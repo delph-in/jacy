@@ -1,0 +1,38 @@
+; (ERB 2001-10-03) Root type for NP fragments.
+
+; AO (2003-09-04)
+; np-frag-end-root is needed agai, but actually it does not used.
+; See global.lsp.
+
+; AO (2003-08-29) BEGIN
+; np-frag-root  -> np-frag-end-root
+; Comment will be added.
+
+np-frag-root := np-frag-rule-type.
+
+;; not used by lkb
+;np-frag-end-root := np-frag-end-rule-type.
+
+; See rule-types.tdl and japgram.tdl
+; AO (2003-08-29) END
+
+; (ERB 2001-12-10) Try letting a few things attach to 
+; utterances (principally, interjections, greetings, other
+; discourse particles).
+
+;utterance-root := sign &
+;[ SYNSEM.LOCAL.CAT.HEAD utterance_head ].
+
+; (MS 2002-1-7) This would be the version for a 'cleaner' grammar that is not robust, but accurate.
+
+utterance-root := j-sign &
+[ SYNSEM [LOCAL.CAT.HEAD utterance_head,
+	 NON-LOCAL.ROBUST -] ].
+
+pp-frag-root := pp-frag-rule-type.
+
+; (MS 2002-12-04) fragment rule type for number fragments
+
+
+number-frag-root := number-frag-rule-type.
+

@@ -1,0 +1,1142 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: japgram
+;;;      module:
+;;;     version: %I%
+;;;  written by: Melanie Siegel/Emily Bender
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel (MS)|             | Emily Bender (ERB), Francis Bond (FCB), Chiharu Hashimoto
+;;;                   |             | (CH), (TT), (AO)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Rules for sentence chains or single sentences
+
+;declarative sentence, finite verb
+
+utterance_rule1a := utterance-plusmessage-type &
+                   [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD decl]],
+                    C-CONT.RELS <! prpstn_rel !>,
+                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
+                                                    [MODUS uttmodus, 
+                                                     FIN +,
+                                                     MAIN-PRD +],
+                                               VAL saturated],
+                                          CONT.RELS diff-list ],
+                                   NON-LOCAL.QUE <! !>]]>].
+
+;wh-question without ka
+;
+; temporarily delete due to problems with pet/lkb inconsistncy
+
+utterance_rule1b := utterance-plusmessage-type &
+                   [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD quest]],
+                    C-CONT.RELS <! int_rel & [ PRED 'int_rel ]!>,
+                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
+                                                    [MODUS uttmodus, 
+                                                     FIN +,
+                                                     MAIN-PRD +],
+                                               VAL saturated],
+                                          CONT.RELS diff-list ],
+                                   NON-LOCAL.QUE <! [] !>]]>].
+
+
+
+;sentence with sentence end particle, finite verb
+; (ERB 2001-09-26) Changing type from utt-type to utt-message-sap-type.
+
+utterance_rule2a := utt-message-sap-type &
+                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & decl],
+                    C-CONT [RELS <! !>,
+                            HCONS <! !>],
+                    ARGS < [SYNSEM.LOCAL.CAT.HEAD s-end_head & [SMOD #1]]>].
+
+
+utterance_rule2b := utt-message-sap-type &
+                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & quest],
+                    C-CONT [RELS <! !>,
+                            HCONS <! !>],
+                    ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
+
+; (ERB 2001-10-31) Moving contrast between imp_rel and polite-imp_rel
+; to REL feature for k2y purposes (and because we can't see why there
+; need to be special types).
+
+utterance_rule2c := utt-message-sap-type &
+                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & imp],
+                    C-CONT [RELS <! imp_rel & [PRED 'imp_rel] !>],
+                    ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
+
+utterance_rule2d := utt-message-sap-type &
+                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & cond],
+                    C-CONT.RELS <! cond_rel !>,
+                    ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
+
+; (MS 2002-01-16) simple-imperative vs. polite-imperative divides utterance_rule2e and utterance_rule10. 
+; The subcat should be saturated.
+
+utterance_rule2e := utt-message-sap-type &
+                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
+                    C-CONT [RELS <! !>,
+                            HCONS <! !>],
+                    ARGS < [SYNSEM.LOCAL.CAT [HEAD verb_head & [MODUS polite-imperative,
+                                                                SMOD decl],
+					      VAL saturated]]>].
+
+; V-te
+
+;utterance_rule3  := utterance-plusmessage-type &
+;                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
+;                    C-CONT.RELS <! prpstn_rel !>,
+;                    ARGS <[SYNSEM [LOCAL.CAT [HEAD verb_head & 
+;                                                   [H-TENSE te,
+;                                                    VN -,
+;                                                    MAIN-PRD +],
+;                                              VAL saturated],
+;                                  NON-LOCAL.QUE <! !>]]>].
+
+; (ERB 2001-11-14) All of the sudden, this isn't working, and
+; the problem seems to be the constraint [ MODUS imperative ]
+; on the daughter.  Try taking it off.
+
+;(MS 2001-11-19) Taking the MODUS imperative restriction on the argument out.
+; (MS 2001-1-7) Instead inserting uttmodus, in order to keep the infinitive verb form out.
+
+; (ERB 2002-01-02) We don't want the pre-masu H-TENSE te forms to
+; be possible daughters here.  HACK: They differ from true te forms
+; in the J-SPEC value (don't know why), so I'll leverage that here.
+
+utterance_rule3  := utterance-plusmessage-type &
+                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
+                    C-CONT.RELS <! imp_rel & [PRED 'imp_rel] !>,
+                    ARGS <[SYNSEM [LOCAL.CAT [HEAD verb_head & 
+                                                   [H-TENSE te,
+                                                    VN -,
+                                                    COP -,
+                                                    J-SPEC 1-list,
+						    MODUS uttmodus,
+                                                    MAIN-PRD +],
+                                              VAL saturated],
+                                  NON-LOCAL.QUE <! !>]]>].
+
+; (ERB 2001-11-05) These idioms probably shouldn't get the prpstn_rel.
+; Also, this was turing up with unbound HCONS lists.
+
+;utterance_rule6  := turn-type &
+;                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
+;                    C-CONT.RELS <! prpstn_rel !>,
+;                    ARGS <[SYNSEM.LOCAL.CAT.HEAD idiom_head]>].
+
+utterance_rule6  := turn-type &
+                    [SYNSEM.LOCAL [ CAT.HEAD utterance_head & [SMOD decl],
+				    LKEYS.--KEYREL #key,
+                                    CONT [ HOOK.LTOP #top ]],
+                     C-CONT [ RELS <! !>,
+                              HCONS <! !> ],
+                    ARGS <[SYNSEM.LOCAL [ CAT.HEAD idiom_head,
+					  CONT.HOOK.LTOP #top,
+                                          LKEYS.--KEYREL #key]]>].
+
+
+utterance_rule9 := utterance-plusmessage-type &
+                  [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
+                    C-CONT.RELS <! prpstn_rel !>,
+                    ARGS <[SYNSEM.LOCAL [CAT.HEAD empty-frag-p_head,
+                                        BAR +]]>].
+
+; (ERB 2001-10-31) Moving contrast between imp_rel and polite-imp_rel
+; to REL feature for k2y purposes (and because we can't see why there
+; need to be special types).
+
+; (ERB 2002-01-14) Don't want VN+kudasai to use this one anymore,
+; so adding SMOD imp.
+
+; (MS 2002-01-16) introduces simple-imperative vs. polite-imperative to divide utterance_rule10 and utterance_rule2e.
+
+utterance_rule10 := utterance-plusmessage-type &
+                  [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
+                   C-CONT.RELS <! imp_rel & [PRED 'imp_rel] !>,
+                   ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
+                                                   [MODUS simple-imperative,
+						    H-TENSE present,
+                                                    FIN +,
+                                                    MAIN-PRD +],
+                                              VAL saturated],
+                                         CONT.HOOK.INDEX.E.MOOD imperative],
+                                  NON-LOCAL.QUE <! !>],
+			  RMORPH-BIND-TYPE imp-morph]>].
+
+
+
+
+
+
+;time in VM
+
+pp_np_rule2 := empty-preposition-type &
+              [SYNSEM.LOCAL.CAT [HEAD empty-case-p_head & [CASE temp-no]],
+               HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD temporal-noun_head].
+
+; (ERB 2001-10-03) Rule that adds unspec-loc-rel to temporal
+; nouns, and makes them modifiers.
+
+adv_np_rule := adv_np_rule-type.
+
+
+;expanded from ordinary_noun_head to noun_head: dore kurai.
+
+; (ERB 2001-10-10) For constructing k2ys it's helpful to have
+; the unspecified relation between nouns in an nn compound not
+; be an instance of prep_mod_rel.
+; (ERB 2001-10-29) Trying to keep integers promoted to NumClPs
+; promoted to NPs out of this rule.  Trying the hack of giving them a 
+; REL value that is not a string.  So, constraining this guy to
+; be REL string.
+; (ERB 2001-10-29) The REL names, written 'relation, are actually
+; treated as atoms, not strings, by cheap.  This means I need to
+; move this contrast one level up.
+; (MS 2001-11-26) Changed the modification from ordinary-noun_head to noun_head in order to allow compounds with exceptional nouns (mitai).
+; (MS 2001-12-19) This solution gave too many ambiguities. I'll introduce a special rule for exceptional nouns.
+; (ERB 2001-11-26) Like other modifiers, this should grab the MOD-IND
+; and MOD-HAND.
+; (ERB 2001-11-26) But it should pass up the LTOP and INDEX of its MOD value.
+; (ERB 2001-11-26) Experimenting (as we so desire) with using
+; a prep-mod-rel again here to allow compounds with nominalizations
+; as the head.
+; (ERB 2001-11-28) I don't think we need to worry about the INDEX and
+; LTOP on the mother here.  These only show up as non-head daughters of the
+; compounds-rule, which is an intersective head-adj rule and therefore
+; takes the head daugther as the semantic head.
+; (ERB 2001-12-03) ARG3 should be the INDEX of the daughter, not
+; the MOD-IND.
+; (ERB 2002-01-28) MOD...HEAD is ordinary-or-date-noun_head to allow
+; nouns like TOKI as head of compounds. (Was just ordinary_noun_head)
+; (MS 2002-06-11) The POSTHEAD is unified with the POSTHEAD of the argument. Thus, I can prevent
+; words like 間 from being the first argument in a compound.
+
+; (MS 2003-09-26) Changed no_nmod to unspec_compound_rel, as defined in Matrix.
+
+
+compound-noun-rule := empty-head-type & 
+[SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & 
+                          [MOD < [LOCAL [CAT [HEAD ordinary-or-date-noun_head,
+                                            VAL.SPR 1-list],
+                                       CONT [MOD-HAND #hhand,
+                                             MOD-IND #hinst]],
+                                MODIFIED.PERIPH -]>,
+                           J-POSTHEAD #ph],
+                     VAL saturated],
+                BAR -],
+         MODIFIED.PERIPH +],
+ C-CONT [RELS <! !>,
+         HCONS <! !>],
+ HEAD-DTR.SYNSEM.LOCAL [CONT nncompound-sem-type &
+			     [RELS <! #key !>,
+			      HCONS <! !>],
+			LKEYS.--KEYREL #key & unspec_compound_rel &
+			     [LBL #hhand,
+			      PRED "no",
+			      ARG0.E.TENSE no_tense,
+			      ARG2 #hinst,
+			      ARG1 #nhinst]],
+ NON-HEAD-DTR.SYNSEM.LOCAL [CAT [HEAD noun_head & [J-POSTHEAD #ph],
+                                VAL saturated],
+                           CONT [ HOOK.INDEX #nhinst],
+			   LKEYS.--KEYREL.PRED atom,
+                           BAR -]].
+
+; (MS 2003-09-26) Changed no_nmod to unspec_compound_rel, as defined in Matrix.
+
+compound-exceptional-noun-rule := empty-head-type & 
+[SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD exceptional_noun_head,
+                                                                VAL.SPR 1-list],
+                                                           CONT [MOD-HAND #hhand,
+                                                                 MOD-IND #hinst]],
+                                                    MODIFIED.PERIPH -] > ],
+                     VAL saturated],
+                BAR -],
+         MODIFIED.PERIPH +],
+ C-CONT [RELS <! !>,
+         HCONS <! !>],
+ HEAD-DTR.SYNSEM.LOCAL [CONT nncompound-sem-type &
+			     [RELS <! #key !>,
+			      HCONS <! !>],
+			LKEYS.--KEYREL #key & unspec_compound_rel &
+			     [LBL #hhand,
+			      PRED "no",
+			       ARG0.E.TENSE no_tense,
+			       ARG2 #hinst,
+			       ARG1 #nhinst]],
+ NON-HEAD-DTR.SYNSEM.LOCAL [CAT [HEAD noun_head,
+                                VAL saturated],
+                           CONT [ HOOK.INDEX #nhinst],
+			   LKEYS.--KEYREL.PRED atom,
+                           BAR -]].
+
+
+
+; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND.
+
+compound-name-rule := empty-head-type & 
+              [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD name_head,
+                                                                            VAL.SPR 1-list],
+                                                                       CONT [MOD-HAND #hhand,
+                                                                             MOD-IND #hinst]],
+								 MODIFIED.PERIPH -] > ],
+                                  VAL saturated],
+                             BAR -],
+		       MODIFIED.PERIPH +],
+	       C-CONT [RELS <! !>,
+		       HCONS <! !>],
+                HEAD-DTR.SYNSEM.LOCAL [CONT appos-id-sem-type &
+					    [RELS <! #key !>,
+					     HCONS <! !>],
+				       LKEYS.--KEYREL #key &
+					    [LBL #hhand,
+					    ARG1 #nhinst,
+					    ARG2 #hinst]],                    
+               NON-HEAD-DTR.SYNSEM.LOCAL [CAT [HEAD name_head,
+                                              VAL saturated],
+                                        LKEYS.--KEYREL [ARG0 #nhinst],
+                                        BAR -]].
+
+
+
+
+
+; (ERB 2001-08-06) Disallowing numbers from compounds.
+; (ERB 2001-08-21) Changed type nonint_head to final_head.
+; (ERB 2001-09-13) Changed type from head-adjunct-rule1-type to head-adjunct-rule-final,
+; since I'm trying to get rid of head-adjunct-rule1-type.  This looses the constraint
+; that the mother's INDEX is identified with the non-head dtr's INDEX, so I'm adding
+; that in here.
+; (MS 2001-10-17) Taking the saturated restriction on the head-dtr out, such that it is possible to 
+; add a determiner to the compound.
+
+; (ERB 2001-11-26) I don't want the INDEX/LTOP to be identified
+; with MOD-IND/MOD-HAND on the mother of this rule, because it
+; may be headed by a nominalization.  As a first stab, say that
+; INDEX and LTOP come from NON-HEAD-DTR and MOD-IND/MOD-HAND come
+; from HEAD-DTR.
+
+; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
+
+; (TT 2003-08-05) add "J-POSTHEAD right"
+; (TT 2003-08-27) delete "J-POSTHEAD right" because it disabled lkb to parse NNN.
+
+
+compounds-rule := hadj-final-i &
+                  [C-CONT [RELS <! !>,
+                           HCONS <! !>],
+                   ARGS <[SYNSEM.LOCAL [CAT [HEAD final_head & [J-POSTHEAD left, MAIN-PRD -,MOD < [MODIFIED.PERIPH #periph] > ],
+                                             VAL saturated],
+                                        BAR -]],
+                         [SYNSEM [LOCAL [CAT [HEAD final_head],
+					 BAR -],
+				  MODIFIED.PERIPH #periph]]>].
+
+; (TT 2003-08-29) experimental rules for dealing with prefix and suffix correctly
+; compounds-rule-nn := hadj-final-i & 
+; 			[C-CONT [RELS <! !>,
+; 				 HCONS <! !>],
+; 			 ARGS <[SYNSEM [LOCAL [CAT [HEAD final_head & 
+; 							 [
+; 							 MAIN-PRD -,
+; 							  MOD < [MODIFIED.PERIPH #periph] > ],
+; 						    VAL saturated],
+; 					       BAR -],
+; 					LEX -]],
+; 				[SYNSEM [LOCAL [CAT [HEAD final_head ],
+; 						BAR -],
+; 					 LEX -,
+; 					 MODIFIED.PERIPH #periph]]>].
+
+; compounds-rule-prefix-n := hadj-final-i & 
+; 			[C-CONT [RELS <! !>,
+; 				 HCONS <! !>],
+; 			 ARGS <[SYNSEM [LOCAL [CAT [HEAD final_head & 
+; 							[J-POSTHEAD left, 
+; 							 MAIN-PRD -,
+; 							 MOD < [MODIFIED.PERIPH #periph] > ],
+; 						   VAL saturated],
+; 					      BAR -],
+; 					LEX +]],
+; 			       [SYNSEM [LOCAL [CAT [HEAD final_head ],
+; 					       BAR -],
+; 					LEX -,
+; 					MODIFIED.PERIPH #periph]]>].
+
+; compounds-rule-n-suffix := hadj-final-i & 
+; 			[SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD posthead,
+; 			 C-CONT [RELS <! !>,
+; 				 HCONS <! !>],
+; 			 ARGS <[SYNSEM [LOCAL [CAT [HEAD final_head & 
+; 							[ 
+; 							 MAIN-PRD -,
+; 							 MOD < [MODIFIED.PERIPH #periph] > ],
+; 						   VAL saturated],
+; 					      BAR -],
+; 					LEX -]],
+; 			       [SYNSEM [LOCAL [CAT [HEAD final_head & [J-POSTHEAD right]],
+; 					       BAR -],
+; 					LEX +,
+; 					MODIFIED.PERIPH #periph]]>].
+
+
+head_subj_rule := head-subject-rule & [SYNSEM.LOCAL.BAR +].
+
+; (ERB 2001-08-06) Splitting this in two for Smith-style number names.
+
+; (MS 2001-11-14) Took the BAR + restriction out in order to make compounds with subcategorizing nouns possible (振込先指定). Let's see if that overgenerates.
+; (MS 2001-11-19) It does. Let's take the BAR from the head-dtr.
+; (MS 2001-11-20) Still too much ambiguity. Everything is BAR + again.
+
+; (ERB 2002-02-11) Making embedded-question-rule a binary rule, akin
+; to head-complement rules because unary version was relying on LKB
+; cycle detection to keep from overgenerating.  As a result, need to
+; block comp-int-lex heads from head-complement-hf-rule.  Will do this
+; with a hack: require MESSAGE.LIST e-list on head daughter.  This hack
+; should cease to work round about when it becomes unnecessary: when
+; we overhaul the analysis of clauses in this grammar.
+
+; (MS 2003-07-11) Changed the MESSAGE hack now.
+
+head-complement-hf-rule := head-complement-hf-type & 
+                           [SYNSEM [LOCAL.BAR +,
+                                    NON-LOCAL.AFFIX #afflist],
+                            HEAD-DTR.SYNSEM [LOCAL [CAT.HEAD final_head,
+						    BAR +],
+                                             NON-LOCAL.AFFIX <! !>],
+                            NON-HEAD-DTR.SYNSEM [NON-LOCAL.AFFIX #afflist,
+						LOCAL.BAR +]].
+
+
+head-complement-hi-rule := head-complement-hi-type &
+                           [SYNSEM.LOCAL.BAR +,
+                            HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD init_head].
+
+head-complement-affixbind-rule  := head-complement-hf-type &
+                                   [SYNSEM [LOCAL.BAR +,
+                                            NON-LOCAL.AFFIX 0-dlist ],
+				    ARGS < [SYNSEM.NON-LOCAL.AFFIX 1-dlist &
+								   [LIST [FIRST #aff,
+									  REST < > & #last],
+								    LAST #last]],
+					   [SYNSEM.LOCAL.CAT.HEAD p_head & [PTYPE #aff]] >].
+
+
+ 
+head-complement2-rule := head-complement2-type & [SYNSEM.LOCAL.BAR +].
+
+; (ERB 2001-09-29) I need a 2obl complements rule that works for
+; date expressions, so I'm making one general one.  Since elements with
+; two obligatory complements are barred from the ordinary head-complements
+; rules, I don't think there will be any ambiguity introduced.
+
+;kara-made-rule := head-2obl-complements-type & 
+;                  [SYNSEM.LOCAL.BAR +,
+;                   ARGS <[SYNSEM.LOCAL.CAT.HEAD noun_head],
+;                         [SYNSEM.LOCAL.CAT.HEAD postp_head & [PTYPE made]]>].
+
+;parenthesis-rule := head-2obl-complements-type & 
+;                  [SYNSEM.LOCAL.BAR +,
+;                   ARGS <[SYNSEM.LOCAL.CAT.HEAD noun_head],
+;                         [SYNSEM.LOCAL.CAT.HEAD parent-end_head]>].
+
+;head-2obl-complements-rule := head-2obl-complements-type &
+;                              [ SYNSEM [LOCAL.BAR +,
+;					NON-LOCAL.QUE <! !>]].
+
+;this is a test: can one say that the modifier must always be saturated?
+
+; (ERB 2001-09-13) Trying to move to a system where there are only two
+; HMRs, one for prehead and one for posthead modifiers.  The intersective 
+; modifiers themselves take care of the necessary handle identities.
+
+; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
+
+
+; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
+; head-adjunct-rule-type.
+
+head-adjunct-rule1 := hadj-final-i & 
+                      [SYNSEM.LOCAL [BAR +],
+                       C-CONT [RELS <! !>,
+                               HCONS <! !>],
+                       ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
+                                                       ADJ -,
+                                                       MAIN-PRD -],
+                                                 VAL saturated],
+                                            BAR +]],
+                             [SYNSEM j-synsem & [LOCAL [BAR +]]]>].
+
+; (ERB 2001-11-07) I think this is part of analysis of low attachment
+; of adverbs wrt ba/tara/etc.
+
+; (ERB 2001-11-28) I think we don't need this anymore with MOD-IND and
+; MOD-HAND and separate rules for scopal and intersective modifiers.
+
+
+; (ERB 2001-09-21) I want to restrict NumClPs made out of intergers only
+; (i.e., mother nodes of the empty-cardinal-numcl-rule) to modify plain
+; nouns or compound nouns, but not NPs.  This is particularly crucial because
+; they are posthead modifiers.  However, the head-adjunct-rule-2 is requiring
+; both daughters to be BAR +.  I'm going to try removing the BAR + 
+; constraint on the head daughter and see what happens.
+
+; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
+
+
+
+head-adjunct-rule2 := hadj-first-i & 
+                      [SYNSEM.LOCAL [BAR +],
+                        ARGS <[SYNSEM j-synsem], 
+                              [SYNSEM.LOCAL [CAT.HEAD [J-POSTHEAD right, 
+                                                       MAIN-PRD -],
+                                             BAR +]]>].
+
+; (ERB 2001-11-28) Rule for scopal modifiers.
+; For some reason, 新しい could be the modifier here until I put
+; in the constraint [VAL saturated].  I don't see why that should
+; change things.  (If I type the MOD.LOCAL of everything, it will
+; be doubly ruled out, but that's a separate issue.)
+
+head-adjunct-rule3 := hadj-final-s &
+                      [SYNSEM.LOCAL [BAR +],
+                       C-CONT [ RELS <! !>,
+                                HCONS <! !> ],
+                       ARGS <[SYNSEM.LOCAL [CAT [ HEAD [J-POSTHEAD left,
+                                                        MAIN-PRD -],
+                                                  VAL saturated ],
+                                            BAR +]],
+                             [SYNSEM j-synsem &
+				     [LOCAL.BAR +]]>].
+
+; (MS 2003-06-11) Rule for scopal modifiers - head first
+
+head-adjunct-rule4 := hadj-first-s &
+                      [SYNSEM.LOCAL [BAR +],
+                       C-CONT [ RELS <! !>,
+                                HCONS <! !> ],
+                       ARGS <[SYNSEM j-synsem &
+				     [LOCAL.BAR +]],
+			     [SYNSEM.LOCAL [CAT [ HEAD [J-POSTHEAD right,
+							MAIN-PRD -],
+						  VAL saturated ],
+                                            BAR +]]>].
+
+; (ERB 2001-11-26) The hallucinated topic-rel should take the MOD-IND
+; of the head noun as its ARG3, not the INDEX.
+
+; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
+
+
+
+; (ERB 2002-01-02) Allowing relative clauses to attach to either
+; NP or N'.  Need to constrain the quantify-n-infl-rule so that
+; it only applies to unmodified elements, to avoid spurious ambiguity.
+
+; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
+; head-adjunct-rule-type.
+
+; (ERB 2002-01-14) It may be desirable to split the relative clause rule in two
+; to prefer low attachment of relative clauses: rel-cl-rule-1 requires a [NUCL
+; +] head daughter, while rel-cl-rule-2 requires a [NUCL -] head
+; daughter.
+;(CH 2003-08-15)  主名詞を関係節のどこにも関連づけない (non gapped)
+; *** 2003-08-14 の Melanie Siegel さんの情報に基づく修正 ***
+; there are three thing to change on the first daughter:
+; 1) MAIN-PRD bool
+; 2) NUCL not_fin_conj
+; 3) The co-indexing of #adjevent to CONT.HOOK.INDEX instead of ARG0.
+;
+;(CH 2003-08-22)
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" を追加
+
+relative-clause-rule := hadj-final-i &
+                      [SYNSEM.LOCAL [BAR +,
+                                     NUCL nucl_minus],
+                        C-CONT [RELS <!  prpstn_rel & [LBL #top,
+                                                        MARG #soa],
+                                          topic_rel & [PRED 'wa,
+                                                       ARG0.E.TENSE no_tense,
+                                                       LBL #adjhand,
+                                                       ARG1 #adjevent,
+                                                       ARG2 #ind] !>,
+                                HCONS <! qeq & [HARG #soa,
+                                                 LARG #adjhand] !>],
+                       ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD rels,
+						       MAIN-PRD bool],
+						 VAL saturated],
+					    CONT.HOOK.INDEX #adjevent,
+                                            LKEYS [--KEYREL [LBL #adjhand]],
+                                            BAR +,
+                                            NUCL not_fin_conj]],
+                              [SYNSEM j-synsem & [LOCAL [CAT.HEAD noun_head,
+							 BAR +,
+							 CONT [MOD-IND #ind,
+							       HOOK.LTOP #top]]]]>].
+
+; (ERB 2002-01-02) [NUCL +] on head daughter seems overly 
+; restrictive (esp. since I'm trying to make all head-adjunct rules
+; [NUCL -] on the mother).  I'm guessing it was here to reduce
+; ambiguity in sentences with multiple te clauses.  Perhaps something
+; similar could be achieved by distinguishing te-coordination on
+; finite clauses and te-coordination on other te-clauses.
+
+; (ERB 2002-01-14) Allow comma-headed conjuncts in this rule by
+; generalizing to verb_head-super.
+
+; (ERB 2002-01-22) NUCL conj now on supertype.
+
+sentence-te-coordination-rule := sentence-coord-type &
+[SYNSEM.LOCAL [BAR +,
+               CAT.VAL saturated,
+	       LKEYS.--KEYREL.PRED 'coord],
+ ARGS <[SYNSEM.LOCAL [CAT [HEAD verb_head-super & [J-POSTHEAD coord,
+						   H-TENSE te,
+						   C-MOD < j-synsem & [LOCAL [CAT #1, 
+									      CONT #3,
+									      BAR #5, 
+									      NUCL #6,
+									      LKEYS #7],
+								       LEX #2, 
+								       NON-LOCAL #4] > ],
+			   VAL saturated],
+		      BAR +],
+        J-NEEDS-AFFIX -],
+       [SYNSEM j-synsem & [LOCAL [BAR +,
+				  CAT #1 & [VAL saturated],
+				  CONT #3,
+				  BAR #5, 
+				  NUCL #6,
+				  LKEYS #7,
+				  NUCL nucl_plus],
+			   LEX #2, 
+			   NON-LOCAL #4],
+        J-NEEDS-AFFIX -] > ].
+
+; (ERB 2001-12-13) For cases where the splitter can't break apart
+; two sentences for lack of punctuation.  This rule allows two sentences
+; be coordinated with no overt marking of it.  In pet/japanese.set
+; it is marked as a spanning-only-rule so that it can only apply at
+; the very top of the tree.  I guess that won't be true in the lkb??
+
+; (ERB 2001-12-13) This is causing some memory problems with cheap.
+; Perhaps the problem is that nothing is requiring the second daughter
+; to be a sentence.  Adding that.
+
+; (ERB 2001-12-13) Still causing memory problems, so commenting this
+; out (as well as its ranking in japanese.set) until I can consult
+; with Uli on Monday.
+
+; (ERB 2001-12-17) Uli fixed the problem: the spanning-only-rules 
+; condition wasn't really being checked.  But this is still producing
+; way too many parses.  Part of the problem is that te forms are 
+; [H-TENSE tensed] instead of [H-TENSE te] (in order to get the pure
+; aspect analysis of the aspect auxiliaries).  So, try blocking the
+; te forms in the left daughter here by requiring [FIN +].
+
+; (ERB 2002-01-02) Don't want this to be [NUCL +] on the
+; second daughter, if hadj rules are going to be [NUCL -].
+
+; (MS 2002-1-7) I'll restrict the rule a little bit further to non-adjectives. 
+; Also, both verbs are MAIN-PRD +. This prevents NA to be the first verb.
+; MODUS nonoperative prevents NAI to be the first verb. It has to be seen if that is too restrictive...
+; (MS 2002-1-7) It is: "表示できませんでした申し訳ございません.
+; (MS 2002-1-10) Another restriction is EMPTY - in the head of the first argument. 
+;  This prevents an empty-cop-id-rule or an empty-cop-rule to be applied to this.
+
+; (ERB 2002-01-22) NUCL conj now on supertype.
+; (ERB 2002-01-29) If we want runon_s with SAPs on the end, we need the
+; head-dtr here to be utt-valid instead of verb_head.  (Remembering that
+; in cheap at least this rule is restricted to spanning-only-edges.)
+; (MS 2002-05-28) If we want the first sentence to have an SAP, we need utt-valid there, too.
+; (MS 2002-06-05) Maybe that's not a good idea, leads to spurious ambiguity in, e.g.,
+;  ご飯を食べるかよい
+; (MS 2002-06-19) But we seem to need this anyway: "口座振替依頼書送ってください,お願いします"
+; (MS 2002-06-20) Trying to restrict this with  NUCL nucl_plus.
+
+
+
+runon_s := sentence-coord-type &
+[SYNSEM [LOCAL [BAR +,
+		CAT.VAL saturated],
+	 NON-LOCAL.ROBUST +],
+ ARGS <[SYNSEM.LOCAL [CAT [HEAD utt-valid & [H-TENSE present-past-or-future,
+					     FIN +,
+                                             EMPTY -,
+					     ADJ -,
+					     MAIN-PRD +],
+			   VAL saturated],
+		      BAR +,
+		      NUCL nucl_plus],
+		J-NEEDS-AFFIX -],
+       [SYNSEM j-synsem & [LOCAL [BAR +,
+				CAT [ HEAD utt-valid &
+					   [ H-TENSE present-past-or-future,
+					     MAIN-PRD + ],
+				      VAL saturated]]],
+	J-NEEDS-AFFIX -]>].
+
+
+conj-rule := conj-rule-type &
+                 [SYNSEM [LOCAL.BAR +,
+			  MODIFIED.PERIPH +],
+                  ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
+						  C-MOD < [MODIFIED.PERIPH #periph] > ],
+                                            VAL saturated],
+                                       BAR +]],
+                        [SYNSEM j-synsem & [LOCAL.BAR +,
+					    MODIFIED.PERIPH #periph]]>].
+
+
+
+
+
+; ERB (2001-09-03) Redefining the vn-light-rule to be a kind of a head-specifier rule.
+; This is so that the light verbs can have some say in the valence of the whole
+; combination.  In particular, I want dekiru to be able to ga-mark the object.
+
+; ERB (2001-09-03) Turns out we don't need a special subtype of the h-spr rule, as
+; the ordinary one will do the work (of course!).
+
+
+vn-light-rule := head-marker-rule & 
+                 [SYNSEM [LOCAL [BAR bool,
+				 CONT.HOOK #hook,
+				 LKEYS [--KEYREL #key,
+				        --ALTKEYREL #altkey]],
+			  LEX +],
+                  J-NEEDS-AFFIX -,
+                  RMORPH-BIND-TYPE #morphbind,
+                 ARGS <[SYNSEM j-synsem & [LOCAL [CAT.HEAD vn_head,
+						  CONT.HOOK #hook,
+						  LKEYS [--KEYREL #key,
+							 --ALTKEYREL #altkey],
+						  BAR -]]],
+                       [SYNSEM j-synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX -, LIGHT +]]],
+                        INFLECTED +,
+                        J-NEEDS-AFFIX -,
+                        RMORPH-BIND-TYPE #morphbind]>].
+
+; (ERB 2002-01-02) Adding a rule for VN+vends (esp. VN + kudasai).
+; Pulled out similarities between new rule and vstem-vend-rule to
+; supertype vstem-vend-rule-type.
+                
+vstem-vend-rule := stem-end-rule-type &
+		   [ SYNSEM [LOCAL.CAT.VAL.SPR null,
+			     MODIFIED.PERIPH #per],
+		     ARGS < [ SYNSEM [LOCAL.CAT.HEAD ordinary-verb-stem_head & [LIGHT #light],
+				      MODIFIED.PERIPH #per],
+			      J-NEEDS-AFFIX + ],
+			    [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light]] >].
+
+
+aux-vend-rule := stem-end-rule-type &
+[ SYNSEM [LOCAL.CAT.VAL.SPR #spr,
+	  MODIFIED.PERIPH #per],
+  J-NEEDS-AFFIX #aff,
+  ARGS < [ SYNSEM [LOCAL.CAT [HEAD other-verb-stem_head & [COP -],
+			      VAL.SPR #spr]],
+	   J-NEEDS-AFFIX + ],
+	 [J-NEEDS-AFFIX #aff,
+	  SYNSEM [LOCAL.CAT.HEAD verb_head,
+		  MODIFIED.PERIPH #per]] >].
+
+na-vend-rule := stem-end-rule-type &
+[ SYNSEM.LOCAL.CAT.VAL.SPR null,
+  J-NEEDS-AFFIX #aff,
+  ARGS < [ SYNSEM.LOCAL.CAT.HEAD na-adj_head],
+	 [J-NEEDS-AFFIX #aff,
+	  SYNSEM.LOCAL.CAT.HEAD verbend_head] >].
+
+
+
+unary-vstem-vend-rule := unary-type-super &
+ [SYNSEM.LOCAL [CAT #cat,
+		CONT #cont,
+		LKEYS #keys,
+		CTXT #ctxt,
+		BAR +],
+  J-NEEDS-AFFIX -,
+  ARGS < [SYNSEM [LOCAL [CAT #cat & [HEAD verb-stem_head & [FIN +,
+							   VN -,
+							   LIGHT -,
+							   EMPTY -]],
+			CONT #cont,
+			LKEYS #keys,
+			CTXT #ctxt,
+			BAR -],
+		  LEX +],
+	  J-NEEDS-AFFIX -] >].
+
+
+; (ERB 2002-01-02) Getting double parses for "お送りいただきたい"
+; because いただきたい is compatible with the head of hsr and the
+; vend of vn-vend-rule.  (Similar problems don't arise with 
+; 食べていただきたい because 食べて is also [HEAD v-end_head] and
+; therefore incompatible with the vstem-vend rule.)  This is a
+; bit of a hack, but keep the vn-vend-rule from appying in these
+; cases by requiring vend to be [AUX -].
+; (MS 2002-11-29) Do we need this rule???
+
+;vn-vend-rule := stem-end-rule-type &
+;[ ARGS < [SYNSEM.LOCAL.CAT.HEAD vn_head],
+;         [SYNSEM.LOCAL.CAT.HEAD.AUX -] >].
+
+vend-vend-rule  := head-marker-rule & 
+                 [SYNSEM [LOCAL [NUCL nucl_plus,
+				 CONT.HOOK #hook,
+				 LKEYS [--KEYREL #key,
+				        --ALTKEYREL #altkey],
+				      BAR #bar],
+			  LEX +,
+			  MODIFIED.PERIPH #per],
+                  J-NEEDS-AFFIX #aff,
+                  LMORPH-BIND-TYPE #lmorph,
+                  RMORPH-BIND-TYPE #rmorph,
+                  ARGS <[SYNSEM j-synsem & [LOCAL [CAT [HEAD verbend_head & [MODUS #mod],
+							VAL.SPR 1-list],
+						   BAR #bar]],
+                         J-NEEDS-AFFIX +,
+                         RMORPH-BIND-TYPE #mt,
+                         LMORPH-BIND-TYPE #lmorph,
+                         INFLECTED +],
+                       [SYNSEM j-synsem & [LOCAL [CAT.HEAD verbend_head & [MODUS #mod],
+						  CONT.HOOK #hook,
+						  LKEYS [--KEYREL #key,
+							 --ALTKEYREL #altkey]],
+					 MODIFIED.PERIPH #per],
+                        J-NEEDS-AFFIX #aff,
+                        LMORPH-BIND-TYPE #mt,
+                        RMORPH-BIND-TYPE #rmorph,
+                        INFLECTED +]>].
+
+ 
+
+;seminaa ga ichinichijuu haitte orimashite
+
+; (ERB 2002-01-02) For some reason, we weren't copying up the
+; MOD-IND and MOD-HAND in this rule. It might be a more general
+; problem, but fixing it here for now.
+
+head-specifier-rule := head-specifier-rule-type &
+                        adjacent-spr-check &
+                       [SYNSEM [LOCAL [BAR #bar,
+                                      CAT.VAL [UNSAT -,
+					       SPR null],
+                                      CONT [MOD-IND #mind,
+                                            MOD-HAND #mhand]],
+				LEX -,
+				MODIFIED.PERIPH #per],
+                       ARGS <[SYNSEM j-synsem & [MODIFIED.PERIPH #per],
+                              J-NEEDS-AFFIX -],
+                             [SYNSEM j-synsem & [LOCAL [BAR #bar,
+                                                      CONT [MOD-IND #mind,
+                                                            MOD-HAND #mhand]]]]>].
+
+
+
+
+prefix-attach-rule := suffix-rule &
+                      [ARGS < [SYNSEM.LOCAL [BAR -,
+                                             CAT.HEAD hon-prefix_head],
+                               J-NEEDS-AFFIX -],
+                              [SYNSEM.LOCAL.BAR bool,
+                               J-NEEDS-AFFIX -] >].
+
+tai-obj-change-rule :=  obj-casechange-rule &
+                       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+							  LOCAL.CAT.HEAD overt-case-p_head &
+                                                                        [CASE ga]],
+                        ARGS < [SYNSEM.LOCAL [CAT [HEAD v-op-end_head,
+						   VAL [SPR null,
+							SUBJ null]],
+                                              LKEYS.--KEYREL objchange_rel]] >].
+
+
+
+
+
+;; 機関の変更したい
+
+vn-light-obj-change-rule  :=  obj-casechange-rule &
+                       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+							  LOCAL.CAT.HEAD overt-case-p_head &
+                                                                        [CASE no-case]],
+			RMORPH-BIND-TYPE #rmorph,
+                        ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
+						  VAL.SPR null],
+				RMORPH-BIND-TYPE #rmorph] >].
+
+vn-light-obj-change-rule-2  :=  obj-casechange-rule &
+                       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+							  LOCAL.CAT [HEAD noun_head,
+								     VAL saturated]],
+			RMORPH-BIND-TYPE #rmorph,
+                        ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
+						  VAL.SPR null],
+				RMORPH-BIND-TYPE #rmorph] >].
+
+
+; (ERB 2001-09-26) Constraining head-dtr to be [HEAD verb_head-avm]
+; so that this rule can't apply after the vstem-vend-rule.
+
+rareru-obj-change-rule :=  obj-casechange-rule &
+                       [SYNSEM.LOCAL.CAT.VAL [COMPS.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
+							       [CASE ga]]],
+                        ARGS < [SYNSEM.LOCAL [ CAT [HEAD verb_head,
+						    VAL.SUBJ null],
+                                               LKEYS.--KEYREL rareru_rel ]] >].
+
+garu-sbj-change-rule := subj-casechange-rule &
+			[SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
+									  [CASE wo]]],
+                        ARGS < [SYNSEM.LOCAL [LKEYS.--KEYREL.PRED 'seem,
+					      CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE ga]] >].
+
+
+; (ERB 2001-09-20) We want currency NumClPs at least to be possible
+; left daughters of compounds for things like 百円ノート or
+; 二万ドル車.  That these are actually compounds is shown by the
+; pronunciation of the latter (niman doru guruma), which involves rendaku.
+; (MS 2001-10-10) But if you restrict them to be BAR -, they can (e.g.) not be modified. Let them be BAR bool and everything is possible?
+
+
+; (ERB 2001-11-01) Breaking this up into three rules.  See notes
+; in ruletypes.tdl.
+
+
+nominal-numcl-rule1 := nominal-numcl-rule-nomod &
+                      [ SYNSEM.LOCAL.BAR bool ].
+
+nominal-numcl-rule2 := nominal-numcl-rule-mod &
+                     [ SYNSEM.LOCAL.BAR bool ].
+
+nominal-numcl-rule3 := nominal-numcl-rule-card &
+                      [ SYNSEM.LOCAL.BAR + ].
+
+; ERB (2001-09-24) Overhauling the date expressions.  They will be
+; nouns to start with, so we don't need this.
+
+;nominal-date-rule :=  nominal-date-rule-type &
+;                      [ SYNSEM.LOCAL.BAR + ].
+
+empty-cardinal-numcl-rule := empty-cardinal-numcl-type.
+
+; AO (2003-09-04) 
+; np-frag-rule is needed again.
+;
+; ; AO (2003-08-29) BEGIN
+; ; np-frag-rule  -> np-frag-end-rule
+; ; Comment will be added.
+
+np-frag-rule := np-frag-rule-type.
+
+; np-frag-end-rule := np-frag-end-rule-type.
+
+; ; See rule-types.tdl and roots.tdl.
+; ; AO (2003-08-29) END
+
+pp-frag-rule := pp-frag-rule-type.
+
+;np-quest-frag-rule := np-quest-frag-rule-type & [ARGS < j-sign  , j-sign > ].
+
+np-quest-frag-rule := np-quest-frag-rule-type &
+		      [ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head,
+						  VAL saturated]]],
+			      [SYNSEM.LOCAL.CAT.HEAD s-end_head & [SMOD quest]] >].
+
+; (TT 2003-09-05)
+
+adv-frag-rule := adv-frag-rule-type.
+na-adj-frag-rule := na-adj-frag-rule-type.
+
+
+; (ERB 2001-11-14) Unary rule to bind off QUE values in embedded
+; questions.
+
+; (ERB 2002-02-11) Changed to binary rule -- see notes at embedded-rule-type.
+; If and when we make the embedded-question-rule a subtype of hcomp-rule-type,
+; the constraints on AFFIX could probably be moved up.
+
+embedded-question-rule := embedded-question-rule-type &
+[SYNSEM.NON-LOCAL [QUE <! !>,
+                AFFIX #affixlist],
+ HEAD-DTR comp-int-lex & 
+                   [SYNSEM.NON-LOCAL.AFFIX <! !>],
+ NON-HEAD-DTR.SYNSEM.NON-LOCAL.AFFIX #affixlist].
+
+; (MS 2001-11-23) rule for colon sentences.
+; 新住所 : AddressErsatz.
+
+; (MS 2003-09-03) Reactivated this rule.
+;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
+
+empty-cop-id-rule := empty-head-type &
+		     [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
+					      [H-TENSE present,
+					       MODUS indicative,
+					       MARK null,
+					       MOD null,
+					       J-SPEC null,
+					       C-MOD null,
+					       FIN +,
+					       EMPTY +,
+					       MAIN-PRD +],
+					 VAL [UNSAT -,
+						SUBJ null,
+						COMPS null,
+						SPR null]],
+				     CONT.HOOK [LTOP #top,
+						INDEX #ind],
+				    CTXT.BACKGROUND <! !>],
+			      NON-LOCAL [QUE <! !>,
+					 ROBUST +]],
+		      C-CONT [RELS <! equal_rel &
+				     [PRED 'cop_id_rel,
+				      LBL #top,
+				      ARG2 #objind,
+				      ARG0 #ind & [E [TENSE present]]] !>,
+			      HCONS <! !>],
+		      HEAD-DTR.SYNSEM.LOCAL.CONT [RELS <! !>,
+						  HCONS <! !>],
+		      INFLECTED +,
+		      J-NEEDS-AFFIX -,
+		      ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head,
+						  VAL saturated],
+					     CONT.HOOK.INDEX #objind]] >].
+
+
+
+empty-copula-rule := empty-head-type &
+		     [SYNSEM [LOCAL [CAT [HEAD verb-noninfl_head-avm &
+					      [COP-ARG -,
+					       C-MOD null,
+					       MOD null,
+					       AUX -,
+					       MARK null,
+					       COP +,
+					       EMPTY +,
+					       H-TENSE present,
+					       MODUS indicative],
+					 VAL obj-arg & 
+					      [UNSAT -,
+					       COMPS.FIRST #objval & [LOCAL [CONT [HOOK [INDEX #ind,
+											 LTOP #hand],
+										   RELS #liszt,
+										   HCONS #hcons],
+									     LKEYS.--KEYREL #key],
+								   NON-LOCAL #nloc]]],
+				    CONT [HOOK [INDEX #ind,
+						LTOP #hand],
+					  MOD-IND #ind,
+					  MOD-HAND #hand,
+					  RELS #liszt,
+					  HCONS #hcons],
+				     LKEYS.--KEYREL #key & [LBL #hand],
+				    CTXT.BACKGROUND <! !>,
+				     BAR +],
+			      NON-LOCAL #nloc & [ROBUST +]],
+		      INFLECTED +,
+		      J-NEEDS-AFFIX -,
+		      C-CONT.RELS <! !>,
+		      ARGS < [SYNSEM #objval & [LOCAL.CAT [HEAD na-adj_head,
+							   VAL saturated]]] >].
+
+quasi-morph-rule := binary-basic &
+		    [SYNSEM [LOCAL [CAT [HEAD #head,
+					 VAL #sc],
+				    CONT #cont],
+			     NON-LOCAL.QUE [ LIST #firstque,
+					  LAST #lastque ]],
+		     ARGS < [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head,
+							  VAL.UNSAT +],
+						     LKEYS.--KEYREL.PRED #rel,
+						     BAR -],
+					       NON-LOCAL.QUE [ LIST #firstque,
+							     LAST #middleque ]]],
+				       
+			    [SYNSEM [LOCAL [CONT #cont,
+						     LKEYS.--KEYREL.PRED #rel,
+						     CAT [HEAD na-adj-basic_head & #head,
+							  VAL #sc & [UNSAT +]]],
+					       NON-LOCAL.QUE [ LIST #middleque,
+							       LAST #lastque ]]] >].
+
+
+
+;(CH 2003-08-15) 動詞語幹＋動詞語幹
+;(FIXME) semantics がおかしい場合がある。
+; ex) V2がV1のイベントを取る場合の解釈ができない。
+; almost lost the ambiguity with VAL.UNSAT +
+; but for some reason subj-zpro-ins-lrule won't run after the vstem-vstem rule
+; because of a conflict of SUBJ NUL and sat-arg-list
+
+; (MS and FCB 2003-10-29) With UNSAT - one gets rid of the ambiguity, but the
+; identification of VAL is not correct; and one cannot get GA-WO. 
+; The valence composition must be re-worked here.
+
+vstem-vstem-rule := head-final-type & 
+		    orth-princ &
+		    [SYNSEM [LOCAL [CAT [VAL #val],
+				    BAR -],
+			     LEX +],
+		     INFLECTED #infl,
+		     RMORPH-BIND-TYPE #rmorphbind,
+		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+							VAL #val ],
+						   BAR -],
+					    LEX +],
+				   RMORPH-BIND-TYPE #im & i-morph],
+		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+						   VAL #val],
+					      BAR -],
+				       LEX +],
+			       INFLECTED #infl,
+			       LMORPH-BIND-TYPE #im,
+ 			       RMORPH-BIND-TYPE #rmorphbind]].
+
+
+;(CH 2003-08-27)
+; 形容詞を名詞に変える。
+;「古 さ」などを解析するため。
+adj-nominal-suffix-rule := head-final-type & 
+			   orth-princ &
+			   [SYNSEM.LOCAL [CAT [HEAD noun_head &
+						    [SMOD unmarked],
+					       VAL spr-arg & [ UNSAT -]]
+					      ],
+			    NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD i-adj-stem_head,
+							       VAL.UNSAT -],
+							  BAR -],
+						   LEX +],
+					  RMORPH-BIND-TYPE shortadj-morph],
+			    HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head-avm &
+							       [J-POSTHEAD right],
+							  VAL.UNSAT +],
+						     BAR -]]]].
+
+
+; ADV -> NOUN
+; 「重要 さ」
+
+; adv-nominal-suffix-rule := head-final-type & 
+; 			   orth-princ &
+;    [SYNSEM.LOCAL.CAT.VAL.UNSAT -,
+;     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD na-adj_head,
+; 				       VAL.UNSAT -],
+; 				  BAR -],
+; 			   LEX +],
+; 		  RMORPH-BIND-TYPE adv_head],
+;     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head-avm &
+; 				       [J-POSTHEAD right],
+; 				  VAL.UNSAT +],
+; 			     BAR -]]]].

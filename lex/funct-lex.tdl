@@ -1,0 +1,2168 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: %Z% %M%
+;;;      module:
+;;;     version: %I%
+;;;  written by:
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel (MS)|             |Emily Bender (ERB), (SF), (TT), (CH)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;"hai okagesama de geNki de yatte orimasu."
+
+hai := excl-lex &
+            [ORTH <! "はい" !>,SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'hai]].
+
+;"iie kochira koso doumo arigatou gozaimashita"
+
+iie := excl-lex &
+       [ORTH <! "いいえ" !>,SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'iie]].
+
+;"juuyokka juuji omachi shite orimasu node soredewa shitsurei itashimasu"
+;" soredewa nijuuyokka kayoubi no niji ni sochira no keNkyuushitsu ni ukagau to iu koto de soredewa tanoshimi ni itashite orimasu node yoroshiku onegai itashimasu"
+;"de soredewa souiu koto de yoroshiku onegai itashimasu"
+;"juuninichi no gogo soredewa kochira no hou kara oukagaisasete itadaite mo yoroshii deshou ka"
+;"hai soredewa omachi shite orimasu"
+;"jaa soredewa nijuurokunichi no gogo ichiji desu ne"
+;"juuyokka juuji omachi shite orimasu node soredewa shitsurei itashimasu"
+;ICH MOECHTE ZWISCHEN 'SOREDEWA' ALS INTERJEKTION (NUR AM SATZANFANG) UND 
+;'SORE DE WA' ALS ADJUNKT UNTERSCHEIDEN
+
+
+soredewa :=
+interj-lex &
+[ORTH <! "それでは" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soredewa ].
+
+dewa-interj :=
+interj-lex &
+[ORTH <! "では" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dewa ].
+
+;sometimes
+
+tokiniwa :=
+interj-lex &
+[ORTH <! "ときには" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tokiniwa ].
+
+;"maa shucchou no keN naN desu keredomo daitai naNjikaN gurai kakaru deshou ka"
+
+maa-interj := interj-lex &
+	         [ORTH <! "まあ" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'maa ].
+
+aa-interj := interj-lex &
+	         [ORTH <! "ああ" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'aa ].
+
+;well; now; then
+
+sate-interj := interj-lex &
+	         [ORTH <! "さて" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sate].
+
+de-interj := interj-lex &
+	         [ORTH <! "で" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'de].
+
+daga-interj := interj-lex &
+	         [ORTH <! "だが" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'daga].
+
+
+;"ja yoroshiku onegai shimasu"
+
+ja-interj := interj-lex &
+	         [ORTH <! "じゃ" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ja].
+
+;"jaa sou shimashou"
+
+jaa := interj-lex &
+	         [ORTH <! "じゃあ" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jaa].
+
+;therefore; consequently
+
+yueni := interj-lex &
+	         [ORTH <! "ゆえに" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yueni].
+
+;to tell the truth
+
+jitsuwa := interj-lex &
+	         [ORTH <! "実は" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jitsuwa].
+
+kono := det-lex &
+         [ORTH <! "この" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kono].
+
+sono := det-lex &
+         [ORTH <! "その" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sono].
+
+sonna := det-lex &
+         [ORTH <! "そんな" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sono].
+
+kouiu := det-lex &
+         [ORTH <! "こういう" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dem].
+
+souiu := det-lex &
+         [ORTH <! "そういう" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dem].
+
+dono-det :=
+det-wh-lex &
+[ORTH <! "どの" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'whq]].
+
+
+doNna :=
+det-wh-lex &
+[ORTH <! "どんな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'whq]].
+
+douiu := det-wh-lex &
+         [ORTH <! "どういう" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'whq].
+
+koushita := det-lex &
+         [ORTH <! "こうした" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dem].
+
+soushita := det-lex &
+         [ORTH <! "そうした" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dem].
+
+
+
+ano := det-lex &
+         [ORTH <! "あの" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ano].
+
+nanrakano := det-lex &
+         [ORTH <! "何らかの" !>,
+          SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nanrakano].
+
+
+;"ee kekkou desu"
+
+ee-interj := interj-lex &
+	            [ORTH <! "ええ" !>,
+                     SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ee].
+
+
+
+
+
+
+;"deshitara mikka no shuu wa muzukashii ka to omowaremasu ga."
+
+deshitara-interj :=  
+interj-lex &
+[ORTH <! "でしたら" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'deshitara].
+
+;"demo seNsei ga niji kara yoji haN made gotsugou ga warui N desu yo ne."
+
+demo-interj :=
+interj-lex &
+[ORTH <! "でも" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'demo].
+
+
+;"uN kuji kara juuniji made." 
+
+uN := interj-lex &
+      [ORTH <! "うん" !>,
+       SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'un].
+
+
+;"nijuugonichi wa maa ichinichi aite imasu node."
+
+maa-hes  := hes-lex &
+            [ORTH <! "まあ" !>].
+
+;"ma nijikaN gurai de wa you wa sumimasu keredomo"
+;"sou desu ne ma niji goro gurai te iu no wa ikaga de gozaimasu ka"
+
+ma := hes-lex &
+      [ORTH <! "ま" !>].
+
+
+soshite :=
+interj-lex &
+[ORTH <! "そして" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soshite].
+
+
+soreja  :=
+interj-lex &
+[ORTH <! "それじゃ" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soreja].
+
+
+shikashi := 
+interj-lex &
+[ORTH <! "しかし" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shikashi].
+
+sokode := 
+interj-lex &
+[ORTH <! "そこで" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sokode].
+
+desukara := 
+interj-lex &
+[ORTH <! "ですから" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'desukara].
+
+
+sorekara :=
+interj-lex &
+[ORTH <! "それから" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorekara].
+
+matawa :=
+interj-lex &
+[ORTH <! "または" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'matawa].
+
+oikura :=
+wh-word-quantity-lex &
+[ORTH <! "おいくら" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'quantity]].
+
+purasu :=
+noun_mod-lex-l &
+[ORTH <! "プラス" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'purasu].
+
+tashou :=
+noun_mod-lex-l &
+[ORTH <! "たしょう" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tashou].
+
+shikamo := 
+interj-lex &
+[ORTH <! "しかも" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shikamo].
+
+
+soretomo :=
+interj-lex &
+[ORTH <! "それとも" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soretomo].
+
+nee :=
+hes-lex &
+[ORTH <! "ねえ" !>].
+
+fuN :=
+hes-lex &
+[ORTH <! "ふん" !>].
+
+uuN :=
+hes-lex &
+[ORTH <! "ううん" !>].
+
+yaa :=
+hes-lex &
+[ORTH <! "やあ" !>].
+
+konna :=
+det-lex &
+[ORTH <! "こんな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'konna].
+
+soreto :=
+interj-lex &
+[ORTH <! "それと" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soreto].
+
+
+naa-hes :=
+hes-lex &
+[ORTH <! "なあ" !>].
+
+
+a  := hes-lex & [ORTH <! "あ" !>].
+
+aa  := hes-lex & [ORTH <! "ああ" !>].
+
+
+desunode :=
+interj-lex &
+[ORTH <! "ですので" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'desunode].
+
+
+dakara :=
+interj-lex &
+[ORTH <! "だから" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dakara].
+
+
+
+;先生のです
+;先生のはよい。
+;私はトムのがほしい。
+
+no-temp-nmod :=
+temp_nmod-lex &
+[ORTH <! "の" !>,
+ SYNSEM.LOCAL [CAT.HEAD.MOD < [LOCAL.CAT.HEAD noun_head-avm] >,
+	       LKEYS.--KEYREL.PRED 'no]].
+
+
+;"asa no juuji ni rufutohaNza no sumimaseN biN wa naNbiN deshita deshou."
+
+;sumimaseN-hes :=
+;hes-lex &
+;no_hon &
+;;[ORTH <! "sumimaseN" !>].
+
+soshitara :=
+interj-lex &
+[ORTH <! "そしたら" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soshitara].
+
+;"勤務先だけが以前のままで変更されていません。"
+
+dake-nmod :=
+temp_nmod-lex &
+[ORTH <! "だけ" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dake].
+
+
+;"食べただけです"
+
+;dake-vmod :=
+;temp_vmod-lex &
+;[ORTH <! "だけ" !>,
+; SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dake].
+
+;izen-nmod :=
+;temp_nmod-lex &
+;[ORTH <! "以前" !>,
+; SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'izen].
+
+
+nomi-nmod :=
+temp_nmod-lex &
+[ORTH <! "のみ" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nomi].
+
+;"e kore de kekkou desu."
+
+e-interj := interj-lex &
+	            [ORTH <! "え" !>,
+                     SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'e].
+
+
+ee-excl := excl-lex &
+	            [ORTH <! "ええ" !>,
+                     SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hai].
+
+eeto-interj := interj-lex &
+	            [ORTH <! "ええと" !>,
+                     SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'eeto].
+
+;furthermore; still; yet; more; still more; greater; further; less
+
+nao-interj := interj-lex &
+	            [ORTH <! "なお" !>,
+                     SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nao].
+
+ieie := excl-lex &
+	            [ORTH <! "いえいえ" !>,
+                     SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iie].
+
+ano-excl := excl-lex &
+[ORTH <! "あの" !>,
+ SYNSEM [LOCAL.LKEYS.--KEYREL.PRED 'ano_excl,
+	 NON-LOCAL.ROBUST +]].
+
+
+sorede :=
+interj-lex &
+[ORTH <! "それで" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorede].
+
+
+
+;"juurokuji gojuugofuN ni eeto furaNkufuruto o shuppatsu shimashite"
+
+eeto-hes :=
+hes-lex &
+[ORTH <! "ええと" !>].
+
+
+o-hon-npref :=
+hon-prefix-lex &
+[ORTH <! "お" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] >]].
+
+o-hon-vnpref :=
+hon-prefix-lex &
+[ORTH <! "お" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT.HEAD vn_head,
+                                   BAR +]]> ]].
+
+o-hon-napref :=
+hon-prefix-lex &
+[ORTH <! "お" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl.CAT.HEAD na-adj_head] > ]].
+
+go-hon-npref :=
+hon-prefix-lex &
+[ORTH <! "ご" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] > ]].
+
+go-hon-vnpref :=
+hon-prefix-lex &
+[ORTH <! "ご" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAL [CAT.HEAD vn_head,
+                                   BAR +]] > ]].
+
+go-hon-kanji-npref :=
+hon-prefix-lex &
+[ORTH <! "御" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] > ]].
+go-hon-kanji-vnpref :=
+hon-prefix-lex &
+[ORTH <! "御" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT.HEAD vn_head,
+                                   BAR +]] > ]].
+
+go-hon-katakana-npref :=
+hon-prefix-lex &
+[ORTH <! "ゴ" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] > ]].
+
+; (ERB 2001-09-06) I don't believe that the comma makes a semantic contribution,
+; so I am removing the comma-rel from the liszt.
+
+comma-pmod := 
+comma-pmod-lex &
+[ORTH <! "、" !>].
+
+comma-advmod := 
+comma-advmod-lex &
+[ORTH <! "、" !>].
+
+comma-infvmod :=
+comma-lex-2 &
+[ORTH <! "、" !>].
+
+comma-interjmod :=
+comma-interjmod-lex &
+[ORTH <! "、" !>].
+
+comma-vmod1 :=
+comma-vmod1-lex &
+[ORTH <! "、" !> ].
+
+comma-vmod2 :=
+comma-vmod2-lex &
+[ORTH <! "、" !> ].
+
+parenthesis-init :=
+parenthesis-init-lex &
+[ORTH <! "（" !>].
+
+parenthesis-end :=
+parenthesis-end-lex &
+[ORTH <! "）" !>].
+
+parenthesis-j-init :=
+parenthesis-init-lex &
+[ORTH <! "【" !>].
+
+parenthesis-j-end :=
+parenthesis-end-lex &
+[ORTH <! "】" !>].
+
+angle-brackets-init :=
+parenthesis-init-lex &
+[ORTH <! "＜" !>].
+
+angle-brackets-end :=
+parenthesis-end-lex &
+[ORTH <! "＞" !>].
+
+
+quotation-name-init :=
+quotation-name-init-lex &
+[ORTH <! "「" !>].
+
+quotation-name-end :=
+quotation-name-end-lex &
+[ORTH <! "」" !>].
+
+quotation-name-init2 :=
+quotation-name-init-lex &
+[ORTH <! "“" !>].
+
+quotation-name-end2 :=
+quotation-name-end-lex &
+[ORTH <! "”" !>].
+
+quotation-noun-init :=
+quotation-noun-init-lex &
+[ORTH <! "「" !>].
+
+quotation-noun-end :=
+quotation-noun-end-lex &
+[ORTH <! "」" !>].
+
+quotation-noun-init-2 :=
+quotation-noun-init-lex &
+[ORTH <! "’" !>].
+
+quotation-noun-end-2 :=
+quotation-noun-end-lex &
+[ORTH <! "’" !>].
+
+quotation-sentence-init :=
+quotation-sentence-init-lex &
+[ORTH <! "「" !>].
+
+quotation-sentence-end :=
+quotation-sentence-end-lex &
+[ORTH <! "」" !>].
+
+
+quotation-sentence-init2 :=
+quotation-sentence-init-lex &
+[ORTH <! "“" !>].
+
+quotation-sentence-end2 :=
+quotation-sentence-end-lex &
+[ORTH <! "”" !>].
+
+quotation-noun-init2 :=
+quotation-noun-init-lex &
+[ORTH <! "『" !>].
+
+quotation-noun-end2 :=
+quotation-noun-end-lex &
+[ORTH <! "』" !>].
+
+quotation-noun-init3 :=
+quotation-noun-init-lex &
+[ORTH <! "”" !>].
+
+quotation-noun-end3 :=
+quotation-noun-end-lex &
+[ORTH <! "”" !>].
+
+
+quotation-sap-init :=
+quotation-sap-init-lex &
+[ORTH <! "「" !>].
+
+quotation-sap-end :=
+quotation-sap-end-lex &
+[ORTH <! "」" !>].
+
+ookina :=
+pred-adj-lex &
+[ORTH <! "大きな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ookii].
+
+ookina-hiragana :=
+pred-adj-lex &
+[ORTH <! "おおきな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ookii].
+
+okkina :=
+pred-adj-lex &
+[ORTH <! "おっきな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ookii].
+
+;proper; appropriate; due
+
+shikarubeki :=
+pred-adj-lex &
+[ORTH <! "しかるべき" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shikarubeki].
+
+
+;These should be erased with a new version of CHASEN:
+
+komakana-hiragana :=
+noun_mod-lex-l &
+[ORTH <! "こまかな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'komakana].
+
+komakana-kanji :=
+noun_mod-lex-l &
+[ORTH <! "細かな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'komakana].
+
+
+
+chiisana := 
+pred-adj-lex &
+[ORTH <! "小さな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chiisai].
+
+chiisana-hiragana := 
+pred-adj-lex &
+[ORTH <! "ちいさな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chiisai].
+
+chissana := 
+noun_mod-lex-l &
+[ORTH <! "ちっさな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chiisai].
+
+chicchana := 
+noun_mod-lex-l &
+[ORTH <! "ちっちゃな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chiisai].
+
+hyonna := 
+noun_mod-lex-l &
+[ORTH <! "ひょんな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hyonna].
+
+rokuna := 
+noun_mod-lex-l &
+[ORTH <! "ろくな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'rokuna].
+
+
+onaji := 
+noun_mod-lex-l &
+[ORTH <! "同じ" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'onaji].
+
+ironna-kanji  := 
+noun_mod-lex-l &
+[ORTH <! "色んな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ironna].
+
+ironna-hiragana  := 
+noun_mod-lex-l &
+[ORTH <! "いろんな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ironna].
+
+okashina := 
+noun_mod-lex-l &
+[ORTH <! "おかしな" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'okashina].
+
+;Seems to be segmented in CHASEN now
+
+;iroirona := 
+;noun_mod-lex &
+;[ORTH <! "色々な" !>,
+; SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iroiro].
+
+;mere,pure
+
+tannaru :=
+noun_mod-lex-l &
+[ORTH <! "単なる" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tannaru].
+
+;additional
+
+saranaru :=
+noun_mod-lex-l &
+[ORTH <! "さらなる" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'saranaru].
+
+; (SF 2003-08-25)
+
+touno :=
+noun_mod-lex-l &
+[ORTH <! "当の" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'touno].
+
+
+soshitara-multi :=
+                  interj-lex &
+                  [ORTH <! "そしたら" !>,
+                   SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soshitara].
+
+soudesune-interj-multi := interj-lex &
+		            [ORTH <! "そう",  "です",  "ね" !>,
+                             SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soudesune].
+
+soudesune-hes-multi := hes-lex & 
+                  [ORTH <! "そう",  "です",  "ね" !>].
+
+haijaa-multi := interj-lex &
+          [ORTH <! "はい",  "じゃあ" !>,
+           SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'haijaa].
+
+ieie-multi := excl-lex &
+              [ORTH <! "いえ",  "いえ" !>,
+               SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'iie]].
+
+; (MS 2002-1-7) I think we don't need these any more.
+
+;desune-multi   := hes-lex & 
+;            [ORTH <! "です",  "ね" !>].
+
+;desuga-hes   := hes-lex & 
+;            [ORTH <! "です",  "が" !>].
+
+
+chottone-multi   := hes-lex &
+              [ORTH <! "ちょっと",  "ね" !>].
+
+soudesune-interj := interj-lex &
+		            [ORTH <! "そうですね" !>,
+                             SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soudesune].
+
+;therefore; consequently; accordingly; because of
+
+yotte-interj := interj-lex &
+		            [ORTH <! "よって" !>,
+                             SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yotte].
+
+dato-multi  :=
+interj-lex &
+        [ORTH <! "だ",  "と" !>,
+         SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dato].
+
+desune-interj-multi := interj-lex &
+                 [ORTH <! "です",  "ね" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'desune].
+
+desuto-interj-multi := interj-lex &
+                 [ORTH <! "です",  "と" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'desuto].
+
+atosorekara-multi := interj-lex &
+               [ORTH <! "あと",  "それから" !>,
+                SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'atosorekara].
+
+soushimashitara-multi :=
+                  interj-lex &
+                  [ORTH <! "そう",  "しましたら" !>,
+                   SYNSEM.LOCAL [BAR +,
+                                 LKEYS.--KEYREL.PRED 'soushimashitara]].
+
+
+soushitara-multi :=
+                   interj-lex &
+                   [ORTH <! "そう",  "したら" !>,
+                   SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soushitara].
+
+;each
+
+gotoni-temp-nmod  :=
+temp_nmod-lex &
+[ORTH <! "ごと","に" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gotoni].
+
+;now, well, why then
+
+sate :=
+interj-lex &
+[ORTH <! "さて" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sate].
+
+shikashinagara :=
+interj-lex &
+[ORTH <! "しかしながら" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shikashinagara].
+
+sorenara :=
+interj-lex &
+[ORTH <! "それなら" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorenara].
+
+soreni :=
+interj-lex &
+[ORTH <! "それに" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soreni].
+
+tadashi :=
+interj-lex &
+[ORTH <! "ただし" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tadashi].
+
+chinamini :=
+interj-lex &
+[ORTH <! "ちなみに" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chinamini].
+
+tsuitewa :=
+interj-lex &
+[ORTH <! "ついては" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tuitewa].
+
+aruiwa :=
+interj-lex &
+[ORTH <! "或いは" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'aruiwa].
+
+shitagatte :=
+interj-lex &
+[ORTH <! "従って" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shitagatte].
+
+nao :=
+interj-lex &
+[ORTH <! "尚" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nao].
+
+nado-nmod :=
+noun_mod-lex-r &
+[ORTH <! "など" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nado].
+
+nado-nmod-kanji :=
+noun_mod-lex-r &
+[ORTH <! "等" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nado].
+
+; "もう半月くらい待つ必要があるようですが"
+
+; (ERB 2002-01-28) Making these noun_mod-lex-r entries on the
+; theory that they don't change the MOD value of the NP that they
+; attach to.  Maybe they should be scopal modifiers though?
+
+kurai-nmod :=
+noun_mod-lex-r &
+[ORTH <! "くらい" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kurai].
+
+gurai-nmod :=
+noun_mod-lex-r &
+[ORTH <! "ぐらい" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kurai].
+
+;hodo-nmod :=
+;noun_mod-lex-r &
+;[ORTH <! "ほど" !>,
+; SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hodo].
+
+goro-nmod :=
+noun_mod-lex-r &
+[ORTH <! "ごろ" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'goro].
+
+; (TT 2003-09-04) BEGIN
+; changed lex-types to parse "PRON ijou",
+; but, cannot still deal with "saNnen ijou matta".
+
+ijou-nmod :=
+noun_mod-lex-r &
+[ORTH <! "以上" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ijou].
+
+ika-nmod := 
+noun_mod-lex-r &
+[ORTH <! "以下" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ika].
+
+igai-nmod := 
+noun_mod-lex-r &
+[ORTH <! "以外" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'igai].
+
+inai-nmod := 
+noun_mod-lex-r &
+[ORTH <! "以内" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'inai].
+
+; (TT 2003-09-04) END
+digit-interj := interj-lex &
+	         [ORTH <! "OneDigitErsatz" !>,
+                  SYNSEM [LOCAL.LKEYS.--KEYREL.PRED 'digit,
+			  NON-LOCAL.ROBUST +]].
+
+;"という、ニュースをヤフーの掲示板で読みましたが"
+
+toiu-interj := interj-lex &
+	         [ORTH <! "という" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'toiu].
+
+;"が、変更の場合もコレを提出する事で、以前に登録したものは、削除（無効）になるのですか？"
+
+ga-interj := interj-lex &
+	         [ORTH <! "が" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ga].
+
+;"為念、確認させて頂きたく。"
+;just to be sure
+;the reading is not sure!
+
+nen-no-tame := interj-lex &
+	         [ORTH <! "為","念" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nen-no-tame].
+
+;;;;;;;;;;;;;;;;;;;;NEW ENTRIES FROM AUG 2003;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+a_1_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'a_1_3,
+ ORTH <! "あ" !> ].
+
+; アーメン 
+
+a-men_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'a-men_1,
+ ORTH <! "アーメン" !> ].
+
+; あっ 
+; Used 10 times
+
+atsu_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'atsu_1_1,
+ ORTH <! "あっ" !> ].
+
+; あな 
+
+ana_1_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ana_1_2,
+ ORTH <! "あな" !> ].
+
+; あら 
+; Used 1 times
+
+ara_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ara_1_1,
+ ORTH <! "あら" !> ].
+
+; 有難う 
+; Used 1 times
+; (CH 2003-08-06) 平仮名「ありがとう」がexcl-lexとしてJACYに存在するため
+
+arigatou_1 := excl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'arigatou_1,
+ ORTH <! "有難う" !> ].
+
+; Used 2 times
+;(CH 2003-08-08) interjとしての用法はなかったので追加
+
+are_1_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'are_1_2,
+ ORTH <! "あれ" !> ].
+
+; あれよあれよ 
+
+areyoareyo_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'areyoareyo_1,
+ ORTH <! "あれよあれよ" !> ].
+
+;<IJ> ; いいえ 
+;<IJ> ; JACY いいえ: iie (excl-lex)
+;<IJ> ; Used 2 times
+;(CH 2003-08-08) exclとして登録されているからいい？
+;<IJ> iie_1 := interj-lex &
+;<IJ> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iie_1,
+;<IJ>  ORTH <! "いいえ" !> ].
+
+; イエス 
+
+iesu_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iesu_1_1,
+ ORTH <! "イエス" !> ].
+
+
+; 痛 
+; Used 1 times
+
+ita_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ita_1_1,
+ ORTH <! "痛" !> ].
+
+
+iya_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iya_1,
+  ORTH <! "いや" !> ].
+
+; 否 
+; Used 1 times
+
+iya_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iya_1_1,
+ ORTH <! "否" !> ].
+
+; いやいや 
+
+iyaiya_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iyaiya_1_1,
+ ORTH <! "いやいや" !> ].
+
+; いやはや 
+
+iyahaya_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iyahaya_1,
+ ORTH <! "いやはや" !> ].
+
+; ウエルカム 
+
+uerukamu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'uerukamu_1,
+ ORTH <! "ウエルカム" !> ].
+
+
+ei_1_9 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ei_1_9,
+ ORTH <! "えい" !> ].
+
+
+etsu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'etsu_1,
+ ORTH <! "えっ" !> ].
+
+
+oi_1_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'oi_1_3,
+ ORTH <! "おい" !> ].
+
+
+ou_1_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ou_1_3,
+ ORTH <! "おう" !> ].
+
+; Used 1 times
+
+o-rai_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'o-rai_1,
+ ORTH <! "オーライ" !> ].
+
+
+otto_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'otto_1_1,
+ ORTH <! "おっと" !> ].
+
+
+; Used 1 times
+;(CH 2003-08-06) 漢字「お早う」がgreeting-lexとしてJACYに存在するため
+
+ohayou_1 := greeting-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ohayou_1,
+ ORTH <! "おはよう" !> ].
+
+; おめでとう 
+; Used 1 times
+
+omedetou_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'omedetou_1,
+ ORTH <! "おめでとう" !> ].
+
+
+guddoibuningu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'guddoibuningu_1,
+ ORTH <! "グッドイブニング" !> ].
+
+
+guddonaito_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'guddonaito_1,
+ ORTH <! "グッドナイト" !> ].
+
+; Used 2 times
+;(CH 2003-08-06) 「さようなら」がgreeting-lexとしてJACYに存在するため
+
+guddobai_1 := greeting-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'guddobai_1,
+ ORTH <! "グッドバイ" !> ].
+
+
+guddomo-ningu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'guddomo-ningu_1,
+ ORTH <! "グッドモーニング" !> ].
+
+
+guddorakku_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'guddorakku_1,
+ ORTH <! "グッドラック" !> ].
+
+
+keigu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'keigu_1,
+ ORTH <! "敬具" !> ].
+
+
+gokigenyou_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gokigenyou_1,
+ ORTH <! "ごきげんよう" !> ].
+
+
+gochisousama_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gochisousama_1,
+ ORTH <! "ごちそうさま" !> ].
+
+; Used 1 times
+
+kora_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kora_1,
+ ORTH <! "こら" !> ].
+
+
+korya_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'korya_1,
+ ORTH <! "こりゃ" !> ].
+
+; Used 28 times
+;(CH 2003-08-08) 登録されていないから追加
+
+kore_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kore_1,
+ ORTH <! "これ" !> ].
+
+; これこれ 
+
+korekore_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'korekore_1_1,
+ ORTH <! "これこれ" !> ].
+
+; これは 
+
+koreha_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'koreha_1,
+ ORTH <! "これは" !> ].
+
+; これはこれは 
+
+korehakoreha_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'korehakoreha_1,
+ ORTH <! "これはこれは" !> ].
+
+; こんちは 
+
+konchiha_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'konchiha_1,
+ ORTH <! "こんちは" !> ].
+
+; こんにちは 
+; Used 1 times
+;(CH 2003-08-06) 漢字「今日は」がgreeting-lexとしてJACYに存在するため
+
+konnichiha_1 := greeting-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'konnichiha_1,
+ ORTH <! "こんにちは" !> ].
+
+
+konbanha_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'konbanha_1,
+ ORTH <! "今晩は" !> ].
+
+
+saa_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'saa_1,
+ ORTH <! "さあ" !> ].
+
+
+satesate_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'satesate_1,
+ ORTH <! "さてさて" !> ].
+
+
+sankyu-_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sankyu-_1,
+ ORTH <! "サンキュー" !> ].
+
+
+shimatta_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shimatta_1,
+ ORTH <! "しまった" !> ].
+
+
+shimeshime_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shimeshime_1,
+ ORTH <! "しめしめ" !> ].
+
+
+shimeta_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shimeta_1,
+ ORTH <! "しめた" !> ].
+
+; Used 215 times
+;(CH 2003-08-08) 登録されていないから追加
+
+sore_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sore_1,
+ ORTH <! "それ" !> ].
+
+; Used 32 times
+;(CH 2003-08-08) 登録されていないから追加
+
+dou_1_6 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dou_1_5,
+ ORTH <! "どう" !> ].
+
+dokkoi_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dokkoi_1,
+ ORTH <! "どっこい" !> ].
+
+
+dokkoisho_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dokkoisho_1,
+ ORTH <! "どっこいしょ" !> ].
+
+; Used 7 times
+
+;(CH 2003-08-08) 登録されていないから追加
+
+dore_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dore_1,
+ ORTH <! "どれ" !> ].
+
+
+donmai_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'donmai_1,
+ ORTH <! "ドンマイ" !> ].
+
+
+
+nain_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nain_1_1,
+ ORTH <! "ナイン" !> ].
+
+
+nanikuso_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nanikuso_1,
+ ORTH <! "なにくそ" !> ].
+
+; Used 2 times
+;(CH 2003-08-08) 登録されていないから追加
+
+ne_1_4 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ne_1_3,
+ ORTH <! "ね" !> ].
+
+
+
+
+nokotta_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nokotta_1,
+ ORTH <! "残った" !> ].
+
+; Used 673 times
+;(CH 2003-08-08) 登録されていないから追加
+
+ha_1_8 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ha_1_7,
+ ORTH <! "は" !> ].
+
+
+haa_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'haa_1,
+ ORTH <! "はあ" !> ].
+
+
+
+haikei_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'haikei_1_1,
+ ORTH <! "拝啓" !> ].
+
+
+haihai_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'haihai_1,
+ ORTH <! "はいはい" !> ].
+
+
+baibai_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'baibai_1,
+ ORTH <! "バイバイ" !> ].
+
+
+hajimemashite_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hajimemashite_1,
+ ORTH <! "初めまして" !> ].
+
+
+hate_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hate_1_1,
+ ORTH <! "はて" !> ].
+
+
+hatena_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hatena_1,
+ ORTH <! "はてな" !> ].
+
+
+hare_1_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hare_1_2,
+ ORTH <! "はれ" !> ].
+
+
+haro-_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'haro-_1_1,
+ ORTH <! "ハロー" !> ].
+
+
+hiyahiya_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hiyahiya_1,
+ ORTH <! "ひやひや" !> ].
+
+
+burabo-_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'burabo-_1,
+ ORTH <! "ブラボー" !> ].
+
+
+; Used 123 times
+;(CH 2003-08-08) ないから追加
+
+he_1_4 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'he_1_3,
+ ORTH <! "へ" !> ].
+
+
+hei_1_6 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hei_1_6,
+ ORTH <! "へい" !> ].
+
+
+hee_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hee_1,
+ ORTH <! "へえ" !> ].
+
+
+beranmee_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'beranmee_1,
+ ORTH <! "べらんめえ" !> ].
+
+
+ hen_1_2 := interj-lex &
+ [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hen_1_2,
+ ORTH <! "へん" !> ].
+
+
+hora_1_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hora_1_2,
+ ORTH <! "ほら" !> ].
+
+
+meri-kurisumasu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'meri-kurisumasu_1,
+ ORTH <! "メリークリスマス" !> ].
+
+
+merushi-_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'merushi-_1,
+ ORTH <! "メルシー" !> ].
+
+
+
+
+
+motohe_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'motohe_1,
+ ORTH <! "元へ" !> ].
+
+
+
+
+yahho-_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yahho-_1,
+ ORTH <! "ヤッホー" !> ].
+
+
+yareyare_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yareyare_1,
+ ORTH <! "やれやれ" !> ].
+
+; Used 1 times
+;(CH 2003-08-06) 「はじめまして」と同じ初対面時のあいさつ。「はじめまして」はgreeting-lexとしてJACYに存在する
+youkoso_1 := greeting-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'youkoso_1,
+ ORTH <! "ようこそ" !> ].
+
+; Used 1 times
+
+yoshi_1_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yoshi_1_3,
+ ORTH <! "よし" !> ].
+
+
+yoshiyoshi_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yoshiyoshi_1,
+ ORTH <! "よしよし" !> ].
+
+
+waa_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'waa_1,
+ ORTH <! "わあ" !> ].
+
+
+watsu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'watsu_1,
+ ORTH <! "わっ" !> ].
+
+
+wasshoi_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'wasshoi_1,
+ ORTH <! "わっしょい" !> ].
+
+
+wahaha_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'wahaha_1,
+ ORTH <! "わはは" !> ].
+
+
+shitsu_1_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shitsu_1_2,
+ ORTH <! "しっ" !> ].
+
+
+chietsu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chietsu_1,
+ ORTH <! "ちぇっ" !> ].
+
+
+appare_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'appare_1,
+ ORTH <! "あっぱれ" !> ].
+
+
+sousou_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sousou_1_1,
+ ORTH <! "草々" !> ].
+
+
+irasshai_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'irasshai_1,
+ ORTH <! "いらっしゃい" !> ].
+
+
+redei-_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'redei-_1_1,
+ ORTH <! "レディー" !> ].
+
+
+no-_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'no-_1,
+ ORTH <! "ノー" !> ].
+
+
+awaya_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'awaya_1,
+ ORTH <! "あわや" !> ].
+
+;<IJ> ; いかに 
+;<IJ> ; JACY いかに: ikani-adv (adv-wh-lex)
+
+;(CH 2003-08-08) ikani-adv (adv-wh-lex)でいい？
+;<IJ> ikani_1 := interj-lex &
+;<IJ> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ikani_1,
+;<IJ>  ORTH <! "いかに" !> ].
+
+
+unun_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'unun_1,
+ ORTH <! "うんうん" !> ].
+
+; Used 1 times
+
+oioi_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'oioi_1,
+ ORTH <! "おいおい" !> ].
+
+
+ookini_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ookini_1,
+ ORTH <! "大きに" !> ].
+
+; Used 1 times
+
+choito_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'choito_1,
+ ORTH <! "ちょいと" !> ].
+
+; Used 4 times
+;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
+chotto_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chotto_1,
+ORTH <! "ちょっと" !> ].
+
+; Used 2 times
+;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
+naruhodo_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'naruhodo_1,
+ ORTH <! "なるほど" !> ].
+
+; Used 1 times
+
+nanto_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nanto_1,
+ ORTH <! "何と" !> ].
+
+
+; Used 13 times
+;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
+
+mou_1_4 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'mou_1_3,
+ ORTH <! "もう" !> ].
+
+maamaa_1 := interj-lex &
+ [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'maamaa_1,
+  ORTH <! "まあまあ" !> ].
+
+; Used 1 times
+;(CH 2003-08-06) 「ごめんなさい」 がexclだから
+gomen_1 := excl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gomen_1,
+ ORTH <! "ご免" !> ].
+
+
+konchikushou_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'konchikushou_1,
+ ORTH <! "こん畜生" !> ].
+
+
+chikushou_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chikushou_1,
+ ORTH <! "畜生" !> ].
+
+; Used 2 times
+
+aware_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'aware_1,
+ ORTH <! "哀れ" !> ].
+
+; Used 1 times
+;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
+
+tadaima_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tadaima_1,
+ ORTH <! "只今" !> ].
+
+
+sora_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sora_1,
+ ORTH <! "そら" !> ].
+
+
+sorya_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorya_1,
+ ORTH <! "そりゃ" !> ].
+
+
+nandatte_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nandatte_1,
+ ORTH <! "何だって" !> ].
+
+
+nanno_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nanno_1,
+ ORTH <! "何の" !> ].
+
+
+shikkei_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shikkei_2,
+ ORTH <! "失敬" !> ].
+
+
+
+heihei_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'heihei_2,
+ ORTH <! "へいへい" !> ].
+
+
+; よちよち 
+
+yochiyochi_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yochiyochi_2,
+ ORTH <! "よちよち" !> ].
+
+; 万歳 
+
+banzai_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'banzai_2,
+ ORTH <! "万歳" !> ].
+
+; Used 2 times
+;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
+shitsurei_2_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shitsurei_2,
+ ORTH <! "失礼" !> ].
+
+; さらば 
+
+saraba_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'saraba_2,
+ ORTH <! "さらば" !> ].
+
+; さらば 
+
+saraba_4 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'saraba_4,
+ ORTH <! "さらば" !> ].
+
+; ＯＫ 
+
+o-ke-_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'o-ke-_3,
+ ORTH <! "ＯＫ" !> ].
+
+; おさらば 
+
+osaraba_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'osaraba_3,
+ ORTH <! "おさらば" !> ].
+
+ kedo_1 := interj-lex &
+ [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kedo_1,
+  ORTH <! "けど" !> ].
+
+ keredo_1 := interj-lex &
+ [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'keredo_1,
+  ORTH <! "けれど" !> ].
+
+; されど 
+
+saredo_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'saredo_1,
+ ORTH <! "されど" !> ].
+
+
+; すると 
+
+suruto_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'suruto_1,
+ ORTH <! "すると" !> ].
+
+; そうしたら 
+
+soushitara_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soushitara_1,
+ ORTH <! "そうしたら" !> ].
+
+
+; その上 
+; Used 4 times
+
+sonoue_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sonoue_1,
+ ORTH <! "その上" !> ].
+
+; その代わり 
+
+sonokawari_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sonokawari_1,
+ ORTH <! "その代わり" !> ].
+
+; そのくせ 
+
+sonokuse_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sonokuse_1,
+ ORTH <! "そのくせ" !> ].
+
+; それでこそ 
+
+soredekoso_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soredekoso_1,
+ ORTH <! "それでこそ" !> ].
+
+
+; それなのに 
+; Used 2 times
+
+sorenanoni_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorenanoni_1,
+ ORTH <! "それなのに" !> ].
+
+; それにしても 
+
+sorenishitemo_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorenishitemo_1,
+ ORTH <! "それにしても" !> ].
+
+; それにもかかわらず 
+; Used 3 times
+;FIXJACY (CH 2003-08-06)「ところで」「ところが」がadjadv-lex.tdlにおいてisect-adv-lexになっている
+sorenimokakawarazu_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorenimokakawarazu_1,
+ ORTH <! "それにもかかわらず" !> ].
+
+; それはそうと 
+; Used 1 times
+
+sorehasouto_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sorehasouto_1,
+ ORTH <! "それはそうと" !> ].
+
+; そんなら 
+
+sonnara_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sonnara_1,
+ ORTH <! "そんなら" !> ].
+
+; だけど 
+
+dakedo_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dakedo_1,
+ ORTH <! "だけど" !> ].
+
+
+ tsuide_1_1 := interj-lex &
+ [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tsuide_1_1,
+  ORTH <! "次いで" !> ].
+
+; 次に 
+
+tsugini_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tsugini_1,
+ ORTH <! "次に" !> ].
+
+; Used 1083 times
+;(CH 2003-08-08) conj としての用法があるからいい？
+ to_1_9 := interj-lex &
+ [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'to_1_9,
+  ORTH <! "と" !> ].
+
+; 何故なら 
+
+nazenara_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nazenara_1,
+ ORTH <! "何故なら" !> ].
+
+; 並びに 
+; Used 2 times
+
+narabini_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'narabini_1,
+ ORTH <! "並びに" !> ].
+
+; はたまた 
+
+hatamata_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hatamata_1,
+ ORTH <! "はたまた" !> ].
+
+; Used 5 times
+;(CH 2003-08-08) moshikuwa (n_conj-p-lex)があるからいい？
+ moshikuha_1 := interj-lex &
+ [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'moshikuha_1,
+  ORTH <! "もしくは" !> ].
+
+; 故に 
+
+yueni_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yueni_1,
+ ORTH <! "故に" !> ].
+
+; さては 
+
+sateha_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sateha_1,
+ ORTH <! "さては" !> ].
+
+; さては 
+
+sateha_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sateha_2,
+ ORTH <! "さては" !> ].
+
+
+; ここに 
+
+kokoni_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kokoni_1,
+ ORTH <! "ここに" !> ].
+
+
+
+; Used 29 times
+;(CH 2003-08-08) ないから追加
+
+ippou_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ippou_1,
+ ORTH <! "一方" !> ].
+
+
+; Used 2 times
+;(CH 2003-08-08) somosomo-noun (ordinary-nohon-n-lex)でいい？
+;<IJ> somosomo_1 := interj-lex &
+;<IJ> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'somosomo_1,
+;<IJ>  ORTH <! "そもそも" !> ].
+
+; 連れて 
+
+tsurete_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tsurete_1,
+ ORTH <! "連れて" !> ].
+
+; とは言うものの 
+
+tohaiumonono_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tohaiumonono_1,
+ ORTH <! "とは言うものの" !> ].
+
+; とは言え 
+
+tohaie_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tohaie_1,
+ ORTH <! "とは言え" !> ].
+
+; Used 3 times
+;(CH 2003-08-08) ないから追加
+
+nimokakawarazu_1_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nimokakawarazu_1,
+ ORTH <! "にもかかわらず" !> ].
+
+
+; グッド 
+
+guddo_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'guddo_2,
+ ORTH <! "グッド" !> ].
+
+; ナイス 
+
+naisu_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'naisu_2,
+ ORTH <! "ナイス" !> ].
+
+; よいしょ 
+
+yoisho_3 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yoisho_3,
+ ORTH <! "よいしょ" !> ].
+
+; Used 69 times
+;(CH 2003-08-08) ないから追加
+
+nani_2_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nani_2,
+ ORTH <! "何" !> ].
+
+; アロハ 
+
+aroha_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'aroha_2,
+ ORTH <! "アロハ" !> ].
+
+; ハレルヤ 
+
+hareruya_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hareruya_2,
+ ORTH <! "ハレルヤ" !> ].
+
+; 待った 
+
+matta_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'matta_2,
+ ORTH <! "待った" !> ].
+
+; Used 2 times
+
+;(CH 2003-08-08) ないから追加
+
+yasume_2_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yasume_2,
+ ORTH <! "休め" !> ].
+
+
+; Used 1 times
+;(CH 2003-08-06) 「さようなら」がgreeting-lexとしてJACYに存在するため
+
+sayonara_2 := greeting-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sayonara_2,
+ ORTH <! "さよなら" !> ].
+
+
+;<IJ> ; その 
+;<IJ> ; JACY その: sono (det-lex)
+;<IJ> ; Used 860 times
+
+;(CH 2003-08-08) ないから追加
+;(FCB 2003-08-13) adds too much amiguity so removed for the moment.
+;<IJ> sono_2 := interj-lex &
+;<IJ> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sono_2,
+;<IJ>  ORTH <! "その" !> ].
+
+;;;;;
+;;;;;
+;;;;; 2003-08-08 追加分。親密度５のもの
+;;;;;
+;;;;;
+
+; 喝 
+
+katsu_1_2 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'katsu_1_2,
+ ORTH <! "喝" !> ].
+
+; チャオ 
+
+chao_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chao_1,
+ ORTH <! "チャオ" !> ].
+
+; やれ 
+
+yare_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yare_1,
+ ORTH <! "やれ" !> ].
+
+; それでいて 
+
+soredeite_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soredeite_1,
+ ORTH <! "それでいて" !> ].
+
+; それ故 
+; Used 2 times
+
+soreyue_1 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soreyue_1,
+ ORTH <! "それ故" !> ].
+
+; 己 
+; Used 1 times
+
+onore_4 := interj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'onore_2,
+ ORTH <! "己" !> ].
+
+; (TT 2003-08-27) for A 、特に B (experimental)
+;
+comma-tokuni-conj := n_conj-p-lex &
+	         [ORTH <! "、", "特に" !>,
+                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tokuni].
+
+
+
+; Used 4 times
+;(CH 2003-08-08) 連体用法がJACYにはなかったので追加
+
+tada_2_2 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tada_2_1,
+ ORTH <! "ただ" !> ].
+
+; あらゆる 
+; Used 6 times
+
+arayuru_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'arayuru_1,
+ ORTH <! "あらゆる" !> ].
+
+; Used 982 times
+;(CH 2003-08-08) 連体の「ある」はなかったので追加
+
+aru_1_3 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'aru_1_1,
+ ORTH <! "ある" !> ].
+
+; いかなる 
+
+ikanaru_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ikanaru_1,
+ ORTH <! "いかなる" !> ].
+
+; 至らぬ 
+
+itaranu_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'itaranu_1,
+ ORTH <! "至らぬ" !> ].
+
+; いわゆる 
+
+iwayuru_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'iwayuru_1,
+ ORTH <! "いわゆる" !> ].
+
+; 大いなる 
+
+ooinaru_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ooinaru_1,
+ ORTH <! "大いなる" !> ].
+
+
+;(CH 2003-08-08) 連体の「来る」はJACYにはなかったので追加
+
+kitaru_1_3 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kitaru_1_1,
+ ORTH <! "来る" !> ].
+
+
+; Used 38 times
+;(CH 2003-08-08) 連体の「今」はなかったので追加
+
+kon_1_2 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kon_1_1,
+ ORTH <! "今" !> ].
+
+; Used 8 times
+;(CH 2003-08-08) 連体用法はなかったので追加
+
+saru_1_4 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'saru_1_3,
+ ORTH <! "去る" !> ].
+
+
+; 底知れぬ 
+
+sokoshirenu_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sokoshirenu_1,
+ ORTH <! "底知れぬ" !> ].
+
+; 素知らぬ 
+
+soshiranu_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'soshiranu_1,
+ ORTH <! "素知らぬ" !> ].
+
+; 大した 
+; Used 3 times
+
+taishita_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'taishita_1,
+ ORTH <! "大した" !> ].
+
+; 大それた 
+
+daisoreta_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'daisoreta_1,
+ ORTH <! "大それた" !> ].
+
+; 大の 
+
+daino_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'daino_1,
+ ORTH <! "大の" !> ].
+
+
+; Used 4 times
+
+chottoshita_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chottoshita_1,
+ ORTH <! "ちょっとした" !> ].
+
+
+tonda_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tonda_1,
+ ORTH <! "とんだ" !> ].
+
+
+naki_1_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'naki_1_1,
+ ORTH <! "亡き" !> ].
+
+
+hitoshirenu_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hitoshirenu_1,
+ ORTH <! "人知れぬ" !> ].
+
+
+futoshita_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'futoshita_1,
+ ORTH <! "ふとした" !> ].
+
+; 見知らぬ 
+; Used 1 times
+
+mishiranu_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'mishiranu_1,
+ ORTH <! "見知らぬ" !> ].
+
+; 明 
+; Used 1 times           ;;; 「次の」「明くる」の意を表しうる！
+
+myou_1_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'myou_1_1,
+ ORTH <! "明" !> ].
+
+; 例の 
+; Used 2 times
+
+reino_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'reino_1,
+ ORTH <! "例の" !> ].
+
+; 我が 
+; Used 1 times
+
+waga_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'waga_1,
+ ORTH <! "我が" !> ].
+
+; 聖なる 
+; Used 1 times
+
+seinaru_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'seinaru_1,
+ ORTH <! "聖なる" !> ].
+
+
+;(CH 2003-08-08) 接頭辞としての用法dou-prefixがあるからいい？
+; 学研辞書では連体用法と接頭用法が区別されているが...
+;連体...先行文脈に現れた対象を指示する「同審議会は...」
+;接頭...「同じ」の意。「同世代」「同年代」
+;<IJ> dou_1_8 := noun_mod-lex-l &
+;<IJ> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dou_1_8,
+;<IJ>  ORTH <! "同" !> ].
+
+; 翌々 
+
+yokuyoku_1_2 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yokuyoku_1_2,
+ ORTH <! "翌々" !> ].
+
+
+
+; Used 28 times
+;(CH 2003-08-08) JACYではordinary-nohon-n-lexとして既に
+; 名詞に接続可能なのでいい？
+;<IJ> moto_1_1 := noun_mod-lex-l &
+;<IJ> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'moto_1_1,
+;<IJ>  ORTH <! "元" !> ].
+
+;<IJ> ; 本 
+;<IJ> ; JACY 本: hon (ordinary-nohon-n-lex) moto-2 (ordinary-nohon-n-lex) hon_numcl (num-cl-mod-lex)
+;<IJ> ; Used 48 times
+
+;(CH 2003-08-08) JACYではordinary-nohon-n-lexとして既に
+; 名詞に接続可能なのでいい？
+;<IJ> hon_1 := noun_mod-lex-l &
+;<IJ> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hon_1,
+;<IJ>  ORTH <! "本" !> ].
+
+
+kano_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kano_1,
+ ORTH <! "彼の" !> ].
+
+
+tadanaranu_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tadanaranu_1,
+ ORTH <! "ただならぬ" !> ].
+
+
+nantaru_1 := noun_mod-lex-l &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nantaru_1,
+ORTH <! "何たる" !> ].

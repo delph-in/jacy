@@ -1,0 +1,177 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: parse-nodes.tdl
+;;;      module: not used in PAGE system
+;;;     version: %I%
+;;;  written by: Melanie Siegel
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel(MS) |             |
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;; labels
+;; UTT, PP, NP, VP, ADV, ADJ, DET, TEMP_MOD, NOUN_MOD, N, V, VMOD-P, NMOD-P, NSPEC-P, CASE-P, IDIOM, SAP, INTERJ, HES, CARD, CARD_MOD, PUNCT
+
+
+utt := label &
+       [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD marked],
+        LABEL-NAME "UTT"].
+
+
+pp := label &
+      [SYNSEM [LOCAL.CAT.HEAD p_head,
+	       LEX -],
+       LABEL-NAME "PP"].
+
+
+vmod-p := label &
+      [SYNSEM [LOCAL.CAT [HEAD vmod-p_head,
+                         VAL.COMPS.FIRST.OPT bool],
+                     LEX +],
+        LABEL-NAME "VMOD-P"].
+
+nmod-p := label &
+      [SYNSEM [LOCAL.CAT [HEAD nmod-p_head,
+                         VAL.COMPS.FIRST.OPT bool],
+                     LEX +],
+        LABEL-NAME "NMOD-P"].
+
+nspec-p := label &
+      [SYNSEM [LOCAL.CAT [HEAD nspec-p_head,
+                          VAL.COMPS.FIRST.OPT bool],
+                     LEX +],
+        LABEL-NAME "NSPEC-P"].
+
+case-p := label &
+      [SYNSEM [LOCAL.CAT [HEAD case-p_head,
+                         VAL.COMPS.FIRST.OPT bool],
+                     LEX +],
+        LABEL-NAME "CASE-P"].
+
+send-p  := label &
+      [SYNSEM.LOCAL.CAT.HEAD s-end_head,
+       LABEL-NAME "SAP-P"].
+
+
+np := label &
+      [SYNSEM [LOCAL [CAT.HEAD noun_head,
+                     BAR +],
+	       LEX -],
+        LABEL-NAME "NP"].
+
+n-bar :=  label &
+      [SYNSEM [LOCAL [CAT.HEAD noun_head,
+                     BAR -],
+	       LEX -],
+        LABEL-NAME "N"].
+
+n-lab := label &
+     [SYNSEM [LOCAL [CAT.HEAD noun_head,
+                    BAR bool],
+	      LEX +],
+      LABEL-NAME "N"].
+
+num-cl := label &
+	  [SYNSEM [LOCAL [ CAT.HEAD num-cl_head ],
+		   LEX + ],
+           LABEL-NAME "NumCl"].
+
+num-cl-p := label &
+	    [SYNSEM [LOCAL [ CAT.HEAD num-cl_head],
+		     LEX - ],
+           LABEL-NAME "NumClP"].
+
+v := label &
+      [SYNSEM [LOCAL [CAT.HEAD verb_head,
+		      BAR bool],
+	       LEX +],
+       LABEL-NAME "V"].
+
+v-bar := label &
+      [SYNSEM [LOCAL [CAT.HEAD verb_head,
+                     BAR -],
+	       LEX -],
+       LABEL-NAME "V"].
+
+vp  := label &
+      [SYNSEM [LOCAL [CAT.HEAD verb_head,
+                     BAR +],
+	       LEX -],
+       LABEL-NAME "VP"].
+                        
+
+adv  := label &
+      [SYNSEM.LOCAL.CAT.HEAD.POS adv,
+       LABEL-NAME "ADV"].
+
+adj := label &
+      [SYNSEM.LOCAL.CAT.HEAD adj_head,
+       LABEL-NAME "ADJ"].
+
+det := label &
+      [SYNSEM.LOCAL.CAT.HEAD det_head,
+       LABEL-NAME "DET"].
+
+temp_mod := label &
+      [SYNSEM.LOCAL.CAT.HEAD temp_mod_head,
+       LABEL-NAME "TEMP_MOD"].
+
+noun_mod := label &
+      [SYNSEM.LOCAL.CAT.HEAD noun_mod_head,
+       LABEL-NAME "NOUN_MOD"].
+
+idiom := label &
+      [SYNSEM.LOCAL.CAT.HEAD idiom_head,
+       LABEL-NAME "IDIOM"].
+
+sap := label &
+      [SYNSEM.LOCAL.CAT.HEAD sap_head,
+       LABEL-NAME "SAP"].
+
+
+interj := label &
+      [SYNSEM.LOCAL.CAT.HEAD interj_head,
+       LABEL-NAME "INTERJ"].
+
+hes := label &
+      [SYNSEM.LOCAL.CAT.HEAD hes_head,
+       LABEL-NAME "HES"].
+
+
+card := label &
+      [SYNSEM.LOCAL [CAT.HEAD int_head,
+                     BAR -],
+       LABEL-NAME "CARD"].
+
+;card-mod := label &
+;      [SYNSEM.LOCAL.CAT.HEAD card-mod_head,
+;       LABEL-NAME "CARD-MOD"].
+
+cardp := label &
+      [SYNSEM.LOCAL [CAT.HEAD int_head,
+                     BAR +],
+       LABEL-NAME "CARD-P"].
+
+punct := label &
+      [SYNSEM.LOCAL.CAT.HEAD punct_head,
+       LABEL-NAME "PUNCT"].
+
+punct2 := label &
+      [SYNSEM.LOCAL.CAT.HEAD punct_head2,
+       LABEL-NAME "PUNCT"].
+
+conj := label &
+      [SYNSEM.LOCAL.CAT.HEAD n_conj_head,
+       LABEL-NAME "CONJ"].
+
+prefix := label &
+      [SYNSEM.LOCAL.CAT.HEAD hon-prefix_head,
+       LABEL-NAME "PREFIX"].

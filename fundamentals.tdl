@@ -1,0 +1,193 @@
+
+j-valence := valence &
+	[UNSAT bool,
+	 SUBJ 0-1-list,
+         COMPS list,
+         SPR 0-1-list].
+
+
+formal := avm & 
+          [SHON bool,
+           AHON bool].
+
+;(MS 2003-07-08) replaced MOD mod_synsem with MOD 0-1-list, in order to adapt to Matrix standards.
+
+j-head :=    head & 
+         [POS category,
+          MARK 0-1-list,
+          MOD 0-1-list,
+          C-MOD 0-1-list,
+          J-SPEC 0-1-list,
+          FORMAL formal,
+          J-POSTHEAD posthead,
+          SMOD smod,
+          QUANTIFIABLE bool,
+          H-TENSE tense,
+          FIN bool,
+          AUX bool,
+          COP bool,
+          VN bool,
+          ADJ bool,
+          LIGHT bool,
+          MAIN-PRD bool,
+          COP-ARG bool,
+          MODUS mood].
+
+c-indices := avm & 
+             [SPEAKER index,
+              ADDRESSEE index].
+
+honor_rel := avm &
+             [HONORER index,
+              HONORED index,
+              POLARITY bool,
+              BEARER individual].
+
+subj-honor_rel :< honor_rel.
+
+obj-honor_rel :< honor_rel.
+
+addr-honor_rel :< honor_rel.
+
+
+j-ctxt := ctxt &
+        [C-INDICES c-indices & [SPEAKER #sp],
+         BACKGROUND diff-list & [LIST list],
+         EMPATHY empathy_rel & [EMPER #sp]].
+
+
+empathy_rel := avm &
+               [EMPER index,
+                EMPEE index].
+
+j-cat := cat & [HEAD j-head, VAL j-valence].
+
+; (ERB 2002-01-24) Change value of NUCL from bool to nucl in order
+; to be able to keep phrases built by conj-rule from being modified.
+
+j-local := local & [CAT j-cat,
+		    CTXT j-ctxt,
+		    NUCL nucl,
+		    BAR bool].
+
+; (ERB 2001-11-28) Types to distinguish between intersective
+; and scopal modifiers (will be used in their MOD values). 
+; (Borrowed from LinGO grammar.)
+
+; (MS 2003-07-10) I cannot use the definitions in matrix.tdl, because they are subtypes of local and I need them to be subtypes of j-local.
+
+scopal_mod := j-local.
+intersective_mod := j-local.
+
+j-nonlocal := non-local & 
+	      [ROBUST bool,
+	       SLASH 0-dlist,
+	       AFFIX diff-list].
+
+
+;;;;;;;;;(MS 2002-11-12) Matrix approach to subcategorization;;;;;;;;;;;;;;
+
+
+2-comps-list := 1-plus-list &
+		< j-synsem, j-synsem >.
+
+saturated := optional-or-saturated & [SUBJ null,
+			COMPS null,
+			SPR null].
+
+sat-or-opt-arg := olist.
+
+sat-arg := sat-or-opt-arg & onull.
+
+opt-1-arg := sat-or-opt-arg & 1-list & [FIRST.OPT + ].
+
+opt-2-args := sat-or-opt-arg & 2-comps-list & [FIRST.OPT + ,
+					       REST.FIRST.OPT + ].
+
+obl-arg := cons.
+obl-1-arg := obl-arg & 1-list & [FIRST.OPT - ].
+obl-2-args := obl-arg & 2-comps-list & [FIRST.OPT - ,
+					REST.FIRST.OPT - ].
+
+
+optional-or-saturated := j-valence.
+
+only-optional-arguments := optional-or-saturated & [SUBJ sat-or-opt-arg,
+						    COMPS sat-or-opt-arg,
+						    SPR sat-or-opt-arg].
+
+
+j-synsem :=  canonical-synsem & 
+          [LOCAL j-local,
+           NON-LOCAL j-nonlocal,
+           MODIFIED.PERIPH bool].
+
+j-lex-synsem := j-synsem & lex-synsem.
+j-phr-synsem := j-synsem & phr-synsem.
+
+opt_synsem := j-synsem & [OPT + ].
+obl_synsem := j-synsem & [OPT - ].
+
+; (MS 2003-07-09) changed due to the sign definition in matrix.tdl
+; BUT I added ORTH diff-list 
+
+j-sign := sign &
+	[ORTH diff-list,
+	 SYNSEM j-synsem,	
+	 LMORPH-BIND-TYPE morphbind,
+	 RMORPH-BIND-TYPE morphbind,
+	 J-NEEDS-AFFIX bool].
+   	
+
+
+lexical-entry :< avm,
+                status: c-lex-entry.
+
+
+
+; So, I'm going to take the constraint off of lexical_sign, make
+; three subtypes of lexical_sign (lexical_sign-word, lexical_sign-affix,
+; and lexical_sign-rule) and make the constraint live on the first 
+; of these.
+
+
+lexical_sign := lexical-entry & word &
+                j-sign &
+               [SYNSEM j-lex-synsem & [LOCAL [CAT.VAL.UNSAT +],
+				       LEX +],
+                STEMTYPE stemtype].
+
+lexical_sign-word := lexical_sign &
+                     [ SYNSEM.LOCAL.LKEYS.--KEYREL.WLINK ne-list ].
+
+lexical_sign-affix := lexical_sign.
+lexical_sign-rule := lexical_sign & phrase-or-lexrule.
+
+
+
+wg-handel-lex-mrs-basic :< j-mrs.
+
+; (ERB 2001-11-26) Not all lexical sem types inherit the constraints
+; that MOD-IND = INDEX and MOD-HAND = LTOP.  I'm going to move these
+; constraints out of this type.
+
+; (MS 2003-07-09) This has to be changed due to the matrix!!!
+
+wg-handel-lex-mrs := wg-handel-lex-mrs-basic.
+
+
+mod-id-mrs := j-mrs &
+              [ MOD-IND #ind,
+                MOD-HAND #hand,
+                HOOK [INDEX #ind,
+		      LTOP #hand ]].
+
+mod-id-wg-handel-mrs := mod-id-mrs & wg-handel-lex-mrs.
+
+wg-handel-id := relation &
+                [ID *top*,
+                 LBLS list,
+                 WORD string].
+
+
+

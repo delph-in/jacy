@@ -1,0 +1,55 @@
+(lkb-load-lisp (parent-directory) "Version.lsp")
+(setf *grammar-directory* (parent-directory)) ; needed for MRS
+(load-lkb-preferences (this-directory) "user-prefs.lsp")
+(lkb-load-lisp (this-directory) "globals.lsp")
+(lkb-load-lisp (this-directory) "user-fns.lsp")
+
+(lkb-load-lisp (this-directory) "checkpaths.lsp" t)
+
+(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+(read-tdl-type-files-aux
+     (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")
+              (lkb-pathname (parent-directory) "matrix.tdl")
+              (lkb-pathname (parent-directory) "mrsbasic.tdl")
+              (lkb-pathname (parent-directory) "newlexsem-types.tdl")
+              (lkb-pathname (parent-directory) "values.tdl")
+              (lkb-pathname (parent-directory) "fundamentals.tdl")
+              (lkb-pathname (parent-directory) "rule-types.tdl")
+              (lkb-pathname (parent-directory) "principles.tdl")
+              (lkb-pathname (parent-directory) "lex-types.tdl")
+              (lkb-pathname (parent-directory) "v-lex-types.tdl")
+	      (lkb-pathname (this-directory) "mrsmunge.tdl")
+))
+
+(lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)
+
+(read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
+
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
+;;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "relative-clauses.tdl"))
+ 
+
+(read-cached-lex-if-available
+ (list  
+  (lkb-pathname (parent-directory) "lex/adjadv-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/aux-stem-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/funct-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/idiom-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/light-verbs-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/noun-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/numbers-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/p-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/pn-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/verbstem-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/vn-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/v-ends-lex.tdl")
+  (lkb-pathname (parent-directory) "lex/generics.tdl")
+  (lkb-pathname (parent-directory) "lex/ersatz.tdl")
+
+))
+
+(read-tdl-parse-node-file-aux 
+          (lkb-pathname (parent-directory) "parse-nodes.tdl"))
+
+(read-tdl-psort-file-aux 
+          (lkb-pathname (parent-directory) "roots.tdl"))

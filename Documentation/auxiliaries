@@ -1,0 +1,88 @@
+DOCUMENTATION OF AUXLIARY TREATMENT
+
+1) perspective:
+
+(ex. ageru, kureru, yaru, sashiageru, kudasaru)
+
+ARG1 --> identical to ARG1 of verb
+ARG2 --> ni-OBJ
+ARG4 --> handel of proposition on the main verb
+
+different types of emphasis: 
+
+ageru, sashiageru, yaru: EMP -> ARG1
+kureru, kudasaru: EMP -> ARG2
+
+different types of honorification:
+
+kudasaru, yaru: SHON
+sashiageru: minus_shon
+
+SHON needs a syntactic (HEAD.FORMAL.SHON) statement about the subject. That means that the subject 'belongs' to the auxiliary. Therefore, zpros and complements must be bound by the auxiliary.
+
+
+
+2) aspect:
+
+(ex. oru,oku,iru,iku,irassharu,shimau,aru,kuru,miru,gozaru)
+
+ARG1 --> identical to ARG1 of verb
+ARG4 --> verb
+
+add different types of aspect:
+
+oru,iru,irassharu: progressive
+oku: prospective
+iku: inceptive
+shimau: terminative
+aru,gozaru: perfective
+kuru: perfect_progressive
+miru: modal
+
+different types of honorification:
+
+oru, oku: minus_shon
+irassharu: shon
+
+3) OBJ-ID
+
+(ex. morau,itadaku)
+
+ARG1 --> EMPATHY
+ARG2 --> ARG1 of the verb
+ARG4 --> verb
+
+different types of honorification:
+
+itadaku: minus_shon
+
+The KEY-REL of negation endings may not be the neg_rel, but the verb relation. Otherwise, it is not possible to link the ARG1 of tabe-naide with the ARG2 of morau in "tabenaide morau"
+
+
+ANSWER TO JON-BOK KIM'S QUESTION:
+
+The relevant Japanese example would be 
+
+jon ga mearii ni hon wo yon-de age-ta.
+
+This has exactly the structure you mentioned.  age-ta (gave)
+in this example, is in the Japanese grammar seen as a
+perspective auxiliary. 
+
+Syntax: age-ta takes a subject, which is co-indexed with its
+specifiers subject, a dative-marked complement and an
+obligatory specifier, which is a verb.
+
+Semantics: The ARG1 of age-ta is the ARG1 of the main verb
+(yon-de, read). age-ta has an own argument (ARG2), which is
+mearii ni (Mary-Dat) in our example. And there is also an
+ARG4 of age-ta, which is co-indexed with the handle of the
+proposition above the main verb. 
+
+Pragmatics: age-ta sets an empathy marking on the ARG1. This
+is noted in the feature structure in CTXT.EMPATHY.
+
+
+ANSWER TO ATSUKOS QUESTION: Warum wird bei Konstruktionen mit Auxiliar erst das Objekt ans Verb gebunden und dann das Auxiliar?
+
+Das Auxiliar hat eine Restriktion, dass die COMPS Liste leer sein muss, wenn das Verb angebunden wird. Eine Alternative waere, die COMPS Liste von Verb zu uebernehmen. Dann haette man Probleme damit, dass man zwei Lesarten bekaeme, wobei das Objekt and das Verb oder das Auxiliar angebunden werden koennte. Ein anderes Problem bekommt man mit ZPROs: Diese sind lexikalische Regeln, die nur auf lexikalische Einheiten angewendet werden koennen. Wenn ich diese Einschraenkung nicht mache, bekomme ich eine Lesartenexplosion bei Nullpronomina. Aber ich kann nicht gut ein ZPRO-Objekt an das Verb anbinden, waehrend ein offenes Objekt am V-AUX-Komplex haengt. Wenn ich andererseits ein OBJ-ZPRO am AUX abbinde, kann ich die COMPS Liste vom Verb nicht mehr damit unifizieren oder uebernehmen. Ein letztes Argument sind adjazente Objekte: Ich koennte sie nicht mehr anbinden, wenn ich das Verb erst ans AUX gebunden habe.

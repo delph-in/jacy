@@ -1,0 +1,4104 @@
+hiratsuka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiratsuka,
+ORTH <! "平塚" !> ].
+
+takemoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takemoto,
+ORTH <! "竹本" !> ].
+
+
+satou :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'satou,
+ORTH <! "佐東" !> ].
+
+tanaka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tanaka,
+ORTH <! "田中" !> ].
+
+nakao :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nakao,
+ORTH <! "中尾" !> ].
+
+suzuki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'suzuki,
+ORTH <! "鈴木" !> ].
+
+shiomi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shiomi,
+ORTH <! "塩見" !> ].
+
+koNdou :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kondou,
+ORTH <! "金堂" !> ].
+
+hitoshi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hitoshi,
+ORTH <! "一司" !> ].
+
+keNichirou :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kenichirou,
+ORTH <! "健一郎" !> ].
+
+kouichi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kouichi,
+ORTH <! "浩一" !> ].
+
+yamamoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamamoto,
+ORTH <! "山本" !> ].
+
+kobayashi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kobayashi,
+ORTH <! "小林" !> ].
+
+akiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'akiko,
+ORTH <! "亜希子" !> ].
+
+aoi :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aoi,
+ORTH <! "青井" !> ].
+
+aoyama :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aoyama,
+ORTH <! "青山" !> ].
+
+asahi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'asahi,
+ORTH <! "朝日" !> ].
+
+asayama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'asayama,
+ORTH <! "浅山" !> ].
+
+ayako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ayako,
+ORTH <! "亜矢子" !> ].
+
+gaikokugo :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'gaikokugo,
+ORTH <! "外国語" !> ].
+
+chie :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'chie,
+ORTH <! "知恵" !> ].
+
+chieko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'chieko,
+ORTH <! "千恵子" !> ].
+
+chiemi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'chiemi,
+ORTH <! "千絵美" !> ].
+
+chiyo :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'chiyo,
+ORTH <! "千代" !> ].
+
+daiki :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'daiki,
+ORTH <! "大機" !> ].
+
+dohi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'dohi,
+ORTH <! "土肥" !> ].
+
+doushisha :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'doushisha,
+ORTH <! "同視射" !> ].
+
+eisei :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'eisei,
+ORTH <! "永世" !> ].
+
+emi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'emi,
+ORTH <! "恵美" !> ].
+
+enomoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'enomoto,
+ORTH <! "榎本" !> ].
+
+fujii :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujii,
+ORTH <! "藤井" !> ].
+
+fujita :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujita,
+ORTH <! "藤田" !> ].
+
+fujitani :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujitani,
+ORTH <! "藤谷" !> ].
+
+fujiwara :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujiwara,
+ORTH <! "藤原" !> ].
+
+fukase :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fukase,
+ORTH <! "深瀬" !> ].
+
+fukudome :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fukudome,
+ORTH <! "福留" !> ].
+
+fukuoka :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fukuoka,
+ORTH <! "福岡" !> ].
+
+fukushima :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fukushima,
+ORTH <! "福島" !> ].
+
+fusako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fusako,
+ORTH <! "房子" !> ].
+
+haNdai :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'handai,
+ORTH <! "阪大" !> ].
+
+haNkyuu :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hankyuu,
+ORTH <! "阪急" !> ].
+
+haNshiN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hanshin,
+ORTH <! "阪神" !> ].
+
+harada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'harada,
+ORTH <! "原田" !> ].
+
+hasegawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hasegawa,
+ORTH <! "馳川" !> ].
+
+hatada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hatada,
+ORTH <! "畠田" !> ].
+
+hayama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hayama,
+ORTH <! "葉山" !> ].
+
+higashi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'higashi,
+ORTH <! "東" !> ].
+
+hirata :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hirata,
+ORTH <! "平田" !> ].
+
+hirayama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hirayama,
+ORTH <! "平山" !> ].
+
+hiroishi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiroishi,
+ORTH <! "広石" !> ].
+
+hironao :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hironao,
+ORTH <! "弘尚" !> ].
+
+hiroyuki :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiroyuki,
+ORTH <! "周行" !> ].
+
+
+hisako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hisako,
+ORTH <! "久子" !> ].
+
+hisako-2 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hisako,
+ORTH <! "ひさ子" !> ].
+
+hoNda :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'honda,
+ORTH <! "本田" !> ].
+
+iida :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'iida,
+ORTH <! "飯田" !> ].
+
+imamura :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'imamura,
+ORTH <! "今村" !> ].
+
+inoue :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'inoue,
+ORTH <! "井上" !> ].
+
+ishii :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ishii,
+ORTH <! "石井" !> ].
+
+ishikawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ishikawa,
+ORTH <! "石川" !> ].
+
+itou :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'itou,
+ORTH <! "伊藤" !> ].
+
+iwaya :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'iwaya,
+ORTH <! "岩屋" !> ].
+
+izumi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'izumi,
+ORTH <! "和泉" !> ].
+
+jounaN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jounan,
+ORTH <! "城南" !> ].
+
+juNko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'junko,
+ORTH <! "絢子" !> ].
+
+kaNsai :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kansai,
+ORTH <! "関西" !> ].
+
+kaNtou :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kantou,
+ORTH <! "関東" !> ].
+
+kadowaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kadowaki,
+ORTH <! "門脇" !> ].
+
+kaneda :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kaneda,
+ORTH <! "金田" !> ].
+
+kashiwara :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kashiwara,
+ORTH <! "柏原" !> ].
+
+katamachi :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'katamachi,
+ORTH <! "片町" !> ].
+
+katou :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'katou,
+ORTH <! "加藤" !> ].
+
+kawaguchi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawaguchi,
+ORTH <! "川口" !> ].
+
+kawahara :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawahara,
+ORTH <! "川原" !> ].
+
+kawai :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawai,
+ORTH <! "川合" !> ].
+
+kawamura :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawamura,
+ORTH <! "川村" !> ].
+
+kawanabe :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawanabe,
+ORTH <! "川辺" !> ].
+
+kawanobe :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawanobe,
+ORTH <! "河之邊" !> ].
+
+kawasaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawasaki,
+ORTH <! "川崎" !> ].
+
+kazumi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kazumi,
+ORTH <! "和美" !> ].
+
+keNji :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kenji,
+ORTH <! "健二" !> ].
+
+keNtarou :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kentarou,
+ORTH <! "健太郎" !> ].
+
+keNto :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kento,
+ORTH <! "健人" !> ].
+
+keNzou :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kenzou,
+ORTH <! "健三" !> ].
+
+keihaN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'keihan,
+ORTH <! "京阪" !> ].
+
+keiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'keiko,
+ORTH <! "恵子" !> ].
+
+keizai :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'keizai,
+ORTH <! "経済" !> ].
+
+kiNdai :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kindai,
+ORTH <! "気大" !> ].
+
+kiNki :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kinki,
+ORTH <! "近畿" !> ].
+
+kimura :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kimura,
+ORTH <! "木村" !> ].
+
+kinoshita :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kinoshita,
+ORTH <! "木下" !> ].
+
+kisaka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kisaka,
+ORTH <! "木坂" !> ].
+
+kitani :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kitani,
+ORTH <! "木谷" !> ].
+
+kitano :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kitano,
+ORTH <! "北野" !> ].
+
+koga :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koga,
+ORTH <! "古賀" !> ].
+
+kouji :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kouji,
+ORTH <! "孝二" !> ].
+
+kouzai :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kouzai,
+ORTH <! "香西" !> ].
+
+koyama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koyama,
+ORTH <! "小山" !> ].
+
+kumagai :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kumagai,
+ORTH <! "熊谷" !> ].
+
+kumasaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kumasaki,
+ORTH <! "熊崎" !> ].
+
+kumiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kumiko,
+ORTH <! "久美子" !> ].
+
+kuniko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kuniko,
+ORTH <! "邦子" !> ].
+
+kurasawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kurasawa,
+ORTH <! "倉沢" !> ].
+
+kurashige :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kurashige,
+ORTH <! "倉重" !> ].
+
+kyoudai :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kyoudai,
+ORTH <! "京大" !> ].
+
+kyouko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kyouko,
+ORTH <! "響子" !> ].
+
+kyuushuu :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kyuushuu,
+ORTH <! "九州" !> ].
+
+machiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'machiko,
+ORTH <! "眞智子" !> ].
+
+maekawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'maekawa,
+ORTH <! "前川" !> ].
+
+makashima :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'makashima,
+ORTH <! "真嘉島" !> ].
+
+maki :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'maki,
+ORTH <! "牧" !> ].
+
+mami :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mami,
+ORTH <! "真美" !> ].
+
+manabu :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'manabu,
+ORTH <! "学" !> ].
+
+masakazu :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'masakazu,
+ORTH <! "正和" !> ].
+
+masami :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'masami,
+ORTH <! "昌己" !> ].
+
+masashi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'masashi,
+ORTH <! "仁" !> ].
+
+masuda :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'masuda,
+ORTH <! "増田" !> ].
+
+matsubara :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsubara,
+ORTH <! "松原" !> ].
+
+
+matsumoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsumoto,
+ORTH <! "松本" !> ].
+
+matsunaga :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsunaga,
+ORTH <! "松永" !> ].
+
+mayumi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mayumi,
+ORTH <! "真弓" !> ].
+
+michiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'michiko,
+ORTH <! "道子" !> ].
+
+mihara :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mihara,
+ORTH <! "三原" !> ].
+
+mihoko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mihoko,
+ORTH <! "美保子" !> ].
+
+miki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miki,
+ORTH <! "三木" !> ].
+
+minami :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'minami,
+ORTH <! "南" !> ].
+
+mitsuko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mitsuko,
+ORTH <! "美津子" !> ].
+
+mitsuo :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mitsuo,
+ORTH <! "光雄" !> ].
+
+miyako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miyako,
+ORTH <! "宮子" !> ].
+
+miyamoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miyamoto,
+ORTH <! "宮本" !> ].
+
+miyuki :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miyuki,
+ORTH <! "美幸" !> ].
+
+mizobata :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mizobata,
+ORTH <! "渠畑" !> ].
+
+mori :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mori,
+ORTH <! "森" !> ].
+
+murakami :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'murakami,
+ORTH <! "村上" !> ].
+
+muraoka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'muraoka,
+ORTH <! "村岡" !> ].
+
+murata :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'murata,
+ORTH <! "村田" !> ].
+
+murayama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'murayama,
+ORTH <! "村山" !> ].
+
+nagato :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nagato,
+ORTH <! "長戸" !> ].
+
+nakagawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nakagawa,
+ORTH <! "中川" !> ].
+
+nakai :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nakai,
+ORTH <! "中井" !> ].
+
+nakajima :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nakajima,
+ORTH <! "中島" !> ].
+
+nakamura :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nakamura,
+ORTH <! "中村" !> ].
+
+naniwa :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'naniwa,
+ORTH <! "浪花" !> ].
+
+naoki :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'naoki,
+ORTH <! "直樹" !> ].
+
+nemoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nemoto,
+ORTH <! "根本" !> ].
+
+nigei :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nigei,
+ORTH <! "逃皃" !> ].
+
+nishida :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nishida,
+ORTH <! "西田" !> ].
+
+nishikami :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nishikami,
+ORTH <! "西神" !> ].
+
+nishino :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nishino,
+ORTH <! "西野" !> ].
+
+nishio :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nishio,
+ORTH <! "西尾" !> ].
+
+nitta :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nitta,
+ORTH <! "新田" !> ].
+
+noda :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'noda,
+ORTH <! "野田" !> ].
+
+nogami :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nogami,
+ORTH <! "野上" !> ].
+
+nomiyama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nomiyama,
+ORTH <! "野見山" !> ].
+
+noriko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'noriko,
+ORTH <! "紀子" !> ].
+
+nouchi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nouchi,
+ORTH <! "納地" !> ].
+
+nozaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nozaki,
+ORTH <! "野崎" !> ].
+
+ogawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ogawa,
+ORTH <! "小川" !> ].
+
+okada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'okada,
+ORTH <! "岡田" !> ].
+
+okamoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'okamoto,
+ORTH <! "岡本" !> ].
+
+okayama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'okayama,
+ORTH <! "岡山" !> ].
+
+okuda :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'okuda,
+ORTH <! "奥田" !> ].
+
+okuno :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'okuno,
+ORTH <! "奥野" !> ].
+
+oonishi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oonishi,
+ORTH <! "大西" !> ].
+
+oota :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oota,
+ORTH <! "太田" !> ].
+
+ryouchi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryouchi,
+ORTH <! "領地" !> ].
+
+ryouichi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryouichi,
+ORTH <! "良一" !> ].
+
+ryouko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryouko,
+ORTH <! "量子" !> ].
+
+
+ryuuichirou :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryuuichirou,
+ORTH <! "竜一郎" !> ].
+
+ryuukoku :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryuukoku,
+ORTH <! "竜谷" !> ].
+
+saNdai :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sandai,
+ORTH <! "三大" !> ].
+
+sachiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sachiko,
+ORTH <! "幸子" !> ].
+
+sada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sada,
+ORTH <! "佐田" !> ].
+
+saitou :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'saitou,
+ORTH <! "斉藤" !> ].
+
+sakaishi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sakaishi,
+ORTH <! "堺市" !> ].
+
+sakazaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sakazaki,
+ORTH <! "坂崎" !> ].
+
+sakura :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sakura,
+ORTH <! "桜" !> ].
+
+satoko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'satoko,
+ORTH <! "聡子" !> ].
+
+satomi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'satomi,
+ORTH <! "里美" !> ].
+
+sawada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sawada,
+ORTH <! "沢田" !> ].
+
+seishiN :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'seishin,
+ORTH <! "精神" !> ].
+
+shiNhaNkyuu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shinhankyuu,
+ORTH <! "新阪九" !> ].
+
+shibuya :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shibuya,
+ORTH <! "渋谷" !> ].
+
+shiga :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shiga,
+ORTH <! "滋賀" !> ].
+
+shigeo :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shigeo,
+ORTH <! "成夫" !> ].
+
+shiho :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shiho,
+ORTH <! "志保" !> ].
+
+shimazu :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shimazu,
+ORTH <! "島津" !> ].
+
+shinozawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shinozawa,
+ORTH <! "篠沢" !> ].
+
+sugita :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sugita,
+ORTH <! "杉田" !> ].
+
+sugiyama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sugiyama,
+ORTH <! "杉山" !> ].
+
+sumiyoshi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sumiyoshi,
+ORTH <! "住吉" !> ].
+
+sunagawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sunagawa,
+ORTH <! "砂川" !> ].
+
+takahashi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takahashi,
+ORTH <! "高橋" !> ].
+
+takashima :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takashima,
+ORTH <! "高嶋" !> ].
+
+takechi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takechi,
+ORTH <! "武智" !> ].
+
+takenaka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takenaka,
+ORTH <! "竹中" !> ].
+
+takuzaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takuzaki,
+ORTH <! "濯崎" !> ].
+
+tamaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tamaki,
+ORTH <! "玉木" !> ].
+
+tamura :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tamura,
+ORTH <! "田村" !> ].
+
+tanimoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tanimoto,
+ORTH <! "谷本" !> ].
+
+tarutani :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tarutani,
+ORTH <! "樽谷" !> ].
+
+taruya :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'taruya,
+ORTH <! "樽屋" !> ].
+
+toba :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toba,
+ORTH <! "鳥羽" !> ].
+
+tokura :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tokura,
+ORTH <! "戸倉" !> ].
+
+tomoko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tomoko,
+ORTH <! "友子" !> ].
+
+tomomi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tomomi,
+ORTH <! "知美" !> ].
+
+tomoyo :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tomoyo,
+ORTH <! "知世" !> ].
+
+toyama :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toyama,
+ORTH <! "富山" !> ].
+
+tsuchida :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tsuchida,
+ORTH <! "土田" !> ].
+
+tsutsui :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tsutsui,
+ORTH <! "筒井" !> ].
+
+tsutsumi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tsutsumi,
+ORTH <! "提" !> ].
+
+ueda :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ueda,
+ORTH <! "上田" !> ].
+
+ueno :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ueno,
+ORTH <! "上野" !> ].
+
+umeda :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'umeda,
+ORTH <! "梅田" !> ].
+
+unohara :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'unohara,
+ORTH <! "宇野原" !> ].
+
+waseda :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'waseda,
+ORTH <! "早稲田" !> ].
+
+watanabe :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'watanabe,
+ORTH <! "渡辺" !> ].
+
+yamada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamada,
+ORTH <! "山田" !> ].
+
+yamaga :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamaga,
+ORTH <! "山鹿" !> ].
+
+yamaguchi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamaguchi,
+ORTH <! "山口" !> ].
+
+yamanaka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamanaka,
+ORTH <! "山中" !> ].
+
+yamanashi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamanashi,
+ORTH <! "山梨" !> ].
+
+yamao :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamao,
+ORTH <! "山尾" !> ].
+
+yamaoka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamaoka,
+ORTH <! "山岡" !> ].
+
+yamashita :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamashita,
+ORTH <! "山下" !> ].
+
+yasuhi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yasuhi,
+ORTH <! "安日" !> ].
+
+yasuhide :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yasuhide,
+ORTH <! "保秀" !> ].
+
+yasuko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yasuko,
+ORTH <! "靖子" !> ].
+
+yayoi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yayoi,
+ORTH <! "弥生" !> ].
+
+yokohama :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yokohama,
+ORTH <! "横浜" !> ].
+
+youko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'youko,
+ORTH <! "陽子" !> ].
+
+yoshida :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshida,
+ORTH <! "吉田" !> ].
+
+yoshikawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshikawa,
+ORTH <! "吉川" !> ].
+
+yoshimoto :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshimoto,
+ORTH <! "吉本" !> ].
+
+yoshimura :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshimura,
+ORTH <! "吉村" !> ].
+
+yoshinaga :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshinaga,
+ORTH <! "吉永" !> ].
+
+yoshinori :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshinori,
+ORTH <! "良則" !> ].
+
+yuka :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yuka,
+ORTH <! "床" !> ].
+
+yukako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yukako,
+ORTH <! "優香子" !> ].
+
+yukiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yukiko,
+ORTH <! "由紀子" !> ].
+
+yumiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yumiko,
+ORTH <! "弓子" !> ].
+
+yuriko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yuriko,
+ORTH <! "百合子" !> ].
+
+yuuji :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yuuji,
+ORTH <! "裕司" !> ].
+
+oono :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oono,
+ORTH <! "大野" !> ].
+
+adachi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'adachi,
+ORTH <! "足立" !> ].
+
+akegami :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'akegami,
+ORTH <! "明上" !> ].
+
+arisa :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'arisa,
+ORTH <! "亜理佐" !> ].
+
+ayami :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ayami,
+ORTH <! "あやみ" !> ].
+
+kasahara :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kasahara,
+ORTH <! "笠原" !> ].
+
+kawada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawada,
+ORTH <! "川田" !> ].
+
+kawakita :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kawakita,
+ORTH <! "川北" !> ].
+
+kitaoka :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kitaoka,
+ORTH <! "北岡" !> ].
+
+komune :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'komune,
+ORTH <! "仔刀背" !> ].
+
+koyamazaki :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koyamazaki,
+ORTH <! "仔山咲" !> ].
+
+makiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'makiko,
+ORTH <! "麻起子" !> ].
+
+mari :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mari,
+ORTH <! "まり" !> ].
+
+mikako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mikako,
+ORTH <! "美佳子" !> ].
+
+mikiko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mikiko,
+ORTH <! "美希子" !> ].
+
+misugi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'misugi,
+ORTH <! "美杉" !> ].
+
+mutsumi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mutsumi,
+ORTH <! "睦美" !> ].
+
+nagata :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nagata,
+ORTH <! "永田" !> ].
+
+nakano :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nakano,
+ORTH <! "中野" !> ].
+
+negawa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'negawa,
+ORTH <! "ねがわ" !> ].
+
+osada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'osada,
+ORTH <! "長田" !> ].
+
+rina :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rina,
+ORTH <! "リナ" !> ].
+
+shimada :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shimada,
+ORTH <! "島田" !> ].
+
+shirou :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shirou,
+ORTH <! "司朗" !> ].
+
+
+takako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takako,
+ORTH <! "貴子" !> ].
+
+tani :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tani,
+ORTH <! "谷" !> ].
+
+taniguchi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'taniguchi,
+ORTH <! "谷口" !> ].
+
+terai :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'terai,
+ORTH <! "寺井" !> ].
+
+tomohiro :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tomohiro,
+ORTH <! "智洋" !> ].
+
+yagi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yagi,
+ORTH <! "八木" !> ].
+
+yasuhiro :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yasuhiro,
+ORTH <! "泰宏" !> ].
+
+youichi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'youichi,
+ORTH <! "陽一" !> ].
+
+yukari :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yukari,
+ORTH <! "ゆかり" !> ].
+
+yuri :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yuri,
+ORTH <! "由梨" !> ].
+
+yuusuke :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yuusuke,
+ORTH <! "祐介" !> ].
+
+hiroko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiroko,
+ORTH <! "浩子" !> ].
+
+higashiguchi :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'higashiguchi,
+ORTH <! "東口" !> ].
+
+eriko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'eriko,
+ORTH <! "英里子" !> ].
+
+koube :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koube,
+ORTH <! "神戸" !> ].
+
+
+doitsu :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'doitsu,
+ORTH <! "ドイツ" !> ].
+
+amerika :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'amerika,
+ORTH <! "アメリカ" !> ].
+
+amushutattohoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'amushutattohoteru,
+ORTH <! "アムシタットホテル" !> ].
+
+amushutattopaaku :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'amushutattopaaku,
+ORTH <! "アムシュタットパーク" !> ].
+
+amushutattopaakuhoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'amushutattopaakuhoteru,
+ORTH <! "アムシュタットパークホテル" !> ].
+
+ana :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ana,
+ORTH <! "アナ" !> ].
+
+atoraNta :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'atoranta,
+ORTH <! "アトランタ" !> ].
+
+atoraNtahoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'atorantahoteru,
+ORTH <! "アトランタホテル" !> ].
+
+jeeaaru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jeeaaru,
+ORTH <! "ジェーアール" !> ].
+
+kaNkuu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kankuu,
+ORTH <! "カンクウ" !> ].
+
+kaNsaikokusaikuukou :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kansaikokusaikuukou,
+ORTH <! "関西国際空港" !> ].
+
+kaNsaikuukou :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kansaikuukou,
+ORTH <! "関西空港" !> ].
+
+kasuteNsu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kasutensu,
+ORTH <! "カステンス" !> ].
+
+kasuteNsuhoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kasutensuhoteru,
+ORTH <! "カステンスホテル" !> ].
+
+kasuteNsuhoteruruiizeNhoofu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kasutensuhoteruruiizenhoofu,
+ORTH <! "カステンスホテルルイーゼンホーフ" !> ].
+
+kesutonaahakubutsukaN :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kesutonaahakubutsukan,
+ORTH <! "ケストナー博物癇" !> ].
+
+koonaa :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koonaa,
+ORTH <! "コーナー" !> ].
+
+koonaahoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koonaahoteru,
+ORTH <! "コーナーホテル" !> ].
+
+marukutokyoukai :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'marukutokyoukai,
+ORTH <! "マルクト教会" !> ].
+
+mootsuaruto-1 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mootsuaruto,
+ORTH <! "モーツアルト" !> ].
+
+mootsuaruto-2 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mootsuaruto,
+ORTH <! "モーツァルト" !> ].
+
+musumaN :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'musuman,
+ORTH <! "ムスマン" !> ].
+
+musumaNhoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'musumanhoteru,
+ORTH <! "ムスマンホテル" !> ].
+
+myuNheN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'myunhen,
+ORTH <! "ミュンヘン" !> ].
+
+nihoN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nihon,
+ORTH <! "日本" !> ].
+
+nihoNkoukuu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nihonkoukuu,
+ORTH <! "日本空港" !> ].
+
+nyuuyooku :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nyuuyooku,
+ORTH <! "ミューヨーク" !> ].
+
+raatohausu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'raatohausu,
+ORTH <! "ラートハウス" !> ].
+
+rokkumaahoofu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rokkumaahoofu,
+ORTH <! "ロックマーホーフ" !> ].
+
+rokkumaahoofuhoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rokkumaahoofuhoteru,
+ORTH <! "ロックマーホーフホテル" !> ].
+
+roNdoN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rondon,
+ORTH <! "ロンドン" !> ].
+
+rufuto :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rufuto,
+ORTH <! "ルフト" !> ].
+
+rufutohaNza :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rufutohanza,
+ORTH <! "ルフトハンザ" !> ].
+
+rufutohaNzakoukuu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rufutohanzakoukuu,
+ORTH <! "ルフトハンザ航空" !> ].
+
+ruiizeNhoofu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ruiizenhoofu,
+ORTH <! "ルイーゼンホーフ" !> ].
+
+shiibuijeeemu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shiibuijeeemu,
+ORTH <! "シーブイジェーエム" !> ].
+
+shitihoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shitihoteru,
+ORTH <! "シティーホテル" !> ].
+
+shupureNgerubijutsukaN :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shupurengerubijutsukan,
+ORTH <! "シュプレンゲル美術館" !> ].
+
+sutifuto :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sutifuto,
+ORTH <! "スチフト" !> ].
+
+sutifutogyararii :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sutifutogyararii,
+ORTH <! "スチフトギャラリー" !> ].
+
+viruherumubusshuhakubutsukaN :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'viruherumubusshuhakubutsukan,
+ORTH <! "ヴィルヘルムブッシュ博物館" !> ].
+
+zeNnikkuu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'zennikkuu,
+ORTH <! "全日空" !> ].
+
+furaNkufuruto :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'furankufuruto,
+ORTH <! "フランクフルト" !> ].
+
+hanoofaa :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hanoofaa,
+ORTH <! "ハノーファー" !> ].
+
+jaru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jaru,
+ORTH <! "ジャル" !> ].
+
+doNjobaNni :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'donjobanni,
+ORTH <! "ドンジョバンニ" !> ].
+
+hoofu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hoofu,
+ORTH <! "ホーフ" !> ].
+
+hirutoN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiruton,
+ORTH <! "ヒルトン" !> ].
+
+iNtekkusu :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'intekkusu,
+ORTH <! "インテックス" !> ].
+
+kanada :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kanada,
+ORTH <! "カナダ" !> ].
+
+kougyou :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kougyou,
+ORTH <! "工業" !> ].
+
+kyouto :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kyouto,
+ORTH <! "京都" !> ].
+
+kyoutokaikaN :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kyoutokaikan,
+ORTH <! "京都会館" !> ].
+
+nichidai :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nichidai,
+ORTH <! "日大" !> ].
+
+omamori :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'omamori,
+ORTH <! "おまもり" !> ].
+
+oosaka :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oosaka,
+ORTH <! "大阪" !> ].
+
+oosutoraria :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oosutoraria,
+ORTH <! "オーストラリア" !> ].
+
+saNgyou :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sangyou,
+ORTH <! "産業" !> ].
+
+shougyou :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shougyou,
+ORTH <! "商業" !> ].
+
+taaminaru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'taaminaru,
+ORTH <! "ターミナル" !> ].
+
+toroNto :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toronto,
+ORTH <! "トロント" !> ].
+
+toukyou :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toukyou,
+ORTH <! "東京" !> ].
+
+zaiiru :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'zaiiru,
+ORTH <! "ザイイル" !> ].
+
+iNtaashitiihoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'intaashitiihoteru,
+ORTH <! "インターシチーホテル" !> ].
+
+ejiputo :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ejiputo,
+ORTH <! "エジプト" !> ].
+
+hanoofaashi :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hanoofaashi,
+ORTH <! "ハノーファー市" !> ].
+
+hereNhauzeNoukyuuteieN :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hereNhauzeNoukyuuteieN,
+ORTH <! "ヘレンカウゼン王宮庭園" !> ].
+
+iNtaashitii :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'iNtaashitii,
+ORTH <! "インターシティー" !> ].
+
+rejideNtsu :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rejidentsu,
+ORTH <! "レジデンツ" !> ].
+
+shiibuijeeemushitihoteru :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shiibuijeeemushitihoteru,
+ORTH <! "シーブイジェーエムシチホテル" !> ].
+
+arupususaNmyaku :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'arupususanmyaku,
+ORTH <! "アルプス山脈" !> ].
+
+nara :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nara,
+ORTH <! "奈良" !> ].
+
+noboru :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'noboru,
+ORTH <! "登" !> ].
+
+tomari-pn :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tomari,
+ORTH <! "泊" !> ].
+
+yasui :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yasui,
+ORTH <! "安井" !> ].
+
+ana-pn :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ana,
+ORTH <! "アナ" !> ].
+
+kafeteria :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kafeteria,
+ORTH <! "カフェテリア" !> ].
+
+kazuo :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kazuo,
+ORTH <! "一男" !> ].
+
+kazuo-sep :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kazuo,
+ORTH <! "一","男" !> ].
+
+hanako :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hanako,
+ORTH <! "花子" !> ].
+
+tarou :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tarou,
+ORTH <! "太朗" !> ].
+
+canon :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'canon,
+ ORTH <! "canon" !> ].
+
+
+sony :=
+inst_name-lex &
+[ORTH <! "ソニー" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sony].
+
+
+ichirou :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ichirou,
+ORTH <! "一郎" !> ].
+
+fuyuko :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fuyuko,
+ORTH <! "冬子" !> ].
+
+maiku :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'maiku,
+ORTH <! "マイク" !> ].
+
+mary-1 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mary,
+ORTH <! "マリー" !> ].
+
+mary-2 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mary,
+ORTH <! "メアリー" !> ].
+
+john-1 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'john,
+ORTH <! "ジョン" !> ].
+
+john-2 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'john,
+ORTH <! "John" !> ].
+
+kenichi :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kenichi,
+ORTH <! "健一" !> ].
+
+dan-1 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'dan,
+ORTH <! "ダン" !> ].
+
+dan-2 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'dan,
+ORTH <! "Dan" !> ].
+
+furikkinjyaa-1 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'flickinger,
+ORTH <! "フリッキンジャー" !> ].
+
+furikkinjyaa-2 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'flickinger,
+ORTH <! "Flickinger" !> ].
+
+kaaku-1 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kirk,
+ORTH <! "カーク" !> ].
+
+kaaku-2 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kirk,
+ORTH <! "Kirk" !> ].
+
+kaaku-3 :=
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kirk,
+ORTH <! "ＫＩＲＫ" !> ].
+
+ootomaN-1 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ootoman,
+ORTH <! "オートマン" !> ].
+
+ootomaN-2 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ootoman,
+ORTH <! "Oatman" !> ].
+
+
+ootomaN-3 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ootoman,
+ORTH <! "ＯＡＴＭＡＮ" !> ].
+
+;;;;;;;;;;;;;;;;;;;;;;New Entries;;;;;;;;;;;;;
+
+shiienuenu-1-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'cnn,
+ORTH <! "ＣＮＮ" !> ].
+
+bibishi-1-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bbc,
+ORTH <! "ＢＢＣ" !> ].
+
+
+shiesu-1-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'cs,
+ORTH <! "ＣＳ" !> ].
+
+biesu-1-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bs,
+ORTH <! "ＢＳ" !> ].
+
+tepodon-1-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tepodon,
+ORTH <! "テポドン" !> ].
+
+universal-television-and-networks-1-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'universal-television-and-networks,
+ORTH <! "ユニバーサル", "・", "テレビジョン", "・", "アンド", "・", "ネットワーク ス" !> ].
+
+kumu_chanri-1-name := 
+ippan-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kumu_chanri,
+ORTH <! "クム","・","チャン", "リ" !> ].
+
+
+;Staatennamen koennen auch agentive sein.
+
+kitachousen-2-locname := 
+agent-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kitachousen-agent,
+ORTH <! "北朝鮮" !> ].
+
+;Koreanischer Vorname:
+
+jonirusou-firstname := 
+first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jonirusou,
+ORTH <! "正日","総" !> ].
+
+chiimei-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'chiimei,
+ORTH <! "チーメイ" !> ].
+
+tsuruha-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tsuruha,
+ORTH <! "ツルハ" !> ].
+
+yuujinoru-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yuujinoru,
+ORTH <! "ユジノール" !> ].
+
+doragonkuesto-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'doragonkuesto,
+ORTH <! "ドラゴンクエスト" !> ].
+
+torishe :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'torishe,
+ORTH <! "トリシェ" !> ].
+
+sumisu-1 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sumisu,
+ORTH <! "スミス" !> ].
+
+sumisu-2 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sumisu,
+ORTH <! "Smith" !> ].
+
+sumisu-3 :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sumisu,
+ORTH <! "SMITH" !> ].
+
+;Nasdaq
+
+nasudakku :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nasudakku,
+ORTH <! "ナスダック" !> ].
+
+;Palm Computing
+
+paamukonpyuutingu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'paamukonpyuutingu,
+ORTH <! "パームコンピューティング" !> ].
+
+hiigaa :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiigaa,
+ORTH <! "ヒーガー" !> ].
+
+buruupuranetto-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'buruupuranetto,
+ORTH <! "ブループラネット" !> ].
+
+fabiusu :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fabiusu,
+ORTH <! "ファビウス" !> ].
+
+viakkusu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'viakkusu,
+ORTH <! "ヴィアックス" !> ].
+
+vooto-japan-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'vooto-japan,
+ORTH <! "ヴォウトジャパン" !> ].
+
+vooto-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'vooto,
+ORTH <! "ヴォウト" !> ].
+
+bisuko-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bisuko,
+ORTH <! "ビスコ" !> ].
+
+miimu-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miimu,
+ORTH <! "ミーム" !> ].
+
+porimaa-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'porimaa,
+ORTH <! "ポリマー" !> ].
+
+
+ueruherumu-surname := surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ueruherumu,
+ORTH <! "ウィルヘルム" !> ].
+
+uebusaabashisutemu-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'uebusaabashisutemu,
+ORTH <! "ウェブサーバシステム" !> ].
+
+efuandoemu-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'efuandoemu,
+ORTH <! "エフアンドエム" !> ].
+
+kureifisshu-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kureifisshu,
+ORTH <! "クレイフィッシュ" !> ].
+
+keeraa-surname := surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'keeraa,
+ORTH <! "ケーラー" !> ].
+
+koodiaru-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koodiaru,
+ORTH <! "コーディアル" !> ].
+
+koodiaruguruupu-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koodiaruguruupu,
+ORTH <! "コーディアルグループ" !> ].
+
+shinnobashisutemu-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shinnobashisutemu,
+ORTH <! "シンノバシステム" !> ].
+
+matsukuimushi-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsukuimushi,
+ORTH <! "マツクイムシ" !> ].
+
+ken-surname := surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ken,
+ORTH <! "兼" !> ].
+
+furiisu-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'furiisu,
+ORTH <! "フリース" !> ].
+
+federarufando-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'federarufando,
+ORTH <! "ＦＦ" !> ].
+
+federarufando-2-ippanname := 
+ippan-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'federarufando,
+ORTH <! "フェデラルファンド" !> ].
+
+ecb-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ecb,
+ORTH <! "ＥＣＢ" !> ].
+
+cnbc-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'cnbc,
+ORTH <! "ＣＮＢＣ" !> ].
+
+fomc-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fomc,
+ORTH <! "ＦＯＭＣ" !> ].
+
+bmw-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bmw,
+ORTH <! "ＢＭＷ" !> ].
+
+eu-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'eu,
+ORTH <! "ＥＵ" !> ].
+
+frb-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'frb,
+ORTH <! "ＦＲＢ" !> ].
+
+etf-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'etf,
+ORTH <! "ＥＴＦ" !> ].
+
+ge-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ge,
+ORTH <! "ＧＥ" !> ].
+
+gdp-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'gdp,
+ORTH <! "ＧＤＰ" !> ].
+
+gm-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'gm,
+ORTH <! "ＧＭ" !> ].
+
+gmt-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'gmt,
+ORTH <! "ＧＭＴ" !> ].
+
+pko-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pko,
+ORTH <! "ＰＫＯ" !> ].
+
+phs-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'phs,
+ORTH <! "ＰＨＳ" !> ].
+
+ja-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ja,
+ORTH <! "ＪＡ" !> ].
+
+kddi-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kddi,
+ORTH <! "ＫＤＤＩ" !> ].
+
+ibm-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ibm,
+ORTH <! "ＩＢＭ" !> ].
+
+ip-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ip,
+ORTH <! "ＩＰ" !> ].
+
+imf-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'imf,
+ORTH <! "ＩＭＦ" !> ].
+
+imfc-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'imfc,
+ORTH <! "ＩＭＦＣ" !> ].
+
+it-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'it,
+ORTH <! "ＩＴ" !> ].
+
+ob-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ob,
+ORTH <! "ＯＢ" !> ].
+
+mba-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mba,
+ORTH <! "ＭＢＡ" !> ].
+
+nec-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nec,
+ORTH <! "ＮＥＣ" !> ].
+
+newos-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'newos,
+ORTH <! "ネオス" !> ].
+
+newos-instname2 := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'newos-abbr,
+ORTH <! "ＮＥＷＯＳ" !> ].
+
+nkk-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nkk,
+ORTH <! "ＮＫＫ" !> ].
+
+lsi-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'lsi,
+ORTH <! "ＬＳＩ" !> ].
+
+ntt-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ntt,
+ORTH <! "ＮＴＴ" !> ].
+
+sfc-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sfc,
+ORTH <! "ＳＦＣ" !> ].
+
+tpg-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tpg,
+ORTH <! "ＴＰＧ" !> ].
+
+risc-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'risc,
+ORTH <! "ＲＩＳＣ" !> ].
+
+wowow-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'wowow,
+ORTH <! "ＷＯＷＯＷ" !> ].
+
+wto-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'wto,
+ORTH <! "ＷＴＯ" !> ].
+
+han-locname := 
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'han,
+ORTH <! "泛" !> ].
+
+iso-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'iso,
+ORTH <! "ＩＳＯ" !> ].
+
+tnt-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tnt,
+ORTH <! "ＴＮＴ" !> ].
+
+topix-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'topix,
+ORTH <! "ＴＯＰＩＸ" !> ].
+
+japantoushii-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'japantoushii,
+ORTH <! "ジャパントゥシー" !> ].
+
+hendorii-pn :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hendorii,
+ORTH <! "ヘンドリー" !> ].
+
+
+linux-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'linux,
+ORTH <! "リナックス" !> ].
+
+asahi-hiragana-inst :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'asahi-bank,
+ORTH <! "あさひ" !> ].
+
+asahidairekuto-inst :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'asahi-direct,
+ORTH <! "あさひ","ダイレクト" !> ].
+
+toukai-locname := 
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toukai,
+ORTH <! "東海" !> ].
+
+toukaiginkou-inst :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toukaiginkou,
+ORTH <! "東海銀行" !> ].
+
+sanwaginkou-inst :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sanwaginkou,
+ORTH <! "三和銀行" !> ].
+
+; (ERB 2001-07-23) Entries added for banking demo corpus
+
+itaria-noun :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'itaria,
+ORTH <! "イタリア" !> ].
+
+oraNda-noun :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oranda,
+ORTH <! "オランダ" !> ].
+
+furaNsu-noun :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'furansu,
+ORTH <! "フランス" !> ].
+
+kaNkoku-noun-1 :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kankoku,
+ORTH <! "韓国" !> ].
+
+kaNkoku-noun-2 :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kankoku,
+ORTH <! "韓","国" !> ].
+
+cariforunia :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'cariforunia,
+ORTH <! "カリフォルニア" !> ].
+
+mauNtenbyuu-1 :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mauntenbyuu,
+ORTH <! "マウンテンビュー" !> ].
+
+mauNtenbyuu-2 :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mauntenbyuu,
+ORTH <! "MOUNTAIN VIEW" !> ].
+
+mauNtenbyuu-3 :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mauntenbyuu,
+ORTH <! "MOUNTAIN","VIEW" !> ].
+
+pakkuberu-inst-1 :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pakkuberu,
+ORTH <! "PacBell" !> ].
+
+pakkuberu-inst-2 :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pakkuberu,
+ORTH <! "ＰＡＣＢＥＬＬ" !> ].
+
+eniibaryuu-inst :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aniibaryuu,
+ORTH <! "ＡＮＹＶＡＬＵＥ" !> ].
+
+eitiitii :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'eitiitii,
+ORTH <! "ＡＴＴ" !> ].
+
+waiwai-inst :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'waiwai,
+ORTH <! "YY" !> ].
+
+piiziiendoii-inst-1 :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'piiziiendoii,
+ORTH <! "P",".","G",".","&","E" !> ].
+
+piiziiendoii-inst-2 :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'piiziiendoii,
+ORTH <! "P.G.&E" !> ].
+
+piiziiendoii-inst-3 :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'piiziiendoii,
+ORTH <! "PG","&","E" !> ].
+
+paruru-product-1 :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'paruru,
+ORTH <! "ぱるる" !> ].
+
+paruru-product-2 :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'paruru,
+ORTH <! "ぱ","るる" !> ].
+
+kabudottokomu-inst-1 :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kabudottokomu,
+ORTH <! "カブ","ドット","コム" !> ].
+
+kabudottokomu-inst-2 :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kabudottokomu,
+ORTH <! "カブドットコム" !> ].
+
+kabudottokomu-inst-3 :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kabudottokomu,
+ORTH <! "カブ","コム" !> ].
+
+kabudottokomu-shouken-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kabudottokomu-shouken,
+ORTH <! "カブドットコム証券" !> ].
+
+doriimukyasuto-product1 :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'doriimukyasuto,
+ORTH <! "ドリーム","キャスト" !> ].
+
+doriimukyasuto-product2 :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'doriimukyasuto,
+ORTH <! "ドリームキャスト" !> ].
+
+webtv-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'webtv,
+ORTH <! "webtv" !> ].
+
+taishou-inst :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'taishou,
+ORTH <! "大証" !> ].
+
+toushou-inst :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toushou,
+ORTH <! "東証" !> ].
+
+makkiNtosshu-inst :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'makkintosshu,
+ORTH <! "マッキントッシュ" !> ].
+
+mac-inst :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'makkintosshu,
+ORTH <! "MAC" !> ].
+
+faNdoseijiN-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fandoseijin,
+ORTH <! "ファンド星人" !> ].
+
+
+mountain-view-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mountain_view,
+ORTH <! "マウンテン","ビュー" !> ].
+
+miruka-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miruka,
+ORTH <! "ミルカ" !> ].
+
+miruka-instname-2  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miruka,
+ORTH <! "Miruka" !> ].
+
+miruka-instname-3  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miruka,
+ORTH <! "Milka" !> ].
+
+mirukakomu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mirukakomu,
+ORTH <! "ミルカコム" !> ].
+
+mirukadottokomu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mirukadottokomu,
+ORTH <! "ミルカドットコム" !> ].
+
+milka-dot-com-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mirukadottokomu,
+ORTH <! "milka","com" !> ].
+
+gaio-tekurojii-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tsuruha,
+ORTH <! "ガイオ", "・", "テクロジー" !> ].
+
+deierujeideirekuto-efuefujii-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tsuruha,
+ORTH <! "ディーエルジェイディレクト","・", "エスエフジー" !> ].
+
+
+one-e-rousu-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'one-e-rousu,
+ORTH <! "ヴァン", "・", "エ", "・", "ローズ" !> ].
+
+
+vooto-dotto-comu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'vooto-dotto-comu,
+ORTH <! "ヴォウト", "・", "ドット", "コム" !> ].
+
+hankyuu-hoteruzu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hankyuu-hoteruzu,
+ORTH <! "阪急", "ホテルズ" !> ].
+
+sofutobanku-ii-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sofutobanku-ii,
+ORTH <! "ソフトバンク", "・", "イー" !> ].
+
+uebu-keitai-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'uebu-keitai,
+ORTH <! "ウェブ", "・", "携帯" !> ].
+
+ion-uerushia-sutoaazu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ion-uerushia-sutoaazu,
+ORTH <! "イオン", "・", "ウエルシア", "・", "ストアーズ" !> ].
+
+efu-ando-emu-imeejingu-tekunorojii-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'efu-ando-emu-imeejingu-tekunorojii,
+ORTH <! "エフ", "・", "アンド", "・", "エム", "・", "イメージング", "・", "テクノロジー" !> ].
+ 
+diierujeidirekuto-esuefujii-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'diierujeidirekuto-esuefujii,
+ORTH <! "ディーエルジェイディレクト", "・", "エスエフジー" !> ].
+ 
+oniirubei-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oniirubei,
+ORTH <! "オニール", "米" !> ].
+ 
+fyuujon-komyunikeeshonzu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fyuujon-komyunikeeshonzu,
+ORTH <! "フュージョン", "・", "コミュニケーションズ" !> ].
+
+japantoushii-dotto-comu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'japantoushii-dotto-comu,
+ORTH <! "ジャパントゥシー", "・", "ドット", "コム" !> ].
+
+ai-soryuushonzu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ai-soryuushonzu,
+ORTH <! "アイ", "・", "ソリューションズ" !> ].
+
+tandemuoushiki-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tandemuoushiki,
+ORTH <! "タンデム", "方式" !> ].
+ 
+sutandaado-ando-puaazu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sutandaado-ando-puaazu,
+ORTH <! "スタンダード", "・", "アンド", "・", "プアーズ" !> ].
+
+s-and-p-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 's-and-p,
+ORTH <! "Ｓ", "＆", "Ｐ" !> ].
+
+c-and-m-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'c-and-m,
+ORTH <! "Ｃ", "＆", "Ｍ" !> ].
+
+
+toushoumazaazu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toushoumazaazu,
+ORTH <! "東証", "マザーズ" !> ].
+
+beeceebee-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'beeceebee,
+ORTH <! "Ｂ", "ツー", "Ｂ" !> ].
+
+
+raibun-surname := surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'raibun,
+ ORTH <! "羅", "怡", "文" !> ].
+
+
+hendry-name :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hendry,
+ORTH <! "ヘン", "ド", "リー" !> ].
+
+beiuouto-dot-com-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'beiuouto-dot-com,
+ORTH <! "米", "ヴォウト", "・", "ドット", "コム", "社" !> ].
+
+yuniakusu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yuniakusu,
+ORTH <! "ユニ", "アッ", "クス" !> ]. 
+
+ntt-me-instname1  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ntt-me,
+ORTH <! "ＮＴＴ", "エムイー" !> ]. 
+
+ntt-me-instname2  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ntt-me,
+ORTH <! "ＮＴＴ","―", "ＭＥ" !> ]. 
+
+
+japantoushii-dot-com-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'japantoushii-dot-com,
+ORTH <! "ジャパントゥシー", "・", "ドット", "コム" !> ].
+
+
+bon-voyage-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bon-voyage,
+ORTH <! "ＢＯＮ", "ＶＯＹＡＧＥ" !> ].
+
+pico-java-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pico-java,
+ORTH <! "ｐｉｃｏＪａｖａ", "―", "ＩＩ" !> ].
+
+i-mode-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'i-mode,
+ORTH <! "ｉ",  "モード" !> ].
+
+l-mode-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'l-mode,
+ORTH <! "Ｌ",  "モード" !> ].
+
+mi-2001-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mi-2001,
+ORTH <! "ＭＩ",  "２００１" !> ].
+
+mi-2001-product2 :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mi-2001,
+ORTH <! "ＭＩ",  "unk_number" !> ].
+
+
+td-uootaa-hausu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'td-uootaa-hausu,
+ORTH <! "ＴＤ",  "ウォーター", "ハウス" !> ].
+
+sh-shiriizu-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sh-shiriizu,
+ORTH <! "ＳＨ",  "シリーズ" !> ].
+
+topix-150-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'topix-150,
+ORTH <! "ＴＯＰＩＸ",  "１５０" !> ].
+
+topix-150-produc2t :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'topix-150,
+ORTH <! "ＴＯＰＩＸ",  "unk_number" !> ].
+
+tnt-post-group-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tnt-post-group,
+ORTH <! "ＴＮＴ",  "ポスト", "グループ" !> ].
+
+tnt-express-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tnt-express,
+ORTH <! "ＴＮＴ",  "エクスプレス" !> ].
+
+
+us-steel-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'us-steel,
+ORTH <! "ＵＳ",  "スチール" !> ].
+
+vr-4300-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'vr-4300,
+ORTH <! "ＶＲ",  "４３００" !> ].
+
+vr-4300-product2 :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'vr-4300,
+ORTH <! "ＶＲ",  "unk_number" !> ].
+
+iso-masutaazu-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'iso-masutaazu,
+ORTH <! "ＩＳＯ", "・", "マスターズ" !> ].
+
+aozora-ginkou-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aozora-ginkou,
+ ORTH <! "あおぞら", "銀行" !> ].
+
+aozora-gin-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aozora-ginkou,
+ORTH <! "あおぞら", "銀" !> ].
+
+aozora-investment-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aozora-investment,
+ORTH <! "あおぞら", "インベストメント" !> ].
+
+f-and-m-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'f-and-m,
+ORTH <! "Ｆ", "＆", "Ｍ" !> ].
+
+p-baansutain-ippanname := 
+ippan-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'p-baansutain,
+ORTH <! "Ｐ","・","バーンスタイン" !> ].
+
+piigiiandoii-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'piigiiandoii,
+ORTH <! "PG","E" !> ].
+
+piigiiandoii-instname-2  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'piigiiandoii,
+ORTH <! "P","G","E" !> ].
+
+mauntenbyuu :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mautenbyuu,
+ORTH <! "マウンテン","・","ビュー" !> ].
+
+;McDonald
+
+makudonarudo-instname  := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'makudonarudo,
+ORTH <! "マクドナルド" !> ].
+
+
+;Ehime
+
+ehime-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ehime,
+ORTH <! "愛媛" !> ].
+
+yokoyama-surname :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yokoyama,
+ORTH <! "横山" !> ].
+
+jasdaq-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jasdaq,
+ORTH <! "JASDAQ" !> ].
+
+hayakawa-surname :=
+surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hayakawa,
+ORTH <! "早川" !> ].
+
+hp-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hp,
+ORTH <! "HP" !> ].
+
+e-wing-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing,
+ORTH <! "e","wing" !> ].
+
+e-wing-katakana-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing,
+ORTH <! "イーウィング" !> ].
+
+
+e-wing-shoken-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing-shoken,
+ORTH <! "イーウイング証券" !> ].
+
+e-wing-romaji-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing,
+ORTH <! "E","−","WING" !> ].
+
+e-wing-romaji-2-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing,
+ORTH <! "ｅ","ｗｉｎｇ" !> ].
+
+
+e-wing-shoken-b-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing-shoken,
+ORTH <! "イーウィング証券" !> ].
+
+e-wing-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing,
+ORTH <! "E","ー","ウイング" !> ].
+
+e-wing-instname-2 :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'e-wing,
+ORTH <! "イーウイング" !> ].
+
+
+uittokyapitaru-shoken-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'uittokyapitaru-shoken,
+ORTH <! "ウィットキャピタル証券" !> ].
+
+yotsunoya-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yotsunoya,
+ORTH <! "吉野家" !> ].
+
+adsl-plus-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'adsl-plus,
+ORTH <! "ADSL","＋" !> ].
+
+furettsu-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'furettsu,
+ORTH <! "フレッツ" !> ].
+
+ssl-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ssl,
+ORTH <! "ssl" !> ].
+
+tls-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tls,
+ORTH <! "tls" !> ].
+
+ci-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ci,
+ORTH <! "ci" !> ].
+
+deeandoshii-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'deeandoshii,
+ORTH <! "デーアンドシー" !> ].
+
+catv-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'catv,
+ORTH <! "CATV" !> ].
+
+hondatsuushinkougyou-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hondatsuushinkougyou,
+ORTH <! "本多通信工業" !> ].
+
+mrf-product :=
+product-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mrf,
+ORTH <! "mrf" !> ].
+
+toukyou-denryoku-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toukyou-denryoku,
+ORTH <! "東京電力" !> ].
+
+toukyou-erekutoron-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toukyou-erekutoron,
+ORTH <! "東京エレクトロン" !> ].
+
+fujiginkou-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujiginkou,
+ORTH <! "富士銀行" !> ].
+
+sanwa-instname :=
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sanwa,
+ORTH <! "三和" !> ].
+
+sumitomoshintakuginkou-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sumitomoshintakuginkou,
+	  ORTH <! "住友信託銀行" !> ].
+
+netscape-product := 
+product-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'netscape,
+          ORTH <! "netscape" !> ].
+
+windows-product := 
+product-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'windows,
+          ORTH <! "windows" !> ].
+
+sslv-product := 
+product-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sslv,
+          ORTH <! "sslv" !> ].
+
+manekkusushouken-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'manekkusushouken,
+	  ORTH <! "マネックス証券" !> ].
+
+from-cc-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'from-cc,
+ORTH <! "FROM","CC" !> ].
+
+cc-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'cc,
+ORTH <! "CC" !> ].
+
+matsuishouken-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsuishouken,
+	  ORTH <! "松井証券" !> ].
+
+bukkubirudingu-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bukkubirudingu,
+	  ORTH <! "ブックビルディング" !> ].
+
+fudabamachi-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fudabamachi,
+ORTH <! "札場町" !> ].
+
+fudabamachi-chasen-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fudabamachi,
+ORTH <! "札場","町" !> ].
+
+kubota-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kubota,
+	  ORTH <! "クボタ" !> ].
+
+ETF-instname := 
+inst_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ETF,
+          ORTH <! "ETF" !> ].
+
+MMF-instname := 
+inst_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'MMF,
+          ORTH <! "MMF" !> ].
+
+IPO-instname := 
+inst_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'IPO,
+          ORTH <! "IPO" !> ].
+
+nikkei-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nikkei,
+	  ORTH <! "日経" !> ].
+
+sankusuAA-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sankusuAA,
+	  ORTH <! "サンクスAA" !> ].
+
+shiiandoesu-chasen-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shiiandoesu,
+	  ORTH <! "シ","−","アンドエス" !> ].
+
+toubutetsudou-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toubutetsudou,
+	  ORTH <! "東武鉄道" !> ].
+
+ufj-indeku-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ufj-indeku,
+	  ORTH <! "UFJ","イン","デ","ク" !> ].
+
+ogata-surname := 
+surname-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ogata,
+          ORTH <! "尾形" !> ].
+
+akio-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'akio,
+          ORTH <! "彰男" !> ].
+
+AKIOOGATA := 
+ippan-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'AKIOOGATA,
+          ORTH <! "AKIOOGATA" !> ].
+
+toyohashi-locname :=  
+loc_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toyohashi,
+          ORTH <! "豊橋" !> ].
+
+yasuo-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yasuo,
+          ORTH <! "靖雄" !> ].
+
+kitsurin-surname :=  
+surname-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kitsurin,
+          ORTH <! "吉林" !> ].
+
+UFJ-product := 
+product-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'UFJ,
+          ORTH <! "UFJ" !> ].
+
+kudou-surname := 
+surname-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kudou,
+          ORTH <! "工藤" !> ].
+
+mitsuisumitomoginkou-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mitsuisumitomoginkou,
+	  ORTH <! "三井住友銀行" !> ].
+
+ryuuji-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryuuji,
+          ORTH <! "隆二" !> ].
+
+
+nihonshinpan-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nihonshinpan,
+	  ORTH <! "日本信販" !> ].
+
+
+nomurashouken-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nomurashouken,
+	  ORTH <! "野村證券" !> ].
+
+tomoko-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tomoko,
+          ORTH <! "伴子" !> ].
+
+eisuke-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'eisuke,
+          ORTH <! "栄介" !> ].
+
+mitsuisumitomo-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mitsuisumitomo,
+	  ORTH <! "三井","住友" !> ].
+
+ebisu-locname :=  
+loc_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ebisu,
+          ORTH <! "恵比寿" !> ].
+
+daiichikangin-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'daiichikangin,
+	  ORTH <! "第一勧銀" !> ].
+
+matsuura-surname := 
+surname-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsuura,
+          ORTH <! "松浦" !> ].
+
+hiroshi-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiroshi,
+          ORTH <! "公治" !> ].
+
+hiroshi-chasen-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiroshi,
+          ORTH <! "公","治" !> ].
+
+hiroshi-hiragana-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hiroshi,
+          ORTH <! "ひろし" !> ].
+
+
+masahide-chasen-firstname :=
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'masahide,
+          ORTH <! "眞","嗣" !> ].
+
+mizuho-instname :=
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mizuho,
+	  ORTH <! "みずほ" !> ].
+
+koparudenshi-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'koparudenshi,
+	  ORTH <! "コパル電子" !> ].
+
+
+densan-chasen-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'densan,
+	  ORTH <! "電","産" !> ].
+
+csk-product :=
+product-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'csk,
+          ORTH <! "CSK" !> ].
+
+hyuunetto-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hyuunetto,
+	  ORTH <! "ヒューネット" !> ].
+
+aiwa-instname := 
+inst_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aiwa,
+          ORTH <! "aiwa" !> ].
+
+touyoushintakuginkou-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'touyoushintakuginkou,
+	  ORTH <! "東洋信託銀行" !> ].
+
+kab-dot-com-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kab-dot-com,
+	  ORTH <! "kab","com" !> ].
+
+goorudo-man-sakkusu-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'goorudo-man-sakkusu,
+	  ORTH <! "ゴールド","マン","サックス" !> ].
+
+houya-shi-locname :=
+loc_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'houya-shi,
+          ORTH <! "保谷","市" !> ].
+
+saitama-shi-locname :=
+loc_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'saitama-shi,
+          ORTH <! "さいたま","市" !> ].
+
+nishitoukyou-shi-locname :=  
+loc_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nishitoukyou-shi,
+          ORTH <! "西東京","市" !> ].
+
+taiseipurehabu-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'taiseipurehabu,
+	  ORTH <! "大成プレハブ" !> ].
+
+nikki-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nikki,
+	  ORTH <! "日揮" !> ].
+
+
+nichimen-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nichimen,
+	  ORTH <! "ニチメン" !> ].
+
+tooyookanetsu-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tooyookanetsu,
+	  ORTH <! "トーヨーカネツ" !> ].
+
+
+toukyuufudousan-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toukyuufudousan,
+	  ORTH <! "東急不動産" !> ].
+
+mitsuikagaku-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mitsuikagaku,
+	  ORTH <! "三井化学" !> ].
+
+shuu-surname :=
+surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shuu,
+	  ORTH <! "周" !> ].
+
+naigai-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'naigai,
+	  ORTH <! "ナイガイ" !> ].
+
+fukuiginkou-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fukuiginkou,
+	  ORTH <! "福井銀行" !> ].
+
+sofutobanku-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sofutobanku,
+	  ORTH <! "ソフトバンク" !> ].
+
+yafuu-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yafuu,
+	  ORTH <! "ヤフー" !> ].
+
+daiichikangyouginkou-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'daiichikangyouginkou,
+	  ORTH <! "第一勧業銀行" !> ].
+
+;Council on Economic and Fiscal Policy
+
+keizai-zaisei-shimon-kaigi-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'keizai-zaisei-shimon-kaigi,
+	  ORTH <! "経済","財政","諮問","会議" !> ].
+
+ttnet-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ttnet,
+	  ORTH <! "ＴＴＮｅｔ" !> ].
+
+setagayaku-locname :=   
+loc_name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'setagayaku,
+          ORTH <! "世田谷","区" !> ].
+
+lpg-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'lpg,
+	  ORTH <! "ＬＰＧ" !> ].
+
+kei-oputikomu-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kei-oputikomu,
+	  ORTH <! "ケイ","・","オプティコム" !> ].
+
+toyotajidousha-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toyotajidousha,
+	  ORTH <! "トヨタ自動車" !> ].
+
+bandou-surname := 
+surname-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bandou,
+          ORTH <! "坂東" !> ].
+
+bandou-surname-2 := 
+surname-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bandou,
+          ORTH <! "板東" !> ].
+
+jirou-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jirou,
+          ORTH <! "二郎" !> ].
+
+yukijirushinyuugyou-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yukijirushinyuugyou,
+	  ORTH <! "雪印乳業" !> ].
+
+nyuugarasufooramu-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nyuugarasufooramu,
+	  ORTH <! "ニュー","ガラス","フォーラム" !> ].
+
+toukyou-to-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toukyou-to,
+ORTH <! "東京","都" !> ].
+
+minato-ku-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'minato-ku,
+ORTH <! "港","区" !> ].
+
+docomo-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'docomo,
+	  ORTH <! "ドコモ" !> ].
+
+ntt-communications-instname := 
+inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ntt-communications,
+ORTH <! "ＮＴＴ", "コミュニケーションズ" !> ]. 
+
+foma-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'foma,
+	  ORTH <! "ＦＯＭＡ" !> ].
+
+foma-katakana-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'foma,
+	  ORTH <! "フォーマ" !> ].
+
+meguro-locname-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'meguro,
+ORTH <! "目黒" !> ].
+
+touden-instname := 
+inst_name-lex &
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'touden,
+	  ORTH <! "東電" !> ].
+
+ryouko-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryouko,
+          ORTH <! "良子" !> ].
+
+an-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'an,
+          ORTH <! "アン" !> ].
+
+
+tomu-firstname := 
+first_name-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'tomu,
+          ORTH <! "トム" !> ].
+
+oono-surname := 
+surname-lex & 
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oono,
+          ORTH <! "大野" !> ].
+
+sanfrancisco-locname :=
+loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sanfrancisco,
+ORTH <! "サンフランシスコ" !> ].
+
+jo-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jo,
+         ORTH <! "徐" !> ].
+
+yasushi-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yasushi,
+         ORTH <! "寧" !> ].
+
+takizawa-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takizawa,
+         ORTH <! "滝澤" !> ].
+
+takeakira-chasen-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takeakira,
+         ORTH <! "武","朗" !> ].
+
+uenishi-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'uenishi,
+         ORTH <! "上西" !> ].
+
+daisuke-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'daisuke,
+         ORTH <! "大介" !> ].
+
+hayashi-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hayashi,
+         ORTH <! "林" !> ].
+
+junji-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'junji,
+         ORTH <! "潤","治" !> ].
+
+uemura-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'uemura,
+         ORTH <! "上村" !> ].
+
+hideki-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hideki,
+         ORTH <! "秀樹" !> ].
+
+oguro-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oguro,
+         ORTH <! "小黒" !> ].
+
+fukumoto-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fukumoto,
+         ORTH <! "福本" !> ].
+
+masaya-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'masaya,
+         ORTH <! "真","也" !> ].
+
+mizuno-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mizuno,
+         ORTH <! "水野" !> ].
+
+takashi-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takashi,
+         ORTH <! "高志" !> ].
+
+fujio-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujio,
+         ORTH <! "藤夫" !> ].
+
+shouji-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shouji,
+         ORTH <! "小路" !> ].
+
+yukihiro-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yukihiro,
+         ORTH <! "幸宏" !> ].
+
+fujio-firstname-2 :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujio,
+         ORTH <! "哲夫" !> ].
+
+fujimoto-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fujimoto,
+         ORTH <! "藤本" !> ].
+
+yanagimoto-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yanagimoto,
+         ORTH <! "柳","元" !> ].
+
+hachidai-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hachidai,
+         ORTH <! "八大" !> ].
+
+takeda-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takeda,
+         ORTH <! "武田" !> ].
+
+okita-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'okita,
+         ORTH <! "沖田" !> ].
+
+takashi-firstname-2 :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'takashi,
+         ORTH <! "貴史" !> ].
+
+hasegawa-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hasegawa,
+         ORTH <! "長谷川" !> ].
+
+shinichi-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shinichi,
+         ORTH <! "伸一" !> ].
+
+kotarou-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kotarou,
+         ORTH <! "小太郎" !> ].
+
+ooami-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ooami,
+         ORTH <! "大網" !> ].
+
+yoshiko-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshiko,
+         ORTH <! "好子" !> ].
+
+yamaji-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamaji,
+         ORTH <! "山路" !> ].
+
+ichihara-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ichihara,
+         ORTH <! "市原" !> ].
+
+toshihiko-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toshihiko,
+         ORTH <! "利彦" !> ].
+
+shingo-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shingo,
+         ORTH <! "真","悟" !> ].
+
+aoki-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'aoki,
+         ORTH <! "青木" !> ].
+
+kouichi-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kouichi,
+         ORTH <! "行","一" !> ].
+
+kishimoto-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kishimoto,
+         ORTH <! "岸本" !> ].
+
+kunio-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kunio,
+         ORTH <! "邦夫" !> ].
+
+ogata-surname-2 :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ogata,
+         ORTH <! "緒方" !> ].
+
+ryouji-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ryouji,
+         ORTH <! "亮二" !> ].
+
+nagakura-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nagakura,
+         ORTH <! "長倉" !> ].
+
+masaaki-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'masaaki,
+         ORTH <! "雅","秋" !> ].
+
+mita-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mita,
+         ORTH <! "三田" !> ].
+
+kotarou-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kotarou,
+         ORTH <! "小太郎" !> ].
+
+pari-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pari,
+         ORTH <! "パリ" !> ].
+
+akiko-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'akiko,
+         ORTH <! "秋子" !> ].
+
+yukiko-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yukiko,
+         ORTH <! "雪子" !> ].
+
+sarii-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sarii,
+         ORTH <! "サリー" !> ].
+
+sukotto-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sukotto,
+         ORTH <! "スコット" !> ].
+
+UFJ-instname :=  
+        inst_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'UFJ,
+         ORTH <! "ＵＦＪ" !> ].
+
+meison-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'meison,
+         ORTH <! "メイソン" !> ].
+
+shikago-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shikago,
+         ORTH <! "シカゴ" !> ].
+
+yamamoto-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamamoto,
+         ORTH <! "山元" !> ].
+
+matsumoto-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsumoto,
+         ORTH <! "松元" !> ].
+
+denisu-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'denisu,
+         ORTH <! "デニス" !> ].
+
+harue-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'harue,
+         ORTH <! "春江" !> ].
+
+matsuyama-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsuyama,
+         ORTH <! "松山" !> ].
+
+fisshaa-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fisshaa,
+         ORTH <! "フィッシャー" !> ].
+
+risa-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'risa,
+         ORTH <! "リサ" !> ].
+
+ueruzu-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ueruzu,
+         ORTH <! "ウエルズ" !> ].
+
+biru-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'biru,
+         ORTH <! "ビル" !> ].
+
+satou-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'satou,
+         ORTH <! "佐藤" !> ].
+
+jonson-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jonson,
+         ORTH <! "ジョンソン" !> ].
+
+;Southeast Asia
+
+toumenasia-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'toumenasia,
+         ORTH <! "東南アジア" !> ].
+
+;Europe
+
+youroppa-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'youroppa,
+         ORTH <! "ヨーロッパ" !> ].
+
+buraun-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'buraun,
+         ORTH <! "ブラウン" !> ].
+
+makku-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'makku,
+         ORTH <! "マック" !> ].
+
+yamane-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamane,
+         ORTH <! "山根" !> ].
+
+dan-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'dan,
+         ORTH <! "段" !> ].
+
+yamakoshi-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamakoshi,
+         ORTH <! "山越" !> ].
+
+oshiogawa-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oshiogawa,
+         ORTH <! "押尾川" !> ].
+
+jun-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jun,
+         ORTH <! "潤" !> ].
+
+matsumiya-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsumiya,
+         ORTH <! "松宮" !> ].
+
+
+;bigmac
+
+biggumakku-product :=  
+        product-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'biggumakku,
+         ORTH <! "ビッグ","マック" !> ].
+
+baryuusetto-product :=  
+        product-name-lex &
+	[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'baryuusetto,
+         ORTH <! "バリュー","セット" !> ].
+
+sumidaku-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sumidaku,
+         ORTH <! "墨田","区" !> ].
+
+andaason-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'andaason,
+         ORTH <! "アンダーソン" !> ].
+
+kurisu-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kurisu,
+         ORTH <! "クリス" !> ].
+
+;Florida
+
+furorida-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'furorida,
+         ORTH <! "フロリダ" !> ].
+
+hisako-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'hisako,
+         ORTH <! "寿子" !> ].
+
+shimizu-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'shimizu,
+         ORTH <! "清水" !> ].
+
+yamakawa-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamakawa,
+         ORTH <! "山川" !> ].
+
+;Detroit
+
+detoroito-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'detoroito,
+         ORTH <! "デトロイト" !> ].
+
+;Michigan
+
+mishigan-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'mishigan,
+         ORTH <! "ミシガン" !> ].
+
+debii-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'debii,
+         ORTH <! "デビー" !> ].
+
+sandora-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sandora,
+         ORTH <! "サンドラ" !> ].
+
+jenifaa-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jenifaa,
+         ORTH <! "ジェニファー" !> ].
+
+pamu-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pamu,
+         ORTH <! "パム" !> ].
+
+joi-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'joi,
+         ORTH <! "ジョイ" !> ].
+
+pamera-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pamera,
+         ORTH <! "パメラ" !> ].
+
+konii-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'konii,
+         ORTH <! "コニー" !> ].
+
+;Los Angeles
+
+rosuanjeresu-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rosuanjeresu,
+         ORTH <! "ロスアンジェルス" !> ].
+
+bekku-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bekku,
+         ORTH <! "ベック" !> ].
+
+suchiibu-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'suchiibu,
+         ORTH <! "スチーブ" !> ].
+
+suuzan-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'suuzan,
+         ORTH <! "スーザン" !> ].
+
+fukata-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fukata,
+         ORTH <! "深田" !> ].
+
+pekin-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'pekin,
+         ORTH <! "北京" !> ].
+
+ken-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ken,
+         ORTH <! "ケン" !> ].
+
+kuraaku-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kuraaku,
+         ORTH <! "クラーク" !> ].
+
+kaaruson-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kaaruson,
+         ORTH <! "カールソン" !> ].
+
+kazuko-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'kazuko,
+         ORTH <! "和子" !> ].
+
+jekku-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jekku,
+         ORTH <! "ジェフ" !> ].
+
+ishida-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ishida,
+         ORTH <! "石田" !> ].
+
+ruisu-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ruisu,
+         ORTH <! "ルイス" !> ].
+
+adamusu-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'adamusu,
+         ORTH <! "アダムス" !> ].
+
+furanshisu-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'furanshisu,
+         ORTH <! "フランシス" !> ].
+
+osukaa-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'osukaa,
+         ORTH <! "オスカー" !> ].
+
+moorisu-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'moorisu,
+         ORTH <! "モーリス" !> ].
+
+maasa-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'maasa,
+         ORTH <! "マーサ" !> ].
+
+oogawa-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'oogawa,
+         ORTH <! "大川" !> ].
+
+
+
+ikeda-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ikeda,
+         ORTH <! "池田" !> ].
+
+rii-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'rii,
+         ORTH <! "リー" !> ].
+
+robin-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'robin,
+         ORTH <! "ロビン" !> ].
+
+bobu-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'bobu,
+         ORTH <! "ボブ" !> ].
+
+maaku-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'maaku,
+         ORTH <! "マーク" !> ].
+
+terii-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'terii,
+         ORTH <! "テリー" !> ].
+
+nanshii-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nanshii,
+         ORTH <! "ナンシー" !> ].
+
+jan-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'jan,
+         ORTH <! "ジャン" !> ].
+
+yamazaki-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yamazaki,
+         ORTH <! "山崎" !> ].
+
+yoshiko-firstname-2 :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'yoshiko,
+         ORTH <! "よし子" !> ].
+
+fookunaa-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fookunaa,
+         ORTH <! "フォークナー" !> ].
+
+ueno-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ueno,
+         ORTH <! "上野" !> ].
+
+nyuuyooku-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'nyuuyooku,
+         ORTH <! "ニューヨーク" !> ].
+
+fuijisan-locname :=  
+        loc_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'fuijisan,
+         ORTH <! "富士山" !> ].
+
+joonsu-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'joonsu,
+         ORTH <! "ジョーンズ" !> ].
+
+miraa-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'miraa,
+         ORTH <! "ミラー" !> ].
+
+haruko-firstname :=  
+        first_name-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'haruko,
+         ORTH <! "春子" !> ].
+
+matsuda-surname:=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'matsuda,
+         ORTH <! "松田" !> ].
+
+ooki-surname:=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ooki,
+         ORTH <! "大木" !> ].
+
+taguchi-surname:=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'taguchi,
+         ORTH <! "田口" !> ].
+
+sugimoto-surname :=  
+        surname-lex & 
+        [SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'sugimoto,
+         ORTH <! "杉本" !>].

@@ -1,0 +1,141 @@
+generic_noun-lex :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_noun,
+ORTH <! "GenericNounLex" !>].
+
+generic_noun-suffix-lex :=
+ordinary-nohon-n-lex &
+[SYNSEM.LOCAL [ LKEYS.--KEYREL.PRED 'generic_noun,
+                BAR - ],
+ORTH <! "GenericNounSuffixLex" !>].
+
+generic_name-lex := ippan-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'generic_name,
+ORTH <! "GenericName" !>].
+
+generic_person_name-lex := person-name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'generic_person,
+ORTH <! "GenericPersonName" !>].
+
+generic_surname-lex := surname-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'generic_surname,
+ORTH <! "GenericSurname" !>].
+
+generic_first_name-lex := first_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'generic_firstname,
+ORTH <! "GenericFirstName" !>].
+
+generic_inst_name-lex := inst_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'generic_instname,
+ORTH <! "GenericInstName" !>].
+
+generic_loc_name-lex := loc_name-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'generic_locname,
+ORTH <! "GenericLocName" !>].
+
+generic_number-lex := card-no-object-no-specifier &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'generic_number,
+ORTH <! "GenericNumber" !>].
+
+generic_na-adj-lex :=
+na-adj-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_na-adj,
+ORTH <! "GenericNaAdj" !>].
+
+generic_scopal_adv-lex :=
+scopal-adv-lex &
+[ORTH <! "GenericScopalAdv" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_scopal_adv].
+
+generic_dim_adv-lex :=
+scopal-adv-lex &
+[ORTH <! "GenericDimAdv" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_dim_adv].
+
+generic_adj_te_infl := generic_adj_te_infl-lex &
+[ORTH <! "GenericAdjTeInfl" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_adj].
+
+generic_adj_a_infl := generic_adj_a_infl-lex &
+[ORTH <! "GeneridAdjAInfl" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_adj].
+
+generic_adj_past_infl := generic_adj_past_infl-lex &
+[ORTH <! "GenericAdjPastInfl" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_adj].
+
+generic_adj_i_infl := generic_adj_i_infl-lex &
+[ORTH <! "GenericAdjIInfl" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_adj].
+
+generic_adj_kere_infl := generic_adj_kere_infl-lex &
+[ORTH <! "GenericAdjKereInfl" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_adj].
+
+generic_adj_short_infl := generic_adj_short_infl-lex &
+[ORTH <! "GenericAdjShortInfl" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_adj].
+
+generic_adj2adv_infl := scopal-adv-lex &
+[ORTH <! "GenericAdjAdvInfl" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_adj2adv].
+
+generic_excl-lex := excl-lex &
+[ORTH <! "GenericExcl" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_excl].
+
+generic_interj-lex := interj-lex &
+[ORTH <! "GenericInterj" !>,
+ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'int].
+
+generic_hes-lex := hes-lex &
+[ORTH <! "GenericHes" !>].
+
+generic_verb_ru_infl :=
+generic_verb_ru_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbRuInfl" !>].
+
+generic_verb_i_infl :=
+generic_verb_i_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbIInfl" !>].
+
+generic_verb_morphbind_infl :=
+generic_verb_morphbind_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbMorphbindInfl" !>].
+
+generic_verb_a_infl :=
+generic_verb_a_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbAInfl" !>].
+
+generic_verb_t_infl :=
+generic_verb_t_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbTInfl" !>].
+
+generic_verb_cond_infl :=
+generic_verb_cond_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbCondInfl" !>].
+
+generic_verb_o_infl :=
+generic_verb_o_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbOInfl" !>].
+
+generic_verb_vstem_infl :=
+generic_verb_vstem_infl-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVerbVstemInfl" !>].
+
+generic_vn-lex :=
+vn-trans1-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'generic_verb,
+ORTH <! "GenericVN" !>].
+
+
+
+

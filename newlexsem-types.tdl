@@ -1,0 +1,392 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: newlexsem-types.tdl
+;;;      module: mrs semantics
+;;;     version: 01
+;;;  written by: Melanie Siegel/Emily Bender
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel (MS)|             |Emily Bender (ERB)  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; (ERB 2001-09-13) Moved LTOP = KEY.LBL constraint to MRS, so I'm taking it
+; out of all of these types.
+; (MS 2001-11-5) I'm afraid I have to undo this for the treatment of HAYAKU NEREBA YOI.
+
+; (ERB 2001-11-26) I don't want nominal-sign-sem-type to inherit
+; the constraints identifying its MOD-IND with its INDEX and its
+; MOD-HAND with its LTOP because this is incorrect for the subtype
+; nom-vn-sem-type.  Making a subtype of nominal-sign-sem-type which
+; does inherit all of these constraints.
+
+; (MS 2003-07-09) changed due to matrix
+
+nominal-sign-sem-type :=  wg-handel-lex-mrs.
+
+mod-id-nominal-sign-sem-type := nominal-sign-sem-type & mod-id-wg-handel-mrs.
+
+common-noun-sem-type := mod-id-nominal-sign-sem-type &
+                        [ RELS diff-list & [LIST.FIRST reg-nom_rel ]].
+
+;date-noun-sem-type := mod-id-nominal-sign-sem-type &
+;                      [ KEY #key & locable_rel,
+;                        RELS 1-dlist & [LIST.FIRST #key ],
+;                        HCONS <! !> ].
+
+
+date-noun-sem-type := mod-id-nominal-sign-sem-type &
+                      [ HCONS <! !>].
+
+; (TT 2003-08-14) temporarily added
+nadv-sem-type := mod-id-nominal-sign-sem-type &
+                      [ HCONS <! !> ].
+; </TT>
+
+pron-sem-type := mod-id-nominal-sign-sem-type &
+                             [HOOK [LTOP #handle,
+				    INDEX #i],
+                              RELS diff-list & 
+                               <! pron_rel, 
+                                  quant_rel &
+                                     [ARG0 #i,
+                                      RSTR #restr] !>,
+                              HCONS <! qeq &
+                                       [HARG #restr,
+                                        LARG #handle] !>].
+
+ppron-sem-type := pron-sem-type &
+                  [RELS <! relation , relation !>].
+
+; (ERB 2001-09-13) This type identifies LTOP with the LBL of
+; the arg_rel.  This has the happy consequence that the LBLS of
+; the arg_rel and the place_rel are the same.
+
+lpron-sem-type := mod-id-nominal-sign-sem-type &
+                  [HOOK [LTOP #hand,
+			 INDEX #ind],
+                   RELS  <! arg1_rel   & [LBL #hand,
+                                       ARG1 #ind],
+                          def_rel & [ARG0 #ind,
+                                     RSTR #restr],
+                          place_rel !>,
+                   HCONS <! qeq &
+                           [HARG #restr,
+                            LARG #hand] !> ].
+
+
+personal-pronoun-sem-type := ppron-sem-type &
+                                  [RELS.LIST.REST.FIRST def_rel].
+
+
+
+det-sem-type := mod-id-wg-handel-mrs.
+
+lex-det-sem-type := det-sem-type.
+
+
+nom-sem-type := mod-id-nominal-sign-sem-type &
+                [RELS diff-list & [LIST.FIRST nominalise_rel]].
+
+nom-pred-sem-type := mod-id-nominal-sign-sem-type &
+                [RELS diff-list & [LIST.FIRST nominalise-pred_rel]].
+
+; (ERB 2001-10-31) I want to disallow NO from modifying NO
+; nominalizations while still allowing it to modify vns used as ns.
+; I'm doing this based on the KEY, so I've introduce a new kind
+; of nominalise_rel for this type.  (Replacing nominalise-pred_rel
+; with nominalise-vn_rel.)
+
+; (ERB 2001-11-26) We want to expose the event of the embedded
+; verb as a target for modification.  This means that the MOD-IND
+; and the INDEX shouldn't be identified for this type.  See notes
+; at the vn2n rule in rule-types.tdl.
+
+
+nom-vn-sem-type := nominal-sign-sem-type &
+                   [RELS.LIST.FIRST nominalise-vn_rel].
+
+
+adj-sem-type := mod-id-wg-handel-mrs &
+                [ HOOK.INDEX #inst,
+                  RELS diff-list & [LIST.FIRST adj_rel &
+					       [ ARG1 #inst]]].
+
+na-adj-sem-type-basic := mod-id-wg-handel-mrs &
+                [ HOOK.INDEX #event,
+                  RELS <! na-adj_rel & [ARG0 #event] !>].
+
+na-adj-sem-type := na-adj-sem-type-basic &
+                [ HCONS <! !>].
+
+; (ERB 2001-08-06) In Smith-style number names, the numbers sometimes
+; have to also provide the times_rel and the plus_rel.
+
+
+card-sem-type := j-mrs &
+                [MOD-IND #ind,
+		 MOD-HAND #hand,
+		 HOOK [INDEX #ind,
+		       LTOP #hand],
+                 HCONS <! !>,
+                 RELS diff-list & [LIST.FIRST const_rel]].
+
+
+; (ERB 2001-08-28) Date expressions
+
+date-sem-type := mod-id-wg-handel-mrs &
+                [HCONS <! !>,
+                 HOOK.INDEX #ind,
+                 RELS diff-list & [LIST.FIRST numbered-np_rel &
+					      [ ARG0 #ind ]]].
+                 
+
+simple-adj-sem-type := adj-sem-type.
+
+dim-adj-sem-type := adj-sem-type &
+		[ RELS diff-list & [LIST.FIRST adj_rel],
+                         HCONS <! !> ].
+
+
+n-conj-sem-type :=  mod-id-wg-handel-mrs &
+                        [HCONS <! !>].
+
+; (ERB 2001-09-13) Nothing is identifying KEY.LBL and LTOP for
+; these guys.  This constraint might belong somewhere higher up.
+
+; (ERB 2001-10-10) In order for the k2y code to recognize PPs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+; (ERB 2001-11-26) This should inherit constraints identifying
+; MOD-IND/HAND with INDEX/LTOP. ???
+
+prep-sem-type := mod-id-wg-handel-mrs.
+
+; (ERB 2001-09-03) For wa, which isn't quite like the other Ps.
+; (ERB 2001-10-01) ... but not as different as I thought.  Adding
+; back constraint that ARG = INDEX.
+
+; (ERB 2001-10-10) In order for the k2y code to recognize PPs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+topic-sem-type := mod-id-wg-handel-mrs.
+
+; (MS 2003-07-09) This seems not to be used.
+
+;preposition-sem-type := prep-sem-type &
+;                        [ KEY #key,
+;			RELS diff-list & [LIST.FIRST #key]].
+
+; (ERB 2001-10-10) For constructing k2ys it's helpful to have
+; the unspecified relation between nouns in an nn compound not
+; be an instance of prep_mod_rel.
+
+; (ERB 2001-11-26) This should inherit constraints identifying
+; MOD-IND/HAND with INDEX/LTOP.
+
+; (ERB 2001-11-26) It also can't identify its KEY's LBL with
+; its LTOP, since KEY.LBL = MOD.MOD-HAND, and we don't want
+; LTOP and MOD.MOD-HAND identified.
+
+; (ERB 2001-11-26) Experimenting (as we so desire) with using
+; a prep-mod_rel again here to allow compounds with nominalizations
+; as the head.
+
+; (ERB 2001-11-26) It seems to work.  We'll use a special relation
+; type (same as for genitive modifiers) so that the downstream machinery
+; recognize this and posit a role.
+
+
+nncompound-sem-type := wg-handel-lex-mrs-basic.
+
+; (ERB 2001-11-08) On the other hand, for n+vn compounds (used
+; as vns) it's useful to have it be prep_mod_rel.
+
+; (MS 2003-07-09) This seems not to be used.
+
+;nvncompound-sem-type := mod-id-wg-handel-mrs &
+;                 [KEY #key & prep-mod_rel &
+;                      [ ARG0.E.TENSE no_tense ],
+;                  RELS diff-list & [ LIST.FIRST #key ]].
+
+appos-id-sem-type := mod-id-wg-handel-mrs &
+                 [RELS <! appos-id_rel !> ].
+
+
+greeting-sem-type := mod-id-wg-handel-mrs &
+               	[ HCONS <!  !>].
+
+excl-sem-type := mod-id-wg-handel-mrs &
+               	[ HCONS <!  !>].
+
+; (ERB 2001-12-10) Making these more like discourse adverbs like
+; "well" and "so" in the LinGO grammar.  (Existing analysis gives
+; them only a LBL and doesn't link that handle up to anything.
+; In a sufficiently long sentence, this leads to non-scoping MRSs.)
+
+; (ERB 2001-12-10) This can't be mod-id-wg-handel mrs or even
+; wg-handel-lex-mrs because its LTOP isn't its KEY.LBL.
+
+; (ERB 2002-02-14) Try making discourse_rel a real type, not just
+; REL name on subord_rel.
+
+
+interj-sem-type := wg-handel-lex-mrs-basic &
+                   [HOOK.LTOP #top,
+                    MOD-HAND #top,
+                    HCONS <!  !>].
+
+hes-sem-type :=  mod-id-wg-handel-mrs &
+                   [RELS <! !>,
+                    HCONS <! !>].
+
+
+
+pred-sem-type :< wg-handel-lex-mrs-basic.
+
+
+verb-sem-type :< pred-sem-type.
+
+aux-sem-type := pred-sem-type &
+		[MOD-IND #ind,
+		 MOD-HAND #hand,
+		 HOOK [INDEX #ind,
+		       LTOP #hand]].
+
+simple-verb-sem-type := verb-sem-type &
+                 [ HOOK [INDEX #ind,
+			 LTOP #top],
+		   MOD-IND #ind,
+		   MOD-HAND #top].
+
+
+
+
+; (ERB 2001-10-10) In order for the k2y code to recognize adverbs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+; (ERB 2001-10-11) No one was saying the type of the relation for adverbs,
+; it was being given as arg_rel & event_rel by inference from the features.
+; Fixing this by making it adv_rel.
+
+i-sect-adv-sem-type := mod-id-wg-handel-mrs &
+                   [ HCONS <! !>  ].
+
+
+; (ERB 2001-09-06) wh adverbs will have more than one element
+; on the liszt.  So scopal-adv-sem-type can't be RELS 1-dlist.
+; I have some more things to add to the sem type for wh adverbs,
+; so I'll just a supertype without that constraint...
+
+; (ERB 2001-10-10) In order for the k2y code to recognize adverbs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+; (ERB 2001-10-11) No one was saying the type of the relation for adverbs,
+; it was being given as arg_rel & event_rel by inference from the features.
+; Fixing this by making it adv_rel.
+
+possibly-wh-scopal-adv-sem-type := mod-id-wg-handel-mrs.
+
+scopal-adv-sem-type := possibly-wh-scopal-adv-sem-type.
+
+; (ERB 2001-09-06) Here's my attempt at the sem type that gives
+; the decompositional semantics for wh adverbs.
+
+; (ERB 2001-09-06) Going on the assumption for now that these
+; things are actually intersective modifiers.
+
+; (ERB 2001-10-10) In order for the k2y code to recognize adverbs as modifiers
+; they need to be ARG0.E.TENSE no_tense.
+
+; (MS 2001-10-17) That leads to problems for e.g. dou suru. 
+; (MS 2001-10-18) I took the identification of INDEX.ARG0 and KEY.ARG0 out.
+
+
+; (ERB 2001-10-17) Like other modifiers, wh adverbs pass up the index
+; of the heads they modify.  This index should not infact be identified
+; with their own event.  
+
+; (ERB 2001-12-05) We're not finding dou in role tables, possibly
+; because the altkey has no label.  Try identifying WLINK of KEY & 
+; ALTKEY.
+
+wh-adv-sem-type := mod-id-wg-handel-mrs &
+                   [ RELS <! prep_mod_rel &
+                            [ARG1 #var,
+                             WLINK #label,
+                             ARG0 [ E.TENSE no_tense ]],
+                            noun_rel &
+                            [LBL #lr,
+                             WLINK #label,
+                             ARG0 #var],
+                            whq_rel &
+                            [ARG0 #var & ref-ind,
+                             RSTR #rest,
+                             PRED 'whq] !>,
+                     HCONS <! qeq & [LARG #lr, HARG #rest] !>].
+
+;(MS 2003-07-09) This seems not to be used.
+
+;i-adj-sem-type := pred-sem-type &
+;		[ KEY #key & adj_rel,
+;		  MOD-IND #ind,
+;		  MOD-HAND #hand,
+;		  HOOK [INDEX #ind,
+;			LTOP #hand],
+;		RELS [LIST.FIRST  #key]].
+
+;simple-i-adj-sem-type := i-adj-sem-type &
+;                 [ HOOK.INDEX #ind,
+;                   RELS  1-dlist & [LIST.FIRST.ARG0 #ind],
+;                   HCONS <! !>  ].
+
+
+
+;pci-adj-sem-type := pred-sem-type &
+;		[ KEY #key & scope-adj_rel & [SCOPE #sc],
+;		  MOD-IND #ind,
+;		  MOD-HAND #hand,
+;		  HOOK [INDEX #ind,
+;			LTOP #hand],
+;;		RELS diff-list & [LIST.FIRST #key],
+;;		HCONS.LIST <qeq & [LARG #sc], ...> ].
+
+
+;simple-pci-adj-sem-type := pci-adj-sem-type &
+;                           [HOOK.INDEX #ind,
+;;                            RELS 1-dlist & [LIST.FIRST.ARG0 #ind],
+;                            HCONS <! qeq !> ].
+
+;cond-pci-adj-sem-type := pci-adj-sem-type &
+;                 [ LBL #op-hand,
+;		   LTOP-H #scope,
+;                   KEY.LBL #hand,
+;                   RELS diff-list & [LIST [FIRST [ARG0.E.TENSE tense], 
+;                                                  REST [FIRST subord_rel & [R-HNDL #h2,
+;                                                                            L-HNDL #h1,
+;                                                                            LBL #hand]]]],
+;                   HCONS <! qeq,
+;                           qeq &
+;                           [ LARG #h2 ],
+;                           qeq &
+;                           [ HARG #op-hand,
+;                             LARG #scope ],
+;                           qeq &
+;                           [ HARG #hand,
+;                             LARG #h1 ] !> ] .
+
+
+; (ERB 2001-08-09)
+
+; (ERB 2001-12-05) Need to enrich this to deal with Ⱦ where the numeral
+; classifier is going to add another plus_rel.
+
+num-cl-sem-type-super := mod-id-wg-handel-mrs &
+                         [ HCONS <! !>].
+                     
+num-cl-sem-type := num-cl-sem-type-super.

@@ -1,0 +1,381 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: %Z% %M%
+;;;      module:
+;;;     version: %I%
+;;;  written by: Melanie Siegel
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel (MS)|             |Emily Bender (ERB)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- verbs;;;;;;;;;;;
+
+; (ERB 2001-10-17) Added subtypes of lexical_sign.  See notes in
+; fundamentals.tdl.
+
+; (ERB 2001-11-07) Certain entries for the (non-id) copula inherit
+; from this type and shouldn't have interesting WLINKs.  So, v-lex
+; is now just lexical_sign and some, but not all, of its subtypes
+; are lexical_sign-word.
+
+v-lex := lexical_sign & 
+         [SYNSEM [LOCAL [CAT [HEAD verb_head,
+                              VAL j-valence],
+                         NUCL nucl_plus],
+                  NON-LOCAL [AFFIX <! !>]]].
+
+
+
+nonaux-lex := v-lex & 
+           [SYNSEM [LOCAL.CAT.HEAD verb-noninfl_head-avm,
+                    NON-LOCAL.QUE <! !>]].
+
+
+generic-verb-lex := v-lex & lexical_sign-word &
+                    [SYNSEM [LOCAL [CAT [HEAD verb_head-avm & [COP -,
+                                                               AUX -,
+                                                               VN -,
+                                                               H-TENSE #tense,
+                                                               MODUS #modus],
+                                         VAL ga-wo_transitive &
+                                              [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
+					       COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #objind]]],
+				    LKEYS.--KEYREL #key & arg12_ev_rel & arg12_rel & [ARG1 #sbjind,
+										ARG2 #objind],
+                                    CONT simple-verb-sem-type &
+                                        [HOOK.INDEX event & [E [TENSE #tense,
+                                                           MOOD #modus]],
+                                         RELS <!  #key !>,
+                                         HCONS <! !>],
+				    ARG-S < #sbj . #comps >],
+                             NON-LOCAL.QUE <! !>],
+                     INFLECTED +].
+
+
+generic_verb_ru_infl-lex := generic-verb-lex &
+                            [SYNSEM.LOCAL [CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+								    BAR +],
+							     MODIFIED.PERIPH -] >,
+                                                      MODUS indicative,
+                                                      H-TENSE present,
+                                                      MARK < >,
+                                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
+                                                      FIN +,
+                                                      FORMAL.AHON +]],
+                                           BAR +],
+                             J-NEEDS-AFFIX -].
+
+generic_verb_i_infl-lex := generic-verb-lex &
+                           [RMORPH-BIND-TYPE i-morph,
+                            J-NEEDS-AFFIX +].
+
+
+generic_verb_morphbind_infl-lex := generic-verb-lex &
+                           [RMORPH-BIND-TYPE morphbind,
+                            J-NEEDS-AFFIX +].
+
+
+generic_verb_a_infl-lex := generic-verb-lex &
+                           [RMORPH-BIND-TYPE a-morph,
+                            J-NEEDS-AFFIX +].
+
+generic_verb_t_infl-lex  := generic-verb-lex &
+                           [RMORPH-BIND-TYPE t-morph,
+                            J-NEEDS-AFFIX +].
+
+
+generic_verb_cond_infl-lex  := generic-verb-lex &
+                           [RMORPH-BIND-TYPE cond-morph,
+                            J-NEEDS-AFFIX +].
+
+generic_verb_o_infl-lex  := generic-verb-lex &
+                           [RMORPH-BIND-TYPE o-morph,
+                            J-NEEDS-AFFIX +].
+
+generic_verb_vstem_infl-lex := generic-verb-lex &
+                           [RMORPH-BIND-TYPE vstem-morph,
+                            J-NEEDS-AFFIX +].
+
+; (ERB 2002-01-14) [SMOD unmarked] to restrain utterance-rule2e.
+
+vn-lex  := nonaux-lex & lexical_sign-word & 
+           [SYNSEM [LOCAL [CAT [HEAD vn_head-avm & [MAIN-PRD -,
+                                                    SMOD unmarked]],
+			   LKEYS.--KEYREL #key,
+                          CONT simple-verb-sem-type & [RELS <! #key !>,
+                                                       HCONS <! !>]]],
+            INFLECTED +].
+
+
+vn-sbj-comps-lex := vn-lex &
+		    [SYNSEM.LOCAL [CAT.VAL [SUBJ.FIRST #sbj,
+					    COMPS #comps],
+				   ARG-S < #sbj . #comps >]].
+
+vn-trans1-lex := vn-sbj-comps-lex &
+            [SYNSEM.LOCAL [CAT.VAL ga-wo_transitive &
+                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+                           LKEYS [--KEYREL [ARG1 #sbjind,
+                                      ARG2 #objind]]]].
+
+
+
+vn-trans2-lex := vn-sbj-comps-lex &
+            [SYNSEM.LOCAL [CAT.VAL ga-ni_transitive &
+                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+                           LKEYS [--KEYREL [ARG1 #sbjind,
+                                      ARG2 #objind]]]].
+
+vn-trans3-lex := vn-sbj-comps-lex &
+            [SYNSEM.LOCAL [CAT.VAL ga-to_transitive2 &
+                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+                           LKEYS [--KEYREL [ARG1 #sbjind,
+                                      ARG2 #objind]]]].
+
+vn-trans8-lex := vn-sbj-comps-lex &
+            [SYNSEM [LOCAL [CAT.VAL sbj-narg_transitive &
+                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+                           LKEYS [--KEYREL [ARG1 #sbjind,
+                                      ARG2 #objind]]],
+		    NON-LOCAL.ROBUST +]].
+
+vn-ditrans-lex := vn-sbj-comps-lex &
+            [SYNSEM.LOCAL [CAT.VAL ditransitive &
+                                      [COMPS [FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+					      REST.FIRST.LOCAL.CONT [HOOK.INDEX #obj2ind]],
+				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+                           LKEYS [--KEYREL [ARG1 #sbjind,
+                                      ARG2 #objind,
+                                      ARG3 #obj2ind]]]].
+
+vn-intrans-lex := vn-lex &
+            [SYNSEM.LOCAL [CAT.VAL intransitive &
+                                      [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]],
+                           LKEYS [--KEYREL.ARG1 #sbjind],
+			   ARG-S < #sbj >]].
+
+
+; (ERB 2001-10-24) I need these verbs to have a special KEY type
+; so that the k2y machinery can recognize them.  Currently, they
+; are getting arg3_rel-super by type inference, and this isn't specific
+; enough.
+
+
+;vn-intransarg2-lex := vn-lex &
+;            [SYNSEM.LOCAL [CAT.VAL intransitive &
+;                                      [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]],
+;                           CONT [KEY arg2only_rel &
+;                                     [ARG2 #sbjind]],
+;			   ARG-S < #sbj >]].
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;VNs;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+vn-ditrans-hhon-lex := vn-ditrans-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-intrans-hhon-lex := vn-intrans-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-trans3-hhon-lex := vn-trans3-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-trans2-hhon-lex := vn-trans2-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-trans1-hhon-lex := vn-trans1-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+vn-ditrans-minus_shon-lex := vn-ditrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+								  VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+											CONT.HOOK.INDEX #2]],
+							     CONT.HOOK.INDEX #3,
+							     CTXT [BACKGROUND <! subj-honor_rel &
+									       [HONORED #2,
+										BEARER #3,
+										POLARITY -] !>]]].
+
+
+vn-intrans-minus_shon-lex  := vn-intrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                   VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+vn-trans3-minus_shon-lex  := vn-trans3-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+vn-trans2-minus_shon-lex  := vn-trans2-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+vn-trans1-minus_shon-lex  := vn-trans1-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vn-ditrans-hhon-minus_shon-lex := vn-ditrans-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+vn-intrans-hhon-minus_shon-lex  := vn-intrans-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+vn-trans3-hhon-minus_shon-lex  := vn-trans3-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+vn-trans2-hhon-minus_shon-lex  := vn-trans2-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+vn-trans1-hhon-minus_shon-lex  := vn-trans1-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+vn-ditrans-shon-lex := vn-ditrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+
+vn-intrans-shon-lex := vn-intrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+vn-trans3-shon-lex := vn-trans3-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+vn-trans2-shon-lex := vn-trans2-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+vn-trans1-shon-lex := vn-trans1-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+vn-ditrans-hhon-shon-lex := vn-ditrans-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+
+vn-intrans-hhon-shon-lex := vn-intrans-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+vn-trans3-hhon-shon-lex := vn-trans3-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+vn-trans2-hhon-shon-lex := vn-trans2-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+vn-trans1-hhon-shon-lex := vn-trans1-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+

@@ -1,0 +1,1930 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: %Z% %M%
+;;;      module:
+;;;     version: %I%
+;;;  written by:
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel(MS) |             | Emily Bender (ERB), Francis Bond (FCB),
+;;;                                 | (CH), (AO)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+rule-type := *rule* & phrase-or-lexrule.
+
+
+phrasal_sign := phrase-or-lexrule & j-sign.
+
+; (MS 2002-05-02) We need a phrasal sign that does not compose the RELS's 
+; to account for quasi-morphological rules (suffixes that are separated by CHASEN
+; from the words they belong to).
+
+binary-basic :=  binary-phrase & orth-princ & que-princ &
+          [SYNSEM [NON-LOCAL [REL #refl,
+			      ROBUST #robust],
+                   LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+                                           SPEAKER #sp],
+                                EMPATHY [EMPER #sp,
+                                         EMPEE #emp]],
+			  ARG-S <>]],
+	   ARGS < j-sign & [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+                                                               SPEAKER #sp],
+                                                    EMPATHY [EMPER #sp,
+                                                             EMPEE #emp]]],
+                                       NON-LOCAL [REL #refl,
+					       ROBUST #robust]]],
+		  j-sign & [SYNSEM [NON-LOCAL [REL #refl,
+					    ROBUST #robust],
+                                    LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+                                                            SPEAKER #sp],
+                                                 EMPATHY [EMPER #sp,
+                                                          EMPEE #emp]]]]]  > ].
+
+
+; (ERB 2002-02-11) Changing embedded-question-rule from a unary rule
+; to a binary rule. So now we need an exception to the QUE amalgamation
+; in binary rules.  Making a super type that has all of the original
+; constraints on binary except the QUE passing.  
+
+
+binary-super := orth-princ & binary-phrase.
+
+
+
+binary := binary-super & que-princ.
+
+binary-cont-final-type := binary & 
+               [SYNSEM.LOCAL [CONT.HOOK #hook,
+			      LKEYS [--KEYREL #key,
+				    --ALTKEYREL #altkey]],
+                ARGS < j-sign, 
+		       j-sign & [ SYNSEM.LOCAL [CONT.HOOK #hook,
+						LKEYS [--KEYREL #key,
+						       --ALTKEYREL #altkey]]] >].
+
+binary-cont-first-type := binary & 
+               [SYNSEM.LOCAL [CONT.HOOK #hook,
+			      LKEYS [--KEYREL #key,
+				     --ALTKEYREL #altkey]],
+                ARGS < j-sign & [ SYNSEM.LOCAL [CONT.HOOK #hook,
+						LKEYS [--KEYREL #key,
+						       --ALTKEYREL #altkey]]],
+		       j-sign >].
+
+
+
+binary-modification-type := affix-list & orth-princ & basic-binary-phrase & que-princ.
+
+
+binary-type-mod := binary-modification-type & binary-headed-phrase &
+	[SYNSEM [LOCAL [CAT [VAL #val]],
+			    LEX -],
+                    HEAD-DTR.SYNSEM [LOCAL [CAT [VAL #val]]]].
+
+binary-type-conj := binary-modification-type & 
+                    [LMORPH-BIND-TYPE #lmorph,
+                     RMORPH-BIND-TYPE #rmorph,
+                     SYNSEM.LOCAL [CAT [HEAD #head,
+					VAL #val],
+				   CONT [MOD-IND #ind,
+					 MOD-HAND #hand]],
+		     ARGS <  [LMORPH-BIND-TYPE #lmorph] ,
+			     [RMORPH-BIND-TYPE #rmorph,
+			      SYNSEM.LOCAL [CONT [MOD-IND #ind,
+						  MOD-HAND #hand],
+					    CAT [HEAD #head,
+						 VAL #val]]]
+			     > ].
+
+; (MS 2003-07-15) Replaced with binary-headed-phrase from matrix.tdl
+                 
+;headed-binary-type := binary-type &
+;                      [SYNSEM.LOCAL [CAT [HEAD #head]],
+;                       HEAD-DTR.SYNSEM.LOCAL.CAT [HEAD #head]].
+
+
+
+unary-type-super :=   phrasal_sign &
+               [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+                                                SPEAKER #sp],
+                                     EMPATHY [EMPER #sp,
+                                              EMPEE #emp]],
+                               CONT [HOOK #hook,
+	                             MOD-IND #modind,
+	                             MOD-HAND #modhd,
+                                     RELS [LIST #list,
+                                            LAST #last],
+                                     HCONS [LIST #sclist,
+                                             LAST #sclast]]],
+			LEX -,
+			NON-LOCAL #nonloc],
+		ORTH #stem,
+                C-CONT mrs & [HOOK #hook,
+                              RELS diff-list & [LIST #list,
+                                                   LAST #middle],
+                              HCONS diff-list & [LIST #sclist,
+                                                    LAST #scmiddle]],
+                ARGS <  [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+                                                                   SPEAKER #sp],
+                                                           EMPATHY [EMPER #sp,
+                                                                    EMPEE #emp]],
+                                                     CONT [RELS [LIST #middle,
+                                                                  LAST #last],
+	                                                   MOD-IND #modind,
+	                                                   MOD-HAND #modhd,
+                                                           HCONS [LIST #scmiddle,
+                                                                   LAST #sclast]]],
+					      NON-LOCAL #nonloc],
+				      ORTH #stem] >].
+
+
+
+unary-type := unary-type-super &
+[ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL optional-or-saturated ].
+
+head-final-type := binary-headed-phrase &	
+            [SYNSEM.LOCAL.CTXT.BACKGROUND [LIST #list,
+                                           LAST #last],
+             NON-HEAD-DTR #nh-dtr & [SYNSEM.LOCAL.CTXT.BACKGROUND [LIST #list,
+                                                                  LAST #middle]],
+             HEAD-DTR #head-dtr & [SYNSEM.LOCAL.CTXT.BACKGROUND [LIST #middle,
+                                                                  LAST #last]],
+             ARGS <#nh-dtr,#head-dtr>].
+
+; (ERB 2001-08-06) Adding this for head-initial hcomps in number names.
+
+head-initial-type := binary-headed-phrase &
+                     affix-list &
+            [SYNSEM [LOCAL.CTXT.BACKGROUND [LIST #list,
+                                            LAST #last]],
+             NON-HEAD-DTR #nh-dtr & [SYNSEM [LOCAL.CTXT.BACKGROUND [LIST #list,
+                                                                   LAST #middle]]],
+             HEAD-DTR #head-dtr & [SYNSEM [LOCAL.CTXT.BACKGROUND [LIST #middle,
+                                                                  LAST #last]]],
+             ARGS <#head-dtr,#nh-dtr>].
+
+
+;head-final-type-modconj := binary-modification-type &  
+;            [
+;             CONJ-DTR #nh-dtr,
+;             HEAD-DTR #head-dtr,
+;             ARGS <#nh-dtr,#head-dtr>].
+
+
+head-first-type-mod := binary-type-mod & 
+            [
+             NON-HEAD-DTR #nh-dtr,
+             HEAD-DTR #head-dtr,
+             ARGS <#head-dtr,#nh-dtr>].
+
+head-final-type-mod := binary-type-mod & 
+            [
+             NON-HEAD-DTR #nh-dtr,
+             HEAD-DTR #head-dtr,
+             ARGS <#nh-dtr,#head-dtr>].
+
+
+
+
+head-first-type := binary-headed-phrase &	
+                   affix-list &
+                   [SYNSEM [LOCAL.CAT.VAL #val],
+                    NON-HEAD-DTR #nh-dtr,
+                    HEAD-DTR #head-dtr & [SYNSEM.LOCAL.CAT.VAL #val],
+                    ARGS <#head-dtr,#nh-dtr>].
+
+
+
+
+head-subject-rule := head-final-type & 
+		     orth-princ &
+                      scp-sbj & 
+		     que-princ &
+                      adjacent_subjbind_check &
+                     adjacent_nonhead_check &
+                     affix-list &
+                     [J-NEEDS-AFFIX -,
+                      SYNSEM [LOCAL [CONT [MOD-IND #ind,
+		                     	   MOD-HAND #top],
+				     CAT.POSTHEAD +,
+				     LKEYS.--ALTKEYREL #altkey],
+			      LEX -],
+                      C-CONT [RELS <! !>,
+                              HCONS <! !>],
+                      HEAD-DTR [J-NEEDS-AFFIX -,
+	                        SYNSEM.LOCAL [CONT [MOD-IND #ind,
+		                     	           MOD-HAND #top],
+					      LKEYS.--ALTKEYREL #altkey,
+					      BAR +]]].
+
+
+
+; (ERB 2001-08-06) Need two kinds of head-complement rules in order
+; to do Jeff Smith style number names.
+
+; (ERB 2001-08-21) Adding $400 to the work done by head-initial
+; h-comps rule.
+
+; (MS 2003-07-23) Cleaning this up.
+
+basic-head-complement-type := orth-princ & 
+			      que-princ &
+			      adjacent_nonhead_check &
+			      affix-list &
+			      [SYNSEM [MODIFIED.PERIPH #p,
+				       LEX -,
+				       LOCAL [CONT [MOD-IND #ind,
+						    MOD-HAND #top],
+					      LKEYS.--ALTKEYREL #altkey,
+					      NUCL #nucl]],
+			       C-CONT [RELS <! !>,
+				       HCONS <! !>],
+			       NON-HEAD-DTR j-sign & [J-NEEDS-AFFIX -],
+			       HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+						  SYNSEM [MODIFIED.PERIPH #p,      
+							  LOCAL [CONT [MOD-IND #ind,
+								       MOD-HAND #top],
+								 LKEYS.--ALTKEYREL #altkey,
+								 NUCL #nucl]]]].
+head-complement-type := basic-head-complement-type &
+			scp-obj & 
+			adjacent_objbind_check.
+
+
+head-complement-hf-type := head-complement-type & head-final-type. 
+
+head-complement-hi-type := head-complement-type & head-initial-type.
+
+;(CH 2003-08-26)
+; ditransitiveの主辞が必ず[BAR +]になるようにして曖昧性を減らす。
+
+head-complement2-type := basic-head-complement-type &
+			 scp-obj2 & 
+			 adjacent_obj2bind_check & 
+			 head-final-type &
+			 [HEAD-DTR.SYNSEM.LOCAL.BAR +].
+
+
+; (ERB 2001-09-13) Trying to go to a system where intersective modifiers themselves
+; specify the identity between their handles and the handle of the head.  Asked Dan
+; why this couldn't work for English.  He gave three reasons:
+;
+; 1. The generation algorithm developed by Carroll, Flickinger et al uses the
+; separate rules to speed up generation by leaving intersective modifiers for last.
+; Having separate rules facilitates this.
+;
+; 2. Bob Casper's problem, NPs like:
+;
+; an apparently unsolvable problem
+;
+; 3. It's useful for ranking to have separate rules. 
+;
+; We're not worrying about generation for this grammar right now, so problem (1) doesn't
+; currently concern us.  I've asked Atusko to translate the Casper NP, and she came up
+; with these:
+;
+; 解決不可能そうな問題
+; 解決不可能っぽい問題 (younger generation)
+; 解決不可能げな問題 
+;
+; In this case, it doesn't look like "apparently" is a modifier of "unsolvable",
+; although there may be other analogous cases.
+;
+; If we do need separate rules for ranking or for generation, that won't be too hard.
+       
+ 
+
+
+; (ERB 2001-10-24) The LTOP for this construction, like the INDEX,
+; should come from the non-head daughter.  The adjunct takes responsibility
+; for passing up the head's LTOP (if it's intersective) or its own
+; (if it's scopal). 
+;
+; (Previously, this rule was getting the handle out of the KEY, which
+; is coming from the head dtr.  I don't know if there's any reason to
+; get the key from the non-head dtr, too.  For now, I'll just get the
+; LTOP value straightened out by taking it from the non-head dtr directly.)
+
+; (MS 2001-10-29) the problem is, that the relative clause rule doesn't scope like this. I'm taking it out and moving it to its daughters.
+
+; (ERB 2001-11-26) The INDEX really should be coming from the non-head
+; daughter, but I'm afraid to mess with that right now.
+
+; (ERB 2001-11-26) Scopal and intersective modifiers behave very 
+; differently with MOD-IND and MOD-HAND, so we have to make 
+; different types of head-adj rule after all.  The general 
+; strategy is this:  
+;
+; Intersective modifiers take the MOD-IND of the head as their 
+; ARG and identify the MOD-HAND of the head with their own LTOP.
+; This means that we can't have intersective modifiers be the
+; semantic head of hadj because LTOP and MOD-HAND would end up
+; identified.
+;
+; Scopal modifiers take the MOD-HAND of the head as their ARG,
+; but keep a distinct handle.  They do pass up the INDEX (not
+; MOD-IND) of the head to the mother.   (So the INDEX of the
+; head daughter will always be the INDEX of the mother.) 
+; Scopal modifiers will be the semantic head of their phrases.  
+;
+; Following the LinGO grammar, we use the type of the local
+; inside MOD to distinguish intersective from scopal modifiers.
+
+; (ERB 2002-01-02) Allowing relative clauses to attach to either
+; NP or N'.  To keep from getting spurious ambiguity with the
+; quantify-n-infl-rule, I want to restrict the latter to 
+; UNmodified N's.  This means that the head-adjunct rules have
+; to change the NUCL value.  Previously, NUCL was just being 
+; copied up from head daughter.  Now it will say NUCL - on
+; mother.  I wonder what this will break...
+
+; (MS 2002-09-16) This breaks sentences like:
+; "ハンバーガーのセットを無料にするサービスだ"
+
+; (ERB 2002-01-02) Can't state this categorically here, because
+; compounds are head-adjunct rules, and I crucially want them to
+; be [NUCL +]...  Moving this constraint to subtypes.
+
+
+head-adjunct-rule-type := adjacent_head_check & orth-princ &
+                          adjacent_nonhead_check &
+                          head-adjunct-p &
+                          affix-list &
+                          [J-NEEDS-AFFIX -,
+                           SYNSEM [LOCAL [ CONT.HOOK.INDEX #ind,
+					   LKEYS [--KEYREL #key,
+                                                 --ALTKEYREL #altkey],
+                                           CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
+					   CAT [VAL #val,
+						HEAD.KEYS.MESSAGE #ms]],
+				   NON-LOCAL [REL #rel],
+				   LEX -,
+                                   MODIFIED hasmod & [PERIPH #periph]],
+                           HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+                                            SYNSEM [ LOCAL [ CONT.HOOK.INDEX #ind,
+							     LKEYS [--KEYREL #key,
+								    --ALTKEYREL #altkey],
+                                                             CTXT.BACKGROUND [ LIST #1,
+                                                                               LAST #3 ],
+							     CAT [VAL #val,
+								  HEAD.KEYS.MESSAGE #ms]],
+                                                     MODIFIED.PERIPH bool]],
+                           NON-HEAD-DTR j-sign & [ J-NEEDS-AFFIX -,
+                                                SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
+                                                                                   LAST #2 ]],
+							 NON-LOCAL [REL #rel],
+                                                         MODIFIED.PERIPH #periph]]].
+
+
+;(CH 2003-08-22) gap有り関係節のための規則
+; without "adjacent_nonhead_check &"
+
+head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check & orth-princ &
+					 head-adjunct-p &
+					 affix-list &
+                          [J-NEEDS-AFFIX -,
+                           SYNSEM [LOCAL [ CONT.HOOK.INDEX #ind,
+					   LKEYS [--KEYREL #key,
+                                                  --ALTKEYREL #altkey],
+                                           CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
+					   CAT [VAL #val,
+                                                HEAD.KEYS.MESSAGE #ms]],
+				   NON-LOCAL [REL #rel],
+				   LEX -,
+                                   MODIFIED hasmod & [PERIPH #periph]],
+                           HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+                                            SYNSEM [ LOCAL [ CONT.HOOK.INDEX #ind,
+							     LKEYS [--KEYREL #key,
+								    --ALTKEYREL #altkey],
+                                                             CTXT.BACKGROUND [ LIST #1,
+                                                                               LAST #3 ],
+							     CAT [VAL #val,
+								  HEAD.KEYS.MESSAGE #ms]],
+                                                     MODIFIED.PERIPH bool]],
+                           NON-HEAD-DTR j-sign & [ J-NEEDS-AFFIX -,
+                                                SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
+                                                                                   LAST #2 ]],
+							 NON-LOCAL [REL #rel],
+                                                         MODIFIED.PERIPH #periph]]].
+
+
+; (ERB 2001-09-13) head-adjunct-rule-final can't have empty C-CONT.RELS & 
+; HCONS because the relative clause rule is one of its subtypes.
+
+head-adjunct-rule-final := head-final-type-mod & head-adjunct-rule-type.
+
+; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
+; head-adjunct-rule-type.
+
+head-adjunct-rule-first := head-first-type-mod & head-adjunct-rule-type &
+                           [ C-CONT [ RELS <! !>,
+                                      HCONS <! !>]].
+
+head-adjunct-rule-intersective := head-adjunct-rule-type &
+[ SYNSEM.LOCAL.CONT [ HOOK.LTOP #top,
+                      MOD-IND #mod-ind,
+                      MOD-HAND #mod-hand ],
+  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
+  HEAD-DTR.SYNSEM.LOCAL.CONT [ HOOK.LTOP #top,
+                               MOD-IND #mod-ind,
+                               MOD-HAND #mod-hand ]].
+                                  
+
+head-adjunct-rule-scopal := head-adjunct-rule-type &
+[ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
+			    INDEX #ind],
+                      MOD-IND #ind,
+                      MOD-HAND #top ],
+  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL scopal_mod] >,
+                             CONT [ HOOK.LTOP #top ]]].
+                                 
+; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
+; head-adjunct-rule-type.
+
+hadj-final-s := head-adjunct-rule-final & head-adjunct-rule-scopal.
+
+hadj-first-s := head-adjunct-rule-first & head-adjunct-rule-scopal.
+hadj-final-i := head-adjunct-rule-final & head-adjunct-rule-intersective.
+hadj-first-i := head-adjunct-rule-first & head-adjunct-rule-intersective.
+
+;(CH 2003-08-22) gap有り関係節のための規則
+;(CH 2003-08-22) "HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD noun_head" を追加
+
+hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-final-type-mod &
+[ SYNSEM.LOCAL.CONT [ HOOK.LTOP #top,
+                      MOD-IND #mod-ind,
+                      MOD-HAND #mod-hand ],
+  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
+  HEAD-DTR.SYNSEM.LOCAL [ CONT [ HOOK.LTOP #top,
+				 MOD-IND #mod-ind,
+				 MOD-HAND #mod-hand ],
+			  CAT.HEAD noun_head ]].
+
+
+;sentence coordination with TE
+
+; (ERB 2001-10-11) Temporarily making this have the more
+; specific conjunction_rel to see if that helps with k2y conversion.
+
+; (ERB 2001-10-11) subord_rel looks like a better candidate.
+
+; (ERB 2001-12-10) Supertype binary-type-conj says that MOD-IND and MOD-HAND
+; come from the head daughter.  So, this rule can't identify its own MOD-HAND
+; and LTOP, since this leads to circular MRSs.  Guessing for now that it's
+; true that the MOD-HAND comes from the head daughter.  This type won't
+; say anything about MOD-IND and MOD-HAND on the mother.  Still taking
+; the INDEX from the head daughter (effectively identifying INDEX and
+; MOD-IND).  Don't know if this will be a problem.
+
+; (ERB 2001-12-13) runon_s rule will also be a subtype of this type, but
+; head-conj-p isn't appropriate for it.  So, reorganizing a bit...
+
+; (ERB 2002-01-14) Grab the LTOP not the KEY.LBL of each conjunct.
+
+
+
+; (ERB 2002-01-24) Force low attachment of adverbs & PP modifiers
+; wrt to this rule by making mother [NUCL conj].  Further, restrict
+; head daughter to [NUCL nucl_bool] to force one order of
+; attachment.
+
+; (ERB 2002-01-29) That constraint is too strong for runon_s rule,
+; so move to head-adjunct-rule-coord-type.
+
+sentence-coord-type :=  binary-type-conj &
+[SYNSEM [LOCAL [CONT [HOOK [INDEX #i,
+			   LTOP #hand]],   
+	       LKEYS.--KEYREL #key & [LBL #hand],
+	       CAT.VAL #val,
+               NUCL te_conj],
+	 LEX -],
+ C-CONT [RELS <! subord_or_conj_rel & #key &
+                [LBL #hand,
+                 L-HNDL #prpstnh2,
+                 R-HNDL #prpstnh1],
+                prpstn_rel &
+                [LBL #prpstnh1,
+                 MARG #prpstnh1soa],
+                prpstn_rel &
+                [LBL #prpstnh2,
+                 MARG #prpstnh2soa] !>,
+         HCONS <! qeq &
+                 [HARG #prpstnh1soa,
+                  LARG #rhand],
+                 qeq &
+                 [HARG #prpstnh2soa,
+                  LARG #lhand]!>],
+ARGS < [SYNSEM.LOCAL [CONT.HOOK.LTOP #lhand]],
+       [SYNSEM.LOCAL [CONT.HOOK [LTOP #rhand,
+				   INDEX #i],
+			CAT.VAL #val]] > ].
+
+
+; (ERB 2001-09-06) Trying to get the MARG of the matrix prpstn to QEQ the
+; handle of the conjunction in coordinated sentences.  The plusmessage utterance
+; type is getting the handle out of the KEY (it should be using the feature
+; LBL aka LTOP).  It looks like the KEY of the mother is unbound here, though,
+; so for the moment I'll just take that from the nonhead-dtr too.
+
+; (ERB 2002-01-07) For the purposes of sentences like V-ga V-te kudasai, I'd
+; like this to take the KEY from the head-daughter.  (Can't (easily) thread
+; that through the non-head-dtr, as we use the KEY to specify the PRED values in
+; the lexical entries.)  So, LTOP from non-hd-dtr, KEY from hd-dtr. 
+
+; (ERB 2002-01-24) Force low attachment of adverbs and PPs wrt to
+; this rule by making mother here [NUCL conj], which contrasts with
+; [NUCL nucl_bool].
+
+; (ERB 2002-01-24) Restrict right daughter to [NUCL not_fin_conj] to force
+; one order of composition in sentences with multiple conjunctions.
+
+conj-rule-type :=  binary-type-conj & 
+                  [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #ctxt1, LAST #ctxt2],
+                                 CONT [ HOOK [INDEX #index,
+					      LTOP #handle] ],
+				 LKEYS.--KEYREL #key,
+				 CAT.VAL #val,
+                                 NUCL fin_conj]],
+                   J-NEEDS-AFFIX -,
+                   C-CONT [RELS <! !>,
+                           HCONS <! !>],
+                   ARGS <  j-sign & 
+                                [SYNSEM.LOCAL [CTXT.BACKGROUND [list #ctxt1,last #ctxt3],
+                                               CONT.HOOK [ INDEX #index,
+							   LTOP #handle],
+                                               CAT [VAL saturated,
+						    HEAD.C-MOD < j-synsem & [LOCAL [CAT #1, 
+										    CONT #3,
+										    BAR #5, 
+										    NUCL #6,
+										    LKEYS #7],
+									     LEX #2, 
+									     NON-LOCAL #4] >],
+                                               NUCL not_fin_conj ],
+                                 J-NEEDS-AFFIX -],
+			   j-sign & 
+                                [SYNSEM [LOCAL [CTXT.BACKGROUND [list #ctxt3,last #ctxt2],
+                                               LKEYS #7 & [--KEYREL #key],
+                                               CAT #1 & [VAL saturated & #val],
+					       CONT #3, 
+					       BAR #5, 
+					       NUCL #6],
+					 LEX #2, 
+					 NON-LOCAL #4],
+				 J-NEEDS-AFFIX -] > ].
+
+
+;head-specifier-rule-type :=  head-final-type & 
+;			     orth-princ &
+;                             scp-spec & 
+;			     que-princ &
+;                             affix-list &
+;                        [C-CONT [RELS <! !>,
+;                                 HCONS <! !>],
+;			 RMORPH-BIND-TYPE #rmorph,
+;                         HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD #4]],
+;					   MODIFIED.PERIPH #per],
+;				      RMORPH-BIND-TYPE #rmorph],
+;                         NON-HEAD-DTR [SYNSEM [LOCAL [CAT.HEAD [J-SPEC < j-synsem & [LOCAL [CAT.HEAD #4],
+;									      MODIFIED.PERIPH #per] > ]]]]].
+
+head-specifier-rule-type :=  head-final-type & 
+			     orth-princ &
+                             scp-spec & 
+			     que-princ &
+                             affix-list &
+                        [C-CONT [RELS <! !>,
+                                 HCONS <! !>],
+			 SYNSEM.LOCAL [LKEYS #keys,
+				       CONT.HOOK #hook],
+			 RMORPH-BIND-TYPE #rmorph,
+                         HEAD-DTR [SYNSEM [LOCAL [CAT.HEAD #head,
+						  CONT #cont & [HOOK #hook],
+						  LKEYS #keys],
+					   MODIFIED.PERIPH #per],
+				   RMORPH-BIND-TYPE #rmorph],
+                         NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.J-SPEC < [LOCAL [CAT.HEAD #head,
+									     CONT #cont,
+									     LKEYS #keys],
+								      MODIFIED.PERIPH #per] > ].
+   
+
+head-marker-rule := binary & 
+                    scp-marking & 
+                   affix-list &
+                    [SYNSEM.LOCAL [CAT [VAL #val,
+                                        HEAD.FORMAL.SHON #sh],
+	                           CONT [MOD-IND #ind,
+	                                 MOD-HAND #top],
+                                   CTXT.BACKGROUND diff-list & [LIST #1, LAST #2]],
+                     C-CONT [RELS <! !>,
+                             HCONS <! !>],
+                     HEAD-DTR #head-dtr & [SYNSEM [LOCAL [CAT.HEAD  #5 & [FORMAL.SHON #sh],
+							  CONT [MOD-IND #ind,
+								MOD-HAND #top],
+							  CTXT.BACKGROUND [LIST #3,LAST #2]],
+						   MODIFIED.PERIPH #per]],
+                     NON-HEAD-DTR #nh-dtr & [SYNSEM.LOCAL [CAT [HEAD.MARK < j-synsem & 
+                                                                          [LOCAL.CAT.HEAD #5,
+									   MODIFIED.PERIPH #per] >,
+                                                               VAL #val],
+                                                          CTXT.BACKGROUND [LIST #1,LAST #3]]],
+                     ARGS <#nh-dtr,#head-dtr>].
+
+
+; (ERB 2001-11-26) This type shouldn't identify MOD-IND and MOD-HAND
+; with INDEX and LTOP, as this isn't true of the compound-noun-rule,
+; a subtype.  (Was identifying them in SYNSEM.LOCAL.CONT).
+
+; (ERB 2001-11-26) It should also get the LTOP from the HEAD-DTR's LTOP,
+; not its KEY.LBL.
+
+empty-head-type :=  headed-phrase & j-sign &
+                   [SYNSEM [LOCAL [CTXT #1,
+                                   CAT.HEAD #head,
+                                   CONT [HOOK.LTOP #hand,
+					 RELS [LIST #firstliszt,
+					       LAST #lastliszt],
+					 HCONS [LIST #scfirst,
+						LAST #sclast]]],
+                            NON-LOCAL #nloc],
+		    C-CONT [RELS diff-list & [LIST #middle2liszt,
+					      LAST #lastliszt],
+			    HCONS diff-list & [LIST #scmiddle2,
+					       LAST #sclast]],
+                    J-NEEDS-AFFIX -,
+                    HEAD-DTR [SYNSEM.LOCAL [CAT [HEAD #head,
+						 VAL.COMPS 1-list & [FIRST #nh-synsem]],
+                                            CONT [HOOK.LTOP #hand,
+						  RELS [LIST  #middle1liszt,
+                                                        LAST  #middle2liszt],
+						  HCONS [LIST #scmiddle1,
+							 LAST #scmiddle2]]]],
+                    NON-HEAD-DTR #nh-dtr & [SYNSEM #nh-synsem &
+                                                  [LOCAL [CTXT #1,
+							  CONT [RELS [LIST #firstliszt,
+								      LAST #middle1liszt],
+								HCONS [LIST #scfirst ,
+								       LAST #scmiddle1]],
+                                                          CAT.VAL optional-or-saturated],
+                                                   NON-LOCAL #nloc],
+                                           J-NEEDS-AFFIX -],
+		    ORTH #stem,
+                    ARGS <#nh-dtr & [ORTH #stem]>].
+
+
+;empty particles:
+
+empty-particle-type := empty-head-type & 
+                      [SYNSEM [LOCAL [CAT.VAL obj-arg &
+                                                [COMPS.FIRST.LOCAL.CAT.HEAD noun_head]],
+			       LEX +],
+		       C-CONT [RELS <! !>,
+			       HCONS <! !>],
+                       ARGS <[SYNSEM.LOCAL.CAT.HEAD noun_head]>].
+
+
+empty-preposition-type := empty-particle-type &
+[HEAD-DTR.SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST.LOCAL [CONT [HOOK.INDEX #arg]],
+                        LKEYS.--KEYREL [ARG2 #arg]]].
+
+empty-conjunction-type :< empty-preposition-type.
+
+; (ERB 2001-09-12) For bare number names used as ordinals.
+; (ERB 2001-09-19) This is vastly overgenerating because it can modify
+; anything that's nominal.  For now, restricting it to lexical nouns.
+; (ERB 2001-09-20) Not quite right, because it can also modify
+; compound nouns.  Try BAR - instead of LEX plus.
+; (ERB 2001-09-21) I don't remember why I made this BAR - on the mother.
+; It makes it incompatible with the head-adjunct-2 rule.  So, I'll
+; take it off for now.
+; (ERB 2001-10-29) empty-head-type does not copy up the KEY, so
+; I'm going to add that here.  (Should it go on the supertype?)
+; (ERB 2001-10-29) Trying to let these guys undergo the numcl-noun rule
+; without then letting them be in compounds, because that's just really
+; ugly.  It seems like the only hope is somewhere within the CONT value.
+; I'm going to play around with the PRED value and see if I can do it
+; that way.
+; (ERB 2001-10-29) The PRED names, written 'relation, are actually
+; treated as atoms, not strings, by cheap.  This means I need to
+; move this contrast one level up.
+; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
+
+empty-cardinal-numcl-type := empty-head-type &
+[ SYNSEM [LOCAL [ CAT.VAL saturated,
+                 LKEYS [ --KEYREL #key & [ WLINK #label ]]],
+	  LEX + ],
+   C-CONT [RELS <! !>,
+	   HCONS <! !>],
+  HEAD-DTR num-cl2-nmod-lex-super &
+           [ SYNSEM.LOCAL [ LKEYS.--KEYREL #key & card_rel,
+                            CAT [ HEAD.MOD < [LOCAL.BAR -] > ]]],
+  ARGS < [ SYNSEM.LOCAL.LKEYS.--KEYREL.WLINK #label ] > ].
+
+
+
+  
+; (ERB 2002-01-07) CONT.LTOP = CONT.KEY.LBL isn't necessarily
+; true for the instances of utterance-message-sap-type.  Move this
+; constraint down lower in the hierarchy.  Likewise for C-CONT.LTOP =
+; C-CONT.KEY.LBL.
+
+
+utterance-type := unary-type  &  
+[SYNSEM j-synsem & [LOCAL [CAT [HEAD utterance_head & [SMOD marked],
+                              VAL  saturated],
+                         CTXT [BACKGROUND diff-list &
+                                          [LIST [FIRST addr-honor_rel &
+                                                       [POLARITY #3,
+                                                        HONORER #sp,
+                                                        HONORED #1],
+                                                 REST #2],
+                                           LAST #4],
+                               C-INDICES [SPEAKER #sp,ADDRESSEE #1]],
+                         NUCL nucl_minus],
+		    LEX -,
+                  NON-LOCAL.AFFIX <! !>],
+ ARGS.FIRST [SYNSEM [LOCAL  [CAT [HEAD.FORMAL.AHON #3,
+				VAL optional-or-saturated],
+                           CTXT.BACKGROUND [LIST #2,
+                                            LAST #4],
+                           BAR +],
+                   NON-LOCAL.AFFIX <! !>],
+	   J-NEEDS-AFFIX -]].
+
+utt-type := utterance-type &
+            [SYNSEM.LOCAL [CONT [HOOK.INDEX #i]],
+  ARGS < [SYNSEM.LOCAL.CONT [HOOK.INDEX #i]] >].
+
+; (MS 2003-10-09) Problems with Matrix 0.5 MESSAGE type
+
+utterance-plusmessage-type := utt-type &
+                              [SYNSEM.LOCAL [LKEYS.--KEYREL.LBL #hand,
+					     CONT.HOOK.LTOP #hand],
+                               C-CONT [HOOK [LTOP #mhand,
+					     INDEX #ind],
+				       RELS <! [MARG #soahand,
+						LBL #mhand ] !>,
+                                       HCONS <! qeq & [HARG #soahand, LARG #hdhand] !>],
+                               ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [LTOP #hdhand,
+								  INDEX #ind]].
+
+
+; (ERB 2001-09-26) The utterance rules for sentences with message-bearing
+; saps were not getting the handle of the message hooked up to LTOP.  This
+; type adds a constraint that fixes that.
+; (MS 2003-10-09) Problem with Matrix 0.5?
+
+
+utt-message-sap-type := utt-type &
+                        [ SYNSEM.LOCAL [CONT.HOOK.LTOP #top],
+                          ARGS < [SYNSEM.LOCAL [CONT.HOOK.LTOP #top]] > ].
+
+
+turn-type :< utterance-type.
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+lexeme-rule := lexeme & inflecting-lex-rule &
+               [J-NEEDS-AFFIX +,
+		SYNSEM #synsem,
+                LMORPH-BIND-TYPE #lmorph,
+                ARGS <[INFLECTED -,
+                       LMORPH-BIND-TYPE #lmorph,
+		       SYNSEM #synsem]>,
+                INFLECTED +].
+
+;lexeme-rule := lexeme & inflecting-lex-rule &
+;               [SYNSEM #synsem  & 
+;                       [LOCAL.CONT.RELS diff-list],
+;                NEEDS-AFFIX +,
+;		J-NEEDS-AFFIX +,
+;                LMORPH-BIND-TYPE #lmorph,
+;                ARGS <[SYNSEM #synsem,
+;                       INFLECTED -,
+;                       LMORPH-BIND-TYPE #lmorph]>,
+;                INFLECTED +].
+
+
+; (ERB 2001-10-17) Added subtypes of lexical_sign.  See notes in
+; fundamentals.tdl.
+
+word-rule-basic := lexical_sign-rule &  
+               [SYNSEM [LOCAL [CAT [HEAD [AUX #aux,
+                                          COP #cop,
+                                          LIGHT #light,
+                                          ADJ #adj,
+                                          MAIN-PRD #main-prd,
+                                          SMOD #smod,
+                                          FORMAL #formal,
+                                          COP-ARG bool,
+                                          H-TENSE #tense],
+                                    VAL #sc],
+                               CONT #cont & [RELS diff-list,
+                                             HOOK.INDEX event & 
+                                                   [E [TENSE #tense]]],
+			       LKEYS #keys,
+                               CTXT #ctxt],
+                        NON-LOCAL #nonloc],
+		J-NEEDS-AFFIX -,
+                ARGS < lexical_sign & [SYNSEM [LOCAL [CAT [HEAD [AUX #aux,
+                                                          COP #cop,
+                                                          LIGHT #light,
+                                                          ADJ #adj,
+                                                          MAIN-PRD #main-prd,
+                                                          SMOD #smod,
+                                                          FORMAL #formal,
+                                                          COP-ARG bool,
+                                                          H-TENSE #tense],
+                                                    VAL #sc],
+                                                    CONT #cont,
+						      LKEYS #keys,
+                                                    CTXT #ctxt],
+                                             NON-LOCAL #nonloc],
+                                       INFLECTED -]>,
+                INFLECTED +].
+
+word-rule := word-rule-basic & constant-lex-rule &
+             [ORTH #stem,
+	      NEEDS-AFFIX -,
+	      SYNSEM.LOCAL.CAT.HEAD [VN #vn,
+                                     MODUS #mood],
+              ARGS  <[SYNSEM.LOCAL.CAT.HEAD [VN #vn,
+                                             MODUS #mood],
+                      ORTH #stem]>].
+
+
+j-lexeme-to-word-rule := word-rule-basic & v-lex &
+                       [ARGS < verb-stem-lex-base>].
+
+; (MS 2003-07-11) We have to find another solution for that.
+
+;j-lexeme-to-lexeme-rule := lexeme-rule & v-lex &
+;                         [ORTH #stem,
+;                          ARGS < verb-stem-lex & [ORTH #stem]>].
+
+
+; (ERB 2001-09-29) This rule said that it's daughter must have exactly
+; one relation on the RELS, which doesn't work for things like itadaku-aux-stem
+; which has two relations.  At any rate, the point was to grab the KEY,
+; so I've changed it to that.
+
+; (ERB 2001-10-15) The potential rule needs to extend the HCONS
+; list when it applies to itadaku, too, so I'm adding HCONS to
+; this type.
+
+;liszt-extending-lrule := lexical_sign &
+;                         [SYNSEM.LOCAL.CONT.RELS [LIST #list,
+;                                                   LAST #last],
+;                          C-CONT.RELS [LIST #list,
+;                                        LAST #middle],
+;                          ARGS < [SYNSEM.LOCAL.CONT.RELS [LIST #middle,
+;                                                           LAST #last]]>].
+
+; (ERB 2001-10-17) Added subtypes of lexical_sign.  See notes in
+; fundamentals.tdl.
+
+liszt-extending-lrule := lexical_sign-rule & lex-rule &
+                         [SYNSEM.LOCAL.CONT [ RELS [LIST #list,
+                                                     LAST #last],
+                                              HCONS [LIST #hlist,
+                                                      LAST #hlast]],
+                          C-CONT [ RELS [LIST #list,
+                                          LAST #middle],
+                                   HCONS [LIST #hlist,
+                                           LAST #hmiddle]],
+                          ARGS < [SYNSEM.LOCAL.CONT [ RELS [LIST #middle,
+                                                             LAST #last],
+                                                      HCONS [LIST #hmiddle,
+                                                              LAST #hlast]]]>].
+
+; (ERB 2001-10-15) The potential rule also needs to extend the
+; h-cons list when it is applying to itadaku and the like.
+
+; (ERB 2002-01-11) Generalize input from verb-stem-lex to verb-stem-lex-super
+; because quasi-light-verbs can't be verb-stem-lex but should be able
+; to undergo this rule.
+
+potential-rule := lex-rule & lexeme &
+                  [SYNSEM [LOCAL [CAT [HEAD #head & [MODUS potential],
+                                       VAL #sc],
+				  LKEYS.--KEYREL #key,
+                                  CONT [HOOK [LTOP #hand,
+					      INDEX #ind]],
+                                  CTXT #ctxt],
+                           NON-LOCAL [QUE #que,
+				   REL #ref,
+				   AFFIX #aff],
+			   MODIFIED.PERIPH #per],
+                   J-NEEDS-AFFIX +,
+		   NEEDS-AFFIX +,
+		   C-CONT [RELS <! prpstn_rel & [LBL #chand, MARG #soa],
+                                    rareru_rel & #key &[LBL #hand,ARG0 #ind, ARG2 #chand] !>,
+                           HCONS <! qeq & [LARG #verb-hd,
+                                            HARG #soa] !>],
+                   ARGS < verb-stem-lex-super & 
+                          [SYNSEM [LOCAL [CAT [HEAD #head,
+                                               VAL #sc],
+                                          CTXT #ctxt,
+                                          CONT verb-sem-type &
+                                              [HOOK [INDEX #ind,
+						     LTOP #verb-hd]]],
+                                   NON-LOCAL [QUE #que,
+                                           REL #ref,
+                                           AFFIX #aff],
+				   MODIFIED.PERIPH #per],
+                           INFLECTED -]>,
+                   INFLECTED +].
+
+
+; (ERB 2001-10-15) The potential rule also needs to extend the
+; h-cons list when it is applying to itadaku and the like.
+
+; (ERB 2001-10-15) This rule is also leaving LTOP undefined.  Fixing
+; that now.
+
+potential-lexeme-to-word-rule  := lex-rule & v-lex &
+               [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
+                                         [AUX #aux,
+                                          COP #cop,
+                                          VN #vn,
+                                          LIGHT #light,
+                                          ADJ #adj,
+                                          MAIN-PRD #main-prd,
+                                          SMOD #smod,
+                                          FORMAL #formal,
+                                          COP-ARG bool],
+                                    VAL #sc],
+			       LKEYS [--KEYREL #key,
+				      --ALTKEYREL #altkey],
+                               CONT [HOOK [LTOP #tophand,
+					   INDEX #ind]]],
+                        NON-LOCAL #nonloc],
+                C-CONT [RELS <! #key & rareru_rel & [ARG2 #chand,
+						      ARG0 #ind,
+						      LBL #tophand],
+                               prpstn_rel & [LBL #chand,
+                                             MARG #soa] !>,
+                        HCONS <! qeq & [LARG #ohand,
+                                         HARG #soa] !>],
+                ARGS < verb-stem-lex & [SYNSEM [LOCAL [CONT verb-sem-type,
+						       LKEYS [--KEYREL.LBL #ohand,
+                                                              --ALTKEYREL #altkey],
+                                                       CAT [HEAD [AUX #aux,
+                                                                  COP #cop,
+                                                                  VN #vn,
+                                                                  LIGHT #light,
+                                                                  ADJ #adj,
+                                                                  MAIN-PRD #main-prd,
+                                                                  SMOD #smod,
+                                                                  FORMAL #formal],
+                                                            VAL #sc]],
+                                                NON-LOCAL #nonloc],
+                                        INFLECTED -]>,
+                INFLECTED +].
+
+; (MS 2002-02-04) this is for なら
+;(CH 2003-08-14)
+; "SYNSEM.LOCAL.CAT.HEAD.C-MOD.FIRST.LOCAL.CAT.HEAD verb_head & [MAIN-PRD +]..."
+;  ---> "SYNSEM.LOCAL.CAT.HEAD.C-MOD.FIRST.LOCAL.CAT.HEAD verb_head..."
+;
+
+conditional-lexeme-to-word-rule  := lex-rule & v-lex &
+               [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
+                                         [AUX #aux,
+                                          COP #cop,
+                                          VN #vn,
+                                          LIGHT #light,
+                                          ADJ #adj,
+                                          MAIN-PRD #main-prd,
+                                          SMOD #smod,
+                                          FORMAL #formal,
+                                          COP-ARG -,
+					  C-MOD < [LOCAL [CAT.HEAD verb_head,
+						     CONT [MOD-HAND #main,
+							   MOD-IND #ind],
+						     BAR +]] > ],
+                                    VAL #sc],
+			       LKEYS [--KEYREL #key,
+				      --ALTKEYREL #altkey],
+                               CONT [HOOK [LTOP #tophand,
+					   INDEX #ind]]],
+                        NON-LOCAL #nonloc],
+                C-CONT [RELS <! if_then_rel & #key &
+                                                [LBL #tophand,
+                                                 R-HNDL #main-prpstn,
+                                                 L-HNDL #subord-prpstn],
+                                                prpstn_rel &
+                                                [LBL #main-prpstn,
+                                                 MARG #prpstnsoa1],
+                                                prpstn_rel &
+                                                [LBL #subord-prpstn,
+                                                 MARG #prpstnsoa2]  !>,
+                        HCONS <! qeq & [LARG #main,
+					 HARG #prpstnsoa1],
+				qeq & [LARG #subord,
+				       HARG #prpstnsoa2] !>],
+                ARGS < verb-stem-lex & [SYNSEM [LOCAL [CONT verb-sem-type,
+						       LKEYS [--KEYREL.LBL #subord,
+                                                              --ALTKEYREL #altkey],
+                                                       CAT [HEAD [AUX #aux,
+                                                                  COP #cop,
+                                                                  VN #vn,
+                                                                  LIGHT #light,
+                                                                  ADJ #adj,
+                                                                  MAIN-PRD #main-prd,
+                                                                  SMOD #smod,
+                                                                  FORMAL #formal],
+                                                            VAL #sc]],
+                                                NON-LOCAL #nonloc],
+                                        INFLECTED -]>,
+                INFLECTED +].
+
+; (ERB 2001-12-05) Need to copy up WLINK too.
+
+adj2adv-rule  := isect-adv-lex & lex-rule &
+               [SYNSEM [LOCAL [LKEYS.--KEYREL [ PRED #rel,
+                                          WLINK #label ],
+                               CTXT #ctxt],
+                        NON-LOCAL #nonloc],
+                J-NEEDS-AFFIX -,
+		NEEDS-AFFIX -,
+                ARGS < base-adj-stem-lex & [SYNSEM [LOCAL [LKEYS.--KEYREL [ PRED #rel,
+                                                                 WLINK #label ],
+							   CTXT #ctxt],
+                                                NON-LOCAL #nonloc],
+					    INFLECTED -]>,
+		INFLECTED +].
+
+
+n2adj-rule := na-adj-lex & inflecting-lex-rule &
+	[SYNSEM [LOCAL [LKEYS.--KEYREL [PRED #rel,
+				  WLINK #label ],
+			CTXT #ctxt],
+		 NON-LOCAL #nonloc],
+	 J-NEEDS-AFFIX -,
+	 ARGS < ordinary-nohon-n-lex & [SYNSEM [LOCAL [LKEYS.--KEYREL [ PRED #rel,
+							       WLINK #label ],
+						    CTXT #ctxt],
+						NON-LOCAL #nonloc]]>,
+	 INFLECTED +].
+
+;(CH 2003-08-25)
+;「名詞＋的」が名詞を直接修飾できるようにするための規則。
+;「名詞＋的」を pred-adj-lex にする。
+; (cf. n2predadj-lrule in infl.tdl)
+
+n2predadj-rule := pred-adj-lex & inflecting-lex-rule &
+	[SYNSEM [LOCAL [LKEYS.--KEYREL [PRED #rel,
+				        WLINK #label ],
+			CTXT #ctxt,
+			BAR -,
+			CONT.HOOK.INDEX event],
+		 NON-LOCAL #nonloc],
+	 J-NEEDS-AFFIX -,
+	 ARGS < ordinary-nohon-n-lex & [SYNSEM [LOCAL [LKEYS.--KEYREL [ PRED #rel,
+							       WLINK #label ],
+						    CTXT #ctxt],
+						NON-LOCAL #nonloc]]>,
+	 INFLECTED +].
+
+
+n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
+	[SYNSEM [LOCAL [LKEYS.--KEYREL [PRED #rel,
+				  WLINK #label ],
+			CTXT #ctxt],
+		 NON-LOCAL #nonloc],
+	 ARGS < ordinary-nohon-n-lex & [SYNSEM [LOCAL [LKEYS.--KEYREL [ PRED #rel,
+							       WLINK #label ],
+						    CTXT #ctxt],
+						NON-LOCAL #nonloc]]>].
+
+
+; (ERB 2001-10-23) The mother of this was BAR +, but that means
+; it can't be the head of a compound, which is the wrong prediction.
+; That is, N+VN things can either be Ns or VNs.  I see two ways to
+; get this.  The first is to allow "outputs" of the vn2n rule to be
+; head daugthers of the compounds rule.  The second is to allow compounds
+; headed by VNs to be the daughters of this rule.  The first seems 
+; easier to implement, so I'm going to try it first.
+
+; (ERB 2001-10-23) It turns out that more than just [BAR +] was
+; keeping these guys out of the compounds rule.  The head value
+; was nom_head-avm, which is incompatible with the MOD value of 
+; the mother of the compoun-noun-rule.  So, I'm changing that to
+; ordinary_noun_head, and adding in the constraints contributed by
+; nom_head-avm.  I bet this leads to some kind of overgeneration.
+
+; (ERB 2001-10-23) It did lead to more ambiguity, but I believe it
+; is genuine ambiguity.  An example is the following:
+;
+; 口座開設申し込み
+;
+; In this particular case, the correct structure is (a), but the
+; grammar also licenses (b):
+;
+; (a)[口座開設]申し込み
+; (b)口座[開設申し込み]
+;
+; That this is legitmate ambiguity is shown by the fact that the
+; following is also grammatical (Atsuko's intuitions):
+;
+; 口座の開設申し込み
+;
+; So we do need to allow moto-vns as first members of compounds.
+
+; (ERB 2001-10-31) I want to disallow の from modifying の
+; nominalizations while still allowing it to modify vns used as ns.
+; I'm doing this based on the KEY, so I've changed the sem type
+; that this rule calls.  (Was CONT nom-pred-sem-type.)
+
+; (ERB 2001-10-31) Copying the WLINK of the daughter's KEY to
+; the mother's KEY so that we can find the raw atom in k2ys.
+
+; (ERB 2001-11-05) Maybe we didn't need to do that.
+
+; (ERB 2001-11-26) We want to expose the event of the embedded
+; verb as a target for modification.  The theory is that any ambiguity
+; between modification of the instance and modification of the event
+; is spurious.  Dan's original suggestion was to add a feature E-INDEX
+; like in the English grammar, but I don't see why MOD-IND can't do
+; this work.  So, the MOD-IND of the vn2n rule should be the INDEX
+; of the embedded verb.  Made appropriate changes to nom-vn-sem-type.
+
+; (ERB 2002-01-02) I want the v2vn rule to be able to feed this
+; one.  Change input from vn-lex to [HEAD vn_head] and [LEX +].
+
+; (ERB 2002-01-14) [SMOD unmarked] on output. (Restrict utterance_rule2e
+; from applying more than it should.)
+
+; (MS 2003-08-22) added the restriction COMPS.FIRST.SAT opt on the VN argument.
+; (FCB, as suggested by MS 2003-08-25)
+; Restrict ARG's COMPS to sat-or-opt-arg to block spurious wo-no conversion
+; for nominalized verbal nouns like (do-parse-tty "勉強")
+
+vn2n-rule :=  n-lex-super &
+            [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head &
+                                      [ MOD null,
+					VN +,
+                                        J-SPEC.FIRST.LOCAL.CAT.HEAD title_head ],
+                                 VAL spr-arg & [SPR.FIRST.LOCAL.CAT.HEAD det_head & [SMOD decl]]],
+			    LKEYS.--KEYREL #key & [PRED 'noun_rel],
+                            CONT nom-vn-sem-type &
+                                [RELS <! #key & 
+				       [LBL #nom-hand,
+					ARG1 #prpstn-hand],
+                                        prpstn_rel & [LBL #prpstn-hand,
+                                                      MARG #soa],
+                                        #vn-key !>,
+                                 MOD-IND #modind,
+                                 MOD-HAND #vn-hand,
+                                 HOOK.LTOP #nom-hand,
+                                 HCONS <! qeq &
+                                         [HARG #soa,
+                                          LARG #vn-hand] !>],
+	                    BAR bool],
+                     NON-LOCAL [QUE <! !>,
+                             AFFIX <! !>]],
+             INFLECTED +,
+             ORTH #stem,
+             ARGS < [ORTH #stem,
+		     SYNSEM [LOCAL [ CAT  [HEAD vn_head-avm,
+					  VAL [UNSAT +,
+					       SUBJ.FIRST.OPT +,
+					       COMPS sat-or-opt-arg]],
+				    LKEYS.--KEYREL #vn-key & [LBL #vn-hand],
+                                    CONT [ HOOK.INDEX #modind]],
+			     LEX + ]]>].
+
+
+v2n-rule := n-lex-super &
+            [SYNSEM [LOCAL [CAT [HEAD nom_head &
+                                      [ MOD null,
+					VN -,
+					J-SPEC null],
+				 VAL spr-arg & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head,
+								 CONT.HOOK.INDEX #ind]]],
+			    LKEYS.--KEYREL.PRED 'kata,
+			    CONT nom-pred-sem-type &
+				[RELS <! [ARG1 #prpstn-hd],
+					prpstn_rel & 
+					[LBL #prpstn-hd,
+					 MARG #prpstn-soa],
+					#v-key & [ARG2 #ind] !>,
+				 HCONS <! qeq & [HARG #prpstn-soa,LARG #v-hd] !>]],
+		     NON-LOCAL [QUE <! !>,
+			     AFFIX <! !>]],
+	     ARGS < [SYNSEM.LOCAL [CAT [HEAD verb-stem_head],
+				   LKEYS [--KEYREL #v-key & 
+					     [LBL #v-hd]]]] >].
+
+
+
+
+adj2v-rule := intrans-v-stem-lex &
+             [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED #rel,
+            ARGS < i-adj-stem-lex & [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED #rel]>].    
+
+adj2n-rule := ordinary-nohon-n-lex &
+            [SYNSEM.LOCAL [LKEYS.--KEYREL.PRED #rel,
+                           BAR +],
+            INFLECTED +,
+            ORTH #stem,
+            ARGS < i-adj-stem-lex & [ORTH #stem,
+				     SYNSEM.LOCAL.LKEYS.--KEYREL.PRED #rel,
+				     INFLECTED -]>].  
+
+v2vn-rule := j-lexeme-to-word-rule &
+             [LMORPH-BIND-TYPE #morph,
+	      INFLECTED +,
+              SYNSEM.LOCAL.CAT [HEAD vn_head-avm &
+                                     [MAIN-PRD -,
+                                      SMOD unmarked],
+                                VAL #sc],
+              ARGS.FIRST [SYNSEM.LOCAL.CAT [HEAD.LIGHT -,
+					    VAL #sc],
+			  RMORPH-BIND-TYPE #morph & inf-morph]].
+
+; (ERB 2002-01-02) [BAR -] on the mother of this rule is
+; keeping it from combining with the head-complement rule, but
+; it needs to for sentences like "書類をお送りいただく"  So,
+; taking that out.  Don't know what it might cause to overgenerate...
+                  
+vnpolite-rule := vn-lex &
+                 [SYNSEM [LOCAL [CAT #cat & [VAL [SUBJ 1-list & [FIRST.LOCAL [CONT.HOOK.INDEX #2]]]],
+                                 CONT #cont & [HOOK.INDEX #3],
+                                 CTXT [C-INDICES #cinds & [SPEAKER #1],
+                                       EMPATHY #emp,
+                                       BACKGROUND <! subj-honor_rel &
+                                                   [HONORER #1,
+                                                    HONORED #2,
+                                                    BEARER #3] !>]],
+                          NON-LOCAL #nonloc],
+                  ARGS.FIRST [SYNSEM [LOCAL [CAT #cat,
+                                             CONT #cont,
+                                             CTXT [C-INDICES #cinds,
+                                                   EMPATHY #emp]],
+				      LEX +,
+				      NON-LOCAL #nonloc],
+                              INFLECTED +]].
+
+npolite-rule := ordinary-n-lex & inflecting-lex-rule &
+                [SYNSEM [LOCAL [CAT #cat,
+                                CONT #cont & [HOOK.INDEX #3],
+                                BAR #bar,
+                                CTXT [C-INDICES #cinds & [SPEAKER #1],
+                                      EMPATHY #emp,
+                                      BACKGROUND <! obj-honor_rel &
+                                                   [HONORER #1,
+                                                    HONORED #3,
+                                                    BEARER #3] !>]],
+                         NON-LOCAL #nonloc],
+                 ARGS.FIRST [SYNSEM [LOCAL [CAT #cat,
+					    CONT #cont,
+					    CTXT [C-INDICES #cinds,
+						  EMPATHY #emp],
+					    BAR #bar],
+				     NON-LOCAL #nonloc]]].
+
+adjpolite-rule := i-adj-stem-lex &
+                 [SYNSEM [LOCAL [CAT #cat & [VAL [SUBJ 1-list & [FIRST.LOCAL [CONT.HOOK.INDEX #2]]]],
+                                 CONT #cont & [HOOK.INDEX #3],
+                                 CTXT [C-INDICES #cinds & [SPEAKER #1],
+                                       EMPATHY #emp,
+                                       BACKGROUND <! subj-honor_rel &
+                                                   [HONORER #1,
+                                                    HONORED #2,
+                                                    BEARER #3] !>],
+                                 BAR -],
+                          NON-LOCAL #nonloc],
+                  ARGS.FIRST [SYNSEM [LOCAL [CAT #cat,
+                                             CONT #cont,
+                                             CTXT [C-INDICES #cinds,
+                                                   EMPATHY #emp]],
+				      LEX +,
+                                      NON-LOCAL #nonloc],
+                              INFLECTED -]].
+
+
+word2word-rule := j-sign & phrase-or-lexrule &
+            [SYNSEM [LOCAL [CAT [HEAD #head],
+                            BAR #bar,
+			    LKEYS #keys,
+                            CONT [HOOK #hook,
+	                          MOD-IND #modind,
+	                          MOD-HAND #modhd,
+                                  RELS diff-list & [LIST #list,
+						    LAST #last],
+                                  HCONS [LIST #hclist,
+                                          LAST #hclast]],
+                            CTXT #ctxt],
+                     NON-LOCAL #nonloc,
+		     MODIFIED.PERIPH #per],
+	     ORTH #stem,
+             INFLECTED +,
+             J-NEEDS-AFFIX #aff,
+             LMORPH-BIND-TYPE #lmorph,
+             RMORPH-BIND-TYPE #rmorph,
+             C-CONT [RELS [LIST #middle,
+                            LAST #last],
+                     HCONS [LIST #hcmiddle,
+                              LAST #hclast]],
+             ARGS <[SYNSEM [LOCAL [CAT [HEAD #head],
+                                   BAR #bar,
+				   LKEYS #keys,
+                                   CONT [HOOK #hook,
+	                                 MOD-IND #modind,
+	                                 MOD-HAND #modhd,
+                                         RELS [LIST #list,
+                                                LAST #middle],
+                                         HCONS [LIST #hclist,
+                                                 LAST #hcmiddle]],
+                                   CTXT #ctxt],
+			    MODIFIED.PERIPH #per,
+                            NON-LOCAL #nonloc],
+                    INFLECTED +,
+		    ORTH #stem,
+                    J-NEEDS-AFFIX #aff,
+                    LMORPH-BIND-TYPE #lmorph,
+                    RMORPH-BIND-TYPE #rmorph]>].
+
+;these are lexical rule types for zero pronoun insertion
+
+zpro-insertion-rule := word2word-rule & 
+	[SYNSEM [LOCAL [CAT.VAL.UNSAT -,
+		       BAR -],
+		 LEX +],
+	 C-CONT [RELS <!  !>,
+		 HCONS <!  !>],
+	 ARGS.FIRST.SYNSEM.LEX +].
+
+
+naadj-zpro-insertion-rule := word2word-rule & 
+	[SYNSEM [LOCAL [CAT.VAL.UNSAT -,
+		       BAR +],
+		 LEX +],
+	 C-CONT [RELS <!  !>,
+		 HCONS <!  !>],
+	 ARGS.FIRST.SYNSEM.LEX +].
+
+
+; (ERB 2002-01-14) MOD-IND and MOD-HAND from head-daughter.
+
+suffix-rule :=  head-final-type-mod &
+                head-adjunct-p &
+                [SYNSEM.LOCAL [CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
+			       LKEYS [--KEYREL #key,
+                                      --ALTKEYREL #altkey],
+                               CONT [HOOK #hook,
+                                     MOD-IND #mi,
+                                     MOD-HAND #mh],
+			       CAT.VAL #val],
+                 C-CONT [RELS <! !>,
+                         HCONS <! !>],
+                 J-NEEDS-AFFIX -,
+                 NON-HEAD-DTR j-sign & 
+                              [SYNSEM.LOCAL [CTXT.BACKGROUND [list #3,last #2],
+                                             LKEYS.--KEYREL relation],
+                               J-NEEDS-AFFIX -],
+                 HEAD-DTR j-sign & 
+                        [SYNSEM.LOCAL [CTXT.BACKGROUND [list #1,last #3],
+				       LKEYS [--KEYREL #key,
+                                              --ALTKEYREL #altkey],
+                                       CONT [HOOK #hook,
+                                             MOD-IND #mi,
+                                             MOD-HAND #mh],
+				       CAT.VAL #val],
+                         J-NEEDS-AFFIX -]].
+
+; (FCB, as suggested by MS 2003-08-25)
+; Restrict COMPS to obl-arg to block spurious wo-no conversion
+; for nominalized verbal nouns like (do-parse-tty "勉強")
+
+obj-casechange-rule := phrasal_sign & headed-phrase & 
+                       [SYNSEM [LOCAL [CAT [VAL [COMPS obl-arg & [FIRST [LOCAL [CAT [HEAD [FORMAL #form,
+											QUANTIFIABLE #quant,
+											KEYS #keys],
+										  VAL #sc],
+											CONT #cont,
+											CTXT #ctxt,
+											BAR #bar],
+										 LEX #lex,
+										 NON-LOCAL #nonloc],
+									  REST #obj2val],
+						 SUBJ #subjval,
+						 SPR null],
+					    HEAD #head_h],
+				       CONT #cont_h,
+                                       CTXT #ctxt_h],
+				LEX #lex_h,
+                                NON-LOCAL #nonloc_h],
+			ORTH #stem,
+                        J-NEEDS-AFFIX #aff,
+                        HEAD-DTR #hdtr & [SYNSEM [LOCAL [CAT [VAL [COMPS cons & [FIRST [OPT bool,
+												   LOCAL [CAT [HEAD overt-case-p_head &
+														    [CASE wo-or-ni,
+														     FORMAL #form,
+														     QUANTIFIABLE #quant,
+														     KEYS #keys],
+													       VAL #sc],
+													  CONT #cont,
+													  CTXT #ctxt,
+													  BAR #bar],
+												   LEX #lex,     
+												   NON-LOCAL #nonloc],
+											    REST #obj2val],
+								   SUBJ #subjval,
+								   SPR null],
+							      HEAD #head_h & verb_head],
+							 CONT #cont_h,
+                                                         CTXT #ctxt_h],
+						  LEX #lex_h,
+                                                  NON-LOCAL #nonloc_h],
+					  ORTH #stem,
+                                          J-NEEDS-AFFIX #aff],
+                        ARGS < #hdtr >].
+                        
+; (MS 2003-01-15) if the subject is obl, it is not possible to parse, e.g. ほしがっている
+                                                     
+subj-casechange-rule := phrasal_sign & headed-phrase & lex-rule &
+			[SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & [FIRST [LOCAL [CAT [HEAD overt-case-p_head &
+												[FORMAL #form,
+												 QUANTIFIABLE #quant],
+											   VAL #sc],
+										      CONT #cont,
+										      CTXT #ctxt,
+										      BAR #bar],
+									      LEX #lex,
+									       NON-LOCAL #nonloc]],
+						 COMPS #objval,
+						 SPR null],
+                                            HEAD #head_h],
+                                       CONT #cont_h,
+                                       CTXT #ctxt_h,
+                                       BAR #bar_h],
+				 LEX #lex_h,
+                                NON-LOCAL #nonloc_h],
+			ORTH #stem,
+			 NEEDS-AFFIX #aff,
+			 J-NEEDS-AFFIX #aff,
+                        HEAD-DTR #hdtr & [SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & [FIRST [OPT bool,
+											       LOCAL [CAT [HEAD overt-case-p_head &
+														[CASE ga,
+														 PTYPE ga,
+														 FORMAL #form,
+														 QUANTIFIABLE #quant],
+													   VAL #sc],
+												      CONT #cont,
+												      CTXT #ctxt,
+												      BAR #bar],
+											       LEX #lex,     
+											       NON-LOCAL #nonloc]],
+								   COMPS #objval,
+								   SPR null],
+							      HEAD #head_h & verb_head],
+							 CONT #cont_h,
+							 CTXT #ctxt_h,
+                                                         BAR #bar_h],
+						  LEX #lex_h,
+						  NON-LOCAL #nonloc_h],
+					  ORTH #stem,
+                                          J-NEEDS-AFFIX #aff],
+			ARGS < #hdtr >].
+
+             
+; (ERB 2001-08-09) Rule for pumping NumClPs to Ns.
+; (ERB 2001-09-21) I want to keep the empty-cardinal-numcl-rule
+; from feeding this rule... it gives me too many possiblities
+; now that these are allowed in compounds.  So I'm putting
+; LEX - on the head-dtr.
+; (ERB 2001-10-04) The mother of this rule needs a KEY value 
+; to keep it out of the adv_np_rule.
+; (ERB 2001-10-29) But I actually need the empty-cardinal-numcl-rule
+; to feed this one, because of sentences like this:
+;
+; 口座番号はEightDigitErsatzです
+;
+; There should be two readings here:  the dispreferred one in which
+; EightDigitErsatz is treated predicatively (as a NumClP), and the
+; preferred one where it is an NP and the identity copula is involved.
+
+; (ERB 2001-11-01) For k2y to purposes, we need to copy the WLINK
+; of the quantity_rel into the WLINK of the reg-nom_rel.  Possible
+; problem: will it matter if this happens with 匹?  (We know we want
+; it for ドル.)
+
+; (ERB 2001-11-01) For k2y purposes (and for really getting the semantics
+; right) we need to treat the NPs 三ドル、三匹、and 三 quiet differently.
+; 三ドル and 三匹 should differ in that a) 三匹 has just a bland 
+; reg-nom_rel, while 三ドル has PRED 'doru and b) the label of the quantity
+; rel gets copied over into the reg-nom_rel only in the case of
+; 三ドル.  Just plain 三 needs to involve a named relation.  So, making
+; three separate rules in place of this one.
+
+
+
+nominal-numcl-rule-type := unary-type &
+[ SYNSEM [ LOCAL [ CAT [ HEAD ordinary_noun_head-avm & [QUANTIFIABLE -, 
+							VN -,
+							KEYS.MESSAGE no-msg],
+                         VAL noun_sc ],
+                   CONT [ HCONS <! !> ]]],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head,
+                                VAL saturated ],
+                          BAR +]].
+
+; For numbers used as numeral classifiers used as nouns
+
+nominal-numcl-rule-card := nominal-numcl-rule-type &
+[ SYNSEM.LOCAL.LKEYS.--KEYREL #key & named-card_rel &
+               [ LBL #hand,
+                 ARG0 #ind ],
+  C-CONT [ HOOK [LTOP #hand,
+		 INDEX #ind],
+           RELS <! !>],
+  ARGS.FIRST.SYNSEM.LOCAL.LKEYS.--KEYREL #key ].
+           
+
+nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
+[ SYNSEM.LOCAL.LKEYS.--KEYREL #nounkey & [ARG0 #arg,
+				    LBL #hand],
+  C-CONT common-noun-sem-type &
+         [ HOOK [LTOP #hand,
+		 INDEX #arg],
+           RELS <! #nounkey !>],
+  ARGS.FIRST.SYNSEM.LOCAL [LKEYS.--KEYREL [ARG1 #arg,
+				     LBL #hand],
+			   CONT.HOOK.LTOP #hand ]].
+
+
+; For 円、ドル、階、etc.
+
+nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
+[ SYNSEM.LOCAL.LKEYS.--KEYREL [WLINK #label,
+			 PRED #rel],
+  ARGS.FIRST.SYNSEM.LOCAL.LKEYS [--KEYREL [WLINK #label],
+				 --ALTKEYREL relation & [ PRED #rel ]]].
+
+; For 匹、本、枚、etc.
+; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
+
+nominal-numcl-rule-mod := nominal-numcl-rule-type-noncard &
+[ ARGS.FIRST.SYNSEM.LOCAL.LKEYS [--KEYREL reg-quantity_rel ]].
+
+
+; ERB (2001-08-28)
+; ERB (2001-09-24) Overhauling the date expressions.  They will be
+; nouns to start with, so we don't need this.
+
+
+numcl2noun-rule-type :=  ordinary-nohon-n-lex &
+                         [SYNSEM.LOCAL.LKEYS [--KEYREL.PRED 'numcl],
+                          INFLECTED +,
+                          ORTH #stem,
+                          ARGS < num-cl-lex & [ORTH #stem]>].   
+
+; (ERB 2001-10-03) I need this to be a syntax rule so that
+; the quantify n rule can feed it, as well as the head-specifier
+; rule for dates like "2001年".  I'm also going to break it
+; down into two rules: one that adds a spec-loc_rel and makes
+; something that is COP-ARG + and one that adds a MOD value.
+
+;possadv-rule-type := isect-adv-lex &
+;                     [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED #key_rel,
+;                      INFLECTED +,
+;                      ORTH #stem,
+;                      ARGS < possibly-adv-n-lex & [ORTH #stem,
+;                                                   SYNSEM.LOCAL.LKEYS.--KEYREL.PRED #key_rel]>].   
+
+; (ERB 2001-10-03) Rule that takes date expression NPs and makes
+; MOD none PPs with unspec-loc_rel.
+
+;pp_np_rule-type := empty-preposition-type &
+;              [SYNSEM.LOCAL.CAT [HEAD empty-case-p_head & [CASE temp-no]],
+;               NON-HEAD-DTR.SYNSEM.LOCAL.LKEYS.--KEYREL locable_rel ].
+
+; (ERB 2001-10-04) The eventual plan is to write two rules for date
+; expressions, one that adds the unspec_rel and produces something
+; that is COP-ARG +, and one that adds a MOD value.  The reason for
+; this is that while all date expressions can be predicative, not all
+; of them can be independent modifiers.  However, I'm not sure at the
+; moment how to get the copula to treat the external argument of predicative
+; date expressions properly, so I'm going to just write one rule for
+; now that creates the independent modifiers, and leave the issue of
+; predicative date expressions for another time.
+
+; (ERB 2001-10-10) In order for the k2y code to recognize adverbs as modifiers
+; they need to be ARG0.E.TENSE no-tense.  
+
+; (ERB 2001-11-28) Treat these derived modifiers as intersective.
+; (MS 2001-12-6) changed the head-dtr from date-noun_head to temporal-noun_head in order to cope with ITSU TABETA.
+; (MS 2002-01-22) This one needed the posthead restriction. And a COP-ARG - to
+; prevent spurious ambiguity in KYOU DA.
+
+; (MS 2003-09-26) Changed unspec-loc_rel to unspec_compound_rel from Matrix.
+
+; (TT 2003-08-14) Dangerous modification to allow pred-nom-lex 「為」 to modify VP.
+;                 ARGS.FIRST.SYNSEM.LOCAL [... CAT [HEAD temporal-noun_head, ...
+;             ->  ARGS.FIRST.SYNSEM.LOCAL [... CAT [HEAD temporal-or-nadv_head  ...
+
+adv_np_rule-type := unary-type &
+[ SYNSEM.LOCAL [ CAT [ VAL saturated,
+                       HEAD adv_head &
+                              [ MOD < [LOCAL intersective_mod & 
+                                          [ CONT [ MOD-IND #arg,
+                                                   MOD-HAND #hand ]] ] >,
+				COP-ARG -,
+				J-POSTHEAD left]],
+		 LKEYS.--KEYREL #key,
+                 CONT [ HOOK [INDEX #ind,
+			      LTOP #hand]],
+                 BAR + ],
+  ARGS.FIRST.SYNSEM.LOCAL [ CONT [ HOOK.INDEX #time ],
+			    LKEYS.--KEYREL modable,
+			    CAT [ HEAD temporal-noun_head,
+				  VAL saturated ]],
+  C-CONT [ RELS <! #key & unspec_compound_rel &
+                  [ LBL #hand,
+                    ARG0 #ind & [ E.TENSE no_tense ],
+                    ARG1 #time,
+                    ARG2 #arg ] !>,
+           HCONS <! !> ]].
+
+
+; AO (2003-09-04)
+; np-frag-rule-type is needed again.
+
+; AO (2003-08-29) BEGIN
+; np-frag-rule-type  -> np-frag-end-rule-type
+; Comment will be added.
+
+
+np-frag-rule-type := unary-type &
+[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+                            [ MOD null,
+                              QUANTIFIABLE -,
+                              SMOD marked ],
+                       VAL saturated ],
+                 CONT [ RELS #liszt,
+                        HCONS #h-cons,
+                        HOOK.INDEX #index ],
+                 NUCL nucl_minus ],
+	  LEX -],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD noun_head,
+                                VAL saturated ],
+                          CONT [ RELS #liszt,
+                                 HCONS #h-cons,
+                                 HOOK.INDEX #index ]]].
+
+
+
+number-frag-rule-type := unary-type &
+[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+                            [ MOD null,
+                              QUANTIFIABLE -,
+                              SMOD marked ],
+                       VAL saturated ],
+                 CONT [ RELS #liszt,
+                        HCONS #h-cons,
+                        HOOK.INDEX #index ],
+                 NUCL nucl_minus ],
+	  LEX -],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head,
+                                VAL saturated ],
+                          CONT [ RELS #liszt,
+                                 HCONS #h-cons,
+                                 HOOK.INDEX #index ]]].
+
+
+;;; FCB+all (2003-08-15) allow 東京 まで 。
+;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD topic-vmod-p_head, into vmod-p_head
+
+
+pp-frag-rule-type := unary-type &
+[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+                            [ MOD null,
+                              SMOD marked ],
+                       VAL saturated ],
+                 CONT [ RELS #liszt,
+                        HCONS #h-cons,
+                        HOOK.INDEX #index ],
+                 NUCL nucl_minus ],
+	  LEX -],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
+                                VAL saturated ],
+                          CONT [ RELS #liszt,
+                                 HCONS #h-cons,
+                                 HOOK.INDEX #index ]]].
+
+
+; (ERB 2002-01-14) This is overgenerating to cases of NP + Sentence ending
+; in KA.  Try restricting second daughter to being LEX +.
+
+np-quest-frag-rule-type := binary-cont-final-type &
+[SYNSEM [LOCAL [CAT [HEAD utterance_head &
+			  [MOD null,
+			   SMOD quest],
+		     VAL saturated],
+		NUCL nucl_minus],
+	 LEX -], 
+ C-CONT [RELS <! [PRED 'cop-id_rel,
+		  LBL #h,
+		  ARG1 #index] !>,
+	 HCONS <! !>],
+ ARGS < [SYNSEM.LOCAL.CONT.HOOK.INDEX #index],
+          [SYNSEM [ LOCAL.CONT.HCONS.LIST.FIRST.LARG #h,
+                                  LEX + ]] >].
+
+; (TT 2003-09-05) allow 「全然。」
+;  this rule type is based on np-frag-rule-type
+adv-frag-rule-type := unary-type &
+[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+                            [ MOD null,
+                              QUANTIFIABLE -,
+                              SMOD marked ],
+                       VAL saturated ],
+                 CONT [ RELS #liszt,
+                        HCONS #h-cons,
+                        HOOK.INDEX #index ],
+                 NUCL nucl_minus ],
+	  LEX -],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD adv_head,
+                                VAL saturated ],
+                          CONT [ RELS #liszt,
+                                 HCONS #h-cons,
+                                 HOOK.INDEX #index ]]].
+
+; (TT 2003-09-05) allow 「便利。」
+;  this rule type is based on np-frag-rule-type
+na-adj-frag-rule-type := unary-type &
+[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+                            [ MOD null,
+                              QUANTIFIABLE -,
+                              SMOD marked ],
+                       VAL saturated ],
+                 CONT [ RELS #liszt,
+                        HCONS #h-cons,
+                        HOOK.INDEX #index ],
+                 NUCL nucl_minus ],
+	  LEX -],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD na-adj_head,
+                                VAL saturated ],
+                          CONT [ RELS #liszt,
+                                 HCONS #h-cons,
+                                 HOOK.INDEX #index ]]].
+
+
+; (ERB 2001-10-29) Added type to KEY in output of this rule,
+; mostly for k2y purposes, but also because I believe it should
+; be able to have type and not have to get it from inference.
+; (MS 2001-11-29) Added the scopal_mod restriction and the key into the liszt.
+                        
+na2adv-rule :=  lexical_sign-word & lex-rule &
+            [SYNSEM [LOCAL [CAT  [HEAD adv_head & [COP-ARG -,
+	                                           MOD < [LOCAL scopal_mod] > ], 
+                                  VAL saturated],
+			    LKEYS.--KEYREL #key & modadv_rel &
+                                      [ PRED #rel ],
+                            CONT [RELS <!#key !>,
+                                  HCONS <! !>],
+                            CTXT.BACKGROUND <! !>,
+                            BAR +],
+                     NON-LOCAL [AFFIX <! !>,
+                             QUE <! !>]],
+             INFLECTED +,
+             NEEDS-AFFIX -,
+             J-NEEDS-AFFIX -,
+             ORTH #stem,
+            ARGS < na-adj-lex & [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED #rel,
+                                 ORTH #stem]>].    
+
+; (ERB 2001-11-14) Unary rule to bind off QUE values in embedded
+; questions.
+; (MS 2001-11-27) Changed the NON-LOCAL.QUE. I think this works better.
+
+; (ERB 2002-02-11) Cheap was finding more parses than LKB for
+; taberu noka, matawa, tabenai noka, wakaranai because it is less
+; strict in checking for cycles and this rule was firing when it
+; shouldn't have.  Try changing NON-LOCAL.QUE of daughter from
+; <! [] !> to ne-que & <! [] !>.
+
+; (ERB 2002-02-11) That would require that all of the rules that
+; potentially unify with the daughter of this one say something more
+; specific about their QUE values... and it looks like that won't
+; be possible.  Instead, I'm going to replace this rule with a 
+; binary rule --- similar to the head-comp rules --- so that it won't
+; produce spurious ambiguity.  
+
+
+; (ERB 2002-02-11) This type incorporates all of the constraints
+; that would be inherited from head-complement-type and head-final-type
+; if I could make the embedded-question-type inherit from them without
+; doing too much damage to the type hierarchy.  (The problem is that
+; the QUE passing is in in too fundamental of a way right now.)
+; The actual constraints that I believe to really be specific to this
+; type are all on the instance in japgram.tdl.
+
+embedded-question-rule-type := headed-phrase &
+[SYNSEM [ LEX -,
+	  LOCAL [ LKEYS [--KEYREL #key,
+                         --ALTKEYREL #altkey ],
+                  CONT [ MOD-IND #ind,
+                         MOD-HAND #top,
+                         HOOK [LTOP #h,
+			       INDEX #i]],
+                  NUCL #nucl,
+                  CAT [ HEAD #head,
+                        VAL [ UNSAT -,
+			      SUBJ #sbjval,
+			      COMPS 0-1-list &  #obj2val,
+			      SPR #sprval]],
+                  CTXT.BACKGROUND [ LIST #list,
+                                    LAST #last ]]],
+ C-CONT [RELS <! !>,
+         HCONS <! !>],
+ HEAD-DTR j-sign & #head-dtr & 
+             [ J-NEEDS-AFFIX -,
+               SYNSEM [ LOCAL [ CONT [ MOD-IND #ind,
+                                       MOD-HAND #top,
+                                       HOOK [LTOP #h,
+					     INDEX #i]],
+				LKEYS [--KEYREL #key,
+                                       --ALTKEYREL #altkey ],
+                                CAT [ HEAD #head,
+                                      VAL [COMPS [FIRST #objval & [OPT bool],
+						  REST #obj2val],
+					   SUBJ #sbjval,
+					   SPR #sprval ]],
+                                CTXT.BACKGROUND [ LIST #middle,
+                                                  LAST #last ],
+                                NUCL #nucl]]],
+ NON-HEAD-DTR j-sign & #nh-dtr & 
+             [ J-NEEDS-AFFIX -,
+               SYNSEM #objval &
+                           [ LOCAL [ CAT [ VAL optional-or-saturated],
+                                     CTXT.BACKGROUND [ LIST #list,
+                                                       LAST #middle ]]]],
+ ARGS < #nh-dtr, #head-dtr >].
+        
+
+; (ERB 2002-01-02) I'm making a second vstem-vend rule for VN + vends,
+; so this is a supertype that captures the (extensive) similarities 
+; between the two.
+
+; (ERB 2002-01-02) go+VN is [J-NEEDS-AFFIX -], and so vn-vend-rule
+; isn't licensing go+VN+kudasai.  Try moving [J-NEEDS-AFFIX +] on 
+; vstem daugther to vstem-vend-rule (subtype).
+
+stem-end-rule-type := head-specifier-rule-type & 
+                 [SYNSEM [LOCAL [BAR +,
+                                NUCL nucl_plus,
+                                CAT.VAL [UNSAT #unsat],
+				CONT [MOD-IND #modind,
+				      MOD-HAND #modhd,
+				      HOOK #hook]],
+			  LEX +],
+                  J-NEEDS-AFFIX #aff,
+                  LMORPH-BIND-TYPE nomorphbind,
+		  RMORPH-BIND-TYPE #rm,
+                  ARGS < [SYNSEM j-synsem & [LOCAL [CAT [VAL [UNSAT #unsat]]]],
+			  RMORPH-BIND-TYPE  #mt,	
+			  INFLECTED +],
+			  [SYNSEM j-synsem & [LOCAL [CONT [MOD-IND #modind,
+							 MOD-HAND #modhd,
+							 HOOK #hook]],
+					    MODIFIED.PERIPH -],
+			   LMORPH-BIND-TYPE #mt,
+			   RMORPH-BIND-TYPE #rm,
+			   J-NEEDS-AFFIX #aff,
+			   INFLECTED +] >,
+                      LMORPH-BIND-TYPE nomorphbind]. 
+
+
+cards-times-rule := lexeme & inflecting-lex-rule & card-lex &
+               [SYNSEM.LOCAL [CAT.VAL.COMPS null,
+			      CONT.HOOK.LTOP #top],
+		C-CONT.RELS <! const_rel & [LBL #fac2],
+			     times_rel & [LBL #top,
+					  FACTOR1 #fac1,
+					  FACTOR2 #fac2] !>,
+		ARGS < card-lex & [SYNSEM.LOCAL.LKEYS.--KEYREL.LBL #fac1] >,
+		INFLECTED +].
+
+cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
+               [SYNSEM.LOCAL [CAT.VAL.COMPS null,
+			      CONT.HOOK.LTOP #top],
+		C-CONT.RELS <! const_rel & [LBL #term2],
+			     plus_rel & [LBL #top,
+					  TERM1 #term1,
+					  TERM2 #term2] !>,
+		ARGS < card-lex & [SYNSEM.LOCAL.CONT.RELS.LIST.REST.FIRST times_rel & [LBL #term1]] >,
+		INFLECTED +].

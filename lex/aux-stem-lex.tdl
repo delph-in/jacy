@@ -1,0 +1,258 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: %Z% %M%
+;;;      module:
+;;;     version: %I%
+;;;  written by:
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel     |             |Emily Bender (ERB), (AO), Francis Bond (FCB)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; (ERB 2001-12-05) Moving to pure aspect analysis.
+
+;oru-aux-stem :=
+;aspect-minus_shon-c-stem-lex &
+;[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive,
+;                    KEY.PRED 'oru],
+;ORTH <! "おる" !>].
+
+oru-aux-stem :=
+pure-aspect-minus_shon-c-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
+ORTH <! "おる" !>].
+
+kudasaru-aux-stem :=
+perspective-shon-c2-stem-lex &
+[ORTH <! "下さる" !>,
+ SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kudasaru,ARG2 #obj2ind],
+               CTXT.EMPATHY.EMPEE #obj2ind]].
+
+kudasaru-aux-stem-2 :=
+perspective-shon-c2-stem-lex &
+[ORTH <! "くださる" !>,
+ SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kudasaru,ARG2 #obj2ind],
+               CTXT.EMPATHY.EMPEE #obj2ind]].
+
+
+
+oku-aux-stem :=
+pure-aspect-minus_shon-c-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT prospective],
+ORTH <! "おく" !>].
+
+; Used 16 times
+
+oku-aux-kanji-stem :=
+pure-aspect-minus_shon-c-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT prospective],
+ORTH <! "置く" !>].
+
+
+; (ERB 2001-11-12) I think this aspect might be better
+; termed "stative", but we can worry about that later.
+
+iru-aux-stem :=
+pure-aspect-v-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
+ORTH <! "いる" !>].
+
+; Used 35 times
+
+iru-aux-kanji-stem :=
+pure-aspect-v-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
+ORTH <! "居る" !>].
+
+; Used 103 times
+
+iku-aux-stem :=
+pure-aspect-c2-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
+ORTH <! "行く" !>].
+
+mairu-aux-stem :=
+pure-aspect-c-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
+ORTH <! "参る" !>].
+
+; Used 1 times
+
+irassharu-aux-stem  :=
+pure-aspect-shon-c2-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
+ORTH <! "いらっしゃる" !>].
+
+aru-aux-stem  :=
+aspect-c-stem-lex &
+[SYNSEM.LOCAL [CONT.HOOK.INDEX.E.ASPECT perfective,
+	       LKEYS.--KEYREL.PRED 'aru],
+ORTH <! "ある" !>].
+
+; (AO 2003-08-06) 「在る」の補助動詞はない
+;		1. 補助動詞の用法は通例「〜てある」ただし文語は別
+;		2. 1の用法では必ずひらがなである
+;	以上より記述できない	
+;	もし文語で「在る」が必要であるなら以下のように追加
+; Used 401 times
+
+aru-kanji-aux-stem  :=
+aspect-c-stem-lex &
+[SYNSEM.LOCAL [CONT.HOOK.INDEX.E.ASPECT perfective,
+	       LKEYS.--KEYREL.PRED 'aru],
+ORTH <! "在る" !>].
+
+; Used 51 times
+
+kuru-aux-stem  :=
+pure-aspect-kurusuru-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT perfect_progressive],
+ORTH <! "来る" !>].
+
+kureru-aux-stem  :=
+perspective-v-stem-lex &
+[ORTH <! "くれる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kureru,ARG2 #obj2ind],
+              CTXT.EMPATHY.EMPEE #obj2ind]].
+
+
+
+; (ERB 2001-11-12) Temporary raising lexical entry for "shimau".
+; Should probably be changed to one that doesn't contribute a 
+; relation at all.
+
+; (ERB 2001-12-05) Try making "shimau" a pure-aspect-aux just
+; like "iru".
+
+;shimau-aux-stem  :=
+;perspective-c-stem-lex &
+;[SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'shimau,ARG1 #sbjind],
+;               CTXT.EMPATHY.EMPEE #sbjind],
+; ORTH <! "しまう" !>].
+
+;shimau-aux-stem  :=
+;aspect-c-stem-lex-temp &
+;[SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'shimau],
+; ORTH <! "しまう" !>].
+
+shimau-aux-stem :=
+pure-aspect-c-stem-lex &
+[ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT terminative,
+  ORTH <! "しまう" !> ].
+
+miru-aux-stem :=
+aspect-v-stem-lex &
+[SYNSEM.LOCAL [LKEYS.--KEYREL.PRED 'miru_aux,
+	       CONT.HOOK.INDEX.E.ASPECT modal],
+ORTH <! "見る" !>].
+
+miru-hiragana-aux-stem :=
+aspect-v-stem-lex &
+[SYNSEM.LOCAL [LKEYS.--KEYREL.PRED 'miru_aux,
+	       CONT.HOOK.INDEX.E.ASPECT modal],
+ORTH <! "みる" !>].
+
+; (FCB 2003-08-14) やって みせる  
+; I am not sure if this is modal or not
+
+miseru-hiragana-aux-stem :=
+aspect-v-stem-lex &
+[SYNSEM.LOCAL [LKEYS.--KEYREL.PRED 'miseru_aux,
+	       CONT.HOOK.INDEX.E.ASPECT modal],
+ORTH <! "みせる" !>].
+
+; Used 10 times
+
+miseru-kanji-aux-stem :=
+aspect-v-stem-lex &
+[SYNSEM.LOCAL [LKEYS.--KEYREL.PRED 'miseru_aux,
+	       CONT.HOOK.INDEX.E.ASPECT modal],
+ORTH <! "見せる" !>].
+
+gozaru-aux-hiragana-stem :=
+aspect-c2-stem-lex &
+[SYNSEM.LOCAL [CONT.HOOK.INDEX.E.ASPECT perfective,
+	       LKEYS.--KEYREL.PRED 'gozaru],
+ORTH <! "ござる" !>].
+
+gozaru-aux-kanji-stem :=
+aspect-c2-stem-lex &
+[SYNSEM.LOCAL [CONT.HOOK.INDEX.E.ASPECT perfective,
+                    LKEYS.--KEYREL.PRED 'gozaru],
+ORTH <! "御座る" !>].
+
+
+ageru-aux-stem :=
+perspective-v-stem-lex &
+[ORTH <! "あげる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'ageru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+; Used 11 times
+
+ageru-kanji-aux-stem :=
+perspective-v-stem-lex &
+[ORTH <! "上げる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'ageru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+sashiageru-aux-stem :=
+perspective-minus_shon-v-stem-lex &
+[ORTH <! "さしあげる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'sashiageru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+moushiageru-aux-stem :=
+perspective-shon-c-stem-lex &
+[ORTH <! "申し上げる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'moushiageru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+
+yaru-aux-stem :=
+perspective-shon-c-stem-lex &
+[ORTH <! "やる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'yaru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+
+morau-aux-stem  :=
+aux-obj-id-c-stem-lex &
+[ORTH <! "もらう" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'morau,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+
+; 貰う 
+; Used 1 times
+
+; (AO 2003-08-06)
+;	本動詞「貰う」は三項動詞としたいが、
+; 	適切な参考記述がみつからない
+;
+; とりあえず、以下のようにしておく
+
+morau-kanji-aux-stem  :=
+aux-obj-id-c-stem-lex &
+[ORTH <! "貰う" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'morau,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+itadaku-aux-stem :=
+aux-obj-id-minus_shon-c-stem-lex &
+[ORTH <! "いただく" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'itadaku,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+itadaku-aux-stem-2 :=
+aux-obj-id-minus_shon-c-stem-lex &
+[ORTH <! "頂く" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'itadaku,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+

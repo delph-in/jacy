@@ -1,0 +1,196 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: %Z% %M%
+;;;      module:
+;;;     version: %I%
+;;;  written by:
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;Melanie Siegel(MS) |             |Emily Bender (ERB)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; (ERB 2001-12-28) "True" light verbs make no semantic contribution:
+
+suru-light-stem  :=
+light-nohon-kurusuru-stem-lex &
+[ORTH <! "する" !>].
+
+itasu-light  :=
+light-minus_shon-c-stem-lex &
+[ORTH <! "いたす" !>].
+
+itasu-kanji-light  :=
+light-minus_shon-c-stem-lex &
+[ORTH <! "致す" !>].
+
+;"itsumo osewa  ni natte orimasu  ."
+;"itsumo osewa ni narimasu."
+;"yoroshikereba okoshi ni narimaseN ka." 
+;"zeNkai no gakkai dewa osewa ni narimashita."
+;"hoNjitsu odeNwa sasete itadakimashita no wa seNsei ga okaki ni narimashita roNbuN o seNjitsu haikeN itashimashite.
+
+
+ninaru-multi := light-shon-c-stem-lex &
+           [ORTH <! "に",  "なる" !>].
+
+moushiageru-light  :=
+light-minus_shon-v-stem-lex &
+[ORTH <! "申し上げる" !>].
+
+moushiageru-hiragana-light  :=
+light-minus_shon-v-stem-lex &
+[ORTH <! "申しあげる" !>].
+
+; (ERB 2001-12-28) The rest of these are like "true" light verbs in
+; that they combine with vns.  They differ in that they do make a 
+; semantic contribution.
+
+; (ERB 2001-12-28) Some of these might need to be treated more like
+; aspect or perspective auxiliaries.
+
+; (ERB 2001-08-30) Fixing dekiru so that it has some semantic effect 
+; in combination with vns.  Giving it the same semantic effect of rareru.
+; I guess it's technically not a light verb then.
+; (MS 2001-09-14) Changed that again.
+
+dekiru-light  :=
+quasi-light-nohon-v-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL rareru_rel,
+ ORTH <! "できる" !>].
+
+dekiru-kanji-light  :=
+quasi-light-nohon-v-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL rareru_rel,
+ ORTH <! "出来る" !>].
+
+;dekiru-light-1 :=
+;dekiru-light-nochange-lex &
+;[ ORTH <! "できる" !>].
+
+; (ERB 2001-09-03) Dekiru with ga-marked object.
+
+;dekiru-light-2 :=
+;dekiru-light-objchange-lex &
+;[ ORTH <! "できる" !>].
+
+negau-light  :=
+quasi-light-nohon-c-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'negau,
+ ORTH <! "ねがう" !>].
+
+negau-light-kanji  :=
+quasi-light-nohon-c-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'negau,
+ ORTH <! "願う" !>].
+
+; (ERB 2001-12-28) I don't see these two in the testsuites, and I don't
+; know whether it's supposed to be an aspect-type, or what, so commenting
+; it out for now.
+
+;kakeru-light  :=
+;quasi-light-nohon-v-stem-lex &
+;[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kakeru,
+; ORTH <! "かける" !>].
+
+;oku-light  :=
+;quasi-light-nohon-c-stem-lex &
+;[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'oku,
+; ORTH <! "おく" !>].
+
+; (ERB 2001-12-28) These guys will effectively be perspective auxiliaries.
+; They are only light verbs in the sense that they combine with VNs.
+
+;kudasaru-light  :=
+;light-shon-c2-stem-lex &
+;[ORTH <! "下さる" !>].
+
+;kudasaru-light-2  :=
+;light-shon-c2-stem-lex &
+;[ORTH <! "くださる" !>].
+
+;sashiageru-light-stem  :=
+;light-minus_shon-v-stem-lex &
+;[ORTH <! "差し上げる" !>].
+
+;yaru-light  :=
+;light-minus_shon-c-stem-lex &
+;[ORTH <! "やる" !>].
+
+kudasaru-light :=
+light-perspective-shon-c2-stem-lex &
+[ORTH <! "下さる" !>,
+ SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kudasaru,ARG2 #obj2ind],
+               CTXT.EMPATHY.EMPEE #obj2ind]].
+
+kudasaru-light-2 :=
+light-perspective-shon-c2-stem-lex &
+[ORTH <! "くださる" !>,
+ SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kudasaru,ARG2 #obj2ind],
+               CTXT.EMPATHY.EMPEE #obj2ind]].
+
+kureru-light  :=
+light-perspective-v-stem-lex &
+[ORTH <! "くれる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kureru,ARG2 #obj2ind],
+              CTXT.EMPATHY.EMPEE #obj2ind]].
+
+ageru-light :=
+light-perspective-v-stem-lex &
+[ORTH <! "あげる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'ageru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+sashiageru-light :=
+light-perspective-minus_shon-v-stem-lex &
+[ORTH <! "さしあげる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'sashiageru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+yaru-light :=
+light-perspective-shon-c-stem-lex &
+[ORTH <! "やる" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'yaru,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+
+; (ERB 2001-12-28) And these guys are effectively aux-obj-id.  Only
+; "light" in the sense that they combine with VNs.
+
+;itadaku-light  :=
+;light-minus_shon-c-stem-lex &
+;[ORTH <! "いただく" !>].
+
+;itadaku-kanji-light  :=
+;light-minus_shon-c-stem-lex &
+;[ORTH <! "頂く" !>].
+
+morau-light  :=
+light-obj-id-c-stem-lex &
+[ORTH <! "もらう" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'morau,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+itadaku-light :=
+light-obj-id-minus_shon-c-stem-lex &
+[ORTH <! "いただく" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'itadaku,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+itadaku-light-2 :=
+light-obj-id-minus_shon-c-stem-lex &
+[ORTH <! "頂く" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'itadaku,ARG1 #sbjind],
+              CTXT.EMPATHY.EMPEE #sbjind]].
+
+
+
+
+
+
+

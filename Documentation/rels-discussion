@@ -1,0 +1,117 @@
+Discussion and developments on relative clauses:
+
+; (ERB 2002-01-02) Allowing relative clauses to attach to either
+; NP or N'.  Need to constrain the quantify-n-infl-rule so that
+; it only applies to unmodified elements, to avoid spurious ambiguity.
+
+; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
+; head-adjunct-rule-type.
+
+; (ERB 2002-01-14) It may be desirable to split the relative clause rule in two
+; to prefer low attachment of relative clauses: rel-cl-rule-1 requires a [NUCL
+; +] head daughter, while rel-cl-rule-2 requires a [NUCL -] head
+; daughter.
+;(CH 2003-08-15)  主名詞を関係節のどこにも関連づけない (non gapped)
+; *** 2003-08-14 の Melanie Siegel さんの情報に基づく修正 ***
+; there are three thing to change on the first daughter:
+; 1) MAIN-PRD bool
+; 2) NUCL not_fin_conj
+; 3) The co-indexing of #adjevent to CONT.HOOK.INDEX instead of ARG0.
+;
+;(CH 2003-08-22)
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" を追加
+
+relative-clause-rule
+
+(CH 2003-08-22) 主語位置に主名詞を関連づける関係節規則
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"を削除
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind"を追加
+;(CH 2003-08-26)
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+;                                   COMPS sat-arg]]"を追加
+;
+; (MS 2003-11-27) This introduces loads of spurious ambiguity. Parallel to the treatment of 
+; topicalizing, it is not possible to decide on the argument binding in relative sentence
+; on the syntactic base. Using selectional restrictions, it should be possible to set up 
+; preferences, but these belong to another level on processing.
+
+rel-cl-sbj-gap-rule
+
+;(CH 2003-08-22) 直接目的語位置に主名詞を関連づける関係節規則
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"を削除
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind"を追加
+;(CH 2003-08-26)
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [COMPS 1-list &
+; 					 [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
+; 					  REST sat-arg],
+; 				   SUBJ sat-arg]],"を追加
+
+rel-cl-obj1-gap-rule
+
+;(CH 2003-08-22) 間接目的語位置に主名詞を関連づける関係節規則
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"を削除
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind"を追加
+;(CH 2003-08-26) 
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [COMPS 1-plus-list &
+; 					 [REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind,
+; 					  FIRST sat-arg],
+; 				   SUBJ sat-arg]],"を追加
+
+
+rel-cl-obj2-gap-rule
+
+;;;;;;;;;;;;;;;;;;;;;DISCUSSION;;;;;;;;;;;;;;;;;;
+
+Melanie:
+
+- I am not really convinced by your (NTT) contribution to relative 
+> sentences and would like to discuss that. You introduced three more 
+> relative clause rules that link the head noun to arguments on the verbs 
+> subcat. Our approach to relative clauses was very similar to topic: We 
+> thought that one cannot decide without additional semantic and world 
+> knowledge, which argument can be linked. Therefore we decided to leave 
+> this relation unspecified. The solution you found seems to insert lots 
+> of spurious ambiguity without really helping, i.e. we have three 
+> readings instead of one; and still don't know where to link the argument.
+
+Emily:
+
+Yes -- that is my recollection of our analysis of relative
+clauses as well.  Tim Baldwin eventually convinced me that
+there were a few cases in which you actually need a syntactic
+long distance dependencies (something to do with constraints ga-no
+conversion, I think, and maybe some other cases) but it seemed
+to me that overgenerating a bit in those cases was better than
+the extensive ambiguity introduced by allowing the long-distance
+dependencies to any missing (i.e., pro-dropped) argument in
+the relative clause.  Furthermore, you need something like
+the topic relation in the case of RCs like (i), which would
+add an extra reading everywhere, too.
+
+(i) atama ga yoku naru hon
+
+(Did we write about this in the Coling paper?  I can't remember.)
+
+Francis:
+
+We are not happy with the implementation - we would like to have one
+rule that can takes anything left from the subcat list rather than two
+rules.  But that is a separate issue.
+
+We discussed this a fair bit before we did this.  The unavoidable
+ambiguity is nasty, and we definitely felt it treebanking.  However,
+the consenus was that in a construction like "akai hon", there is
+really no ambiguity or vagueness - the ONLY interpretation we wanted
+was the gapped one.  What we want to do is find something that will
+restrict the application of the vague rule to the cases where it is
+needed "atama-ga yoku naru hon", "sakana-wo yaku nioi" .  We haven't
+done that yet (^_^).  We are also interested in how often we can get
+the correct selection using the stochastic model and treebank - just
+because we get the same ambiguity everytime doesn't mean it has to be
+ranked the same.  In fact, I would like to try the same with topic at
+some stage...
+
+However, I realise that we may not reach consensus here, and suggest
+that we might consider a tiny fork - have an experimental hen.tdl and
+two scripts, one which doesn't load that one (ascript) and one that
+does (nscript) so we can keep the wierd stuff separate.

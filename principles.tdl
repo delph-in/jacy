@@ -1,0 +1,242 @@
+;;; -*- Mode: TDL; Package: DISCO -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: %Z% %M%
+;;;      module:
+;;;     version: %I%
+;;;  written by:
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;                   |             |
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+argument-binding-princ := basic-binary-headed-phrase & 
+			  [SYNSEM.LOCAL.CONT.HOOK #hook,
+			   HEAD-DTR.SYNSEM.LOCAL.CONT.HOOK #hook].
+
+scp-sbj := argument-binding-princ  & 
+[SYNSEM.LOCAL [CAT.VAL [SUBJ null,
+			COMPS #comps,
+			SPR #spr,
+			UNSAT - ]],
+ HEAD-DTR.SYNSEM.LOCAL.CAT [HEAD.FORMAL.SHON #shon,
+			    VAL [SUBJ 1-list & 
+				      [FIRST #1 & [LOCAL.CAT.HEAD.FORMAL.SHON #shon]],
+				 COMPS #comps,
+				 SPR #spr]],
+ NON-HEAD-DTR.SYNSEM #1].
+
+
+
+
+scp-obj :=  argument-binding-princ &
+[SYNSEM.LOCAL.CAT.VAL [SUBJ #sbjval,
+		       COMPS 0-1-list & #obj2val,
+		       SPR #sprval,
+		       UNSAT - ],
+ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [COMPS cons & [FIRST #1 & [OPT bool],
+							 REST #obj2val ],
+				SUBJ #sbjval,
+				SPR #sprval],
+ NON-HEAD-DTR.SYNSEM #1].
+
+
+scp-obj2 :=  argument-binding-princ &
+[SYNSEM.LOCAL.CAT.VAL [COMPS 0-1-list & [FIRST #objval],
+		       UNSAT - ,
+		       SUBJ #sbjval,
+		       SPR #sprval],
+ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [COMPS 2-comps-list & [FIRST #objval,
+						      REST.FIRST #1 & [OPT bool]],
+                               SUBJ #sbjval,
+			       SPR #sprval],
+ NON-HEAD-DTR.SYNSEM #1].
+
+
+scp-spec := argument-binding-princ &
+[SYNSEM.LOCAL.CAT.VAL [SUBJ #sbjval,
+		       SPR 0-1-list,
+		       COMPS #comps],
+ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR 1-list & [FIRST #1],
+				SUBJ #sbjval,
+				COMPS #comps],
+ NON-HEAD-DTR.SYNSEM #1].
+
+
+
+scp-marking := argument-binding-princ &
+[SYNSEM.LOCAL.CAT [HEAD #4,
+                   VAL #sc],
+ HEAD-DTR.SYNSEM.LOCAL.CAT [HEAD #4,
+                            VAL.SPR.FIRST [LOCAL [CAT [HEAD #3,
+						       VAL #sc],
+						  CONT #sem],
+					   LEX #2,
+					   OPT bool]],
+ NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD #3,
+                                VAL #sc],
+                           CONT #sem],
+		     LEX #2]].
+
+
+
+head-adjunct-p:= basic-binary-headed-phrase & 
+[HEAD-DTR.SYNSEM [LOCAL [CAT #1, CONT #3, BAR #5, NUCL #6, LKEYS [--KEYREL #key, --ALTKEYREL #altkey]],
+		  LEX #2,
+                  NON-LOCAL #4,
+		  MODIFIED.PERIPH #7],
+ NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL [CAT #1, 
+						 CONT #3,
+						 BAR #5,
+						 NUCL #6, 
+						 LKEYS [--KEYREL #key,
+						        --ALTKEYREL #altkey]],
+					  LEX #2, 
+					  NON-LOCAL #4,
+					  MODIFIED.PERIPH #7] > ].
+
+
+
+
+
+adjacent_nonhead_check  := headed-phrase & 
+[NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
+				   SPR sat-or-opt-arg,
+				   COMPS sat-or-opt-arg]].
+
+
+adjacent_head_check := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
+								SPR sat-or-opt-arg,
+								COMPS sat-or-opt-arg]].
+
+adjacent_subjbind_check  := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
+								     COMPS sat-or-opt-arg]].
+
+adjacent_objbind_check := headed-phrase & 
+[HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
+				SUBJ sat-or-opt-arg]].
+
+adjacent_obj2bind_check  := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
+								     SUBJ sat-or-opt-arg,
+								     COMPS 2-comps-list & [FIRST.OPT +]]].
+
+adjacent_obj2obl-bind_check := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
+                                                                        SUBJ sat-or-opt-arg,
+									COMPS obl-2-args]].
+
+
+
+
+adjacent-spr-check := head-specifier-rule-type & [NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
+										    COMPS sat-or-opt-arg]].
+
+sat-check-unary := unary-type & [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
+								SPR sat-or-opt-arg,
+								COMPS sat-or-opt-arg]].
+
+
+sat-check-binary:=  binary & [ARGS [FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
+								SPR sat-or-opt-arg,
+								COMPS sat-or-opt-arg],
+				    REST.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
+								SPR sat-or-opt-arg,
+								COMPS sat-or-opt-arg]]].
+
+
+; (MS 2003-07-15) Not used any more.
+
+;nonloc_principle := binary & [SYNSEM.NON-LOCAL #1,
+;                       HEAD-DTR.SYNSEM.NON-LOCAL #1,
+;                       NON-HEAD-DTR.SYNSEM.NON-LOCAL #1].
+
+
+;nonloc_principle_unary := unary-type & [SYNSEM.NON-LOCAL #1,
+;                             ARGS.FIRST.SYNSEM.NON-LOCAL #1].
+
+
+
+
+
+
+
+
+;shinai to ikemaseN
+
+; (MS 2003-07-15) Not used any more.
+
+;speaker-addr-principle := binary & [SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
+;                                                                  SPEAKER #2],
+;                                                       EMPATHY [EMPER #sp,
+;                                                                EMPEE #emp]],
+;                             NON-HEAD-DTR.SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
+;                                                                      SPEAKER #2],
+;                                                            EMPATHY [EMPER #sp,
+;                                                                     EMPEE #emp]],
+;                             HEAD-DTR.SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
+;                                                                   SPEAKER #2],
+;                                                         EMPATHY [EMPER #sp,
+;                                                                  EMPEE #emp]]].
+;
+; (MS 2003-07-15) Not used any more.
+
+;speaker-addr-principle-unary  := unary-type & [SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
+;                                                                             SPEAKER #2],
+;                                                                  EMPATHY [EMPER #sp,
+;                                                                           EMPEE #emp]],
+;                                    ARGS.FIRST.SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
+;                                                                           SPEAKER #2],
+;                                                                EMPATHY [EMPER #sp,
+;                                                                         EMPEE #emp]]].
+;
+
+affix-list := phrasal_sign &
+              [SYNSEM.NON-LOCAL.AFFIX [LIST #afflist,
+				       LAST #afflast],
+	       ARGS < [SYNSEM.NON-LOCAL.AFFIX [LIST #affmiddle,
+                                             LAST #afflast]],
+		      [SYNSEM.NON-LOCAL.AFFIX [LIST #afflist,
+                                                LAST #affmiddle]] > ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+orth-princ := phrasal_sign &
+	      [ORTH [LIST #firststem,
+		     LAST #laststem],
+	       ARGS < [ORTH [LIST #firststem,
+			     LAST #middlestem]],
+		      [ORTH [LIST #middlestem,
+			     LAST #laststem]] >].
+
+liszt-princ := phrasal_sign & 
+	       [SYNSEM [LOCAL [CONT [RELS [LIST #firstliszt,
+                                       LAST #lastliszt],
+                                HCONS [LIST #scfirst,
+                                        LAST #sclast]]]],
+           C-CONT [RELS diff-list & [LIST #middle2liszt,
+                                        LAST #lastliszt],
+                   HCONS diff-list & [LIST #scmiddle2,
+                                         LAST #sclast]],
+           ARGS < j-sign & [SYNSEM [LOCAL [CONT [RELS [LIST #firstliszt,
+                                                           LAST #middle1liszt],
+                                                    HCONS [LIST #scfirst ,
+                                                            LAST #scmiddle1]]]]],
+		  j-sign & [SYNSEM [LOCAL [CONT [RELS [LIST  #middle1liszt,
+                                                        LAST  #middle2liszt],
+                                                 HCONS [LIST #scmiddle1,
+                                                         LAST #scmiddle2]]]]] > ].
+
+que-princ := phrasal_sign & 
+	     [ SYNSEM.NON-LOCAL.QUE [ LIST #firstque,
+				      LAST #lastque ],
+	       ARGS < [SYNSEM.NON-LOCAL.QUE [ LIST #firstque,
+					      LAST #middleque ]],
+		      [SYNSEM.NON-LOCAL.QUE [ LIST #middleque,
+					      LAST #lastque ]]> ].
