@@ -779,28 +779,29 @@ sentence-te-coordination-rule := sentence-coord-type &
 ; (MS 2002-06-19) But we seem to need this anyway: "口座振替依頼書送ってください,お願いします"
 ; (MS 2002-06-20) Trying to restrict this with  NUCL nucl_plus.
 
+; (FCB 2005-01-28) HINOKI:OFF as we always split sentences.
 
+; runon_s := sentence-coord-type &
+; [SYNSEM [LOCAL [BAR +,
+; 		CAT.VAL saturated],
+; 	 NON-LOCAL.ROBUST +],
+;  ARGS <[SYNSEM.LOCAL [CAT [HEAD utt-valid & [H-TENSE present-past-or-future,
+; 					     FIN +,
+;                                              EMPTY -,
+; 					     ADJ -,
+; 					     MAIN-PRD +],
+; 			   VAL saturated],
+; 		      BAR +,
+; 		      NUCL nucl_plus],
+; 		J-NEEDS-AFFIX -],
+;        [SYNSEM j-synsem & [LOCAL [BAR +,
+; 				CAT [ HEAD utt-valid &
+; 					   [ H-TENSE present-past-or-future,
+; 					     MAIN-PRD +,
+; 					      EMPTY -],
+; 				      VAL saturated]]],
+; 	J-NEEDS-AFFIX -]>].
 
-runon_s := sentence-coord-type &
-[SYNSEM [LOCAL [BAR +,
-		CAT.VAL saturated],
-	 NON-LOCAL.ROBUST +],
- ARGS <[SYNSEM.LOCAL [CAT [HEAD utt-valid & [H-TENSE present-past-or-future,
-					     FIN +,
-                                             EMPTY -,
-					     ADJ -,
-					     MAIN-PRD +],
-			   VAL saturated],
-		      BAR +,
-		      NUCL nucl_plus],
-		J-NEEDS-AFFIX -],
-       [SYNSEM j-synsem & [LOCAL [BAR +,
-				CAT [ HEAD utt-valid &
-					   [ H-TENSE present-past-or-future,
-					     MAIN-PRD +,
-					      EMPTY -],
-				      VAL saturated]]],
-	J-NEEDS-AFFIX -]>].
 
 ; (MS 2004-06-25) We need something for the XARG. Try the XARG of the second conjunct.
 
