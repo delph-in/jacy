@@ -1,0 +1,8 @@
+
+dekiru-light := quasi-light-nohon-v-stem-lex &
+ [ ORTH <! "できる" !>,
+   SYNSEM.LKEYS.KEYREL rareru-relation ].
+
+dekiru-kanji-light := quasi-light-nohon-v-stem-lex &
+ [ ORTH <! "出来る" !>,
+   SYNSEM.LKEYS.KEYREL rareru-relation ].

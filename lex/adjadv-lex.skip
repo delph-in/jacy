@@ -1,0 +1,10 @@
+
+ii-eval-adj := eval-opt-i-adj-stem-lex &
+ [ ORTH <! "いい" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "ii",
+            LOCAL.CAT.HEAD.FORMAL.SHON - ] ].
+
+ii-adj := i-adj-stem-lex &
+ [ ORTH <! "いい" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "ii",
+            LOCAL.CAT.HEAD.FORMAL.SHON - ] ].

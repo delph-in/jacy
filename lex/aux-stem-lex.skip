@@ -1,0 +1,152 @@
+
+miseru-hiragana-aux-stem := aspect-v-stem-lex &
+ [ ORTH <! "みせる" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "miseru_aux",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
+
+ageru-aux-stem := perspective-v-stem-lex &
+ [ ORTH <! "あげる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "ageru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+gozaru-aux-kanji-stem := aspect-c2-stem-lex &
+ [ ORTH <! "御座る" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "gozaru",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] ].
+
+mairu-aux-stem := pure-aspect-c-stem-lex &
+ [ ORTH <! "参る" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
+
+itadaku-aux-stem := aux-obj-id-minus_shon-c-stem-lex &
+ [ ORTH <! "いただく" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "itadaku" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+yaru-aux-stem := perspective-shon-c-stem-lex &
+ [ ORTH <! "やる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "yaru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+irassharu-aux-stem := pure-aspect-shon-c2-stem-lex &
+ [ ORTH <! "いらっしゃる" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
+
+kudasaru-aux-stem-2 := perspective-shon-c2-stem-lex &
+ [ ORTH <! "くださる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG2 #1,
+                             PRED "kudasaru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+aru-aux-stem := aspect-c-stem-lex &
+ [ ORTH <! "ある" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "aru",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] ].
+
+shimau-aux-stem := pure-aspect-c-stem-lex &
+ [ ORTH <! "しまう" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT terminative ].
+
+iru-aux-stem := pure-aspect-v-stem-lex &
+ [ ORTH <! "いる" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
+
+moushiageru-aux-stem := perspective-shon-c-stem-lex &
+ [ ORTH <! "申し上げる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "moushiageru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+morau-kanji-aux-stem := aux-obj-id-c-stem-lex &
+ [ ORTH <! "貰う" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "morau" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+miru-hiragana-aux-stem := aspect-v-stem-lex &
+ [ ORTH <! "みる" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "miru_aux",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
+
+oru-aux-stem := pure-aspect-minus_shon-c-stem-lex &
+ [ ORTH <! "おる" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
+
+kuru-aux-stem := pure-aspect-kurusuru-stem-lex &
+ [ ORTH <! "来る" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfect_progressive ].
+
+miseru-kanji-aux-stem := aspect-v-stem-lex &
+ [ ORTH <! "見せる" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "miseru_aux",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
+
+iku-aux-stem := pure-aspect-c2-stem-lex &
+ [ ORTH <! "行く" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
+
+oku-aux-stem := pure-aspect-minus_shon-c-stem-lex &
+ [ ORTH <! "おく" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT prospective ].
+
+oku-aux-kanji-stem := pure-aspect-minus_shon-c-stem-lex &
+ [ ORTH <! "置く" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT prospective ].
+
+kudasaru-aux-stem := perspective-shon-c2-stem-lex &
+ [ ORTH <! "下さる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG2 #1,
+                             PRED "kudasaru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+miru-aux-stem := aspect-v-stem-lex &
+ [ ORTH <! "見る" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "miru_aux",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
+
+ageru-kanji-aux-stem := perspective-v-stem-lex &
+ [ ORTH <! "上げる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "ageru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+gozaru-aux-hiragana-stem := aspect-c2-stem-lex &
+ [ ORTH <! "ござる" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "gozaru",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] ].
+
+kureru-aux-stem := perspective-v-stem-lex &
+ [ ORTH <! "くれる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG2 #1,
+                             PRED "kureru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+iru-aux-kanji-stem := pure-aspect-v-stem-lex &
+ [ ORTH <! "居る" !>,
+   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
+
+morau-aux-stem := aux-obj-id-c-stem-lex &
+ [ ORTH <! "もらう" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "morau" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+sashiageru-aux-stem := perspective-minus_shon-v-stem-lex &
+ [ ORTH <! "さしあげる" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "sashiageru" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+itadaku-aux-stem-2 := aux-obj-id-minus_shon-c-stem-lex &
+ [ ORTH <! "頂く" !>,
+   SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
+                             PRED "itadaku" ],
+            LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
+
+aru-kanji-aux-stem := aspect-c-stem-lex &
+ [ ORTH <! "在る" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "aru",
+            LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ] ].

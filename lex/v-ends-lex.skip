@@ -1,0 +1,748 @@
+
+reru-pot-end := rareru-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE cond-exceptional-morph,
+   ORTH <! "れる" !>,
+   SYNSEM.LOCAL.CAT.HEAD.MODUS potential ].
+
+saseru-trans-obj2-end := caus-trans-obj2-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "させる" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+zuni-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "ず", "に" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "neg_rel",
+            LOCAL [ CAT.HEAD [ C-MOD.FIRST.LOCAL [ BAR +,
+                                                         CAT.HEAD verb_head & [ MAIN-PRD + ] ],
+                                 COP-ARG -,
+                                 FIN -,
+                                 FORMAL.AHON -,
+                                 H-TENSE te,
+                                 J-POSTHEAD coord,
+                                 J-SPEC null,
+                                 MARK null,
+                                 MOD null ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ] ].
+
+mai-end := mai-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE mai-morph,
+   ORTH <! "まい" !>,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 H-TENSE present,
+                                 J-SPEC null,
+                                 MARK null,
+                                 MOD null,
+                                 MODUS indicative ] ].
+
+nasai-chasen-end := v-imperative-tense-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "な", "さ", "い" !> ].
+
+seru-trans-obj-end := caus-trans-obj-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "せる" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+daraba-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE nd-morph,
+   ORTH <! "だら", "ば" !>,
+   SYNSEM.LOCAL.CAT [ HEAD.FORMAL.AHON +,
+                          VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past ] ].
+
+mashitaraba-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE i-morph,
+   ORTH <! "まし", "たら", "ば" !>,
+   SYNSEM.LOCAL.CAT [ HEAD.FORMAL.AHON +,
+                          VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past ] ].
+
+hajimeru-end := v-noncaus-op-end-lex &
+ [ INFLECTED -,
+   J-NEEDS-AFFIX +,
+   LMORPH-BIND-TYPE i-morph,
+   ORTH <! "はじめる" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LKEYS.KEYREL #3 & [ PRED "hajimeru" ],
+            LOCAL [ CAT [ HEAD v-op-end_head & [ COP-ARG -,
+                                 MARK [ FIRST [ LOCAL.CAT.HEAD verbend_head,
+                                                MODIFIED.PERIPH - ],
+                                        REST null ] ],
+                          VAL.SPR.FIRST [ LKEYS.KEYREL.ARG1 #8,
+                                              LOCAL.CONT [ HOOK.LTOP #1,
+                                                             MOD-HAND #4,
+                                                             MOD-IND #7 ] ] ],
+                    CONT [ HCONS [ LAST #10,
+                                   LIST [ FIRST qeq & [ HARG #5,
+                                                  LARG #1 ],
+                                          REST #10 ] ],
+                           HOOK [ INDEX #7 & [ E.MOOD indicative ],
+                                  LTOP #6 ],
+                           MOD-HAND #4,
+                           MOD-IND #7,
+                           RELS [ LAST #11,
+                                  LIST [ FIRST #3 & [ ARG1 #8,
+                                                 ARG4 #2,
+                                                 LBL #6 ],
+                                         REST [ FIRST message & [ LBL #2,
+                                                        MARG #5,
+                                                        PRED proposition_m_rel ],
+                                                REST #11 ] ] ] ] ],
+            MODIFIED.PERIPH + ] ].
+
+nagara-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE i-morph,
+   ORTH <! "ながら" !>,
+   SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE present ].
+
+tagaru-multi-end := tai-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "た", "がる" !>,
+   SYNSEM.LOCAL.CAT.HEAD.C-MOD null ].
+
+mashite-end := v-te-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "まし", "て" !> ].
+
+mashite-end2 := v-te-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "まして" !> ].
+
+tari-end := v-coord-end-lex &
+ [ LMORPH-BIND-TYPE t-morph,
+   ORTH <! "たり" !> ].
+
+tara-chasen-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE t-morph,
+   ORTH <! "た", "ら" !>,
+   SYNSEM.LOCAL.CAT [ HEAD.FORMAL.AHON -,
+                          VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past ] ].
+
+ru-pot-end := rareru-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE cond-morph,
+   ORTH <! "る" !>,
+   SYNSEM.LOCAL.CAT.HEAD.MODUS potential ].
+
+sasou-end := na-varg-end-lex &
+ [ ORTH <! "さ", "そう" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "sou",
+            LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS negative ] ].
+
+saseru-intrans-end := caus-intrans-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "させる" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+nasai-end := v-imperative-tense-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "なさい" !> ].
+
+de-end := v-te-end-lex &
+ [ LMORPH-BIND-TYPE nd-morph,
+   ORTH <! "で" !> ].
+
+rareru-trans-adv-pass-end := adversative-trans-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "られる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS passive ] ].
+
+arimasendeshita-adj-end := v-neg-polite-past-end-lex &
+ [ LMORPH-BIND-TYPE a-morph,
+   ORTH <! "あり", "ませ", "ん", "でし", "た" !>,
+   SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head ].
+
+reru-simple-pass-end := simple-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "れる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD.MODUS passive ].
+
+zaru-wo-emasen-end := v-neg-polite-present-end-lex &
+ [ LMORPH-BIND-TYPE a-morph,
+   ORTH <! "ざる", "を", "え", "ませ", "ん" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "cant_help_rel" ].
+
+you-end := v-consultative-tense-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "よう" !>,
+   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
+
+te-end := v-te-end-lex &
+ [ LMORPH-BIND-TYPE t-morph,
+   ORTH <! "て" !> ].
+
+arimasendeshita-end := v-neg-polite-past-end-lex &
+ [ LMORPH-BIND-TYPE a-morph,
+   ORTH <! "あり", "ませ", "ん", "でし", "た" !>,
+   SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY tai_rel ].
+
+saseru-trans-obj-end := caus-trans-obj-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "させる" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+nasa-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX bool,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "な", "さ" !>,
+   RMORPH-BIND-TYPE shortadj-morph,
+   SYNSEM [ LKEYS.KEYREL.PRED "neg_rel",
+            LOCAL [ CAT.HEAD [ C-MOD null,
+                                 FIN -,
+                                 H-TENSE present,
+                                 J-SPEC null,
+                                 MARK.FIRST.LOCAL.CAT.HEAD na-adj_head,
+                                 MOD null ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ] ].
+
+tara-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE t-morph,
+   ORTH <! "たら" !>,
+   SYNSEM.LOCAL.CAT [ HEAD.FORMAL.AHON -,
+                          VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past ] ].
+
+sasu-trans-obj2-end := caus-trans-obj2-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "さす" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+nakereba-narimasen-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "なけれ", "ば", "なり", "ませ", "ん" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "have_to_rel",
+            LOCAL [ CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON +,
+                                 H-TENSE present,
+                                 J-SPEC null,
+                                 MARK null,
+                                 MOD null,
+                                 MODUS negative ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ] ].
+
+rareru-honorific-pass-end := v-honorific-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "られる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS indicative ] ].
+
+reru-honorific-pass-end := v-honorific-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "れる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS indicative ] ].
+
+masendeshita-end := v-neg-polite-past-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "ませ", "ん", "でし", "た" !> ].
+
+naide-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "ない", "で" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "neg_rel",
+            LOCAL [ CAT [ HEAD [ COP-ARG -,
+                                 FIN -,
+                                 FORMAL.AHON -,
+                                 H-TENSE tensed,
+                                 J-POSTHEAD coord,
+                                 J-SPEC [ FIRST [ LEX +,
+                                                  LOCAL [ BAR +,
+                                                          CAT.HEAD verb_head & [ AUX + ] ] ],
+                                          REST null ],
+                                 MARK null,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD verb_head & [ MAIN-PRD + ] ] ] > ],
+                          VAL.SPR.FIRST.LOCAL.CAT.VAL.UNSAT - ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ] ].
+
+seru-trans-obj2-end := caus-trans-obj2-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "せる" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+sasu-intrans-end := caus-intrans-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "さす" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+rareru-pot-end := rareru-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE i-morph,
+   ORTH <! "られる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD.MODUS potential ].
+
+dari-end := v-coord-end-lex &
+ [ LMORPH-BIND-TYPE nd-morph,
+   ORTH <! "だり" !> ].
+
+mashitara-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE i-morph,
+   ORTH <! "まし", "たら" !>,
+   SYNSEM.LOCAL [ CAT [ HEAD [ COP-ARG -,
+                                 FORMAL.AHON + ],
+                          VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ].
+
+rareru-ditrans-pass-end := ditrans-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "られる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD.MODUS passive ].
+
+mashita-end := v-past-tense-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "まし", "た" !>,
+   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
+                                 H-TENSE past,
+                                 J-SPEC < [ LOCAL.CAT.HEAD nom_head ] > ] ].
+
+zu-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE aa-morph,
+   ORTH <! "ず" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "neg_rel",
+            LOCAL [ CAT.HEAD [ C-MOD.FIRST.LOCAL [ BAR +,
+                                                         CAT.HEAD verb_head & [ MAIN-PRD + ] ],
+                                 COP-ARG -,
+                                 FIN -,
+                                 FORMAL.AHON -,
+                                 H-TENSE te,
+                                 J-POSTHEAD coord,
+                                 MARK null,
+                                 MOD null ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ] ].
+
+teru-end := v-contracted-aux-end-lex &
+ [ J-NEEDS-AFFIX +,
+   LMORPH-BIND-TYPE t-morph,
+   ORTH <! "てる" !>,
+   SYNSEM.LOCAL [ CAT [ HEAD.MODUS #1,
+                          VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #1 ],
+                    CONT.HOOK.INDEX.E [ ASPECT progressive,
+                                              MOOD #1 ] ] ].
+
+rareru-simple-pass-end := simple-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "られる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS passive ] ].
+
+masen-end := v-neg-polite-present-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "ませ", "ん" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+reru-trans-adv-pass-end := adversative-trans-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "れる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS passive ] ].
+
+naru-end := v-noncaus-op-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "なる" !>,
+   STEMTYPE c-stem,
+   SYNSEM [ LKEYS.KEYREL adv-relation & #3 & [ ARG0 #6,
+                             ARG1 #5,
+                             LBL #4,
+                             PRED "naru" ],
+            LOCAL [ CAT [ HEAD v-op-end_head & [ MODUS indicative ],
+                          VAL.SPR.FIRST.LOCAL.CONT [ HOOK [ INDEX #2,
+                                                                    LTOP #5 ],
+                                                             MOD-HAND #1 ] ],
+                    CONT [ HCONS [ LAST #8,
+                                   LIST #8 ],
+                           HOOK [ INDEX #6,
+                                  LTOP #4 ],
+                           MOD-HAND #1,
+                           MOD-IND #2,
+                           RELS <! #3 !> ] ],
+            MODIFIED.PERIPH + ] ].
+
+nu-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "ぬ" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "neg_rel",
+            LOCAL [ CAT.HEAD [ C-MOD null,
+                                 COP-ARG -,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 H-TENSE present,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MARK null,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ] ].
+
+chau-end := v-contracted-aux-end-lex &
+ [ INFLECTED -,
+   J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE t-morph,
+   ORTH <! "ちゃう" !>,
+   SYNSEM.LOCAL [ CAT [ HEAD [ COP-ARG -,
+                                 MODUS #1 ],
+                          VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #1 ],
+                    CONT.HOOK.INDEX.E [ ASPECT terminative,
+                                              MOOD indicative ] ] ].
+
+masu-end := v-present-tense-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "ます" !>,
+   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
+                                 J-SPEC < [ LOCAL.CAT.HEAD exceptional_noun_head ] > ] ].
+
+arimasen-tai-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "あり", "ませ", "ん" !>,
+   SYNSEM.LOCAL [ CAT [ HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON +,
+                                 H-TENSE present,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MARK null,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS negative ],
+                          VAL.SPR.FIRST.LKEYS.KEYREL tai-relation ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ].
+
+taku-end := tai-end-lex-basic &
+ [ INFLECTED +,
+   J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE i-morph,
+   ORTH <! "たく" !>,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD < [ LOCAL [ BAR +,
+                                                 CAT.HEAD verb_head & [ MAIN-PRD + ] ] ] >,
+                                 COP-ARG -,
+                                 FIN -,
+                                 FORMAL.SHON -,
+                                 H-TENSE te,
+                                 J-POSTHEAD coord,
+                                 J-SPEC [ FIRST [ LEX +,
+                                                  LOCAL [ BAR +,
+                                                          CAT.HEAD verb_head & [ AUX + ] ] ],
+                                          REST null ],
+                                 MARK null,
+                                 MODUS voluntative ] ].
+
+tagaru-end := tai-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "たがる" !>,
+   SYNSEM.LOCAL.CAT.HEAD.C-MOD null ].
+
+seru-intrans-end := caus-intrans-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "せる" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH bool ] ].
+
+tagaru-multiword-notyetend := tai-notyetend-lex &
+ [ ORTH <! "た", "がる" !>,
+   STEMTYPE c-stem ].
+
+ni-end := naadj2adv-end-lex &
+ [ J-NEEDS-AFFIX -,
+   ORTH <! "に" !>,
+   SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD left ].
+
+jau-chasen-end := v-contracted-aux-end-lex &
+ [ INFLECTED -,
+   J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE nd-morph,
+   ORTH <! "じゃ", "う" !>,
+   SYNSEM.LOCAL [ CAT [ HEAD [ COP-ARG -,
+                                 MODUS #1 ],
+                          VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #1 ],
+                    CONT.HOOK.INDEX.E [ ASPECT terminative,
+                                              MOOD indicative ] ] ].
+
+arimasen-adj-end := v-neg-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "あり", "ませ", "ん" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "neg_rel",
+            LOCAL [ CAT [ HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON +,
+                                 H-TENSE present,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MARK null,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS negative ],
+                          VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head ],
+                    CONT.HOOK.INDEX.E.MOOD indicative ] ] ].
+
+rareru-intrans-adv-pass-end := adversative-intrans-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "られる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS passive ] ].
+
+mashou-end := v-consultative-tense-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "ましょ", "う" !>,
+   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
+
+reru-ditrans-pass-end := ditrans-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "れる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD.MODUS passive ].
+
+tagaru-notyetend := tai-notyetend-lex &
+ [ ORTH <! "たがる" !>,
+   STEMTYPE c-stem ].
+
+u-end := v-consultative-tense-end-lex &
+ [ LMORPH-BIND-TYPE o-morph,
+   ORTH <! "う" !>,
+   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
+
+tai-notyetend := tai-notyetend-lex &
+ [ ORTH <! "たい" !>,
+   STEMTYPE adj-stem ].
+
+jau-end := v-contracted-aux-end-lex &
+ [ INFLECTED -,
+   J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE nd-morph,
+   ORTH <! "じゃう" !>,
+   SYNSEM.LOCAL [ CAT [ HEAD [ COP-ARG -,
+                                 MODUS #1 ],
+                          VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #1 ],
+                    CONT.HOOK.INDEX.E [ ASPECT terminative,
+                                              MOOD indicative ] ] ].
+
+da-end := v-past-tense-end-lex &
+ [ INFLECTED +,
+   LMORPH-BIND-TYPE nd-morph,
+   ORTH <! "だ" !>,
+   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON -,
+                                 J-SPEC < [ LOCAL.CAT.HEAD nom_head ] > ] ].
+
+ba-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE cond-morph,
+   ORTH <! "ば" !> ].
+
+dake-v2adv-end := v2adv-end-lex &
+ [ LMORPH-BIND-TYPE mai-morph,
+   ORTH <! "だけ" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "dake",
+            LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MODUS voluntative ] > ] ].
+
+dara-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE nd-morph,
+   ORTH <! "だら" !>,
+   SYNSEM.LOCAL.CAT [ HEAD.FORMAL.AHON -,
+                          VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past ] ].
+
+comma-te-end := comma-coord-end-lex &
+ [ LMORPH-BIND-TYPE i-or-t-morph,
+   ORTH <! "、" !> ].
+
+gatai-v1-notyetend := v2adj-notyetend-lex-v1 &
+ [ ORTH <! "難い" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "gatai",
+            MODIFIED.PERIPH + ] ].
+
+nai-notyetend := v-noncaus-op-end-lex &
+ [ INFLECTED -,
+   J-NEEDS-AFFIX +,
+   LMORPH-BIND-TYPE a-morph,
+   ORTH <! "ない" !>,
+   STEMTYPE adj-stem,
+   SYNSEM [ LKEYS.KEYREL neg-relation & #2 & [ PRED "neg_rel" ],
+            LOCAL [ CAT [ HEAD v-op-end_head & [ COP-ARG -,
+                                 J-SPEC null,
+                                 MARK.FIRST [ LOCAL.CAT.HEAD verbend_head,
+                                                MODIFIED.PERIPH - ] ],
+                          VAL.SPR.FIRST.LOCAL.CONT [ HOOK.LTOP #1,
+                                                             MOD-HAND #3,
+                                                             MOD-IND #5 ] ],
+                    CONT [ HCONS [ LAST #8,
+                                   LIST [ FIRST qeq & [ HARG #6,
+                                                  LARG #1 ],
+                                          REST #8 ] ],
+                           HOOK [ INDEX #5 & [ E.MOOD indicative ],
+                                  LTOP #4 ],
+                           MOD-HAND #3,
+                           MOD-IND #5,
+                           RELS [ LAST #9,
+                                  LIST [ FIRST #2 & [ ARG1 #6,
+                                                 LBL #4 ],
+                                         REST #9 ] ] ] ],
+            MODIFIED.PERIPH + ] ].
+
+reru-intrans-adv-pass-end := adversative-intrans-pass-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-c-stem-morph,
+   ORTH <! "れる" !>,
+   STEMTYPE v-stem,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FIN +,
+                                 FORMAL.AHON -,
+                                 J-POSTHEAD rels,
+                                 J-SPEC < [ LOCAL.CAT.HEAD noun_head ] >,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] >,
+                                 MODUS passive ] ].
+
+taraba-end := v-cond-end-lex &
+ [ J-NEEDS-AFFIX -,
+   LMORPH-BIND-TYPE t-morph,
+   ORTH <! "たら", "ば" !>,
+   SYNSEM.LOCAL.CAT [ HEAD.FORMAL.AHON +,
+                          VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past ] ].
+
+nikui-v1-notyetend := v2adj-notyetend-lex-v1 &
+ [ ORTH <! "にくい" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "nikui",
+            MODIFIED.PERIPH + ] ].
+
+sasu-trans-obj-end := caus-trans-obj-end-lex &
+ [ INFLECTED -,
+   LMORPH-BIND-TYPE pass-v-stem-morph,
+   ORTH <! "さす" !>,
+   STEMTYPE v-stem,
+   SYNSEM [ LOCAL.CAT.HEAD [ C-MOD null,
+                                 J-POSTHEAD rels,
+                                 MOD < [ LOCAL [ BAR +,
+                                               CAT.HEAD noun_head ] ] > ],
+            MODIFIED.PERIPH + ] ].
+
+tai-end := tai-end-lex &
+ [ LMORPH-BIND-TYPE i-morph,
+   ORTH <! "たい" !>,
+   SYNSEM.LOCAL.CAT.HEAD [ C-MOD null,
+                                 FORMAL.SHON - ] ].
+
+ta-end := v-past-tense-end-lex &
+ [ INFLECTED +,
+   LMORPH-BIND-TYPE t-morph,
+   ORTH <! "た" !>,
+   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON -,
+                                 J-SPEC < [ LOCAL.CAT.HEAD nom_head ] > ] ].
