@@ -138,6 +138,9 @@ FIRST))))
         (when (and (eq space :space) (not (zerop (fill-pointer result))))
           (decf (fill-pointer result)))
         (return result)))
+;;;
+;;; Call chasen and format the input appropriately
+;;;
 
 (defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
   (let* ((string (string-trim '(#\space #\tab) string))
@@ -191,6 +194,15 @@ FIRST))))
              "~{~a~^ ~}" 
              (loop for analysis in analyses collect (first analysis)))))
          (length full))))))
+
+;;; preprocess without using chasen (used in Hinoki treebank)
+
+;;;(defun preprocess-sentence-string 
+;;;    "Trim white space and trailing punctuation"
+;;;    (string &key (verbose *chasen-debug-p*) posp)
+;;;  (progn
+;;;    (string-trim '(#\space #\tab) string)
+;;;    (normalize-sentence-string string)))
 
 ;;;
 ;;; hook for [incr tsdb()] to call when preprocessing input (going to the PET
