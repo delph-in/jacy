@@ -1005,7 +1005,8 @@ meguru-hiragana-inst-stem :=  v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'meguru]],
                    ORTH <! "めぐる" !> ].
 
-niru-stem :=  v2-c-stem-lex &
+; SF v2-c-stem-lex -> v6-v-stem-lex
+niru-stem :=  v6-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'niru]],
                    ORTH <! "似る" !> ].
 
