@@ -42,7 +42,6 @@
 :include "lex/verbstem-lex.tdl".
 :include "lex/vn-lex.tdl".
 :include "lex/v-ends-lex.tdl".
-:include "lex/ersatz.tdl".
 :end :instance.
 
 :begin :instance :status generic-lex-entry.
