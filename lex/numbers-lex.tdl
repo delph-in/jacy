@@ -1683,10 +1683,49 @@ nine_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "9",
   ORTH <! "£¹" !> ].
 
+one_card_a := card_ichi_no_valence &
+[ ORTH <! "1" !> ].
+
+two_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "2",
+  ORTH <! "2" !> ].
+
+three_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "3",
+  ORTH <! "3" !> ].
+
+four_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "4",
+  ORTH <! "4" !> ].
+
+five_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "5",
+  ORTH <! "5" !> ].
+
+six_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "6",
+  ORTH <! "6" !> ].
+
+seven_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "7",
+  ORTH <! "7" !> ].
+
+eight_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "8",
+  ORTH <! "8" !> ].
+
+nine_card_a := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "9",
+  ORTH <! "0" !> ].
+
 ;;; probably needs more work
 zero_card1 := card_2_no_valence & 
 [ SYNSEM.LKEYS.KEYREL.CARG "0",
   ORTH <! "£°" !> ].
+
+zero_card_a := card_2_no_valence & 
+[ SYNSEM.LKEYS.KEYREL.CARG "0",
+  ORTH <! "0" !> ].
 
 hito_card := card_ichi_no_valence &
 [ ORTH <! "¤Ò¤È" !> ].
