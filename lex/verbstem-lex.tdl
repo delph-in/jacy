@@ -12,7 +12,7 @@
 ;;; ------------------|-------------|------------------------------------------
 ;;;    Melanie Siegel |    2003     |Francis Bond (FCB), Atsuko Shimada,  
 ;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF), 
-;;;                   |             |Takaaki Tanaka (TT)
+;;;                   |             |Takaaki Tanaka (TT), Kuribayashi
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1665,6 +1665,12 @@ ORTH <! "引く" !>].
 hiku-2-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_rel]],
 ORTH <! "惹く" !>].
+
+;挽く (kuribayashi)
+
+hiku-3-stem := v1-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_3_rel]],
+ORTH <! "挽く" !>].
 
 hiku-hiragana-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_rel]],
@@ -21131,11 +21137,6 @@ oshimu-2-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_oshimu_v_2_rel]],
 ORTH <! "愛しむ" !>].
 
-;挽く
-
-hiku-2-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_2_rel]],
-ORTH <! "挽く" !>].
 
 ;飲み潰れる
 
@@ -21511,4 +21512,19 @@ kakaru-4-stem  :=  intrans-c-stem-lex &
 saiwaisuru-stem  :=  intrans-kurusuru-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_saiwaisuru_v_rel]],
                    ORTH <! "幸いする" !>].
+
+
+;Kuribayshi(05-01-21)
+
+;出来る
+
+dekiru-b-stem-kanji := intrans-v-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_dekiru_v_b_kanji_rel]],
+ORTH <! "出来る" !>].
+
+;できる
+
+dekiru-b-stem-hiragana := intrans-v-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_dekiru_v_b_hiragana_rel]],
+ORTH <! "できる" !>].
 
