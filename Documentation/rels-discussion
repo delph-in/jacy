@@ -2,7 +2,7 @@
 MELANIE
 --------------------------------------------------------------------------- 
 
-Dear Emily and Francis,
+
 
 I have done most of the merging of the grammar versions and could 
 tomorrow give you a tar file on that.
@@ -20,15 +20,11 @@ this relation unspecified. The solution you found seems to insert lots
 of spurious ambiguity without really helping, i.e. we have three 
 readings instead of one; and still don't know where to link the argument.
 
-Best,
-	Melanie
-
 
 --------------------------------------------------------------------------- 
 EMILY
 --------------------------------------------------------------------------- 
 
-Dear Melanie & Francis,
 
 Yes -- that is my recollection of our analysis of relative
 clauses as well.  Tim Baldwin eventually convinced me that
@@ -46,14 +42,10 @@ add an extra reading everywhere, too.
 
 (Did we write about this in the Coling paper?  I can't remember.)
 
-Emily
 
 --------------------------------------------------------------------------- 
 FRANCIS
 --------------------------------------------------------------------------- 
-
-
-
 
 We are not happy with the implementation - we would like to have one
 rule that can takes anything left from the subcat list rather than two
@@ -100,41 +92,9 @@ childrens books, with the text written in different colors... they've
 been discussing them for a while, and finally say "akai hon ga
 yominikui" meaning "moji ga akai hon ga yominikui".  Or some such.
 
-Perhaps it's worth digging around in a corpus for better counterexamples...
-
-Anyway, it seems to me that Melanie & I are objecting to (what we see
-as) extraneous ambiguity in parsing, whereas Bondo-san-tachi are
-objecting to (what they see as) extraneous ambiguity in
-interpretation.  As a grammar engineering, I know where I stand on the
-issue.
-
-
->> However, I realise that we may not reach consensus here, and suggest
->> that we might consider a tiny fork - have an experimental hen.tdl and
->> two scripts, one which doesn't load that one (ascript) and one that
->> does (nscript) so we can keep the wierd stuff separate.
-
-
-That would be fine, but I'd rather convince you 
-
-
 --------------------------------------------------------------------------- 
 FRANCIS
 --------------------------------------------------------------------------- 
-
-
-Akira, Taka, Sanae and Chashi, you're also invited in!  
-
->> Emily:
->> I'm (still?) skeptical about the claim that "akai hon" is completely
->> unambiguous.  I'd be happy to believe that there is one strongly preferred
->> reading, but can it really never have the other(s)?  What about a
->> context in which the interlocutors are trying to choose between some
->> childrens books, with the text written in different colors... they've
->> been discussing them for a while, and finally say "akai hon ga
->> yominikui" meaning "moji ga akai hon ga yominikui".  Or some such.
-
-
 That is a different ambiguity/vagueness. It exists for English as well,
 and as far as I know for any language in which you ascribe properties
 (i.e. all of them).  Even in the most salient interpretation it isn't
@@ -148,20 +108,21 @@ argument of the verb (actually, at least in the last case, I would like
 it to be, with a sort of adjuncts are arguments analysis (but I
 digress)).
 
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
 
->> Emily:
->> Perhaps it's worth digging around in a corpus for better counterexamples...
+Perhaps it's worth digging around in a corpus for better counterexamples...
 
+Anyway, it seems to me that Melanie & I are objecting to (what we see
+as) extraneous ambiguity in parsing, whereas Bondo-san-tachi are
+objecting to (what they see as) extraneous ambiguity in
+interpretation.  As a grammar engineering, I know where I stand on the
+issue.
 
-Tim or Chashi may have them at their fingertips.
-
-
->> Anyway, it seems to me that Melanie & I are objecting to (what we see
->> as) extraneous ambiguity in parsing, whereas Bondo-san-tachi are
->> objecting to (what they see as) extraneous ambiguity in
->> interpretation.  As a grammar engineering, I know where I stand on the
->> issue.
-
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
 
 I would prefer to see it as us taking the mono-stratal claim that HPSG
 makes more seriously.  It seems to me that whether a constituent is an
@@ -197,11 +158,22 @@ correlations.  This could, of course, be done as part of a separate
 interpretation module.  However, is seems to be something on the level I
 want in my treebank.
 
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+>> However, I realise that we may not reach consensus here, and suggest
+>> that we might consider a tiny fork - have an experimental hen.tdl and
+>> two scripts, one which doesn't load that one (ascript) and one that
+>> does (nscript) so we can keep the wierd stuff separate.
 
 
->> Emily: 
->> That would be fine, but I'd rather convince you 
+That would be fine, but I'd rather convince you 
 
+
+--------------------------------------------------------------------------- 
+FRANCIS
+----------------------------------------------------------------------------
 
 And vice versa.  Unfortunately, from a practical point of view, we will
 probably have to have two scripts anyway as our default is not to call
@@ -685,6 +657,21 @@ FRANCIS
 Both Tanaka and Amano found "Kim-ga nobeta riyuu" to be clearly
 ambiguous, with the object gap and content-clause readings.
 
+--------------------------------------------------------------------------- 
+TIM
+--------------------------------------------------------------------------- 
+
+Philistines! I find this somewhat surprising, and had managed to convince
+Uchiyama-san yesterday that only the object gap reading was possible. I'd be
+intrigued to have a sentential context in which they think that the
+content-clause reading comes out. Sorry, I realise that this is heading off in
+a tangent from the main point of the discussion.
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+
 
 >> You also get very weird pragmatic effects in trying to interpret
 >> RCCs such as:
@@ -748,4 +735,778 @@ Melanie, Emily:
 
 Is this deliberate?
 
+
+--------------------------------------------------------------------------- 
+2003-12-04
+--------------------------------------------------------------------------- 
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+>Emily wrote:
+>
+>>> > I'd love to see some, if it's not too much trouble.  Perhaps hard
+>>> > to search for in a corpus, though.
+>
+>> 
+>> One example which, I believe, is unambiguously gapping is:
+>> 
+>> Kim-ga nobeta riyuu
+>> 
+>> noberu is funny in that it requires an overt direct object (somewhat like the
+>> "put" requiring an overt locative), such that the non-gapping interpretation
+>> becomes ungrammatical. Most locatives and temporals resist the topic analysis
+>> (as in they cannot be true topics), but it seems that you are on the trail of
+>> these. 
+
+
+But, if this is indeed unambiguously gapping (see Francis's message), 
+it doesn't argue for constraining the topic-like relative clause rule,
+since that reading would be ruled out by the fact that nobeta can't
+appear without something explicit happening to its object.  On the other
+hand, it does argue for also including a gap-based relative clause rule.
+I've always (well, since talking this over with you in 2001 or so at
+least) believed that the linguistically correct thing is to include
+both.  Practically, I'm still resisting 
+
+>>         You also get very weird pragmatic effects in trying to interpret RCCs
+>> such as:
+>> 
+>> hoN-o watashita aite
+>> 
+>> as anything other than gapping. The ga/no examples were things like:
+>> 
+>> Kim-ga watashita hito
+>> Kim-no watashita hito
+>> 
+>> In the first case, you get two interpretations: the person Kim handed (X) to,
+>> and the person Kim handed (over/to X), whereas in the second case, you only get
+>> the object-gapping interpretation (the person Kim handed (over/to X). Note that
+>> this is a defeasible constraint:
+>> 
+>> Kim-no kagi-o watashita hito
+>> 
+>> means the person Kim handed the keys to.
+
+
+The defeasibility here makes this look very much like a pragmatic
+effect, as you say, and therefore probably not one we want to model
+in the grammar.  (Rather, it should be handled in some "interpretation"
+component.)
+
+
+>> Emily wrote:
+>
+>>> > I don't think that my position runs counter to the mono-stratal claim.
+>>> > It's true that HPSG builds a single representation for a surface string,
+>>> > including syntactic, semantic (and ideally pragmatic) information.  But
+>>> > the semantic representations always require further interpretation
+>>> > (that's just how language works), and furthermore there is plenty of
+>>> > work in HPSG that relies on underspecified semantic representations
+>>> > to represent certain ambiguities rather than building separate structures
+>>> > for each one (cf. the MRS treatment of scope ambiguities).  (Likewise,
+>>> > I wouldn't expect anyone to handle pronoun resolution in the grammar,
+>>> > with the possible exception of reflexives.)
+>>> > 
+>>> > Now, if the grammar of Japanese does in fact distinguish whether
+>>> > something is an argument or not, than our implemented grammars should
+>>> > do so, too.  If there is no syntactic reflex of the difference, I'd
+>>> > rather leave it up to interpretation, on the model of pronoun resolution.
+>
+>> 
+>> Based on my earlier work on relative clauses, what I'd be interested
+>> in is the ability to read the valence saturation properties directly
+>> off the MRS, and I guess you get this directly from the ARGS
+>> list. This would then give you the range of unfilled argument
+>> positions to test for possible gapping.
+
+
+This sounds (to me) more compatible with the topic-only version of
+the grammar than it is with one that implements the different gapping
+possibilities.  Is that what you mean?  On the other hand, it also
+assumes that we're basically not looking at any long-distance dependencies.
+If the argument is a gapped one (rather than just topic-linked), it
+belongs with the highest verb.  Is that defensible (even statistically)?
+Or am I missing something?
+
+To put it differently, what about examples like this one:
+
+(1) kinou akai to omotta hon
+
+(Actually, I'm not sure if that should be akai to akakatta, please
+correct me someone...)  Is that parallel to "akai hon" in its
+range of interpretations, i.e., would Bondo-san-tachi feel that
+the topic-like analysis is similarly lacking in precision?
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+>> Emily:
+>> To put it differently, what about examples like this one:
+>> 
+>> (1) kinou akai to omotta hon
+>> 
+>> (Actually, I'm not sure if that should be akai to akakatta, please
+>> correct me someone...)  Is that parallel to "akai hon" in its
+>> range of interpretations, i.e., would Bondo-san-tachi feel that
+>> the topic-like analysis is similarly lacking in precision?
+
+
+Yes.  My colleagues, and for what it's worth me, find only one
+possible interpretation - hon is the ARG1 of akai.
+
+--------------------------------------------------------------------------- 
+cHIKARA HASHIMOTO
+--------------------------------------------------------------------------- 
+
+It's difficult for me to come up with situations where "akai hon" has
+interpretation where the one which is red is not "hon". Likewise, in
+(1) the one which is red is always "hon", I guess. 
+
+If we describe the situation where the one which is red is something
+other than "hon", for instance, the building in which the publisher is
+located, then we say something like below.
+
+ (a) sono syuppansya no biru ga akai hon
+          publisher
+
+ (b) kinou sono syuppansya no biru ga akai to omotta hon
+
+However, "akai hon" and "kinou akai to omotta hon" have no such
+interpretations. 
+
+But It's possible it's just pragmatic and other Japanese might judge
+differently. 
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+Interesting.  What do you think of (c)?
+
+(c) Kono hon ha syuppansya no biru ga akai (to omotta).
+
+--------------------------------------------------------------------------- 
+cHIKARA HASHIMOTO
+--------------------------------------------------------------------------- 
+
+I think (c) is completely acceptable.
+
+But "Kono hon ha akai (to omotta)" is difficult to construe
+in the same way as (c).
+
+--------------------------------------------------------------------------- 
+AKIRA OHTANI
+--------------------------------------------------------------------------- 
+
+Question.
+
+At Mon, 01 Dec 2003 16:13:46 +0900,
+HASHIMOTO Chikara wrote:
+
+>> clause's subject and the relative head are co-referencial (as
+>> indicated with ``_i" in (2)), the subject is never a pronoun. 
+>> 
+>>  (2) * [kare_i ga hon wo katta] hito_i
+>> 
+>> I would say that the analysis that all relative clauses are non-gapped
+>> ones would predict something like (2).
+
+
+(I) *Ken-ga [keeki-ga teeburu-no ue-ni aru mono]-o tot-te  tabe-ta.
+       -nom  cake-nom table-gen  on    be  NO -acc pick up ate
+
+Sentence (I) should be ungrammatical in the same way from
+sentence/phrase that hashimoto pointed out. 
+Compare (I) and (II):
+
+(II) Ken-ga  [keeki-ga teeburu-no ue-ni aru no]-o   tot-te  tabe-ta.
+       -nom  cake-nom table-gen  on    be  NO -acc pick up ate
+    `There was a cake on the table and Ken picked it up and ate it.'
+
+There are head-internal relative clauses in Japanese, exemplified by
+examples like (II). I don't know the literature that this construction
+is subject to a number of constraints relating to syntax and semantics. 
+
+Is NO a kind of dimmy noun? 
+Are there any semantic relation between keeki and NO, aren't they?
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+I'd be inclined to treat the internally headed relative clauses
+as a separate construction all together, rather than try to handle
+them with the same machinery as externally headed relative clauses.
+
+That said, we'll still need an explanation for the ungrammaticality
+of (I), given the existence of the topic-like (head-restrictive)
+relative clause constructions.  I think it's basically semantic:
+that is, once again, I'll bet the following is ungrammatical:
+
+(III) mono-ha keeki-ga teeburu-no ue-ni aru.
+
+Emily
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+>> Emily:
+>> I'd be inclined to treat the internally headed relative clauses
+>> as a separate construction all together, rather than try to handle
+>> them with the same machinery as externally headed relative clauses.
+
+
+I agree we should treat internally headed ones separately.
+
+>> 
+>> That said, we'll still need an explanation for the ungrammaticality
+>> of (I), given the existence of the topic-like (head-restrictive)
+>> relative clause constructions.  I think it's basically semantic:
+>> that is, once again, I'll bet the following is ungrammatical:
+>> 
+>> (III) mono-ha keeki-ga teeburu-no ue-ni aru.
+
+
+It's pretty bad for me.
+
+
+--------------------------------------------------------------------------- 
+MELANIE
+--------------------------------------------------------------------------- 
+
+first let me try to start to set up restrictions for an example like "akai hon":
+
+- the verb is intransitive (i.e., "taberu mizumi" would be ambiguous)
+- there is no other subject (i.e., "me ga akai hito" would have to have the
+topic interpretation. )
+
+Is that correct? Are there more restrictions?
+
+Another thought (that's where Ann comes in):
+If we have cases here, where we cannot decide on the syntactic level, if
+something is an adjunct or an argument; and if it's an argument, if it's an arg1
+or arg2, shouldn't that fit well with the RMRS idea of underspecifying argument
+positions?
+For "tabeta mizumi"
+Something like
+
+ARGn mizumi
+
+in the relation of the verb "tabeta"? What would be missing here, is an MRS that
+allows to state this uncertainty. Ann, we have talked about examples of topics
+in Japanese, where as well one cannot decide the argument position of an entity.
+ How would one encode that in the grammar in order to get the ARGn
+interpretation in the RMRS right?
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+n Tue, Dec 02, 2003 at 04:08:12PM +0100, Melanie Siegel wrote:
+
+>> Melanie:
+>> first let me try to start to set up restrictions for an example like "akai hon":
+>> 
+>> - the verb is intransitive (i.e., "taberu mizumi" would be ambiguous)
+>> - there is no other subject (i.e., "me ga akai hito" would have to have the
+>> topic interpretation. )
+>> 
+>> Is that correct? Are there more restrictions?
+
+
+I think it might be a little different. Presumably, if there are
+intransitive verbs functioning as relative clauses that actually
+resist the topic-like relative clause construction, then there are
+also transitive verbs that do so.  Whether or not they end up leading
+to ambiguous relative clauses wouldn't depend on whether there is
+also pro-drop of some argument in addition to the gapped argument.
+
+
+>> Another thought (that's where Ann comes in): If we have cases here,
+>> where we cannot decide on the syntactic level, if something is an
+>> adjunct or an argument; and if it's an argument, if it's an arg1 or
+>> arg2, shouldn't that fit well with the RMRS idea of underspecifying
+>> argument positions?
+>> For "tabeta mizumi"
+>> Something like
+>> 
+>> ARGn mizumi
+>> 
+>> in the relation of the verb "tabeta"? What would be missing here, is
+>> an MRS that allows to state this uncertainty. Ann, we have talked
+>> about examples of topics in Japanese, where as well one cannot
+>> decide the argument position of an entity.  How would one encode
+>> that in the grammar in order to get the ARGn interpretation in the
+>> RMRS right?
+
+
+This would be a nice way of dealing with the ambiguity caused
+by pro-drop, but if we go this way, I think we'd have to also find
+a way to include adjuncts as well as arguments...
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+>> Melanie:
+>
+>>> > Hi,
+>>> > first let me try to start to set up restrictions for an example like "akai hon":
+>>> > 
+>>> > - the verb is intransitive (i.e., "taberu mizumi" would be ambiguous)
+>>> > - there is no other subject (i.e., "me ga akai hito" would have to have the
+>>> > topic interpretation. )
+>>> > 
+>>> > Is that correct? Are there more restrictions?
+>
+>> 
+>> I think it might be a little different. Presumably, if there are
+>> intransitive verbs functioning as relative clauses that actually
+>> resist the topic-like relative clause construction, then there are
+>> also transitive verbs that do so.  Whether or not they end up leading
+>> to ambiguous relative clauses wouldn't depend on whether there is
+>> also pro-drop of some argument in addition to the gapped argument.
+
+
+As far as resultative-style head-restrictive clauses go (the sakana-ga
+yakeru-nioi case, which seems to me to be the really problematic one),
+it seems to me to be restricted to non-stative predicates -
+processes, accomplishments etc.  But my intuitions are not so clear, I
+need to look at more data.
+ 
+
+>>> > Another thought (that's where Ann comes in): If we have cases here,
+>>> > where we cannot decide on the syntactic level, if something is an
+>>> > adjunct or an argument; and if it's an argument, if it's an arg1 or
+>>> > arg2, shouldn't that fit well with the RMRS idea of underspecifying
+>>> > argument positions?
+>>> > For "tabeta mizumi"
+>>> > Something like
+>>> > 
+>>> > ARGn mizumi
+
+
+That would be nice.
+ 
+
+>>> > in the relation of the verb "tabeta"? What would be missing here, is
+>>> > an MRS that allows to state this uncertainty. Ann, we have talked
+>>> > about examples of topics in Japanese, where as well one cannot
+>>> > decide the argument position of an entity.  How would one encode
+>>> > that in the grammar in order to get the ARGn interpretation in the
+>>> > RMRS right?
+>
+>> 
+>> This would be a nice way of dealing with the ambiguity caused
+>> by pro-drop, but if we go this way, I think we'd have to also find
+>> a way to include adjuncts as well as arguments...
+
+
+Another strength of RMRS I believe.
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+>Just to confirm, the topic-like interpretation (as given by the
+>> original JACY) is meant to be a semantic superset of the
+>> gapped-analysis and the head-restrictive analysis isn't it?  Which
+>> interpretation is correct is left to the interpretation module.
+
+
+Yes -- although I'm afraid I've been using the term somewhat ambiguously
+in this discussion.  On the one hand, I've used it to refer to the
+non-gapped (i.e., head-restrictive) analysis, and on the other to
+the semantic superset idea. Sorry about that.
+
+>> Francis:
+>> If we split RelCl+N into two classes
+>>  - gapping - (with various possible arguments)
+>>  - head-restrictive or attributive (Tim identifies 7 semantic types) 
+>>  
+>> I still can't think of a head-restrictive interpretation of "akai hon"
+>> that makes sense.  Maybe a real linguist could?
+
+
+Well, as you pointed out in an earlier message, the metonymy problem
+makes it hard to think of examples.  Basically, we'd need to look at
+instances of "kono hon-ha akai desu" and find ones that aren't
+basically "kono hon-ga akai desu" and then make corresponding relative
+clauses.  There's a separate issue which we haven't brought up
+so far, which is the validity of treating adjectives as relatives at
+all (we don't for English).  Perhaps that explains why "akai hon"
+and "red book" seem to have the same set of possible interpretations?
+(In the JaCY grammar, we had last I checked a very small number of
+pre-nominal modifiers that behaved like adjectives and not like 
+relative clauses.  One was tan naru, since it can't be predicative.)
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+I think that "nurete-iru hon" (wet book) is as unambiguous for me - it
+isn't so much the fact that the part-of-speech is an adjective as it
+is that the predicate is stative.
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+This is an interesting development, and should be confirmed ^_^;
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+I can't think of any instances of "kono hon-ha akai desu" that aren't
+basically "kono hon-ga akai desu".  But I'll keep trying.
+ 
+
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+
+>> Emily:
+>>> > adjunct-extraction analysis for the English equivalents (the day I
+>>> > bought the book), and presumably could use something similar for
+>>> > Japanese, if we're going down that path.
+>
+>> Francis: 
+>> Matsumoto also argues for an adjunct-extraction analysis for "atama-ga
+>> yoku naru hon" <=> "hon-ni-yotte atama-ga yoku naru" to lead us even
+>> further down a very slippery slope.
+
+
+Which Matsumoto are we talking about?
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+Yoshiko.  In "noun-modifying constructions"
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+>> Francis: 
+>> I will be extra attuned to them as I go through our treebank.  We
+>> should be able to pull out all examples of each type easily, although
+>> I am not 100% confident that my judgments were always consistent.
+
+
+Great!
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+So what I should really do is get back to debugging infl.tdl so I can
+redo our treebank and then get the data ...  I suspect I won't be able
+to extract it this week, and then I am taking Dec 9-25th off (and
+27th-31st is a holiday) so I am afraid it looks like January.
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+Sounds like a good project for the new year.  I'm impressed that you've
+had the time to keep up with this conversation so far!  (I'm barely
+hanging on...)
+ 
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+
+>> Emily:
+>>> > The other reason I prefer the topic-analysis is that it gives only one
+>>> > parse for each relative clause.  If you're going to allow for all
+>>> > different kinds of gapped arguments, as well as locative/temporal
+>>> > adverbs, given the prevalence of pro-drop, you're going to get lots of
+>>> > analyses for each one, and we're not going to be able to distinguish
+>>> > them syntactically.  (Although maybe sortal constraints would give us
+>>> > some headway?)
+>
+>> Francis:  
+>> And this makes a big difference tree banking.  Especially with the
+>> possible adjunct-extraction it gets very hairy quickly.  We tried to
+>> solve this with sortal constraints in ALT and found them to be
+>> effective, but hard to do right.  To capture the full range of use we
+>> really needed preferences rather than constraints.  Which I suppose
+>> pushes us toward interpretation...
+
+
+Indeedy 
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+Although of course we would still need interpretation after the
+grammar gives us a choice between gapping and attributive.
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+Right - so why not push it all off into interpretation?
+
+
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+>> Emily:
+>>> > Alright, to sum up and try to sound like a bit less of a curmudgeon
+>>> > this morning: Until someone comes up with a characterization of a
+>>> > class of relative clauses that strictly disallow the head-restrictive
+>>> > interpretation, I'll continue to believe that the actual state of
+>>> > affairs is that both analyses (gapped and head-restrictive) actually
+>>> > apply in all cases.  
+>
+>> Francis:   
+>> Can you show me what a head-restrictive analysis of "akai hon" looks
+>> like?
+
+
+Syntactically, or in MRS? Like what the Japanese grammar gives.  
+What kind of context it makes sense in?  We're still working on 
+that one, right?
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+I meant what kind of context it makes sense in.  And we are still
+working on that.
+
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+>> Emily:
+>>> > (However, if stochastic parse selection can get us to the right
+>>> > interpretation most of the time--and do so better or more easily
+>>> > than whatever the relevant algorithm is in some back-end trying to
+>>> > interpret our representations--I might be talked out of this
+>>> > position.)
+>
+>> Francis:   
+>> However, in order to test this we need to (1) build a tree bank with
+>> the gapped relative clause rule - which we are doing and (2) implement
+>> a back end to interpret (at least) relative clauses - which we are not
+>> at present ...  
+>> 
+>> A few numbers (from Baldwin 2001) data from the EDR corpus:
+>> subject gap:           64%
+>> object gap:             7% 
+>> Locative/temporal gap:  4% 
+>> Co-actor gap:		1%
+>> 
+>> Content attributive:   14% (i.e. nouns that take arguments)
+>> Idiom/exclusive RCC:    5% (lexically governed)
+>> 
+>> All others < 1% each
+>> 
+>> resultative gap (the classic "sakana-wo yaku nioi") 0.1%
+>> 
+>> Assuming Tim as the interpretor to beat: just under 90%.
+>> 
+>> I would like to look at our corpus (which admittedly has a very skewed
+>> collection of relative clauses) and preferably one or more others and
+>> see what proportion are tagged as gapped/non-gapped using the current
+>> grammar (or a slightly better one that also has gapped
+>> temporal/locative and some more clause taking nouns).  Then see how
+>> well we do with stochastic parse selection.  To do this of course I
+>> will need to use the gapped rule...
+
+
+That all sounds good.
+
+
+>> For the time being, Melanie has put the rules in a separate file.
+
+
+And it seems like we're maybe even converging a bit in our
+views, too.
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+I think so, although we are still not in perfect harmony.
+
+I would say we all agree on the following:
+
+(A) Japanese relative clauses have at least two interpretations
+ - attributive
+ - gapping
+
+(B) These can be represented by a single superset 
+ - topic relation
+[I am not sure if it gets the long distance things right]
+
+(C) Many interpretations can not be distinguished solely with the
+    level of semantics that should be in a grammar
+
+(D) We need some kind of adjunct extraction machinery
+
+(E) We need some more clause taking nouns (jijitsu, riyuu, ...)
+
+(F) It would be nice if we could get an underspecified ARGn
+    analysis 
+
+I think we disagree on the following:
+
+(i) Some interpretations can be distinguished solely with the level of
+    semantics that should be in a grammar
+
+ - Francis believes this, but have not demonstrated it to my satisfaction,
+   let alone Emily's  - I think Chikara also believes this
+
+(ro) Even if (D) is true it is still better to have a single superset
+     analysis and leave interpretation to some back-end interpreter
+     and avoid the explosion of spurious ambiguity 
+     - Emily's position
+
+(ha) Even if (D) is false, we should try and return the several
+     analyses and annotate the preferred one in our treebank and
+     try to disambiguate using the stochastic model.
+     - Francis's position
+
+(ni) In any case relative-clause topic and topic topic are different
+    enough to be labeled differently.
+    Francis's position
+
+(ho) To be consistent Francis should also want to annotate the
+     preferred analysis of -ha marked topics in the treebank and
+     disambiguate using the stochastic model.
+     Hmm.  I must admit I would like to try this...
+
+
+Discussing things with Akira, Taka and Sanae yesterday came to an
+ambiguous conclusion - there was a strong aesthetic feeling that the
+grammar should say whether the relative clause was gapped or not.
+There was also a strong feeling that akai-hon was unambiguous.
+However, no-one was able to think of a way of constraining any of the
+ambiguity syntactically and we all acknowledged the rational behind
+the superset analysis.  
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+
+>(A) Japanese relative clauses have at least two interpretations
+>>  - attributive
+>>  - gapping
+
+
+I guess this should be modified to "Most Japanese relative
+clauses" or "In general, Japanese relative clauses..."
+
+>(B) These can be represented by a single superset 
+>>  - topic relation
+>> [I am not sure if it gets the long distance things right]
+
+
+Why not?  Ha-topics can be related long-distance to embedded
+verbs, right?
+
+-- Kono hon ha akai to omotta.
+ 
+
+>> (C) Many interpretations can not be distinguished solely with the
+>>     level of semantics that should be in a grammar
+>> 
+>> (D) We need some kind of adjunct extraction machinery
+>> 
+>> (E) We need some more clause taking nouns (jijitsu, riyuu, ...)
+>> 
+>> (F) It would be nice if we could get an underspecified ARGn
+>>     analysis 
+>> 
+>> I think we disagree on the following:
+>> 
+>> (i) Some interpretations can be distinguished solely with the level of
+>>     semantics that should be in a grammar
+>> 
+>>  - Francis believes this, but have not demonstrated it to my satisfaction,
+>>    let alone Emily's  - I think Chikara also believes this
+>> 
+>> (ro) Even if (D) is true it is still better to have a single superset
+>>      analysis and leave interpretation to some back-end interpreter
+>>      and avoid the explosion of spurious ambiguity 
+>>      - Emily's position
+>> 
+>> (ha) Even if (D) is false, we should try and return the several
+>>      analyses and annotate the preferred one in our treebank and
+>>      try to disambiguate using the stochastic model.
+>>      - Francis's position
+
+
+I'm not sure I see the connection to (D) for either (ro) or
+(ha), but other than that they make sense to me (as summaries).
+
+
+>> (ni) In any case relative-clause topic and topic topic are different
+>>     enough to be labeled differently.
+>>     Francis's position
+>> 
+>> (ho) To be consistent Francis should also want to annotate the
+>>      preferred analysis of -ha marked topics in the treebank and
+>>      disambiguate using the stochastic model.
+>>      Hmm.  I must admit I would like to try this...
+
+
+That would be interesting ... but talk about your extra ambiguity!!
+Are you proposing a gap-based analysis of (gap-related) topics, or
+some other syntactic mechanisms for producing the multiple reasons
+to choose between?
+
+
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+
+>> Francis:
+>>> > Both Tanaka and Amano found "Kim-ga nobeta riyuu" to be clearly
+>>> > ambiguous, with the object gap and content-clause readings.
+>
+>> Tim:
+>> Philistines! I find this somewhat surprising, and had managed to convince
+>> Uchiyama-san yesterday that only the object gap reading was possible. I'd be
+
+
+If you have to convince your informant, then your judgment is
+suspect.  I believe a certain Bender is vary scathing of minimalist
+researchers doing this in her review in Journal of Linguistics.
+
+>> Tim:
+>> intrigued to have a sentential context in which they think that the
+>> content-clause reading comes out. Sorry, I realise that this is heading off in
+>> a tangent from the main point of the discussion.
+
+
+
+Context paraphrase in English:
+
+The reason I spoke out (nobeta) was that I was annoyed by his
+attitude.
+
+The reason that Kim  (nobeta) was that she wanted to help him.
+"Kim-ga nobeta riyuu-ha kare-wo tasuketakatta kara da."
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+My untested assumption is that the distribution of topics and the
+distribution of relative clauses is different enough that an
+interpreter (back-end system) will want different parameters in
+resolving them.  For example I am pretty sure that o-kaku is quite
+rare as a topic (much less than 7%), although I can't find any data at
+hand.
+
+--
 

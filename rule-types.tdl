@@ -1171,13 +1171,15 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 ; Restrict ARG's COMPS to sat-or-opt-arg to block spurious wo-no conversion
 ; for nominalized verbal nouns like (do-parse-tty " Ÿ∂Ø")
 
+; (MS 2003-12-09) coindexed ARG0 of the vn with ARG0 of the resulting noun.
+
 vn2n-rule :=  n-lex-super &
             [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head &
                                       [ MOD null,
 					VN +,
                                         J-SPEC.FIRST.LOCAL.CAT.HEAD title_head ],
                                  VAL spr-arg & [SPR.FIRST.LOCAL.CAT.HEAD det_head & [SMOD decl]]],
-			    LKEYS.--KEYREL #key & [PRED 'noun_rel],
+			    LKEYS.--KEYREL #key & [PRED 'noun_rel,ARG0 #arg0],
                             CONT nom-vn-sem-type &
                                 [RELS <! #key & 
 				       [LBL #nom-hand,
@@ -1201,7 +1203,8 @@ vn2n-rule :=  n-lex-super &
 					  VAL [UNSAT +,
 					       SUBJ.FIRST.OPT +,
 					       COMPS sat-or-opt-arg]],
-				    LKEYS.--KEYREL #vn-key & [LBL #vn-hand],
+				    LKEYS.--KEYREL #vn-key & [LBL #vn-hand,
+				                              ARG0 #arg0],
                                     CONT [ HOOK.INDEX #modind]],
 			     LEX + ]]>].
 

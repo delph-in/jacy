@@ -10,7 +10,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
-;;; Melanie Siegel    |             |Emily Bender (ERB), Atsuko Shimada, (SF)
+;;; Melanie Siegel    |             |Emily Bender (ERB), Atsuko Shimada, 
+;;;                   |             |Sanae Fujita (SF), Takaaki Tanaka (TT)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1354,12 +1355,14 @@ ORTH <! "忙しい" !>].
 
 ii-eval-adj  :=
 eval-opt-i-adj-stem-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ii,
+[SYNSEM.LOCAL [CAT.HEAD.FORMAL.SHON -,
+			 LKEYS.--KEYREL.PRED 'ii],
 ORTH <! "いい" !>].
 
 ii-adj  :=
 i-adj-stem-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ii,
+	  [SYNSEM.LOCAL [CAT.HEAD.FORMAL.SHON -,
+			 LKEYS.--KEYREL.PRED 'ii],
 ORTH <! "いい" !>].
 
 warui-eval-adj  :=
