@@ -492,58 +492,26 @@ mo-sconj-np := s-conj-nonprop1-lex &
 ;"hai kochira wa sore de kekkou desu."
 ;"sore de yoroshiku onegai itashimasu"
 
-de-advp-main-1 := adv-p-lex-1 &  
-                  [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
-                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
-                                 CONT.RELS <! [PRED 'de] !>],
-                   ORTH <! "で" !> ].
+de-advp-1 := adv-p-lex-1 &  
+	     [SYNSEM.LOCAL [CAT.HEAD [PTYPE de ],
+			    CONT.RELS <! [PRED 'de] !>],
+	      ORTH <! "で" !> ].
 
-;de-advp-main-2 := adv-p-lex-2 &  
-;                 [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
-;                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+;de-advp-2 := adv-p-lex-2 &  
+;                 [SYNSEM.LOCAL [CAT.HEAD [PTYPE de ],
 ;                                CONT.RELS <! [PRED 'de] !>],
 ;                  ORTH <! "で" !> ].
 
-de-advp-main-3 := adv-p-lex-3 &  
-                  [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
-                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
-                                 CONT.RELS <! [PRED 'de] !>],
-                   ORTH <! "で" !> ].
+de-advp-3 := adv-p-lex-3 &  
+	     [SYNSEM.LOCAL [CAT.HEAD [PTYPE de ],
+			    CONT.RELS <! [PRED 'de] !>],
+	      ORTH <! "で" !> ].
 
-de-advp-main-4 := adv-p-lex-4 &  
-                  [SYNSEM.LOCAL [CAT [HEAD [PTYPE de,
-					    MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
-				      VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
-                                 CONT.RELS <! [PRED 'de] !>],
-                   ORTH <! "で" !> ].
-
-
-de-advp-sub-1 := adv-p-lex-1 &  
-                 [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
-                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
-                                CONT.RELS <! [PRED 'de] !>],
-                  ORTH <! "で" !> ].
-
-
-;de-advp-sub-2 := adv-p-lex-2 &  
-;                 [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
-;                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
-;                                CONT.RELS <! [PRED 'de] !>],
-;                  ORTH <! "で" !> ].
-
-
-de-advp-sub-3 := adv-p-lex-3 &  
-                 [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
-                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
-                                CONT.RELS <! [PRED 'de] !>],
-                  ORTH <! "で" !> ].
-
-de-advp-sub-4 := adv-p-lex-4 &  
-		 [SYNSEM.LOCAL [CAT [HEAD [PTYPE de,
-					   MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
-				     VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
-                                CONT.RELS <! [PRED 'de] !>],
-                  ORTH <! "で" !> ].
+de-advp-4 := adv-p-lex-4 &  
+	     [SYNSEM.LOCAL [CAT [HEAD [PTYPE de ],
+				 VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
+			    CONT.RELS <! [PRED 'de] !>],
+	      ORTH <! "で" !> ].
 
 
 ;"seNsei to teNjikai o goissho sasete itadaku."
@@ -1351,17 +1319,11 @@ nikansuru := nounmod-p-lex &
 
 ;"watakushi no keNkyuushitsu  no hou e moushiwake gozaimaseN ga."
 
-e-sub := postp-lex &
-	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE e,
-                                           MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
-                                 CONT.RELS <! [PRED 'e_prep] !>],
-                    ORTH <! "へ" !> ].
+e-p-lex := postp-lex &
+	 [SYNSEM.LOCAL [CAT.HEAD.PTYPE e,
+			CONT.RELS <! [PRED 'e_prep] !>],
+	  ORTH <! "へ" !> ].
 
-e-main := postp-lex &
-	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE e,
-                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
-                                 CONT.RELS <! [PRED 'e_prep] !>],
-                    ORTH <! "へ" !> ].
 
 ;"ichiji  made kaigi sonota ari masu  node."
 ;"kaigi sonota wa gozaimaseN node."
@@ -1438,17 +1400,10 @@ kara-made := lexical_sign &
 
 
 
-kara-main := postp-lex &
-	         [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
-                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
-                                CONT.RELS <! [PRED 'kara_prep] !>],
+kara-p-lex := postp-lex &
+	     [SYNSEM.LOCAL [CAT.HEAD.PTYPE kara,
+			    CONT.RELS <! [PRED 'kara_prep] !>],
                    ORTH <! "から" !> ]. 
-
-kara-sub := postp-lex &
-            [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
-                                     MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
-                           CONT.RELS <! [PRED 'kara_prep] !>],
-             ORTH <! "から" !> ]. 
 
 ;"日本へ行くからです"
 
@@ -1476,18 +1431,10 @@ kara-vtearg :=  vmod-p-lex &
 		   ORTH <! "から" !> ].
 
 
-arrow-main := postp-lex &
-	         [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
-                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
-                                CONT.RELS <! [PRED 'kara_prep] !>],
-                   ORTH <! "→" !> ]. 
-
-arrow-sub := postp-lex &
-            [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
-                                     MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
-                           CONT.RELS <! [PRED 'kara_prep] !>],
-             ORTH <! "→" !> ]. 
-
+arrow-p-lex := postp-lex &
+	       [SYNSEM.LOCAL [CAT.HEAD.PTYPE kara,
+			      CONT.RELS <! [PRED 'kara_prep] !>],
+		ORTH <! "→" !> ]. 
 
 bakari-narg := postp-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE bakari,

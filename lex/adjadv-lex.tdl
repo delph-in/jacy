@@ -22090,14 +22090,6 @@ yokei_1 := scopal-adv-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'yokei_1,
  ORTH <! "余計" !> ].
 
-;<IJ> ; から 
-;<IJ> ; JACY から: kara-sconj (s-conj1-lex) kara-sconj-np (s-conj-nonprop1-lex) kara-send (s-ell-end-lex) kara-case (case-p-lex) kara-nmod-1 (nounmod-p-lex) kara-main (postp-lex) kara-sub (postp-lex) kara-parentarg (vmod-p-lex) kara-vtearg (vmod-p-lex)
-;<IJ> ; Used 662 times
-
-;<IJ> kara_1_2 := scopal-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED 'kara_1_2,
-;<IJ>  ORTH <! "から" !> ].
-
 ; 早 
 
 haya_1 := scopal-adv-lex &

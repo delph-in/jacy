@@ -59801,13 +59801,6 @@ konketsuji_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'konketsuji_1,
  ORTH <! "º®·ì»ù" !> ].
 
-; ¸À¸ì 
-; Used 20 times
-
-gongo_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'gongo_1,
- ORTH <! "¸À¸ì" !> ].
-
 ; º®¹çÊª 
 ; Used 1 times
 
