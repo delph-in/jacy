@@ -758,6 +758,9 @@ naru-pparg-stem :=  v2b-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
                    ORTH <! "なる" !>].
 
+naru-pparg-kanji-stem :=  v2b-c-stem-lex &
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                   ORTH <! "成る" !>].
 
 dounaru-stem :=  intrans-c-stem-wh-lex &
                  [SYNSEM.LKEYS [KEYREL.PRED '_dounaru_v_rel],

@@ -557,8 +557,6 @@ head-adjunct-rule-first-s := hadj-first-s &
 
 ; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
 
-
-
 ; (ERB 2002-01-02) Allowing relative clauses to attach to either
 ; NP or N'.  Need to constrain the quantify-n-infl-rule so that
 ; it only applies to unmodified elements, to avoid spurious ambiguity.
@@ -580,6 +578,9 @@ head-adjunct-rule-first-s := hadj-first-s &
 ;(CH 2003-08-22)
 ; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" を追加
 
+; (MS 2004-12-13) This had [ADJ -] on its argument, preventing the correct
+; reading for 目が美しい猫.
+
 relative-clause-rule := hadj-final-i &
                       [SYNSEM.LOCAL [BAR +,
                                      NUCL nucl_minus],
@@ -593,7 +594,7 @@ relative-clause-rule := hadj-final-i &
                                                        ARG2 #ind] !>,
                                 HCONS <! qeq & [HARG #soa,
                                                  LARG #adjhand] !>],
-                       ARGS <[SYNSEM [LOCAL [CAT [HEAD [ADJ -,
+                       ARGS <[SYNSEM [LOCAL [CAT [HEAD [ADJ bool,
 							J-POSTHEAD rels,
 						       MAIN-PRD bool],
 						 VAL saturated],

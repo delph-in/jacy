@@ -52,6 +52,12 @@ full-or-zpro-ref-ind := full & index.
 full_ref-ind := full-or-zpro-ref-ind & ref-ind & [PNG j-png].
 zpro_ref-ind := full-or-zpro-ref-ind.
 
+; (MS 2004-12-13) The conj-ref-ind should be under full_ref-ind
+; in order to match the type hierarchy including zero pronouns.
+; This overrides the Matrix type.
+
+conj-ref-ind := conj-index & full_ref-ind.
+
 j-png := png & [PN pn, GEN gender].
 
 ; The basic semantic structure, a CONT, is just something with a handle.

@@ -183,6 +183,9 @@ kara-case :< ni-or-kara.
 ; be distinguished.  For now, give complementizer to its own case
 ; value.  (Probably need more fundamental change to analysis -- 
 ; perhaps when we overhaul the clause analysis.)
+; (MS 2004-12-13) Why was made in topic? This lead to unwanted unifications!
+; took that out (犬などの動物 got a reading, where the nado got PTYPE made).
+
 
 to-comp := case.
 
@@ -216,7 +219,7 @@ e  :< postp-case.
 sonota  :< postp-case.
 tomo  :< postp-case.
 nado  :< nontop.
-made  :=  postp-case & topic.
+made  :=  postp-case.
 kara  :< postp-case.
 bakari  :< postp-case.
 kurai  :< postp-case.
