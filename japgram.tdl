@@ -1098,9 +1098,13 @@ quasi-morph-rule := binary-basic &
 ; identification of VAL is not correct; and one cannot get GA-WO. 
 ; The valence composition must be re-worked here.
 
+; (MS 2004-02-25) No, UNSAT - is also not right. One doesn't get readings for both 
+; zero pronouns and subjects, playing around with UNSAT.
+; Does the valence come from V1? Identifying the agent?
+
 vstem-vstem-rule := head-final-type & 
 		    orth-princ &
-		    [SYNSEM [LOCAL [CAT [VAL #val],
+		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
 				    BAR -],
 			     LEX +],
 		     INFLECTED #infl,
@@ -1108,11 +1112,13 @@ vstem-vstem-rule := head-final-type &
 		     RMORPH-BIND-TYPE #rmorphbind,
 		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
 							VAL #val],
+						   CONT.HOOK.XARG #arg1,
 						   BAR -],
 					    LEX +],
 				   RMORPH-BIND-TYPE #im & i-morph],
 		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
-						   VAL #val & [UNSAT +]],
+						   VAL.UNSAT +],
+					      CONT.HOOK.XARG #arg1,
 					      BAR -],
 				       LEX +],
 			       INFLECTED #infl,

@@ -1544,7 +1544,8 @@ obj-casechange-rule := phrasal_sign & headed-phrase &
 ; (MS 2003-01-15) if the subject is obl, it is not possible to parse, e.g. ほしがっている
                                                      
 subj-casechange-rule := phrasal_sign & headed-phrase & lex-rule &
-			[SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & [FIRST [LOCAL [CAT [HEAD overt-case-p_head &
+			[SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & [FIRST [OPT -,
+									LOCAL [CAT [HEAD overt-case-p_head &  
 												[FORMAL #form,
 												 QUANTIFIABLE #quant],
 											   VAL #sc],

@@ -2395,9 +2395,9 @@ uwagaki-vn :=
 
 ;adjustment, adjustment, emendation, modification, retrieval
 
-chousei-vn-2 :=  
+shuusei-vn-2 :=  
         vn-trans1-lex &
-        [SYNSEM.LKEYS.KEYREL.PRED 'chousei-2_vn,
+        [SYNSEM.LKEYS.KEYREL.PRED 'shuusei-2_vn,
          ORTH <! "½¤Àµ" !> ].
 
 ;close, occlusion
