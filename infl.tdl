@@ -113,17 +113,20 @@ lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE c2-stem].
 
-pot-lexeme-cons-infl-rule := 
-%suffix (く け) (る れ) (う え) (す せ) (む め) (ぐ げ) (ぶ べ) (つ て) (ぬ ね)
-potential-rule &
-[RMORPH-BIND-TYPE i-or-t-or-a-morph,
-ARGS.FIRST.STEMTYPE cons-stem].
 
-pot-lexeme-v-infl-rule := 
-%suffix (!vる !vられ)
-potential-rule &
-[RMORPH-BIND-TYPE e-morph,
-ARGS.FIRST.STEMTYPE v-stem].
+; (MS 2004-11-24) Maybe we don't use these any more?
+
+;pot-lexeme-cons-infl-rule := 
+;%suffix (く け) (る れ) (う え) (す せ) (む め) (ぐ げ) (ぶ べ) (つ て) (ぬ ね)
+;potential-rule &
+;[RMORPH-BIND-TYPE i-or-t-or-a-morph,
+;ARGS.FIRST.STEMTYPE cons-stem].
+
+;pot-lexeme-v-infl-rule := 
+;%suffix (!vる !vられ)
+;potential-rule &
+;[RMORPH-BIND-TYPE e-morph,
+;ARGS.FIRST.STEMTYPE v-stem].
 
 cond-lexeme-infl-rule := 
 %suffix (く け) (る れ) (う え) (す せ) (む め) (ぐ げ) (ぶ べ) (つ て) (ぬ ね) (れる れ) (せる せ)
@@ -132,11 +135,13 @@ lexeme-rule &
 ARGS.FIRST.STEMTYPE regular-stem].
 
 ;(MS 2002-12-02) In spoken language, one can find 食べれば
+; (MS 2004-11-24) Extended these to all v-stem verbs
 
 cond-spoken-lexeme-infl-rule := 
-%suffix (食べる 食べ)
+%suffix (!vる !v)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-exceptional-morph,
+ ARGS.FIRST.STEMTYPE v-stem,
  SYNSEM.NON-LOCAL.ROBUST +].
 
 
@@ -152,18 +157,21 @@ lexeme-rule &
 [RMORPH-BIND-TYPE o-morph,
 ARGS.FIRST.STEMTYPE v-stem].
 
-ere-lexeme-c-stem-infl-rule := 
-%suffix (く けれ) (る えれ) (う えれ) (す せれ) (む めれ) (ぐ げれ) (ぶ べれ) (つ てれ)  (ぬ ねれ)
-lexeme-rule &
-[RMORPH-BIND-TYPE ere-morph,
- ARGS.FIRST.STEMTYPE cons-stem].
+; (MS 2004-11-24) It seems that this is not used any more.
 
+;ere-lexeme-c-stem-infl-rule := 
+;%suffix (く けれ) (る えれ) (う えれ) (す せれ) (む めれ) (ぐ げれ) (ぶ べれ) (つ てれ)  (ぬ ねれ)
+;lexeme-rule &
+;[RMORPH-BIND-TYPE ere-morph,
+; ARGS.FIRST.STEMTYPE cons-stem].
 
-ere-lexeme-v-stem-infl-rule := 
-%suffix (る れれ)
-lexeme-rule &
-[RMORPH-BIND-TYPE ere-morph,
- ARGS.FIRST.STEMTYPE v-stem].
+; (MS 2004-11-24) It seems that this is not used any more.
+
+;ere-lexeme-v-stem-infl-rule := 
+;%suffix (る れれ)
+;lexeme-rule &
+;[RMORPH-BIND-TYPE ere-morph,
+; ARGS.FIRST.STEMTYPE v-stem].
 
 
 nd-lexeme-infl-rule := 

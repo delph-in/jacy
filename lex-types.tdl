@@ -5303,6 +5303,8 @@ prpstn-introducing-end-lex := v-noncaus-op-end-lex &
 
 ; (MS 2003-12-19) Matrix 0.6
 
+; (MS 2004-11-22) The cause-relation should not include the wo-complement.
+
 caus-trans-obj-end-lex := v-op-end-lex &
                 [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
 				     VAL [SPR obl-1-arg &
@@ -5315,7 +5317,7 @@ caus-trans-obj-end-lex := v-op-end-lex &
 					  SUBJ [FIRST [OPT + ,
 						       LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
 							      CONT.HOOK.INDEX #causer]]],
-					  COMPS < #obj-val & [LOCAL.CONT.HOOK.INDEX #object],
+					  COMPS < #obj-val,
 						  [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
 							  CONT.HOOK.INDEX #causee]] >]],
 				CONT [HOOK [INDEX #event,
@@ -5329,47 +5331,47 @@ caus-trans-obj-end-lex := v-op-end-lex &
 					     LBL #prpstn-hd, 
 					     MARG #prpstn-soa] !>,
 				      HCONS <! qeq & [HARG #prpstn-soa, LARG #hand] !> ]],
-			 LKEYS.KEYREL arg1234-relation & #key & [ARG1 #causer,
-							  ARG2 #causee,
-							  ARG3 #object,
-							  ARG4 #prpstn-hd,
-							  ARG0 #event,
-							  LBL #top]]].
+			 LKEYS.KEYREL arg123-relation & #key & [ARG1 #causer,
+								 ARG2 #causee,
+								 ARG3 #prpstn-hd,
+								 ARG0 #event,
+								 LBL #top]]].
 
 
 
 
-caus-trans-obj2-end-lex := v-op-end-lex &
-                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
-				     VAL [SPR obl-1-arg &
-					      [FIRST.LOCAL [CONT [HOOK [LTOP #hand,
-									XARG #causee]],
-							     CAT [HEAD verb-stem_head,
-								  VAL sbj-obj-arg &
-								       [UNSAT +,
-									COMPS 1-list & [FIRST #obj-val]]]]],
-					  SUBJ [FIRST [OPT + ,
-						       LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
-							      CONT.HOOK.INDEX #causer]]],
-					  COMPS < #obj-val & [LOCAL.CONT.HOOK.INDEX #object], 
-						  [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
-							  CONT.HOOK.INDEX #causee]] >]],
-				CONT [HOOK [INDEX #event,
-					    LTOP #top],
-				      MOD-IND #event,
-				      MOD-HAND #top,
-				      RELS <! #key & [PRED 'cause], 
-					     message &
-					    [PRED proposition_m_rel,
-					     LBL #prpstn-hd, 
-					     MARG #prpstn-soa] !>,
-				      HCONS <! qeq & [HARG #prpstn-soa, LARG #hand] !> ]],
-			 LKEYS.KEYREL arg1234-relation & #key & [ARG1 #causer,
-							  ARG2 #causee,
-							  ARG3 #object,
-							  ARG4 #prpstn-hd,
-							  ARG0 #event,
-							  LBL #top]]].
+;caus-trans-obj2-end-lex := v-op-end-lex &
+;                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
+;				     VAL [SPR obl-1-arg &
+;					      [FIRST.LOCAL [CONT [HOOK [LTOP #hand,
+;									XARG #causee]],
+;							     CAT [HEAD verb-stem_head,
+;								  VAL sbj-obj-arg &
+;								       [UNSAT +,
+;									COMPS 1-list & [FIRST #obj-val]]]]],
+;					  SUBJ [FIRST [OPT + ,
+;						       LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
+;							      CONT.HOOK.INDEX #causer]]],
+;					  COMPS < #obj-val & [LOCAL.CONT.HOOK.INDEX #object], 
+;						  [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
+;							  CONT.HOOK.INDEX #causee]] >]],
+;				CONT [HOOK [INDEX #event,
+;					    LTOP #top],
+;				      MOD-IND #event,
+;				      MOD-HAND #top,
+;				      RELS <! #key & [PRED 'cause], 
+;					     message &
+;					    [PRED proposition_m_rel,
+;					     LBL #prpstn-hd, 
+;					     MARG #prpstn-soa] !>,
+;				      HCONS <! qeq & [HARG #prpstn-soa, LARG #hand] !> ]],
+;			 LKEYS.KEYREL arg1234-relation & #key & [ARG1 #causer,
+;							  ARG2 #causee,
+;							  ARG3 #object,
+;							  ARG4 #prpstn-hd,
+;							  ARG0 #event,
+;							  LBL #top]]].
+
 
 
 caus-intrans-end-lex := v-op-end-lex &
@@ -5442,7 +5444,7 @@ simple-pass-end-lex :=   pass-end-lex &
 			       CONT [RELS <! !>,
 				     HOOK.INDEX #event & [E.PASS +],
 				     HCONS <! !>],
-			       CTXT.EMPATHY.EMPEE #surfobjind],
+			       CTXT.EMPATHY.EMPEE #surfsbjind],
 			LKEYS.KEYREL pass-relation &  [LBL #hand]],
 		LMORPH-BIND-TYPE pass-morph].
 
@@ -5455,7 +5457,7 @@ simple-pass-end-lex :=   pass-end-lex &
 ; (MS 2004-11-22) Restricted to SPRs with sbj-obj-obj2-arg, namely ditransitives.
 
 
-ditrans-pass-end-lex :=   pass-end-lex &
+ditrans-pass-end-ganini-lex :=   pass-end-lex &
                [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
 					 SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
                                                              CONT.HOOK.INDEX #surfsbjind]],
@@ -5465,7 +5467,7 @@ ditrans-pass-end-lex :=   pass-end-lex &
 					 SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
 									XARG #surfobj2ind,
 									LTOP #hand]],
-							    CAT.VAL sbj-obj-obj2-arg,
+							    CAT.VAL sbj-obj-obj2-arg & [UNSAT +],
 							    ARG-S < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 									    CONT.HOOK.INDEX #surfobj2ind]],
 								    [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE wo],
@@ -5477,9 +5479,42 @@ ditrans-pass-end-lex :=   pass-end-lex &
 				   CONT [RELS <! !>,
 					 HOOK.INDEX #event & [E.PASS +],
 					 HCONS <! !>],
-			       CTXT.EMPATHY.EMPEE #surfobj2ind],
+			       CTXT.EMPATHY.EMPEE #surfsbjind],
 			LKEYS.KEYREL pass-relation & [LBL #hand]],
 		LMORPH-BIND-TYPE pass-morph].
+
+
+; (MS 2004-11-25) There is a second type of ditransitive passives:
+; 田中がフランシスによってボールを当てられた
+; These keep the wo-argument.
+
+
+ditrans-pass-end-ganiwo-lex :=   pass-end-lex &
+               [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
+					 SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+                                                             CONT.HOOK.INDEX #surfsbjind]],
+                                         COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
+						 [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+                                                             CONT.HOOK.INDEX #surfobj2ind]] >,
+					 SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
+									XARG #surfobj2ind,
+									LTOP #hand]],
+							    CAT.VAL sbj-obj-obj2-arg & [UNSAT +],
+							    ARG-S < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+									    CONT.HOOK.INDEX #surfobj2ind]],
+								    #objval & [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE wo],
+										      CONT.HOOK.INDEX #surfobjind]],
+								    [LOCAL [CAT.HEAD case-p_head & [CASE ni],
+										      CONT.HOOK.INDEX #surfsbjind]] >]]],
+				    HEAD.KEYS.KEY pass_rel],
+				    
+				   CONT [RELS <! !>,
+					 HOOK.INDEX #event & [E.PASS +],
+					 HCONS <! !>],
+			       CTXT.EMPATHY.EMPEE #surfsbjind],
+			LKEYS.KEYREL pass-relation & [LBL #hand]],
+		LMORPH-BIND-TYPE pass-morph].
+
 
 
 

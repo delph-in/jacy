@@ -16860,7 +16860,8 @@ susugu_1 := v1-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_susugu_v_1_rel,
  ORTH <! "Âõ¤°" !>].
 
-; ¸¯¤ë 
+; ¸¯¤ë
+; to give 
 
 yaru_1 := v1-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yaru_v_1_rel,

@@ -609,16 +609,16 @@ seru-trans-obj-end := caus-trans-obj-end-lex &
             LMORPH-BIND-TYPE pass-c-stem-morph,
             STEMTYPE v-stem].
 
-seru-trans-obj2-end := caus-trans-obj2-end-lex &
-           [ORTH <! "せる" !>,
-            INFLECTED -,
-            SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
-                                                 BAR +]] >,
-                                     C-MOD null,
-                                     J-POSTHEAD rels]],
-                    MODIFIED.PERIPH +],
-            LMORPH-BIND-TYPE pass-c-stem-morph,
-            STEMTYPE v-stem].
+;seru-trans-obj2-end := caus-trans-obj2-end-lex &
+;           [ORTH <! "せる" !>,
+;            INFLECTED -,
+;            SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+;                                                 BAR +]] >,
+;                                     C-MOD null,
+;                                     J-POSTHEAD rels]],
+;                    MODIFIED.PERIPH +],
+;            LMORPH-BIND-TYPE pass-c-stem-morph,
+;            STEMTYPE v-stem].
 
 ; (TT 2003-09-03) lex type を *-obj-* と *-obj2-* に
 
@@ -633,16 +633,16 @@ saseru-trans-obj-end := caus-trans-obj-end-lex &
             LMORPH-BIND-TYPE pass-v-stem-morph,
             STEMTYPE v-stem].
 
-saseru-trans-obj2-end := caus-trans-obj2-end-lex &
-           [ORTH <! "させる" !>,
-            INFLECTED -,
-            SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
-                                                 BAR +]] >,
-                                     C-MOD null,
-                                     J-POSTHEAD rels]],
-                    MODIFIED.PERIPH +],
-            LMORPH-BIND-TYPE pass-v-stem-morph,
-            STEMTYPE v-stem].
+;saseru-trans-obj2-end := caus-trans-obj2-end-lex &
+;           [ORTH <! "させる" !>,
+;            INFLECTED -,
+;            SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+;                                                 BAR +]] >,
+;                                     C-MOD null,
+;                                     J-POSTHEAD rels]],
+;                    MODIFIED.PERIPH +],
+;            LMORPH-BIND-TYPE pass-v-stem-morph,
+;            STEMTYPE v-stem].
 
 ; (SF 2003-09-02) CP from させる
 
@@ -672,16 +672,16 @@ sasu-trans-obj-end := caus-trans-obj-end-lex &
             LMORPH-BIND-TYPE pass-v-stem-morph,
             STEMTYPE v-stem].
 
-sasu-trans-obj2-end := caus-trans-obj2-end-lex &
-           [ORTH <! "さす" !>,
-            INFLECTED -,
-            SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
-                                                 BAR +]] >,
-                                     C-MOD null,
-                                     J-POSTHEAD rels]],
-                    MODIFIED.PERIPH +],
-            LMORPH-BIND-TYPE pass-v-stem-morph,
-            STEMTYPE v-stem].
+;sasu-trans-obj2-end := caus-trans-obj2-end-lex &
+;           [ORTH <! "さす" !>,
+;            INFLECTED -,
+;            SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+;                                                 BAR +]] >,
+;                                     C-MOD null,
+;                                     J-POSTHEAD rels]],
+;                    MODIFIED.PERIPH +],
+;            LMORPH-BIND-TYPE pass-v-stem-morph,
+;            STEMTYPE v-stem].
 
 ;passive
 
@@ -707,14 +707,28 @@ rareru-simple-pass-end := simple-pass-end-lex &
             LMORPH-BIND-TYPE pass-v-stem-morph,
             STEMTYPE v-stem].
 
-reru-ditrans-pass-end := ditrans-pass-end-lex &
+reru-ditrans-pass-ganiwo-end := ditrans-pass-end-ganiwo-lex &
            [ORTH <! "れる" !>,
             INFLECTED -,
             SYNSEM.LOCAL [CAT.HEAD [MODUS passive]],
             LMORPH-BIND-TYPE pass-c-stem-morph,
             STEMTYPE v-stem].
 
-rareru-ditrans-pass-end := ditrans-pass-end-lex &
+rareru-ditrans-pass-ganiwo-end := ditrans-pass-end-ganiwo-lex &
+           [ORTH <! "られる" !>,
+            INFLECTED -,
+            SYNSEM.LOCAL [CAT.HEAD [MODUS passive]],
+            LMORPH-BIND-TYPE pass-v-stem-morph,
+            STEMTYPE v-stem].
+
+reru-ditrans-pass-ganini-end := ditrans-pass-end-ganini-lex &
+           [ORTH <! "れる" !>,
+            INFLECTED -,
+            SYNSEM.LOCAL [CAT.HEAD [MODUS passive]],
+            LMORPH-BIND-TYPE pass-c-stem-morph,
+            STEMTYPE v-stem].
+
+rareru-ditrans-pass-ganini-end := ditrans-pass-end-ganini-lex &
            [ORTH <! "られる" !>,
             INFLECTED -,
             SYNSEM.LOCAL [CAT.HEAD [MODUS passive]],
