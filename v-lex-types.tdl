@@ -10,7 +10,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
-;;;Melanie Siegel (MS)|             |Emily Bender (ERB)
+;;;Melanie Siegel (MS)|             |Emily Bender (ERB), Francis Bond (FCB)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -104,15 +104,18 @@ generic_verb_vstem_infl-lex := generic-verb-lex &
                             J-NEEDS-AFFIX +].
 
 ; (ERB 2002-01-14) [SMOD unmarked] to restrain utterance-rule2e.
+; (FCB 2003-12-04) Hooked up ARG0
 
 vn-lex  := nonaux-lex & lexical_sign-word & 
            [SYNSEM [LOCAL [CAT [HEAD vn_head-avm & [MAIN-PRD -,
                                                     SMOD unmarked]],
-			   LKEYS.--KEYREL #key,
-                          CONT simple-verb-sem-type & [RELS <! #key !>,
-                                                       HCONS <! !>]]],
+			   LKEYS.--KEYREL #key & [ ARG0 #ind,
+						   LBL #top],
+			   CONT simple-verb-sem-type & [HOOK [INDEX #ind,
+							     LTOP #top],
+						       RELS <! #key !>,
+						       HCONS <! !>]]],
             INFLECTED +].
-
 
 vn-sbj-comps-lex := vn-lex &
 		    [SYNSEM.LOCAL [CAT.VAL [SUBJ.FIRST #sbj,
