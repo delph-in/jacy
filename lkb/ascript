@@ -1,3 +1,4 @@
+;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
 (lkb-load-lisp (parent-directory) "Version.lsp")
 (setf *grammar-directory* (parent-directory)) ; needed for MRS
 (load-lkb-preferences (this-directory) "user-prefs.lsp")
@@ -26,7 +27,7 @@
 (read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
 
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
-;;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "relative-clauses.tdl"))
+;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "relative-clauses.tdl"))
  
 
 (read-cached-lex-if-available
