@@ -714,13 +714,16 @@ conj-rule := conj-rule-type &
 
 ; (MS 2003-12-19) Matrix 0.6
 
+; (MS 2004-01-09) grab the KEYS from the VN.
+
 vn-light-rule := head-marker-rule & 
                  [SYNSEM [LOCAL [BAR bool,
+				 CAT.HEAD.KEYS #keys,
 				 CONT.HOOK #hook],
 			  LEX +],
                   J-NEEDS-AFFIX -,
                   RMORPH-BIND-TYPE #morphbind,
-                 ARGS <[SYNSEM j-synsem & [LOCAL [CAT.HEAD vn_head,
+                 ARGS <[SYNSEM j-synsem & [LOCAL [CAT.HEAD vn_head & [KEYS #keys],
 						  CONT.HOOK #hook,
 						   BAR -]]],
                        [SYNSEM j-synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX -, LIGHT +]]],

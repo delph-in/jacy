@@ -3473,29 +3473,30 @@ nom-exceptional-pred-lex :=  nom-pred-lex &
 ; (MS 2003-10-08) Problems with Matrix 0.5?
 ;; (FCB 2003-08-13) made MAIN-PRD bool to allow  (do-parse-tty "歩い て 行く こと")
 ;; as suggested by Melanie
+; (MS 2004-01-09) This is not being used any more.
 
-nom-int-lex := nom-lex & 
-       [SYNSEM.LOCAL [CAT [VAL.SPR.FIRST [LOCAL [CONT.HOOK.LTOP #verb-hand,
-						 CAT [HEAD verb_head & [MAIN-PRD -,
-									SMOD decl]],
-                                                 BAR +]]],
-                      CONT  nom-pred-sem-type &
-                          [RELS <! [ARG0 #i,
-                                     LBL #nom-hand,
-                                     ARG1 #prpstn-hand],
-                                  quant-relation & 
-				 [ARG0 #i, 
-				  PRED udef_rel,
-				  RSTR #restr],
-                                  message & [PRED question_m_rel,
-					     LBL #prpstn-hand,
-					     MARG #soa] !>,
-                           HOOK [LTOP #nom-hand],
-                           HCONS <! qeq &
-                                   [HARG #restr,
-                                    LARG #nom-hand],
-                                   [HARG #soa,
-                                    LARG #verb-hand] !> ]]].
+;nom-int-lex := nom-lex & 
+;       [SYNSEM.LOCAL [CAT [VAL.SPR.FIRST [LOCAL [CONT.HOOK.LTOP #verb-hand,
+;						 CAT [HEAD verb_head & [MAIN-PRD -,
+;									SMOD decl]],
+;                                                 BAR +]]],
+;                      CONT  nom-pred-sem-type &
+;                          [RELS <! [ARG0 #i,
+;                                     LBL #nom-hand,
+;                                     ARG1 #prpstn-hand],
+;                                  quant-relation & 
+;				 [ARG0 #i, 
+;				  PRED udef_rel,
+;				  RSTR #restr],
+;                                  message & [PRED question_m_rel,
+;					     LBL #prpstn-hand,
+;					     MARG #soa] !>,
+;                           HOOK [LTOP #nom-hand],
+;                           HCONS <! qeq &
+;                                   [HARG #restr,
+;                                    LARG #nom-hand],
+;                                   [HARG #soa,
+;                                    LARG #verb-hand] !> ]]].
 
 
 ; (ERB 2001-11-07) Need a supertype for nominalizers that is
@@ -4454,19 +4455,21 @@ naadj2v-end-lex := lexical_sign-word &
 
 
 v-neg-end-lex := v-noncaus-op-end-lex &
-                 [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS negative],
+                 [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS negative,
+							    KEYS.KEY #negrel],
 				      VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
 								 HOOK.LTOP #v-hd,
 								 MOD-IND #event]]],
-				 CONT [RELS <! neg-relation &  [ARG2 #neg-arg,
-							     PRED 'neg_rel,
-								  LBL #top] !>,
+				 CONT [RELS <! neg-relation &  #keyrel & [ARG2 #neg-arg,
+									  PRED 'neg_rel & #negrel,
+									  LBL #top] !>,
 				       HOOK [LTOP #top,
 					     INDEX #event & [E.MOOD indicative]],
 				       MOD-HAND #modhd,
 				       MOD-IND #event,
 				       HCONS <! qeq & [LARG #v-hd,
-							HARG #neg-arg] !>]]]].
+							HARG #neg-arg] !>]],
+			  LKEYS.KEYREL #keyrel]].
 
 v-neg-polite-present-end-lex := v-neg-end-lex &
 				[J-NEEDS-AFFIX -,

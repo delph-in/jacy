@@ -2,6 +2,10 @@
 
 encoding := EUC-JP.
 
+;; allow lexical entries to fail
+lex-entries-can-fail.
+
+
 ;;;
 ;;; _fix_me_
 ;;;

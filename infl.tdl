@@ -18,6 +18,9 @@
 ; (ERB 2002-01-29) Output of this rule should also be SMOD unmarked
 ; to block ambiguity with nonprop conjunctions.  
 
+; (MS 2004-02-09) BAR -, to block spurious ambiguity in 
+; 私が笑う
+
 ru-lexeme-infl-rule := 
 word-rule & 
 [RMORPH-BIND-TYPE u-morph,
@@ -31,7 +34,8 @@ word-rule &
                                               SMOD unmarked,
                                               J-POSTHEAD rels,
                                               FORMAL.AHON -],
-                CONT.HOOK.INDEX.E.MOOD indicative],
+                CONT.HOOK.INDEX.E.MOOD indicative,
+		BAR -],
  ARGS.FIRST v-lex & [STEMTYPE regular-stem,
                      SYNSEM.LOCAL.CAT.HEAD #head]].
 
