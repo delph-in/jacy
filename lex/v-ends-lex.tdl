@@ -901,6 +901,18 @@ mai-end  :=  mai-end-lex &
                                           FIN +]],
                   LMORPH-BIND-TYPE mai-morph].
 
+beki-end :=  beki-end-lex &
+                 [ORTH <! "д┘дн" !>,
+                  J-NEEDS-AFFIX -,
+                  SYNSEM.LOCAL [CAT.HEAD [MODUS indicative,
+                                          MOD null,
+                                          C-MOD null,
+                                          H-TENSE present,
+                                          MARK null,
+                                          J-SPEC null,
+                                          FIN +]],
+                  LMORPH-BIND-TYPE beki-morph].
+
 ;tend to
 
 gachi-end := v2na-end-lex &

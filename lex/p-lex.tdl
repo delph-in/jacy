@@ -1,4 +1,4 @@
-;;;; -*- Mode: TDL; Coding: euc-jp -*-
+;; -*- Mode: TDL; Package: DISCO -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -448,7 +448,7 @@ comma-advp := adv-p-lex-1 &
               ORTH <! "、" !>].
 
 ; (not FCB 2003-08-13)  Evil hack
-; FIXME: fix the input text
+; FIXME: fix the inpout text
 comma-no-nmod-1 := nounmod-p-lex &
            [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
 			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
@@ -794,6 +794,7 @@ kara-main := postp-lex &
 ; (MS 2002-06-26) I want to allow kara and ni to modify also VNs. That leads to ambiguity, but could be necessary
 ; for, e.g., "当座預金から普通預金に100ドルの振込をお願いしたいのですが。" 
 ; (I want to request transfer of 100 dollars from account X to account Y.)
+
 kara-nmod-1 := nounmod-p-lex &
            [SYNSEM.LOCAL [CAT [HEAD [PTYPE nattr,
 				     MOD < [LOCAL.CAT.HEAD.VN +] >],
@@ -801,6 +802,16 @@ kara-nmod-1 := nounmod-p-lex &
                           CONT.RELS <! prep-mod-relation & [PRED '_kara_p_rel] !>],
             ORTH <! "から" !>].
 
+
+; (MS 2004-12-21) This should also be possible for relational nouns like 東、上、北
+; such as in 大阪が東京から北だ.
+
+kara-nmod-2 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD [PTYPE nattr,
+				     MOD < [LOCAL.CAT.HEAD relational_noun_head] >],
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                          CONT.RELS <! prep-mod-relation & [PRED '_kara_p_rel] !>],
+            ORTH <! "から" !>].
 
 kara-parentarg := vmod-p-lex &
 		  [SYNSEM.LOCAL [CAT [HEAD postp_head,
@@ -945,6 +956,12 @@ mo-saparg := topic-vmod-p-lex &
                               CONT.RELS <! [PRED '_mo_p_rel] !>],
                  ORTH <! "も" !>].
 
+; (MS 2004-12-21) This is for mo that takes a verbal argument: 寝てもいい
+mo-varg := topic-vobj-lex &
+           [SYNSEM.LOCAL [CONT.RELS <! [PRED '_mo_p_rel] !>,
+                          CAT.HEAD.PTYPE mo],
+            ORTH <! "も" !>].
+
 
 ;"何度もTwoDigitErsatz円をつけながらも、購入することができませんでした。"
 mo-sconj :=  s-conj1-lex &
@@ -1052,16 +1069,10 @@ niatari-varg := postp-lex-varg &
          ORTH <! "に当たり" !>]. 
 
 
-niataru-hiragana-narg := postp-lex &
-        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
-                       CONT.RELS <! [PRED '_niataru_p_rel] !>],
-         ORTH <! "にあたる" !>]. 
-
-niataru-kanji-narg := postp-lex &
+niataru-narg := postp-lex &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_niataru_p_rel] !>],
          ORTH <! "に当たる" !>]. 
-
 
 ;配当金の受領にあたっては、お届け印を押捺する必要がありますが、milka.comで株式を買った場合のお届け印はどのようになるのでしょうか。
 niatatte-hiragana-narg := postp-lex &
@@ -1074,16 +1085,6 @@ niatatte-hiragana-varg := postp-lex-varg &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_niatatte_p_rel] !>],
          ORTH <! "にあたって" !>]. 
-
-niatatte-kanji-narg := postp-lex &
-        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
-                       CONT.RELS <! [PRED '_niatatte_p_rel] !>],
-         ORTH <! "に当たって" !>]. 
-
-niatatte-kanji-varg := postp-lex-varg &
-        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
-                       CONT.RELS <! [PRED '_niatatte_p_rel] !>],
-         ORTH <! "に当たって" !>]. 
 
 ;"kaigi ga gogo  ni haitte  orimashite."
 ni-case := ga-wo-ni-p-lex &
@@ -1408,6 +1409,9 @@ no-nmod-2 := nounmod-p-lex &
 		    LKEYS.KEYREL.ARG1 #1],
             ORTH <! "の" !>].
 
+
+
+
 ;"zero nana nana nana no hou de yoroshii desu ka."
 no-nspec-1 := nspec-p-lex &
               [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
@@ -1428,11 +1432,6 @@ no-nspec-3 := nspec-p-lex &
               ORTH <! "の" !>].
 
 
-no-parmod := parmod-p-lex &
-           [SYNSEM.LOCAL [CAT [HEAD.PTYPE parmod,
-                              VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD noun_head]],
-                          CONT.RELS <! [PRED '_no_p_rel] !>],
-            ORTH <! "の" !>].
 
 ; (TT 2003-08-15) 漢字見出しを追加
 notame-kanji-p := plain-topic-nobj-lex &
@@ -1827,6 +1826,13 @@ yori-varg := postp-lex-varg &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE yori,
                                 CONT.RELS <! [PRED '_yori_p_rel] !>],
          ORTH <! "より" !>]. 
+
+yori-nmod := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD [PTYPE nattr, MOD.FIRST.LOCAL.CAT.HEAD relational_noun_head],
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                          CONT.RELS <! prep-mod-relation & [PRED '_yori_p_rel] !>],
+            ORTH <! "より" !>].
+
 
 
 zutsu-p := postp-lex &

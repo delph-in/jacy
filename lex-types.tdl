@@ -313,7 +313,9 @@ exceptional_noun_nmod_head := nom_head-avm & [J-SPEC null,
 					      MOD < [LOCAL.CAT.HEAD noun_head]>, 
 					      J-POSTHEAD rels].
 
-                                                                     
+                  
+relational_noun_head := ordinary_noun_head & [MOD null,J-SPEC null, VN -].
+                                                   
 
 dofw_noun_head  :< temporal-noun_head.
 dofm_noun_head  :< temporal-noun_head.
@@ -916,10 +918,10 @@ na-adj_head  := adj_head &
 
 na-adj-basic_head := na-adj_head & [ADJ +,POS adj].
 
-na-adj-suffix_head := na-adj-basic_head & [MOD < [LOCAL intersective_mod & 
-							[CAT [HEAD ordinary_noun_head,
-							      VAL saturated]]] >,
-					   J-POSTHEAD right].
+;na-adj-suffix_head := na-adj-basic_head & [MOD < [LOCAL intersective_mod & 
+;							[CAT [HEAD ordinary_noun_head,
+;							      VAL saturated]]] >,
+;					   J-POSTHEAD left].
 
 na-adj-end_head := na-adj_head & verbend_head-unmarked & [POS adj,
 							  MOD null,
@@ -1202,6 +1204,7 @@ eval-adj_sc := obj-arg &
 	       [COMPS < [LOCAL [CAT [HEAD [FORMAL.AHON -],
 				     VAL saturated],
 				BAR +]] > ].
+
 
 ;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
 ; (MS 2004-06-25) The restriction on EMPTY - is not useful. It prevents the parsing of, e.g.
@@ -2588,6 +2591,18 @@ dofm-n-lex := day-lex &
 mofy-n-lex := day-lex & 
                [SYNSEM [LOCAL.CAT.HEAD temp_numeral_head-avm,
 			LKEYS.KEYREL mofy-relation    ]].
+
+relational-n-lex := n-lex &
+		    [SYNSEM [LOCAL [CAT [HEAD relational_noun_head,
+                                    VAL noun_sc & [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
+                               CONT [HOOK [LTOP #hand],
+				     RELS <! #key !>,
+				     HCONS <! !>],
+			       CTXT.BACKGROUND <! !>,
+			       ARG-S < #spr >],
+			LKEYS.KEYREL contentful-nom-relation & #key & [LBL #hand],
+                        NON-LOCAL [QUE <! !>,
+				   AFFIX <! !>]]].
 
 ; (MS 2003-07-14) With PRED string (matrix.tdl), it is not possible to use types here and therefore I cannot state PRED def (which overrides PRED udef in the quantify-n-infl-rule). Default-Unification might help here.
 ; (MS 2003-10-08) I'll use the KEY value instead.
@@ -4021,9 +4036,12 @@ na-adj-wh-lex := na-adj-basic-lex &
                       LOCAL.CONT.HOOK.LTOP #top]].
 
 ; (MS 2002-05-02) this is for 的 that is separated by CHASEN.
+; (MS 2004-12-21) but wrongly assumed that this modifies its noun. it should be the
+; head of the phrase in 時間的な継続, such that it can be subcategorized for by な
 
-na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj-suffix_head & [MAIN-PRD -],
-						    VAL adj_sc & [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #arg]],
+na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj_head & [MAIN-PRD -],
+						    VAL sbj-narg_transitive & [COMPS.FIRST [OPT -,
+										    LOCAL.CONT.HOOK.INDEX #arg]]],
 					       CONT na-adj-sem-type & [RELS <! #key !>,
 								       HOOK.XARG #arg]],
 					LKEYS.KEYREL #key & [ARG1 #arg],
@@ -7753,13 +7771,14 @@ adj-stem-lex := base-adj-stem-lex & lexical_sign-word &
 ; might do the trick since は only wants to modify MAIN-PRD + things.
 
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
+; (MS 2004-12-21) these are for nai that takes ga  and nai that 
+; takes ga - n : 花子は問題がない、問題ない
 
-i-adj-neg-stem-lex := base-adj-stem-lex &
+base-i-adj-neg-stem-lex := base-adj-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD [ MODUS negative ],
-		     VAL sbj-arg &
-			  [SUBJ.FIRST [OPT + ,
+		     VAL [SUBJ.FIRST [OPT + ,
 				       LOCAL [CAT.HEAD case-p_head & [CASE ga],
-					      CONT [HOOK.INDEX #inst]]]]],
+					      CONT.HOOK.INDEX #inst]]]],
 		CONT [HOOK [INDEX #event,
 			    XARG #inst,
 			   LTOP #top],
@@ -7773,6 +7792,19 @@ i-adj-neg-stem-lex := base-adj-stem-lex &
 		      HCONS <! qeq & [HARG #arghd,
 				      LARG #aru_hd] !>]],
 	 LKEYS.KEYREL #key]].
+
+
+i-adj-neg-stem-lex := base-i-adj-neg-stem-lex &
+		      [SYNSEM.LOCAL.CAT.VAL sbj-arg].
+
+i-adj-nocase-neg-stem-lex := base-i-adj-neg-stem-lex &
+		      [SYNSEM.LOCAL [CAT.VAL sbj-obj-arg & 
+					     [COMPS.FIRST [OPT - ,
+							   LOCAL [CAT [HEAD ordinary_noun_head,
+								       VAL saturated],
+								  CONT.HOOK.INDEX #compsind]]],
+				     CONT.RELS.LIST.REST.FIRST.ARG2 #compsind]].
+
 
 i-adj-stem-lex := adj-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD.MODUS indicative,

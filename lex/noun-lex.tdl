@@ -1,4 +1,4 @@
-;;;; -*- Mode: TDL; Coding: euc-jp -*-
+;; -*- Mode: TDL; Package: DISCO -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: noun-lex.tdl
@@ -505,10 +505,6 @@ ordinary-nohon-n-lex &
 [ORTH <! "議題" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_gidai_n_rel]].
 
-go :=
-ordinary-nohon-n-lex &
-[ORTH <! "後" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_go_n_rel]].
 
 gogotai :=
 ordinary-nohon-n-lex &
@@ -1370,7 +1366,7 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_kyuuka_n_rel]].
 
 mae :=
-ordinary-nohon-n-lex &
+relational-n-lex &
 [ORTH <! "前" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_mae_n_rel]].
 
@@ -2065,7 +2061,7 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_uchiawasejitai_n_rel]].
 
 ue :=
-ordinary-nohon-n-lex &
+relational-n-lex &
 [ORTH <! "上" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_ue_n_rel]].
 
@@ -2835,7 +2831,7 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_nissuu_n_rel]].
 
 nochi :=
-ordinary-nohon-n-lex &
+relational-n-lex &
 [ORTH <! "後" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_nochi_n_rel]].
 
@@ -4427,16 +4423,6 @@ pron-sp-ref-lex &
 [ORTH <! "僕" !>,
  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 
-ore :=
-pron-sp-ref-lex &
-[ORTH <! "おれ" !>,
- SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
-
-ore-kanji := 
-pron-sp-ref-lex &
-[ORTH <! "俺" !>,
- SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
-
 shousei :=
 pron-sp-ref-lex &
 [ORTH <! "小生" !>,
@@ -5121,10 +5107,6 @@ nom-dummy-lex &
 [ORTH <! "べき" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_beki_n_rel]].
 
-beki-pred :=
-nom-pred-lex &
-[ORTH <! "べき" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_beki_n_rel]].
 
 koro-dummy :=
 nom-common-lex &
@@ -6136,7 +6118,7 @@ ORTH <! "限度","額" !>].
 ;ahead
 
 saki-noun := 
-ordinary-nohon-n-lex &
+relational-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_saki_n_rel,
 ORTH <! "先" !>].
 
@@ -9929,7 +9911,7 @@ ordinary-nohon-n-lex &
 ;under; below; beneath
 
 shita-noun :=  
-ordinary-nohon-n-lex &
+relational-n-lex &
 	[SYNSEM.LKEYS.KEYREL.PRED '_shita_n_rel,
           ORTH <! "下" !>].
 
@@ -48832,15 +48814,25 @@ kisoba_1 := ordinary-nohon-n-lex &
 
 ; 北 
 ; Used 12 times
+; These are relational nouns that can be n-modified by kara and yori,
+; such as in 東京から北
 
-kita_1 := ordinary-nohon-n-lex &
+kita_1 := relational-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kita_n_1_rel,
  ORTH <! "北" !>].
 
+higashi_east := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_higashi_n_east_rel,
+ ORTH <! "東" !>].
+
+minami_south := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_minami_n_east_rel,
+ ORTH <! "南" !>].
+
 ; ギター 
 
-gita-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gita_n_1_rel,
+gitaa_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_gitaa_n_1_rel,
  ORTH <! "ギター" !>].
 
 ; 北アメリカ 
@@ -52358,7 +52350,7 @@ kudamono_1 := ordinary-nohon-n-lex &
 
 ; 下り 
 
-kudari_1 := ordinary-nohon-n-lex &
+kudari_1 := relational-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kudari_n_1_rel,
  ORTH <! "下り" !>].
 
@@ -73719,9 +73711,9 @@ sei_1_2 := ordinary-nohon-n-lex &
 ; 西 
 ; Used 20 times
 
-sei_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sei_n_1_rel,
- ORTH <! "西" !>].
+;sei_1_3 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sei_n_1_rel,
+; ORTH <! "西" !>].
 
 ; 静 
 
@@ -79747,12 +79739,6 @@ tanabota_1 := ordinary-nohon-n-lex &
 dani_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dani_n_1_rel,
  ORTH <! "ダニ" !>].
-
-; 谷 
-
-tani_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tani_n_1_rel,
- ORTH <! "谷" !>].
 
 ; 谷川 
 
@@ -93401,13 +93387,13 @@ nobose_1 := ordinary-nohon-n-lex &
 ; 上り 
 ; Used 3 times
 
-nobori_1 := ordinary-nohon-n-lex &
+nobori_1 := relational-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nobori_n_1_rel,
  ORTH <! "上り" !>].
 
 ; のぼり 
 
-nobori_1_1 := ordinary-nohon-n-lex &
+nobori_1_1 := relational-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nobori_n_1_rel,
  ORTH <! "のぼり" !>].
 
@@ -145377,3 +145363,24 @@ juu-n :=
 ordinary-nohon-n-lex &
 [ORTH <! "じゅう" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_juu_n_4_rel]].
+
+; as in 丁寧語 polite language
+
+teinei-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "丁寧" !>,
+SYNSEM [LKEYS.KEYREL.PRED '_teinei_n_4_rel,
+	LOCAL.BAR -]].
+
+; (MS 2004-12-21) we need an entry for the usual noun 事:
+; 事を行うのに。。。
+
+koto-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "事" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].
+
+koto-hiragana-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "こと" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].

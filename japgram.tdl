@@ -876,6 +876,7 @@ na-vend-rule := stem-end-rule-type &
 
 
 ; (MS 2004-11-08) This one should keep the LMORPH-BIND-TPYE: 来やすい
+; (MS 2004-12-21) This doesn't necessarily have to be FIN +: 偽りなく
 
 unary-vstem-vend-rule := unary-type-super &
  [SYNSEM [LOCAL [CAT #cat,
@@ -884,7 +885,7 @@ unary-vstem-vend-rule := unary-type-super &
 		 BAR +]],
   J-NEEDS-AFFIX -,
   LMORPH-BIND-TYPE #lmorph,
-  ARGS < [SYNSEM [LOCAL [CAT #cat & [HEAD verb-stem_head & [FIN +,
+  ARGS < [SYNSEM [LOCAL [CAT #cat & [HEAD verb-stem_head & [FIN bool,
 							    VN -,
 							    LIGHT -,
 							    EMPTY -]],
@@ -1238,29 +1239,29 @@ quasi-morph-rule := binary-basic &
 ; zero pronouns and subjects, playing around with UNSAT.
 ; Does the valence come from V1? Identifying the agent?
 
-;vstem-vstem-rule := head-final-type & 
-;		    orth-princ &
-;		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
-;				    BAR -],
-;			     LEX +],
-;		     INFLECTED #infl,
-;		     J-NEEDS-AFFIX #aff,
-;		     RMORPH-BIND-TYPE #rmorphbind,
-;		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
-;							VAL #val],
-;						   CONT.HOOK.XARG #arg1,
-;						   BAR -],
-;					    LEX +],
-;				   RMORPH-BIND-TYPE #im & i-morph],
-;		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
-;						   VAL.UNSAT +],
-;					      CONT.HOOK.XARG #arg1,
-;					      BAR -],
-;				       LEX +],
-;			       INFLECTED #infl,
-;			       J-NEEDS-AFFIX #aff,
-;			       LMORPH-BIND-TYPE #im,
-; 			       RMORPH-BIND-TYPE #rmorphbind]].
+vstem-vstem-rule := head-final-type & 
+		    orth-princ &
+		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
+				    BAR -],
+			     LEX +],
+		     INFLECTED #infl,
+		     J-NEEDS-AFFIX #aff,
+		     RMORPH-BIND-TYPE #rmorphbind,
+		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+							VAL #val],
+						   CONT.HOOK.XARG #arg1,
+						   BAR -],
+					    LEX +],
+				   RMORPH-BIND-TYPE #im & i-morph],
+		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+						   VAL.UNSAT +],
+					      CONT.HOOK.XARG #arg1,
+					      BAR -],
+				       LEX +],
+			       INFLECTED #infl,
+			       J-NEEDS-AFFIX #aff,
+			       LMORPH-BIND-TYPE #im,
+ 			       RMORPH-BIND-TYPE #rmorphbind]].
 
 
 ;(CH 2003-08-27)

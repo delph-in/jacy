@@ -1,4 +1,4 @@
-;;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;;; -*- Mode: TDL; Package: DISCO -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -605,23 +605,29 @@ kaeru_return-stem  := intrans-c-stem-lex &
                    ORTH <! "帰る" !>].
 
 kakaru-stem  :=  v8-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_kakaru_l_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_1_rel]],
                    ORTH <! "掛る" !>].
 
 kakaru-a-stem  :=  v8-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_1_rel]],
                    ORTH <! "かかる" !>].
 
 kakaru-b-stem  :=  v8-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_kakaru_l_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_1_rel]],
+                   ORTH <! "掛かる" !>].
+
+; (MS 2004-12-21) This is for 空中 に 掛かる.
+
+kakaru-hang-stem  :=  v2b-c-stem-lex &
+                 [SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_hang_rel]],
                    ORTH <! "掛かる" !>].
 
 kakaru-2-stem := v2-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kakaru_2_v_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_2_rel]],
 ORTH <! "係る" !>].
 
 kakaru-2a-stem := v2-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kakaru_v_2_rel]],
 ORTH <! "かかる" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
@@ -1094,10 +1100,6 @@ haru-stem :=  v4-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_haru_v_rel]],
                    ORTH <! "張る" !>].
 
-haru-1-stem :=  v4-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_haru_v_1_rel]],
-                   ORTH <! "貼る" !>].
-
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 hasamaru-stem :=  intrans-c-stem-lex &
@@ -1222,14 +1224,6 @@ ORTH <! "諮る" !>].
 
 hakaru-3a-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hakaru_a_3a_rel]],
-ORTH <! "はかる" !>].
-
-hakaru-4-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_hakaru_a_4_rel]],
-ORTH <! "測る" !>].
-
-hakaru-4a-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_hakaru_a_4a_rel]],
 ORTH <! "はかる" !>].
 
 hashiru-stem :=   v1-c-stem-lex &
@@ -5587,6 +5581,7 @@ ORTH <! "会" !>].
 tsudukeru-syntactic-vv-stem := syntactic-vv-v-stem-lex &
  [SYNSEM.LKEYS [KEYREL [PRED '_tsudukeru_v_rel]],
   ORTH <! "続ける" !>].
+
 
 ;;;;;;;;;;;;;;;NEW ENTRIES - AUG 03;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -12112,8 +12107,10 @@ doujiru_1 := intrans-v-stem-lex &
 
 ; 通り過ぎる 
 ; Used 2 times
+; blow over, go by, pass +v, pass by
+; (MS 2004-12-21) Should be v1: ある 低い 段階 を 通り過ぎる こと 
 
-toorisugiru_1 := intrans-v-stem-lex &
+toorisugiru_1 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toorisugiru_v_1_rel,
  ORTH <! "通り過ぎる" !>].
 

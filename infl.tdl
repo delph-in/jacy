@@ -115,14 +115,16 @@ lexeme-rule &
  ARGS.FIRST.STEMTYPE c2-stem].
 
 
-; (MS 2004-11-24) Maybe we don't use these any more?
+; (MS 2004-12-21) We need this! 飲めます
 
-;pot-lexeme-cons-infl-rule := 
-;%suffix (く け) (る れ) (う え) (す せ) (む め) (ぐ げ) (ぶ べ) (つ て) (ぬ ね)
-;potential-rule &
-;[RMORPH-BIND-TYPE i-or-t-or-a-morph,
-;ARGS.FIRST.STEMTYPE cons-stem].
+pot-lexeme-cons-infl-rule := 
+%suffix (く け) (る れ) (う え) (す せ) (む め) (ぐ げ) (ぶ べ) (つ て) (ぬ ね)
+potential-rule &
+[RMORPH-BIND-TYPE i-or-t-or-a-morph,
+ARGS.FIRST.STEMTYPE cons-stem].
 
+
+;  (MS 2004-12-21) Maybe we don't need this one any more?
 ;pot-lexeme-v-infl-rule := 
 ;%suffix (!vる !vられ)
 ;potential-rule &
@@ -621,7 +623,7 @@ j-lexeme-to-word-rule &
                          FIN -,
                          FORMAL.AHON -,
 			 COP-ARG -],
-	       BAR +]].
+	       BAR -]].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;N-> QUANTIFIED N;;;;;;;;;;;;;;;;;;;;
 

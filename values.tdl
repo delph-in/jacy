@@ -299,7 +299,8 @@ beki-morph :< cstem-morph.
 imp-morph :< cstem-morph.
 cond-morph :< cstem-morph.
 
-e-morph :< vstem-morph.
+; (MS 2004-12-21) Maybe we don't need this one any more?
+;e-morph :< vstem-morph.
 
 pass-morph :< morphbind.
 pass-c-stem-morph := pass-morph & cstem-morph.

@@ -14451,9 +14451,10 @@ oyafukou_1 := vn-intrans-lex &
 
 ; admiration
 ; Used 5 times
+; (MS 2004-12-21) Should be vn-trans1: 立派 な 様子 を 感心 し て
 
-kanshin_1_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kanshin_vn_1_rel,
+kanshin_1_1 := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kanshin_vn_admiration_rel,
  ORTH <! "感心" !>].
 
 ; ぎざぎざ 
@@ -16416,12 +16417,6 @@ rengou_1 := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_rengou_vn_1_rel,
  ORTH <! "連合" !>].
 
-; 連続 
-; Used 15 times
-
-renzoku_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_renzoku_vn_1_rel,
- ORTH <! "連続" !>].
 
 ; 連発 
 
@@ -28457,3 +28452,8 @@ choushuu_1_1 := vn-trans1-lex &
 ryaku_2 := vn-ditrans-toni-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ryaku_vn_1_rel,
  ORTH <! "略" !>].
+
+matsuri := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_matsuri_vn_1_rel,
+ ORTH <! "祭り" !>].
+

@@ -318,11 +318,12 @@ interj-lex &
 ;先生のです
 ;先生のはよい。
 ;私はトムのがほしい。
+; (MS 2004-12-15) This shouldn't undergo the empty rules.
 
 no-temp-nmod :=
 temp_nmod-lex &
 [ORTH <! "の" !>,
- SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD noun_head-avm] >,
+ SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD noun_head-avm & [EMPTY +]] >,
 	 LKEYS.KEYREL.PRED '_no_nmod_rel]].
 
 
@@ -599,6 +600,10 @@ quotation-sap-init-lex &
 
 quotation-sap-end :=
 quotation-sap-end-lex &
+[ORTH <! "」" !>].
+
+quotation-definition-end :=
+quotation-definition-end-lex &
 [ORTH <! "」" !>].
 
 ookina :=

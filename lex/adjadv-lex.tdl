@@ -1688,17 +1688,23 @@ i-adj-neg-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nai_a_rel,
  ORTH <! "ない" !>].
 
-moushiwakenai-adj :=
-i-adj-neg-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_moushiwakenai_a_rel,
-ORTH <! "申し訳","ない" !>].
+nai_2-adj  :=
+i-adj-nocase-neg-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_nai_a_2_rel,
+ ORTH <! "ない" !>].
+
+
+;moushiwakenai-adj :=
+;i-adj-neg-stem-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_moushiwakenai_a_rel,
+;ORTH <! "申し訳","ない" !>].
 
 ;"問題ないような気もしますが"
 
-mondainai-adj :=
-i-adj-neg-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mondainai_a_rel,
-ORTH <! "問題","ない" !>].
+;mondainai-adj :=
+;i-adj-neg-stem-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_mondainai_a_rel,
+;ORTH <! "問題","ない" !>].
 
 
 chiisai-adj  :=
@@ -3000,6 +3006,13 @@ bakari-adv :=
 scopal-adv-right2left-lex &
 [ORTH <! "ばかり" !>,
  SYNSEM.LKEYS.KEYREL.PRED '_bakari_a_rel].
+
+beki-adv :=
+scopal-adv-right2left-lex &
+[ORTH <! "べき" !>,
+ SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD [H-TENSE present,
+						  FORMAL.AHON -],
+	 LKEYS.KEYREL.PRED '_beki_a_rel]].
 
 rashii-eval-adj := 
 eval-obl-i-adj-stem-lex &
@@ -23362,4 +23375,9 @@ zenbu-adv :=
 isect-adv-lex &
 [ORTH <! "全部" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_zenbu_a_rel].
+
+amari-adv := scopal-adv-regular-lex &
+[SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY _neg_v_rel,
+	 LKEYS.KEYREL.PRED '_amari_a_rel],
+ ORTH <! "余り" !>].
 
