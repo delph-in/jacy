@@ -129,6 +129,16 @@ true-type := plus.
 ;; path into the MRS semantics
 mrs-path := "SYNSEM.LOCAL.CONT".
 
+;;
+;; (MS 2004-06-14) path into the MRSs CFROM, CTO, and CARG
+;;
+mrs-cfrom-path := "SYNSEM.LOCAL.CONT.RELS.LIST.CFROM".
+mrs-cto-path   := "SYNSEM.LOCAL.CONT.RELS.LIST.CTO".
+mrs-carg-path  := "SYNSEM.LKEYS.KEYREL.CARG".
+
+
+
+
 ;; path to LABEL for RA mapping
 label-path := "SYNSEM.LOCAL.KEYS.KEY.LBL".
 ;; the same, relative to the root of a rel
