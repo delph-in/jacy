@@ -2004,4 +2004,59 @@ kirorittoru_numcl_alphabet := num-cl-spr-only-meas-lex &
 [ ORTH <! "£ë£ì" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_kirorittoru_numcl_alphabet_rel].
 
+;;;05-01-12
+
+; ¥ß¥ê¥°¥é¥à
+
+miriguramu_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "¥ß¥ê¥°¥é¥à" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_miriguramu_numcl_rel].
+
+; £ç
+
+guramu_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ç" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_guramu_numcl_alphabet_rel].
+
+; £í£ç
+
+miriguramu_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£í£ç" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_miriguramu_numcl_alphabet_rel].
+
+; £ë£ç
+
+kiroguramu_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ë£ç" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kiroguramu_numcl_alphabet_rel].
+
+; £ô
+
+ton_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ô" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kiroguramu_numcl_alphabet_rel].
+
+; £î£í
+
+nanomeetoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£î£í" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_nanomeetoru_numcl_alphabet_rel].
+
+; £á
+
+a-ru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£á" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_a-ru_numcl_alphabet_rel].
+
+; £è£á
+
+hekuta-ru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£è£á" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_hekuta-ru_numcl_alphabet_rel].
+
+; £è£Ð£á
+
+hekutopasukaru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£è£Ð£á" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_hekutopasukaru_numcl_alphabet_rel].
 

@@ -1074,6 +1074,12 @@ niataru-narg := postp-lex &
                        CONT.RELS <! [PRED '_niataru_p_rel] !>],
          ORTH <! "に当たる" !>]. 
 
+niataru-hiragana-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED '_niataru_p_rel] !>],
+         ORTH <! "にあたる" !>]. 
+
+
 ;配当金の受領にあたっては、お届け印を押捺する必要がありますが、milka.comで株式を買った場合のお届け印はどのようになるのでしょうか。
 niatatte-hiragana-narg := postp-lex &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
