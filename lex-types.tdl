@@ -4766,7 +4766,7 @@ v-neg-end-lex := v-noncaus-op-end-lex &
 				      VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
 								 HOOK.LTOP #v-hd,
 								 MOD-IND #event]]],
-				 CONT [RELS <! neg-relation &  #keyrel & [ARG2 #neg-arg,
+				 CONT [RELS <! neg-relation &  #keyrel & [ARG3 #neg-arg,
 									  PRED #negrel,
 									  LBL #top] !>,
 				       HOOK [LTOP #top,

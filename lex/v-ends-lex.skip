@@ -536,7 +536,7 @@ reru-pot-end := rareru-end-lex &
 ;passive
 reru-simple-pass-end := simple-pass-end-lex &
            [ORTH <! "дьды" !>,
-            INFLECTED -,
+            INFLECTED bool,
             SYNSEM [LOCAL.CAT.HEAD [MODUS passive]],
             LMORPH-BIND-TYPE pass-c-stem-morph,
             STEMTYPE v-stem].
