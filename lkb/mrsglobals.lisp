@@ -335,3 +335,6 @@ set in the code")
    - specified by the grammar")
 
 (defparameter *mrs-rule-condition-path* (list (vsym "CONDITION")))
+
+;;; for the compare function 
+(setq *discriminant-path* '(SYNSEM LKEYS KEYREL PRED))
