@@ -5025,6 +5025,10 @@ nodesu-v-cop-lex  :=
 n-cop-lex &
 [ORTH <! "の","です" !> ].
 
+nodesu-chasen-v-cop-lex  :=
+n-cop-lex &
+[ORTH <! "の","で","す" !> ].
+
 nodeshou-v-cop-lex  :=
 n-cop-lex &
 [ORTH <! "の","でしょ","う" !> ].

@@ -760,10 +760,6 @@ ordinary-nohon-n-lex &
 [ORTH <! "遺伝子" !>,
 SYNSEM.LKEYS.KEYREL [PRED 'idenshi]].
 
-ie :=
-ordinary-nohon-n-lex &
-[ORTH <! "家" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'ie]].
 
 igaku :=
 ordinary-nohon-n-lex &
@@ -3681,10 +3677,10 @@ ordinary-nohon-n-lex &
 [ORTH <! "むかえ" !>,
 SYNSEM.LKEYS.KEYREL [PRED 'mukae]].
 
-uchi :=
+ie :=
 ordinary-nohon-n-lex &
 [ORTH <! "家" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'uchi]].
+SYNSEM.LKEYS.KEYREL [PRED 'ie]].
 
 uchi-hiragana-noun :=
 ordinary-nohon-n-lex &
