@@ -3429,6 +3429,7 @@ wh-word-honsubj-lex := wh-word-person-lex &
 ; things like "tabeta" [SMOD unmarked].  Change the requirement
 ; on the SPR here from [SMOD decl] to [SMOD unmarked].
 ; (MS 2003-10-08) Problems with Matrix 0.5?
+; (FCB 2004-01-07) Fixed problem with koto HOOK by coindexing INDEX with ARG0
 
 nom-pred-lex := nom-lex & 
        [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST [LOCAL [CONT.HOOK.LTOP #verb-hand,
@@ -3450,7 +3451,8 @@ nom-pred-lex := nom-lex &
                                           [PRED proposition_m_rel,
 					   LBL #prpstn-hand,
 					   MARG #soa] !>,
-                           HOOK [LTOP #nom-hand],
+                           HOOK [LTOP #nom-hand,
+				 INDEX #i],
                            HCONS <! qeq &
                                    [HARG #restr,
                                     LARG #nom-hand],
