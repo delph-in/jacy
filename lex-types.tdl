@@ -905,13 +905,16 @@ exceptional-adj_head := adj_head &
 ;  I thus take the MAIN-PRD + restriction on the modified item out.
 ;  "税金の項目を申告でなく源泉にしたいのですが"
 
-adv_head := adj-or-adv_head &
+base-adv_head := adj-or-adv_head &
             [POS adv,
              J-SPEC null,
              MARK null,
-             MOD < [LOCAL [CAT.HEAD sentence-valid & [AUX -],
-                                  NUCL nucl_bool ]] >,
              C-MOD null].
+
+
+adv_head := base-adv_head &
+            [MOD < [LOCAL [CAT.HEAD sentence-valid & [AUX -],
+                                  NUCL nucl_bool ]] >].
 
 
 adv_head-avm := adv_head &
@@ -919,7 +922,8 @@ adv_head-avm := adv_head &
 	     KEYS.KEY adv_rel,
 	     H-TENSE present].
 
-
+case-adv_head := base-adv_head &
+            [MOD < >].
 
 hes_head :< final_head.
 
@@ -1215,7 +1219,7 @@ ga-ni_transitive := sbj-obj2-arg &
 adv_transitive := sbj-obj2-arg &
                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
 		     COMPS obl-1-arg &
-			   < [LOCAL.CAT.HEAD adv_head] >].
+			   < [LOCAL.CAT.HEAD base-adv_head] >].
 
 
 naru_transitive :=  sbj-obj2-arg &
@@ -1266,6 +1270,14 @@ ga-wo-to-ditransitive := sbj-obj-obj2-arg  &
 			   LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
 			  [OPT - ,
 			   LOCAL.CAT.HEAD case-p_head & [CASE to]] >].
+
+ga-wo-toni-ditransitive := sbj-obj-obj2-arg  &
+                 [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+		  COMPS < [OPT + ,
+			   LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
+			  [OPT + ,
+			   LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
+
 
 ; (MS 2003-12-23) Added CASE ni-or-ga for, e.g., ni - ga wakaru.
 
@@ -1406,9 +1418,15 @@ sbj-narg_transitive := sbj-obj-arg &
 		       
                                  
     
+;;;;;;;;;;;;;;LEXICAL TYPE -- unknown words;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+my_unknown_word := lexical_sign.
+
+my_unknown_noun := my_unknown_word & ordinary-n-lex.
+
+my_unknown_vn := my_unknown_word & vn-trans1-lex.
+
 ;;;;;;;;;;;;;;LEXICAL TYPES -- particles;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
 ; (ERB 2001-10-17) Some p-lex identify their KEY with their OBJ's
 ; and some don't, do I can't make the whole class lexical_sign-word.
 ; I'm going to make p-lex lexical_sign and make the subtypes that
@@ -1480,6 +1498,8 @@ ga-wo-ni-p-lex-4 := p-lex-c &
                                 HOOK.LTOP #chand,
                                 HCONS <! qeq & [LARG #ohand,
                                                  HARG #soa] !>]]].
+
+
 
 ga-wo-ni-p-lex-5 := case-p-lex & 
                   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
@@ -3785,7 +3805,8 @@ nom-dummy-lex := nom-lex & lexical_sign-word &
                           [HOOK.INDEX #i,
                            RELS diff-list & 
                                  <! #key,
-                                  unspec-compound-relation & [ARG2 #spri,
+                                  unspec-compound-relation & [PRED 'unspec_compound_rel,
+							      ARG2 #spri,
 							      ARG1 #i] !>,
                            HCONS <! !>]],
 		LKEYS.KEYREL #key & [ARG0 #i]]].
@@ -3793,6 +3814,16 @@ nom-dummy-lex := nom-lex & lexical_sign-word &
 nom-exceptional-dummy-lex := nom-dummy-lex &
 			     [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head-avm].
 
+
+nom-transitive-lex := nom-lex & lexical_sign-word &
+       [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
+                                                 CONT [HOOK.INDEX #spri]]],
+                      CONT nom-sem-type &
+                          [HOOK [INDEX #i],
+                           RELS diff-list & 
+                                 <! #key !>,
+                           HCONS <! !>]],
+		LKEYS.KEYREL #key & [ARG0 #i, ARG1 #spri]]].
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- adjectives;;;;;;;;;;;;;;;;;;
@@ -4686,32 +4717,33 @@ na-naarg-end-lex :=  na-end-lex &
 		     [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-03-22) 
 
 naadj2adv-end-lex := lexical_sign-word &
                      [SYNSEM j-synsem &
-                             [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal_mod & [CONT [MOD-HAND #hand,
-											       MOD-IND #ind,
-												HOOK [XARG #xarg,
-												      INDEX #ind]]]] > ],
+                             [LOCAL [CAT [HEAD case-adv_head,
 					  VAL obj-arg &
 					       [COMPS #comps & [FIRST [OPT - ,
 								       LOCAL [CAT [HEAD na-adj_head,
-										   VAL saturated],
-									      CONT [RELS <! #key !>,
-										    HOOK [XARG #xarg,
-											  LTOP #tophand]]]]]]],
+										   VAL.UNSAT +],
+									      CONT [RELS <! #key & [ARG1 #xarg] !>,
+										    HOOK [LTOP #tophand,
+											  INDEX #ind]]]]]]],
 				     ARG-S #comps,
 				     CONT [HOOK [LTOP #tophand,
-						 INDEX #ind,
-						 XARG #xarg],
-					   MOD-HAND #tophand,
-					   MOD-IND #ind,
-					   RELS <! !>,
-                                           HCONS <! qeq & [HARG #tophand, LARG #hand] !>]],
-			      LKEYS.KEYREL #key & [ARG1 #xarg],
-			      NON-LOCAL [QUE <! !>,
-					 AFFIX <! !>]],
-                      INFLECTED +].
+						 XARG #xarg,
+ 						 INDEX #ind],
+ 					   MOD-HAND #tophand,
+ 					   MOD-IND #ind,
+ 					   RELS <! !>,
+                                            HCONS <!  !>]],
+ 			      LKEYS.KEYREL #key & [ LBL #tophand],
+ 			      NON-LOCAL [QUE <! !>,
+ 					 AFFIX <! !>]],
+                       INFLECTED +].
+
+
+
 
 ; (MS 2003-12-19) Matrix 0.6
 
@@ -6103,8 +6135,8 @@ v2-infinitive-minusshon-stem-lex := v2-minusshon-stem-lex & [STEMTYPE infinitive
 
 v2a-stem-lex := v-sbj-comps-stem-lex &
                 [SYNSEM [LOCAL [CAT [HEAD.COP -,
-                                     VAL naru_transitive &
-                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+                                     VAL adv_transitive &
+                                      [COMPS.FIRST.LOCAL.CONT [HOOK [INDEX #objind, XARG #sbjind]],
 				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 				
 				CONT [HOOK.XARG #sbjind]],
@@ -6154,7 +6186,68 @@ v2a-c2-minusshon-stem-lex := v2a-minusshon-stem-lex & [STEMTYPE c2-stem].
 v2a-c-minusshon-stem-lex := v2a-minusshon-stem-lex & [STEMTYPE c-stem].
 v2a-v-minusshon-stem-lex := v2a-minusshon-stem-lex & [STEMTYPE v-stem].
 
-               
+; (MS 2004-03-22) added to parse 男になる with a copula semantics embedded.
+
+ v2b-stem-lex := v-stem-lex &
+                [SYNSEM [LOCAL [CAT [HEAD.COP -,
+                                     VAL naru_transitive &
+                                      [COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind,
+				       SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind]],
+				
+				CONT [HOOK [XARG #sbjind,
+					    INDEX event],
+				      RELS <!  #key & [LBL #hand],
+					      [PRED 'cop_id_rel,
+					       ARG0 #ind,
+					       ARG1 #sbjind,
+					       ARG2 #objind,
+					       LBL #hand] !>,
+				      HCONS  <! !> ]],
+			 LKEYS.KEYREL arg12-relation & #key &
+                                     [ARG1 #sbjind,
+                                      ARG2 #ind],
+			 NON-LOCAL.QUE <! !>]].
+
+
+
+
+v2b-nohon-stem-lex := v2b-stem-lex &
+                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+v2b-shon-stem-lex  := v2b-stem-lex &
+                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                                                CONT.HOOK.INDEX #2]],
+                                    CONT.HOOK.INDEX #3,
+                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                                      [HONORED #2,
+                                                       BEARER #3,
+                                                       POLARITY +] !>]]].
+
+v2b-minusshon-stem-lex  := v2b-stem-lex &
+                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                                                CONT.HOOK.INDEX #2]],
+                                    CONT.HOOK.INDEX #3,
+                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                                      [HONORED #2,
+                                                       BEARER #3,
+                                                       POLARITY -] !>]]].
+
+
+
+v2b-c2-stem-lex := v2b-nohon-stem-lex & [STEMTYPE c2-stem].
+v2b-c-stem-lex := v2b-nohon-stem-lex & [STEMTYPE c-stem].
+v2b-v-stem-lex := v2b-nohon-stem-lex & [STEMTYPE v-stem].
+
+v2b-c2-shon-stem-lex := v2b-shon-stem-lex & [STEMTYPE c2-stem].
+v2b-c-shon-stem-lex := v2b-shon-stem-lex & [STEMTYPE c-stem].
+v2b-v-shon-stem-lex := v2b-shon-stem-lex & [STEMTYPE v-stem].
+
+v2b-c2-minusshon-stem-lex := v2b-minusshon-stem-lex & [STEMTYPE c2-stem].
+v2b-c-minusshon-stem-lex := v2b-minusshon-stem-lex & [STEMTYPE c-stem].
+v2b-v-minusshon-stem-lex := v2b-minusshon-stem-lex & [STEMTYPE v-stem].
+              
 
 v5-stem-lex := v-sbj-comps-stem-lex &
                [SYNSEM [LOCAL [CAT [HEAD.COP -,
@@ -7329,6 +7422,7 @@ i-adj-neg-stem-lex := base-adj-stem-lex &
 				       LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 					      CONT [HOOK.INDEX #inst]]]]],
 		CONT [HOOK [INDEX #event,
+			    XARG #inst,
 			   LTOP #top],
 		      RELS <! neg-relation & #key &
 			    [ARG2 #arghd, 
@@ -7342,9 +7436,10 @@ i-adj-neg-stem-lex := base-adj-stem-lex &
 	 LKEYS.KEYREL #key]].
 
 i-adj-stem-lex := adj-stem-lex &
-[SYNSEM [LOCAL.CAT [HEAD.MODUS indicative,
+[SYNSEM [LOCAL [CAT [HEAD.MODUS indicative,
                     VAL adj_sc &
                          [SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #inst]]],
+		CONT.HOOK.XARG #inst],
 	 LKEYS [KEYREL arg1-relation &
 			 [ARG1 #inst]]]].
 

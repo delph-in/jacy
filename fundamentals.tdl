@@ -81,6 +81,7 @@ intersective_mod := j-local.
 
 j-nonlocal := non-local & 
 	      [ROBUST bool,
+	       UNDERSPEC_ARG bool,
 	       SLASH 0-dlist,
 	       AFFIX diff-list].
 

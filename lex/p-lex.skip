@@ -1619,3 +1619,8 @@ zutsu-p := postp-lex &
                                 CONT.RELS <! [PRED 'zutsu] !>],
          ORTH <! "¤º¤Ä" !> ]. 
 
+; (MS 2004-03-22) commented out, replaced with naadj2adv-end-lex.
+
+;ni-case-5 := ga-wo-ni-p-lex-5 &
+;             [ORTH <! "¤Ë" !>,
+;              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].

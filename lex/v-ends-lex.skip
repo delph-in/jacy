@@ -335,27 +335,27 @@ nakereba-narimasen-end  :=  v-neg-end-lex &
                LMORPH-BIND-TYPE a-morph].	
 
 
-naru-end := v-noncaus-op-end-lex &
-	    [ORTH <! "なる" !>,
-	     INFLECTED -,
-	     LMORPH-BIND-TYPE a-morph,
-	     STEMTYPE c-stem,
-	     SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
-				 VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
-								 INDEX #mod-i],
-							     MOD-HAND #mod-h]],
-			    CONT [HOOK [INDEX #event,
-					LTOP #hd],
-				  MOD-HAND #mod-h,
-				  MOD-IND #mod-i,
-				  RELS <! #key !>,
-				  HCONS <! !>]],
-		     LKEYS.KEYREL #key & adv-relation &
-			   [PRED 'naru,
-			    LBL #hd,
-			    ARG1 #arg-h,
-			    ARG0 #event],
-		     MODIFIED.PERIPH +]].
+;naru-end := v-noncaus-op-end-lex &
+;	    [ORTH <! "なる" !>,
+;	     INFLECTED -,
+;	     LMORPH-BIND-TYPE a-morph,
+;	     STEMTYPE c-stem,
+;	     SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
+;				 VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
+;								 INDEX #mod-i],
+;							     MOD-HAND #mod-h]],
+;			    CONT [HOOK [INDEX #event,
+;					LTOP #hd],
+;				  MOD-HAND #mod-h,
+;				  MOD-IND #mod-i,
+;				  RELS <! #key !>,
+;				  HCONS <! !>]],
+;		     LKEYS.KEYREL #key & adv-relation &
+;			   [PRED 'naru,
+;			    LBL #hd,
+;			    ARG1 #arg-h,
+;			    ARG0 #event],
+;		     MODIFIED.PERIPH +]].
 
 
 nasa-end := v-neg-end-lex &
@@ -382,6 +382,7 @@ nasai-end  := v-imperative-tense-end-lex &
                  [ORTH <! "なさい" !>,
                   LMORPH-BIND-TYPE i-morph].
 
+; (MS 2004-03-22) 
 
 ni-end := naadj2adv-end-lex &
           [ORTH <! "に" !>,

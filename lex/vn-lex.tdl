@@ -28445,3 +28445,10 @@ choushuu_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'choushuu_1_1,
  ORTH <! "Ä§¼ý" !> ].
 
+; Î¬ 
+; Used 173 times
+; SF 2003-08-26
+
+ryaku_2 := vn-ditrans-toni-lex &
+[SYNSEM.LKEYS.KEYREL.PRED 'ryaku_1,
+ ORTH <! "Î¬" !> ].

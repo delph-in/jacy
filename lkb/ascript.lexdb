@@ -51,20 +51,18 @@
 								  (parent-directory) "lex/light-verbs-lex.skip")))
 	(read-cached-sublex-if-available "noun-lex" (list (lkb-pathname 
 							   (parent-directory) "lex/noun-lex.skip")))
-	(read-cached-sublex-if-available "numbers-lex" (list (lkb-pathname 
-							      (parent-directory) "lex/numbers-lex.skip")))
+;	(read-cached-sublex-if-available "numbers-lex" (list (lkb-pathname 
+;							      (parent-directory) "lex/numbers-lex.skip")))
 	(read-cached-sublex-if-available "p-lex" (list (lkb-pathname 
 							(parent-directory) "lex/p-lex.skip")))
-	(read-cached-sublex-if-available "pn-lex" (list  (lkb-pathname 
-							  (parent-directory) "lex/pn-lex.skip")))
+;	(read-cached-sublex-if-available "pn-lex" (list  (lkb-pathname 
+;							  (parent-directory) "lex/pn-lex.skip")))
 	(read-cached-sublex-if-available "verbstem-lex" (list (lkb-pathname 
 							       (parent-directory) "lex/verbstem-lex.skip")))
-	(read-cached-sublex-if-available "vn-lex" (list (lkb-pathname 
-							 (parent-directory) "lex/vn-lex.skip")))
+;	(read-cached-sublex-if-available "vn-lex" (list (lkb-pathname 
+;							 (parent-directory) "lex/vn-lex.skip")))
 	(read-cached-sublex-if-available "v-ends-lex" (list (lkb-pathname 
-							     (parent-directory) "lex/v-ends-lex.skip")))
-	(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
-							 (parent-directory) "lex/ersatz.skip"))))
+							     (parent-directory) "lex/v-ends-lex.skip"))))
     (error))
     
 (read-tdl-parse-node-file-aux 

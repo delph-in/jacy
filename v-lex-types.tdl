@@ -173,6 +173,17 @@ vn-intrans-lex := vn-lex &
 		     LKEYS [KEYREL.ARG1 #sbjind]]].
 
 
+
+vn-ditrans-toni-lex := vn-sbj-comps-lex &
+            [SYNSEM [LOCAL.CAT.VAL ga-wo-toni-ditransitive &
+                                      [COMPS [FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+					      REST.FIRST.LOCAL.CONT [HOOK.INDEX #obj2ind]],
+				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+		     LKEYS [KEYREL [ARG1 #sbjind,
+				      ARG2 #objind,
+                                      ARG3 #obj2ind]]]].
+
+
 ; (ERB 2001-10-24) I need these verbs to have a special KEY type
 ; so that the k2y machinery can recognize them.  Currently, they
 ; are getting arg3_rel-super by type inference, and this isn't specific

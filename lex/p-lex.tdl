@@ -731,6 +731,8 @@ ni-case-2 := ga-wo-ni-p-lex-2 &
              [ORTH <! "に" !>,
               SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
 
+
+
 ;"何日からになりますか"
 
 ni-case-3 := ga-wo-ni-p-lex-3 &

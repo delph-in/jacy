@@ -85,3 +85,6 @@
 
 (read-tdl-psort-file-aux 
           (lkb-pathname (parent-directory) "roots.tdl"))
+
+#+unknown-words
+(lkb-load-lisp "/project/cl/yy/lkb/src/unknown-words/" "grammar-jacy.lisp")

@@ -5216,6 +5216,11 @@ nom-common-lex &
 [ORTH <! "»þ" !>,
 SYNSEM.LKEYS.KEYREL [PRED 'toki]].
 
+;ryaku-trans-com :=
+;nom-transitive-lex &
+;[ORTH <! "Î¬" !>,
+;SYNSEM.LKEYS.KEYREL [PRED 'ryaku]].
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;WHQ;;;;;;;;;;;;;;;;;
 
 naNnichi := temp_numeral-whq-lex &
@@ -118759,18 +118764,6 @@ riyaka-_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'riyaka-_1,
  ORTH <! "¥ê¥ä¥«¡¼" !> ].
 
-; Î¬ 
-; Used 173 times
-
-;ryaku_1 := ordinary-nohon-n-lex &
-;[SYNSEM.LKEYS.KEYREL.PRED 'ryaku_1,
-; ORTH <! "Î¬" !> ].
-
-; SF 2003-08-26
-
-ryaku_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'ryaku_1,
- ORTH <! "Î¬" !> ].
 
 ; Î¬¸ì 
 

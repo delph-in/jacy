@@ -612,8 +612,15 @@ word2word-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VN->N;;;;;;;;;;;;;;;;;;;;
 
-vn2n-infl-rule :=
-vn2n-rule.
+vn2n-infl-rule-det :=
+vn2n-rule-detarg.
+
+vn2n-infl-rule-nspec_arg1 :=
+vn2n-rule-nspecarg1.
+
+vn2n-infl-rule-nspec_arg2 :=
+vn2n-rule-nspecarg2.
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ->V;;;;;;;;;;;;;;;;;;;;
 

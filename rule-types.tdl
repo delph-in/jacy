@@ -27,7 +27,8 @@ phrasal_sign := phrase-or-lexrule & j-sign.
 
 binary-basic :=  binary-phrase & orth-princ & que-princ &
           [SYNSEM [NON-LOCAL [REL #refl,
-			      ROBUST #robust],
+			      ROBUST #robust,
+			      UNDERSPEC_ARG #uarg],
                    LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
                                            SPEAKER #sp],
                                 EMPATHY [EMPER #sp,
@@ -38,9 +39,11 @@ binary-basic :=  binary-phrase & orth-princ & que-princ &
                                                     EMPATHY [EMPER #sp,
                                                              EMPEE #emp]]],
                                        NON-LOCAL [REL #refl,
-					       ROBUST #robust]]],
+						  ROBUST #robust,
+						  UNDERSPEC_ARG #uarg]]],
 		  j-sign & [SYNSEM [NON-LOCAL [REL #refl,
-					    ROBUST #robust],
+					       ROBUST #robust,
+					       UNDERSPEC_ARG #uarg],
                                     LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
                                                             SPEAKER #sp],
                                                  EMPATHY [EMPER #sp,
@@ -162,24 +165,36 @@ unary-type := unary-type-super &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL optional-or-saturated ].
 
 head-final-type := binary-headed-phrase &	
-            [SYNSEM.LOCAL.CTXT.BACKGROUND [LIST #list,
-                                           LAST #last],
-             NON-HEAD-DTR #nh-dtr & [SYNSEM.LOCAL.CTXT.BACKGROUND [LIST #list,
-                                                                  LAST #middle]],
-             HEAD-DTR #head-dtr & [SYNSEM.LOCAL.CTXT.BACKGROUND [LIST #middle,
-                                                                  LAST #last]],
+            [SYNSEM [NON-LOCAL [ROBUST #rob,
+				UNDERSPEC_ARG #uarg],
+		      LOCAL.CTXT.BACKGROUND [LIST #list,
+                                           LAST #last]],
+             NON-HEAD-DTR #nh-dtr & [SYNSEM [NON-LOCAL [ROBUST #rob,
+							UNDERSPEC_ARG #uarg],
+					     LOCAL.CTXT.BACKGROUND [LIST #list,
+                                                                  LAST #middle]]],
+             HEAD-DTR #head-dtr & [SYNSEM [NON-LOCAL [ROBUST #rob,
+						      UNDERSPEC_ARG #uarg],
+					   LOCAL.CTXT.BACKGROUND [LIST #middle,
+								  LAST #last]]],
              ARGS <#nh-dtr,#head-dtr>].
 
 ; (ERB 2001-08-06) Adding this for head-initial hcomps in number names.
 
 head-initial-type := binary-headed-phrase &
                      affix-list &
-            [SYNSEM [LOCAL.CTXT.BACKGROUND [LIST #list,
-                                            LAST #last]],
-             NON-HEAD-DTR #nh-dtr & [SYNSEM [LOCAL.CTXT.BACKGROUND [LIST #list,
-                                                                   LAST #middle]]],
-             HEAD-DTR #head-dtr & [SYNSEM [LOCAL.CTXT.BACKGROUND [LIST #middle,
-                                                                  LAST #last]]],
+            [SYNSEM [NON-LOCAL [ROBUST #rob,
+				UNDERSPEC_ARG #uarg],
+		     LOCAL.CTXT.BACKGROUND [LIST #list,
+					    LAST #last]],
+             NON-HEAD-DTR #nh-dtr & [SYNSEM [NON-LOCAL [ROBUST #rob,
+							UNDERSPEC_ARG #uarg],
+					     LOCAL.CTXT.BACKGROUND [LIST #list,
+								    LAST #middle]]],
+             HEAD-DTR #head-dtr & [SYNSEM [NON-LOCAL [ROBUST #rob,
+						      UNDERSPEC_ARG #uarg],
+					   LOCAL.CTXT.BACKGROUND [LIST #middle,
+								  LAST #last]]],
              ARGS <#head-dtr,#nh-dtr>].
 
 
@@ -1101,13 +1116,15 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
 adj2adv-rule  := isect-adv-lex & lex-rule &
                [SYNSEM [LKEYS.KEYREL [ PRED #rel,
 					 WLINK #label ],
-			LOCAL.CTXT #ctxt,
+			LOCAL [CTXT #ctxt,
+			       CONT.HOOK.XARG #xarg],
 			NON-LOCAL #nonloc],
                 J-NEEDS-AFFIX -,
 		NEEDS-AFFIX -,
                 ARGS < base-adj-stem-lex & [SYNSEM [LKEYS.KEYREL [ PRED #rel,
 								     WLINK #label ],
-						    LOCAL.CTXT #ctxt,
+						    LOCAL [CTXT #ctxt,
+			                                   CONT.HOOK.XARG #xarg],
 						    NON-LOCAL #nonloc],
 					    INFLECTED -]>,
 		INFLECTED +].
@@ -1238,12 +1255,12 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 
 ; (MS 2003-12-09) coindexed ARG0 of the vn with ARG0 of the resulting noun.
 
-vn2n-rule :=  n-lex-super &
-            [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head &
+vn2n-rule-super :=  n-lex-super &
+            [SYNSEM [LOCAL [CAT [HEAD noun_head &
                                       [ MOD null,
 					VN +,
                                         J-SPEC.FIRST.LOCAL.CAT.HEAD title_head ],
-                                 VAL spr-arg & [SPR.FIRST.LOCAL.CAT.HEAD det_head & [SMOD decl]]],
+                                 VAL spr-arg],
                             CONT nom-vn-sem-type &
                                 [RELS <! #key & 
 				       [LBL #nom-hand,
@@ -1275,6 +1292,32 @@ vn2n-rule :=  n-lex-super &
 						       ARG0 #arg0],
 			     LEX + ]]>].
 
+vn2n-rule-detarg :=  vn2n-rule-super &
+            [SYNSEM.LOCAL.CAT [HEAD ordinary_noun_head,
+	    VAL.SPR.FIRST.LOCAL.CAT.HEAD det_head & [SMOD decl]]].
+
+; (MS 2004-03-26) These are used for argument binding in case of something
+;  like ≤÷ª“§Œ Ÿ∂Ø. Thex must be restricted a bit.
+	
+
+vn2n-rule-nspecarg1 :=  vn2n-rule-super &
+            [SYNSEM [LOCAL [CAT [HEAD nom_head,
+			         VAL.SPR.FIRST [OPT -, 
+						LOCAL [CAT.HEAD nspec-p_head,
+						       CONT.HOOK.INDEX #arg1]]]],
+		     NON-LOCAL.UNDERSPEC_ARG -],
+	     ARGS.FIRST.SYNSEM.LKEYS.KEYREL.ARG1 #arg1].
+
+
+
+vn2n-rule-nspecarg2 :=  vn2n-rule-super &
+            [SYNSEM [LOCAL [CAT [HEAD nom_head,
+			       VAL.SPR.FIRST [OPT -, 
+					      LOCAL [CAT.HEAD nspec-p_head,
+						     CONT.HOOK.INDEX #arg2]]]],
+		     NON-LOCAL.UNDERSPEC_ARG -],
+	     ARGS.FIRST.SYNSEM [LKEYS.KEYREL.ARG2 #arg2]].
+
 
 v2n-rule := n-lex-super &
             [SYNSEM [LOCAL [CAT [HEAD nom_head &
@@ -1297,8 +1340,6 @@ v2n-rule := n-lex-super &
 	     ARGS < [SYNSEM [LOCAL.CAT [HEAD verb-stem_head],
 			     LKEYS [KEYREL #v-key & 
 					     [LBL #v-hd]]]] >].
-
-
 
 
 adj2v-rule := intrans-v-stem-lex &

@@ -148,12 +148,16 @@ FIRST))))
 ;;; Call chasen and format the input appropriately
 ;;;
 
+;;; contains the readings from Chasen
+(defparameter *chasen-readings* nil)
+
 (defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
   (let* ((string (string-trim '(#\space #\tab) string))
          (command (format 
                    nil 
                    "~a -F  '(\"%m\" \"%M\" \"%P-+%Tn-%Fn\" \"%y\")\\n'" 
                    *chasen-application*)))
+    (setf *chasen-readings* nil)
     (multiple-value-bind (stream foo pid)
         (run-process
          command :wait nil
@@ -190,7 +194,11 @@ FIRST))))
                      (incf id)
                      i (incf i) form (second analysis) pos)
                     full)
-            finally (when verbose (format t "~%")))
+	    ;; collects readings
+	    unless (punctuationp form) do
+	      (push (fourth analysis) *chasen-readings*)
+            finally (setf *chasen-readings* (reverse *chasen-readings*))
+		    (when verbose (format t "~%")))
         (values
          (if posp
            (format nil "~{~a~^ ~}" (reverse full))
