@@ -5,6 +5,8 @@
 ;;; parameters only - grammar specific functions 
 ;;; should go in user-fns.lsp
 
+(setf excl:*locale* (excl:find-locale "japan.EUC"))
+
 (defparameter *active-parsing-p* t)
 
 ;;; Types
@@ -153,4 +155,13 @@
 
 (setf *semantics-index-path* '(synsem local cont hook index))
 
-(setf excl:*locale* (excl:find-locale "japan.EUC"))
+;;; connection parameters for lexical database, an association list with fields
+;;; `:host', `:db', `:table', and `:user' (optional) 
+;;; if unset we fall back to .tdl lexicon files
+
+(defparameter *psql-lexicon-parameters* 
+  #+:psql
+  '((:db "jap") (:host "localhost") (:table "jap"))
+  #-:psql
+  nil)
+

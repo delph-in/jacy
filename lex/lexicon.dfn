@@ -1,0 +1,7 @@
+jap	id	name		symbol
+jap	unifs	type	nil	symbol
+jap	orth	orthography		string-list
+jap	unifs	orthography	(orth)	string-diff-fs
+jap	unifs	keyrel	(synsem lkeys keyrel pred)	mixed
+jap	unifs	keytag	(synsem lkeys keyrel carg)	mixed
+jap	unifs	altkey	(synsem lkeys altkeyrel pred)	mixed
