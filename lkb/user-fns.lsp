@@ -151,6 +151,7 @@ FIRST))))
 ;;; contains the readings from Chasen
 (defparameter *chasen-readings* nil)
 
+#+:chasen
 (defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
   (let* ((string (string-trim '(#\space #\tab) string))
          (command (format 
@@ -211,12 +212,11 @@ FIRST))))
 
 ;;; preprocess without using chasen (used in Hinoki treebank)
 
-(defun preprocess-sentence-string 
-    (string &key (verbose *chasen-debug-p*) posp)
+#-:chasen
+(defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
   "Trim white space and trailing punctuation"
-  (progn
-    (string-trim '(#\space #\tab) string)
-    (normalize-sentence-string string)))
+  (declare (ignore verbose posp))
+  (normalize-sentence-string (string-trim '(#\space #\tab) string)))
 
 ;;;
 ;;; hook for [incr tsdb()] to call when preprocessing input (going to the PET

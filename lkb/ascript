@@ -1,4 +1,15 @@
 ;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
+
+;;;
+;;; there are two modes regarding tokenization and morphological analysis, use
+;;; of ChaSen or assuming presegmented input.  the default has been ChaSen for
+;;; some time, even though the NTT crowd seems to prefer to maintain their data
+;;; in pre-segmented form.  use a load-time feature :chasen to configure this,
+;;; specifically the definition of preprocess-sentence-string() in `user-fns'
+;;; will be different for the two universes.               (9-feb-05; oe & fcb)
+;;;
+(pushnew :chasen *features*)
+
 (lkb-load-lisp (parent-directory) "Version.lsp")
 (setf *grammar-directory* (parent-directory)) ; needed for MRS
 (load-lkb-preferences (this-directory) "user-prefs.lsp")
@@ -49,7 +60,7 @@
 (read-cached-sublex-if-available "numbers" (list (lkb-pathname 
                                               (parent-directory) "lex/numbers-lex.tdl")))
 (read-cached-sublex-if-available "p" (list (lkb-pathname 
-                                              (parent-directory) "lex/p-lex.tdl")))
+                                            (parent-directory) "lex/p-lex.tdl")))
 (read-cached-sublex-if-available "pn" (list  (lkb-pathname 
                                               (parent-directory) "lex/pn-lex.tdl")))
 (read-cached-sublex-if-available "verbstem" (list (lkb-pathname 
@@ -57,30 +68,10 @@
 (read-cached-sublex-if-available "vn" (list (lkb-pathname 
                                               (parent-directory) "lex/vn-lex.tdl")))
 (read-cached-sublex-if-available "v-ends" (list (lkb-pathname 
-                                              (parent-directory) "lex/v-ends-lex.tdl")))
+                                                 (parent-directory) "lex/v-ends-lex.tdl")))
 (read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
                                               (parent-directory) "lex/ersatz.tdl")))
 
-
-
-;(read-cached-lex-if-available
-; (list  
-;  (lkb-pathname (parent-directory) "lex/adjadv-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/aux-stem-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/funct-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/idiom-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/light-verbs-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/noun-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/numbers-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/p-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/pn-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/verbstem-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/vn-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/v-ends-lex.tdl")
-;  (lkb-pathname (parent-directory) "lex/generics.tdl")
-;  (lkb-pathname (parent-directory) "lex/ersatz.tdl")
-;
-;))
 
 (read-tdl-parse-node-file-aux 
           (lkb-pathname (parent-directory) "parse-nodes.tdl"))
