@@ -62,8 +62,10 @@
 ;	(read-cached-sublex-if-available "vn-lex" (list (lkb-pathname 
 ;							 (parent-directory) "lex/vn-lex.skip")))
 	(read-cached-sublex-if-available "v-ends-lex" (list (lkb-pathname 
-							     (parent-directory) "lex/v-ends-lex.skip"))))
-    (error))
+							     (parent-directory) "lex/v-ends-lex.skip")))
+	(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
+							 (parent-directory) "lex/ersatz.skip"))))
+    (error "*psql-lexicon-parameters* unset"))
     
 (read-tdl-parse-node-file-aux 
           (lkb-pathname (parent-directory) "parse-nodes.tdl"))
