@@ -28,26 +28,57 @@
 
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
 ;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "relative-clauses.tdl"))
- 
 
-(read-cached-lex-if-available
- (list  
-  (lkb-pathname (parent-directory) "lex/adjadv-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/aux-stem-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/funct-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/idiom-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/light-verbs-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/noun-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/numbers-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/p-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/pn-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/verbstem-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/vn-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/v-ends-lex.tdl")
-  (lkb-pathname (parent-directory) "lex/generics.tdl")
-  (lkb-pathname (parent-directory) "lex/ersatz.tdl")
+; (Ben Waldron 2003-12-06):
 
-))
+(read-cached-lex-if-available (list
+  (lkb-pathname (parent-directory) "lex/generics.tdl"))) ;; pick an arbitrary file and call it the _main_ lexicon
+(read-cached-sublex-if-available "adjadv" (list  (lkb-pathname 
+                                             (parent-directory) "lex/adjadv-lex.tdl")))
+(read-cached-sublex-if-available "aux-stem" (list (lkb-pathname 
+                                              (parent-directory) "lex/aux-stem-lex.tdl")))
+(read-cached-sublex-if-available "funct-lex" (list  (lkb-pathname 
+                                              (parent-directory) "lex/funct-lex.tdl")))
+(read-cached-sublex-if-available "idiom-lex" (list  (lkb-pathname 
+                                              (parent-directory) "lex/idiom-lex.tdl")))
+(read-cached-sublex-if-available "light-verbs" (list (lkb-pathname 
+                                              (parent-directory) "lex/light-verbs-lex.tdl")))
+(read-cached-sublex-if-available "noun" (list (lkb-pathname 
+                                              (parent-directory) "lex/noun-lex.tdl")))
+(read-cached-sublex-if-available "numbers" (list (lkb-pathname 
+                                              (parent-directory) "lex/numbers-lex.tdl")))
+(read-cached-sublex-if-available "p" (list (lkb-pathname 
+                                              (parent-directory) "lex/p-lex.tdl")))
+(read-cached-sublex-if-available "pn" (list  (lkb-pathname 
+                                              (parent-directory) "lex/pn-lex.tdl")))
+(read-cached-sublex-if-available "verbstem" (list (lkb-pathname 
+                                              (parent-directory) "lex/verbstem-lex.tdl")))
+(read-cached-sublex-if-available "vn" (list (lkb-pathname 
+                                              (parent-directory) "lex/vn-lex.tdl")))
+(read-cached-sublex-if-available "v-ends" (list (lkb-pathname 
+                                              (parent-directory) "lex/v-ends-lex.tdl")))
+(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
+                                              (parent-directory) "lex/ersatz.tdl")))
+
+
+;(read-cached-lex-if-available
+; (list  
+;  (lkb-pathname (parent-directory) "lex/adjadv-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/aux-stem-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/funct-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/idiom-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/light-verbs-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/noun-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/numbers-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/p-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/pn-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/verbstem-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/vn-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/v-ends-lex.tdl")
+;  (lkb-pathname (parent-directory) "lex/generics.tdl")
+;  (lkb-pathname (parent-directory) "lex/ersatz.tdl")
+;
+;))
 
 (read-tdl-parse-node-file-aux 
           (lkb-pathname (parent-directory) "parse-nodes.tdl"))
