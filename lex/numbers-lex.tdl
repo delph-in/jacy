@@ -767,9 +767,6 @@ dai-card2ord := card2ord-lex &
 bai_numcl := num-cl-spr-only-ind-lex &
 [ ORTH <! "倍" !> ].
 
-kasho_numcl-2b := num-cl-spr-only-ind-lex &
-[ ORTH <! "カ所" !> ].
-
 inchi_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "インチ" !>,
   SYNSEM.LKEYS.KEYREL.PRED 'inchi ].
@@ -896,6 +893,18 @@ kasane_2 := num-cl-spr-only-ind-lex &
 
 kasho_2 := num-cl-spr-only-ind-lex &
 [ ORTH <! "箇所" !> ].
+
+kasho_numcl-2b := num-cl-spr-only-ind-lex  &
+[ ORTH <! "カ所" !> ].
+
+kasho_numcl-2c := num-cl-spr-only-ind-lex  &
+[ ORTH <! "か所" !> ].
+
+kasho_numcl-2d := num-cl-spr-only-ind-lex  &
+[ ORTH <! "ヵ所" !> ].
+
+kasho_numcl-2e := num-cl-spr-only-ind-lex  &
+[ ORTH <! "ヶ所" !> ].
 
 ; カラット 
 
