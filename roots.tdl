@@ -32,19 +32,19 @@ np-frag-root := np-frag-rule-type.
 ; (MS 2004-03-24) This is the version with underspecification of ARG binding,
 ; for example in relative sentences or topics
 
-;utterance-root := j-sign &
-;[ SYNSEM [LOCAL.CAT.HEAD utterance_head,
-;	 NON-LOCAL [ROBUST -,
-;		    UNDERSPEC_ARG +] ]].
- 
-; (MS-2004-03-24) This would be the version, which tries to bind ARGs in
-; situations, where the binding is not clear, gives multiple analyses and
-; lets further processing decide.
-
 utterance-root := j-sign &
 [ SYNSEM [LOCAL.CAT.HEAD utterance_head,
 	 NON-LOCAL [ROBUST -,
-		    UNDERSPEC_ARG -] ]].
+		    UNDERSPEC_ARG +] ]].
+ 
+; (MS-2004-03-24) This is the version, which tries to bind ARGs in
+; situations, where the binding is not clear, gives multiple analyses and
+; lets further processing decide.
+
+;utterance-root := j-sign &
+;[ SYNSEM [LOCAL.CAT.HEAD utterance_head,
+;	 NON-LOCAL [ROBUST -,
+;		    UNDERSPEC_ARG -] ]].
 
 
 pp-frag-root := pp-frag-rule-type.

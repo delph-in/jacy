@@ -438,11 +438,15 @@ head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check & orth-princ &
 ; NOTE without the rel-cl-obj2-gap-rule, this rule can be just rel-cl-gap-rule := hadj-final-i  & ...
 ; and we could lose two rule types.  Then we could make this also the supertype for the non-gapping rule...
 
+; (MS 2004-04-01) We decided to give the gap rules a UNDERSPEC_ARG - feature,
+;  such that this can be selected by the root node type.
+
 rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
-		       [SYNSEM.LOCAL [BAR +,
+		       [SYNSEM [LOCAL [BAR +,
 				      NUCL nucl_minus,
 				      CONT [MOD-IND #ind,
 					    MOD-HAND #top]],
+				NON-LOCAL.UNDERSPEC_ARG -],
 			C-CONT [RELS <!   message  & 
  				       [PRED proposition_m_rel,
 					LBL #top,
