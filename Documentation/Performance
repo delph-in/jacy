@@ -1,6 +1,8 @@
 Performace tweaks				 Francis Bond
 -----------------
 
+(1) Quick Check:
+
 Make sure the two quick-check files are kept up to date.
 
 LKB:	japanese/lkb/checkpaths.lsp
@@ -28,7 +30,9 @@ cut -d@ -f 7 tsdb/skeletons/vanilla/item | cheap -compute-qc=pet/qc.tdl japanese
 After you have made the quick check file, you need to rebuild the grammar
 flop japanese.tdl
 
-Note: This is slow, as quick-check is, off course, turned off.  Flop is also slow at the moment. 
+Note: This is slow, as quick-check is, off course, turned off.  Flop
+is also slow at the moment.  Otherwise you should use the mode you
+would normally use (e.g. with packing if you use packing).
 
 
 FCB: I should write a script to do this.
@@ -48,3 +52,83 @@ from within the *common-lisp* buffer:
       "~/delphin/grammars/japanese/testsuites/hinoki-test-a.100" 
       "~/delphin/grammars/japanese/testsuites/hinoki-test-a.100.results"))
 
+========================================================================
+
+(2) Optimize selection of keyargs [only do this occasionally)
+(Oepen + Callmeier 2000: in the book)
+
+You can gain some performance increase by setting the order in which
+the daughters of rules are checked.  The order can be specified in 
+lkb/globals.lsp
+(defparameter *rule-keys*
+  '((HEAD-ADJUNCT-RULE1 . 1)
+    (COMPOUNDS-RULE . 1)
+    (KARA-MADE-RULE . 2) 
+    (HEAD_SUBJ_RULE . 2)
+    (HEAD-SPECIFIER-RULE . 2)
+    (HEAD-COMPLEMENT-RULE . 2) 
+    (HEAD-COMPLEMENT2-RULE . 2)
+    (HEAD-ADJUNCT-RULE2 . 2)))
+and
+pet/japanese.set
+;; assoc (rules -> keyarg position) (alternative to KEY-ARG mechanism)
+rule-keyargs := 
+$HEAD-ADJUNCT-RULE1 1 
+$HEAD-ADJUNCT-RULE2 2 
+$HEAD-ADJUNCT-RULE3 1 
+$RELATIVE-CLAUSE-RULE 1 
+$COMPOUNDS-RULE 1 
+$SENTENCE-TE-COORDINATION-RULE 1
+$CONJ-RULE 1
+$KARA-MADE-RULE 2 
+$HEAD_SUBJ_RULE 2 
+$HEAD-SPECIFIER-RULE 2 
+$HEAD-COMPLEMENT-HF-RULE 2 
+$HEAD-COMPLEMENT-HI-RULE 1 
+$HEAD-COMPLEMENT-AFFIXBIND-RULE 2
+$HEAD-COMPLEMENT2-RULE 2 
+$HEAD-2OBL-COMPLEMENTS-RULE 2
+$VN-LIGHT-RULE 2
+$VEND-VEND-RULE 1
+$VSTEM-VEND-RULE 2 
+$VN-VEND-RULE 2
+$PREFIX-ATTACH-RULE 1
+$NP-QUEST-FRAG-RULE 2.
+
+Key mode in cheap is set with:
+  `-key=n' --- select key mode (0=key-driven, 1=l-r, 2=r-l, 3=head-driven)
+default is 0.
+
+You get the data by :creating two profiles one with -key=1 and one
+with key=2, tuning on -rulestats.  First enable
+[Process,switches:write rule relation] in \itsdb.  Use the mode you
+would normally use (e.g. with packing if you use packing).
+
+Then [Analyze:rule table] for both profiles and you want to check the
+daughter with the least number of active edges (the passive edges
+should be the same modulo memory overflow errors).
+
+1 means daugher 1 first [l-r for binary rules]
+2 means daugher 2 first [r-l for binary rules]
+default is l-r or KEY-ARG.
+
+Or you can use KEY-ARG and specify it per rule in the grammar.
+
+FCB: this would also be nice to automate
+========================================================================
+
+(3) Put some restrictions on the application of morphological rules
+
+lkb/globals.lsp
+; maximum depth for chaining morphological rules
+(defparameter *maximal-morphological-rule-depth* 3)
+
+pet/japanese.set
+; maximum depth for chaining morphological rules
+orthographemics-maximum-chain-depth := 3.
+; minimum stem length to apply morphological rules
+orthographemics-minimum-stem-length := 3.
+; don't apply the same rule twice to the same lexeme
+orthographemics-duplicate-filter:= true.
+;; only allow cohesive chains (whatever they may be)
+;orthographemics-cohesive-chains:= true.
