@@ -221,7 +221,7 @@ hajimeru-end := v-noncaus-op-end-lex &
 arimasen-tai-end := v-neg-end-lex &
            [ORTH <! "あり","ませ","ん" !>,
             J-NEEDS-AFFIX -,
-           SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
+           SYNSEM [LOCAL [CAT [HEAD [H-TENSE present,
                                     MOD < [LOCAL [CAT.HEAD noun_head,
                                                 BAR +]] >,
                                     MARK null,
@@ -233,6 +233,7 @@ arimasen-tai-end := v-neg-end-lex &
                                    MODUS negative],
                               VAL.SPR.FIRST.LKEYS.KEYREL tai-relation],
                          CONT.HOOK.INDEX.E.MOOD indicative],
+		    LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE a-morph]. 
 
 arimasen-adj-end := v-neg-end-lex &

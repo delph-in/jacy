@@ -28,10 +28,12 @@
 ;"gozeNchuu deshitara aite orimasu keredomo."
 
 keredomo-sconj := s-conj1-decl-lex &
-             [ORTH <! "けれども" !>].
+             [ORTH <! "けれども" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
 
 keredomo-sconj-np := s-conj-nonprop1-decl-lex &
-             [ORTH <! "けれども" !>].
+             [ORTH <! "けれども" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
 
 keredomo-send := s-end1-decl-lex &
              [ORTH <! "けれども" !>].
@@ -42,16 +44,20 @@ keredomo-send := s-end1-decl-lex &
 ;"kitani desu kedomo."
 
 kedomo-sconj := s-conj1-decl-lex &
-          [ORTH <! "けども" !>].
+          [ORTH <! "けども" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
 
 kedomo-sconj-np := s-conj-nonprop1-decl-lex &
-          [ORTH <! "けども" !>].
+          [ORTH <! "けども" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
 
 kedomone-sconj := s-conj1-decl-lex &
-          [ORTH <! "けども","ね" !>].
+          [ORTH <! "けども","ね" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
 
 kedomone-sconj-np := s-conj-nonprop1-decl-lex &
-          [ORTH <! "けども","ね" !>].
+          [ORTH <! "けども","ね" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
 
 kedomo-send := s-end1-decl-lex &
           [ORTH <! "けども" !>].
@@ -792,7 +798,7 @@ kara-nmod-1 := nounmod-p-lex &
            [SYNSEM.LOCAL [CAT [HEAD [PTYPE nattr,
 				     MOD < [LOCAL.CAT.HEAD.VN +] >],
 			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
-                          CONT.RELS <! prep-mod-relation !>],
+                          CONT.RELS <! prep-mod-relation & [PRED '_kara_p_rel] !>],
             ORTH <! "から" !>].
 
 
@@ -985,7 +991,8 @@ na-nmod-1 := nounmod-p-lex &
 
 nanode-np := s-conj-nonprop1-lex &
           [ORTH <! "なので" !>,
-           SYNSEM.LOCAL [CAT.HEAD.SMOD decl]].
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+		   LKEYS.KEYREL.PRED '_nanode_p_rel]].
 
 ;"FourDigitErsatz円なのは、どうしてですか。"
 nanowa := plain-topic-nobj-lex &
@@ -1152,7 +1159,7 @@ ni-nmod-1 := nounmod-p-lex &
            [SYNSEM.LOCAL [CAT [HEAD [PTYPE ni,
 				     MOD < [LOCAL.CAT.HEAD.VN +] >],
 			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
-                          CONT.RELS <! prep-mod-relation !>],
+                          CONT.RELS <! prep-mod-relation & [PRED '_ni_p_rel] !>],
             ORTH <! "に" !>].
 
 ;現物株式の売買において、現金買付余力をオーバーして買ったために必要入金額が発生しました。
@@ -1932,7 +1939,8 @@ nado-nobj := topic-plus-nobj-lex &
                ORTH <! "など" !> ].
 
 nanode := s-conj1-decl-lex &
-          [ORTH <! "なので" !>].
+          [ORTH <! "なので" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
 
 nari-conj := s-conj1-decl-lex &
     [ORTH <! "なり" !>,

@@ -2258,6 +2258,8 @@ s-end2-lex := s-end-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-02) For generation, these need PRED values on the arg1-relation.
+ 
 
 s-ell-end-lex := sap-lex &
               [SYNSEM [LOCAL [CAT [HEAD s-end_head-avm & [EMPTY +],
@@ -2275,6 +2277,7 @@ s-ell-end-lex := sap-lex &
                                             MARG #prpstnsoa2],
                                             arg1-relation &
                                               [LBL #main,
+					       PRED 'ellipsis,
                                                ARG0 #ind] !>,
                                    HCONS <! qeq & [LARG #v-handle,
                                                   HARG #prpstnsoa1],
@@ -2302,9 +2305,10 @@ interj-lex := lexical_sign-word &
                             CONT interj-sem-type &
 				[RELS <! subord-or-conj-relation &
 				       [ LBL #top,
+					 PRED 'discourse_rel,
 					 R-HNDL #rhand,
 					 L-HNDL #hand ],
-				       #key & 
+				       #key & interj-relation &
 				       [ LBL #hand ] !>,
 				 HOOK.LTOP #top],
                             BAR +,
@@ -4453,13 +4457,15 @@ date-no-int-lex := date-lex &
 					    [ LBL #hand ],
 				  KEYREL.NUMBER #hand ]]].
 
+; (MS 2004-12-02) For generation, these need PRED values for the prep-mod-relation.
 
 date-with-object2-lex := date-lex &
                          [ SYNSEM.LOCAL [ CAT.VAL [ COMPS < [OPT - ,
 							     LOCAL [ CAT.VAL saturated,
                                                                         CONT.HOOK.INDEX #objind ]] >],
 					  CONT [ RELS.LIST.REST.FIRST prep-mod-relation &
-                                                                       [ ARG2 #selfind,
+                                                                       [ PRED 'prep,
+									 ARG2 #selfind,
                                                                          ARG1 #objind,
                                                                          LBL #h2 ],
                                                 HOOK [LTOP #h2,
@@ -4770,6 +4776,7 @@ v-end-lex := lexical_sign-affix &
 ; (MS 2002-1-9) This needs a subject: 雨が降りそうだ
 ; (MS 2003-10-08) Problems with Matrix 0.5?
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-03) The PRED value should be copied into the relation for indexing.
 
 na-end-lex := lexical_sign-word &
               [J-NEEDS-AFFIX -,
@@ -4790,10 +4797,12 @@ na-end-lex := lexical_sign-word &
 					  XARG #xarg],
 				   MOD-IND #event,
 				   MOD-HAND #hand,
+				   RELS <! [PRED #pred] !>,
 				   HCONS <! qeq & [HARG #arghd, LARG #adjhand] !>]],
-		       LKEYS.KEYREL [ARG1 #arghd,
-					 LBL #hand,
-                                         ARG0 #event],
+		       LKEYS.KEYREL [PRED #pred,
+				     ARG1 #arghd,
+				     LBL #hand,
+				     ARG0 #event],
                        NON-LOCAL [QUE <! !>,
                                AFFIX <! !>]],
 	       INFLECTED +,
@@ -7389,6 +7398,8 @@ aspect-shon-kurusuru-stem-lex := aspect-shon-stem-lex & [STEMTYPE kurusuru-stem]
 ; (MS 2004-11-09) E.TENSE should come from the aspect auxiliary, other things in INDEX
 ; from the content verb: 食べなくている
 
+; (MS 2004-12-01) Why do we need INSTLOC here? Take it out.
+
 pure-aspect-stem-lex := verb-stem-lex &
 [SYNSEM [ LOCAL [CAT [ HEAD aux-stem_head & 
                             [ H-TENSE #tense,
@@ -7397,13 +7408,11 @@ pure-aspect-stem-lex := verb-stem-lex &
                             [SUBJ.FIRST #sbj,
 			     SPR.FIRST.LOCAL [ CONT.HOOK [ LTOP #ohand,
 							   INDEX #event & [SORT #sort,
-									   INSTLOC #instloc,
 									   E.MOOD #mood]]]]],
                  CONT [RELS <! !>,
                        HOOK [INDEX [ E [TENSE #tense,
 					MOOD #mood],
-				     SORT #sort,
-				     INSTLOC #instloc],
+				     SORT #sort],
 			     LTOP #ohand],
                        HCONS <! !> ],
 		 ARG-S < #sbj >],

@@ -995,10 +995,13 @@ rareru-obj-change-rule :=  obj-casechange-rule &
 								       MODUS potential],
 						    VAL.SUBJ null]]]] >].
 
+; (MS 2004-12-10) I don't want this to apply to copula verbs (generation).
+
 garu-sbj-change-rule := subj-casechange-rule &
 			[SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
 									  [CASE wo]]],
-                        ARGS < [SYNSEM [LOCAL.CAT [HEAD.KEYS.KEY seem_rel,
+                        ARGS < [SYNSEM [LOCAL.CAT [HEAD [KEYS.KEY seem_rel,
+							 COP -],
 						   VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE ga]]] >].
 
 
@@ -1212,29 +1215,29 @@ quasi-morph-rule := binary-basic &
 ; zero pronouns and subjects, playing around with UNSAT.
 ; Does the valence come from V1? Identifying the agent?
 
-vstem-vstem-rule := head-final-type & 
-		    orth-princ &
-		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
-				    BAR -],
-			     LEX +],
-		     INFLECTED #infl,
-		     J-NEEDS-AFFIX #aff,
-		     RMORPH-BIND-TYPE #rmorphbind,
-		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
-							VAL #val],
-						   CONT.HOOK.XARG #arg1,
-						   BAR -],
-					    LEX +],
-				   RMORPH-BIND-TYPE #im & i-morph],
-		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
-						   VAL.UNSAT +],
-					      CONT.HOOK.XARG #arg1,
-					      BAR -],
-				       LEX +],
-			       INFLECTED #infl,
-			       J-NEEDS-AFFIX #aff,
-			       LMORPH-BIND-TYPE #im,
- 			       RMORPH-BIND-TYPE #rmorphbind]].
+;vstem-vstem-rule := head-final-type & 
+;		    orth-princ &
+;		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
+;				    BAR -],
+;			     LEX +],
+;		     INFLECTED #infl,
+;		     J-NEEDS-AFFIX #aff,
+;		     RMORPH-BIND-TYPE #rmorphbind,
+;		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+;							VAL #val],
+;						   CONT.HOOK.XARG #arg1,
+;						   BAR -],
+;					    LEX +],
+;				   RMORPH-BIND-TYPE #im & i-morph],
+;		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+;						   VAL.UNSAT +],
+;					      CONT.HOOK.XARG #arg1,
+;					      BAR -],
+;				       LEX +],
+;			       INFLECTED #infl,
+;			       J-NEEDS-AFFIX #aff,
+;			       LMORPH-BIND-TYPE #im,
+; 			       RMORPH-BIND-TYPE #rmorphbind]].
 
 
 ;(CH 2003-08-27)

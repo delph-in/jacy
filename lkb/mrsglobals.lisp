@@ -331,3 +331,5 @@ set in the code")
       )
   "used to define the conversion of extra values between MRS and RMRS
    - specified by the grammar")
+
+(defparameter *mrs-rule-condition-path* (list (vsym "CONDITION")))

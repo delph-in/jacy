@@ -358,9 +358,11 @@ qeq := avm &
   [ HARG handle,
     LARG handle ].        
 
+
+; (MS 2004-12-01) INSTLOC is needed for generation. This requires it to be string.
 semarg := avm &
-  [ INSTLOC instloc ].
-instloc := *top*.
+  [ INSTLOC string].
+
 
 handle := semarg.
 individual := semarg &

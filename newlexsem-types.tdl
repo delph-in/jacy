@@ -325,9 +325,12 @@ scopal-adv-sem-type := possibly-wh-scopal-adv-sem-type.
 ; because the altkey has no label.  Try identifying WLINK of KEY & 
 ; ALTKEY.
 
+; (MS 2004-12-02) For generation, these need PRED values on the prep-mod-relation.
+
 wh-adv-sem-type := mod-id-wg-handel-mrs &
                    [ RELS <! prep-mod-relation &
                             [ARG1 #var,
+			     PRED 'prep-mod,
                              WLINK #label,
                              ARG0 [ E.TENSE no_tense ]],
                             noun-relation &

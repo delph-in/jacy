@@ -226,11 +226,13 @@ numbered-np-relation := nonmodable-relation & niarg-relation &
                 [ NUMBER handle,
                   ARG0 full].
 
-dofm-relation := numbered-np-relation.
-mofy-relation := numbered-np-relation.
-yofc-relation := numbered-np-relation.
-numbered-hour-relation := numbered-np-relation.
-numbered-minute-relation := numbered-np-relation.
+; (MS 2004-12-02) For generation, these need PRED values.
+
+dofm-relation := numbered-np-relation & [PRED 'dofm].
+mofy-relation := numbered-np-relation & [PRED 'mofy].
+yofc-relation := numbered-np-relation & [PRED 'yofc].
+numbered-hour-relation := numbered-np-relation & [PRED 'hour].
+numbered-minute-relation := numbered-np-relation & [PRED 'minute].
 
 ; ERB (2001-10-03) For days of the week, which are like
 ; the numbered-np_rels, but have a name instead of a number.
@@ -600,6 +602,8 @@ title-id-relation := arg12-relation & [PRED "title-id_rel",
 
 
 scopal-adv-relation := arg1-relation & [ARG1 handle].
+
+interj-relation := relation.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; predsorts

@@ -200,3 +200,6 @@ tam := avm &
     ASPECT aspect,
     MOOD mood,
     PASS bool ]. 
+
+
+never_unify_rel := relation.

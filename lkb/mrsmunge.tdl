@@ -6,16 +6,16 @@
 
 
 general_mrs_rule := avm &
-[ LCONDITION mrs,
+[ CONDITION mrs,
   OUTPUT *top* ] .
 
 mrs_rule :=  general_mrs_rule &
 [ INPUT mrs,
-  LCONDITION mrs,
+  CONDITION mrs,
   OUTPUT mrs ] .
 
 generator_rule :=  general_mrs_rule &
-[ LCONDITION mrs,
+[ CONDITION mrs,
   OUTPUT string ] .
 
 
