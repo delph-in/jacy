@@ -31,8 +31,7 @@ word-rule &
                                               SMOD unmarked,
                                               J-POSTHEAD rels,
                                               FORMAL.AHON -],
-                CONT.HOOK.INDEX.E.MOOD indicative,
-		BAR +],
+                CONT.HOOK.INDEX.E.MOOD indicative],
  ARGS.FIRST v-lex & [STEMTYPE regular-stem,
                      SYNSEM.LOCAL.CAT.HEAD #head]].
 
@@ -860,7 +859,7 @@ opend-obj2-zpro-ins-lrule := zpro-insertion-rule &
 			SUBJ #subj & [FIRST #sbj & [OPT bool]],
 			SPR #spr],
 	       ARG-S < #sbj , #obj >,
-		CONT.RELS.LIST.FIRST.ARG3 zpro_ref-ind]],
+		CONT.RELS.LIST.FIRST.ARG2 zpro_ref-ind]],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
 							       EMPTY -,
 							      MODUS operative],

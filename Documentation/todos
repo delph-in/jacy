@@ -30,12 +30,6 @@ I think this could be restricted more.
 e.g.  (do-parse-tty "叱っ たり 注意 し たり する 時 に 発する 語")
 
 
-* Running debug - check lexicon
-  gave a warning for the set of words ending in "chuu" .
-  I can't cut and paste from the lkb window [which frustrates me no end] 
-  so I won't list them all  
-     Warning malformed difference list for all of
-     KOUGICHUU -- GAISHUTSUCHUU
 
 ------------------------------------------------------------------------
 FRANCIS

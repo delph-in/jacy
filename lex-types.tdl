@@ -1178,10 +1178,11 @@ ga-wo-obl_transitive := sbj-obj-arg &
 			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]] >].
 
 ; (SF 2003)
-ni-ga_transitive := sbj-obj-arg &
-                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >,
-                           COMPS opt-1-arg &
-			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
+; (MS 2003-12-23) This seems not to be used.
+;ni-ga_transitive := sbj-obj-arg &
+;                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >,
+;                           COMPS opt-1-arg &
+;			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
 
 ga-ni_transitive := sbj-obj2-arg &
                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
@@ -1242,9 +1243,10 @@ ga-wo-to-ditransitive := sbj-obj-obj2-arg  &
 			  [OPT - ,
 			   LOCAL.CAT.HEAD case-p_head & [CASE to]] >].
 
+; (MS 2003-12-23) Added CASE ni-or-ga for, e.g., ni - ga wakaru.
 
 mental_state_transitive :=  sbj-obj-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+                    [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-ga]] >,
 		     COMPS opt-1-arg &
 			  < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga-or-wo]] >].
 
@@ -1294,19 +1296,6 @@ light_transitive := j-valence &
 ; (ERB 2001-09-03) Type for dekiru with ga-marked object, suppressed
 ; subject.  Assuming value of OBJ is always a ga-or-wo marked noun.
 
-; (ERB 2001-09-03) Making OBJ obligatory in this case to avoid
-; spurious ambiguity: cf. tai-obj-change-rule.
-
-; (MS 2003-05-13) Not needed any more?
-
-
-;ga-vcomp_transitive := obj-arg &
-;                    [COMPS obl-1-arg &
-;			   < [LOCAL.CAT [HEAD verb_head & [FIN +,
-;							   VN -,
-;							   COP -,
-;							   MAIN-PRD -],
-;					 VAL saturated]] >].
 
 
 aux_transitive  :=  sbj-obj-spr-arg & 
@@ -4835,12 +4824,10 @@ v-op-end-lex := lexical_sign-word &
                                   VAL [SPR obl-1-arg &
 					   [FIRST.LOCAL [CAT [HEAD verb_head & [AUX #aux,
 									       VN #vn & - ]],
-							 CONT.HOOK.XARG #xarg,
 							 BAR -]]]],
                              CONT verb-sem-type &
                                  [HOOK [INDEX event &
-					      [E [TENSE #tense]],
-					XARG #xarg]],
+					      [E [TENSE #tense]]]],
                              BAR -,
                              NUCL nucl_plus],
 		      LEX +,
@@ -4852,7 +4839,9 @@ v-noncaus-op-end-lex := v-op-end-lex &
 						COMPS #compsval,
 						SPR.FIRST.LOCAL [CAT.VAL [SUBJ #sbjval,
 									 COMPS #compsval],
+								 CONT.HOOK.XARG #xarg,
 								 ARG-S #args]],
+				       CONT.HOOK.XARG #xarg,
 				       ARG-S #args]].
 
 
@@ -4880,25 +4869,26 @@ prpstn-introducing-end-lex := v-noncaus-op-end-lex &
 ; (TT 2003-09-03) lex type を *-obj-* と *-obj2-* に
 ;                 v2-stem-lex を接続可能にするため
 
-; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
+; (MS 2003-12-19) Matrix 0.6
 
 caus-trans-obj-end-lex := v-op-end-lex &
                 [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
 				     VAL [SPR obl-1-arg &
 					      [FIRST [LOCAL [CONT [HOOK [LTOP #hand,
-									 XARG #causee],
-								   RELS.LIST.FIRST [ARG2 #object]],
+									 XARG #causee]],
 							     CAT [HEAD verb-stem_head,
 								  VAL sbj-obj-arg &
 								       [UNSAT +,
-									COMPS 1-list & [FIRST.LOCAL.CONT.HOOK.INDEX #causer]]]]]],
-					       SUBJ [FIRST [OPT + ,
+									COMPS 1-list & [FIRST #obj-val]]]]]],
+					  SUBJ [FIRST [OPT + ,
 						       LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
-							      CONT.HOOK.INDEX #causee]]],
-					  COMPS < [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
-							  CONT.HOOK.INDEX #causer]] >]],
+							      CONT.HOOK.INDEX #causer]]],
+					  COMPS < #obj-val & [LOCAL.CONT.HOOK.INDEX #object],
+						  [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
+							  CONT.HOOK.INDEX #causee]] >]],
 				CONT [HOOK [INDEX #event,
-					    LTOP #top],
+					    LTOP #top,
+					    XARG #causer],
 				      MOD-IND #event,
 				      MOD-HAND #top,
 				      RELS <! #key & [PRED 'cause], 
@@ -4915,24 +4905,23 @@ caus-trans-obj-end-lex := v-op-end-lex &
 							  LBL #top]]].
 
 
-; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
+
 
 caus-trans-obj2-end-lex := v-op-end-lex &
                 [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
 				     VAL [SPR obl-1-arg &
 					      [FIRST.LOCAL [CONT [HOOK [LTOP #hand,
-									XARG #causee],
-								  RELS.LIST.FIRST [ARG2 #object]],
+									XARG #causee]],
 							     CAT [HEAD verb-stem_head,
 								  VAL sbj-obj2-arg &
 								       [UNSAT +,
 									COMPS 1-list & [FIRST #obj-val]]]]],
 					  SUBJ [FIRST [OPT + ,
 						       LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
-							      CONT.HOOK.INDEX #causee]]],
-					  COMPS < #obj-val, 
+							      CONT.HOOK.INDEX #causer]]],
+					  COMPS < #obj-val & [LOCAL.CONT.HOOK.INDEX #object], 
 						  [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
-							  CONT.HOOK.INDEX #causer]] >]],
+							  CONT.HOOK.INDEX #causee]] >]],
 				CONT [HOOK [INDEX #event,
 					    LTOP #top],
 				      MOD-IND #event,
@@ -4960,8 +4949,8 @@ caus-intrans-end-lex := v-op-end-lex &
 							    LOCAL [CAT.HEAD overt-case-p_head & [CASE wo-or-ni],
 								   CONT.HOOK.INDEX #causee]] >,
 					  SPR obl-1-arg &
-						     [FIRST.LOCAL [CONT [HOOK.LTOP #hand,
-									 RELS.LIST.FIRST.ARG1 #causee],
+						     [FIRST.LOCAL [CONT.HOOK [LTOP #hand,
+									       XARG #causee],
 								   CAT [HEAD verb-stem_head,
 									VAL [UNSAT +,
 									     SUBJ 0-1-list,
