@@ -74,7 +74,7 @@ start-symbols := $utterance-root $np-frag-root $pp-frag-root.
 ;start-symbols := $utterance-root.
 
 ;; name of type containing quick check structure
-qc-structure := $qc_paths.
+qc-structure := $qc_unif_set.
 
 ;; names of attributes not to pass from daughter to mother in parsing
 deleted-daughters := ARGS HEAD-DTR NON-HEAD-DTR.
