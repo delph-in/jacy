@@ -3969,6 +3969,8 @@ card-lex-super := lexical_sign-word &
 card-lex := lexical_sign-word & 
             [SYNSEM [LOCAL [CAT.HEAD.KEYS.KEY #pred,
 			    CONT card-sem-type & [ RELS.LIST.FIRST #key]],
+		     NON-LOCAL [QUE <! !>,
+				AFFIX <! !>],
 		     LKEYS.KEYREL #key & [PRED #pred]]].
 
 ; (ERB 2004-1-18) Special type for ²¿ in numeral classifier phrases.
