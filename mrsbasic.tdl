@@ -122,6 +122,12 @@ int_rel := message.
 
 whq_rel :< quant_rel.
 
+; (MS 2003-12-03) no_relation seems to be useful again, as Emily wants to 
+; use it in nominal-numcl-rule-nomod.
+
+no_relation := relation.
+
+
 def_rel := quant_rel & [PRED "def"].
 
 udef_rel := quant_rel & [PRED "udef"].

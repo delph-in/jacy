@@ -1,80 +1,34 @@
-Discussion and developments on relative clauses:
+--------------------------------------------------------------------------- 
+MELANIE
+--------------------------------------------------------------------------- 
 
-; (ERB 2002-01-02) Allowing relative clauses to attach to either
-; NP or N'.  Need to constrain the quantify-n-infl-rule so that
-; it only applies to unmodified elements, to avoid spurious ambiguity.
+Dear Emily and Francis,
 
-; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
-; head-adjunct-rule-type.
-
-; (ERB 2002-01-14) It may be desirable to split the relative clause rule in two
-; to prefer low attachment of relative clauses: rel-cl-rule-1 requires a [NUCL
-; +] head daughter, while rel-cl-rule-2 requires a [NUCL -] head
-; daughter.
-;(CH 2003-08-15)  主名詞を関係節のどこにも関連づけない (non gapped)
-; *** 2003-08-14 の Melanie Siegel さんの情報に基づく修正 ***
-; there are three thing to change on the first daughter:
-; 1) MAIN-PRD bool
-; 2) NUCL not_fin_conj
-; 3) The co-indexing of #adjevent to CONT.HOOK.INDEX instead of ARG0.
-;
-;(CH 2003-08-22)
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" を追加
-
-relative-clause-rule
-
-(CH 2003-08-22) 主語位置に主名詞を関連づける関係節規則
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"を削除
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind"を追加
-;(CH 2003-08-26)
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
-;                                   COMPS sat-arg]]"を追加
-;
-; (MS 2003-11-27) This introduces loads of spurious ambiguity. Parallel to the treatment of 
-; topicalizing, it is not possible to decide on the argument binding in relative sentence
-; on the syntactic base. Using selectional restrictions, it should be possible to set up 
-; preferences, but these belong to another level on processing.
-
-rel-cl-sbj-gap-rule
-
-;(CH 2003-08-22) 直接目的語位置に主名詞を関連づける関係節規則
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"を削除
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind"を追加
-;(CH 2003-08-26)
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [COMPS 1-list &
-; 					 [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
-; 					  REST sat-arg],
-; 				   SUBJ sat-arg]],"を追加
-
-rel-cl-obj1-gap-rule
-
-;(CH 2003-08-22) 間接目的語位置に主名詞を関連づける関係節規則
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"を削除
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind"を追加
-;(CH 2003-08-26) 
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [COMPS 1-plus-list &
-; 					 [REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind,
-; 					  FIRST sat-arg],
-; 				   SUBJ sat-arg]],"を追加
-
-
-rel-cl-obj2-gap-rule
-
-;;;;;;;;;;;;;;;;;;;;;DISCUSSION;;;;;;;;;;;;;;;;;;
-
-Melanie:
-
+I have done most of the merging of the grammar versions and could 
+tomorrow give you a tar file on that.
+Some problems are not yet solved:
+- I have to re-check that in the merging process I did not lose any 
+lexical information.
+- I have to make changes due to Matrix 0.6
 - I am not really convinced by your (NTT) contribution to relative 
-> sentences and would like to discuss that. You introduced three more 
-> relative clause rules that link the head noun to arguments on the verbs 
-> subcat. Our approach to relative clauses was very similar to topic: We 
-> thought that one cannot decide without additional semantic and world 
-> knowledge, which argument can be linked. Therefore we decided to leave 
-> this relation unspecified. The solution you found seems to insert lots 
-> of spurious ambiguity without really helping, i.e. we have three 
-> readings instead of one; and still don't know where to link the argument.
+sentences and would like to discuss that. You introduced three more 
+relative clause rules that link the head noun to arguments on the verbs 
+subcat. Our approach to relative clauses was very similar to topic: We 
+thought that one cannot decide without additional semantic and world 
+knowledge, which argument can be linked. Therefore we decided to leave 
+this relation unspecified. The solution you found seems to insert lots 
+of spurious ambiguity without really helping, i.e. we have three 
+readings instead of one; and still don't know where to link the argument.
 
-Emily:
+Best,
+	Melanie
+
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+Dear Melanie & Francis,
 
 Yes -- that is my recollection of our analysis of relative
 clauses as well.  Tim Baldwin eventually convinced me that
@@ -92,7 +46,14 @@ add an extra reading everywhere, too.
 
 (Did we write about this in the Coling paper?  I can't remember.)
 
-Francis:
+Emily
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+
+
 
 We are not happy with the implementation - we would like to have one
 rule that can takes anything left from the subcat list rather than two
@@ -115,3 +76,676 @@ However, I realise that we may not reach consensus here, and suggest
 that we might consider a tiny fork - have an experimental hen.tdl and
 two scripts, one which doesn't load that one (ascript) and one that
 does (nscript) so we can keep the wierd stuff separate.
+
+
+Can I widen this discussion to include my group here + tim and a
+couple of others?  
+
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+[Tim: We're inviting you to join in a discussion of the treatment of
+relative clauses]
+
+[Francis: Please also forward to your colleagues there.]
+
+
+I'm (still?) skeptical about the claim that "akai hon" is completely
+unambiguous.  I'd be happy to believe that there is one strongly preferred
+reading, but can it really never have the other(s)?  What about a
+context in which the interlocutors are trying to choose between some
+childrens books, with the text written in different colors... they've
+been discussing them for a while, and finally say "akai hon ga
+yominikui" meaning "moji ga akai hon ga yominikui".  Or some such.
+
+Perhaps it's worth digging around in a corpus for better counterexamples...
+
+Anyway, it seems to me that Melanie & I are objecting to (what we see
+as) extraneous ambiguity in parsing, whereas Bondo-san-tachi are
+objecting to (what they see as) extraneous ambiguity in
+interpretation.  As a grammar engineering, I know where I stand on the
+issue.
+
+
+>> However, I realise that we may not reach consensus here, and suggest
+>> that we might consider a tiny fork - have an experimental hen.tdl and
+>> two scripts, one which doesn't load that one (ascript) and one that
+>> does (nscript) so we can keep the wierd stuff separate.
+
+
+That would be fine, but I'd rather convince you 
+
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+
+Akira, Taka, Sanae and Chashi, you're also invited in!  
+
+>> Emily:
+>> I'm (still?) skeptical about the claim that "akai hon" is completely
+>> unambiguous.  I'd be happy to believe that there is one strongly preferred
+>> reading, but can it really never have the other(s)?  What about a
+>> context in which the interlocutors are trying to choose between some
+>> childrens books, with the text written in different colors... they've
+>> been discussing them for a while, and finally say "akai hon ga
+>> yominikui" meaning "moji ga akai hon ga yominikui".  Or some such.
+
+
+That is a different ambiguity/vagueness. It exists for English as well,
+and as far as I know for any language in which you ascribe properties
+(i.e. all of them).  Even in the most salient interpretation it isn't
+normally the whole book that is red, but only the cover.  I would be
+happy (although not ecstatic) to give the same parse to a book with a
+red cover, a book with red type and a book about communists...
+
+However, in the atama-ga yoku naru hon/sakana-wo yaku nioi examples (and
+more troublingly to me the kinou katta hon) the modified noun is NOT an
+argument of the verb (actually, at least in the last case, I would like
+it to be, with a sort of adjuncts are arguments analysis (but I
+digress)).
+
+
+>> Emily:
+>> Perhaps it's worth digging around in a corpus for better counterexamples...
+
+
+Tim or Chashi may have them at their fingertips.
+
+
+>> Anyway, it seems to me that Melanie & I are objecting to (what we see
+>> as) extraneous ambiguity in parsing, whereas Bondo-san-tachi are
+>> objecting to (what they see as) extraneous ambiguity in
+>> interpretation.  As a grammar engineering, I know where I stand on the
+>> issue.
+
+
+I would prefer to see it as us taking the mono-stratal claim that HPSG
+makes more seriously.  It seems to me that whether a constituent is an
+argument or not is something that a grammar should distinguish.  As a
+grammar engineer, I can see why you don't want to make a distinction
+that the grammar will never decide, and am in full sympathy.  In the
+medium term (as soon as one of has the insight), our goal was to find a
+way to restrict the vague rule from even applying to "akai hon".  Then
+it would not be a spurious ambiguity, and this discussion becomes
+unnecessary.  If I recall correctly the topic-like (head-restrictive)
+analyses are actually the least common, and normally have a fairly
+restrictive interpretation (resultative).  A quick look at Tim's MA
+shows 84% gapped (includes non-SBJ/OBJ) vs 14% head-restrictive
+(includes examples where I think the noun can subcategorize for a
+clause).  So I would rather get gapping constructions right than
+head-restrictive ones.   As a non-grammar engineer, I calculate that
+allowing for some non-sbj/obj arguments and locative/temporal, I would
+expect a grammar that returns analyses with the gapped analysis is going
+to give the correct analysis more often than one that claims all
+relative clauses are head-restrictive.  Perhaps the real problem is
+that, although we understand that the topic-analysis is meant to be a
+superset of the gapped and head-restrictive analyses, it just seems too
+vague for a precise grammar.
+
+In a different line of argument (orthogonal to the first), I argue that
+if you think of the symbolic grammar AND the stochastic model together
+as making up the grammar that we are engineering then we can tolerate
+kinds of ambiguity that we wouldn't otherwise.  In this case - the
+symbolic grammar and language model will learn to disprefer the vague
+rule, prefer the subject for intransitive and object for transitive,
+maybe modulo some specific variations based on certain verb/argument
+correlations.  This could, of course, be done as part of a separate
+interpretation module.  However, is seems to be something on the level I
+want in my treebank.
+
+
+
+>> Emily: 
+>> That would be fine, but I'd rather convince you 
+
+
+And vice versa.  Unfortunately, from a practical point of view, we will
+probably have to have two scripts anyway as our default is not to call
+chasen (we don't want the analyses to potentially change if the chasen
+dictionary/model changes).
+
+I think that is as convincing as I can be without going back and
+re-reading about relative clauses, and all my notes/books on them are at
+work so I will stop here.
+
+--------------------------------------------------------------------------- 
+CHASHI
+--------------------------------------------------------------------------- 
+If all relative clauses are parsed as non-gapped, (1a) is necessarily
+parsed with the relative clause's subject being (phonetically null)
+pronoun, pro, as in (1b), even if (1a) is intended to mean something
+like (1c). 
+
+ (1) a. hon wo katta hito
+
+     b. [pro hon wo katta] hito
+
+     c. a man who bought a book
+
+However, if (1a)'s interpretation is (1c), that is, its relative
+clause's subject and the relative head are co-referencial (as
+indicated with ``_i" in (2)), the subject is never a pronoun. 
+
+ (2) * [kare_i ga hon wo katta] hito_i
+
+I would say that the analysis that all relative clauses are non-gapped
+ones would predict something like (2).
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+This is an interesting point.  I think there may be a way out
+of it though.  We are constraining the head noun to be related
+to the rest of the clause by a topic relation.  So, if (3) is
+also ungrammatical, I'd say (2) is out for the same reasons (on
+our analysis):
+
+(3) hito_i-ha kare_i-ga hon wo katta
+
+--------------------------------------------------------------------------- 
+EMILY
+--------------------------------------------------------------------------- 
+
+
+>> Francis:
+>> That is a different ambiguity/vagueness. It exists for English as well,
+>> and as far as I know for any language in which you ascribe properties
+>> (i.e. all of them).  Even in the most salient interpretation it isn't
+>> normally the whole book that is red, but only the cover.  I would be
+>> happy (although not ecstatic) to give the same parse to a book with a
+>> red cover, a book with red type and a book about communists...
+
+
+Okay - point taken.  But I think we could come up with better
+examples.  The empirical question is, are there really RelCl+N strings
+that can't be given the head-restrictive (topic-like) interpretation
+in any context?  And if the answer is yes, what properties do they
+have in common that we can leverage in the analysis?
+
+
+>> Francis:
+>> However, in the atama-ga yoku naru hon/sakana-wo yaku nioi examples (and
+>> more troublingly to me the kinou katta hon) the modified noun is NOT an
+>> argument of the verb (actually, at least in the last case, I would like
+>> it to be, with a sort of adjuncts are arguments analysis (but I
+>> digress)).
+
+
+It seems to me that sakana-wo yaku nioi might conceivably be a case of
+the noun selecting the relative clause.  I seem to remember reading
+somewhere (or maybe just imagining once before) that nioi, oto, etc
+land in the same class as fact, idea, etc in Japanese.  As for kinou
+katta hon, do you mean hon wo katta hi?  We'll need an
+adjunct-extraction analysis for the English equivalents (the day I
+bought the book), and presumably could use something similar for
+Japanese, if we're going down that path.
+
+
+
+>> Francis:
+>> Tim or Chashi may have them at their fingertips.
+
+
+I'd love to see some, if it's not too much trouble.  Perhaps hard
+to search for in a corpus, though.
+
+
+
+>>> Francis:
+> I would prefer to see it as us taking the mono-stratal claim that HPSG
+>> makes more seriously.  It seems to me that whether a constituent is an
+>> argument or not is something that a grammar should distinguish.  As a
+
+
+I don't think that my position runs counter to the mono-stratal claim.
+It's true that HPSG builds a single representation for a surface string,
+including syntactic, semantic (and ideally pragmatic) information.  But
+the semantic representations always require further interpretation
+(that's just how language works), and furthermore there is plenty of
+work in HPSG that relies on underspecified semantic representations
+to represent certain ambiguities rather than building separate structures
+for each one (cf. the MRS treatment of scope ambiguities).  (Likewise,
+I wouldn't expect anyone to handle pronoun resolution in the grammar,
+with the possible exception of reflexives.)
+
+Now, if the grammar of Japanese does in fact distinguish whether
+something is an argument or not, than our implemented grammars should
+do so, too.  If there is no syntactic reflex of the difference, I'd
+rather leave it up to interpretation, on the model of pronoun resolution.
+
+
+
+The other reason I prefer the topic-analysis is that it gives only one
+parse for each relative clause.  If you're going to allow for all
+different kinds of gapped arguments, as well as locative/temporal
+adverbs, given the prevalence of pro-drop, you're going to get lots of
+analyses for each one, and we're not going to be able to distinguish
+them syntactically.  (Although maybe sortal constraints would give us
+some headway?)
+
+
+>> Francis:
+>> In a different line of argument (orthogonal to the first), I argue that
+>> if you think of the symbolic grammar AND the stochastic model together
+>> as making up the grammar that we are engineering then we can tolerate
+>> kinds of ambiguity that we wouldn't otherwise.  In this case - the
+>> symbolic grammar and language model will learn to disprefer the vague
+>> rule, prefer the subject for intransitive and object for transitive,
+>> maybe modulo some specific variations based on certain verb/argument
+>> correlations.  This could, of course, be done as part of a separate
+>> interpretation module.  However, is seems to be something on the level I
+>> want in my treebank.
+
+
+Speaking from a purely practical level once again, while this sounds good
+for ambiguity resolution in practical applications, it doesn't solve
+the problem of dealing with all that ambiguity while in the process
+of grammar engineering.  There's enough ambiguity around as it is --
+and the treebank-based parse selection techniques are wonderful -- but
+that doesn't mean I want to throw in any more if I can help it.
+
+Alright, to sum up and try to sound like a bit less of a curmudgeon
+this morning: Until someone comes up with a characterization of a
+class of relative clauses that strictly disallow the head-restrictive
+interpretation, I'll continue to believe that the actual state of
+affairs is that both analyses (gapped and head-restrictive) actually
+apply in all cases.  Furthermore, since there are usually multiple
+possibilities for the gapped kind in any given case, leading to an
+interpretation problem anyway, I prefer to only implement the
+head-restrictive kind.  (However, if stochastic parse selection can
+get us to the right interpretation most of the time--and do so better
+or more easily than whatever the relevant algorithm is in some
+back-end trying to interpret our representations--I might be talked
+out of this position.)
+
+
+--------------------------------------------------------------------------- 
+TIM
+--------------------------------------------------------------------------- 
+
+
+>> It seems to me that sakana-wo yaku nioi might conceivably be a case of
+>> the noun selecting the relative clause.  I seem to remember reading
+>> somewhere (or maybe just imagining once before) that nioi, oto, etc
+>> land in the same class as fact, idea, etc in Japanese.  
+
+
+The Matsumoto claim is that jijitsu, riyuu, mokuteki and whatnot select for
+the relative clause, whereas with nioi, oto, etc, the noun and clause mutually
+select for each other. I'm not sure that I agree with this analysis, but do
+think that there is something to be said for the mutual selection argument for
+RCCs like:
+
+     Kennedy-ga ansatsu-sareta yokutoshi 
+
+
+
+>> Emily:
+>> I'd love to see some, if it's not too much trouble.  Perhaps hard
+>> to search for in a corpus, though.
+
+
+One example which, I believe, is unambiguously gapping is:
+
+Kim-ga nobeta riyuu
+
+noberu is funny in that it requires an overt direct object (somewhat like the
+"put" requiring an overt locative), such that the non-gapping interpretation
+becomes ungrammatical. Most locatives and temporals resist the topic analysis
+(as in they cannot be true topics), but it seems that you are on the trail of
+these. You also get very weird pragmatic effects in trying to interpret RCCs
+such as:
+
+hoN-o watashita aite
+
+as anything other than gapping. The ga/no examples were things like:
+
+Kim-ga watashita hito
+Kim-no watashita hito
+
+In the first case, you get two interpretations: the person Kim handed (X) to,
+and the person Kim handed (over/to X), whereas in the second case, you only get
+the object-gapping interpretation (the person Kim handed (over/to X). Note that
+this is a defeasible constraint:
+
+Kim-no kagi-o watashita hito
+
+means the person Kim handed the keys to.
+
+
+>> Emily:
+>> I don't think that my position runs counter to the mono-stratal claim.
+>> It's true that HPSG builds a single representation for a surface string,
+>> including syntactic, semantic (and ideally pragmatic) information.  But
+>> the semantic representations always require further interpretation
+>> (that's just how language works), and furthermore there is plenty of
+>> work in HPSG that relies on underspecified semantic representations
+>> to represent certain ambiguities rather than building separate structures
+>> for each one (cf. the MRS treatment of scope ambiguities).  (Likewise,
+>> I wouldn't expect anyone to handle pronoun resolution in the grammar,
+>> with the possible exception of reflexives.)
+>> 
+>> Now, if the grammar of Japanese does in fact distinguish whether
+>> something is an argument or not, than our implemented grammars should
+>> do so, too.  If there is no syntactic reflex of the difference, I'd
+>> rather leave it up to interpretation, on the model of pronoun resolution.
+
+
+Based on my earlier work on relative clauses, what I'd be interested in is the
+ability to read the valence saturation properties directly off the MRS, and I
+guess you get this directly from the ARGS list. This would then give you the
+range of unfilled argument positions to test for possible gapping.
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+>> Emily:
+>> Okay - point taken.  But I think we could come up with better
+>> examples.  The empirical question is, are there really RelCl+N strings
+>> that can't be given the head-restrictive (topic-like) interpretation
+>> in any context?  And if the answer is yes, what properties do they
+>> have in common that we can leverage in the analysis?
+
+
+Just to confirm, the topic-like interpretation (as given by the
+original JACY) is meant to be a semantic superset of the
+gapped-analysis and the head-restrictive analysis isn't it?  Which
+interpretation is correct is left to the interpretation module.
+
+If we split RelCl+N into two classes
+ - gapping - (with various possible arguments)
+ - head-restrictive or attributive (Tim identifies 7 semantic types) 
+ 
+I still can't think of a head-restrictive interpretation of "akai hon"
+that makes sense.  Maybe a real linguist could?
+
+
+>> Francis:
+>>> > However, in the atama-ga yoku naru hon/sakana-wo yaku nioi examples (and
+>>> > more troublingly to me the kinou katta hon) the modified noun is NOT an
+>>> > argument of the verb (actually, at least in the last case, I would like
+>>> > it to be, with a sort of adjuncts are arguments analysis (but I
+>>> > digress)).
+>
+>> Emily: 
+>> It seems to me that sakana-wo yaku nioi might conceivably be a case of
+>> the noun selecting the relative clause.  I seem to remember reading
+>> somewhere (or maybe just imagining once before) that nioi, oto, etc
+>> land in the same class as fact, idea, etc in Japanese.  As for kinou
+>> katta hon, do you mean hon wo katta hi?  We'll need an
+
+Yes.  Sorry.
+
+>> Emily: 
+>> adjunct-extraction analysis for the English equivalents (the day I
+>> bought the book), and presumably could use something similar for
+>> Japanese, if we're going down that path.
+
+
+Matsumoto also argues for an adjunct-extraction analysis for "atama-ga
+yoku naru hon" <=> "hon-ni-yotte atama-ga yoku naru" to lead us even
+further down a very slippery slope.
+ 
+
+>> Emily: 
+>> I'd love to see some, if it's not too much trouble.  Perhaps hard
+>> to search for in a corpus, though.
+
+
+I will be extra attuned to them as I go through our treebank.  We
+should be able to pull out all examples of each type easily, although
+I am not 100% confident that my judgments were always consistent.
+ 
+
+>> Emily: 
+>>>> > > Anyway, it seems to me that Melanie & I are objecting to (what we see
+>>>> > > as) extraneous ambiguity in parsing, whereas Bondo-san-tachi are
+>>>> > > objecting to (what they see as) extraneous ambiguity in
+>>>> > > interpretation.  As a grammar engineer, I know where I stand on the
+>>>> > > issue.
+>>
+>> Francis: 
+>>> > 
+>>> > I would prefer to see it as us taking the mono-stratal claim that HPSG
+>>> > makes more seriously.  It seems to me that whether a constituent is an
+>>> > argument or not is something that a grammar should distinguish.  As a
+>
+>> Emily: 
+>> I don't think that my position runs counter to the mono-stratal claim.
+>> It's true that HPSG builds a single representation for a surface string,
+>> including syntactic, semantic (and ideally pragmatic) information.  But
+>> the semantic representations always require further interpretation
+>> (that's just how language works), and furthermore there is plenty of
+>> work in HPSG that relies on underspecified semantic representations
+>> to represent certain ambiguities rather than building separate structures
+>> for each one (cf. the MRS treatment of scope ambiguities).  (Likewise,
+>> I wouldn't expect anyone to handle pronoun resolution in the grammar,
+>> with the possible exception of reflexives.)
+>>
+
+True.
+
+>> Emily:  
+>> Now, if the grammar of Japanese does in fact distinguish whether
+>> something is an argument or not, than our implemented grammars should
+>> do so, too.  If there is no syntactic reflex of the difference, I'd
+>> rather leave it up to interpretation, on the model of pronoun resolution.
+
+
+I will keep trying to come up with a syntactic difference then.
+ 
+
+>> Francis: 
+>>> > grammar engineer, I can see why you don't want to make a distinction
+>>> > that the grammar will never decide, and am in full sympathy.  In the
+>>> > medium term (as soon as one of has the insight), our goal was to find a
+>>> > way to restrict the vague rule from even applying to "akai hon".  Then
+>>> > it would not be a spurious ambiguity, and this discussion becomes
+>>> > unnecessary.  If I recall correctly the topic-like (head-restrictive)
+>>> > analyses are actually the least common, and normally have a fairly
+>>> > restrictive interpretation (resultative).  A quick look at Tim's MA
+>>> > shows 84% gapped (includes non-SBJ/OBJ) vs 14% head-restrictive
+>>> > (includes examples where I think the noun can subcategorize for a
+>>> > clause).  So I would rather get gapping constructions right than
+>>> > head-restrictive ones.   As a non-grammar engineer, I calculate that
+>>> > allowing for some non-sbj/obj arguments and locative/temporal, I would
+>>> > expect a grammar that returns analyses with the gapped analysis is going
+>>> > to give the correct analysis more often than one that claims all
+>>> > relative clauses are head-restrictive.  Perhaps the real problem is
+>>> > that, although we understand that the topic-analysis is meant to be a
+>>> > superset of the gapped and head-restrictive analyses, it just seems too
+>>> > vague for a precise grammar.
+>
+>>
+>> Emily:  
+>> The other reason I prefer the topic-analysis is that it gives only one
+>> parse for each relative clause.  If you're going to allow for all
+>> different kinds of gapped arguments, as well as locative/temporal
+>> adverbs, given the prevalence of pro-drop, you're going to get lots of
+>> analyses for each one, and we're not going to be able to distinguish
+>> them syntactically.  (Although maybe sortal constraints would give us
+>> some headway?)
+
+
+And this makes a big difference tree banking.  Especially with the
+possible adjunct-extraction it gets very hairy quickly.  We tried to
+solve this with sortal constraints in ALT and found them to be
+effective, but hard to do right.  To capture the full range of use we
+really needed preferences rather than constraints.  Which I suppose
+pushes us toward interpretation...
+ 
+
+>> Francis: 
+>>> > In a different line of argument (orthogonal to the first), I argue that
+>>> > if you think of the symbolic grammar AND the stochastic model together
+>>> > as making up the grammar that we are engineering then we can tolerate
+>>> > kinds of ambiguity that we wouldn't otherwise.  In this case - the
+>>> > symbolic grammar and language model will learn to disprefer the vague
+>>> > rule, prefer the subject for intransitive and object for transitive,
+>>> > maybe modulo some specific variations based on certain verb/argument
+>>> > correlations.  This could, of course, be done as part of a separate
+>>> > interpretation module.  However, is seems to be something on the level I
+>>> > want in my treebank.
+>
+>> 
+>> Emily: 
+>> Speaking from a purely practical level once again, while this sounds good
+>> for ambiguity resolution in practical applications, it doesn't solve
+>> the problem of dealing with all that ambiguity while in the process
+>> of grammar engineering.  There's enough ambiguity around as it is --
+>> and the treebank-based parse selection techniques are wonderful -- but
+>> that doesn't mean I want to throw in any more if I can help it.
+
+
+Agreed.
+ 
+
+
+>> Emily: 
+>> this morning: Until someone comes up with a characterization of a
+>> class of relative clauses that strictly disallow the head-restrictive
+>> interpretation, I'll continue to believe that the actual state of
+>> affairs is that both analyses (gapped and head-restrictive) actually
+>> apply in all cases.  
+
+
+Can you show me what a head-restrictive analysis of "akai hon" looks
+like?
+
+
+>> Emily: 
+>> Furthermore, since there are usually multiple possibilities for the
+>> gapped kind in any given case, leading to an interpretation problem
+>> anyway, I prefer to only implement the head-restrictive kind.
+
+
+A reasonable choice.
+
+
+>> Emily: 
+>> (However, if stochastic parse selection can get us to the right
+>> interpretation most of the time--and do so better or more easily
+>> than whatever the relevant algorithm is in some back-end trying to
+>> interpret our representations--I might be talked out of this
+>> position.)
+
+
+However, in order to test this we need to (1) build a tree bank with
+the gapped relative clause rule - which we are doing and (2) implement
+a back end to interpret (at least) relative clauses - which we are not
+at present ...  
+
+A few numbers (from Baldwin 2001) data from the EDR corpus:
+subject gap:           64%
+object gap:             7% 
+Locative/temporal gap:  4% 
+Co-actor gap:		1%
+
+Content attributive:   14% (i.e. nouns that take arguments)
+Idiom/exclusive RCC:    5% (lexically governed)
+
+All others < 1% each
+
+resultative gap (the classic "sakana-wo yaku nioi") 0.1%
+
+Assuming Tim as the interpretor to beat: just under 90%.
+
+I would like to look at our corpus (which admittedly has a very skewed
+collection of relative clauses) and preferably one or more others and
+see what proportion are tagged as gapped/non-gapped using the current
+grammar (or a slightly better one that also has gapped
+temporal/locative and some more clause taking nouns).  Then see how
+well we do with stochastic parse selection.  To do this of course I
+will need to use the gapped rule...
+
+For the time being, Melanie has put the rules in a separate file.
+
+--------------------------------------------------------------------------- 
+FRANCIS
+--------------------------------------------------------------------------- 
+
+
+>> One example which, I believe, is unambiguously gapping is:
+>> 
+>> Kim-ga nobeta riyuu
+>> 
+>> noberu is funny in that it requires an overt direct object (somewhat like the
+>> "put" requiring an overt locative), such that the non-gapping interpretation
+>> becomes ungrammatical. Most locatives and temporals resist the topic analysis
+>> (as in they cannot be true topics), but it seems that you are on the trail of
+>> these. 
+
+
+Both Tanaka and Amano found "Kim-ga nobeta riyuu" to be clearly
+ambiguous, with the object gap and content-clause readings.
+
+
+>> You also get very weird pragmatic effects in trying to interpret
+>> RCCs such as:
+>> 
+>> hoN-o watashita aite
+>> 
+>> as anything other than gapping. The ga/no examples were things like:
+>> 
+>> Kim-ga watashita hito
+>> Kim-no watashita hito
+>> 
+>> In the first case, you get two interpretations: the person Kim handed (X) to,
+>> and the person Kim handed (over/to X), whereas in the second case, you only get
+>> the object-gapping interpretation (the person Kim handed (over/to X). Note that
+>> this is a defeasible constraint:
+>> 
+>> Kim-no kagi-o watashita hito
+>> 
+>> means the person Kim handed the keys to.
+
+
+Hmmm, interesting,  although I don't immediately see a way to capture
+that difference.
+ 
+
+>>> > I don't think that my position runs counter to the mono-stratal claim.
+>>> > It's true that HPSG builds a single representation for a surface string,
+>>> > including syntactic, semantic (and ideally pragmatic) information.  But
+>>> > the semantic representations always require further interpretation
+>>> > (that's just how language works), and furthermore there is plenty of
+>>> > work in HPSG that relies on underspecified semantic representations
+>>> > to represent certain ambiguities rather than building separate structures
+>>> > for each one (cf. the MRS treatment of scope ambiguities).  (Likewise,
+>>> > I wouldn't expect anyone to handle pronoun resolution in the grammar,
+>>> > with the possible exception of reflexives.)
+>>> > 
+>>> > Now, if the grammar of Japanese does in fact distinguish whether
+>>> > something is an argument or not, than our implemented grammars should
+>>> > do so, too.  If there is no syntactic reflex of the difference, I'd
+>>> > rather leave it up to interpretation, on the model of pronoun resolution.
+>
+>> 
+>> Based on my earlier work on relative clauses, what I'd be interested in is the
+>> ability to read the valence saturation properties directly off the MRS, and I
+>> guess you get this directly from the ARGS list. This would then give you the
+>> range of unfilled argument positions to test for possible gapping.
+
+
+I am still very bad at reading MRSs but I believe that currently JACY
+gives the same analysis for -ha marked topics and embedded clauses
+(the noun is linked to the verb with a "wa" relation) although the
+top is different.  I would have thought it may be useful to
+distinguish these from the point of view of an interpreter.
+
+
+Actually, looking closely, for topic "wa" (ha-kaku) the ARG1 is the
+noun, and the ARG2 the event.  For the relative clause "wa", the ARG1
+is the event, and the ARG2 the noun.  
+
+Melanie, Emily:
+
+Is this deliberate?
+
+

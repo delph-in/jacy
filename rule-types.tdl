@@ -1594,16 +1594,15 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 ; (ERB 2003-11-12) Change relation to norm-relation on ALTKEY
 ; of daughter, to keep ??? type out of this rule.
 
-; (MS 2003-12-02) norm-relation has no definition???
+; (MS 2003-12-02) norm-relation has no definition??? Use no_relation instead?
 
 nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
 [ SYNSEM.LOCAL.LKEYS.--KEYREL [WLINK #label,
 			 PRED #rel],
   ARGS.FIRST.SYNSEM.LOCAL.LKEYS [--KEYREL [WLINK #label],
-				 --ALTKEYREL [ PRED #rel ]]].
+				 --ALTKEYREL no_relation & [ PRED #rel ]]].
 
 
-;;				 --ALTKEYREL norm-relation & [ PRED #rel ]]].
 
 ; For É¤¡¢ËÜ¡¢Ëç¡¢etc.
 ; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
