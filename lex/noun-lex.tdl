@@ -1,4 +1,4 @@
-;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: noun-lex.tdl
@@ -4102,6 +4102,10 @@ ordinary-nohon-n-lex &
 [ORTH <! "絵" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_e_n_rel]].
 
+imi :=
+ordinary-nohon-n-lex &
+[ORTH <! "意味" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_imi_n_rel]].
 
 dochiraka :=
 ordinary-nohon-n-lex &
@@ -4417,6 +4421,16 @@ pron-sp-ref-lex &
 boku-kanji:=
 pron-sp-ref-lex &
 [ORTH <! "僕" !>,
+ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+ore :=
+pron-sp-ref-lex &
+[ORTH <! "おれ" !>,
+ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+ore-kanji := 
+pron-sp-ref-lex &
+[ORTH <! "俺" !>,
  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 
 shousei :=
@@ -4951,20 +4965,27 @@ nom-dummy-lex &
 [ORTH <! "こと" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_koto_n_rel]].
 
-koto-pred-2 :=
+koto-pred-kanji :=
 nom-pred-lex &
 [ORTH <! "事" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_koto_n_rel]].
 
-koto-common-2 :=
+koto-common-kanji :=
 nom-common-lex &
 [ORTH <! "事" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_koto_n_rel]].
 
-koto-dummy-2 :=
+koto-dummy-kanji :=
 nom-dummy-lex &
 [ORTH <! "事" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_koto_n_rel]].
+
+; (MS 2004-12-21) we need an entry for the usual noun 事:
+; 事を行うのに。。。
+; (FCB 2005-01-10)  Add koto as a noun for kanji only
+koto-noun-kanji := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_koto_n_1_rel,
+ ORTH <! "事" !>].
 
 hou-pred :=
 nom-pred-lex &
@@ -7338,9 +7359,9 @@ ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zeikin_n_rel,
 ORTH <! "税金" !>].
 
-tani-noun :=
+tanni-noun :=
 ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tani_n_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tanni_n_rel,
 ORTH <! "単位" !>].
 
 tanka-noun :=
@@ -58679,22 +58700,22 @@ koten_1_1 := ordinary-nohon-n-lex &
 ; 古都 
 ; Used 1 times
 
-koto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_koto_n_1_rel,
+koto_1_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_koto_n_2_rel,
  ORTH <! "古都" !>].
 
 ; 琴 
 ; Used 3 times
 
-koto_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_koto_n_1_rel,
+koto_1_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_koto_n_3_rel,
  ORTH <! "琴" !>].
 
 ; 言 
 ; Used 1 times
 
-koto_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_koto_n_1_rel,
+koto_1_4 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_koto_n_4_rel,
  ORTH <! "言" !>].
 
 ; 小道具 
@@ -79735,6 +79756,12 @@ tanabota_1 := ordinary-nohon-n-lex &
 dani_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dani_n_1_rel,
  ORTH <! "ダニ" !>].
+
+; 谷 
+
+tani_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tani_n_1_rel,
+ ORTH <! "谷" !>].
 
 ; 谷川 
 
@@ -145368,15 +145395,3 @@ ordinary-nohon-n-lex &
 SYNSEM [LKEYS.KEYREL.PRED '_teinei_n_4_rel,
 	LOCAL.BAR -]].
 
-; (MS 2004-12-21) we need an entry for the usual noun 事:
-; 事を行うのに。。。
-
-koto-n :=
-ordinary-nohon-n-lex &
-[ORTH <! "事" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].
-
-koto-hiragana-n :=
-ordinary-nohon-n-lex &
-[ORTH <! "こと" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].

@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: adjadv-lex.tdl
@@ -10,8 +10,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
-;;; Melanie Siegel    |             |Emily Bender (ERB), Atsuko Shimada, 
-;;;                   |             |Sanae Fujita (SF), Takaaki Tanaka (TT)
+;;; Melanie Siegel    |             | Emily Bender (ERB), Atsuko Shimada, 
+;;;                   |             | Sanae Fujita (SF), Takaaki Tanaka (TT)
+;;;                   |             | Francis Bond (FCB)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -506,8 +507,6 @@ ainiku-adv :=
 scopal-adv-regular-lex &
 [ORTH <! "あいにく" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_ainiku_a_rel].
-
-
 
 bisshiri-adv :=
 isect-adv-lex &
@@ -3024,6 +3023,17 @@ rashii-naarg-adj :=
 naarg-obl-i-adj-stem-lex &
 [ORTH <! "らしい" !>,
  SYNSEM.LKEYS.KEYREL.PRED '_rashii_a_rel].
+
+rashii-n2adj := 
+n-obl-i-adj-stem-lex &
+[ORTH <! "らしい" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_rashii_a_rel].
+
+ppoi-n2adj := 
+n-obl-i-adj-stem-lex &
+[ORTH <! "っぽい" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_ppoi_adj_rel].
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -7805,6 +7805,25 @@ naarg-obl-i-adj-stem-lex := eval-i-adj-stem-lex &
 			   [SYNSEM.LOCAL.CAT.VAL.COMPS obl-1-arg & [FIRST.LOCAL.CAT.HEAD na-adj_head]].
 
 
+;;; (FCB 2004-06-25) new type for 子供らしい 子供っぽい
+
+
+cop-adj-stem-lex := adj-stem-lex &
+[SYNSEM [LOCAL [CAT [HEAD.MODUS indicative,
+		     VAL cop-id_transitive &
+				[SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbj,
+				 COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #nom]],
+		CONT.HOOK.XARG #sbj],
+	 LKEYS [KEYREL arg1-relation &
+		       [ARG1 #sbj,
+			ARG2 #nom]]]].
+
+n-obl-i-adj-stem-lex := cop-adj-stem-lex &
+   [SYNSEM.LOCAL.CAT.VAL.COMPS obl-1-arg & 
+			       [FIRST.LOCAL.CAT.HEAD noun_head]].
+
+
+
 
 ;generic types for CHASEN connection
 

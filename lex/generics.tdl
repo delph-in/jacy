@@ -9,6 +9,12 @@ ordinary-nohon-n-lex &
 	  LOCAL.BAR - ],
 ORTH <! "GenericNounSuffixLex" !>].
 
+;;; Assume an unknown joshuushi is a measure noun (FCB 2004-02-11)
+generic_num-cl-lex :=
+num-cl-spr-only-meas-lex &
+[SYNSEM.LKEYS.KEYREL.PRED 'generic_numcl,
+ORTH <! "GenericNumClLex" !>].
+
 generic_name-lex := ippan-name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'generic_name,
 ORTH <! "GenericName" !>].

@@ -206,6 +206,7 @@ posmapping :=
   Ì¾»ì-¸ÇÍ­Ì¾»ì-ÃÏ°è-°ìÈÌ+n-n                    $generic_loc_name-lex
   Ì¾»ì-¸ÇÍ­Ì¾»ì-ÃÏ°è-¹ñ+n-n                      $generic_loc_name-lex
   Ì¾»ì-¿ô+n-n					 $generic_number-lex
+  Ì¾»ì-ÀÜÈø-½õ¿ô»ì+n-n                           $generic_num-cl-lex	
   Ì¾»ì-·ÁÍÆÆ°»ì¸ì´´+n-n                          $generic_na-adj-lex
   Éû»ì-°ìÈÌ+n-n                                  $generic_scopal_adv-lex
   Éû»ì-½õ»ìÎàÀÜÂ³+n-n                            $generic_dim_adv-lex
