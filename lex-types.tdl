@@ -3020,7 +3020,7 @@ event-num-cl-lex := adv-num-cl-lex &
 						     XARG #ind]]],
 		CONT [HOOK [LTOP #top,
 			    INDEX #ind],
-		      RELS <! !>]].
+		      RELS <! !>]]].
 
 
 ; (ERB 2004-1-18) These ones are differentiated from the 

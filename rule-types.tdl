@@ -1874,13 +1874,15 @@ numcl2noun-rule-type :=  ordinary-nohon-n-lex &
 
 ; (MS 2004-12-13) This needs to link the HOOK.INDEX of its modifying thing.
 ; (MS 2004-12-20) This shouldn't be unspec_compound_rel, but prep-mod-relation! 今日来る
-
+; added restriction on MOD.LOCAL.HEAD - only modify main verbs
 adv_np_rule-type := unary-type &
 [ SYNSEM [LOCAL [ CAT [ VAL saturated,
                        HEAD adv_head &
-                              [ MOD < [LOCAL intersective_mod & 
-                                          [ CONT [ HOOK [INDEX #arg,
-							 LTOP #hand ]] ]] >,
+			    [ MOD < [LOCAL intersective_mod & 
+					   [ CAT.HEAD verb_head &
+						      [MAIN-PRD +],
+					     CONT [ HOOK [INDEX #arg,
+							  LTOP #hand ]] ]] >,
 				COP-ARG -,
 				J-POSTHEAD left]],
                  CONT [ HOOK [INDEX #ind,
