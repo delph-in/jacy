@@ -2,7 +2,7 @@
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
 ;;;Melanie Siegel (MS)|             | Emily Bender (ERB), Francis Bond (FCB),
-;;;                   |             | (SF), Chikara Hashimoto (CH)
+;;;                   |             | Sanae Fujita (SF), Chikara Hashimoto (CH)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -639,7 +639,7 @@ v2n-rule &
              RMORPH-BIND-TYPE morphbindtype,
              INFLECTED -]].
 
-;;;;;;;;;;;;;;;;;;;;;;;;VN POLITE;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;; VN, N and ADJ POLITE ;;;;;;;;;;;;;;;;
 
 ; (ERB 2002-01-26) Restrict this rule to specific lexical entries,
 ; to reduce the number of 'words' parser has to consider.  Chasen
@@ -652,16 +652,20 @@ v2n-rule &
 ; (MS 2003-11-18) This solution made problems with the generation. Used the 
 ; BACKGROUND <! !> restriction because of that.
 
-;vn-polite-infl-rule :=
-;%prefix (知らせ お知らせ) (願い お願い) (送り お送り)
-;vnpolite-rule &
-;[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vn_head].
+; (FCB 2003-12-05) Taking away the lexical restriction makes "おく"
+; explode.  So I'm restricting these again.
 
+;;;;;;;;;;;;;;;;;;;;;;;;VN POLITE;;;;;;;;;;;;;;;;;;;;
 vn-polite-infl-rule :=
-%prefix (* お)
+%prefix (知らせ お知らせ) (願い お願い) (送り お送り)
 vnpolite-rule &
-[ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD vn_head,
-			  CTXT.BACKGROUND <! !>]].
+[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vn_head].
+
+; vn-polite-infl-rule :=
+; %prefix (* お)
+; vnpolite-rule &
+; [ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD vn_head,
+; 			  CTXT.BACKGROUND <! !>]].
 
 ;vn-polite-infl-rule :=
 ;%prefix (* お)
@@ -671,45 +675,31 @@ vnpolite-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;N POLITE;;;;;;;;;;;;;;;;;;;;
 
-; (ERB 2002-01-28) Restrict this rule to specific lexical entries,
-; to reduce the number of 'words' parser has to consider.  Chasen
-; seems to split the o- prefix off at least some of the time.
-
-; (ERB 2002-02-11) Uli made a fix to cheap that blocks impossible
-; chains of inflectional rules.  Try taking away lexical restriction
-; here to see how bad it gets now.
-
-;n-polite-infl-rule :=
-;%prefix (世話 お世話) (昼 お昼) (金 お金) (手数 お手数)
-;npolite-rule &
-;[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
-
 n-polite-infl-rule :=
-%prefix (* お)
+%prefix (世話 お世話) (昼 お昼) (金 お金) (手数 お手数)
 npolite-rule &
-[ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD ordinary_noun_head,
-			  CTXT.BACKGROUND <! !>]].
+[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
+
+; n-polite-infl-rule :=
+; %prefix (* お)
+; npolite-rule &
+; [ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD ordinary_noun_head,
+; 			  CTXT.BACKGROUND <! !>]].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ POLITE;;;;;;;;;;;;;;;;;;;;
 
-; (ERB 2002-01-28) Restrict this rule to specific lexical entries,
-; to reduce the number of 'words' parser has to consider.  Chasen
-; seems to split the o- prefix off at least some of the time.
-
-; (ERB 2002-02-11) Uli made a fix to cheap that blocks impossible
-; chains of inflectional rules.  Try taking away lexical restriction
-; here to see how bad it gets now.
-
-;adj-polite-infl-rule :=
-;%prefix (忙しい お忙しい)
-;adjpolite-rule &
-;[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head].
-
 adj-polite-infl-rule :=
-%prefix (* お)
+%prefix (忙しい お忙しい)
 adjpolite-rule &
-[ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD i-adj-stem_head,
-			  CTXT.BACKGROUND <! !>]].
+[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head].
+
+; adj-polite-infl-rule :=
+; %prefix (* お)
+; adjpolite-rule &
+; [ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD i-adj-stem_head,
+; 			  CTXT.BACKGROUND <! !>]].
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;NA -> ADV;;;;;;;;;;;;;;;;;;;;
 
