@@ -5448,6 +5448,7 @@ pass-end-lex :=  v-op-end-lex &
 ; Access ARG-S instead of RELS.LIST.FIRST.
 ; (MS 2004-11-30) It is too strict to say that the valence of the SPR should be sbj-obj-arg. 
 ; There could be a SPR (in case of causative-passive).
+; (MS 2004-12-14) The SPR must be [LIGHT -], because we have a new rule for light passives.
 
 
 simple-pass-end-lex :=   pass-end-lex &
@@ -5460,9 +5461,10 @@ simple-pass-end-lex :=   pass-end-lex &
 								       XARG #surfobjind]],
 							   ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
 								   [LOCAL.CONT.HOOK.INDEX #surfsbjind] >,
-							   CAT.VAL [UNSAT +,
+							   CAT [VAL [UNSAT +,
 								    SUBJ opt-1-arg,
-								    COMPS 1-list]]]],
+								    COMPS 1-list],
+								HEAD.LIGHT -]]]],
 				    HEAD.KEYS.KEY pass_rel],
 			      
 			       CONT [RELS <! !>,
@@ -5608,7 +5610,9 @@ lightverb-pass-end-lex :=   pass-end-lex &
 				    HEAD.KEYS.KEY pass_rel],
 			      
 			       CONT [RELS <! !>,
-				     HOOK.INDEX #event & [E.PASS +],
+				     HOOK [INDEX #event & [E.PASS +],
+					   LTOP #hand,
+					   XARG #surfsbjind],
 				     HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfobjind],
 			LKEYS.KEYREL pass-relation &  [LBL #hand]],
@@ -7828,14 +7832,19 @@ generic_adj_short_infl-lex  := generic-i-adj-lex &
 ; and we don't need it here.  Still presumably want the E.TENSE value
 ; to come from the SPR's INDEX, though.
 
+; (MS 2004-12-14) The light verb needs to copy the VN's ARG-S, such
+; that this can be accessed by, e.g., passive.
+
 light-stem-base-lex := verb-stem-lex-super &
 [SYNSEM [LOCAL [CAT [HEAD light-verb_head &
                           [H-TENSE #tense,
                            MODUS #mood],
                      VAL light_transitive & 
                           [SPR.FIRST.LOCAL [ CAT.HEAD.MODUS #mood,
-                                           CONT.HOOK.INDEX.E.TENSE #tense ]]],
-                CONT pred-sem-type & [HOOK.INDEX [E.TENSE #tense]]],
+					     CONT.HOOK.INDEX.E.TENSE #tense,
+					     ARG-S #arg-s]]],
+                CONT pred-sem-type & [HOOK.INDEX [E.TENSE #tense]],
+		ARG-S #arg-s],
          NON-LOCAL.QUE <! !>,
 	 MODIFIED.PERIPH +]].
 

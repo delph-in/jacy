@@ -75,6 +75,11 @@ juu_card4 := card_2_spr_object &
 [ SYNSEM.LKEYS.KEYREL.CARG "10",
   ORTH <! "½½" !>].
 
+juu_card4 := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "10",
+  ORTH <! "£±" !>].
+
+
 hyaku_card1 := card_3_no_valence & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100",
   ORTH <! "É´" !>].
@@ -1772,3 +1777,11 @@ kakuni_numcl := num-cl-spr-only-meas-lex &
 
 kaisen_numcl := num-cl-spr-only-ind-lex &
 [ ORTH <! "²óÀþ" !>].
+
+
+; (MS 2004-12-14) make DAI look the same as $
+
+dai_numcl_2 := num-cl-obj-only-meas-lex &
+[ ORTH <! "Âè" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_dai_numcl_2_rel].
+

@@ -5226,6 +5226,14 @@ nom-common-lex &
 [ORTH <! "»þ" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_toki_n_rel]].
 
+; (MS 2004-12-14) to parse ÉáÄÌ ¤Î »þ
+
+toki-dummy :=
+nom-dummy-lex &
+[ORTH <! "»þ" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_toki_n_rel]].
+
+
 ;ryaku-trans-com :=
 ;nom-transitive-lex &
 ;[ORTH <! "Î¬" !>,
@@ -66313,7 +66321,7 @@ juu_1 := ordinary-nohon-n-lex &
 ; Used 3 times
 
 juu_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_juu_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_juu_n_2_rel,
  ORTH <! "½Æ" !>].
 
 ; ½Å°µ 
@@ -129758,7 +129766,7 @@ shuu_1_3 := ordinary-nohon-n-lex &
 ; Used 23 times
 
 juu_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_juu_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_juu_n_3_rel,
  ORTH <! "½Ã" !>].
 
 ; ½ñ±¡ 
@@ -145356,3 +145364,16 @@ kou-prefix :=
 ordinary-nohon-minusbar-left-n-lex &
 [ORTH <! "¹³" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kou_n_rel]].
+
+
+; importance
+
+jouyou-importance :=
+ordinary-nohon-minusbar-left-n-lex &
+[ORTH <! "½ÅÍ×" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_jouyou_n_3_rel]].
+
+juu-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "¤¸¤å¤¦" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_juu_n_4_rel]].

@@ -177,29 +177,46 @@ utterance_rule-command := utterance-plusmessage-type &
 
 
 
+; (MS 2004-12-14) an utterance rule for sentences with an infinite ending, like "µ¶¤ê¤Ê¤¯",
+; at the moment restricted to adjectives.
 
-
+utterance_rule-decl-infinite := utterance-plusmessage-type &
+                   [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD decl]],
+                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
+                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
+                                                    [MODUS uttmodus, 
+                                                     FIN -,
+						     H-TENSE te,
+						     ADJ +,
+                                                     MAIN-PRD +],
+                                               VAL saturated],
+                                          CONT.RELS diff-list ],
+                                   NON-LOCAL [QUE <! !>,
+					      ROBUST +]]]>].
 
 ;time in VM
 
 pp_np_rule-time := empty-preposition-type &
               [SYNSEM.LOCAL.CAT [HEAD empty-case-p_head & [CASE temp-no]],
-               HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD temporal-noun_head].
+	       ARGS <[SYNSEM.LOCAL.CAT.HEAD temporal-noun_head]> ].
+
 
 ; (MS 2004-04-02) Empty case particles. Try to restrict: to case particle function and lexical nouns.
 ; I'm sure this will add loads of ambiguity. Only for parsing spoken Japanese!
+; (MS 2004-12-14) RELS and HCONS and HOOK should come from the argument.
 
 pp_np_rule-case := empty-preposition-type &
               [SYNSEM [LOCAL [CAT [HEAD empty-case-p_head & [CASE ga-or-wo],
-				   VAL.COMPS < [LOCAL.CONT.HOOK [INDEX #arg, 
-								 LTOP #hand]] >],
-			      CONT [HOOK [INDEX #arg, 
-					  LTOP #hand],
-				    RELS <! !>,
-				    HCONS <! !>]],
+				   VAL.COMPS < >],
+			      CONT [HOOK #hook,
+				    RELS #rels,
+				    HCONS #hcons]],
 		       NON-LOCAL.ROBUST +],
 	       C-CONT.RELS <! !>, 
-	       ARGS.FIRST.SYNSEM.LEX +].
+	       ARGS.FIRST.SYNSEM [LEX +,
+				  LOCAL.CONT [HOOK #hook,
+					      RELS #rels,
+					      HCONS #hcons]]].
 
 
 
@@ -1096,6 +1113,8 @@ embedded-question-rule := embedded-question-rule-type &
 ; (MS 2004-06-25) Linked the XARG to its nonhead-dtr index. No conjunctions should go into this (C-MOD null).
 ; (MS 2004-08-25) SMOD unmarked, such that it cannot apply to utterances. COP -, such that it cannot apply to copula sentences. 
 ; (MS 2004-11-09) AUX aux_minus, such that it cannot apply to auxiliaries.
+; (MS 2004-12-14) Take the CTXT from the argument.
+
 
 empty-cop-id-rule := empty-head-type &
 		     [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
@@ -1115,27 +1134,29 @@ empty-cop-id-rule := empty-head-type &
 				     CONT.HOOK [LTOP #top,
 						XARG #argind,
 						INDEX #ind],
-				    CTXT.BACKGROUND <! !>],
+				    CTXT #ctxt],
 			      NON-LOCAL [QUE <! !>,
 					 ROBUST +],
 			      MODIFIED notmod],
 		      C-CONT [RELS <! equal-relation &
 				     [PRED 'unknown_rel,
 				      LBL #top,
-				      ARG1 #argind,
+				      ARG2 #argind,
 				      ARG0 #ind & [E [TENSE present]]] !>,
 			      HCONS <! !>],
 		      HEAD-DTR.SYNSEM.LOCAL.CONT [RELS <! !>,
 						  HCONS <! !>],
 		      INFLECTED +,
 		      J-NEEDS-AFFIX -,
-		      ARGS < [SYNSEM.LOCAL [CAT [HEAD final_head & [EMPTY -,
+		      ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head & [EMPTY -,
 								    AUX aux_minus,
+								    ADJ -,
 								    COP -,
 								    C-MOD null,
 								    SMOD unmarked],
 						  VAL saturated],
-					     CONT.HOOK.INDEX #argind]] >].
+					     CONT.HOOK.INDEX #argind,
+					    CTXT #ctxt]] >].
 
 
 
@@ -1157,8 +1178,6 @@ empty-copula-rule := empty-head-type &
 				    CONT [HOOK [XARG #xarg,
 						INDEX #ind,
 						LTOP #hand],
-					  MOD-IND #ind,
-					  MOD-HAND #hand,
 					  RELS #liszt,
 					  HCONS #hcons],
 				     CTXT.BACKGROUND <! !>,
@@ -1168,7 +1187,7 @@ empty-copula-rule := empty-head-type &
 		      INFLECTED +,
 		      J-NEEDS-AFFIX -,
 		      C-CONT.RELS <! !>,
-		      ARGS < [SYNSEM [LOCAL [CAT [HEAD na-adj_head,
+		      ARGS < [SYNSEM [LOCAL [CAT [HEAD adj-or-adv_head,
 							    VAL saturated],
 						       CONT [HOOK [XARG #xarg,
 								   INDEX #ind,

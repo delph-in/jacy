@@ -10882,10 +10882,11 @@ kani_2 := na-adj-lex &
 ;<IJ> ; ´°Á´ 
 ;<IJ> ; JACY ´°Á´: kaNzeN (ordinary-nohon-n-lex)
 ;<IJ> ; Used 21 times
+;perfect
 
-;<IJ> kanzen_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kanzen_a_2_rel,
-;<IJ>  ORTH <! "´°Á´" !>].
+kanzen_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kanzen_a_2_rel,
+ORTH <! "´°Á´" !>].
 
 ; ´°àú 
 
@@ -23361,3 +23362,4 @@ zenbu-adv :=
 isect-adv-lex &
 [ORTH <! "Á´Éô" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_zenbu_a_rel].
+

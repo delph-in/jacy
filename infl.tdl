@@ -574,6 +574,30 @@ lexeme-rule &
 		   MARK null,
 		   FIN -]].
 
+
+
+adj-ku-lexeme-infl-rule := 
+%suffix (¤¤ ¤¯)
+j-lexeme-to-word-rule &
+[RMORPH-BIND-TYPE u-morph,
+ ARGS.FIRST [STEMTYPE adj-stem,
+	     SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head & [MODUS #modus],
+	     J-NEEDS-AFFIX +],
+ SYNSEM.LOCAL [CAT.HEAD i-adj-stem_head & 
+			[H-TENSE te,
+                         MODUS #modus,
+                         MOD null,
+                         J-POSTHEAD rels,
+                         MARK null,
+			 J-SPEC null,
+                         SMOD unmarked,
+                         VN -,
+                         C-MOD < [LOCAL.CAT.HEAD sentence-valid] >,
+                         FIN -,
+                         FORMAL.AHON -,
+			 COP-ARG -],
+	       BAR +]].
+
 ;;;;;;;;;;;;;;;;;;;;;;;;N-> QUANTIFIED N;;;;;;;;;;;;;;;;;;;;
 
 ; (ERB 2001-08-16) Changed the following:

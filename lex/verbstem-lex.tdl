@@ -744,6 +744,10 @@ naru-stem :=  v2a-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
                    ORTH <! "なる" !>].
 
+naru-intrans-stem :=  intrans-c-stem-lex &
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                   ORTH <! "なる" !>].
+
 ; Used 235 times
 
 naru-kanji-stem :=  v2a-c-stem-lex &
@@ -15369,13 +15373,13 @@ nagetobasu_1 := v1-c-stem-lex &
 ; Used 4 times
 
 nasu_1_3 := v1-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nasu_v_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nasu_v_13_rel,
  ORTH <! "為す" !>].
 
 ; 生す 
 
 nasu_1_4 := v1-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nasu_v_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nasu_v_14_rel,
  ORTH <! "生す" !>].
 
 ; なぞる 

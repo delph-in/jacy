@@ -912,7 +912,7 @@ made-kanji := postp-lex &
 
 ;おそくまで踊る
 made-topic := topic-advarg-lex &
-	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE topic,
                                 CONT.RELS <! [PRED '_made_p_rel] !>],
                    ORTH <! "まで" !>].  
 

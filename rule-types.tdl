@@ -737,11 +737,10 @@ empty-head-type :=  headed-phrase & j-sign &
 
 
 ;empty particles:
+; (MS 2004-12-14) These shouldn't take a complement
 
 empty-particle-type := empty-head-type & 
-                      [SYNSEM [LOCAL [CAT.VAL obj-arg &
-                                                [COMPS.FIRST.LOCAL.CAT.HEAD noun_head]],
-			       LEX +],
+                      [SYNSEM.LEX +,
 		       C-CONT [RELS <! !>,
 			       HCONS <! !>],
                        ARGS <[SYNSEM.LOCAL.CAT.HEAD noun_head]>].
@@ -1131,19 +1130,20 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
                 INFLECTED +].
 
 ; (ERB 2001-12-05) Need to copy up WLINK too.
+; (MS 2004-12-13) Need to copy up the HOOK (not only XARG).
 
 adj2adv-rule  := isect-adv-lex & lex-rule &
                [SYNSEM [LKEYS.KEYREL [ PRED #rel,
 				       WLINK #label ],
 			LOCAL [CTXT #ctxt,
-			       CONT.HOOK.XARG #xarg],
+			       CONT.HOOK #hook],
 			NON-LOCAL #nonloc],
                 J-NEEDS-AFFIX -,
 		NEEDS-AFFIX -,
                 ARGS < base-adj-stem-lex & [SYNSEM [LKEYS.KEYREL [ PRED #rel,
 								     WLINK #label ],
 						    LOCAL [CTXT #ctxt,
-			                                   CONT.HOOK.XARG #xarg],
+			                                   CONT.HOOK #hook],
 						    NON-LOCAL #nonloc],
 					    INFLECTED -]>,
 		INFLECTED +].
@@ -1873,12 +1873,14 @@ numcl2noun-rule-type :=  ordinary-nohon-n-lex &
 ;                 ARGS.FIRST.SYNSEM.LOCAL [... CAT [HEAD temporal-noun_head, ...
 ;             ->  ARGS.FIRST.SYNSEM.LOCAL [... CAT [HEAD temporal-or-nadv_head  ...
 
+; (MS 2004-12-13) This needs to link the HOOK.INDEX of its modifying thing.
+
 adv_np_rule-type := unary-type &
 [ SYNSEM [LOCAL [ CAT [ VAL saturated,
                        HEAD adv_head &
                               [ MOD < [LOCAL intersective_mod & 
-                                          [ CONT [ MOD-IND #arg,
-                                                   MOD-HAND #hand ]] ] >,
+                                          [ CONT [ HOOK [INDEX #arg,
+							 LTOP #hand ]] ]] >,
 				COP-ARG -,
 				J-POSTHEAD left]],
                  CONT [ HOOK [INDEX #ind,
@@ -1890,6 +1892,7 @@ adv_np_rule-type := unary-type &
 		     LKEYS.KEYREL modable-relation ],
   C-CONT [ RELS <! unspec-compound-relation &
                   [ LBL #hand,
+		    PRED 'unspec,
                     ARG0 #ind & [ E.TENSE no_tense ],
                     ARG1 #time,
                     ARG2 #arg ] !>,
