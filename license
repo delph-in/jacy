@@ -1,24 +1,65 @@
-Copyright (c) 1997-2003 Melanie Siegel, Emily Bender, Stephan Oepen 
+LKB Licence:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software, to deal in the Software without restriction, including without
-limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+      Permission is hereby granted, free of charge, to any
+       person obtaining a copy of this software and associated
+       documentation files (the "Software"), to deal in the
+       Software without restriction, including without
+       limitation the rights to use, copy, modify, merge,
+       publish, distribute, sublicense, and/or sell copies of
+       the Software, and to permit persons to whom the Software
+       is furnished to do so, subject to the following
+       conditions:
 
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
+       The above copyright notice and this permission notice
+       shall be included in all copies or substantial portions
+       of the Software.
 
-You may modify your copy or copies of the grammar or any portion of it, thus forming a work based on the grammar, and copy and distribute such modifications or
-work under the terms described above, provided that you also meet all of these conditions:
+       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+       ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+       TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+       PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+       CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+       OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+       IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+       DEALINGS IN THE SOFTWARE.
 
-a)      You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change.
+JACY Licence:
 
-b)      You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the grammar or any part thereof, to be licensed as
-a whole at no charge to all third parties under the terms of this License.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT  SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY  CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION  OF
-CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER  DEALINGS
-IN THE SOFTWARE. 
+Copyright (c) 1997-2004 Melanie Siegel, Emily Bender, Stephan Oepen 
 
-It would be nice if you'd give me a short feedback about the usage of the grammar. I could also offer to write email, when there is a new version
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software, to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so, subject to the following
+conditions: 
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.  
+
+You may modify your copy or copies of the grammar or any portion of it, thus
+forming a work based on the grammar, and copy and distribute such
+modifications or work under the terms described above, provided that you also
+meet all of these conditions: 
+
+a)      You must cause the modified files to carry prominent notices stating
+that you changed the files and the date of any change. 
+ 
+b)      You must cause any work that you distribute or publish, that in whole
+or in part contains or is derived from the grammar or any part thereof, to be
+licensed as a whole at no charge to all third parties under the terms of this
+License. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT  SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY  CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER  DEALINGS IN
+THE SOFTWARE.  
+
+It would be nice if you'd give me a short feedback about the usage of the
+grammar. I could also offer to write email, when there is a new version
 available. 
