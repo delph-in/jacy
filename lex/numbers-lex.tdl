@@ -436,6 +436,10 @@ kagetsu_numcl-1c := num-cl-nomod-lex &
 [ ORTH <! "ヵ月" !>,
   SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
+kagetsu_numcl-1d := num-cl-nomod-lex &
+[ ORTH <! "か月" !>,
+   SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
+
 kagetsu_numcl-2a := num-cl3-nomod-lex &
 [ ORTH <! "ヶ月" !>,
   SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
@@ -446,6 +450,10 @@ kagetsu_numcl-2b := num-cl3-nomod-lex &
 
 kagetsu_numcl-2c := num-cl3-nomod-lex &
 [ ORTH <! "ヵ月" !>,
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
+
+kagetsu_numcl-2d := num-cl3-nomod-lex &
+[ ORTH <! "か月" !>,
   SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
 nichi_numcl-1 := num-cl-nomod-lex &
