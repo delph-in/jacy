@@ -2495,31 +2495,34 @@ pers-pron-lex := pron-lex &
 			   LOCAL.CONT personal-pronoun-sem-type &
 					  [RELS.LIST.FIRST #key]]].
 
-pers-pron-selfemp-lex := pers-pron-lex &
+; (MS 2005-02-28) Renamed the pers-pron-selfemp-lex.
+; This is actually only the reflexive 自分
+
+reflexive-pronoun-lex := pers-pron-lex &
 			 [ SYNSEM [LOCAL [CONT [HOOK.INDEX #ind],
 					  CTXT.EMPATHY.EMPEE #ind],
 				   LKEYS.KEYREL pron-relation,
 				   NON-LOCAL [QUE <! !>,
 					      REL <! #ind !>]]].
 
-pron-honsubj-lex := pers-pron-lex &
-[SYNSEM.LOCAL [CAT.HEAD.FORMAL.SHON +,
-               CONT [HOOK.INDEX #1],
-               CTXT [C-INDICES.SPEAKER #2,
-                     BACKGROUND <! obj-honor_rel &
-                                 [POLARITY +,
-                                  HONORER #2,
-                                  HONORED #1] !>]]].
 
-pron-honsubj-selfemp-lex := pron-honsubj-lex &
-			    [ SYNSEM [LOCAL [CONT [HOOK.INDEX #ind],
-					     CTXT.EMPATHY.EMPEE #ind],
-				      LKEYS.KEYREL pron-relation,
-				      NON-LOCAL [QUE <! !>,
-						 REL <! #ind !>]]].
+; (MS 2005-02-28) Renamed the pron-honsubj-selfemp-lex. 
+;This is actually only the honorific reflexive. Thus, it
+; inherits from the reflexive-pronoun-lex and we don't need the 
+; pron-honsubj-lex any more. ご自分
+
+reflexive-pronoun-honsbj-lex := reflexive-pronoun-lex &
+			    [SYNSEM.LOCAL [CAT.HEAD.FORMAL.SHON +,
+					   CONT [HOOK.INDEX #1],
+					   CTXT [C-INDICES.SPEAKER #2,
+						 BACKGROUND <! obj-honor_rel &
+							     [POLARITY +,
+							      HONORER #2,
+							      HONORED #1] !>]]].
 			   
+; (MS 2005-02-28) renamed pron-sp-ref-lex. No example.
 
-pron-sp-ref-lex := pers-pron-lex &
+pron-firstperson-ref-lex := pers-pron-lex &
 		   [SYNSEM [LKEYS.KEYREL [ARG0 [PNG.PN one]],
 			    LOCAL [CAT.HEAD.FORMAL.SHON -,
 				   CONT [HOOK.INDEX #1],
@@ -2530,17 +2533,11 @@ pron-sp-ref-lex := pers-pron-lex &
 						      HONORER #1,
 						      HONORED #1] !>]]]].
 
-pron-firstpl-ref-lex  := pers-pron-lex &
-[SYNSEM [LKEYS.KEYREL [ARG0 [PNG.PN onepl]],
-	 LOCAL [CAT.HEAD.FORMAL.SHON -,
-		CONT [HOOK.INDEX #2],
-		CTXT [C-INDICES.SPEAKER #1,
-		      BACKGROUND <! obj-honor_rel &
-				  [POLARITY -,
-				   HONORER #1,
-                                  HONORED #2] !>]]]].
 
-pron-add-ref-lex := pers-pron-lex &
+
+; (MS 2005-02-28) renamed pron-add-ref-lex. そちら
+
+pron-secondperson-ref-lex := pers-pron-lex &
                     [SYNSEM [LKEYS.KEYREL [ARG0 [PNG.PN two]],
 			     LOCAL [CAT.HEAD.FORMAL.SHON +,
                                    CONT [HOOK.INDEX #1],
@@ -2551,22 +2548,49 @@ pron-add-ref-lex := pers-pron-lex &
                                                       HONORER #2,
                                                       HONORED #1] !>]]]].
 
-pron-sp-add-ref-lex := pers-pron-lex &
-                       [SYNSEM [ LKEYS.KEYREL [ARG0 [PNG.PN onepl]],
-				 LOCAL [CAT.HEAD.FORMAL.SHON -,
-                                      CONT [HOOK.INDEX #1],
-                                      CTXT [C-INDICES.SPEAKER #1,
-                                            BACKGROUND <! obj-honor_rel &
-                                                        [POLARITY -,
-                                                         HONORER #1,
-                                                         HONORED #1] !>]]]].
+; (MS 2005-02-28) added the clear plural cases, such as 君達
+
+pron-secondpl-ref-lex := pron-secondperson-ref-lex &
+			 [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twopl].
+
+; (MS 2005-02-28) added the clear singular cases, such as 君
+
+pron-secondsg-ref-lex := pron-secondperson-ref-lex &
+			 [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twosg].
 
 
-pron-ent-ref-lex :=  pers-pron-lex &
+; (MS 2005-02-28) renamed pron-sp-add-ref-lex. We do not need the distinction
+; between inclusion of the addressee and exclusion, because the pronouns don't give
+; this distinction. This can inherit from pron-firstperson-ref-lex. 私達
+
+pron-firstpl-ref-lex := pron-firstperson-ref-lex &
+                       [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN onepl].
+
+; (MS 2005-02-28) added the clear singular first person pronoun type. 私
+
+pron-firstsg-ref-lex := pron-firstperson-ref-lex &
+                       [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN onesg].
+
+
+; (MS 2005-02-28) renamed pron-ent-ref-lex.
+
+pron-thirdperson-ref-lex :=  pers-pron-lex &
                   [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN three]]].
 
-pron-ent-ref-ahon-lex := pron-ent-ref-lex &
-			 [ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +]. 
+
+; (MS 2005-02-28) added the clear singular third person pronoun type. 彼女
+
+pron-thirdsg-ref-lex := pron-thirdperson-ref-lex  &
+                  [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN threesg]]].
+
+; (MS 2005-02-28) added the clear plural third person pronoun type. 彼ら
+
+pron-thirdpl-ref-lex := pron-thirdperson-ref-lex  &
+                  [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN threepl]]].
+
+
+;pron-thirdperson-ref-ahon-lex := pron-thirdperson-ref-lex &
+;			 [ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +]. 
 
 pron-demon-lex := pron-lex &
                   [SYNSEM [LKEYS.KEYREL #key & [ARG0 #i],
@@ -2582,9 +2606,6 @@ pron-loc-ref-lex  := pron-lex &
 					  [HOOK.INDEX #i,
 					   RELS.LIST.FIRST #key ]]].
 
-
-pron-thirdpl-ref-lex :=  pers-pron-lex &
-                  [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN threepl]]].
 
 
 ;  TT&FCB 2003-09-03 took away [SYNSEM [LOCAL [CAT [ VAL.SPR.FIRST.LOCAL.KEYS.KEY.PRED 'def]]
