@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: parse-nodes.tdl

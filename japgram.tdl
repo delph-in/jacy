@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: japgram
@@ -10,8 +10,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
-;;;Melanie Siegel (MS)|             | Emily Bender (ERB), Francis Bond (FCB), Chiharu Hashimoto
-;;;                   |             | (CH), (TT), (AO)
+;;;Melanie Siegel (MS)|             | Emily Bender (ERB), Francis Bond (FCB), 
+;;;                   |             | Chikara Hashimoto (CH),  
+;;;                   |             | Takaaki Tanaka (TT), Akira Ohtani (AO)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
