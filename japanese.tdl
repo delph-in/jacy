@@ -21,6 +21,7 @@
 
 :begin :instance :status rule.
 :include "japgram.tdl".
+;:include "relative-clauses.tdl".
 :end :instance.
 
 :begin :instance :status lex-rule.
