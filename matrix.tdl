@@ -355,8 +355,8 @@ ne_m_rel := abstr-ques_m_rel.
 ; "label" argument.
 
 qeq := avm &
-  [ HARG handle,
-    LARG handle ].        
+  [ HARG handle & [ INSTLOC #instloc ],
+    LARG handle & [ INSTLOC #instloc ] ].        
 
 
 ; (MS 2004-12-01) INSTLOC is needed for generation. This requires it to be string.

@@ -157,6 +157,23 @@
 
 (setf *semantics-index-path* '(synsem local cont hook index))
 
+;;;
+;;; while debugging the generator, turn ambiguity packing off; equate QEQs to
+;;; take advantage of handle constraints generator internally, this requires 
+;;; that the qeq type in the grammar identifies the Skolem constants of the two
+;;; variables, e.g.
+;;;
+;;;   qeq := avm &
+;;;   [ HARG handle & [ INSTLOC #instloc ],
+;;;     LARG handle & [ INSTLOC #instloc ] ].
+;;;
+;;; once generation develops a little further, turn packing back on and find a
+;;; suitable restrictor (suppressing orthography and pieces of semantics that
+;;; will never fail, e.g. RELS and maybe HCONS).               (25-dec-04; oe)
+;;;
+(setf *gen-packing-p* nil)
+(setf *gen-equate-qeqs-p* t)
+
 ;;; connection parameters for lexical database, an association list with fields
 ;;; `:host', `:db', `:table', and `:user' (optional) 
 ;;; if unset we fall back to .tdl lexicon files
