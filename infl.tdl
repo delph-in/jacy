@@ -247,6 +247,9 @@ j-lexeme-to-word-rule &
 
 ;;;;;;;;;;;;;;;;;;;COPULA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+; (FCB 2004-02-08) BAR -, to block spurious ambiguity in 
+; きれい な 犬 
+; (CHECKME: + also works (no difference in cover, with one less rule)
 
 desu-lexeme-infl-rule :=
 word-rule & 
@@ -259,10 +262,9 @@ word-rule &
                                      J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,
                                      J-POSTHEAD rels,
                                      FIN +],
-	       BAR #bar],
+	       BAR -],
  ARGS.FIRST v-lex & [STEMTYPE cop-stem,
-                     SYNSEM.LOCAL [CAT.HEAD.MOD #mod,
-				   BAR #bar]]].
+                     SYNSEM.LOCAL [CAT.HEAD.MOD #mod]]].
 
 ; (ERB 2001-11-12) Experimenting with making te form TENSE tensed
 ; instead of TENSE te.
