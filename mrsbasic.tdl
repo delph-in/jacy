@@ -251,8 +251,13 @@ non-future-date-relation := not-niarg-relation & modable-relation.
 ; there will be integer_rel, const_rel, times_rel and plus_rel.
 ; Just like the LinGO grammar!
 
+; (ERB 2004-1-16) Another update to integer-relation and its subtypes
+; to synch up with the ERG.
 
-integer-relation :< relation.
+;integer-relation :< relation.
+
+integer-relation := arg1-relation &
+ [ ARG1 individual ].
 
 ; (ERB 2002-02-14) For current version of k2y code, need const_rel
 ; to have an event variable.
@@ -265,7 +270,10 @@ integer-relation :< relation.
 ;	       PRED 'const,
 ;               ARG0.E.TENSE no_tense ].
 
-const-relation := named-relation.
+;const-relation := named-relation.
+
+const-relation := integer-relation & const-value-relation &
+		  [ PRED 'card_rel ].
 
 times-relation := integer-relation & 
              [ PRED 'times,
@@ -274,8 +282,8 @@ times-relation := integer-relation &
 
 plus-relation := integer-relation &
             [ PRED 'plus,
-	       TERM1 handle,
-              TERM2 handle ].
+	      TERM1 handle,
+	      TERM2 handle ].
 
 ; (ERB 2001-11-14) To keep the numbers-qua-numcls out of the
 ; first two nominal numcl rules.
@@ -618,3 +626,10 @@ no_rel := predsort.
 tai_rel  := predsort.
 rareru_rel := predsort.
 seem_rel := predsort.
+
+; (ERB 2004-1-18) Copied from ERG for measure NP numeral
+; classifier phrases.
+
+degree-relation := arg0-relation &
+  [ DARG *top*,
+    ARG0 individual ].

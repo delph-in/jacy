@@ -129,14 +129,17 @@ na-adj-sem-type := na-adj-sem-type-basic &
 ; (ERB 2001-08-06) In Smith-style number names, the numbers sometimes
 ; have to also provide the times_rel and the plus-relation.
 
+; (ERB 2004-1-16) See notes at card-lex: exposing the ARG1 as the XARG.
 
 card-sem-type := j-mrs &
                 [MOD-IND #ind,
 		 MOD-HAND #hand,
 		 HOOK [INDEX #ind,
-		       LTOP #hand],
+		       LTOP #hand,
+		       XARG #xarg],
                  HCONS <! !>,
-                 RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind]]].
+                 RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind,
+								ARG1 #xarg]]].
 
 
 ; (ERB 2001-08-28) Date expressions
@@ -388,7 +391,13 @@ wh-adv-sem-type := mod-id-wg-handel-mrs &
 ; (ERB 2001-12-05) Need to enrich this to deal with Ⱦ where the numeral
 ; classifier is going to add another plus-relation.
 
-num-cl-sem-type-super := mod-id-wg-handel-mrs &
-                         [ HCONS <! !>].
-                     
+; (ERB 2004-1-16) I'm going to be introducing some H-CONS constraints now, because
+; the numeral classifier is going to introduce the quantifier for the modified
+; noun. 
+
+;num-cl-sem-type-super := mod-id-wg-handel-mrs &
+;                         [ HCONS <! !>].
+                    
+num-cl-sem-type-super := mod-id-wg-handel-mrs.
+
 num-cl-sem-type := num-cl-sem-type-super.

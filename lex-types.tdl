@@ -956,6 +956,11 @@ int_head-avm := int_head &
 ; (ERB 2001-08-21) Adding subtypes for XDigitErsatz that don't correspond
 ; to types that are already there.
 
+; (ERB 2004-1-18) Need a special type for 何 in num cl phrases,
+; so that it's an integer but can't be selected by anything else.
+
+nan_int :< int_head-avm.
+
 int21 :< int_head-avm.
 int17- :< int_head-avm.
 int17 :< int17-.
@@ -2577,7 +2582,7 @@ affix-noun-lex := n-lex &
 ; of number names.
 
 
-; (ERB 2001-12-05) num-cl3-lex has slightly different semantic constraints,
+; (ERB 2001-12-05) spr-obj-num-cl-lex has slightly different semantic constraints,
 ; so replace num-cl-sem-type here with num-cl-sem-type-super and further
 ; constrain on subtypes.
 
@@ -2593,25 +2598,53 @@ numeral-classifier := lexical_sign-word &
   J-NEEDS-AFFIX -,
   INFLECTED +].
 
-num-cl-lex := numeral-classifier &
-[ SYNSEM [ LOCAL [ CAT [VAL spr-arg &
-                              [ SPR #spr & [FIRST [OPT - ,
+; (ERB 2004-1-16) New semantic analysis has num-cls introducing more
+; relations, with the total number depending on the semantic type.
+
+;spr-only-num-cl-lex := numeral-classifier &
+;[ SYNSEM [ LOCAL [ CAT [VAL spr-arg &
+;                              [ SPR #spr & [FIRST [OPT - ,
+;					   LOCAL [ CAT [ HEAD int_head &
+;							      [ ST-ALONE + ],
+;							 VAL saturated ],
+;						   CONT.HOOK [LTOP #handle,
+;							      INDEX #ind,
+;							      XARG #arg]]]]],
+;			HEAD.KEYS [KEY quantity_rel, ALTKEY #altpred]],
+;		   ARG-S #spr,
+;		   CONT num-cl-sem-type &
+;			   [HOOK [XARG #arg,
+;				  INDEX #ind],
+;			    RELS <! #key & [ARG0 #ind,
+;					    ARG1 #arg] !>,
+;			    MSG no-msg]],
+;	   LKEYS [KEYREL #key & quantity-relation & [AMOUNT #handle],
+;		  ALTKEYREL.PRED #altpred]]].
+
+; (ERB 2004-1-18) The SPR should have its XARG coindexed with
+; the modified noun's MOD-IND value and the LTOP of the NumCl.
+; (The numerals identify that XARG with the ARG1 of their card-rel.)
+
+; (ERB 2004-1-18) We don't actually wan't the SPR's LTOP to 
+; be the same as the NumCl's LTOP, as in the case of measure-num-cl-lex
+; this shouldn't be the case (or we end up with the noun-rel
+; for the measure unit and the noun-rel of the modified NP sharing
+; a handle.)  Move this constraint onto appropriate subtype.
+; Likewise for the MOD-IND = XARG.  True of individuating numeral
+; classifiers, but not of measure numeral classifiers.  Move
+; to appropriate subtypes.
+
+
+spr-only-num-cl-lex := numeral-classifier &
+[ SYNSEM [ LOCAL [ CAT [ VAL spr-arg &
+                              [ SPR #spr &
+                                   [FIRST [OPT - ,
 					   LOCAL [ CAT [ HEAD int_head &
 							      [ ST-ALONE + ],
-							 VAL saturated ],
-						   CONT.HOOK [LTOP #handle,
-							      INDEX #ind,
-							      XARG #arg]]]]],
-			HEAD.KEYS [KEY quantity_rel, ALTKEY #altpred]],
+							 VAL saturated ]]]]]],
 		   ARG-S #spr,
 		   CONT num-cl-sem-type &
-			   [HOOK [XARG #arg,
-				  INDEX #ind],
-			    RELS <! #key & [ARG0 #ind,
-					    ARG1 #arg] !>,
-			    MSG no-msg]],
-	   LKEYS [KEYREL #key & quantity-relation & [AMOUNT #handle],
-		  ALTKEYREL.PRED #altpred]]].
+			    [MSG no-msg]]]].
 
 ; (ERB 2001-08-21) For "numeral classifiers" that go before the
 ; numbers, i.e., $, ＄, ￥...
@@ -2623,43 +2656,54 @@ num-cl-lex := numeral-classifier &
 ; so I'm changing the types to cross-classify the order and the
 ; possible MOD values.
 
-num-cl2-lex := numeral-classifier &
-[ SYNSEM [ LKEYS.KEYREL quantity-relation & #key & [AMOUNT #handle],
-	   LOCAL [ CAT [VAL obj-arg &
-			    [ COMPS #comps & [FIRST [OPT - ,
-						     LOCAL [ CAT [ HEAD int_head &
-									[ ST-ALONE + ],
-								   VAL saturated ],
-							     CONT.HOOK.LTOP #handle ]]]],
-			HEAD.KEYS [KEY quantity_rel]],
-		   ARG-S #comps,
-		 CONT num-cl-sem-type & [RELS <! #key !>,
-					 MSG no-msg ]]]].
+; (ERB 2004-1-18) These also will make no semantic contribution in
+; the new analysis. ... except to hook up the XARG and LTOP of the
+; COMPS element to the appropriate values. ... but this works differently
+; for measure and individuating numeral classifiers.
+
+obj-only-num-cl-lex := numeral-classifier &
+ [ SYNSEM.LOCAL [CAT [VAL obj-arg &
+			[ COMPS #comps & 
+				[FIRST [OPT - ,
+					LOCAL [ CAT [ HEAD int_head &
+							   [ ST-ALONE + ],
+						      VAL saturated ]]]]]],
+		  ARG-S #comps,
+		  CONT num-cl-sem-type &
+			  [ MSG no-msg ]]].
 
 ; (ERB 2001-12-05) Some numeral classifiers take both a specifier and
 ; an object, namely those that can take 半 as an object.  (In 二年半,
 ; 年 has to be the head for semantic reasons.)
 
-num-cl3-lex := numeral-classifier &
+; (ERB 2004-1-18) measure-num-cl-lex is now contributing a whole mess
+; of relations.  Need to allow cross-classification with this type
+; without creating conflicting specifications on the RELS value.
+; Use LKEYS.ALTKEYREL to stash the plus rel, and then pull it on in
+; the relevant subtype.  Also, add constraints so that the XARG
+; of the han_rel gets bound properly.  Mention of XARG looks okay
+; here, because it's not related to anything in the MOD value.
+
+spr-obj-num-cl-lex := numeral-classifier &
 [ SYNSEM [ LOCAL [ CAT [ VAL spr-obj-arg &
                                 [ SPR.FIRST #spr &
 					    [OPT - ,
 					     LOCAL [ CAT [ HEAD int_head &
-                                                               [ ST-ALONE + ],
-								 VAL saturated ],
-							   CONT.HOOK.LTOP #spr_h ]],
+								[ ST-ALONE + ],
+							   VAL saturated ],
+						     CONT.HOOK [ LTOP #spr_h,
+								 XARG #xarg ]]],
 				  COMPS.FIRST #comps &
 					    [OPT - ,
 					     LOCAL [ CAT.HEAD han_head,
-						     CONT.HOOK.LTOP #obj_h ]]]],
-		   ARG-S < #spr , #comps >,
-                   CONT [RELS <! #key,
-                                   plus-relation &
-                                 [ LBL #handle,
-                                   TERM1 #spr_h,
-                                   TERM2 #obj_h ] !> ]],
-	   LKEYS.KEYREL #key &
-		 [ AMOUNT #handle ]]].
+						     CONT.HOOK [ LTOP #obj_h,
+								 XARG #xarg ]]]]],
+		   ARG-S < #spr , #comps >],
+	   LKEYS.ALTKEYREL plus-relation &
+		           [ ARG1 #xarg,
+			     TERM1 #spr_h,
+			     TERM2 #obj_h ]]].
+
                          
 
 ; (ERB 2001-09-13) Type for extra entries of "No." and "bangou"
@@ -2690,18 +2734,40 @@ num-cl3-lex := numeral-classifier &
 ; until the data requires it.
 ;
 
-; Types for different MOD possibilities.
+; Types for different MOD possibilities. 
+; (ERB 2004-1-18) Francis has convinced me that there is also an
+; ambiguity in the case of mensural classifiers (e.g., 円、メートル、
+; etc) between direct modification and the anaphoric use, linked 
+; to the head noun by の.  Therefore, this dimension of classification
+; is no longer mod v. nomod, but individuating vs. measure.  I
+; expect to see some more types in here as we extend the analysis
+; to other NumCl types.
 
 ; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND instead of INDEX
 ; and LTOP.  Also, these are intersective modifiers.
 
-mod-num-cl-lex := numeral-classifier &
-[ SYNSEM [LKEYS.KEYREL.ARG1 #modind,
-	  LOCAL [ CAT [ HEAD num-cl-mod_head &
-			     [ MOD < [LOCAL intersective_mod & 
-					    [CONT [ MOD-IND #modind,
-						    MOD-HAND #hand ]]] > ]],
-		  CONT [HOOK.LTOP #hand ]]]].
+; (ERB 2004-1-18) Put constaints on semantics etc for individuating
+; numeral classifiers here.
+
+; (ERB 2004-1-16) Per Francis, the individuate-rel can be left
+; implicit.  Presumably an inference engine could get it from 
+; the card-rel. No need for that extra quant-rel either.
+
+; (ERB 2004-1-18) Constraints on the SPR don't belong here,
+; as a few oddballs actually take a COMPS instead.  
+
+individuating-num-cl-lex := numeral-classifier &
+  [ SYNSEM.LOCAL [ CAT.HEAD num-cl-mod_head & 
+			    [ MOD < [ LOCAL intersective_mod &
+					    [ CONT [ MOD-HAND #ltop,
+						     MOD-IND #ind ]]]>],
+		   CONT [ RELS <! !>,
+			  HCONS <! !>,
+			  MOD-IND #ind,
+			  MOD-HAND #ltop,
+			  HOOK [ INDEX #ind,
+				 LTOP #ltop ] ]]].
+
 
 ; (ERB 2002-01-22) We don't want an attachment ambiguity between
 ; posthead NumClPs and prehead modifiers.  Restrict posthead
@@ -2712,18 +2778,61 @@ mod-num-cl-lex := numeral-classifier &
 ; the supposedly floated quantifier is attaching low), but the MRS
 ; looks fine, so leave it for now.
 
-anymod-num-cl-lex := mod-num-cl-lex &
+anymod-ind-num-cl-lex := individuating-num-cl-lex &
 [ SYNSEM.LOCAL.CAT.HEAD num-cl-n-or-p-mod_head &
                         [ MOD < [LOCAL.NUCL nucl_plus ] > ]].
 
 ; (ERB 2001-09-12) Some num-cl like things can't "float" (i.e., show 
 ; up outside the PP.  So these have a more specific MOD value).
 
-noun-mod-num-cl-lex := mod-num-cl-lex &
+noun-mod-ind-num-cl-lex := individuating-num-cl-lex &
 [ SYNSEM.LOCAL.CAT.HEAD num-cl-nmod_head ].
 
-no-mod-num-cl-lex := numeral-classifier &
-[ SYNSEM.LOCAL.CAT.HEAD num-cl-nomod_head ].
+; (ERB 2004-1-18) These ones are differentiated from the 
+; individuating ones by their semantic contribution (and
+; reumably eventually by their lack of fussiness in what
+; ontological types they'll modify), but they can serve as
+; modifiers in the same way.  [We may want to separate out
+; the syntactic details of the MOD possibilities from this
+; semantic distinction at some point, but leave that for now.]
+; For now, say that they can only show up as premodifiers of Ns.
+
+; (ERB 2004-1-18) Need to leave length of RELS list underspecified,
+; since spr-obj-num-cl-lex adds a plus-relation to tie in the 
+; complements "han".  Furthermore, need to hold off
+; on relating the LBL of the noun-relation to number,
+; as it might end up being identified with the LTOP
+; of the SPR or with the plus-relation.
+
+
+measure-num-cl-lex := numeral-classifier &
+[ SYNSEM [ LKEYS.KEYREL #key,
+	   LOCAL [ CAT.HEAD num-cl-nmod_head & 
+			    [ MOD < [ LOCAL intersective_mod &
+					    [ CONT [ MOD-HAND #ltop,
+						   MOD-IND #ind ]]]>],
+		   CONT [ RELS.LIST < quant-relation &
+				[ PRED udef_rel,
+				  ARG0 #meas-ind,
+				  RSTR #harg ],
+				#key & noun-relation &
+				[ LBL #larg,
+				  ARG0 #meas-ind ],
+				degree-relation &
+				[ LBL #larg,
+				  PRED 'degree_rel,
+				  DARG #darg ],
+				arg1-relation &
+				[ LBL #ltop,
+				  PRED #darg & 'unspec_adj_rel,
+				  ARG1 #ind ], ... >,
+			  HCONS <! qeq & 
+				 [ HARG #harg,
+				   LARG #larg ] !>,
+			  MOD-IND #ind,
+			  MOD-HAND #ltop,
+			  HOOK [ INDEX #ind,
+				 LTOP #ltop ]]]]].
 
 ; Cross-classified subtypes:
 
@@ -2740,63 +2849,158 @@ no-mod-num-cl-lex := numeral-classifier &
 
 ; 本、個、匹、人、 etc.
 
-; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
-; (ERB 2003-12-03) We still need some mechanism for separating the mod numcls from the nomods
-; in the nominal-numcl rules.  Melanie has resurrected no-relation, and I'm putting it back in here.
+; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any
+; more, I'll erase that here.
 
-num-cl-mod-lex := num-cl-lex & anymod-num-cl-lex &
-                  [ SYNSEM.LKEYS [ KEYREL reg-quantity-relation & [PRED 'reg-quantity_rel],
-					 ALTKEYREL no-relation ]].
+; (ERB 2003-12-03) We still need some mechanism for separating the mod
+; numcls from the nomods in the nominal-numcl rules.  Melanie has
+; resurrected no-relation, and I'm putting it back in here.
+
+; (ERB 2004-1-16) Changing semantic analysis to fit with Francis's
+; thinking better.  These ones are the "individuating" classifiers.
+; Putting all the constraints here for now and worrying about
+; generalizing later.
+
+;num-cl-mod-lex := num-cl-lex & anymod-ind-num-cl-lex &
+;                  [ SYNSEM.LKEYS [ KEYREL reg-quantity-relation & [PRED 'reg-quantity_rel],
+;					 ALTKEYREL no-relation ]].
+
+; (ERB 2004-1-16) Per Francis, the individuate-rel can be left
+; implicit.  Presumably an inference engine could get it from 
+; the card-rel. No need for that extra quant-rel either.
+
+;num-cl-mod-lex := num-cl-lex & anymod-ind-num-cl-lex &
+;  [ SYNSEM.LOCAL [ CAT [ HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #ind,
+;						     HOOK [ LTOP #ltop ] ],
+;			 VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #ind,
+;							 LTOP #ltop ] ],
+;		   CONT [ RELS <! !>,
+;			  MOD-IND #ind,
+;			  MOD-HAND #ltop,
+;			  HOOK [ INDEX #ind,
+;				 LTOP #ltop ] ]]].
+
+
+; (ERB 2004-1-16) Per Francis, the individuate-rel can be left
+; implicit.  Presumably an inference engine could get it from 
+; the card-rel. No need for that extra quant-rel either.
+
+; (ERB 2004-1-18) Moved constraints on the semantics of these
+; guys up to individuating-num-cl-lex.  Still need to hook up
+; XARG and LTOP of SPR to appropriate things.
+
+num-cl-spr-only-ind-lex := spr-only-num-cl-lex & anymod-ind-num-cl-lex &
+  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #xarg,
+						   MOD-HAND #ltop ],
+		       VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #xarg,
+						       LTOP #ltop ]]].
+
 
 ; 番、号
-; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
-; (ERB 2003-12-03) We still need some mechanism for separating the mod numcls from the nomods
-; in the nominal-numcl rules.  Melanie has resurrected no-relation, and I'm putting it back in here.
 
-num-cl-nmod-lex := num-cl-lex & noun-mod-num-cl-lex &
-                  [ SYNSEM.LKEYS [  KEYREL reg-quantity-relation,
-					  ALTKEYREL no-relation]].
+; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any
+; more, I'll erase that here.
+
+; (ERB 2003-12-03) We still need some mechanism for separating the mod
+; numcls from the nomods in the nominal-numcl rules.  Melanie has
+; resurrected no-relation, and I'm putting it back in here.
+
+; (ERB 2004-1-18) Hook up XARG and LTOP of SPR with appropriate
+; things.  This looks mighty similar to the above.  Consider just
+; having this type further constrain the MOD value?
+
+num-cl-spr-only-ind-nmod-lex := spr-only-num-cl-lex & noun-mod-ind-num-cl-lex &
+  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #xarg,
+						   MOD-HAND #ltop ],
+		       VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #xarg,
+						       LTOP #ltop ]]].
+
 
 ; 円、年、階、etc
-; (ERB 2003-12-03) Norm-relation is gone, so here the type of ALTKEY will be noun-rel.  It doesn't
-; really matter what it is exactly, as long as it contrasts with no-relation, because the only information
+
+; (ERB 2003-12-03) Norm-relation is gone, so here the type of ALTKEY
+; will be noun-rel.  It doesn't really matter what it is exactly, as
+; long as it contrasts with no-relation, because the only information
 ; we take from it presently is the PRED value.
 
-num-cl-nomod-lex := num-cl-lex & no-mod-num-cl-lex &
-                  [ SYNSEM.LKEYS [  KEYREL reg-quantity-relation & [PRED 'reg-quantity_rel],
-				    ALTKEYREL noun-relation ]].
+; (ERB 2004-1-18) Removed KEY and ALTKEY constraints from here
+; for new analysis.
+
+; (ERB 2004-1-18) Constraint length of RELS list and 
+; relate SPR..LTOP/XARG to noun-relation.  
+
+num-cl-spr-only-meas-lex := spr-only-num-cl-lex & measure-num-cl-lex &
+  [ SYNSEM [ LKEYS.KEYREL [ LBL #lbl,
+			    ARG0 #xarg ],
+	     LOCAL [ CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK [ LTOP #lbl,
+							 XARG #xarg ],
+		     CONT.RELS <! *top*, *top*, *top*, *top* !> ]]].
 
 ; ￥、＄、etc.
-; (ERB 2003-12-03) Norm-relation is gone, so here the type of ALTKEY will be noun-rel.  It doesn't
-; really matter what it is exactly, as long as it contrasts with no-relation, because the only information
+
+; (ERB 2003-12-03) Norm-relation is gone, so here the type of ALTKEY
+; will be noun-rel.  It doesn't really matter what it is exactly, as
+; long as it contrasts with no-relation, because the only information
 ; we take from it presently is the PRED value.
 
-num-cl2-nomod-lex := num-cl2-lex & no-mod-num-cl-lex &
-		     [ SYNSEM.LKEYS [ KEYREL reg-quantity-relation & [PRED 'reg-quantity_rel],
-				      ALTKEYREL noun-relation ]].
+; (ERB 2004-1-18) Removed KEY and ALTKEY constraints from here
+; for new analysis.
+
+; (ERB 2004-1-18) Constraint length of RELS list and 
+; relate COMPS..LTOP/XARG to noun-relation.  
+
+
+num-cl-obj-only-meas-lex := obj-only-num-cl-lex & measure-num-cl-lex &
+  [ SYNSEM [ LKEYS.KEYREL [ LBL #lbl,
+			    ARG0 #xarg ],
+	     LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK [ LTOP #lbl,
+							   XARG #xarg ],
+		     CONT.RELS <! *top*, *top*, *top*, *top* !> ]]].
 
 ; numbers used as numcls
-; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
-; (ERB 2003-12-03) We still need some mechanism for separating the mod numcls from the nomods
-; in the nominal-numcl rules.  Melanie has resurrected no-relation, and I'm putting it back in here.
 
-num-cl2-nmod-lex-super := num-cl2-lex & noun-mod-num-cl-lex &
-			  [ SYNSEM.LKEYS [ ALTKEYREL no-relation ]].
+; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any
+; more, I'll erase that here.
+
+; (ERB 2003-12-03) We still need some mechanism for separating the mod
+; numcls from the nomods in the nominal-numcl rules.  Melanie has
+; resurrected no-relation, and I'm putting it back in here.
+
+; (ERB 2004-1-18) Removed KEY and ALTKEY constraints from here
+; for new analysis.
+
+
+num-cl-obj-only-nmod-ind-lex-super := obj-only-num-cl-lex & noun-mod-ind-num-cl-lex.
 
 ; No., 番号
 
-num-cl2-nmod-lex := num-cl2-nmod-lex-super &
-                    [ SYNSEM.LKEYS.KEYREL reg-quantity-relation].
+; (ERB 2004-1-18) Removed KEY and ALTKEY constraints from here
+; for new analysis.
+
+
+num-cl-obj-only-nmod-ind-lex := num-cl-obj-only-nmod-ind-lex-super.
 
 ; (ERB 2001-09-13) This creates so much ambiguity, we should probably wait
 ; until the data requires it.
 
-;num-cl3-nmod-lex := num-cl3-lex & noun-mod-num-cl-lex.
+;num-cl-spr-obj-nmod-lex := spr-obj-num-cl-lex & noun-mod-ind-num-cl-lex.
 
 ; 年、 時、ヶ月 etc. with 半
 
-num-cl3-nomod-lex := num-cl3-lex & no-mod-num-cl-lex &
-                     [ SYNSEM.LKEYS [ KEYREL reg-quantity-relation & [PRED 'reg-quantity_rel]]].
+; (ERB 2004-1-18) Removed KEY and ALTKEY constraints from here
+; for new analysis.
+
+; (ERB 2004-1-18) Pull plus-relation from ALTKEYREL onto RELS list,
+; relate its LBL to LBL of noun-relation in KEYREL, ARG1 to ARG0.
+
+num-cl-spr-obj-meas-lex := spr-obj-num-cl-lex & measure-num-cl-lex &
+   [ SYNSEM [ LKEYS [ KEYREL [ LBL #lbl,
+			       ARG0 #xarg ],
+		      ALTKEYREL #altkey & [ LBL #lbl,
+					    ARG1 #xarg ]],
+	     LOCAL [ CONT.RELS <! *top*, *top*, *top*, *top*,
+				   #altkey !> ]]].
+
 
 
 
@@ -3734,21 +3938,64 @@ scopal-adv-right2left-lex := scopal-adv-lex &
 ; be SPRs of numeral classifiers and other entities.  The MOD none
 ; constraint is on int_head.
 
+; (ERB 2004-1-16) They're still not modifying anything directly, but
+; semantically it's going to look like they are.  So, I've updated the
+; definitions of the relevant relations (integer-relation, and its
+; subtypes).  Now card-lex needs to identify the ARG1 of the
+; const-relation and any plus or times relations (the modified thingy)
+; with its XARG, so that other card-lexes and the numeral classifier
+; can get at it.  Modify card-lex, card-sem-type, card-with-object and
+; card-with-specifier appropriately.
 
 
+; (ERB 2004-1-18) Making special entry for 何 in numeral classifier
+; phrases.  Assume for the moment (probably incorrectly) that
+; 何十年 etc are ungrammatical, because I don't know what their
+; semantics should look like.  This entry will share some but not
+; all of the constraints on card-lex, so I'm going to create a 
+; supertype card-lex-super:
 
-card-lex := lexical_sign-word & 
-            [SYNSEM [LOCAL [CAT [ HEAD int_head-avm & [KEYS.KEY #pred],
+card-lex-super := lexical_sign-word & 
+            [SYNSEM [LOCAL [CAT [ HEAD int_head-avm,
 				  VAL [SUBJ null,
 				       COMPS 0-1-list & #comps]],
 			    ARG-S #comps,
-                            CONT card-sem-type & [ RELS.LIST.FIRST #key],
                             CTXT.BACKGROUND <! !>,
                             BAR bool],
-		     LKEYS.KEYREL #key & [PRED #pred],
                     NON-LOCAL [QUE <! !>,
                             AFFIX <! !>]], 
-             INFLECTED +].
+	     INFLECTED +].
+
+card-lex := lexical_sign-word & 
+            [SYNSEM [LOCAL [CAT.HEAD.KEYS.KEY #pred,
+			    CONT card-sem-type & [ RELS.LIST.FIRST #key]],
+		     LKEYS.KEYREL #key & [PRED #pred]]].
+
+; (ERB 2004-1-18) Special type for 何 in numeral classifier phrases.
+
+nan-card-lex := card-lex-super &
+ [ SYNSEM.LOCAL [ CAT [ VAL saturated,
+			HEAD nan_int ],
+		  CONT [ RELS <! quant-relation &
+			         [ PRED whq_rel,
+				   ARG0 #ind,
+				   RSTR #harg ],
+			         noun-relation &
+			         [ PRED 'number_rel,
+				   ARG0 #ind,
+				   LBL #larg ],
+			         arg12-relation &
+			         [ PRED 'unspec_rel,
+				   LBL #ltop,
+				   ARG1 #xarg,
+				   ARG2 #ind ] !>,
+			 HCONS <! qeq &
+				[ HARG #harg,
+				  LARG #larg ] !>,
+			 HOOK [ LTOP #ltop,
+				XARG #xarg ],
+			 MSG no-msg ]]].
+				   
 
 ; (ERB 2001-08-06) Subtypes of card-lex are cross-classified on
 ; two dimensions: their value and their j-valence.
@@ -3771,10 +4018,13 @@ card-no-object := card-complementation &
 card-with-object := card-complementation & 
             [SYNSEM [LOCAL [CAT.VAL [ COMPS obl-1-arg &
 					    < [LOCAL [ CAT [ VAL saturated,
-                                                               HEAD int_head ],
-                                                         CONT [ HOOK.LTOP #term2 ]]] >],
-			    CONT [ RELS.LIST.REST.FIRST plus-relation & 
-							 [ TERM2 #term2 ]]]]].
+							     HEAD int_head ],
+						       CONT.HOOK [ XARG #xarg,
+								   LTOP #term2 ]]] >],
+			    CONT [ HOOK.XARG #xarg,
+				   RELS.LIST.REST.FIRST plus-relation & 
+					     [ ARG1 #xarg,
+					       TERM2 #term2 ]]]]].
 
 
 card-no-specifier := card-specification &
@@ -3783,14 +4033,17 @@ card-no-specifier := card-specification &
                                              ALTKEYREL #key ]]].
 
 card-with-specifier := card-specification & 
-            [SYNSEM [LOCAL.CAT.VAL.SPR obl-1-arg &
+            [SYNSEM [LOCAL [ CONT.HOOK.XARG #xarg,
+			     CAT.VAL.SPR obl-1-arg &
 				       [FIRST [LOCAL [ CAT [ VAL saturated,
 							     HEAD int_head ],
-						       CONT [ HOOK.LTOP #factor2 ]]]],
+						       CONT.HOOK [ XARG #xarg,
+								   LTOP #factor2 ]]]]],
 		     LKEYS [KEYREL.LBL #factor1,
 			    ALTKEYREL times-relation & 
-					 [ FACTOR1 #factor1,
-					   FACTOR2 #factor2 ]]]].
+				       [ ARG1 #xarg,
+					 FACTOR1 #factor1,
+					 FACTOR2 #factor2 ]]]].
 
 ; (ERB 2001-08-06) Cross-classified subtypes of card-j-valence:
 
@@ -3810,7 +4063,7 @@ card-with-object-no-specifier := card-with-object & card-no-specifier &
 card-no-object-with-specifier := card-no-object & card-with-specifier &
      [ SYNSEM [LKEYS.ALTKEYREL #altkey & [LBL #top],
 		     LOCAL.CONT [HOOK.LTOP #top,
-                           RELS <! relation, #altkey !> ]]].
+				 RELS <! relation, #altkey !> ]]].
 
 card-no-object-no-specifier := card-no-object & card-no-specifier &
      [ SYNSEM.LOCAL.CONT [ RELS <! [ LBL #top ] !>,
