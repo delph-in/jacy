@@ -1672,6 +1672,7 @@ hiku-3-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_3_rel]],
 ORTH <! "挽く" !>].
 
+
 hiku-hiragana-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_rel]],
 ORTH <! "ひく" !>].
@@ -21137,12 +21138,6 @@ oshimu-2-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_oshimu_v_2_rel]],
 ORTH <! "愛しむ" !>].
 
-
-;挽く
-
-hiku-3-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_3_rel]],
-ORTH <! "挽く" !>].
 
 
 ;飲み潰れる

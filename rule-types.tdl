@@ -2164,6 +2164,7 @@ cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
 
 vstem-vstem-rule-type := head-final-type & 
 		    orth-princ &
+			 que-princ &
 		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
 				    BAR -],
 			     LEX +],
