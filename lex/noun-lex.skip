@@ -2,18 +2,18 @@
 acchi :=
 pron-loc-ref-lex &
 [ORTH <! "あっち" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
 
 
 achikochi_1_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'achikochi_1],
- ORTH <! "あちこち" !> ].
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_achikochi_n_1_rel],
+ ORTH <! "あちこち" !>].
 
 
 achira :=
 pron-loc-ref-lex &
 [ORTH <! "あちら" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
 
 ; (AO 2003-08-07) 三人称単数
 ;		指すものを軽く敬っている
@@ -49,7 +49,7 @@ SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
 
 arekore_1_2 :=  pron-thirdpl-ref-lex &
 [SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]],
- ORTH <! "あれこれ" !> ].
+ ORTH <! "あれこれ" !>].
 
 
 arera :=
@@ -61,7 +61,7 @@ SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
 asoko :=
 pron-loc-ref-lex &
 [ORTH <! "あそこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
 
 ;only spoken language:
 atakushi :=
@@ -89,32 +89,32 @@ pron-sp-ref-lex &
 
 
 dare-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'dare-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_dare_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "だれ" !>].
 
 
 dare-mo-2 := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'dare-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_dare_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "誰" !>].
 
 ;both
 dochira-mo :=
 affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'dochira-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_dochira_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "どちら" !>].
 
 
 doko-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'doko-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_doko_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "どこ" !>].
 
 
 dore-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'dore-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_dore_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "どれ" !>].
 
@@ -122,26 +122,26 @@ ORTH <! "どれ" !>].
 gaku-suffix :=
 ordinary-nohon-n-lex &
 [ORTH <! "額" !>,
- SYNSEM [LKEYS.KEYREL.PRED 'gaku,
+ SYNSEM [LKEYS.KEYREL.PRED '_gaku_n_rel,
 	 LOCAL [CAT.HEAD.J-POSTHEAD right,
 		BAR -]]].
 
 ;people
 hitobito-noun :=  
         ordinary-nohon-n-lex &
-	[SYNSEM.LKEYS.KEYREL [PRED 'hitobito,
+	[SYNSEM.LKEYS.KEYREL [PRED '_hitobito_n_rel,
 				ARG0.PNG.PN threepl],
          ORTH <! "人々" !>].
 
 
 ikura-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'ikura-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_ikura_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "いくら" !>].
 
 
 ikutsu-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'ikutsu-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_ikutsu_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "いくつ" !>].
 
@@ -149,19 +149,19 @@ ORTH <! "いくつ" !>].
 ima :=
 date-noun-lex &
 [ORTH <! "今" !>,
-SYNSEM [LKEYS.KEYREL [PRED 'ima],
+SYNSEM [LKEYS.KEYREL [PRED '_ima_n_rel],
 	LOCAL.BAR +]].
 
 
 itsu-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'itsu-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_itsu_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "いつ" !>].
 
 
 kanata := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel],
- ORTH <! "彼方" !> ].
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
+ ORTH <! "彼方" !>].
 
 
 kanojo :=
@@ -191,7 +191,7 @@ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 ki-suffix :=
 ordinary-nohon-n-lex &
 [ORTH <! "機" !>,
-SYNSEM [LKEYS.KEYREL [PRED 'ki],
+SYNSEM [LKEYS.KEYREL [PRED '_ki_n_rel],
 	LOCAL [CAT.HEAD.J-POSTHEAD right,
 	       BAR -]]].
 
@@ -204,7 +204,7 @@ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 ;children
 kodomotachi-noun :=  
         ordinary-nohon-n-lex &
-	[SYNSEM.LKEYS.KEYREL [PRED 'kodomotachi,
+	[SYNSEM.LKEYS.KEYREL [PRED '_kodomotachi_n_rel,
                                 ARG0.PNG.PN threepl],
          ORTH <! "子供","達" !>].
 
@@ -212,7 +212,7 @@ kodomotachi-noun :=
 koko :=
 pron-loc-ref-lex &
 [ORTH <! "ここ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'here-rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_here_n_rel_rel]].
 
 
 kore :=
@@ -230,19 +230,19 @@ SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
 mono-suffix :=
 ordinary-nohon-n-lex &
 [ORTH <! "物" !>,
-SYNSEM [LKEYS.KEYREL [PRED 'mono],
+SYNSEM [LKEYS.KEYREL [PRED '_mono_n_rel],
 	LOCAL [CAT.HEAD.J-POSTHEAD right,
 	       BAR -]]].
 
 
 nanika-multi := ordinary-nohon-plusbar-n-lex &
                                 [ORTH <! "何",  "か" !>,
-                                 SYNSEM [LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED 'indef,
-					 LKEYS.KEYREL.PRED 'nanika]].
+                                 SYNSEM [LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED '_indef_n_rel,
+					 LKEYS.KEYREL.PRED '_nanika_n_rel]].
 
 
 nani-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED 'nani-mo,
+[SYNSEM [LKEYS.KEYREL.PRED '_nani_n_mo_rel,
          NON-LOCAL.AFFIX <! mo !>],
 ORTH <! "なに" !>].
 
@@ -254,25 +254,25 @@ onmi_1 := pron-add-ref-lex &
 
 onore_1_2 := pron-sp-ref-lex &
 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
- ORTH <! "己" !> ].
+ ORTH <! "己" !>].
 
 ; (AO 2003-08-08) 対称の代名詞 相手を見下した言い方
 ;		辞書的には漢字で書くのだろうが、
 ;		「てめえ, あたし, われ」と同様ひらがなで追加
 onore_2 := pron-add-ref-lex &
 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
- ORTH <! "おのれ" !> ].
+ ORTH <! "おのれ" !>].
 
 
 sei_1_10 := pron-sp-ref-lex &
 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +, 
- ORTH <! "生" !> ].
+ ORTH <! "生" !>].
 
 
 sho-office-suffix :=
 ordinary-nohon-n-lex &
 [ORTH <! "署" !>,
-SYNSEM [LKEYS.KEYREL [PRED 'sho],
+SYNSEM [LKEYS.KEYREL [PRED '_sho_n_rel],
 	LOCAL [CAT.HEAD.J-POSTHEAD right,
 	       BAR -]]].
 
@@ -290,19 +290,19 @@ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 
 sochira_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel],
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
  ORTH <! "そちら" !>].
 
 
 soko :=
 pron-loc-ref-lex &
 [ORTH <! "そこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
 
 
 sokora_1_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel],
- ORTH <! "そこら" !> ].
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
+ ORTH <! "そこら" !>].
 
 
 sore :=
@@ -331,7 +331,7 @@ SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
 
 temae_2_1 := pron-sp-ref-lex &
 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
- ORTH <! "手前" !> ].
+ ORTH <! "手前" !>].
 
 
 temee_1_2 := pron-add-ref-lex &
@@ -341,14 +341,14 @@ temee_1_2 := pron-add-ref-lex &
 
 ware_1_3 := pron-sp-ref-lex &
 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
- ORTH <! "我" !> ].
+ ORTH <! "我" !>].
 
 ; (AO 2003-08-07) 対称の代名詞 相手をののしって言う
 ;		辞書的には漢字で書くのだろうが、
 ;		「てめえ、あたし」と同様ひらがなで追加
 ware_2_1 := pron-add-ref-lex &
 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
- ORTH <! "われ" !> ].
+ ORTH <! "われ" !>].
 
 
 wareware-kanji-firstpl :=
@@ -400,5 +400,5 @@ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 yasei_1_3 := pron-sp-ref-lex &
 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +, 
- ORTH <! "野生" !> ].
+ ORTH <! "野生" !>].
 

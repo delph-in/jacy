@@ -2,13 +2,13 @@
 ii-adj  :=
 i-adj-stem-lex &
 	  [SYNSEM [LOCAL.CAT.HEAD.FORMAL.SHON -,
-		   LKEYS.KEYREL.PRED 'ii],
+		   LKEYS.KEYREL.PRED '_ii_a_rel],
 ORTH <! "いい" !>].
 
 
 ii-eval-adj  :=
 eval-opt-i-adj-stem-lex &
 [SYNSEM [LOCAL.CAT.HEAD.FORMAL.SHON -,
-	 LKEYS.KEYREL.PRED 'ii],
+	 LKEYS.KEYREL.PRED '_ii_a_rel],
 ORTH <! "いい" !>].
 

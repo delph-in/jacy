@@ -14,20 +14,20 @@ arimasen-adj-end := v-neg-end-lex &
                                    MODUS negative],
                               VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head],
 			  CONT.HOOK.INDEX.E.MOOD indicative],
-		   LKEYS.KEYREL.PRED 'neg_rel],
+		   LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE a-morph]. 
 
 
 arimasendeshita-adj-end :=  v-neg-polite-past-end-lex &
               [ORTH <! "あり","ませ", "ん","でし","た" !>,
-	       SYNSEM.LKEYS.KEYREL.PRED 'neg_rel,
+	       SYNSEM.LKEYS.KEYREL.PRED '_neg_v_rel,
                SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head,
                LMORPH-BIND-TYPE a-morph].
 
 
 arimasendeshita-end :=  v-neg-polite-past-end-lex &
               [ORTH <! "あり","ませ", "ん","でし","た" !>,
-	       SYNSEM.LKEYS.KEYREL.PRED 'neg_rel,
+	       SYNSEM.LKEYS.KEYREL.PRED '_neg_v_rel,
                SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY tai_rel,
                LMORPH-BIND-TYPE a-morph].
 
@@ -71,7 +71,7 @@ chau-end :=  v-contracted-aux-end-lex &
 ; (MS 2002-05-08) The comma seems to work similar to the TE ending in the conjunctive domain.
 ; (MS & FCB 2003-10-29) extended that to i-or-t-morph to cope for: 
 ; 走り 、 寝る as well as,  美しく 、 良い
-; At present JACY doesn't accept either of these without the comma
+; At present JACY doesn'_t accept either of these without the comma
 ; maybe it should, although that would greatly increase ambiguity
 comma-te-end := comma-coord-end-lex &
            [ORTH <! "、" !>,
@@ -88,8 +88,8 @@ da-end := v-past-tense-end-lex &
 ;"食べられるだけ食べたい"
 dake-v2adv-end := v2adv-end-lex &
 		  [ORTH <! "だけ" !>,
-		   SYNSEM [LKEYS.KEYREL.PRED 'dake,
-			   LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD.MODUS voluntative] > ],
+		   SYNSEM [LKEYS.KEYREL.PRED '_dake_v_rel,
+			   LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD.MODUS voluntative] >],
 		   LMORPH-BIND-TYPE mai-morph].
 
 
@@ -122,7 +122,7 @@ de-end := v-te-end-lex &
 
 gatai-v1-notyetend := v2adj-notyetend-lex-v1 &
              [ORTH <! "難い" !>,
-              SYNSEM [LKEYS.KEYREL.PRED 'gatai,
+              SYNSEM [LKEYS.KEYREL.PRED '_gatai_v_rel,
 		      MODIFIED.PERIPH +]].
 
 
@@ -142,7 +142,7 @@ hajimeru-end := v-noncaus-op-end-lex &
 			  CONT [RELS <! #key & [ARG4 #arg4,
 						 ARG1 #arg1,
 						 LBL #top],
-				       message & [PRED proposition_m_rel,
+				       message & [PRED proposition_v_m_rel,
 						  LBL #arg4,
 						  MARG #subprpstn_soa]!>,
 				HOOK [LTOP #top,
@@ -151,7 +151,7 @@ hajimeru-end := v-noncaus-op-end-lex &
 				MOD-IND #event,
 				HCONS <! qeq & [LARG #v-hd,
 						 HARG #subprpstn_soa] !>]],
-		    LKEYS.KEYREL #key &  [PRED 'hajimeru],
+		    LKEYS.KEYREL #key &  [PRED '_hajimeru_v_rel],
 		    MODIFIED.PERIPH +]].
 
 
@@ -194,13 +194,13 @@ mai-end  :=  mai-end-lex &
 
 masendeshita-end :=  v-neg-polite-past-end-lex &
               [ORTH <! "ませ","ん","でし","た" !>,
-	       SYNSEM.LKEYS.KEYREL.PRED 'neg_rel,
+	       SYNSEM.LKEYS.KEYREL.PRED '_neg_v_rel,
 	       LMORPH-BIND-TYPE i-morph].
 
 ;finite-present-polite-negative
 masen-end :=  v-neg-polite-present-end-lex &
               [ORTH <! "ませ","ん" !>,
-	       SYNSEM.LKEYS.KEYREL.PRED 'neg_rel,
+	       SYNSEM.LKEYS.KEYREL.PRED '_neg_v_rel,
 	       LMORPH-BIND-TYPE i-morph].
 
 ;finite-past-polite-indicative
@@ -290,7 +290,7 @@ naide-end := v-neg-end-lex &
                                     FORMAL.AHON -],
 			       VAL.SPR.FIRST.LOCAL.CAT.VAL.UNSAT -],
                           CONT.HOOK.INDEX.E.MOOD indicative],
-		   LKEYS.KEYREL.PRED 'neg_rel],
+		   LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE a-morph].
 
 ;判らなくなりました
@@ -315,7 +315,7 @@ nai-notyetend  := v-noncaus-op-end-lex &
 				MOD-IND #event,
 				HCONS <! qeq & [LARG #v-hd,
 						 HARG #neg-arg] !>]],
-		    LKEYS.KEYREL #key & neg-relation & [PRED 'neg_rel],
+		    LKEYS.KEYREL #key & neg-relation & [PRED '_neg_v_rel],
 		    MODIFIED.PERIPH +]].
 
 ;have to
@@ -331,7 +331,7 @@ nakereba-narimasen-end  :=  v-neg-end-lex &
                                        FIN +,
                                        FORMAL.AHON +],
                              CONT.HOOK.INDEX.E.MOOD indicative],
-		       LKEYS.KEYREL.PRED 'have_to_rel],
+		       LKEYS.KEYREL.PRED '_haveto_v_rel],
                LMORPH-BIND-TYPE a-morph].	
 
 
@@ -351,7 +351,7 @@ nakereba-narimasen-end  :=  v-neg-end-lex &
 ;				  RELS <! #key !>,
 ;				  HCONS <! !>]],
 ;		     LKEYS.KEYREL #key & adv-relation &
-;			   [PRED 'naru,
+;			   [PRED '_naru_v_rel,
 ;			    LBL #hd,
 ;			    ARG1 #arg-h,
 ;			    ARG0 #event],
@@ -368,7 +368,7 @@ nasa-end := v-neg-end-lex &
                                     J-SPEC null,
                                     FIN -]],
                          CONT.HOOK.INDEX.E.MOOD indicative],
-		   LKEYS.KEYREL.PRED 'neg_rel],
+		   LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE a-morph,
             RMORPH-BIND-TYPE shortadj-morph]. 
 
@@ -392,7 +392,7 @@ ni-end := naadj2adv-end-lex &
 
 nikui-v1-notyetend := v2adj-notyetend-lex-v1 &
              [ORTH <! "にくい" !>,
-              SYNSEM [LKEYS.KEYREL.PRED 'nikui,
+              SYNSEM [LKEYS.KEYREL.PRED '_nikui_v_rel,
 		      MODIFIED.PERIPH +]].
 
 
@@ -410,7 +410,7 @@ nu-end := v-neg-end-lex &
                                     FIN +,
                                     FORMAL.AHON -]],
                          CONT.HOOK.INDEX.E.MOOD indicative],
-		   LKEYS.KEYREL.PRED 'neg_rel],
+		   LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE a-morph]. 
 
 
@@ -605,7 +605,7 @@ saseru-trans-obj-end := caus-trans-obj-end-lex &
 sasou-end := na-varg-end-lex &
            [ORTH <! "さ","そう" !>,
             SYNSEM [LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS negative,
-		    LKEYS.KEYREL.PRED 'sou]].
+		    LKEYS.KEYREL.PRED '_sou_v_rel]].
 
 ; (SF 2003-09-02) CP from させる
 sasu-intrans-end := caus-intrans-end-lex &
@@ -767,7 +767,7 @@ tara-end := v-cond-end-lex &
             LMORPH-BIND-TYPE t-morph,
             J-NEEDS-AFFIX -].
 
-; (ERB 2002-01-22) These two should be C-MOD none, if they're combining
+; (ERB 2002-01-22) These two should be C-MOD none, if they'_re combining
 ; via the MOD value.  (Our analysis of Vtari Vtari suru might need
 ; some work.)
 ;nonfinite-present-plain-indicative
@@ -797,7 +797,7 @@ teru-end :=  v-contracted-aux-end-lex &
               SYNSEM.LOCAL [CAT [HEAD [MODUS #modus],
                                  VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #modus],
                             CONT [HOOK.INDEX.E [ ASPECT progressive,
-                                            MOOD #modus ]]],
+                                            MOOD #modus]]],
               LMORPH-BIND-TYPE t-morph].
 
 ;finite-future-plain-consultative
@@ -815,12 +815,12 @@ you-end  :=  v-consultative-tense-end-lex &
 ;cannot help doing, have to
 zaru-wo-emasen-end := v-neg-polite-present-end-lex  &
               [ORTH <! "ざる","を", "え", "ませ", "ん" !>,
-               SYNSEM.LKEYS.KEYREL.PRED 'cant_help_rel,
+               SYNSEM.LKEYS.KEYREL.PRED '_canthelp_v_rel,
 	       LMORPH-BIND-TYPE a-morph].
 
 ; (TT+all 2003-08-12) 
 ; We think this should be a coordinator, more like the current entry for zuni
-; and it can't premodify nouns (unlike nu)!  
+; and it can'_t premodify nouns (unlike nu)!  
 zu-end := v-neg-end-lex &
            [ORTH <! "ず" !>,
             J-NEEDS-AFFIX -,
@@ -834,15 +834,15 @@ zu-end := v-neg-end-lex &
                                     J-POSTHEAD coord,
                                     FORMAL.AHON -]],
                          CONT.HOOK.INDEX.E.MOOD indicative],
-		   LKEYS.KEYREL.PRED 'neg_rel],
+		   LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE aa-morph]. 
 
-; (ERB 2002-01-22) This doesn't want to undergo any of the ordinary
+; (ERB 2002-01-22) This doesn'_t want to undergo any of the ordinary
 ; head-adjunct rules and is too promiscuous in the sentence-te-coord-rule
 ; because its C-MOD is underspecified.  Try making C-MOD what the
 ; MOD value was and MOD none.  The semantic result is okay:  Get 
 ; coordination of negated first clause and second clause.  I guess
-; that's pretty close to "without S1, S2".
+; that'_s pretty close to "without S1, S2".
 zuni-end := v-neg-end-lex &
            [ORTH <! "ず" , "に" !>,
             J-NEEDS-AFFIX -,
@@ -857,6 +857,6 @@ zuni-end := v-neg-end-lex &
                                     J-POSTHEAD coord,
                                     FORMAL.AHON -],
                           CONT.HOOK.INDEX.E.MOOD indicative],
-		   LKEYS.KEYREL.PRED 'neg_rel],
+		   LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE a-morph].
 

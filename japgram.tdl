@@ -187,6 +187,23 @@ pp_np_rule-time := empty-preposition-type &
               [SYNSEM.LOCAL.CAT [HEAD empty-case-p_head & [CASE temp-no]],
                HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD temporal-noun_head].
 
+; (MS 2004-04-02) Empty case particles. Try to restrict: to case particle function and lexical nouns.
+; I'm sure this will add loads of ambiguity. Only for parsing spoken Japanese!
+
+pp_np_rule-case := empty-preposition-type &
+              [SYNSEM [LOCAL [CAT [HEAD empty-case-p_head & [CASE ga-or-wo],
+				   VAL.COMPS < [LOCAL.CONT.HOOK [INDEX #arg, 
+								 LTOP #hand]] >],
+			      CONT [HOOK [INDEX #arg, 
+					  LTOP #hand],
+				    RELS <! !>,
+				    HCONS <! !>]],
+		       NON-LOCAL.ROBUST +],
+	       C-CONT.RELS <! !>, 
+	       ARGS.FIRST.SYNSEM.LEX +].
+
+
+
 ; (ERB 2001-10-03) Rule that adds unspec-loc-rel to temporal
 ; nouns, and makes them modifiers.
 

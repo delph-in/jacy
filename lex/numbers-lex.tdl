@@ -18,658 +18,658 @@
 ;; Regular numbers as added by ERB 2001-08-06.
 
 ichi_card := card_ichi_no_valence &
-[ ORTH <! "一" !> ].
+[ ORTH <! "一" !>].
 
 suu_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "suu",
-  ORTH <! "数" !> ].
+  ORTH <! "数" !>].
 
 nan_card := nan-card-lex &
-[ ORTH <! "何" !> ].
+[ ORTH <! "何" !>].
 
 ni_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "2",
-  ORTH <! "二" !> ].
+  ORTH <! "二" !>].
 
 san_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "3",
-  ORTH <! "三" !> ].
+  ORTH <! "三" !>].
 
 shi_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "4",
-  ORTH <! "四" !> ].
+  ORTH <! "四" !>].
 
 go_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "5",
-  ORTH <! "五" !> ].
+  ORTH <! "五" !>].
 
 roku_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "6",
-  ORTH <! "六" !> ].
+  ORTH <! "六" !>].
 
 shichi_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "7",
-  ORTH <! "七" !> ].
+  ORTH <! "七" !>].
 
 hachi_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "8",
-  ORTH <! "八" !> ].
+  ORTH <! "八" !>].
 
 kyuu_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "9",
-  ORTH <! "九" !> ].
+  ORTH <! "九" !>].
 
 juu_card1 := card_2_no_valence & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10",
-  ORTH <! "十" !> ].
+  ORTH <! "十" !>].
 
 juu_card2 := card_2_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10",
-  ORTH <! "十" !> ].
+  ORTH <! "十" !>].
 
 juu_card3 := card_2_object_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10",
-  ORTH <! "十" !> ].
+  ORTH <! "十" !>].
 
 juu_card4 := card_2_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10",
-  ORTH <! "十" !> ].
+  ORTH <! "十" !>].
 
 hyaku_card1 := card_3_no_valence & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100",
-  ORTH <! "百" !> ].
+  ORTH <! "百" !>].
 
 hyaku_card2 := card_3_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100",
-  ORTH <! "百" !> ].
+  ORTH <! "百" !>].
 
 hyaku_card3 := card_3_object_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100",
-  ORTH <! "百" !> ].
+  ORTH <! "百" !>].
 
 hyaku_card4 := card_3_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100",
-  ORTH <! "百" !> ].
+  ORTH <! "百" !>].
 
 sen_card1 := card_4_no_valence & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000",
-  ORTH <! "千" !> ].
+  ORTH <! "千" !>].
 
 sen_card2 := card_4_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000",
-  ORTH <! "千" !> ].
+  ORTH <! "千" !>].
 
 sen_card6 := card_4_spr_only_2 & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000",
-  ORTH <! "千" !> ].
+  ORTH <! "千" !>].
 
 sen_card3 := card_4_object_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000",
-  ORTH <! "千" !> ].
+  ORTH <! "千" !>].
 
 sen_card4 := card_4_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000",
-  ORTH <! "千" !> ].
+  ORTH <! "千" !>].
 
 sen_card5 := card_4_spr_object_2 & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000",
-  ORTH <! "千" !> ].
+  ORTH <! "千" !>].
 
 man_card1 := card_5_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10000",
-  ORTH <! "万" !> ].
+  ORTH <! "万" !>].
 
 man_card2 := card_5_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10000",
-  ORTH <! "万" !> ].
+  ORTH <! "万" !>].
 
 oku_card1 := card_9_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100000000",
-  ORTH <! "億" !> ].
+  ORTH <! "億" !>].
 
 oku_card2 := card_9_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100000000",
-  ORTH <! "億" !> ].
+  ORTH <! "億" !>].
 
 chou_card1 := card_13_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000000000000",
-  ORTH <! "兆" !> ].
+  ORTH <! "兆" !>].
 
 chou_card2 := card_13_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "1000000000000",
-  ORTH <! "兆" !> ].
+  ORTH <! "兆" !>].
 
 kei_card1 := card_17_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10000000000000000",
-  ORTH <! "京" !> ].
+  ORTH <! "京" !>].
 
 kei_card2:= card_17_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10000000000000000",
-  ORTH <! "京" !> ].
+  ORTH <! "京" !>].
 
 gai_card1 := card_21_spr_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100000000000000000000",
-  ORTH <! "垓" !> ].
+  ORTH <! "垓" !>].
 
 gai_card2 := card_21_spr_object & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100000000000000000000",
-  ORTH <! "垓" !> ].
+  ORTH <! "垓" !>].
 
 ; (ERB 2001-12-05)
 
 han_card := han-lex &
-[ ORTH <! "半" !> ].
+[ ORTH <! "半" !>].
 
 
 
 ; Ordinary numeral classifiers
 
 nin_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "人" !> ].
+[ ORTH <! "人" !>].
 
 mei_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "名" !> ].
+[ ORTH <! "名" !>].
 
 shi_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "氏" !> ].
+[ ORTH <! "氏" !>].
 
 ko_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "個" !> ].
+[ ORTH <! "個" !>].
 
 tsu_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "つ" !> ].
+[ ORTH <! "つ" !>].
 
 hon_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "本" !> ].
+[ ORTH <! "本" !>].
 
 hai_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "杯" !> ].
+[ ORTH <! "杯" !>].
 
 satsu_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "札" !> ].
+[ ORTH <! "札" !>].
 
 mai_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "枚" !> ].
+[ ORTH <! "枚" !>].
 
 ki_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "機" !> ].
+[ ORTH <! "機" !>].
 
 dai_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "台" !> ].
+[ ORTH <! "台" !>].
 
 tou_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "頭" !> ].
+[ ORTH <! "頭" !>].
 
 hiki_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "匹" !> ].
+[ ORTH <! "匹" !>].
 
 wa_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "羽" !> ].
+[ ORTH <! "羽" !>].
 
 satsu-2_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "冊" !> ].
+[ ORTH <! "冊" !>].
 
 tsubu_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "粒" !> ].
+[ ORTH <! "粒" !>].
 
 ken_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "件" !> ].
+[ ORTH <! "件" !>].
 
 bit_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "bit" !> ].
+[ ORTH <! "bit" !>].
 
 kabu_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "株" !> ].
+[ ORTH <! "株" !>].
 
 bu_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "部" !> ].
+[ ORTH <! "部" !>].
 
 souba_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "相場" !> ].
+[ ORTH <! "相場" !>].
 
 hako_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "箱" !> ].
+[ ORTH <! "箱" !>].
 
 
-; ERB (2001-09-12) Cardinals; using KEY.PRED to differentiate
+; ERB (2001-09-12) Cardinals; using KEY.PRED to differentiate_numcl_rel
 ; from plain quantity-rel.
 
 ban_numcl := num-cl-spr-only-ind-nmod-lex &
 [ ORTH <! "番" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 jou-numcl := num-cl-spr-only-ind-nmod-lex &
 [ ORTH <! "重" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 gou_numcl := num-cl-spr-only-ind-nmod-lex &
 [ ORTH <! "号" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 no_numcl-1 := num-cl-obj-only-nmod-ind-lex &
 [ ORTH <! "No" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 no_numcl-2 := num-cl-obj-only-nmod-ind-lex &
 [ ORTH <! "Ｎｏ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 ; (ERB 2001-09-13) Wait until these actually show up in the data.
 
 ;no_numcl-3 := num-cl-spr-obj-nmod-lex &
 ;[ ORTH <! "No" !>,
-;  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+;  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 ;no_numcl-4 := num-cl-spr-obj-nmod-lex &
 ;[ ORTH <! "Ｎｏ" !>,
-;  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+;  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 ; for "kouza bangou 12345" where the whole thing refers
 ; to an account.
 
 bangou_numcl-1 := num-cl-obj-only-nmod-ind-lex &
 [ ORTH <! "番号" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 ; (ERB 2001-09-13) Wait until these actually show up in the data.
 
 ;bangou_numcl-2 := num-cl-spr-obj-nmod-lex &
 ;[ ORTH <! "番号" !>,
-;  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+;  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
-; Numeral classifiers that can't be modifiers on their own.
+; Numeral classifiers that can'_t be modifiers on their own.
 
 en_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "円" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'en ].
+  SYNSEM.LKEYS.KEYREL.PRED '_en_numcl_rel].
 
 en_numcl-2 := num-cl-spr-only-meas-lex &
 [ ORTH <! "￥" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'en ].
+  SYNSEM.LKEYS.KEYREL.PRED '_en_numcl_rel].
 
 en_numcl-3 := num-cl-obj-only-meas-lex &
 [ ORTH <! "￥" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'en ].
+  SYNSEM.LKEYS.KEYREL.PRED '_en_numcl_rel].
 
 ;hundredth of a yen
 
 sen_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "銭" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'sen ].
+  SYNSEM.LKEYS.KEYREL.PRED '_sen_numcl_rel].
 
 
 
 doru_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "ドル" !> ].
+[ ORTH <! "ドル" !>].
 
 doru_numcl-2 := num-cl-spr-only-meas-lex &
 [ ORTH <! "＄" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'doru ].
+  SYNSEM.LKEYS.KEYREL.PRED '_doru_numcl_rel].
 
 doru_numcl-3 := num-cl-obj-only-meas-lex &
 [ ORTH <! "＄" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'doru ].
+  SYNSEM.LKEYS.KEYREL.PRED '_doru_numcl_rel].
 
 doru_numcl-4 := num-cl-obj-only-meas-lex &
 [ ORTH <! "$" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'doru ].
+  SYNSEM.LKEYS.KEYREL.PRED '_doru_numcl_rel].
 
 yuuro_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ユーロ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'yuuro ].
+  SYNSEM.LKEYS.KEYREL.PRED '_yuuro_numcl_rel].
 
 maruku_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "マルク" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'maruku ].
+  SYNSEM.LKEYS.KEYREL.PRED '_maruku_numcl_rel].
 
 furan_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "フラン" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'furan ].
+  SYNSEM.LKEYS.KEYREL.PRED '_furan_numcl_rel].
 
 girudaa_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ギルダー" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'girudaa ].
+  SYNSEM.LKEYS.KEYREL.PRED '_girudaa_numcl_rel].
 
 penihi_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ペニヒ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'penihi ].
+  SYNSEM.LKEYS.KEYREL.PRED '_penihi_numcl_rel].
 
 peso_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ペソ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'peso ].
+  SYNSEM.LKEYS.KEYREL.PRED '_peso_numcl_rel].
 
 cento_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "セント" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'cento ].
+  SYNSEM.LKEYS.KEYREL.PRED '_cento_numcl_rel].
 
 won_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ウォン" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'won ].
+  SYNSEM.LKEYS.KEYREL.PRED '_won_numcl_rel].
 
 
 paasento_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "パーセント" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'paasento ].
+  SYNSEM.LKEYS.KEYREL.PRED '_paasento_numcl_rel].
 
 paasento_numcl-2 := num-cl-spr-only-meas-lex &
 [ ORTH <! "％" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'paasento ].
+  SYNSEM.LKEYS.KEYREL.PRED '_paasento_numcl_rel].
 
 paasento_numcl-3 := num-cl-spr-only-meas-lex &
 [ ORTH <! "%" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'paasento ].
+  SYNSEM.LKEYS.KEYREL.PRED '_paasento_numcl_rel].
 
 wari_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "割" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'wari ].
+  SYNSEM.LKEYS.KEYREL.PRED '_wari_numcl_rel].
 
 ninmae_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "人前" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'ninmae ].
+  SYNSEM.LKEYS.KEYREL.PRED '_ninmae_numcl_rel].
 
 meetoru_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "メートル" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'meetoru ].
+  SYNSEM.LKEYS.KEYREL.PRED '_meetoru_numcl_rel].
 
 kiromeetoru_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "キロメートル" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kiromeetoru ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kiromeetoru_numcl_rel].
 
 mairu_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "マイル" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'mairu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_mairu_numcl_rel].
 
 
 senchi_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "センチ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'senchi ].
+  SYNSEM.LKEYS.KEYREL.PRED '_senchi_numcl_rel].
 
 kiro_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "キロ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kiro ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kiro_numcl_rel].
 
 ton_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "トン" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'ton ].
+  SYNSEM.LKEYS.KEYREL.PRED '_ton_numcl_rel].
 
 keta_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ケタ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'keta ].
+  SYNSEM.LKEYS.KEYREL.PRED '_keta_numcl_rel].
 
 keta_numcl-2 := num-cl-spr-only-meas-lex &
 [ ORTH <! "桁" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'keta ].
+  SYNSEM.LKEYS.KEYREL.PRED '_keta_numcl_rel].
 
 do_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "度" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'do_degree ].
+  SYNSEM.LKEYS.KEYREL.PRED '_do_numcl_degree_rel].
 
 paku_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "泊" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'paku ].
+  SYNSEM.LKEYS.KEYREL.PRED '_paku_numcl_rel].
 
 shurui_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "種類" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'shurui ].
+  SYNSEM.LKEYS.KEYREL.PRED '_shurui_numcl_rel].
 
 
 kouza_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "口座" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kouza ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kouza_numcl_rel].
 
 genzai_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "現在" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'genzai ].
+  SYNSEM.LKEYS.KEYREL.PRED '_genzai_numcl_rel].
 
 ; (ERB 2001-12-05) Things that optionally take 半.
 
 nen_numcl-1 := num-cl-spr-only-meas-lex &
 [ ORTH <! "年" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'nen ].
+  SYNSEM.LKEYS.KEYREL.PRED '_nen_numcl_rel].
 
 nen_numcl-2 := num-cl-spr-obj-meas-lex &
 [ ORTH <! "年" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'nen ].
+  SYNSEM.LKEYS.KEYREL.PRED '_nen_numcl_rel].
 
 kagetsu_numcl-1a := num-cl-spr-only-meas-lex &
 [ ORTH <! "ヶ月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 kagetsu_numcl-1b := num-cl-spr-only-meas-lex &
 [ ORTH <! "カ月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 kagetsu_numcl-1c := num-cl-spr-only-meas-lex &
 [ ORTH <! "ヵ月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 kagetsu_numcl-1d := num-cl-spr-only-meas-lex &
 [ ORTH <! "か月" !>,
-   SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+   SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 kagetsu_numcl-2a := num-cl-spr-obj-meas-lex &
 [ ORTH <! "ヶ月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 kagetsu_numcl-2b := num-cl-spr-obj-meas-lex &
 [ ORTH <! "カ月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 kagetsu_numcl-2c := num-cl-spr-obj-meas-lex &
 [ ORTH <! "ヵ月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 kagetsu_numcl-2d := num-cl-spr-obj-meas-lex &
 [ ORTH <! "か月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
 
 nichi_numcl-1 := num-cl-spr-only-meas-lex &
 [ ORTH <! "日" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'nichi ].
+  SYNSEM.LKEYS.KEYREL.PRED '_nichi_numcl_rel].
 
 nichi_numcl-2 := num-cl-spr-obj-meas-lex &
 [ ORTH <! "日" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'nichi ].
+  SYNSEM.LKEYS.KEYREL.PRED '_nichi_numcl_rel].
 
 gatsu_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "月" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'gatsu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_gatsu_numcl_rel].
 
 ;business days
 
 eigyounichi_numcl-1 := num-cl-spr-only-meas-lex &
 [ ORTH <! "営業","日" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'eigyounichi ].
+  SYNSEM.LKEYS.KEYREL.PRED '_eigyounichi_numcl_rel].
 
 
 fun_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "分" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'fun ].
+  SYNSEM.LKEYS.KEYREL.PRED '_fun_numcl_rel].
 
 ; (ERB 2001-08-28) Date expressions
 
 toshi_date := toshi-no-object2-lex &
-[ ORTH <! "年" !> ].
+[ ORTH <! "年" !>].
 
 gatsu_date-1 := gatsu-no-object2-lex &
-[ ORTH <! "月" !> ].
+[ ORTH <! "月" !>].
 
 gatsu_date-2 := gatsu-with-object2-lex &
-[ ORTH <! "月" !> ].
+[ ORTH <! "月" !>].
 
 nichi_date-1 := nichi-no-object2-lex &
-[ ORTH <! "日" !> ].
+[ ORTH <! "日" !>].
 
 nichi_date-2 := nichi-with-object2-lex &
-[ ORTH <! "日" !> ].
+[ ORTH <! "日" !>].
 
 ; ERB (2001-08-28) Extra months for CHASEN parsing of "八月" etc. as one word
 ; (MS 2004-01-15) We need these also with numbers.
 
 1gatsu_date-1 := 1gatsu-no-object2-lex &
-[ ORTH <! "一月" !> ].
+[ ORTH <! "一月" !>].
 
 1gatsu_date-2 := 1gatsu-with-object2-lex &
-[ ORTH <! "一月" !> ].
+[ ORTH <! "一月" !>].
 
 1gatsu_date-3 := 1gatsu-no-object2-lex &
-[ ORTH <! "１月" !> ].
+[ ORTH <! "１月" !>].
 
 1gatsu_date-4 := 1gatsu-with-object2-lex &
-[ ORTH <! "１月" !> ].
+[ ORTH <! "１月" !>].
 
 2gatsu_date-1 := 2gatsu-no-object2-lex &
-[ ORTH <! "二月" !> ].
+[ ORTH <! "二月" !>].
 
 2gatsu_date-2 := 2gatsu-with-object2-lex &
-[ ORTH <! "二月" !> ].
+[ ORTH <! "二月" !>].
 
 2gatsu_date-3 := 2gatsu-no-object2-lex &
-[ ORTH <! "２月" !> ].
+[ ORTH <! "２月" !>].
 
 2gatsu_date-4 := 2gatsu-with-object2-lex &
-[ ORTH <! "２月" !> ].
+[ ORTH <! "２月" !>].
 
 3gatsu_date-1 := 3gatsu-no-object2-lex &
-[ ORTH <! "三月" !> ].
+[ ORTH <! "三月" !>].
 
 3gatsu_date-2 := 3gatsu-with-object2-lex &
-[ ORTH <! "三月" !> ].
+[ ORTH <! "三月" !>].
 
 3gatsu_date-3 := 3gatsu-no-object2-lex &
-[ ORTH <! "３月" !> ].
+[ ORTH <! "３月" !>].
 
 3gatsu_date-4 := 3gatsu-with-object2-lex &
-[ ORTH <! "３月" !> ].
+[ ORTH <! "３月" !>].
 
 4gatsu_date-1 := 4gatsu-no-object2-lex &
-[ ORTH <! "四月" !> ].
+[ ORTH <! "四月" !>].
 
 4gatsu_date-2 := 4gatsu-with-object2-lex &
-[ ORTH <! "四月" !> ].
+[ ORTH <! "四月" !>].
 
 4gatsu_date-3 := 4gatsu-no-object2-lex &
-[ ORTH <! "４月" !> ].
+[ ORTH <! "４月" !>].
 
 4gatsu_date-4 := 4gatsu-with-object2-lex &
-[ ORTH <! "４月" !> ].
+[ ORTH <! "４月" !>].
 
 5gatsu_date-1 := 5gatsu-no-object2-lex &
-[ ORTH <! "五月" !> ].
+[ ORTH <! "五月" !>].
 
 5gatsu_date-2 := 5gatsu-with-object2-lex &
-[ ORTH <! "五月" !> ].
+[ ORTH <! "五月" !>].
 
 5gatsu_date-3 := 5gatsu-no-object2-lex &
-[ ORTH <! "５月" !> ].
+[ ORTH <! "５月" !>].
 
 5gatsu_date-4 := 5gatsu-with-object2-lex &
-[ ORTH <! "５月" !> ].
+[ ORTH <! "５月" !>].
 
 6gatsu_date-1 := 6gatsu-no-object2-lex &
-[ ORTH <! "六月" !> ].
+[ ORTH <! "六月" !>].
 
 6gatsu_date-2 := 6gatsu-with-object2-lex &
-[ ORTH <! "六月" !> ].
+[ ORTH <! "六月" !>].
 
 6gatsu_date-3 := 6gatsu-no-object2-lex &
-[ ORTH <! "６月" !> ].
+[ ORTH <! "６月" !>].
 
 6gatsu_date-4 := 6gatsu-with-object2-lex &
-[ ORTH <! "６月" !> ].
+[ ORTH <! "６月" !>].
 
 7gatsu_date-1 := 7gatsu-no-object2-lex &
-[ ORTH <! "七月" !> ].
+[ ORTH <! "七月" !>].
 
 7gatsu_date-2 := 7gatsu-with-object2-lex &
-[ ORTH <! "七月" !> ].
+[ ORTH <! "七月" !>].
 
 7gatsu_date-3 := 7gatsu-no-object2-lex &
-[ ORTH <! "７月" !> ].
+[ ORTH <! "７月" !>].
 
 7gatsu_date-4 := 7gatsu-with-object2-lex &
-[ ORTH <! "７月" !> ].
+[ ORTH <! "７月" !>].
 
 8gatsu_date-1 := 8gatsu-no-object2-lex &
-[ ORTH <! "八月" !> ].
+[ ORTH <! "八月" !>].
 
 8gatsu_date-2 := 8gatsu-with-object2-lex &
-[ ORTH <! "八月" !> ].
+[ ORTH <! "八月" !>].
 
 8gatsu_date-3 := 8gatsu-no-object2-lex &
-[ ORTH <! "８月" !> ].
+[ ORTH <! "８月" !>].
 
 8gatsu_date-4 := 8gatsu-with-object2-lex &
-[ ORTH <! "８月" !> ].
+[ ORTH <! "８月" !>].
 
 9gatsu_date-1 := 9gatsu-no-object2-lex &
-[ ORTH <! "九月" !> ].
+[ ORTH <! "九月" !>].
 
 9gatsu_date-2 := 9gatsu-with-object2-lex &
-[ ORTH <! "九月" !> ].
+[ ORTH <! "九月" !>].
 
 9gatsu_date-3 := 9gatsu-no-object2-lex &
-[ ORTH <! "９月" !> ].
+[ ORTH <! "９月" !>].
 
 9gatsu_date-4 := 9gatsu-with-object2-lex &
-[ ORTH <! "９月" !> ].
+[ ORTH <! "９月" !>].
 
 10gatsu_date-1 := 10gatsu-no-object2-lex &
-[ ORTH <! "十月" !> ].
+[ ORTH <! "十月" !>].
 
 10gatsu_date-2 := 10gatsu-with-object2-lex &
-[ ORTH <! "十月" !> ].
+[ ORTH <! "十月" !>].
 
 10gatsu_date-3 := 10gatsu-no-object2-lex &
-[ ORTH <! "１０月" !> ].
+[ ORTH <! "１０月" !>].
 
 10gatsu_date-4 := 10gatsu-with-object2-lex &
-[ ORTH <! "１０月" !> ].
+[ ORTH <! "１０月" !>].
 
 11gatsu_date-1 := 11gatsu-no-object2-lex &
-[ ORTH <! "十一月" !> ].
+[ ORTH <! "十一月" !>].
 
 11gatsu_date-2 := 11gatsu-with-object2-lex &
-[ ORTH <! "十一月" !> ].
+[ ORTH <! "十一月" !>].
 
 11gatsu_date-3 := 11gatsu-no-object2-lex &
-[ ORTH <! "１１月" !> ].
+[ ORTH <! "１１月" !>].
 
 11gatsu_date-4 := 11gatsu-with-object2-lex &
-[ ORTH <! "１１月" !> ].
+[ ORTH <! "１１月" !>].
 
 12gatsu_date-1 := 12gatsu-no-object2-lex &
-[ ORTH <! "十二月" !> ].
+[ ORTH <! "十二月" !>].
 
 12gatsu_date-2 := 12gatsu-with-object2-lex &
-[ ORTH <! "十二月" !> ].
+[ ORTH <! "十二月" !>].
 
 12gatsu_date-3 := 12gatsu-no-object2-lex &
-[ ORTH <! "１２月" !> ].
+[ ORTH <! "１２月" !>].
 
 12gatsu_date-4 := 12gatsu-with-object2-lex &
-[ ORTH <! "１２月" !> ].
+[ ORTH <! "１２月" !>].
 
 ;every month
 
 maitsuki-noun :=
 date-noun-adv-lex &
 [ORTH <! "毎月" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'maitsuki]].
+SYNSEM.LKEYS.KEYREL [PRED '_maitsuki_numcl_rel]].
 
 ;one month
 
 hitotsuki-noun :=
 date-noun-adv-lex &
 [ORTH <! "ひと月" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'hitotsuki]].
+SYNSEM.LKEYS.KEYREL [PRED '_hitotsuki_numcl_rel]].
 
 ;first ten days of the month
 
 shojun-noun :=
 date-noun-adv-lex &
 [ORTH <! "初旬" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'shojun]].
+SYNSEM.LKEYS.KEYREL [PRED '_shojun_numcl_rel]].
 
 ;first ten days of the month
 
@@ -678,121 +678,121 @@ SYNSEM.LKEYS.KEYREL [PRED 'shojun]].
 nishuume :=
 ordinary-nohon-n-lex &
 [ORTH <! "二週目" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'nishuume]].
+SYNSEM.LKEYS.KEYREL [PRED '_nishuume_numcl_rel]].
 
 shuu :=
 ordinary-nohon-n-lex &
 [ORTH <! "週" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'shuu]].
+SYNSEM.LKEYS.KEYREL [PRED '_shuu_numcl_rel]].
 
 shuukaN :=
 ordinary-nohon-n-lex &
 [ORTH <! "週間" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'shuukan]].
+SYNSEM.LKEYS.KEYREL [PRED '_shuukan_numcl_rel]].
 
 shuumatsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "週末" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'shuumatsu]].
+SYNSEM.LKEYS.KEYREL [PRED '_shuumatsu_numcl_rel]].
 
 tsuki :=
 ordinary-nohon-n-lex &
 [ORTH <! "月" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'tsuki]].
+SYNSEM.LKEYS.KEYREL [PRED '_tsuki_numcl_rel]].
 
 yokujitsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌日" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'yokujitsu]].
+SYNSEM.LKEYS.KEYREL [PRED '_yokujitsu_numcl_rel]].
 
 yokushuu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌週" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'yokushuu]].
+SYNSEM.LKEYS.KEYREL [PRED '_yokushuu_numcl_rel]].
 
 yokugetsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌月" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'yokugetsu]].
+SYNSEM.LKEYS.KEYREL [PRED '_yokugetsu_numcl_rel]].
 
 yokuyokushuu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌々週" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'yokuyokushuu]].
+SYNSEM.LKEYS.KEYREL [PRED '_yokuyokushuu_numcl_rel]].
 
 zeNjitsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "前日" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'zenjitsu]].
+SYNSEM.LKEYS.KEYREL [PRED '_zenjitsu_numcl_rel]].
 
 zeNshuu-week :=
 ordinary-nohon-n-lex &
 [ORTH <! "前週" !>,
-SYNSEM.LKEYS.KEYREL [PRED 'zenshuu-week]].
+SYNSEM.LKEYS.KEYREL [PRED '_zenshuu_numcl_week_rel]].
 
 
 gatsu-matsu_date-1 := gatsu-no-object2-lex &
-[ ORTH <! "月末" !> ].
+[ ORTH <! "月末" !>].
 
 gatsu-shuujun_date-1 := gatsu-no-object2-lex &
-[ ORTH <! "月","中旬" !> ].
+[ ORTH <! "月","中旬" !>].
 
 
 shu_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "種" !> ].
+[ ORTH <! "種" !>].
 
 ;kilowatt
 
 kirowatto_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "キロワット" !> ].
+[ ORTH <! "キロワット" !>].
 
 ;volt
 
 boruto_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "ボルト" !> ].
+[ ORTH <! "ボルト" !>].
 
 ;cubic meter
 
 rippoumeetoru_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "立方メートル" !> ].
+[ ORTH <! "立方メートル" !>].
 
 
 ; "第一種電気通信事業者だ"
 
 dai-card2ord := card2ord-lex &
-[ ORTH <! "第" !> ].
+[ ORTH <! "第" !>].
 
 ;twice; times; -fold; double; be doubled; increase
 
 bai_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "倍" !> ].
+[ ORTH <! "倍" !>].
 
 inchi_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "インチ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'inchi ].
+  SYNSEM.LKEYS.KEYREL.PRED '_inchi_numcl_rel].
 
 ji_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "時" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'hour_rel ].
+  SYNSEM.LKEYS.KEYREL.PRED '_hour_numcl_rel_rel].
 
 ;department, division, section, unit
 
 ka_numcl  := num-cl-spr-only-ind-lex &
-[ ORTH <! "課" !> ].
+[ ORTH <! "課" !>].
 
 shoku_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "食" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'food_rel ].
+  SYNSEM.LKEYS.KEYREL.PRED '_food_numcl_rel_rel].
 
 jikan_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "時間" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'jikan ].
+  SYNSEM.LKEYS.KEYREL.PRED '_jikan_numcl_rel].
 
 ;station
 
 eki_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "駅" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'eki ].
+  SYNSEM.LKEYS.KEYREL.PRED '_eki_numcl_rel].
 
 
 ;;;;;;;;;;;;;;;;NEW ENTRIES AUG 2003;;;;;;;;;;;;;;;;;;;;;,
@@ -802,61 +802,61 @@ eki_numcl := num-cl-spr-only-meas-lex &
 ; Used 17 times
 
 suji_9 := num-cl-spr-only-ind-lex &
-[ ORTH <! "筋" !> ].
+[ ORTH <! "筋" !>].
 
  dan_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "段" !> ].
+ [ ORTH <! "段" !>].
 
 
 ; 節 
 ; Used 21 times
 
 fushi_9 := num-cl-spr-only-ind-lex &
-[ ORTH <! "節" !> ].
+[ ORTH <! "節" !>].
 
 ; Used 64 times
 
  ten_4 := num-cl-spr-only-ind-lex &
- [ ORTH <! "点" !> ].
+ [ ORTH <! "点" !>].
 
 ; Used 175 times
 
  tokoro_4 := num-cl-spr-only-ind-lex &
- [ ORTH <! "所" !> ].
+ [ ORTH <! "所" !>].
 
 ; Used 78 times
 
  me_4 := num-cl-spr-only-ind-lex &
- [ ORTH <! "目" !> ].
+ [ ORTH <! "目" !>].
 
 ; ダウン 
 
 daun_4 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ダウン" !> ].
+[ ORTH <! "ダウン" !>].
 
 ; 通話 
 ; Used 3 times
 
 tsuuwa_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "通話" !> ].
+[ ORTH <! "通話" !>].
 
 ; Used 3 times
 
 setto_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "セット" !> ].
+[ ORTH <! "セット" !>].
 
 ; アンペア 
 ; Used 1 times
 
 anpea_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'ampere_2,
- ORTH <! "アンペア" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_ampere_numcl_2_rel,
+ ORTH <! "アンペア" !>].
 
 
 ; オーム 
 
 o-mu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "オーム" !> ].
+[ ORTH <! "オーム" !>].
 
 
 
@@ -864,290 +864,290 @@ o-mu_2 := num-cl-spr-only-ind-lex &
 ; Used 1 times
 
 ori_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "折り" !> ].
+[ ORTH <! "折り" !>].
 
 ; Used 18 times
 
 kai_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "回" !> ].
+ [ ORTH <! "回" !>].
 
 ; Used 2 times
 
 kai_2_1 := num-cl-spr-only-ind-lex &
- [ ORTH <! "階" !> ].
+ [ ORTH <! "階" !>].
 
 ; 抱え 
 ; Used 4 times
 
 kakae_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "抱え" !> ].
+[ ORTH <! "抱え" !>].
 
 ; 重ね 
 ; Used 4 times
 
 kasane_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "重ね" !> ].
+[ ORTH <! "重ね" !>].
 
 ; 箇所 
 ; Used 3 times
 
 kasho_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "箇所" !> ].
+[ ORTH <! "箇所" !>].
 
 kasho_numcl-2b := num-cl-spr-only-ind-lex  &
-[ ORTH <! "カ所" !> ].
+[ ORTH <! "カ所" !>].
 
 kasho_numcl-2c := num-cl-spr-only-ind-lex  &
-[ ORTH <! "か所" !> ].
+[ ORTH <! "か所" !>].
 
 kasho_numcl-2d := num-cl-spr-only-ind-lex  &
-[ ORTH <! "ヵ所" !> ].
+[ ORTH <! "ヵ所" !>].
 
 kasho_numcl-2e := num-cl-spr-only-ind-lex  &
-[ ORTH <! "ヶ所" !> ].
+[ ORTH <! "ヶ所" !>].
 
 ; カラット 
 
 karatto_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "カラット" !> ].
+[ ORTH <! "カラット" !>].
 
 ; カロリー 
 ; Used 2 times
 
 karori-_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'calorie-_2,
- ORTH <! "カロリー" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_calorie_numcl__2_rel,
+ ORTH <! "カロリー" !>].
 
 ; 巻 
 ; volume
 ; Used 1 times
 
 kan_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'kan_2,
- ORTH <! "巻" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_kan_numcl_2_rel,
+ ORTH <! "巻" !>].
 
 ; Used 46 times
 
  kyaku_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "客" !> ].
+ [ ORTH <! "客" !>].
 
 ; 球 
 ; Used 65 times
 
 kyuu_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'kyuu_2,
- ORTH <! "球" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_kyuu_numcl_2_rel,
+ ORTH <! "球" !>].
 
 ; Used 5 times
 
  kyoku_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "局" !> ].
+ [ ORTH <! "局" !>].
 
 ; 切れ 
 ; Used 8 times
 
 kire_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'kire_2,
- ORTH <! "切れ" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_kire_numcl_2_rel,
+ ORTH <! "切れ" !>].
 
 ; キロカロリー 
 ; Used 1 times
 
 kirokarori-_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'kilocalorie-_2,
- ORTH <! "キロカロリー" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_kilocalorie_numcl__2_rel,
+ ORTH <! "キロカロリー" !>].
 
 ; キログラム 
 ; Used 1 times
 
 kiroguramu_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'kiroguramu_2,
- ORTH <! "キログラム" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_kiroguramu_numcl_2_rel,
+ ORTH <! "キログラム" !>].
 
 
 ; キロリットル 
 
 kirorittoru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "キロリットル" !> ].
+[ ORTH <! "キロリットル" !>].
 
 ; 句 
 ; Used 5 times
 
 ku_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "句" !> ].
+[ ORTH <! "句" !>].
 
 ; 具 
 ; Used 3 times
 
 gu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "具" !> ].
+[ ORTH <! "具" !>].
 
 ; クール 
 
 ku-ru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "クール" !> ].
+[ ORTH <! "クール" !>].
 
 ; クォーター 
 
 kuo-ta-_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "クォーター" !> ].
+[ ORTH <! "クォーター" !>].
 
 ; 口 
 ; Used 73 times
 
 kuchi_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'kuchi_2,
- ORTH <! "口" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_kuchi_numcl_2_rel,
+ ORTH <! "口" !>].
 
 ; Used 24 times
 
  kumi_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "組" !> ].
+ [ ORTH <! "組" !>].
 
 ; グラム 
 ; Used 1 times
 
 guramu_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'gram_2,
-  ORTH <! "グラム" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_gram_numcl_2_rel,
+  ORTH <! "グラム" !>].
 
 
 ; Used 144 times
 
  ken_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "間" !> ].
+ [ ORTH <! "間" !>].
 
 ; 戸 
 ; Used 11 times
 
 ko_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "戸" !> ].
+[ ORTH <! "戸" !>].
 
 ; コマ 
 ; Used 1 times
 
 koma_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "コマ" !> ].
+[ ORTH <! "コマ" !>].
 
 ; 才 
 
 sai_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "才" !> ].
+[ ORTH <! "才" !>].
 
 ; サイクル 
 
 saikuru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "サイクル" !> ].
+[ ORTH <! "サイクル" !>].
 
 ; 竿 
 ; Used 1 times
 
 sao_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "竿" !> ].
+[ ORTH <! "竿" !>].
 
 ; 死 
 ; Used 2 times
 
 shi_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "死" !> ].
+[ ORTH <! "死" !>].
 
 ; 糸 
 ; Used 41 times
 
 shi_2_1 := num-cl-spr-only-ind-lex &
-[ ORTH <! "糸" !> ].
+[ ORTH <! "糸" !>].
 
 
 ; 軸 
 ; Used 19 times
 
 jiku_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "軸" !> ].
+[ ORTH <! "軸" !>].
 
 ; 時限 
 ; Used 1 times
 
 jigen_2 := num-cl-spr-only-meas-lex &
-[ SYNSEM.LKEYS.KEYREL.PRED 'jigen_2,
- ORTH <! "時限" !> ].
+[ SYNSEM.LKEYS.KEYREL.PRED '_jigen_numcl_2_rel,
+ ORTH <! "時限" !>].
 
 ; 次元 
 
 jigen_2_1 := num-cl-spr-only-ind-lex &
-[ ORTH <! "次元" !> ].
+[ ORTH <! "次元" !>].
 
 ; 締め 
 ; Used 1 times
 
 shime_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "締め" !> ].
+[ ORTH <! "締め" !>].
 
 ; 車線 
 
 shasen_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "車線" !> ].
+[ ORTH <! "車線" !>].
 
 ; Used 1 times
 
  shuu_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "周" !> ].
+ [ ORTH <! "周" !>].
 
 ; Used 11 times
 
  shuu_2_1 := num-cl-spr-only-ind-lex &
- [ ORTH <! "週" !> ].
+ [ ORTH <! "週" !>].
 
 ; Used 1 times
 
 shuukan_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "週間" !> ].
+[ ORTH <! "週間" !>].
 
 ; 旬 
 ; Used 2 times
 
 jun_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "旬" !> ].
+[ ORTH <! "旬" !>].
 
 ; 錠 
 ; Used 5 times
 
 jou_2 := num-cl-spr-only-ind-lex &
-[SYNSEM.LKEYS.ALTKEYREL.PRED 'jou_2,
-  ORTH <! "錠" !> ].
+[SYNSEM.LKEYS.ALTKEYREL.PRED '_jou_numcl_2_rel,
+  ORTH <! "錠" !>].
 
 
 
 ; ストローク 
 
 sutoro-ku_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ストローク" !> ].
+[ ORTH <! "ストローク" !>].
 
 ; 世紀 
 ; Used 2 times
 ; FIXME almost certainly a funny date class
 
 seiki_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "世紀" !> ].
+[ ORTH <! "世紀" !>].
 
 ; せき 
 
 seki_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "せき" !> ].
+[ ORTH <! "せき" !>].
 
 ; 隻 
 
 seki_2_1 := num-cl-spr-only-ind-lex &
-[ ORTH <! "隻" !> ].
+[ ORTH <! "隻" !>].
 
 ; 尺 
 
 seki_2_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "尺" !> ].
+[ ORTH <! "尺" !>].
 
 ; Used 23 times
 
  seki_2_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "席" !> ].
+ [ ORTH <! "席" !>].
 
 
 
@@ -1155,14 +1155,14 @@ seki_2_2 := num-cl-spr-only-ind-lex &
 ; Used 44 times
 
 senchime-toru_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'centimeter_2,
-  ORTH <! "センチメートル" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_centimeter_numcl_2_rel,
+  ORTH <! "センチメートル" !>].
 
 ;ミリメートル
 
 mirime-toru := num-cl-spr-only-meas-lex &
-	       [SYNSEM.LKEYS.KEYREL.PRED 'millimeter,
-		ORTH <! "ミリメートル" !> ].
+	       [SYNSEM.LKEYS.KEYREL.PRED '_millimeter_numcl_rel,
+		ORTH <! "ミリメートル" !>].
 
 
 
@@ -1171,156 +1171,156 @@ mirime-toru := num-cl-spr-only-meas-lex &
 ; Used 4 times
 
 soroi_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "揃い" !> ].
+[ ORTH <! "揃い" !>].
 
 ; ダース 
 
 da-su_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ダース" !> ].
+[ ORTH <! "ダース" !>].
 
 ; 打数 
 ; Used 4 times
 
 dasuu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "打数" !> ].
+[ ORTH <! "打数" !>].
 
 ; 束 
 ; Used 1 times
 ; FIXME: need to check the group nouns
 taba_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "束" !> ].
+[ ORTH <! "束" !>].
 
 ; チェーン 
 
 chie-n_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "チェーン" !> ].
+[ ORTH <! "チェーン" !>].
 
 
 
 ; Used 12 times
 
  tsui_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "対" !> ].
+ [ ORTH <! "対" !>].
 
 ; 包み 
 ; Used 3 times
 
 tsutsumi_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "包み" !> ].
+[ ORTH <! "包み" !>].
 
 ; 坪 
 
 tsubo_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "坪" !> ].
+[ ORTH <! "坪" !>].
 
 ; 斗 
 
 to_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "斗" !> ].
+[ ORTH <! "斗" !>].
 
 
 
 ; Used 14 times
 
  toori_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "通り" !> ].
+ [ ORTH <! "通り" !>].
 
 
 ; 流れ 
 ; Used 18 times
 
 nagare_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "流れ" !> ].
+[ ORTH <! "流れ" !>].
 
 ; 握り 
 ; Used 5 times
 
 nigiri_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "握り" !> ].
+[ ORTH <! "握り" !>].
 
 
 ; ニュートン 
 
 nyu-ton_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ニュートン" !> ].
+[ ORTH <! "ニュートン" !>].
 
 
 ; 波 
 ; Used 13 times
 
 ha_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "波" !> ].
+[ ORTH <! "波" !>].
 
 
 ; 拝 
 
 hai_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "拝" !> ].
+[ ORTH <! "拝" !>].
 
 ; 敗 
 
 hai_2_1 := num-cl-spr-only-ind-lex &
-[ ORTH <! "敗" !> ].
+[ ORTH <! "敗" !>].
 
 ; バイト 
 ; Used 1 times
 ; byte
 
 baito_2 := num-cl-spr-only-ind-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'byte_2,
-  ORTH <! "バイト" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_byte_numcl_2_rel,
+  ORTH <! "バイト" !>].
 
 ; 柱 
 ; Used 3 times
 
 hashira_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "柱" !> ].
+[ ORTH <! "柱" !>].
 
 ; パスカル 
 
 pasukaru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "パスカル" !> ].
+[ ORTH <! "パスカル" !>].
 
 hatsu_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "発" !> ].
+ [ ORTH <! "発" !>].
 
 ; 幅 
 ; Used 17 times
 
 haba_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "幅" !> ].
+[ ORTH <! "幅" !>].
 
 ; 張り 
 ; Used 5 times
 
 hari_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "張り" !> ].
+[ ORTH <! "張り" !>].
 
 ; 馬力 
 
 bariki_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "馬力" !> ].
+[ ORTH <! "馬力" !>].
 
 ; バレル 
 
 bareru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "バレル" !> ].
+[ ORTH <! "バレル" !>].
 
 ; ピッチ 
 
 picchi_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ピッチ" !> ].
+[ ORTH <! "ピッチ" !>].
 
 ; 俵 
 ; Used 1 times
 
 hyou_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "俵" !> ].
+[ ORTH <! "俵" !>].
 
 ; Used 1 times
 
  hyou_2_1 := num-cl-spr-only-ind-lex &
- [ ORTH <! "票" !> ].
+ [ ORTH <! "票" !>].
 
 ; 秒 
 ; Used 7 times
@@ -1328,301 +1328,301 @@ hyou_2 := num-cl-spr-only-ind-lex &
 ; CHECKME: should I be a funny time class?
 
 byou_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'byou_2,
-  ORTH <! "秒" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_byou_numcl_2_rel,
+  ORTH <! "秒" !>].
 
 ; フィート 
 
 fi-to_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "フィート" !> ].
+[ ORTH <! "フィート" !>].
 
 ; 服 
 ; Used 12 times
 
 fuku_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "服" !> ].
+[ ORTH <! "服" !>].
 
 ; 筆 
 ; Used 2 times
 
 fude_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "筆" !> ].
+[ ORTH <! "筆" !>].
 
 
 ; 振り 
 ; Used 1 times
 
 furi_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "振り" !> ].
+[ ORTH <! "振り" !>].
 
 ; Used 4 times
 
  pe-ji_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "ページ" !> ].
+ [ ORTH <! "ページ" !>].
 
 ; ヘクタール 
 
 hekuta-ru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ヘクタール" !> ].
+[ ORTH <! "ヘクタール" !>].
 
 ; ヘルツ 
 
 herutsu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ヘルツ" !> ].
+[ ORTH <! "ヘルツ" !>].
 
  hen_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "編" !> ].
+[ ORTH <! "編" !>].
 
 ; 返 
 
 hen_2_1 := num-cl-spr-only-ind-lex &
-[ ORTH <! "返" !> ].
+[ ORTH <! "返" !>].
 
 ; Used 1 times
 
  ho_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "歩" !> ].
+ [ ORTH <! "歩" !>].
 
 ; Used 2 times
 
  pointo_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "ポイント" !> ].
+ [ ORTH <! "ポイント" !>].
 
  pondo_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "ポンド" !> ].
+ [ ORTH <! "ポンド" !>].
 
 
 ; 巻き 
 ; Used 2 times
 
 maki_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "巻き" !> ].
+[ ORTH <! "巻き" !>].
 
 ; 幕 
 ; Used 5 times
 
 maku_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "幕" !> ].
+[ ORTH <! "幕" !>].
 
 
 ; ミクロン 
 
 mikuron_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ミクロン" !> ].
+[ ORTH <! "ミクロン" !>].
 
 ; ミリバール 
 
 miriba-ru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ミリバール" !> ].
+[ ORTH <! "ミリバール" !>].
 
 ; ｍｍ 
 
 mirime-toru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ｍｍ" !> ].
+[ ORTH <! "ｍｍ" !>].
 
 ; ミリリットル 
 
 miririttoru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ミリリットル" !> ].
+[ ORTH <! "ミリリットル" !>].
 
 ; 群れ 
 ; Used 10 times
 ; checkme
 
 mure_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'mure_2,
-  ORTH <! "群れ" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_mure_numcl_2_rel,
+  ORTH <! "群れ" !>].
 
 ; メーター 
 
 me-ta-_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "メーター" !> ].
+[ ORTH <! "メーター" !>].
 
 
 messhu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "メッシュ" !> ].
+[ ORTH <! "メッシュ" !>].
 
 ; 面 
 ; Used 44 times
 
 men_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "面" !> ].
+[ ORTH <! "面" !>].
 
 ; 素 
 ; Used 30 times
 
 moto_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "素" !> ].
+[ ORTH <! "素" !>].
 
 ; 盛 
 
 mori_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "盛" !> ].
+[ ORTH <! "盛" !>].
 
 ; 門 
 ; Used 5 times
 
 mon_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "門" !> ].
+[ ORTH <! "門" !>].
 
 ; ヤード 
 
 ya-do_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ヤード" !> ].
+[ ORTH <! "ヤード" !>].
 
 ; 里 
 ; Used 1 times
 
 ri_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'ri_2,
-  ORTH <! "里" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_ri_numcl_2_rel,
+  ORTH <! "里" !>].
 
 ; リットル 
 
 rittoru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "リットル" !> ].
+[ ORTH <! "リットル" !>].
 
 ; ルーブル 
 
 ru-buru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ルーブル" !> ].
+[ ORTH <! "ルーブル" !>].
 
 ; ルックス 
 
 rukkusu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ルックス" !> ].
+[ ORTH <! "ルックス" !>].
 
 ; Used 2 times
 
 retsu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "列" !> ].
+[ ORTH <! "列" !>].
 
 ; レントゲン 
 
 rentogen_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "レントゲン" !> ].
+[ ORTH <! "レントゲン" !>].
 
 ; 渡り 
 
 watari_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "渡り" !> ].
+[ ORTH <! "渡り" !>].
 
 ; ワット 
 ; Used 1 times
 
 watto_2 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'watto_2,
-  ORTH <! "ワット" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_watto_numcl_2_rel,
+  ORTH <! "ワット" !>].
 
 ongusutoro-mu := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'angstrom,
-  ORTH <! "オングストローム" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_angstrom_numcl_rel,
+  ORTH <! "オングストローム" !>].
 
 
 ; Used 39 times
 
  kin_2 := num-cl-spr-only-ind-lex &
- [ ORTH <! "金" !> ].
+ [ ORTH <! "金" !>].
 
 
 
 ; ミリ 
 
 miri_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ミリ" !> ].
+[ ORTH <! "ミリ" !>].
 
 ; 山 
 ; Used 29 times
 
 yama_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "山" !> ].
+[ ORTH <! "山" !>].
 
 ; 語 
 ; Used 181 times
 
 go_3 := num-cl-spr-only-meas-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'go_3,
-  ORTH <! "語" !> ].
+[SYNSEM.LKEYS.KEYREL.PRED '_go_numcl_3_rel,
+  ORTH <! "語" !>].
 
 ; 腰 
 ; Used 16 times
 
 koshi_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "腰" !> ].
+[ ORTH <! "腰" !>].
 
 ; 座 
 ; Used 1 times
 
 za_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "座" !> ].
+[ ORTH <! "座" !>].
 
 
 ; 丈 
 ; Used 4 times
 
 jou_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "丈" !> ].
+[ ORTH <! "丈" !>].
 
 ; 層 
 ; Used 5 times
 
 sou_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "層" !> ].
+[ ORTH <! "層" !>].
 
 ; Used 8 times
 
  chaku_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "着" !> ].
+ [ ORTH <! "着" !>].
 
 ; 派 
 
 ha_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "派" !> ].
+[ ORTH <! "派" !>].
 
 ; 封 
 ; Used 2 times
 
 fuu_3 := num-cl-spr-only-ind-lex &
-[ ORTH <! "封" !> ].
+[ ORTH <! "封" !>].
 
 ; Used 22 times
 
  mawari_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "周り" !> ].
+ [ ORTH <! "周り" !>].
 
  ; Used 38 times
 
  moji_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "文字" !> ].
+ [ ORTH <! "文字" !>].
 
 ; Used 3 times
 
  tsuu_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "通" !> ].
+ [ ORTH <! "通" !>].
 
 ; Used 99 times
 
  te_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "手" !> ].
+ [ ORTH <! "手" !>].
 
  rinku_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "リンク" !> ].
+ [ ORTH <! "リンク" !>].
 
 iningu_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "イニング" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'iningu ].
+  SYNSEM.LKEYS.KEYREL.PRED '_iningu_numcl_rel].
 
 dan_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ダン" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'dan ].
+  SYNSEM.LKEYS.KEYREL.PRED '_dan_numcl_rel].
 
 sai-kanji-1_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "歳" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'sai ].
+  SYNSEM.LKEYS.KEYREL.PRED '_sai_numcl_rel].
 
 sai-kanji-2_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "才" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'sai ].
+  SYNSEM.LKEYS.KEYREL.PRED '_sai_numcl_rel].
 
 zen_numcl := num-cl-spr-only-ind-lex &
 	     [ ORTH <! "膳" !>].
@@ -1632,13 +1632,13 @@ sou_numcl := num-cl-spr-only-ind-lex &
 
 banme_numcl := num-cl-spr-only-ind-nmod-lex &
 [ ORTH <! "番目" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
 
 
 nichikan_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "日間" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'nichikan ].
+  SYNSEM.LKEYS.KEYREL.PRED '_nichikan_numcl_rel].
 
 
 ;;; hand added
@@ -1649,121 +1649,126 @@ nichikan_numcl := num-cl-spr-only-meas-lex &
 ;;; Arabic Numerals
 
 one_card := card_ichi_no_valence &
-[ ORTH <! "１" !> ].
+[ ORTH <! "１" !>].
 
 two_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "2",
-  ORTH <! "２" !> ].
+  ORTH <! "２" !>].
 
 three_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "3",
-  ORTH <! "３" !> ].
+  ORTH <! "３" !>].
 
 four_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "4",
-  ORTH <! "４" !> ].
+  ORTH <! "４" !>].
 
 five_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "5",
-  ORTH <! "５" !> ].
+  ORTH <! "５" !>].
 
 six_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "6",
-  ORTH <! "６" !> ].
+  ORTH <! "６" !>].
 
 seven_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "7",
-  ORTH <! "７" !> ].
+  ORTH <! "７" !>].
 
 eight_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "8",
-  ORTH <! "８" !> ].
+  ORTH <! "８" !>].
 
 nine_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "9",
-  ORTH <! "９" !> ].
+  ORTH <! "９" !>].
 
 one_card_a := card_ichi_no_valence &
-[ ORTH <! "1" !> ].
+[ ORTH <! "1" !>].
 
 two_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "2",
-  ORTH <! "2" !> ].
+  ORTH <! "2" !>].
 
 three_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "3",
-  ORTH <! "3" !> ].
+  ORTH <! "3" !>].
 
 four_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "4",
-  ORTH <! "4" !> ].
+  ORTH <! "4" !>].
 
 five_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "5",
-  ORTH <! "5" !> ].
+  ORTH <! "5" !>].
 
 six_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "6",
-  ORTH <! "6" !> ].
+  ORTH <! "6" !>].
 
 seven_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "7",
-  ORTH <! "7" !> ].
+  ORTH <! "7" !>].
 
 eight_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "8",
-  ORTH <! "8" !> ].
+  ORTH <! "8" !>].
 
 nine_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "9",
-  ORTH <! "0" !> ].
+  ORTH <! "0" !>].
 
 ;;; probably needs more work
 zero_card1 := card_2_no_valence & 
 [ SYNSEM.LKEYS.KEYREL.CARG "0",
-  ORTH <! "０" !> ].
+  ORTH <! "０" !>].
 
 zero_card_a := card_2_no_valence & 
 [ SYNSEM.LKEYS.KEYREL.CARG "0",
-  ORTH <! "0" !> ].
+  ORTH <! "0" !>].
 
 hito_card := card_ichi_no_valence &
-[ ORTH <! "ひと" !> ].
+[ ORTH <! "ひと" !>].
 
 futa_card := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "2",
-  ORTH <! "ふた" !> ].
+  ORTH <! "ふた" !>].
 
 
 gou_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "合" !> ].
+[ ORTH <! "合" !>].
 
 
 megaherutsu_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "メガヘルツ" !> ].
+[ ORTH <! "メガヘルツ" !>].
 
 ; Used 5 times
 
  dai_3 := num-cl-spr-only-ind-lex &
- [ ORTH <! "代" !> ].
+ [ ORTH <! "代" !>].
 
 
 ; Used 1 times
 
 a-ru_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "アール" !> ].
+[ ORTH <! "アール" !>].
 
 
 ; Used 1 times
 
 shi-shi-_2 := num-cl-spr-only-ind-lex &
-[ ORTH <! "ｃｃ" !> ].
+[ ORTH <! "ｃｃ" !>].
 
 ; (MS 2004-01-15) new entries
 
 nensei_numcl := num-cl-spr-only-ind-lex &
-[ ORTH <! "年生" !> ].
+[ ORTH <! "年生" !>].
 
 kakuni_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "カ国" !>,
-  SYNSEM.LKEYS.KEYREL.PRED 'kakuni ].
+  SYNSEM.LKEYS.KEYREL.PRED '_kakuni_numcl_rel].
+
+; (MS 2004-04-02) new entries
+
+kaisen_numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "回線" !>].

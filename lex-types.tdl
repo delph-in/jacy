@@ -1156,7 +1156,7 @@ subcategorizing-noun_sc := spr-obj-arg &
 					    CONT det-sem-type]] > ].
 
 adj_sc := sbj-arg &
-           [SUBJ.FIRST [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] ].
+           [SUBJ.FIRST [LOCAL.CAT.HEAD case-p_head & [CASE ga]] ].
 
 
 eval-adj_sc := obj-arg &
@@ -1196,14 +1196,14 @@ desu-sap_sc := sap_sc &
 
 
 ga-wo_transitive := sbj-obj-arg &
-                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
                            COMPS opt-1-arg &
-			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]] >].
+			   < [LOCAL.CAT.HEAD case-p_head & [CASE wo]] >].
 
 ga-wo-obl_transitive := sbj-obj-arg &
-                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
                            COMPS obl-1-arg &
-			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]] >].
+			   < [LOCAL.CAT.HEAD case-p_head & [CASE wo]] >].
 
 ; (SF 2003)
 ; (MS 2003-12-23) This seems not to be used.
@@ -1213,11 +1213,11 @@ ga-wo-obl_transitive := sbj-obj-arg &
 ;			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
 
 ga-ni_transitive := sbj-obj2-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+                    [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
                           COMPS < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] > ].
 
 adv_transitive := sbj-obj2-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+                    [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
 		     COMPS obl-1-arg &
 			   < [LOCAL.CAT.HEAD base-adv_head] >].
 
@@ -1234,7 +1234,7 @@ ga-to_transitive1 := sbj-obj-arg &
 			  < [LOCAL.CAT.HEAD case-p_head & [CASE to]] > ].
 
 ga-to_transitive2 := sbj-obj-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+                    [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
                           COMPS opt-1-arg & 
 			  < [LOCAL.CAT.HEAD  case-p_head & [CASE to]] >].
 
@@ -1245,7 +1245,7 @@ ga-to-ni_transitive := sbj-obj-arg &
 			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
 
 intransitive := sbj-arg &
-                [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
+                [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
 
 
 to_intransitive-opt := obj-arg &
@@ -1284,7 +1284,7 @@ ga-wo-toni-ditransitive := sbj-obj-obj2-arg  &
 mental_state_transitive :=  sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-ga]] >,
 		     COMPS opt-1-arg &
-			  < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga-or-wo]] >].
+			  < [LOCAL.CAT.HEAD case-p_head & [CASE ga-or-wo]] >].
 
 aru_transitive :=  sbj-arg &
            [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
@@ -4926,13 +4926,15 @@ v-tense-end-lex := v-tense-end-lex-super &
 ;    --> "SYNSEM.LOCAL.CAT.HEAD.C-MOD < ... ..>"
 ; 「Vて〜な様子」などがacceptされる
 ;
+
+; (MS 2004-04-02) changed C-MOD verb_head to sentence-valid, to allow also excl's in the sentence coordination.
 te-end-lex-basic := v-tense-end-lex &
 	      [J-NEEDS-AFFIX -,
             SYNSEM.LOCAL [CAT [HEAD [FIN -,
                                      MARK null,
                                      COP-ARG -,
-                                     C-MOD < [LOCAL [CAT [HEAD verb_head],
-                                                  BAR +]] >,
+                                     C-MOD < [LOCAL [CAT [HEAD sentence-valid],
+						     BAR +]] >,
                                      MOD null,
                                      J-POSTHEAD coord,
                                      FORMAL.AHON -]],
@@ -7419,7 +7421,7 @@ i-adj-neg-stem-lex := base-adj-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD [ MODUS negative ],
 		     VAL sbj-arg &
 			  [SUBJ.FIRST [OPT + ,
-				       LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+				       LOCAL [CAT.HEAD case-p_head & [CASE ga],
 					      CONT [HOOK.INDEX #inst]]]]],
 		CONT [HOOK [INDEX #event,
 			    XARG #inst,

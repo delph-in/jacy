@@ -1,22 +1,22 @@
 
 ageru-a-stem := v1-v-stem-lex &
-[SYNSEM [LKEYS [KEYREL [PRED 'ageru,
+[SYNSEM [LKEYS [KEYREL [PRED '_ageru_v_rel,
 			  ARG1 #arg1]],
 	 LOCAL.CTXT.EMPATHY.EMPEE #arg1],
-ORTH <! "あげる" !> ].
+ORTH <! "あげる" !>].
 
 ; (MS 2002-05-19) ageru sets the empathy to its agent.
 ageru-stem := v1-v-stem-lex &
-[SYNSEM [LKEYS [KEYREL [PRED 'ageru,
+[SYNSEM [LKEYS [KEYREL [PRED '_ageru_v_rel,
 			 ARG1 #arg1]],
 	       LOCAL.CTXT.EMPATHY.EMPEE #arg1],
-ORTH <! "上げる" !> ].
+ORTH <! "上げる" !>].
 
 ;<OLD> ; Used 3 times
 aisuru-stem := v1-kurusuru-stem-lex &
-[SYNSEM [LKEYS [KEYREL [PRED 'aisuru]],
+[SYNSEM [LKEYS [KEYREL [PRED '_aisuru_v_rel]],
          NON-LOCAL.QUE <! !>],
-ORTH <! "愛する" !> ].
+ORTH <! "愛する" !>].
 
 
 dai-cop-id := cop-id-stem-lex &
@@ -57,7 +57,7 @@ cop-id-stem-lex &
  SYNSEM.LOCAL.CAT.HEAD.MOD null,
  STEMTYPE da-stem].
 
-; (ERB 2002-02-14) We weren't parsing "そうだ" so add this one.
+; (ERB 2002-02-14) We weren'_t parsing "そうだ" so add this one.
 da-v-cop-lex  :=
 reg-cop-lex &
 [ORTH <! "だ" !>,
@@ -134,17 +134,17 @@ cop-neg-stem-lex &
 
 
 deru_from-hiragana-stem := v1-v-stem-lex &
-[SYNSEM [LKEYS.KEYREL [PRED 'deru_from],
+[SYNSEM [LKEYS.KEYREL [PRED '_deru_v_from_rel],
 	 LOCAL.BAR +],
 RMORPH-BIND-TYPE nomorphbind,
-ORTH <! "でる" !> ].
+ORTH <! "でる" !>].
 
 
 deru_to-hiragana-stem := intrans-v-stem-lex &
-[SYNSEM [LKEYS [KEYREL.PRED 'deru_to],
+[SYNSEM [LKEYS [KEYREL.PRED '_deru_v_to_rel],
 	 LOCAL.BAR +],
 RMORPH-BIND-TYPE nomorphbind,
-ORTH <! "でる" !> ].
+ORTH <! "でる" !>].
 
 ; "もしまだでしたら、可能となる予定はいつ頃でしょうか？"
 deshitara-cop-lex :=
@@ -206,7 +206,7 @@ reg-cop-lex &
 			 FIN -,
 			 VN -,
 			 C-MOD < [LOCAL [CAT.HEAD verb_head & [MAIN-PRD +],
-				      BAR +]]> ]]].
+				      BAR +]]>]]].
 
 
 dewanai-cop-id-stem :=
@@ -231,40 +231,40 @@ cop-neg-stem-lex &
 
 ;idiomatic reading of dou-suru
 dousuru-stem := v1-kurusuru-stem-lex &
-[SYNSEM [LKEYS.KEYREL [PRED 'dousuru],
+[SYNSEM [LKEYS.KEYREL [PRED '_dousuru_v_rel],
 	 LOCAL.CONT.HOOK.LTOP #top,
          NON-LOCAL.QUE <! #top !>],
-ORTH <! "どう","する" !> ].
+ORTH <! "どう","する" !>].
 
 
 irassharu-stem := intrans-c2-stem-lex & 
                   [SYNSEM [LOCAL.BAR -,
-			   LKEYS [KEYREL [PRED 'irassharu]]],
-                   ORTH <! "いらっしゃる" !> ]. 
+			   LKEYS [KEYREL [PRED '_irassharu_v_rel]]],
+                   ORTH <! "いらっしゃる" !>]. 
 
 ; (MS 2002-09-16) This one leads to (spurious) ambiguity as soon as iru-aux comes up!
 iru_be-stem := intrans-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'iru_be]],
+[SYNSEM.LKEYS [KEYREL [PRED '_iru_v_be_rel]],
 RMORPH-BIND-TYPE nomorphbind,
-ORTH <! "いる" !> ].
+ORTH <! "いる" !>].
 
 ; (MS 2002-09-16) This one leads to spurious ambiguity as soon as iru-aux comes up!
 iru_need-hiragana-stem := aru-c-stem-lex &
-		   [SYNSEM.LKEYS [KEYREL [PRED 'iru_need]],
+		   [SYNSEM.LKEYS [KEYREL [PRED '_iru_v_need_rel]],
 		    RMORPH-BIND-TYPE nomorphbind,
-		    ORTH <! "いる" !> ].
+		    ORTH <! "いる" !>].
 
 ; (MS 2002-06-20) the RMORPH-BIND-TYPE helps to prevent いい to undergo the v2vn-infl-rule.
 iu-stem2a := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL.PRED 'iu-2a],
+[SYNSEM.LKEYS [KEYREL.PRED '_iu_a_2a_rel],
  RMORPH-BIND-TYPE nomorphbind,
-ORTH <! "いう" !> ].
+ORTH <! "いう" !>].
 
 
 iu-stem3a := to_intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL.PRED 'iu-3a],
+[SYNSEM.LKEYS [KEYREL.PRED '_iu_a_3a_rel],
  RMORPH-BIND-TYPE nomorphbind,
-ORTH <! "いう" !> ].
+ORTH <! "いう" !>].
 
 
 janai-cop-id-stem :=
@@ -335,9 +335,9 @@ kashira-cop-lex := reg-cop-stem-lex &
 
 ;break down, broke down, give, yield
 kussuru-stem := v1-kurusuru-stem-lex &
-[SYNSEM [LKEYS [KEYREL [PRED 'kussuru]],
+[SYNSEM [LKEYS [KEYREL [PRED '_kussuru_v_rel]],
          NON-LOCAL.QUE <! !>],
-ORTH <! "屈する" !> ].
+ORTH <! "屈する" !>].
 
 ; (MS 2002-01-17) for conditional NARA: それなら良い
 na-cop-id-lex :=
@@ -354,7 +354,7 @@ reg-cop-stem-lex &
  SYNSEM [LOCAL.CAT.HEAD [MODUS indicative,
 			 MAIN-PRD -,
                          MOD < [LOCAL [CAT.HEAD noun_head,
-                                    CONT.HOOK.INDEX #ind]] > ],
+                                    CONT.HOOK.INDEX #ind]] >],
 	 LKEYS.KEYREL.ARG1 #ind],
  STEMTYPE da-stem].
 
@@ -415,39 +415,40 @@ reg-cop-lex &
 
 negau-v8-stem := v8-c-minusshon-stem-lex &
 [SYNSEM [ LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.VN -,
-	  LKEYS.KEYREL.PRED 'negau ],
- ORTH <! "願う" !> ].
+	  LKEYS.KEYREL.PRED '_negau_v_rel],
+ ORTH <! "願う" !>].
 
 
 suru-stem  := v1-kurusuru-stem-lex &
-[SYNSEM [LKEYS [KEYREL [PRED 'suru]],
+[SYNSEM [LKEYS [KEYREL [PRED '_suru_v_rel]],
          NON-LOCAL.QUE <! !>],
-ORTH <! "する" !> ].
+ORTH <! "する" !>].
 
 
 suru-v5a-stem  := v5a-kurusuru-stem-lex &
-[SYNSEM [LKEYS [KEYREL [PRED 'suru-2]],
+[SYNSEM [LKEYS [KEYREL [PRED '_suru_a_2_rel]],
          NON-LOCAL.QUE <! !>],
-ORTH <! "する" !> ].
+ORTH <! "する" !>].
 
 
 taberu-stem := v1-v-stem-lex &
-[SYNSEM [LKEYS [KEYREL.PRED 'taberu],
+[SYNSEM [LKEYS [KEYREL.PRED '_taberu_v_rel],
 	 LOCAL.CTXT.BACKGROUND <! !>],
-ORTH <! "食べる" !> ].
+ORTH <! "食べる" !>].
 
 ;attain, reach
 tassuru-stem := v1-kurusuru-stem-lex &
-                 [SYNSEM [LKEYS [KEYREL [PRED 'tassuru]],
+                 [SYNSEM [LKEYS [KEYREL [PRED '_tassuru_v_rel]],
                           NON-LOCAL.QUE <! !>],
-                   ORTH <! "達する" !> ].
+                   ORTH <! "達する" !>].
 
 ;to demand, to require, to take
 yousuru-stem := v1-kurusuru-stem-lex &
-[SYNSEM [LKEYS [KEYREL [PRED 'yousuru]],
+[SYNSEM [LKEYS [KEYREL [PRED '_yousuru_v_rel]],
          NON-LOCAL.QUE <! !>],
-ORTH <! "要する" !> ].
+ORTH <! "要する" !>].
 
 naru-pparg-stem :=  v2b-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED 'naru]],
-                   ORTH <! "なる" !> ].
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                   ORTH <! "なる" !>].
+

@@ -56,7 +56,7 @@ light-minus_shon-v-stem-lex &
 
 ; (ERB 2001-08-30) Fixing dekiru so that it has some semantic effect 
 ; in combination with vns.  Giving it the same semantic effect of rareru.
-; I guess it's technically not a light verb then.
+; I guess it'_s technically not a light verb then.
 ; (MS 2001-09-14) Changed that again.
 
 dekiru-light  :=
@@ -81,26 +81,26 @@ quasi-light-nohon-v-stem-lex &
 
 negau-light  :=
 quasi-light-nohon-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'negau,
+[SYNSEM.LKEYS.KEYREL.PRED '_negau_v_rel,
  ORTH <! "ねがう" !>].
 
 negau-light-kanji  :=
 quasi-light-nohon-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED 'negau,
+[SYNSEM.LKEYS.KEYREL.PRED '_negau_v_rel,
  ORTH <! "願う" !>].
 
-; (ERB 2001-12-28) I don't see these two in the testsuites, and I don't
-; know whether it's supposed to be an aspect-type, or what, so commenting
+; (ERB 2001-12-28) I don'_t see these two in the testsuites, and I don'_t
+; know whether it'_s supposed to be an aspect-type, or what, so commenting
 ; it out for now.
 
 ;kakeru-light  :=
 ;quasi-light-nohon-v-stem-lex &
-;[SYNSEM.LKEYS.KEYREL.PRED 'kakeru,
+;[SYNSEM.LKEYS.KEYREL.PRED '_kakeru_v_rel,
 ; ORTH <! "かける" !>].
 
 ;oku-light  :=
 ;quasi-light-nohon-c-stem-lex &
-;[SYNSEM.LKEYS.KEYREL.PRED 'oku,
+;[SYNSEM.LKEYS.KEYREL.PRED '_oku_v_rel,
 ; ORTH <! "おく" !>].
 
 ; (ERB 2001-12-28) These guys will effectively be perspective auxiliaries.
@@ -125,32 +125,32 @@ quasi-light-nohon-c-stem-lex &
 kudasaru-light :=
 light-perspective-shon-arg2emp-c2-stem-lex &
 [ORTH <! "下さる" !>,
- SYNSEM.LKEYS.KEYREL.PRED 'kudasaru].
+ SYNSEM.LKEYS.KEYREL.PRED '_kudasaru_v_rel].
 
 kudasaru-light-2 :=
 light-perspective-shon-arg2emp-c2-stem-lex &
 [ORTH <! "くださる" !>,
- SYNSEM.LKEYS.KEYREL.PRED 'kudasaru].
+ SYNSEM.LKEYS.KEYREL.PRED '_kudasaru_v_rel].
 
 kureru-light  :=
 light-perspective-arg2emp-v-stem-lex &
 [ORTH <! "くれる" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'kureru].
+SYNSEM.LKEYS.KEYREL.PRED '_kureru_v_rel].
 
 ageru-light :=
 light-perspective-arg1emp-v-stem-lex &
 [ORTH <! "あげる" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'ageru].
+SYNSEM.LKEYS.KEYREL.PRED '_ageru_v_rel].
 
 sashiageru-light :=
 light-perspective-minus_shon-arg1emp-v-stem-lex &
 [ORTH <! "さしあげる" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'sashiageru].
+SYNSEM.LKEYS.KEYREL.PRED '_sashiageru_v_rel].
 
 yaru-light :=
 light-perspective-shon-arg1emp-c-stem-lex &
 [ORTH <! "やる" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'yaru].
+SYNSEM.LKEYS.KEYREL.PRED '_yaru_v_rel].
 
 
 ; (ERB 2001-12-28) And these guys are effectively aux-obj-id.  Only
@@ -167,17 +167,17 @@ SYNSEM.LKEYS.KEYREL.PRED 'yaru].
 morau-light  :=
 light-obj-id-arg1emp-c-stem-lex &
 [ORTH <! "もらう" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'morau].
+SYNSEM.LKEYS.KEYREL.PRED '_morau_v_rel].
 
 itadaku-light :=
 light-obj-id-minus_shon-arg1emp-c-stem-lex &
 [ORTH <! "いただく" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'itadaku].
+SYNSEM.LKEYS.KEYREL.PRED '_itadaku_v_rel].
 
 itadaku-light-2 :=
 light-obj-id-minus_shon-arg1emp-c-stem-lex &
 [ORTH <! "頂く" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'itadaku].
+SYNSEM.LKEYS.KEYREL.PRED '_itadaku_v_rel].
 
 
 
