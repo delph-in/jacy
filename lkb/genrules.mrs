@@ -1,3 +1,4 @@
+#|
 ;;;;;;;;COPULA;;;;;;;;;;;;;;;;
 
 
@@ -91,7 +92,6 @@ no_part_genrule_1 := generator_rule &
 wa_part_genrule_2  := generator_rule &
  [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "wa-in-copula-sent" ].
-
 
 
 ;;;;;;;;;LIGHT VERBS;;;;;;;;;;
@@ -368,3 +368,1337 @@ karasign_part_genrule := generator_rule &
 
 
 ;;;;;;;;;;NUMERAL CLASSIFIERS;;;;;;;;;
+
+|#
+
+ta-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ ARG0 event & [ E.TENSE past ] ] !> ],
+  OUTPUT "ta-end" ].
+
+;;;
+;;; automatically generated rules for all semantically empty lexical entries:
+;;;
+;;; (loop
+;;;     with *package* = (find-package :lkb)
+;;;     for id in mrs::*empty-semantics-lexical-entries*
+;;;     do
+;;;       (format
+;;;        t
+;;;        "~(~a~)_gr := generator_rule &~%~
+;;;         [ CONDITION [ RELS <! [ PRED \"non_existing_rel\" ] !> ],~%  ~
+;;;           OUTPUT \"~(~a~)\" ].~%~%"
+;;;        id id))
+;;;
+;;; francis and melanie, go through this list to activate the ones you actually
+;;; want to be available; keep in mind that (in the current set-up_ generator
+;;; rules are not type expanded, i.e. you have to supply everything you need in
+;;; a rule yourselves.                                          (25-dec-04; oe)
+;;;        
+
+picchi_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "picchi_2" ].
+
+no_numcl-1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "no_numcl-1" ].
+
+reru-simple-pass-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "reru-simple-pass-end" ].
+
+ka_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ka_numcl" ].
+
+parenthesis-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "parenthesis-end" ].
+
+wa_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "wa_numcl" ].
+
+ga-3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ga-3" ].
+
+ha_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ha_3" ].
+
+shu_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shu_numcl" ].
+
+angle-double-brackets-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "angle-double-brackets-end" ].
+
+to-conj-pobj_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "to-conj-pobj" ].
+
+ndesu-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ndesu-v-cop-lex" ].
+
+soudesune-hes-multi_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "soudesune-hes-multi" ].
+
+quotation-name-end2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-name-end2" ].
+
+gou_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "gou_2" ].
+
+jou_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jou_2" ].
+
+jou_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jou_3" ].
+
+sou_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "sou_3" ].
+
+mon_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mon_2" ].
+
+o-hon-vnpref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "o-hon-vnpref" ].
+
+fi-to_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "fi-to_2" ].
+
+de-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "de-v-cop-lex" ].
+
+o-3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "o-3" ].
+
+mori_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mori_2" ].
+
+o-2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "o-2" ].
+
+quotation-sentence-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-sentence-end" ].
+
+no_numcl-2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "no_numcl-2" ].
+
+reru-ditrans-pass-ganini-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "reru-ditrans-pass-ganini-end" ].
+
+da-v-cop-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "da-v-cop-stem" ].
+
+quotation-noun-init3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-init3" ].
+
+gozaru-aux-hiragana-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "gozaru-aux-hiragana-stem" ].
+
+comma-pmod_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "comma-pmod" ].
+
+mashite-end2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mashite-end2" ].
+
+chau-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "chau-end" ].
+
+angle-double-brackets-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "angle-double-brackets-init" ].
+
+aa_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "aa" ].
+
+ga_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ga" ].
+
+ma_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ma" ].
+
+ru-buru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ru-buru_2" ].
+
+mei_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mei_numcl" ].
+
+you-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "you-end" ].
+
+quotation-name-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-name-end" ].
+
+quotation-noun-init2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-init2" ].
+
+ken_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ken_numcl" ].
+
+tsubo_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tsubo_2" ].
+
+rukkusu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rukkusu_2" ].
+
+zen_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "zen_numcl" ].
+
+kasho_numcl-2d_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kasho_numcl-2d" ].
+
+wa-in-copula-sent_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "wa-in-copula-sent" ].
+
+kakae_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kakae_2" ].
+
+tokoro_4_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tokoro_4" ].
+
+parenthesis-j-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "parenthesis-j-end" ].
+
+rareru-ditrans-pass-ganini-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rareru-ditrans-pass-ganini-end" ].
+
+watari_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "watari_2" ].
+
+seki_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "seki_2_1" ].
+
+boruto_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "boruto_numcl" ].
+
+pe-ji_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "pe-ji_2" ].
+
+u-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "u-end" ].
+
+jou-numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jou-numcl" ].
+
+comma-vmod1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "comma-vmod1" ].
+
+ku-ru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ku-ru_2" ].
+
+yaa_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "yaa" ].
+
+quotation-noun-init-2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-init-2" ].
+
+jau-chasen-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jau-chasen-end" ].
+
+mawari_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mawari_3" ].
+
+souba_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "souba_numcl" ].
+
+toori_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "toori_2" ].
+
+te_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "te_3" ].
+
+miriba-ru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "miriba-ru_2" ].
+
+sou_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "sou_numcl" ].
+
+tou_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tou_numcl" ].
+
+hon_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hon_numcl" ].
+
+gou_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "gou_numcl" ].
+
+nodeshou-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nodeshou-v-cop-lex" ].
+
+seki_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "seki_2" ].
+
+comma-vmod2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "comma-vmod2" ].
+
+to-comp3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "to-comp3" ].
+
+jau-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jau-end" ].
+
+ten_4_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ten_4" ].
+
+hen_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hen_2" ].
+
+men_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "men_2" ].
+
+ken_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ken_2" ].
+
+o-mu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "o-mu_2" ].
+
+a-ru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "a-ru_2" ].
+
+kirorittoru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kirorittoru_2" ].
+
+nensei_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nensei_numcl" ].
+
+dasuu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dasuu_2" ].
+
+aru-kanji-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "aru-kanji-aux-stem" ].
+
+generic_adj_a_infl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "generic_adj_a_infl" ].
+
+gozaru-aux-kanji-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "gozaru-aux-kanji-stem" ].
+
+seki_2_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "seki_2_3" ].
+
+retsu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "retsu_2" ].
+
+parenthesis-j-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "parenthesis-j-init" ].
+
+quotation-noun-end2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-end2" ].
+
+tsui_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tsui_2" ].
+
+saikuru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "saikuru_2" ].
+
+ku_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ku_2" ].
+
+kuo-ta-_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kuo-ta-_2" ].
+
+comma-interjmod_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "comma-interjmod" ].
+
+satsu_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "satsu_numcl" ].
+
+desu-v-cop-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "desu-v-cop-stem" ].
+
+irassharu-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "irassharu-aux-stem" ].
+
+ban_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ban_numcl" ].
+
+suru-light-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "suru-light-stem" ].
+
+to-comp1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "to-comp1" ].
+
+shime_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shime_2" ].
+
+chottone-multi_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "chottone-multi" ].
+
+masu-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "masu-end" ].
+
+da-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "da-v-cop-lex" ].
+
+na-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "na-v-cop-lex" ].
+
+bu_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "bu_numcl" ].
+
+dai_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dai_numcl" ].
+
+bai_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "bai_numcl" ].
+
+mai_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mai_numcl" ].
+
+hai_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hai_numcl" ].
+
+setto_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "setto_3" ].
+
+reru-honorific-pass-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "reru-honorific-pass-end" ].
+
+gu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "gu_2" ].
+
+oru-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "oru-aux-stem" ].
+
+iru-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "iru-aux-stem" ].
+
+aru-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "aru-aux-stem" ].
+
+bit_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "bit_numcl" ].
+
+no-nspec-4_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "no-nspec-4" ].
+
+kasane_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kasane_2" ].
+
+nagare_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nagare_2" ].
+
+naa-hes_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "naa-hes" ].
+
+maa-hes_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "maa-hes" ].
+
+quotation-sentence-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-sentence-init" ].
+
+deshou-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "deshou-v-cop-lex" ].
+
+iru-aux-kanji-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "iru-aux-kanji-stem" ].
+
+herutsu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "herutsu_2" ].
+
+da-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "da-end" ].
+
+shuu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shuu_2" ].
+
+shimau-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shimau-aux-stem" ].
+
+quotation-noun-end3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-end3" ].
+
+quotation-sap-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-sap-end" ].
+
+nin_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nin_numcl" ].
+
+soroi_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "soroi_2" ].
+
+mairu-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mairu-aux-stem" ].
+
+moto_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "moto_2" ].
+
+nara-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nara-cop-lex" ].
+
+tsuuwa_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tsuuwa_3" ].
+
+hyou_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hyou_2" ].
+
+miri_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "miri_2" ].
+
+parenthesis-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "parenthesis-init" ].
+
+mirime-toru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mirime-toru_2" ].
+
+ko_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ko_2" ].
+
+to_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "to_2" ].
+
+shuukan_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shuukan_2" ].
+
+mikuron_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mikuron_2" ].
+
+go-hon-npref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "go-hon-npref" ].
+
+nigiri_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nigiri_2" ].
+
+comma-advmod_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "comma-advmod" ].
+
+pasukaru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "pasukaru_2" ].
+
+za_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "za_3" ].
+
+quotation-noun-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-init" ].
+
+koma_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "koma_2" ].
+
+o-hon-napref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "o-hon-napref" ].
+
+rentogen_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rentogen_2" ].
+
+uun_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "uun" ].
+
+ya-do_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ya-do_2" ].
+
+fun_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "fun" ].
+
+kyoku_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kyoku_2" ].
+
+kyaku_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kyaku_2" ].
+
+ndarou-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ndarou-v-cop-lex" ].
+
+generic_adj_i_infl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "generic_adj_i_infl" ].
+
+sao_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "sao_2" ].
+
+hai_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hai_2" ].
+
+kai_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kai_2" ].
+
+sai_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "sai_2" ].
+
+suji_9_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "suji_9" ].
+
+dearu-v-cop-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dearu-v-cop-stem" ].
+
+ho_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ho_2" ].
+
+karatto_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "karatto_2" ].
+
+dai_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dai_3" ].
+
+dan_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dan_3" ].
+
+rinku_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rinku_3" ].
+
+shuu_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shuu_2_1" ].
+
+satsu-2_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "satsu-2_numcl" ].
+
+miririttoru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "miririttoru_2" ].
+
+chie-n_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "chie-n_2" ].
+
+ki_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ki_numcl" ].
+
+megaherutsu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "megaherutsu_2" ].
+
+nasai-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nasai-end" ].
+
+dearu-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dearu-v-cop-lex" ].
+
+fude_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "fude_2" ].
+
+datta-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "datta-v-cop-lex" ].
+
+dari-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dari-end" ].
+
+kasho_numcl-2b_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kasho_numcl-2b" ].
+
+tari-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tari-end" ].
+
+me-ta-_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "me-ta-_2" ].
+
+quotation-noun-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-end" ].
+
+teru-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "teru-end" ].
+
+ori_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ori_2" ].
+
+fushi_9_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "fushi_9" ].
+
+maku_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "maku_2" ].
+
+reru-ditrans-pass-ganiwo-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "reru-ditrans-pass-ganiwo-end" ].
+
+quotation-name-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-name-init" ].
+
+a_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "a" ].
+
+o_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "o" ].
+
+desu-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "desu-v-cop-lex" ].
+
+itasu-light_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "itasu-light" ].
+
+kara-case_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kara-case" ].
+
+baito_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "baito_2" ].
+
+oku-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "oku-aux-stem" ].
+
+iku-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "iku-aux-stem" ].
+
+quotation-sentence-init2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-sentence-init2" ].
+
+nodesu-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nodesu-v-cop-lex" ].
+
+o-hon-npref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "o-hon-npref" ].
+
+generic_hes-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "generic_hes-lex" ].
+
+seki_2_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "seki_2_2" ].
+
+hiki_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hiki_numcl" ].
+
+nyu-ton_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nyu-ton_2" ].
+
+kirowatto_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kirowatto_numcl" ].
+
+moji_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "moji_3" ].
+
+te-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "te-end" ].
+
+de-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "de-end" ].
+
+karasign-nspec_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "karasign-nspec" ].
+
+me_4_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "me_4" ].
+
+shi_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shi_2_1" ].
+
+deshitara-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "deshitara-cop-lex" ].
+
+chaku_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "chaku_3" ].
+
+kasho_numcl-2e_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kasho_numcl-2e" ].
+
+colon_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "colon" ].
+
+nda-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nda-v-cop-lex" ].
+
+messhu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "messhu_2" ].
+
+shi_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shi_2" ].
+
+dake-case_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dake-case" ].
+
+tsutsumi_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tsutsumi_2" ].
+
+quotation-noun-end-2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-noun-end-2" ].
+
+fuku_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "fuku_2" ].
+
+rippoumeetoru_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rippoumeetoru_numcl" ].
+
+hako_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hako_numcl" ].
+
+daun_4_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "daun_4" ].
+
+ndeshou-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ndeshou-v-cop-lex" ].
+
+rareru-simple-pass-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rareru-simple-pass-end" ].
+
+quotation-sap-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-sap-init" ].
+
+nasai-chasen-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nasai-chasen-end" ].
+
+sutoro-ku_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "sutoro-ku_2" ].
+
+generic_adj_kere_infl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "generic_adj_kere_infl" ].
+
+furi_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "furi_2" ].
+
+kumi_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kumi_2" ].
+
+seiki_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "seiki_2" ].
+
+fuu_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "fuu_3" ].
+
+jun_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jun_2" ].
+
+nodesu-chasen-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nodesu-chasen-v-cop-lex" ].
+
+tsubu_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tsubu_numcl" ].
+
+ni-case-2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ni-case-2" ].
+
+no-case_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "no-case" ].
+
+go-hon-katakana-npref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "go-hon-katakana-npref" ].
+
+hekuta-ru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hekuta-ru_2" ].
+
+mashou-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mashou-end" ].
+
+angle-brackets-init_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "angle-brackets-init" ].
+
+ni-case-3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ni-case-3" ].
+
+iku-aux-hiragana-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "iku-aux-hiragana-stem" ].
+
+shasen_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shasen_2" ].
+
+comma-infvmod_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "comma-infvmod" ].
+
+kaisen_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kaisen_numcl" ].
+
+hen_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hen_2_1" ].
+
+bareru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "bareru_2" ].
+
+kasho_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kasho_2" ].
+
+generic_adj_short_infl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "generic_adj_short_infl" ].
+
+ni-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ni-end" ].
+
+go-hon-kanji-npref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "go-hon-kanji-npref" ].
+
+quotation-name-init2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-name-init2" ].
+
+yama_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "yama_2" ].
+
+taba_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "taba_2" ].
+
+haba_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "haba_2" ].
+
+pointo_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "pointo_2" ].
+
+quotation-sentence-end2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "quotation-sentence-end2" ].
+
+ga-2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ga-2" ].
+
+ha_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ha_2" ].
+
+tsuu_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tsuu_3" ].
+
+hyou_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hyou_2_1" ].
+
+banme_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "banme_numcl" ].
+
+colon-2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "colon-2" ].
+
+ni-case_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ni-case" ].
+
+kara-sign-case_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kara-sign-case" ].
+
+go-hon-vnpref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "go-hon-vnpref" ].
+
+dai-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "dai-v-cop-lex" ].
+
+noda-v-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "noda-v-cop-lex" ].
+
+bangou_numcl-1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "bangou_numcl-1" ].
+
+angle-brackets-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "angle-brackets-end" ].
+
+jiku_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jiku_2" ].
+
+na-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "na-cop-lex" ].
+
+koshi_3_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "koshi_3" ].
+
+mashite-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mashite-end" ].
+
+shi-shi-_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shi-shi-_2" ].
+
+hashira_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hashira_2" ].
+
+kuru-aux-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kuru-aux-stem" ].
+
+moushiageru-light_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "moushiageru-light" ].
+
+ko_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ko_numcl" ].
+
+kanaa-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kanaa-cop-lex" ].
+
+mashita-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "mashita-end" ].
+
+rareru-ditrans-pass-ganiwo-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rareru-ditrans-pass-ganiwo-end" ].
+
+go-hon-kanji-vnpref_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "go-hon-kanji-vnpref" ].
+
+bariki_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "bariki_2" ].
+
+rareru-honorific-pass-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rareru-honorific-pass-end" ].
+
+itasu-kanji-light_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "itasu-kanji-light" ].
+
+doru_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "doru_numcl" ].
+
+generic_adj_past_infl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "generic_adj_past_infl" ].
+
+nee_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nee" ].
+
+jigen_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "jigen_2_1" ].
+
+rittoru_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "rittoru_2" ].
+
+degozaru-cop-multi_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "degozaru-cop-multi" ].
+
+kai_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kai_2_1" ].
+
+hai_2_1_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hai_2_1" ].
+
+oku-aux-kanji-stem_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "oku-aux-kanji-stem" ].
+
+kashira-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kashira-cop-lex" ].
+
+kin_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kin_2" ].
+
+deareba-cop-lex_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "deareba-cop-lex" ].
+
+generic_adj_te_infl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "generic_adj_te_infl" ].
+
+eeto-hes_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "eeto-hes" ].
+
+comma-te-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "comma-te-end" ].
+
+reru-light-pass-end_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "reru-light-pass-end" ].
+
+tsu_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "tsu_numcl" ].
+
+kasho_numcl-2c_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kasho_numcl-2c" ].
+
+hari_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hari_2" ].
+
+maki_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "maki_2" ].
+
+kabu_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "kabu_numcl" ].
+
+da-su_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "da-su_2" ].
+
+nandesu-cop-multi_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "nandesu-cop-multi" ].
+
+pondo_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "pondo_2" ].
+
+hatsu_2_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "hatsu_2" ].
+
+ninaru-multi_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "ninaru-multi" ].
+
+moushiageru-hiragana-light_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "moushiageru-hiragana-light" ].
+
+shi_numcl_gr := generator_rule &
+[ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  OUTPUT "shi_numcl" ].

@@ -238,7 +238,7 @@ set in the code")
 ;;; ended up combining a sequence of chunks from the chart, lacking a global
 ;;; solution.  the following is to enable detection of `fragmentary' MRSs.
 ;;;
-(defconstant *semi-fragment-relations*
+(setf *semi-fragment-relations*
   (list "fragment_rel" (mrs::vsym "unspec_conj_rel")))
 
 (defparameter *alex-mode* nil
