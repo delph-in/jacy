@@ -204,8 +204,8 @@ FIRST))))
 ;;; preprocess without using chasen (used in Hinoki treebank)
 
 ;;;(defun preprocess-sentence-string 
-;;;    "Trim white space and trailing punctuation"
 ;;;    (string &key (verbose *chasen-debug-p*) posp)
+;;;  "Trim white space and trailing punctuation"
 ;;;  (progn
 ;;;    (string-trim '(#\space #\tab) string)
 ;;;    (normalize-sentence-string string)))
