@@ -405,6 +405,7 @@ keta_numcl-2 := num-cl-spr-only-meas-lex &
 [ ORTH <! "ทๅ" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_keta_numcl_rel].
 
+;;; degree
 do_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "ลู" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_do_numcl_degree_rel].
@@ -871,10 +872,19 @@ o-mu_2 := num-cl-spr-only-ind-lex &
 ori_2 := num-cl-spr-only-ind-lex &
 [ ORTH <! "ภÞค๊" !>].
 
-; Used 18 times
+;;;; (FCB 2005-01-17)event classifiers
 
-kai_2 := num-cl-spr-only-ind-lex &
+; Used 18 times
+kai_event := event-num-cl-lex &
  [ ORTH <! "ฒ๓" !>].
+
+; (FCB 2005-01-17) normally only with cardinality <= 3
+do_event := event-num-cl-lex &
+ [ ORTH <! "ลู" !>].
+
+; (FCB 2005-01-17) normally only with cardinality 1
+hen_event := event-num-cl-lex &
+ [ ORTH <! "สื" !>].
 
 ; Used 2 times
 

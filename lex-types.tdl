@@ -1,4 +1,4 @@
-;; -*- Mode: TDL; Package: DISCO -*-
+;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: lex-types.tdl
@@ -224,6 +224,7 @@ quotation-noun-init_head := brackets-or-quotations-init_head &
 			J-SPEC  < >,
                         J-POSTHEAD left].
 
+
 quotation-noun-end_head  := brackets-or-quotations-end_head & noun_head &
                        [MOD < [LOCAL [CAT [HEAD ordinary_noun_head,
 						  VAL saturated],
@@ -435,9 +436,12 @@ num-cl-n-or-p-mod_head := num-cl-mod_head &
 ; (MS 2004-12-27) Floated numeral classifiers
 ; (MS 2005-01-07) Using EMPTY to prevent floated quantifiers to go into the nominal-numcl-rule.
 
-num-cl-float_head := num-cl-mod_head &
+num-cl-adv_head := num-cl-mod_head &
                    [ MOD < [LOCAL scopal_mod & [CAT [ HEAD verb_head]]] >,
 		     EMPTY -].
+
+num-cl-float_head := num-cl-adv_head.
+num-cl-event_head := num-cl-adv_head.
 
 ; 番、号
 
@@ -1871,7 +1875,6 @@ plain-topic-vmod-p-lex := topic-vmod-p-lex.
 ; That arises because the P object of wa identifies its ARG with its 
 ; MOD.IND with its own INDEX and wa takes the INDEX of its OBJ as ARG2
 ; and the INDEX of it's MOD (same thing) as ARG...  So grab the KEY.ARG0 instead.
-
 ; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND instead of INDEX and LTOP.
 
 ; (ERB 2002-01-10) Some Ps select for MAIN-PRD + or -.  We 
@@ -2150,16 +2153,23 @@ sap1-lex  := lexical_sign-word &
 ; for modification and so on. This should be the LTOP. The tense information is unified between 
 ; the two conjuncts and passed to the top.
 ; We need to add a value to XARG, in order not to get spurious ambiguity with the vmod-p が
-
+; (FCB 2005-01-29) Added J-POSTHEAD rels to VAL.COMPS.FIRST.CAT.HEAD
+; to get rid of spurious ambiguity with comma-vmod2
+; (I don't want it to trigger for coord) 食べて、笑った。
+; (FCB 2005-01-30) Add EMPTY - restriction on main verb.  
+; Otherwise there is a lot of ambiguity with fragments
 
 s-conj-lex := sap-lex &
               [SYNSEM [LOCAL [CAT [HEAD s-conj_head &
-					[C-MOD < [LOCAL.CONT.HOOK [LTOP #main-v-handel,
-								   INDEX.E #tam]]> ],
+					[C-MOD < [LOCAL [CONT.HOOK [LTOP #main-v-handel,
+								   INDEX.E #tam],
+							 CAT.HEAD.EMPTY -]]> ],
                                   VAL.COMPS.FIRST [LOCAL [CONT.HOOK [LTOP #subord-v-handel,
 								    INDEX.E #tam,
 								    XARG #xarg],
-							 CAT.HEAD.EMPTY bool,
+							 CAT.HEAD [EMPTY bool,
+								   J-POSTHEAD rels,
+								   FIN +],
 							 NUCL not_fin_conj ]]],
                              NUCL nucl_minus,
                              CONT [HOOK [INDEX #ind & event & [E #tam],
@@ -2968,23 +2978,28 @@ anymod-ind-num-cl-lex := individuating-num-cl-lex &
 noun-mod-ind-num-cl-lex := individuating-num-cl-lex &
 [ SYNSEM.LOCAL.CAT.HEAD num-cl-nmod_head ].
 
+; (FCB 2005-02-10) Adverbial numeral classifiers
+; this is a supertype for event and floating classifiers
+
+adv-num-cl-lex := numeral-classifier &
+[ SYNSEM.LOCAL [CAT [HEAD num-cl-adv_head &
+			  [MOD < [ LOCAL.CONT.HOOK [LTOP #top,
+						    INDEX #ind]] >],
+		     VAL [COMPS < >,
+			  SUBJ < >]],
+		CONT [HOOK [LTOP #top,
+			    INDEX #ind],
+		      HCONS <! !>]]].
 
 ; (MS 2004-12-27) Floated numeral classifiers, modifying verbs,
 ; semantically counting their subjects. This type is needed for 
 ; the lexical rule that makes the numeral classifier float.
 ; only for non-zpros.
 
-floated-num-cl-lex := numeral-classifier &
-[ SYNSEM.LOCAL [CAT [HEAD num-cl-float_head &
-			  [MOD < [ LOCAL.CONT.HOOK [LTOP #top,
-						    INDEX #ind]] >],
-		     VAL [SPR.FIRST.LOCAL.CONT.HOOK [XARG #xarg],
-			  COMPS < >,
-			  SUBJ < >]],
-		CONT [HOOK [LTOP #top,
-			    INDEX #ind,
-			    XARG #xarg],
-		      HCONS <! !>]]].
+floated-num-cl-lex := adv-num-cl-lex &
+[ SYNSEM.LOCAL [CAT [HEAD num-cl-float_head, 
+		     VAL [SPR.FIRST.LOCAL.CONT.HOOK.XARG #xarg]],
+		CONT.HOOK.XARG #xarg]].
 
 floated-ind-sbj-num-cl-lex := floated-num-cl-lex &
 [ SYNSEM.LOCAL [CAT [HEAD [MOD < [ LOCAL.CONT.HOOK.XARG #xarg & full_ref-ind] >],
@@ -2993,6 +3008,19 @@ floated-ind-sbj-num-cl-lex := floated-num-cl-lex &
 floated-ind-obj-num-cl-lex := floated-num-cl-lex &
 [ SYNSEM.LOCAL [CAT [HEAD [MOD < [ LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK [INDEX #xarg & full_ref-ind]] >],
 		     VAL [SPR.FIRST.LOCAL.CONT.HOOK [XARG #xarg]]]]].
+
+; (FCB 2005-01-17) Added event classifiers
+; 回、遍、度  not sure about 発, 拳 etc
+;;; (FCB 2005-01-28) added J-POSTHEAD left so they only modify following verbs
+
+event-num-cl-lex := adv-num-cl-lex & 
+[ SYNSEM.LOCAL [CAT [HEAD num-cl-event_head &
+			  [J-POSTHEAD left],
+		     VAL [SPR.FIRST.LOCAL.CONT.HOOK [LTOP #top,
+						     XARG #ind]]],
+		CONT [HOOK [LTOP #top,
+			    INDEX #ind],
+		      RELS <! !>]].
 
 
 ; (ERB 2004-1-18) These ones are differentiated from the 

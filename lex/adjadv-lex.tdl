@@ -353,11 +353,6 @@ scopal-adv-regular-lex &
 [ORTH <! "是非" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_zehi_a_rel].
 
-ichido-adv :=
-scopal-adv-regular-lex &
-[ORTH <! "一度" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_ichido_a_rel].
-
 moshi-adv :=
 scopal-adv-regular-lex &
 [ORTH <! "もし" !>,
@@ -568,6 +563,10 @@ isect-adv-lex &
 [ORTH <! "ほとんど" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_hotondo_a_rel].
 
+ichido-adv :=
+scopal-adv-regular-lex &
+[ORTH <! "一度" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_ichido_a_rel].
 
 ippeN-adv :=
 isect-adv-lex &
@@ -16193,19 +16192,6 @@ yuutou_2 := na-adj-lex &
 miyabi_2 := na-adj-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_miyabi_a_2_rel,
  ORTH <! "雅" !>].
-
-ikkai-multi := scopal-adv-regular-lex & 
-[ORTH <! "１", "回" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ikkai_a_rel]. 
-
-nikai-multi := scopal-adv-regular-lex & 
-[ORTH <! "２", "回" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_nikai_a_rel]. 
-
-ichido-multi := scopal-adv-regular-lex & 
-[ORTH <! "１", "度" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ichido_a_rel]. 
-
 
 ; あわや 
 
