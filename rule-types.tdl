@@ -804,9 +804,13 @@ empty-conjunction-type :< empty-preposition-type.
 ; constraint down lower in the hierarchy.  Likewise for C-CONT.LTOP =
 ; C-CONT.KEY.LBL.
 
+; (MS 2004-12-20) I want this to inherit its daughter's EMPTY value to be able
+; to restrict utterances in the case of quotations: ¡ÖÁ°ÁÕ¶Ê¡×¤ÎÎ¬¾Î
+
 
 utterance-type := unary-type  &  
-[SYNSEM j-synsem & [LOCAL [CAT [HEAD utterance_head & [SMOD marked],
+[SYNSEM j-synsem & [LOCAL [CAT [HEAD utterance_head & [SMOD marked,
+						       EMPTY #empty],
 				VAL  saturated],
 			   CTXT [BACKGROUND diff-list &
 					    [LIST [FIRST addr-honor_rel &
@@ -819,7 +823,8 @@ utterance-type := unary-type  &
 			   NUCL nucl_minus],
 		    LEX -,
 		    NON-LOCAL.AFFIX <! !>],
- ARGS.FIRST [SYNSEM [LOCAL  [CAT [HEAD.FORMAL.AHON #3,
+ ARGS.FIRST [SYNSEM [LOCAL  [CAT [HEAD [FORMAL.AHON #3,
+					EMPTY #empty],
 				  VAL optional-or-saturated],
 			     CTXT.BACKGROUND [LIST #2,
                                             LAST #4],
@@ -1873,6 +1878,7 @@ numcl2noun-rule-type :=  ordinary-nohon-n-lex &
 ;             ->  ARGS.FIRST.SYNSEM.LOCAL [... CAT [HEAD temporal-or-nadv_head  ...
 
 ; (MS 2004-12-13) This needs to link the HOOK.INDEX of its modifying thing.
+; (MS 2004-12-20) This shouldn't be unspec_compound_rel, but prep-mod-relation! º£ÆüÍè¤ë
 
 adv_np_rule-type := unary-type &
 [ SYNSEM [LOCAL [ CAT [ VAL saturated,
@@ -1889,7 +1895,7 @@ adv_np_rule-type := unary-type &
 			    CAT [ HEAD temporal-noun_head,
 				  VAL saturated ]],
 		     LKEYS.KEYREL modable-relation ],
-  C-CONT [ RELS <! unspec-compound-relation &
+  C-CONT [ RELS <! prep-mod-relation &
                   [ LBL #hand,
 		    PRED 'unspec,
                     ARG0 #ind & [ E.TENSE no_tense ],

@@ -469,6 +469,15 @@ lexeme-rule &
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 
+; (MS 2004-12-17) beki takes す in the case of する+べき: すべき
+
+beki-lexeme-infl-rule := 
+%suffix (する す)
+lexeme-rule &
+[RMORPH-BIND-TYPE beki-morph,
+ARGS.FIRST.STEMTYPE kurusuru-stem].
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJECTIVES;;;;;;;;;;;;;;;;;;;;
 
 ; (ERB 2002-01-22) Try making these work

@@ -253,6 +253,10 @@ quotation-sap-end_head  := brackets-or-quotations-end_head &
 			J-SPEC  < >,
                         J-POSTHEAD right].
 
+quotation-definition-end_head := brackets-or-quotations-end_head & nom_head-avm &
+                       [MOD null,
+			J-SPEC  null].
+
 ; (ERB 2001-08-09) I need a supertype to both noun_head and case-p_head to 
 ; get disjunctive modification possiblities for numeral classifiers w/o
 ; adding extra lexical entries.
@@ -298,9 +302,16 @@ pron_head-avm := pron_head & [MOD null,
 			      VN -,
 			      QUANTIFIABLE -].
 
-exceptional_noun_head :< nom_head-avm.
+exceptional_noun_head := nom_head-avm & [MOD null, 
+					 J-SPEC null, 
+					 NO-MOD -, 
+					 QUANTIFIABLE -].
 
-exceptional_noun_head-avm := exceptional_noun_head & [MOD null, J-SPEC null, NO-MOD -, QUANTIFIABLE -].
+
+exceptional_noun_nmod_head := nom_head-avm & [J-SPEC null, 
+					      QUANTIFIABLE -, 
+					      MOD < [LOCAL.CAT.HEAD noun_head]>, 
+					      J-POSTHEAD rels].
 
                                                                      
 
@@ -320,8 +331,7 @@ dofm_noun_head-avm := dofm_noun_head &
 nom_head  :< noun_head-avm.
 
 
-nom_head-avm  := nom_head & [J-SPEC null,
-                             MOD null].
+nom_head-avm  := nom_head & [J-SPEC null, ADJ -].
 
 
 title_head  :< noun_head-avm.
@@ -933,7 +943,7 @@ exceptional-adj_head := adj_head &
 ;  I thus take the MAIN-PRD + restriction on the modified item out.
 ;  "税金の項目を申告でなく源泉にしたいのですが"
 
-base-adv_head := adj-or-adv_head &
+adv_head := adj-or-adv_head &
             [POS adv,
              J-SPEC null,
              MARK null,
@@ -943,17 +953,13 @@ base-adv_head := adj-or-adv_head &
 ; (MS 2004-11-05) erased AUX aux_minus on the modified to account for aspectual reading
 ; of また彼が帰って来る
 
-adv_head := base-adv_head &
-            [MOD < [LOCAL [CAT.HEAD sentence-valid,
-                                  NUCL nucl_bool ]] >].
-
 
 adv_head-avm := adv_head &
-            [COP-ARG +,
-	     KEYS.KEY adv_rel,
+            [KEYS.KEY adv_rel,
+	     MOD < [LOCAL [CAT.HEAD sentence-valid]] >,
 	     H-TENSE present].
 
-case-adv_head := base-adv_head &
+case-adv_head := adv_head &
             [MOD < >].
 
 hes_head :< final_head.
@@ -1255,7 +1261,7 @@ ga-ni_transitive := sbj-obj-arg &
 adv_transitive := sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
 		     COMPS obl-1-arg &
-			   < [LOCAL.CAT.HEAD base-adv_head] >].
+			   < [LOCAL.CAT.HEAD adv_head] >].
 
 
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
@@ -2013,19 +2019,7 @@ casep-conj-p-lex := mod-p-lex &
 				 RELS <! #key !>]]]].
 
 
-; (MS 2004-12-15) For the conjunction of quotations: 「 居る 」 や 「 来る 」 の 尊敬語
 
-quot-conj-p-lex := mod-p-lex & 
-            [SYNSEM [LKEYS.KEYREL #key & [L-HNDL #arg,
-					  R-HNDL #mod],
-		     LOCAL [CAT [HEAD nmod-p_head-avm & [MOD < [LOCAL [CAT.HEAD quotation-sentence-end_head,
-								       CONT [HOOK.LTOP #mod]]] >,
-							 J-POSTHEAD left],
-                               VAL.COMPS.FIRST.LOCAL [CAT.HEAD quotation-sentence-end_head,
-						      CONT [HOOK.LTOP #arg]]],
-			    CONT n-conj-sem-type &
-                               [HCONS <! !>,
-				RELS <! #key !>]]]].
 
 ;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- others;;;;;;;;;;;
 
@@ -2403,7 +2397,7 @@ n-lex := n-lex-super & lexical_sign-word.
 
 
 exceptional-n-lex := n-lex &
-[SYNSEM [LOCAL [CAT [HEAD exceptional_noun_head-avm,
+[SYNSEM [LOCAL [CAT [HEAD exceptional_noun_head,
 		     VAL noun_sc],
 		CONT common-noun-sem-type & 
 		    [RELS <! #key !>,
@@ -2649,7 +2643,7 @@ product-name-lex := name-lex &
 
 nom-lex := n-lex-super & 
            [SYNSEM [LOCAL [CAT [HEAD nom_head-avm,
-                                VAL nom_sc & [SPR #spr]],
+                                VAL.SPR #spr],
                             CTXT.BACKGROUND <! !>,
 			   ARG-S #spr,
                           BAR +],
@@ -3494,7 +3488,8 @@ quotation-sentence-init-lex := lexical_sign &
                        INFLECTED +].
 
 ; (MS 2004-08-24) linked INDEX and XARG to INDEX and XARG of the complement.
-; (MS 2004-12-15) we need to link the whole HOOK.
+; (MS 2004-12-15) we need to link the whole HOOK, which can then be accessed by 
+; conjunctions (「 居る 」 や 「 来る 」 や 「 行く 」 の 尊敬語 。)
 
 quotation-sentence-end-lex := lexical_sign &
                       [SYNSEM [LOCAL [CAT [VAL obj-obj2-arg &
@@ -3539,6 +3534,40 @@ quotation-sap-end-lex := lexical_sign &
                                       CTXT.BACKGROUND <! !>],
                                NON-LOCAL [QUE <! !>,
                                        AFFIX <! !>]],
+                       INFLECTED +].
+
+
+; (MS 2004-12-20) This is for definition sentences, such as 「 来る 」 の 尊敬語
+
+quotation-definition-end-lex :=  lexical_sign &
+                      [SYNSEM [LOCAL [CAT [VAL obj-obj2-arg &
+					     [COMPS  obl-2-args & #comps &
+						     < [LOCAL [CAT [HEAD final_head & [EMPTY -],
+								    VAL saturated],
+							       CONT.HOOK.LTOP #vind]],
+						       [LOCAL.CAT.HEAD quotation-noun-init_head] >],
+					   HEAD quotation-definition-end_head],
+				      ARG-S #comps,
+                                      CONT [HOOK [LTOP #ltop,
+						  INDEX #index],
+					    RELS <! #key,
+						    message & [LBL #arg1,
+							       PRED proposition_m_rel,
+							       MARG #marg],
+						    quant-relation & 
+						  [PRED 'udef_rel,
+						   ARG0 #index,
+						   RSTR #rstr]  !>,
+                                              HCONS <! qeq & [HARG #rstr, LARG #ltop],
+						       qeq & [HARG #marg, LARG #vind] !> ],
+                                      CTXT.BACKGROUND <! !>],
+                               NON-LOCAL [QUE <! !>,
+                                       AFFIX <! !>],
+			       LKEYS.KEYREL #key & noun-arg1-relation &
+					  [PRED 'nom_rel,
+					   ARG0 #index,
+					   ARG1 #arg1,
+					   LBL #ltop]],
                        INFLECTED +].
                        
 
@@ -3825,13 +3854,14 @@ wh-word-honsubj-lex := wh-word-person-lex &
 ; on the SPR here from [SMOD decl] to [SMOD unmarked].
 ; (MS 2003-10-08) Problems with Matrix 0.5?
 ; (FCB 2004-01-07) Fixed problem with koto HOOK by coindexing INDEX with ARG0
+; (MS 2004-12-17) But it should not take an empty copula.
 
-nom-pred-lex := nom-lex & 
+nom-pred-lex-basic := nom-lex & 
        [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST [LOCAL [CONT.HOOK.LTOP #verb-hand,
 						 CAT [HEAD verb_head & [MAIN-PRD -,
 									MODUS uttmodus,
-									SMOD unmarked],
-						      VAL saturated],
+									SMOD unmarked,
+									EMPTY -]],
 						 BAR +]]],
                       CONT  nom-pred-sem-type &
                           [RELS <! [ARG0 #i,
@@ -3855,12 +3885,17 @@ nom-pred-lex := nom-lex &
                                     LARG #verb-hand] !> ]],
 		LKEYS.KEYREL.PRED #k-pred]].
 
+nom-pred-lex := nom-pred-lex-basic & [SYNSEM.LOCAL.CAT [HEAD.MOD null,
+							 VAL nom_sc & [SPR.FIRST.LOCAL.CAT.VAL saturated]]].
+
 
 nom-pred-vn-lex := nom-pred-lex &
 		   [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD vn_head].
 
 nom-exceptional-pred-lex :=  nom-pred-lex &
-			     [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head-avm].
+			     [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head].
+
+
 
 ; (MS 2003-10-08) Problems with Matrix 0.5?
 ;; (FCB 2003-08-13) made MAIN-PRD bool to allow  (do-parse-tty "歩い て 行く こと")
@@ -3899,14 +3934,14 @@ nom-exceptional-pred-lex :=  nom-pred-lex &
 
 nom-common-lex := nom-lex & lexical_sign-word &
                   [SYNSEM [LKEYS.KEYREL #key & [ARG0 #i],
-			   LOCAL [CAT.VAL.SPR.FIRST.LOCAL [CAT.HEAD det_head & [SMOD decl]],
+			   LOCAL [CAT.VAL nom_sc & [SPR.FIRST.LOCAL [CAT.HEAD det_head & [SMOD decl]]],
 				  CONT common-noun-sem-type &
 							  [HOOK.INDEX #i,
 							   RELS <! #key !>,
 							   HCONS <! !> ]]]].
 
 nom-exceptional-common-lex := nom-common-lex &
-			      [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head-avm].
+			      [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head].
 
 ; (ERB 2001-11-07) Need a supertype for nominalizers that is
 ; like nouns but inherits from lexical_sign and not
@@ -3918,8 +3953,8 @@ nom-exceptional-common-lex := nom-common-lex &
 ; (MS 2003-12-17) Adapting to Matrix Ver. 0.6: unspec_rel is now unspec-compound-relation
 
 nom-dummy-lex := nom-lex & lexical_sign-word &
-       [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
-                                                 CONT [HOOK.INDEX #spri]]],
+       [SYNSEM [LOCAL [CAT [VAL nom_sc & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
+                                                 CONT [HOOK.INDEX #spri]]]],
                       CONT nom-sem-type &
                           [HOOK.INDEX #i,
                            RELS diff-list & 
@@ -3931,12 +3966,12 @@ nom-dummy-lex := nom-lex & lexical_sign-word &
 		LKEYS.KEYREL #key & [ARG0 #i]]].
 
 nom-exceptional-dummy-lex := nom-dummy-lex &
-			     [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head-avm].
+			     [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head].
 
 
 nom-transitive-lex := nom-lex & lexical_sign-word &
-       [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
-                                                 CONT [HOOK.INDEX #spri]]],
+       [SYNSEM [LOCAL [CAT [VAL nom_sc & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
+                                                 CONT [HOOK.INDEX #spri]]]],
                       CONT nom-sem-type &
                           [HOOK [INDEX #i],
                            RELS diff-list & 
@@ -4038,6 +4073,7 @@ adv-wh-lex := adv-lex &
 		      LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod &
 						    [ CONT [ MOD-HAND #head-hd,
 							     MOD-IND #ind]]] >,
+				       COP-ARG +,
 				       J-POSTHEAD left],
 			     CONT wh-adv-sem-type &
 				      [HOOK [LTOP #head-hd,
@@ -4065,6 +4101,7 @@ isect-adv-lex := adv-lex &
                   [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod & 
 							 [CONT.HOOK [LTOP #handel,
 								     INDEX #ind]]] >,
+					    COP-ARG +,
 					    J-POSTHEAD left],
                                   CONT i-sect-adv-sem-type &
 					   [HOOK.INDEX #ind,
@@ -4113,12 +4150,18 @@ scopal-adv-lex := adv-lex &
                            NON-LOCAL.QUE <! !>]].
 
 scopal-adv-regular-lex := scopal-adv-lex &
-			  [SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD left].
+			  [SYNSEM.LOCAL.CAT.HEAD [J-POSTHEAD left,
+						  COP-ARG +]].
+
+
+; (MS 2004-12-15) This doesn't have to be COMPS null on the modifiee, otherwise we
+; don't get relative-clause-obj-gap rules. But it should be COP-ARG -, such that
+; we will not get spurious ambiguity in the case of 人が食べるべきだ
 
 scopal-adv-right2left-lex := scopal-adv-lex &
 			  [SYNSEM.LOCAL.CAT.HEAD [J-POSTHEAD right,
-						  MOD < [LOCAL.CAT [HEAD verb_head,
-								 VAL [COMPS null]]] > ]].
+						  COP-ARG -,
+						  MOD < [LOCAL.CAT.HEAD verb_head] > ]].
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- numbers;;;;;;;;;;;;;;;;;;
@@ -4845,7 +4888,8 @@ na-naarg-end-lex :=  na-end-lex &
 		     [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
 ; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-03-22) 
+; (MS 2004-12-20) This is used for na-adjectives that can have ni-marking and then become adverbs,
+; such as 元気になる
 
 naadj2adv-end-lex := lexical_sign-word &
                      [SYNSEM j-synsem &
@@ -5877,6 +5921,7 @@ v2adv-end-lex := lexical_sign-word &
                [SYNSEM  j-synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal_mod & 
 									     [CONT [MOD-HAND #handel,
 										    MOD-IND #ind]]] >,
+								     COP-ARG +,
 								   J-POSTHEAD left],
 					      VAL obj-arg &
 						   [COMPS.FIRST [OPT - ,
@@ -5898,15 +5943,15 @@ v2adv-end-lex := lexical_sign-word &
 
 v2n-end-lex :=  nom-lex &
 		[SYNSEM [LKEYS.KEYREL #key & [ARG0 #i],
-			 LOCAL [CAT.VAL.SPR.FIRST [LOCAL [CAT [HEAD verb_head &
-								    [MODUS infinitive,
-								     ADJ -,
-								     FORMAL.AHON -,
-								     VN -,
-								     MAIN-PRD -],
-							       VAL saturated],
-							  CONT.HOOK.LTOP #v-hd,
-							  NUCL nucl_plus]],
+			 LOCAL [CAT.VAL nom_sc & [SPR.FIRST [LOCAL [CAT [HEAD verb_head &
+									      [MODUS infinitive,
+									       ADJ -,
+									       FORMAL.AHON -,
+									       VN -,
+									       MAIN-PRD -],
+									 VAL saturated],
+								    CONT.HOOK.LTOP #v-hd,
+								    NUCL nucl_plus]]],
 				CONT nom-pred-sem-type &
 						  [RELS <! #key &
 							 [ARG1 #prpstn-hd,
@@ -5990,6 +6035,19 @@ mai-end-lex := v-noncaus-op-end-lex &
 					   MARG #h7] !>,
                                     HCONS <! qeq & [HARG #h7,
                                                      LARG #h1] !>]]]].
+
+beki-end-lex:= v-noncaus-op-end-lex &
+               [SYNSEM [LKEYS.KEYREL #key & scopal-adv-relation & [PRED '_beki_a_rel,
+								   ARG0 #ind,
+								   ARG1 #h3],
+			LOCAL [CAT [HEAD v-op-end_head,
+                                   VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
+								    INDEX #ind]]]],
+                              CONT [HOOK [INDEX #ind],
+                                    RELS <! #key !>,
+                                    HCONS <! qeq & [HARG #h3,
+                                                     LARG #h1] !>]]]].
+
  
 
 
@@ -6308,11 +6366,14 @@ v2-infinitive-minusshon-stem-lex := v2-minusshon-stem-lex & [STEMTYPE infinitive
 ; ARG1.  Changing it to ARG1.  Nothing was explicitly saying arg123-relation,
 ; so now it's just arg12-relation.
 
+; (MS 2004-12-20) Just identify the COMPS...LTOP with the KEYREL...LBL, not go via COMPS..MOD..LTOP.
+; 元気になる
+
 v2a-stem-lex := v-stem-lex &
                 [SYNSEM [LOCAL [CAT [HEAD.COP -,
                                      VAL adv_transitive &
-					      [COMPS.FIRST.LOCAL [CAT.HEAD.MOD.FIRST.LOCAL.CONT.HOOK.LTOP #hand,
-								  CONT [HOOK [INDEX #objind]]],
+					      [COMPS.FIRST.LOCAL [CONT [HOOK [INDEX #objind,
+									      LTOP #hand]]],
 				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 				
 				CONT [HOOK [XARG #sbjind,

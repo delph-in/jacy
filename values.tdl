@@ -295,6 +295,7 @@ aa-morph :< a-or-aa-morph.
 
 nd-morph :< cstem-morph.
 mai-morph :< cstem-morph.
+beki-morph :< cstem-morph.
 imp-morph :< cstem-morph.
 cond-morph :< cstem-morph.
 

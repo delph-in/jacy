@@ -25,6 +25,13 @@ utt := label &
        [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD marked],
         LABEL-NAME "UTT"].
 
+punct := label &
+      [SYNSEM.LOCAL.CAT.HEAD punct_head,
+       LABEL-NAME "PUNCT"].
+
+punct2 := label &
+      [SYNSEM.LOCAL.CAT.HEAD punct_head2,
+       LABEL-NAME "PUNCT"].
 
 pp := label &
       [SYNSEM [LOCAL.CAT.HEAD p_head,
@@ -169,13 +176,7 @@ cardp := label &
                      BAR +],
        LABEL-NAME "CARD-P"].
 
-punct := label &
-      [SYNSEM.LOCAL.CAT.HEAD punct_head,
-       LABEL-NAME "PUNCT"].
 
-punct2 := label &
-      [SYNSEM.LOCAL.CAT.HEAD punct_head2,
-       LABEL-NAME "PUNCT"].
 
 conj := label &
       [SYNSEM.LOCAL.CAT.HEAD n_conj_head,

@@ -205,19 +205,21 @@ pp_np_rule-time := empty-preposition-type &
 ; (MS 2004-04-02) Empty case particles. Try to restrict: to case particle function and lexical nouns.
 ; I'm sure this will add loads of ambiguity. Only for parsing spoken Japanese!
 ; (MS 2004-12-14) RELS and HCONS and HOOK should come from the argument.
+; (MS 2004-12-16) Maybe this adds too much ambiguity. Taking it out again.
 
-pp_np_rule-case := empty-preposition-type &
-              [SYNSEM [LOCAL [CAT [HEAD empty-case-p_head & [CASE ga-or-wo],
-				   VAL.COMPS < >],
-			      CONT [HOOK #hook,
-				    RELS #rels,
-				    HCONS #hcons]],
-		       NON-LOCAL.ROBUST +],
-	       C-CONT.RELS <! !>, 
-	       ARGS.FIRST.SYNSEM [LEX +,
-				  LOCAL.CONT [HOOK #hook,
-					      RELS #rels,
-					      HCONS #hcons]]].
+;pp_np_rule-case := empty-preposition-type &
+;              [SYNSEM [LOCAL [CAT [HEAD empty-case-p_head & [CASE ga-or-wo],
+;				   VAL.COMPS < >],
+;			      CONT [HOOK #hook,
+;				    RELS #rels,
+;				    HCONS #hcons]],
+;		       NON-LOCAL.ROBUST +],
+;	       C-CONT.RELS <! !>, 
+;	       ARGS.FIRST.SYNSEM [LEX +,
+;				  LOCAL [CONT [HOOK #hook,
+;					       RELS #rels,
+;					       HCONS #hcons],
+;					 CAT.VAL saturated]]].
 
 
 
@@ -661,7 +663,7 @@ rel-cl-sbj-gap-adj-rule := rel-cl-gap-rule  &
 rel-cl-obj1-gap-rule := rel-cl-gap-rule & 
 			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
 			 ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
-							 COMPS 1-list &
+							 COMPS opt-1-arg &
 							      [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
 							       REST onull]]]]]],
 			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind ]>].
