@@ -240,8 +240,8 @@ set in the code")
 ;;; solution.  the following is to enable detection of `fragmentary' MRSs.
 ;;;
 
-(setf *semi-fragment-relations*
-  (list "fragment_rel" (mrs::vsym "unspec_conj_rel")))
+;(setf *semi-fragment-relations*
+;  (list "fragment_rel" (mrs::vsym "unspec_conj_rel")))
 
 (defparameter *alex-mode* nil
   "if t, allows scope to have specified relations")

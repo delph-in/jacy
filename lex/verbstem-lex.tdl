@@ -21138,6 +21138,13 @@ oshimu-2-stem := v1-c-stem-lex &
 ORTH <! "愛しむ" !>].
 
 
+;挽く
+
+hiku-3-stem := v1-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hiku_v_3_rel]],
+ORTH <! "挽く" !>].
+
+
 ;飲み潰れる
 
 nomitsubureru-stem := intrans-v-stem-lex &

@@ -3943,6 +3943,7 @@ wh-word-honsubj-lex := wh-word-person-lex &
 ; (MS 2003-10-08) Problems with Matrix 0.5?
 ; (FCB 2004-01-07) Fixed problem with koto HOOK by coindexing INDEX with ARG0
 ; (MS 2004-12-17) But it should not take an empty copula.
+; (MS 2005-01-26) BAR + on the SPR is not right, VNs for nom-pred-vn-lex are not BAR +
 
 nom-pred-lex-basic := nom-lex & 
        [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST [LOCAL [CONT.HOOK.LTOP #verb-hand,
@@ -3950,7 +3951,7 @@ nom-pred-lex-basic := nom-lex &
 									MODUS uttmodus,
 									SMOD unmarked,
 									EMPTY -]],
-						 BAR +]]],
+						 BAR bool]]],
                       CONT  nom-pred-sem-type &
                           [RELS <! [ARG0 #i,
 				    PRED #k-pred,
@@ -3974,7 +3975,7 @@ nom-pred-lex-basic := nom-lex &
 		LKEYS.KEYREL.PRED #k-pred]].
 
 nom-pred-lex := nom-pred-lex-basic & [SYNSEM.LOCAL.CAT [HEAD.MOD null,
-							 VAL nom_sc & [SPR.FIRST.LOCAL.CAT.VAL saturated]]].
+							VAL nom_sc & [SPR.FIRST.LOCAL.CAT.VAL saturated]]].
 
 
 nom-pred-vn-lex := nom-pred-lex &
@@ -4057,15 +4058,17 @@ nom-exceptional-dummy-lex := nom-dummy-lex &
 			     [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head].
 
 
-nom-transitive-lex := nom-lex & lexical_sign-word &
-       [SYNSEM [LOCAL [CAT [VAL nom_sc & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
-                                                 CONT [HOOK.INDEX #spri]]]],
-                      CONT nom-sem-type &
-                          [HOOK [INDEX #i],
-                           RELS diff-list & 
-                                 <! #key !>,
-                           HCONS <! !>]],
-		LKEYS.KEYREL #key & [ARG0 #i, ARG1 #spri]]].
+; (MS 2005-01-27) This seems not to be used any more.
+
+;nom-transitive-lex := nom-lex & lexical_sign-word &
+;       [SYNSEM [LOCAL [CAT [VAL nom_sc & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl];,
+;                                                 CONT [HOOK.INDEX #spri]]]],
+;                      CONT nom-sem-type &
+;                          [HOOK [INDEX #i],
+;                           RELS diff-list & 
+;                                 <! #key !>,
+;                           HCONS <! !>]],
+;		LKEYS.KEYREL #key & [ARG0 #i, ARG1 #spri]]].
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- adjectives;;;;;;;;;;;;;;;;;;
@@ -7557,6 +7560,9 @@ aspect-shon-kurusuru-stem-lex := aspect-shon-stem-lex & [STEMTYPE kurusuru-stem]
 ; from the content verb: 食べなくている
 
 ; (MS 2004-12-01) Why do we need INSTLOC here? Take it out.
+; (MS 2005-01-11) The XARG should be identified with the verb, otherwise
+; we get a reading where the aspect verb undergoes zero pronominalization,
+; while the main verb doesn't (友達を三人待っています)
 
 pure-aspect-stem-lex := verb-stem-lex &
 [SYNSEM [ LOCAL [CAT [ HEAD aux-stem_head & 
@@ -7566,11 +7572,13 @@ pure-aspect-stem-lex := verb-stem-lex &
                             [SUBJ.FIRST #sbj,
 			     SPR.FIRST.LOCAL [ CONT.HOOK [ LTOP #ohand,
 							   INDEX #event & [SORT #sort,
-									   E.MOOD #mood]]]]],
+									   E.MOOD #mood],
+							   XARG #xarg]]]],
                  CONT [RELS <! !>,
                        HOOK [INDEX [ E [TENSE #tense,
 					MOOD #mood],
 				     SORT #sort],
+			     XARG #xarg,
 			     LTOP #ohand],
                        HCONS <! !> ],
 		 ARG-S < #sbj >],

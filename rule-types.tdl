@@ -2161,3 +2161,43 @@ cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
 					  TERM2 #term2] !>,
 		ARGS < card-lex & [SYNSEM.LOCAL.CONT.RELS.LIST.REST.FIRST times-relation & [LBL #term1]] >,
 		INFLECTED +].
+
+vstem-vstem-rule-type := head-final-type & 
+		    orth-princ &
+		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
+				    BAR -],
+			     LEX +],
+		     INFLECTED #infl,
+		     J-NEEDS-AFFIX #aff,
+		     RMORPH-BIND-TYPE #rmorphbind,
+		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+							VAL #val],
+						   CONT.HOOK.XARG #arg1,
+						   BAR -],
+					    LEX +],
+				   RMORPH-BIND-TYPE #im & i-morph],
+		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+						   VAL.UNSAT +],
+					      CONT.HOOK.XARG #arg1,
+					      BAR -],
+				       LEX +],
+			       INFLECTED #infl,
+			       J-NEEDS-AFFIX #aff,
+			       LMORPH-BIND-TYPE #im,
+ 			       RMORPH-BIND-TYPE #rmorphbind]].
+
+adj-nominal-suffix-type := head-final-type & 
+			   orth-princ &
+			   [SYNSEM.LOCAL [CAT [HEAD noun_head &
+						    [SMOD unmarked],
+					       VAL spr-arg & [ UNSAT -]]
+					      ],
+			    NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD i-adj-stem_head,
+							       VAL.UNSAT -],
+							  BAR -],
+						   LEX +],
+					  RMORPH-BIND-TYPE shortadj-morph],
+			    HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head-avm &
+							       [J-POSTHEAD right],
+							  VAL.UNSAT +],
+						     BAR -]]]].
