@@ -1,76 +1,103 @@
 
-o-hon-vnpref := hon-prefix-lex &
- [ ORTH <! "お" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL [ BAR +,
-                                               CAT.HEAD vn_head ] ] > ] ].
-
-go-hon-npref := hon-prefix-lex &
- [ ORTH <! "ご" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL [ BAR +,
-                                               CAT [ HEAD ordinary_noun_head,
-                                                     VAL.SPR 1-list ] ] ] > ] ].
-
-aru_1_3 := noun_mod-lex-l &
- [ ORTH <! "ある" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "aru_1_1",
-            LOCAL.CAT.HEAD.MOD.FIRST.LEX + ] ].
-
-soushimashitara-multi := interj-lex &
- [ ORTH <! "そう", "しましたら" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "soushimashitara",
-            LOCAL.BAR + ] ].
-
-go-hon-katakana-npref := hon-prefix-lex &
- [ ORTH <! "ゴ" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL [ BAR +,
-                                               CAT [ HEAD ordinary_noun_head,
-                                                     VAL.SPR 1-list ] ] ] > ] ].
-
-digit-interj := interj-lex &
- [ ORTH <! "OneDigitErsatz" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "digit",
-            NON-LOCAL.ROBUST + ] ].
-
-go-hon-vnpref := hon-prefix-lex &
- [ ORTH <! "ご" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL [ BAR +,
-                                               CAT.HEAD vn_head ] ] > ] ].
-
-no-temp-nmod := temp_nmod-lex &
- [ ORTH <! "の" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "no",
-            LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD noun_head-avm ] > ] ].
-
-o-hon-npref := hon-prefix-lex &
- [ ORTH <! "お" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL [ BAR +,
-                                               CAT [ HEAD ordinary_noun_head,
-                                                     VAL.SPR 1-list ] ] ] > ] ].
-
-go-hon-kanji-npref := hon-prefix-lex &
- [ ORTH <! "御" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL [ BAR +,
-                                               CAT [ HEAD ordinary_noun_head,
-                                                     VAL.SPR 1-list ] ] ] > ] ].
-
-o-hon-napref := hon-prefix-lex &
- [ ORTH <! "お" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL.CAT.HEAD na-adj_head ] > ] ].
-
-go-hon-kanji-vnpref := hon-prefix-lex &
- [ ORTH <! "御" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
-                                 MOD < [ LOCAL [ BAR +,
-                                               CAT.HEAD vn_head ] ] > ] ].
-
 ano-excl := excl-lex &
- [ ORTH <! "あの" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ano_excl",
-            NON-LOCAL.ROBUST + ] ].
+[ORTH <! "あの" !>,
+ SYNSEM [LKEYS.KEYREL.PRED 'ano_excl,
+	 NON-LOCAL.ROBUST +]].
+
+; Used 982 times
+;(CH 2003-08-08) 連体の「ある」はなかったので追加
+; (MS 2003-12-22) LEX + against spurious ambiguity.
+aru_1_3 := noun_mod-lex-l &
+[SYNSEM [LKEYS.KEYREL.PRED 'aru_1_1,
+	 LOCAL.CAT.HEAD.MOD.FIRST.LEX +],
+ ORTH <! "ある" !> ].
+
+; (TT 2003-09-04) END
+digit-interj := interj-lex &
+	         [ORTH <! "OneDigitErsatz" !>,
+                  SYNSEM [LKEYS.KEYREL.PRED 'digit,
+			  NON-LOCAL.ROBUST +]].
+
+
+go-hon-kanji-npref :=
+hon-prefix-lex &
+[ORTH <! "御" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] > ]].
+
+
+go-hon-kanji-vnpref :=
+hon-prefix-lex &
+[ORTH <! "御" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT.HEAD vn_head,
+                                   BAR +]] > ]].
+
+
+go-hon-katakana-npref :=
+hon-prefix-lex &
+[ORTH <! "ゴ" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] > ]].
+
+
+go-hon-npref :=
+hon-prefix-lex &
+[ORTH <! "ご" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] > ]].
+
+
+go-hon-vnpref :=
+hon-prefix-lex &
+[ORTH <! "ご" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAL [CAT.HEAD vn_head,
+                                   BAR +]] > ]].
+
+;先生のです
+;先生のはよい。
+;私はトムのがほしい。
+no-temp-nmod :=
+temp_nmod-lex &
+[ORTH <! "の" !>,
+ SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD noun_head-avm] >,
+	 LKEYS.KEYREL.PRED 'no]].
+
+
+o-hon-napref :=
+hon-prefix-lex &
+[ORTH <! "お" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl.CAT.HEAD na-adj_head] > ]].
+
+
+o-hon-npref :=
+hon-prefix-lex &
+[ORTH <! "お" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
+					VAL.SPR 1-list],
+                                   BAR +]] >]].
+
+
+o-hon-vnpref :=
+hon-prefix-lex &
+[ORTH <! "お" !>,
+ SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
+                        MOD < [LOCAl [CAT.HEAD vn_head,
+                                   BAR +]]> ]].
+
+
+soushimashitara-multi :=
+                  interj-lex &
+                  [ORTH <! "そう",  "しましたら" !>,
+                   SYNSEM [LOCAL.BAR +,
+			   LKEYS.KEYREL.PRED 'soushimashitara]].
+

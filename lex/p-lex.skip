@@ -1,1364 +1,1621 @@
 
-kanaa-chasen := s-end2-lex &
- [ ORTH <! "か", "な", "あ" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD quest,
-                    CONT.RELS [ LAST #2,
-                                  LIST [ FIRST message & [ PRED ne_m_rel ],
-                                         REST #2 ] ],
-                    CTXT.C-INDICES.SPEAKER.PNG.GEN masc ] ].
-
-omegutte := postp-lex &
- [ ORTH <! "をめぐって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "omegutte" ] !> ] ].
-
-no-nspec-1 := nspec-p-lex &
- [ ORTH <! "の" !>,
-   SYNSEM.LOCAL.CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ] ].
-
-nikanshite := postp-lex &
- [ ORTH <! "に関して" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nikanshite" ] !> ] ].
-
-kara-cardmod3 := nounmod-p-lex &
- [ ORTH <! "―" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL [ BAR +,
-                                                        CAT.HEAD int_head ] ] ],
-                    CONT.RELS <! [ PRED "kara_cardmod" ] !> ] ].
-
-nanka := postp-lex &
- [ ORTH <! "なんか" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nanka,
-                    CONT.RELS <! [ PRED "nanka_prep" ] !> ] ].
-
-toshite := postp-lex &
- [ ORTH <! "として" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toshite,
-                    CONT.RELS <! [ PRED "toshite" ] !> ] ].
-
-arrow-nmod := nounmod-p-lex &
- [ ORTH <! "→" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! [ PRED "arrow" ] !> ] ].
-
-no-parmod := parmod-p-lex &
- [ ORTH <! "の" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE parmod,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! [ PRED "no-parmod" ] !> ] ].
-
-keredo-sconj-np := s-conj-nonprop1-lex &
- [ ORTH <! "けれど" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "keredomo",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nara-conj-np := s-conj-nonprop1-lex &
- [ ORTH <! "なら" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "nara",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-totomoni-hiragana := postp-lex &
- [ ORTH <! "とともに" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE tomo,
-                    CONT.RELS <! [ PRED "totomo_prep" ] !> ] ].
-
-tame-sconj := s-conj1-lex &
- [ ORTH <! "ため" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "tame",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-to-comp3 := to-case-lex &
- [ ORTH <! "と" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head & [ PTYPE nontop ] ] ].
-
-noni-sconj := s-conj1-lex &
- [ ORTH <! "のに" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "noni",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-node-sconj-np := s-conj-nonprop1-lex &
- [ ORTH <! "ので" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "node",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-notame-kanji-p := plain-topic-nobj-lex &
- [ ORTH <! "の", "為" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE notame,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "notame" ] !> ] ].
-
-ni-nmod-1 := nounmod-p-lex &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.VN + ] >,
-                                 PTYPE ni ],
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! prep-mod-relation !> ] ].
-
-dash-cardmod := nounmod-p-lex &
- [ ORTH <! "／" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL [ BAR +,
-                                                        CAT.HEAD int_head ] ] ],
-                    CONT.RELS <! [ PRED "kara_cardmod" ] !> ] ].
-
-monono-send := s-ell-end-lex &
- [ ORTH <! "ものの" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD decl,
-                    CONT.RELS.LIST.FIRST.PRED "monono_rel" ] ].
-
-shika-p-pobj := topic-pobj-lex &
- [ ORTH <! "しか" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MODUS negative ] >,
-                                 PTYPE shika ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [ CASE mod,
-                                                                     PTYPE overt ] ],
-                    CONT.RELS <! [ PRED "shika" ] !> ] ].
-
-koso-pobj := topic-pobj-lex &
- [ ORTH <! "こそ" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE koso,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [ CASE mod,
-                                                                     PTYPE nontop ] ],
-                    CONT.RELS <! [ PRED "koso" ] !> ] ].
-
-mo-sconj := s-conj1-lex &
- [ ORTH <! "も" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "mo",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-de-advp-sub-1 := adv-p-lex-1 &
- [ ORTH <! "で" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE de ],
-                    CONT.RELS <! [ PRED "de" ] !> ] ].
-
-ni-parg := adv-p-lex-4 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE ni ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case ],
-                    CONT.RELS <! [ PRED "ni" ] !> ] ].
-
-nitsuitedesuga := postp-lex &
- [ ORTH <! "について", "ですが" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitsuitedesuga" ] !> ] ].
-
-mo-parg := topic-pobj-lex &
- [ ORTH <! "も" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE mo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head & [ PTYPE overt ] ],
-                    CONT.RELS <! [ PRED "mo" ] !> ] ].
-
-nitsuki := postp-lex &
- [ ORTH <! "に", "つき" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitsuite" ] !> ] ].
-
-tou-p := postp-lex &
- [ ORTH <! "とう" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE tou,
-                    CONT.RELS <! [ PRED "tou_prep" ] !> ] ].
-
-niatari-hiragana-varg := postp-lex-1 &
- [ ORTH <! "にあたり" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "niatari" ] !> ] ].
-
-niatari-narg := postp-lex &
- [ ORTH <! "に当たり" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "niatari" ] !> ] ].
-
-nanode-np := s-conj-nonprop1-lex &
- [ ORTH <! "なので" !>,
-   SYNSEM.LOCAL.CAT.HEAD.SMOD decl ].
-
-ni-case := ga-wo-ni-p-lex &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE ni,
-                                 PTYPE ni ] ].
-
-ni-adjarg := adv-p-lex-3 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE ni,
-                    CONT.RELS <! [ PRED "ni" ] !> ] ].
-
-denaito-sap-np := s-conj-nonprop1-decl-lex &
- [ ORTH <! "でないと" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "denaito",
-            LOCAL.CAT.VAL desu-sap_sc ] ].
-
-keredo-sconj := s-conj1-lex &
- [ ORTH <! "けれど" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "keredomo",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-bakari-parg := adv-p-lex-4 &
- [ ORTH <! "ばかり" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE bakari ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD [ CASE mod,
-                                                                     PTYPE to ] ],
-                    CONT.RELS <! [ PRED "bakari" ] !> ] ].
-
-nitaishi := postp-lex &
- [ ORTH <! "に対し" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitaishite" ] !> ] ].
-
-dewa-advarg := topic-advarg-lex &
- [ ORTH <! "で", "は" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE wa,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD adv_head ],
-                    CONT.RELS <! [ PRED "dewa" ] !> ] ].
-
-kedo := s-conj1-lex &
- [ ORTH <! "けど" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "kedo",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nitotte-multi := postp-lex &
- [ ORTH <! "に", "とって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitsuite" ] !> ] ].
-
-toshimashite-multi := postp-lex &
- [ ORTH <! "と", "し", "まし", "て" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toshite,
-                    CONT.RELS <! [ PRED "toshite" ] !> ] ].
-
-kadouka-comp-varg := comp-int-lex &
- [ ORTH <! "か", "どう", "か" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST [ LOCAL.CAT.HEAD verb_head & [ MAIN-PRD -,
-                                                                     SMOD unmarked ],
-                                                NON-LOCAL.QUE [ LAST #2,
-                                                                  LIST #2 ] ] ] ].
-
-ni-parentarg := adv-p-lex-7 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE ni,
-                    CONT.RELS <! [ PRED "ni" ] !> ] ].
-
-made-1-kanji := postp-lex-1 &
- [ ORTH <! "迄" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE made,
-                    CONT.RELS <! [ PRED "made" ] !> ] ].
-
-tomo := postp-lex &
- [ ORTH <! "とも" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE tomo,
-                    CONT.RELS <! [ PRED "tomo_prep" ] !> ] ].
-
-hodo-p := postp-lex &
- [ ORTH <! "ほど" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE kurai,
-                    CONT.RELS <! [ PRED "hodo" ] !> ] ].
-
-kedo-np := s-conj-nonprop1-lex &
- [ ORTH <! "けど" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "kedo",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-tono := postp-lex &
- [ ORTH <! "と", "の" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toiu,
-                    CONT.RELS <! [ PRED "toiu" ] !> ] ].
-
-node-sconj-multi := s-conj1-lex &
- [ ORTH <! "の", "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "node",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-monono-sconj := s-conj1-lex &
- [ ORTH <! "ものの" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "monono",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-noni-send := s-ell-end-lex &
- [ ORTH <! "のに" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD decl,
-                    CONT.RELS.LIST.FIRST.PRED "noni_rel" ] ].
-
-nisaishi := postp-lex &
- [ ORTH <! "に際し" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nisaishite" ] !> ] ].
-
-demo := plain-topic-nobj-lex &
- [ ORTH <! "でも" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE mo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "demo" ] !> ] ].
-
-noni-sconj-np-multi := s-conj-nonprop1-lex &
- [ ORTH <! "の", "に" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "noni",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nitsukimashite := postp-lex &
- [ ORTH <! "につきまして" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ FORMAL.AHON +,
-                                 PTYPE nitsuite ],
-                    CONT.RELS <! [ PRED "nitsuite" ] !> ] ].
-
-kurai-p := postp-lex &
- [ ORTH <! "くらい" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE kurai,
-                    CONT.RELS <! [ PRED "kurai" ] !> ] ].
-
-niatatte-hiragana-narg := postp-lex &
- [ ORTH <! "にあたって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "niatatte" ] !> ] ].
-
-comma-advp := adv-p-lex-1 &
- [ ORTH <! "、" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE comma,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-nikansuru := nounmod-p-lex &
- [ ORTH <! "に関する" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! [ PRED "nikansuru" ] !> ] ].
-
-kara-parentarg := vmod-p-lex &
- [ ORTH <! "から" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD postp_head,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD parent-end_head ],
-                    CONT.RELS <! [ PRED "kara_prep" ] !> ] ].
-
-otoushite := postp-lex &
- [ ORTH <! "を通して" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "otoushite" ] !> ] ].
-
-toshimashite-2 := postp-lex &
- [ ORTH <! "としまして" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toshite,
-                    CONT.RELS <! [ PRED "toshite" ] !> ] ].
-
-datte := adv-p-lex-1 &
- [ ORTH <! "だって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE de,
-                    CONT.RELS <! [ PRED "datte" ] !> ] ].
-
-i-emp := s-end1-decl-minusahon-lex &
- [ ORTH <! "い" !>,
-   SYNSEM.LOCAL [ CAT.VAL.COMPS.FIRST [ LOCAL.CAT.HEAD.COP +,
-                                                NON-LOCAL.QUE [ LAST #3,
-                                                                  LIST #3 ] ],
-                    CTXT [ C-INDICES.SPEAKER #1,
-                           EMPATHY.EMPEE #1 ] ] ].
-
-nikakete-multi := postp-lex &
- [ ORTH <! "に", "かけ", "て" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nikakete,
-                    CONT.RELS <! [ PRED "nikakete" ] !> ] ].
-
-wa-varg := topic-vobj-lex &
- [ ORTH <! "は" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE wa,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-ka-nmod := nounmod-p-lex &
- [ ORTH <! "か" !>,
-   SYNSEM.LOCAL [ CAT.VAL.COMPS.FIRST [ LOCAL.CAT.HEAD verb_head & [ FIN +,
-                                                                     FORMAL.AHON -,
-                                                                     MAIN-PRD +,
-                                                                     MODUS uttmodus ],
-                                                NON-LOCAL.QUE <! #1 !> ],
-                    CONT [ HOOK.LTOP #1,
-                           RELS <! [ PRED "ka_nmod" ] !> ] ] ].
-
-gurai-p := postp-lex &
- [ ORTH <! "ぐらい" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE kurai,
-                    CONT.RELS <! [ PRED "kurai" ] !> ] ].
-
-nomi-topic := plain-topic-nobj-lex &
- [ ORTH <! "のみ" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE topic,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "nomi" ] !> ] ].
-
-kamo-naarg := comp-prpstn-lex &
- [ ORTH <! "かも" !>,
-   SYNSEM.LOCAL.CAT [ HEAD.PTYPE kamo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head ] ].
-
-nishitagatte-varg := postp-lex-1 &
- [ ORTH <! "に従って" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nishitagatte" ] !> ] ].
-
-e-main := postp-lex &
- [ ORTH <! "へ" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE e ],
-                    CONT.RELS <! [ PRED "e_prep" ] !> ] ].
-
-kara-sconj-np := s-conj-nonprop1-lex &
- [ ORTH <! "から" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "kara",
-            LOCAL.CAT [ HEAD.SMOD decl,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FIN + ] ] ].
-
-mo-saparg := topic-vmod-p-lex &
- [ ORTH <! "も" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE mo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap1_head ],
-                    CONT.RELS <! [ PRED "mo" ] !> ] ].
-
-zutsu-p := postp-lex &
- [ ORTH <! "ずつ" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE zutsu,
-                    CONT.RELS <! [ PRED "zutsu" ] !> ] ].
-
-goto-p := postp-lex &
- [ ORTH <! "ごと" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE zutsu,
-                    CONT.RELS <! [ PRED "goto" ] !> ] ].
-
-toitta := postp-lex &
- [ ORTH <! "といった" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toiu,
-                    CONT.RELS <! [ PRED "toitta" ] !> ] ].
-
-niwatatte := postp-lex &
- [ ORTH <! "にわたって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE niyotte,
-                    CONT.RELS <! [ PRED "niwatatte" ] !> ] ].
-
-ne-conj := s-conj1-lex &
- [ ORTH <! "ね" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ne_rel",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-ja-p := topic-nobj-lex &
- [ ORTH <! "じゃ" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD i-adj_head & [ MODUS negative ] ] >,
-                                 PTYPE wa ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-goro-p := postp-lex &
- [ ORTH <! "ごろ" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE kurai,
-                    CONT.RELS <! [ PRED "goro" ] !> ] ].
-
-toshitara-multi := postp-lex &
- [ ORTH <! "と", "し", "たら" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toshite,
-                    CONT.RELS <! [ PRED "toshitara" ] !> ] ].
-
-na := s-end2-lex &
- [ ORTH <! "な" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD quest,
-                    CONT.RELS [ LAST #2,
-                                  LIST [ FIRST message & [ PRED question_m_rel ],
-                                         REST #2 ] ] ] ].
-
-made := postp-lex &
- [ ORTH <! "まで" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE made,
-                    CONT.RELS <! [ PRED "made" ] !> ] ].
-
-nitaisuru := nounmod-p-lex &
- [ ORTH <! "に対する" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! [ PRED "nitaishite" ] !> ] ].
-
-ga := ga-wo-ni-p-lex &
- [ ORTH <! "が" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE ga,
-                                 PTYPE ga ] ].
-
-niatatte-hiragana-varg := postp-lex-1 &
- [ ORTH <! "にあたって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "niatatte" ] !> ] ].
-
-colon := ga-wo-ni-p-lex &
- [ ORTH <! "：" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE coparg,
-                                 PTYPE overt ] ].
-
-to-advp-exh-4 := adv-p-lex-4 &
- [ ORTH <! "と" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT [ HEAD.MAIN-PRD +,
-                                                     VAL.COMPS null ] ] >,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case ],
-                    CONT.RELS <! [ PRED "to_with" ] !> ] ].
-
-no-case := case-p-lex &
- [ ORTH <! "の" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ CASE no-case,
-                                 PTYPE ga ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS [ LAST #2,
-                                  LIST #2 ] ] ].
-
-shika-p-nobj := topic-nobj-lex &
- [ ORTH <! "しか" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MODUS negative ] >,
-                                 PTYPE shika ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "shika" ] !> ] ].
-
-kara-nmod-1 := nounmod-p-lex &
- [ ORTH <! "から" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.VN + ] >,
-                                 PTYPE nattr ],
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! prep-mod-relation !> ] ].
-
-kara-sign-case := case-p-lex &
- [ ORTH <! "〜" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ CASE kara-case,
-                                 PTYPE kara ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS [ LAST #2,
-                                  LIST #2 ] ] ].
-
-made-1 := postp-lex-1 &
- [ ORTH <! "まで" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE made,
-                    CONT.RELS <! [ PRED "made" ] !> ] ].
-
-wa-parg := topic-pobj-lex &
- [ ORTH <! "は" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE wa,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-noni-send-multi := s-ell-end-lex &
- [ ORTH <! "の", "に" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD decl,
-                    CONT.RELS.LIST.FIRST.PRED "noni_rel" ] ].
-
-to-conj-pobj := nmod-p-lex &
- [ ORTH <! "と" !>,
-   SYNSEM [ LKEYS.KEYREL [ L-INDEX #2,
-                             PRED "to_conj",
-                             R-INDEX #1 ],
-            LOCAL [ CAT [ HEAD [ J-POSTHEAD left,
-                                 MOD < [ LOCAL.CONT.HOOK.INDEX #1 ] >,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST synsem & [ LOCAL [ CAT.HEAD p_head & [ CASE mod,
-                                                                     PTYPE nontop ],
-                                                        CONT.HOOK.INDEX #2 ] ] ],
-                    CONT n-conj-sem-type ] ] ].
-
-kara-cardmod2 := nounmod-p-lex &
- [ ORTH <! "~" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL [ BAR +,
-                                                        CAT.HEAD int_head ] ] ],
-                    CONT.RELS <! [ PRED "kara_cardmod" ] !> ] ].
-
-kara-made := lexical_sign &
- [ ORTH <! "まで" !>,
-   SYNSEM [ LOCAL [ BAR +,
-                    CAT [ HEAD postp_head & [ ADJ -,
-                                 FORMAL.SHON #1,
-                                 PTYPE made,
-                                 QUANTIFIABLE #2 ],
-                          VAL kara-made_sc & [ COMPS.FIRST.LOCAL [ BAR +,
-                                                        CAT.HEAD [ FORMAL.SHON #1,
-                                                                     QUANTIFIABLE #2 ] ] ] ],
-                    CONT.RELS <! [ PRED "kara_made_prep" ] !>,
-                    CTXT.BACKGROUND [ LAST #5,
-                                        LIST #5 ] ],
-            NON-LOCAL.QUE [ LAST #3,
-                              LIST #3 ] ] ].
-
-o-2 := ga-wo-ni-p-lex-2 &
- [ ORTH <! "を" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE wo,
-                                 PTYPE wo ] ].
-
-kamo-chasen-case := comp-prpstn-lex &
- [ ORTH <! "か", "も" !>,
-   SYNSEM.LOCAL.CAT [ HEAD.PTYPE kamo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD sentence-valid ] ].
-
-kamo-case := comp-prpstn-lex &
- [ ORTH <! "かも" !>,
-   SYNSEM.LOCAL.CAT [ HEAD.PTYPE kamo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD sentence-valid ] ].
-
-no-nspec-2 := nspec-p-lex &
- [ ORTH <! "の" !>,
-   SYNSEM.LOCAL.CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD postp_head ] ].
-
-to-comp1 := to-case-lex &
- [ ORTH <! "と" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ] ].
-
-de-advp-sub-4 := adv-p-lex-4 &
- [ ORTH <! "で" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE de ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case ],
-                    CONT.RELS <! [ PRED "de" ] !> ] ].
-
-niyoru := postp-lex &
- [ ORTH <! "による" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE niyotte,
-                    CONT.RELS <! [ PRED "niyotte" ] !> ] ].
-
-nante-nobj := vmod-p-lex &
- [ ORTH <! "なんて" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nanka,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "nanka_prep" ] !> ] ].
-
-yori-varg := postp-lex-1 &
- [ ORTH <! "より" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE yori,
-                    CONT.RELS <! [ PRED "yori" ] !> ] ].
-
-colon-2 := ga-wo-ni-p-lex &
- [ ORTH <! ":" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE coparg,
-                                 PTYPE overt ] ].
-
-o-4 := ga-wo-ni-p-lex-4 &
- [ ORTH <! "を" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE wo,
-                                 PTYPE wo ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap_head & [ SMOD quest ] ] ].
-
-o-3 := ga-wo-ni-p-lex-3 &
- [ ORTH <! "を" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE wo,
-                                 PTYPE wo ] ].
-
-omotte := postp-lex &
- [ ORTH <! "をもって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "omotte" ] !> ] ].
-
-to-comp-saparg := comp-prpstn-lex &
- [ ORTH <! "と" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap_head & [ SMOD quest ] ] ].
-
-node-send := s-ell-end-lex &
- [ ORTH <! "ので" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD decl,
-                    CONT.RELS.LIST.FIRST.PRED "node_rel" ] ].
-
-hodo-varg := postp-lex-1 &
- [ ORTH <! "ほど" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE kurai,
-                    CONT.RELS <! [ PRED "hodo" ] !> ] ].
-
-ga-2 := ga-wo-ni-p-lex-2 &
- [ ORTH <! "が" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE ga,
-                                 PTYPE ga ] ].
-
-kara-case := case-p-lex &
- [ ORTH <! "から" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ CASE kara-case,
-                                 PTYPE kara ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS [ LAST #2,
-                                  LIST #2 ] ] ].
-
-koso-nobj := plain-topic-nobj-lex &
- [ ORTH <! "こそ" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE koso,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "koso" ] !> ] ].
-
 arrow-main := postp-lex &
- [ ORTH <! "→" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE kara ],
-                    CONT.RELS <! [ PRED "kara_prep" ] !> ] ].
+	         [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
+                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+                                CONT.RELS <! [PRED 'kara_prep] !>],
+                   ORTH <! "→" !> ]. 
+
+;"職業欄の変更：無職→派遣社員"
+arrow-nmod := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                          CONT.RELS <! [PRED 'arrow] !>],
+            ORTH <! "→" !> ].
 
-keredomone := s-end1-declint-lex &
- [ ORTH <! "けれども", "ね" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED ne_m_rel ] !> ].
-
-mo := plain-topic-nobj-lex &
- [ ORTH <! "も" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE mo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "mo" ] !> ] ].
-
-no-nspec-3 := nspec-p-lex &
- [ ORTH <! "の" !>,
-   SYNSEM.LOCAL.CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ H-TENSE te,
-                                                                     VN - ] ] ].
-
-kashira := s-end2-lex &
- [ ORTH <! "かしら" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD quest,
-                    CONT.RELS [ LAST #2,
-                                  LIST [ FIRST message & [ PRED ne_m_rel ],
-                                         REST #2 ] ],
-                    CTXT.C-INDICES.SPEAKER.PNG.GEN fem ] ].
-
-kara-sconj := s-conj1-lex &
- [ ORTH <! "から" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "kara",
-            LOCAL.CAT [ HEAD.SMOD decl,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FIN + ] ] ].
-
-ga-conj-np := s-conj-nonprop1-lex &
- [ ORTH <! "が" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ga",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-tame-kanji-sconj := s-conj1-lex &
- [ ORTH <! "為" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "tame",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nitotte := postp-lex &
- [ ORTH <! "にとって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitotte" ] !> ] ].
-
-ga-conj := s-conj1-lex &
- [ ORTH <! "が" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ga",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-kara-main := postp-lex &
- [ ORTH <! "から" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE kara ],
-                    CONT.RELS <! [ PRED "kara_prep" ] !> ] ].
-
-nite := adv-p-lex-1 &
- [ ORTH <! "にて" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE de,
-                    CONT.RELS <! [ PRED "nite" ] !> ] ].
-
-node-send-multi := s-ell-end-lex &
- [ ORTH <! "の", "で" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD decl,
-                    CONT.RELS.LIST.FIRST.PRED "node_rel" ] ].
-
-otsuujite := postp-lex &
- [ ORTH <! "を通じて" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "otsuujite" ] !> ] ].
-
-ni-naarg := adv-p-lex-6 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE ni,
-                    CONT.RELS <! [ PRED "ni" ] !> ] ].
-
-ne := s-end1-declint-lex &
- [ ORTH <! "ね" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED ne_m_rel ] !> ].
-
-e-sub := postp-lex &
- [ ORTH <! "へ" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE e ],
-                    CONT.RELS <! [ PRED "e_prep" ] !> ] ].
-
-kedomone := s-end1-declint-lex &
- [ ORTH <! "けども", "ね" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED ne_m_rel ] !> ].
-
-equal-topic := plain-topic-nobj-lex &
- [ ORTH <! "＝" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE topic,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "equal" ] !> ] ].
-
-kana := s-end2-lex &
- [ ORTH <! "か", "な" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD quest,
-                    CONT.RELS [ LAST #2,
-                                  LIST [ FIRST message & [ PRED ne_m_rel ],
-                                         REST #2 ] ],
-                    CTXT.C-INDICES.SPEAKER.PNG.GEN masc ] ].
-
-yori := postp-lex &
- [ ORTH <! "より" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE yori,
-                    CONT.RELS <! [ PRED "yori" ] !> ] ].
-
-comma-no-nmod-1 := nounmod-p-lex &
- [ ORTH <! "、", "の" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! [ PRED "no_nmod" ] !> ] ].
-
-i-sap := s-end1-quest-minusahon-lex &
- [ ORTH <! "い" !>,
-   SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [ LOCAL.CAT.HEAD.COP +,
-                                                NON-LOCAL.QUE 1-dlist ] ].
-
-to-conj-nobj := n_conj-p-lex &
- [ ORTH <! "と" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "to_and",
-            LOCAL.CAT [ HEAD.PTYPE to,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ] ] ].
-
-no-nmod-1 := nounmod-p-lex &
- [ ORTH <! "の" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS [ LAST #1,
-                                  LIST [ FIRST prep-mod-relation & [ PRED "no" ],
-                                         REST #1 ] ] ] ].
-
-noni-sconj-multi := s-conj1-lex &
- [ ORTH <! "の", "に" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "noni",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-de-advp-main-4 := adv-p-lex-4 &
- [ ORTH <! "で" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE de ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case ],
-                    CONT.RELS <! [ PRED "de" ] !> ] ].
-
-noni-sconj-np := s-conj-nonprop1-lex &
- [ ORTH <! "のに" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "noni",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nikansuru-multi := postp-lex &
- [ ORTH <! "に", "かんする" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nikanshite,
-                    CONT.RELS <! [ PRED "nikaNshite" ] !> ] ].
-
-totomoni := postp-lex &
- [ ORTH <! "と共に" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE tomo,
-                    CONT.RELS <! [ PRED "totomo_prep" ] !> ] ].
-
-sura-p-nobj := topic-vmod-p-lex &
- [ ORTH <! "すら" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MODUS negative ] >,
-                                 PTYPE shika ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "sura" ] !> ] ].
-
-dash-nmod := nounmod-p-lex &
- [ ORTH <! "／" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL [ BAR +,
-                                                        CAT.HEAD noun_head ] ] ],
-                    CONT.RELS <! [ PRED "dash_nmod" ] !> ] ].
-
-niyotte := postp-lex &
- [ ORTH <! "によって" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE niyotte,
-                    CONT.RELS <! [ PRED "niyotte" ] !> ] ].
-
-to-comp-quotarg := comp-prpstn-lex &
- [ ORTH <! "と" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD quotation-sentence-end_head ] ].
-
-naa := s-end1-declint-lex &
- [ ORTH <! "なあ" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED ne_m_rel ] !> ].
-
-ga-3 := ga-wo-ni-p-lex-3 &
- [ ORTH <! "が" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE ga,
-                                 PTYPE ga ] ].
-
-ne-conj-np := s-conj-nonprop1-lex &
- [ ORTH <! "ね" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ne_rel",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-bakari-narg := postp-lex &
- [ ORTH <! "ばかり" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE bakari,
-                    CONT.RELS <! [ PRED "bakari" ] !> ] ].
-
-dake-pobj := topic-pobj-lex &
- [ ORTH <! "だけ" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE dake,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head ],
-                    CONT.RELS <! [ PRED "dake" ] !> ] ].
-
-niatari-varg := postp-lex-1 &
- [ ORTH <! "に当たり" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "niatari" ] !> ] ].
-
-nitsuite-multi := postp-lex &
- [ ORTH <! "に", "ついて" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitsuite" ] !> ] ].
-
-niokeru := nounmod-p-lex &
- [ ORTH <! "における" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE niokeru,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD noun_head ] ],
-                    CONT.RELS <! [ PRED "niokeru" ] !> ] ].
-
-nikanshimashite-multi := postp-lex &
- [ ORTH <! "に", "かんしまして" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nikanshite,
-                    CONT.RELS <! [ PRED "nikaNshite" ] !> ] ].
-
-ni-narg := adv-p-lex-1 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE ni,
-                    CONT.RELS <! [ PRED "ni" ] !> ] ].
-
-noka-comp-varg := comp-int-lex &
- [ ORTH <! "の", "か" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ SMOD unmarked ] ] ].
-
-sae := postp-lex &
- [ ORTH <! "さえ" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE sae,
-                    CONT.RELS <! [ PRED "sae" ] !> ] ].
-
-wa-comparg := topic-cobj-lex &
- [ ORTH <! "は" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE wa,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-nikanshite-multi := postp-lex &
- [ ORTH <! "に", "かんし", "て" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nikanshite,
-                    CONT.RELS <! [ PRED "nikanshite" ] !> ] ].
-
-kara-vtearg := vmod-p-lex &
- [ ORTH <! "から" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD postp_head,
-                          VAL.COMPS.FIRST.LOCAL.CAT [ HEAD verb_head & [ FIN -,
-                                                                     VN - ],
-                                                              VAL saturated ] ],
-                    CONT.RELS <! [ PRED "kara_prep" ] !> ] ].
-
-mo-advarg := topic-advarg-lex &
- [ ORTH <! "も" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE mo,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD adv_head ],
-                    CONT.RELS <! [ PRED "mo" ] !> ] ].
-
-niatari-hiragana-narg := postp-lex &
- [ ORTH <! "にあたり" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "niatari" ] !> ] ].
-
-kane-send := s-end1-declint-lex &
- [ ORTH <! "か", "ね" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED ne_m_rel ] !> ].
-
-nite-chasen := adv-p-lex-1 &
- [ ORTH <! "に", "て" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE de,
-                    CONT.RELS <! [ PRED "nite" ] !> ] ].
-
-omotte-kanji := postp-lex &
- [ ORTH <! "を以て" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "omotte" ] !> ] ].
-
-nishitagatte-narg := postp-lex &
- [ ORTH <! "に従って" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nishitagatte" ] !> ] ].
-
-to-sap := s-conj1-lex &
- [ ORTH <! "と" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "to_sconj",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-shi-sap-np := s-conj-nonprop1-lex &
- [ ORTH <! "し" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "shi",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-toiu-nmod := nounmod-p-lex &
- [ ORTH <! "という" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD verb_head ] ],
-                    CONT.RELS [ LAST #1,
-                                  LIST [ FIRST prep-mod-relation & [ PRED "no" ],
-                                         REST #1 ] ] ] ].
-
-colon-advp := adv-p-lex-1 &
- [ ORTH <! "：" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE comma,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-colon-advp-2 := adv-p-lex-1 &
- [ ORTH <! ":" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE comma,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-nante-pobj := vmod-p-lex &
- [ ORTH <! "なんて" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nanka,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [ PTYPE postp-case ] ],
-                    CONT.RELS <! [ PRED "nanka_prep" ] !> ] ].
-
-shi-sap := s-conj1-lex &
- [ ORTH <! "し" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "shi",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nara-conj := s-conj1-lex &
- [ ORTH <! "なら" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "nara",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-dake-case := ga-wo-ni-p-lex &
- [ ORTH <! "だけ" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE ga-or-wo,
-                                 PTYPE dake ] ].
-
-ka-comp-varg := comp-int-lex &
- [ ORTH <! "か" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ MAIN-PRD -,
-                                                                     SMOD decl ] ] ].
-
-toka-p := postp-lex &
- [ ORTH <! "とか" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toka,
-                    CONT.RELS <! [ PRED "toka" ] !> ] ].
-
-ni-case-2 := ga-wo-ni-p-lex-2 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE ni,
-                                 PTYPE ni ] ].
-
-shika-varg := topic-vobj-lex &
- [ ORTH <! "しか" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MODUS negative ] >,
-                                 PTYPE shika ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ FIN +,
-                                                                     FORMAL.AHON - ] ],
-                    CONT.RELS <! [ PRED "shika" ] !> ] ].
-
-toshite-varg := topic-vmod-p-lex &
- [ ORTH <! "として" !>,
-   SYNSEM.LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ ADJ -,
-                                                                     COP -,
-                                                                     FIN +,
-                                                                     FORMAL.AHON -,
-                                                                     MAIN-PRD -,
-                                                                     VN - ],
-                    CONT.RELS <! [ PRED "toshite" ] !> ] ].
-
-niataru-narg := postp-lex &
- [ ORTH <! "に当たる" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "niataru" ] !> ] ].
-
-yone := s-end1-declint-lex &
- [ ORTH <! "よ", "ね" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED ne_m_rel ] !> ].
-
-toitashimashite-multi := postp-lex &
- [ ORTH <! "と", "いたし", "まし", "て" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toshite,
-                    CONT.RELS <! [ PRED "toshite" ] !> ] ].
-
-denaito-sap := s-conj1-decl-lex &
- [ ORTH <! "でないと" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "denaito",
-            LOCAL.CAT.VAL desu-sap_sc ] ].
-
-notame-p := plain-topic-nobj-lex &
- [ ORTH <! "の", "ため" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE notame,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "notame" ] !> ] ].
-
-to-advp-exh-1 := adv-p-lex-1 &
- [ ORTH <! "と" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.VAL.COMPS null ] >,
-                                 PTYPE to ],
-                    CONT.RELS <! [ PRED "to_with" ] !> ] ].
-
-nisaishite := postp-lex &
- [ ORTH <! "に際して" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nisaishite" ] !> ] ].
-
-nitaishite := postp-lex &
- [ ORTH <! "に対して" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitaishite" ] !> ] ].
-
-nikanshi := postp-lex &
- [ ORTH <! "に関し" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nikanshite" ] !> ] ].
-
-kara-send := s-ell-end-lex &
- [ ORTH <! "から" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD decl,
-                    CONT.RELS.LIST.FIRST.PRED "kara_rel" ] ].
-
-tteiunowa := plain-topic-nobj-lex &
- [ ORTH <! "っていう", "の", "は" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED "toiu" ] !> ].
-
-node-sconj-np-multi := s-conj-nonprop1-lex &
- [ ORTH <! "の", "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "node",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nitsuite := postp-lex &
- [ ORTH <! "について" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nitsuite" ] !> ] ].
-
-kara-sub := postp-lex &
- [ ORTH <! "から" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE kara ],
-                    CONT.RELS <! [ PRED "kara_prep" ] !> ] ].
-
-made-topic := topic-advarg-lex &
- [ ORTH <! "まで" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE made,
-                    CONT.RELS <! [ PRED "made" ] !> ] ].
-
-nioite := postp-lex &
- [ ORTH <! "において" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nioite" ] !> ] ].
-
-noyotte := postp-lex &
- [ ORTH <! "の", "よっ", "て" !>,
-   SYNSEM [ LOCAL [ CAT.HEAD.PTYPE niyotte,
-                    CONT.RELS <! [ PRED "niyotte" ] !> ],
-            NON-LOCAL.ROBUST + ] ].
-
-sura-p-pobj := topic-vmod-p-lex &
- [ ORTH <! "すら" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MODUS negative ] >,
-                                 PTYPE shika ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [ CASE mod,
-                                                                     PTYPE overt ] ],
-                    CONT.RELS <! [ PRED "sura" ] !> ] ].
-
-shika-cardarg := topic-vmod-p-lex &
- [ ORTH <! "しか" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MODUS negative ] >,
-                                 PTYPE shika ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD int_head ],
-                    CONT.RELS <! [ PRED "shika" ] !> ] ].
-
-toiu := postp-lex &
- [ ORTH <! "という" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toiu,
-                    CONT.RELS <! [ PRED "toiu" ] !> ] ].
-
-ni-varg := adv-p-lex-5 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE ni,
-                    CONT.RELS <! [ PRED "ni" ] !> ] ].
-
-de-advp-main-1 := adv-p-lex-1 &
- [ ORTH <! "で" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE de ],
-                    CONT.RELS <! [ PRED "de" ] !> ] ].
-
-de-advp-main-3 := adv-p-lex-3 &
- [ ORTH <! "で" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE de ],
-                    CONT.RELS <! [ PRED "de" ] !> ] ].
-
-to-comp-varg := comp-prpstn-lex &
- [ ORTH <! "と" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ MAIN-PRD -,
-                                                                     SMOD smod,
-                                                                     VN - ] ] ].
-
-nishitagai-varg := postp-lex-1 &
- [ ORTH <! "に従い" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nishitagai" ] !> ] ].
-
-kadouka-comp-naarg := comp-int-lex &
- [ ORTH <! "か", "どう", "か" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST [ LOCAL.CAT.HEAD na-adj_head,
-                                                NON-LOCAL.QUE [ LAST #2,
-                                                                  LIST #2 ] ] ] ].
-
-tte-narg := plain-topic-nobj-lex &
- [ ORTH <! "って" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE wa,
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-niyori := postp-lex &
- [ ORTH <! "により" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE niyotte,
-                    CONT.RELS <! [ PRED "niyotte" ] !> ] ].
-
-karane := s-end1-declint-lex &
- [ ORTH <! "から", "ね" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED ne_m_rel ] !> ].
-
-nimokakarawazu := postp-lex &
- [ ORTH <! "にもかかわらず" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE postp-case,
-                    CONT.RELS <! [ PRED "nimokakarawazu" ] !> ] ].
-
-wa-advarg := topic-advarg-lex &
- [ ORTH <! "は" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE wa,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
-
-na-nmod-1 := nounmod-p-lex &
- [ ORTH <! "な" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL.CAT.HEAD exceptional_noun_head ] ],
-                    CONT.RELS <! [ PRED "na_nmod" ] !> ] ].
-
-node-sconj := s-conj1-lex &
- [ ORTH <! "ので" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "node",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-ga4 := topic-pobj-lex &
- [ ORTH <! "が" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL.CAT.VAL.SUBJ null ] >,
-                                 PTYPE topic ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [ PTYPE postp-case ] ],
-                    CONT.RELS <! [ PRED "ga_prep" ] !> ] ].
-
-ga3 := topic-vmod-p-lex &
- [ ORTH <! "が" !>,
-   SYNSEM.LOCAL [ CAT [ HEAD [ MOD < [ LOCAL [ CAT [ HEAD.EMPTY -,
-                                                     VAL [ SUBJ null,
-                                                           UNSAT - ] ],
-                                               CONT.HOOK.XARG full_ref-ind ] ] >,
-                                 PTYPE topic ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head ],
-                    CONT.RELS <! [ PRED "ga_prep" ] !> ] ].
-
-nishitagai-narg := postp-lex &
- [ ORTH <! "に従い" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nishitagai" ] !> ] ].
-
-nikakete := postp-lex &
- [ ORTH <! "にかけて" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE nitsuite,
-                    CONT.RELS <! [ PRED "nikakete" ] !> ] ].
-
-mo-sconj-np := s-conj-nonprop1-lex &
- [ ORTH <! "も" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "keredomo",
-            LOCAL.CAT.HEAD.SMOD decl ] ].
-
-nanowa := plain-topic-nobj-lex &
- [ ORTH <! "な", "の", "は" !>,
-   SYNSEM.LOCAL.CONT.RELS <! [ PRED "wa" ] !> ].
-
-sonota := postp-lex &
- [ ORTH <! "そのた" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE sonota,
-                    CONT.RELS <! [ PRED "sonota" ] !> ] ].
-
-nokawo-comp-varg := comp-int-lex &
- [ ORTH <! "の", "か", "を" !>,
-   SYNSEM.LOCAL.CAT [ HEAD [ CASE to,
-                                 PTYPE to ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ MAIN-PRD - ] ] ].
-
-no-nmod-2 := nounmod-p-lex &
- [ ORTH <! "の" !>,
-   SYNSEM [ LKEYS.KEYREL.ARG1 #1,
-            LOCAL [ CAT [ HEAD.PTYPE nattr,
-                          VAL.COMPS.FIRST synsem & [ LOCAL [ BAR +,
-                                                        CAT.HEAD vmod-p_head & [ PTYPE nontop ],
-                                                        CONT.HOOK.XARG #1 ] ] ],
-                    CONT.RELS [ LAST #2,
-                                  LIST [ FIRST prep-mod-relation & [ PRED "no" ],
-                                         REST #2 ] ] ] ] ].
-
-kamo-narg := comp-copinsert-lex &
- [ ORTH <! "かも" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED abstr-ques_m_rel,
-            LOCAL.CAT.HEAD.PTYPE kamo ] ].
-
-made-kanji := postp-lex &
- [ ORTH <! "迄" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE made,
-                    CONT.RELS <! [ PRED "made" ] !> ] ].
 
 arrow-sub := postp-lex &
- [ ORTH <! "→" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE kara ],
-                    CONT.RELS <! [ PRED "kara_prep" ] !> ] ].
+            [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
+                                     MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
+                           CONT.RELS <! [PRED 'kara_prep] !>],
+             ORTH <! "→" !> ]. 
 
-de-advp-sub-3 := adv-p-lex-3 &
- [ ORTH <! "で" !>,
-   SYNSEM.LOCAL [ CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE de ],
-                    CONT.RELS <! [ PRED "de" ] !> ] ].
 
+bakari-narg := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE bakari,
+                                CONT.RELS <! [PRED 'bakari] !>],
+         ORTH <! "ばかり" !> ]. 
+
+
+bakari-parg := adv-p-lex-4 &  
+                 [SYNSEM.LOCAL [CAT [HEAD [PTYPE bakari,
+					   MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+				     VAL.COMPS.FIRST.LOCAL.CAT.HEAD [PTYPE to,
+								    CASE mod]],
+                               CONT.RELS <! [PRED 'bakari] !>],
+                  ORTH <! "ばかり" !> ].
+
+; (ERB 2001-12-20) language server is now normalizing fw characters
+; to hw characters, so we need hw colon, too.
+colon := ga-wo-ni-p-lex & 
+       [ORTH <! "：" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE overt]]].
+
+
+colon-2 := ga-wo-ni-p-lex & 
+       [ORTH <! ":" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE overt]]].
+
+; (ERB 2001-12-20) language server is now normalizing fw characters
+; to hw characters, so we need hw colon, too.
+colon-advp := adv-p-lex-1 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE comma],
+                                    CONT.RELS <! [PRED 'wa] !>],
+              ORTH <! "：" !> ].
+
+
+colon-advp-2 := adv-p-lex-1 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE comma],
+                                    CONT.RELS <! [PRED 'wa] !>],
+              ORTH <! ":" !> ].
+
+
+comma-advp := adv-p-lex-1 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE comma],
+                                    CONT.RELS <! [PRED 'wa] !>],
+              ORTH <! "、" !> ].
+
+; (not FCB 2003-08-13)  Evil hack
+; FIXME: fix the inpout text
+comma-no-nmod-1 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                          CONT.RELS <! [PRED 'no_nmod] !>],
+            ORTH <! "、", "の" !> ].
+
+;"三井化学だけ旧住所です"
+dake-case := ga-wo-ni-p-lex &
+             [ORTH <! "だけ" !>,
+              SYNSEM.LOCAL [CAT.HEAD [CASE ga-or-wo,PTYPE dake]]].
+
+;"僕にだけ話して下さい。"
+dake-pobj := topic-pobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head,
+                         HEAD.PTYPE dake],
+                      CONT.RELS <! [PRED 'dake] !>],
+       ORTH <! "だけ" !> ].
+
+
+dash-cardmod := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD int_head,
+                                                              BAR +]]],
+                          CONT.RELS <! [PRED 'kara_cardmod] !>],
+            ORTH <! "／" !> ].
+
+
+dash-nmod := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head,
+                                                              BAR +]]],
+                          CONT.RELS <! [PRED 'dash_nmod] !>],
+            ORTH <! "／" !> ].
+
+
+datte := adv-p-lex-1 &  
+                 [SYNSEM.LOCAL [CAT.HEAD.PTYPE de,
+                                CONT.RELS <! [PRED 'datte] !>],
+                  ORTH <! "だって" !> ].
+
+;"hai kochira wa sore de kekkou desu."
+;"sore de yoroshiku onegai itashimasu"
+de-advp-main-1 := adv-p-lex-1 &  
+                  [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
+                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+                                 CONT.RELS <! [PRED 'de] !>],
+                   ORTH <! "で" !> ].
+
+
+de-advp-main-3 := adv-p-lex-3 &  
+                  [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
+                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+                                 CONT.RELS <! [PRED 'de] !>],
+                   ORTH <! "で" !> ].
+
+
+de-advp-main-4 := adv-p-lex-4 &  
+                  [SYNSEM.LOCAL [CAT [HEAD [PTYPE de,
+					    MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+				      VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
+                                 CONT.RELS <! [PRED 'de] !>],
+                   ORTH <! "で" !> ].
+
+
+de-advp-sub-1 := adv-p-lex-1 &  
+                 [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
+                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
+                                CONT.RELS <! [PRED 'de] !>],
+                  ORTH <! "で" !> ].
+
+
+de-advp-sub-3 := adv-p-lex-3 &  
+                 [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
+                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
+                                CONT.RELS <! [PRED 'de] !>],
+                  ORTH <! "で" !> ].
+
+
+de-advp-sub-4 := adv-p-lex-4 &  
+		 [SYNSEM.LOCAL [CAT [HEAD [PTYPE de,
+					   MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
+				     VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
+                                CONT.RELS <! [PRED 'de] !>],
+                  ORTH <! "で" !> ].
+
+;"誰 でも 利用 でき ます か "
+demo := plain-topic-nobj-lex &
+	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
+                                     HEAD.PTYPE mo],
+                                CONT.RELS <! [PRED 'demo] !>],
+                   ORTH <! "でも" !> ].
+
+
+denaito-sap := s-conj1-decl-lex &
+	         [ORTH <! "でないと" !>,
+		  SYNSEM [LOCAL.CAT.VAL desu-sap_sc,
+			  LKEYS.KEYREL.PRED 'denaito]].
+
+
+denaito-sap-np := s-conj-nonprop1-decl-lex &
+	         [ORTH <! "でないと" !>,
+          SYNSEM [LOCAL.CAT [VAL desu-sap_sc],
+		  LKEYS.KEYREL.PRED 'denaito]].
+
+;"友達からだけではない。"
+dewa-advarg := topic-advarg-lex &
+	       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD adv_head,
+                                   HEAD.PTYPE wa],
+                              CONT.RELS <! [PRED 'dewa] !>],
+                 ORTH <! "で","は" !> ].
+
+
+e-main := postp-lex &
+	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE e,
+                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+                                 CONT.RELS <! [PRED 'e_prep] !>],
+                    ORTH <! "へ" !> ].
+
+
+equal-topic  := plain-topic-nobj-lex &
+	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
+                                     HEAD.PTYPE topic],
+                                CONT.RELS <! [PRED 'equal] !>],
+                   ORTH <! "＝" !> ].
+
+;"watakushi no keNkyuushitsu  no hou e moushiwake gozaimaseN ga."
+e-sub := postp-lex &
+	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE e,
+                                           MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
+                                 CONT.RELS <! [PRED 'e_prep] !>],
+                    ORTH <! "へ" !> ].
+
+;"naN nichi ga yoroshii deshou ka."
+ga := ga-wo-ni-p-lex & 
+       [ORTH <! "が" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
+
+
+ga-2 := ga-wo-ni-p-lex-2 & 
+       [ORTH <! "が" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
+
+;"watakushi ga juuniji ni kaigi ga owarimasu"
+; (MS 2003-01-16) restricted to the cases, where the subject is saturated and no zero pronoun. therefore, I inserted the zpro_ref-ind to ARG1 in the zpro insertion rules (infl.tdl)
+ga3 := topic-vmod-p-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+			   HEAD [PTYPE topic,
+				 MOD < [LOCAL [CAT [VAL [UNSAT -,
+							 SUBJ null],
+						    HEAD.EMPTY -],
+					       CONT.HOOK.XARG full_ref-ind]] > ]],
+		      CONT.RELS <! [PRED 'ga_prep] !>],
+	ORTH <! "が" !> ].
+
+
+ga-3 := ga-wo-ni-p-lex-3 & 
+       [ORTH <! "が" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
+
+;"itsu ga gotsugou ga yoroshii deshou ka."
+; (MS 2002-07-11) How do I restrict this to predicates that have a saturated non-zpro subject?
+; For the moment, VAL.SUBJ none seems to be enough, but a semantic restriction would be better.
+ga4 := topic-pobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE postp-case],
+                          HEAD [PTYPE topic,
+                                MOD < [LOCAL.CAT.VAL [SUBJ null]] > ]],
+                      CONT.RELS <! [PRED 'ga_prep] !>],
+        ORTH <! "が" !> ].
+
+
+ga-conj := s-conj1-lex & 
+           [ ORTH <! "が" !>,
+             SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                           LKEYS.KEYREL.PRED 'ga]].
+
+
+ga-conj-np := s-conj-nonprop1-lex & 
+           [ ORTH <! "が" !>,
+             SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                           LKEYS.KEYREL.PRED 'ga]].
+
+
+goro-p := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE kurai,
+                                CONT.RELS <! [PRED 'goro] !>],
+         ORTH <! "ごろ" !> ]. 
+
+
+goto-p := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE zutsu,
+                                CONT.RELS <! [PRED 'goto] !>],
+         ORTH <! "ごと" !> ]. 
+
+
+gurai-p := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE kurai,
+                                CONT.RELS <! [PRED 'kurai] !>],
+         ORTH <! "ぐらい" !> ]. 
+
+
+hodo-p := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE kurai,
+                                CONT.RELS <! [PRED 'hodo] !>],
+         ORTH <! "ほど" !> ]. 
+
+
+hodo-varg := postp-lex-1 &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE kurai,
+                                CONT.RELS <! [PRED 'hodo] !>],
+         ORTH <! "ほど" !> ]. 
+
+; "僕も行くんだい。"
+;emphatic
+i-emp := s-end1-decl-minusahon-lex &
+       [ORTH <! "い" !>,
+        SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST [NON-LOCAL.QUE <! !>,
+					   LOCAL.CAT.HEAD.COP +]],
+		      CTXT [C-INDICES.SPEAKER #1,
+			    EMPATHY.EMPEE #1]]].
+
+;"どこが静かだい。"
+; WH question in informal male speech
+i-sap := s-end1-quest-minusahon-lex & 
+      [ORTH <! "い" !>,
+       SYNSEM [LOCAL [CAT [VAL.COMPS.FIRST [NON-LOCAL.QUE 1-dlist,
+					    LOCAL.CAT.HEAD.COP +]]]]].
+
+
+ja-p := topic-nobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+                                   HEAD [PTYPE wa,
+                                         MOD < [LOCAL.CAT.HEAD i-adj_head & 
+                                               [MODUS negative]] > ]],
+                          CONT.RELS <! [PRED 'wa] !>],
+       ORTH <! "じゃ" !> ].
+
+
+ka-comp-varg := comp-int-lex &
+            [ORTH <! "か" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [SMOD decl,
+                                                                            MAIN-PRD -]]]]].
+
+
+kadouka-comp-naarg := comp-int-lex &
+            [ORTH <! "か","どう","か" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD na-adj_head,
+                                                NON-LOCAL.QUE <! !>]]]].
+
+
+kadouka-comp-varg := comp-int-lex &
+            [ORTH <! "か","どう","か" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [SMOD unmarked,
+                                                                            MAIN-PRD -],
+                                                NON-LOCAL.QUE <! !>]]]].
+
+;あるいは弊社が発行していましても紛失したかもしれません。
+kamo-case := comp-prpstn-lex &
+        [SYNSEM.LOCAL [CAT [HEAD.PTYPE kamo,
+			    VAL.COMPS.FIRST.LOCAL.CAT.HEAD sentence-valid]],
+         ORTH <! "かも" !> ]. 
+
+; "あっ、そのケーキはおいしいかもしれません。"
+kamo-chasen-case := comp-prpstn-lex &
+        [SYNSEM.LOCAL [CAT [HEAD.PTYPE kamo,
+			    VAL.COMPS.FIRST.LOCAL.CAT.HEAD sentence-valid]],
+         ORTH <! "か","も" !> ]. 
+
+;京都の桜はまだきれいかもしれない。
+kamo-naarg := comp-prpstn-lex &
+        [SYNSEM.LOCAL [CAT [HEAD.PTYPE kamo,
+			    VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head]],
+         ORTH <! "かも" !> ]. 
+
+;"あれは鈴木先生かもしれないよ。"
+kamo-narg := comp-copinsert-lex &
+        [SYNSEM [LOCAL.CAT.HEAD.PTYPE kamo,
+		 LKEYS.KEYREL.PRED abstr-ques_m_rel],
+         ORTH <! "かも" !> ]. 
+
+
+kana :=
+s-end2-lex &
+ [ORTH <! "か","な" !>,
+  SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
+                 CONT.RELS <! message & [ PRED ne_m_rel ] !>,
+                  CTXT.C-INDICES.SPEAKER.PNG.GEN masc]].
+
+;"松本さんは来るかなあ。"
+kanaa :=
+s-end2-lex &
+ [ORTH <! "か","なあ" !>,
+  SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
+                 CONT.RELS <! message & [ PRED ne_m_rel ] !>,
+                  CTXT.C-INDICES.SPEAKER.PNG.GEN masc]].
+
+
+kanaa-chasen :=
+s-end2-lex &
+ [ORTH <! "か","な", "あ" !>,
+  SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
+                 CONT.RELS <! message & [ PRED ne_m_rel ] !>,
+                  CTXT.C-INDICES.SPEAKER.PNG.GEN masc]].
+
+
+kane-send := s-end1-declint-lex & 
+      [ORTH <! "か","ね" !>,
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
+
+;"itsu ni kaette koreru ka keNtou ga tatte imaseN"
+ka-nmod := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head &
+                                                             [MODUS uttmodus,
+                                                              FIN +,
+                                                              FORMAL.AHON -,
+                                                              MAIN-PRD +],
+                                              NON-LOCAL.QUE <! #top !>],
+                          CONT [RELS <! [PRED 'ka_nmod] !>,
+                                HOOK.LTOP #top]],
+            ORTH <! "か" !> ].
+
+
+kara-cardmod2 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD int_head,
+                                                              BAR +]]],
+                          CONT.RELS <! [PRED 'kara_cardmod] !>],
+            ORTH <! "~" !> ].
+
+
+kara-cardmod3 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD int_head,
+                                                              BAR +]]],
+                          CONT.RELS <! [PRED 'kara_cardmod] !>],
+            ORTH <! "―" !> ].
+
+;Hack for Verbmobil kara-made interpretation
+kara-case := case-p-lex & 
+             [ORTH <! "から" !>,
+              SYNSEM.LOCAL [CAT [HEAD [CASE kara-case, PTYPE kara],
+                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+                           CONT.RELS <! !>]].
+
+
+kara-made := lexical_sign &
+             [SYNSEM [LOCAL [CAT [HEAD postp_head & [FORMAL.SHON #1, 
+                                                    QUANTIFIABLE #2,
+						    ADJ -,
+                                                    PTYPE made],
+                                 VAL kara-made_sc & [COMPS.FIRST.LOCAL [CAT.HEAD [FORMAL.SHON #1,
+                                                                                 QUANTIFIABLE #2],
+                                                                       BAR +]]],
+			     CONT.RELS <! [PRED 'kara_made_prep] !>,
+			     CTXT.BACKGROUND <! !>,
+			     BAR +],
+		      NON-LOCAL.QUE <! !>],
+              ORTH <! "まで" !> ].
+
+
+kara-main := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
+                                          MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+                                CONT.RELS <! [PRED 'kara_prep] !>],
+                   ORTH <! "から" !> ]. 
+
+
+karane := s-end1-declint-lex & 
+      [ORTH <! "から","ね" !>,
+       SYNSEM.LOCAL [CONT.RELS <!  [ PRED ne_m_rel ] !>]].
+
+; (MS 2002-06-26) I want to allow kara and ni to modify also VNs. That leads to ambiguity, but could be necessary
+; for, e.g., "当座預金から普通預金に100ドルの振込をお願いしたいのですが。" 
+; (I want to request transfer of 100 dollars from account X to account Y.)
+kara-nmod-1 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD [PTYPE nattr,
+				     MOD < [LOCAL.CAT.HEAD.VN +] > ],
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                          CONT.RELS <! prep-mod-relation !>],
+            ORTH <! "から" !> ].
+
+
+kara-parentarg := vmod-p-lex &
+		  [SYNSEM.LOCAL [CAT [HEAD postp_head,
+				     VAL.COMPS.FIRST.LOCAL.CAT.HEAD parent-end_head],
+                                CONT.RELS <! [PRED 'kara_prep] !>],
+		   ORTH <! "から" !> ].
+
+;"ジョギングをしたからシャワーを浴びた"
+kara-sconj  := s-conj1-lex &
+          [ORTH <! "から" !>,
+           SYNSEM [LOCAL.CAT [HEAD.SMOD decl,
+			      VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FIN +],
+		   LKEYS.KEYREL.PRED 'kara]].
+
+
+kara-sconj-np  := s-conj-nonprop1-lex &
+          [ORTH <! "から" !>,
+           SYNSEM [LOCAL.CAT [HEAD.SMOD decl,
+			      VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FIN +],
+		   LKEYS.KEYREL.PRED 'kara]].
+
+
+kara-send := s-ell-end-lex &
+       [ORTH <! "から" !>,
+        SYNSEM.LOCAL [CAT.HEAD.SMOD decl,
+                      CONT.RELS.LIST.FIRST.PRED 'kara_rel]].
+
+
+kara-sign-case := case-p-lex & 
+             [ORTH <! "〜" !>,
+              SYNSEM.LOCAL [CAT [HEAD [CASE kara-case, PTYPE kara],
+                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+                           CONT.RELS <! !>]].
+
+
+kara-sub := postp-lex &
+            [SYNSEM.LOCAL [CAT.HEAD [PTYPE kara,
+                                     MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] > ],
+                           CONT.RELS <! [PRED 'kara_prep] !>],
+             ORTH <! "から" !> ]. 
+
+;"出してからの方がよいのでしょうか？"
+; (MS 2002-05-16) This should not work for VN!
+kara-vtearg :=  vmod-p-lex &
+		  [SYNSEM.LOCAL [CAT [HEAD postp_head,
+				     VAL.COMPS.FIRST.LOCAL.CAT [HEAD verb_head & [FIN -,
+                                                                                 VN -],
+							       VAL saturated]],
+                                CONT.RELS <! [PRED 'kara_prep] !>],
+		   ORTH <! "から" !> ].
+
+;"yoru to iu wake ni wa ikimaseN desu kashira." 
+;"dore gurai naNjikaN gurai kakarimasu kashira." 
+;Weakening
+;"松本さんは来るかしら。"
+kashira := s-end2-lex & 
+   [ORTH <! "かしら" !>,
+    SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
+                  CONT.RELS <! message & [ PRED ne_m_rel ] !>,
+                  CTXT.C-INDICES.SPEAKER.PNG.GEN fem]]. 
+
+;"hai sou desu kedo."
+;hai ogawa desu kedo
+;juuyokka mo juugonichi mo gozeNchuu wa yotei ga aite iru N desu kedo ja juuyokka wa ikaga deshou
+kedo := s-conj1-lex &
+        [ORTH <! "けど" !>,
+         SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                       LKEYS.KEYREL.PRED 'kedo]].
+
+
+kedomone := s-end1-declint-lex & 
+      [ORTH <! "けども","ね" !>,
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
+
+
+kedo-np := s-conj-nonprop1-lex &
+        [ORTH <! "けど" !>,
+         SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                       LKEYS.KEYREL.PRED 'kedo]].
+
+
+keredomone := s-end1-declint-lex & 
+      [ORTH <! "けれども","ね" !>,
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
+
+;osoi jikaN ni narimasu keredo sorede yoroshikereba kamaimaseN ga
+keredo-sconj := s-conj1-lex &
+    [ORTH <! "けれど" !>,
+     SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                   LKEYS.KEYREL.PRED 'keredomo]]. 
+
+
+keredo-sconj-np := s-conj-nonprop1-lex &
+    [ORTH <! "けれど" !>,
+     SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                   LKEYS.KEYREL.PRED 'keredomo]]. 
+
+;"kochira  koso onegai shimasu."
+;"kochira koso omachi shite orimasu."
+koso-nobj := plain-topic-nobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+                         HEAD.PTYPE koso],
+                      CONT.RELS <! [PRED 'koso] !>],
+       ORTH <! "こそ" !> ].
+
+
+koso-pobj := topic-pobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE nontop,
+                                                                  CASE mod],
+                         HEAD.PTYPE koso],
+                      CONT.RELS <! [PRED 'koso] !>],
+       ORTH <! "こそ" !> ].
+
+; "もう半月くらい待つ必要があるようですが"
+; (ERB 2002-01-28) Replaced these with noun_mod-lex-r entries,
+; in funct-lex.tdl.
+; (MS 2002-12-23) But we still need these: 七時くらい行く
+kurai-p := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE kurai,
+                                CONT.RELS <! [PRED 'kurai] !>],
+         ORTH <! "くらい" !> ]. 
+
+
+made := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
+                                CONT.RELS <! [PRED 'made] !>],
+                   ORTH <! "まで" !> ].  
+
+
+made-1 := postp-lex-1 &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
+                                CONT.RELS <! [PRED 'made] !>],
+                   ORTH <! "まで" !> ].  
+
+
+made-1-kanji := postp-lex-1 &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
+                                CONT.RELS <! [PRED 'made] !>],
+                   ORTH <! "迄" !> ].  
+
+
+made-kanji := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
+                                CONT.RELS <! [PRED 'made] !>],
+                   ORTH <! "迄" !> ].  
+
+;おそくまで踊る
+made-topic := topic-advarg-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
+                                CONT.RELS <! [PRED 'made] !>],
+                   ORTH <! "まで" !> ].  
+
+;"suiyoubi wa watashi mo gogo wa aite iru N desu ga."
+mo := plain-topic-nobj-lex &
+	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
+                                     HEAD.PTYPE mo],
+                                CONT.RELS <! [PRED 'mo] !>],
+                   ORTH <! "も" !> ].
+
+
+mo-advarg := topic-advarg-lex &
+	       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD adv_head,
+                                   HEAD.PTYPE mo],
+                              CONT.RELS <! [PRED 'mo] !>],
+                 ORTH <! "も" !> ].
+
+
+monono-sconj :=  s-conj1-lex &
+          [ORTH <! "ものの" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+		   LKEYS.KEYREL.PRED 'monono]].
+
+; (SF 2003-08-26)
+monono-send := s-ell-end-lex &
+          [ORTH <! "ものの" !>,
+           SYNSEM.LOCAL [CAT.HEAD.SMOD decl,
+			 CONT.RELS.LIST.FIRST.PRED 'monono_rel]].
+
+
+mo-parg := topic-pobj-lex &
+	       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head & [PTYPE overt],
+                                   HEAD.PTYPE mo],
+                              CONT.RELS <! [PRED 'mo] !>],
+                 ORTH <! "も" !> ].
+
+;"sumimaseN yahari desu ne chotto youji ga hairu ka mo shirenai node"
+mo-saparg := topic-vmod-p-lex &
+	       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap1_head,
+                                   HEAD.PTYPE mo],
+                              CONT.RELS <! [PRED 'mo] !>],
+                 ORTH <! "も" !> ].
+
+;"何度もTwoDigitErsatz円をつけながらも、購入することができませんでした。"
+mo-sconj :=  s-conj1-lex &
+          [ORTH <! "も" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'mo]].
+
+
+mo-sconj-np := s-conj-nonprop1-lex &
+    [ORTH <! "も" !>,
+     SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                   LKEYS.KEYREL.PRED 'keredomo]]. 
+
+
+na := s-end2-lex &
+      [ORTH <! "な" !>,
+       SYNSEM [LOCAL [CAT.HEAD.SMOD quest,
+                      CONT.RELS <! message & [ PRED question_m_rel ] !>]]].
+
+
+naa := s-end1-declint-lex & 
+      [ORTH <! "なあ" !>,
+       SYNSEM [LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]]].
+
+;"sono tsugi no shuu no juu shichi nichi no kayoubi nanka ikaga deshou ka."
+;"getsuyoubi naNka wa..."
+;"suiyoubi naNka raku na N desu."
+;"gogo naNka ikaga deshou ka."
+;"are naNka keikakuaN toka..."
+;"gogo naNka ojikaN yoroshii deshou ka."
+;"gogo naNka dewa..."
+naNka := postp-lex &
+       [SYNSEM.LOCAL [CAT.HEAD.PTYPE nanka,
+                      CONT.RELS <! [PRED 'nanka_prep] !>],
+       ORTH <! "なんか" !> ].
+
+
+na-nmod-1 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD exceptional_noun_head]]],
+                          CONT.RELS <! [PRED 'na_nmod] !>],
+            ORTH <! "な" !> ].
+
+
+nanode-np := s-conj-nonprop1-lex &
+          [ORTH <! "なので" !>,
+           SYNSEM.LOCAL [CAT.HEAD.SMOD decl]].
+
+;"FourDigitErsatz円なのは、どうしてですか。"
+nanowa := plain-topic-nobj-lex &
+	         [SYNSEM.LOCAL [CONT.RELS <! [PRED 'wa] !>],
+         ORTH <! "な","の","は" !> ]. 
+
+;hakubutsukaN naNte ikaga desu ka
+naNte-nobj := vmod-p-lex &
+         [SYNSEM.LOCAL [CAT [HEAD.PTYPE nanka,
+                            VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+                        CONT.RELS <! [PRED 'nanka_prep] !>],
+          ORTH <! "なんて" !> ].
+
+
+naNte-pobj := vmod-p-lex &
+         [SYNSEM.LOCAL [CAT [HEAD.PTYPE nanka,
+                            VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE postp-case]],
+                        CONT.RELS <! [PRED 'nanka_prep] !>],
+          ORTH <! "なんて" !> ].
+
+
+nara-conj := s-conj1-lex & 
+           [ ORTH <! "なら" !>,
+             SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                           LKEYS.KEYREL.PRED 'nara]].
+
+
+nara-conj-np := s-conj-nonprop1-lex & 
+           [ ORTH <! "なら" !>,
+             SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                           LKEYS.KEYREL.PRED 'nara]].
+
+;"uchiawase o shinai to ikemaseN ne"
+;"shikata arimaseN ne"
+ne := s-end1-declint-lex & 
+      [ORTH <! "ね" !>,
+       SYNSEM [LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]]].
+
+; (ERB 2002-01-07) Is this really a conjunction?  
+ne-conj := s-conj1-lex & 
+           [ ORTH <! "ね" !>,
+             SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+		     LKEYS.KEYREL.PRED 'ne_rel]].
+
+
+ne-conj-np := s-conj-nonprop1-lex & 
+           [ ORTH <! "ね" !>,
+             SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+		     LKEYS.KEYREL.PRED 'ne_rel]].
+
+
+ni-adjarg := adv-p-lex-3 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
+                            CONT.RELS <! [PRED 'ni] !>],
+              ORTH <! "に" !> ].
+
+;他社証券会社より口座振替による手続きを行うにあたり口座番号等教えてください。
+niatari-hiragana-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'niatari] !>],
+         ORTH <! "にあたり" !> ]. 
+
+
+niatari-hiragana-varg := postp-lex-1 &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'niatari] !>],
+         ORTH <! "にあたり" !> ]. 
+
+
+niatari-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'niatari] !>],
+         ORTH <! "に当たり" !> ]. 
+
+
+niatari-varg := postp-lex-1 &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'niatari] !>],
+         ORTH <! "に当たり" !> ]. 
+
+
+niataru-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'niataru] !>],
+         ORTH <! "に当たる" !> ]. 
+
+;配当金の受領にあたっては、お届け印を押捺する必要がありますが、milka.comで株式を買った場合のお届け印はどのようになるのでしょうか。
+niatatte-hiragana-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'niatatte] !>],
+         ORTH <! "にあたって" !> ]. 
+
+
+niatatte-hiragana-varg := postp-lex-1 &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'niatatte] !>],
+         ORTH <! "にあたって" !> ]. 
+
+;"kaigi ga gogo  ni haitte  orimashite."
+ni-case := ga-wo-ni-p-lex &
+            [ORTH <! "に" !>,
+             SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
+
+
+ni-case-2 := ga-wo-ni-p-lex-2 &
+             [ORTH <! "に" !>,
+              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
+
+;"何日からになりますか"
 ni-case-3 := ga-wo-ni-p-lex-3 &
- [ ORTH <! "に" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE ni,
-                                 PTYPE ni ] ].
+             [ORTH <! "に" !>,
+              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
 
-o := ga-wo-ni-p-lex &
- [ ORTH <! "を" !>,
-   SYNSEM.LOCAL.CAT.HEAD [ CASE wo,
-                                 PTYPE wo ] ].
+;本日TwoDigitErsatz時TwoDigitErsatz頃からTimeErsatz頃にかけてエラーメッセージばかりで先に進めない事があった。
+nikakete := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nikakete] !>],
+         ORTH <! "にかけて" !> ]. 
 
-wa-narg := plain-topic-nobj-lex &
- [ ORTH <! "は" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE wa,
-                    CONT.RELS <! [ PRED "wa" ] !> ] ].
+
+nikakete-multi := postp-lex &
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nikakete,
+                               CONT.RELS <! [PRED 'nikakete] !>],
+                 ORTH <! "に",  "かけ","て" !> ].
+
+
+nikanshi := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                CONT.RELS <! [PRED 'nikanshite] !>],
+                  ORTH <! "に関し" !> ]. 
+
+
+nikaNshimashite-multi := postp-lex &
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nikaNshite,
+                               CONT.RELS <! [PRED 'nikaNshite] !>],
+         ORTH <! "に",  "かんしまして" !> ].
+
+
+nikanshite := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                CONT.RELS <! [PRED 'nikanshite] !>],
+                  ORTH <! "に関して" !> ]. 
+
+
+nikaNshite-multi := postp-lex &
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nikaNshite,
+                               CONT.RELS <! [PRED 'nikanshite] !>],
+         ORTH <! "に",  "かんし","て" !> ].
+
+; (TT 2003-08-28) 
+; changed lexical type of "に関する" by referring to "の" to enable it to modify noun,
+; while RELS "no_nmod" is incorrect.
+nikansuru := nounmod-p-lex &
+	         [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                                CONT.RELS <! [PRED 'nikansuru] !>],
+                  ORTH <! "に関する" !> ]. 
+
+
+nikaNsuru-multi := postp-lex &
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nikaNshite,
+                               CONT.RELS <! [PRED 'nikaNshite] !>],
+                 ORTH <! "に",  "かんする" !> ].
+
+
+nimokakarawazu := postp-lex &
+          [SYNSEM.LOCAL [CAT.HEAD.PTYPE postp-case,
+                         CONT.RELS <! [PRED 'nimokakarawazu] !>],
+           ORTH <! "にもかかわらず" !> ]. 
+
+
+ni-naarg := adv-p-lex-6 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
+                            CONT.RELS <! [PRED 'ni] !>],
+              ORTH <! "に" !> ].
+
+;"naNji ni itashimasu ka."
+;"asa wa watashi wa osoi ni koshita koto wa nai no desu ga."
+ni-narg := adv-p-lex-1 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
+                                    CONT.RELS <! [PRED 'ni] !>],
+              ORTH <! "に" !> ].
+
+
+ni-nmod-1 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD [PTYPE ni,
+				     MOD < [LOCAL.CAT.HEAD.VN +] > ],
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                          CONT.RELS <! prep-mod-relation !>],
+            ORTH <! "に" !> ].
+
+;現物株式の売買において、現金買付余力をオーバーして買ったために必要入金額が発生しました。
+nioite := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nioite] !>],
+         ORTH <! "において" !> ]. 
+
+; (TT 2003-09-04) 
+; changed lexical type of "における" by referring to "の" to enable it to modify noun,
+; while RELS "no_nmod" is incorrect.
+; see "nitaisuru".
+; (MS 2003-11-25) fixed.
+niokeru := nounmod-p-lex &
+	         [SYNSEM.LOCAL [CAT [HEAD.PTYPE niokeru,
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                                CONT.RELS <! [PRED 'niokeru] !>],
+         ORTH <! "における" !> ]. 
+
+
+ni-parentarg := adv-p-lex-7 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
+                            CONT.RELS <! [PRED 'ni] !>],
+              ORTH <! "に" !> ].
+
+
+ni-parg := adv-p-lex-4 &
+             [SYNSEM.LOCAL [CAT [HEAD [PTYPE ni,
+				       MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] > ],
+				 VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
+                            CONT.RELS <! [PRED 'ni] !>],
+              ORTH <! "に" !> ].
+
+;以前、全日空の株式を購入しましたが、株主優待を受けるに際し、「株主名簿に株主として名前を記載させるには、株式の名義書換が必要となります。
+nisaishi := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nisaishite] !>],
+         ORTH <! "に際し" !> ]. 
+
+;マクドナルド上場に際しての募集はありますか？
+nisaishite := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nisaishite] !>],
+         ORTH <! "に際して" !> ]. 
+
+
+nishitagai-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nishitagai] !>],
+         ORTH <! "に従い" !> ]. 
+
+
+nishitagai-varg := postp-lex-1 &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nishitagai] !>],
+         ORTH <! "に従い" !> ]. 
+
+;従って、約定価格・個別元本価格は、目論見書の規定に従って申込成立日OneDigitErsatz／TwoDigitErsatzの翌営業日であるOneDigitErsatz／TwoDigitErsatzの基準価格・FourDigitErsatz円／OneDigitErsatz万口であるのが正しいと思います。
+nishitagatte-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nishitagatte] !>],
+         ORTH <! "に従って" !> ]. 
+
+
+nishitagatte-varg := postp-lex-1 &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nishitagatte] !>],
+         ORTH <! "に従って" !> ]. 
+
+
+nitaishi := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                CONT.RELS <! [PRED 'nitaishite] !>],
+                  ORTH <! "に対し" !> ]. 
+
+
+nitaishite := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                CONT.RELS <! [PRED 'nitaishite] !>],
+                  ORTH <! "に対して" !> ]. 
+
+; (TT 2003-08-28) 
+; changed lexical type of "に対する" by referring to "の" to enable it to modify noun,
+; while RELS "no_nmod" is incorrect.
+nitaisuru := nounmod-p-lex &
+	         [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+			             VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                                CONT.RELS <! [PRED 'nitaishite] !>],
+                  ORTH <! "に対する" !> ]. 
+
+;マクドナルドの株を公募価格にて購入したいのですが、インターネットで購入出来ますか？
+nite := adv-p-lex-1 &  
+                 [SYNSEM.LOCAL [CAT.HEAD.PTYPE de,
+                                CONT.RELS <! [PRED 'nite] !>],
+                  ORTH <! "にて" !> ].
+
+;but sometimes CHASEN segments it!
+;今日の遠足はここにて解散します。
+nite-chasen := adv-p-lex-1 &  
+                 [SYNSEM.LOCAL [CAT.HEAD.PTYPE de,
+                               CONT.RELS <! [PRED 'nite] !>],
+                  ORTH <! "に","て" !> ].
+
+
+nitotte := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                CONT.RELS <! [PRED 'nitotte] !>],
+                  ORTH <! "にとって" !> ]. 
+
+
+nitotte-multi := postp-lex &
+           [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                          CONT.RELS <! [PRED 'nitsuite] !>],
+            ORTH <! "に",  "とって" !> ]. 
+
+;keNkyuukai no jikai no keNkyuukai no teema ni tsuite uchiawase o sasete itadaku no ni seNsei ni ojikaN totte itadakitai N desu ga."
+;"sono naiyou ni tsuite no uchiawase no nichiji o chotto kimetakute odeNwa itashimashita."
+nitsuite := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                CONT.RELS <! [PRED 'nitsuite] !>],
+                  ORTH <! "について" !> ]. 
+
+
+nitsuitedesuga := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'nitsuitedesuga] !>],
+         ORTH <! "について","ですが" !> ].
+
+
+nitsuite-multi := postp-lex &
+                        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                       CONT.RELS <! [PRED 'nitsuite] !>],
+         ORTH <! "に",  "ついて" !> ]. 
+
+; "その入手方法につき教えていただければ幸いです"
+nitsuki := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                                CONT.RELS <! [PRED 'nitsuite] !>],
+                  ORTH <! "に","つき" !> ]. 
+
+
+nitsukimashite  := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD [PTYPE nitsuite,
+                                          FORMAL.AHON +],
+                                CONT.RELS <! [PRED 'nitsuite] !>],
+                  ORTH <! "につきまして" !> ]. 
+
+
+ni-varg := adv-p-lex-5 &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
+                            CONT.RELS <! [PRED 'ni] !>],
+              ORTH <! "に" !> ].
+
+
+niwatatte := postp-lex &
+         [SYNSEM.LOCAL [CAT.HEAD.PTYPE niyotte,
+                        CONT.RELS <! [PRED 'niwatatte] !>],
+         ORTH <! "にわたって" !> ].
+
+
+niyori := postp-lex &
+         [SYNSEM.LOCAL [CAT.HEAD.PTYPE niyotte,
+                        CONT.RELS <! [PRED 'niyotte] !>],
+         ORTH <! "により" !> ].
+
+
+niyoru := postp-lex &
+         [SYNSEM.LOCAL [CAT.HEAD.PTYPE niyotte,
+                        CONT.RELS <! [PRED 'niyotte] !>],
+         ORTH <! "による" !> ].
+
+
+niyotte := postp-lex &
+         [SYNSEM.LOCAL [CAT.HEAD.PTYPE niyotte,
+                        CONT.RELS <! [PRED 'niyotte] !>],
+         ORTH <! "によって" !> ].
+
+
+no-case := case-p-lex & 
+             [ORTH <! "の" !>,
+              SYNSEM.LOCAL [CAT [HEAD [CASE no-case, PTYPE ga],
+                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+                           CONT.RELS <! !>]].
+
+;"saNjuuichinichi deshitara ichinichi aite imasu node kekkou desu."
+;"kayoubi wa gogo saNji made kaigi ga haitte orimasu node."
+node-sconj := s-conj1-lex &
+          [ORTH <! "ので" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'node]].
+
+
+node-sconj-multi := s-conj1-lex &
+          [ORTH <! "の","で" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'node]].
+
+
+node-sconj-np := s-conj-nonprop1-lex &
+          [ORTH <! "ので" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+		   LKEYS.KEYREL.PRED 'node]].
+
+
+node-sconj-np-multi := s-conj-nonprop1-lex &
+          [ORTH <! "の","で" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+		   LKEYS.KEYREL.PRED 'node]].
+
+
+node-send := s-ell-end-lex &
+          [ORTH <! "ので" !>,
+           SYNSEM.LOCAL [CAT.HEAD.SMOD decl,
+                         CONT.RELS.LIST.FIRST.PRED 'node_rel]].
+
+
+node-send-multi := s-ell-end-lex &
+          [ORTH <! "の","で" !>,
+           SYNSEM.LOCAL [CAT.HEAD.SMOD decl,
+                         CONT.RELS.LIST.FIRST.PRED 'node_rel]].
+
+; (MS 2002-1-8) Taking the restriction of MAIN-PRD - out of the object. This is the reason:
+; どう対処したらよいのかご連絡ください
+noka-comp-varg := comp-int-lex &
+            [ORTH <! "の","か" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [SMOD unmarked]]]]].
+
+
+nokawo-comp-varg := comp-int-lex &
+            [ORTH <! "の","か","を" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [MAIN-PRD -]]]]].
+
+
+nomi-topic := plain-topic-nobj-lex &
+	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
+                                     HEAD.PTYPE topic],
+                                CONT.RELS <! [PRED 'nomi] !>],
+                   ORTH <! "のみ" !> ].
+
+
+noni-sconj :=  s-conj1-lex &
+          [ORTH <! "のに" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+		   LKEYS.KEYREL.PRED 'noni]].
+
+
+noni-sconj-multi :=  s-conj1-lex &
+          [ORTH <! "の","に" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'noni]].
+
+
+noni-sconj-np :=  s-conj-nonprop1-lex &
+          [ORTH <! "のに" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'noni]].
+
+
+noni-sconj-np-multi :=  s-conj-nonprop1-lex &
+          [ORTH <! "の","に" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'noni]].
+
+
+noni-send := s-ell-end-lex &
+          [ORTH <! "のに" !>,
+           SYNSEM.LOCAL [CAT.HEAD.SMOD decl,
+                         CONT.RELS.LIST.FIRST.PRED 'noni_rel]].
+
+
+noni-send-multi := s-ell-end-lex &
+          [ORTH <! "の","に" !>,
+           SYNSEM.LOCAL [CAT.HEAD.SMOD decl,
+                         CONT.RELS.LIST.FIRST.PRED 'noni_rel]].
+
+;"raigetsu no kokusai kaigi no uchiawase o shi tai N desu kedomo."
+; (ERB 2001-09-21) I made the mother of nominal-numcl-rule be BAR -
+; so that NumClPs can be in compounds.  This is inconsistent with the
+; BAR + constraint on the OBJ of no-nmod-1.  I'm taking this constraint
+; away for now and seeing what it breaks.
+; (ERB 2001-11-26) We want a special type for no-nmod and 
+; compounds that the downstream machinery can recognize.
+no-nmod-1 := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
+                          CONT.RELS <! prep-mod-relation & [PRED 'no] !>],
+            ORTH <! "の" !> ].
+
+; (MS 2002-05-23) Defined the ARG3 of NO in DE NO (KARA NO) such that it is unified to the ARG3 of DE (KARA), which
+; is the noun. Otherwise, there is a loose end. But this means, that in those cases the vmod-p has an identical
+; ARG and ARG3...
+no-nmod-2 := nounmod-p-lex &
+           [SYNSEM [LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD vmod-p_head  & [PTYPE nontop],
+							       CONT.HOOK.XARG #1,
+                                                              BAR +]]],
+			  CONT.RELS <! prep-mod-relation & [PRED 'no] !>],
+		    LKEYS.KEYREL.ARG1 #1],
+            ORTH <! "の" !> ].
+
+;"zero nana nana nana no hou de yoroshii desu ka."
+no-nspec-1 := nspec-p-lex &
+              [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head]],
+               ORTH <! "の" !> ].
+
+
+no-nspec-2 := nspec-p-lex &
+             [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD postp_head]],
+                       ORTH <! "の" !> ].
+
+
+no-nspec-3 := nspec-p-lex &
+             [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                               VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [H-TENSE te,
+                                                                          VN -]]],
+              ORTH <! "の" !> ].
+
+
+no-parmod := parmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE parmod,
+                              VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD noun_head]],
+                          CONT.RELS <! [PRED 'no-parmod] !>],
+            ORTH <! "の" !> ].
+
+; (TT 2003-08-15) 漢字見出しを追加
+notame-kanji-p := plain-topic-nobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+                         HEAD.PTYPE notame],
+                      CONT.RELS <! [PRED 'notame] !>],
+       ORTH <! "の","為" !> ].
+
+; "引越しのため住所変更になりました。"
+notame-p := plain-topic-nobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+                         HEAD.PTYPE notame],
+                      CONT.RELS <! [PRED 'notame] !>],
+       ORTH <! "の","ため" !> ].
+
+;RISKについての判断も含め，すべて本人責任というのが，貴社をふくめた証券会社のよってたつ原則ではないですか。
+noyotte := postp-lex &
+         [SYNSEM [LOCAL [CAT.HEAD.PTYPE niyotte,
+			 CONT.RELS <! [PRED 'niyotte] !>],
+		  NON-LOCAL.ROBUST +],
+         ORTH <! "の","よっ","て" !> ].
+
+;"raigetsu no kokusai kaigi no uchiawase o shi tai N desu kedomo."
+o := ga-wo-ni-p-lex & 
+       [ORTH <! "を" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
+
+
+o-2 := ga-wo-ni-p-lex-2 & 
+       [ORTH <! "を" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
+
+
+o-3 := ga-wo-ni-p-lex-3 & 
+       [ORTH <! "を" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
+
+
+o-4 := ga-wo-ni-p-lex-4 &
+       [ORTH <! "を" !>,
+       SYNSEM.LOCAL.CAT [HEAD [CASE wo, PTYPE wo],
+			 VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap_head & [SMOD quest]]].
+
+
+omegutte := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'omegutte] !>],
+         ORTH <! "をめぐって" !> ]. 
+
+
+omotte := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'omotte] !>],
+         ORTH <! "をもって" !> ]. 
+
+
+omotte-kanji := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'omotte] !>],
+         ORTH <! "を以て" !> ].
+
+
+otoushite := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'otoushite] !>],
+         ORTH <! "を通して" !> ]. 
+
+
+otsuujite := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED 'otsuujite] !>],
+         ORTH <! "を通じて" !> ]. 
+
+
+sae := postp-lex &
+         [SYNSEM.LOCAL [CAT.HEAD.PTYPE sae,
+                        CONT.RELS <! [PRED 'sae] !>],
+         ORTH <! "さえ" !> ].
+
+
+shika-cardarg := topic-vmod-p-lex &
+                 [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD int_head,
+                                    HEAD [PTYPE shika,
+                                          MOD < [LOCAL.CAT.HEAD.MODUS negative] > ]],
+                                CONT.RELS <! [PRED 'shika] !>],
+                  ORTH <! "しか" !> ].
+
+
+shika-p-nobj := topic-nobj-lex &
+           [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+                              HEAD [PTYPE shika,
+                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] > ]],
+                          CONT.RELS <! [PRED 'shika] !>],
+            ORTH <! "しか" !> ].
+
+
+shika-p-pobj := topic-pobj-lex &
+           [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [CASE mod,
+                                                                      PTYPE overt],
+                              HEAD [PTYPE shika,
+                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] > ]],
+                          CONT.RELS <! [PRED 'shika] !>],
+            ORTH <! "しか" !> ].
+
+
+shika-varg := topic-vobj-lex &
+              [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [FIN +,
+                                                                            FORMAL.AHON -],
+                                 HEAD [PTYPE shika,
+                                       MOD < [LOCAL.CAT.HEAD.MODUS negative] > ]],
+                             CONT.RELS <! [PRED 'shika] !>],
+               ORTH <! "しか" !> ].
+
+;"kyou wa desu ne chotto yuugata made jugyou mo haitte imasu shi."
+;shiryou mo sorotte orimasu shi tsugou ga ii ka to omou N desu ga
+;gozeNchuu ikemasu shi muika deshitara gogo aite imasu ga dou desu ka
+shi-sap  := s-conj1-lex &
+         [ORTH <! "し" !>,
+          SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'shi]].
+
+
+shi-sap-np  := s-conj-nonprop1-lex &
+         [ORTH <! "し" !>,
+          SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'shi]].
+
+;"ichiji  made kaigi sonota ari masu  node."
+;"kaigi sonota wa gozaimaseN node."
+sonota := postp-lex &
+	          [SYNSEM.LOCAL [CAT.HEAD.PTYPE sonota,
+                                 CONT.RELS <! [PRED 'sonota] !>],
+          ORTH <! "そのた" !> ].
+
+
+sura-p-nobj := topic-vmod-p-lex &
+           [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+                              HEAD [PTYPE shika,
+                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] > ]],
+                          CONT.RELS <! [PRED 'sura] !>],
+            ORTH <! "すら" !> ].
+
+
+sura-p-pobj := topic-vmod-p-lex &
+           [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [CASE mod,
+                                                                      PTYPE overt],
+                              HEAD [PTYPE shika,
+                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] > ]],
+                          CONT.RELS <! [PRED 'sura] !>],
+            ORTH <! "すら" !> ].
+
+; (TT 2003-08-14) 漢字見出しを登録
+tame-kanji-sconj := s-conj1-lex &
+          [ORTH <! "為" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                          LKEYS.KEYREL.PRED 'tame]].
+
+; "この度、引越しをしたため住所が変更となりました。"
+tame-sconj := s-conj1-lex &
+          [ORTH <! "ため" !>,
+           SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                         LKEYS.KEYREL.PRED 'tame]].
+
+
+to-advp-exh-1  := adv-p-lex-1 & 
+                     [SYNSEM.LOCAL [CAT.HEAD [PTYPE to,
+                                             MOD < [LOCAL.CAT [VAL.COMPS null]] > ],
+                                    CONT.RELS <! [PRED 'to_with] !>],
+                      ORTH <! "と" !> ].
+
+;"seNsei to teNjikai o goissho sasete itadaku."
+to-advp-exh-4  := adv-p-lex-4 & 
+                     [SYNSEM.LOCAL [CAT [HEAD [PTYPE to,
+                                              MOD < [LOCAL.CAT [VAL.COMPS null,
+							     HEAD.MAIN-PRD +]] > ],
+					 VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
+                                    CONT.RELS <! [PRED 'to_with] !>],
+                      ORTH <! "と" !> ].
+
+
+to-comp1 := to-case-lex &
+             [ORTH <! "と" !>,
+              SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head]]].
+
+
+to-comp3 := to-case-lex &
+            [ORTH <! "と" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head & [PTYPE nontop]]]].
+
+
+to-comp-quotarg :=  comp-prpstn-lex &
+            [ORTH <! "と" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD quotation-sentence-end_head]]]].
+
+
+to-comp-saparg := comp-prpstn-lex &
+            [ORTH <! "と" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD sap_head & [SMOD quest]]]]].
+
+;"ichijikaN haN to iu koto desu yo ne."
+;"watakushi no heya de to iu koto desu ne."
+;"yoji haN ni kochira no hou kara seNsei no keNkyuushitsu ni ukagawashite itadaketara to omou N desu ga."
+;"eki kara gohyaku meetoru to iu gurai naN desu kedomo."
+; (ERB 2002-02-12) In my ambiguity reduction campaign, I make most
+; verbs be [SMOD unmarked], so if this says "SMOD decl" it doesn't
+; combine with them.  Try loosening this constraint.
+to-comp-varg := comp-prpstn-lex &
+            [ORTH <! "と" !>,
+             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [SMOD smod,
+									    VN -,
+                                                                            MAIN-PRD -]]]]].
+
+
+to-conj-nobj  := n_conj-p-lex &
+            [SYNSEM [LOCAL [CAT [HEAD.PTYPE to,
+                               VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD noun_head]]],
+		     LKEYS.KEYREL.PRED 'to_and],
+             ORTH <! "と" !> ].
+
+
+to-conj-pobj  := nmod-p-lex &
+            [SYNSEM [LOCAL [CAT [HEAD [PTYPE to,
+                                      MOD < [LOCAL.CONT [HOOK.INDEX #mod]] >,
+                                      J-POSTHEAD left],
+                                VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD p_head & [PTYPE nontop,
+                                                                                   CASE mod],
+                                                                CONT [HOOK.INDEX #arg]]]],
+                           CONT n-conj-sem-type],
+		     LKEYS [KEYREL [PRED 'to_conj,
+				      L-INDEX #arg,
+				      R-INDEX #mod]]],
+             ORTH <! "と" !> ].
+
+
+toitashimashite-multi := postp-lex &
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE toshite,
+                               CONT.RELS <! [PRED 'toshite] !>],
+         ORTH <! "と",  "いたし","まし","て" !> ]. 
+
+
+toitta := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE toiu,
+                                CONT.RELS <! [PRED 'toitta] !>],
+         ORTH <! "といった" !> ]. 
+
+
+toiu := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE toiu,
+                                CONT.RELS <! [PRED 'toiu] !>],
+         ORTH <! "という" !> ]. 
+
+
+toiu-nmod := nounmod-p-lex &
+           [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+                              VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD verb_head]]],
+                          CONT.RELS <! prep-mod-relation & [PRED 'no] !>],
+            ORTH <! "という" !> ].
+
+;"opera toka wa osuki desu ka."
+toka-p := postp-lex &
+          [SYNSEM.LOCAL [CAT.HEAD.PTYPE toka,
+                         CONT.RELS <! [PRED 'toka] !>],
+           ORTH <! "とか" !> ]. 
+
+;"ni juu hachi nichi to ni juu ku nichi wa ryouhou tomo keNkyuu seminaa no tame ichi nichi juu umat te masu."
+;"toriaezu ichibaN chokkiN de futari tomo aite iru suiyoubi no gogo wa dou deshou ka ."
+tomo := postp-lex &
+	          [SYNSEM.LOCAL [CAT.HEAD.PTYPE tomo,
+                                 CONT.RELS <! [PRED 'tomo_prep] !>],
+          ORTH <! "とも" !> ].
+
+
+tono := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE toiu,
+                                CONT.RELS <! [PRED 'toiu] !>],
+         ORTH <! "と","の" !> ]. 
+
+;"sono shuu desu to juuninichi no getsuyoubi naNka wa ikaga deshou ka."
+;"kore da to iNtaashitiihoteru de eki no kounai ni arimasu."
+to-sap  := s-conj1-lex & 
+                  [ORTH <! "と" !>,
+                   SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                                 LKEYS.KEYREL.PRED 'to_sconj]].
+
+
+toshimashite-2 := postp-lex &
+                  [SYNSEM.LOCAL [CAT.HEAD.PTYPE toshite,
+                                 CONT.RELS <! [PRED 'toshite] !>],
+                   ORTH <! "としまして" !> ]. 
+
+
+toshimashite-multi := postp-lex &
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE toshite,
+                               CONT.RELS <! [PRED 'toshite] !>],
+                 ORTH <! "と",  "し","まし","て" !> ]. 
+
+
+toshitara-multi := postp-lex &
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE toshite,
+                               CONT.RELS <! [PRED 'toshitara] !>],
+         ORTH <! "と",  "し","たら" !> ]. 
+
+
+toshite := postp-lex &
+           [SYNSEM.LOCAL [CAT.HEAD.PTYPE toshite,
+                          CONT.RELS <! [PRED 'toshite] !>],
+         ORTH <! "として" !> ]. 
+
 
 toshite-multi := postp-lex &
- [ ORTH <! "と", "し", "て" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.PTYPE toshite,
-                    CONT.RELS <! [ PRED "toshite" ] !> ] ].
+	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE toshite,
+                               CONT.RELS <! [PRED 'toshite] !>],
+                 ORTH <! "と",  "し","て" !> ]. 
 
-kanaa := s-end2-lex &
- [ ORTH <! "か", "なあ" !>,
-   SYNSEM.LOCAL [ CAT.HEAD.SMOD quest,
-                    CONT.RELS [ LAST #2,
-                                  LIST [ FIRST message & [ PRED ne_m_rel ],
-                                         REST #2 ] ],
-                    CTXT.C-INDICES.SPEAKER.PNG.GEN masc ] ].
+
+toshite-varg := topic-vmod-p-lex &
+		[ORTH <! "として" !>,
+		 SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [FIN +,
+									       VN -,
+									       COP -,
+									       ADJ -,
+									       FORMAL.AHON -,
+									       MAIN-PRD -]],
+			       CONT.RELS <! [PRED 'toshite] !>]].
+
+
+totomoni := postp-lex &
+	          [SYNSEM.LOCAL [CAT.HEAD.PTYPE tomo,
+                                 CONT.RELS <! [PRED 'totomo_prep] !>],
+          ORTH <! "と共に" !> ].
+
+
+totomoni-hiragana := postp-lex &
+	          [SYNSEM.LOCAL [CAT.HEAD.PTYPE tomo,
+                                 CONT.RELS <! [PRED 'totomo_prep] !>],
+          ORTH <! "とともに" !> ].
+
+
+tou-p := postp-lex &
+         [SYNSEM.LOCAL [CAT.HEAD.PTYPE tou,
+                           CONT.RELS <! [PRED 'tou_prep] !>],
+         ORTH <! "とう" !> ]. 
+
+;ヘルプっていうのは、IEのヘルプではなく、おたくの”ブラウザーチェック”のなかの文面で見たんですよ。
+tteiunowa := plain-topic-nobj-lex &
+	         [SYNSEM.LOCAL [CONT.RELS <! [PRED 'toiu] !>],
+         ORTH <! "っていう","の","は" !> ]. 
+
+;"外貨預金ってなんですか"
+tte-narg := plain-topic-nobj-lex &
+       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+                          HEAD.PTYPE wa],
+                      CONT.RELS <! [PRED 'wa] !>],
+        ORTH <! "って" !> ].
+
+
+wa-advarg := topic-advarg-lex &
+             [SYNSEM.LOCAL [CONT.RELS <! [PRED 'wa] !>,
+                            CAT.HEAD.PTYPE wa],
+              ORTH <! "は" !> ].
+
+
+wa-comparg := topic-cobj-lex &
+              [SYNSEM.LOCAL [CONT.RELS <! [PRED 'wa] !>,
+                             CAT.HEAD.PTYPE wa],
+               ORTH <! "は" !> ].
+
+
+wa-narg := plain-topic-nobj-lex &
+           [SYNSEM.LOCAL [CONT.RELS <! [PRED 'wa] !>,
+                          CAT.HEAD.PTYPE wa],
+            ORTH <! "は" !> ].
+
+;"kochira wa ichinichi aite iru N desu ga."
+;"sore wa doumo arigatou gozaimasu."
+;"goyotei no hou wa raishuu wa seNsei wa ikaga deshou ka"
+;"asa kara yotei wa arimaseN node"
+wa-parg := topic-pobj-lex &
+       [SYNSEM.LOCAL [CONT.RELS <! [PRED 'wa] !>,
+                      CAT.HEAD.PTYPE wa],
+        ORTH <! "は" !> ].
+
+
+wa-varg := topic-vobj-lex &
+           [SYNSEM.LOCAL [CONT.RELS <! [PRED 'wa] !>,
+                          CAT.HEAD.PTYPE wa],
+            ORTH <! "は" !> ].
+
+
+yone := s-end1-declint-lex & 
+      [ORTH <! "よ","ね" !>,
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
+
+
+yori := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE yori,
+                                CONT.RELS <! [PRED 'yori] !>],
+         ORTH <! "より" !> ]. 
+
+
+yori-varg := postp-lex-1 &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE yori,
+                                CONT.RELS <! [PRED 'yori] !>],
+         ORTH <! "より" !> ]. 
+
+
+zutsu-p := postp-lex &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE zutsu,
+                                CONT.RELS <! [PRED 'zutsu] !>],
+         ORTH <! "ずつ" !> ]. 
+

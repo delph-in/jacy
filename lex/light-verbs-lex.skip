@@ -1,8 +1,20 @@
 
-dekiru-light := quasi-light-nohon-v-stem-lex &
- [ ORTH <! "できる" !>,
-   SYNSEM.LKEYS.KEYREL rareru-relation ].
+dekiru-kanji-light  :=
+quasi-light-nohon-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL rareru-relation,
+ ORTH <! "出来る" !>].
 
-dekiru-kanji-light := quasi-light-nohon-v-stem-lex &
- [ ORTH <! "出来る" !>,
-   SYNSEM.LKEYS.KEYREL rareru-relation ].
+; (ERB 2001-12-28) The rest of these are like "true" light verbs in
+; that they combine with vns.  They differ in that they do make a 
+; semantic contribution.
+; (ERB 2001-12-28) Some of these might need to be treated more like
+; aspect or perspective auxiliaries.
+; (ERB 2001-08-30) Fixing dekiru so that it has some semantic effect 
+; in combination with vns.  Giving it the same semantic effect of rareru.
+; I guess it's technically not a light verb then.
+; (MS 2001-09-14) Changed that again.
+dekiru-light  :=
+quasi-light-nohon-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL rareru-relation,
+ ORTH <! "できる" !>].
+

@@ -1,292 +1,404 @@
 
-watakushi := pron-sp-ref-lex &
- [ ORTH <! "私" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
+acchi :=
+pron-loc-ref-lex &
+[ORTH <! "あっち" !>,
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
 
-kanojo := pron-ent-ref-lex &
- [ ORTH <! "彼女" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG [ GEN fem,
-                                          PN threesg ] ].
-
-sore_2 := pron-demon-lex &
- [ ORTH <! "ソレ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
-
-soredake := pron-ent-ref-lex &
- [ ORTH <! "それだけ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
-
-watakushidomo-spadd := pron-sp-add-ref-lex &
- [ ORTH <! "私", "ども" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-achira_1 := pron-ent-ref-ahon-lex &
- [ ORTH <! "あちら" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG [ GEN neut,
-                                          PN threesg ] ].
-
-onore_1_2 := pron-sp-ref-lex &
- [ ORTH <! "己" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-asoko := pron-loc-ref-lex &
- [ ORTH <! "あそこ" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "there-rel" ].
-
-are_2 := pron-demon-lex &
- [ ORTH <! "アレ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
-
-temae_2_1 := pron-sp-ref-lex &
- [ ORTH <! "手前" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-ware_2_1 := pron-add-ref-lex &
- [ ORTH <! "われ" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
-
-arekore_1_2 := pron-thirdpl-ref-lex &
- [ ORTH <! "あれこれ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
-
-wareware-kanji-firstpl := pron-firstpl-ref-lex &
- [ ORTH <! "我々" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-sei_1_10 := pron-sp-ref-lex &
- [ ORTH <! "生" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-kore-katakana := pron-demon-lex &
- [ ORTH <! "コレ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
-
-shousei := pron-sp-ref-lex &
- [ ORTH <! "小生" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-boku := pron-sp-ref-lex &
- [ ORTH <! "ぼく" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
-
-acchi := pron-loc-ref-lex &
- [ ORTH <! "あっち" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "there-rel" ].
-
-watashi := pron-sp-ref-lex &
- [ ORTH <! "わたし" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-dochira-mo := affix-noun-lex &
- [ ORTH <! "どちら" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "dochira-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
-
-onmi_1 := pron-add-ref-lex &
- [ ORTH <! "御", "身" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-watashitachi-spadd := pron-sp-add-ref-lex &
- [ ORTH <! "私", "達" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-arera := pron-thirdpl-ref-lex &
- [ ORTH <! "あれら" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
-
-gaku-suffix := ordinary-nohon-n-lex &
- [ ORTH <! "額" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "gaku",
-            LOCAL [ BAR -,
-                    CAT.HEAD.J-POSTHEAD right ] ] ].
-
-temee_1_2 := pron-add-ref-lex &
- [ ORTH <! "てめえ" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
-
-watashitachi-firstpl := pron-firstpl-ref-lex &
- [ ORTH <! "私", "達" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-dare-mo-2 := affix-noun-lex &
- [ ORTH <! "誰" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "dare-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
-
-watakushidomo-firstpl := pron-firstpl-ref-lex &
- [ ORTH <! "私", "ども" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-achira := pron-loc-ref-lex &
- [ ORTH <! "あちら" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "there-rel" ].
-
-karera := pron-thirdpl-ref-lex &
- [ ORTH <! "彼ら" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN andro ].
-
-ima := date-noun-lex &
- [ ORTH <! "今" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ima",
-            LOCAL.BAR + ] ].
-
-kare := pron-ent-ref-lex &
- [ ORTH <! "彼" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG [ GEN masc,
-                                          PN threesg ] ].
-
-wareware-kanji-sp-add := pron-sp-add-ref-lex &
- [ ORTH <! "我々" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-ikutsu-mo := affix-noun-lex &
- [ ORTH <! "いくつ" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ikutsu-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
-
-sochira := pron-add-ref-lex &
- [ ORTH <! "そちら" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-kochira := pron-firstpl-ref-lex &
- [ ORTH <! "こちら" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-ki-suffix := ordinary-nohon-n-lex &
- [ ORTH <! "機" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ki",
-            LOCAL [ BAR -,
-                    CAT.HEAD.J-POSTHEAD right ] ] ].
-
-onore_2 := pron-add-ref-lex &
- [ ORTH <! "おのれ" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
-
-anata-kanji := pron-add-ref-lex &
- [ ORTH <! "貴方" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-mono-suffix := ordinary-nohon-n-lex &
- [ ORTH <! "物" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "mono",
-            LOCAL [ BAR -,
-                    CAT.HEAD.J-POSTHEAD right ] ] ].
-
-atakushi := pron-sp-ref-lex &
- [ ORTH <! "あたくし" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-doko-mo := affix-noun-lex &
- [ ORTH <! "どこ" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "doko-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
-
-sokora_1_1 := pron-loc-ref-lex &
- [ ORTH <! "そこら" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "there-rel" ].
-
-ikura-mo := affix-noun-lex &
- [ ORTH <! "いくら" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "ikura-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
-
-kanata := pron-loc-ref-lex &
- [ ORTH <! "彼方" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "there-rel" ].
-
-sorera := pron-thirdpl-ref-lex &
- [ ORTH <! "それら" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
-
-dore-mo := affix-noun-lex &
- [ ORTH <! "どれ" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "dore-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
-
-kimi-pron := pron-add-ref-lex &
- [ ORTH <! "君" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
-
-kodomotachi-noun := ordinary-nohon-n-lex &
- [ ORTH <! "子供", "達" !>,
-   SYNSEM.LKEYS.KEYREL [ ARG0.PNG.PN threepl,
-                             PRED "kodomotachi" ] ].
-
-nani-mo := affix-noun-lex &
- [ ORTH <! "なに" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "nani-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
-
-nanika-multi := ordinary-nohon-plusbar-n-lex &
- [ ORTH <! "何", "か" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "nanika",
-            LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED "indef" ] ].
-
-atashi := pron-sp-ref-lex &
- [ ORTH <! "あたし" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
 
 achikochi_1_1 := pron-loc-ref-lex &
- [ ORTH <! "あちこち" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "achikochi_1" ].
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'achikochi_1],
+ ORTH <! "あちこち" !> ].
 
-yasei_1_3 := pron-sp-ref-lex &
- [ ORTH <! "野生" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
 
-kore := pron-demon-lex &
- [ ORTH <! "これ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
+achira :=
+pron-loc-ref-lex &
+[ORTH <! "あちら" !>,
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
 
-sho-office-suffix := ordinary-nohon-n-lex &
- [ ORTH <! "署" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "sho",
-            LOCAL [ BAR -,
-                    CAT.HEAD.J-POSTHEAD right ] ] ].
+; (AO 2003-08-07) 三人称単数
+;		指すものを軽く敬っている
+;		はたしてこの書き方で動くのか...
+achira_1 := pron-ent-ref-ahon-lex &
+[SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN neut, PN threesg]],
+ ORTH <! "あちら" !>].
 
-sore := pron-demon-lex &
- [ ORTH <! "それ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
 
-hitobito-noun := ordinary-nohon-n-lex &
- [ ORTH <! "人々" !>,
-   SYNSEM.LKEYS.KEYREL [ ARG0.PNG.PN threepl,
-                             PRED "hitobito" ] ].
+anata :=
+pron-add-ref-lex &
+[ORTH <! "あなた" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
-ware_1_3 := pron-sp-ref-lex &
- [ ORTH <! "我" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
+;you; dear (what a wife calls a husband)
+anata-kanji :=
+pron-add-ref-lex &
+[ORTH <! "貴方" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
-boku-kanji := pron-sp-ref-lex &
- [ ORTH <! "僕" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
 
-sochira_1 := pron-loc-ref-lex &
- [ ORTH <! "そちら" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "there-rel" ].
+are :=
+pron-demon-lex &
+[ORTH <! "あれ" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
 
-are := pron-demon-lex &
- [ ORTH <! "あれ" !>,
-   SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut ].
+
+are_2 :=
+pron-demon-lex &
+[ORTH <! "アレ" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+arekore_1_2 :=  pron-thirdpl-ref-lex &
+[SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]],
+ ORTH <! "あれこれ" !> ].
+
+
+arera :=
+pron-thirdpl-ref-lex &
+[ORTH <! "あれら" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+asoko :=
+pron-loc-ref-lex &
+[ORTH <! "あそこ" !>,
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
+
+;only spoken language:
+atakushi :=
+pron-sp-ref-lex &
+[ORTH <! "あたくし" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+atashi :=
+pron-sp-ref-lex &
+[ORTH <! "あたし" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+boku :=
+pron-sp-ref-lex &
+[ORTH <! "ぼく" !>,
+ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+
+boku-kanji:=
+pron-sp-ref-lex &
+[ORTH <! "僕" !>,
+ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
 
 dare-mo := affix-noun-lex &
- [ ORTH <! "だれ" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "dare-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
+[SYNSEM [LKEYS.KEYREL.PRED 'dare-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "だれ" !>].
 
-anata := pron-add-ref-lex &
- [ ORTH <! "あなた" !>,
-   SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
+
+dare-mo-2 := affix-noun-lex &
+[SYNSEM [LKEYS.KEYREL.PRED 'dare-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "誰" !>].
+
+;both
+dochira-mo :=
+affix-noun-lex &
+[SYNSEM [LKEYS.KEYREL.PRED 'dochira-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "どちら" !>].
+
+
+doko-mo := affix-noun-lex &
+[SYNSEM [LKEYS.KEYREL.PRED 'doko-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "どこ" !>].
+
+
+dore-mo := affix-noun-lex &
+[SYNSEM [LKEYS.KEYREL.PRED 'dore-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "どれ" !>].
+
+
+gaku-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "額" !>,
+ SYNSEM [LKEYS.KEYREL.PRED 'gaku,
+	 LOCAL [CAT.HEAD.J-POSTHEAD right,
+		BAR -]]].
+
+;people
+hitobito-noun :=  
+        ordinary-nohon-n-lex &
+	[SYNSEM.LKEYS.KEYREL [PRED 'hitobito,
+				ARG0.PNG.PN threepl],
+         ORTH <! "人々" !>].
+
+
+ikura-mo := affix-noun-lex &
+[SYNSEM [LKEYS.KEYREL.PRED 'ikura-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "いくら" !>].
+
+
+ikutsu-mo := affix-noun-lex &
+[SYNSEM [LKEYS.KEYREL.PRED 'ikutsu-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "いくつ" !>].
+
+
+ima :=
+date-noun-lex &
+[ORTH <! "今" !>,
+SYNSEM [LKEYS.KEYREL [PRED 'ima],
+	LOCAL.BAR +]].
+
 
 itsu-mo := affix-noun-lex &
- [ ORTH <! "いつ" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "itsu-mo",
-            NON-LOCAL.AFFIX <! mo !> ] ].
+[SYNSEM [LKEYS.KEYREL.PRED 'itsu-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "いつ" !>].
 
-koko := pron-loc-ref-lex &
- [ ORTH <! "ここ" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "here-rel" ].
 
-soko := pron-loc-ref-lex &
- [ ORTH <! "そこ" !>,
-   SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "there-rel" ].
+kanata := pron-loc-ref-lex &
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel],
+ ORTH <! "彼方" !> ].
+
+
+kanojo :=
+pron-ent-ref-lex &
+[ORTH <! "彼女" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN fem, PN threesg]]].
+
+
+kare :=
+pron-ent-ref-lex &
+[ORTH <! "彼" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+
+karera :=
+pron-thirdpl-ref-lex &
+[ORTH <! "彼ら" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN andro]]].
+
+
+kimi-pron :=
+pron-add-ref-lex &
+[ORTH <! "君" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+
+ki-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "機" !>,
+SYNSEM [LKEYS.KEYREL [PRED 'ki],
+	LOCAL [CAT.HEAD.J-POSTHEAD right,
+	       BAR -]]].
+
+
+kochira :=
+pron-firstpl-ref-lex &
+[ORTH <! "こちら" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+;children
+kodomotachi-noun :=  
+        ordinary-nohon-n-lex &
+	[SYNSEM.LKEYS.KEYREL [PRED 'kodomotachi,
+                                ARG0.PNG.PN threepl],
+         ORTH <! "子供","達" !>].
+
+
+koko :=
+pron-loc-ref-lex &
+[ORTH <! "ここ" !>,
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'here-rel]].
+
+
+kore :=
+pron-demon-lex &
+[ORTH <! "これ" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+kore-katakana :=
+pron-demon-lex &
+[ORTH <! "コレ" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+mono-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "物" !>,
+SYNSEM [LKEYS.KEYREL [PRED 'mono],
+	LOCAL [CAT.HEAD.J-POSTHEAD right,
+	       BAR -]]].
+
+
+nanika-multi := ordinary-nohon-plusbar-n-lex &
+                                [ORTH <! "何",  "か" !>,
+                                 SYNSEM [LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED 'indef,
+					 LKEYS.KEYREL.PRED 'nanika]].
+
+
+nani-mo := affix-noun-lex &
+[SYNSEM [LKEYS.KEYREL.PRED 'nani-mo,
+         NON-LOCAL.AFFIX <! mo !>],
+ORTH <! "なに" !>].
+
+; (AO 2003-08-07) 御身の「身」
+onmi_1 := pron-add-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
+ ORTH <! "御","身" !>].
+
+
+onore_1_2 := pron-sp-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
+ ORTH <! "己" !> ].
+
+; (AO 2003-08-08) 対称の代名詞 相手を見下した言い方
+;		辞書的には漢字で書くのだろうが、
+;		「てめえ, あたし, われ」と同様ひらがなで追加
+onore_2 := pron-add-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
+ ORTH <! "おのれ" !> ].
+
+
+sei_1_10 := pron-sp-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +, 
+ ORTH <! "生" !> ].
+
+
+sho-office-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "署" !>,
+SYNSEM [LKEYS.KEYREL [PRED 'sho],
+	LOCAL [CAT.HEAD.J-POSTHEAD right,
+	       BAR -]]].
+
+
+shousei :=
+pron-sp-ref-lex &
+[ORTH <! "小生" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+sochira :=
+pron-add-ref-lex &
+[ORTH <! "そちら" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+sochira_1 := pron-loc-ref-lex &
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel],
+ ORTH <! "そちら" !>].
+
+
+soko :=
+pron-loc-ref-lex &
+[ORTH <! "そこ" !>,
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel]].
+
+
+sokora_1_1 := pron-loc-ref-lex &
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED 'there-rel],
+ ORTH <! "そこら" !> ].
+
+
+sore :=
+pron-demon-lex &
+[ORTH <! "それ" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+sore_2 :=
+pron-demon-lex &
+[ORTH <! "ソレ" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+soredake :=
+pron-ent-ref-lex &
+[ORTH <! "それだけ" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+sorera :=
+pron-thirdpl-ref-lex &
+[ORTH <! "それら" !>,
+SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+
+
+temae_2_1 := pron-sp-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
+ ORTH <! "手前" !> ].
+
+
+temee_1_2 := pron-add-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
+ ORTH <! "てめえ" !>].
+
+
+ware_1_3 := pron-sp-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
+ ORTH <! "我" !> ].
+
+; (AO 2003-08-07) 対称の代名詞 相手をののしって言う
+;		辞書的には漢字で書くのだろうが、
+;		「てめえ、あたし」と同様ひらがなで追加
+ware_2_1 := pron-add-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
+ ORTH <! "われ" !> ].
+
+
+wareware-kanji-firstpl :=
+pron-firstpl-ref-lex &
+[ORTH <! "我々" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+wareware-kanji-sp-add :=
+pron-sp-add-ref-lex &
+[ORTH <! "我々" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+watakushi := pron-sp-ref-lex &
+             [ORTH <! "私" !>,
+              SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+watakushidomo-firstpl :=
+pron-firstpl-ref-lex &
+[ORTH <! "私","ども" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+watakushidomo-spadd :=
+pron-sp-add-ref-lex &
+[ORTH <! "私","ども" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+watashi :=
+pron-sp-ref-lex &
+[ORTH <! "わたし" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+watashitachi-firstpl :=
+pron-firstpl-ref-lex &
+[ORTH <! "私","達" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+watashitachi-spadd :=
+pron-sp-add-ref-lex &
+[ORTH <! "私","達" !>,
+SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+yasei_1_3 := pron-sp-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +, 
+ ORTH <! "野生" !> ].
+
