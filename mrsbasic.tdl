@@ -250,10 +250,15 @@ integer_rel :< relation.
 ; (ERB 2002-02-14) For current version of k2y code, need const_rel
 ; to have an event variable.
 
-const_rel := integer_rel & event_rel &
-             [ CONST_VALUE *top*,
-	       PRED 'const,
-               ARG0.E.TENSE no_tense ].
+; (MS 2003-12-10) This is now CARG (RMRS construction and matrix).
+; But what should we do about ARG0?
+
+;const_rel := integer_rel & event_rel &
+;             [ CONST_VALUE *top*,
+;	       PRED 'const,
+;               ARG0.E.TENSE no_tense ].
+
+const_rel := named_rel.
 
 times_rel := integer_rel & 
              [ PRED 'times,

@@ -2218,7 +2218,7 @@ issu-stem :=
 ;buy back
 
 kaimodosu-stem :=  
-        intrans-v-stem-lex &
+        intrans-c-stem-lex &
         [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kaimodosu,
          ORTH <! "Çã¤¤Ìá¤¹" !> ].
 

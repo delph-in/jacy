@@ -1,3 +1,6 @@
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
 some miscellaneous words
  
       3 error: no lexicon entries for "どうし".
@@ -14,3 +17,323 @@ some miscellaneous words
       1 error: no lexicon entries for "げ".
       1 error: no lexicon entries for "がま".
       1 error: no lexicon entries for "かぎり".
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+
+* Apectual "aru" occurs even if it has no specifier - this is a major
+source of spurious ambiguity.
+
+e.g. ある 集団 に 属する 全て の 人
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+
+
+
+* "tari" (as in "V tari V tari suru") can modify a non-suru verb
+I think this could be restricted more.
+
+e.g.  (do-parse-tty "叱っ たり 注意 し たり する 時 に 発する 語")
+
+
+* Running debug - check lexicon
+  gave a warning for the set of words ending in "chuu" .
+  I can't cut and paste from the lkb window [which frustrates me no end] 
+  so I won't list them all  
+     Warning malformed difference list for all of
+     KOUGICHUU -- GAISHUTSUCHUU
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+And more of a wishlist/ do we really need to do this kind of thing -
+
+* Among the verbs I added were slightly archaic verbs like 「生ずる」
+"shou-zuru".  At the moment, we can't inflect these.  It would be
+trivial to as (ze ji) etc to infl.tdl, but all these verbs also have a
+more modern counterpart e.g. 「生じる」 "shou-jiru" which gives the
+same inflectional forms and has the same meaning.  It would be nifty
+to have them as a special class in some way.  But i would need to
+discuss them more with a knowledgable Japanese linguist before doing
+anything.  I will ask Akira Ohtanai next tim we have some time.
+
+* Also added were verbs like 「関する」"kansuru" which pretty much
+  only turn up as pseudo postpositions 「に関する」"nikansuru".
+  Matsumoto Yo has a nice paper about these somewhere (I read it in
+  a bookshop and don't actully own a copy or remember the title).
+
+* Some of the verbs are those where Melanie and I disagree on the
+  subcat (intransitive vs v2).  For the moment I put them in as v2,
+  but I realize that further discussion is needed.
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+
+There is one known bug - with 中 chuu/juu "during", which I think is
+related to the matrix changes.
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+
+The suffix file contained a fair few problematic entries.  Many of
+them we can now parse, but the semantics (and possibly syntax) is
+definitely not so correct.
+
+E.G. 
+団 "dan" which doesn't have the group meaning
+げ "ge" as in sumu-ge (coldish) which doesn't get the POS conversion
+etc.
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+
+I have tried to comment all the entries I thought needed more work
+(with FIXME) and also those which I wasn't sure about (CHECKME).
+
+I expect Takaaki "NP" Tanaka will be looking at them soon (^_^).
+
+I haven't been able to check the grammar for generation as it ran out
+of memory while indexing (1GB memory).  Our new machine have arrived,
+but I haven't had time to play with them yet.  Ben Waldron at
+Cambridge is working on moving the lexicon to PostgreSQL, which should
+make some things easier.
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+
+
+P.S.  The suffix file also included a fair few verbs which operate as
+the second verb in V-V constructions, I didn't add them to the
+official grammar, but list them here in case anyone is interested
+(^_^):
+
+
+
+;<IJ> ; 切れる 
+;<IJ> ; JACY 切れる: kireru-stem (intrans-v-stem-lex)
+;<IJ> ; Used 1 times
+
+;<IJ> kireru_2 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'kireru_2,
+;<IJ>  ORTH <! "切れる" !> ].
+
+; くたびれる 
+; Used 1 times
+; (TT 2003-08-07)
+; FIXJACY: 複合動詞を生成する(lexical typeが必要)
+; e.g. 「待ちくたびれる」
+
+; kutabireru_2 := ordinary-suffix-n-lex &
+; [SYNSEM.LOCAL.KEYS.KEY.PRED 'kutabireru_2,
+;  ORTH <! "くたびれる" !> ].
+
+;<LF> ; 果てる 
+
+;<LF> hateru_2 := ordinary-suffix-n-lex &
+;<LF> [SYNSEM.LOCAL.KEYS.KEY.PRED 'hateru_2,
+;<LF>  ORTH <! "果てる" !> ].
+
+;<LF> ; 惚れる 
+
+;<LF> horeru_2 := ordinary-suffix-n-lex &
+;<LF> [SYNSEM.LOCAL.KEYS.KEY.PRED 'horeru_2,
+;<LF>  ORTH <! "惚れる" !> ].
+
+;<IJ> ; 詰める 
+;<IJ> ; JACY 詰める: tsumeru-stem (v1-v-stem-lex)
+;<IJ> ; Used 3 times
+
+;<IJ> tsumeru_3 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tsumeru_3,
+;<IJ>  ORTH <! "詰める" !> ].
+
+
+;<IJ> ; 通す 
+;<IJ> ; JACY 通す: toosu-stem (v1-c-stem-lex) tousu-stem (v1-c-stem-lex)
+;<IJ> ; Used 5 times
+
+;<IJ> toosu_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'toosu_1,
+;<IJ>  ORTH <! "通す" !> ].
+
+;<IJ> ; 飛ばす 
+;<IJ> ; JACY 飛ばす: tobasu-stem (v1-c-stem-lex)
+;<IJ> ; Used 2 times
+
+;<IJ> tobasu_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tobasu_1,
+;<IJ>  ORTH <! "飛ばす" !> ].
+
+;<IJ> ; 直す 
+;<IJ> ; JACY 直す: naosu-stem (v1-c-stem-lex)
+;<IJ> ; Used 4 times
+
+;<IJ> naosu_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'naosu_1,
+;<IJ>  ORTH <! "直す" !> ].
+
+; 成す 
+; Used 5 times
+; (TT 2003-08-07)
+; FIXJACY: 複合動詞を生成する(lexical typeが必要)
+; e.g. 「つくり成す」
+
+; nasu_1_2 := ordinary-suffix-n-lex &
+; [SYNSEM.LOCAL.KEYS.KEY.PRED 'nasu_1_2,
+;  ORTH <! "成す" !> ].
+
+;<LF> ; 習わす 
+
+;<LF> narawasu_1 := ordinary-suffix-n-lex &
+;<LF> [SYNSEM.LOCAL.KEYS.KEY.PRED 'narawasu_1,
+;<LF>  ORTH <! "習わす" !> ].
+
+;<IJ> ; 抜く 
+;<IJ> ; JACY 抜く: nuku-stem (v1-c-stem-lex)
+;<IJ> ; Used 3 times
+
+;<IJ> nuku_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'nuku_1,
+;<IJ>  ORTH <! "抜く" !> ].
+
+;<IJ> ; 果たす 
+;<IJ> ; JACY 果たす: hatasu-stem (v1-c-stem-lex)
+;<IJ> ; Used 2 times
+
+;<IJ> hatasu_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'hatasu_1,
+;<IJ>  ORTH <! "果たす" !> ].
+
+;<IJ> ; 回す 
+;<IJ> ; JACY 回す: mawasu-stem (v4-c-stem-lex)
+;<IJ> ; Used 2 times
+
+;<IJ> mawasu_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'mawasu_1,
+;<IJ>  ORTH <! "回す" !> ].
+
+;<IJ> ; 渡す 
+;<IJ> ; JACY 渡す: watasu-stem (v1-c-stem-lex)
+;<IJ> ; Used 9 times
+
+;<IJ> watasu_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'watasu_1,
+;<IJ>  ORTH <! "渡す" !> ].
+
+
+;<IJ> ; 得る 
+;<IJ> ; JACY 得る: eru-stem (v1-v-stem-lex)
+;<IJ> ; Used 25 times
+
+;<IJ> eru_2_1 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'eru_2_1,
+;<IJ>  ORTH <! "得る" !> ].
+
+;<IJ> ; 掛ける 
+;<IJ> ; JACY 掛ける: kakeru-kanji_telephone-stem (v1-v-stem-lex)
+;<IJ> ; Used 18 times
+
+;<IJ> kakeru_2 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'kakeru_2,
+;<IJ>  ORTH <! "掛ける" !> ].
+
+; 兼ねる 
+; Used 1 times
+; (TT 2003-08-07)
+; FIXJACY: 複合動詞を生成する(lexical typeが必要)
+; e.g. 「見兼ねる」
+
+; kaneru_2 := ordinary-suffix-n-lex &
+; [SYNSEM.LOCAL.KEYS.KEY.PRED 'kaneru_2,
+;  ORTH <! "兼ねる" !> ].
+
+; 建てる 
+; Used 9 times
+; (TT 2003-08-07)
+; ORTH 「建てる」->「立てる」
+; FIXJACY: 複合動詞を生成する(lexical typeが必要)
+; e.g. 「並べ立てる」「述べ立てる」
+
+; tateru_2 := ordinary-suffix-n-lex &
+; [SYNSEM.LOCAL.KEYS.KEY.PRED 'tateru_2,
+;  ORTH <! "立てる" !> ].
+
+;<IJ> ; 付ける 
+;<IJ> ; JACY 付ける: tsukeru_attach-stem (v1-v-stem-lex)
+;<IJ> ; Used 82 times
+
+;<IJ> tsukeru_2 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tsukeru_2,
+;<IJ>  ORTH <! "付ける" !> ].
+
+;<IJ> ; 続ける 
+;<IJ> ; JACY 続ける: tsuzukeru-stem (v1-v-stem-lex) tsudukeru-stem (v1-v-stem-lex)
+;<IJ> ; Used 12 times
+
+;<IJ> tsudukeru_2 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tsudukeru_2,
+;<IJ>  ORTH <! "続ける" !> ].
+
+;<IJ> ; 始める 
+;<IJ> ; JACY 始める: hajimeru-stem (v1-v-stem-lex)
+;<IJ> ; Used 14 times
+
+;<IJ> hajimeru_2 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'hajimeru_2,
+;<IJ>  ORTH <! "始める" !> ].
+
+;<IJ> ; 上げる 
+;<IJ> ; JACY 上げる: ageru-stem (v1-v-stem-lex)
+;<IJ> ; Used 11 times
+
+;<IJ> ageru_2 := ordinary-suffix-n-lex &
+;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'ageru_2,
+;<IJ>  ORTH <! "上げる" !> ].
+
+
+------------------------------------------------------------------
+The latest grammar still has about 1% less cover than our version of
+Oct 14.  It appears a couple of verbs we changed haven't been merged -
+notably different subcats of "omou" "naru" and I think "ikiru".  On
+the other hand, we are producing far fewer bad MRSs due to various
+improvements Melanie added in, and we have lost some of the more
+annoying spurious ambiguity (and then added most of it back in with a
+new "ni" particle ...).  Sanae has a copy of the latest MRSs which she
+will put on the NAIST machine for Eric.
+
+------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+I was unable to generate with the latest grammar because the lexicon
+was so big I ran out of memory indexing ...
+------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+Still to do:
+  - get the cover up to where it was (and beyond)
+  - fix the MRSs
+    there are still some with "string" appearing in them ...
+  - update the trees to the new grammar
+  - relearn the stochastic model
+  - redo the knowledge acquisition
+
+Specific things people are working on/looking at that I know about
+  - Chikara
+    - V-V, relative clauses
+  - Akira and Miyata
+    - paraphrasing
+    - Ohtani maybe also "koko-yori higashi"
+  - Atsuko
+    - verbal-nouns
+  - Wai-lok, Kyonghee (and me)
+    - numeral classifiers
+  - Taka (and me)
+    - NP analysis
+  - Sanae (and me)
+    - Verb classes
+  - Eric (and me)
+    - Improving the knowledge acquisition
+

@@ -3,59 +3,59 @@
 ;; Numbers
 
 onedigit_ersatz_card := card_1_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'OneDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'OneDigitErsatz,
   ORTH <! "OneDigitErsatz" !> ].
 
 twodigit_ersatz_card := card_2_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'TwoDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'TwoDigitErsatz,
   ORTH <! "TwoDigitErsatz" !> ].
 
 threedigit_ersatz_card := card_3_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'ThreeDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ThreeDigitErsatz,
   ORTH <! "ThreeDigitErsatz" !> ].
 
 fourdigit_ersatz_card := card_4e_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'FourDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'FourDigitErsatz,
   ORTH <! "FourDigitErsatz" !> ].
 
 fivedigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'FiveDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'FiveDigitErsatz,
   ORTH <! "FiveDigitErsatz" !> ].
 
 sixdigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'SixDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'SixDigitErsatz,
   ORTH <! "SixDigitErsatz" !> ].
 
 sevendigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'SevenDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'SevenDigitErsatz,
   ORTH <! "SevenDigitErsatz" !> ].
 
 eightdigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'EightDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'EightDigitErsatz,
   ORTH <! "EightDigitErsatz" !> ].
 
 ninedigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'NineDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'NineDigitErsatz,
   ORTH <! "NineDigitErsatz" !> ].
 
 tendigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'TenDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'TenDigitErsatz,
   ORTH <! "TenDigitErsatz" !> ].
 
 elevendigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'ElevenDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ElevenDigitErsatz,
   ORTH <! "ElevenDigitErsatz" !> ].
 
 twelvedigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'TwelveDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'TwelveDigitErsatz,
   ORTH <! "TwelveDigitErsatz" !> ].
 
 thirteenplusdigit_ersatz_card := card_13x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'ThirteenPlusDigitErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ThirteenPlusDigitErsatz,
   ORTH <! "ThirteenPlusDigitErsatz" !> ].
 
 decimal_ersatz_card := card_1_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'DecimalErsatz,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'DecimalErsatz,
   ORTH <! "DecimalErsatz" !> ].
 
 ;; Nouns and nouny things

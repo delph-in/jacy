@@ -3730,7 +3730,7 @@ card-with-object-with-specifier_ichi := card-with-object-with-specifier & card-w
 
 card_ichi := card-value &
              [ SYNSEM.LOCAL [ CAT.HEAD int_ichi,
-                              LKEYS.--KEYREL.CONST_VALUE "1" ]].
+                              LKEYS.--KEYREL.CARG "1" ]].
 
 card1 := card-value &
              [ SYNSEM.LOCAL.CAT.HEAD int1 ].
@@ -3851,7 +3851,7 @@ han-lex := lexical_sign-word &
                          VAL saturated ],
 		   ARG-S < >,
 		   LKEYS.--KEYREL #key & [ LBL #top,
-				     CONST_VALUE ".5" ],
+				     CARG ".5" ],
                    CONT card-sem-type &
                        [ HOOK.LTOP #top,
                          RELS <! #key !>]],
@@ -3948,7 +3948,7 @@ toshi-lex := date-lex &
 
 date-ersatz-lex := date-no-object2-no-int-lex &
                    [ SYNSEM.LOCAL.LKEYS [--KEYREL.PRED 'dateersatz,
-                                         --ALTKEYREL.CONST_VALUE 'ersatz ]].
+                                         --ALTKEYREL.CARG 'ersatz ]].
 
 nichi-no-object2-lex := nichi-lex & date-no-object2-with-int-lex.
 gatsu-no-object2-lex := gatsu-lex & date-no-object2-with-int-lex.
@@ -3964,87 +3964,87 @@ gatsu-with-object2-lex := gatsu-lex & date-with-object2-with-int-lex &
 
 1gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "1" ]].
+                                           LKEYS.--ALTKEYREL.CARG "1" ]].
 
 2gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "2" ]].
+                                           LKEYS.--ALTKEYREL.CARG "2" ]].
 
 3gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "3" ]].
+                                           LKEYS.--ALTKEYREL.CARG "3" ]].
 
 4gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "4" ]].
+                                           LKEYS.--ALTKEYREL.CARG "4" ]].
 
 5gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "5" ]].
+                                           LKEYS.--ALTKEYREL.CARG "5" ]].
 
 6gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS < [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "6" ]].
+                                           LKEYS.--ALTKEYREL.CARG "6" ]].
 
 7gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS <  [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "7" ]].
+                                           LKEYS.--ALTKEYREL.CARG "7" ]].
 
 8gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS <  [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "8" ]].
+                                           LKEYS.--ALTKEYREL.CARG "8" ]].
 
 9gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS <  [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "9" ]].
+                                           LKEYS.--ALTKEYREL.CARG "9" ]].
 
 10gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS <  [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "10" ]].
+                                           LKEYS.--ALTKEYREL.CARG "10" ]].
 
 11gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS <  [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "11" ]].
+                                           LKEYS.--ALTKEYREL.CARG "11" ]].
 
 12gatsu-with-object2-lex := gatsu-lex & date-with-object2-no-int-lex &
                           [ SYNSEM.LOCAL [ CAT.VAL.COMPS <  [LOCAL.CAT.HEAD.KEYS.KEY yofc_relation] >,
-                                           LKEYS.--ALTKEYREL.CONST_VALUE "12" ]].
+                                           LKEYS.--ALTKEYREL.CARG "12" ]].
 
 1gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "1" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "1" ]].
 
 2gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "2" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "2" ]].
 
 3gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "3" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "3" ]].
 
 4gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "4" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "4" ]].
 
 5gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "5" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "5" ]].
 
 6gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "6" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "6" ]].
 
 7gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "7" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "7" ]].
 
 8gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "8" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "8" ]].
 
 9gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "9" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "9" ]].
 
 10gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "10" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "10" ]].
 
 11gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "11" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "11" ]].
 
 12gatsu-no-object2-lex := gatsu-lex & date-no-object2-no-int-lex &
-                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CONST_VALUE "12" ]].
+                          [ SYNSEM.LOCAL [ LKEYS.--ALTKEYREL.CARG "12" ]].
 
 ;;;;;;;;;;; Other date expressions ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

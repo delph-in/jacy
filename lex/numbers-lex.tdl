@@ -21,131 +21,131 @@ ichi_card := card_ichi_no_valence &
 [ ORTH <! "°ì" !> ].
 
 ni_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "2",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "2",
   ORTH <! "Æó" !> ].
 
 san_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "3",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "3",
   ORTH <! "»°" !> ].
 
 shi_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "4",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "4",
   ORTH <! "»Í" !> ].
 
 go_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "5",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "5",
   ORTH <! "¸Þ" !> ].
 
 roku_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "6",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "6",
   ORTH <! "Ï»" !> ].
 
 shichi_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "7",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "7",
   ORTH <! "¼·" !> ].
 
 hachi_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "8",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "8",
   ORTH <! "È¬" !> ].
 
 kyuu_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "9",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "9",
   ORTH <! "¶å" !> ].
 
 juu_card1 := card_2_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
   ORTH <! "½½" !> ].
 
 juu_card2 := card_2_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
   ORTH <! "½½" !> ].
 
 juu_card3 := card_2_object_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
   ORTH <! "½½" !> ].
 
 juu_card4 := card_2_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
   ORTH <! "½½" !> ].
 
 hyaku_card1 := card_3_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
   ORTH <! "É´" !> ].
 
 hyaku_card2 := card_3_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
   ORTH <! "É´" !> ].
 
 hyaku_card3 := card_3_object_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
   ORTH <! "É´" !> ].
 
 hyaku_card4 := card_3_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
   ORTH <! "É´" !> ].
 
 sen_card1 := card_4_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
   ORTH <! "Àé" !> ].
 
 sen_card2 := card_4_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
   ORTH <! "Àé" !> ].
 
 sen_card6 := card_4_spr_only_2 & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
   ORTH <! "Àé" !> ].
 
 sen_card3 := card_4_object_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
   ORTH <! "Àé" !> ].
 
 sen_card4 := card_4_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
   ORTH <! "Àé" !> ].
 
 sen_card5 := card_4_spr_object_2 & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
   ORTH <! "Àé" !> ].
 
 man_card1 := card_5_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000",
   ORTH <! "Ëü" !> ].
 
 man_card2 := card_5_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000",
   ORTH <! "Ëü" !> ].
 
 oku_card1 := card_9_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000",
   ORTH <! "²¯" !> ].
 
 oku_card2 := card_9_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000",
   ORTH <! "²¯" !> ].
 
 chou_card1 := card_13_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000000000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000000000000",
   ORTH <! "Ãû" !> ].
 
 chou_card2 := card_13_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "1000000000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000000000000",
   ORTH <! "Ãû" !> ].
 
 kei_card1 := card_17_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10000000000000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000000000000000",
   ORTH <! "µþ" !> ].
 
 kei_card2:= card_17_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "10000000000000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000000000000000",
   ORTH <! "µþ" !> ].
 
 gai_card1 := card_21_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100000000000000000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000000000000000",
   ORTH <! "Ô¶" !> ].
 
 gai_card2 := card_21_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "100000000000000000000",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000000000000000",
   ORTH <! "Ô¶" !> ].
 
 ; (ERB 2001-12-05)
@@ -1555,47 +1555,47 @@ one_card := card_ichi_no_valence &
 [ ORTH <! "£±" !> ].
 
 two_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "2",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "2",
   ORTH <! "£²" !> ].
 
 three_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "3",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "3",
   ORTH <! "£³" !> ].
 
 four_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "4",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "4",
   ORTH <! "£´" !> ].
 
 five_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "5",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "5",
   ORTH <! "£µ" !> ].
 
 six_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "6",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "6",
   ORTH <! "£¶" !> ].
 
 seven_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "7",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "7",
   ORTH <! "£·" !> ].
 
 eight_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "8",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "8",
   ORTH <! "£¸" !> ].
 
 nine_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "9",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "9",
   ORTH <! "£¹" !> ].
 
 ;;; probably needs more work
 zero_card1 := card_2_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "0",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "0",
   ORTH <! "£°" !> ].
 
 hito_card := card_ichi_no_valence &
 [ ORTH <! "¤Ò¤È" !> ].
 
 futa_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE "2",
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "2",
   ORTH <! "¤Õ¤¿" !> ].
 
 

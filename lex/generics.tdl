@@ -34,7 +34,7 @@ generic_loc_name-lex := loc_name-lex &
 ORTH <! "GenericLocName" !>].
 
 generic_number-lex := card-no-object-no-specifier &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CONST_VALUE 'generic_number,
+[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'generic_number,
 ORTH <! "GenericNumber" !>].
 
 generic_na-adj-lex :=
