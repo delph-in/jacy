@@ -1,11 +1,60 @@
 ------------------------------------------------------------------------
 FRANCIS
 ------------------------------------------------------------------------
+(do-parse-tty "日常 の 行い が 確か で ある 。")
+There is a difference in the parse output between pet and the lkb
+Only pet gives - utterance_rule-wh-without-ka !
+
+As pet is less restrictive than the lkb, it causes immense trouble
+when updateing or annotating.
+
+So - commenting out utterance_rule-wh-without-ka so I can update.
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+ERROR with TEKI
+cheap "cannot instantiate base of full form"?
+LKB seems to parse fine!
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+ERROR with parse of "東京 へ の 道"
+(and in general all such postposition -no sentences) 
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+Lexical types fail to unify
+`$nakereba-narimasen-end'
+`$zaru-wo-emasen-end'
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+Lexical types fail to unify
+Spurious Ambiguity
+ (do-parse-tty "心 が 満たさ れ ない")
+TAI-OBJ-CHANGE-RULE
+
+SF fixed by adding KEY - 
+
+Now only get adversative passive!
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+
+Somewhere along the line we seem to have lost the V-V verbs...
+ (do-parse-tty "移り 動く")
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
 some miscellaneous words
  
       3 error: no lexicon entries for "どうし".
       2 error: no lexicon entries for "にあたる".
-      2 error: no lexicon entries for "か月".
       1 error: no lexicon entries for "路".
       1 error: no lexicon entries for "分の".
       1 error: no lexicon entries for "団".
@@ -21,7 +70,6 @@ some miscellaneous words
 ------------------------------------------------------------------------
 FRANCIS
 ------------------------------------------------------------------------
-
 
 
 * "tari" (as in "V tari V tari suru") can modify a non-suru verb
@@ -54,12 +102,6 @@ anything.  I will ask Akira Ohtanai next tim we have some time.
   subcat (intransitive vs v2).  For the moment I put them in as v2,
   but I realize that further discussion is needed.
 
-------------------------------------------------------------------------
-FRANCIS
-------------------------------------------------------------------------
-
-There is one known bug - with 中 chuu/juu "during", which I think is
-related to the matrix changes.
 ------------------------------------------------------------------------
 FRANCIS
 ------------------------------------------------------------------------
@@ -287,9 +329,7 @@ notably different subcats of "omou" "naru" and I think "ikiru".  On
 the other hand, we are producing far fewer bad MRSs due to various
 improvements Melanie added in, and we have lost some of the more
 annoying spurious ambiguity (and then added most of it back in with a
-new "ni" particle ...).  Sanae has a copy of the latest MRSs which she
-will put on the NAIST machine for Eric.
-
+new "ni" particle ...). 
 ------------------------------------------------------------------
 FRANCIS
 ------------------------------------------------------------------------
