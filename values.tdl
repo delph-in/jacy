@@ -146,6 +146,10 @@ caus-pot-vol-neg := pot-caus-vol & pot-neg-caus.
 ;taku-nakere-ba
 vol-neg-cond := neg-vol & neg-cond.
 
+;(MS 2004-11-26) sase-rareru
+pass-caus := passive-basic & causative.
+
+
 smod  :< sort.
 
 unmarked :< smod.
@@ -374,12 +378,16 @@ masc :< andro.
 neut :< andro.
 
 
+; (MS 2004-11-30) I want to distinguish between relatives and others,
+; such that the others don't go into the relative clause rule.
+
 posthead :< sort.
-left :< posthead.
-right :< posthead.
-intersective :< posthead.
+nonrels  :< posthead.
+left :< nonrels.
+right :< nonrels.
+intersective :< nonrels.
 rels :< posthead.
-coord :< posthead.
+coord :< nonrels.
 
 ; (ERB 2002-01-24) To keep phrases produced by the conj-rule
 ; from being modified.  The multiple layers here allow for

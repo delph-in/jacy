@@ -661,13 +661,14 @@ rel-cl-obj1-gap-rule := rel-cl-gap-rule &
 ; FIXME: NOT WORKING
 ; NOTE without this rule, the rel-cl-gap-rule can be just rel-cl-gap-rule := hadj-final-i  & ...
 ; need to work on it a bit more
+;
+; (MS 2004-11-30) The first complement should not be restricted to be bound: 置くテーブル
 
 rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
 			 ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
 							 COMPS 1-plus-list &
-							      [FIRST onull,
-							       REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind]]]]]],
+							      [REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind]]]]]],
 			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind ]>].
 
 

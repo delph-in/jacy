@@ -161,9 +161,9 @@
 ;;; `:host', `:db', `:table', and `:user' (optional) 
 ;;; if unset we fall back to .tdl lexicon files
 
-;(defparameter *psql-lexicon-parameters* 
-;  #+:psql
-;  '((:user "bmw20") (:port "5229") (:db "jap2") (:host "localhost") (:table "jap"))
-;  #-:psql
-;  nil)
+(defparameter *psql-lexicon-parameters* 
+  #+:psql
+  '((:db "jap") (:host "localhost") (:table "jap"))
+  #-:psql
+  nil)
 

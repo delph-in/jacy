@@ -412,8 +412,12 @@ num-cl-n-or-p-mod_head := num-cl-mod_head &
 ; (ERB 2001-09-12) Some num-cl like things can't "float" (i.e., show 
 ; up outside the PP.  So these have a more specific MOD value).
 
+; (MS 2004-11-30) But these should not go into the relative clause rule.
+; That's why they get the J-POSTHEAD nonrels.
+
 num-cl-nmod_head := num-cl-mod_head &
-                    [ MOD < [LOCAL.CAT.HEAD noun_head ] > ].
+                    [ MOD < [LOCAL.CAT.HEAD noun_head ] >,
+		      J-POSTHEAD nonrels].
 
 ; 円、階、etc.
 
@@ -1318,11 +1322,17 @@ cop_transitive := obj-arg &
 			   CAT [HEAD [COP-ARG +,MAIN-PRD -],
 				VAL saturated]]] > ].
 
-cop-stem_transitive := obj-arg &
-                       [COMPS obl-1-arg &
+
+; (MS 2004-11-30) If the VAL of the na-adj is restricted to be saturated, 
+; the relative-clause-gap-rules cannot be applied. Rather, the cop-sem should 
+; take the subject of the nad-adj.
+
+cop-stem_transitive := sbj-obj-arg &
+                       [SUBJ #sbjval,
+			COMPS obl-1-arg &
 			      < [LOCAL [BAR +,
 					     CAT [HEAD na-adj_head,
-						  VAL saturated]]] > ].
+						  VAL.SUBJ #sbjval]]] > ].
 
 
 ; (ERB 2001-09-24) Experimenting with removing [BAR +] constraint
@@ -4017,10 +4027,12 @@ lex-mod-adv-wh-lex := adv-wh-lex &
 
 ; (MS 2003-12-17) Changing the semantics of adverbs (Matrix)
 
+; (MS 2004-11-26) Changing MOD-HAND and MOD-IND in MOD to LTOP and INDEX.
+
 isect-adv-lex := adv-lex &
                   [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod & 
-							 [CONT [MOD-HAND #handel,
-								MOD-IND #ind]]] >,
+							 [CONT.HOOK [LTOP #handel,
+								     INDEX #ind]]] >,
 					    J-POSTHEAD left],
                                   CONT i-sect-adv-sem-type &
 					   [HOOK.INDEX #ind,
@@ -5426,6 +5438,8 @@ pass-end-lex :=  v-op-end-lex &
 ; ditransitive passives (置かれた)
 ; (MS 2004-11-18) Added PASS + to the event Index, such that this appears in the MRS. 
 ; Access ARG-S instead of RELS.LIST.FIRST.
+; (MS 2004-11-30) It is too strict to say that the valence of the SPR should be sbj-obj-arg. 
+; There could be a SPR (in case of causative-passive).
 
 
 simple-pass-end-lex :=   pass-end-lex &
@@ -5438,7 +5452,9 @@ simple-pass-end-lex :=   pass-end-lex &
 								       XARG #surfobjind]],
 							   ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
 								   [LOCAL.CONT.HOOK.INDEX #surfsbjind] >,
-							   CAT.VAL sbj-obj-arg & [UNSAT +]]]],
+							   CAT.VAL [UNSAT +,
+								    SUBJ opt-1-arg,
+								    COMPS 1-list]]]],
 				    HEAD.KEYS.KEY pass_rel],
 			      
 			       CONT [RELS <! !>,

@@ -796,21 +796,28 @@ subj-zpro-ins-lrule := zpro-insertion-rule &
 ; (MS 2004-11-09) Ok, tried to give AUX a more complex value. Aspect
 ; auxiliaries should not undergo the rule, while complex auxiliaries should be
 ; allowed.
+; (MS 2004-11-30) We need to be able to bind the second complement first:
+; テーブルに置く . I have therefore changed the rule such that it can apply to a 
+; COMPS list that contains one or more arguments and puts the rest on the mother's list.
 
 
-obj-zpro-ins-lrule := zpro-insertion-rule & 
+
+
+obj-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
-			COMPS null,
+			COMPS #restcomps,
 			SPR #spr],
-	       ARG-S #subj],
+	       ARG-S [FIRST #subj, 
+		      REST #restcomps]],
 	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
 ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
-						      AUX aux_minus_or_complex,
-						      EMPTY -],
+						      AUX aux_minus_or_complex, 
+						       EMPTY -],
                                VAL [SUBJ #subj,
-				    COMPS opt-1-arg,
+				    COMPS olist & 
+					  [FIRST [OPT + ],
+					   REST #restcomps],
 				    SPR #spr]]]]].
-
 
 ; (ERB 2001-10-08) while OBJ and SUBJ zpro rules were strictly
 ; ordered with respect to each other, OBJ2 wasn't.  I'm going
@@ -818,19 +825,21 @@ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
 ; (MS 2001-10-09) Now we cannot get perspective auxiliaries. We should find another solution.
 ; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
 ; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
+; (MS 2004-11-30) To restrict the application of this rule, it applies only if there is
+; a first complement left. 
 
 
 obj2-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
-			COMPS 1-list & < #obj>,
+			COMPS obl-1-arg & < [LOCAL #obj] >,
 			SPR #spr],
-	       ARG-S < #subj , #obj  >],
+	       ARG-S < #subj , [LOCAL #obj]  >],
 	 LKEYS.KEYREL.ARG3 zpro_ref-ind],
 ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                VAL [SUBJ < #subj >,
 				    COMPS opt-2-args & 
-					  < #obj , [OPT + ] >,
+					  < [LOCAL #obj] , [OPT + ] >,
 				    SPR #spr]]]]].
 
 
@@ -936,6 +945,7 @@ wo-no-conversion-rule := obj-casechange-rule &
                         ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
                                                        [MAIN-PRD -,
 							COP -,
+							VN -,
 							MODUS infinitive]],
 					      BAR -],
                                 INFLECTED +,

@@ -1133,7 +1133,7 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
 
 adj2adv-rule  := isect-adv-lex & lex-rule &
                [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-					 WLINK #label ],
+				       WLINK #label ],
 			LOCAL [CTXT #ctxt,
 			       CONT.HOOK.XARG #xarg],
 			NON-LOCAL #nonloc],
