@@ -1,0 +1,74 @@
+;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
+(lkb-load-lisp (parent-directory) "Version.lsp")
+(setf *grammar-version* "Japanese (lexdb-03)")
+(setf *grammar-directory* (parent-directory)) ; needed for MRS
+(load-lkb-preferences (this-directory) "user-prefs.lsp")
+(lkb-load-lisp (this-directory) "globals.lsp")
+(lkb-load-lisp (this-directory) "user-fns.lsp")
+
+(lkb-load-lisp (this-directory) "checkpaths.lsp" t)
+
+(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+(read-tdl-type-files-aux
+     (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")
+              (lkb-pathname (parent-directory) "matrix.tdl")
+              (lkb-pathname (parent-directory) "mrsbasic.tdl")
+              (lkb-pathname (parent-directory) "newlexsem-types.tdl")
+              (lkb-pathname (parent-directory) "values.tdl")
+              (lkb-pathname (parent-directory) "fundamentals.tdl")
+              (lkb-pathname (parent-directory) "rule-types.tdl")
+              (lkb-pathname (parent-directory) "principles.tdl")
+              (lkb-pathname (parent-directory) "lex-types.tdl")
+              (lkb-pathname (parent-directory) "v-lex-types.tdl")
+	      (lkb-pathname (this-directory) "mrsmunge.tdl")
+))
+
+(lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)
+
+(read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
+
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
+;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "relative-clauses.tdl"))
+
+; (Ben Waldron 2003-12-06):
+
+  ;; optionally, use a lexical database; 
+  ;; to activate the DB set *psql-lexicon-parameters* (see globals.lsp)
+  (if *psql-lexicon-parameters*
+      (progn
+	(load-psql-lexicon-from-script)
+	(read-cached-sublex-if-available "generics" (list
+					     (lkb-pathname (parent-directory) "lex/generics.skip")))
+	(read-cached-sublex-if-available "adjadv-lex" (list  (lkb-pathname 
+							      (parent-directory) "lex/adjadv-lex.skip")))
+	(read-cached-sublex-if-available "aux-stem-lex" (list (lkb-pathname 
+							       (parent-directory) "lex/aux-stem-lex.skip")))
+	(read-cached-sublex-if-available "funct-lex" (list  (lkb-pathname 
+							     (parent-directory) "lex/funct-lex.skip")))
+	(read-cached-sublex-if-available "idiom-lex" (list  (lkb-pathname 
+							     (parent-directory) "lex/idiom-lex.skip")))
+	(read-cached-sublex-if-available "light-verbs-lex" (list (lkb-pathname 
+								  (parent-directory) "lex/light-verbs-lex.skip")))
+	(read-cached-sublex-if-available "noun-lex" (list (lkb-pathname 
+							   (parent-directory) "lex/noun-lex.skip")))
+	(read-cached-sublex-if-available "numbers-lex" (list (lkb-pathname 
+							      (parent-directory) "lex/numbers-lex.skip")))
+	(read-cached-sublex-if-available "p-lex" (list (lkb-pathname 
+							(parent-directory) "lex/p-lex.skip")))
+	(read-cached-sublex-if-available "pn-lex" (list  (lkb-pathname 
+							  (parent-directory) "lex/pn-lex.skip")))
+	(read-cached-sublex-if-available "verbstem-lex" (list (lkb-pathname 
+							       (parent-directory) "lex/verbstem-lex.skip")))
+	(read-cached-sublex-if-available "vn-lex" (list (lkb-pathname 
+							 (parent-directory) "lex/vn-lex.skip")))
+	(read-cached-sublex-if-available "v-ends-lex" (list (lkb-pathname 
+							     (parent-directory) "lex/v-ends-lex.skip")))
+	(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
+							 (parent-directory) "lex/ersatz.skip"))))
+    (error))
+    
+(read-tdl-parse-node-file-aux 
+          (lkb-pathname (parent-directory) "parse-nodes.tdl"))
+
+(read-tdl-psort-file-aux 
+          (lkb-pathname (parent-directory) "roots.tdl"))
