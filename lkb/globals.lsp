@@ -33,17 +33,22 @@
 
 (defparameter *list-head* '(first))
 
-(def-lkb-parameter *empty-list-type* 'null)
+(defparameter *empty-list-type* 'null)
+;;(def-lkb-parameter *empty-list-type* 'null)
 
-(def-lkb-parameter *list-type* 'list)
+(defparameter *list-type* 'list)
+;;(def-lkb-parameter *list-type* 'list)
 
 (def-lkb-parameter *non-empty-list-type* 'ne-list)
 
-(def-lkb-parameter *diff-list-type* 'diff-list)
+(defparameter *diff-list-type* 'diff-list)
+;;(def-lkb-parameter *diff-list-type* 'diff-list)
 
-(def-lkb-parameter *diff-list-list* 'list)
+(defparameter *diff-list-list* 'list)
+;;(def-lkb-parameter *diff-list-list* 'list)
 
-(def-lkb-parameter *diff-list-last* 'last)
+(defparameter *diff-list-last* 'last)
+;;(def-lkb-parameter *diff-list-last* 'last)
 
 (defparameter *lex-rule-suffix* "-infl-rule"
  "creates the inflectional rule name from the information
@@ -90,9 +95,9 @@
 (defparameter *start-symbol* '(utterance-root)
    "specifing valid parses")
 
-;(defparameter *maximal-lex-rule-applications* 7
-;   "The number of lexical rule applications which may be made
-;   before it is assumed that some rules are applying circularly")
+(defparameter *maximal-lex-rule-applications* 7
+   "The number of lexical rule applications which may be made
+   before it is assumed that some rules are applying circularly")
 
 (defparameter *deleted-daughter-features* 
   '(ARGS HEAD-DTR NON-HEAD-DTR DTR)
@@ -126,7 +131,8 @@
 (defparameter *local-path* '(SYNSEM LOCAL))
 
 ;;; the path inside the node to be unified with the label node
-(defparameter *label-fs-path* nil)
+(defparameter *label-fs-path* '())
+;;(defparameter *label-fs-path* nil)
 
 (defparameter *label-template-type* 'label)
 

@@ -39,6 +39,12 @@ FIRST))))
   (and (symbolp type-name)
        (search "GLBTYPE" (symbol-name type-name))))
 
+;;;
+;;; create feature structure representation of orthography value for insertion
+;;; into the output structure of inflectional rules; somewhat more complicated
+;;; than one might expect because of treatment for multi-word elements.
+;;;
+
 (defun make-orth-tdfs (orth)
   (let ((unifs nil)
         (tmp-orth-path *orth-path*))
@@ -257,3 +263,32 @@ FIRST))))
     (setf *leaf-temp-file* 
       (make-pathname :name (concatenate 'string prefix "-rels")
                      :directory (pathname-directory (lkb-tmp-dir))))))
+
+
+;;;
+;;; assign priorities to parser tasks and lexical entries
+;;;
+(defun rule-priority (rule)
+  (case (rule-id rule)
+    (subj 1000)))
+
+(defun gen-rule-priority (rule)
+  (rule-priority rule))
+
+(defun lex-priority (mrec)
+  (declare (ignore mrec))
+  800)
+
+(defun gen-lex-priority (fs)
+  (declare (ignore fs))
+  800)
+
+(defun bool-value-true (fs)
+  (and fs
+       (let ((fs-type (type-of-fs fs)))
+         (eql fs-type '+))))
+  
+(defun bool-value-false (fs)
+  (and fs
+       (let ((fs-type (type-of-fs fs)))
+         (eql fs-type '-))))

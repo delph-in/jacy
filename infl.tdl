@@ -585,20 +585,20 @@ lexeme-rule &
 
 quantify-n-infl-rule :=
 word2word-rule &
-[SYNSEM [LOCAL [CAT.VAL saturated & [UNSAT -]],
+[SYNSEM [LOCAL [CAT [VAL saturated & [UNSAT -]]],
 	 LEX #lex],
- C-CONT [RELS <! #key & [PRED 'udef,
-                          ARG0 #i,
-                          RSTR #restr] !>,
+ C-CONT [RELS <! [PRED #rel & udef_rel,
+		  ARG0 #i,
+		  RSTR #restr] !>,
          HCONS <! qeq &
                  [HARG #restr,
                   LARG #h] !>],
  ARGS.FIRST.SYNSEM [LOCAL [CAT [HEAD noun_head,
 			       VAL [UNSAT +,
 				    SPR opt-1-arg & [FIRST [OPT + ,
-							    LOCAL.LKEYS [--KEYREL #key & quant_rel]]],
-				    SUBJ sat-or-opt-arg,
-				    COMPS sat-or-opt-arg]],
+							    LOCAL.CAT.HEAD.KEYS.KEY #rel]],
+				    SUBJ olist,
+				    COMPS olist]],
                           CONT.HOOK [LTOP #h,
 				     INDEX #i],
                           NUCL nucl_plus],
@@ -749,11 +749,11 @@ n2predadj-rule &
 
 
 subj-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM.LOCAL [CAT.VAL [SUBJ null,
+[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
 			COMPS #comps,
 			SPR #spr],
-	       ARG-S #rest ,
-	       LKEYS.--KEYREL.ARG1 zpro_ref-ind],
+	       ARG-S #rest],
+	 LKEYS.KEYREL.ARG1 zpro_ref-ind],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                 VAL [SUBJ opt-1-arg & < #sbj >,
@@ -765,11 +765,11 @@ subj-zpro-ins-lrule := zpro-insertion-rule &
 
 
 obj-zpro-ins-lrule := zpro-insertion-rule & 
-[SYNSEM.LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
+[SYNSEM [LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
 			COMPS null,
 			SPR #spr],
-	       ARG-S #subj,
-	       LKEYS.--KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S #subj],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
 ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                VAL [SUBJ #subj,
@@ -784,11 +784,11 @@ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
 
 
 obj2-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM.LOCAL [CAT.VAL [SUBJ < #subj >,
+[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
 			COMPS 1-list & < #obj>,
 			SPR #spr],
-	       ARG-S < #subj , #obj  >,
-	       LKEYS.--KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S < #subj , #obj  >],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
 ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                VAL [SUBJ < #subj >,
@@ -798,11 +798,11 @@ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
 
 
 naadj-subj-zpro-ins-lrule := naadj-zpro-insertion-rule &
-[SYNSEM.LOCAL [CAT.VAL [SUBJ null,
+[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
 			COMPS #comps,
 			SPR #spr],
-	       ARG-S < >,
-	       LKEYS.--KEYREL na-adj_rel & [ARG1 zpro_ref-ind]],
+	       ARG-S < >],
+	 LKEYS.KEYREL na-adj-relation & [ARG1 zpro_ref-ind]],
  ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD na-adj_head & [ADJ +],
                                VAL [SUBJ opt-1-arg,
 				    COMPS #comps & null,
@@ -810,11 +810,11 @@ naadj-subj-zpro-ins-lrule := naadj-zpro-insertion-rule &
 
 
 opend-subj-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM.LOCAL [CAT.VAL [SUBJ null,
+[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
 				COMPS #comps,
 				SPR #spr],
-	       ARG-S #rest,
-	       LKEYS.--KEYREL.ARG1 zpro_ref-ind],
+	       ARG-S #rest],
+	 LKEYS.KEYREL.ARG1 zpro_ref-ind],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
 							       EMPTY -,
 							      MODUS operative],
@@ -825,11 +825,11 @@ opend-subj-zpro-ins-lrule := zpro-insertion-rule &
 				  REST #rest]]]].
 
 opend-obj-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM.LOCAL [CAT.VAL [COMPS null,
+[SYNSEM [LOCAL [CAT.VAL [COMPS null,
 			SUBJ #subj & [FIRST.OPT bool],
 			SPR #spr],
-	       ARG-S #subj,
-	       LKEYS.--KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S #subj],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
 							       EMPTY -,
 							      MODUS operative],
@@ -838,11 +838,11 @@ opend-obj-zpro-ins-lrule := zpro-insertion-rule &
 				    SPR #spr]]]]].
 
 opend-obj2-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM.LOCAL [CAT.VAL [COMPS 1-list & < #obj >,
+[SYNSEM [LOCAL [CAT.VAL [COMPS 1-list & < #obj >,
 			SUBJ #subj & [FIRST #sbj & [OPT bool]],
 			SPR #spr],
-	       ARG-S < #sbj , #obj >,
-	       LKEYS.--KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S < #sbj , #obj >],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
 							       EMPTY -,
 							      MODUS operative],

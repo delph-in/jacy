@@ -98,39 +98,45 @@ j-png := png & [PN pn, GEN gender].
 
 ; (ERB 2001-10-31) Need a common supertype for these two.
 ; (ERB 2001-10-31) On second thought, handel this with REL.
+; (MS 2003-12-17) Adapting to Matrix 0.6
+;imp_rel := message.
+
+;cond_rel := message &
+;[ PRED "cond" ].
+
+; (MS 2003-12-17) The Matrix contains no message type for conditional
+;  sentences.
+
+conditional_m_rel := message_m_rel.
+
+; (MS 2003-12-17) Adapting to Matrix 0.6
+
+;propositional_rel := message &
+;[ PRED "prpstn_rel"].
 
 
-imp_rel := message.
-
-cond_rel := message &
-[ PRED 'cond ].
-
-propositional_rel := message &
-[ PRED "prpstn_rel"].
-
-
-prpstn_or_like_rel :< message.
+;prpstn_or_like_rel :< message.
 
 ; (ERB 2001-11-01) Using REL to distinguish between closely
 ; related message types.
 
-prpstn_rel := propositional_rel & prpstn_or_like_rel. 
+;prpstn_rel := propositional_rel & prpstn_or_like_rel. 
 
 
-int_rel := message.
+;int_rel := message.
 
 
-whq_rel :< quant_rel.
+;whq-relation :< quant-relation.
 
-; (MS 2003-12-03) no_relation seems to be useful again, as Emily wants to 
+; (MS 2003-12-03) no-relation seems to be useful again, as Emily wants to 
 ; use it in nominal-numcl-rule-nomod.
 
-no_relation := relation.
+no-relation := relation.
 
 
-def_rel := quant_rel & [PRED "def"].
+;def_rel := quant-relation & [PRED "def"].
 
-udef_rel := quant_rel & [PRED "udef"].
+;udef_rel := quant-relation & [PRED "udef"].
 
 ; Nominal relations
 
@@ -141,16 +147,16 @@ udef_rel := quant_rel & [PRED "udef"].
 
 abstr-excl_rel := relation.
 
-excl_rel := abstr-excl_rel.
+;excl_rel := abstr-excl_rel.
 
 ; (ERB 2001-12-10) Let individual interjections provide
 ; the REL.
 
-interj_rel := abstr-excl_rel.
+;interj_rel := abstr-excl_rel.
 
-hes_rel := relation.
+;hes_rel := relation.
 
-greeting_rel := abstr-excl_rel.
+;greeting_rel := abstr-excl_rel.
 
 
 ; (ERB 2001-10-31) Trying to keep nmod-p の from modifying
@@ -165,23 +171,23 @@ greeting_rel := abstr-excl_rel.
 ; between の nominalizations and vns used as ns.  For now, I'm
 ; going to try making a separate type for the vn nominalizations.
 
-contentful-nom_rel := noun_rel & [ARG0 full_ref-ind].
+contentful-nom-relation := noun-relation & [ARG0 full_ref-ind].
 
 ; (ERB 2001-11-05) For k2y purposes, I need all of the nominalise
 ; relations to have a common supertype.
 
-basic-nominalise_rel := noun_rel.
+;basic-nominalise_rel := noun-relation.
 
-nominalise_rel := basic-nominalise_rel.
+;nominalise-relation := noun-relation.
 
 
-arg-nominalise_rel := basic-nominalise_rel & arg1_rel.
+;arg-nominalise_rel := basic-nominalise_rel & arg1-relation.
 
-nominalise-pred_rel := arg-nominalise_rel.
+;nominalise-pred_rel := arg-nominalise_rel.
 
-nominalise-vn_rel := contentful-nom_rel & arg-nominalise_rel.
+;nominalise-vn_rel := contentful-nom_rel & arg-nominalise_rel.
 
-reg-nom_rel :< contentful-nom_rel.
+reg-nom-relation :< contentful-nom-relation.
 
 ; (ERB 2001-10-03) None of the subtypes of temp_rel are being used,
 ; so I'm going to comment them out for now, and redo as necessary.
@@ -203,37 +209,38 @@ reg-nom_rel :< contentful-nom_rel.
 ; can be compatible with locable_rel.  So, I need to introduce
 ; the feature NAMED outside of reg-nom_rel.
 
-locable_rel := contentful-nom_rel.
+locable-relation := contentful-nom-relation.
 
-niarg := locable_rel.
-not-niarg := locable_rel.
-modable := locable_rel.
-nonmodable := locable_rel.
+niarg-relation := locable-relation.
+not-niarg-relation := locable-relation.
+modable-relation := locable-relation.
+nonmodable-relation := locable-relation.
+
 
 
 ; ERB (2001-08-28) For compositional analysis of dates
 ; ERB (2001-10-03) Working numbered-np_rel into the new
 ; hierarchy below locable_rel.
 
-numbered-np_rel := nonmodable & niarg &
+numbered-np-relation := nonmodable-relation & niarg-relation &
                 [ NUMBER handle,
                   ARG0 full].
 
-dofm_rel := numbered-np_rel.
-mofy_rel := numbered-np_rel.
-yofc_rel := numbered-np_rel.
-numbered-hour_rel := numbered-np_rel.
-numbered-minute_rel := numbered-np_rel.
+dofm-relation := numbered-np-relation.
+mofy-relation := numbered-np-relation.
+yofc-relation := numbered-np-relation.
+numbered-hour-relation := numbered-np-relation.
+numbered-minute-relation := numbered-np-relation.
 
 ; ERB (2001-10-03) For days of the week, which are like
 ; the numbered-np_rels, but have a name instead of a number.
 
-dofw_rel := named_rel & nonmodable & niarg.
+dofw-relation := named-relation & nonmodable-relation & niarg-relation.
 
 ; ERB (2001-10-03) Types for other kinds of date expressions.
 
-future-date_rel := niarg & modable.
-non-future-date_rel := not-niarg & modable.
+future-date-relation := niarg-relation & modable-relation.
+non-future-date-relation := not-niarg-relation & modable-relation.
 
 
 ; (ERB 2001-08-06) Changing card_rel to look more like the LinGO
@@ -245,7 +252,7 @@ non-future-date_rel := not-niarg & modable.
 ; Just like the LinGO grammar!
 
 
-integer_rel :< relation.
+integer-relation :< relation.
 
 ; (ERB 2002-02-14) For current version of k2y code, need const_rel
 ; to have an event variable.
@@ -258,14 +265,14 @@ integer_rel :< relation.
 ;	       PRED 'const,
 ;               ARG0.E.TENSE no_tense ].
 
-const_rel := named_rel.
+const-relation := named-relation.
 
-times_rel := integer_rel & 
+times-relation := integer-relation & 
              [ PRED 'times,
 	       FACTOR1 handle,
                FACTOR2 handle ].
 
-plus_rel := integer_rel &
+plus-relation := integer-relation &
             [ PRED 'plus,
 	       TERM1 handle,
               TERM2 handle ].
@@ -273,19 +280,19 @@ plus_rel := integer_rel &
 ; (ERB 2001-11-14) To keep the numbers-qua-numcls out of the
 ; first two nominal numcl rules.
 
-quantity_rel := arg1_rel &
+quantity-relation := arg1-relation &
                 [ AMOUNT handle ].
 
-reg-quantity_rel := quantity_rel.
+reg-quantity-relation := quantity-relation.
 
-card_rel := quantity_rel.
+card-relation := quantity-relation.
 
 ; (ERB 2001-11-14) Type for the relation in numbers acting as
 ; labels for things, as in:
 ;
 ; 口座番号は12345です
 
-named-card_rel := card_rel & contentful-nom_rel & [PRED 'named_card].
+named-card-relation := card-relation & contentful-nom-relation & [PRED 'named_card].
 
 ; (ERB 2001-10-29) I need a value for REL for integers that get
 ; promoted to NumClPs by the empty-cardinal-rule.  I want it to
@@ -310,26 +317,26 @@ named-card_rel := card_rel & contentful-nom_rel & [PRED 'named_card].
 ; leverage Chasen's recognition of place names in YY's
 ; product. 
 
-named-place_rel := named_rel.
+;named-place_rel := named_rel.
 
 ; Pronouns
 
-pron_rel :< reg-nom_rel. 
+pron-relation :< reg-nom-relation. 
 
 
-zero-pron_rel :< pron_rel.
+;zero-pron-relation :< pron-relation.
 
-real-pron_rel :< pron_rel.
+real-pron-relation :< pron-relation.
 
-generic-nom_rel := pron_rel &
-                   [PRED "generic-nom_rel"].
+generic-nom-relation := pron-relation &
+                   [PRED generic-nom_rel].
 
-place_rel := pron_rel &
-                   [PRED "place_rel"].
+place-relation := pron-relation &
+                   [PRED place_rel].
 
 
 
-ad_rel :< relation.
+;ad_rel :< relation.
 
 
 
@@ -345,25 +352,25 @@ ad_rel :< relation.
 
 ; (MS 2003-09-26) Adapting to Matrix Ver.0.5: There is no ARG any more.
 
-adj_rel := arg12_ev_rel &
+adj-relation := arg12-ev-relation &
            [ ARG0.E.TENSE no_tense ].
 
-na-adj_rel := arg1_ev_rel.
+na-adj-relation := arg1-ev-relation.
 
 
-scoped_rel  := relation &
-	[ SCOPE handle ].
+;scoped_rel  := relation &
+;	[ SCOPE handle ].
 
-scope_rel :< scoped_rel.
+;scope_rel :< scoped_rel.
 
-mood_rel := scope_rel.
+;mood_rel := scope_rel.
 
-dim_rel := relation &
-	[ DARG individual ].
+;dim_rel := relation &
+;	[ DARG individual ].
 
 
-ordinal_rel := ad_rel &
-               [ ORD integer ].
+;ordinal_rel := ad_rel &
+;               [ ORD integer ].
 
 
 ;arg_rel := relation &
@@ -411,7 +418,7 @@ ordinal_rel := ad_rel &
 
 ; (MS 2003-09-26) Adapting to Matrix Ver.0.5: There is no ARG any more.
 
-;argmod_rel := arg_rel & arg1_rel.
+;argmod_rel := arg_rel & arg1-relation.
 
 ; (ERB 2001-10-18) I can't think of a reason that any relation
 ; should have both the features ARG and ARG1, so I am removing
@@ -419,48 +426,48 @@ ordinal_rel := ad_rel &
 
 
 
-modal_rel := arg12_rel &
-             scope_rel.
+;modal_rel := arg12-relation &
+;             scope_rel.
 
 ;(MS 2003-09-26) Switched to Matrix unspec_compound_rel
 
-;unspec_rel := arg12_rel & [PRED "unspec_rel"].
+;unspec_rel := arg12-relation & [PRED "unspec_rel"].
 
 ; (ERB 2001-10-10) For time NPs used as adverbs.
 ; (MS 2003-09-26) Switched to Matrix unspec_compound_rel
 
-;unspec-loc_rel := arg12_rel & [PRED "unspec-loc_rel"].
+;unspec-loc_rel := arg12-relation & [PRED "unspec-loc_rel"].
 
 
 ;(MS 2001-10-23) if we're not including ZPRO's into the MRS, we should not say too much about the index of ARGs.
 
-equal_rel := arg12_ev_rel &
+equal-relation := arg12-ev-relation &
               [ ARG1 full,
                 ARG2 event-or-ref-index,
                 LBL handle].
 
 
 
-want2_rel := arg12_rel & [PRED "want2_rel"].
+want2-relation := arg12-relation & [PRED "want2_rel"].
 
 
 ; Preposition relations
 
 ; (MS 2003-07-09) This is different to the matrix definition. We have to see, whether it is necessary to keep it.
 
-;j-prep-mod_rel :< arg12_rel.
+;j-prep-mod_rel :< arg12-relation.
 
 ; (ERB 2001-11-26) We want a special type for no-nmod and 
 ; compounds that the downstream machinery can recognize.
-; (MS 2003-09-26) Switched to Matrix prep_mod_rel.
+; (MS 2003-09-26) Switched to Matrix prep-mod-relation.
 
-;no_nmod := prep_mod_rel & [PRED 'no].
+;no_nmod := prep-mod-relation & [PRED 'no].
 
-;kara_nmod := prep_mod_rel.
+;kara_nmod := prep-mod-relation.
 
-;ni_nmod := prep_mod_rel.
+;ni_nmod := prep-mod-relation.
 
-;tloc_rel := prep_mod_rel.
+;tloc_rel := prep-mod-relation.
 
 
 ; (ERB 2001-09-03) I want the ARG3 of the topic_rel to
@@ -485,13 +492,13 @@ want2_rel := arg12_rel & [PRED "want2_rel"].
 ; lexsem types.)
 
 
-topic_rel := prep_mod_rel &
-             [ ARG2 semarg ].
+;topic_rel := prep-mod-relation &
+;             [ ARG2 semarg ].
 
 	
 ; (ERB 2001-10-11) No one was using this type, and adverbs were getting
 ; the type of their relations from type inference from the features.
-; It was a glb type, too.  I'm going to make adv_rel a subtype of
+; It was a glb type, too.  I'm going to make adv-relation a subtype of
 ; arg_rel & event_rel, and declare it on the adv-sem-type.
 		 
 
@@ -499,10 +506,10 @@ topic_rel := prep_mod_rel &
 ; arg_rel & event_rel and eliminates a glb type.
 
 
-modadv_rel := adv_rel & arg1_rel.
+;modadv-relation := adv-relation & arg1-relation.
 
 ; (ERB 2001-10-22) Negation isn't working in k2ys, so I'm going
-; to try making it a subtype of adv_rel for the moment, just for fun.
+; to try making it a subtype of adv-relation for the moment, just for fun.
 
 ; (ERB 2001-10-24) It wasn't working because it wasn't using this
 ; rel.  Instead, it was an arg_rel with REL 'neg_rel.  So, I'm going
@@ -514,29 +521,29 @@ modadv_rel := adv_rel & arg1_rel.
 ; (MS 2002-12-03) neg_rel needs an arg1 that can be accessed, e.g. in tabenaide morau.
 ; (MS 2003-07-11) For the Japanese analysis, it also needs an ARG2
 
-j-neg_rel := adv_rel & arg12_rel.
+neg-relation := adv-relation & arg12-relation.
 
-cant_help_rel :< j-neg_rel.
+;cant_help_rel :< j-neg_rel.
 
 
-objchange_rel := arg12_rel.
+objchange-relation := arg12-relation.
 
-tai_rel := objchange_rel & [PRED "tai_rel"].
+tai-relation := objchange-relation & [PRED tai_rel].
 
 ; (MS 2001-11-22) RARERU needs an ARG1, if it shall be able to combine with TAI.
 
-rareru_rel := arg12_rel & [PRED 'rareru].
+rareru-relation := arg12-relation & [PRED rareru_rel].
 
-pass_rel := arg12_rel & [PRED 'passive].
+pass-relation := arg12-relation & [PRED 'passive].
 
-adversative-intrans_rel := arg12_rel & [PRED 'adversative].
+adversative-intrans-relation := arg12-relation & [PRED 'adversative].
 
-adversative-trans_rel := arg123_rel & [PRED 'adversative].
+adversative-trans-relation := arg123-relation & [PRED 'adversative].
 
 
 ; Degree relations
 
-degree_rel :< relation.
+;degree_rel :< relation.
 
 
 ; (ERB 2001-08-02) Changed type of C-ARG to conj_non_expl-ind to
@@ -553,18 +560,15 @@ degree_rel :< relation.
 ; (ERB 2002-02-14) In case this helps with k2ys.
 ; (MS 2003-09-25) Adapted this to matrix ver.05
 
-discourse_rel := if_then_rel.
+;discourse-relation := subord-or-conj-relation & [PRED "if-then-rel"].
 
-in-order-to_rel := subord_or_conj_rel & [PRED "in-order-to_rel"].
+;in-order-to_rel := subord-or-conj-relation & [PRED "in-order-to_rel"].
 
 
-; for debugging ky2s.
 
-fooj := relation &
-[ FOOJ handle ].
 
 ; for k2ys it is helpful for the unspec rel for noun noun
-; compounds to not be a prep_mod_rel.   Giving it the same
+; compounds to not be a prep-mod-relation.   Giving it the same
 ; features as the English grammar.
 ; (MS 2003-09-25) there is a new definition in matrix version 0.5
 
@@ -579,20 +583,38 @@ fooj := relation &
 ;  [ HINST event ].
 
 
-appos-id_rel := arg12_rel & [PRED "appos-id_rel"].
+appos-id-relation := arg12-relation & [PRED "appos-id_rel"].
 
-title-id_rel := arg12_rel & [PRED "title-id_rel",
+title-id-relation := arg12-relation & [PRED "title-id_rel",
                              ARG0.E.TENSE no_tense].
 
 
-;(MS 2003-10-05) As the KEY contains sorts, I'll introduce the sorts
-; types here.
 
-quant_relation :< semsort.
-def_relation :< quant_relation.
-reg_nom_relation :< semsort.
-quantity_relation :< semsort.
-pron_relation :< semsort.
-mofy_relation :< semsort.
-yofc_relation :< semsort.
 
+scopal-adv-relation := arg1-relation & [ARG1 handle].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; predsorts
+
+quant_rel := predsort.
+udef_rel := quant_rel.
+def_rel := udef_rel.
+indef_rel := udef_rel.
+whq_rel := def_rel.
+
+hes_rel := predsort.
+pron_rel := predsort.
+generic-nom_rel := predsort.
+place_rel := predsort.
+quantity_rel := predsort.
+date_rel := predsort.
+yofc_rel := date_rel.
+mofy_rel := date_rel.
+
+adv_rel := predsort.
+noun_rel := predsort.
+
+no_rel := predsort.
+tai_rel  := predsort.
+rareru_rel := predsort.
+seem_rel := predsort.

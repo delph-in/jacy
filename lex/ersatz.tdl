@@ -3,59 +3,59 @@
 ;; Numbers
 
 onedigit_ersatz_card := card_1_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'OneDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'OneDigitErsatz,
   ORTH <! "OneDigitErsatz" !> ].
 
 twodigit_ersatz_card := card_2_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'TwoDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'TwoDigitErsatz,
   ORTH <! "TwoDigitErsatz" !> ].
 
 threedigit_ersatz_card := card_3_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ThreeDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'ThreeDigitErsatz,
   ORTH <! "ThreeDigitErsatz" !> ].
 
 fourdigit_ersatz_card := card_4e_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'FourDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'FourDigitErsatz,
   ORTH <! "FourDigitErsatz" !> ].
 
 fivedigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'FiveDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'FiveDigitErsatz,
   ORTH <! "FiveDigitErsatz" !> ].
 
 sixdigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'SixDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'SixDigitErsatz,
   ORTH <! "SixDigitErsatz" !> ].
 
 sevendigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'SevenDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'SevenDigitErsatz,
   ORTH <! "SevenDigitErsatz" !> ].
 
 eightdigit_ersatz_card := card_5x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'EightDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'EightDigitErsatz,
   ORTH <! "EightDigitErsatz" !> ].
 
 ninedigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'NineDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'NineDigitErsatz,
   ORTH <! "NineDigitErsatz" !> ].
 
 tendigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'TenDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'TenDigitErsatz,
   ORTH <! "TenDigitErsatz" !> ].
 
 elevendigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ElevenDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'ElevenDigitErsatz,
   ORTH <! "ElevenDigitErsatz" !> ].
 
 twelvedigit_ersatz_card := card_9x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'TwelveDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'TwelveDigitErsatz,
   ORTH <! "TwelveDigitErsatz" !> ].
 
 thirteenplusdigit_ersatz_card := card_13x_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'ThirteenPlusDigitErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'ThirteenPlusDigitErsatz,
   ORTH <! "ThirteenPlusDigitErsatz" !> ].
 
 decimal_ersatz_card := card_1_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'DecimalErsatz,
+[ SYNSEM.LKEYS.KEYREL.CARG 'DecimalErsatz,
   ORTH <! "DecimalErsatz" !> ].
 
 ;; Nouns and nouny things
@@ -74,37 +74,37 @@ time_ersatz := date-ersatz-lex &
 
 emailersatz-locname :=
 loc_name-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'emailersatz,
+[SYNSEM.LKEYS.KEYREL.CARG 'emailersatz,
 ORTH <! "EmailErsatz" !>].
 
 zipcodeersatz-locname :=
 loc_name-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'zipcodeersatz,
+[SYNSEM.LKEYS.KEYREL.CARG 'zipcodeersatz,
 ORTH <! "ZipCodeErsatz" !>].
 
 addressersatz-locname :=
 loc_name-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'addressersatz,
+[SYNSEM.LKEYS.KEYREL.CARG 'addressersatz,
 ORTH <! "AddressErsatz" !>].
 
 webersatz-locname :=
 loc_name-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'webersatz,
+[SYNSEM.LKEYS.KEYREL.CARG 'webersatz,
 ORTH <! "WebErsatz" !>].
 
 PhoneNumberErsatz-locname :=
 loc_name-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'PhoneNumberErsatz,
+[SYNSEM.LKEYS.KEYREL.CARG 'PhoneNumberErsatz,
 ORTH <! "PhoneNumberErsatz" !>].
 
 MailboxIdErsatz-locname :=
 loc_name-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'MailboxIdErsatz,
+[SYNSEM.LKEYS.KEYREL.CARG 'MailboxIdErsatz,
 ORTH <! "MailboxIdErsatz" !>].
 
 MailboxNameErsatz-locname :=
 loc_name-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.CARG 'MailboxNameErsatz,
+[SYNSEM.LKEYS.KEYREL.CARG 'MailboxNameErsatz,
 ORTH <! "MailboxNameErsatz" !>].
 
 ; (ERB 2001-11-14) LinGO has these as syntactic adverbs but
@@ -115,7 +115,7 @@ ORTH <! "MailboxNameErsatz" !>].
 
 EHKeywordErsatz :=
 ordinary-nohon-n-lex &
-[SYNSEM.LOCAL [LKEYS [--KEYREL.PRED 'EHKeywordErsatz]],
+[SYNSEM [LKEYS [KEYREL.PRED 'EHKeywordErsatz]],
 ORTH <! "EHKeywordErsatz" !>].
 
 
@@ -123,337 +123,337 @@ ORTH <! "EHKeywordErsatz" !>].
 
 EHSMErsatz :=
 ordinary-nohon-n-lex &
-[SYNSEM.LOCAL [LKEYS [--KEYREL.PRED 'EHSMErsatz]],
+[SYNSEM [LKEYS [KEYREL.PRED 'EHSMErsatz]],
 ORTH <! "EHSMErsatz" !>].
 
 ;; Currency symbols
 
 CurrencyErsatzAUD-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzAUD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzAUD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzAUD ].
 
 CurrencyErsatzAUD-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzAUD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzAUD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzAUD ].
 
 CurrencyErsatzATS-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzATS" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzATS ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzATS ].
 
 CurrencyErsatzATS-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzATS" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzATS ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzATS ].
 
 CurrencyErsatzBEF-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzBEF" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzBEF ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzBEF ].
 
 CurrencyErsatzBEF-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzBEF" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzBEF ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzBEF ].
 
 CurrencyErsatzCND-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzCND" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCND ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCND ].
 
 CurrencyErsatzCND-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzCND" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCND ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCND ].
 
 CurrencyErsatzCNY-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzCNY" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCNY ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCNY ].
 
 CurrencyErsatzCNY-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzCNY" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCNY ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCNY ].
 
 CurrencyErsatzGBP-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzGBP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzGBP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzGBP ].
 
 CurrencyErsatzGBP-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzGBP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzGBP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzGBP ].
 
 CurrencyErsatzEUR-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzEUR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzEUR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzEUR ].
 
 CurrencyErsatzEUR-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzEUR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzEUR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzEUR ].
 
 CurrencyErsatzFIM-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzFIM" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzFIM ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzFIM ].
 
 CurrencyErsatzFIM-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzFIM" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzFIM ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzFIM ].
 
 CurrencyErsatzFRF-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzFRF" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzFRF ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzFRF ].
 
 CurrencyErsatzFRF-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzFRF" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzFRF ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzFRF ].
 
 CurrencyErsatzDEM-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzDEM" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzDEM ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzDEM ].
 
 CurrencyErsatzDEM-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzDEM" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzDEM ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzDEM ].
 
 CurrencyErsatzGRD-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzGRD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzGRD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzGRD ].
 
 CurrencyErsatzGRD-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzGRD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzGRD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzGRD ].
 
 CurrencyErsatzHKD-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzHKD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzHKD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzHKD ].
 
 CurrencyErsatzHKD-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzHKD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzHKD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzHKD ].
 
 CurrencyErsatzIEP-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzIEP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzIEP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzIEP ].
 
 CurrencyErsatzIEP-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzIEP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzIEP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzIEP ].
 
 CurrencyErsatzILS-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzILS" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzILS ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzILS ].
 
 CurrencyErsatzILS-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzILS" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzILS ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzILS ].
 
 CurrencyErsatzITL-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzITL" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzITL ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzITL ].
 
 CurrencyErsatzITL-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzITL" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzITL ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzITL ].
 
 CurrencyErsatzJPY-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzJPY" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzJPY ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzJPY ].
 
 CurrencyErsatzJPY-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzJPY" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzJPY ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzJPY ].
 
 CurrencyErsatzKRW-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzKRW" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzKRW ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzKRW ].
 
 CurrencyErsatzKRW-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzKRW" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzKRW ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzKRW ].
 
 CurrencyErsatzMYR-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzMYR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzMYR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzMYR ].
 
 CurrencyErsatzMYR-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzMYR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzMYR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzMYR ].
 
 CurrencyErsatzMXP-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzMXP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzMXP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzMXP ].
 
 CurrencyErsatzMXP-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzMXP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzMXP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzMXP ].
 
 CurrencyErsatzNLG-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzNLG" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzNLG ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzNLG ].
 
 CurrencyErsatzNLG-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzNLG" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzNLG ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzNLG ].
 
 CurrencyErsatzNZD-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzNZD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzNZD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzNZD ].
 
 CurrencyErsatzNZD-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzNZD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzNZD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzNZD ].
 
 CurrencyErsatzNOK-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzNOK" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzNOK ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzNOK ].
 
 CurrencyErsatzNOK-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzNOK" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzNOK ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzNOK ].
 
 CurrencyErsatzPTE-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzPTE" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzPTE ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzPTE ].
 
 CurrencyErsatzPTE-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzPTE" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzPTE ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzPTE ].
 
 CurrencyErsatzSUR-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzSUR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzSUR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzSUR ].
 
 CurrencyErsatzSUR-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzSUR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzSUR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzSUR ].
 
 CurrencyErsatzSGD-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzSGD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzSGD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzSGD ].
 
 CurrencyErsatzSGD-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzSGD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzSGD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzSGD ].
 
 CurrencyErsatzESP-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzESP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzESP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzESP ].
 
 CurrencyErsatzESP-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzESP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzESP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzESP ].
 
 CurrencyErsatzSEK-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzSEK" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzSEK ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzSEK ].
 
 CurrencyErsatzSEK-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzSEK" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzSEK ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzSEK ].
 
 CurrencyErsatzCHF-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzCHF" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCHF ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCHF ].
 
 CurrencyErsatzCHF-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzCHF" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCHF ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCHF ].
 
 CurrencyErsatzTWD-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzTWD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzTWD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzTWD ].
 
 CurrencyErsatzTWD-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzTWD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzTWD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzTWD ].
 
 CurrencyErsatzTHB-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzTHB" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzTHB ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzTHB ].
 
 CurrencyErsatzTHB-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzTHB" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzTHB ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzTHB ].
 
 CurrencyErsatzINR-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzINR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzINR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzINR ].
 
 CurrencyErsatzINR-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzINR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzINR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzINR ].
 
 CurrencyErsatzPKR-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzPKR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzPKR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzPKR ].
 
 CurrencyErsatzPKR-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzPKR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzPKR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzPKR ].
 
 CurrencyErsatzARP-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzARP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzARP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzARP ].
 
 CurrencyErsatzARP-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzARP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzARP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzARP ].
 
 CurrencyErsatzBRL-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzBRL" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzBRL ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzBRL ].
 
 CurrencyErsatzBRL-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzBRL" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzBRL ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzBRL ].
 
 CurrencyErsatzCLP-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzCLP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCLP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCLP ].
 
 CurrencyErsatzCLP-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzCLP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCLP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCLP ].
 
 CurrencyErsatzCZK-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzCZK" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCZK ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCZK ].
 
 CurrencyErsatzCZK-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzCZK" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzCZK ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzCZK ].
 
 CurrencyErsatzEGP-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzEGP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzEGP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzEGP ].
 
 CurrencyErsatzEGP-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzEGP" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzEGP ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzEGP ].
 
 CurrencyErsatzZAR-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzZAR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzZAR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzZAR ].
 
 CurrencyErsatzZAR-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzZAR" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzZAR ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzZAR ].
 
 CurrencyErsatzUSD-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzUSD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzUSD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzUSD ].
 
 CurrencyErsatzUSD-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzUSD" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzUSD ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzUSD ].
 
 CurrencyErsatzDollarSymb-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzDollarSymb" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzDollarSymb ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzDollarSymb ].
 
 CurrencyErsatzDollarSymb-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzDollarSymb" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzDollarSymb ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzDollarSymb ].
 
 CurrencyErsatzYenSymb-1 := num-cl-nomod-lex &
 [ ORTH <! "CurrencyErsatzYenSymb" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzYenSymb ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzYenSymb ].
 
 CurrencyErsatzYenSymb-2 := num-cl2-nomod-lex &
 [ ORTH <! "CurrencyErsatzYenSymb" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'CurrencyErsatzYenSymb ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'CurrencyErsatzYenSymb ].
 
 

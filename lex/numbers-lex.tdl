@@ -21,131 +21,131 @@ ichi_card := card_ichi_no_valence &
 [ ORTH <! "一" !> ].
 
 ni_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "2",
+[ SYNSEM.LKEYS.KEYREL.CARG "2",
   ORTH <! "二" !> ].
 
 san_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "3",
+[ SYNSEM.LKEYS.KEYREL.CARG "3",
   ORTH <! "三" !> ].
 
 shi_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "4",
+[ SYNSEM.LKEYS.KEYREL.CARG "4",
   ORTH <! "四" !> ].
 
 go_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "5",
+[ SYNSEM.LKEYS.KEYREL.CARG "5",
   ORTH <! "五" !> ].
 
 roku_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "6",
+[ SYNSEM.LKEYS.KEYREL.CARG "6",
   ORTH <! "六" !> ].
 
 shichi_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "7",
+[ SYNSEM.LKEYS.KEYREL.CARG "7",
   ORTH <! "七" !> ].
 
 hachi_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "8",
+[ SYNSEM.LKEYS.KEYREL.CARG "8",
   ORTH <! "八" !> ].
 
 kyuu_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "9",
+[ SYNSEM.LKEYS.KEYREL.CARG "9",
   ORTH <! "九" !> ].
 
 juu_card1 := card_2_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
+[ SYNSEM.LKEYS.KEYREL.CARG "10",
   ORTH <! "十" !> ].
 
 juu_card2 := card_2_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
+[ SYNSEM.LKEYS.KEYREL.CARG "10",
   ORTH <! "十" !> ].
 
 juu_card3 := card_2_object_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
+[ SYNSEM.LKEYS.KEYREL.CARG "10",
   ORTH <! "十" !> ].
 
 juu_card4 := card_2_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10",
+[ SYNSEM.LKEYS.KEYREL.CARG "10",
   ORTH <! "十" !> ].
 
 hyaku_card1 := card_3_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
+[ SYNSEM.LKEYS.KEYREL.CARG "100",
   ORTH <! "百" !> ].
 
 hyaku_card2 := card_3_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
+[ SYNSEM.LKEYS.KEYREL.CARG "100",
   ORTH <! "百" !> ].
 
 hyaku_card3 := card_3_object_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
+[ SYNSEM.LKEYS.KEYREL.CARG "100",
   ORTH <! "百" !> ].
 
 hyaku_card4 := card_3_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100",
+[ SYNSEM.LKEYS.KEYREL.CARG "100",
   ORTH <! "百" !> ].
 
 sen_card1 := card_4_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000",
   ORTH <! "千" !> ].
 
 sen_card2 := card_4_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000",
   ORTH <! "千" !> ].
 
 sen_card6 := card_4_spr_only_2 & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000",
   ORTH <! "千" !> ].
 
 sen_card3 := card_4_object_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000",
   ORTH <! "千" !> ].
 
 sen_card4 := card_4_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000",
   ORTH <! "千" !> ].
 
 sen_card5 := card_4_spr_object_2 & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000",
   ORTH <! "千" !> ].
 
 man_card1 := card_5_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000",
+[ SYNSEM.LKEYS.KEYREL.CARG "10000",
   ORTH <! "万" !> ].
 
 man_card2 := card_5_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000",
+[ SYNSEM.LKEYS.KEYREL.CARG "10000",
   ORTH <! "万" !> ].
 
 oku_card1 := card_9_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "100000000",
   ORTH <! "億" !> ].
 
 oku_card2 := card_9_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "100000000",
   ORTH <! "億" !> ].
 
 chou_card1 := card_13_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000000000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000000000000",
   ORTH <! "兆" !> ].
 
 chou_card2 := card_13_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "1000000000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "1000000000000",
   ORTH <! "兆" !> ].
 
 kei_card1 := card_17_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000000000000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "10000000000000000",
   ORTH <! "京" !> ].
 
 kei_card2:= card_17_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "10000000000000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "10000000000000000",
   ORTH <! "京" !> ].
 
 gai_card1 := card_21_spr_only & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000000000000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "100000000000000000000",
   ORTH <! "垓" !> ].
 
 gai_card2 := card_21_spr_object & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "100000000000000000000",
+[ SYNSEM.LKEYS.KEYREL.CARG "100000000000000000000",
   ORTH <! "垓" !> ].
 
 ; (ERB 2001-12-05)
@@ -229,66 +229,66 @@ hako_numcl := num-cl-mod-lex &
 
 ban_numcl := num-cl-nmod-lex &
 [ ORTH <! "番" !>,
-  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 jou-numcl := num-cl-nmod-lex &
 [ ORTH <! "重" !>,
-  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 gou_numcl := num-cl-nmod-lex &
 [ ORTH <! "号" !>,
-  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 no_numcl-1 := num-cl2-nmod-lex &
 [ ORTH <! "No" !>,
-  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 no_numcl-2 := num-cl2-nmod-lex &
 [ ORTH <! "Ｎｏ" !>,
-  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 ; (ERB 2001-09-13) Wait until these actually show up in the data.
 
 ;no_numcl-3 := num-cl3-nmod-lex &
 ;[ ORTH <! "No" !>,
-;  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+;  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 ;no_numcl-4 := num-cl3-nmod-lex &
 ;[ ORTH <! "Ｎｏ" !>,
-;  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+;  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 ; for "kouza bangou 12345" where the whole thing refers
 ; to an account.
 
 bangou_numcl-1 := num-cl2-nmod-lex &
 [ ORTH <! "番号" !>,
-  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 ; (ERB 2001-09-13) Wait until these actually show up in the data.
 
 ;bangou_numcl-2 := num-cl3-nmod-lex &
 ;[ ORTH <! "番号" !>,
-;  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+;  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 ; Numeral classifiers that can't be modifiers on their own.
 
 en_numcl := num-cl-nomod-lex &
 [ ORTH <! "円" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'en ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'en ].
 
 en_numcl-2 := num-cl-nomod-lex &
 [ ORTH <! "￥" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'en ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'en ].
 
 en_numcl-3 := num-cl2-nomod-lex &
 [ ORTH <! "￥" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'en ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'en ].
 
 ;hundredth of a yen
 
 sen_numcl := num-cl-nomod-lex &
 [ ORTH <! "銭" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'sen ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'sen ].
 
 
 
@@ -297,179 +297,179 @@ doru_numcl := num-cl-mod-lex &
 
 doru_numcl-2 := num-cl-nomod-lex &
 [ ORTH <! "＄" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'doru ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'doru ].
 
 doru_numcl-3 := num-cl2-nomod-lex &
 [ ORTH <! "＄" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'doru ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'doru ].
 
 doru_numcl-4 := num-cl2-nomod-lex &
 [ ORTH <! "$" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'doru ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'doru ].
 
 yuuro_numcl := num-cl-nomod-lex &
 [ ORTH <! "ユーロ" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'yuuro ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'yuuro ].
 
 maruku_numcl := num-cl-nomod-lex &
 [ ORTH <! "マルク" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'maruku ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'maruku ].
 
 furan_numcl := num-cl-nomod-lex &
 [ ORTH <! "フラン" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'furan ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'furan ].
 
 girudaa_numcl := num-cl-nomod-lex &
 [ ORTH <! "ギルダー" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'girudaa ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'girudaa ].
 
 penihi_numcl := num-cl-nomod-lex &
 [ ORTH <! "ペニヒ" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'penihi ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'penihi ].
 
 peso_numcl := num-cl-nomod-lex &
 [ ORTH <! "ペソ" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'peso ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'peso ].
 
 cento_numcl := num-cl-nomod-lex &
 [ ORTH <! "セント" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'cento ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'cento ].
 
 won_numcl := num-cl-nomod-lex &
 [ ORTH <! "ウォン" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'won ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'won ].
 
 
 paasento_numcl := num-cl-nomod-lex &
 [ ORTH <! "パーセント" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'paasento ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'paasento ].
 
 paasento_numcl-2 := num-cl-nomod-lex &
 [ ORTH <! "％" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'paasento ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'paasento ].
 
 paasento_numcl-3 := num-cl-nomod-lex &
 [ ORTH <! "%" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'paasento ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'paasento ].
 
 wari_numcl := num-cl-nomod-lex &
 [ ORTH <! "割" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'wari ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'wari ].
 
 ninmae_numcl := num-cl-nomod-lex &
 [ ORTH <! "人前" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'ninmae ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'ninmae ].
 
 meetoru_numcl := num-cl-nomod-lex &
 [ ORTH <! "メートル" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'meetoru ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'meetoru ].
 
 kiromeetoru_numcl := num-cl-nomod-lex &
 [ ORTH <! "キロメートル" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kiromeetoru ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kiromeetoru ].
 
 mairu_numcl := num-cl-nomod-lex &
 [ ORTH <! "マイル" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'mairu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'mairu ].
 
 
 senchi_numcl := num-cl-nomod-lex &
 [ ORTH <! "センチ" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'senchi ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'senchi ].
 
 kiro_numcl := num-cl-nomod-lex &
 [ ORTH <! "キロ" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kiro ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kiro ].
 
 ton_numcl := num-cl-nomod-lex &
 [ ORTH <! "トン" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'ton ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'ton ].
 
 keta_numcl := num-cl-nomod-lex &
 [ ORTH <! "ケタ" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'keta ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'keta ].
 
 keta_numcl-2 := num-cl-nomod-lex &
 [ ORTH <! "桁" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'keta ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'keta ].
 
 do_numcl := num-cl-nomod-lex &
 [ ORTH <! "度" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'do_degree ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'do_degree ].
 
 paku_numcl := num-cl-nomod-lex &
 [ ORTH <! "泊" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'paku ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'paku ].
 
 shurui_numcl := num-cl-nomod-lex &
 [ ORTH <! "種類" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'shurui ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'shurui ].
 
 
 kouza_numcl := num-cl-nomod-lex &
 [ ORTH <! "口座" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kouza ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kouza ].
 
 genzai_numcl := num-cl-nomod-lex &
 [ ORTH <! "現在" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'genzai ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'genzai ].
 
 ; (ERB 2001-12-05) Things that optionally take 半.
 
 nen_numcl-1 := num-cl-nomod-lex &
 [ ORTH <! "年" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'nen ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'nen ].
 
 nen_numcl-2 := num-cl3-nomod-lex &
 [ ORTH <! "年" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'nen ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'nen ].
 
 kagetsu_numcl-1a := num-cl-nomod-lex &
 [ ORTH <! "ヶ月" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
 kagetsu_numcl-1b := num-cl-nomod-lex &
 [ ORTH <! "カ月" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
 kagetsu_numcl-1c := num-cl-nomod-lex &
 [ ORTH <! "ヵ月" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
 kagetsu_numcl-2a := num-cl3-nomod-lex &
 [ ORTH <! "ヶ月" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
 kagetsu_numcl-2b := num-cl3-nomod-lex &
 [ ORTH <! "カ月" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
 kagetsu_numcl-2c := num-cl3-nomod-lex &
 [ ORTH <! "ヵ月" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kagetsu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kagetsu ].
 
 nichi_numcl-1 := num-cl-nomod-lex &
 [ ORTH <! "日" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'nichi ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'nichi ].
 
 nichi_numcl-2 := num-cl3-nomod-lex &
 [ ORTH <! "日" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'nichi ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'nichi ].
 
 gatsu_numcl := num-cl-nomod-lex &
 [ ORTH <! "月" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'gatsu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'gatsu ].
 
 ;business days
 
 eigyounichi_numcl-1 := num-cl-nomod-lex &
 [ ORTH <! "営業","日" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'eigyounichi ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'eigyounichi ].
 
 
 fun_numcl := num-cl-nomod-lex &
 [ ORTH <! "分" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'fun ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'fun ].
 
 ; (ERB 2001-08-28) Date expressions
 
@@ -567,21 +567,21 @@ nichi_date-2 := nichi-with-object2-lex &
 maitsuki-noun :=
 date-noun-adv-lex &
 [ORTH <! "毎月" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'maitsuki]].
+SYNSEM.LKEYS.KEYREL [PRED 'maitsuki]].
 
 ;one month
 
 hitotsuki-noun :=
 date-noun-adv-lex &
 [ORTH <! "ひと月" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'hitotsuki]].
+SYNSEM.LKEYS.KEYREL [PRED 'hitotsuki]].
 
 ;first ten days of the month
 
 shojun-noun :=
 date-noun-adv-lex &
 [ORTH <! "初旬" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'shojun]].
+SYNSEM.LKEYS.KEYREL [PRED 'shojun]].
 
 ;first ten days of the month
 
@@ -590,57 +590,57 @@ SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'shojun]].
 nishuume :=
 ordinary-nohon-n-lex &
 [ORTH <! "二週目" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'nishuume]].
+SYNSEM.LKEYS.KEYREL [PRED 'nishuume]].
 
 shuu :=
 ordinary-nohon-n-lex &
 [ORTH <! "週" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'shuu]].
+SYNSEM.LKEYS.KEYREL [PRED 'shuu]].
 
 shuukaN :=
 ordinary-nohon-n-lex &
 [ORTH <! "週間" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'shuukan]].
+SYNSEM.LKEYS.KEYREL [PRED 'shuukan]].
 
 shuumatsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "週末" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'shuumatsu]].
+SYNSEM.LKEYS.KEYREL [PRED 'shuumatsu]].
 
 tsuki :=
 ordinary-nohon-n-lex &
 [ORTH <! "月" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'tsuki]].
+SYNSEM.LKEYS.KEYREL [PRED 'tsuki]].
 
 yokujitsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌日" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'yokujitsu]].
+SYNSEM.LKEYS.KEYREL [PRED 'yokujitsu]].
 
 yokushuu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌週" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'yokushuu]].
+SYNSEM.LKEYS.KEYREL [PRED 'yokushuu]].
 
 yokugetsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌月" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'yokugetsu]].
+SYNSEM.LKEYS.KEYREL [PRED 'yokugetsu]].
 
 yokuyokushuu :=
 ordinary-nohon-n-lex &
 [ORTH <! "翌々週" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'yokuyokushuu]].
+SYNSEM.LKEYS.KEYREL [PRED 'yokuyokushuu]].
 
 zeNjitsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "前日" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'zenjitsu]].
+SYNSEM.LKEYS.KEYREL [PRED 'zenjitsu]].
 
 zeNshuu-week :=
 ordinary-nohon-n-lex &
 [ORTH <! "前週" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'zenshuu-week]].
+SYNSEM.LKEYS.KEYREL [PRED 'zenshuu-week]].
 
 
 gatsu-matsu_date-1 := gatsu-no-object2-lex &
@@ -684,11 +684,11 @@ kasho_numcl-2b := num-cl-mod-lex &
 
 inchi_numcl := num-cl-nomod-lex &
 [ ORTH <! "インチ" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'inchi ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'inchi ].
 
 ji_numcl := num-cl-nomod-lex &
 [ ORTH <! "時" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'hour_rel ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'hour_rel ].
 
 ;department, division, section, unit
 
@@ -697,17 +697,17 @@ ka_numcl  := num-cl-mod-lex &
 
 shoku_numcl := num-cl-nomod-lex &
 [ ORTH <! "食" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'food_rel ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'food_rel ].
 
 jikan_numcl := num-cl-nomod-lex &
 [ ORTH <! "時間" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'jikan ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'jikan ].
 
 ;station
 
 eki_numcl := num-cl-nomod-lex &
 [ ORTH <! "駅" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'eki ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'eki ].
 
 
 ;;;;;;;;;;;;;;;;NEW ENTRIES AUG 2003;;;;;;;;;;;;;;;;;;;;;,
@@ -764,7 +764,7 @@ setto_3 := num-cl-mod-lex &
 ; Used 1 times
 
 anpea_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'ampere_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'ampere_2,
  ORTH <! "アンペア" !> ].
 
 
@@ -818,7 +818,7 @@ karatto_2 := num-cl-mod-lex &
 ; Used 2 times
 
 karori-_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'calorie-_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'calorie-_2,
  ORTH <! "カロリー" !> ].
 
 ; 巻 
@@ -826,7 +826,7 @@ karori-_2 := num-cl-nomod-lex &
 ; Used 1 times
 
 kan_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kan_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'kan_2,
  ORTH <! "巻" !> ].
 
 ; Used 46 times
@@ -838,7 +838,7 @@ kan_2 := num-cl-nomod-lex &
 ; Used 65 times
 
 kyuu_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kyuu_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'kyuu_2,
  ORTH <! "球" !> ].
 
 ; Used 5 times
@@ -850,21 +850,21 @@ kyuu_2 := num-cl-nomod-lex &
 ; Used 8 times
 
 kire_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kire_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'kire_2,
  ORTH <! "切れ" !> ].
 
 ; キロカロリー 
 ; Used 1 times
 
 kirokarori-_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kilocalorie-_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'kilocalorie-_2,
  ORTH <! "キロカロリー" !> ].
 
 ; キログラム 
 ; Used 1 times
 
 kiroguramu_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kiroguramu_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'kiroguramu_2,
  ORTH <! "キログラム" !> ].
 
 
@@ -899,7 +899,7 @@ kuo-ta-_2 := num-cl-mod-lex &
 ; Used 73 times
 
 kuchi_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'kuchi_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'kuchi_2,
  ORTH <! "口" !> ].
 
 ; Used 24 times
@@ -911,7 +911,7 @@ kuchi_2 := num-cl-nomod-lex &
 ; Used 1 times
 
 guramu_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'gram_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'gram_2,
   ORTH <! "グラム" !> ].
 
 
@@ -971,7 +971,7 @@ jiku_2 := num-cl-mod-lex &
 ; Used 1 times
 
 jigen_2 := num-cl-nomod-lex &
-[ SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'jigen_2,
+[ SYNSEM.LKEYS.ALTKEYREL.PRED 'jigen_2,
  ORTH <! "時限" !> ].
 
 ; 次元 
@@ -1015,7 +1015,7 @@ jun_2 := num-cl-mod-lex &
 ; Used 5 times
 
 jou_2 := num-cl-mod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'jou_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'jou_2,
   ORTH <! "錠" !> ].
 
 
@@ -1058,13 +1058,13 @@ seki_2_2 := num-cl-mod-lex &
 ; Used 44 times
 
 senchime-toru_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'centimeter_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'centimeter_2,
   ORTH <! "センチメートル" !> ].
 
 ;ミリメートル
 
 mirime-toru := num-cl-nomod-lex &
-	       [SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'millimeter,
+	       [SYNSEM.LKEYS.ALTKEYREL.PRED 'millimeter,
 		ORTH <! "ミリメートル" !> ].
 
 
@@ -1170,7 +1170,7 @@ hai_2_1 := num-cl-mod-lex &
 ; byte
 
 baito_2 := num-cl-mod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'byte_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'byte_2,
   ORTH <! "バイト" !> ].
 
 ; 柱 
@@ -1231,7 +1231,7 @@ hyou_2 := num-cl-mod-lex &
 ; CHECKME: should I be a funny time class?
 
 byou_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'byou_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'byou_2,
   ORTH <! "秒" !> ].
 
 ; フィート 
@@ -1333,7 +1333,7 @@ miririttoru_2 := num-cl-mod-lex &
 ; checkme
 
 mure_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'mure_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'mure_2,
   ORTH <! "群れ" !> ].
 
 ; メーター 
@@ -1377,7 +1377,7 @@ ya-do_2 := num-cl-mod-lex &
 ; Used 1 times
 
 ri_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'ri_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'ri_2,
   ORTH <! "里" !> ].
 
 ; リットル 
@@ -1414,11 +1414,11 @@ watari_2 := num-cl-mod-lex &
 ; Used 1 times
 
 watto_2 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'watto_2,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'watto_2,
   ORTH <! "ワット" !> ].
 
 ongusutoro-mu := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'angstrom,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'angstrom,
   ORTH <! "オングストローム" !> ].
 
 
@@ -1444,7 +1444,7 @@ yama_2 := num-cl-mod-lex &
 ; Used 181 times
 
 go_3 := num-cl-nomod-lex &
-[SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'go_3,
+[SYNSEM.LKEYS.ALTKEYREL.PRED 'go_3,
   ORTH <! "語" !> ].
 
 ; 腰 
@@ -1513,19 +1513,19 @@ fuu_3 := num-cl-mod-lex &
 
 iningu_numcl := num-cl-nomod-lex &
 [ ORTH <! "イニング" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'iningu ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'iningu ].
 
 dan_numcl := num-cl-nomod-lex &
 [ ORTH <! "ダン" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'dan ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'dan ].
 
 sai-kanji-1_numcl := num-cl-nomod-lex &
 [ ORTH <! "歳" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'sai ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'sai ].
 
 sai-kanji-2_numcl := num-cl-nomod-lex &
 [ ORTH <! "才" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'sai ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'sai ].
 
 zen_numcl := num-cl-mod-lex &
 	     [ ORTH <! "膳" !>].
@@ -1535,13 +1535,13 @@ sou_numcl := num-cl-mod-lex &
 
 banme_numcl := num-cl-nmod-lex &
 [ ORTH <! "番目" !>,
-  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'card-rel ].
+  SYNSEM.LKEYS.KEYREL.PRED 'card-rel ].
 
 
 
 nichikan_numcl := num-cl-nomod-lex &
 [ ORTH <! "日間" !>,
-  SYNSEM.LOCAL.LKEYS.--ALTKEYREL.PRED 'nichikan ].
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'nichikan ].
 
 
 ;;; hand added
@@ -1555,47 +1555,47 @@ one_card := card_ichi_no_valence &
 [ ORTH <! "１" !> ].
 
 two_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "2",
+[ SYNSEM.LKEYS.KEYREL.CARG "2",
   ORTH <! "２" !> ].
 
 three_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "3",
+[ SYNSEM.LKEYS.KEYREL.CARG "3",
   ORTH <! "３" !> ].
 
 four_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "4",
+[ SYNSEM.LKEYS.KEYREL.CARG "4",
   ORTH <! "４" !> ].
 
 five_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "5",
+[ SYNSEM.LKEYS.KEYREL.CARG "5",
   ORTH <! "５" !> ].
 
 six_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "6",
+[ SYNSEM.LKEYS.KEYREL.CARG "6",
   ORTH <! "６" !> ].
 
 seven_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "7",
+[ SYNSEM.LKEYS.KEYREL.CARG "7",
   ORTH <! "７" !> ].
 
 eight_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "8",
+[ SYNSEM.LKEYS.KEYREL.CARG "8",
   ORTH <! "８" !> ].
 
 nine_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "9",
+[ SYNSEM.LKEYS.KEYREL.CARG "9",
   ORTH <! "９" !> ].
 
 ;;; probably needs more work
 zero_card1 := card_2_no_valence & 
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "0",
+[ SYNSEM.LKEYS.KEYREL.CARG "0",
   ORTH <! "０" !> ].
 
 hito_card := card_ichi_no_valence &
 [ ORTH <! "ひと" !> ].
 
 futa_card := card_1_no_valence &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL.CARG "2",
+[ SYNSEM.LKEYS.KEYREL.CARG "2",
   ORTH <! "ふた" !> ].
 
 

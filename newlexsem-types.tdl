@@ -32,7 +32,7 @@ nominal-sign-sem-type :=  wg-handel-lex-mrs.
 mod-id-nominal-sign-sem-type := nominal-sign-sem-type & mod-id-wg-handel-mrs.
 
 common-noun-sem-type := mod-id-nominal-sign-sem-type &
-                        [ RELS diff-list & [LIST.FIRST reg-nom_rel ]].
+                        [ RELS diff-list & [LIST.FIRST reg-nom-relation ]].
 
 ;date-noun-sem-type := mod-id-nominal-sign-sem-type &
 ;                      [ KEY #key & locable_rel,
@@ -52,8 +52,8 @@ pron-sem-type := mod-id-nominal-sign-sem-type &
                              [HOOK [LTOP #handle,
 				    INDEX #i],
                               RELS diff-list & 
-                               <! pron_rel, 
-                                  quant_rel &
+                               <! pron-relation, 
+                                  quant-relation &
                                      [ARG0 #i,
                                       RSTR #restr] !>,
                               HCONS <! qeq &
@@ -70,18 +70,20 @@ ppron-sem-type := pron-sem-type &
 lpron-sem-type := mod-id-nominal-sign-sem-type &
                   [HOOK [LTOP #hand,
 			 INDEX #ind],
-                   RELS  <! arg1_rel   & [LBL #hand,
+                   RELS  <! arg1-relation   & [LBL #hand,
                                        ARG1 #ind],
-                          def_rel & [ARG0 #ind,
-                                     RSTR #restr],
-                          place_rel !>,
+                          quant-relation & 
+			  [PRED def_rel,
+			   ARG0 #ind,
+			   RSTR #restr],
+                          place-relation !>,
                    HCONS <! qeq &
                            [HARG #restr,
                             LARG #hand] !> ].
 
 
 personal-pronoun-sem-type := ppron-sem-type &
-                                  [RELS.LIST.REST.FIRST def_rel].
+                                  [RELS.LIST.REST.FIRST.PRED def_rel].
 
 
 
@@ -91,10 +93,10 @@ lex-det-sem-type := det-sem-type.
 
 
 nom-sem-type := mod-id-nominal-sign-sem-type &
-                [RELS diff-list & [LIST.FIRST nominalise_rel]].
+                [RELS diff-list & [LIST.FIRST noun-relation]].
 
 nom-pred-sem-type := mod-id-nominal-sign-sem-type &
-                [RELS diff-list & [LIST.FIRST nominalise-pred_rel]].
+                [RELS diff-list & [LIST.FIRST noun-arg1-relation]].
 
 ; (ERB 2001-10-31) I want to disallow NO from modifying NO
 ; nominalizations while still allowing it to modify vns used as ns.
@@ -109,23 +111,23 @@ nom-pred-sem-type := mod-id-nominal-sign-sem-type &
 
 
 nom-vn-sem-type := nominal-sign-sem-type &
-                   [RELS.LIST.FIRST nominalise-vn_rel].
+                   [RELS.LIST.FIRST noun-arg1-relation].
 
 
 adj-sem-type := mod-id-wg-handel-mrs &
                 [ HOOK.INDEX #inst,
-                  RELS diff-list & [LIST.FIRST adj_rel &
+                  RELS diff-list & [LIST.FIRST adj-relation &
 					       [ ARG1 #inst]]].
 
 na-adj-sem-type-basic := mod-id-wg-handel-mrs &
                 [ HOOK.INDEX #event,
-                  RELS <! na-adj_rel & [ARG0 #event] !>].
+                  RELS <! na-adj-relation & [ARG0 #event] !>].
 
 na-adj-sem-type := na-adj-sem-type-basic &
                 [ HCONS <! !>].
 
 ; (ERB 2001-08-06) In Smith-style number names, the numbers sometimes
-; have to also provide the times_rel and the plus_rel.
+; have to also provide the times_rel and the plus-relation.
 
 
 card-sem-type := j-mrs &
@@ -134,7 +136,7 @@ card-sem-type := j-mrs &
 		 HOOK [INDEX #ind,
 		       LTOP #hand],
                  HCONS <! !>,
-                 RELS diff-list & [LIST.FIRST const_rel]].
+                 RELS diff-list & [LIST.FIRST const-relation]].
 
 
 ; (ERB 2001-08-28) Date expressions
@@ -142,14 +144,14 @@ card-sem-type := j-mrs &
 date-sem-type := mod-id-wg-handel-mrs &
                 [HCONS <! !>,
                  HOOK.INDEX #ind,
-                 RELS diff-list & [LIST.FIRST numbered-np_rel &
+                 RELS diff-list & [LIST.FIRST numbered-np-relation &
 					      [ ARG0 #ind ]]].
                  
 
 simple-adj-sem-type := adj-sem-type.
 
 dim-adj-sem-type := adj-sem-type &
-		[ RELS diff-list & [LIST.FIRST adj_rel],
+		[ RELS diff-list & [LIST.FIRST adj-relation],
                          HCONS <! !> ].
 
 
@@ -215,7 +217,7 @@ nncompound-sem-type := wg-handel-lex-mrs-basic.
 ;                  RELS diff-list & [ LIST.FIRST #key ]].
 
 appos-id-sem-type := mod-id-wg-handel-mrs &
-                 [RELS <! appos-id_rel !> ].
+                 [RELS <! appos-id-relation !> ].
 
 
 greeting-sem-type := mod-id-wg-handel-mrs &
@@ -316,24 +318,24 @@ scopal-adv-sem-type := possibly-wh-scopal-adv-sem-type.
 ; ALTKEY.
 
 wh-adv-sem-type := mod-id-wg-handel-mrs &
-                   [ RELS <! prep_mod_rel &
+                   [ RELS <! prep-mod-relation &
                             [ARG1 #var,
                              WLINK #label,
                              ARG0 [ E.TENSE no_tense ]],
-                            noun_rel &
+                            noun-relation &
                             [LBL #lr,
                              WLINK #label,
                              ARG0 #var],
-                            whq_rel &
+                            quant-relation &
                             [ARG0 #var & ref-ind,
                              RSTR #rest,
-                             PRED 'whq] !>,
+                             PRED whq_rel] !>,
                      HCONS <! qeq & [LARG #lr, HARG #rest] !>].
 
 ;(MS 2003-07-09) This seems not to be used.
 
 ;i-adj-sem-type := pred-sem-type &
-;		[ KEY #key & adj_rel,
+;		[ KEY #key & adj-relation,
 ;		  MOD-IND #ind,
 ;		  MOD-HAND #hand,
 ;		  HOOK [INDEX #ind,
@@ -348,7 +350,7 @@ wh-adv-sem-type := mod-id-wg-handel-mrs &
 
 
 ;pci-adj-sem-type := pred-sem-type &
-;		[ KEY #key & scope-adj_rel & [SCOPE #sc],
+;		[ KEY #key & scope-adj-relation & [SCOPE #sc],
 ;		  MOD-IND #ind,
 ;		  MOD-HAND #hand,
 ;		  HOOK [INDEX #ind,
@@ -384,7 +386,7 @@ wh-adv-sem-type := mod-id-wg-handel-mrs &
 ; (ERB 2001-08-09)
 
 ; (ERB 2001-12-05) Need to enrich this to deal with Ⱦ where the numeral
-; classifier is going to add another plus_rel.
+; classifier is going to add another plus-relation.
 
 num-cl-sem-type-super := mod-id-wg-handel-mrs &
                          [ HCONS <! !>].

@@ -95,13 +95,13 @@ saturated := optional-or-saturated & [SUBJ null,
 			COMPS null,
 			SPR null].
 
-sat-or-opt-arg := olist.
+;sat-or-opt-arg := olist.
 
-sat-arg := sat-or-opt-arg & onull.
+;sat-arg := sat-or-opt-arg & onull.
 
-opt-1-arg := sat-or-opt-arg & 1-list & [FIRST.OPT + ].
+opt-1-arg := olist & 1-list & [FIRST.OPT + ].
 
-opt-2-args := sat-or-opt-arg & 2-comps-list & [FIRST.OPT + ,
+opt-2-args := olist & 2-comps-list & [FIRST.OPT + ,
 					       REST.FIRST.OPT + ].
 
 obl-arg := cons.
@@ -112,9 +112,9 @@ obl-2-args := obl-arg & 2-comps-list & [FIRST.OPT - ,
 
 optional-or-saturated := j-valence.
 
-only-optional-arguments := optional-or-saturated & [SUBJ sat-or-opt-arg,
-						    COMPS sat-or-opt-arg,
-						    SPR sat-or-opt-arg].
+only-optional-arguments := optional-or-saturated & [SUBJ olist,
+						    COMPS olist,
+						    SPR olist].
 
 
 j-synsem :=  canonical-synsem & 
@@ -158,7 +158,7 @@ lexical_sign := lexical-entry & word &
                 STEMTYPE stemtype].
 
 lexical_sign-word := lexical_sign &
-                     [ SYNSEM.LOCAL.LKEYS.--KEYREL.WLINK ne-list ].
+                     [ SYNSEM.LKEYS.KEYREL.WLINK ne-list ].
 
 lexical_sign-affix := lexical_sign.
 lexical_sign-rule := lexical_sign & phrase-or-lexrule.

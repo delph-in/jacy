@@ -22,7 +22,7 @@
 
 utterance_rule1a := utterance-plusmessage-type &
                    [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD decl]],
-                    C-CONT.RELS <! prpstn_rel !>,
+                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
                     ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
                                                     [MODUS uttmodus, 
                                                      FIN +,
@@ -37,7 +37,7 @@ utterance_rule1a := utterance-plusmessage-type &
 
 utterance_rule1b := utterance-plusmessage-type &
                    [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD quest]],
-                    C-CONT.RELS <! int_rel & [ PRED 'int_rel ]!>,
+                    C-CONT.RELS <! message & [ PRED question_m_rel ]!>,
                     ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
                                                     [MODUS uttmodus, 
                                                      FIN +,
@@ -67,15 +67,18 @@ utterance_rule2b := utt-message-sap-type &
 ; (ERB 2001-10-31) Moving contrast between imp_rel and polite-imp_rel
 ; to REL feature for k2y purposes (and because we can't see why there
 ; need to be special types).
+; (MS 2003-12-17) Adapting to Matrix 0.6
 
 utterance_rule2c := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & imp],
-                    C-CONT [RELS <! imp_rel & [PRED 'imp_rel] !>],
+                    C-CONT [RELS <! message & [PRED command_m_rel] !>],
                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
+
+; (MS 2003-12-17) Adapting to Matrix 0.6, but added cond_m_rel.
 
 utterance_rule2d := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & cond],
-                    C-CONT.RELS <! cond_rel !>,
+                    C-CONT.RELS <! message & [PRED conditional_m_rel] !>,
                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
 
 ; (MS 2002-01-16) simple-imperative vs. polite-imperative divides utterance_rule2e and utterance_rule10. 
@@ -93,7 +96,7 @@ utterance_rule2e := utt-message-sap-type &
 
 ;utterance_rule3  := utterance-plusmessage-type &
 ;                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
-;                    C-CONT.RELS <! prpstn_rel !>,
+;                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
 ;                    ARGS <[SYNSEM [LOCAL.CAT [HEAD verb_head & 
 ;                                                   [H-TENSE te,
 ;                                                    VN -,
@@ -111,10 +114,11 @@ utterance_rule2e := utt-message-sap-type &
 ; (ERB 2002-01-02) We don't want the pre-masu H-TENSE te forms to
 ; be possible daughters here.  HACK: They differ from true te forms
 ; in the J-SPEC value (don't know why), so I'll leverage that here.
+; (MS 2003-12-17) Adapting to Matrix 0.6
 
 utterance_rule3  := utterance-plusmessage-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
-                    C-CONT.RELS <! imp_rel & [PRED 'imp_rel] !>,
+                    C-CONT.RELS <! message & [PRED command_m_rel] !>,
                     ARGS <[SYNSEM [LOCAL.CAT [HEAD verb_head & 
                                                    [H-TENSE te,
                                                     VN -,
@@ -134,19 +138,17 @@ utterance_rule3  := utterance-plusmessage-type &
 ;                    ARGS <[SYNSEM.LOCAL.CAT.HEAD idiom_head]>].
 
 utterance_rule6  := turn-type &
-                    [SYNSEM.LOCAL [ CAT.HEAD utterance_head & [SMOD decl],
-				    LKEYS.--KEYREL #key,
-                                    CONT [ HOOK.LTOP #top ]],
+                    [SYNSEM [LOCAL [ CAT.HEAD utterance_head & [SMOD decl],
+                                    CONT [ HOOK.LTOP #top ]]],
                      C-CONT [ RELS <! !>,
                               HCONS <! !> ],
-                    ARGS <[SYNSEM.LOCAL [ CAT.HEAD idiom_head,
-					  CONT.HOOK.LTOP #top,
-                                          LKEYS.--KEYREL #key]]>].
+                    ARGS <[SYNSEM [LOCAL [ CAT.HEAD idiom_head,
+					   CONT.HOOK.LTOP #top]]]>].
 
 
 utterance_rule9 := utterance-plusmessage-type &
                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
-                    C-CONT.RELS <! prpstn_rel !>,
+                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
                     ARGS <[SYNSEM.LOCAL [CAT.HEAD empty-frag-p_head,
                                         BAR +]]>].
 
@@ -158,10 +160,11 @@ utterance_rule9 := utterance-plusmessage-type &
 ; so adding SMOD imp.
 
 ; (MS 2002-01-16) introduces simple-imperative vs. polite-imperative to divide utterance_rule10 and utterance_rule2e.
+; (MS 2003-12-17) Adapting to Matrix 0.6
 
 utterance_rule10 := utterance-plusmessage-type &
                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
-                   C-CONT.RELS <! imp_rel & [PRED 'imp_rel] !>,
+                   C-CONT.RELS <! message & [PRED command_m_rel] !>,
                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
                                                    [MODUS simple-imperative,
 						    H-TENSE present,
@@ -220,7 +223,7 @@ adv_np_rule := adv_np_rule-type.
 ; (MS 2002-06-11) The POSTHEAD is unified with the POSTHEAD of the argument. Thus, I can prevent
 ; words like Дж from being the first argument in a compound.
 
-; (MS 2003-09-26) Changed no_nmod to unspec_compound_rel, as defined in Matrix.
+; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
 
 
 compound-noun-rule := empty-head-type & 
@@ -236,22 +239,22 @@ compound-noun-rule := empty-head-type &
          MODIFIED.PERIPH +],
  C-CONT [RELS <! !>,
          HCONS <! !>],
- HEAD-DTR.SYNSEM.LOCAL [CONT nncompound-sem-type &
+ HEAD-DTR.SYNSEM [LOCAL [CONT nncompound-sem-type &
 			     [RELS <! #key !>,
-			      HCONS <! !>],
-			LKEYS.--KEYREL #key & unspec_compound_rel &
-			     [LBL #hhand,
-			      PRED "no",
-			      ARG0.E.TENSE no_tense,
-			      ARG2 #hinst,
-			      ARG1 #nhinst]],
- NON-HEAD-DTR.SYNSEM.LOCAL [CAT [HEAD noun_head & [J-POSTHEAD #ph],
+			      HCONS <! !>]],
+		  LKEYS.KEYREL #key & unspec-compound-relation &
+			[LBL #hhand,
+			 PRED "no",
+			 ARG0.E.TENSE no_tense,
+			 ARG2 #hinst,
+			 ARG1 #nhinst]],
+ NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD noun_head & [J-POSTHEAD #ph],
                                 VAL saturated],
                            CONT [ HOOK.INDEX #nhinst],
-			   LKEYS.--KEYREL.PRED atom,
-                           BAR -]].
+			   BAR -],
+			   LKEYS.KEYREL.PRED atom]].
 
-; (MS 2003-09-26) Changed no_nmod to unspec_compound_rel, as defined in Matrix.
+; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
 
 compound-exceptional-noun-rule := empty-head-type & 
 [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD exceptional_noun_head,
@@ -264,20 +267,20 @@ compound-exceptional-noun-rule := empty-head-type &
          MODIFIED.PERIPH +],
  C-CONT [RELS <! !>,
          HCONS <! !>],
- HEAD-DTR.SYNSEM.LOCAL [CONT nncompound-sem-type &
+ HEAD-DTR.SYNSEM [LOCAL [CONT nncompound-sem-type &
 			     [RELS <! #key !>,
-			      HCONS <! !>],
-			LKEYS.--KEYREL #key & unspec_compound_rel &
-			     [LBL #hhand,
-			      PRED "no",
-			       ARG0.E.TENSE no_tense,
-			       ARG2 #hinst,
-			       ARG1 #nhinst]],
- NON-HEAD-DTR.SYNSEM.LOCAL [CAT [HEAD noun_head,
-                                VAL saturated],
-                           CONT [ HOOK.INDEX #nhinst],
-			   LKEYS.--KEYREL.PRED atom,
-                           BAR -]].
+			      HCONS <! !>]],
+		  LKEYS.KEYREL #key & unspec-compound-relation &
+			[LBL #hhand,
+			 PRED "no",
+			 ARG0.E.TENSE no_tense,
+			 ARG2 #hinst,
+			 ARG1 #nhinst]],
+ NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD noun_head,
+				  VAL saturated],
+			     CONT [ HOOK.INDEX #nhinst],
+			     BAR -],
+			   LKEYS.KEYREL.PRED atom]].
 
 
 
@@ -294,17 +297,17 @@ compound-name-rule := empty-head-type &
 		       MODIFIED.PERIPH +],
 	       C-CONT [RELS <! !>,
 		       HCONS <! !>],
-                HEAD-DTR.SYNSEM.LOCAL [CONT appos-id-sem-type &
+                HEAD-DTR.SYNSEM [LOCAL [CONT appos-id-sem-type &
 					    [RELS <! #key !>,
-					     HCONS <! !>],
-				       LKEYS.--KEYREL #key &
-					    [LBL #hhand,
-					    ARG1 #nhinst,
-					    ARG2 #hinst]],                    
-               NON-HEAD-DTR.SYNSEM.LOCAL [CAT [HEAD name_head,
+					     HCONS <! !>]],
+				 LKEYS.KEYREL #key &
+				       [LBL #hhand,
+					ARG1 #nhinst,
+					ARG2 #hinst]],                    
+               NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD name_head,
                                               VAL saturated],
-                                        LKEYS.--KEYREL [ARG0 #nhinst],
-                                        BAR -]].
+					   BAR -],
+				    LKEYS.KEYREL [ARG0 #nhinst]]].
 
 
 
@@ -462,7 +465,7 @@ head-complement2-rule := head-complement2-type & [SYNSEM.LOCAL.BAR +].
 ; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
 
 
-; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
+; (ERB 2002-01-02) [NUCL -] on mother - see notes at 
 ; head-adjunct-rule-type.
 
 head-adjunct-rule1 := hadj-final-i & 
@@ -542,7 +545,7 @@ head-adjunct-rule4 := hadj-first-s &
 ; NP or N'.  Need to constrain the quantify-n-infl-rule so that
 ; it only applies to unmodified elements, to avoid spurious ambiguity.
 
-; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
+; (ERB 2002-01-02) [NUCL -] on mother - see notes at 
 ; head-adjunct-rule-type.
 
 ; (ERB 2002-01-14) It may be desirable to split the relative clause rule in two
@@ -562,22 +565,23 @@ head-adjunct-rule4 := hadj-first-s &
 relative-clause-rule := hadj-final-i &
                       [SYNSEM.LOCAL [BAR +,
                                      NUCL nucl_minus],
-                        C-CONT [RELS <!  prpstn_rel & [LBL #top,
-                                                        MARG #soa],
-                                          topic_rel & [PRED 'wa,
+                        C-CONT [RELS <!  message & [PRED proposition_m_rel,
+						    LBL #top,
+						    MARG #soa],
+                                          prep-mod-relation & [PRED 'wa,
                                                        ARG0.E.TENSE no_tense,
                                                        LBL #adjhand,
                                                        ARG1 #adjevent,
                                                        ARG2 #ind] !>,
                                 HCONS <! qeq & [HARG #soa,
                                                  LARG #adjhand] !>],
-                       ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD rels,
+                       ARGS <[SYNSEM [LOCAL [CAT [HEAD [J-POSTHEAD rels,
 						       MAIN-PRD bool],
 						 VAL saturated],
-					    CONT.HOOK.INDEX #adjevent,
-                                            LKEYS [--KEYREL [LBL #adjhand]],
+					    CONT.HOOK[INDEX #adjevent,
+						      LTOP #adjhand],
                                             BAR +,
-                                            NUCL not_fin_conj]],
+                                            NUCL not_fin_conj]]],
                               [SYNSEM j-synsem & [LOCAL [CAT.HEAD noun_head,
 							 BAR +,
 							 CONT [MOD-IND #ind,
@@ -594,18 +598,18 @@ relative-clause-rule := hadj-final-i &
 ; generalizing to verb_head-super.
 
 ; (ERB 2002-01-22) NUCL conj now on supertype.
+; (MS 2003-12-19) Matrix 0.6
 
 sentence-te-coordination-rule := sentence-coord-type &
-[SYNSEM.LOCAL [BAR +,
-               CAT.VAL saturated,
-	       LKEYS.--KEYREL.PRED 'coord],
+[SYNSEM [LOCAL [BAR +,
+               CAT.VAL saturated]],
+ C-CONT.RELS.LIST.FIRST.PRED 'coord,
  ARGS <[SYNSEM.LOCAL [CAT [HEAD verb_head-super & [J-POSTHEAD coord,
 						   H-TENSE te,
 						   C-MOD < j-synsem & [LOCAL [CAT #1, 
 									      CONT #3,
 									      BAR #5, 
-									      NUCL #6,
-									      LKEYS #7],
+									      NUCL #6],
 								       LEX #2, 
 								       NON-LOCAL #4] > ],
 			   VAL saturated],
@@ -616,7 +620,6 @@ sentence-te-coordination-rule := sentence-coord-type &
 				  CONT #3,
 				  BAR #5, 
 				  NUCL #6,
-				  LKEYS #7,
 				  NUCL nucl_plus],
 			   LEX #2, 
 			   NON-LOCAL #4],
@@ -707,20 +710,17 @@ conj-rule := conj-rule-type &
 ; ERB (2001-09-03) Turns out we don't need a special subtype of the h-spr rule, as
 ; the ordinary one will do the work (of course!).
 
+; (MS 2003-12-19) Matrix 0.6
 
 vn-light-rule := head-marker-rule & 
                  [SYNSEM [LOCAL [BAR bool,
-				 CONT.HOOK #hook,
-				 LKEYS [--KEYREL #key,
-				        --ALTKEYREL #altkey]],
+				 CONT.HOOK #hook],
 			  LEX +],
                   J-NEEDS-AFFIX -,
                   RMORPH-BIND-TYPE #morphbind,
                  ARGS <[SYNSEM j-synsem & [LOCAL [CAT.HEAD vn_head,
 						  CONT.HOOK #hook,
-						  LKEYS [--KEYREL #key,
-							 --ALTKEYREL #altkey],
-						  BAR -]]],
+						   BAR -]]],
                        [SYNSEM j-synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX -, LIGHT +]]],
                         INFLECTED +,
                         J-NEEDS-AFFIX -,
@@ -760,18 +760,16 @@ na-vend-rule := stem-end-rule-type &
 
 
 unary-vstem-vend-rule := unary-type-super &
- [SYNSEM.LOCAL [CAT #cat,
-		CONT #cont,
-		LKEYS #keys,
-		CTXT #ctxt,
-		BAR +],
+ [SYNSEM [LOCAL [CAT #cat,
+		 CONT #cont,
+		 CTXT #ctxt,
+		 BAR +]],
   J-NEEDS-AFFIX -,
   ARGS < [SYNSEM [LOCAL [CAT #cat & [HEAD verb-stem_head & [FIN +,
 							   VN -,
 							   LIGHT -,
 							   EMPTY -]],
 			CONT #cont,
-			LKEYS #keys,
 			CTXT #ctxt,
 			BAR -],
 		  LEX +],
@@ -791,12 +789,12 @@ unary-vstem-vend-rule := unary-type-super &
 ;[ ARGS < [SYNSEM.LOCAL.CAT.HEAD vn_head],
 ;         [SYNSEM.LOCAL.CAT.HEAD.AUX -] >].
 
+; (MS 2003-12-19) Matrix 0.6
+
 vend-vend-rule  := head-marker-rule & 
                  [SYNSEM [LOCAL [NUCL nucl_plus,
 				 CONT.HOOK #hook,
-				 LKEYS [--KEYREL #key,
-				        --ALTKEYREL #altkey],
-				      BAR #bar],
+				 BAR #bar],
 			  LEX +,
 			  MODIFIED.PERIPH #per],
                   J-NEEDS-AFFIX #aff,
@@ -810,9 +808,7 @@ vend-vend-rule  := head-marker-rule &
                          LMORPH-BIND-TYPE #lmorph,
                          INFLECTED +],
                        [SYNSEM j-synsem & [LOCAL [CAT.HEAD verbend_head & [MODUS #mod],
-						  CONT.HOOK #hook,
-						  LKEYS [--KEYREL #key,
-							 --ALTKEYREL #altkey]],
+						  CONT.HOOK #hook],
 					 MODIFIED.PERIPH #per],
                         J-NEEDS-AFFIX #aff,
                         LMORPH-BIND-TYPE #mt,
@@ -830,16 +826,18 @@ vend-vend-rule  := head-marker-rule &
 head-specifier-rule := head-specifier-rule-type &
                         adjacent-spr-check &
                        [SYNSEM [LOCAL [BAR #bar,
-                                      CAT.VAL [UNSAT -,
-					       SPR null],
-                                      CONT [MOD-IND #mind,
-                                            MOD-HAND #mhand]],
+				       CAT.VAL [UNSAT -,
+						SPR null],
+				       CONT [HOOK.XARG #xarg,
+					     MOD-IND #mind,
+					     MOD-HAND #mhand]],
 				LEX -,
 				MODIFIED.PERIPH #per],
-                       ARGS <[SYNSEM j-synsem & [MODIFIED.PERIPH #per],
+			ARGS <[SYNSEM j-synsem & [MODIFIED.PERIPH #per],
                               J-NEEDS-AFFIX -],
                              [SYNSEM j-synsem & [LOCAL [BAR #bar,
-                                                      CONT [MOD-IND #mind,
+                                                      CONT [HOOK.XARG #xarg,
+							    MOD-IND #mind,
                                                             MOD-HAND #mhand]]]]>].
 
 
@@ -852,14 +850,15 @@ prefix-attach-rule := suffix-rule &
                               [SYNSEM.LOCAL.BAR bool,
                                J-NEEDS-AFFIX -] >].
 
+; (MS 2003-12-19) Matrix 0.6
+
 tai-obj-change-rule :=  obj-casechange-rule &
                        [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
 							  LOCAL.CAT.HEAD overt-case-p_head &
                                                                         [CASE ga]],
-                        ARGS < [SYNSEM.LOCAL [CAT [HEAD v-op-end_head,
+                        ARGS < [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [KEYS.KEY tai_rel],
 						   VAL [SPR null,
-							SUBJ null]],
-                                              LKEYS.--KEYREL objchange_rel]] >].
+							SUBJ null]]]]] >].
 
 
 
@@ -892,15 +891,14 @@ vn-light-obj-change-rule-2  :=  obj-casechange-rule &
 rareru-obj-change-rule :=  obj-casechange-rule &
                        [SYNSEM.LOCAL.CAT.VAL [COMPS.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
 							       [CASE ga]]],
-                        ARGS < [SYNSEM.LOCAL [ CAT [HEAD verb_head,
-						    VAL.SUBJ null],
-                                               LKEYS.--KEYREL rareru_rel ]] >].
+                        ARGS < [SYNSEM [LOCAL [ CAT [HEAD verb_head & [KEYS.KEY rareru_rel],
+						    VAL.SUBJ null]]]] >].
 
 garu-sbj-change-rule := subj-casechange-rule &
 			[SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
 									  [CASE wo]]],
-                        ARGS < [SYNSEM.LOCAL [LKEYS.--KEYREL.PRED 'seem,
-					      CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE ga]] >].
+                        ARGS < [SYNSEM [LOCAL.CAT [HEAD.KEYS.KEY seem_rel,
+						   VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE ga]]] >].
 
 
 ; (ERB 2001-09-20) We want currency NumClPs at least to be possible
@@ -963,7 +961,7 @@ na-adj-frag-rule := na-adj-frag-rule-type.
 ; (ERB 2001-11-14) Unary rule to bind off QUE values in embedded
 ; questions.
 
-; (ERB 2002-02-11) Changed to binary rule -- see notes at embedded-rule-type.
+; (ERB 2002-02-11) Changed to binary rule  see notes at embedded-rule-type.
 ; If and when we make the embedded-question-rule a subtype of hcomp-rule-type,
 ; the constraints on AFFIX could probably be moved up.
 
@@ -1000,7 +998,7 @@ empty-cop-id-rule := empty-head-type &
 				    CTXT.BACKGROUND <! !>],
 			      NON-LOCAL [QUE <! !>,
 					 ROBUST +]],
-		      C-CONT [RELS <! equal_rel &
+		      C-CONT [RELS <! equal-relation &
 				     [PRED 'cop_id_rel,
 				      LBL #top,
 				      ARG2 #objind,
@@ -1032,18 +1030,17 @@ empty-copula-rule := empty-head-type &
 					       COMPS.FIRST #objval & [LOCAL [CONT [HOOK [INDEX #ind,
 											 LTOP #hand],
 										   RELS #liszt,
-										   HCONS #hcons],
-									     LKEYS.--KEYREL #key],
-								   NON-LOCAL #nloc]]],
+										   HCONS #hcons]],
+								      NON-LOCAL #nloc]]],
 				    CONT [HOOK [INDEX #ind,
 						LTOP #hand],
 					  MOD-IND #ind,
 					  MOD-HAND #hand,
 					  RELS #liszt,
 					  HCONS #hcons],
-				     LKEYS.--KEYREL #key & [LBL #hand],
-				    CTXT.BACKGROUND <! !>,
+				     CTXT.BACKGROUND <! !>,
 				     BAR +],
+			      LKEYS.KEYREL [LBL #hand],
 			      NON-LOCAL #nloc & [ROBUST +]],
 		      INFLECTED +,
 		      J-NEEDS-AFFIX -,
@@ -1059,17 +1056,15 @@ quasi-morph-rule := binary-basic &
 					  LAST #lastque ]],
 		     ARGS < [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head,
 							  VAL.UNSAT +],
-						     LKEYS.--KEYREL.PRED #rel,
-						     BAR -],
-					       NON-LOCAL.QUE [ LIST #firstque,
+					    BAR -],
+				     NON-LOCAL.QUE [ LIST #firstque,
 							     LAST #middleque ]]],
 				       
 			    [SYNSEM [LOCAL [CONT #cont,
-						     LKEYS.--KEYREL.PRED #rel,
 						     CAT [HEAD na-adj-basic_head & #head,
 							  VAL #sc & [UNSAT +]]],
-					       NON-LOCAL.QUE [ LIST #middleque,
-							       LAST #lastque ]]] >].
+				     NON-LOCAL.QUE [ LIST #middleque,
+						     LAST #lastque ]]] >].
 
 
 

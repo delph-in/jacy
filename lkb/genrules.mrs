@@ -79,15 +79,15 @@ cop_rule_20 := generator_rule &
   OUTPUT "nda-v-cop-lex" ].
 
 cop_rule_21 := generator_rule &
- [ LCONDITION  [ RELS <! na-adj_rel !> ],
+ [ LCONDITION  [ RELS <! na-adj-relation !> ],
   OUTPUT "dearu-v-cop-stem" ].
 
 cop_rule_22 := generator_rule &
- [ LCONDITION  [ RELS <! na-adj_rel !> ],
+ [ LCONDITION  [ RELS <! na-adj-relation !> ],
   OUTPUT "desu-v-cop-stem" ].
 
 cop_rule_23 := generator_rule &
- [ LCONDITION  [ RELS <! na-adj_rel !> ],
+ [ LCONDITION  [ RELS <! na-adj-relation !> ],
   OUTPUT "da-v-cop-stem" ].
 
 
@@ -95,68 +95,68 @@ cop_rule_23 := generator_rule &
 ;;;;;;;;;;;;;;PARTICLES;;;;;;;;;;;
 
 ga_part_genrule_1  := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "ga" ].
 
 ga_part_genrule_2  := generator_rule &
- [ LCONDITION  [ RELS <! adv_rel !> ],
+ [ LCONDITION  [ RELS <! adv-relation !> ],
   OUTPUT "ga-2" ].
 
 ga_part_genrule_3  := generator_rule &
- [ LCONDITION  [ RELS <! prep_mod_rel !> ],
+ [ LCONDITION  [ RELS <! prep-mod-relation !> ],
   OUTPUT "ga-3" ].
 
 wo_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "o" ].
 
 wo_part_genrule_2  := generator_rule &
- [ LCONDITION  [ RELS <! adv_rel !> ],
+ [ LCONDITION  [ RELS <! adv-relation !> ],
   OUTPUT "o-2" ].
 
 wo_part_genrule_3  := generator_rule &
- [ LCONDITION  [ RELS <! prep_mod_rel !> ],
+ [ LCONDITION  [ RELS <! prep-mod-relation !> ],
   OUTPUT "o-3" ].
 
 
 ni_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "ni-case" ].
 
 ni_part_genrule_2  := generator_rule &
- [ LCONDITION  [ RELS <! adv_rel !> ],
+ [ LCONDITION  [ RELS <! adv-relation !> ],
   OUTPUT "ni-case-2" ].
 
 ni_part_genrule_3  := generator_rule &
- [ LCONDITION  [ RELS <! prep_mod_rel !> ],
+ [ LCONDITION  [ RELS <! prep-mod-relation !> ],
   OUTPUT "ni-case-3" ].
 
 kara_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "kara-case" ].
 
 kara_sign_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "kara-sign-case" ].
 
 no_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "no-case" ].
 
 dake_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "dake-case" ].
 
 to_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST noun_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "to-comp1" ].
 
 to_part_genrule_3  := generator_rule &
- [ LCONDITION  [ RELS <! prep_mod_rel !> ],
+ [ LCONDITION  [ RELS <! prep-mod-relation !> ],
   OUTPUT "to-comp3" ].
 
 no_part_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS.RELS.FIRST const_rel ],
+ [ LCONDITION  [ RELS.RELS.FIRST const-relation ],
   OUTPUT "no-nspec-4" ].
 
 
@@ -164,27 +164,27 @@ no_part_genrule_1 := generator_rule &
 ;;;;;;;;;LIGHT VERBS;;;;;;;;;;
 
 light_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel !> ],
+ [ LCONDITION  [ RELS <! event-relation !> ],
   OUTPUT "suru-light-stem" ].
 
 light_genrule_2 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel !> ],
+ [ LCONDITION  [ RELS <! event-relation !> ],
   OUTPUT "itasu-light" ].
 
 light_genrule_3 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel !> ],
+ [ LCONDITION  [ RELS <! event-relation !> ],
   OUTPUT "itasu-kanji-light" ].
 
 light_genrule_4 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel !> ],
+ [ LCONDITION  [ RELS <! event-relation !> ],
   OUTPUT "ninaru-multi" ].
 
 light_genrule_5 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel !> ],
+ [ LCONDITION  [ RELS <! event-relation !> ],
   OUTPUT "moushiageru-light" ].
 
 light_genrule_6 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel !> ],
+ [ LCONDITION  [ RELS <! event-relation !> ],
   OUTPUT "moushiageru-hiragana-light" ].
 
 ;;;;;;;;HESITATIONS;;;;;;;;;;;
@@ -244,177 +244,177 @@ hes_genrule_13 := generator_rule &
 ;;;;;;;;;AUXILIARIES
 
 aux_genrule_1 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT terminative] !> ],
   OUTPUT "jau-end" ].
 
 aux_genrule_2 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT terminative] !> ],
   OUTPUT "chau-end" ].
 
 aux_genrule_3 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT progressive] !> ],
   OUTPUT "teru-end" ].
 
 aux_genrule_4 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT terminative] !> ],
   OUTPUT "shimau-aux-stem" ].
 
 aux_genrule_5 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT progressive] !> ],
   OUTPUT "oru-aux-stem" ].
 
 aux_genrule_6 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT progressive] !> ],
   OUTPUT "iru-aux-stem" ].
 
 aux_genrule_7 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT prospective] !> ],
   OUTPUT "oku-aux-stem" ].
 
 aux_genrule_8 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT inceptive] !> ],
   OUTPUT "iku-aux-stem" ].
 
 aux_genrule_9 := generator_rule &
- [ LCONDITION  [ RELS <! event_rel &
+ [ LCONDITION  [ RELS <! event-relation &
 	                 [ARG0.E.ASPECT perfect_progressive] !> ],
   OUTPUT "kuru-aux-stem" ].
 
 ;;;;ENDINGS;;;;;;;
 
 passend_genrule_1 :=  generator_rule &
- [ LCONDITION  [ RELS <! arg12_rel !> ],
+ [ LCONDITION  [ RELS <! arg12-relation !> ],
   OUTPUT "reru-simple-pass-end" ].
 
 passend_genrule_2 :=  generator_rule &
- [ LCONDITION  [ RELS <! arg12_rel !> ],
+ [ LCONDITION  [ RELS <! arg12-relation !> ],
   OUTPUT "rareru-simple-pass-end" ].
 
 passend_genrule_3 :=  generator_rule &
- [ LCONDITION  [ RELS <! arg12_rel !> ],
+ [ LCONDITION  [ RELS <! arg12-relation !> ],
   OUTPUT "rareru-ditrans-pass-end" ].
 
 passend_genrule_4 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "rareru-adv-pass-end" ].
 
 passend_genrule_5 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "reru-adv-pass-end" ].
 
 passend_genrule_6 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "reru-honorific-pass-end" ].
 
 passend_genrule_7 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "rareru-honorific-pass-end" ].
 
 passend_genrule_8 :=  generator_rule &
- [ LCONDITION  [ RELS <! arg12_rel !> ],
+ [ LCONDITION  [ RELS <! arg12-relation !> ],
   OUTPUT "reru-ditrans-pass-end" ].
 
 tenseend_genrule_1 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "mashite-end" ].
 
 tenseend_genrule_2 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "mashite-end2" ].
 
 tenseend_genrule_3 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "tari-end" ].
 
 tenseend_genrule_4 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "dari-end" ].
 
 tenseend_genrule_5 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "mashou-end" ].
 
 tenseend_genrule_6 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "mashita-end" ].
 
 tenseend_genrule_7 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "nasai-chasen-end" ].
 
 tenseend_genrule_8 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "nasai-end" ].
 
 tenseend_genrule_9 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "u-end" ].
 
 tenseend_genrule_10 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "masu-end" ].
 
 tenseend_genrule_11 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "mashite-end" ].
 
 tenseend_genrule_12 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "mashite-end2" ].
 
 tenseend_genrule_13 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "ta-end" ].
 
 tenseend_genrule_14 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "da-end" ].
 
 tenseend_genrule_15 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "de-end" ].
 
 tenseend_genrule_16 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "te-end" ].
 
 
 ;;;SYMBOLS;;;;;;;;;;
 
 comma_genrule_1 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-te-end" ].
 
 comma_genrule_2 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-vmod1" ].
 
 comma_genrule_3 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-vmod2" ].
 
 comma_genrule_4 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-advmod" ].
 
 comma_genrule_5 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-pmod" ].
 
 comma_genrule_6 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-infvmod" ].
 
 comma_genrule_7 :=  generator_rule &
- [ LCONDITION  [ RELS.LIST.FIRST event_rel ],
+ [ LCONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-interjmod" ].
 
 
@@ -523,7 +523,7 @@ parent_genrule_4 := generator_rule &
   OUTPUT "parenthesis-j-end" ].
 
 karasign_part_genrule := generator_rule &
- [ LCONDITION  [ RELS.RELS.FIRST const_rel ],
+ [ LCONDITION  [ RELS.RELS.FIRST const-relation ],
   OUTPUT "karasign-nspec" ].
 
 ;;;;;;;;;;HONORIFIC PREFIXES

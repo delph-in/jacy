@@ -47,14 +47,14 @@ generic-verb-lex := v-lex & lexical_sign-word &
                                          VAL ga-wo_transitive &
                                               [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
 					       COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #objind]]],
-				    LKEYS.--KEYREL #key & arg12_ev_rel & arg12_rel & [ARG1 #sbjind,
-										ARG2 #objind],
                                     CONT simple-verb-sem-type &
                                         [HOOK.INDEX event & [E [TENSE #tense,
                                                            MOOD #modus]],
                                          RELS <!  #key !>,
                                          HCONS <! !>],
 				    ARG-S < #sbj . #comps >],
+			     LKEYS.KEYREL #key & arg12-ev-relation & arg12-relation & [ARG1 #sbjind,
+									       ARG2 #objind],
                              NON-LOCAL.QUE <! !>],
                      INFLECTED +].
 
@@ -109,12 +109,12 @@ generic_verb_vstem_infl-lex := generic-verb-lex &
 vn-lex  := nonaux-lex & lexical_sign-word & 
            [SYNSEM [LOCAL [CAT [HEAD vn_head-avm & [MAIN-PRD -,
                                                     SMOD unmarked]],
-			   LKEYS.--KEYREL #key & [ ARG0 #ind,
-						   LBL #top],
 			   CONT simple-verb-sem-type & [HOOK [INDEX #ind,
 							     LTOP #top],
 						       RELS <! #key !>,
-						       HCONS <! !>]]],
+						       HCONS <! !>]],
+		    LKEYS.KEYREL #key & [ ARG0 #ind,
+					    LBL #top]],
             INFLECTED +].
 
 vn-sbj-comps-lex := vn-lex &
@@ -123,50 +123,50 @@ vn-sbj-comps-lex := vn-lex &
 				   ARG-S < #sbj . #comps >]].
 
 vn-trans1-lex := vn-sbj-comps-lex &
-            [SYNSEM.LOCAL [CAT.VAL ga-wo_transitive &
-                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
-				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
-                           LKEYS [--KEYREL [ARG1 #sbjind,
-                                      ARG2 #objind]]]].
+            [SYNSEM [LOCAL.CAT.VAL ga-wo_transitive &
+				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+		     LKEYS [KEYREL [ARG1 #sbjind,
+				      ARG2 #objind]]]].
 
 
 
 vn-trans2-lex := vn-sbj-comps-lex &
-            [SYNSEM.LOCAL [CAT.VAL ga-ni_transitive &
-                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
-				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
-                           LKEYS [--KEYREL [ARG1 #sbjind,
-                                      ARG2 #objind]]]].
+            [SYNSEM [LOCAL.CAT.VAL ga-ni_transitive &
+				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+		     LKEYS [KEYREL [ARG1 #sbjind,
+				      ARG2 #objind]]]].
 
 vn-trans3-lex := vn-sbj-comps-lex &
-            [SYNSEM.LOCAL [CAT.VAL ga-to_transitive2 &
-                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
-				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
-                           LKEYS [--KEYREL [ARG1 #sbjind,
-                                      ARG2 #objind]]]].
+            [SYNSEM [LOCAL.CAT.VAL ga-to_transitive2 &
+				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+		     LKEYS [KEYREL [ARG1 #sbjind,
+				      ARG2 #objind]]]].
 
 vn-trans8-lex := vn-sbj-comps-lex &
-            [SYNSEM [LOCAL [CAT.VAL sbj-narg_transitive &
-                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
-				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
-                           LKEYS [--KEYREL [ARG1 #sbjind,
-                                      ARG2 #objind]]],
-		    NON-LOCAL.ROBUST +]].
+            [SYNSEM [LOCAL.CAT.VAL sbj-narg_transitive &
+				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+		     LKEYS [KEYREL [ARG1 #sbjind,
+				      ARG2 #objind]],
+		     NON-LOCAL.ROBUST +]].
 
 vn-ditrans-lex := vn-sbj-comps-lex &
-            [SYNSEM.LOCAL [CAT.VAL ditransitive &
+            [SYNSEM [LOCAL.CAT.VAL ditransitive &
                                       [COMPS [FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 					      REST.FIRST.LOCAL.CONT [HOOK.INDEX #obj2ind]],
 				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
-                           LKEYS [--KEYREL [ARG1 #sbjind,
-                                      ARG2 #objind,
+		     LKEYS [KEYREL [ARG1 #sbjind,
+				      ARG2 #objind,
                                       ARG3 #obj2ind]]]].
 
 vn-intrans-lex := vn-lex &
-            [SYNSEM.LOCAL [CAT.VAL intransitive &
+            [SYNSEM [LOCAL [CAT.VAL intransitive &
                                       [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]],
-                           LKEYS [--KEYREL.ARG1 #sbjind],
-			   ARG-S < #sbj >]].
+			    ARG-S < #sbj >],
+		     LKEYS [KEYREL.ARG1 #sbjind]]].
 
 
 ; (ERB 2001-10-24) I need these verbs to have a special KEY type
@@ -382,3 +382,5 @@ vn-trans1-hhon-shon-lex := vn-trans1-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.
                                     BEARER #3,
                                     POLARITY +] !>]]].
 
+vn-trans1-minusbar-lex := vn-trans1-lex &
+			  [SYNSEM.LOCAL.BAR -].

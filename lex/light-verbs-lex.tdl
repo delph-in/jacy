@@ -61,12 +61,12 @@ light-minus_shon-v-stem-lex &
 
 dekiru-light  :=
 quasi-light-nohon-v-stem-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL rareru_rel,
+[SYNSEM.LKEYS.KEYREL rareru-relation,
  ORTH <! "できる" !>].
 
 dekiru-kanji-light  :=
 quasi-light-nohon-v-stem-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL rareru_rel,
+[SYNSEM.LKEYS.KEYREL rareru-relation,
  ORTH <! "出来る" !>].
 
 ;dekiru-light-1 :=
@@ -81,12 +81,12 @@ quasi-light-nohon-v-stem-lex &
 
 negau-light  :=
 quasi-light-nohon-c-stem-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'negau,
+[SYNSEM.LKEYS.KEYREL.PRED 'negau,
  ORTH <! "ねがう" !>].
 
 negau-light-kanji  :=
 quasi-light-nohon-c-stem-lex &
-[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'negau,
+[SYNSEM.LKEYS.KEYREL.PRED 'negau,
  ORTH <! "願う" !>].
 
 ; (ERB 2001-12-28) I don't see these two in the testsuites, and I don't
@@ -95,12 +95,12 @@ quasi-light-nohon-c-stem-lex &
 
 ;kakeru-light  :=
 ;quasi-light-nohon-v-stem-lex &
-;[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kakeru,
+;[SYNSEM.LKEYS.KEYREL.PRED 'kakeru,
 ; ORTH <! "かける" !>].
 
 ;oku-light  :=
 ;quasi-light-nohon-c-stem-lex &
-;[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'oku,
+;[SYNSEM.LKEYS.KEYREL.PRED 'oku,
 ; ORTH <! "おく" !>].
 
 ; (ERB 2001-12-28) These guys will effectively be perspective auxiliaries.
@@ -123,40 +123,34 @@ quasi-light-nohon-c-stem-lex &
 ;[ORTH <! "やる" !>].
 
 kudasaru-light :=
-light-perspective-shon-c2-stem-lex &
+light-perspective-shon-arg2emp-c2-stem-lex &
 [ORTH <! "下さる" !>,
- SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kudasaru,ARG2 #obj2ind],
-               CTXT.EMPATHY.EMPEE #obj2ind]].
+ SYNSEM.LKEYS.KEYREL.PRED 'kudasaru].
 
 kudasaru-light-2 :=
-light-perspective-shon-c2-stem-lex &
+light-perspective-shon-arg2emp-c2-stem-lex &
 [ORTH <! "くださる" !>,
- SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kudasaru,ARG2 #obj2ind],
-               CTXT.EMPATHY.EMPEE #obj2ind]].
+ SYNSEM.LKEYS.KEYREL.PRED 'kudasaru].
 
 kureru-light  :=
-light-perspective-v-stem-lex &
+light-perspective-arg2emp-v-stem-lex &
 [ORTH <! "くれる" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'kureru,ARG2 #obj2ind],
-              CTXT.EMPATHY.EMPEE #obj2ind]].
+SYNSEM.LKEYS.KEYREL.PRED 'kureru].
 
 ageru-light :=
-light-perspective-v-stem-lex &
+light-perspective-arg1emp-v-stem-lex &
 [ORTH <! "あげる" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'ageru,ARG1 #sbjind],
-              CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED 'ageru].
 
 sashiageru-light :=
-light-perspective-minus_shon-v-stem-lex &
+light-perspective-minus_shon-arg1emp-v-stem-lex &
 [ORTH <! "さしあげる" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'sashiageru,ARG1 #sbjind],
-              CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED 'sashiageru].
 
 yaru-light :=
-light-perspective-shon-c-stem-lex &
+light-perspective-shon-arg1emp-c-stem-lex &
 [ORTH <! "やる" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'yaru,ARG1 #sbjind],
-              CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED 'yaru].
 
 
 ; (ERB 2001-12-28) And these guys are effectively aux-obj-id.  Only
@@ -171,22 +165,19 @@ SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'yaru,ARG1 #sbjind],
 ;[ORTH <! "頂く" !>].
 
 morau-light  :=
-light-obj-id-c-stem-lex &
+light-obj-id-arg1emp-c-stem-lex &
 [ORTH <! "もらう" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'morau,ARG1 #sbjind],
-              CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED 'morau].
 
 itadaku-light :=
-light-obj-id-minus_shon-c-stem-lex &
+light-obj-id-minus_shon-arg1emp-c-stem-lex &
 [ORTH <! "いただく" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'itadaku,ARG1 #sbjind],
-              CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED 'itadaku].
 
 itadaku-light-2 :=
-light-obj-id-minus_shon-c-stem-lex &
+light-obj-id-minus_shon-arg1emp-c-stem-lex &
 [ORTH <! "頂く" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'itadaku,ARG1 #sbjind],
-              CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED 'itadaku].
 
 
 

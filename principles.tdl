@@ -87,17 +87,15 @@ scp-marking := argument-binding-princ &
 
 
 head-adjunct-p:= basic-binary-headed-phrase & 
-[HEAD-DTR.SYNSEM [LOCAL [CAT #1, CONT #3, BAR #5, NUCL #6, LKEYS [--KEYREL #key, --ALTKEYREL #altkey]],
+[HEAD-DTR.SYNSEM [LOCAL [CAT #1, CONT #3, BAR #5, NUCL #6],
 		  LEX #2,
                   NON-LOCAL #4,
 		  MODIFIED.PERIPH #7],
  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL [CAT #1, 
 						 CONT #3,
 						 BAR #5,
-						 NUCL #6, 
-						 LKEYS [--KEYREL #key,
-						        --ALTKEYREL #altkey]],
-					  LEX #2, 
+						 NUCL #6],
+					   LEX #2, 
 					  NON-LOCAL #4,
 					  MODIFIED.PERIPH #7] > ].
 
@@ -106,47 +104,47 @@ head-adjunct-p:= basic-binary-headed-phrase &
 
 
 adjacent_nonhead_check  := headed-phrase & 
-[NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
-				   SPR sat-or-opt-arg,
-				   COMPS sat-or-opt-arg]].
+[NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SUBJ olist,
+				   SPR olist,
+				   COMPS olist]].
 
 
-adjacent_head_check := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
-								SPR sat-or-opt-arg,
-								COMPS sat-or-opt-arg]].
+adjacent_head_check := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SUBJ olist,
+								SPR olist,
+								COMPS olist]].
 
-adjacent_subjbind_check  := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
-								     COMPS sat-or-opt-arg]].
+adjacent_subjbind_check  := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR olist,
+								     COMPS olist]].
 
 adjacent_objbind_check := headed-phrase & 
-[HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
-				SUBJ sat-or-opt-arg]].
+[HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR olist,
+				SUBJ olist]].
 
-adjacent_obj2bind_check  := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
-								     SUBJ sat-or-opt-arg,
+adjacent_obj2bind_check  := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR olist,
+								     SUBJ olist,
 								     COMPS 2-comps-list & [FIRST.OPT +]]].
 
-adjacent_obj2obl-bind_check := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
-                                                                        SUBJ sat-or-opt-arg,
+adjacent_obj2obl-bind_check := headed-phrase & [HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR olist,
+                                                                        SUBJ olist,
 									COMPS obl-2-args]].
 
 
 
 
-adjacent-spr-check := head-specifier-rule-type & [NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR sat-or-opt-arg,
-										    COMPS sat-or-opt-arg]].
+adjacent-spr-check := head-specifier-rule-type & [NON-HEAD-DTR.SYNSEM.LOCAL.CAT.VAL [SPR olist,
+										    COMPS olist]].
 
-sat-check-unary := unary-type & [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
-								SPR sat-or-opt-arg,
-								COMPS sat-or-opt-arg]].
+sat-check-unary := unary-type & [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ olist,
+								SPR olist,
+								COMPS olist]].
 
 
-sat-check-binary:=  binary & [ARGS [FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
-								SPR sat-or-opt-arg,
-								COMPS sat-or-opt-arg],
-				    REST.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ sat-or-opt-arg,
-								SPR sat-or-opt-arg,
-								COMPS sat-or-opt-arg]]].
+sat-check-binary:=  binary & [ARGS [FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ olist,
+								SPR olist,
+								COMPS olist],
+				    REST.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ olist,
+								SPR olist,
+								COMPS olist]]].
 
 
 ; (MS 2003-07-15) Not used any more.

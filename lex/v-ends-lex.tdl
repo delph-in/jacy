@@ -113,11 +113,9 @@ te-end := v-te-end-lex &
 ; At present JACY doesn't accept either of these without the comma
 ; maybe it should, although that would greatly increase ambiguity
 
-comma-te-end := v-coord-end-lex &
+comma-te-end := comma-coord-end-lex &
            [ORTH <! "、" !>,
-            SYNSEM.LOCAL [CAT.HEAD.J-SPEC null,
-			  LKEYS.--KEYREL adj_rel & [PRED 'comma]],
-            LMORPH-BIND-TYPE i-or-t-morph].
+	    LMORPH-BIND-TYPE i-or-t-morph].
 
 
 ; (ERB 2001-11-12) Experimenting with making te form TENSE tensed
@@ -130,82 +128,28 @@ de-end := v-te-end-lex &
 
 ;finite-present-polite-negative
 
-masen-end :=  v-neg-end-lex &
+masen-end :=  v-neg-polite-present-end-lex &
               [ORTH <! "ませ","ん" !>,
-               J-NEEDS-AFFIX -,
-               SYNSEM.LOCAL [CAT.HEAD [MODUS negative,
-                                       MOD null,
-                                       C-MOD null,
-                                       H-TENSE present,
-                                       MARK null,
-                                       J-SPEC null,
-                                       FIN +,
-                                       FORMAL.AHON +],
-                             CONT.HOOK.INDEX.E.MOOD indicative],
-               LMORPH-BIND-TYPE i-morph].
+	       LMORPH-BIND-TYPE i-morph].
 
-masendeshita-end :=  v-neg-end-lex &
-              [ORTH <! "ませ","ん","でし","た" !>,
-               J-NEEDS-AFFIX -,
-               SYNSEM.LOCAL [CAT.HEAD [MODUS negative,
-                                       MOD null,
-                                       C-MOD null,
-                                       H-TENSE past,
-                                       MARK null,
-                                       J-SPEC null,
-                                       FIN +,
-                                       FORMAL.AHON +],
-                             CONT.HOOK.INDEX.E.MOOD indicative],
-               LMORPH-BIND-TYPE i-morph].
+masendeshita-end :=  v-neg-polite-past-end-lex &
+              [ORTH <! "ませ","ん","でし","た" !>].
 
-arimasendeshita-end :=  v-neg-end-lex &
+arimasendeshita-end :=  v-neg-polite-past-end-lex &
               [ORTH <! "あり","ませ", "ん","でし","た" !>,
-               J-NEEDS-AFFIX -,
-               SYNSEM.LOCAL [CAT [HEAD [MODUS negative,
-                                        MOD null,
-                                        C-MOD null,
-                                        H-TENSE past,
-                                        MARK null,
-                                        J-SPEC null,
-                                        FIN +,
-                                        FORMAL.AHON +],
-                                  VAL.SPR.FIRST.LOCAL.LKEYS.--KEYREL tai_rel],
-                             CONT.HOOK.INDEX.E.MOOD indicative],
+               SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL tai-relation,
                LMORPH-BIND-TYPE a-morph].
 
-arimasendeshita-adj-end :=  v-neg-end-lex &
+arimasendeshita-adj-end :=  v-neg-polite-past-end-lex &
               [ORTH <! "あり","ませ", "ん","でし","た" !>,
-               J-NEEDS-AFFIX -,
-               SYNSEM.LOCAL [CAT [HEAD [MODUS negative,
-                                        MOD null,
-                                        C-MOD null,
-                                        H-TENSE past,
-                                        MARK null,
-                                        J-SPEC null,
-                                        FIN +,
-                                        FORMAL.AHON +],
-                                  VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head],
-                             CONT.HOOK.INDEX.E.MOOD indicative],
+               SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head,
                LMORPH-BIND-TYPE a-morph].
 
 
 ;finite-present-plain-negative
 
-nai-end := v-neg-end-lex &
-           [ORTH <! "ない" !>,
-            J-NEEDS-AFFIX -,
-            SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
-                                    MOD < [LOCAL [CAT.HEAD noun_head,
-                                                BAR +]] >,
-                                    MARK null,
-                                    C-MOD null,
-                                    J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                    FIN +,
-                                    J-POSTHEAD rels,
-                                    FORMAL.AHON -]],
-                         CONT.HOOK.INDEX.E.MOOD indicative],
-            LMORPH-BIND-TYPE a-morph,
-            STEMTYPE adj-stem]. 
+nai-end := v-finite-present-plain-negative-end-lex &
+           [ORTH <! "ない" !>]. 
 
 ;判らなくなりました
 
@@ -222,7 +166,6 @@ nai-notyetend  := v-noncaus-op-end-lex &
 			       VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
 							  HOOK.LTOP #v-hd,
 							  MOD-IND #event]]],
-			   LKEYS.--KEYREL #key & j-neg_rel & [PRED 'neg_rel],
 			  CONT [RELS <! #key & [ARG1 #neg-arg,
 						 LBL #top] !>,
 				HOOK [LTOP #top,
@@ -231,6 +174,7 @@ nai-notyetend  := v-noncaus-op-end-lex &
 				MOD-IND #event,
 				HCONS <! qeq & [LARG #v-hd,
 						 HARG #neg-arg] !>]],
+		    LKEYS.KEYREL #key & neg-relation & [PRED 'neg_rel],
 		    MODIFIED.PERIPH +]].
 
 
@@ -244,22 +188,23 @@ hajimeru-end := v-noncaus-op-end-lex &
 	    SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK < [MODIFIED.PERIPH -,
 							    LOCAL.CAT.HEAD verbend_head] >,
 						      COP-ARG -],
-			       VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
+			       VAL.SPR.FIRST [LOCAL.CONT [MOD-HAND #modhd,
 							  HOOK.LTOP #v-hd,
 							  MOD-IND #event],
-						    LKEYS.--KEYREL.ARG1 #arg1]],
-			   LKEYS.--KEYREL #key &  [PRED 'hajimeru],
+					      LKEYS.KEYREL.ARG1 #arg1]],
 			  CONT [RELS <! #key & [ARG4 #arg4,
 						 ARG1 #arg1,
 						 LBL #top],
-				       prpstn_rel & [LBL #arg4,
-						     MARG #subprpstn_soa]!>,
+				       message & [PRED proposition_m_rel,
+						  LBL #arg4,
+						  MARG #subprpstn_soa]!>,
 				HOOK [LTOP #top,
 				      INDEX #event & [E.MOOD indicative]],
 				MOD-HAND #modhd,
 				MOD-IND #event,
 				HCONS <! qeq & [LARG #v-hd,
 						 HARG #subprpstn_soa] !>]],
+		    LKEYS.KEYREL #key &  [PRED 'hajimeru],
 		    MODIFIED.PERIPH +]].
 
 arimasen-tai-end := v-neg-end-lex &
@@ -275,7 +220,7 @@ arimasen-tai-end := v-neg-end-lex &
                                     J-POSTHEAD rels,
                                     FORMAL.AHON +,
                                    MODUS negative],
-                              VAL.SPR.FIRST.LOCAL.LKEYS.--KEYREL tai_rel],
+                              VAL.SPR.FIRST.LKEYS.KEYREL tai-relation],
                          CONT.HOOK.INDEX.E.MOOD indicative],
             LMORPH-BIND-TYPE a-morph]. 
 
@@ -536,7 +481,7 @@ u-end  := v-consultative-tense-end-lex &
 ;            J-NEEDS-AFFIX +,
 ;            SYNSEM.LOCAL [CAT [HEAD verb_head & [FORMAL.AHON -,
 ;                                                 MARK.FIRST.LOCAL.CAT.HEAD v-end_head],
-;                               VAL.SPR.FIRST.LOCAL.LKEYS.--KEYREL.ARG1 #arg1],
+;                               VAL.SPR.FIRSTLKEYS.KEYREL.ARG1 #arg1],
 ;                          CONT [RELS <! [PRED 'rareru, 
 ;                                          ARG0 #ind,
 ;                                          ARG1 #arg1,
@@ -868,68 +813,34 @@ reru-pot-end := rareru-end-lex &
                    LMORPH-BIND-TYPE cond-exceptional-morph].
 
 
-sou-varg-end := na-end-lex &
+sou-varg-end := na-varg-end-lex &
            [ORTH <! "そう" !>,
-            J-NEEDS-AFFIX -,
-            LMORPH-BIND-TYPE i-or-shortadj-morph,
-            SYNSEM.LOCAL [CAT [VAL.SPR.FIRST.LOCAL.CAT.HEAD verb_head & [VN -,
-                                                                         FORMAL.AHON -]],
-			  LKEYS.--KEYREL.PRED 'sou,
-                          CONT na-adj-sem-type-basic]].
+            SYNSEM.LKEYS.KEYREL.PRED 'sou].
 
-sasou-end := na-end-lex &
+sasou-end := na-varg-end-lex &
            [ORTH <! "さ","そう" !>,
-            J-NEEDS-AFFIX -,
-            LMORPH-BIND-TYPE shortadj-morph,
-            SYNSEM.LOCAL [CAT [VAL.SPR.FIRST.LOCAL.CAT.HEAD verb_head & [VN -,
-									 MODUS negative,
-                                                                         FORMAL.AHON -]],
-			  LKEYS.--KEYREL.PRED 'sou,
-                          CONT na-adj-sem-type-basic]].
+            SYNSEM [LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS negative,
+		    LKEYS.KEYREL.PRED 'sou]].
 
-you-varg-end := na-end-lex &
+you-varg-end := na-varg-end-lex &
            [ORTH <! "よう" !>,
-            J-NEEDS-AFFIX -,
-            LMORPH-BIND-TYPE i-or-shortadj-morph,
-            SYNSEM.LOCAL [CAT [VAL.SPR.FIRST.LOCAL.CAT.HEAD verb_head & [VN -,
-                                                                          FORMAL.AHON -]],
-			  LKEYS.--KEYREL.PRED 'you,
-                          CONT na-adj-sem-type-basic]].
+            SYNSEM.LKEYS.KEYREL.PRED 'you].
 
-you-kanji-varg-end := na-end-lex &
+you-kanji-varg-end := na-varg-end-lex &
            [ORTH <! "様" !>,
-            J-NEEDS-AFFIX -,
-            LMORPH-BIND-TYPE i-or-shortadj-morph,
-            SYNSEM.LOCAL [CAT [VAL.SPR.FIRST.LOCAL.CAT.HEAD verb_head & [VN -,
-                                                                          FORMAL.AHON -]],
-			  LKEYS.--KEYREL.PRED 'you,
-                          CONT na-adj-sem-type-basic]].
+            SYNSEM.LKEYS.KEYREL.PRED 'you].
 
-toori-varg-end := na-end-lex &
+toori-varg-end := na-varg-end-lex &
            [ORTH <! "とおり" !>,
-            J-NEEDS-AFFIX -,
-            LMORPH-BIND-TYPE i-or-shortadj-morph,
-            SYNSEM.LOCAL [CAT [VAL.SPR.FIRST.LOCAL.CAT.HEAD verb_head & [VN -,
-                                                                          FORMAL.AHON -]],
-			  LKEYS.--KEYREL.PRED 'toori,
-                          CONT na-adj-sem-type-basic]].
+            SYNSEM.LKEYS.KEYREL.PRED 'toori].
 
-toori-kanji-varg-end := na-end-lex &
+toori-kanji-varg-end := na-varg-end-lex &
            [ORTH <! "通り" !>,
-            J-NEEDS-AFFIX -,
-            LMORPH-BIND-TYPE i-or-shortadj-morph,
-            SYNSEM.LOCAL [CAT [VAL.SPR.FIRST.LOCAL.CAT.HEAD verb_head & [VN -,
-                                                                          FORMAL.AHON -]],
-			  LKEYS.--KEYREL.PRED 'toori,
-                          CONT na-adj-sem-type-basic]].
+            SYNSEM.LKEYS.KEYREL.PRED 'toori].
 
-sou-naarg-end := na-end-lex &
+sou-naarg-end := na-naarg-end-lex &
            [ORTH <! "そう" !>,
-            J-NEEDS-AFFIX -,
-            LMORPH-BIND-TYPE i-or-shortadj-morph,
-            SYNSEM.LOCAL [CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD na-adj_head,
-			  LKEYS.--KEYREL.PRED 'sou,
-                          CONT na-adj-sem-type-basic]].
+            SYNSEM.LKEYS.KEYREL.PRED 'sou].
 
 
 
@@ -952,17 +863,13 @@ mai-end  :=  mai-end-lex &
 
 gachi-end := v2na-end-lex &
                  [ORTH <! "がち" !>,
-                  J-NEEDS-AFFIX -,
-                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gachi_rel,
-                  LMORPH-BIND-TYPE i-morph].
+                  SYNSEM.LKEYS.KEYREL.PRED 'gachi_rel].
 
 ;tend to (visible indication of tendency)
 
 gimi-end := v2na-end-lex &
                  [ORTH <! "ぎみ" !>,
-                  J-NEEDS-AFFIX -,
-                  SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gimi_rel,
-                  LMORPH-BIND-TYPE i-morph].
+                  SYNSEM.LKEYS.KEYREL.PRED 'gimi_rel].
 
 ;imperative
 
@@ -986,202 +893,77 @@ kudasai-vn-end-2 := kudasai-vn-end &
 
 ;easy to
 
-yasui-v1-end := v2adj-end-lex-v1 &
+yasui-v1-end := v2adj-end-v1-nmod-lex &
              [ORTH <! "やすい" !>,
-              SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
-                                      MODUS indicative,
-                                      MOD < [LOCAL [CAT [HEAD noun_head,
-                                                       VAL.SPR 1-list],
-                                                  BAR +]] >,
-                                      J-POSTHEAD rels,
-                                      MARK null,
-                                      VN -,
-                                      C-MOD null,
-                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                      FIN +,
-                                      FORMAL.AHON -],
-                            LKEYS.--KEYREL.PRED 'yasui],
-              J-NEEDS-AFFIX -,
-              INFLECTED -,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM [LKEYS.KEYREL.PRED 'yasui]].
 
-yasui-v1-notyetend := v2adj-end-lex-v1 &
+yasui-v1-notyetend :=  v2adj-notyetend-lex-v1  &
              [ORTH <! "やす" !>,
-              SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yasui,
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM.LKEYS.KEYREL.PRED 'yasui].
 
-yasui-v2-end := v2adj-end-lex-v2 &
+yasui-v2-end := v2adj-end-v2-nmod-lex  &
              [ORTH <! "やすい" !>,
-              SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
-                                      MODUS indicative,
-                                      MOD < [LOCAL [CAT [HEAD noun_head,
-                                                       VAL.SPR 1-list],
-                                                  BAR +]] >,
-                                      J-POSTHEAD rels,
-                                      MARK null,
-                                      VN -,
-                                      C-MOD null,
-                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                      FIN +,
-                                      FORMAL.AHON -],
-                            LKEYS.--KEYREL.PRED 'yasui],
-              J-NEEDS-AFFIX -,
-              INFLECTED -,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM.LKEYS.KEYREL.PRED 'yasui].
 
-yasui-v2-notyetend := v2adj-end-lex-v2 &
+yasui-v2-notyetend := v2adj-notyetend-lex-v2 &
              [ORTH <! "やすい" !>,
-              SYNSEM [LOCAL.LKEYS.--KEYREL.PRED 'yasui,
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM [LKEYS.KEYREL.PRED 'yasui]].
 
-nikui-v1-end := v2adj-end-lex-v1 &
+nikui-v1-end := v2adj-end-v1-nmod-lex &
              [ORTH <! "にくい" !>,
-              SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
-                                      MODUS indicative,
-                                      MOD < [LOCAL [CAT [HEAD noun_head,
-                                                       VAL.SPR 1-list],
-                                                  BAR +]] >,
-                                      J-POSTHEAD rels,
-                                      MARK null,
-                                      VN -,
-                                      C-MOD null,
-                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                      FIN +,
-                                      FORMAL.AHON -],
-                            LKEYS.--KEYREL.PRED 'nikui],
-              J-NEEDS-AFFIX -,
-              INFLECTED -,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM.LKEYS.KEYREL.PRED 'nikui].
 
 
-nikui-v1-notyetend := v2adj-end-lex-v1 &
+nikui-v1-notyetend := v2adj-notyetend-lex-v1 &
              [ORTH <! "にくい" !>,
-              SYNSEM [LOCAL.LKEYS.--KEYREL.PRED 'nikui,
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM [LKEYS.KEYREL.PRED 'nikui,
+		      MODIFIED.PERIPH +]].
 
-nikui-v2-end := v2adj-end-lex-v2 &
+nikui-v2-end := v2adj-nmod-maybeend-lex-v2 &
              [ORTH <! "にくい" !>,
-              SYNSEM [LOCAL [CAT.HEAD [H-TENSE present,
-                                      MODUS indicative,
-                                      MOD < [LOCAL [CAT [HEAD noun_head,
-                                                       VAL.SPR 1-list],
-                                                  BAR +]] >,
-                                      J-POSTHEAD rels,
-                                      MARK null,
-                                      VN -,
-                                      C-MOD null,
-                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                      FIN +,
-                                      FORMAL.AHON -],
-                            LKEYS.--KEYREL.PRED 'nikui],
-		      MODIFIED.PERIPH +],
-              J-NEEDS-AFFIX bool,
-              INFLECTED bool,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM.LKEYS.KEYREL.PRED 'nikui].
 
 
-nikui-v2-notyetend := v2adj-end-lex-v2 &
+nikui-v2-notyetend := v2adj-notyetend-lex-v2 &
              [ORTH <! "にくい" !>,
-             SYNSEM [LOCAL.LKEYS.--KEYREL.PRED 'nikui,
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE i-morph].
+             SYNSEM [LKEYS.KEYREL.PRED 'nikui]].
 
 ;hard to
 
 
-gatai-v1-end := v2adj-end-lex-v1 &
+gatai-v1-end := v2adj-end-v1-nmod-lex &
              [ORTH <! "難い" !>,
-              SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
-                                      MODUS indicative,
-                                      MOD < [LOCAL [CAT [HEAD noun_head,
-                                                       VAL.SPR 1-list],
-                                                  BAR +]] >,
-                                      J-POSTHEAD rels,
-                                      MARK null,
-                                      VN -,
-                                      C-MOD null,
-                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                      FIN +,
-                                      FORMAL.AHON -],
-                            LKEYS.--KEYREL.PRED 'gatai],
-              J-NEEDS-AFFIX -,
-              INFLECTED -,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM.LKEYS.KEYREL.PRED 'gatai].
 
 ; (SF 2003-08-25) same as 難い
 ; (MS 2003-11-25) adapted
 
-gatai-hira-v1-end := v2adj-end-lex-v1 &
+gatai-hira-v1-end := v2adj-end-v2-nmod-lex &
              [ORTH <! "がたい" !>,
-              SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
-                                      MODUS indicative,
-                                      MOD < [LOCAL [CAT [HEAD noun_head,
-                                                       VAL.SPR 1-list],
-                                                  BAR +]] >,
-                                      J-POSTHEAD rels,
-                                      MARK null,
-                                      VN -,
-                                      C-MOD null,
-                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                      FIN +,
-                                      FORMAL.AHON -],
-                            LKEYS.--KEYREL.PRED 'gatai],
-              J-NEEDS-AFFIX -,
-              INFLECTED -,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM.LKEYS.KEYREL.PRED 'gatai].
 
 
-gatai-v1-notyetend := v2adj-end-lex-v1 &
+gatai-v1-notyetend := v2adj-notyetend-lex-v1 &
              [ORTH <! "難い" !>,
-              SYNSEM [LOCAL.LKEYS.--KEYREL.PRED 'gatai,
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM [LKEYS.KEYREL.PRED 'gatai,
+		      MODIFIED.PERIPH +]].
 
-gatai-v2-end := v2adj-end-lex-v2 &
+gatai-v2-end := v2adj-end-v2-nmod-lex &
              [ORTH <! "難い" !>,
-              SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
-                                      MODUS indicative,
-                                      MOD < [LOCAL [CAT [HEAD noun_head,
-                                                       VAL.SPR 1-list],
-                                                  BAR +]] >,
-                                      J-POSTHEAD rels,
-                                      MARK null,
-                                      VN -,
-                                      C-MOD null,
-                                      J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                      FIN +,
-                                      FORMAL.AHON -],
-                            LKEYS.--KEYREL.PRED 'gatai],
-              J-NEEDS-AFFIX -,
-              INFLECTED -,
-              LMORPH-BIND-TYPE i-morph].
+              SYNSEM.LKEYS.KEYREL.PRED 'gatai].
 
 
-gatai-v2-notyetend := v2adj-end-lex-v2 &
+gatai-v2-notyetend := v2adj-notyetend-lex-v2 &
              [ORTH <! "難い" !>,
-              SYNSEM [LOCAL.LKEYS.--KEYREL.PRED 'gatai,
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE i-morph].
-
-
-
-
+              SYNSEM [LKEYS.KEYREL.PRED 'gatai]].
 
 
 ;"食べられるだけ食べたい"
 
 dake-v2adv-end := v2adv-end-lex &
 		  [ORTH <! "だけ" !>,
-		   SYNSEM.LOCAL [LKEYS.--KEYREL.PRED 'dake,
-				 CAT.HEAD.MOD < [LOCAL.CAT.HEAD.MODUS voluntative] > ],
+		   SYNSEM [LKEYS.KEYREL.PRED 'dake,
+			   LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD.MODUS voluntative] > ],
 		   LMORPH-BIND-TYPE mai-morph].
 
 ;contracted forms
@@ -1257,17 +1039,17 @@ naru-end := v-noncaus-op-end-lex &
 				 VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
 								 INDEX #mod-i],
 							     MOD-HAND #mod-h]],
-			    LKEYS.--KEYREL #key & adv_rel &
-				      [PRED 'naru,
-				       LBL #hd,
-				       ARG1 #arg-h,
-				       ARG0 #event],
 			    CONT [HOOK [INDEX #event,
 					LTOP #hd],
 				  MOD-HAND #mod-h,
 				  MOD-IND #mod-i,
 				  RELS <! #key !>,
 				  HCONS <! !>]],
+		     LKEYS.KEYREL #key & adv-relation &
+			   [PRED 'naru,
+			    LBL #hd,
+			    ARG1 #arg-h,
+			    ARG0 #event],
 		     MODIFIED.PERIPH +]].
 
 
@@ -1277,7 +1059,7 @@ naru-end := v-noncaus-op-end-lex &
 nakereba-narimasen-end  :=  v-neg-end-lex &
               [ORTH <! "なけれ","ば","なり","ませ", "ん" !>,
                J-NEEDS-AFFIX -,
-               SYNSEM.LOCAL [CAT.HEAD [MODUS negative,
+               SYNSEM [LOCAL [CAT.HEAD [MODUS negative,
                                        MOD null,
                                        C-MOD null,
                                        H-TENSE present,
@@ -1285,27 +1067,16 @@ nakereba-narimasen-end  :=  v-neg-end-lex &
                                        J-SPEC null,
                                        FIN +,
                                        FORMAL.AHON +],
-			     LKEYS.--KEYREL.PRED 'have_to_rel,
                              CONT.HOOK.INDEX.E.MOOD indicative],
+		       LKEYS.KEYREL.PRED 'have_to_rel],
                LMORPH-BIND-TYPE a-morph].	
 
 
 
 ;cannot help doing, have to
 
-zaru-wo-emasen-end :=  v-neg-end-lex &
-              [ORTH <! "ざる","を","得","ませ", "ん" !>,
-               J-NEEDS-AFFIX -,
-               SYNSEM.LOCAL [CAT.HEAD [MODUS negative,
-                                       MOD null,
-                                       C-MOD null,
-                                       H-TENSE present,
-                                       MARK null,
-                                       J-SPEC null,
-                                       FIN +,
-                                       FORMAL.AHON +],
-			     LKEYS.--KEYREL.PRED 'cant_help_rel,
-                             CONT.HOOK.INDEX.E.MOOD indicative],
+zaru-wo-emasen-end := v-neg-polite-present-end-lex  &
+              [SYNSEM.LKEYS.KEYREL.PRED 'cant_help_rel,
                LMORPH-BIND-TYPE a-morph].
 
 
@@ -1313,34 +1084,14 @@ zaru-wo-emasen-end :=  v-neg-end-lex &
 
 
 garu-adj2v-end := adj2v-end-lex &
-             [ORTH <! "がる" !>,
-              SYNSEM [LOCAL [LKEYS.--KEYREL.PRED 'seem,
-			     CONT.HOOK.INDEX.E.MOOD indicative],
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE shortadj-morph,
-	     STEMTYPE c-stem].
+             [ORTH <! "がる" !>].
 
 garu-na-end := naadj2v-end-lex &
-	       [ORTH <! "がる" !>,
-              SYNSEM [LOCAL [LKEYS.--KEYREL.PRED 'seem,
-			     CONT.HOOK.INDEX.E.MOOD indicative,
-			     BAR -],
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE shortadj-morph,
-		INFLECTED -,
-	     STEMTYPE c-stem].
+	       [ORTH <! "がる" !>].
 
 garu-v-end := garu-end-lex &
-             [ORTH <! "がる" !>,
-              SYNSEM [LOCAL [LKEYS.--KEYREL.PRED 'seem,
-			     CONT.HOOK.INDEX.E.MOOD indicative],
-		      MODIFIED.PERIPH +],
-	      J-NEEDS-AFFIX +,
-              LMORPH-BIND-TYPE i-morph,
-	     STEMTYPE c-stem].
+             [ORTH <! "がる" !>].
 
 kata-v-end := v2n-end-lex &
 	      [ORTH <! "方" !>,
-	       SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kata].
+	       SYNSEM.LKEYS.KEYREL.PRED 'kata].
