@@ -40,7 +40,7 @@ nonaux-lex := v-lex &
 
 generic-verb-lex := v-lex & lexical_sign-word &
                     [SYNSEM [LOCAL [CAT [HEAD verb_head-avm & [COP -,
-                                                               AUX -,
+                                                               AUX aux_minus,
                                                                VN -,
                                                                H-TENSE #tense,
                                                                MODUS #modus],

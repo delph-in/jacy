@@ -226,7 +226,7 @@ quotation-sentence-init_head := punct_head-avm &
 
 quotation-sentence-end_head  := punct_head & sentence-valid &
                        [MOD < [LOCAL [CAT.HEAD sentence-valid,
-                                             BAR +]] >,
+				      BAR +]] >,
                         J-SPEC null,
                         J-POSTHEAD right].
 
@@ -448,7 +448,7 @@ verb_head := verb_head-super.
 
 verb_head-avm := verb_head &
              [POS v,
-              AUX bool,
+              AUX aux,
               COP bool,
               VN bool,
               LIGHT bool,
@@ -467,7 +467,7 @@ ordinary-verb-stem_head := verb-stem_head.
 other-verb-stem_head := verb-stem_head.
 
 v-stem_head  := ordinary-verb-stem_head &
-                [AUX -,
+                [AUX aux_minus,
                  MODUS nonpassive,
                  LIGHT -,
                  ADJ -].
@@ -476,12 +476,12 @@ cop-id-stem_head := v-stem_head &
 		    [COP-ARG -,
 		     COP +,
 		     VN -,
-		     AUX -,
+		     AUX aux_minus,
 		     LIGHT -,
 		     ADJ -].
 
 aux-stem_head := other-verb-stem_head &
-                [AUX +,
+                [AUX aux_plus,
                  ADJ -,
                  LIGHT -,
                  COP-ARG -].
@@ -514,14 +514,14 @@ contracted-aux_head := verbend_head-unmarked.
 
 verb-noninfl_head :< verb_head-avm.
 
-verb-noninfl_head-avm := verb-noninfl_head & [AUX -].
+verb-noninfl_head-avm := verb-noninfl_head & [AUX aux_minus].
 
 cop_head := verb-noninfl_head-avm & [COP-ARG -, LIGHT -].
 
 ; (MS 2003-1-22) Should be COP-ARG neutr, because of 結婚するんですか 
 
 light-verb_head := other-verb-stem_head &
-                [AUX -,
+                [AUX aux_minus,
                  ADJ -,
                  LIGHT +].
 
@@ -564,10 +564,16 @@ vmod-p_head-avm := vmod-p_head &
 ; say MOD...SMOD unmarked?  (I'm using that to constrain some other
 ; things and it would be nice if the head type were enough here.)
 
-topic-vmod-p_head := vmod-p_head-avm & [MOD < [LOCAL [CAT.HEAD [MAIN-PRD +]] ] >,
-                                        PTYPE topic,
-                                        COP-ARG -].
+; (MS 2004-11-12) Here we restrict the MOD to be MAIN-PRD +. But this is not true
+; in all cases: 社内でも有名な王が寝る。Here we want to be able to say that the king is
+; famous in the company. I wonder how much this affects the ambiguity.
 
+;topic-vmod-p_head := vmod-p_head-avm & [MOD < [LOCAL [CAT.HEAD [MAIN-PRD +]] ] >,
+;                                        PTYPE topic,
+;                                        COP-ARG -].
+
+topic-vmod-p_head := vmod-p_head-avm & [PTYPE topic,
+                                        COP-ARG -].
 
 uttmod-p_head := mod-p_head-avm &
                [J-SPEC null,
@@ -651,21 +657,25 @@ ga-or-wo-case-p_head := overt-case-p_head & noun-or-case-p_head & [CASE ga-or-wo
 
 empty-case-p_head := case-p_head  & [PTYPE empty].
 
-; (MS & FCB 2003-10-29) added AUX - to get rid of spurious ambiguity in 普通 と 違っ て いる.
+; (MS & FCB 2003-10-29) added AUX aux_minus to get rid of spurious ambiguity in 普通 と 違っ て いる.
+; (MS 2004-11-05) But now we don't get aspectual readings in 家から父が運んでいる . So, I take
+; it out again.
 
 postp_head := vmod-p_head-avm &
               [PTYPE overt,
 	       MOD < [LOCAL [NUCL nucl_bool,
-			       CAT.HEAD.AUX -]] >,
+			     CAT.HEAD.AUX aux]] >,
                COP-ARG +].
 
 
-; (MS & FCB 2003-10-29) added AUX - to get rid of spurious ambiguity in 普通 と 違っ て いる.
+; (MS & FCB 2003-10-29) added AUX aux_minus to get rid of spurious ambiguity in 普通 と 違っ て いる.
+; (MS 2004-11-05) But now we don't get aspectual readings in 家で父が運んでいる . So, I take
+; it out again.
 
 adv-p_head := vmod-p_head-avm &
                 [PTYPE overt,
 		 MOD < [LOCAL [NUCL nucl_bool,
-			       CAT.HEAD.AUX -]] >,
+			       CAT.HEAD.AUX aux]] >,
                  COP-ARG -].
 
 
@@ -855,7 +865,7 @@ vn_head-avm := vn_head &
 i-adj_head := verb_head-avm &
               [VN -,
                C-MOD null,
-               AUX -,
+               AUX aux_minus,
                COP -,
                LIGHT -,
                ADJ +,
@@ -913,8 +923,11 @@ base-adv_head := adj-or-adv_head &
              C-MOD null].
 
 
+; (MS 2004-11-05) erased AUX aux_minus on the modified to account for aspectual reading
+; of また彼が帰って来る
+
 adv_head := base-adv_head &
-            [MOD < [LOCAL [CAT.HEAD sentence-valid & [AUX -],
+            [MOD < [LOCAL [CAT.HEAD sentence-valid,
                                   NUCL nucl_bool ]] >].
 
 
@@ -1066,8 +1079,8 @@ sbj-arg := j-valence &
 
 sbj-obj-arg := j-valence &
                [SPR null,
-                   SUBJ opt-1-arg,
-                   COMPS 1-list].
+		SUBJ opt-1-arg,
+		COMPS 1-list].
 
 sbj-obj2-arg := j-valence &
                [SPR null,
@@ -1156,8 +1169,11 @@ subcategorizing-noun_sc := spr-obj-arg &
 				  < [LOCAL [CAT.HEAD det_head,
 					    CONT det-sem-type]] > ].
 
+; (MS 2004-08-25) Topics and colons should be allowed as arguments.
+; This is why I changed the CASE to ga-or-coparg.
+
 adj_sc := sbj-arg &
-           [SUBJ.FIRST [LOCAL.CAT.HEAD case-p_head & [CASE ga]] ].
+           [SUBJ.FIRST [LOCAL.CAT.HEAD case-p_head & [CASE ga-or-coparg]] ].
 
 
 eval-adj_sc := obj-arg &
@@ -1264,12 +1280,14 @@ ditransitive :=  sbj-obj-obj2-arg &
 		       < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
 			  [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >].
 
-ga-wo-to-ditransitive := sbj-obj-obj2-arg  &
-                 [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
-		  COMPS < [OPT + ,
-			   LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
-			  [OPT - ,
-			   LOCAL.CAT.HEAD case-p_head & [CASE to]] >].
+; (MS 2004-11-15) This seems not to be used any more.
+
+;ga-wo-to-ditransitive := sbj-obj-obj2-arg  &
+;                 [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+;		  COMPS < [OPT + ,
+;			   LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
+;			  [OPT - ,
+;			   LOCAL.CAT.HEAD case-p_head & [CASE to]] >].
 
 ga-wo-toni-ditransitive := sbj-obj-obj2-arg  &
                  [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
@@ -1339,7 +1357,7 @@ aux_transitive  :=  sbj-obj-spr-arg &
 	       < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
 						 COP -,
 						 VN -,
-						 AUX -],
+						 AUX aux_minus],
 			      VAL [COMPS null,
 				   SUBJ null]],
 			 CONT.HOOK.XARG #ind,
@@ -1368,13 +1386,16 @@ light-aux_transitive  :=  j-valence &
 
 ; (MS 2004-06-25) Took the COMPS null restriction out to allow the rel-clause-obj-gap-rule to apply.
 ; And then took over the COMPS value from the verb to the auxiliary.
+; (MS 2004-07-09) FORMAL.AHON - restriction on the SPR, to rule out "mashite"
+; (MS 2004-11-05) AUX aux_minus on the specifier might be too strong: 読んでもらっている
 
 aspect_transitive :=  j-valence & 
                       [SPR obl-1-arg &
 			   < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
 							     COP -,
 							     VN -,
-							     AUX -],
+							     AUX aux,
+							     FORMAL.AHON -],
 					  VAL  [SUBJ  #sbj,
 						COMPS #obj]],
 				     NUCL nucl_plus]] >,
@@ -1390,7 +1411,7 @@ perspective_transitive  :=  sbj-obj-spr-arg &
 				 < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
 									COP -,
 									VN -,
-									AUX -],
+									AUX aux_minus],
 						VAL [SUBJ #sbj,
 						     COMPS null]]]] >,
 			     SUBJ #sbj,
@@ -3207,7 +3228,7 @@ pred-adj-lex := lexical_sign-word &
                                        J-POSTHEAD rels,
                                        H-TENSE no_tense,
                                        FIN +,
-                                       AUX -,
+                                       AUX aux_minus,
                                        COP -,
                                        VN -,
                                        ADJ -,
@@ -3414,21 +3435,26 @@ quotation-sentence-init-lex := lexical_sign &
                                        AFFIX <! !>]],
                        INFLECTED +].
 
+; (MS 2004-08-24) linked INDEX and XARG to INDEX and XARG of the complement.
 
 quotation-sentence-end-lex := lexical_sign &
                       [SYNSEM [LOCAL [CAT [VAL obj-obj2-arg &
 					     [COMPS  obl-2-args & #comps &
-						     < [LOCAL.CAT [HEAD verb_head,
-							     VAL saturated]],
-						 [LOCAL.CAT.HEAD quotation-sentence-init_head] >],
+						     < [LOCAL [CAT [HEAD verb_head,
+								    VAL saturated],
+							       CONT [ HOOK [INDEX #ind,
+									    XARG #xarg]]]],
+						       [LOCAL.CAT.HEAD quotation-sentence-init_head] >],
 					   HEAD quotation-sentence-end_head],
 				      ARG-S #comps,
-                                      CONT [ RELS <! !>,
-                                              HCONS <! !> ],
+				      CONT [ HOOK [INDEX #ind,
+						   XARG #xarg],
+					     RELS <! !>,
+					     HCONS <! !> ],
                                       CTXT.BACKGROUND <! !>],
-                               NON-LOCAL [QUE <! !>,
-                                       AFFIX <! !>]],
-                       INFLECTED +].
+			       NON-LOCAL [QUE <! !>,
+					  AFFIX <! !>]],
+		       INFLECTED +].
 
 
 quotation-sap-init-lex := lexical_sign &
@@ -4829,6 +4855,8 @@ naadj2v-end-lex := lexical_sign-word &
 
 ; (ERB 2001-11-28) Replace KEY.LBL with LTOP.
 
+; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
+
 
 v-neg-end-lex := v-noncaus-op-end-lex &
                  [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS negative,
@@ -4836,7 +4864,7 @@ v-neg-end-lex := v-noncaus-op-end-lex &
 				      VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
 								 HOOK.LTOP #v-hd,
 								 MOD-IND #event]]],
-				 CONT [RELS <! neg-relation &  #keyrel & [ARG3 #neg-arg,
+				 CONT [RELS <! neg-relation &  #keyrel & [ARG1 #neg-arg,
 									  PRED #negrel,
 									  LBL #top] !>,
 				       HOOK [LTOP #top,
@@ -4966,21 +4994,24 @@ v-tense-end-lex := v-tense-end-lex-super &
 ;
 
 ; (MS 2004-04-02) changed C-MOD verb_head to sentence-valid, to allow also excl's in the sentence coordination.
+; (MS 2004-07-09) took AHON - out, to account for まして. Instead, co-indexed AHON of the C-MOD
+; with AHON of the HEAD to allow S-mashite...masu and S-te...ta, but not S-mashite...ta.
+
 te-end-lex-basic := v-tense-end-lex &
 	      [J-NEEDS-AFFIX -,
             SYNSEM.LOCAL [CAT [HEAD [FIN -,
                                      MARK null,
                                      COP-ARG -,
-                                     C-MOD < [LOCAL [CAT [HEAD sentence-valid],
+                                     C-MOD < [LOCAL [CAT [HEAD sentence-valid & [FORMAL.AHON #ahon]],
 						     BAR +]] >,
                                      MOD null,
                                      J-POSTHEAD coord,
-                                     FORMAL.AHON -]],
+				     FORMAL.AHON #ahon]],
                           CONT.HOOK.INDEX.E.MOOD indicative]].
 
 
 v-te-end-lex := te-end-lex-basic &
-	      [SYNSEM.LOCAL.CAT [HEAD [J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX +],
+	      [SYNSEM.LOCAL.CAT [HEAD [J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX aux_plus],
 						      BAR +],
 					       LEX +,
 					       MODIFIED.PERIPH -] >,
@@ -4990,6 +5021,7 @@ v-te-end-lex := te-end-lex-basic &
 
 v-coord-end-lex := te-end-lex-basic &
 		   [SYNSEM.LOCAL.CAT.HEAD [J-SPEC null,
+					   FORMAL.AHON -,
 					   MODUS indicative]].
 
 comma-coord-end-lex := v-coord-end-lex &
@@ -5373,6 +5405,8 @@ pass-end-lex :=  v-op-end-lex &
 
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
+; (MS 2004-11-15) UNSAT + on the SPR to prevent spurious ambiguity in the case of
+; ditransitive passives (置かれた)
 
 simple-pass-end-lex :=   pass-end-lex &
                [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
@@ -5383,7 +5417,7 @@ simple-pass-end-lex :=   pass-end-lex &
 								       LTOP #hand,
 								       XARG #surfobjind],
 								 RELS.LIST.FIRST arg12-relation & [ARG2 #surfsbjind]],
-							   CAT.VAL sbj-obj-arg]]],
+							   CAT.VAL sbj-obj-arg & [UNSAT +]]]],
 				    HEAD.KEYS.KEY pass_rel],
 			      
 			       CONT [RELS <! !>,
@@ -5394,28 +5428,33 @@ simple-pass-end-lex :=   pass-end-lex &
 		LMORPH-BIND-TYPE pass-morph].
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
+; (MS 2004-11-12) This seems to have mixed ARG2 and ARG3 in the arg123-relation.
+; I have corrected that.
+; (MS 2004-11-15) UNSAT + to prevent spurious ambiguity. 
 
 ditrans-pass-end-lex :=   pass-end-lex &
-               [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+               [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
+					 SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
                                                              CONT.HOOK.INDEX #surfsbjind]],
-                                         COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #objind],
+                                         COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
 						 [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
-                                                             CONT.HOOK.INDEX #surfobjind]] >,
+                                                             CONT.HOOK.INDEX #surfobj2ind]] >,
 					 SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
-									XARG #surfobjind,
+									XARG #surfobj2ind,
 									LTOP #hand],
-								  RELS.LIST.FIRST arg123-relation & [ARG2 #surfsbjind,
-												     ARG3 #objind]],
+								  RELS.LIST.FIRST arg123-relation & [ARG1 #surfobj2ind,
+												     ARG2 #surfsbjind,
+												     ARG3 #surfobjind]],
 							    CAT.VAL [SUBJ 1-list & < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
 								     COMPS 2-comps-list & 
-									  < #objval & [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
-									    [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >]]]],
+									  < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
+									    #objval & [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >]]]],
 				    HEAD.KEYS.KEY pass_rel],
 				    
 				   CONT [RELS <! !>,
 					 HOOK.INDEX #event,
 					 HCONS <! !>],
-			       CTXT.EMPATHY.EMPEE #surfobjind],
+			       CTXT.EMPATHY.EMPEE #surfobj2ind],
 			LKEYS.KEYREL pass-relation & [LBL #hand]],
 		LMORPH-BIND-TYPE pass-morph].
 
@@ -5423,46 +5462,54 @@ ditrans-pass-end-lex :=   pass-end-lex &
 
 ; (MS 2003-12-19) Matrix 0.6
 
+;  (MS 2004-11-12) I had to bind the ARG2 of the adversative relation. It seems to me that the ARG2 should be the event, rather than
+; the ARG1 of the verb. Then, we have only one adversative relation, with ARG1 (the surface subject) and ARG2 (the event).
+
 adversative-pass-end-lex := pass-end-lex &
 			    [SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 									      CONT.HOOK.INDEX #surfsbjind]] >,
 						      SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
 									      CONT.HOOK.LTOP #sprhd]] >],
 						 HEAD.KEYS.KEY pass_rel],
-						CONT [RELS <! #key !>,
-						 HOOK [LTOP #sprhd,
-						       XARG #surfsbjind,
-						       INDEX #event],
+					    CONT [RELS <! #key !>,
+						  HOOK [XARG #surfsbjind,
+							INDEX #event],
 						 HCONS <!  !>]],
-				     LKEYS.KEYREL #key & [ARG1 #surfsbjind,
-							  ARG0 #event]],
+				     LKEYS.KEYREL #key & adversative-relation & [ARG1 #surfsbjind,
+										 ARG2 #sprhd,
+										 ARG0 #event]],
 			     LMORPH-BIND-TYPE pass-morph].
 						     
+
+
+;adversative-intrans-pass-end-lex := adversative-pass-end-lex &
+;                [SYNSEM [LOCAL [CAT [VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
+;								      CONT.HOOK.INDEX #surfobjind]]>,
+;					 SPR < [LOCAL [CAT.VAL sbj-arg,
+;						       CONT.HOOK.XARG #surfobjind]] >],
+;				     HEAD.KEYS.KEY pass_rel],
+;			       CTXT.EMPATHY.EMPEE #surfobjind],
+;			 LKEYS.KEYREL adversative-intrans-relation & 
+;			       [ARG2 #surfobjind]]].
 
 adversative-intrans-pass-end-lex := adversative-pass-end-lex &
                 [SYNSEM [LOCAL [CAT [VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
 								      CONT.HOOK.INDEX #surfobjind]]>,
 					 SPR < [LOCAL [CAT.VAL sbj-arg,
-						       CONT.HOOK.XARG #surfobjind]] >],
-				     HEAD.KEYS.KEY pass_rel],
-			       CTXT.EMPATHY.EMPEE #surfobjind],
-			 LKEYS.KEYREL adversative-intrans-relation]].
+						       CONT.HOOK [XARG #surfobjind]]] >]],
+			       CTXT.EMPATHY.EMPEE #surfobjind]]].
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
 
 adversative-trans-pass-end-lex := adversative-pass-end-lex &
                 [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #surfsbjind,
-					 COMPS opt-2-args & < #obj & [LOCAL [CAT.HEAD case-p_head & [CASE wo],
-									     CONT.HOOK.INDEX #surfobjind]] ,
+					 COMPS opt-2-args & < #obj & [LOCAL [CAT.HEAD case-p_head & [CASE wo]]] ,
 								[LOCAL [CAT.HEAD case-p_head & [CASE ni],
 									CONT.HOOK.INDEX #surfobjind2]] >,
 					  SPR < [LOCAL [CAT.VAL sbj-obj-arg & [COMPS.FIRST #obj],
-							CONT [HOOK.XARG #surfobjind2]]] >],
-				     HEAD.KEYS.KEY pass_rel],
+							CONT [HOOK [XARG #surfobjind2]]]] >]],
 			       
-			       CTXT.EMPATHY.EMPEE #surfsbjind],
-		 LKEYS.KEYREL adversative-trans-relation & 
-			[ARG2 #surfobjind]]].
+			       CTXT.EMPATHY.EMPEE #surfsbjind]]].
 
 
 
@@ -5541,7 +5588,7 @@ v-contracted-aux-end-lex := v-op-end-lex &
                           COMPS #compsval,
 			  SPR obl-1-arg &
 				[FIRST [LOCAL [CONT.HOOK #hook,
-					       CAT [HEAD.AUX -,
+					       CAT [HEAD.AUX aux_minus,
 						    VAL [SUBJ #subjval,
 							 COMPS #compsval]]]]]]],
 		CONT [RELS <! !>,
@@ -5554,7 +5601,7 @@ v-contracted-aux-end-lex := v-op-end-lex &
 
 ;(MS 01-09-19) If the top-handle should be the handle of the subord_rel, we have problems with the restriction that LTOP = KEY.LBL.
 ; (MS 02-11-19) Shift the restriction on the subject to the semantics.
-
+; (MS 2004-11-08) AUX aux_minus on the SPR seems to be too strict: 帰って来やすい
 
 ; (MS 2003-12-19) Matrix 0.6
 
@@ -5565,7 +5612,7 @@ v2adj-end-lex := v-op-end-lex &
 				     LOCAL [CAT [HEAD  verb-stem_head & [MAIN-PRD -,
 									 COP -,
 									 VN -,
-									 AUX -],
+									 AUX aux],
 						 VAL [SUBJ #verbsbj & null,
 						      COMPS #verbcomps]],
 					    CONT.HOOK.LTOP #verbhd]],
@@ -5783,11 +5830,13 @@ garu-end-lex := prpstn-introducing-end-lex &
 		STEMTYPE c-stem].
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
+
 
 mai-end-lex := v-noncaus-op-end-lex &
                [SYNSEM [LKEYS.KEYREL #key & neg-relation & [LBL #top, 
 							    PRED 'neg_rel,
-							    ARG2 #h3],
+							    ARG1 #h3],
 			LOCAL [CAT [HEAD v-op-end_head,
                                    VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
 								    XARG #x1],
@@ -5856,6 +5905,8 @@ kudasai-vn-end := v-end-lex &
 ;;;;;;;;;;;;;;VERBAL STEMS;;;;;;;;;;;;;;;
 
 ; (MS 2004-01-13) Experimenting with BAR bool instead of BAR -.
+; (MS 2004-11-05) But that introduces spurious ambiguity with the
+; unary-vstem-vend-rule.
 
 verb-stem-lex-base  := v-lex & 
               [SYNSEM [LOCAL [CAT.HEAD verb-stem_head,
@@ -6309,9 +6360,9 @@ v5a-stem-lex := v-sbj-comps-stem-lex  &
 						     NON-LOCAL.QUE <! !> ],
 				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 			       CONT verb-sem-type &
-                                         [HOOK.XARG #sbjind]],
+				   [HOOK.XARG #sbjind]],
 			LKEYS.KEYREL [ARG1 #sbjind,
-                                               ARG4 #objind],
+				      ARG2 #objind],
                         NON-LOCAL.QUE <! !>]].
 
 
@@ -6427,13 +6478,13 @@ v5a-kurusuru-minusshon-stem-lex := v5a-minusshon-stem-lex & [STEMTYPE kurusuru-s
 ;aru-c-minusshon-stem-lex := aru-minusshon-stem-lex & [STEMTYPE c-stem].
 ;aru-v-minusshon-stem-lex := aru-minusshon-stem-lex & [STEMTYPE v-stem].
 
-
+; (MS 2004-08-24) ARG2 is now linked to LTOP, not the INDEX.
 
 
 v3-stem-lex := v-sbj-comps-stem-lex &
               [SYNSEM [LOCAL [CAT [HEAD.COP -,
                                   VAL ga-to_transitive1 &
-                                      [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+                                      [COMPS.FIRST.LOCAL.CONT [HOOK.LTOP #objind],
 				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 			      CONT [HOOK.XARG #sbjind]],
 		       LKEYS.KEYREL [ARG1 #sbjind,
@@ -6765,8 +6816,28 @@ cop-id-stem-lex := v-sbj-comps-stem-lex &
                             LBL #hand,
                             ARG1 #sbjind,
                             ARG2 #objind,
-                            ARG0 #ind],
-         NON-LOCAL.QUE <! !>]].
+                            ARG0 #ind]]].
+
+cop-id-noquest-stem-lex := cop-id-stem-lex &
+			    [ SYNSEM.NON-LOCAL.QUE <! !>].
+
+cop-id-ordinary-stem-lex := cop-id-noquest-stem-lex &
+			    [ SYNSEM.LOCAL.CAT.HEAD.MOD null].
+
+cop-id-conditional-stem-lex:= cop-id-ordinary-stem-lex &
+			      [ SYNSEM.LOCAL.CAT.HEAD.MODUS conditional].
+
+cop-id-quest-stem-lex := cop-id-stem-lex &
+			 [SYNSEM [LOCAL [CAT [HEAD [MODUS indicative,
+						    MOD null,
+						   J-SPEC null,
+						   SMOD quest,
+						   MARK null,
+						   FORMAL.AHON -]],
+					 CONT.HOOK.LTOP #h],
+				  NON-LOCAL.QUE <! #h !>]].
+
+; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
 
 cop-id-neg-stem-lex := verb-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD i-adj-stem_head &
@@ -6775,7 +6846,7 @@ cop-id-neg-stem-lex := verb-stem-lex &
 					     SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]]],
 		CONT [HOOK [LTOP #neg-hand,
 			   XARG #sbjind],
-                     RELS <! neg-relation & #key & [LBL #neg-hand,ARG2 #arg, PRED 'neg_rel],
+                     RELS <! neg-relation & #key & [LBL #neg-hand,ARG1 #arg, PRED 'neg_rel],
                               equal-relation & 
                                          [PRED 'cop_id_rel,
                                           LBL #cop-hand,
@@ -6796,7 +6867,7 @@ cop-stem-lex := verb-stem-lex &
                           COP +,
                           H-TENSE #tense,
                           VN -,
-                          AUX -,
+                          AUX aux_minus,
                           LIGHT -,
                           ADJ -],
                     VAL cop-stem_transitive & [COMPS #comps & [FIRST [LOCAL [CONT.HOOK #hook,
@@ -6820,13 +6891,14 @@ n-cop-stem-lex := cop-stem-lex.
 reg-cop-stem-lex := cop-stem-lex & [SYNSEM.LKEYS.KEYREL arg1-ev-relation].
 
 ; (ERB 2001-10-25) Using type neg_rel instead of PRED 'neg_rel.
+; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
 
 cop-neg-stem-lex := verb-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
                           COP +,
                           H-TENSE #tense,
                           VN -,
-                          AUX -,
+                          AUX aux_minus,
                           LIGHT -,
                           MODUS negative,
                           ADJ +],
@@ -6836,7 +6908,7 @@ cop-neg-stem-lex := verb-stem-lex &
 							 CAT.HEAD.H-TENSE #tense]]]]],
 		CONT [HOOK [LTOP #hand,
 			    INDEX #ind],
-                     RELS <! #key & neg-relation & [LBL #hand,ARG2 #arg, PRED 'neg_rel] !>,
+                     RELS <! #key & neg-relation & [LBL #hand,ARG1 #arg, PRED 'neg_rel] !>,
                     HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
                CTXT.BACKGROUND <! !>,
 		ARG-S #comps],
@@ -6844,6 +6916,7 @@ cop-neg-stem-lex := verb-stem-lex &
          NON-LOCAL.QUE <! !>]].
 
 ; (MS 2003-06-23) ではない
+; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
 
 cop-neg-lex := nonaux-lex &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
@@ -6860,7 +6933,7 @@ cop-neg-lex := nonaux-lex &
 	       
 	       CONT [HOOK #hook & [LTOP #hand,
 				   INDEX #ind],
-		     RELS <! #key & neg-relation & [ARG2 #arg, PRED 'neg_rel]  !>,
+		     RELS <! #key & neg-relation & [ARG1 #arg, PRED 'neg_rel]  !>,
 		     HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
 	       CTXT.BACKGROUND <! !>,
 	       ARG-S #comps,
@@ -6882,15 +6955,17 @@ cop-neg-lex := nonaux-lex &
 
 ; (MS 2003-12-19) Matrix 0.6
 
-cop-lex := nonaux-lex &
+; (MS 2004-08-25) I now call them cop-light-lex.
+
+cop-light-lex := nonaux-lex &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
 			   MARK null,
 			   SMOD unmarked,
 			   COP +,
 			   H-TENSE #tense],
                     VAL  cop_transitive & [COMPS #comps & [FIRST [LOCAL [CONT [HOOK #hook],
-							CAT.HEAD.H-TENSE #tense,
-							NUCL not_fin_conj]]]]],
+									 CAT.HEAD.H-TENSE #tense,
+									 NUCL not_fin_conj]]]]],
 	       
 	       CONT [HOOK #hook & [INDEX #ind, LTOP #hand],
 		     MOD-IND #ind,
@@ -6916,7 +6991,7 @@ cop-lex := nonaux-lex &
 ; that doesn't work for deshitara.)  Also, all are MOD none and say
 ; the same thing about H-TENSE.
 
-n-cop-lex := cop-lex &
+n-cop-lex := cop-light-lex &
 [SYNSEM.LOCAL.CAT [HEAD [H-TENSE #tense,
                          MODUS #mood,
                          MOD null,
@@ -6924,7 +6999,7 @@ n-cop-lex := cop-lex &
                    VAL.COMPS.FIRST.LOCAL.CAT.HEAD [H-TENSE #tense,
                                                   MODUS #mood]]].
 
-reg-cop-lex := cop-lex.
+reg-cop-lex := cop-light-lex.
 
 
 
@@ -6940,10 +7015,11 @@ aux-top-stem-lex := verb-stem-lex & lexical_sign-word &
 
 
 aux-obj-id-stem-lex := aux-top-stem-lex &
-                  [SYNSEM [LOCAL [CAT.VAL aux_transitive &
+                  [SYNSEM [LOCAL [CAT [VAL aux_transitive &
                                             [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
 					     COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind],
 					     SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand],
+				       HEAD.AUX complex_aux],
                                  CONT [RELS diff-list & <! #key,
 							 message &
 							 [PRED proposition_m_rel,
@@ -7084,10 +7160,11 @@ light-obj-id-shon-kurusuru-stem-lex := light-obj-id-shon-stem-lex & [STEMTYPE ku
 ; (MS 2003-12-19) Matrix 0.6
 
 aspect-stem-lex  := aux-top-stem-lex &
-[SYNSEM [LOCAL [CAT.VAL aspect_transitive &
+[SYNSEM [LOCAL [CAT [VAL aspect_transitive &
                           [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
 			   SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand],
-               CONT [RELS diff-list & <! #key,
+		     HEAD.AUX aspect_aux],
+		CONT [RELS diff-list & <! #key,
 				       message &
 				       [PRED proposition_m_rel,
 					LBL #chand,
@@ -7138,17 +7215,15 @@ aspect-shon-kurusuru-stem-lex := aspect-shon-stem-lex & [STEMTYPE kurusuru-stem]
 
 ; (ERB 2001-11-12) I think the real solution for the aspect auxiliaries
 ; (shimau, iru, aru, and maybe some others) is to make them contribute no
-; relation but rather provide information about E.AJ-SPECT of their specifier.
+; relation but rather provide information about E.ASPECT of their specifier.
 ; This type is an interim solution to make them raising verbs -- that is, they
 ; contribute one place (arg4only) relations.
-
-
 
 ; (ERB 2001-11-12) This is a first pass at making "pure" aspect auxiliaries.
 ; The current motivation is "iru", which Monique has just come across, and
 ; which just looks silly right now with "iru_rel".  The idea here is that
 ; the pure aspect auxiliaries don't contribute a relation of their own but
-; rather stamp some info into the E.AJ-SPECT of the verb.  For now, they'll have
+; rather stamp some info into the E.ASPECT of the verb.  For now, they'll have
 ; underspecified KEY values, but we might find that we want them to raise
 ; the KEY of their SPR.  They certainly raise the handle & event.
 
@@ -7162,15 +7237,24 @@ aspect-shon-kurusuru-stem-lex := aspect-shon-stem-lex & [STEMTYPE kurusuru-stem]
 ; constraints directly in here.  Not making this lexical_sign-word, for
 ; now.  (No real KEY, don't need a WLINK.)
 
+; (MS 2004-11-09) E.TENSE should come from the aspect auxiliary, other things in INDEX
+; from the content verb: 食べなくている
+
 pure-aspect-stem-lex := verb-stem-lex &
 [SYNSEM [ LOCAL [CAT [ HEAD aux-stem_head & 
-                            [ H-TENSE #tense ],
+                            [ H-TENSE #tense,
+			      AUX aspect_aux],
                        VAL aspect_transitive &
                             [SUBJ.FIRST #sbj,
 			     SPR.FIRST.LOCAL [ CONT.HOOK [ LTOP #ohand,
-							   INDEX #event ]]]],
+							   INDEX [SORT #sort,
+								  INSTLOC #instloc,
+								  E.MOOD #mood]]]]],
                  CONT [RELS <! !>,
-                       HOOK [INDEX #event & [ E.TENSE #tense ],
+                       HOOK [INDEX [ E [TENSE #tense,
+					MOOD #mood],
+				     SORT #sort,
+				     INSTLOC #instloc],
 			     LTOP #ohand],
                        HCONS <! !> ],
 		 ARG-S < #sbj >],
@@ -7217,9 +7301,10 @@ pure-aspect-shon-kurusuru-stem-lex := pure-aspect-shon-stem-lex & [STEMTYPE kuru
 ; (MS 2003-12-19) Matrix 0.6
 
 perspective-stem-lex  := aux-top-stem-lex &
-[SYNSEM [LOCAL [CAT.VAL perspective_transitive & [COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind],
+[SYNSEM [LOCAL [CAT [VAL perspective_transitive & [COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind],
 						 SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
 						 SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand],
+		     HEAD.AUX complex_aux],
                CONT [RELS diff-list & <! #key,
 				       message &
 				       [PRED proposition_m_rel,
@@ -7415,6 +7500,8 @@ adj-stem-lex := base-adj-stem-lex & lexical_sign-word &
 ; of pobj は and the MOD.MAIN-PRD of its object be the same, and this
 ; might do the trick since は only wants to modify MAIN-PRD + things.
 
+; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
+
 i-adj-neg-stem-lex := base-adj-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD [ MODUS negative ],
 		     VAL sbj-arg &
@@ -7425,7 +7512,7 @@ i-adj-neg-stem-lex := base-adj-stem-lex &
 			    XARG #inst,
 			   LTOP #top],
 		      RELS <! neg-relation & #key &
-			    [ARG2 #arghd, 
+			    [ARG1 #arghd, 
 			     LBL #top],
 			    [PRED 'exist,
 			     LBL #aru_hd,
@@ -7717,7 +7804,7 @@ lexeme :< lexical_sign.
 ; (cf. infinitive-infl-rule-for-syntactic-VV in infl.tdl
 ;      tsudukeru-syntactic-vv-stem in verbstem-lex.tdl)
 syntactic-vv-stem_head  := other-verb-stem_head &
-			   [AUX -,
+			   [AUX aux_minus,
 			    MODUS nonpassive,
 			    LIGHT -,
 			    ADJ -].

@@ -84340,35 +84340,35 @@ te-pu_1 := ordinary-nohon-n-lex &
 ; テープレコーダー 
 ; Used 1 times
 
-te-pureko-da-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_te_n_pureko_rel,
+teepurekoodaa_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_teepurekoodaa_n__rel,
  ORTH <! "テープレコーダー" !>].
 
 ; テーブル 
 ; Used 2 times
 
-te-buru_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_te_n_buru_1_rel,
+teeburu_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_teburu_n_1_rel,
  ORTH <! "テーブル" !>].
 
 ; テーブルマナー 
 
-te-burumana-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_te_n_rel,
+teeburumana_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_teburumana_n_1_rel,
  ORTH <! "テーブルマナー" !>].
 
 ; テーマソング 
 ; Used 1 times
 
-te-masongu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_te_n_rel,
+teemasongu_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_teemasongu_n_1_rel,
  ORTH <! "テーマソング" !>].
 
 ; テーマミュージック 
 ; Used 1 times
 
-te-mamyu-jikku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_te_n_mamyu_rel,
+teemamyuujikku_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_teemamyuujikku_n_1_rel,
  ORTH <! "テーマミュージック" !>].
 
 ; デーモン 

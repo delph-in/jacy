@@ -53,6 +53,7 @@ mashita-end :=  v-past-tense-end-lex &
 
 mashite-end  :=  v-te-end-lex &
                  [ORTH <! "まし", "て" !>,
+		  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
 		  LMORPH-BIND-TYPE i-morph].
 
 ;another segmentation of CHASEN
@@ -62,6 +63,7 @@ mashite-end  :=  v-te-end-lex &
 
 mashite-end2  :=  v-te-end-lex &
                  [ORTH <! "まして" !>,
+		  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
                   LMORPH-BIND-TYPE i-morph].
 
 
@@ -105,6 +107,7 @@ dari-end := v-coord-end-lex &
 
 te-end := v-te-end-lex &
            [ORTH <! "て" !>,
+	    SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
             LMORPH-BIND-TYPE t-morph].
 
 ; (MS 2002-05-08) The comma seems to work similar to the TE ending in the conjunctive domain.
@@ -123,6 +126,7 @@ comma-te-end := comma-coord-end-lex &
 
 de-end := v-te-end-lex &
            [ORTH <! "で" !>,
+	    SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
                   LMORPH-BIND-TYPE nd-morph].
 
 
@@ -155,6 +159,7 @@ arimasendeshita-adj-end :=  v-neg-polite-past-end-lex &
 
 nai-end := v-finite-present-plain-negative-end-lex &
            [ORTH <! "ない" !>,
+	    INFLECTED +,
 	    SYNSEM.LKEYS.KEYREL.PRED '_neg_v_rel]. 
 
 ;判らなくなりました
@@ -309,13 +314,15 @@ nu-end := v-neg-end-lex &
 ; (ERB 2001-11-12) Experimenting with making te form TENSE tensed
 ; instead of TENSE te.
 
+; (MS 2004-11-09) UNSAT - on the SPR is too strong: 研究しないでいる
+
 naide-end := v-neg-end-lex &
            [ORTH <! "ない" , "で" !>,
             J-NEEDS-AFFIX -,
             SYNSEM [LOCAL [CAT [HEAD [FIN -,
                                     H-TENSE tensed,
                                     J-SPEC < [LOCAL [CAT.HEAD verb_head &
-                                                          [AUX +],
+                                                          [AUX aux_plus],
                                                 BAR +],
 					      LEX +] >,
                                     MARK null,
@@ -324,7 +331,7 @@ naide-end := v-neg-end-lex &
                                                BAR +]] >,
                                     J-POSTHEAD coord,
                                     FORMAL.AHON -],
-			       VAL.SPR.FIRST.LOCAL.CAT.VAL.UNSAT -],
+			       VAL.SPR.FIRST.LOCAL.CAT.VAL.UNSAT bool],
                           CONT.HOOK.INDEX.E.MOOD indicative],
 		   LKEYS.KEYREL.PRED '_neg_v_rel],
             LMORPH-BIND-TYPE a-morph].
@@ -543,7 +550,7 @@ taku-end := tai-end-lex-basic &
                                      J-POSTHEAD coord,
                                      MARK null,
                                      COP-ARG -,
-                                    J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX +],
+                                    J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX aux_plus],
                                                  BAR +],
 					      LEX +] >,
                                      FIN -,

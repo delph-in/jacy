@@ -587,13 +587,13 @@ hajimaru-stem := intrans-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_hajimaru_v_rel]],
                    ORTH <! "始まる" !>].
 
-iru_need-stem := intrans-c-stem-lex &
+iru_need-stem := intrans-v-stem-lex &
                    [SYNSEM.LKEYS [KEYREL [PRED '_iru_v_need_rel]],
                    ORTH <! "要る" !>].
 
 ; (MS 2002-09-16) This one leads to spurious ambiguity as soon as iru-aux comes up!
 
-iru_need-hiragana-stem := intrans-c-stem-lex &
+iru_need-hiragana-stem := intrans-v-stem-lex &
 		   [SYNSEM.LKEYS [KEYREL [PRED '_iru_v_need_rel]],
 		    RMORPH-BIND-TYPE nomorphbind,
 		    ORTH <! "いる" !>].
@@ -1081,6 +1081,7 @@ yoru-hiragana-stem :=  v1-c-stem-lex &
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 ;(TT 2003-08-29) -> v4-c-stem-lex
+; stretch
 
 haru-stem :=  v4-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_haru_v_rel]],
@@ -1771,7 +1772,7 @@ tsukiau-stem := v5-c-stem-lex &
 ORTH <! "付き合う" !>].
 
 tsukiau-a-stem := v5-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsukiau_a_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsukiau_v_rel]],
 ORTH <! "つきあう" !>].
 
 
@@ -2700,6 +2701,8 @@ nobasu-2-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_nobasu_a_2_rel]],
 ORTH <! "伸ばす" !>].
 
+;spend
+
 tsuiyasu-stem := v4-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_tsuiyasu_v_rel]],
 ORTH <! "費す" !>].
@@ -3040,6 +3043,8 @@ ORTH <! "住む" !>].
 susumu-stem := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_susumu_v_rel]],
 ORTH <! "進む" !>].
+
+; ask, invite, leave, recommend
 
 tanomu-stem := v4-c-minusshon-stem-lex &
 [SYNSEM.LKEYS.KEYREL [PRED '_tanomu_v_rel],
@@ -3444,6 +3449,9 @@ ORTH <! "切れる" !>].
 shiraseru-stem := v4-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_shiraseru_v_rel]],
 ORTH <! "知らせる" !>].
+
+;acquaint, announce, apprise, communicate, enlighten, 
+;impart, inform, instruct, make known, pass along, post
 
 shiraseru-stem-2 := v4-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_shiraseru_v_rel]],
@@ -4429,6 +4437,8 @@ ageru-2-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_ageru_a_2_rel]],
 ORTH <! "挙げる" !>].
 
+;devote, apply
+
 ateru-stem := v4-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_ateru_v_rel]],
 ORTH <! "当てる" !>].
@@ -4440,6 +4450,8 @@ ORTH <! "集める" !>].
 barakeru-stem := intrans-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_barakeru_v_rel]],
 ORTH <! "ばらける" !>].
+
+; compare
 
 kuraberu-stem := v4-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_kuraberu_v_rel]],
@@ -4464,6 +4476,8 @@ ORTH <! "まとめる" !>].
 mitsukeru-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_mitsukeru_v_rel]],
 ORTH <! "見つける" !>].
+
+;transfer, connect
 
 norikaeru-stem := v4-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_norikaeru_v_rel]],
@@ -4499,8 +4513,6 @@ toriyoseru-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_toriyoseru_v_rel]],
 ORTH <! "取り寄せる" !>].
 
-;"兼る" should be Hiragana. 兼る -> かねる
-;(Atsuko Shimada, Oct.1.2001)
 
 wakarikaneru-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_wakarikaneru_v_rel]],
@@ -4723,6 +4735,8 @@ kakisoeru-stem-b := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_kakisoeru_v_rel]],
 ORTH <! "書添える" !>].
 
+;append
+
 soeru-stem := v4-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_soeru_v_rel]],
 ORTH <! "添える" !>].
@@ -4915,15 +4929,13 @@ ochiru-2-stem  := v1-v-stem-lex &
 ;;;;;;;;;;;;;;;;;;;COPULA;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 da-v-cop-id-stem  :=
-cop-id-stem-lex &
+cop-id-ordinary-stem-lex &
 [ORTH <! "だ" !>,
- SYNSEM.LOCAL.CAT.HEAD.MOD null,
  STEMTYPE da-stem].
 
 desu-v-cop-id-stem  :=
-cop-id-stem-lex &
+cop-id-ordinary-stem-lex &
 [ORTH <! "です" !>,
- SYNSEM.LOCAL.CAT.HEAD.MOD null,
  STEMTYPE desu-stem].
 
 desu-v-cop-lex  :=
@@ -5146,60 +5158,41 @@ reg-cop-lex &
 ; (MS 2002-01-17) for conditional NARA: それなら良い
 
 na-cop-id-lex :=
-cop-id-stem-lex &
+cop-id-conditional-stem-lex &
 [ORTH <! "な" !>,
- SYNSEM.LOCAL.CAT.HEAD [MOD null,
-			MODUS conditional],
  STEMTYPE da-stem].
 
 naga-cop-id-lex :=
-cop-id-stem-lex &
+cop-id-conditional-stem-lex &
 [ORTH <! "なが" !>,
- SYNSEM.LOCAL.CAT.HEAD [MOD null,
-			MODUS conditional],
  STEMTYPE da-stem].
 
 
-naNdesu-cop-id-multi := cop-id-stem-lex &
+naNdesu-cop-id-multi := cop-id-ordinary-stem-lex &
 	               [ORTH <! "なん",  "です" !>,
-                        SYNSEM.LOCAL.CAT.HEAD.MOD null,
                         STEMTYPE desu-stem].
 
-nanodesu-cop-id-multi := cop-id-stem-lex &
+nanodesu-cop-id-multi := cop-id-ordinary-stem-lex &
 	               [ORTH <! "な","の", "です" !>,
-                        SYNSEM.LOCAL.CAT.HEAD.MOD null,
                         STEMTYPE desu-stem].
 
-nanodesu-cop-id-multi-2 := cop-id-stem-lex &
+nanodesu-cop-id-multi-2 := cop-id-ordinary-stem-lex &
 	               [ORTH <! "な","のです" !>,
-                        SYNSEM.LOCAL.CAT.HEAD.MOD null,
                         STEMTYPE desu-stem].
 
 ;"君達は学生かい"
 
-kai-cop-id-lex := cop-id-stem-lex &
+kai-cop-id-lex := cop-id-quest-stem-lex &
 	               [ORTH <! "かい" !>,
-                        SYNSEM.LOCAL [CAT [HEAD [MODUS indicative,
-						 MOD null,
-						 J-SPEC null,
-						 SMOD quest,
-						 MARK null,
-						 FORMAL.AHON -],
-					   VAL.COMPS.FIRST [LOCAL.CAT.HEAD ordinary_noun_head,
-							    NON-LOCAL.QUE <! !>]]],
+			SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [LOCAL.CAT.HEAD ordinary_noun_head,
+							  NON-LOCAL.QUE <! !>],
 			STEMTYPE desu-stem].
 
 ;"あの人はだれかしら。"
 
-kashira-cop-id-lex := cop-id-stem-lex &
+kashira-cop-id-lex := cop-id-quest-stem-lex &
 	               [ORTH <! "かしら" !>,
-                        SYNSEM.LOCAL [CAT [HEAD [MODUS indicative,
-						 MOD null,
-						 J-SPEC null,
-						 SMOD quest,
-						 MARK null,
-						 FORMAL.AHON -],
-					   VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+                        SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
 				      CTXT.C-INDICES.SPEAKER.PNG.GEN fem],
 			STEMTYPE desu-stem].
 
@@ -5217,30 +5210,22 @@ kanaa-cop-lex := reg-cop-stem-lex &
 
 ;"あの人はだれかなあ。"
 
-kanaa-cop-id-lex := cop-id-stem-lex &
+kanaa-cop-id-lex := cop-id-quest-stem-lex &
 	               [ORTH <! "か","なあ" !>,
-                        SYNSEM.LOCAL [CAT [HEAD [MODUS indicative,
-						 MOD null,
-						 J-SPEC null,
-						 SMOD quest,
-						 MARK null,
-						 FORMAL.AHON -],
-					   VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+                        SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
 				      CTXT.C-INDICES.SPEAKER.PNG.GEN masc],
 			STEMTYPE desu-stem].
 
 ;書類が不備で利用不可なのか
 
-nano-cop-id-multi := cop-id-stem-lex &
+nano-cop-id-multi := cop-id-ordinary-stem-lex &
 	               [ORTH <! "な","の" !>,
-                        SYNSEM.LOCAL.CAT.HEAD.MOD null,
                         STEMTYPE desu-stem].
 
 ;"先生なんだ"
 
-nan-cop-id-multi := cop-id-stem-lex &
+nan-cop-id-multi := cop-id-ordinary-stem-lex &
 	               [ORTH <! "な","ん" !>,
-                        SYNSEM.LOCAL.CAT.HEAD.MOD null,
                         STEMTYPE desu-stem].
 
 
@@ -5252,7 +5237,7 @@ naNdesu-cop-multi := reg-cop-stem-lex &
 
 ; (MS 2003-09-02) Changed that to be c2-stem: でございます
 
-degozaru-cop-id-multi := cop-id-stem-lex &
+degozaru-cop-id-multi := cop-id-noquest-stem-lex &
                      [ORTH <! "で",  "ござる" !>,
 		      STEMTYPE c2-stem].
 
@@ -5268,7 +5253,7 @@ reg-cop-stem-lex &
  STEMTYPE c2-stem].
 
 dearu-v-cop-id-stem  :=
-cop-id-stem-lex &
+cop-id-noquest-stem-lex &
 [ORTH <! "で","ある" !>,
  STEMTYPE c2-stem].
 
@@ -5284,7 +5269,7 @@ reg-cop-lex &
                    VAL.COMPS.FIRST.LOCAL.CAT.HEAD.H-TENSE #tense]].
 
 
-dai-cop-id := cop-id-stem-lex &
+dai-cop-id := cop-id-ordinary-stem-lex &
 	               [ORTH <! "だい" !>,
                         SYNSEM.LOCAL [CAT [HEAD [MOD null,
 						 J-SPEC null,
@@ -11645,8 +11630,9 @@ hekotareru_1 := intrans-v-stem-lex &
 ; Used 1 times
 
 ; SF (2003-08-28) intrans-v-stem-lex -> v2-v-stem-lex 
+; (2004-11-12) hoeru - bark doesn't seem transitive to me.
 
-hoeru_1 := v2-v-stem-lex &
+hoeru_1 := intrans-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hoeru_v_1_rel,
  ORTH <! "吠える" !>].
 

@@ -24,7 +24,7 @@ j-head :=    head &
           QUANTIFIABLE bool,
           H-TENSE tense,
           FIN bool,
-          AUX bool,
+          AUX aux,
           COP bool,
           VN bool,
           ADJ bool,

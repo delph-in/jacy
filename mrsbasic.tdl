@@ -530,7 +530,7 @@ want2-relation := arg12-relation & [PRED "want2_rel"].
 ; (MS 2003-07-11) For the Japanese analysis, it also needs an ARG2
 ; (MS 2004-02-20) and also an ARG3, in the case of passive?
 
-neg-relation := adv-relation & arg123-relation.
+neg-relation := adv-relation & arg1-relation.
 
 ;cant_help_rel :< j-neg_rel.
 
@@ -545,9 +545,8 @@ rareru-relation := arg12-relation & [PRED rareru_rel].
 
 pass-relation := arg12-relation & [PRED 'passive].
 
-adversative-intrans-relation := arg12-relation & [PRED 'adversative].
+adversative-relation := arg12-relation & [PRED 'adversative].
 
-adversative-trans-relation := arg123-relation & [PRED 'adversative].
 
 
 ; Degree relations

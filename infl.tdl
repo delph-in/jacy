@@ -302,7 +302,7 @@ de-lexeme-infl-rule :=
 			 J-POSTHEAD coord,
                          C-MOD null,
                          MARK null,
-                         J-SPEC.FIRST.LOCAL [CAT.HEAD verb_head & [AUX +]],
+                         J-SPEC.FIRST.LOCAL [CAT.HEAD verb_head & [AUX aux_plus]],
                          FIN -],
 	 LEX +],
  ARGS.FIRST.STEMTYPE desu-stem].
@@ -316,7 +316,7 @@ conditional-lexeme-to-word-rule &
 			 MOD null,
 			 VN -,
 			 MARK null,
-			 J-SPEC.FIRST [LOCAL [CAT.HEAD verb_head & [AUX +]],
+			 J-SPEC.FIRST [LOCAL [CAT.HEAD verb_head & [AUX aux_plus]],
 				     LEX +],
 			 FIN -]],
  ARGS.FIRST.STEMTYPE da-stem].
@@ -355,18 +355,21 @@ ARGS.FIRST.STEMTYPE cop-stem].
 
 ;;;;;;;;;;;;;;;;;;;KURU-SURU;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+; (MS 2004-10-05) BAR -, to block spurious ambiguity in 来る 
+
 kuru-lexeme-infl-rule := 
 word-rule & 
 [RMORPH-BIND-TYPE u-morph,
- SYNSEM.LOCAL.CAT.HEAD verb_head & [H-TENSE present,
-                        MODUS indicative,
-                        MOD < [LOCAL [CAT.HEAD noun_head,
-                                    BAR +]] >,
-                        MARK null,
-                        J-SPEC.FIRST.LOCAL.CAT.HEAD noun_head,
-                        FIN +,
-                        J-POSTHEAD rels,
-                        FORMAL.AHON -],
+ SYNSEM.LOCAL [CAT.HEAD verb_head & [H-TENSE present,
+				  MODUS indicative,
+				  MOD < [LOCAL [CAT.HEAD noun_head,
+						BAR +]] >,
+				     MARK null,
+				     J-SPEC.FIRST.LOCAL.CAT.HEAD noun_head,
+				     FIN +,
+				     J-POSTHEAD rels,
+				     FORMAL.AHON -],
+	       BAR -],
  ARGS.FIRST v-lex & [STEMTYPE kurusuru-stem]].
 
 ki-lexeme-infl-rule := 
@@ -484,13 +487,15 @@ lexeme-rule &
 ; 良いことだ     元気ではない
 ; (MS 2002-02-01) But this leads to ambiguity in cases of ADJ NO DESU KA. 
 ; What shall we do?
-
+; (MS 2004-11-09) J-NEEDS-AFFIX + on the argument, such that it doesn't apply
+; to 食べていない . I further restrict it to adj-stems.
 
 adj-i-lexeme-infl-rule := 
 word-rule &
 [RMORPH-BIND-TYPE u-morph,
  ARGS.FIRST [STEMTYPE adj-stem,
-	     SYNSEM.LOCAL.CAT.HEAD.MODUS #modus],
+	     SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head & [MODUS #modus],
+	     J-NEEDS-AFFIX +],
  SYNSEM.LOCAL [CAT.HEAD i-adj-stem_head & 
 			[H-TENSE present,
                          MODUS #modus,
@@ -763,20 +768,6 @@ n2predadj-rule &
 ; Moving to XARG instead.
 
 
-;subj-zpro-ins-lrule := zpro-insertion-rule &
-;[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
-;			COMPS #comps,
-;			SPR #spr],
-;	       ARG-S #rest,
-;	       CONT.HOOK.XARG zpro_ref-ind]],
-; ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
-;						       EMPTY -],
-;                                VAL [SUBJ opt-1-arg & < #sbj >,
-;				     COMPS #comps,
-;				     SPR #spr]],
-;			   ARG-S [FIRST #sbj,
-;				  REST #rest ]]]].
-
 
 subj-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ null,
@@ -793,6 +784,11 @@ subj-zpro-ins-lrule := zpro-insertion-rule &
 ; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
 ; (MS 2004-02-25) No. LKEYS.KEYREL IS accessible (we are in lexrules!)
 ; (MS 2004-06-25) Auxiliaries should not undergo this. 
+; (MS 2004-11-05) why not? 食べてもらう
+; (MS 2004-11-09) Ok, tried to give AUX a more complex value. Aspect
+; auxiliaries should not undergo the rule, while complex auxiliaries should be
+; allowed.
+
 
 obj-zpro-ins-lrule := zpro-insertion-rule & 
 [SYNSEM [LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
@@ -801,7 +797,7 @@ obj-zpro-ins-lrule := zpro-insertion-rule &
 	       ARG-S #subj],
 	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
 ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
-						      AUX -,
+						      AUX aux_minus_or_complex,
 						      EMPTY -],
                                VAL [SUBJ #subj,
 				    COMPS opt-1-arg,

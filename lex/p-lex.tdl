@@ -1787,6 +1787,13 @@ wa-varg := topic-vobj-lex &
                           CAT.HEAD.PTYPE wa],
             ORTH <! "は" !>].
 
+;(MS 2004-08-24) I want to link the wa phrase in copula sentences to ARG1.
+; e.g.: これは花です。
+
+wa-in-copula-sent := ga-wo-ni-p-lex & 
+       [ORTH <! "は" !>,
+       SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE wa]]].
+
 yori := postp-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE yori,
                                 CONT.RELS <! [PRED '_yori_p_rel] !>],

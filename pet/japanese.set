@@ -68,7 +68,8 @@ punctuation-characters := "\"!&'()*+,-¡Ý./;<=>?@[\]^_`{|}~¡£¡©¡Ä¡¥¡¤¡¡¡û¡ü¡ý¡ö".
 grammar-info := grammar_info.
 
 ;; type of a valid parse, spoken and email language
-start-symbols := $utterance-root $np-frag-root $pp-frag-root.
+;;start-symbols := $utterance-root $np-frag-root $pp-frag-root.
+start-symbols := $utterance-root.
 
 ;; type of a valid parse, written language
 ;start-symbols := $utterance-root.

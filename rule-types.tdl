@@ -885,6 +885,7 @@ lexeme-rule := lexeme & inflecting-lex-rule &
 
 ; (ERB 2001-10-17) Added subtypes of lexical_sign.  See notes in
 ; fundamentals.tdl.
+; (MS 2004-11-08) Shouldn't that keep the LMORPH-BIND-TYPE?
 
 word-rule-basic := lexical_sign-rule &  
                [SYNSEM [LOCAL [CAT [HEAD [AUX #aux,
@@ -905,6 +906,7 @@ word-rule-basic := lexical_sign-rule &
 			LKEYS #keys,
                         NON-LOCAL #nonloc],
 		J-NEEDS-AFFIX -,
+		LMORPH-BIND-TYPE #lmorph,
                 ARGS < lexical_sign & [SYNSEM [LOCAL [CAT [HEAD [AUX #aux,
 								 COP #cop,
 								 LIGHT #light,
@@ -920,6 +922,7 @@ word-rule-basic := lexical_sign-rule &
 						      CTXT #ctxt],
 					       LKEYS #keys,
 					       NON-LOCAL #nonloc],
+				       LMORPH-BIND-TYPE #lmorph,
                                        INFLECTED -]>,
 		INFLECTED +].
 
@@ -1022,6 +1025,8 @@ potential-rule := lex-rule & lexeme &
 ; (ERB 2001-10-15) This rule is also leaving LTOP undefined.  Fixing
 ; that now.
 
+; (MS 2004-11-09) The INDEX should come from the argument: 食べて行ける
+
 potential-lexeme-to-word-rule  := lex-rule & v-lex &
                [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
                                          [AUX #aux,
@@ -1040,15 +1045,15 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
 			       ALTKEYREL #altkey],
                         NON-LOCAL #nonloc],
                 C-CONT [RELS <! #key & rareru-relation & [ARG2 #chand,
-						      ARG0 #ind,
-						      LBL #tophand],
+							  ARG0 #ind,
+							  LBL #tophand],
                                message & 
 			      [PRED proposition_m_rel,
 			       LBL #chand,
 			       MARG #soa] !>,
                         HCONS <! qeq & [LARG #ohand,
                                          HARG #soa] !>],
-                ARGS < verb-stem-lex & [SYNSEM [LOCAL [CONT verb-sem-type,
+                ARGS < verb-stem-lex & [SYNSEM [LOCAL [CONT verb-sem-type & [HOOK.INDEX #ind],
                                                        CAT [HEAD [AUX #aux,
                                                                   COP #cop,
                                                                   VN #vn,
@@ -1486,7 +1491,7 @@ word2word-rule := j-sign & phrase-or-lexrule &
 
 zpro-insertion-rule := word2word-rule & 
 	[SYNSEM [LOCAL [CAT.VAL.UNSAT -,
-		       BAR -],
+			BAR -],
 		 LEX +],
 	 C-CONT [RELS <!  !>,
 		 HCONS <!  !>],

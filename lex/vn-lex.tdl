@@ -25251,6 +25251,7 @@ hakkan_1_1 := vn-trans1-lex &
 
 ; È¯´ø 
 ; Used 4 times
+; exhibition, exert
 
 hakki_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hakki_vn_1_rel,
@@ -28445,9 +28446,9 @@ choushuu_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_choushuu_vn_1_rel,
  ORTH <! "Ä§¼ý" !>].
 
-; Î¬ 
 ; Used 173 times
 ; SF 2003-08-26
+; automatic exposure
 
 ryaku_2 := vn-ditrans-toni-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ryaku_vn_1_rel,

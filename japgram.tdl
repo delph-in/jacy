@@ -816,7 +816,7 @@ vn-light-rule := head-marker-rule &
                  ARGS <[SYNSEM j-synsem & [LOCAL [CAT.HEAD vn_head & [KEYS #keys],
 						  CONT.HOOK #hook,
 						   BAR -]]],
-                       [SYNSEM j-synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX -, LIGHT +]]],
+                       [SYNSEM j-synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX aux_minus, LIGHT +]]],
                         INFLECTED +,
                         J-NEEDS-AFFIX -,
                         RMORPH-BIND-TYPE #morphbind]>].
@@ -853,6 +853,7 @@ na-vend-rule := stem-end-rule-type &
 	  SYNSEM.LOCAL.CAT.HEAD verbend_head] >].
 
 
+; (MS 2004-11-08) This one should keep the LMORPH-BIND-TPYE: 来やすい
 
 unary-vstem-vend-rule := unary-type-super &
  [SYNSEM [LOCAL [CAT #cat,
@@ -860,14 +861,16 @@ unary-vstem-vend-rule := unary-type-super &
 		 CTXT #ctxt,
 		 BAR +]],
   J-NEEDS-AFFIX -,
+  LMORPH-BIND-TYPE #lmorph,
   ARGS < [SYNSEM [LOCAL [CAT #cat & [HEAD verb-stem_head & [FIN +,
-							   VN -,
-							   LIGHT -,
-							   EMPTY -]],
+							    VN -,
+							    LIGHT -,
+							    EMPTY -]],
 			CONT #cont,
 			CTXT #ctxt,
 			BAR -],
 		  LEX +],
+	  LMORPH-BIND-TYPE #lmorph,
 	  J-NEEDS-AFFIX -] >].
 
 
@@ -1087,12 +1090,13 @@ embedded-question-rule := embedded-question-rule-type &
 ; (MS 2003-09-03) Reactivated this rule.
 ;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
 ; (MS 2004-06-25) Linked the XARG to its nonhead-dtr index. No conjunctions should go into this (C-MOD null).
+; (MS 2004-08-25) SMOD unmarked, such that it cannot apply to utterances. COP -, such that it cannot apply to copula sentences. 
+; (MS 2004-11-09) AUX aux_minus, such that it cannot apply to auxiliaries.
 
 empty-cop-id-rule := empty-head-type &
 		     [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
 					      [H-TENSE present,
 					       MODUS indicative,
-					       SMOD #smod,
 					       MARK null,
 					       MOD null,
 					       J-SPEC null,
@@ -1122,8 +1126,10 @@ empty-cop-id-rule := empty-head-type &
 		      INFLECTED +,
 		      J-NEEDS-AFFIX -,
 		      ARGS < [SYNSEM.LOCAL [CAT [HEAD final_head & [EMPTY -,
+								    AUX aux_minus,
+								    COP -,
 								    C-MOD null,
-								    SMOD #smod],
+								    SMOD unmarked],
 						  VAL saturated],
 					     CONT.HOOK.INDEX #argind]] >].
 
@@ -1134,7 +1140,7 @@ empty-copula-rule := empty-head-type &
 					      [COP-ARG -,
 					       C-MOD null,
 					       MOD null,
-					       AUX -,
+					       AUX aux_minus,
 					       MARK null,
 					       COP +,
 					       EMPTY +,

@@ -77,6 +77,11 @@ pure-aspect-c2-stem-lex &
 [SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
 ORTH <! "行く" !>].
 
+iku-aux-hiragana-stem :=
+pure-aspect-c2-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
+ORTH <! "いく" !>].
+
 mairu-aux-stem :=
 pure-aspect-c-stem-lex &
 [SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],

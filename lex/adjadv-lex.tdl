@@ -1724,6 +1724,11 @@ i-adj-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yasui_a_rel,
 ORTH <! "安","い" !>].
 
+yasui-eval-adj  :=
+eval-opt-i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yasui_eval_a_rel,
+ORTH <! "やすい" !>].
+
 arigatai-adj  :=
 i-adj-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_arigatai_a_rel,

@@ -155,43 +155,8 @@ quest :< marked.
 cond :< marked.
 imp :< marked.
 
-;satr :< sort.
-;sat_or_opt :< satr.
-;unsat :< satr.
 
-;sat :< sat_or_opt.
-;opt := sat_or_opt & unsat.
-;obl :< unsat.
-
-;unsat := sort.
-;opt := unsat.
-;obl := unsat.
- 
-
-;; some sorts for underspecifying quantifier relations CJ110797
-; (MS 2003-07-09) not used any more.
-
-;q_rel :< sort.
-
-;true_q :< q_rel.
-;udef :< q_rel.
-
-
-;whq :< nondef.
-
-;def :< udef.
-;nondef :< udef.
-;indef :< nondef.
-
-;dem :< def.
-
-;kono :< dem.
-;sono :< dem.
-;dono :< dem.
-;ano :< dem.
-;sonna :< dem.
-
-;fuer Partikel:
+;Particles
 
 ptype :< sort.
 
@@ -428,5 +393,15 @@ te_conj := not_fin_conj.
 nucl_bool := not_fin_conj.
 nucl_plus := nucl_bool.
 nucl_minus := nucl_bool.
+
+; (MS 2004-11-09) We need to divide auxiliaries into aspectual and others to
+; be able to state where zpros can be inserted.
+
+aux :< sort.
+aux_plus :< aux.
+aux_minus_or_complex :< aux.
+aux_minus :< aux_minus_or_complex.
+aspect_aux :< aux_plus.
+complex_aux := aux_plus & aux_minus_or_complex.
 
 
