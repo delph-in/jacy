@@ -1,0 +1,45 @@
+Performace tweaks
+-----------------
+
+
+Make sure the two quick-check files are kept up to date.
+
+LKB:	japanese/lkb/checkpaths.lsp
+PET:	japanese/pet/qc.tdl
+
+
+Generate as follows:
+====================
+PET (hinoki):
+-------------
+Make sure yor grammar is up-to-date:
+flop japanese.tdl
+
+mv pet/qc.tdl pet/qc.tdl.old
+
+cut -d@ -f 7 ~/delphin/hinoki/skeletons/test-a/item | head -100 | \
+cheap -compute-qc=pet/qc.tdl japanese
+
+
+### can do this for vanilla, but need to have the chasen preprocessor
+cut -d@ -f 7 tsdb/skeletons/vanilla/item | cheap -compute-qc=pet/qc.tdl japanese
+
+After you have made the quick check file, you need to rebuild the grammar
+flop japanese.tdl
+
+
+LKB:
+----
+(see Copestake (2002), indexed under checkpaths)
+
+
+mv lkb/checkpaths.lsp pet/checkpaths.lsp.old
+
+from within the *common-lisp* buffer:
+
+(lkb::with-check-path-list-collection 
+   "~/delphin/grammars/japanese/lkb/checkpaths" 
+   (parse-sentences 
+      "~/delphin/grammars/japanese/testsuites/hinoki-test-a.100" 
+      "~/delphin/grammars/japanese/testsuites/hinoki-test-a.100.results"))
+
