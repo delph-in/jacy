@@ -1097,16 +1097,15 @@ wa-advarg := topic-advarg-lex &
 
 ;"watakushi ga juuniji ni kaigi ga owarimasu"
 ; (MS 2003-01-16) restricted to the cases, where the subject is saturated and no zero pronoun. therefore, I inserted the zpro_ref-ind to ARG1 in the zpro insertion rules (infl.tdl)
-;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
-; This patch forgives JACY for not parsing "watakushi ga juuniji ni kaigi ga owarimasu". 
+
 
 ga3 := topic-vmod-p-lex &
        [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
 			   HEAD [PTYPE topic,
 				 MOD < [LOCAL [CAT [VAL [UNSAT -,
 							 SUBJ null],
-						    HEAD.EMPTY -]],
-					LKEYS.KEYREL.ARG1 full_ref-ind] > ]],
+						    HEAD.EMPTY -],
+					       CONT.HOOK.XARG full_ref-ind]] > ]],
 		      CONT.RELS <! [PRED 'ga_prep] !>],
 	ORTH <! "¤¬" !> ].
 

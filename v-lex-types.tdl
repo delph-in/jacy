@@ -108,18 +108,21 @@ generic_verb_vstem_infl-lex := generic-verb-lex &
 
 vn-lex  := nonaux-lex & lexical_sign-word & 
            [SYNSEM [LOCAL [CAT [HEAD vn_head-avm & [MAIN-PRD -,
-                                                    SMOD unmarked]],
+                                                    SMOD unmarked,
+						    KEYS.KEY #keypred]],
 			   CONT simple-verb-sem-type & [HOOK [INDEX #ind,
 							     LTOP #top],
 						       RELS <! #key !>,
 						       HCONS <! !>]],
 		    LKEYS.KEYREL #key & [ ARG0 #ind,
-					    LBL #top]],
+					  PRED #keypred,
+					  LBL #top]],
             INFLECTED +].
 
 vn-sbj-comps-lex := vn-lex &
-		    [SYNSEM.LOCAL [CAT.VAL [SUBJ.FIRST #sbj,
+		    [SYNSEM.LOCAL [CAT.VAL [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
 					    COMPS #comps],
+				   CONT.HOOK.XARG #sbjind,
 				   ARG-S < #sbj . #comps >]].
 
 vn-trans1-lex := vn-sbj-comps-lex &
@@ -127,7 +130,7 @@ vn-trans1-lex := vn-sbj-comps-lex &
 				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
 		     LKEYS [KEYREL [ARG1 #sbjind,
-				      ARG2 #objind]]]].
+				    ARG2 #objind]]]].
 
 
 
@@ -165,7 +168,8 @@ vn-ditrans-lex := vn-sbj-comps-lex &
 vn-intrans-lex := vn-lex &
             [SYNSEM [LOCAL [CAT.VAL intransitive &
                                       [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]],
-			    ARG-S < #sbj >],
+			    ARG-S < #sbj >,
+			    CONT.HOOK.XARG #sbjind],
 		     LKEYS [KEYREL.ARG1 #sbjind]]].
 
 

@@ -24,7 +24,7 @@ word-rule &
  SYNSEM.LOCAL [ CAT.HEAD verb_head & #head & [H-TENSE present,
                                               MODUS indicative,
                                               MOD < [LOCAL [CAT.HEAD noun_head,
-                                                          BAR +]] >,
+							    BAR +]] >,
                                               MARK null,
                                               J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
                                               FIN +,
@@ -32,7 +32,7 @@ word-rule &
                                               J-POSTHEAD rels,
                                               FORMAL.AHON -],
                 CONT.HOOK.INDEX.E.MOOD indicative,
-		BAR -],
+		BAR +],
  ARGS.FIRST v-lex & [STEMTYPE regular-stem,
                      SYNSEM.LOCAL.CAT.HEAD #head]].
 
@@ -193,11 +193,12 @@ potential-lexeme-to-word-rule &
 ; strategy: these guys are CMOD none, but get picked up by a special
 ; comma that has the right CMOD value for the sentence-te-coordination-rule.
 
+
 infinitive-lexeme-1-infl-rule :=
 %suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
- SYNSEM.LOCAL.CAT.HEAD [H-TENSE tensed,
+ SYNSEM.LOCAL [CAT.HEAD [H-TENSE tensed,
                         MODUS infinitive,
                         MOD null,
                         VN -,
@@ -206,7 +207,7 @@ j-lexeme-to-word-rule &
                         J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,
                         J-POSTHEAD coord,
                         COP-ARG -,
-                        FIN -],
+                        FIN -]],
  ARGS.FIRST [STEMTYPE regular-stem,
              SYNSEM.LOCAL.CAT.HEAD verb-stem_head,
 	     RMORPH-BIND-TYPE morphbindtype]].
@@ -417,7 +418,7 @@ infinitive-lexeme-2-infl-rule :=
 %suffix (来る 来) (する し) (くる こ)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
- SYNSEM.LOCAL.CAT.HEAD verb_head-avm & [H-TENSE tensed,
+ SYNSEM.LOCAL [CAT.HEAD verb_head-avm & [H-TENSE tensed,
                                         MODUS infinitive,
                                         MOD < [LOCAL [CAT [HEAD verb_head & [MAIN-PRD +]],
                                                    BAR +] ] >,
@@ -426,7 +427,7 @@ j-lexeme-to-word-rule &
                                         VN -,
                                         J-SPEC null,
                                         COP-ARG -,
-                                        FIN -],
+                                        FIN -]],
  ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 mai-lexeme-infl-rule := 
@@ -746,14 +747,16 @@ n2predadj-rule &
 ; valence of their SPRs, I need to restrict light verbs
 ; from undergoing these rules.
 
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to XARG instead.
 
 
 subj-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ null,
 			COMPS #comps,
 			SPR #spr],
-	       ARG-S #rest],
-	 LKEYS.KEYREL.ARG1 zpro_ref-ind],
+	       ARG-S #rest,
+	       CONT.HOOK.XARG zpro_ref-ind]],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                 VAL [SUBJ opt-1-arg & < #sbj >,
@@ -763,13 +766,15 @@ subj-zpro-ins-lrule := zpro-insertion-rule &
 				  REST #rest ]]]].
 
 
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
 
 obj-zpro-ins-lrule := zpro-insertion-rule & 
 [SYNSEM [LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
 			COMPS null,
 			SPR #spr],
-	       ARG-S #subj],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S #subj,
+	       CONT.RELS.LIST.FIRST.ARG2 zpro_ref-ind]],
 ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                VAL [SUBJ #subj,
@@ -781,14 +786,16 @@ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
 ; ordered with respect to each other, OBJ2 wasn't.  I'm going
 ; to require it to apply first.
 ; (MS 2001-10-09) Now we cannot get perspective auxiliaries. We should find another solution.
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
 
 
 obj2-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
 			COMPS 1-list & < #obj>,
 			SPR #spr],
-	       ARG-S < #subj , #obj  >],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S < #subj , #obj  >,
+	       CONT.RELS.LIST.FIRST.ARG3 zpro_ref-ind]],
 ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                VAL [SUBJ < #subj >,
@@ -797,24 +804,29 @@ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
 				    SPR #spr]]]]].
 
 
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to XARG instead.
+
 naadj-subj-zpro-ins-lrule := naadj-zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ null,
 			COMPS #comps,
 			SPR #spr],
-	       ARG-S < >],
-	 LKEYS.KEYREL na-adj-relation & [ARG1 zpro_ref-ind]],
+	       ARG-S < >,
+	       CONT.HOOK.XARG zpro_ref-ind] ],
  ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD na-adj_head & [ADJ +],
                                VAL [SUBJ opt-1-arg,
 				    COMPS #comps & null,
 				    SPR #spr & null]]]].
 
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to XARG instead.
 
 opend-subj-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ null,
-				COMPS #comps,
-				SPR #spr],
-	       ARG-S #rest],
-	 LKEYS.KEYREL.ARG1 zpro_ref-ind],
+			 COMPS #comps,
+			 SPR #spr],
+		ARG-S #rest,
+		CONT.HOOK.XARG zpro_ref-ind]],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
 							       EMPTY -,
 							      MODUS operative],
@@ -824,12 +836,15 @@ opend-subj-zpro-ins-lrule := zpro-insertion-rule &
 			   ARG-S [FIRST #sbj,
 				  REST #rest]]]].
 
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
+
 opend-obj-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [COMPS null,
 			SUBJ #subj & [FIRST.OPT bool],
 			SPR #spr],
-	       ARG-S #subj],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S #subj,
+		CONT.RELS.LIST.FIRST.ARG2 zpro_ref-ind]],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
 							       EMPTY -,
 							      MODUS operative],
@@ -837,12 +852,15 @@ opend-obj-zpro-ins-lrule := zpro-insertion-rule &
 				    COMPS opt-1-arg,
 				    SPR #spr]]]]].
 
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
+
 opend-obj2-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [COMPS 1-list & < #obj >,
 			SUBJ #subj & [FIRST #sbj & [OPT bool]],
 			SPR #spr],
-	       ARG-S < #sbj , #obj >],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+	       ARG-S < #sbj , #obj >,
+		CONT.RELS.LIST.FIRST.ARG3 zpro_ref-ind]],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
 							       EMPTY -,
 							      MODUS operative],
@@ -873,7 +891,9 @@ opend-obj2-zpro-ins-lrule := zpro-insertion-rule &
 ga-no-conversion-rule := subj-casechange-rule &
                        [SYNSEM.LOCAL.CAT.VAL.SUBJ obl-1-arg & [FIRST [LOCAL.CAT.HEAD.CASE no-case]],
                         ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
-                                                       [MAIN-PRD -,H-TENSE present-or-past]],
+                                                       [MAIN-PRD -,
+							COP -,
+							H-TENSE present-or-past]],
 					      BAR -],
                                 INFLECTED +,
                                 J-NEEDS-AFFIX -] >].
@@ -884,7 +904,9 @@ wo-no-conversion-rule := obj-casechange-rule &
                                                                OPT - ]],
 				      BAR +],
                         ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
-                                                       [MAIN-PRD -,MODUS infinitive]],
+                                                       [MAIN-PRD -,
+							COP -,
+							MODUS infinitive]],
 					      BAR -],
                                 INFLECTED +,
                                 J-NEEDS-AFFIX -] >].
@@ -901,7 +923,7 @@ infinitive-infl-rule-for-syntactic-VV :=
 %suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
- SYNSEM.LOCAL.CAT.HEAD [H-TENSE tensed,
+ SYNSEM.LOCAL [CAT.HEAD [H-TENSE tensed,
                         MODUS infinitive,
                         MOD null,
                         VN -,
@@ -910,7 +932,7 @@ j-lexeme-to-word-rule &
                         J-SPEC.FIRST.LOCAL.CAT.HEAD syntactic-vv-stem_head,
                         J-POSTHEAD coord,
                         COP-ARG -,
-                        FIN -],
+                        FIN -]],
  ARGS.FIRST [STEMTYPE regular-stem,
              SYNSEM.LOCAL.CAT.HEAD verb-stem_head,
 	     RMORPH-BIND-TYPE morphbindtype]].

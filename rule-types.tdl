@@ -823,6 +823,7 @@ word-rule-basic := lexical_sign-rule &
                                           ADJ #adj,
                                           MAIN-PRD #main-prd,
                                           SMOD #smod,
+					  KEYS.KEY #keypred,
                                           FORMAL #formal,
                                           COP-ARG bool,
                                           H-TENSE #tense],
@@ -835,21 +836,22 @@ word-rule-basic := lexical_sign-rule &
                         NON-LOCAL #nonloc],
 		J-NEEDS-AFFIX -,
                 ARGS < lexical_sign & [SYNSEM [LOCAL [CAT [HEAD [AUX #aux,
-                                                          COP #cop,
-                                                          LIGHT #light,
-                                                          ADJ #adj,
-                                                          MAIN-PRD #main-prd,
-                                                          SMOD #smod,
-                                                          FORMAL #formal,
-                                                          COP-ARG bool,
-                                                          H-TENSE #tense],
-                                                    VAL #sc],
-                                                    CONT #cont,
-                                                    CTXT #ctxt],
+								 COP #cop,
+								 LIGHT #light,
+								 ADJ #adj,
+								 MAIN-PRD #main-prd,
+								 SMOD #smod,
+								 KEYS.KEY #keypred,
+								 FORMAL #formal,
+								 COP-ARG bool,
+								 H-TENSE #tense],
+							   VAL #sc],
+						      CONT #cont,
+						      CTXT #ctxt],
 					       LKEYS #keys,
-                                             NON-LOCAL #nonloc],
+					       NON-LOCAL #nonloc],
                                        INFLECTED -]>,
-                INFLECTED +].
+		INFLECTED +].
 
 word-rule := word-rule-basic & constant-lex-rule &
              [ORTH #stem,
@@ -1273,10 +1275,11 @@ adj2n-rule := ordinary-nohon-n-lex &
 v2vn-rule := j-lexeme-to-word-rule &
              [LMORPH-BIND-TYPE #morph,
 	      INFLECTED +,
-              SYNSEM.LOCAL.CAT [HEAD vn_head-avm &
+              SYNSEM.LOCAL [CAT [HEAD vn_head-avm &
                                      [MAIN-PRD -,
                                       SMOD unmarked],
                                 VAL #sc],
+			    BAR +],
               ARGS.FIRST [SYNSEM.LOCAL.CAT [HEAD.LIGHT -,
 					    VAL #sc],
 			  RMORPH-BIND-TYPE #morph & inf-morph]].
@@ -1622,8 +1625,7 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 [ C-CONT common-noun-sem-type &
          [ HOOK [LTOP #hand,
 		 INDEX #arg],
-           RELS <! reg-nom-relation & [ARG0 #arg,
-				       LBL #hand] !>],
+           RELS <! !>],
   ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [LTOP #hand,
 				     XARG #arg]].
 

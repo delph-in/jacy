@@ -1975,9 +1975,11 @@ arayuru_1 := noun_mod-lex-l &
 
 ; Used 982 times
 ;(CH 2003-08-08) 連体の「ある」はなかったので追加
+; (MS 2003-12-22) LEX + against spurious ambiguity.
 
 aru_1_3 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED 'aru_1_1,
+[SYNSEM [LKEYS.KEYREL.PRED 'aru_1_1,
+	 LOCAL.CAT.HEAD.MOD.FIRST.LEX +],
  ORTH <! "ある" !> ].
 
 ; いかなる 

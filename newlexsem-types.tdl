@@ -136,7 +136,7 @@ card-sem-type := j-mrs &
 		 HOOK [INDEX #ind,
 		       LTOP #hand],
                  HCONS <! !>,
-                 RELS diff-list & [LIST.FIRST const-relation]].
+                 RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind]]].
 
 
 ; (ERB 2001-08-28) Date expressions

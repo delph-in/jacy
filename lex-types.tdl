@@ -3697,14 +3697,18 @@ isect-adv-lex := adv-lex &
 scopal-adv-lex := adv-lex &
                   [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL scopal_mod & 
                                                       [ CONT.HOOK [INDEX #ind,
-								   LTOP #head-hd],
+								   LTOP #h2],
 							NUCL nucl_plus]] > ],
 				  
                                   CONT scopal-adv-sem-type &
-                                       [HOOK.INDEX #ind,
+                                       [HOOK [INDEX #ind,
+					      LTOP #top],
 					RELS <! #key !>,
-                                        HCONS <! !> ]],
-			   LKEYS.KEYREL #key & scopal-adv-relation & [ARG1 handle &  #head-hd],
+                                        HCONS <! qeq & [HARG #h1,
+							LARG #h2] !> ]],
+			   LKEYS.KEYREL #key & scopal-adv-relation & [ARG1 #h1,
+								      ARG0 #ind,
+								      LBL #top],
                            NON-LOCAL.QUE <! !>]].
 
 scopal-adv-regular-lex := scopal-adv-lex &
@@ -4539,11 +4543,13 @@ v-finite-present-plain-negative-end-lex := v-neg-end-lex &
 ; (MS 2003-12-19) Matrix 0.6
 
 v-simple-end-lex := v-end-lex &
-[ SYNSEM [LOCAL [CAT [HEAD.SMOD smod,
-                     VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #top,
-						      INDEX #event],
-						MOD-IND #mi,
-						MOD-HAND #mh ]]],
+[ SYNSEM [LOCAL [CAT [HEAD [SMOD smod,
+			    KEYS.KEY #key],
+                     VAL.SPR.FIRST [LOCAL [CONT [HOOK [LTOP #top,
+						       INDEX #event],
+						 MOD-IND #mi,
+						 MOD-HAND #mh ],
+					   CAT.HEAD.KEYS.KEY #key]]],
 		
                 CONT [HOOK [INDEX #event,
 			    LTOP #top],
@@ -5044,21 +5050,21 @@ ditrans-pass-end-lex :=   pass-end-lex &
 adversative-pass-end-lex := pass-end-lex &
 			    [SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 									      CONT.HOOK.INDEX #surfsbjind]] >,
-						     SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
-									     CONT.HOOK.LTOP #sprhd]] >]],
-					   
-					   CONT [RELS <! !>,
+						      SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
+									      CONT.HOOK.LTOP #sprhd]] >]],
+						CONT [RELS <! #key !>,
 						 HOOK [LTOP #sprhd,
+						       XARG #surfsbjind,
 						       INDEX #event],
 						 HCONS <!  !>]],
-				     LKEYS.KEYREL [ARG1 #surfsbjind,
-						     ARG0 #event]],
+				     LKEYS.KEYREL #key & [ARG1 #surfsbjind,
+							  ARG0 #event]],
 			     LMORPH-BIND-TYPE pass-morph].
 						     
 
 adversative-intrans-pass-end-lex := adversative-pass-end-lex &
                 [SYNSEM [LOCAL [CAT [VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
-									CONT.HOOK.INDEX #surfobjind]]>,
+								      CONT.HOOK.INDEX #surfobjind]]>,
 					 SPR < [LOCAL [CAT.VAL sbj-arg,
 						       CONT.HOOK.XARG #surfobjind]] >]],
 			       CTXT.EMPATHY.EMPEE #surfobjind],
@@ -5073,8 +5079,7 @@ adversative-trans-pass-end-lex := adversative-pass-end-lex &
 								[LOCAL [CAT.HEAD case-p_head & [CASE ni],
 									CONT.HOOK.INDEX #surfobjind2]] >,
 					  SPR < [LOCAL [CAT.VAL sbj-obj-arg & [COMPS.FIRST #obj],
-							CONT [HOOK.XARG #surfobjind2,
-							      RELS.LIST.FIRST.ARG2 #surfobjind]]] >]],
+							CONT [HOOK.XARG #surfobjind2]]] >]],
 			       
 			       CTXT.EMPATHY.EMPEE #surfsbjind],
 		 LKEYS.KEYREL adversative-trans-relation & 
@@ -7312,7 +7317,7 @@ lexeme :< lexical_sign.
 ; 統語的複合動詞VVの V2 のためのタイプ
 ; (cf. infinitive-infl-rule-for-syntactic-VV in infl.tdl
 ;      tsudukeru-syntactic-vv-stem in verbstem-lex.tdl)
-syntactic-vv-stem_head  := ordinary-verb-stem_head &
+syntactic-vv-stem_head  := other-verb-stem_head &
 			   [AUX -,
 			    MODUS nonpassive,
 			    LIGHT -,
@@ -7332,7 +7337,7 @@ syntactic-vv-stem-lex := verb-stem-lex & lexical_sign-word &
 			   [SUBJ.FIRST #sbj & [LOCAL [CONT.HOOK.INDEX #sbjind,
 						      CAT.HEAD case-p_head &
 								      [CASE ni-or-ga]]],
-			    SPR.FIRST.LKEYS.KEYREL.LBL #ohand]],
+			    SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand]],
 		 CONT [HOOK.INDEX #event & [E [TENSE #tense]],
 		       HCONS <! qeq & [LARG #ohand,
 				       HARG #soa] !>,

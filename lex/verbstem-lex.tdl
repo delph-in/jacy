@@ -3746,6 +3746,10 @@ tsuzukeru-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'tsuzukeru]],
 ORTH <! "続ける" !> ].
 
+tsuzukeru-hiragana-stem := v1-v-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED 'tsuzukeru]],
+ORTH <! "つづける" !> ].
+
 kachitsuzukeru-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'kachitsuzukeru]],
 ORTH <! "勝ちつずける" !> ].
@@ -4668,14 +4672,6 @@ ORTH <! "振替える" !> ].
 furikaeru-stem3 := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'furikaeru_2]],
 ORTH <! "振り替える" !> ]. 
-
-tsudukeru-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'tsudukeru]],
-ORTH <! "続ける" !> ].
-
-tsudukeru-hiragana-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'tsudukeru]],
-ORTH <! "つづける" !> ].
 
 kaitsukeru-1-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'kaitsukeru]],
