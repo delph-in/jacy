@@ -18,7 +18,7 @@ Make sure:
 
 mv pet/qc.tdl pet/qc.tdl.old
 
-cut -d@ -f 7 ~/delphin/hinoki/skeletons/test-a/item | head -100 | \
+cat delphin/grammars/japanese/testsuites/hinoki-test-a.100 | \
 cheap -compute-qc=pet/qc.tdl japanese
 
 
@@ -28,6 +28,10 @@ cut -d@ -f 7 tsdb/skeletons/vanilla/item | cheap -compute-qc=pet/qc.tdl japanese
 After you have made the quick check file, you need to rebuild the grammar
 flop japanese.tdl
 
+Note: This is slow, as quick-check is, off course, turned off.  Flop is also slow at the moment. 
+
+
+FCB: I should write a script to do this.
 
 LKB:
 ----
