@@ -10,8 +10,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
-;;;    Melanie Siegel |    2003     |Francis Bond (FCB), Atsuko Shimada, (TT), 
-;;;                   |             |Emily Bender (ERB), (SF), (AO)
+;;;    Melanie Siegel |    2003     |Francis Bond (FCB), Atsuko Shimada, 
+;;;                   |             |Tanaka Takaki (TT), Akira Ohtani (AO)
+;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -171,20 +172,27 @@ ordinary-nohon-n-lex &
 [ORTH <! "頭" !>,
 SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'atama]].
 
+
 atari :=
 ordinary-nohon-n-lex &
 [ORTH <! "当り" !>,
 SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'atari]].
+
+;;; CHECKME should I be a suffix? (FCB 2003-12-07)
 
 ate-addressed :=
 ordinary-nohon-n-lex &
 [ORTH <! "宛" !>,
 SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'ate-addressed]].
 
+;;; CHECKME should I be a suffix? (FCB 2003-12-07)
+
 ate-addressed-2 :=
 ordinary-nohon-n-lex &
 [ORTH <! "宛て" !>,
 SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'ate-addressed]].
+
+;;; CHECKME should I be a suffix? (FCB 2003-12-07)
 
 ate-aim :=
 ordinary-nohon-n-lex &
@@ -4715,6 +4723,15 @@ dono :=
 title-pers-honsubj-lex &
 [ORTH <! "殿" !>].
 
+
+;; 主 
+; CHECKME - can this be a title suffix (FCB 2003-12-07)
+
+; nushi_3 := title-pers-honsubj-lex &
+; [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nushi_3,
+;  ORTH <! "主" !> ].
+
+
 keNkyuushitsu-inst :=
 title-inst-lex &
 [ORTH <! "研究室" !>,
@@ -4738,6 +4755,10 @@ saN-title :=
 title-pers-honsubj-lex &
 [ORTH <! "さん" !>].
 
+shi_2_2 := 
+title-pers-honsubj-lex &
+[ORTH <! "氏" !> ].
+
 kuN :=
 title-pers-minus-honsubj-lex &
 [ORTH <! "君" !>].
@@ -4745,6 +4766,12 @@ title-pers-minus-honsubj-lex &
 seNsei-title :=
 title-pers-honsubj-lex &
 [ORTH <! "先生" !>].
+
+shi-title :=
+title-pers-honsubj-lex &
+[ORTH <! "師" !>].
+
+
 
 daigaku-loc :=
 title-loc-lex &
@@ -4760,6 +4787,13 @@ gaidai :=
 title-loc-lex &
 [ORTH <! "外大" !>,
 SYNSEM.LOCAL.LKEYS.--KEYREL [PRED 'gaidai]].
+
+; 院 (for small temples)
+
+in_2 := title-loc-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'in_2,
+ ORTH <! "院" !> ].
+
 
 shuu-title :=
 title-loc-lex &
@@ -5405,7 +5439,7 @@ pron-honsubj-lex &
                  REL <! #ind !>]]].
 
 ; (AO 2003-08-07) pron-honsubj-lex の例
-;		<IJ> ご自分
+;		 ご自分
 ;		御自分, ご自身とは普通書かない
 
 go-jishin_1 := pron-honsubj-lex &
@@ -7249,40 +7283,6 @@ ordinary-nohon-n-lex &
 [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'eki,
 ORTH <! "益" !>].
 
-sho-suffix :=
-ordinary-nohon-n-lex &
-[ORTH <! "書" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'sho],
-              CAT.HEAD.J-POSTHEAD right,
-              BAR -]].
-
-ki-suffix :=
-ordinary-nohon-n-lex &
-[ORTH <! "機" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'ki],
-              CAT.HEAD.J-POSTHEAD right,
-              BAR -]].
-
-jyou-suffix :=
-ordinary-nohon-n-lex &
-[ORTH <! "上" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'jyou],
-              CAT.HEAD.J-POSTHEAD right,
-              BAR -]].
-
-sho-office-suffix :=
-ordinary-nohon-n-lex &
-[ORTH <! "署" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'sho],
-              CAT.HEAD.J-POSTHEAD right,
-              BAR -]].
-
-gaku-suffix :=
-ordinary-nohon-n-lex &
-[ORTH <! "額" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'gaku],
-              CAT.HEAD.J-POSTHEAD right,
-              BAR -]].
 
 zei-noun :=
 ordinary-nohon-n-lex &
@@ -7621,27 +7621,6 @@ kiNkou-noun :=
 ordinary-nohon-n-lex &
 [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kinkou,
 ORTH <! "近郊" !>].
-
-mono-suffix :=
-ordinary-nohon-n-lex &
-[ORTH <! "物" !>,
-SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'mono],
-              CAT.HEAD.J-POSTHEAD right,
-              BAR -]].
-
-; added by SF (2003-08-22)
-butsu-suffix :=
-ordinary-suffix-n-lex &
-[ORTH <! "物" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'butsu].
-
-; added by SF (2003-08-25)
-
-gawa-suffix :=
-ordinary-suffix-n-lex &
-[ORTH <! "側" !>,
-SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gawa].
-
 nihongo-noun  :=
 ordinary-nohon-n-lex &
 [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nihongo,
@@ -8484,7 +8463,8 @@ ordinary-nohon-n-lex &
 ;[SYNSEM.LOCAL [LKEYS [--KEYREL.PRED 'azuke]],
 ;ORTH <! "預け" !>].
 
-;bill
+;bill 
+; CHECK me - do we need a separate suffix (FCB 2003-12-07)
 
 tsuke-noun :=
 ordinary-nohon-n-lex &
@@ -144816,3 +144796,693 @@ temae_1_1 := ordinary-nohon-n-lex &
 mi_1_1 := ordinary-nohon-n-lex &
 [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'mi_1_1,
  ORTH <! "身" !> ].
+
+;;;;;;;;;;;;;;;;;;;;;; Suffixes ;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; FIXME (FCB 2003-12-07) 
+;;; Many of these need more specific types to get the syntax/semantics right
+
+; 臭い 
+; Used 8 times
+
+; (TT 2003-08-07)
+; FIXJACY: 複合形容詞を生成(lexical typeが必要)
+; kusai_2 := ordinary-suffix-n-lex &
+; [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kusai_2,
+;  ORTH <! "臭い" !> ].
+
+
+; 上 
+; JACY 上: ue (ordinary-nohon-n-lex) jyou-suffix (ordinary-nohon-n-lex)
+; Used 233 times
+
+jyou-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jyou,
+ ORTH <! "上" !> ].
+
+; 限り 
+; Used 8 times
+
+kagiri_4_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kagiri_3,
+ ORTH <! "限り" !> ].
+
+
+mono-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "物" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'mono],
+              CAT.HEAD.J-POSTHEAD right,
+              BAR -]].
+
+; added by SF (2003-08-22)
+butsu-suffix :=
+ordinary-suffix-n-lex &
+[ORTH <! "物" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'butsu].
+
+; added by SF (2003-08-25)
+
+gawa-suffix :=
+ordinary-suffix-n-lex &
+[ORTH <! "側" !>,
+SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gawa].
+
+; 平ら 
+; Used 8 times
+; (TT 2003-08-07)
+; ORTH: 「平ら」->「平」
+; 地名をつくる接尾語
+; e.g.: 「松本平」
+
+taira_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'taira_1,
+ ORTH <! "平" !> ].
+
+
+; そこそこ 
+
+sokosoko_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sokosoko_1,
+ ORTH <! "そこそこ" !> ].
+
+; ぽっきり 
+
+pokkiri_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'pokkiri_1,
+ ORTH <! "ぽっきり" !> ].
+
+; 生 
+; Used 21 times
+; (TT 2003-08-07)
+; e.g. 「一年生」「研究生」
+
+sei_3_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sei_3_2,
+ ORTH <! "生" !> ].
+
+; 上がり 
+; Used 2 times
+; (TT 2003-08-07)
+; e.g. 「病み上がり」;「女中上がり」
+
+agari_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'agari_2,
+ ORTH <! "上がり" !> ].
+
+; 当たり 
+; Used 2 times
+; (TT 2003-08-07)
+; e.g. 「食当たり」
+
+atari_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'atari_2,
+ ORTH <! "当たり" !> ].
+
+
+
+; 扱い 
+; Used 5 times
+; (TT 2003-08-07)
+; FIXJACY: サ変名詞を作る lexical type が必要
+; e.g. 「邪魔者扱い(する)」;「部長扱い(する)」
+
+; atsukai_2 := ordinary-suffix-n-lex &
+; [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'atsukai_2,
+;  ORTH <! "扱い" !> ].
+
+
+; 医 
+; Used 1 times
+
+i_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'i_2,
+ ORTH <! "医" !> ].
+
+
+; 納め 
+; Used 3 times
+
+osame_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'osame_2,
+ ORTH <! "納め" !> ].
+
+
+; 狩り 
+
+kari_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kari_2,
+ ORTH <! "狩り" !> ].
+
+; 眼 
+
+gan_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gan_2,
+ ORTH <! "眼" !> ].
+
+; 器 
+; Used 21 times
+
+ki_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ki_2_1,
+ ORTH <! "器" !> ].
+
+; 期 
+; Used 6 times
+
+ki_2_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ki_2_2,
+ ORTH <! "期" !> ].
+
+; 記 
+; Used 1 times
+
+ki_2_3 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ki_2_3,
+ ORTH <! "記" !> ].
+
+; 刻み 
+
+kizami_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kizami_2,
+ ORTH <! "刻み" !> ].
+
+; 気取り 
+
+kidori_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kidori_2,
+ ORTH <! "気取り" !> ].
+
+; 強 
+; Used 6 times 
+; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
+
+kyou_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kyou_2,
+ ORTH <! "強" !> ].
+
+; 弱 
+; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
+
+jaku_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jaku_2,
+ ORTH <! "弱" !> ].
+
+
+
+; 区 
+; Used 8 times
+; CHECK me - used in addressed (FCB 2003-12-07)
+
+ku_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ku_2,
+ ORTH <! "区" !> ].
+
+
+; 群 
+; CHECKME - used in addressed (FCB 2003-12-07)
+
+gun_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gun_2,
+ ORTH <! "群" !> ].
+
+
+; 崩れ 
+
+kuzure_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kuzure_2,
+ ORTH <! "崩れ" !> ].
+
+; 軍 
+; Used 2 times
+
+gun_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gun_2_1,
+ ORTH <! "軍" !> ].
+
+; 権 
+
+ken_2_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ken_2_1,
+ ORTH <! "権" !> ].
+
+; 次第 
+
+shidai_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shidai_2,
+ ORTH <! "次第" !> ].
+
+; CHECK me - could be a title? (FCB 2003-12-07)
+
+; 衆 
+
+shuu_2_3 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shuu_2_1,
+ ORTH <! "衆" !> ].
+
+sho-suffix := ordinary-suffix-n-lex &
+[ORTH <! "書" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'sho]]].
+
+; CHECK me - should be a number expression? (FCB 2003-12-07)
+; 勝 
+
+shou_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shou_2_1,
+ ORTH <! "勝" !> ].
+; 陣 
+; Used 1 times
+
+jin_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jin_2,
+ ORTH <! "陣" !> ].
+
+; 性 
+; Used 18 times
+
+sei_2_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sei_2_2,
+ ORTH <! "性" !> ].
+
+; 節 
+; Used 21 times
+
+setsu_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'setsu_2,
+ ORTH <! "節" !> ].
+
+; 線 
+; Used 53 times
+
+sen_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sen_2,
+ ORTH <! "線" !> ].
+
+; 育ち 
+; Used 3 times
+
+sodachi_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sodachi_2,
+ ORTH <! "育ち" !> ].
+
+; 隊 
+; Used 3 times
+
+tai_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tai_2,
+ ORTH <! "隊" !> ].
+
+; 質 
+; Used 19 times
+
+tachi_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tachi_2,
+ ORTH <! "質" !> ].
+
+; 談 
+
+dan_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dan_2_1,
+ ORTH <! "談" !> ].
+
+; 使い 
+; Used 9 times
+
+tsukai_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tsukai_2,
+ ORTH <! "使い" !> ].
+
+; 付き 
+; Used 11 times
+
+tsuki_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tsuki_2_1,
+ ORTH <! "付き" !> ].
+
+; 出 
+; Used 26 times
+; (TT 2003-08-07)
+; e.g.: 「使い出」「読み出」
+; FIXME - could constrain this more (FCB 2003-12-07)
+
+de_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'de_2,
+ ORTH <! "出" !> ].
+
+
+; デー  "valentine's day"
+
+de-_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'de-_2,
+ ORTH <! "デー" !> ].
+
+; 堂 
+; Used 1 times
+
+dou_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dou_2_1,
+ ORTH <! "堂" !> ].
+
+; 内外 
+
+naigai_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'naigai_2,
+ ORTH <! "内外" !> ].
+
+; 直し 
+; Used 1 times
+
+naoshi_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'naoshi_2,
+ ORTH <! "直し" !> ].
+
+; 並 
+; Used 3 times
+
+nami_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nami_2,
+ ORTH <! "並" !> ].
+
+; 煮 
+; Used 19 times
+
+ni_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ni_2,
+ ORTH <! "煮" !> ].
+
+; 抜き 
+
+nuki_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nuki_2,
+ ORTH <! "抜き" !> ].
+
+; 逃れ 
+; Used 4 times
+
+nogare_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nogare_2,
+ ORTH <! "逃れ" !> ].
+
+; 乗り 
+; Used 2 times
+; (TT 2003-08-08)
+; e.g.: 「自転車乗り」; 「五人乗り」
+
+nori_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nori_2,
+ ORTH <! "乗り" !> ].
+
+; 輩 
+
+hai_2_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hai_2,
+ ORTH <! "輩" !> ].
+
+; 判 
+; Used 3 times
+
+han_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'han_2_1,
+ ORTH <! "判" !> ].
+
+; 半分 
+; Used 11 times
+
+hanbun_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hanbun_2,
+ ORTH <! "半分" !> ].
+
+
+; 風情 
+; Used 4 times
+
+fuzei_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'fuzei_2,
+ ORTH <! "風情" !> ].
+
+; 弁 
+; Used 3 times
+
+ben_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ben_2,
+ ORTH <! "弁" !> ].
+
+
+; 魔 
+
+ma_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ma_2,
+ ORTH <! "魔" !> ].
+
+; 回し 
+; Used 6 times
+
+mawashi_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'mawashi_2,
+ ORTH <! "回し" !> ].
+
+; 持ち 
+; Used 35 times
+; (TT 2003-08-08)
+; e.g.: 「大金持ち」; 「男持ちの時計」; 「食費は自分持ち」
+
+mochi_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'mochi_2,
+ ORTH <! "持ち" !> ].
+
+; 屋 
+; Used 5 times
+
+ya_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ya_2,
+ ORTH <! "屋" !> ].
+
+
+; 寄り 
+
+yori_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yori_2_1,
+ ORTH <! "寄り" !> ].
+
+; 格好 
+; Used 5 times
+; (TT 2003-08-08)
+; e.g.: 「三十かっこうの船員」
+
+kakkou_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kakkou_2_1,
+ ORTH <! "格好" !> ].
+
+; 語 
+; Used 181 times
+
+go_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'go_2,
+ ORTH <! "語" !> ].
+
+; 腰 
+; Used 16 times
+
+koshi_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'koshi_2,
+ ORTH <! "腰" !> ].
+
+; 座 
+; Used 1 times
+
+za_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'za_2,
+ ORTH <! "座" !> ].
+
+; 層 
+; Used 5 times
+
+sou_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sou_2,
+ ORTH <! "層" !> ].
+
+; 派 
+
+ha_2_1 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ha_2,
+ ORTH <! "派" !> ].
+
+
+; 打 
+
+da_2 := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'da_2,
+ ORTH <! "打" !> ].
+
+; (TT 2003-08-12)
+; 「内（ない）」の 接尾用法を追加 (接頭辞は noun-lex に nai-prefix が存在)
+; e.g.: 「範囲_内_で歩く」
+; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
+
+
+nai-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nai-suffix,
+ ORTH <! "内" !> ].
+
+; (TT 2003-08-12)
+; 「以内」の 接尾用法を追加 (ordinary-nohon-n-lex は存在)
+; e.g.: 「２メートル_以内_を見る」
+; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
+
+
+inai-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'inai-suffix,
+ ORTH <! "以内" !> ].
+
+; (TT 2003-08-12)
+; 「以外」の 接尾用法を追加 (ordinary-nohon-n-lex は存在)
+; e.g.: 「爬虫類_以外_を集める」
+; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
+
+igai-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'igai-suffix,
+ ORTH <! "以外" !> ].
+
+
+shou-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shou-suffix,
+ ORTH <! "症" !> ].
+
+ban-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ban-suffix,
+ ORTH <! "版" !> ].
+
+sei-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sei-suffix,
+ ORTH <! "製" !> ].
+
+gama-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gama-suffix,
+ ORTH <! "がま" !> ].
+
+;; FIXME semantics
+doushi-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'doushi-suffix,
+ ORTH <! "どうし" !> ].
+
+dan-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dan-suffix,
+ ORTH <! "団" !> ].
+
+shi-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shi-suffix,
+ ORTH <! "史" !> ].
+
+tou-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tou-suffix,
+ ORTH <! "筒" !> ].
+
+ro-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ro-suffix,
+ ORTH <! "路" !> ].
+
+ban-1-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ban-1-suffix,
+ ORTH <! "盤" !> ].
+
+zoi-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'zoi-suffix,
+ ORTH <! "沿い" !> ].
+
+chou-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chou-suffix,
+ ORTH <! "帳" !> ].
+
+;; FIXME semantics
+me-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'me-suffix,
+ ORTH <! "め" !> ].
+
+;; FIXME semantics
+goto-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'goto-suffix,
+ ORTH <! "毎" !> ].
+
+;; FIXME semantics
+tachi-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tachi-suffix,
+ ORTH <! "達" !> ].
+
+shou-1-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shou-1-suffix,
+ ORTH <! "相" !> ].
+
+kan-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kan-suffix,
+ ORTH <! "官" !> ].
+
+kai-1-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kai-1-suffix,
+ ORTH <! "界" !> ].
+
+doori-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'doori-suffix,
+ ORTH <! "どおり" !> ].
+
+zai-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'zai-suffix,
+ ORTH <! "剤" !> ].
+
+
+ki-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "機" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'ki],
+              CAT.HEAD.J-POSTHEAD right,
+              BAR -]].
+
+sho-office-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "署" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'sho],
+              CAT.HEAD.J-POSTHEAD right,
+              BAR -]].
+
+gaku-suffix :=
+ordinary-nohon-n-lex &
+[ORTH <! "額" !>,
+SYNSEM.LOCAL [LKEYS.--KEYREL [PRED 'gaku],
+              CAT.HEAD.J-POSTHEAD right,
+              BAR -]].
+
+
+
+;;; FCB 2003-08-14 食事 中 juu/chuu 
+
+chuu-kanji-suffix := temp_numeral-dur-suffix-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chuu-during,
+ ORTH <! "中" !> ].
+
+chuu-suffix := temp_numeral-dur-suffix-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chuu-during,
+ ORTH <! "じゅう" !> ].
+
+juu-suffix := temp_numeral-dur-suffix-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'chuu-during,
+ ORTH <! "ちゅう" !> ].
+
+
+
+;(CH 2003-08-27)
+;(FCB 2003-09-04) added mi and changed type to adj2n-suffix-lex
+;「古さ」などのために。
+sa-suffix := adj2n-suffix-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sa-suffix,
+ ORTH <! "さ" !> ].
+
+mi-suffix := adj2n-suffix-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'mi-suffix,
+ ORTH <! "み" !> ].
+
+
+; FIXME more like -teki
+ge-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ge-suffix,
+ ORTH <! "げ" !> ].
+
+
