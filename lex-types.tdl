@@ -1,4 +1,5 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;; -*- Mode: TDL; Package: DISCO -*-
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: lex-types.tdl
 ;;;      module: Basis
@@ -126,6 +127,12 @@ punct_head := final_head &
 punct_head-avm := punct_head &
                   [J-SPEC  < >].
 
+brackets-or-quotations_head := punct_head.
+brackets-or-quotations-end_head :=brackets-or-quotations_head.
+brackets-or-quotations-init_head :=brackets-or-quotations_head.
+
+comma-etc_head := punct_head-avm.
+
 ; (ERB 2002-01-14) For comma that takes infinitival V as
 ; complement and gives it a C-MOD value.
 
@@ -142,22 +149,22 @@ punct_head2 := verb_head-super &
                 C-MOD < [LOCAL [CAT [HEAD verb_head & [MAIN-PRD +]],
                              BAR +] ] >].
 
-comma-pmod_head := punct_head-avm &
+comma-pmod_head := comma-etc_head &
               [MOD < [LOCAL [CAT.HEAD p_head,
                                     BAR +]] >,
                J-POSTHEAD right].
 
-comma-advmod_head := punct_head-avm &
+comma-advmod_head := comma-etc_head &
               [MOD < [LOCAL [CAT.HEAD adv_head,
                                     BAR +]] >,
                J-POSTHEAD right].
 
-comma-sapmod_head := punct_head-avm &
+comma-sapmod_head := comma-etc_head &
               [MOD < [LOCAL [CAT.HEAD sap_head,
                                     BAR +]] >,
                J-POSTHEAD right].
 
-comma-infvmod_head := punct_head-avm &
+comma-infvmod_head := comma-etc_head &
               [MOD < [LOCAL [CAT [HEAD sentence-valid &
                                                 [FIN -,
                                                  MAIN-PRD +]],
@@ -167,7 +174,7 @@ comma-infvmod_head := punct_head-avm &
 ; (ERB 2002-01-15) Replacing comma-s_conj with two commas that
 ; modify verbal things that have nonempty MOD and C-MOD values, respectively.
 
-comma-vmod1_head := punct_head-avm &
+comma-vmod1_head := comma-etc_head &
               [MOD < [LOCAL [CAT [HEAD verb_head &
                                               [MOD 1-list,
                                                C-MOD null,
@@ -176,7 +183,7 @@ comma-vmod1_head := punct_head-avm &
                                     BAR +]] >,
                J-POSTHEAD right].
 
-comma-vmod2_head := punct_head-avm &
+comma-vmod2_head := comma-etc_head &
               [MOD < [LOCAL [CAT [HEAD verb_head &
                                               [C-MOD 1-list,
                                                MAIN-PRD bool],
@@ -184,7 +191,7 @@ comma-vmod2_head := punct_head-avm &
                                     BAR +]] >,
                J-POSTHEAD right].
 
-comma-interjmod_head  := punct_head-avm &
+comma-interjmod_head  := comma-etc_head &
               [MOD < [LOCAL [CAT.HEAD interj_head,
                                     BAR +]] >,
                J-POSTHEAD right].
@@ -195,48 +202,55 @@ parent-end_head := punct_head & noun_head & int_head &
 				  VAL saturated],
 			     BAR +]] > ].
 
-parent-init_head := punct_head-avm &
-              [MOD null].
+parent-init_head := brackets-or-quotations_head &
+              [MOD null,
+	       J-SPEC  < >].
 
 
-quotation-name-init_head := punct_head-avm &
+quotation-name-init_head := brackets-or-quotations-init_head &
                        [MOD null,
+			J-SPEC  < >,
                         J-POSTHEAD left].
 
-quotation-name-end_head  := punct_head-avm & 
+quotation-name-end_head  := brackets-or-quotations-end_head & 
                        [MOD < [LOCAL [CAT.HEAD name_head,
                                              BAR +]] >,
+			J-SPEC  < >,
                         J-POSTHEAD right].
 
 
-quotation-noun-init_head := punct_head-avm &
+quotation-noun-init_head := brackets-or-quotations-init_head &
                        [MOD null,
+			J-SPEC  < >,
                         J-POSTHEAD left].
 
-quotation-noun-end_head  := punct_head & noun_head &
+quotation-noun-end_head  := brackets-or-quotations-end_head & noun_head &
                        [MOD < [LOCAL [CAT [HEAD ordinary_noun_head,
 						  VAL saturated],
                                              BAR +]] >,
                         J-POSTHEAD right].
 
-quotation-sentence-init_head := punct_head-avm &
+quotation-sentence-init_head := brackets-or-quotations-init_head &
                        [MOD null,
+			J-SPEC  < >,
                         J-POSTHEAD left].
 
-quotation-sentence-end_head  := punct_head & sentence-valid &
+quotation-sentence-end_head  := brackets-or-quotations-end_head & sentence-valid &
                        [MOD < [LOCAL [CAT.HEAD sentence-valid,
 				      BAR +]] >,
-                        J-SPEC null,
+			J-SPEC  < >,
                         J-POSTHEAD right].
 
-quotation-sap-init_head := punct_head-avm & 
+quotation-sap-init_head := brackets-or-quotations-init_head & 
                       [MOD < [LOCAL [CAT.HEAD sap_head,
                                              BAR +]] >,
+		       J-SPEC  < >,
                         J-POSTHEAD left].
 
-quotation-sap-end_head  := punct_head-avm &
+quotation-sap-end_head  := brackets-or-quotations-end_head &
                        [MOD < [LOCAL [CAT.HEAD sap_head,
                                              BAR +]] >,
+			J-SPEC  < >,
                         J-POSTHEAD right].
 
 ; (ERB 2001-08-09) I need a supertype to both noun_head and case-p_head to 
@@ -1628,7 +1642,7 @@ nmod-p-lex :=  mod-p-lex &
                      MODIFIED.PERIPH -]].
 
 parmod-p-lex :=  mod-p-lex & 
-            [SYNSEM [LOCAL.CAT.HEAD nmod-p_head-avm & [MOD < [LOCAL.CAT [HEAD parent-end_head,
+            [SYNSEM [LOCAL.CAT.HEAD nmod-p_head-avm & [MOD < [LOCAL.CAT [HEAD brackets-or-quotations-end_head,
 									 VAL saturated]] > ],
                      MODIFIED.PERIPH +]].
 
@@ -1639,6 +1653,7 @@ n-conj-lex := p-lex-c &
 		       MODIFIED.PERIPH +]].
 
 ; (ERB 2001-11-26) Changing modifiers to grab MOD-IND & MOD-HAND.
+; (MS 2004-12-15) Changing that back!
 
 nounmod-p-lex := nmod-p-lex &
                  [SYNSEM [LKEYS.KEYREL #key & prep-mod-relation &
@@ -1646,13 +1661,14 @@ nounmod-p-lex := nmod-p-lex &
 					   ARG0.E.TENSE no_tense,
 					   LBL #handle,
 					   ARG1 #arg],
-			  LOCAL [CAT [HEAD.MOD < [LOCAL.CONT [MOD-IND #mod,
-							      MOD-HAND #handle]] >,
+			  LOCAL [CAT [HEAD.MOD < [LOCAL.CONT.HOOK [INDEX #mod,
+								   LTOP #handle]] >,
 				      VAL.COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #arg]],
 				 CONT prep-sem-type &
 				     [RELS.LIST.FIRST #key,
 				      HOOK.INDEX #mod,
 				      HCONS <! !>]]]].
+
 
 parentmod-p-lex := parmod-p-lex &
                  [SYNSEM [LKEYS.KEYREL #key & prep-mod-relation &
@@ -1660,8 +1676,8 @@ parentmod-p-lex := parmod-p-lex &
 					  ARG0.E.TENSE no_tense,
                                           LBL #handle,
                                           ARG1 #arg],
-			  LOCAL [CAT [HEAD.MOD <[LOCAL.CONT [MOD-IND #mod,
-							     MOD-HAND #handle]]>,
+			  LOCAL [CAT [HEAD.MOD <[LOCAL.CONT.HOOK [INDEX #mod,
+								  LTOP #handle]]>,
 				      VAL.COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #arg]],
 				 CONT prep-sem-type &
 				     [RELS.LIST.FIRST #key,
@@ -1996,6 +2012,20 @@ casep-conj-p-lex := mod-p-lex &
 				[HCONS <! !>,
 				 RELS <! #key !>]]]].
 
+
+; (MS 2004-12-15) For the conjunction of quotations: 「 居る 」 や 「 来る 」 の 尊敬語
+
+quot-conj-p-lex := mod-p-lex & 
+            [SYNSEM [LKEYS.KEYREL #key & [L-HNDL #arg,
+					  R-HNDL #mod],
+		     LOCAL [CAT [HEAD nmod-p_head-avm & [MOD < [LOCAL [CAT.HEAD quotation-sentence-end_head,
+								       CONT [HOOK.LTOP #mod]]] >,
+							 J-POSTHEAD left],
+                               VAL.COMPS.FIRST.LOCAL [CAT.HEAD quotation-sentence-end_head,
+						      CONT [HOOK.LTOP #arg]]],
+			    CONT n-conj-sem-type &
+                               [HCONS <! !>,
+				RELS <! #key !>]]]].
 
 ;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- others;;;;;;;;;;;
 
@@ -3464,19 +3494,18 @@ quotation-sentence-init-lex := lexical_sign &
                        INFLECTED +].
 
 ; (MS 2004-08-24) linked INDEX and XARG to INDEX and XARG of the complement.
+; (MS 2004-12-15) we need to link the whole HOOK.
 
 quotation-sentence-end-lex := lexical_sign &
                       [SYNSEM [LOCAL [CAT [VAL obj-obj2-arg &
 					     [COMPS  obl-2-args & #comps &
 						     < [LOCAL [CAT [HEAD verb_head,
 								    VAL saturated],
-							       CONT [ HOOK [INDEX #ind,
-									    XARG #xarg]]]],
+							       CONT [ HOOK #hook]]],
 						       [LOCAL.CAT.HEAD quotation-sentence-init_head] >],
 					   HEAD quotation-sentence-end_head],
 				      ARG-S #comps,
-				      CONT [ HOOK [INDEX #ind,
-						   XARG #xarg],
+				      CONT [ HOOK #hook,
 					     RELS <! !>,
 					     HCONS <! !> ],
                                       CTXT.BACKGROUND <! !>],

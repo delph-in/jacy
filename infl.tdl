@@ -1,4 +1,3 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
@@ -253,6 +252,22 @@ j-lexeme-to-word-rule &
                          J-SPEC null,
                          FIN +]],
  ARGS.FIRST.STEMTYPE c2-stem].
+
+
+; (MS 2004-12-15) For example, ป฿ค์, stop
+
+imperative-c-stem-infl-rule :=
+%suffix (ค๋ ค์)
+j-lexeme-to-word-rule &
+[RMORPH-BIND-TYPE imp-morph,
+ SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
+                         MODUS simple-imperative,
+                         VN -,
+                         MOD null,
+                         MARK null,
+                         J-SPEC null,
+                         FIN +]],
+ ARGS.FIRST.STEMTYPE c-stem].
 
 ;;;;;;;;;;;;;;;;;;;COPULA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;; -*- Mode: TDL; Package: DISCO -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: parse-nodes.tdl
@@ -53,6 +53,11 @@ nspec-p := label &
 case-p := label &
       [SYNSEM [LOCAL.CAT [HEAD case-p_head,
                          VAL.COMPS.FIRST.OPT bool],
+                     LEX +],
+        LABEL-NAME "CASE-P"].
+
+empty-case-p := label &
+      [SYNSEM [LOCAL.CAT [HEAD empty-case-p_head],
                      LEX +],
         LABEL-NAME "CASE-P"].
 

@@ -1,4 +1,3 @@
-;; -*- Mode: TDL; -*-
 
 j-valence := valence &
 	[UNSAT bool,
