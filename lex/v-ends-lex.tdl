@@ -133,11 +133,12 @@ masen-end :=  v-neg-polite-present-end-lex &
 	       LMORPH-BIND-TYPE i-morph].
 
 masendeshita-end :=  v-neg-polite-past-end-lex &
-              [ORTH <! "ませ","ん","でし","た" !>].
+              [ORTH <! "ませ","ん","でし","た" !>,
+	       LMORPH-BIND-TYPE i-morph].
 
 arimasendeshita-end :=  v-neg-polite-past-end-lex &
               [ORTH <! "あり","ませ", "ん","でし","た" !>,
-               SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL tai-relation,
+               SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY tai_rel,
                LMORPH-BIND-TYPE a-morph].
 
 arimasendeshita-adj-end :=  v-neg-polite-past-end-lex &
@@ -1077,6 +1078,7 @@ nakereba-narimasen-end  :=  v-neg-end-lex &
 
 zaru-wo-emasen-end := v-neg-polite-present-end-lex  &
               [SYNSEM.LKEYS.KEYREL.PRED 'cant_help_rel,
+	       ORTH <! "ざる","を", "え", "ませ", "ん" !>,
                LMORPH-BIND-TYPE a-morph].
 
 

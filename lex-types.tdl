@@ -1479,17 +1479,18 @@ comp-prpstn-lex := comp-lex &
                    [SYNSEM.LOCAL.CONT.RELS <! message & [PRED proposition_m_rel] !>].
 
 comp-copinsert-lex := p-lex-c &
-            [SYNSEM.LOCAL [CAT [HEAD case-p_head & [CASE to],
+            [SYNSEM [LOCAL [CAT [HEAD case-p_head & [CASE to],
                                 VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
 						       CONT.HOOK [INDEX #oind]]],
-                          CONT [RELS <! message & [LBL #phand,
-						   MARG #soa], 
+                          CONT [RELS <! message & #key & [LBL #phand,
+							  MARG #soa], 
 				            [PRED 'cop_id_rel,
 					     ARG2 #oind,
 					     LBL #cophand] !>,
                                 HOOK.LTOP #phand,
                                 HCONS <! qeq & [LARG #cophand,
-                                                 HARG #soa] !>]]].
+                                                 HARG #soa] !>]],
+		     LKEYS.KEYREL #key]].
 
 ; (ERB 2002-02-11) Hack to keep these guys out of the orindary
 ; head-complement-hf rule, now that I've made the embedded-question-rule
@@ -2108,7 +2109,7 @@ s-end1-decl-lex := s-end1-lex &
 
 s-end1-declint-lex := s-end1-lex &
 		   [SYNSEM [LOCAL [CAT.HEAD.SMOD decl,
-				   CONT.RELS <! [PRED question_m_rel] !>],
+				   CONT.RELS <! [PRED abstr-ques_m_rel] !>],
 		      NON-LOCAL.QUE 0-dlist]].
 
 s-end1-decl-minusahon-lex := s-end1-decl-lex &
@@ -2529,7 +2530,9 @@ temp_numeral-nonwh-lex  := temp_numeral-lex &
                            [SYNSEM.NON-LOCAL.QUE <! !>].
 
 temp_numeral-dur-lex := temp_numeral-basic-lex &
-                         [SYNSEM [NON-LOCAL.QUE <! !>]].
+                         [SYNSEM [NON-LOCAL.QUE <! !>,
+				  LOCAL.CONT.RELS <! #key !>,
+				  LKEYS.KEYREL #key]].
 
 ;;; FCB 2003-08-14 ¿©»ö Ãæ juu/chuu 
 ;;; Should probably be more of an operator
@@ -4485,8 +4488,7 @@ v-neg-polite-past-end-lex := v-neg-end-lex &
 						      J-SPEC null,
 						      FIN +,
 						      FORMAL.AHON +],
-					    CONT.HOOK.INDEX.E.MOOD indicative],
-			      LMORPH-BIND-TYPE i-morph].
+					    CONT.HOOK.INDEX.E.MOOD indicative]].
 
 v-finite-present-plain-negative-end-lex := v-neg-end-lex &
            [J-NEEDS-AFFIX -,

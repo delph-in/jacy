@@ -124,11 +124,11 @@ ka-nmod := nounmod-p-lex &
 
 ne := s-end1-declint-lex & 
       [ORTH <! "ね" !>,
-       SYNSEM [LOCAL [CONT.RELS <! [ PRED 'ne_rel ] !>]]].
+       SYNSEM [LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]]].
 
 naa := s-end1-declint-lex & 
       [ORTH <! "なあ" !>,
-       SYNSEM [LOCAL [CONT.RELS <! [ PRED 'na_rel ] !>]]].
+       SYNSEM [LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]]].
 
 ; (ERB 2002-01-07) Is this really a conjunction?  
 
@@ -144,23 +144,23 @@ ne-conj-np := s-conj-nonprop1-lex &
 
 kane-send := s-end1-declint-lex & 
       [ORTH <! "か","ね" !>,
-       SYNSEM.LOCAL [CONT.RELS <! [ PRED 'ka_ne_rel ] !>]].
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
 
 karane := s-end1-declint-lex & 
       [ORTH <! "から","ね" !>,
-       SYNSEM.LOCAL [CONT.RELS <!  [ PRED 'kara_ne_rel ] !>]].
+       SYNSEM.LOCAL [CONT.RELS <!  [ PRED ne_m_rel ] !>]].
 
 kedomone := s-end1-declint-lex & 
       [ORTH <! "けども","ね" !>,
-       SYNSEM.LOCAL [CONT.RELS <! [ PRED 'kedomo_ne_rel ] !>]].
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
 
 keredomone := s-end1-declint-lex & 
       [ORTH <! "けれども","ね" !>,
-       SYNSEM.LOCAL [CONT.RELS <! [ PRED 'keredomo_ne_rel ] !>]].
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
 
 yone := s-end1-declint-lex & 
       [ORTH <! "よ","ね" !>,
-       SYNSEM.LOCAL [CONT.RELS <! [ PRED 'yo_ne_rel ] !>]].
+       SYNSEM.LOCAL [CONT.RELS <! [ PRED ne_m_rel ] !>]].
 
 ;"moushiwake nai no desu ga."
 ;"yoji haN ni keNkyuushitsu no hou made ikashite itadakimasu ga"
@@ -2167,8 +2167,8 @@ kamo-naarg := comp-prpstn-lex &
 ;"あれは鈴木先生かもしれないよ。"
 
 kamo-narg := comp-copinsert-lex &
-        [SYNSEM.LOCAL [CAT.HEAD.PTYPE kamo,
-                       CONT.RELS.LIST.FIRST.PRED 'kamo],
+        [SYNSEM [LOCAL.CAT.HEAD.PTYPE kamo,
+		 LKEYS.KEYREL.PRED abstr-ques_m_rel],
          ORTH <! "かも" !> ]. 
 
 otoushite := postp-lex &

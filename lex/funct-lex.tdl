@@ -127,18 +127,15 @@ souiu := det-lex &
 
 dono-det :=
 det-wh-lex &
-[ORTH <! "どの" !>,
- SYNSEM.LKEYS.KEYREL [PRED 'whq]].
+[ORTH <! "どの" !>].
 
 
 doNna :=
 det-wh-lex &
-[ORTH <! "どんな" !>,
- SYNSEM.LKEYS.KEYREL [PRED 'whq]].
+[ORTH <! "どんな" !>].
 
 douiu := det-wh-lex &
-         [ORTH <! "どういう" !>,
-          SYNSEM.LKEYS.KEYREL.PRED 'whq].
+         [ORTH <! "どういう" !>].
 
 koushita := det-lex &
          [ORTH <! "こうした" !>,

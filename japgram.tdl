@@ -20,7 +20,7 @@
 
 ;declarative sentence, finite verb
 
-utterance_rule1a := utterance-plusmessage-type &
+utterance_rule-decl-finite := utterance-plusmessage-type &
                    [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD decl]],
                     C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
                     ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
@@ -35,7 +35,7 @@ utterance_rule1a := utterance-plusmessage-type &
 ;
 ; temporarily delete due to problems with pet/lkb inconsistncy
 
-utterance_rule1b := utterance-plusmessage-type &
+utterance_rule-wh-without-ka := utterance-plusmessage-type &
                    [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD quest]],
                     C-CONT.RELS <! message & [ PRED question_m_rel ]!>,
                     ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
@@ -51,14 +51,14 @@ utterance_rule1b := utterance-plusmessage-type &
 ;sentence with sentence end particle, finite verb
 ; (ERB 2001-09-26) Changing type from utt-type to utt-message-sap-type.
 
-utterance_rule2a := utt-message-sap-type &
+utterance_rule-sep-decl := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & decl],
                     C-CONT [RELS <! !>,
                             HCONS <! !>],
                     ARGS < [SYNSEM.LOCAL.CAT.HEAD s-end_head & [SMOD #1]]>].
 
 
-utterance_rule2b := utt-message-sap-type &
+utterance_rule-sep-quest := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & quest],
                     C-CONT [RELS <! !>,
                             HCONS <! !>],
@@ -69,14 +69,14 @@ utterance_rule2b := utt-message-sap-type &
 ; need to be special types).
 ; (MS 2003-12-17) Adapting to Matrix 0.6
 
-utterance_rule2c := utt-message-sap-type &
+utterance_rule-sep-imp := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & imp],
                     C-CONT [RELS <! message & [PRED command_m_rel] !>],
                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
 
 ; (MS 2003-12-17) Adapting to Matrix 0.6, but added cond_m_rel.
 
-utterance_rule2d := utt-message-sap-type &
+utterance_rule-sep-cond := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & cond],
                     C-CONT.RELS <! message & [PRED conditional_m_rel] !>,
                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
@@ -84,7 +84,7 @@ utterance_rule2d := utt-message-sap-type &
 ; (MS 2002-01-16) simple-imperative vs. polite-imperative divides utterance_rule2e and utterance_rule10. 
 ; The subcat should be saturated.
 
-utterance_rule2e := utt-message-sap-type &
+utterance_rule-polite-imp := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
                     C-CONT [RELS <! !>,
                             HCONS <! !>],
@@ -116,7 +116,7 @@ utterance_rule2e := utt-message-sap-type &
 ; in the J-SPEC value (don't know why), so I'll leverage that here.
 ; (MS 2003-12-17) Adapting to Matrix 0.6
 
-utterance_rule3  := utterance-plusmessage-type &
+utterance_rule-imp  := utterance-plusmessage-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
                     C-CONT.RELS <! message & [PRED command_m_rel] !>,
                     ARGS <[SYNSEM [LOCAL.CAT [HEAD verb_head & 
@@ -137,7 +137,7 @@ utterance_rule3  := utterance-plusmessage-type &
 ;                    C-CONT.RELS <! prpstn_rel !>,
 ;                    ARGS <[SYNSEM.LOCAL.CAT.HEAD idiom_head]>].
 
-utterance_rule6  := turn-type &
+utterance_rule-idiom  := turn-type &
                     [SYNSEM [LOCAL [ CAT.HEAD utterance_head & [SMOD decl],
                                     CONT [ HOOK.LTOP #top ]]],
                      C-CONT [ RELS <! !>,
@@ -146,7 +146,7 @@ utterance_rule6  := turn-type &
 					   CONT.HOOK.LTOP #top]]]>].
 
 
-utterance_rule9 := utterance-plusmessage-type &
+utterance_rule-empty-frag-p := utterance-plusmessage-type &
                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
                     C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
                     ARGS <[SYNSEM.LOCAL [CAT.HEAD empty-frag-p_head,
@@ -162,7 +162,7 @@ utterance_rule9 := utterance-plusmessage-type &
 ; (MS 2002-01-16) introduces simple-imperative vs. polite-imperative to divide utterance_rule10 and utterance_rule2e.
 ; (MS 2003-12-17) Adapting to Matrix 0.6
 
-utterance_rule10 := utterance-plusmessage-type &
+utterance_rule-command := utterance-plusmessage-type &
                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
                    C-CONT.RELS <! message & [PRED command_m_rel] !>,
                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
@@ -182,7 +182,7 @@ utterance_rule10 := utterance-plusmessage-type &
 
 ;time in VM
 
-pp_np_rule2 := empty-preposition-type &
+pp_np_rule-time := empty-preposition-type &
               [SYNSEM.LOCAL.CAT [HEAD empty-case-p_head & [CASE temp-no]],
                HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD temporal-noun_head].
 
@@ -468,7 +468,7 @@ head-complement2-rule := head-complement2-type & [SYNSEM.LOCAL.BAR +].
 ; (ERB 2002-01-02) [NUCL -] on mother - see notes at 
 ; head-adjunct-rule-type.
 
-head-adjunct-rule1 := hadj-final-i & 
+head-adjunct-rule-final-i := hadj-final-i & 
                       [SYNSEM.LOCAL [BAR +],
                        C-CONT [RELS <! !>,
                                HCONS <! !>],
@@ -497,7 +497,7 @@ head-adjunct-rule1 := hadj-final-i &
 
 
 
-head-adjunct-rule2 := hadj-first-i & 
+head-adjunct-rule-first-i := hadj-first-i & 
                       [SYNSEM.LOCAL [BAR +],
                         ARGS <[SYNSEM j-synsem], 
                               [SYNSEM.LOCAL [CAT.HEAD [J-POSTHEAD right, 
@@ -510,7 +510,7 @@ head-adjunct-rule2 := hadj-first-i &
 ; change things.  (If I type the MOD.LOCAL of everything, it will
 ; be doubly ruled out, but that's a separate issue.)
 
-head-adjunct-rule3 := hadj-final-s &
+head-adjunct-rule-final-s := hadj-final-s &
                       [SYNSEM.LOCAL [BAR +],
                        C-CONT [ RELS <! !>,
                                 HCONS <! !> ],
@@ -523,7 +523,7 @@ head-adjunct-rule3 := hadj-final-s &
 
 ; (MS 2003-06-11) Rule for scopal modifiers - head first
 
-head-adjunct-rule4 := hadj-first-s &
+head-adjunct-rule-first-s := hadj-first-s &
                       [SYNSEM.LOCAL [BAR +],
                        C-CONT [ RELS <! !>,
                                 HCONS <! !> ],
@@ -868,7 +868,7 @@ tai-obj-change-rule :=  obj-casechange-rule &
 
 ;; 機関の変更したい
 
-vn-light-obj-change-rule  :=  obj-casechange-rule &
+vn-light-obj-change-rule-case-p  :=  obj-casechange-rule &
                        [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
 							  LOCAL.CAT.HEAD overt-case-p_head &
                                                                         [CASE no-case]],
@@ -877,7 +877,7 @@ vn-light-obj-change-rule  :=  obj-casechange-rule &
 						  VAL.SPR null],
 				RMORPH-BIND-TYPE #rmorph] >].
 
-vn-light-obj-change-rule-2  :=  obj-casechange-rule &
+vn-light-obj-change-rule-noun  :=  obj-casechange-rule &
                        [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
 							  LOCAL.CAT [HEAD noun_head,
 								     VAL saturated]],
@@ -914,13 +914,13 @@ garu-sbj-change-rule := subj-casechange-rule &
 ; in ruletypes.tdl.
 
 
-nominal-numcl-rule1 := nominal-numcl-rule-nomod &
+nominal-numcl-rule-nomod := nominal-numcl-rule-nomod &
                       [ SYNSEM.LOCAL.BAR bool ].
 
-nominal-numcl-rule2 := nominal-numcl-rule-mod &
+nominal-numcl-rule-mod := nominal-numcl-rule-mod &
                      [ SYNSEM.LOCAL.BAR bool ].
 
-nominal-numcl-rule3 := nominal-numcl-rule-card &
+nominal-numcl-rule-card := nominal-numcl-rule-card &
                       [ SYNSEM.LOCAL.BAR + ].
 
 ; ERB (2001-09-24) Overhauling the date expressions.  They will be

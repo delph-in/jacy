@@ -7916,7 +7916,7 @@ ima :=
 date-noun-lex &
 [ORTH <! "º£" !>,
 SYNSEM [LKEYS.KEYREL [PRED 'ima],
-              BAR +]].
+	LOCAL.BAR +]].
 
 ima-hiragana :=
 date-noun-lex &
@@ -8225,7 +8225,7 @@ SYNSEM.LKEYS.KEYREL.PRED 'mukai].
 sho-prefix :=
 ordinary-nohon-minusbar-left-n-lex &
 [ORTH <! "½ô" !>,
-SYNSEMLKEYS.KEYREL.PRED 'sho].
+SYNSEM.LKEYS.KEYREL.PRED 'sho].
 
 ;right, good
 
