@@ -838,8 +838,8 @@ no-nmod-1 := nounmod-p-lex &
 no-nmod-2 := nounmod-p-lex &
            [SYNSEM [LOCAL [CAT [HEAD.PTYPE nattr,
                               VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD vmod-p_head  & [PTYPE nontop],
-                                                              BAR +],
-							LKEYS.KEYREL.ARG1 #1]],
+							       CONT.HOOK.XARG #1,
+                                                              BAR +]]],
 			  CONT.RELS <! prep-mod-relation & [PRED 'no] !>],
 		    LKEYS.KEYREL.ARG1 #1],
             ORTH <! "¤Î" !> ].

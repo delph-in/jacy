@@ -816,7 +816,7 @@ naadj-subj-zpro-ins-lrule := naadj-zpro-insertion-rule &
 			SPR #spr],
 	       ARG-S < >,
 	       CONT.HOOK.XARG zpro_ref-ind] ],
- ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD na-adj_head & [ADJ +],
+ ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD na-adj_head & [ADJ +, MOD null],
                                VAL [SUBJ opt-1-arg,
 				    COMPS #comps & null,
 				    SPR #spr & null]]]].

@@ -1408,7 +1408,7 @@ naadj-zpro-insertion-rule := word2word-rule &
 
 ; (ERB 2002-01-14) MOD-IND and MOD-HAND from head-daughter.
 
-suffix-rule :=  head-final-type-mod &
+prefix-rule :=  head-final-type-mod &
                 head-adjunct-p &
                 [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
 				CONT [HOOK #hook,
@@ -1428,6 +1428,28 @@ suffix-rule :=  head-final-type-mod &
 					      MOD-HAND #mh],
 					CAT.VAL #val]],
 				 J-NEEDS-AFFIX -]].
+
+suffix-rule :=  head-first-type-mod &
+                head-adjunct-p &
+                [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
+				CONT [HOOK #hook,
+                                     MOD-IND #mi,
+                                     MOD-HAND #mh],
+				CAT.VAL #val]],
+		 C-CONT [RELS <! !>,
+			 HCONS <! !>],
+                 J-NEEDS-AFFIX -,
+                 NON-HEAD-DTR j-sign & 
+			[SYNSEM [LOCAL.CTXT.BACKGROUND [list #3,last #2]],
+			 J-NEEDS-AFFIX -],
+		 HEAD-DTR j-sign & 
+			[SYNSEM [LOCAL [CTXT.BACKGROUND [list #1,last #3],
+					CONT [HOOK #hook,
+					      MOD-IND #mi,
+					      MOD-HAND #mh],
+					CAT.VAL #val]],
+				 J-NEEDS-AFFIX -]].
+
 
 ; (FCB, as suggested by MS 2003-08-25)
 ; Restrict COMPS to obl-arg to block spurious wo-no conversion

@@ -2847,7 +2847,8 @@ SYNSEM.LKEYS.KEYREL.PRED 'fumei].
 
 teki-suffix :=
 na-adj-suffix-lex &
-[ORTH <! "Ū" !>].
+[ORTH <! "Ū" !>,
+ SYNSEM.LKEYS.KEYREL.PRED 'teki].
 
 ;varied; various
 

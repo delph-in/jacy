@@ -130,6 +130,7 @@ de-end := v-te-end-lex &
 
 masen-end :=  v-neg-polite-present-end-lex &
               [ORTH <! "ませ","ん" !>,
+	       SYNSEM.LKEYS.KEYREL.PRED 'neg_rel,
 	       LMORPH-BIND-TYPE i-morph].
 
 masendeshita-end :=  v-neg-polite-past-end-lex &
@@ -228,7 +229,7 @@ arimasen-tai-end := v-neg-end-lex &
 arimasen-adj-end := v-neg-end-lex &
            [ORTH <! "あり","ませ","ん" !>,
             J-NEEDS-AFFIX -,
-           SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
+           SYNSEM [LOCAL [CAT [HEAD [H-TENSE present,
                                     MOD < [LOCAL [CAT.HEAD noun_head,
                                                 BAR +]] >,
                                     MARK null,
@@ -239,19 +240,21 @@ arimasen-adj-end := v-neg-end-lex &
                                     FORMAL.AHON +,
                                    MODUS negative],
                               VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head],
-                         CONT.HOOK.INDEX.E.MOOD indicative],
+			  CONT.HOOK.INDEX.E.MOOD indicative],
+		   LKEYS.KEYREL.PRED 'neg_rel],
             LMORPH-BIND-TYPE a-morph]. 
 
 nasa-end := v-neg-end-lex &
            [ORTH <! "な","さ" !>,
             J-NEEDS-AFFIX bool,
-           SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
+           SYNSEM [LOCAL [CAT [HEAD [H-TENSE present,
                                     MOD null,
                                     MARK.FIRST.LOCAL.CAT.HEAD na-adj_head,
                                     C-MOD null,
                                     J-SPEC null,
                                     FIN -]],
                          CONT.HOOK.INDEX.E.MOOD indicative],
+		   LKEYS.KEYREL.PRED 'neg_rel],
             LMORPH-BIND-TYPE a-morph,
             RMORPH-BIND-TYPE shortadj-morph]. 
 
@@ -263,7 +266,7 @@ nasa-end := v-neg-end-lex &
 zu-end := v-neg-end-lex &
            [ORTH <! "ず" !>,
             J-NEEDS-AFFIX -,
-           SYNSEM.LOCAL [CAT [HEAD [FIN -,
+           SYNSEM [LOCAL [CAT [HEAD [FIN -,
 				    H-TENSE te,
                                     MOD null,
                                     MARK null,
@@ -273,12 +276,13 @@ zu-end := v-neg-end-lex &
                                     J-POSTHEAD coord,
                                     FORMAL.AHON -]],
                          CONT.HOOK.INDEX.E.MOOD indicative],
+		   LKEYS.KEYREL.PRED 'neg_rel],
             LMORPH-BIND-TYPE aa-morph]. 
 
 nu-end := v-neg-end-lex &
            [ORTH <! "ぬ" !>,
             J-NEEDS-AFFIX -,
-           SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
+           SYNSEM [LOCAL [CAT [HEAD [H-TENSE present,
                                     MOD < [LOCAL [CAT.HEAD noun_head,
                                                 BAR +]] >,
                                     MARK null,
@@ -289,6 +293,7 @@ nu-end := v-neg-end-lex &
                                     FIN +,
                                     FORMAL.AHON -]],
                          CONT.HOOK.INDEX.E.MOOD indicative],
+		   LKEYS.KEYREL.PRED 'neg_rel],
             LMORPH-BIND-TYPE a-morph]. 
 
 ;te-plain-negative
@@ -303,7 +308,7 @@ nu-end := v-neg-end-lex &
 naide-end := v-neg-end-lex &
            [ORTH <! "ない" , "で" !>,
             J-NEEDS-AFFIX -,
-            SYNSEM.LOCAL [CAT [HEAD [FIN -,
+            SYNSEM [LOCAL [CAT [HEAD [FIN -,
                                     H-TENSE tensed,
                                     J-SPEC < [LOCAL [CAT.HEAD verb_head &
                                                           [AUX +],
@@ -317,6 +322,7 @@ naide-end := v-neg-end-lex &
                                     FORMAL.AHON -],
 			       VAL.SPR.FIRST.LOCAL.CAT.VAL.UNSAT -],
                           CONT.HOOK.INDEX.E.MOOD indicative],
+		   LKEYS.KEYREL.PRED 'neg_rel],
             LMORPH-BIND-TYPE a-morph].
 
 ; (ERB 2002-01-22) This doesn't want to undergo any of the ordinary
@@ -329,7 +335,7 @@ naide-end := v-neg-end-lex &
 zuni-end := v-neg-end-lex &
            [ORTH <! "ず" , "に" !>,
             J-NEEDS-AFFIX -,
-            SYNSEM.LOCAL [CAT.HEAD [FIN -,
+            SYNSEM [LOCAL [CAT.HEAD [FIN -,
                                     H-TENSE te,
                                     J-SPEC null,
                                     MARK null,
@@ -340,6 +346,7 @@ zuni-end := v-neg-end-lex &
                                     J-POSTHEAD coord,
                                     FORMAL.AHON -],
                           CONT.HOOK.INDEX.E.MOOD indicative],
+		   LKEYS.KEYREL.PRED 'neg_rel],
             LMORPH-BIND-TYPE a-morph].
 
 ;negative (+ta)
@@ -1077,11 +1084,9 @@ nakereba-narimasen-end  :=  v-neg-end-lex &
 ;cannot help doing, have to
 
 zaru-wo-emasen-end := v-neg-polite-present-end-lex  &
-              [SYNSEM.LKEYS.KEYREL.PRED 'cant_help_rel,
-	       ORTH <! "ざる","を", "え", "ませ", "ん" !>,
-               LMORPH-BIND-TYPE a-morph].
-
-
+              [ORTH <! "ざる","を", "え", "ませ", "ん" !>,
+               SYNSEM.LKEYS.KEYREL.PRED 'cant_help_rel,
+	       LMORPH-BIND-TYPE a-morph].
 
 
 

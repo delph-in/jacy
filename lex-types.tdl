@@ -859,13 +859,18 @@ adj_head := adj-or-adv_head & [COP-ARG -].
 
 
 na-adj_head  := adj_head &
-              [MOD null,
-               C-MOD null,
+              [C-MOD null,
                MARK null].
 
 na-adj-basic_head := na-adj_head & [ADJ +,POS adj].
 
+na-adj-suffix_head := na-adj-basic_head & [MOD < [LOCAL intersective_mod & 
+							[CAT [HEAD ordinary_noun_head,
+							      VAL saturated]]] >,
+					   J-POSTHEAD right].
+
 na-adj-end_head := na-adj_head & verbend_head-unmarked & [POS adj,
+							  MOD null,
 							  J-SPEC.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
 exceptional-adj_head := adj_head &
@@ -3552,7 +3557,8 @@ adj-lex := lexical_sign-word &
 
 
 
-na-adj-basic-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj-basic_head & [MAIN-PRD -],
+na-adj-basic-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj-basic_head & [MAIN-PRD -,
+									     MOD null],
                                                   VAL adj_sc & [SUBJ #sbj & [FIRST.LOCAL.CONT.HOOK.INDEX #arg]]],
 					     ARG-S #sbj,
 					     
@@ -3583,7 +3589,7 @@ na-adj-wh-lex := na-adj-basic-lex &
 
 ; (MS 2002-05-02) this is for Ū that is separated by CHASEN.
 
-na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj-basic_head & [MAIN-PRD -],
+na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj-suffix_head & [MAIN-PRD -],
 						    VAL adj_sc & [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #arg]],
 					       CONT na-adj-sem-type & [RELS <! #key !>,
 								       HOOK.XARG #arg]],
@@ -4347,7 +4353,8 @@ v-end-lex := lexical_sign-affix &
 na-end-lex := lexical_sign-word &
               [J-NEEDS-AFFIX -,
 	       SYNSEM j-synsem &
-                      [LOCAL [CAT [HEAD na-adj_head & [MODUS indicative],
+                      [LOCAL [CAT [HEAD na-adj_head & [MODUS indicative,
+						       MOD null],
                                    VAL [SUBJ #sbj,
 					COMPS #comps,
 					 SPR obl-1-arg & 
@@ -4461,7 +4468,7 @@ v-neg-end-lex := v-noncaus-op-end-lex &
 								 HOOK.LTOP #v-hd,
 								 MOD-IND #event]]],
 				 CONT [RELS <! neg-relation &  #keyrel & [ARG2 #neg-arg,
-									  PRED 'neg_rel & #negrel,
+									  PRED #negrel,
 									  LBL #top] !>,
 				       HOOK [LTOP #top,
 					     INDEX #event & [E.MOOD indicative]],
