@@ -140,6 +140,9 @@
 
 (defparameter *label-template-type* 'label)
 
+;;; for the compare function 
+(defparameter *discriminant-path* '(SYNSEM LKEYS KEYREL PRED))
+
 ;;;
 ;;; enable (mostly) YY-specific recording of surface position in MRS relations
 ;;;
