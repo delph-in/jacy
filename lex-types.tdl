@@ -5479,9 +5479,11 @@ kudasai-vn-end := v-end-lex &
                    
 ;;;;;;;;;;;;;;VERBAL STEMS;;;;;;;;;;;;;;;
 
+; (MS 2004-01-13) Experimenting with BAR bool instead of BAR -.
+
 verb-stem-lex-base  := v-lex & 
               [SYNSEM [LOCAL [CAT.HEAD verb-stem_head,
-                              BAR -]],
+                              BAR bool]],
                J-NEEDS-AFFIX +,
                INFLECTED -].
 

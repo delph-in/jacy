@@ -151,7 +151,8 @@ arimasendeshita-adj-end :=  v-neg-polite-past-end-lex &
 ;finite-present-plain-negative
 
 nai-end := v-finite-present-plain-negative-end-lex &
-           [ORTH <! "ない" !>]. 
+           [ORTH <! "ない" !>,
+	    SYNSEM.LKEYS.KEYREL.PRED 'neg_rel]. 
 
 ;判らなくなりました
 

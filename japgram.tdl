@@ -36,16 +36,16 @@ utterance_rule-decl-finite := utterance-plusmessage-type &
 ; (FCB 2004-01-10)
 ; temporarily comment out delete due to problems with pet/lkb inconsistency 
 
- ;utterance_rule-wh-without-ka := utterance-plusmessage-type &
- ;                   [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD quest]],
- ;                    C-CONT.RELS <! message & [ PRED question_m_rel ]!>,
- ;                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
- ;                                                    [MODUS uttmodus, 
- ;                                                     FIN +,
- ;                                                     MAIN-PRD +],
- ;                                               VAL saturated],
- ;                                          CONT.RELS diff-list ],
- ;                                   NON-LOCAL.QUE 1-dlist ]]>].
+ utterance_rule-wh-without-ka := utterance-plusmessage-type &
+                    [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD quest]],
+                     C-CONT.RELS <! message & [ PRED question_m_rel ]!>,
+                     ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
+                                                     [MODUS uttmodus, 
+                                                      FIN +,
+                                                      MAIN-PRD +],
+                                                VAL saturated],
+                                           CONT.RELS diff-list ],
+                                    NON-LOCAL.QUE <! [] !> ]]>].
 
 
 

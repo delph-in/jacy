@@ -3993,7 +3993,8 @@ deru_to-stem := intrans-v-stem-lex &
 ORTH <! "出る" !> ].
 
 deru_to-hiragana-stem := intrans-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'deru_to]],
+[SYNSEM [LKEYS [KEYREL.PRED 'deru_to],
+	 LOCAL.BAR +],
 RMORPH-BIND-TYPE nomorphbind,
 ORTH <! "でる" !> ].
 
@@ -4004,7 +4005,8 @@ deru_from-stem := v1-v-stem-lex &
 ORTH <! "出る" !> ].
 
 deru_from-hiragana-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'deru_from]],
+[SYNSEM [LKEYS.KEYREL [PRED 'deru_from],
+	 LOCAL.BAR +],
 RMORPH-BIND-TYPE nomorphbind,
 ORTH <! "でる" !> ].
 
