@@ -28457,3 +28457,9 @@ matsuri := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_matsuri_vn_1_rel,
  ORTH <! "祭り" !>].
 
+; (MS 2004-12-22) this should be a vn entry: 白いハトが平和を意味する。
+; (took it out of noun-lex).
+
+imi-vn := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_imi_vn_1_rel,
+ ORTH <! "意味" !>].

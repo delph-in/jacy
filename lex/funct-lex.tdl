@@ -723,6 +723,13 @@ noun_mod-lex-l &
 SYNSEM.LKEYS.KEYREL.PRED '_touno_nmod_rel].
 
 
+ichiban-nmod := 
+noun_mod-lex-l &
+[ORTH <! "一番" !>,
+ SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD relational_noun_head,
+	 LKEYS.KEYREL.PRED '_ichiban_nmod_rel]].
+
+
 soshitara-multi :=
                   interj-lex &
                   [ORTH <! "そしたら" !>,

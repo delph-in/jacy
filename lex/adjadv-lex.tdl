@@ -507,10 +507,6 @@ scopal-adv-regular-lex &
 [ORTH <! "あいにく" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_ainiku_a_rel].
 
-amari-adv :=
-isect-adv-lex &
-[ORTH <! "あまり" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_amari_a_rel].
 
 
 bisshiri-adv :=
@@ -23376,8 +23372,13 @@ isect-adv-lex &
 [ORTH <! "全部" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_zenbu_a_rel].
 
-amari-adv := scopal-adv-regular-lex &
-[SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY _neg_v_rel,
+amari-kanji-adv := scopal-adv-regular-lex &
+[SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY '_neg_v_rel,
 	 LKEYS.KEYREL.PRED '_amari_a_rel],
  ORTH <! "余り" !>].
 
+amari-hiragana-adv :=
+scopal-adv-regular-lex &
+[SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY '_neg_v_rel,
+	 LKEYS.KEYREL.PRED '_amari_a_rel],
+ ORTH <! "あまり" !>].

@@ -1526,18 +1526,15 @@ p-lex-c := p-lex & lexical_sign-word.
 ; Also, adding MOD-IND and MOD-HAND to info that gets raised.
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
 case-p-lex := p-lex & 
             [SYNSEM [LOCAL [CAT [HEAD overt-case-p_head,
                                 VAL.COMPS < [LOCAL.CONT [HOOK [INDEX #arg, 
-							       LTOP #hand],
-							 MOD-IND #modind,
-							 MOD-HAND #modhand]] >],
+							       LTOP #hand]]] >],
                            CONT [HOOK [INDEX #arg, 
 				       LTOP #hand],
-				 MOD-IND #modind,
-				 MOD-HAND #modhand,
                                  RELS <! !>,
                                  HCONS <! !>]]]].
 
@@ -1697,12 +1694,13 @@ parentmod-p-lex := parmod-p-lex &
 ; (ERB 2001-11-28) Replace INDEX and LTOP with MOD-IND and MOD-HAND.
 ; (MS 2002-09-10) This should also hold for "¡Á".
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
 nmod-numcl-p-lex := nmod-p-lex &
 [ SYNSEM.LOCAL [ CAT [ VAL.COMPS.FIRST.LOCAL.CAT.HEAD num-cl-mod_head &
-                                                     [ MOD < [LOCAL.CONT [ MOD-IND #modind,
-									   MOD-HAND #hand ] ] > ],
+                                                     [ MOD < [LOCAL.CONT.HOOK [ INDEX #modind,
+										LTOP #hand ] ] > ],
                        HEAD [ MOD < [ LOCAL.CONT.HOOK [INDEX #modind,
 						       LTOP #hand],
                                     MODIFIED.PERIPH + ]>,
@@ -1891,12 +1889,13 @@ topic-nobj-lex := topic-vmod-p-lex &
 
 plain-topic-nobj-lex := topic-nobj-lex & plain-topic-vmod-p-lex.
 
+
 topic-plus-nobj-lex := topic-nobj-lex &
 [ SYNSEM [LKEYS.ALTKEYREL #altkey & adj-relation &
                                [ LBL #hand,
                                  ARG1 #ind ],
-	  LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT [ MOD-IND #ind,
-						   MOD-HAND #hand ],
+	  LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
+							LTOP #hand ],
 		  CONT [ RELS <! relation, #altkey !> ]]]].
 
 ; (ERB 2001-09-06) Moving some constraints on varg, comparg, & advarg wa here.
@@ -1966,6 +1965,8 @@ adv-p-lex-7 := adv-p-lex &
 ; Don't know if some other subtype did need the constraint.
 ; (MS 2002-1-7) The L-HAND and R-HAND are not bound. 
 ;(MS 2004-06-24) As the n-conjunction gets an index, it should be quantified
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 
 n_conj-p-lex := n-conj-lex & 
             [SYNSEM [LKEYS.KEYREL conjunction-relation & #key &
@@ -1981,7 +1982,6 @@ n_conj-p-lex := n-conj-lex &
 						       BAR +]],
 			    CONT n-conj-sem-type &
                                [HOOK [INDEX conj-ref-ind & #index],
-				MOD-IND #index,
 				RELS <! #key , quant-relation & [PRED udef_rel,
 								 ARG0 #index,
 								 RSTR #rest] !>,
@@ -2913,16 +2913,15 @@ spr-obj-num-cl-lex := numeral-classifier &
 
 ; (ERB 2004-1-18) Constraints on the SPR don't belong here,
 ; as a few oddballs actually take a COMPS instead.  
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 individuating-num-cl-lex := numeral-classifier &
   [ SYNSEM.LOCAL [ CAT.HEAD num-cl-mod_head & 
 			    [ MOD < [ LOCAL intersective_mod &
-					    [ CONT [ MOD-HAND #ltop,
-						     MOD-IND #ind ]]]>],
+					    [ CONT.HOOK [ LTOP #ltop,
+							  INDEX #ind ]]]>],
 		   CONT [ RELS <! !>,
 			  HCONS <! !>,
-			  MOD-IND #ind,
-			  MOD-HAND #ltop,
 			  HOOK [ INDEX #ind,
 				 LTOP #ltop ] ]]].
 
@@ -2969,13 +2968,14 @@ noun-mod-ind-num-cl-lex := individuating-num-cl-lex &
 ; the paper (Bender & Siegel 2004, IJCNLP-04) I'm going to 
 ; write as if there were another role (EARG, for Extent ARG)
 ; in the degree-rel to tie things together.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 measure-num-cl-lex := numeral-classifier &
 [ SYNSEM [ LKEYS.KEYREL #key,
 	   LOCAL [ CAT.HEAD num-cl-nmod_head & 
 			    [ MOD < [ LOCAL intersective_mod &
-					    [ CONT [ MOD-HAND #ltop,
-						   MOD-IND #ind ]]]>],
+					    [ CONT.HOOK [ LTOP #ltop,
+							  INDEX #ind ]]]>],
 		   CONT [ RELS.LIST < quant-relation &
 				[ PRED udef_rel,
 				  ARG0 #meas-ind,
@@ -2994,8 +2994,6 @@ measure-num-cl-lex := numeral-classifier &
 			  HCONS <! qeq & 
 				 [ HARG #harg,
 				   LARG #larg ] !>,
-			  MOD-IND #ind,
-			  MOD-HAND #ltop,
 			  HOOK [ INDEX #ind,
 				 LTOP #ltop ]]]]].
 
@@ -3053,10 +3051,11 @@ measure-num-cl-lex := numeral-classifier &
 ; (ERB 2004-1-18) Moved constraints on the semantics of these
 ; guys up to individuating-num-cl-lex.  Still need to hook up
 ; XARG and LTOP of SPR to appropriate things.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 num-cl-spr-only-ind-lex := spr-only-num-cl-lex & anymod-ind-num-cl-lex &
-  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #xarg,
-						   MOD-HAND #ltop ],
+  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #xarg,
+							LTOP #ltop ],
 		       VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #xarg,
 						       LTOP #ltop ]]].
 
@@ -3073,10 +3072,11 @@ num-cl-spr-only-ind-lex := spr-only-num-cl-lex & anymod-ind-num-cl-lex &
 ; (ERB 2004-1-18) Hook up XARG and LTOP of SPR with appropriate
 ; things.  This looks mighty similar to the above.  Consider just
 ; having this type further constrain the MOD value?
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 num-cl-spr-only-ind-nmod-lex := spr-only-num-cl-lex & noun-mod-ind-num-cl-lex &
-  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #xarg,
-						   MOD-HAND #ltop ],
+  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #xarg,
+							LTOP #ltop ],
 		       VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #xarg,
 						       LTOP #ltop ]]].
 
@@ -3229,17 +3229,18 @@ temp_nmod-lex := temp_mod-lex &
 ; (ERB 2001-11-28) Constrain these to head-adj-1 and use
 ; MOD-IND/MOD-HAND.
 ; (MS 2003-10-29) There was a mistake on the RELS that prevented the RELS to pass up.
+; (MS 2004-12-22) use HOOK instead of MOD-IND/MOD-HAND
 
 noun_mod-lex := lexical_sign-word &
             [SYNSEM [LKEYS.KEYREL #key & [ARG1 #inst, 
 					  LBL #handle],
 		     LOCAL [CAT [HEAD noun_mod_head-avm &
 				      [MOD < [LOCAL intersective_mod &
-						    [ CONT [MOD-IND #inst,
-							    MOD-HAND #handle]]] > ], 
+						    [ CONT.HOOK [INDEX #inst,
+								 LTOP #handle]]] > ], 
 				 VAL saturated],
 			    ARG-S < >,
-			    CONT simple-adj-sem-type &
+			    CONT simple-verb-sem-type &
 				[RELS <! #key !>,
                                  HCONS <! !>],
                             BAR +],
@@ -3373,6 +3374,7 @@ comma-interjmod-lex := comma-lex &
 
 ; (ERB 2002-01-15) Restrict this to OBJs that are C-MOD null to
 ; keep real TE forms out.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 comma-lex-2 := lexical_sign &
 [SYNSEM [LOCAL [CAT [ VAL obj-arg & [ UNSAT +,
@@ -3384,16 +3386,12 @@ comma-lex-2 := lexical_sign &
 									C-MOD null,
 									MODUS infinitive],
 								 VAL saturated ],
-							   CONT [ HOOK #hook,
-								  MOD-IND #mind,
-								  MOD-HAND #mhand ]]]],
+							   CONT [ HOOK #hook ]]]],
 		      HEAD punct_head2],
 		ARG-S #comps,
                 CONT[ RELS <! !>,
                       HCONS <! !>,
-                      HOOK #hook,
-                      MOD-IND #mind,
-                      MOD-HAND #mhand ],
+                      HOOK #hook ],
                 CTXT.BACKGROUND <! !>],
          NON-LOCAL [QUE <! !>,
                  AFFIX <! !>]],
@@ -4082,6 +4080,7 @@ adv-lex := lexical_sign-word &
 
 ; (ERB 2001-11-28) Constrain these to intersective head-adj rules.
 ; Changing ref to KEY.LBL and KEY.ARG0 to MOD-HAND and MOD-IND.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 adv-wh-lex := adv-lex &
              [SYNSEM [NON-LOCAL.QUE <! #head-hd !>,
@@ -4089,8 +4088,8 @@ adv-wh-lex := adv-lex &
 					    LBL #head-hd],
 			     ALTKEYREL #altkey],
 		      LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod &
-						    [ CONT [ MOD-HAND #head-hd,
-							     MOD-IND #ind]]] >,
+						    [ CONT.HOOK [ LTOP #head-hd,
+							     INDEX #ind]]] >,
 				       COP-ARG +,
 				       J-POSTHEAD left],
 			     CONT wh-adv-sem-type &
@@ -4866,6 +4865,7 @@ v-end-lex := lexical_sign-affix &
 ; (MS 2003-10-08) Problems with Matrix 0.5?
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-03) The PRED value should be copied into the relation for indexing.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 na-end-lex := lexical_sign-word &
               [J-NEEDS-AFFIX -,
@@ -4884,8 +4884,6 @@ na-end-lex := lexical_sign-word &
 				  [HOOK [LTOP #hand,
 					  INDEX #event,
 					  XARG #xarg],
-				   MOD-IND #event,
-				   MOD-HAND #hand,
 				   RELS <! [PRED #pred] !>,
 				   HCONS <! qeq & [HARG #arghd, LARG #adjhand] !>]],
 		       LKEYS.KEYREL [PRED #pred,
@@ -4923,8 +4921,6 @@ naadj2adv-end-lex := lexical_sign-word &
 				     CONT [HOOK [LTOP #tophand,
 						 XARG #xarg,
  						 INDEX #ind],
- 					   MOD-HAND #tophand,
- 					   MOD-IND #ind,
  					   RELS <! !>,
                                             HCONS <!  !>]],
  			      LKEYS.KEYREL #key & [ LBL #tophand],
@@ -4936,6 +4932,7 @@ naadj2adv-end-lex := lexical_sign-word &
 
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 naadj2v-end-lex := lexical_sign-word &
               [SYNSEM j-synsem &
@@ -4945,17 +4942,13 @@ naadj2v-end-lex := lexical_sign-word &
 					 SPR obl-1-arg & 
 					     [FIRST [LOCAL [CAT.VAL [SUBJ #sbj,
 								     COMPS #comps],
-							    CONT [HOOK [XARG #xarg, LTOP #adjhand],
-								  MOD-IND #modind,
-								  MOD-HAND #modhd]],
+							    CONT [HOOK [XARG #xarg, LTOP #adjhand]]],
 						     LEX +]]]],
 			      ARG-S < #sbj . #comps >,
 			      BAR -,
 			      CONT [HOOK [LTOP #top,
 					  INDEX #event & [E.MOOD indicative],
 					  XARG #xarg],
-				    MOD-IND #modind,
-				    MOD-HAND #modhd,
 				    RELS <! #key,
 					   message &
                                           [PRED proposition_m_rel,
@@ -5067,20 +5060,17 @@ v-finite-present-plain-negative-end-lex := v-neg-end-lex &
 ; doing something special with MOD-IND and MOD-HAND.
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 v-simple-end-lex := v-end-lex &
 [ SYNSEM [LOCAL [CAT [HEAD [SMOD smod,
 			    KEYS.KEY #key],
                      VAL.SPR.FIRST [LOCAL [CONT [HOOK [LTOP #top,
-						       INDEX #event],
-						 MOD-IND #mi,
-						 MOD-HAND #mh ],
+						       INDEX #event]],
 					   CAT.HEAD.KEYS.KEY #key]]],
 		
                 CONT [HOOK [INDEX #event,
 			    LTOP #top],
-                      MOD-IND #mi,
-                      MOD-HAND #mh,
                       HCONS <! !>]],
 	  LKEYS.KEYREL [ARG0 #event,
 			LBL #top]]].
@@ -5287,8 +5277,8 @@ tai-notyetend-lex :=  tai-end-lex-basic &
 v-cond-end-lex  :=  v-noncaus-op-end-lex &
                     [SYNSEM [LOCAL [CAT [HEAD v-cond-end_head & [C-MOD < [LOCAL [CAT [HEAD verb_head],
                                                                            BAR +,
-                                                                           CONT [MOD-HAND #main-v-handel,
-                                                                                 MOD-IND #ind]]] >,
+                                                                           CONT.HOOK [LTOP #main,
+										      INDEX #ind]]] >,
                                                               MOD < [LOCAL [CAT.HEAD verb_head,
 									    BAR +],
 								     LEX -] >,
@@ -5300,13 +5290,11 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
 								 MAIN-PRD -,
                                                               FIN -],
                                         VAL.SPR.FIRST.LOCAL [CAT.HEAD.MAIN-PRD -,
-							      CONT [MOD-HAND #subord-v-handel,
-								    MOD-IND #modind]]],
+							      CONT.HOOK [LTOP #subord,
+									 INDEX #ind]]],
 				    
                                    CONT [HOOK [INDEX #ind,
 					       LTOP #tophand],					       
-					 MOD-HAND #subord-v-handel,
-					 MOD-IND #modind,
                                           RELS <! subord-relation & #key &
                                                 [PRED "if_then_rel",
 						 LBL #tophand,
@@ -5320,9 +5308,9 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
 						[PRED proposition_m_rel,
 						 LBL #subord,
                                                  MARG #prpstnsoa2] !>,
-                                         HCONS <! qeq & [LARG #main-v-handel,
+                                         HCONS <! qeq & [LARG #main,
                                                           HARG #prpstnsoa1],
-                                                 qeq & [LARG #subord-v-handel,
+                                                 qeq & [LARG #subord,
                                                         HARG #prpstnsoa2] !>]],
 			     LKEYS.KEYREL #key]].
 
@@ -5333,9 +5321,8 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
 rareru-end-lex :=  v-noncaus-op-end-lex &
                [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK < [MODIFIED.PERIPH -] >,
 							  KEYS.KEY #pred],
-                                   VAL.SPR.FIRST [LOCAL.CONT [MOD-HAND #ohand,
-							      MOD-IND #modind,
-							      HOOK.XARG #arg1]]],
+                                   VAL.SPR.FIRST [LOCAL.CONT [HOOK [XARG #arg1,
+								    LTOP #ohand]]]],
                               CONT [RELS <! rareru-relation &  [ARG1 #arg1,
 							     ARG2 #chand,
                                                              LBL #top,
@@ -5347,8 +5334,6 @@ rareru-end-lex :=  v-noncaus-op-end-lex &
                                                          MARG #soa] !>,
                                     HOOK [INDEX #event,
 					  LTOP #top],
-				    MOD-IND #modind,
-				    MOD-HAND #ohand,
                                     HCONS <! qeq & [LARG #ohand,
                                                      HARG #soa] !>]],
 			MODIFIED.PERIPH +]].  

@@ -848,6 +848,7 @@ ru-pot-end := rareru-end-lex &
                    INFLECTED -,
                    LMORPH-BIND-TYPE cond-morph].
 
+
 reru-pot-end := rareru-end-lex &
                   [ORTH <! "дьды" !>,
                    SYNSEM.LOCAL.CAT.HEAD.MODUS potential,

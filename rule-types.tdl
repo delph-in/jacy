@@ -111,12 +111,12 @@ binary-type-conj := binary-modification-type &
                      RMORPH-BIND-TYPE #rmorph,
                      SYNSEM.LOCAL [CAT [HEAD #head,
 					VAL #val],
-				   CONT [MOD-IND #ind,
-					 MOD-HAND #hand]],
+				   CONT.HOOK [INDEX #ind,
+					      LTOP#hand]],
 		     ARGS <  [LMORPH-BIND-TYPE #lmorph,
 			      SYNSEM.LOCAL.CONT.HOOK.INDEX #ind] ,
 			     [RMORPH-BIND-TYPE #rmorph,
-			      SYNSEM.LOCAL [CONT [MOD-HAND #hand],
+			      SYNSEM.LOCAL [CONT.HOOK [LTOP #hand],
 					    CAT [HEAD #head,
 						 VAL #val]]]
 			     > ].
@@ -1956,21 +1956,22 @@ number-frag-rule-type := unary-type &
 ;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD topic-vmod-p_head, into vmod-p_head
 
 
-;pp-frag-rule-type := unary-type &
-;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-;                            [ MOD null,
-;                              SMOD marked ],
-;                       VAL saturated ],
-;                 CONT [ RELS #liszt,
-;                        HCONS #h-cons,
-;                        HOOK.INDEX #index ],
-;                 NUCL nucl_minus ],
-;	  LEX -],
-;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
-;                                VAL saturated ],
-;                          CONT [ RELS #liszt,
-;                                 HCONS #h-cons,
-;                                 HOOK.INDEX #index ]]].
+pp-frag-rule-type := unary-type &
+[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+                            [ MOD null,
+			      EMPTY +,
+                              SMOD marked ],
+                       VAL saturated ],
+                 CONT [ RELS #liszt,
+                        HCONS #h-cons,
+                        HOOK.INDEX #index ],
+                 NUCL nucl_minus ],
+	  LEX -],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
+                                VAL saturated ],
+                          CONT [ RELS #liszt,
+                                 HCONS #h-cons,
+                                 HOOK.INDEX #index ]]].
 
 
 ; (ERB 2002-01-14) This is overgenerating to cases of NP + Sentence ending

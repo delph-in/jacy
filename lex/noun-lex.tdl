@@ -4102,10 +4102,6 @@ ordinary-nohon-n-lex &
 [ORTH <! "³¨" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_e_n_rel]].
 
-imi :=
-ordinary-nohon-n-lex &
-[ORTH <! "°ÕÌ£" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_imi_n_rel]].
 
 dochiraka :=
 ordinary-nohon-n-lex &
@@ -36623,7 +36619,7 @@ uchikata_1 := ordinary-nohon-n-lex &
 ; ÆâÂ¦ 
 ; Used 15 times
 
-uchigawa_1 := ordinary-nohon-n-lex &
+uchigawa_1 := relational-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_uchigawa_n_1_rel,
  ORTH <! "ÆâÂ¦" !>].
 
@@ -90866,7 +90862,7 @@ nisankatanso_1 := ordinary-nohon-n-lex &
 ; À¾ 
 ; Used 20 times
 
-nishi_1 := ordinary-nohon-n-lex &
+nishi_1 := relational-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nishi_n_1_rel,
  ORTH <! "À¾" !>].
 

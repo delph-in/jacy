@@ -635,19 +635,20 @@ relative-clause-rule := hadj-final-i &
 ;                                   COMPS sat-arg]]"¤òÄÉ²Ã
 ; (FCB 2004-02-03) redid to factor out shared parts
 
+; (MS 2004-12-22) Why did we have two rules for adjectives and non-adjectives? I'll take that out.
 
 rel-cl-sbj-gap-rule := rel-cl-gap-rule  & 
 		  [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
-		   ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ -,
+		   ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ bool,
 					    VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
 						 COMPS onull]]],
 			 [SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
 
-rel-cl-sbj-gap-adj-rule := rel-cl-gap-rule  & 
-		       [ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ +,
-						 VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
-						      COMPS onull]]],
-			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
+;rel-cl-sbj-gap-adj-rule := rel-cl-gap-rule  & 
+;		       [ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ +,
+;						 VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+;						      COMPS onull]]],
+;			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
 
 
 
@@ -1081,7 +1082,7 @@ nominal-numcl-rule := nominal-numcl-rule-type-noncard.
 ; ; See rule-types.tdl and roots.tdl.
 ; ; AO (2003-08-29) END
 
-;pp-frag-rule := pp-frag-rule-type.
+pp-frag-rule := pp-frag-rule-type.
 
 ;np-quest-frag-rule := np-quest-frag-rule-type & [ARGS < j-sign  , j-sign > ].
 
@@ -1162,7 +1163,6 @@ empty-cop-id-rule := empty-head-type &
 						  VAL saturated],
 					     CONT.HOOK.INDEX #argind,
 					    CTXT #ctxt]] >].
-
 
 
 empty-copula-rule := empty-head-type &

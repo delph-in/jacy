@@ -54,7 +54,7 @@ utterance-root := j-sign &
 
 
 
-;pp-frag-root := pp-frag-rule-type.
+pp-frag-root := pp-frag-rule-type.
 
 ; (MS 2002-12-04) fragment rule type for number fragments
 
