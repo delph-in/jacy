@@ -5919,54 +5919,54 @@ intrans-minusshon-kurusuru-stem-lex := intrans-minusshon-stem-lex & [STEMTYPE ku
 ;                                             [VAL.SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 ;                                        KEYS  [KEY [ARG2 #sbjind]]]].
 
-intransarg2-stem-lex := v-nonop-stem-lex &
-                    [SYNSEM [LOCAL [CAT [HEAD [COP -],
-                                        VAL intransitive &
-                                             [SUBJ.FIRST #sbj & [LOCAL.CONT [HOOK.INDEX #sbjind]]]],
-                                        CONT  [HOOK.XARG #sbjind],
-				    ARG-S < #sbj > ],
-			      LKEYS.KEYREL arg1-relation &
-                                                   [ARG1 #sbjind],
-                             NON-LOCAL.QUE <! !>]].
-
-intransarg2-nohon-stem-lex := intransarg2-stem-lex & 
-                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
-
-intransarg2-shon-stem-lex  := intransarg2-stem-lex &
-                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
-                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
-                                                                CONT.HOOK.INDEX #2]],
-                                    CONT.HOOK.INDEX #3,
-                                    CTXT subj-honor-ctxt &  [BACKGROUND <! subj-honor_rel &
-                                                      [HONORED #2,
-                                                       BEARER #3,
-                                                       POLARITY +] !>]]].
-
-intransarg2-minusshon-stem-lex  := intransarg2-stem-lex &
-                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
-                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
-                                                                CONT.HOOK.INDEX #2]],
-                                    CONT.HOOK.INDEX #3,
-                                    CTXT subj-honor-ctxt &  [BACKGROUND <! subj-honor_rel &
-                                                     [HONORED #2,
-                                                      BEARER #3,
-                                                      POLARITY -] !>]]].
-
-intransarg2-c2-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE c2-stem].
-intransarg2-c-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE c-stem].
-intransarg2-v-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE v-stem].
-intransarg2-kurusuru-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE kurusuru-stem].
-
-intransarg2-shon-c2-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE c2-stem].
-intransarg2-shon-c-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE c-stem].
-intransarg2-shon-v-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE v-stem].
-intransarg2-shon-kurusuru-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE kurusuru-stem].
-
-intransarg2-minusshon-c2-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE c2-stem].
-intransarg2-minusshon-c-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE c-stem].
-intransarg2-minusshon-v-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE v-stem].
-intransarg2-minusshon-kurusuru-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE kurusuru-stem].
-
+;intransarg2-stem-lex := v-nonop-stem-lex &
+;                    [SYNSEM [LOCAL [CAT [HEAD [COP -],
+;                                        VAL intransitive &
+;                                             [SUBJ.FIRST #sbj & [LOCAL.CONT [HOOK.INDEX #sbjind]]]],
+;                                        CONT  [HOOK.XARG #sbjind],
+;				    ARG-S < #sbj > ],
+;			      LKEYS.KEYREL arg1-relation &
+;                                                   [ARG1 #sbjind],
+;                             NON-LOCAL.QUE <! !>]].
+;
+;intransarg2-nohon-stem-lex := intransarg2-stem-lex & 
+;                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+;
+;intransarg2-shon-stem-lex  := intransarg2-stem-lex &
+;                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+;                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+;                                                                CONT.HOOK.INDEX #2]],
+;                                    CONT.HOOK.INDEX #3,
+;                                    CTXT subj-honor-ctxt &  [BACKGROUND <! subj-honor_rel &
+;                                                      [HONORED #2,
+;                                                       BEARER #3,
+;                                                       POLARITY +] !>]]].
+;
+;intransarg2-minusshon-stem-lex  := intransarg2-stem-lex &
+;                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+;                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+;                                                                CONT.HOOK.INDEX #2]],
+;                                    CONT.HOOK.INDEX #3,
+;                                    CTXT subj-honor-ctxt &  [BACKGROUND <! subj-honor_rel &
+;                                                     [HONORED #2,
+;                                                      BEARER #3,
+;                                                      POLARITY -] !>]]].
+;
+;intransarg2-c2-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE c2-stem].
+;intransarg2-c-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE c-stem].
+;intransarg2-v-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE v-stem].
+;intransarg2-kurusuru-stem-lex := intransarg2-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+;
+;intransarg2-shon-c2-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE c2-stem].
+;intransarg2-shon-c-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE c-stem].
+;intransarg2-shon-v-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE v-stem].
+;intransarg2-shon-kurusuru-stem-lex := intransarg2-shon-stem-lex & [STEMTYPE kurusuru-stem].
+;
+;intransarg2-minusshon-c2-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE c2-stem].
+;intransarg2-minusshon-c-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE c-stem].
+;intransarg2-minusshon-v-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE v-stem].
+;intransarg2-minusshon-kurusuru-stem-lex := intransarg2-minusshon-stem-lex & [STEMTYPE kurusuru-stem].
+;
 
 v1-stem-lex := v-sbj-comps-stem-lex &
                   [SYNSEM [LKEYS.KEYREL [ARG1 #sbjind,
@@ -6358,67 +6358,70 @@ v5a-c-minusshon-stem-lex := v5a-minusshon-stem-lex & [STEMTYPE c-stem].
 v5a-v-minusshon-stem-lex := v5a-minusshon-stem-lex & [STEMTYPE v-stem].
 v5a-kurusuru-minusshon-stem-lex := v5a-minusshon-stem-lex & [STEMTYPE kurusuru-stem].
 
-v7-stem-lex  := v-sbj-comps-stem-lex &
-               [SYNSEM [LOCAL [CAT [HEAD.COP -,
-                                   VAL ga-wo-to-ditransitive &
-                                      [COMPS < [LOCAL.CONT [HOOK.INDEX #objind]],
-					       [LOCAL.CONT [HOOK.INDEX #obj2ind]] >,
-				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
-                           CONT verb-sem-type &
-                                         [HOOK.XARG #sbjind]],
-			LKEYS.KEYREL [ARG1 #sbjind,
-                                               ARG2 #objind,
-                                               ARG3 #obj2ind],
-                        NON-LOCAL.QUE <! !>]].
+; (MS 2004-06-01) V7 seems not to be in use any more.
 
-v7-nohon-stem-lex := v7-stem-lex &
-                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+;v7-stem-lex  := v-sbj-comps-stem-lex &
+;               [SYNSEM [LOCAL [CAT [HEAD.COP -,
+;                                   VAL ga-wo-to-ditransitive &
+;                                      [COMPS < [LOCAL.CONT [HOOK.INDEX #objind]],
+;					       [LOCAL.CONT [HOOK.INDEX #obj2ind]] >,
+;				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
+;                           CONT verb-sem-type &
+;                                         [HOOK.XARG #sbjind]],
+;			LKEYS.KEYREL [ARG1 #sbjind,
+;                                               ARG2 #objind,
+;                                               ARG3 #obj2ind],
+;                        NON-LOCAL.QUE <! !>]].
+;
+;v7-nohon-stem-lex := v7-stem-lex &
+;                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+;
+;v7-shon-stem-lex  := v7-stem-lex &
+;                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+;                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+;                                                                CONT.HOOK.INDEX #2]],
+;                                    CONT.HOOK.INDEX #3,
+;                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+;                                                      [HONORED #2,
+;                                                       BEARER #3,
+;                                                       POLARITY +] !>]]].
+;
+;v7-minusshon-stem-lex  := v7-stem-lex &
+;                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+;                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+;                                                                CONT.HOOK.INDEX #2 ]],
+;                                    CONT.HOOK.INDEX #3,
+;                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+;                                                      [HONORED #2,
+;                                                       BEARER #3,
+;                                                       POLARITY -] !>]]].
+;
+;v7-c2-stem-lex := v7-nohon-stem-lex & [STEMTYPE c2-stem].
+;v7-c-stem-lex := v7-nohon-stem-lex & [STEMTYPE c-stem].
+;v7-v-stem-lex := v7-nohon-stem-lex & [STEMTYPE v-stem].
+;
+;v7-c2-shon-stem-lex := v7-shon-stem-lex & [STEMTYPE c2-stem].
+;v7-c-shon-stem-lex := v7-shon-stem-lex & [STEMTYPE c-stem].
+;v7-v-shon-stem-lex := v7-shon-stem-lex & [STEMTYPE v-stem].
+;
+;v7-c2-minusshon-stem-lex := v7-minusshon-stem-lex & [STEMTYPE c2-stem].
+;v7-c-minusshon-stem-lex := v7-minusshon-stem-lex & [STEMTYPE c-stem].
+;v7-v-minusshon-stem-lex := v7-minusshon-stem-lex & [STEMTYPE v-stem].
+;
 
-v7-shon-stem-lex  := v7-stem-lex &
-                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
-                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
-                                                                CONT.HOOK.INDEX #2]],
-                                    CONT.HOOK.INDEX #3,
-                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
-                                                      [HONORED #2,
-                                                       BEARER #3,
-                                                       POLARITY +] !>]]].
+;(MS 2004-06-01) I don't think we need this any more.
 
-v7-minusshon-stem-lex  := v7-stem-lex &
-                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
-                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
-                                                                CONT.HOOK.INDEX #2 ]],
-                                    CONT.HOOK.INDEX #3,
-                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
-                                                      [HONORED #2,
-                                                       BEARER #3,
-                                                       POLARITY -] !>]]].
-
-v7-c2-stem-lex := v7-nohon-stem-lex & [STEMTYPE c2-stem].
-v7-c-stem-lex := v7-nohon-stem-lex & [STEMTYPE c-stem].
-v7-v-stem-lex := v7-nohon-stem-lex & [STEMTYPE v-stem].
-
-v7-c2-shon-stem-lex := v7-shon-stem-lex & [STEMTYPE c2-stem].
-v7-c-shon-stem-lex := v7-shon-stem-lex & [STEMTYPE c-stem].
-v7-v-shon-stem-lex := v7-shon-stem-lex & [STEMTYPE v-stem].
-
-v7-c2-minusshon-stem-lex := v7-minusshon-stem-lex & [STEMTYPE c2-stem].
-v7-c-minusshon-stem-lex := v7-minusshon-stem-lex & [STEMTYPE c-stem].
-v7-v-minusshon-stem-lex := v7-minusshon-stem-lex & [STEMTYPE v-stem].
-
-
-
-aru-stem-lex := intrans-stem-lex &
-               [SYNSEM.NON-LOCAL.QUE <! !>].
-
-
-aru-nohon-stem-lex := aru-stem-lex &
-                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
-
-
-aru-c2-stem-lex := aru-nohon-stem-lex & [STEMTYPE c2-stem].
-aru-c-stem-lex := aru-nohon-stem-lex & [STEMTYPE c-stem].
-aru-v-stem-lex := aru-nohon-stem-lex & [STEMTYPE v-stem].
+;aru-stem-lex := intrans-stem-lex &
+;               [SYNSEM.NON-LOCAL.QUE <! !>].
+;
+;
+;aru-nohon-stem-lex := aru-stem-lex &
+;                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+;
+;
+;aru-c2-stem-lex := aru-nohon-stem-lex & [STEMTYPE c2-stem].
+;aru-c-stem-lex := aru-nohon-stem-lex & [STEMTYPE c-stem].
+;aru-v-stem-lex := aru-nohon-stem-lex & [STEMTYPE v-stem].
 
 ;aru-c2-shon-stem-lex := aru-shon-stem-lex & [STEMTYPE c2-stem].
 ;aru-c-shon-stem-lex := aru-shon-stem-lex & [STEMTYPE c-stem].

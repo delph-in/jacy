@@ -341,7 +341,7 @@ ORTH <! "見あたる" !>].
 
 ;to be found
 
-miataru-stem-2 := intransarg2-c-stem-lex &
+miataru-stem-2 := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_miataru_a_2_rel]],
 ORTH <! "見当たる" !>].
 
@@ -567,14 +567,14 @@ ganbaru-hiragana-stem := intrans-c-stem-lex &
                       [SYNSEM.LKEYS [KEYREL [PRED '_ganbaru_v_rel]],
                    ORTH <! "がんばる" !>].
 
-hairu-stem := aru-c-stem-lex &
+hairu-stem := intrans-c-stem-lex &
                    [SYNSEM.LKEYS [KEYREL [PRED '_hairu_v_rel]],
                    ORTH <! "入る" !>].
 
 ;die-hard, please
 
 
-kiniiru-stem := aru-c-stem-lex &
+kiniiru-stem := intrans-c-stem-lex &
                    [SYNSEM.LKEYS [KEYREL [PRED '_kiniiru_v_rel]],
                    ORTH <! "気に入る" !>].
 
@@ -585,13 +585,13 @@ hajimaru-stem := intrans-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_hajimaru_v_rel]],
                    ORTH <! "始まる" !>].
 
-iru_need-stem := aru-c-stem-lex &
+iru_need-stem := intrans-c-stem-lex &
                    [SYNSEM.LKEYS [KEYREL [PRED '_iru_v_need_rel]],
                    ORTH <! "要る" !>].
 
 ; (MS 2002-09-16) This one leads to spurious ambiguity as soon as iru-aux comes up!
 
-iru_need-hiragana-stem := aru-c-stem-lex &
+iru_need-hiragana-stem := intrans-c-stem-lex &
 		   [SYNSEM.LKEYS [KEYREL [PRED '_iru_v_need_rel]],
 		    RMORPH-BIND-TYPE nomorphbind,
 		    ORTH <! "いる" !>].
@@ -781,7 +781,7 @@ kachinokoru-stem :=  intrans-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_kachinokoru_v_rel]],
                    ORTH <! "勝ち残る" !>].
 
-oru-stem :=  aru-c-stem-lex &
+oru-stem :=  intrans-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_oru_v_rel]],
                    ORTH <! "おる" !>].
 
@@ -1104,25 +1104,25 @@ furu-2-stem :=  v1-c-stem-lex &
 ;[SYNSEM.LKEYS [KEYREL [PRED '_aru_v_rel],
 ;ORTH <! "ある" !>].
 
-aru-stem := aru-c-stem-lex &
+aru-stem := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL.PRED '_exist_v_rel],
 ORTH <! "ある" !>].
 
-aru-kanji-stem := aru-c-stem-lex &
+aru-kanji-stem := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL.PRED '_exist_v_rel],
 ORTH <! "有る" !>].
 
 ; Used 401 times
 
-aru-kanji-stem-2 := aru-c-stem-lex &
+aru-kanji-stem-2 := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL.PRED '_exist_v_rel],
 ORTH <! "在る" !>].
 
-gozaru-hiragana-stem :=  aru-c2-stem-lex &
+gozaru-hiragana-stem :=  intrans-c2-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_gozaru_v_rel]],
  ORTH <! "ござる" !>].
 
-gozaru-kanji-stem :=  aru-c2-stem-lex &
+gozaru-kanji-stem :=  intrans-c2-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_gozaru_v_rel]],
  ORTH <! "御座る" !>].
 
@@ -1135,11 +1135,11 @@ arigatougozaru-kanji-stem :=  v8-c2-stem-lex &
  ORTH <! "ありがとう","御座る" !>].
 
 
-moushiwakegozaru-stem  :=  aru-c2-stem-lex &
+moushiwakegozaru-stem  :=  intrans-c2-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_moushiwakegozaru_v_rel]],
  ORTH <! "申し訳","ござる" !>].
 
-moushiwakearu-stem  :=  aru-c2-stem-lex &
+moushiwakearu-stem  :=  intrans-c2-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_moushiwakegozaru_v_rel]],
  ORTH <! "申し訳","ある" !>].
 
