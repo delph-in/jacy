@@ -747,6 +747,10 @@ naru-kanji-stem :=  v2a-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED 'naru]],
                    ORTH <! "成る" !> ].
 
+naru-2-kanji-stem :=  intrans-c-stem-lex &
+                 [SYNSEM.LKEYS [KEYREL [PRED 'naru]],
+                   ORTH <! "成る" !> ].
+
 
 dounaru-stem :=  intrans-c-stem-wh-lex &
                  [SYNSEM.LKEYS [KEYREL.PRED 'dounaru],
@@ -2022,6 +2026,14 @@ omou-stem := v5-c-stem-lex &
 ORTH <! "思う" !> ].
 
 omou-hiragana-stem := v5-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED 'omou]],
+ORTH <! "おもう" !> ].
+
+omou-2-stem := v1-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED 'omou]],
+ORTH <! "思う" !> ].
+
+omou-2-hiragana-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'omou]],
 ORTH <! "おもう" !> ].
 
