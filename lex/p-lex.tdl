@@ -1783,22 +1783,22 @@ zutsu-p := postp-lex &
 
 Nde-sap-multi := s-conj1-decl-lex &
            [ORTH <! "ん",  "で" !>,
-            SYNSEM.LKEYS.KEYREL.PRED 'decl].
+            SYNSEM.LKEYS.KEYREL.PRED '_decl_p_rel].
 
 Nde-sap-np-multi := s-conj-nonprop1-decl-lex &
            [ORTH <! "ん",  "で" !>,
-            SYNSEM.LKEYS.KEYREL.PRED 'decl].
+            SYNSEM.LKEYS.KEYREL.PRED '_decl_p_rel].
 
 
 arrow-p-lex := postp-lex &
 	       [SYNSEM.LOCAL [CAT.HEAD.PTYPE kara,
-			      CONT.RELS <! [PRED 'kara_prep] !>],
+			      CONT.RELS <! [PRED '_kara_p_prep_rel] !>],
 		ORTH <! "→" !> ]. 
 
 
 aruiwa-conj := n_conj-p-lex &
                [ORTH <! "あるいは" !>,
-                SYNSEM.LKEYS.KEYREL.PRED 'aruiwa_con].
+                SYNSEM.LKEYS.KEYREL.PRED '_aruiwa_conj_rel].
 
 
 ;;; (not FCB 2003-08-12)  Evil hack
@@ -1806,11 +1806,11 @@ aruiwa-conj := n_conj-p-lex &
 
 comma-matawa-conj := n_conj-p-lex &
 	         [ORTH <! "、", "または" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED 'matawa].
+                  SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
 comma_n_conj := n_conj-p-lex &
        [ORTH <! "、" !>,
-        SYNSEM.LKEYS.KEYREL.PRED 'comma_n_con].
+        SYNSEM.LKEYS.KEYREL.PRED '_comma_conj_rel].
 
 exclamation-mark := s-end1-decl-lex &
        [ORTH <! "！" !>].
@@ -1827,24 +1827,24 @@ hyphen-conj-2  := hyphen-conj-p-lex &
 ka-or :=
 s-conj1-decl-lex &
  [ORTH <! "か" !>,
-  SYNSEM.LKEYS.KEYREL.PRED  'ka].
+  SYNSEM.LKEYS.KEYREL.PRED  '_ka_conj_rel].
 
 ka-postp-conj := postp-conj-p-lex &
        [ORTH <! "か" !>,
-        SYNSEM.LKEYS.KEYREL.PRED 'ka].
+        SYNSEM.LKEYS.KEYREL.PRED '_ka_conj_rel].
 
 
 ka2 := n_conj-p-lex &
        [ORTH <! "か" !>,
-        SYNSEM.LKEYS.KEYREL.PRED 'ka].
+        SYNSEM.LKEYS.KEYREL.PRED '_ka_conj_rel].
 
 kaato-multi := n_conj-p-lex &
          [ORTH <! "か",  "あと" !>,
-          SYNSEM.LKEYS.KEYREL.PRED 'kaato].
+          SYNSEM.LKEYS.KEYREL.PRED '_kaato_conj_rel].
 
 kamata-multi  := n_conj-p-lex &
            [ORTH <! "か",  "また" !>,
-          SYNSEM.LKEYS.KEYREL.PRED 'kamata].
+          SYNSEM.LKEYS.KEYREL.PRED '_kamata_conj_rel].
 
 ; (MS 2002-09-10) And also for 〜.
 
@@ -1853,7 +1853,7 @@ karasign-nspec := nmod-numcl-p-lex &
 
 katsu := n_conj-p-lex &
       [ORTH <! "かつ" !>,
-       SYNSEM.LKEYS.KEYREL.PRED 'katsu].
+       SYNSEM.LKEYS.KEYREL.PRED '_katsu_conj_rel].
 
 
 kke := s-end1-declint-lex & 
@@ -1862,35 +1862,35 @@ kke := s-end1-declint-lex &
 
 matawa-conj := n_conj-p-lex &
 	         [ORTH <! "または" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED 'matawa].
+                  SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
 matawa-kanji-conj := n_conj-p-lex &
 	         [ORTH <! "又は" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED 'matawa].
+                  SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
 ; "申し込みがされていないのか、または、事務手続き上遅れているのか、確認していただきたい。"
 
 matawa-casep-conj := casep-conj-p-lex &
 		     [ORTH <! "または" !>,
-		      SYNSEM.LKEYS.KEYREL.PRED 'matawa_casep_conj].
+		      SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
 matawa-s-conj := s-conj1-decl-lex & 
              [ ORTH <! "または" !>,
-              SYNSEM.LKEYS.KEYREL.PRED 'matawa].
+              SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
 moshikuwa := n_conj-p-lex &
              [ORTH <! "もしくは" !>,
-                SYNSEM.LKEYS.KEYREL.PRED 'moshikuwa].
+                SYNSEM.LKEYS.KEYREL.PRED '_moshikuwa_conj_rel].
 
 nado-kanji-nobj := topic-plus-nobj-lex &
-             [ SYNSEM.LKEYS [ KEYREL.PRED 'wa,
-                                   ALTKEYREL.PRED 'nado ],
+             [ SYNSEM.LKEYS [ KEYREL.PRED '_wa,
+                                   ALTKEYREL.PRED '_nado_conj_rel],
                ORTH <! "等" !> ].
 
 
 nado-nobj := topic-plus-nobj-lex &
-             [ SYNSEM.LKEYS [ KEYREL.PRED 'wa,
-                                   ALTKEYREL.PRED 'nado ],
+             [ SYNSEM.LKEYS [ KEYREL.PRED '_wa,
+                                   ALTKEYREL.PRED '_nado_conj_rel],
                ORTH <! "など" !> ].
 
 nanode := s-conj1-decl-lex &
@@ -1898,11 +1898,11 @@ nanode := s-conj1-decl-lex &
 
 nari-conj := s-conj1-decl-lex &
     [ORTH <! "なり" !>,
-     SYNSEM.LKEYS.KEYREL.PRED 'nari]. 
+     SYNSEM.LKEYS.KEYREL.PRED '_nari_conj_rel]. 
 
 nari-conj-np := s-conj-nonprop1-decl-lex &
     [ORTH <! "なり" !>,
-     SYNSEM.LKEYS.KEYREL.PRED 'nari]. 
+     SYNSEM.LKEYS.KEYREL.PRED '_nari_conj_rel]. 
 
 ; (ERB 2001-08-09) の connecting NumClP to nouns.
  
@@ -1911,39 +1911,39 @@ no-nspec-4 := nmod-numcl-p-lex &
 
 oyobi := n_conj-p-lex &
       [ORTH <! "及び" !>,
-       SYNSEM.LKEYS.KEYREL.PRED 'oyobi].
+       SYNSEM.LKEYS.KEYREL.PRED '_oyobi_conj_rel].
 
 ;口座番号（仮ユーザID）およびパスワードを入力しログインを試みましたが、だめでした。
 
 oyobi-conj  := n_conj-p-lex &
-            [SYNSEM.LKEYS.KEYREL.PRED 'oyobi,
+            [SYNSEM.LKEYS.KEYREL.PRED '_oyobi_conj_rel,
              ORTH <! "および" !> ].
 
 
 soredewa2 := n_conj-p-lex &
          [ORTH <! "それでは" !>,
-                SYNSEM.LKEYS.KEYREL.PRED 'soredewa_coord].
+                SYNSEM.LKEYS.KEYREL.PRED '_soredewa_conj_rel].
 
 
 sorekara2 := n_conj-p-lex &
 	          [ORTH <! "それから" !>,
-                SYNSEM.LKEYS.KEYREL.PRED 'sorekara_coord].
+                SYNSEM.LKEYS.KEYREL.PRED '_sorekara_conj_rel].
 
 ;kiNyoubi no hou wa moshi sono opera no hou no chiketto desu toka hakubutsukaN no hou ni ikeru no deshitara dekitara goissho shitai no desu keredomo.
 
 toka-sap  := s-conj1-decl-lex &
          [ORTH <! "とか" !>,
-          SYNSEM.LKEYS.KEYREL.PRED 'toka].
+          SYNSEM.LKEYS.KEYREL.PRED '_toka_conj_rel].
 
 
 ya := n_conj-p-lex &
       [ORTH <! "や" !>,
-       SYNSEM.LKEYS.KEYREL.PRED 'ya].
+       SYNSEM.LKEYS.KEYREL.PRED '_ya_conj_rel].
 
 
 yara := n_conj-p-lex &
 	          [ORTH <! "やら" !>,
-                SYNSEM.LKEYS.KEYREL.PRED 'yara].
+                SYNSEM.LKEYS.KEYREL.PRED '_yara_conj_rel].
 
 
 
