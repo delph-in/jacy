@@ -448,7 +448,4 @@ yousuru-stem := v1-kurusuru-stem-lex &
          NON-LOCAL.QUE <! !>],
 ORTH <! "要する" !>].
 
-naru-pparg-stem :=  v2b-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
-                   ORTH <! "なる" !>].
 

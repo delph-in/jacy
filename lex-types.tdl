@@ -1204,10 +1204,6 @@ ga-wo_transitive := sbj-obj-arg &
                            COMPS opt-1-arg &
 			   < [LOCAL.CAT.HEAD case-p_head & [CASE wo]] >].
 
-ga-wo-obl_transitive := sbj-obj-arg &
-                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
-                           COMPS obl-1-arg &
-			   < [LOCAL.CAT.HEAD case-p_head & [CASE wo]] >].
 
 ; (SF 2003)
 ; (MS 2003-12-23) This seems not to be used.
@@ -6064,61 +6060,7 @@ v1-c-minusshon-stem-lex := v1-minusshon-stem-lex & [STEMTYPE c-stem].
 v1-v-minusshon-stem-lex := v1-minusshon-stem-lex & [STEMTYPE v-stem].
 v1-kurusuru-minusshon-stem-lex := v1-minusshon-stem-lex & [STEMTYPE kurusuru-stem].
 
-
-v1a-stem-lex := v-sbj-comps-stem-lex &
-                  [SYNSEM [LKEYS.KEYREL [ARG1 #sbjind,
-					    ARG2 #objind],
-			   LOCAL [CAT [HEAD [COP -,
-                                            MODUS mood],
-                                      VAL ga-wo-obl_transitive &
-                                             [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
-					      COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind]],
-                                 CONT [HOOK.XARG #sbjind]]]].
-
-v1a-nohon-stem-lex := v1a-stem-lex &
-                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
-
-v1a-shon-stem-lex  := v1a-stem-lex &
-                     [SYNSEM [LOCAL [CAT [HEAD.FORMAL.SHON +,
-                                          VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
-                                                                 CONT.HOOK.INDEX #2]],
-                                     CONT.HOOK.INDEX #3,
-                                     CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
-                                                      [HONORED #2,
-                                                       BEARER #3,
-                                                       POLARITY +] !>]],
-                              NON-LOCAL.QUE <! !>]].
-
-v1a-minusshon-stem-lex  := v1a-stem-lex &
-                     [SYNSEM [LOCAL [CAT [HEAD.FORMAL.SHON -,
-                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
-                                                                CONT.HOOK.INDEX #2]],
-                                    CONT.HOOK.INDEX #3,
-                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
-                                                     [HONORED #2,
-                                                      BEARER #3,
-                                                      POLARITY -] !>]],
-                              NON-LOCAL.QUE <! !>]].
-
-v1a-c2-stem-lex := v1a-nohon-stem-lex & [STEMTYPE c2-stem,
-                                       SYNSEM.NON-LOCAL.QUE <! !>].
-v1a-c-stem-lex := v1a-nohon-stem-lex & [STEMTYPE c-stem,
-                                      SYNSEM.NON-LOCAL.QUE <! !>].
-v1a-v-stem-lex := v1a-nohon-stem-lex & [STEMTYPE v-stem,
-                                      SYNSEM.NON-LOCAL.QUE <! !>].
-v1a-kurusuru-stem-lex := v1a-nohon-stem-lex & [STEMTYPE kurusuru-stem].
-
-v1a-c2-shon-stem-lex := v1a-shon-stem-lex & [STEMTYPE c2-stem].
-v1a-c-shon-stem-lex := v1a-shon-stem-lex & [STEMTYPE c-stem].
-v1a-v-shon-stem-lex := v1a-shon-stem-lex & [STEMTYPE v-stem].
-v1a-kurusuru-shon-stem-lex := v1a-shon-stem-lex & [STEMTYPE kurusuru-stem].
-
-
-v1a-c2-minusshon-stem-lex := v1a-minusshon-stem-lex & [STEMTYPE c2-stem].
-v1a-c-minusshon-stem-lex := v1a-minusshon-stem-lex & [STEMTYPE c-stem].
-v1a-v-minusshon-stem-lex := v1a-minusshon-stem-lex & [STEMTYPE v-stem].
-v1a-kurusuru-minusshon-stem-lex := v1a-minusshon-stem-lex & [STEMTYPE kurusuru-stem].
-
+; (MS 2004-07-06) v1a with obligatory wo-comp is not used any more.
 
 v2-stem-lex := v-sbj-comps-stem-lex &
                [SYNSEM [LOCAL [CAT [HEAD.COP -,
@@ -6177,16 +6119,25 @@ v2-infinitive-minusshon-stem-lex := v2-minusshon-stem-lex & [STEMTYPE infinitive
 ; ARG1.  Changing it to ARG1.  Nothing was explicitly saying arg123-relation,
 ; so now it's just arg12-relation.
 
-v2a-stem-lex := v-sbj-comps-stem-lex &
+v2a-stem-lex := v-stem-lex &
                 [SYNSEM [LOCAL [CAT [HEAD.COP -,
                                      VAL adv_transitive &
-                                      [COMPS.FIRST.LOCAL.CONT [HOOK [INDEX #objind, XARG #sbjind]],
+					      [COMPS.FIRST.LOCAL [CAT.HEAD.MOD.FIRST.LOCAL.CONT.HOOK.LTOP #hand,
+								  CONT [HOOK [INDEX #objind]]],
 				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 				
-				CONT [HOOK.XARG #sbjind]],
-			 LKEYS.KEYREL arg12-relation & 
+				CONT [HOOK [XARG #sbjind,
+					    INDEX event],
+				      RELS <!  #key & [LBL #hand],
+					      [PRED 'cop_id_rel,
+					       ARG0 #ind & event,
+					       ARG1 #sbjind,
+					       ARG2 #objind,
+					       LBL #hand] !>,
+				      HCONS  <! !> ]],
+			 LKEYS.KEYREL arg12-relation & #key &
                                      [ARG1 #sbjind,
-                                      ARG2 #objind],
+                                      ARG2 #ind],
 			 NON-LOCAL.QUE <! !>]].
 
 
@@ -6215,8 +6166,6 @@ v2a-minusshon-stem-lex  := v2a-stem-lex &
                                                        BEARER #3,
                                                        POLARITY -] !>]]].
 
-; (ERB 2002-01-29) These types need to inherit from v2a types not
-; v2 types in order to work!  
 
 v2a-c2-stem-lex := v2a-nohon-stem-lex & [STEMTYPE c2-stem].
 v2a-c-stem-lex := v2a-nohon-stem-lex & [STEMTYPE c-stem].
@@ -6242,7 +6191,7 @@ v2a-v-minusshon-stem-lex := v2a-minusshon-stem-lex & [STEMTYPE v-stem].
 					    INDEX event],
 				      RELS <!  #key & [LBL #hand],
 					      [PRED 'cop_id_rel,
-					       ARG0 #ind,
+					       ARG0 #ind & event,
 					       ARG1 #sbjind,
 					       ARG2 #objind,
 					       LBL #hand] !>,
@@ -6775,11 +6724,12 @@ mental-v-minusshon-stem-lex := mental-minusshon-stem-lex & [STEMTYPE v-stem].
 to_intrans-stem-lex := v-nonop-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD.COP -,
                     VAL to_intransitive-opt &
-                         [COMPS.FIRST #comp & [LOCAL.CONT [HOOK.INDEX #objind]]]],
-               CONT [HOOK.XARG #objind],
+                         [COMPS.FIRST #comp & [LOCAL.CONT.HOOK [LTOP #arghndl,
+								XARG #xarg]]]],
+               CONT [HOOK.XARG #xarg],
                CTXT.BACKGROUND <! !>,
 		ARG-S < #comp >],
-	 LKEYS.KEYREL.ARG1 #objind,
+	 LKEYS.KEYREL.ARG1 #arghndl,
          NON-LOCAL.QUE <! !>]].
 
 
