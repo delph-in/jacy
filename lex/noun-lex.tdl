@@ -145357,4 +145357,10 @@ ge-suffix := ordinary-suffix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'ge-suffix,
  ORTH <! "¤²" !> ].
 
+; (MS 2004-01-14) New entry
+; anti-
 
+kou-prefix :=
+ordinary-nohon-minusbar-left-n-lex &
+[ORTH <! "¹³" !>,
+SYNSEM.LKEYS.KEYREL [PRED 'kou]].

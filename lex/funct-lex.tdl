@@ -518,6 +518,13 @@ angle-brackets-end :=
 parenthesis-end-lex &
 [ORTH <! "กไ" !>].
 
+angle-double-brackets-init :=
+parenthesis-init-lex &
+[ORTH <! "กิ" !>].
+
+angle-double-brackets-end :=
+parenthesis-end-lex &
+[ORTH <! "กี" !>].
 
 quotation-name-init :=
 quotation-name-init-lex &

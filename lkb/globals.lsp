@@ -152,3 +152,5 @@
 (defparameter *discriminant-path* '(synsem local keys key pred))
 
 (setf *semantics-index-path* '(synsem local cont hook index))
+
+(setf excl:*locale* (excl:find-locale "japan.EUC"))

@@ -4102,3 +4102,14 @@ sugimoto-surname :=
         surname-lex & 
         [SYNSEM.LKEYS.KEYREL.CARG 'sugimoto,
          ORTH <! "錯呿" !>].
+
+lennon-surname :=  
+        surname-lex & 
+        [SYNSEM.LKEYS.KEYREL.CARG 'lennon,
+         ORTH <! "伊用件" !>].
+
+lennon-chasen-surname :=  
+        surname-lex & 
+        [SYNSEM.LKEYS.KEYREL.CARG 'lennon,
+         ORTH <! "伊","用","件" !>].
+

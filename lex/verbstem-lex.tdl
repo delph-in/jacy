@@ -721,6 +721,7 @@ mochiyoru-stem :=  v1-c-stem-lex &
                          ORTH <! "»ý¤Á´ó¤ë" !> ].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
+; recur, return, revert
 
 modoru-stem :=  intrans-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED 'modoru]],
@@ -20877,3 +20878,9 @@ sukuiageru_1_1 := v1-v-stem-lex &
 karonjiru_1 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'karonjiru_1,
  ORTH <! "·Ú¤ó¤¸¤ë" !> ].
+
+; (MS 2004-01-15) New entry
+
+haramodosu := v1-c-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED 'haramodosu,
+ ORTH <! "Ê§Ìá" !> ].

@@ -497,6 +497,7 @@ nichi_date-2 := nichi-with-object2-lex &
 [ ORTH <! "Æü" !> ].
 
 ; ERB (2001-08-28) Extra months for CHASEN parsing of "È¬·î" etc. as one word
+; (MS 2004-01-15) We need these also with numbers.
 
 1gatsu_date-1 := 1gatsu-no-object2-lex &
 [ ORTH <! "°ì·î" !> ].
@@ -504,11 +505,23 @@ nichi_date-2 := nichi-with-object2-lex &
 1gatsu_date-2 := 1gatsu-with-object2-lex &
 [ ORTH <! "°ì·î" !> ].
 
+1gatsu_date-3 := 1gatsu-no-object2-lex &
+[ ORTH <! "£±·î" !> ].
+
+1gatsu_date-4 := 1gatsu-with-object2-lex &
+[ ORTH <! "£±·î" !> ].
+
 2gatsu_date-1 := 2gatsu-no-object2-lex &
 [ ORTH <! "Æó·î" !> ].
 
 2gatsu_date-2 := 2gatsu-with-object2-lex &
 [ ORTH <! "Æó·î" !> ].
+
+2gatsu_date-3 := 2gatsu-no-object2-lex &
+[ ORTH <! "£²·î" !> ].
+
+2gatsu_date-4 := 2gatsu-with-object2-lex &
+[ ORTH <! "£²·î" !> ].
 
 3gatsu_date-1 := 3gatsu-no-object2-lex &
 [ ORTH <! "»°·î" !> ].
@@ -516,11 +529,23 @@ nichi_date-2 := nichi-with-object2-lex &
 3gatsu_date-2 := 3gatsu-with-object2-lex &
 [ ORTH <! "»°·î" !> ].
 
+3gatsu_date-3 := 3gatsu-no-object2-lex &
+[ ORTH <! "£³·î" !> ].
+
+3gatsu_date-4 := 3gatsu-with-object2-lex &
+[ ORTH <! "£³·î" !> ].
+
 4gatsu_date-1 := 4gatsu-no-object2-lex &
 [ ORTH <! "»Í·î" !> ].
 
 4gatsu_date-2 := 4gatsu-with-object2-lex &
 [ ORTH <! "»Í·î" !> ].
+
+4gatsu_date-3 := 4gatsu-no-object2-lex &
+[ ORTH <! "£´·î" !> ].
+
+4gatsu_date-4 := 4gatsu-with-object2-lex &
+[ ORTH <! "£´·î" !> ].
 
 5gatsu_date-1 := 5gatsu-no-object2-lex &
 [ ORTH <! "¸Þ·î" !> ].
@@ -528,11 +553,23 @@ nichi_date-2 := nichi-with-object2-lex &
 5gatsu_date-2 := 5gatsu-with-object2-lex &
 [ ORTH <! "¸Þ·î" !> ].
 
+5gatsu_date-3 := 5gatsu-no-object2-lex &
+[ ORTH <! "£µ·î" !> ].
+
+5gatsu_date-4 := 5gatsu-with-object2-lex &
+[ ORTH <! "£µ·î" !> ].
+
 6gatsu_date-1 := 6gatsu-no-object2-lex &
 [ ORTH <! "Ï»·î" !> ].
 
 6gatsu_date-2 := 6gatsu-with-object2-lex &
 [ ORTH <! "Ï»·î" !> ].
+
+6gatsu_date-3 := 6gatsu-no-object2-lex &
+[ ORTH <! "£¶·î" !> ].
+
+6gatsu_date-4 := 6gatsu-with-object2-lex &
+[ ORTH <! "£¶·î" !> ].
 
 7gatsu_date-1 := 7gatsu-no-object2-lex &
 [ ORTH <! "¼··î" !> ].
@@ -540,11 +577,23 @@ nichi_date-2 := nichi-with-object2-lex &
 7gatsu_date-2 := 7gatsu-with-object2-lex &
 [ ORTH <! "¼··î" !> ].
 
+7gatsu_date-3 := 7gatsu-no-object2-lex &
+[ ORTH <! "£··î" !> ].
+
+7gatsu_date-4 := 7gatsu-with-object2-lex &
+[ ORTH <! "£··î" !> ].
+
 8gatsu_date-1 := 8gatsu-no-object2-lex &
 [ ORTH <! "È¬·î" !> ].
 
 8gatsu_date-2 := 8gatsu-with-object2-lex &
 [ ORTH <! "È¬·î" !> ].
+
+8gatsu_date-3 := 8gatsu-no-object2-lex &
+[ ORTH <! "£¸·î" !> ].
+
+8gatsu_date-4 := 8gatsu-with-object2-lex &
+[ ORTH <! "£¸·î" !> ].
 
 9gatsu_date-1 := 9gatsu-no-object2-lex &
 [ ORTH <! "¶å·î" !> ].
@@ -552,11 +601,23 @@ nichi_date-2 := nichi-with-object2-lex &
 9gatsu_date-2 := 9gatsu-with-object2-lex &
 [ ORTH <! "¶å·î" !> ].
 
+9gatsu_date-3 := 9gatsu-no-object2-lex &
+[ ORTH <! "£¹·î" !> ].
+
+9gatsu_date-4 := 9gatsu-with-object2-lex &
+[ ORTH <! "£¹·î" !> ].
+
 10gatsu_date-1 := 10gatsu-no-object2-lex &
 [ ORTH <! "½½·î" !> ].
 
 10gatsu_date-2 := 10gatsu-with-object2-lex &
 [ ORTH <! "½½·î" !> ].
+
+10gatsu_date-3 := 10gatsu-no-object2-lex &
+[ ORTH <! "£±£°·î" !> ].
+
+10gatsu_date-4 := 10gatsu-with-object2-lex &
+[ ORTH <! "£±£°·î" !> ].
 
 11gatsu_date-1 := 11gatsu-no-object2-lex &
 [ ORTH <! "½½°ì·î" !> ].
@@ -564,11 +625,23 @@ nichi_date-2 := nichi-with-object2-lex &
 11gatsu_date-2 := 11gatsu-with-object2-lex &
 [ ORTH <! "½½°ì·î" !> ].
 
+11gatsu_date-3 := 11gatsu-no-object2-lex &
+[ ORTH <! "£±£±·î" !> ].
+
+11gatsu_date-4 := 11gatsu-with-object2-lex &
+[ ORTH <! "£±£±·î" !> ].
+
 12gatsu_date-1 := 12gatsu-no-object2-lex &
 [ ORTH <! "½½Æó·î" !> ].
 
 12gatsu_date-2 := 12gatsu-with-object2-lex &
 [ ORTH <! "½½Æó·î" !> ].
+
+12gatsu_date-3 := 12gatsu-no-object2-lex &
+[ ORTH <! "£±£²·î" !> ].
+
+12gatsu_date-4 := 12gatsu-with-object2-lex &
+[ ORTH <! "£±£²·î" !> ].
 
 ;every month
 
@@ -1631,3 +1704,11 @@ a-ru_2 := num-cl-mod-lex &
 shi-shi-_2 := num-cl-mod-lex &
 [ ORTH <! "£ã£ã" !> ].
 
+; (MS 2004-01-15) new entries
+
+nensei_numcl := num-cl-mod-lex &
+[ ORTH <! "Ç¯À¸" !> ].
+
+kakuni_numcl := num-cl-nomod-lex &
+[ ORTH <! "¥«¹ñ" !>,
+  SYNSEM.LKEYS.ALTKEYREL.PRED 'kakuni ].
