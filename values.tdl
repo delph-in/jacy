@@ -32,6 +32,7 @@ interj :< category.
 det :< category.
 temp_mod :< category.
 noun_mod :< category.
+pp_mod :< category.
 idiom :< category.
 utt :< category.
 turn :< category.

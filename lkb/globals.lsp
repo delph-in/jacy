@@ -161,7 +161,7 @@
 
 (defparameter *psql-lexicon-parameters* 
   #+:psql
-  '((:db "jap") (:host "localhost") (:table "jap"))
+  '((:db "erg") (:host "localhost") (port 5432) (:table "erg2"))
   #-:psql
   nil)
 

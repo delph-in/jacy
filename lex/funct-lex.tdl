@@ -2175,3 +2175,11 @@ tadanaranu_1 := noun_mod-lex-l &
 nantaru_1 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED 'nantaru_1,
 ORTH <! "何たる" !> ].
+
+dake-ppmod := pp_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED 'dake_ppmod,
+ORTH <! "だけ" !> ].
+
+bakari-ppmod := pp_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED 'bakari_ppmod,
+ORTH <! "ばかり" !> ].

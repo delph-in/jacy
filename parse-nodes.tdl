@@ -128,6 +128,10 @@ noun_mod := label &
       [SYNSEM.LOCAL.CAT.HEAD noun_mod_head,
        LABEL-NAME "NOUN_MOD"].
 
+pp_mod := label &
+      [SYNSEM.LOCAL.CAT.HEAD pp_mod_head,
+       LABEL-NAME "PP_MOD"].
+
 idiom := label &
       [SYNSEM.LOCAL.CAT.HEAD idiom_head,
        LABEL-NAME "IDIOM"].

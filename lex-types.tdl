@@ -94,7 +94,19 @@ noun_mod_head-avm :=  noun_mod_head &
                        J-SPEC null,
                        COP-ARG -].
 
+pp_mod_head :< final_head.
 
+
+
+pp_mod_head-avm :=  pp_mod_head &
+                      [POS pp_mod,
+                       MARK null,
+                       MOD < [LOCAL [CAT [HEAD postp_head,
+                                                 VAL saturated],
+                                            BAR bool]] >,
+                       C-MOD null,
+                       J-SPEC null,
+                       COP-ARG -].
 
 hon-prefix_head :=  j-head &
                    [POS prefix,
@@ -587,6 +599,8 @@ overt-nmod-p_head := nmod-p_head-avm &
                       MOD < [LOCAL [ CAT [HEAD noun_head,
                                         VAL saturated]],
                            MODIFIED.PERIPH +] > ].
+
+
 
 ; (MS 2001-12-14) The COP-ARG - is introduced to prevent spurious ambiguity in II NO DESU KA.
 
@@ -3100,6 +3114,29 @@ noun_mod-lex-l := noun_mod-lex &
 
 noun_mod-lex-r := noun_mod-lex &
                   [ SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD right ].
+
+pp_mod-lex := lexical_sign-word &
+            [SYNSEM [LKEYS.KEYREL #key & [ARG1 #inst, 
+					  LBL #handle],
+		     LOCAL [CAT [HEAD pp_mod_head-avm &
+				      [MOD < [LOCAL intersective_mod &
+						    [ CONT [HOOK.XARG #inst,
+							    RELS.LIST.FIRST.LBL #handle]]] > ], 
+				 VAL saturated],
+			    ARG-S < >,
+			    CONT simple-adj-sem-type &
+				[RELS <! #key !>,
+                                 HCONS <! !>],
+                            BAR +],
+                     NON-LOCAL [QUE <! !>,
+                             AFFIX <! !>]], 
+             INFLECTED +].
+
+
+pp_mod-lex-r := pp_mod-lex &
+                  [ SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD right ].
+
+
 
 
 ;(MS 2001-10-23) this shall be for ookina, chiisana
