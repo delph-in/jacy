@@ -1596,11 +1596,14 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 
 ; (MS 2003-12-02) norm-relation has no definition??? Use no_relation instead?
 
+; (ERB 2003-12-03) No -- no_relation contrasted with norm-relation.  Using
+; noun-rel instead.
+
 nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
 [ SYNSEM.LOCAL.LKEYS.--KEYREL [WLINK #label,
-			 PRED #rel],
+			       PRED #rel],
   ARGS.FIRST.SYNSEM.LOCAL.LKEYS [--KEYREL [WLINK #label],
-				 --ALTKEYREL no_relation & [ PRED #rel ]]].
+				 --ALTKEYREL noun_rel & [ PRED #rel ]]].
 
 
 
@@ -1610,8 +1613,15 @@ nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
 ; (ERB 2003-11-12) For printing of MRSs, put in a PRED value
 ; on the KEY.
 
+; (ERB 2003-12-03) We still need some mechanism for separating the mod numcls from the nomods
+; in the nominal-numcl rules.  Melanie has resurrected no_relation, and I'm putting it back in here.
+
+; (ERB 2003-12-03) [PRED 'reg-nom_rel] belongs on mother's KEYREL, not daughters.
+
 nominal-numcl-rule-mod := nominal-numcl-rule-type-noncard &
-[ ARGS.FIRST.SYNSEM.LOCAL.LKEYS.--KEYREL reg-quantity_rel & [PRED 'reg-nom_rel]].
+[ SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'reg-nom_rel,
+  ARGS.FIRST.SYNSEM.LOCAL.LKEYS [ --KEYREL reg-quantity_rel,
+				  --ALTKEYREL no_relation ]].
 
 
 ; ERB (2001-08-28)

@@ -2655,30 +2655,47 @@ no-mod-num-cl-lex := numeral-classifier &
 ; ËÜ¡¢¸Ä¡¢É¤¡¢¿Í¡¢ etc.
 
 ; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
+; (ERB 2003-12-03) We still need some mechanism for separating the mod numcls from the nomods
+; in the nominal-numcl rules.  Melanie has resurrected no_relation, and I'm putting it back in here.
 
 num-cl-mod-lex := num-cl-lex & anymod-num-cl-lex &
-                  [ SYNSEM.LOCAL.LKEYS [ --KEYREL reg-quantity_rel & [PRED 'reg-quantity_rel]]].
+                  [ SYNSEM.LOCAL.LKEYS [ --KEYREL reg-quantity_rel & [PRED 'reg-quantity_rel],
+					 --ALTKEYREL no_relation ]].
 
 ; ÈÖ¡¢¹æ
 ; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
+; (ERB 2003-12-03) We still need some mechanism for separating the mod numcls from the nomods
+; in the nominal-numcl rules.  Melanie has resurrected no_relation, and I'm putting it back in here.
 
 num-cl-nmod-lex := num-cl-lex & noun-mod-num-cl-lex &
-                  [ SYNSEM.LOCAL.LKEYS [  --KEYREL reg-quantity_rel]].
+                  [ SYNSEM.LOCAL.LKEYS [  --KEYREL reg-quantity_rel,
+					  --ALTKEYREL no_relation]].
 
-; ±ß¡¢Ç¯¡¢³¬¡¢etc.
+; ±ß¡¢Ç¯¡¢³¬¡¢etc
+; (ERB 2003-12-03) Norm-relation is gone, so here the type of ALTKEY will be noun-rel.  It doesn't
+; really matter what it is exactly, as long as it contrasts with no_relation, because the only information
+; we take from it presently is the PRED value.
 
 num-cl-nomod-lex := num-cl-lex & no-mod-num-cl-lex &
-                  [ SYNSEM.LOCAL.LKEYS [  --KEYREL reg-quantity_rel & [PRED 'reg-quantity_rel]]].
+                  [ SYNSEM.LOCAL.LKEYS [  --KEYREL reg-quantity_rel & [PRED 'reg-quantity_rel],
+					  --ALTKEYREL noun_rel ]].
 
 ; ¡ï¡¢¡ð¡¢etc.
+; (ERB 2003-12-03) Norm-relation is gone, so here the type of ALTKEY will be noun-rel.  It doesn't
+; really matter what it is exactly, as long as it contrasts with no_relation, because the only information
+; we take from it presently is the PRED value.
 
 num-cl2-nomod-lex := num-cl2-lex & no-mod-num-cl-lex &
-                     [ SYNSEM.LOCAL.LKEYS [ --KEYREL reg-quantity_rel & [PRED 'reg-quantity_rel]]].
+                     [ SYNSEM.LOCAL.LKEYS [ --KEYREL reg-quantity_rel & [PRED 'reg-quantity_rel],
+					    --ALTKEYREL noun_rel ]].
 
 ; numbers used as numcls
 ; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
+; (ERB 2003-12-03) We still need some mechanism for separating the mod numcls from the nomods
+; in the nominal-numcl rules.  Melanie has resurrected no_relation, and I'm putting it back in here.
 
-num-cl2-nmod-lex-super := num-cl2-lex & noun-mod-num-cl-lex.
+num-cl2-nmod-lex-super := num-cl2-lex & noun-mod-num-cl-lex &
+			  [ SYNSEM.LOCAL.LKEYS [ --ALTKEYREL no_relation ]].
 
 ; No., ÈÖ¹æ
 
