@@ -987,7 +987,8 @@ vn-light-obj-change-rule-noun  :=  obj-casechange-rule &
 rareru-obj-change-rule :=  obj-casechange-rule &
                        [SYNSEM.LOCAL.CAT.VAL [COMPS.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
 							       [CASE ga]]],
-                        ARGS < [SYNSEM [LOCAL [ CAT [HEAD verb_head & [KEYS.KEY rareru_rel],
+                        ARGS < [SYNSEM [LOCAL [ CAT [HEAD verb_head & [KEYS.KEY rareru_rel,
+								       MODUS potential],
 						    VAL.SUBJ null]]]] >].
 
 garu-sbj-change-rule := subj-casechange-rule &

@@ -627,6 +627,7 @@ no_rel := predsort.
 tai_rel  := predsort.
 rareru_rel := predsort.
 seem_rel := predsort.
+pass_rel := predsort.
 
 ; (ERB 2004-1-18) Copied from ERG for measure NP numeral
 ; classifier phrases.

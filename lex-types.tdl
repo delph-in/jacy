@@ -5383,13 +5383,14 @@ simple-pass-end-lex :=   pass-end-lex &
 								       LTOP #hand,
 								       XARG #surfobjind],
 								 RELS.LIST.FIRST arg12-relation & [ARG2 #surfsbjind]],
-							   CAT.VAL sbj-obj-arg]]]],
+							   CAT.VAL sbj-obj-arg]]],
+				    HEAD.KEYS.KEY pass_rel],
 			      
 			       CONT [RELS <! !>,
 				     HOOK.INDEX #event,
 				     HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfobjind],
-			LKEYS.KEYREL pass-relation & [LBL #hand]],
+			LKEYS.KEYREL pass-relation &  [LBL #hand]],
 		LMORPH-BIND-TYPE pass-morph].
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
@@ -5408,7 +5409,8 @@ ditrans-pass-end-lex :=   pass-end-lex &
 							    CAT.VAL [SUBJ 1-list & < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
 								     COMPS 2-comps-list & 
 									  < #objval & [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
-									    [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >]]]]],
+									    [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >]]]],
+				    HEAD.KEYS.KEY pass_rel],
 				    
 				   CONT [RELS <! !>,
 					 HOOK.INDEX #event,
@@ -5425,7 +5427,8 @@ adversative-pass-end-lex := pass-end-lex &
 			    [SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 									      CONT.HOOK.INDEX #surfsbjind]] >,
 						      SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
-									      CONT.HOOK.LTOP #sprhd]] >]],
+									      CONT.HOOK.LTOP #sprhd]] >],
+						 HEAD.KEYS.KEY pass_rel],
 						CONT [RELS <! #key !>,
 						 HOOK [LTOP #sprhd,
 						       XARG #surfsbjind,
@@ -5440,7 +5443,8 @@ adversative-intrans-pass-end-lex := adversative-pass-end-lex &
                 [SYNSEM [LOCAL [CAT [VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
 								      CONT.HOOK.INDEX #surfobjind]]>,
 					 SPR < [LOCAL [CAT.VAL sbj-arg,
-						       CONT.HOOK.XARG #surfobjind]] >]],
+						       CONT.HOOK.XARG #surfobjind]] >],
+				     HEAD.KEYS.KEY pass_rel],
 			       CTXT.EMPATHY.EMPEE #surfobjind],
 			 LKEYS.KEYREL adversative-intrans-relation]].
 
@@ -5453,7 +5457,8 @@ adversative-trans-pass-end-lex := adversative-pass-end-lex &
 								[LOCAL [CAT.HEAD case-p_head & [CASE ni],
 									CONT.HOOK.INDEX #surfobjind2]] >,
 					  SPR < [LOCAL [CAT.VAL sbj-obj-arg & [COMPS.FIRST #obj],
-							CONT [HOOK.XARG #surfobjind2]]] >]],
+							CONT [HOOK.XARG #surfobjind2]]] >],
+				     HEAD.KEYS.KEY pass_rel],
 			       
 			       CTXT.EMPATHY.EMPEE #surfsbjind],
 		 LKEYS.KEYREL adversative-trans-relation & 
