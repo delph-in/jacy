@@ -159,7 +159,8 @@ yone := s-end1-declint-lex &
 
 
 ga-sap := s-end1-decl-lex &
-          [ORTH <! "が" !>].
+          [ORTH <! "が" !>,
+	   SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.EMPTY -].
 
 ;ga-s-ell := s-ell-end-lex &
 ;       [ORTH <! "が" !>,
@@ -168,7 +169,8 @@ ga-sap := s-end1-decl-lex &
 
 ga-conj := s-conj1-lex & 
            [ ORTH <! "が" !>,
-             SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+             SYNSEM [LOCAL.CAT [HEAD.SMOD decl,
+				VAL.COMPS.FIRST.LOCAL.CAT.HEAD.EMPTY -],
                            LKEYS.KEYREL.PRED '_ga_p_rel]].
 
 ga-conj-np := s-conj-nonprop1-lex & 
@@ -228,8 +230,9 @@ shi-send :=  s-end1-decl-lex &
 
 to-sap  := s-conj1-lex & 
                   [ORTH <! "と" !>,
-                   SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
-                                 LKEYS.KEYREL.PRED '_to_p_sconj_rel]].
+                   SYNSEM [LOCAL.CAT [HEAD.SMOD decl,
+				      VAL.COMPS.FIRST.LOCAL.CAT.HEAD.EMPTY -],
+			   LKEYS.KEYREL.PRED '_to_p_sconj_rel]].
 
 ; (ERB 2002-01-14) I'_m not sure we'_d ever actually need this.
 ; と seems to be more of a subordinating conjunction.
@@ -446,6 +449,13 @@ comma-no-nmod-1 := nounmod-p-lex &
                           CONT.RELS <! [PRED '_no_nmod_rel] !>],
             ORTH <! "、", "の" !>].
 
+comma-sap  := s-conj1-lex & 
+                  [ORTH <! "、" !>,
+                   SYNSEM [LOCAL.CAT.HEAD.SMOD decl,
+                                 LKEYS.KEYREL.PRED '_comma_p_sconj_rel]].
+
+
+
 ;"三井化学だけ旧住所です"
 dake-case := ga-wo-ni-p-lex &
              [ORTH <! "だけ" !>,
@@ -607,10 +617,15 @@ ga-3 := ga-wo-ni-p-lex-3 &
 ;"itsu ga gotsugou ga yoroshii deshou ka."
 ; (MS 2002-07-11) How do I restrict this to predicates that have a saturated non-zpro subject?
 ; For the moment, VAL.SUBJ none seems to be enough, but a semantic restriction would be better.
+; (MS 2004-06-25) The same as above in ga-top: zpro-ref-ind.
+
 ga4 := topic-pobj-lex &
        [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE postp-case],
                           HEAD [PTYPE topic,
-                                MOD < [LOCAL.CAT.VAL [SUBJ null]] >]],
+                                MOD < [LOCAL [CAT [VAL [UNSAT -,
+							 SUBJ null],
+						    HEAD.EMPTY -],
+					      CONT.HOOK.XARG full_ref-ind]] >]],
                       CONT.RELS <! [PRED '_ga_p_rel] !>],
         ORTH <! "が" !>].
 
@@ -639,7 +654,7 @@ hodo-p := postp-lex &
          ORTH <! "ほど" !>]. 
 
 
-hodo-varg := postp-lex-1 &
+hodo-varg := postp-lex-varg &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE kurai,
                                 CONT.RELS <! [PRED '_hodo_p_rel] !>],
          ORTH <! "ほど" !>]. 
@@ -871,13 +886,13 @@ made := postp-lex &
                    ORTH <! "まで" !>].  
 
 
-made-1 := postp-lex-1 &
+made-1 := postp-lex-varg &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
                                 CONT.RELS <! [PRED '_made_p_rel] !>],
                    ORTH <! "まで" !>].  
 
 
-made-1-kanji := postp-lex-1 &
+made-1-kanji := postp-lex-varg &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE made,
                                 CONT.RELS <! [PRED '_made_p_rel] !>],
                    ORTH <! "迄" !>].  
@@ -1012,7 +1027,7 @@ niatari-hiragana-narg := postp-lex &
          ORTH <! "にあたり" !>]. 
 
 
-niatari-hiragana-varg := postp-lex-1 &
+niatari-hiragana-varg := postp-lex-varg &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_niatari_p_rel] !>],
          ORTH <! "にあたり" !>]. 
@@ -1024,7 +1039,7 @@ niatari-narg := postp-lex &
          ORTH <! "に当たり" !>]. 
 
 
-niatari-varg := postp-lex-1 &
+niatari-varg := postp-lex-varg &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_niatari_p_rel] !>],
          ORTH <! "に当たり" !>]. 
@@ -1042,7 +1057,7 @@ niatatte-hiragana-narg := postp-lex &
          ORTH <! "にあたって" !>]. 
 
 
-niatatte-hiragana-varg := postp-lex-1 &
+niatatte-hiragana-varg := postp-lex-varg &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_niatatte_p_rel] !>],
          ORTH <! "にあたって" !>]. 
@@ -1190,7 +1205,7 @@ nishitagai-narg := postp-lex &
          ORTH <! "に従い" !>]. 
 
 
-nishitagai-varg := postp-lex-1 &
+nishitagai-varg := postp-lex-varg &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_nishitagai_p_rel] !>],
          ORTH <! "に従い" !>]. 
@@ -1202,7 +1217,7 @@ nishitagatte-narg := postp-lex &
          ORTH <! "に従って" !>]. 
 
 
-nishitagatte-varg := postp-lex-1 &
+nishitagatte-varg := postp-lex-varg &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_nishitagatte_p_rel] !>],
          ORTH <! "に従って" !>]. 
@@ -1609,6 +1624,22 @@ to-conj-pobj  := nmod-p-lex &
              ORTH <! "と" !>].
 
 
+;(MS 2004-06-25) I want to define the second conjunction in, e.g. "犬と猫とがいます"
+
+to-second-conj := postp-lex-coord &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE to,
+                                CONT.RELS <! [PRED '_to_with_p_rel] !>],
+         ORTH <! "と" !>].
+
+
+ka-second-conj := postp-lex-coord &
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE to,
+                                CONT.RELS <! [PRED '_ka_with_p_rel] !>],
+         ORTH <! "か" !>].
+
+
+
+
 toitashimashite-multi := postp-lex &
 	        [SYNSEM.LOCAL [CAT.HEAD.PTYPE toshite,
                                CONT.RELS <! [PRED '_toshite_p_rel] !>],
@@ -1762,7 +1793,7 @@ yori := postp-lex &
          ORTH <! "より" !>]. 
 
 
-yori-varg := postp-lex-1 &
+yori-varg := postp-lex-varg &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE yori,
                                 CONT.RELS <! [PRED '_yori_p_rel] !>],
          ORTH <! "より" !>]. 

@@ -792,6 +792,7 @@ subj-zpro-ins-lrule := zpro-insertion-rule &
 ; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
 ; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
 ; (MS 2004-02-25) No. LKEYS.KEYREL IS accessible (we are in lexrules!)
+; (MS 2004-06-25) Auxiliaries should not undergo this. 
 
 obj-zpro-ins-lrule := zpro-insertion-rule & 
 [SYNSEM [LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
@@ -799,8 +800,9 @@ obj-zpro-ins-lrule := zpro-insertion-rule &
 			SPR #spr],
 	       ARG-S #subj],
 	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
-ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
-						       EMPTY -],
+ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
+						      AUX -,
+						      EMPTY -],
                                VAL [SUBJ #subj,
 				    COMPS opt-1-arg,
 				    SPR #spr]]]]].

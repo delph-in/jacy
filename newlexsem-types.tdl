@@ -119,9 +119,13 @@ adj-sem-type := mod-id-wg-handel-mrs &
                   RELS diff-list & [LIST.FIRST adj-relation &
 					       [ ARG1 #inst]]].
 
+;(MS 2004-06-25) added the linking of LBL to LTOP.
+
 na-adj-sem-type-basic := mod-id-wg-handel-mrs &
-                [ HOOK.INDEX #event,
-                  RELS <! na-adj-relation & [ARG0 #event] !>].
+                [ HOOK [INDEX #event,
+			LTOP #handle],
+                  RELS <! na-adj-relation & [ARG0 #event,
+					     LBL #handle] !>].
 
 na-adj-sem-type := na-adj-sem-type-basic &
                 [ HCONS <! !>].
@@ -157,9 +161,10 @@ dim-adj-sem-type := adj-sem-type &
 		[ RELS diff-list & [LIST.FIRST adj-relation],
                          HCONS <! !> ].
 
+;(MS 2004-06-24) As the n-conjunction gets an index, it should be quantified and therefore 
+; needs something in its HCONS. Therefore I erased the [HCONS <! !>] condition.
 
-n-conj-sem-type :=  mod-id-wg-handel-mrs &
-                        [HCONS <! !>].
+n-conj-sem-type :=  mod-id-wg-handel-mrs.
 
 ; (ERB 2001-09-13) Nothing is identifying KEY.LBL and LTOP for
 ; these guys.  This constraint might belong somewhere higher up.

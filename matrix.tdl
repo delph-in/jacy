@@ -505,12 +505,15 @@ prep-mod-relation := arg12-ev-relation.
 adv-relation := arg0-relation.
 
 ; coordinating and subordinating conjunctions
+; (MS 2004-06-24) changed the handle to semarg, otherwise it won't scope 
+; in n compounds.
 
 subord-or-conj-relation := relation &
-  [ L-HNDL handle,
-    R-HNDL handle ].
+  [ L-HNDL semarg,
+    R-HNDL semarg ].
 
-conjunction-relation := subord-or-conj-relation &
+
+conjunction-relation := subord-or-conj-relation & 
   [ C-ARG conj-index,
     L-INDEX index,
     R-INDEX index ].

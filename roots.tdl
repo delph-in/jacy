@@ -8,7 +8,7 @@
 ; np-frag-root  -> np-frag-end-root
 ; Comment will be added.
 
-np-frag-root := np-frag-rule-type.
+;np-frag-root := np-frag-rule-type.
 
 ;; not used by lkb
 ;np-frag-end-root := np-frag-end-rule-type.
@@ -37,9 +37,9 @@ np-frag-root := np-frag-rule-type.
 ;	 NON-LOCAL [ROBUST -,
 ;		    UNDERSPEC_ARG +] ]].
 
-utterance-root := j-sign &
-[ SYNSEM [LOCAL.CAT.HEAD utterance_head,
-	 NON-LOCAL [UNDERSPEC_ARG +] ]].
+;utterance-root := j-sign &
+;[ SYNSEM [LOCAL.CAT.HEAD utterance_head,
+;	 NON-LOCAL [UNDERSPEC_ARG +] ]].
 
 
  
@@ -47,14 +47,14 @@ utterance-root := j-sign &
 ; situations, where the binding is not clear, gives multiple analyses and
 ; lets further processing decide.
 
-;utterance-root := j-sign &
-;[ SYNSEM [LOCAL.CAT.HEAD utterance_head,
-;	 NON-LOCAL [ROBUST -,
-;		    UNDERSPEC_ARG -] ]].
+utterance-root := j-sign &
+[ SYNSEM [LOCAL.CAT.HEAD utterance_head,
+	 NON-LOCAL [ROBUST +,
+		    UNDERSPEC_ARG -] ]].
 
 
 
-pp-frag-root := pp-frag-rule-type.
+;pp-frag-root := pp-frag-rule-type.
 
 ; (MS 2002-12-04) fragment rule type for number fragments
 

@@ -35,7 +35,7 @@
 
 (defparameter *scope-feat* (vsym "BODY"))
 
-(defparameter *ignored-sem-features* (list (vsym "WLINK"))
+(defparameter *ignored-sem-features* (list (vsym "WLINK")(vsym "CFROM")(vsym "CTO"))
   "A list of features which are ignored completely")
 
 (defparameter *main-semantics-path* 

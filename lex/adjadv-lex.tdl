@@ -16186,40 +16186,40 @@ ichido-multi := scopal-adv-regular-lex &
 
 ; あわや 
 
-awaya_2 := scopal-adv-lex &
+awaya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_awaya_a_2_rel,
  ORTH <! "あわや" !>].
 
 ;<IJ> ; いかに 
 ;<IJ> ; JACY いかに: ikani-adv (adv-wh-lex)
 
-;<IJ> ikani_2 := scopal-adv-lex &
+;<IJ> ikani_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ikani_a_2_rel,
 ;<IJ>  ORTH <! "いかに" !>].
 
 ; うんうん 
 
-unun_2 := scopal-adv-lex &
+unun_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_unun_a_2_rel,
  ORTH <! "うんうん" !>].
 
 ; おいおい 
 ; Used 1 times
 
-oioi_2 := scopal-adv-lex &
+oioi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_oioi_a_2_rel,
  ORTH <! "おいおい" !>].
 
 ; 大きに 
 
-ookini_2 := scopal-adv-lex &
+ookini_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ookini_a_2_rel,
  ORTH <! "大きに" !>].
 
 ; ちょいと 
 ; Used 1 times
 
-choito_2 := scopal-adv-lex &
+choito_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_choito_a_2_rel,
  ORTH <! "ちょいと" !>].
 
@@ -16227,7 +16227,7 @@ choito_2 := scopal-adv-lex &
 ;<IJ> ; JACY ちょっと: chotto-adv (isect-adv-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> chotto_2 := scopal-adv-lex &
+;<IJ> chotto_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_chotto_a_2_rel,
 ;<IJ>  ORTH <! "ちょっと" !>].
 
@@ -16235,21 +16235,21 @@ choito_2 := scopal-adv-lex &
 ;<IJ> ; JACY なるほど: naruhodo-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> naruhodo_2 := scopal-adv-lex &
+;<IJ> naruhodo_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_naruhodo_a_2_rel,
 ;<IJ>  ORTH <! "なるほど" !>].
 
 ; 何と 
 ; Used 1 times
 
-nanto_2 := scopal-adv-lex &
+nanto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nanto_a_2_rel,
  ORTH <! "何と" !>].
 
 ;<IJ> ; ま 
 ;<IJ> ; JACY ま: ma (hes-lex)
 
-;<IJ> ma_2_2 := scopal-adv-lex &
+;<IJ> ma_2_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ma_a_2_rel,
 ;<IJ>  ORTH <! "ま" !>].
 
@@ -16257,7 +16257,7 @@ nanto_2 := scopal-adv-lex &
 ;<IJ> ; JACY まあ: maa-interj (interj-lex) maa-hes (hes-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> maa_2 := scopal-adv-lex &
+;<IJ> maa_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_maa_a_2_rel,
 ;<IJ>  ORTH <! "まあ" !>].
 
@@ -16265,14 +16265,14 @@ nanto_2 := scopal-adv-lex &
 ;<IJ> ; JACY もう: mou-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 13 times
 
-;<IJ> mou_2 := scopal-adv-lex &
+;<IJ> mou_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mou_a_2_rel,
 ;<IJ>  ORTH <! "もう" !>].
 
 ;<IJ> ; まあまあ 
 ;<IJ> ; JACY まあまあ: maamaa-adj (na-adj-lex)
 
-;<IJ> maamaa_2 := scopal-adv-lex &
+;<IJ> maamaa_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_maamaa_a_2_rel,
 ;<IJ>  ORTH <! "まあまあ" !>].
 
@@ -16280,13 +16280,13 @@ nanto_2 := scopal-adv-lex &
 ;<IJ> ; JACY 只今: tadaima-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> tadaima_3 := scopal-adv-lex &
+;<IJ> tadaima_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tadaima_a_3_rel,
 ;<IJ>  ORTH <! "只今" !>].
 
 ; 突如 
 
-totsujo_2 := scopal-adv-lex &
+totsujo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_totsujo_a_2_rel,
  ORTH <! "突如" !>].
 
@@ -16294,88 +16294,88 @@ totsujo_2 := scopal-adv-lex &
 ;<IJ> ; JACY 突然: totsuzeN-adv (isect-adv-lex)
 ;<IJ> ; Used 7 times
 
-;<IJ> totsuzen_2 := scopal-adv-lex &
+;<IJ> totsuzen_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_totsuzen_a_2_rel,
 ;<IJ>  ORTH <! "突然" !>].
 
 ; へいへい 
 
-heihei_3 := scopal-adv-lex &
+heihei_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_heihei_a_3_rel,
  ORTH <! "へいへい" !>].
 
 ; よちよち 
 
-yochiyochi_3 := scopal-adv-lex &
+yochiyochi_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yochiyochi_a_3_rel,
  ORTH <! "よちよち" !>].
 
 ; 青々 
 
-aoao_2 := scopal-adv-lex &
+aoao_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_aoao_a_2_rel,
  ORTH <! "青々" !>].
 
 ; あくせく 
 
-akuseku_2 := scopal-adv-lex &
+akuseku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_akuseku_a_2_rel,
  ORTH <! "あくせく" !>].
 
 ; あっさり 
 ; Used 5 times
 
-assari_2 := scopal-adv-lex &
+assari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_assari_a_2_rel,
  ORTH <! "あっさり" !>].
 
 ; 生き生き 
 ; Used 6 times
 
-ikiiki_2 := scopal-adv-lex &
+ikiiki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikiiki_a_2_rel,
  ORTH <! "生き生き" !>].
 
 ; いじいじ 
 
-ijiiji_2 := scopal-adv-lex &
+ijiiji_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ijiiji_a_2_rel,
  ORTH <! "いじいじ" !>].
 
 ; いそいそ 
 
-isoiso_2 := scopal-adv-lex &
+isoiso_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_isoiso_a_2_rel,
  ORTH <! "いそいそ" !>].
 
 ; うかうか 
 
-ukauka_2 := scopal-adv-lex &
+ukauka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ukauka_a_2_rel,
  ORTH <! "うかうか" !>].
 
 ; うきうき 
 ; Used 1 times
 
-ukiuki_2 := scopal-adv-lex &
+ukiuki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ukiuki_a_2_rel,
  ORTH <! "うきうき" !>].
 
 ; うじうじ 
 
-ujiuji_2 := scopal-adv-lex &
+ujiuji_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ujiuji_a_2_rel,
  ORTH <! "うじうじ" !>].
 
 ; うじゃうじゃ 
 
-ujauja_2 := scopal-adv-lex &
+ujauja_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ujauja_a_2_rel,
  ORTH <! "うじゃうじゃ" !>].
 
 ; うずうず 
 
-uzuuzu_2 := scopal-adv-lex &
+uzuuzu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_uzuuzu_a_2_rel,
  ORTH <! "うずうず" !>].
 
@@ -16383,162 +16383,162 @@ uzuuzu_2 := scopal-adv-lex &
 ;<IJ> ; JACY うっかり: ukkari-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> ukkari_2 := scopal-adv-lex &
+;<IJ> ukkari_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ukkari_a_2_rel,
 ;<IJ>  ORTH <! "うっかり" !>].
 
 ; うっとり 
 ; Used 2 times
 
-uttori_2 := scopal-adv-lex &
+uttori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_uttori_a_2_rel,
  ORTH <! "うっとり" !>].
 
 ; うつらうつら 
 
-utsurautsura_2 := scopal-adv-lex &
+utsurautsura_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_utsurautsura_a_2_rel,
  ORTH <! "うつらうつら" !>].
 
 ; うとうと 
 
-utouto_2 := scopal-adv-lex &
+utouto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_utouto_a_2_rel,
  ORTH <! "うとうと" !>].
 
 ; うようよ 
 
-uyouyo_2 := scopal-adv-lex &
+uyouyo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_uyouyo_a_2_rel,
  ORTH <! "うようよ" !>].
 
 ; うろうろ 
 ; Used 1 times
 
-urouro_2 := scopal-adv-lex &
+urouro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_urouro_a_2_rel,
  ORTH <! "うろうろ" !>].
 
 ; うろちょろ 
 
-urochoro_2 := scopal-adv-lex &
+urochoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_urochoro_a_2_rel,
  ORTH <! "うろちょろ" !>].
 
 ; うんざり 
 
-unzari_2 := scopal-adv-lex &
+unzari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_unzari_a_2_rel,
  ORTH <! "うんざり" !>].
 
 ; おたおた 
 
-otaota_2 := scopal-adv-lex &
+otaota_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_otaota_a_2_rel,
  ORTH <! "おたおた" !>].
 
 ; おっとり 
 
-ottori_2 := scopal-adv-lex &
+ottori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ottori_a_2_rel,
  ORTH <! "おっとり" !>].
 
 ; おろおろ 
 
-orooro_2 := scopal-adv-lex &
+orooro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_orooro_a_2_rel,
  ORTH <! "おろおろ" !>].
 
 ; がくがく 
 
-gakugaku_2 := scopal-adv-lex &
+gakugaku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gakugaku_a_2_rel,
  ORTH <! "がくがく" !>].
 
 ; がつがつ 
 
-gatsugatsu_2 := scopal-adv-lex &
+gatsugatsu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gatsugatsu_a_2_rel,
  ORTH <! "がつがつ" !>].
 
 ; がっかり 
 
-gakkari_2 := scopal-adv-lex &
+gakkari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gakkari_a_2_rel,
  ORTH <! "がっかり" !>].
 
 ; がっくり 
 
-gakkuri_2 := scopal-adv-lex &
+gakkuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gakkuri_a_2_rel,
  ORTH <! "がっくり" !>].
 
 ; がっしり 
 ; Used 2 times
 
-gasshiri_2 := scopal-adv-lex &
+gasshiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gasshiri_a_2_rel,
  ORTH <! "がっしり" !>].
 
 ; がっちり 
 
-gacchiri_2 := scopal-adv-lex &
+gacchiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gacchiri_a_2_rel,
  ORTH <! "がっちり" !>].
 
 ; かっと 
 
-katto_2 := scopal-adv-lex &
+katto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_katto_a_2_rel,
  ORTH <! "かっと" !>].
 
 ; がやがや 
 
-gayagaya_2 := scopal-adv-lex &
+gayagaya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gayagaya_a_2_rel,
  ORTH <! "がやがや" !>].
 
 ; からっと 
 
-karatto_2_1 := scopal-adv-lex &
+karatto_2_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karatto_a_2_rel,
  ORTH <! "からっと" !>].
 
 ; かりかり 
 
-karikari_2 := scopal-adv-lex &
+karikari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karikari_a_2_rel,
  ORTH <! "かりかり" !>].
 
 ; かれこれ 
 ; Used 1 times
 
-karekore_2 := scopal-adv-lex &
+karekore_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karekore_a_2_rel,
  ORTH <! "かれこれ" !>].
 
 ; がんがん 
 
-gangan_2 := scopal-adv-lex &
+gangan_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gangan_a_2_rel,
  ORTH <! "がんがん" !>].
 
 ; ぎくしゃく 
 
-gikushaku_2 := scopal-adv-lex &
+gikushaku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gikushaku_a_2_rel,
  ORTH <! "ぎくしゃく" !>].
 
 ; ぎすぎす 
 
-gisugisu_2 := scopal-adv-lex &
+gisugisu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gisugisu_a_2_rel,
  ORTH <! "ぎすぎす" !>].
 
 ; きっちり 
 ; Used 1 times
 
-kicchiri_2 := scopal-adv-lex &
+kicchiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kicchiri_a_2_rel,
  ORTH <! "きっちり" !>].
 
@@ -16546,542 +16546,542 @@ kicchiri_2 := scopal-adv-lex &
 ;<IJ> ; JACY きっと: kitto-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> kitto_2 := scopal-adv-lex &
+;<IJ> kitto_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kitto_a_2_rel,
 ;<IJ>  ORTH <! "きっと" !>].
 
 ; きっぱり 
 ; Used 1 times
 
-kippari_2 := scopal-adv-lex &
+kippari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kippari_a_2_rel,
  ORTH <! "きっぱり" !>].
 
 ; きびきび 
 
-kibikibi_2 := scopal-adv-lex &
+kibikibi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kibikibi_a_2_rel,
  ORTH <! "きびきび" !>].
 
 ; ぎょっと 
 
-gyotto_2 := scopal-adv-lex &
+gyotto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gyotto_a_2_rel,
  ORTH <! "ぎょっと" !>].
 
 ; きょろきょろ 
 
-kyorokyoro_2 := scopal-adv-lex &
+kyorokyoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kyorokyoro_a_2_rel,
  ORTH <! "きょろきょろ" !>].
 
 ; ぎょろぎょろ 
 
-gyorogyoro_2 := scopal-adv-lex &
+gyorogyoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gyorogyoro_a_2_rel,
  ORTH <! "ぎょろぎょろ" !>].
 
 ; きらきら 
 ; Used 1 times
 
-kirakira_2 := scopal-adv-lex &
+kirakira_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kirakira_a_2_rel,
  ORTH <! "きらきら" !>].
 
 ; ぎらぎら 
 
-giragira_2 := scopal-adv-lex &
+giragira_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_giragira_a_2_rel,
  ORTH <! "ぎらぎら" !>].
 
 ; きりっと 
 
-kiritto_2 := scopal-adv-lex &
+kiritto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kiritto_a_2_rel,
  ORTH <! "きりっと" !>].
 
 ; きれいさっぱり 
 
-kireisappari_2 := scopal-adv-lex &
+kireisappari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kireisappari_a_2_rel,
  ORTH <! "きれいさっぱり" !>].
 
 ; くすくす 
 
-kusukusu_2 := scopal-adv-lex &
+kusukusu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kusukusu_a_2_rel,
  ORTH <! "くすくす" !>].
 
 ; くっきり 
 
-kukkiri_2 := scopal-adv-lex &
+kukkiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kukkiri_a_2_rel,
  ORTH <! "くっきり" !>].
 
 ; ぐったり 
 
-guttari_2 := scopal-adv-lex &
+guttari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guttari_a_2_rel,
  ORTH <! "ぐったり" !>].
 
 ; ぐにゃぐにゃ 
 
-gunyagunya_2 := scopal-adv-lex &
+gunyagunya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gunyagunya_a_2_rel,
  ORTH <! "ぐにゃぐにゃ" !>].
 
 ; くねくね 
 
-kunekune_2 := scopal-adv-lex &
+kunekune_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kunekune_a_2_rel,
  ORTH <! "くねくね" !>].
 
 ; くよくよ 
 
-kuyokuyo_2 := scopal-adv-lex &
+kuyokuyo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kuyokuyo_a_2_rel,
  ORTH <! "くよくよ" !>].
 
 ; くらくら 
 ; Used 1 times
 
-kurakura_2 := scopal-adv-lex &
+kurakura_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kurakura_a_2_rel,
  ORTH <! "くらくら" !>].
 
 ; ぐらぐら 
 
-guragura_2 := scopal-adv-lex &
+guragura_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guragura_a_2_rel,
  ORTH <! "ぐらぐら" !>].
 
 ; くるくる 
 ; Used 1 times
 
-kurukuru_2 := scopal-adv-lex &
+kurukuru_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kurukuru_a_2_rel,
  ORTH <! "くるくる" !>].
 
 ; 黒々 
 
-kuroguro_2 := scopal-adv-lex &
+kuroguro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kuroguro_a_2_rel,
  ORTH <! "黒々" !>].
 
 ; けちけち 
 
-kechikechi_2 := scopal-adv-lex &
+kechikechi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kechikechi_a_2_rel,
  ORTH <! "けちけち" !>].
 
 ; げっそり 
 
-gessori_2 := scopal-adv-lex &
+gessori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gessori_a_2_rel,
  ORTH <! "げっそり" !>].
 
 ; げんなり 
 
-gennari_2 := scopal-adv-lex &
+gennari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gennari_a_2_rel,
  ORTH <! "げんなり" !>].
 
 ; こざっぱり 
 
-kozappari_2 := scopal-adv-lex &
+kozappari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kozappari_a_2_rel,
  ORTH <! "こざっぱり" !>].
 
 ; こそこそ 
 
-kosokoso_2 := scopal-adv-lex &
+kosokoso_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kosokoso_a_2_rel,
  ORTH <! "こそこそ" !>].
 
 ; こぢんまり 
 
-kodinmari_2 := scopal-adv-lex &
+kodinmari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kodinmari_a_2_rel,
  ORTH <! "こぢんまり" !>].
 
 ; ごつごつ 
 ; Used 3 times
 
-gotsugotsu_2 := scopal-adv-lex &
+gotsugotsu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gotsugotsu_a_2_rel,
  ORTH <! "ごつごつ" !>].
 
 ; こってり 
 
-kotteri_2 := scopal-adv-lex &
+kotteri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kotteri_a_2_rel,
  ORTH <! "こってり" !>].
 
 ; こてこて 
 
-kotekote_2 := scopal-adv-lex &
+kotekote_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kotekote_a_2_rel,
  ORTH <! "こてこて" !>].
 
 ; ごてごて 
 ; Used 1 times
 
-gotegote_2 := scopal-adv-lex &
+gotegote_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gotegote_a_2_rel,
  ORTH <! "ごてごて" !>].
 
 ; 細々 
 ; Used 2 times
 
-komagoma_2 := scopal-adv-lex &
+komagoma_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_komagoma_a_2_rel,
  ORTH <! "細々" !>].
 
 ; ごみごみ 
 
-gomigomi_2 := scopal-adv-lex &
+gomigomi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gomigomi_a_2_rel,
  ORTH <! "ごみごみ" !>].
 
 ; ころころ 
 
-korokoro_2 := scopal-adv-lex &
+korokoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_korokoro_a_2_rel,
  ORTH <! "ころころ" !>].
 
 ; こんもり 
 
-konmori_2 := scopal-adv-lex &
+konmori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_konmori_a_2_rel,
  ORTH <! "こんもり" !>].
 
 ; さっくり 
 
-sakkuri_2 := scopal-adv-lex &
+sakkuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sakkuri_a_2_rel,
  ORTH <! "さっくり" !>].
 
 ; ざっくり 
 
-zakkuri_2 := scopal-adv-lex &
+zakkuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zakkuri_a_2_rel,
  ORTH <! "ざっくり" !>].
 
 ; さっぱり 
 ; Used 3 times
 
-sappari_2 := scopal-adv-lex &
+sappari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sappari_a_2_rel,
  ORTH <! "さっぱり" !>].
 
 ; さばさば 
 
-sabasaba_2 := scopal-adv-lex &
+sabasaba_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sabasaba_a_2_rel,
  ORTH <! "さばさば" !>].
 
 ; さらさら 
 
-sarasara_2 := scopal-adv-lex &
+sarasara_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sarasara_a_2_rel,
  ORTH <! "さらさら" !>].
 
 ; ざらざら 
 ; Used 2 times
 
-zarazara_2 := scopal-adv-lex &
+zarazara_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zarazara_a_2_rel,
  ORTH <! "ざらざら" !>].
 
 ; ざわざわ 
 ; Used 1 times
 
-zawazawa_2 := scopal-adv-lex &
+zawazawa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zawazawa_a_2_rel,
  ORTH <! "ざわざわ" !>].
 
 ; しくしく 
 
-shikushiku_2 := scopal-adv-lex &
+shikushiku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shikushiku_a_2_rel,
  ORTH <! "しくしく" !>].
 
 ; じたばた 
 
-jitabata_2 := scopal-adv-lex &
+jitabata_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jitabata_a_2_rel,
  ORTH <! "じたばた" !>].
 
 ; しっくり 
 
-shikkuri_2 := scopal-adv-lex &
+shikkuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shikkuri_a_2_rel,
  ORTH <! "しっくり" !>].
 
 ; じっと 
 ; Used 3 times
 
-jitto_2 := scopal-adv-lex &
+jitto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jitto_a_2_rel,
  ORTH <! "じっと" !>].
 
 ; しっとり 
 
-shittori_2 := scopal-adv-lex &
+shittori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shittori_a_2_rel,
  ORTH <! "しっとり" !>].
 
 ; じっとり 
 
-jittori_2 := scopal-adv-lex &
+jittori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jittori_a_2_rel,
  ORTH <! "じっとり" !>].
 
 ; じとじと 
 
-jitojito_2 := scopal-adv-lex &
+jitojito_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jitojito_a_2_rel,
  ORTH <! "じとじと" !>].
 
 ; しばしば 
 ; Used 2 times
 
-shibashiba_2 := scopal-adv-lex &
+shibashiba_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shibashiba_a_2_rel,
  ORTH <! "しばしば" !>].
 
 ; じめじめ 
 
-jimejime_2 := scopal-adv-lex &
+jimejime_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jimejime_a_2_rel,
  ORTH <! "じめじめ" !>].
 
 ; しゃきしゃき 
 
-shakishaki_2 := scopal-adv-lex &
+shakishaki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shakishaki_a_2_rel,
  ORTH <! "しゃきしゃき" !>].
 
 ; しゃきっと 
 
-shakitto_2 := scopal-adv-lex &
+shakitto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shakitto_a_2_rel,
  ORTH <! "しゃきっと" !>].
 
 ; じゃらじゃら 
 
-jarajara_2 := scopal-adv-lex &
+jarajara_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jarajara_a_2_rel,
  ORTH <! "じゃらじゃら" !>].
 
 ; しゃんと 
 
-shanto_2 := scopal-adv-lex &
+shanto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shanto_a_2_rel,
  ORTH <! "しゃんと" !>].
 
 ; しょぼしょぼ 
 
-shoboshobo_2 := scopal-adv-lex &
+shoboshobo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shoboshobo_a_2_rel,
  ORTH <! "しょぼしょぼ" !>].
 
 ; しょんぼり 
 
-shonbori_2 := scopal-adv-lex &
+shonbori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shonbori_a_2_rel,
  ORTH <! "しょんぼり" !>].
 
 ; じりじり 
 ; Used 1 times
 
-jirijiri_2 := scopal-adv-lex &
+jirijiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jirijiri_a_2_rel,
  ORTH <! "じりじり" !>].
 
 ; しんなり 
 
-shinnari_2 := scopal-adv-lex &
+shinnari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shinnari_a_2_rel,
  ORTH <! "しんなり" !>].
 
 ; しんみり 
 
-shinmiri_2 := scopal-adv-lex &
+shinmiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shinmiri_a_2_rel,
  ORTH <! "しんみり" !>].
 
 ; すかっと 
 
-sukatto_2 := scopal-adv-lex &
+sukatto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukatto_a_2_rel,
  ORTH <! "すかっと" !>].
 
 ; ずきずき 
 
-zukizuki_2 := scopal-adv-lex &
+zukizuki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zukizuki_a_2_rel,
  ORTH <! "ずきずき" !>].
 
 ; すっきり 
 ; Used 2 times
 
-sukkiri_2 := scopal-adv-lex &
+sukkiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukkiri_a_2_rel,
  ORTH <! "すっきり" !>].
 
 ; すっと 
 
-sutto_2 := scopal-adv-lex &
+sutto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sutto_a_2_rel,
  ORTH <! "すっと" !>].
 
 ; すべすべ 
 
-subesube_2 := scopal-adv-lex &
+subesube_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_subesube_a_2_rel,
  ORTH <! "すべすべ" !>].
 
 ; ずんぐり 
 
-zunguri_2 := scopal-adv-lex &
+zunguri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zunguri_a_2_rel,
  ORTH <! "ずんぐり" !>].
 
 ; ずんぐりむっくり 
 
-zungurimukkuri_2 := scopal-adv-lex &
+zungurimukkuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zungurimukkuri_a_2_rel,
  ORTH <! "ずんぐりむっくり" !>].
 
 ; すんなり 
 
-sunnari_2 := scopal-adv-lex &
+sunnari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sunnari_a_2_rel,
  ORTH <! "すんなり" !>].
 
 ; せかせか 
 
-sekaseka_2 := scopal-adv-lex &
+sekaseka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sekaseka_a_2_rel,
  ORTH <! "せかせか" !>].
 
 ; ぞくぞく 
 
-zokuzoku_2 := scopal-adv-lex &
+zokuzoku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zokuzoku_a_2_rel,
  ORTH <! "ぞくぞく" !>].
 
 ; そそくさ 
 
-sosokusa_2 := scopal-adv-lex &
+sosokusa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sosokusa_a_2_rel,
  ORTH <! "そそくさ" !>].
 
 ; ぞっと 
 ; Used 2 times
 
-zotto_2 := scopal-adv-lex &
+zotto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zotto_a_2_rel,
  ORTH <! "ぞっと" !>].
 
 ; ぞろぞろ 
 
-zorozoro_2 := scopal-adv-lex &
+zorozoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zorozoro_a_2_rel,
  ORTH <! "ぞろぞろ" !>].
 
 ; そわそわ 
 ; Used 1 times
 
-sowasowa_2 := scopal-adv-lex &
+sowasowa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sowasowa_a_2_rel,
  ORTH <! "そわそわ" !>].
 
 ; ちかちか 
 
-chikachika_2 := scopal-adv-lex &
+chikachika_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chikachika_a_2_rel,
  ORTH <! "ちかちか" !>].
 
 ; ちくちく 
 
-chikuchiku_2 := scopal-adv-lex &
+chikuchiku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chikuchiku_a_2_rel,
  ORTH <! "ちくちく" !>].
 
 ; ちまちま 
 
-chimachima_2 := scopal-adv-lex &
+chimachima_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chimachima_a_2_rel,
  ORTH <! "ちまちま" !>].
 
 ; ちゃっかり 
 
-chakkari_2 := scopal-adv-lex &
+chakkari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chakkari_a_2_rel,
  ORTH <! "ちゃっかり" !>].
 
 ;<IJ> ; ちゃんと 
 ;<IJ> ; JACY ちゃんと: chanto-adv (isect-adv-lex)
 
-;<IJ> chanto_2 := scopal-adv-lex &
+;<IJ> chanto_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_chanto_a_2_rel,
 ;<IJ>  ORTH <! "ちゃんと" !>].
 
 ; ちょこちょこ 
 
-chokochoko_2 := scopal-adv-lex &
+chokochoko_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chokochoko_a_2_rel,
  ORTH <! "ちょこちょこ" !>].
 
 ; ちょこまか 
 
-chokomaka_2 := scopal-adv-lex &
+chokomaka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chokomaka_a_2_rel,
  ORTH <! "ちょこまか" !>].
 
 ; ちょろちょろ 
 
-chorochoro_2 := scopal-adv-lex &
+chorochoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chorochoro_a_2_rel,
  ORTH <! "ちょろちょろ" !>].
 
 ; ちらちら 
 
-chirachira_2 := scopal-adv-lex &
+chirachira_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chirachira_a_2_rel,
  ORTH <! "ちらちら" !>].
 
 ; ちらほら 
 
-chirahora_2 := scopal-adv-lex &
+chirahora_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chirahora_a_2_rel,
  ORTH <! "ちらほら" !>].
 
 ; ちりちり 
 
-chirichiri_2 := scopal-adv-lex &
+chirichiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chirichiri_a_2_rel,
  ORTH <! "ちりちり" !>].
 
 ; つやつや 
 ; Used 1 times
 
-tsuyatsuya_2 := scopal-adv-lex &
+tsuyatsuya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsuyatsuya_a_2_rel,
  ORTH <! "つやつや" !>].
 
 ; つるつる 
 ; Used 1 times
 
-tsurutsuru_2 := scopal-adv-lex &
+tsurutsuru_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsurutsuru_a_2_rel,
  ORTH <! "つるつる" !>].
 
 ; つんつん 
 
-tsuntsun_2 := scopal-adv-lex &
+tsuntsun_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsuntsun_a_2_rel,
  ORTH <! "つんつん" !>].
 
@@ -17089,180 +17089,180 @@ tsuntsun_2 := scopal-adv-lex &
 ;<IJ> ; JACY てきぱき: tekipaki-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> tekipaki_2 := scopal-adv-lex &
+;<IJ> tekipaki_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tekipaki_a_2_rel,
 ;<IJ>  ORTH <! "てきぱき" !>].
 
 ; でれでれ 
 
-deredere_2 := scopal-adv-lex &
+deredere_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_deredere_a_2_rel,
  ORTH <! "でれでれ" !>].
 
 ; 転々 
 
-tenten_2 := scopal-adv-lex &
+tenten_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tenten_a_2_rel,
  ORTH <! "転々" !>].
 
 ; とかく 
 
-tokaku_2 := scopal-adv-lex &
+tokaku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tokaku_a_2_rel,
  ORTH <! "とかく" !>].
 
 ; どきどき 
 ; Used 4 times
 
-dokidoki_2 := scopal-adv-lex &
+dokidoki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dokidoki_a_2_rel,
  ORTH <! "どきどき" !>].
 
 ; どぎまぎ 
 
-dogimagi_2 := scopal-adv-lex &
+dogimagi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dogimagi_a_2_rel,
  ORTH <! "どぎまぎ" !>].
 
 ; どっしり 
 ; Used 1 times
 
-dosshiri_2 := scopal-adv-lex &
+dosshiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dosshiri_a_2_rel,
  ORTH <! "どっしり" !>].
 
 ; とぼとぼ 
 
-tobotobo_2 := scopal-adv-lex &
+tobotobo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tobotobo_a_2_rel,
  ORTH <! "とぼとぼ" !>].
 
 ; とろとろ 
 
-torotoro_2 := scopal-adv-lex &
+torotoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_torotoro_a_2_rel,
  ORTH <! "とろとろ" !>].
 
 ; どんより 
 
-donyori_2 := scopal-adv-lex &
+donyori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_donyori_a_2_rel,
  ORTH <! "どんより" !>].
 
 ; なよなよ 
 
-nayonayo_2 := scopal-adv-lex &
+nayonayo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nayonayo_a_2_rel,
  ORTH <! "なよなよ" !>].
 
 ; にこにこ 
 
-nikoniko_2 := scopal-adv-lex &
+nikoniko_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nikoniko_a_2_rel,
  ORTH <! "にこにこ" !>].
 
 ; にたにた 
 
-nitanita_2 := scopal-adv-lex &
+nitanita_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nitanita_a_2_rel,
  ORTH <! "にたにた" !>].
 
 ; にっこり 
 
-nikkori_2 := scopal-adv-lex &
+nikkori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nikkori_a_2_rel,
  ORTH <! "にっこり" !>].
 
 ; にやにや 
 
-niyaniya_2 := scopal-adv-lex &
+niyaniya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_niyaniya_a_2_rel,
  ORTH <! "にやにや" !>].
 
 ; にょろにょろ 
 
-nyoronyoro_2 := scopal-adv-lex &
+nyoronyoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nyoronyoro_a_2_rel,
  ORTH <! "にょろにょろ" !>].
 
 ; にんまり 
 
-ninmari_2 := scopal-adv-lex &
+ninmari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ninmari_a_2_rel,
  ORTH <! "にんまり" !>].
 
 ; ぬくぬく 
 
-nukunuku_2 := scopal-adv-lex &
+nukunuku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nukunuku_a_2_rel,
  ORTH <! "ぬくぬく" !>].
 
 ; ぬめぬめ 
 
-numenume_2 := scopal-adv-lex &
+numenume_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_numenume_a_2_rel,
  ORTH <! "ぬめぬめ" !>].
 
 ; ぬるぬる 
 ; Used 1 times
 
-nurunuru_2 := scopal-adv-lex &
+nurunuru_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nurunuru_a_2_rel,
  ORTH <! "ぬるぬる" !>].
 
 ; ねちねち 
 
-nechinechi_2 := scopal-adv-lex &
+nechinechi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nechinechi_a_2_rel,
  ORTH <! "ねちねち" !>].
 
 ; ねっとり 
 
-nettori_2 := scopal-adv-lex &
+nettori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nettori_a_2_rel,
  ORTH <! "ねっとり" !>].
 
 ; ねとねと 
 
-netoneto_2 := scopal-adv-lex &
+netoneto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_netoneto_a_2_rel,
  ORTH <! "ねとねと" !>].
 
 ; のそのそ 
 
-nosonoso_2 := scopal-adv-lex &
+nosonoso_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nosonoso_a_2_rel,
  ORTH <! "のそのそ" !>].
 
 ; のっそり 
 
-nossori_2 := scopal-adv-lex &
+nossori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nossori_a_2_rel,
  ORTH <! "のっそり" !>].
 
 ; のっぺり 
 
-nopperi_2 := scopal-adv-lex &
+nopperi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nopperi_a_2_rel,
  ORTH <! "のっぺり" !>].
 
 ; 伸び伸び 
 ; Used 3 times
 
-nobinobi_2 := scopal-adv-lex &
+nobinobi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nobinobi_a_2_rel,
  ORTH <! "伸び伸び" !>].
 
 ; のらりくらり 
 
-norarikurari_2 := scopal-adv-lex &
+norarikurari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_norarikurari_a_2_rel,
  ORTH <! "のらりくらり" !>].
 
 ; のろのろ 
 ; Used 1 times
 
-noronoro_2 := scopal-adv-lex &
+noronoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_noronoro_a_2_rel,
  ORTH <! "のろのろ" !>].
 
@@ -17270,45 +17270,45 @@ noronoro_2 := scopal-adv-lex &
 ;<IJ> ; JACY のんびり: noNbiri-vn (vn-intrans-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> nonbiri_2 := scopal-adv-lex &
+;<IJ> nonbiri_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nonbiri_a_2_rel,
 ;<IJ>  ORTH <! "のんびり" !>].
 
 ; はきはき 
 
-hakihaki_2 := scopal-adv-lex &
+hakihaki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hakihaki_a_2_rel,
  ORTH <! "はきはき" !>].
 
 ; ぱくぱく 
 ; Used 1 times
 
-pakupaku_2 := scopal-adv-lex &
+pakupaku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pakupaku_a_2_rel,
  ORTH <! "ぱくぱく" !>].
 
 ; はたはた 
 
-hatahata_2 := scopal-adv-lex &
+hatahata_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hatahata_a_2_rel,
  ORTH <! "はたはた" !>].
 
 ;<IJ> ; ばたばた 
 ;<IJ> ; JACY ばたばた: batabata-vn (vn-intrans-lex)
 
-;<IJ> batabata_2 := scopal-adv-lex &
+;<IJ> batabata_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_batabata_a_2_rel,
 ;<IJ>  ORTH <! "ばたばた" !>].
 
 ; ぱちくり 
 
-pachikuri_2 := scopal-adv-lex &
+pachikuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pachikuri_a_2_rel,
  ORTH <! "ぱちくり" !>].
 
 ; ぱちぱち 
 
-pachipachi_2 := scopal-adv-lex &
+pachipachi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pachipachi_a_2_rel,
  ORTH <! "ぱちぱち" !>].
 
@@ -17316,172 +17316,172 @@ pachipachi_2 := scopal-adv-lex &
 ;<IJ> ; JACY はっきり: hakkiri-vn (vn-intrans-lex)
 ;<IJ> ; Used 44 times
 
-;<IJ> hakkiri_2 := scopal-adv-lex &
+;<IJ> hakkiri_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hakkiri_a_2_rel,
 ;<IJ>  ORTH <! "はっきり" !>].
 
 ; ぱっちり 
 
-pacchiri_2 := scopal-adv-lex &
+pacchiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pacchiri_a_2_rel,
  ORTH <! "ぱっちり" !>].
 
 ; はっと 
 
-hatto_2 := scopal-adv-lex &
+hatto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hatto_a_2_rel,
  ORTH <! "はっと" !>].
 
 ; はらはら 
 ; Used 2 times
 
-harahara_2 := scopal-adv-lex &
+harahara_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_harahara_a_2_rel,
  ORTH <! "はらはら" !>].
 
 ; ばりばり 
 
-baribari_2 := scopal-adv-lex &
+baribari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_baribari_a_2_rel,
  ORTH <! "ばりばり" !>].
 
 ; 晴れ晴れ 
 ; Used 5 times
 
-harebare_2 := scopal-adv-lex &
+harebare_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_harebare_a_2_rel,
  ORTH <! "晴れ晴れ" !>].
 
 ; 冷え冷え 
 
-hiebie_2 := scopal-adv-lex &
+hiebie_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hiebie_a_2_rel,
  ORTH <! "冷え冷え" !>].
 
 ; ひくひく 
 
-hikuhiku_2 := scopal-adv-lex &
+hikuhiku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hikuhiku_a_2_rel,
  ORTH <! "ひくひく" !>].
 
 ; びくびく 
 
-bikubiku_2 := scopal-adv-lex &
+bikubiku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bikubiku_a_2_rel,
  ORTH <! "びくびく" !>].
 
 ; ぴくぴく 
 
-pikupiku_2 := scopal-adv-lex &
+pikupiku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pikupiku_a_2_rel,
  ORTH <! "ぴくぴく" !>].
 
 ; ぴちぴち 
 
-pichipichi_2 := scopal-adv-lex &
+pichipichi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pichipichi_a_2_rel,
  ORTH <! "ぴちぴち" !>].
 
 ; びっくり 
 ; Used 2 times
 
-bikkuri_2 := scopal-adv-lex &
+bikkuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bikkuri_a_2_rel,
  ORTH <! "びっくり" !>].
 
 ; ひっそり 
 ; Used 1 times
 
-hissori_2 := scopal-adv-lex &
+hissori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hissori_a_2_rel,
  ORTH <! "ひっそり" !>].
 
 ; ぴったり 
 ; Used 9 times
 
-pittari_2 := scopal-adv-lex &
+pittari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pittari_a_2_rel,
  ORTH <! "ぴったり" !>].
 
 ; 冷や冷や 
 ; Used 1 times
 
-hiyahiya_2 := scopal-adv-lex &
+hiyahiya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hiyahiya_a_2_rel,
  ORTH <! "冷や冷や" !>].
 
 ; ひょこひょこ 
 
-hyokohyoko_2 := scopal-adv-lex &
+hyokohyoko_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyokohyoko_a_2_rel,
  ORTH <! "ひょこひょこ" !>].
 
 ; ひょろひょろ 
 
-hyorohyoro_2 := scopal-adv-lex &
+hyorohyoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyorohyoro_a_2_rel,
  ORTH <! "ひょろひょろ" !>].
 
 ; ひりひり 
 
-hirihiri_2 := scopal-adv-lex &
+hirihiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hirihiri_a_2_rel,
  ORTH <! "ひりひり" !>].
 
 ; びりびり 
 
-biribiri_2 := scopal-adv-lex &
+biribiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_biribiri_a_2_rel,
  ORTH <! "びりびり" !>].
 
 ; ぴりぴり 
 
-piripiri_2 := scopal-adv-lex &
+piripiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_piripiri_a_2_rel,
  ORTH <! "ぴりぴり" !>].
 
 ; 広々 
 ; Used 1 times
 
-hirobiro_2 := scopal-adv-lex &
+hirobiro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hirobiro_a_2_rel,
  ORTH <! "広々" !>].
 
 ; ぴんぴん 
 
-pinpin_2 := scopal-adv-lex &
+pinpin_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pinpin_a_2_rel,
  ORTH <! "ぴんぴん" !>].
 
 ; ひんやり 
 
-hinyari_2 := scopal-adv-lex &
+hinyari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hinyari_a_2_rel,
  ORTH <! "ひんやり" !>].
 
 ; ふかふか 
 
-fukafuka_2 := scopal-adv-lex &
+fukafuka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_fukafuka_a_2_rel,
  ORTH <! "ふかふか" !>].
 
 ; ぶくぶく 
 
-bukubuku_2 := scopal-adv-lex &
+bukubuku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bukubuku_a_2_rel,
  ORTH <! "ぶくぶく" !>].
 
 ; ふっくら 
 ; Used 1 times
 
-fukkura_2 := scopal-adv-lex &
+fukkura_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_fukkura_a_2_rel,
  ORTH <! "ふっくら" !>].
 
 ; ふらふら 
 ; Used 1 times
 
-furafura_2 := scopal-adv-lex &
+furafura_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_furafura_a_2_rel,
  ORTH <! "ふらふら" !>].
 
@@ -17489,286 +17489,286 @@ furafura_2 := scopal-adv-lex &
 ;<IJ> ; JACY ぶらぶら: burabura-vn (vn-intrans-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> burabura_2 := scopal-adv-lex &
+;<IJ> burabura_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_burabura_a_2_rel,
 ;<IJ>  ORTH <! "ぶらぶら" !>].
 
 ; ぷりぷり 
 
-puripuri_2 := scopal-adv-lex &
+puripuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_puripuri_a_2_rel,
  ORTH <! "ぷりぷり" !>].
 
 ; ぶるぶる 
 
-buruburu_2 := scopal-adv-lex &
+buruburu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_buruburu_a_2_rel,
  ORTH <! "ぶるぶる" !>].
 
 ; ふわふわ 
 
-fuwafuwa_2 := scopal-adv-lex &
+fuwafuwa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_fuwafuwa_a_2_rel,
  ORTH <! "ふわふわ" !>].
 
 ; ぷんぷん 
 
-punpun_2 := scopal-adv-lex &
+punpun_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_punpun_a_2_rel,
  ORTH <! "ぷんぷん" !>].
 
 ; ふんわり 
 ; Used 1 times
 
-funwari_2 := scopal-adv-lex &
+funwari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_funwari_a_2_rel,
  ORTH <! "ふんわり" !>].
 
 ; べたべた 
 
-betabeta_2 := scopal-adv-lex &
+betabeta_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_betabeta_a_2_rel,
  ORTH <! "べたべた" !>].
 
 ; ぺたぺた 
 
-petapeta_2 := scopal-adv-lex &
+petapeta_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_petapeta_a_2_rel,
  ORTH <! "ぺたぺた" !>].
 
 ; べとべと 
 
-betobeto_2 := scopal-adv-lex &
+betobeto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_betobeto_a_2_rel,
  ORTH <! "べとべと" !>].
 
 ; へなへな 
 
-henahena_2 := scopal-adv-lex &
+henahena_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_henahena_a_2_rel,
  ORTH <! "へなへな" !>].
 
 ; へらへら 
 ; Used 1 times
 
-herahera_2 := scopal-adv-lex &
+herahera_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_herahera_a_2_rel,
  ORTH <! "へらへら" !>].
 
 ; ぼうっと 
 
-boutto_2 := scopal-adv-lex &
+boutto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_boutto_a_2_rel,
  ORTH <! "ぼうっと" !>].
 
 ; ほかほか 
 
-hokahoka_2 := scopal-adv-lex &
+hokahoka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hokahoka_a_2_rel,
  ORTH <! "ほかほか" !>].
 
 ; ぽかぽか 
 
-pokapoka_2 := scopal-adv-lex &
+pokapoka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pokapoka_a_2_rel,
  ORTH <! "ぽかぽか" !>].
 
 ; ほくほく 
 
-hokuhoku_2 := scopal-adv-lex &
+hokuhoku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hokuhoku_a_2_rel,
  ORTH <! "ほくほく" !>].
 
 ; ぼけっと 
 
-boketto_2 := scopal-adv-lex &
+boketto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_boketto_a_2_rel,
  ORTH <! "ぼけっと" !>].
 
 ; ぼさっと 
 
-bosatto_2 := scopal-adv-lex &
+bosatto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bosatto_a_2_rel,
  ORTH <! "ぼさっと" !>].
 
 ; ぼそっと 
 
-bosotto_2 := scopal-adv-lex &
+bosotto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bosotto_a_2_rel,
  ORTH <! "ぼそっと" !>].
 
 ; ぼそぼそ 
 
-bosoboso_2 := scopal-adv-lex &
+bosoboso_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bosoboso_a_2_rel,
  ORTH <! "ぼそぼそ" !>].
 
 ; ぼたぼた 
 
-botabota_2 := scopal-adv-lex &
+botabota_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_botabota_a_2_rel,
  ORTH <! "ぼたぼた" !>].
 
 ; ぽちゃぽちゃ 
 
-pochapocha_2 := scopal-adv-lex &
+pochapocha_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pochapocha_a_2_rel,
  ORTH <! "ぽちゃぽちゃ" !>].
 
 ; ほっそり 
 ; Used 1 times
 
-hossori_2 := scopal-adv-lex &
+hossori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hossori_a_2_rel,
  ORTH <! "ほっそり" !>].
 
 ; ぽっちゃり 
 
-pocchari_2 := scopal-adv-lex &
+pocchari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pocchari_a_2_rel,
  ORTH <! "ぽっちゃり" !>].
 
 ; ほっと 
 
-hotto_2 := scopal-adv-lex &
+hotto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hotto_a_2_rel,
  ORTH <! "ほっと" !>].
 
 ; ぽっと 
 
-potto_2 := scopal-adv-lex &
+potto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_potto_a_2_rel,
  ORTH <! "ぽっと" !>].
 
 ; ぼやぼや 
 
-boyaboya_2 := scopal-adv-lex &
+boyaboya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_boyaboya_a_2_rel,
  ORTH <! "ぼやぼや" !>].
 
 ; 惚れ惚れ 
 
-horebore_2 := scopal-adv-lex &
+horebore_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_horebore_a_2_rel,
  ORTH <! "惚れ惚れ" !>].
 
 ; ほんのり 
 
-honnori_2 := scopal-adv-lex &
+honnori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_honnori_a_2_rel,
  ORTH <! "ほんのり" !>].
 
 ; まごまご 
 
-magomago_2 := scopal-adv-lex &
+magomago_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_magomago_a_2_rel,
  ORTH <! "まごまご" !>].
 
 ; まじまじ 
 
-majimaji_2 := scopal-adv-lex &
+majimaji_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_majimaji_a_2_rel,
  ORTH <! "まじまじ" !>].
 
 ; みしみし 
 
-mishimishi_2 := scopal-adv-lex &
+mishimishi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mishimishi_a_2_rel,
  ORTH <! "みしみし" !>].
 
 ; むかむか 
 
-mukamuka_2 := scopal-adv-lex &
+mukamuka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mukamuka_a_2_rel,
  ORTH <! "むかむか" !>].
 
 ; むくむく 
 
-mukumuku_2 := scopal-adv-lex &
+mukumuku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mukumuku_a_2_rel,
  ORTH <! "むくむく" !>].
 
 ; むっつり 
 
-muttsuri_2 := scopal-adv-lex &
+muttsuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_muttsuri_a_2_rel,
  ORTH <! "むっつり" !>].
 
 ; むっと 
 
-mutto_2 := scopal-adv-lex &
+mutto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mutto_a_2_rel,
  ORTH <! "むっと" !>].
 
 ; むらむら 
 
-muramura_2 := scopal-adv-lex &
+muramura_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_muramura_a_2_rel,
  ORTH <! "むらむら" !>].
 
 ; むんむん 
 
-munmun_2 := scopal-adv-lex &
+munmun_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_munmun_a_2_rel,
  ORTH <! "むんむん" !>].
 
 ; めそめそ 
 
-mesomeso_2 := scopal-adv-lex &
+mesomeso_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mesomeso_a_2_rel,
  ORTH <! "めそめそ" !>].
 
 ; もくもく 
 
-mokumoku_2 := scopal-adv-lex &
+mokumoku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mokumoku_a_2_rel,
  ORTH <! "もくもく" !>].
 
 ; もぐもぐ 
 
-mogumogu_2 := scopal-adv-lex &
+mogumogu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mogumogu_a_2_rel,
  ORTH <! "もぐもぐ" !>].
 
 ; もじもじ 
 
-mojimoji_2 := scopal-adv-lex &
+mojimoji_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mojimoji_a_2_rel,
  ORTH <! "もじもじ" !>].
 
 ; もぞもぞ 
 
-mozomozo_2 := scopal-adv-lex &
+mozomozo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mozomozo_a_2_rel,
  ORTH <! "もぞもぞ" !>].
 
 ; もたもた 
 
-motamota_2 := scopal-adv-lex &
+motamota_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_motamota_a_2_rel,
  ORTH <! "もたもた" !>].
 
 ; もりもり 
 
-morimori_2 := scopal-adv-lex &
+morimori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_morimori_a_2_rel,
  ORTH <! "もりもり" !>].
 
 ; やきもき 
 
-yakimoki_2 := scopal-adv-lex &
+yakimoki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yakimoki_a_2_rel,
  ORTH <! "やきもき" !>].
 
 ; やんわり 
 
-yanwari_2 := scopal-adv-lex &
+yanwari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yanwari_a_2_rel,
  ORTH <! "やんわり" !>].
 
 ; ゆさゆさ 
 
-yusayusa_2 := scopal-adv-lex &
+yusayusa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yusayusa_a_2_rel,
  ORTH <! "ゆさゆさ" !>].
 
@@ -17776,7 +17776,7 @@ yusayusa_2 := scopal-adv-lex &
 ;<IJ> ; JACY ゆっくり: yukkuri-adv (isect-adv-lex)
 ;<IJ> ; Used 10 times
 
-;<IJ> yukkuri_2 := scopal-adv-lex &
+;<IJ> yukkuri_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yukkuri_a_2_rel,
 ;<IJ>  ORTH <! "ゆっくり" !>].
 
@@ -17784,100 +17784,100 @@ yusayusa_2 := scopal-adv-lex &
 ;<IJ> ; JACY ゆったり: yuttari-adj (na-adj-lex)
 ;<IJ> ; Used 15 times
 
-;<IJ> yuttari_2 := scopal-adv-lex &
+;<IJ> yuttari_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yuttari_a_2_rel,
 ;<IJ>  ORTH <! "ゆったり" !>].
 
 ; ゆらゆら 
 
-yurayura_2 := scopal-adv-lex &
+yurayura_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yurayura_a_2_rel,
  ORTH <! "ゆらゆら" !>].
 
 ; よたよた 
 
-yotayota_2 := scopal-adv-lex &
+yotayota_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yotayota_a_2_rel,
  ORTH <! "よたよた" !>].
 
 ; よろよろ 
 
-yoroyoro_2 := scopal-adv-lex &
+yoroyoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoroyoro_a_2_rel,
  ORTH <! "よろよろ" !>].
 
 ;<IJ> ; わくわく 
 ;<IJ> ; JACY わくわく: wakuwaku-adv (isect-adv-lex)
 
-;<IJ> wakuwaku_2 := scopal-adv-lex &
+;<IJ> wakuwaku_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_wakuwaku_a_2_rel,
 ;<IJ>  ORTH <! "わくわく" !>].
 
 ; わなわな 
 
-wanawana_2 := scopal-adv-lex &
+wanawana_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_wanawana_a_2_rel,
  ORTH <! "わなわな" !>].
 
 ; かさかさ 
 
-kasakasa_2 := scopal-adv-lex &
+kasakasa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kasakasa_a_2_rel,
  ORTH <! "かさかさ" !>].
 
 ; がさがさ 
 
-gasagasa_2 := scopal-adv-lex &
+gasagasa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gasagasa_a_2_rel,
  ORTH <! "がさがさ" !>].
 
 ; がたがた 
 
-gatagata_2 := scopal-adv-lex &
+gatagata_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gatagata_a_2_rel,
  ORTH <! "がたがた" !>].
 
 ; がばがば 
 
-gabagaba_2 := scopal-adv-lex &
+gabagaba_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gabagaba_a_2_rel,
  ORTH <! "がばがば" !>].
 
 ; がぶがぶ 
 
-gabugabu_2 := scopal-adv-lex &
+gabugabu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gabugabu_a_2_rel,
  ORTH <! "がぶがぶ" !>].
 
 ; くしゃくしゃ 
 
-kushakusha_2 := scopal-adv-lex &
+kushakusha_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kushakusha_a_2_rel,
  ORTH <! "くしゃくしゃ" !>].
 
 ; ぐずぐず 
 ; Used 1 times
 
-guzuguzu_2 := scopal-adv-lex &
+guzuguzu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guzuguzu_a_2_rel,
  ORTH <! "ぐずぐず" !>].
 
 ; ごそごそ 
 
-gosogoso_2 := scopal-adv-lex &
+gosogoso_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gosogoso_a_2_rel,
  ORTH <! "ごそごそ" !>].
 
 ; ごちゃごちゃ 
 ; Used 1 times
 
-gochagocha_2 := scopal-adv-lex &
+gochagocha_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gochagocha_a_2_rel,
  ORTH <! "ごちゃごちゃ" !>].
 
 ; ごわごわ 
 
-gowagowa_2 := scopal-adv-lex &
+gowagowa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gowagowa_a_2_rel,
  ORTH <! "ごわごわ" !>].
 
@@ -17885,39 +17885,39 @@ gowagowa_2 := scopal-adv-lex &
 ;<IJ> ; JACY しっかり: shikkari-adv (isect-adv-lex)
 ;<IJ> ; Used 17 times
 
-;<IJ> shikkari_2 := scopal-adv-lex &
+;<IJ> shikkari_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shikkari_a_2_rel,
 ;<IJ>  ORTH <! "しっかり" !>].
 
 ; しとしと 
 
-shitoshito_2 := scopal-adv-lex &
+shitoshito_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shitoshito_a_2_rel,
  ORTH <! "しとしと" !>].
 
 ; ずるずる 
 
-zuruzuru_2 := scopal-adv-lex &
+zuruzuru_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zuruzuru_a_2_rel,
  ORTH <! "ずるずる" !>].
 
 ; たっぷり 
 ; Used 3 times
 
-tappuri_2 := scopal-adv-lex &
+tappuri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tappuri_a_2_rel,
  ORTH <! "たっぷり" !>].
 
 ; だぶだぶ 
 
-dabudabu_2 := scopal-adv-lex &
+dabudabu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dabudabu_a_2_rel,
  ORTH <! "だぶだぶ" !>].
 
 ; だらだら 
 ; Used 1 times
 
-daradara_2 := scopal-adv-lex &
+daradara_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_daradara_a_2_rel,
  ORTH <! "だらだら" !>].
 
@@ -17925,92 +17925,92 @@ daradara_2 := scopal-adv-lex &
 ;<IJ> ; JACY 直接: chokusetsu-adv (isect-adv-lex) chokusetsu (ordinary-nohon-n-lex)
 ;<IJ> ; Used 27 times
 
-;<IJ> chokusetsu_2 := scopal-adv-lex &
+;<IJ> chokusetsu_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_chokusetsu_a_2_rel,
 ;<IJ>  ORTH <! "直接" !>].
 
 ; てかてか 
 
-tekateka_2 := scopal-adv-lex &
+tekateka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tekateka_a_2_rel,
  ORTH <! "てかてか" !>].
 
 ; どろどろ 
 ; Used 2 times
 
-dorodoro_2 := scopal-adv-lex &
+dorodoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dorodoro_a_2_rel,
  ORTH <! "どろどろ" !>].
 
 ; ばさばさ 
 
-basabasa_2 := scopal-adv-lex &
+basabasa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_basabasa_a_2_rel,
  ORTH <! "ばさばさ" !>].
 
 ; ぱさぱさ 
 
-pasapasa_2 := scopal-adv-lex &
+pasapasa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pasapasa_a_2_rel,
  ORTH <! "ぱさぱさ" !>].
 
 ; ぴかぴか 
 
-pikapika_2 := scopal-adv-lex &
+pikapika_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pikapika_a_2_rel,
  ORTH <! "ぴかぴか" !>].
 
 ; びちゃびちゃ 
 
-bichabicha_2 := scopal-adv-lex &
+bichabicha_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bichabicha_a_2_rel,
  ORTH <! "びちゃびちゃ" !>].
 
 ; ぶかぶか 
 
-bukabuka_2 := scopal-adv-lex &
+bukabuka_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bukabuka_a_2_rel,
  ORTH <! "ぶかぶか" !>].
 
 ; ふにゃふにゃ 
 
-funyafunya_2 := scopal-adv-lex &
+funyafunya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_funyafunya_a_2_rel,
  ORTH <! "ふにゃふにゃ" !>].
 
 ; ぶよぶよ 
 
-buyobuyo_2 := scopal-adv-lex &
+buyobuyo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_buyobuyo_a_2_rel,
  ORTH <! "ぶよぶよ" !>].
 
 ; ぺこぺこ 
 
-pekopeko_2 := scopal-adv-lex &
+pekopeko_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pekopeko_a_2_rel,
  ORTH <! "ぺこぺこ" !>].
 
 ; べらべら 
 
-berabera_2 := scopal-adv-lex &
+berabera_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_berabera_a_2_rel,
  ORTH <! "べらべら" !>].
 
 ; ぺらぺら 
 
-perapera_2 := scopal-adv-lex &
+perapera_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_perapera_a_2_rel,
  ORTH <! "ぺらぺら" !>].
 
 ; ぼさぼさ 
 
-bosabosa_2 := scopal-adv-lex &
+bosabosa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bosabosa_a_2_rel,
  ORTH <! "ぼさぼさ" !>].
 
 ; よぼよぼ 
 
-yoboyobo_2 := scopal-adv-lex &
+yoboyobo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoboyobo_a_2_rel,
  ORTH <! "よぼよぼ" !>].
 
@@ -18018,132 +18018,132 @@ yoboyobo_2 := scopal-adv-lex &
 ;<IJ> ; JACY 何とか: naNtoka-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> nantoka_2 := scopal-adv-lex &
+;<IJ> nantoka_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nantoka_a_2_rel,
 ;<IJ>  ORTH <! "何とか" !>].
 
 ; いらいら 
 ; Used 2 times
 
-iraira_3 := scopal-adv-lex &
+iraira_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_iraira_a_3_rel,
  ORTH <! "いらいら" !>].
 
 ; 思い入れ 
 
-omoiire_3 := scopal-adv-lex &
+omoiire_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_omoiire_a_3_rel,
  ORTH <! "思い入れ" !>].
 
 ; ぐりぐり 
 
-guriguri_3 := scopal-adv-lex &
+guriguri_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guriguri_a_3_rel,
  ORTH <! "ぐりぐり" !>].
 
 ; ごたごた 
 ; Used 2 times
 
-gotagota_3 := scopal-adv-lex &
+gotagota_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gotagota_a_3_rel,
  ORTH <! "ごたごた" !>].
 
 ; こっくり 
 
-kokkuri_3 := scopal-adv-lex &
+kokkuri_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokkuri_a_3_rel,
  ORTH <! "こっくり" !>].
 
 ; ごろごろ 
 
-gorogoro_3 := scopal-adv-lex &
+gorogoro_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gorogoro_a_3_rel,
  ORTH <! "ごろごろ" !>].
 
 ; 終始 
 
-shuushi_3 := scopal-adv-lex &
+shuushi_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shuushi_a_3_rel,
  ORTH <! "終始" !>].
 
 ; ちんちん 
 
-chinchin_3 := scopal-adv-lex &
+chinchin_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chinchin_a_3_rel,
  ORTH <! "ちんちん" !>].
 
 ; どたばた 
 
-dotabata_3 := scopal-adv-lex &
+dotabata_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dotabata_a_3_rel,
  ORTH <! "どたばた" !>].
 
 ; ねばねば 
 
-nebaneba_3 := scopal-adv-lex &
+nebaneba_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nebaneba_a_3_rel,
  ORTH <! "ねばねば" !>].
 
 ; ひらひら 
 
-hirahira_3 := scopal-adv-lex &
+hirahira_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hirahira_a_3_rel,
  ORTH <! "ひらひら" !>].
 
 ; ぶつぶつ 
 
-butsubutsu_3 := scopal-adv-lex &
+butsubutsu_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_butsubutsu_a_3_rel,
  ORTH <! "ぶつぶつ" !>].
 
 ; ぼんやり 
 ; Used 3 times
 
-bonyari_3 := scopal-adv-lex &
+bonyari_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bonyari_a_3_rel,
  ORTH <! "ぼんやり" !>].
 
 ; むしゃくしゃ 
 
-mushakusha_3 := scopal-adv-lex &
+mushakusha_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mushakusha_a_3_rel,
  ORTH <! "むしゃくしゃ" !>].
 
 ; もやもや 
 
-moyamoya_3 := scopal-adv-lex &
+moyamoya_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_moyamoya_a_3_rel,
  ORTH <! "もやもや" !>].
 
 ; 由来 
 ; Used 1 times
 
-yurai_3 := scopal-adv-lex &
+yurai_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yurai_a_3_rel,
  ORTH <! "由来" !>].
 
 ; がちゃがちゃ 
 
-gachagacha_3 := scopal-adv-lex &
+gachagacha_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gachagacha_a_3_rel,
  ORTH <! "がちゃがちゃ" !>].
 
 ; がらがら 
 
-garagara_3 := scopal-adv-lex &
+garagara_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_garagara_a_3_rel,
  ORTH <! "がらがら" !>].
 
 ; 相当 
 ; Used 9 times
 
-soutou_3 := scopal-adv-lex &
+soutou_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soutou_a_3_rel,
  ORTH <! "相当" !>].
 
 ; もじゃもじゃ 
 
-mojamoja_3 := scopal-adv-lex &
+mojamoja_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mojamoja_a_3_rel,
  ORTH <! "もじゃもじゃ" !>].
 
@@ -18151,14 +18151,14 @@ mojamoja_3 := scopal-adv-lex &
 ;<IJ> ; JACY あるいは: aruiwa-adv (scopal-adv-regular-lex) aruiwa-conj (n_conj-p-lex)
 ;<IJ> ; Used 18 times
 
-;<IJ> aruiha_2 := scopal-adv-lex &
+;<IJ> aruiha_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_aruiha_a_2_rel,
 ;<IJ>  ORTH <! "あるいは" !>].
 
 ;<IJ> ; 追って 
 ;<IJ> ; JACY 追って: otte-adv (isect-adv-lex)
 
-;<IJ> otte_2 := scopal-adv-lex &
+;<IJ> otte_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_otte_a_2_rel,
 ;<IJ>  ORTH <! "追って" !>].
 
@@ -18166,13 +18166,13 @@ mojamoja_3 := scopal-adv-lex &
 ;<IJ> ; JACY 同じく: onajiku-stem (isect-adv-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> onajiku_2 := scopal-adv-lex &
+;<IJ> onajiku_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_onajiku_a_2_rel,
 ;<IJ>  ORTH <! "同じく" !>].
 
 ; ここに 
 
-kokoni_2 := scopal-adv-lex &
+kokoni_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokoni_a_2_rel,
  ORTH <! "ここに" !>].
 
@@ -18180,7 +18180,7 @@ kokoni_2 := scopal-adv-lex &
 ;<IJ> ; JACY しかしながら: shikashinagara (interj-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> shikashinagara_2 := scopal-adv-lex &
+;<IJ> shikashinagara_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shikashinagara_a_2_rel,
 ;<IJ>  ORTH <! "しかしながら" !>].
 
@@ -18188,7 +18188,7 @@ kokoni_2 := scopal-adv-lex &
 ;<IJ> ; JACY 時に: tokini-adv (isect-adv-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> tokini_2 := scopal-adv-lex &
+;<IJ> tokini_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tokini_a_2_rel,
 ;<IJ>  ORTH <! "時に" !>].
 
@@ -18196,7 +18196,7 @@ kokoni_2 := scopal-adv-lex &
 ;<IJ> ; JACY また: mata-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 972 times
 
-;<IJ> mata_2 := scopal-adv-lex &
+;<IJ> mata_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mata_a_2_rel,
 ;<IJ>  ORTH <! "また" !>].
 
@@ -18204,44 +18204,44 @@ kokoni_2 := scopal-adv-lex &
 ;<IJ> ; JACY ただ: tada-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> tada_3 := scopal-adv-lex &
+;<IJ> tada_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tada_a_3_rel,
 ;<IJ>  ORTH <! "ただ" !>].
 
 ; そこそこ 
 
-sokosoko_2 := scopal-adv-lex &
+sokosoko_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sokosoko_a_2_rel,
  ORTH <! "そこそこ" !>].
 
 ; ぽっきり 
 
-pokkiri_2 := scopal-adv-lex &
+pokkiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pokkiri_a_2_rel,
  ORTH <! "ぽっきり" !>].
 
 ; ちやほや 
 
-chiyahoya_2 := scopal-adv-lex &
+chiyahoya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chiyahoya_a_2_rel,
  ORTH <! "ちやほや" !>].
 
 ; 一倍 
 
-ichibai_3 := scopal-adv-lex &
+ichibai_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichibai_a_3_rel,
  ORTH <! "一倍" !>].
 
 ; 一見 
 
-ikken_3 := scopal-adv-lex &
+ikken_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikken_a_3_rel,
  ORTH <! "一見" !>].
 
 ;<IJ> ; 是非 
 ;<IJ> ; JACY 是非: zehi-kanji-adv (scopal-adv-regular-lex)
 
-;<IJ> zehi_3 := scopal-adv-lex &
+;<IJ> zehi_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zehi_a_3_rel,
 ;<IJ>  ORTH <! "是非" !>].
 
@@ -18249,7 +18249,7 @@ ikken_3 := scopal-adv-lex &
 ;<IJ> ; JACY 都合: tsugou (ordinary-nohon-n-lex)
 ;<IJ> ; Used 11 times
 
-;<IJ> tsugou_3 := scopal-adv-lex &
+;<IJ> tsugou_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tsugou_a_3_rel,
 ;<IJ>  ORTH <! "都合" !>].
 
@@ -18257,14 +18257,14 @@ ikken_3 := scopal-adv-lex &
 ;<IJ> ; JACY 何: nan-kanji-wh (wh-word-thing-lex)
 ;<IJ> ; Used 69 times
 
-;<IJ> nani_3 := scopal-adv-lex &
+;<IJ> nani_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nani_a_3_rel,
 ;<IJ>  ORTH <! "何" !>].
 
 
 ; Used 8 times
 
-arekore_2 := scopal-adv-lex &
+arekore_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_arekore_a_2_rel,
  ORTH <! "あれこれ" !>].
 
@@ -18272,7 +18272,7 @@ arekore_2 := scopal-adv-lex &
 ;<IJ> ; JACY いずれ: izure (ordinary-nohon-n-lex)
 ;<IJ> ; Used 6 times
 
-;<IJ> izure_2 := scopal-adv-lex &
+;<IJ> izure_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_izure_a_2_rel,
 ;<IJ>  ORTH <! "いずれ" !>].
 
@@ -18280,127 +18280,127 @@ arekore_2 := scopal-adv-lex &
 ;<IJ> ; JACY ああ: aa-interj (interj-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> aa_1 := scopal-adv-lex &
+;<IJ> aa_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_aa_a_1_rel,
 ;<IJ>  ORTH <! "ああ" !>].
 
 ; 相変わらず 
 
-aikawarazu_1 := scopal-adv-lex &
+aikawarazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_aikawarazu_a_1_rel,
  ORTH <! "相変わらず" !>].
 
 ;<IJ> ; あくまで 
 ;<IJ> ; JACY あくまで: akumade-adv (scopal-adv-regular-lex)
 
-;<IJ> akumade_1 := scopal-adv-lex &
+;<IJ> akumade_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_akumade_a_1_rel,
 ;<IJ>  ORTH <! "あくまで" !>].
 
 ; 明けて 
 
-akete_1 := scopal-adv-lex &
+akete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_akete_a_1_rel,
  ORTH <! "明けて" !>].
 
 ; あたかも 
 ; Used 1 times
 
-atakamo_1 := scopal-adv-lex &
+atakamo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_atakamo_a_1_rel,
  ORTH <! "あたかも" !>].
 
 ; あたふた 
 
-atafuta_1 := scopal-adv-lex &
+atafuta_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_atafuta_a_1_rel,
  ORTH <! "あたふた" !>].
 
 ; 頭から 
 
-atamakara_1 := scopal-adv-lex &
+atamakara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_atamakara_a_1_rel,
  ORTH <! "頭から" !>].
 
 ; あながち 
 
-anagachi_1 := scopal-adv-lex &
+anagachi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_anagachi_a_1_rel,
  ORTH <! "あながち" !>].
 
 ; 危なく 
 ; Used 1 times
 
-abunaku_1 := scopal-adv-lex &
+abunaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_abunaku_a_1_rel,
  ORTH <! "危なく" !>].
 
 ; 危うく 
 
-ayauku_1 := scopal-adv-lex &
+ayauku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ayauku_a_1_rel,
  ORTH <! "危うく" !>].
 
 ; 洗いざらい 
 
-araizarai_1 := scopal-adv-lex &
+araizarai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_araizarai_a_1_rel,
  ORTH <! "洗いざらい" !>].
 
 ; 改めて 
 ; Used 4 times
 
-aratamete_1 := scopal-adv-lex &
+aratamete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_aratamete_a_1_rel,
  ORTH <! "改めて" !>].
 
 ; ありあり 
 
-ariari_1 := scopal-adv-lex &
+ariari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ariari_a_1_rel,
  ORTH <! "ありあり" !>].
 
 ; あわよくば 
 
-awayokuba_1 := scopal-adv-lex &
+awayokuba_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_awayokuba_a_1_rel,
  ORTH <! "あわよくば" !>].
 
 ;<IJ> ; 案の定 
 ;<IJ> ; JACY 案の定: annojou (scopal-adv-regular-lex)
 
-;<IJ> annojou_1 := scopal-adv-lex &
+;<IJ> annojou_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_annojou_a_1_rel,
 ;<IJ>  ORTH <! "案の定" !>].
 
 ; いかにも 
 ; Used 5 times
 
-ikanimo_1 := scopal-adv-lex &
+ikanimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikanimo_a_1_rel,
  ORTH <! "いかにも" !>].
 
 ; いかほど 
 
-ikahodo_1 := scopal-adv-lex &
+ikahodo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikahodo_a_1_rel,
  ORTH <! "いかほど" !>].
 
 ; いささか 
 
-isasaka_1 := scopal-adv-lex &
+isasaka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_isasaka_a_1_rel,
  ORTH <! "いささか" !>].
 
 ; 美しくも 
 
-ishikumo_1 := scopal-adv-lex &
+ishikumo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ishikumo_a_1_rel,
  ORTH <! "美しくも" !>].
 
 ; 痛く 
 
-itaku_1 := scopal-adv-lex &
+itaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_itaku_a_1_rel,
  ORTH <! "痛く" !>].
 
@@ -18408,26 +18408,26 @@ itaku_1 := scopal-adv-lex &
 ;<IJ> ; JACY 一応: ichiou-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> ichiou_1 := scopal-adv-lex &
+;<IJ> ichiou_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ichiou_a_1_rel,
 ;<IJ>  ORTH <! "一応" !>].
 
 ; 一概に 
 
-ichigaini_1 := scopal-adv-lex &
+ichigaini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichigaini_a_1_rel,
  ORTH <! "一概に" !>].
 
 ; 一度に 
 ; Used 2 times
 
-ichidoni_1 := scopal-adv-lex &
+ichidoni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichidoni_a_1_rel,
  ORTH <! "一度に" !>].
 
 ; いち早く 
 
-ichihayaku_1 := scopal-adv-lex &
+ichihayaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichihayaku_a_1_rel,
  ORTH <! "いち早く" !>].
 
@@ -18435,7 +18435,7 @@ ichihayaku_1 := scopal-adv-lex &
 ;<IJ> ; JACY いつか: itsuka (indef-word-temp-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> itsuka_1_1 := scopal-adv-lex &
+;<IJ> itsuka_1_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_itsuka_a_1_rel,
 ;<IJ>  ORTH <! "いつか" !>].
 
@@ -18443,54 +18443,54 @@ ichihayaku_1 := scopal-adv-lex &
 ;<IJ> ; JACY 一気に: ikkini-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> ikkini_1 := scopal-adv-lex &
+;<IJ> ikkini_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ikkini_a_1_rel,
 ;<IJ>  ORTH <! "一気に" !>].
 
 ; 一挙に 
 
-ikkyoni_1 := scopal-adv-lex &
+ikkyoni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikkyoni_a_1_rel,
  ORTH <! "一挙に" !>].
 
 ; いつしか 
 ; Used 1 times
 
-itsushika_1 := scopal-adv-lex &
+itsushika_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_itsushika_a_1_rel,
  ORTH <! "いつしか" !>].
 
 ; 一斉に 
 ; Used 6 times
 
-isseini_1 := scopal-adv-lex &
+isseini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_isseini_a_1_rel,
  ORTH <! "一斉に" !>].
 
 ; いっそ 
 
-isso_1 := scopal-adv-lex &
+isso_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_isso_a_1_rel,
  ORTH <! "いっそ" !>].
 
 ; 一体全体 
 ; Used 1 times
 
-ittaizentai_1 := scopal-adv-lex &
+ittaizentai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ittaizentai_a_1_rel,
  ORTH <! "一体全体" !>].
 
 ; 一遍に 
 ; Used 1 times
 
-ippenni_1 := scopal-adv-lex &
+ippenni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ippenni_a_1_rel,
  ORTH <! "一遍に" !>].
 
 ; いつまで 
 ; Used 3 times
 
-itsumade_1 := scopal-adv-lex &
+itsumade_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_itsumade_a_1_rel,
  ORTH <! "いつまで" !>].
 
@@ -18498,13 +18498,13 @@ itsumade_1 := scopal-adv-lex &
 ;<IJ> ; JACY いつも: itsumo-adv (scopal-adv-regular-lex) itsumo (ordinary-nohon-n-lex)
 ;<IJ> ; Used 11 times
 
-;<IJ> itsumo_1 := scopal-adv-lex &
+;<IJ> itsumo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_itsumo_a_1_rel,
 ;<IJ>  ORTH <! "いつも" !>].
 
 ; 今更 
 
-imasara_1 := scopal-adv-lex &
+imasara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_imasara_a_1_rel,
  ORTH <! "今更" !>].
 
@@ -18512,14 +18512,14 @@ imasara_1 := scopal-adv-lex &
 ;<IJ> ; JACY 未だ: imada-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 17 times
 
-;<IJ> imada_1 := scopal-adv-lex &
+;<IJ> imada_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_imada_a_1_rel,
 ;<IJ>  ORTH <! "未だ" !>].
 
 ; 今だに 
 ; Used 1 times
 
-imadani_1 := scopal-adv-lex &
+imadani_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_imadani_a_1_rel,
  ORTH <! "今だに" !>].
 
@@ -18527,41 +18527,41 @@ imadani_1 := scopal-adv-lex &
 ;<IJ> ; JACY 今に: imani-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> imani_1 := scopal-adv-lex &
+;<IJ> imani_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_imani_a_1_rel,
 ;<IJ>  ORTH <! "今に" !>].
 
 ; 今にも 
 ; Used 1 times
 
-imanimo_1 := scopal-adv-lex &
+imanimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_imanimo_a_1_rel,
  ORTH <! "今にも" !>].
 
 ; 今まで 
 ; Used 10 times
 
-imamade_1 := scopal-adv-lex &
+imamade_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_imamade_a_1_rel,
  ORTH <! "今まで" !>].
 
 ;<IJ> ; 今や 
 ;<IJ> ; JACY 今や: imaya-adv (isect-adv-lex)
 
-;<IJ> imaya_1 := scopal-adv-lex &
+;<IJ> imaya_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_imaya_a_1_rel,
 ;<IJ>  ORTH <! "今や" !>].
 
 ;<IJ> ; いや 
 ;<IJ> ; JACY いや: iya-adj (na-adj-lex)
 
-;<IJ> iya_1_2 := scopal-adv-lex &
+;<IJ> iya_1_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_iya_a_1_rel,
 ;<IJ>  ORTH <! "いや" !>].
 
 ; いやに 
 
-iyani_1 := scopal-adv-lex &
+iyani_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_iyani_a_1_rel,
  ORTH <! "いやに" !>].
 
@@ -18569,64 +18569,64 @@ iyani_1 := scopal-adv-lex &
 ;<IJ> ; JACY 以来: irai (ordinary-nohon-n-lex)
 ;<IJ> ; Used 5 times
 
-;<IJ> irai_1 := scopal-adv-lex &
+;<IJ> irai_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_irai_a_1_rel,
 ;<IJ>  ORTH <! "以来" !>].
 
 ; 入れ替わり立ち替わり 
 
-irekawaritachikawari_1 := scopal-adv-lex &
+irekawaritachikawari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_irekawaritachikawari_a_1_rel,
  ORTH <! "入れ替わり立ち替わり" !>].
 
 ; 言わば 
 
-iwaba_1_1 := scopal-adv-lex &
+iwaba_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_iwaba_a_1_rel,
  ORTH <! "言わば" !>].
 
 ; 薄々 
 
-usuusu_1 := scopal-adv-lex &
+usuusu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_usuusu_a_1_rel,
  ORTH <! "薄々" !>].
 
 ; うんと 
 
-unto_1 := scopal-adv-lex &
+unto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_unto_a_1_rel,
  ORTH <! "うんと" !>].
 
 ; 得 
 ; Used 27 times
 
-e_1_3 := scopal-adv-lex &
+e_1_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_e_a_1_rel,
  ORTH <! "得" !>].
 
 ; えっちらおっちら 
 
-ecchiraocchira_1 := scopal-adv-lex &
+ecchiraocchira_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ecchiraocchira_a_1_rel,
  ORTH <! "えっちらおっちら" !>].
 
 ; えっと 
 
-etto_1 := scopal-adv-lex &
+etto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_etto_a_1_rel,
  ORTH <! "えっと" !>].
 
 ; おいおい 
 ; Used 1 times
 
-oioi_1_1 := scopal-adv-lex &
+oioi_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_oioi_a_1_rel,
  ORTH <! "おいおい" !>].
 
 ; 大いに 
 ; Used 2 times
 
-ooini_1 := scopal-adv-lex &
+ooini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ooini_a_1_rel,
  ORTH <! "大いに" !>].
 
@@ -18634,127 +18634,127 @@ ooini_1 := scopal-adv-lex &
 ;<IJ> ; JACY 恐らく: osoraku-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> osoraku_1 := scopal-adv-lex &
+;<IJ> osoraku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_osoraku_a_1_rel,
 ;<IJ>  ORTH <! "恐らく" !>].
 
 ; 恐らくは 
 
-osorakuha_1 := scopal-adv-lex &
+osorakuha_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_osorakuha_a_1_rel,
  ORTH <! "恐らくは" !>].
 
 ; 恐る恐る 
 
-osoruosoru_1 := scopal-adv-lex &
+osoruosoru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_osoruosoru_a_1_rel,
  ORTH <! "恐る恐る" !>].
 
 ; おっかなびっくり 
 
-okkanabikkuri_1 := scopal-adv-lex &
+okkanabikkuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_okkanabikkuri_a_1_rel,
  ORTH <! "おっかなびっくり" !>].
 
 ; 覚えず 
 
-oboezu_1 := scopal-adv-lex &
+oboezu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_oboezu_a_1_rel,
  ORTH <! "覚えず" !>].
 
 ; 思い思い 
 
-omoiomoi_1 := scopal-adv-lex &
+omoiomoi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_omoiomoi_a_1_rel,
  ORTH <! "思い思い" !>].
 
 ;<IJ> ; 思う存分 
 ;<IJ> ; JACY 思う存分: omouzonbun-adv (scopal-adv-regular-lex)
 
-;<IJ> omouzonbun_1 := scopal-adv-lex &
+;<IJ> omouzonbun_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_omouzonbun_a_1_rel,
 ;<IJ>  ORTH <! "思う存分" !>].
 
 ; 思うに 
 
-omouni_1 := scopal-adv-lex &
+omouni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_omouni_a_1_rel,
  ORTH <! "思うに" !>].
 
 ; 主に 
 ; Used 44 times
 
-omoni_1_1 := scopal-adv-lex &
+omoni_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_omoni_a_1_rel,
  ORTH <! "主に" !>].
 
 ; おもむろに 
 
-omomuroni_1 := scopal-adv-lex &
+omomuroni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_omomuroni_a_1_rel,
  ORTH <! "おもむろに" !>].
 
 ; 思わず 
 ; Used 2 times
 
-omowazu_1 := scopal-adv-lex &
+omowazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_omowazu_a_1_rel,
  ORTH <! "思わず" !>].
 
 ;<IJ> ; 折り入って 
 ;<IJ> ; JACY 折り入って: oriitte-adv (isect-adv-lex)
 
-;<IJ> oriitte_1 := scopal-adv-lex &
+;<IJ> oriitte_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_oriitte_a_1_rel,
 ;<IJ>  ORTH <! "折り入って" !>].
 
 ; 折しも 
 
-orishimo_1 := scopal-adv-lex &
+orishimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_orishimo_a_1_rel,
  ORTH <! "折しも" !>].
 
 ; 返って 
 
-kaette_1 := scopal-adv-lex &
+kaette_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kaette_a_1_rel,
  ORTH <! "返って" !>].
 
 ; 重ね重ね 
 
-kasanegasane_1 := scopal-adv-lex &
+kasanegasane_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kasanegasane_a_1_rel,
  ORTH <! "重ね重ね" !>].
 
 ; 重ねて 
 ; Used 2 times
 
-kasanete_1 := scopal-adv-lex &
+kasanete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kasanete_a_1_rel,
  ORTH <! "重ねて" !>].
 
 ; がたっと 
 
-gatatto_1 := scopal-adv-lex &
+gatatto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gatatto_a_1_rel,
  ORTH <! "がたっと" !>].
 
 ; 片っ端から 
 ; Used 1 times
 
-katappashikara_1 := scopal-adv-lex &
+katappashikara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_katappashikara_a_1_rel,
  ORTH <! "片っ端から" !>].
 
 ; がちがち 
 
-gachigachi_1 := scopal-adv-lex &
+gachigachi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gachigachi_a_1_rel,
  ORTH <! "がちがち" !>].
 
 ; かちん 
 
-kachin_1_1 := scopal-adv-lex &
+kachin_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kachin_a_1_rel,
  ORTH <! "かちん" !>].
 
@@ -18762,19 +18762,19 @@ kachin_1_1 := scopal-adv-lex &
 ;<IJ> ; JACY かつて: katsute-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> katsute_1 := scopal-adv-lex &
+;<IJ> katsute_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_katsute_a_1_rel,
 ;<IJ>  ORTH <! "かつて" !>].
 
 ; がっぷり 
 
-gappuri_1 := scopal-adv-lex &
+gappuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gappuri_a_1_rel,
  ORTH <! "がっぷり" !>].
 
 ; がっぽり 
 
-gappori_1 := scopal-adv-lex &
+gappori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gappori_a_1_rel,
  ORTH <! "がっぽり" !>].
 
@@ -18782,7 +18782,7 @@ gappori_1 := scopal-adv-lex &
 ;<IJ> ; JACY 必ず: kanarazu-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 6 times
 
-;<IJ> kanarazu_1 := scopal-adv-lex &
+;<IJ> kanarazu_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kanarazu_a_1_rel,
 ;<IJ>  ORTH <! "必ず" !>].
 
@@ -18790,89 +18790,89 @@ gappori_1 := scopal-adv-lex &
 ;<IJ> ; JACY 必ずしも: kanarazushimo-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> kanarazushimo_1 := scopal-adv-lex &
+;<IJ> kanarazushimo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kanarazushimo_a_1_rel,
 ;<IJ>  ORTH <! "必ずしも" !>].
 
 ; 必ずや 
 
-kanarazuya_1 := scopal-adv-lex &
+kanarazuya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kanarazuya_a_1_rel,
  ORTH <! "必ずや" !>].
 
 ; 兼ねて 
 
-kanete_1 := scopal-adv-lex &
+kanete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kanete_a_1_rel,
  ORTH <! "兼ねて" !>].
 
 ; 構えて 
 
-kamaete_1 := scopal-adv-lex &
+kamaete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kamaete_a_1_rel,
  ORTH <! "構えて" !>].
 
 ; がみがみ 
 
-gamigami_1 := scopal-adv-lex &
+gamigami_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gamigami_a_1_rel,
  ORTH <! "がみがみ" !>].
 
 ; 辛く 
 ; Used 1 times
 
-karaku_1 := scopal-adv-lex &
+karaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karaku_a_1_rel,
  ORTH <! "辛く" !>].
 
 ; からっきし 
 
-karakkishi_1 := scopal-adv-lex &
+karakkishi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karakkishi_a_1_rel,
  ORTH <! "からっきし" !>].
 
 ; がらり 
 
-garari_1 := scopal-adv-lex &
+garari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_garari_a_1_rel,
  ORTH <! "がらり" !>].
 
 ; 仮に 
 ; Used 7 times
 
-karini_1 := scopal-adv-lex &
+karini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karini_a_1_rel,
  ORTH <! "仮に" !>].
 
 ; 仮にも 
 
-karinimo_1 := scopal-adv-lex &
+karinimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karinimo_a_1_rel,
  ORTH <! "仮にも" !>].
 
 ; 軽々 
 
-karugaru_1 := scopal-adv-lex &
+karugaru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karugaru_a_1_rel,
  ORTH <! "軽々" !>].
 
 ; 代わる代わる 
 ; Used 2 times
 
-kawarugawaru_1 := scopal-adv-lex &
+kawarugawaru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kawarugawaru_a_1_rel,
  ORTH <! "代わる代わる" !>].
 
 ; 元来 
 ; Used 1 times
 
-ganrai_1 := scopal-adv-lex &
+ganrai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ganrai_a_1_rel,
  ORTH <! "元来" !>].
 
 ; ぎくり 
 
-gikuri_1 := scopal-adv-lex &
+gikuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gikuri_a_1_rel,
  ORTH <! "ぎくり" !>].
 
@@ -18880,76 +18880,76 @@ gikuri_1 := scopal-adv-lex &
 ;<IJ> ; JACY きちんと: kichinto-adv (isect-adv-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> kichinto_1 := scopal-adv-lex &
+;<IJ> kichinto_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kichinto_a_1_rel,
 ;<IJ>  ORTH <! "きちんと" !>].
 
 ; きっかり 
 ; Used 1 times
 
-kikkari_1 := scopal-adv-lex &
+kikkari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kikkari_a_1_rel,
  ORTH <! "きっかり" !>].
 
 ; ぎっしり 
 ; Used 1 times
 
-gisshiri_1 := scopal-adv-lex &
+gisshiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gisshiri_a_1_rel,
  ORTH <! "ぎっしり" !>].
 
 ; 決まって 
 ; Used 1 times
 
-kimatte_1 := scopal-adv-lex &
+kimatte_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kimatte_a_1_rel,
  ORTH <! "決まって" !>].
 
 ; ぎゃふん 
 
-gyafun_1 := scopal-adv-lex &
+gyafun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gyafun_a_1_rel,
  ORTH <! "ぎゃふん" !>].
 
 ; ぎゅうぎゅう 
 
-gyuugyuu_1 := scopal-adv-lex &
+gyuugyuu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gyuugyuu_a_1_rel,
  ORTH <! "ぎゅうぎゅう" !>].
 
 ; ぎゅっと 
 
-gyutto_1 := scopal-adv-lex &
+gyutto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gyutto_a_1_rel,
  ORTH <! "ぎゅっと" !>].
 
 ; 極力 
 
-kyokuryoku_1 := scopal-adv-lex &
+kyokuryoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kyokuryoku_a_1_rel,
  ORTH <! "極力" !>].
 
 ; きょとん 
 
-kyoton_1 := scopal-adv-lex &
+kyoton_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kyoton_a_1_rel,
  ORTH <! "きょとん" !>].
 
 ; きらり 
 
-kirari_1 := scopal-adv-lex &
+kirari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kirari_a_1_rel,
  ORTH <! "きらり" !>].
 
 ; きりきり 
 
-kirikiri_1 := scopal-adv-lex &
+kirikiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kirikiri_a_1_rel,
  ORTH <! "きりきり" !>].
 
 ; きりり 
 
-kiriri_1 := scopal-adv-lex &
+kiriri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kiriri_a_1_rel,
  ORTH <! "きりり" !>].
 
@@ -18957,81 +18957,81 @@ kiriri_1 := scopal-adv-lex &
 ;<IJ> ; JACY 極めて: kiwamete-adv (isect-adv-lex)
 ;<IJ> ; Used 11 times
 
-;<IJ> kiwamete_1 := scopal-adv-lex &
+;<IJ> kiwamete_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kiwamete_a_1_rel,
 ;<IJ>  ORTH <! "極めて" !>].
 
 ; ぐいぐい 
 
-guigui_1 := scopal-adv-lex &
+guigui_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guigui_a_1_rel,
  ORTH <! "ぐいぐい" !>].
 
 ; ぐうぐう 
 
-guuguu_1 := scopal-adv-lex &
+guuguu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guuguu_a_1_rel,
  ORTH <! "ぐうぐう" !>].
 
 ; ぐっすり 
 ; Used 1 times
 
-gussuri_1 := scopal-adv-lex &
+gussuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gussuri_a_1_rel,
  ORTH <! "ぐっすり" !>].
 
 ; ぐっと 
 
-gutto_1 := scopal-adv-lex &
+gutto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gutto_a_1_rel,
  ORTH <! "ぐっと" !>].
 
 ; くどくど 
 
-kudokudo_1 := scopal-adv-lex &
+kudokudo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kudokudo_a_1_rel,
  ORTH <! "くどくど" !>].
 
 ; ぐにゃり 
 
-gunyari_1 := scopal-adv-lex &
+gunyari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gunyari_a_1_rel,
  ORTH <! "ぐにゃり" !>].
 
 ; ぐびぐび 
 
-gubigubi_1 := scopal-adv-lex &
+gubigubi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gubigubi_a_1_rel,
  ORTH <! "ぐびぐび" !>].
 
 ; ぐるぐる 
 ; Used 1 times
 
-guruguru_1 := scopal-adv-lex &
+guruguru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guruguru_a_1_rel,
  ORTH <! "ぐるぐる" !>].
 
 ; くるり 
 
-kururi_1 := scopal-adv-lex &
+kururi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kururi_a_1_rel,
  ORTH <! "くるり" !>].
 
 ; くれぐれ 
 
-kuregure_1_1 := scopal-adv-lex &
+kuregure_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kuregure_a_1_rel,
  ORTH <! "くれぐれ" !>].
 
 ; ぐんぐん 
 
-gungun_1 := scopal-adv-lex &
+gungun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gungun_a_1_rel,
  ORTH <! "ぐんぐん" !>].
 
 ; ぐんと 
 
-gunto_1 := scopal-adv-lex &
+gunto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gunto_a_1_rel,
  ORTH <! "ぐんと" !>].
 
@@ -19039,7 +19039,7 @@ gunto_1 := scopal-adv-lex &
 ;<IJ> ; JACY 決して: keshite-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> keshite_1 := scopal-adv-lex &
+;<IJ> keshite_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_keshite_a_1_rel,
 ;<IJ>  ORTH <! "決して" !>].
 
@@ -19047,193 +19047,193 @@ gunto_1 := scopal-adv-lex &
 ;<IJ> ; JACY 決して: keshite-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> kesshite_1 := scopal-adv-lex &
+;<IJ> kesshite_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kesshite_a_1_rel,
 ;<IJ>  ORTH <! "決して" !>].
 
 ; げに 
 
-geni_1 := scopal-adv-lex &
+geni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_geni_a_1_rel,
  ORTH <! "げに" !>].
 
 ; げらげら 
 
-geragera_1 := scopal-adv-lex &
+geragera_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_geragera_a_1_rel,
  ORTH <! "げらげら" !>].
 
 ; 現に 
 ; Used 8 times
 
-genni_1 := scopal-adv-lex &
+genni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_genni_a_1_rel,
  ORTH <! "現に" !>].
 
 ; ここの所 
 
-kokonotokoro_1 := scopal-adv-lex &
+kokonotokoro_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokonotokoro_a_1_rel,
  ORTH <! "ここの所" !>].
 
 ; 心置きなく 
 
-kokorookinaku_1 := scopal-adv-lex &
+kokorookinaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokorookinaku_a_1_rel,
  ORTH <! "心置きなく" !>].
 
 ; 心から 
 ; Used 2 times
 
-kokorokara_1 := scopal-adv-lex &
+kokorokara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokorokara_a_1_rel,
  ORTH <! "心から" !>].
 
 ; 心して 
 
-kokoroshite_1 := scopal-adv-lex &
+kokoroshite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokoroshite_a_1_rel,
  ORTH <! "心して" !>].
 
 ; 試みに 
 
-kokoromini_1 := scopal-adv-lex &
+kokoromini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokoromini_a_1_rel,
  ORTH <! "試みに" !>].
 
 ; ごしごし 
 
-goshigoshi_1 := scopal-adv-lex &
+goshigoshi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_goshigoshi_a_1_rel,
  ORTH <! "ごしごし" !>].
 
 ; こぞって 
 
-kozotte_1 := scopal-adv-lex &
+kozotte_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kozotte_a_1_rel,
  ORTH <! "こぞって" !>].
 
 ; ごそっと 
 
-gosotto_1 := scopal-adv-lex &
+gosotto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gosotto_a_1_rel,
  ORTH <! "ごそっと" !>].
 
 ; こつこつ 
 
-kotsukotsu_1 := scopal-adv-lex &
+kotsukotsu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kotsukotsu_a_1_rel,
  ORTH <! "こつこつ" !>].
 
 ; こっそり 
 ; Used 6 times
 
-kossori_1 := scopal-adv-lex &
+kossori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kossori_a_1_rel,
  ORTH <! "こっそり" !>].
 
 ; ごっそり 
 
-gossori_1 := scopal-adv-lex &
+gossori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gossori_a_1_rel,
  ORTH <! "ごっそり" !>].
 
 ; ことごとく 
 ; Used 2 times
 
-kotogotoku_1 := scopal-adv-lex &
+kotogotoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kotogotoku_a_1_rel,
  ORTH <! "ことごとく" !>].
 
 ; ことのほか 
 
-kotonohoka_1 := scopal-adv-lex &
+kotonohoka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kotonohoka_a_1_rel,
  ORTH <! "ことのほか" !>].
 
 ; 好んで 
 ; Used 3 times
 
-kononde_1 := scopal-adv-lex &
+kononde_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kononde_a_1_rel,
  ORTH <! "好んで" !>].
 
 ; こよなく 
 
-koyonaku_1 := scopal-adv-lex &
+koyonaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_koyonaku_a_1_rel,
  ORTH <! "こよなく" !>].
 
 ; これほど 
 
-korehodo_1 := scopal-adv-lex &
+korehodo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_korehodo_a_1_rel,
  ORTH <! "これほど" !>].
 
 ; ころり 
 
-korori_1_1 := scopal-adv-lex &
+korori_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_korori_a_1_rel,
  ORTH <! "ころり" !>].
 
 ; ごろり 
 
-gorori_1 := scopal-adv-lex &
+gorori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gorori_a_1_rel,
  ORTH <! "ごろり" !>].
 
 ; こんがり 
 
-kongari_1 := scopal-adv-lex &
+kongari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kongari_a_1_rel,
  ORTH <! "こんがり" !>].
 
 ; 再三 
 
-saisan_1_1 := scopal-adv-lex &
+saisan_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_saisan_a_1_rel,
  ORTH <! "再三" !>].
 
 ; 先に 
 ; Used 6 times
 
-sakini_1 := scopal-adv-lex &
+sakini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sakini_a_1_rel,
  ORTH <! "先に" !>].
 
 ; さくさく 
 
-sakusaku_1 := scopal-adv-lex &
+sakusaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sakusaku_a_1_rel,
  ORTH <! "さくさく" !>].
 
 ; 差し当たり 
 
-sashiatari_1 := scopal-adv-lex &
+sashiatari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sashiatari_a_1_rel,
  ORTH <! "差し当たり" !>].
 
 ; さすが 
 
-sasuga_1_1 := scopal-adv-lex &
+sasuga_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sasuga_a_1_rel,
  ORTH <! "さすが" !>].
 
 ; さぞ 
 
-sazo_1 := scopal-adv-lex &
+sazo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sazo_a_1_rel,
  ORTH <! "さぞ" !>].
 
 ; さぞかし 
 
-sazokashi_1 := scopal-adv-lex &
+sazokashi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sazokashi_a_1_rel,
  ORTH <! "さぞかし" !>].
 
 ; さっさと 
 
-sassato_1 := scopal-adv-lex &
+sassato_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sassato_a_1_rel,
  ORTH <! "さっさと" !>].
 
@@ -19241,26 +19241,26 @@ sassato_1 := scopal-adv-lex &
 ;<IJ> ; JACY 早速: sassoku-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> sassoku_1 := scopal-adv-lex &
+;<IJ> sassoku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sassoku_a_1_rel,
 ;<IJ>  ORTH <! "早速" !>].
 
 ;<IJ> ; ざっと 
 ;<IJ> ; JACY ざっと: zatto-adv (scopal-adv-regular-lex)
 
-;<IJ> zatto_1 := scopal-adv-lex &
+;<IJ> zatto_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zatto_a_1_rel,
 ;<IJ>  ORTH <! "ざっと" !>].
 
 ; さほど 
 
-sahodo_1 := scopal-adv-lex &
+sahodo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sahodo_a_1_rel,
  ORTH <! "さほど" !>].
 
 ; さらさら 
 
-sarasara_1 := scopal-adv-lex &
+sarasara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sarasara_a_1_rel,
  ORTH <! "さらさら" !>].
 
@@ -19268,52 +19268,52 @@ sarasara_1 := scopal-adv-lex &
 ;<IJ> ; JACY 更に: sarani-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 21 times
 
-;<IJ> sarani_1 := scopal-adv-lex &
+;<IJ> sarani_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sarani_a_1_rel,
 ;<IJ>  ORTH <! "更に" !>].
 
 ; さらり 
 
-sarari_1 := scopal-adv-lex &
+sarari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sarari_a_1_rel,
  ORTH <! "さらり" !>].
 
 ; 強いて 
 ; Used 1 times
 
-shiite_1 := scopal-adv-lex &
+shiite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shiite_a_1_rel,
  ORTH <! "強いて" !>].
 
 ; 仕方無しに 
 
-shikatanashini_1 := scopal-adv-lex &
+shikatanashini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shikatanashini_a_1_rel,
  ORTH <! "仕方無しに" !>].
 
 ; しかと 
 
-shikato_1 := scopal-adv-lex &
+shikato_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shikato_a_1_rel,
  ORTH <! "しかと" !>].
 
 ; 次第に 
 ; Used 3 times
 
-shidaini_1 := scopal-adv-lex &
+shidaini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shidaini_a_1_rel,
  ORTH <! "次第に" !>].
 
 ; 親しく 
 ; Used 5 times
 
-shitashiku_1 := scopal-adv-lex &
+shitashiku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shitashiku_a_1_rel,
  ORTH <! "親しく" !>].
 
 ; じっくり 
 
-jikkuri_1 := scopal-adv-lex &
+jikkuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jikkuri_a_1_rel,
  ORTH <! "じっくり" !>].
 
@@ -19321,158 +19321,158 @@ jikkuri_1 := scopal-adv-lex &
 ;<IJ> ; JACY 実に: jitsuni (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> jitsuni_1 := scopal-adv-lex &
+;<IJ> jitsuni_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_jitsuni_a_1_rel,
 ;<IJ>  ORTH <! "実に" !>].
 
 ;<IJ> ; 実は 
 ;<IJ> ; JACY 実は: jitsuwa (interj-lex)
 
-;<IJ> jitsuha_1 := scopal-adv-lex &
+;<IJ> jitsuha_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_jitsuha_a_1_rel,
 ;<IJ>  ORTH <! "実は" !>].
 
 ; 渋々 
 ; Used 1 times
 
-shibushibu_1 := scopal-adv-lex &
+shibushibu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shibushibu_a_1_rel,
  ORTH <! "渋々" !>].
 
 ; しみじみ 
 ; Used 1 times
 
-shimijimi_1 := scopal-adv-lex &
+shimijimi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shimijimi_a_1_rel,
  ORTH <! "しみじみ" !>].
 
 ; じゃぶじゃぶ 
 
-jabujabu_1 := scopal-adv-lex &
+jabujabu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jabujabu_a_1_rel,
  ORTH <! "じゃぶじゃぶ" !>].
 
 ; じゃんじゃん 
 
-janjan_1 := scopal-adv-lex &
+janjan_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_janjan_a_1_rel,
  ORTH <! "じゃんじゃん" !>].
 
 ; 主として 
 ; Used 7 times
 
-shutoshite_1 := scopal-adv-lex &
+shutoshite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shutoshite_a_1_rel,
  ORTH <! "主として" !>].
 
 ;<IJ> ; 順次 
 ;<IJ> ; JACY 順次: juNji-adv (isect-adv-lex)
 
-;<IJ> junji_1 := scopal-adv-lex &
+;<IJ> junji_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_junji_a_1_rel,
 ;<IJ>  ORTH <! "順次" !>].
 
 ; 順に 
 ; Used 4 times
 
-junni_1 := scopal-adv-lex &
+junni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_junni_a_1_rel,
  ORTH <! "順に" !>].
 
 ; 徐々に 
 ; Used 1 times
 
-jojoni_1 := scopal-adv-lex &
+jojoni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jojoni_a_1_rel,
  ORTH <! "徐々に" !>].
 
 ; 所詮 
 
-shosen_1 := scopal-adv-lex &
+shosen_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shosen_a_1_rel,
  ORTH <! "所詮" !>].
 
 ; しょっちゅう 
 
-shocchuu_1 := scopal-adv-lex &
+shocchuu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shocchuu_a_1_rel,
  ORTH <! "しょっちゅう" !>].
 
 ; 知らず知らず 
 
-shirazushirazu_1 := scopal-adv-lex &
+shirazushirazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shirazushirazu_a_1_rel,
  ORTH <! "知らず知らず" !>].
 
 ; じろじろ 
 
-jirojiro_1 := scopal-adv-lex &
+jirojiro_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jirojiro_a_1_rel,
  ORTH <! "じろじろ" !>].
 
 ; じろり 
 
-jirori_1 := scopal-adv-lex &
+jirori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jirori_a_1_rel,
  ORTH <! "じろり" !>].
 
 ; じわじわ 
 
-jiwajiwa_1 := scopal-adv-lex &
+jiwajiwa_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jiwajiwa_a_1_rel,
  ORTH <! "じわじわ" !>].
 
 ; じわり 
 
-jiwari_1 := scopal-adv-lex &
+jiwari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jiwari_a_1_rel,
  ORTH <! "じわり" !>].
 
 ; じわりじわり 
 
-jiwarijiwari_1 := scopal-adv-lex &
+jiwarijiwari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jiwarijiwari_a_1_rel,
  ORTH <! "じわりじわり" !>].
 
 ; じんと 
 
-jinto_1 := scopal-adv-lex &
+jinto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jinto_a_1_rel,
  ORTH <! "じんと" !>].
 
 ; 随時 
 
-zuiji_1 := scopal-adv-lex &
+zuiji_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zuiji_a_1_rel,
  ORTH <! "随時" !>].
 
 ; すいすい 
 
-suisui_1 := scopal-adv-lex &
+suisui_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_suisui_a_1_rel,
  ORTH <! "すいすい" !>].
 
 ; 末永く 
 
-suenagaku_1 := scopal-adv-lex &
+suenagaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_suenagaku_a_1_rel,
  ORTH <! "末永く" !>].
 
 ; ずかずか 
 
-zukazuka_1 := scopal-adv-lex &
+zukazuka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zukazuka_a_1_rel,
  ORTH <! "ずかずか" !>].
 
 ; すくすく 
 
-sukusuku_1 := scopal-adv-lex &
+sukusuku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukusuku_a_1_rel,
  ORTH <! "すくすく" !>].
 
 ; 少なからず 
 
-sukunakarazu_1 := scopal-adv-lex &
+sukunakarazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukunakarazu_a_1_rel,
  ORTH <! "少なからず" !>].
 
@@ -19480,20 +19480,20 @@ sukunakarazu_1 := scopal-adv-lex &
 ;<IJ> ; JACY 少なくとも: sukunakutomo-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> sukunakutomo_1 := scopal-adv-lex &
+;<IJ> sukunakutomo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sukunakutomo_a_1_rel,
 ;<IJ>  ORTH <! "少なくとも" !>].
 
 ; 優れて 
 ; Used 1 times
 
-sugurete_1 := scopal-adv-lex &
+sugurete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sugurete_a_1_rel,
  ORTH <! "優れて" !>].
 
 ; ずけずけ 
 
-zukezuke_1 := scopal-adv-lex &
+zukezuke_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zukezuke_a_1_rel,
  ORTH <! "ずけずけ" !>].
 
@@ -19501,51 +19501,51 @@ zukezuke_1 := scopal-adv-lex &
 ;<IJ> ; JACY 少し: sukoshi-adv (scopal-adv-regular-lex) sukoshi (ordinary-nohon-n-lex)
 ;<IJ> ; Used 35 times
 
-;<IJ> sukoshi_1 := scopal-adv-lex &
+;<IJ> sukoshi_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sukoshi_a_1_rel,
 ;<IJ>  ORTH <! "少し" !>].
 
 ; 少しも 
 ; Used 3 times
 
-sukoshimo_1 := scopal-adv-lex &
+sukoshimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukoshimo_a_1_rel,
  ORTH <! "少しも" !>].
 
 ; すごすご 
 
-sugosugo_1 := scopal-adv-lex &
+sugosugo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sugosugo_a_1_rel,
  ORTH <! "すごすご" !>].
 
 ; ずしり 
 
-zushiri_1 := scopal-adv-lex &
+zushiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zushiri_a_1_rel,
  ORTH <! "ずしり" !>].
 
 ; すたすた 
 
-sutasuta_1 := scopal-adv-lex &
+sutasuta_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sutasuta_a_1_rel,
  ORTH <! "すたすた" !>].
 
 ; すっかり 
 ; Used 21 times
 
-sukkari_1 := scopal-adv-lex &
+sukkari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukkari_a_1_rel,
  ORTH <! "すっかり" !>].
 
 ; ずっしり 
 
-zusshiri_1 := scopal-adv-lex &
+zusshiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zusshiri_a_1_rel,
  ORTH <! "ずっしり" !>].
 
 ; すってんころり 
 
-suttenkorori_1 := scopal-adv-lex &
+suttenkorori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_suttenkorori_a_1_rel,
  ORTH <! "すってんころり" !>].
 
@@ -19553,20 +19553,20 @@ suttenkorori_1 := scopal-adv-lex &
 ;<IJ> ; JACY ずっと: zutto-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> zutto_1 := scopal-adv-lex &
+;<IJ> zutto_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zutto_a_1_rel,
 ;<IJ>  ORTH <! "ずっと" !>].
 
 ; すっぱり 
 
-suppari_1 := scopal-adv-lex &
+suppari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_suppari_a_1_rel,
  ORTH <! "すっぱり" !>].
 
 ; すっぽり 
 ; Used 1 times
 
-suppori_1 := scopal-adv-lex &
+suppori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_suppori_a_1_rel,
  ORTH <! "すっぽり" !>].
 
@@ -19574,95 +19574,95 @@ suppori_1 := scopal-adv-lex &
 ;<IJ> ; JACY 既に: sudeni-adv-2 (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> sudeni_1 := scopal-adv-lex &
+;<IJ> sudeni_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sudeni_a_1_rel,
 ;<IJ>  ORTH <! "既に" !>].
 
 ; すぱすぱ 
 
-supasupa_1 := scopal-adv-lex &
+supasupa_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_supasupa_a_1_rel,
  ORTH <! "すぱすぱ" !>].
 
 ; ずばずば 
 
-zubazuba_1 := scopal-adv-lex &
+zubazuba_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zubazuba_a_1_rel,
  ORTH <! "ずばずば" !>].
 
 ; ずばり 
 
-zubari_1 := scopal-adv-lex &
+zubari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zubari_a_1_rel,
  ORTH <! "ずばり" !>].
 
 ; すやすや 
 
-suyasuya_1 := scopal-adv-lex &
+suyasuya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_suyasuya_a_1_rel,
  ORTH <! "すやすや" !>].
 
 ; すらすら 
 ; Used 1 times
 
-surasura_1 := scopal-adv-lex &
+surasura_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_surasura_a_1_rel,
  ORTH <! "すらすら" !>].
 
 ; すらり 
 ; Used 1 times
 
-surari_1 := scopal-adv-lex &
+surari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_surari_a_1_rel,
  ORTH <! "すらり" !>].
 
 ; ずらり 
 
-zurari_1 := scopal-adv-lex &
+zurari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zurari_a_1_rel,
  ORTH <! "ずらり" !>].
 
 ; するする 
 
-surusuru_1 := scopal-adv-lex &
+surusuru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_surusuru_a_1_rel,
  ORTH <! "するする" !>].
 
 ; するり 
 
-sururi_1 := scopal-adv-lex &
+sururi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sururi_a_1_rel,
  ORTH <! "するり" !>].
 
 ; ずんずん 
 
-zunzun_1 := scopal-adv-lex &
+zunzun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zunzun_a_1_rel,
  ORTH <! "ずんずん" !>].
 
 ; 誠心誠意 
 
-seishinseii_1 := scopal-adv-lex &
+seishinseii_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_seishinseii_a_1_rel,
  ORTH <! "誠心誠意" !>].
 
 ;<IJ> ; せっせと 
 ;<IJ> ; JACY せっせと: sesseto-adv (isect-adv-lex)
 
-;<IJ> sesseto_1 := scopal-adv-lex &
+;<IJ> sesseto_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sesseto_a_1_rel,
 ;<IJ>  ORTH <! "せっせと" !>].
 
 ; 是非とも 
 ; Used 1 times
 
-zehitomo_1 := scopal-adv-lex &
+zehitomo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zehitomo_a_1_rel,
  ORTH <! "是非とも" !>].
 
 ; せめて 
 
-semete_1_1 := scopal-adv-lex &
+semete_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_semete_a_1_rel,
  ORTH <! "せめて" !>].
 
@@ -19670,88 +19670,88 @@ semete_1_1 := scopal-adv-lex &
 ;<IJ> ; JACY 全然: zeNzeN-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> zenzen_1 := scopal-adv-lex &
+;<IJ> zenzen_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zenzen_a_1_rel,
 ;<IJ>  ORTH <! "全然" !>].
 
 ; 続々 
 
-zokuzoku_1 := scopal-adv-lex &
+zokuzoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zokuzoku_a_1_rel,
  ORTH <! "続々" !>].
 
 ; 即刻 
 
-sokkoku_1 := scopal-adv-lex &
+sokkoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sokkoku_a_1_rel,
  ORTH <! "即刻" !>].
 
 ; ぞっこん 
 
-zokkon_1 := scopal-adv-lex &
+zokkon_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zokkon_a_1_rel,
  ORTH <! "ぞっこん" !>].
 
 ; そっと 
 ; Used 1 times
 
-sotto_1_1 := scopal-adv-lex &
+sotto_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sotto_a_1_rel,
  ORTH <! "そっと" !>].
 
 ; その内 
 ; Used 3 times
 
-sonouchi_1 := scopal-adv-lex &
+sonouchi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sonouchi_a_1_rel,
  ORTH <! "その内" !>].
 
 ; そよそよ 
 ; Used 1 times
 
-soyosoyo_1 := scopal-adv-lex &
+soyosoyo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soyosoyo_a_1_rel,
  ORTH <! "そよそよ" !>].
 
 ; それ程 
 ; Used 2 times
 
-sorehodo_1 := scopal-adv-lex &
+sorehodo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sorehodo_a_1_rel,
  ORTH <! "それ程" !>].
 
 ;<IJ> ; そろそろ 
 ;<IJ> ; JACY そろそろ: sorosoro-adv (isect-adv-lex)
 
-;<IJ> sorosoro_1 := scopal-adv-lex &
+;<IJ> sorosoro_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sorosoro_a_1_rel,
 ;<IJ>  ORTH <! "そろそろ" !>].
 
 ; 大して 
 ; Used 1 times
 
-taishite_1 := scopal-adv-lex &
+taishite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taishite_a_1_rel,
  ORTH <! "大して" !>].
 
 ; 大抵 
 ; Used 3 times
 
-taitei_1 := scopal-adv-lex &
+taitei_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taitei_a_1_rel,
  ORTH <! "大抵" !>].
 
 ; 大分 
 ; Used 1 times
 
-daibu_1 := scopal-adv-lex &
+daibu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_daibu_a_1_rel,
  ORTH <! "大分" !>].
 
 ; 絶えず 
 ; Used 3 times
 
-taezu_1 := scopal-adv-lex &
+taezu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taezu_a_1_rel,
  ORTH <! "絶えず" !>].
 
@@ -19759,53 +19759,53 @@ taezu_1 := scopal-adv-lex &
 ;<IJ> ; JACY 互いに: tagai-adv (isect-adv-lex)
 ;<IJ> ; Used 27 times
 
-;<IJ> tagaini_1 := scopal-adv-lex &
+;<IJ> tagaini_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tagaini_a_1_rel,
 ;<IJ>  ORTH <! "互いに" !>].
 
 ; 高々 
 
-takadaka_1 := scopal-adv-lex &
+takadaka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_takadaka_a_1_rel,
  ORTH <! "高々" !>].
 
 ; 多々 
 
-tata_1 := scopal-adv-lex &
+tata_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tata_a_1_rel,
  ORTH <! "多々" !>].
 
 ; 直ちに 
 ; Used 9 times
 
-tadachini_1 := scopal-adv-lex &
+tadachini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tadachini_a_1_rel,
  ORTH <! "直ちに" !>].
 
 ; たちまち 
 
-tachimachi_1 := scopal-adv-lex &
+tachimachi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tachimachi_a_1_rel,
  ORTH <! "たちまち" !>].
 
 ; たった 
 ; Used 2 times
 
-tatta_1 := scopal-adv-lex &
+tatta_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tatta_a_1_rel,
  ORTH <! "たった" !>].
 
 ; たった今 
 ; Used 2 times
 
-tattaima_1 := scopal-adv-lex &
+tattaima_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tattaima_a_1_rel,
  ORTH <! "たった今" !>].
 
 ; たとえ 
 ; Used 30 times
 
-tatoe_1_1 := scopal-adv-lex &
+tatoe_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tatoe_a_1_rel,
  ORTH <! "たとえ" !>].
 
@@ -19813,39 +19813,39 @@ tatoe_1_1 := scopal-adv-lex &
 ;<IJ> ; JACY 例えば: tatoeba-adv (isect-adv-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> tatoeba_1 := scopal-adv-lex &
+;<IJ> tatoeba_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tatoeba_a_1_rel,
 ;<IJ>  ORTH <! "例えば" !>].
 
 ; 度々 
 ; Used 2 times
 
-tabitabi_1 := scopal-adv-lex &
+tabitabi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tabitabi_a_1_rel,
  ORTH <! "度々" !>].
 
 ; たらたら 
 
-taratara_1 := scopal-adv-lex &
+taratara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taratara_a_1_rel,
  ORTH <! "たらたら" !>].
 
 ; たらふく 
 
-tarafuku_1 := scopal-adv-lex &
+tarafuku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tarafuku_a_1_rel,
  ORTH <! "たらふく" !>].
 
 ; 断じて 
 
-danjite_1 := scopal-adv-lex &
+danjite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_danjite_a_1_rel,
  ORTH <! "断じて" !>].
 
 ;<IJ> ; 断然 
 ;<IJ> ; JACY 断然: danzen-adv (scopal-adv-regular-lex)
 
-;<IJ> danzen_1 := scopal-adv-lex &
+;<IJ> danzen_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_danzen_a_1_rel,
 ;<IJ>  ORTH <! "断然" !>].
 
@@ -19853,112 +19853,112 @@ danjite_1 := scopal-adv-lex &
 ;<IJ> ; JACY 単に: tanni-adv (isect-adv-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> tanni_1 := scopal-adv-lex &
+;<IJ> tanni_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tanni_a_1_rel,
 ;<IJ>  ORTH <! "単に" !>].
 
 ;<IJ> ; 近々 
 ;<IJ> ; JACY 近々: chikajika-adv (isect-adv-lex)
 
-;<IJ> chikadika_1 := scopal-adv-lex &
+;<IJ> chikadika_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_chikadika_a_1_rel,
 ;<IJ>  ORTH <! "近々" !>].
 
 ; 誓って 
 
-chikatte_1 := scopal-adv-lex &
+chikatte_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chikatte_a_1_rel,
  ORTH <! "誓って" !>].
 
 ; 力一杯 
 
-chikaraippai_1 := scopal-adv-lex &
+chikaraippai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chikaraippai_a_1_rel,
  ORTH <! "力一杯" !>].
 
 ; ちくり 
 
-chikuri_1 := scopal-adv-lex &
+chikuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chikuri_a_1_rel,
  ORTH <! "ちくり" !>].
 
 ; ちっとも 
 ; Used 1 times
 
-chittomo_1 := scopal-adv-lex &
+chittomo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chittomo_a_1_rel,
  ORTH <! "ちっとも" !>].
 
 ; ちびちび 
 
-chibichibi_1 := scopal-adv-lex &
+chibichibi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chibichibi_a_1_rel,
  ORTH <! "ちびちび" !>].
 
 ; ちびりちびり 
 
-chibirichibiri_1 := scopal-adv-lex &
+chibirichibiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chibirichibiri_a_1_rel,
  ORTH <! "ちびりちびり" !>].
 
 ; 着々 
 
-chakuchaku_1 := scopal-adv-lex &
+chakuchaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chakuchaku_a_1_rel,
  ORTH <! "着々" !>].
 
 ; ちゃらちゃら 
 
-charachara_1 := scopal-adv-lex &
+charachara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_charachara_a_1_rel,
  ORTH <! "ちゃらちゃら" !>].
 
 ; 丁度 
 ; Used 7 times
 
-choudo_1 := scopal-adv-lex &
+choudo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_choudo_a_1_rel,
  ORTH <! "丁度" !>].
 
 ; ちょきちょき 
 
-chokichoki_1 := scopal-adv-lex &
+chokichoki_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chokichoki_a_1_rel,
  ORTH <! "ちょきちょき" !>].
 
 ; ちょくちょく 
 
-chokuchoku_1 := scopal-adv-lex &
+chokuchoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chokuchoku_a_1_rel,
  ORTH <! "ちょくちょく" !>].
 
 ; ちょこん 
 
-chokon_1 := scopal-adv-lex &
+chokon_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chokon_a_1_rel,
  ORTH <! "ちょこん" !>].
 
 ; ちょっくら 
 
-chokkura_1 := scopal-adv-lex &
+chokkura_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chokkura_a_1_rel,
  ORTH <! "ちょっくら" !>].
 
 ; ちょっぴり 
 
-choppiri_1 := scopal-adv-lex &
+choppiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_choppiri_a_1_rel,
  ORTH <! "ちょっぴり" !>].
 
 ; ちらっと 
 
-chiratto_1 := scopal-adv-lex &
+chiratto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chiratto_a_1_rel,
  ORTH <! "ちらっと" !>].
 
 ; ちらり 
 
-chirari_1 := scopal-adv-lex &
+chirari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chirari_a_1_rel,
  ORTH <! "ちらり" !>].
 
@@ -19966,46 +19966,46 @@ chirari_1 := scopal-adv-lex &
 ;<IJ> ; JACY つい: tsui-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> tsui_1 := scopal-adv-lex &
+;<IJ> tsui_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tsui_a_1_rel,
 ;<IJ>  ORTH <! "つい" !>].
 
 ; ついに 
 ; Used 1 times
 
-tsuini_1 := scopal-adv-lex &
+tsuini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsuini_a_1_rel,
  ORTH <! "ついに" !>].
 
 ; つかつか 
 
-tsukatsuka_1 := scopal-adv-lex &
+tsukatsuka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsukatsuka_a_1_rel,
  ORTH <! "つかつか" !>].
 
 ; 次々 
 ; Used 7 times
 
-tsugitsugi_1 := scopal-adv-lex &
+tsugitsugi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsugitsugi_a_1_rel,
  ORTH <! "次々" !>].
 
 ; つくづく 
 
-tsukuduku_1 := scopal-adv-lex &
+tsukuduku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsukuduku_a_1_rel,
  ORTH <! "つくづく" !>].
 
 ; 努めて 
 ; Used 1 times
 
-tsutomete_1 := scopal-adv-lex &
+tsutomete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsutomete_a_1_rel,
  ORTH <! "努めて" !>].
 
 ; 常々 
 
-tsunedune_1 := scopal-adv-lex &
+tsunedune_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsunedune_a_1_rel,
  ORTH <! "常々" !>].
 
@@ -20013,50 +20013,50 @@ tsunedune_1 := scopal-adv-lex &
 ;<IJ> ; JACY 常に: shineni-adv (isect-adv-lex)
 ;<IJ> ; Used 8 times
 
-;<IJ> tsuneni_1 := scopal-adv-lex &
+;<IJ> tsuneni_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tsuneni_a_1_rel,
 ;<IJ>  ORTH <! "常に" !>].
 
 ; つべこべ 
 
-tsubekobe_1 := scopal-adv-lex &
+tsubekobe_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsubekobe_a_1_rel,
  ORTH <! "つべこべ" !>].
 
 ; つやつや 
 ; Used 1 times
 
-tsuyatsuya_1 := scopal-adv-lex &
+tsuyatsuya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsuyatsuya_a_1_rel,
  ORTH <! "つやつや" !>].
 
 ; 手当り次第 
 
-teatarishidai_1 := scopal-adv-lex &
+teatarishidai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_teatarishidai_a_1_rel,
  ORTH <! "手当り次第" !>].
 
 ; でかでか 
 
-dekadeka_1 := scopal-adv-lex &
+dekadeka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dekadeka_a_1_rel,
  ORTH <! "でかでか" !>].
 
 ; てくてく 
 
-tekuteku_1 := scopal-adv-lex &
+tekuteku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tekuteku_a_1_rel,
  ORTH <! "てくてく" !>].
 
 ; てっきり 
 
-tekkiri_1 := scopal-adv-lex &
+tekkiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tekkiri_a_1_rel,
  ORTH <! "てっきり" !>].
 
 ; 点々 
 
-tenten_1 := scopal-adv-lex &
+tenten_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tenten_a_1_rel,
  ORTH <! "点々" !>].
 
@@ -20064,7 +20064,7 @@ tenten_1 := scopal-adv-lex &
 ;<IJ> ; JACY と: to-sap (s-conj1-lex) to-advp-exh-4 (adv-p-lex-4) to-advp-exh-1 (adv-p-lex-1) to-conj-nobj (n_conj-p-lex) to-conj-pobj (nmod-p-lex) to-comp-varg (comp-prpstn-lex) to-comp-saparg (comp-prpstn-lex) to-comp-quotarg (comp-prpstn-lex) to-comp1 (to-case-lex) to-comp3 (to-case-lex)
 ;<IJ> ; Used 1083 times
 
-;<IJ> to_1_10 := scopal-adv-lex &
+;<IJ> to_1_10 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_to_a_1_rel,
 ;<IJ>  ORTH <! "と" !>].
 
@@ -20072,13 +20072,13 @@ tenten_1 := scopal-adv-lex &
 ;<IJ> ; JACY どう: dou-adv (lex-mod-adv-wh-lex)
 ;<IJ> ; Used 32 times
 
-;<IJ> dou_1_7 := scopal-adv-lex &
+;<IJ> dou_1_7 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_dou_a_1_rel,
 ;<IJ>  ORTH <! "どう" !>].
 
 ; どうか 
 
-douka_1_5 := scopal-adv-lex &
+douka_1_5 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_douka_a_1_rel,
  ORTH <! "どうか" !>].
 
@@ -20086,92 +20086,92 @@ douka_1_5 := scopal-adv-lex &
 ;<IJ> ; JACY どうせ: douse-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> douse_1 := scopal-adv-lex &
+;<IJ> douse_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_douse_a_1_rel,
 ;<IJ>  ORTH <! "どうせ" !>].
 
 ; 到底 
 ; Used 2 times
 
-toutei_1 := scopal-adv-lex &
+toutei_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toutei_a_1_rel,
  ORTH <! "到底" !>].
 
 ; どうでも 
 
-doudemo_1 := scopal-adv-lex &
+doudemo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_doudemo_a_1_rel,
  ORTH <! "どうでも" !>].
 
 ; とうとう 
 ; Used 3 times
 
-toutou_1 := scopal-adv-lex &
+toutou_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
  ORTH <! "とうとう" !>].
 
 ; 当分 
 
-toubun_1_1 := scopal-adv-lex &
+toubun_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toubun_a_1_rel,
  ORTH <! "当分" !>].
 
 ;<IJ> ; どうも 
 ;<IJ> ; JACY どうも: doumo-adv (scopal-adv-regular-lex) doumo-idiom (excl-lex)
 
-;<IJ> doumo_1 := scopal-adv-lex &
+;<IJ> doumo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_doumo_a_1_rel,
 ;<IJ>  ORTH <! "どうも" !>].
 
 ;<IJ> ; どうやら 
 ;<IJ> ; JACY どうやら: douyara-adv (scopal-adv-regular-lex)
 
-;<IJ> douyara_1 := scopal-adv-lex &
+;<IJ> douyara_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_douyara_a_1_rel,
 ;<IJ>  ORTH <! "どうやら" !>].
 
 ; 遠からず 
 
-tookarazu_1 := scopal-adv-lex &
+tookarazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tookarazu_a_1_rel,
  ORTH <! "遠からず" !>].
 
 ; どかっと 
 
-dokatto_1 := scopal-adv-lex &
+dokatto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dokatto_a_1_rel,
  ORTH <! "どかっと" !>].
 
 ; どかどか 
 
-dokadoka_1 := scopal-adv-lex &
+dokadoka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dokadoka_a_1_rel,
  ORTH <! "どかどか" !>].
 
 ; 時折 
 ; Used 1 times
 
-tokiori_1 := scopal-adv-lex &
+tokiori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tokiori_a_1_rel,
  ORTH <! "時折" !>].
 
 ; 時として 
 
-tokitoshite_1 := scopal-adv-lex &
+tokitoshite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tokitoshite_a_1_rel,
  ORTH <! "時として" !>].
 
 ;<IJ> ; とくとく 
 ;<IJ> ; JACY とくとく: tokutoku-noun (ordinary-nohon-n-lex)
 
-;<IJ> tokutoku_1 := scopal-adv-lex &
+;<IJ> tokutoku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tokutoku_a_1_rel,
 ;<IJ>  ORTH <! "とくとく" !>].
 
 ;<IJ> ; とくとく 
 ;<IJ> ; JACY とくとく: tokutoku-noun (ordinary-nohon-n-lex)
 
-;<IJ> tokutoku_1_1 := scopal-adv-lex &
+;<IJ> tokutoku_1_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tokutoku_a_1_rel,
 ;<IJ>  ORTH <! "とくとく" !>].
 
@@ -20179,64 +20179,64 @@ tokitoshite_1 := scopal-adv-lex &
 ;<IJ> ; JACY 特に: tokuni-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 258 times
 
-;<IJ> tokuni_1 := scopal-adv-lex &
+;<IJ> tokuni_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tokuni_a_1_rel,
 ;<IJ>  ORTH <! "特に" !>].
 
 ; どことなく 
 ; Used 2 times
 
-dokotonaku_1 := scopal-adv-lex &
+dokotonaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dokotonaku_a_1_rel,
  ORTH <! "どことなく" !>].
 
 ; 所構わず 
 
-tokorokamawazu_1 := scopal-adv-lex &
+tokorokamawazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tokorokamawazu_a_1_rel,
  ORTH <! "所構わず" !>].
 
 ; どしどし 
 
-doshidoshi_1 := scopal-adv-lex &
+doshidoshi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_doshidoshi_a_1_rel,
  ORTH <! "どしどし" !>].
 
 ; どっかり 
 
-dokkari_1 := scopal-adv-lex &
+dokkari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dokkari_a_1_rel,
  ORTH <! "どっかり" !>].
 
 ; とっくり 
 ; Used 3 times
 
-tokkuri_1_1 := scopal-adv-lex &
+tokkuri_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tokkuri_a_1_rel,
  ORTH <! "とっくり" !>].
 
 ; どっさり 
 
-dossari_1 := scopal-adv-lex &
+dossari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dossari_a_1_rel,
  ORTH <! "どっさり" !>].
 
 ; どっと 
 ; Used 1 times
 
-dotto_1_1 := scopal-adv-lex &
+dotto_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dotto_a_1_rel,
  ORTH <! "どっと" !>].
 
 ; とっとと 
 
-tottoto_1 := scopal-adv-lex &
+tottoto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tottoto_a_1_rel,
  ORTH <! "とっとと" !>].
 
 ; どっぷり 
 
-doppuri_1 := scopal-adv-lex &
+doppuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_doppuri_a_1_rel,
  ORTH <! "どっぷり" !>].
 
@@ -20244,7 +20244,7 @@ doppuri_1 := scopal-adv-lex &
 ;<IJ> ; JACY とても: totemo-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 7 times
 
-;<IJ> totemo_1 := scopal-adv-lex &
+;<IJ> totemo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_totemo_a_1_rel,
 ;<IJ>  ORTH <! "とても" !>].
 
@@ -20252,132 +20252,132 @@ doppuri_1 := scopal-adv-lex &
 ;<IJ> ; JACY とにかく: tonikaku-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> tonikaku_1 := scopal-adv-lex &
+;<IJ> tonikaku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tonikaku_a_1_rel,
 ;<IJ>  ORTH <! "とにかく" !>].
 
 ; どの道 
 
-donomichi_1 := scopal-adv-lex &
+donomichi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_donomichi_a_1_rel,
  ORTH <! "どの道" !>].
 
 ; とまれ 
 
-tomare_1 := scopal-adv-lex &
+tomare_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tomare_a_1_rel,
  ORTH <! "とまれ" !>].
 
 ; ともあれ 
 ; Used 1 times
 
-tomoare_1 := scopal-adv-lex &
+tomoare_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tomoare_a_1_rel,
  ORTH <! "ともあれ" !>].
 
 ; 共々 
 
-tomodomo_1 := scopal-adv-lex &
+tomodomo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tomodomo_a_1_rel,
  ORTH <! "共々" !>].
 
 ; 共に 
 ; Used 8 times
 
-tomoni_1 := scopal-adv-lex &
+tomoni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tomoni_a_1_rel,
  ORTH <! "共に" !>].
 
 ; どやどや 
 
-doyadoya_1 := scopal-adv-lex &
+doyadoya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_doyadoya_a_1_rel,
  ORTH <! "どやどや" !>].
 
 ; 取り急ぎ 
 
-toriisogi_1 := scopal-adv-lex &
+toriisogi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toriisogi_a_1_rel,
  ORTH <! "取り急ぎ" !>].
 
 ; とろり 
 ; Used 1 times
 
-torori_1 := scopal-adv-lex &
+torori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_torori_a_1_rel,
  ORTH <! "とろり" !>].
 
 ; どろり 
 ; Used 1 times
 
-dorori_1 := scopal-adv-lex &
+dorori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dorori_a_1_rel,
  ORTH <! "どろり" !>].
 
 ;<IJ> ; どんどん 
 ;<IJ> ; JACY どんどん: dondon-adv (isect-adv-lex)
 
-;<IJ> dondon_1 := scopal-adv-lex &
+;<IJ> dondon_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_dondon_a_1_rel,
 ;<IJ>  ORTH <! "どんどん" !>].
 
 ; どんぴしゃり 
 
-donpishari_1 := scopal-adv-lex &
+donpishari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_donpishari_a_1_rel,
  ORTH <! "どんぴしゃり" !>].
 
 ; どんぶり 
 
-donburi_1_1 := scopal-adv-lex &
+donburi_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_donburi_a_1_rel,
  ORTH <! "どんぶり" !>].
 
 ; なおさら 
 
-naosara_1 := scopal-adv-lex &
+naosara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naosara_a_1_rel,
  ORTH <! "なおさら" !>].
 
 ; なおも 
 
-naomo_1 := scopal-adv-lex &
+naomo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naomo_a_1_rel,
  ORTH <! "なおも" !>].
 
 ; 中でも 
 
-nakademo_1 := scopal-adv-lex &
+nakademo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nakademo_a_1_rel,
  ORTH <! "中でも" !>].
 
 ; 長々 
 
-naganaga_1 := scopal-adv-lex &
+naganaga_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naganaga_a_1_rel,
  ORTH <! "長々" !>].
 
 ; 中には 
 
-nakaniha_1 := scopal-adv-lex &
+nakaniha_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nakaniha_a_1_rel,
  ORTH <! "中には" !>].
 
 ; 中にも 
 
-nakanimo_1 := scopal-adv-lex &
+nakanimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nakanimo_a_1_rel,
  ORTH <! "中にも" !>].
 
 ; 泣き泣き 
 
-nakinaki_1 := scopal-adv-lex &
+nakinaki_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nakinaki_a_1_rel,
  ORTH <! "泣き泣き" !>].
 
 ; 泣く泣く 
 
-nakunaku_1 := scopal-adv-lex &
+nakunaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nakunaku_a_1_rel,
  ORTH <! "泣く泣く" !>].
 
@@ -20385,26 +20385,26 @@ nakunaku_1 := scopal-adv-lex &
 ;<IJ> ; JACY なぜ: naze-adv (adv-wh-lex)
 ;<IJ> ; Used 5 times
 
-;<IJ> naze_1 := scopal-adv-lex &
+;<IJ> naze_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_naze_a_1_rel,
 ;<IJ>  ORTH <! "なぜ" !>].
 
 ; 何故に 
 
-nazeni_1 := scopal-adv-lex &
+nazeni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nazeni_a_1_rel,
  ORTH <! "何故に" !>].
 
 ; なにしろ 
 
-nanishiro_1 := scopal-adv-lex &
+nanishiro_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nanishiro_a_1_rel,
  ORTH <! "なにしろ" !>].
 
 ; なにとぞ 
 ; Used 1 times
 
-nanitozo_1 := scopal-adv-lex &
+nanitozo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nanitozo_a_1_rel,
  ORTH <! "なにとぞ" !>].
 
@@ -20412,31 +20412,31 @@ nanitozo_1 := scopal-adv-lex &
 ;<IJ> ; JACY 何も: nanimo-adv (isect-adv-lex)
 ;<IJ> ; Used 11 times
 
-;<IJ> nanimo_1 := scopal-adv-lex &
+;<IJ> nanimo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nanimo_a_1_rel,
 ;<IJ>  ORTH <! "何も" !>].
 
 ; 何やら 
 
-naniyara_1 := scopal-adv-lex &
+naniyara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naniyara_a_1_rel,
  ORTH <! "何やら" !>].
 
 ; 何故 
 
-naniyue_1 := scopal-adv-lex &
+naniyue_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naniyue_a_1_rel,
  ORTH <! "何故" !>].
 
 ; 並べて 
 
-nabete_1 := scopal-adv-lex &
+nabete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nabete_a_1_rel,
  ORTH <! "並べて" !>].
 
 ; なみなみ 
 
-naminami_1_1 := scopal-adv-lex &
+naminami_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naminami_a_1_rel,
  ORTH <! "なみなみ" !>].
 
@@ -20444,7 +20444,7 @@ naminami_1_1 := scopal-adv-lex &
 ;<IJ> ; JACY なるべく: narubeku-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> narubeku_1 := scopal-adv-lex &
+;<IJ> narubeku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_narubeku_a_1_rel,
 ;<IJ>  ORTH <! "なるべく" !>].
 
@@ -20452,13 +20452,13 @@ naminami_1_1 := scopal-adv-lex &
 ;<IJ> ; JACY 何だか: naNdaka-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> nandaka_1 := scopal-adv-lex &
+;<IJ> nandaka_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nandaka_a_1_rel,
 ;<IJ>  ORTH <! "何だか" !>].
 
 ; 何で 
 
-nande_1 := scopal-adv-lex &
+nande_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nande_a_1_rel,
  ORTH <! "何で" !>].
 
@@ -20466,155 +20466,155 @@ nande_1 := scopal-adv-lex &
 ;<IJ> ; JACY 何でも: nandemo-adv (isect-adv-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> nandemo_1 := scopal-adv-lex &
+;<IJ> nandemo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nandemo_a_1_rel,
 ;<IJ>  ORTH <! "何でも" !>].
 
 ; なんとなく 
 
-nantonaku_1 := scopal-adv-lex &
+nantonaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nantonaku_a_1_rel,
  ORTH <! "なんとなく" !>].
 
 ; 何とも 
 ; Used 1 times
 
-nantomo_1 := scopal-adv-lex &
+nantomo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nantomo_a_1_rel,
  ORTH <! "何とも" !>].
 
 ; 何なら 
 
-nannara_1 := scopal-adv-lex &
+nannara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nannara_a_1_rel,
  ORTH <! "何なら" !>].
 
 ; 何なりと 
 
-nannarito_1 := scopal-adv-lex &
+nannarito_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nannarito_a_1_rel,
  ORTH <! "何なりと" !>].
 
 ; 何にも 
 ; Used 2 times
 
-nannimo_1 := scopal-adv-lex &
+nannimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nannimo_a_1_rel,
  ORTH <! "何にも" !>].
 
 ; なんぼ 
 
-nanbo_1 := scopal-adv-lex &
+nanbo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nanbo_a_1_rel,
  ORTH <! "なんぼ" !>].
 
 ; なんぼ何でも 
 
-nanbonandemo_1 := scopal-adv-lex &
+nanbonandemo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nanbonandemo_a_1_rel,
  ORTH <! "なんぼ何でも" !>].
 
 ; にこり 
 
-nikori_1 := scopal-adv-lex &
+nikori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nikori_a_1_rel,
  ORTH <! "にこり" !>].
 
 ; にやり 
 
-niyari_1 := scopal-adv-lex &
+niyari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_niyari_a_1_rel,
  ORTH <! "にやり" !>].
 
 ; にょきにょき 
 
-nyokinyoki_1 := scopal-adv-lex &
+nyokinyoki_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nyokinyoki_a_1_rel,
  ORTH <! "にょきにょき" !>].
 
 ; ぬけぬけ 
 
-nukenuke_1 := scopal-adv-lex &
+nukenuke_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nukenuke_a_1_rel,
  ORTH <! "ぬけぬけ" !>].
 
 ; ぬっと 
 
-nutto_1 := scopal-adv-lex &
+nutto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nutto_a_1_rel,
  ORTH <! "ぬっと" !>].
 
 ; ぬるり 
 
-nururi_1 := scopal-adv-lex &
+nururi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nururi_a_1_rel,
  ORTH <! "ぬるり" !>].
 
 ; 願わくは 
 
-negawakuha_1 := scopal-adv-lex &
+negawakuha_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_negawakuha_a_1_rel,
  ORTH <! "願わくは" !>].
 
 ; 願わくば 
 
-negawakuba_1 := scopal-adv-lex &
+negawakuba_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_negawakuba_a_1_rel,
  ORTH <! "願わくば" !>].
 
 ; 根っから 
 
-nekkara_1 := scopal-adv-lex &
+nekkara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nekkara_a_1_rel,
  ORTH <! "根っから" !>].
 
 ; 根掘り葉掘り 
 
-nehorihahori_1 := scopal-adv-lex &
+nehorihahori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nehorihahori_a_1_rel,
  ORTH <! "根掘り葉掘り" !>].
 
 ; 年がら年中 
 
-nengaranenjuu_1 := scopal-adv-lex &
+nengaranenjuu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nengaranenjuu_a_1_rel,
  ORTH <! "年がら年中" !>].
 
 ;<IJ> ; 年々 
 ;<IJ> ; JACY 年々: nennen-date-noun (date-noun-adv-lex)
 
-;<IJ> nennen_1 := scopal-adv-lex &
+;<IJ> nennen_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nennen_a_1_rel,
 ;<IJ>  ORTH <! "年々" !>].
 
 ; のこのこ 
 
-nokonoko_1 := scopal-adv-lex &
+nokonoko_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nokonoko_a_1_rel,
  ORTH <! "のこのこ" !>].
 
 ; 残らず 
 ; Used 1 times
 
-nokorazu_1 := scopal-adv-lex &
+nokorazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nokorazu_a_1_rel,
  ORTH <! "残らず" !>].
 
 ; のっしのっし 
 
-nosshinosshi_1 := scopal-adv-lex &
+nosshinosshi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nosshinosshi_a_1_rel,
  ORTH <! "のっしのっし" !>].
 
 ; のほほん 
 
-nohohon_1 := scopal-adv-lex &
+nohohon_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nohohon_a_1_rel,
  ORTH <! "のほほん" !>].
 
 ; ぱくり 
 
-pakuri_1 := scopal-adv-lex &
+pakuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pakuri_a_1_rel,
  ORTH <! "ぱくり" !>].
 
@@ -20622,147 +20622,147 @@ pakuri_1 := scopal-adv-lex &
 ;<IJ> ; JACY 初めて: hajimete-adv (isect-adv-lex)
 ;<IJ> ; Used 12 times
 
-;<IJ> hajimete_1 := scopal-adv-lex &
+;<IJ> hajimete_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hajimete_a_1_rel,
 ;<IJ>  ORTH <! "初めて" !>].
 
 ; 果たして 
 
-hatashite_1 := scopal-adv-lex &
+hatashite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hatashite_a_1_rel,
  ORTH <! "果たして" !>].
 
 ; ぱたぱた 
 
-patapata_1 := scopal-adv-lex &
+patapata_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_patapata_a_1_rel,
  ORTH <! "ぱたぱた" !>].
 
 ; ぱたり 
 
-patari_1 := scopal-adv-lex &
+patari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_patari_a_1_rel,
  ORTH <! "ぱたり" !>].
 
 ; ばっさり 
 
-bassari_1 := scopal-adv-lex &
+bassari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bassari_a_1_rel,
  ORTH <! "ばっさり" !>].
 
 ; ばったり 
 
-battari_1 := scopal-adv-lex &
+battari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_battari_a_1_rel,
  ORTH <! "ばったり" !>].
 
 ; ぱったり 
 
-pattari_1 := scopal-adv-lex &
+pattari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pattari_a_1_rel,
  ORTH <! "ぱったり" !>].
 
 ; ばっちり 
 
-bacchiri_1 := scopal-adv-lex &
+bacchiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bacchiri_a_1_rel,
  ORTH <! "ばっちり" !>].
 
 ; ぱっと 
 
-patto_1_1 := scopal-adv-lex &
+patto_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_patto_a_1_rel,
  ORTH <! "ぱっと" !>].
 
 ; 早くも 
 
-hayakumo_1 := scopal-adv-lex &
+hayakumo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hayakumo_a_1_rel,
  ORTH <! "早くも" !>].
 
 ; 早々 
 ; Used 1 times
 
-hayabaya_1 := scopal-adv-lex &
+hayabaya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hayabaya_a_1_rel,
  ORTH <! "早々" !>].
 
 ; ぱりっと 
 
-paritto_1 := scopal-adv-lex &
+paritto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_paritto_a_1_rel,
  ORTH <! "ぱりっと" !>].
 
 ; 晴れて 
 
-harete_1 := scopal-adv-lex &
+harete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_harete_a_1_rel,
  ORTH <! "晴れて" !>].
 
 ; びくっと 
 
-bikutto_1 := scopal-adv-lex &
+bikutto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bikutto_a_1_rel,
  ORTH <! "びくっと" !>].
 
 ; びくとも 
 
-bikutomo_1 := scopal-adv-lex &
+bikutomo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bikutomo_a_1_rel,
  ORTH <! "びくとも" !>].
 
 ; ぴくり 
 
-pikuri_1 := scopal-adv-lex &
+pikuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pikuri_a_1_rel,
  ORTH <! "ぴくり" !>].
 
 ; ひしひし 
 
-hishihishi_1 := scopal-adv-lex &
+hishihishi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hishihishi_a_1_rel,
  ORTH <! "ひしひし" !>].
 
 ; びしびし 
 
-bishibishi_1 := scopal-adv-lex &
+bishibishi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bishibishi_a_1_rel,
  ORTH <! "びしびし" !>].
 
 ; ぴしゃり 
 
-pishari_1 := scopal-adv-lex &
+pishari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pishari_a_1_rel,
  ORTH <! "ぴしゃり" !>].
 
 ; ひそひそ 
 
-hisohiso_1 := scopal-adv-lex &
+hisohiso_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hisohiso_a_1_rel,
  ORTH <! "ひそひそ" !>].
 
 ; ぴたっと 
 
-pitatto_1 := scopal-adv-lex &
+pitatto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pitatto_a_1_rel,
  ORTH <! "ぴたっと" !>].
 
 ; ぴたり 
 ; Used 3 times
 
-pitari_1 := scopal-adv-lex &
+pitari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pitari_a_1_rel,
  ORTH <! "ぴたり" !>].
 
 ; ぴちゃぴちゃ 
 
-pichapicha_1 := scopal-adv-lex &
+pichapicha_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pichapicha_a_1_rel,
  ORTH <! "ぴちゃぴちゃ" !>].
 
 ; びっしょり 
 
-bisshori_1 := scopal-adv-lex &
+bisshori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bisshori_a_1_rel,
  ORTH <! "びっしょり" !>].
 
@@ -20770,145 +20770,145 @@ bisshori_1 := scopal-adv-lex &
 ;<IJ> ; JACY びっしり: bisshiri-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> bisshiri_1 := scopal-adv-lex &
+;<IJ> bisshiri_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_bisshiri_a_1_rel,
 ;<IJ>  ORTH <! "びっしり" !>].
 
 ; 人一倍 
 
-hitoichibai_1 := scopal-adv-lex &
+hitoichibai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitoichibai_a_1_rel,
  ORTH <! "人一倍" !>].
 
 ; 一重に 
 
-hitoeni_1 := scopal-adv-lex &
+hitoeni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitoeni_a_1_rel,
  ORTH <! "一重に" !>].
 
 ; ひと際 
 ; Used 1 times
 
-hitokiwa_1 := scopal-adv-lex &
+hitokiwa_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitokiwa_a_1_rel,
  ORTH <! "ひと際" !>].
 
 ; ひどく 
 ; Used 16 times
 
-hidoku_1 := scopal-adv-lex &
+hidoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hidoku_a_1_rel,
  ORTH <! "ひどく" !>].
 
 ; 等しく 
 ; Used 3 times
 
-hitoshiku_1 := scopal-adv-lex &
+hitoshiku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitoshiku_a_1_rel,
  ORTH <! "等しく" !>].
 
 ; 人知れず 
 
-hitoshirezu_1 := scopal-adv-lex &
+hitoshirezu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitoshirezu_a_1_rel,
  ORTH <! "人知れず" !>].
 
 ; ひとまず 
 
-hitomazu_1 := scopal-adv-lex &
+hitomazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitomazu_a_1_rel,
  ORTH <! "ひとまず" !>].
 
 ; 日に日に 
 
-hinihini_1 := scopal-adv-lex &
+hinihini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hinihini_a_1_rel,
  ORTH <! "日に日に" !>].
 
 ; ひやり 
 
-hiyari_1 := scopal-adv-lex &
+hiyari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hiyari_a_1_rel,
  ORTH <! "ひやり" !>].
 
 ; ひょいと 
 
-hyoito_1 := scopal-adv-lex &
+hyoito_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyoito_a_1_rel,
  ORTH <! "ひょいと" !>].
 
 ; ひょっこり 
 
-hyokkori_1 := scopal-adv-lex &
+hyokkori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyokkori_a_1_rel,
  ORTH <! "ひょっこり" !>].
 
 ;<IJ> ; ひょっと 
 ;<IJ> ; JACY ひょっと: hyotto-vn (vn-intrans-lex)
 
-;<IJ> hyotto_1 := scopal-adv-lex &
+;<IJ> hyotto_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hyotto_a_1_rel,
 ;<IJ>  ORTH <! "ひょっと" !>].
 
 ; ひょっとしたら 
 
-hyottoshitara_1 := scopal-adv-lex &
+hyottoshitara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyottoshitara_a_1_rel,
  ORTH <! "ひょっとしたら" !>].
 
 ; ひょっとして 
 
-hyottoshite_1 := scopal-adv-lex &
+hyottoshite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyottoshite_a_1_rel,
  ORTH <! "ひょっとして" !>].
 
 ; ひょっとすると 
 ; Used 1 times
 
-hyottosuruto_1 := scopal-adv-lex &
+hyottosuruto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyottosuruto_a_1_rel,
  ORTH <! "ひょっとすると" !>].
 
 ; ぴょんぴょん 
 
-pyonpyon_1 := scopal-adv-lex &
+pyonpyon_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pyonpyon_a_1_rel,
  ORTH <! "ぴょんぴょん" !>].
 
 ; ひらり 
 
-hirari_1 := scopal-adv-lex &
+hirari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hirari_a_1_rel,
  ORTH <! "ひらり" !>].
 
 ; ぷいと 
 
-puito_1 := scopal-adv-lex &
+puito_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_puito_a_1_rel,
  ORTH <! "ぷいと" !>].
 
 ; ふうふう 
 
-fuufuu_1 := scopal-adv-lex &
+fuufuu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_fuufuu_a_1_rel,
  ORTH <! "ふうふう" !>].
 
 ; ぶうぶう 
 ; Used 1 times
 
-buubuu_1_1 := scopal-adv-lex &
+buubuu_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_buubuu_a_1_rel,
  ORTH <! "ぶうぶう" !>].
 
 ; 深々 
 
-fukabuka_1 := scopal-adv-lex &
+fukabuka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_fukabuka_a_1_rel,
  ORTH <! "深々" !>].
 
 ; ぷかぷか 
 
-pukapuka_1 := scopal-adv-lex &
+pukapuka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pukapuka_a_1_rel,
  ORTH <! "ぷかぷか" !>].
 
@@ -20916,193 +20916,193 @@ pukapuka_1 := scopal-adv-lex &
 ;<IJ> ; JACY 再び: futatabi-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 8 times
 
-;<IJ> futatabi_1 := scopal-adv-lex &
+;<IJ> futatabi_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_futatabi_a_1_rel,
 ;<IJ>  ORTH <! "再び" !>].
 
 ; ふっと 
 
-futto_1_1 := scopal-adv-lex &
+futto_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_futto_a_1_rel,
  ORTH <! "ふっと" !>].
 
 ; ふと 
 ; Used 1 times
 
-futo_1_2 := scopal-adv-lex &
+futo_1_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_futo_a_1_rel,
  ORTH <! "ふと" !>].
 
 ; ふらっと 
 
-furatto_1_1 := scopal-adv-lex &
+furatto_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_furatto_a_1_rel,
  ORTH <! "ふらっと" !>].
 
 ; ふらり 
 
-furari_1 := scopal-adv-lex &
+furari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_furari_a_1_rel,
  ORTH <! "ふらり" !>].
 
 ; ぶらり 
 
-burari_1 := scopal-adv-lex &
+burari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_burari_a_1_rel,
  ORTH <! "ぶらり" !>].
 
 ; ふわり 
 ; Used 1 times
 
-fuwari_1 := scopal-adv-lex &
+fuwari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_fuwari_a_1_rel,
  ORTH <! "ふわり" !>].
 
 ; ふんだんに 
 
-fundanni_1 := scopal-adv-lex &
+fundanni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_fundanni_a_1_rel,
  ORTH <! "ふんだんに" !>].
 
 ; ぶんぶん 
 
-bunbun_1 := scopal-adv-lex &
+bunbun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bunbun_a_1_rel,
  ORTH <! "ぶんぶん" !>].
 
 ; ぺちゃくちゃ 
 
-pechakucha_1 := scopal-adv-lex &
+pechakucha_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pechakucha_a_1_rel,
  ORTH <! "ぺちゃくちゃ" !>].
 
 ; べったり 
 
-bettari_1 := scopal-adv-lex &
+bettari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bettari_a_1_rel,
  ORTH <! "べったり" !>].
 
 ; ぺったり 
 
-pettari_1 := scopal-adv-lex &
+pettari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pettari_a_1_rel,
  ORTH <! "ぺったり" !>].
 
 ; べっとり 
 
-bettori_1 := scopal-adv-lex &
+bettori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bettori_a_1_rel,
  ORTH <! "べっとり" !>].
 
 ; 別に 
 ; Used 1 times
 
-betsuni_1 := scopal-adv-lex &
+betsuni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_betsuni_a_1_rel,
  ORTH <! "別に" !>].
 
 ; ぺろぺろ 
 
-peropero_1 := scopal-adv-lex &
+peropero_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_peropero_a_1_rel,
  ORTH <! "ぺろぺろ" !>].
 
 ; ぺろり 
 
-perori_1 := scopal-adv-lex &
+perori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_perori_a_1_rel,
  ORTH <! "ぺろり" !>].
 
 ; 変に 
 
-henni_1 := scopal-adv-lex &
+henni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_henni_a_1_rel,
  ORTH <! "変に" !>].
 
 ; ぼこぼこ 
 
-bokoboko_1 := scopal-adv-lex &
+bokoboko_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bokoboko_a_1_rel,
  ORTH <! "ぼこぼこ" !>].
 
 ; 細々 
 ; Used 2 times
 
-hosoboso_1 := scopal-adv-lex &
+hosoboso_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hosoboso_a_1_rel,
  ORTH <! "細々" !>].
 
 ; ぽたぽた 
 
-potapota_1 := scopal-adv-lex &
+potapota_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_potapota_a_1_rel,
  ORTH <! "ぽたぽた" !>].
 
 ; ぽたり 
 
-potari_1 := scopal-adv-lex &
+potari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_potari_a_1_rel,
  ORTH <! "ぽたり" !>].
 
 ; ぼちぼち 
 
-bochibochi_1 := scopal-adv-lex &
+bochibochi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bochibochi_a_1_rel,
  ORTH <! "ぼちぼち" !>].
 
 ; ぽっかり 
 
-pokkari_1 := scopal-adv-lex &
+pokkari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pokkari_a_1_rel,
  ORTH <! "ぽっかり" !>].
 
 ; ぽっくり 
 
-pokkuri_1_1 := scopal-adv-lex &
+pokkuri_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_pokkuri_a_1_rel,
  ORTH <! "ぽっくり" !>].
 
 ; ぼつぼつ 
 ; Used 2 times
 
-botsubotsu_1 := scopal-adv-lex &
+botsubotsu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_botsubotsu_a_1_rel,
  ORTH <! "ぼつぼつ" !>].
 
 ;<IJ> ; ぽつぽつ 
 ;<IJ> ; JACY ぽつぽつ: potsupotsu-adv (isect-adv-lex)
 
-;<IJ> potsupotsu_1 := scopal-adv-lex &
+;<IJ> potsupotsu_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_potsupotsu_a_1_rel,
 ;<IJ>  ORTH <! "ぽつぽつ" !>].
 
 ; ぽつり 
 
-potsuri_1 := scopal-adv-lex &
+potsuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_potsuri_a_1_rel,
  ORTH <! "ぽつり" !>].
 
 ; ぽつりぽつり 
 
-potsuripotsuri_1 := scopal-adv-lex &
+potsuripotsuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_potsuripotsuri_a_1_rel,
  ORTH <! "ぽつりぽつり" !>].
 
 ; ぽつん 
 
-potsun_1 := scopal-adv-lex &
+potsun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_potsun_a_1_rel,
  ORTH <! "ぽつん" !>].
 
 ; ほとほと 
 
-hotohoto_1 := scopal-adv-lex &
+hotohoto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hotohoto_a_1_rel,
  ORTH <! "ほとほと" !>].
 
 ; ほとほと 
 
-hotohoto_1_1 := scopal-adv-lex &
+hotohoto_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hotohoto_a_1_rel,
  ORTH <! "ほとほと" !>].
 
@@ -21110,110 +21110,110 @@ hotohoto_1_1 := scopal-adv-lex &
 ;<IJ> ; JACY ほぼ: hobo-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 6 times
 
-;<IJ> hobo_1_1 := scopal-adv-lex &
+;<IJ> hobo_1_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hobo_a_1_rel,
 ;<IJ>  ORTH <! "ほぼ" !>].
 
 ; ほやほや 
 
-hoyahoya_1 := scopal-adv-lex &
+hoyahoya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hoyahoya_a_1_rel,
  ORTH <! "ほやほや" !>].
 
 ; ぼろぼろ 
 
-boroboro_1 := scopal-adv-lex &
+boroboro_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_boroboro_a_1_rel,
  ORTH <! "ぼろぼろ" !>].
 
 ; ぽろぽろ 
 
-poroporo_1 := scopal-adv-lex &
+poroporo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_poroporo_a_1_rel,
  ORTH <! "ぽろぽろ" !>].
 
 ; ほろり 
 
-horori_1 := scopal-adv-lex &
+horori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_horori_a_1_rel,
  ORTH <! "ほろり" !>].
 
 ; ぽろり 
 
-porori_1 := scopal-adv-lex &
+porori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_porori_a_1_rel,
  ORTH <! "ぽろり" !>].
 
 ;<IJ> ; ま 
 ;<IJ> ; JACY ま: ma (hes-lex)
 
-;<IJ> ma_1_3 := scopal-adv-lex &
+;<IJ> ma_1_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ma_a_1_rel,
 ;<IJ>  ORTH <! "ま" !>].
 
 ;<IJ> ; 毎度 
 ;<IJ> ; JACY 毎度: maido (date-noun-adv-lex)
 
-;<IJ> maido_1 := scopal-adv-lex &
+;<IJ> maido_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_maido_a_1_rel,
 ;<IJ>  ORTH <! "毎度" !>].
 
 ; 前もって 
 ; Used 27 times
 
-maemotte_1 := scopal-adv-lex &
+maemotte_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_maemotte_a_1_rel,
  ORTH <! "前もって" !>].
 
 ; 負けず劣らず 
 
-makezuotorazu_1 := scopal-adv-lex &
+makezuotorazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_makezuotorazu_a_1_rel,
  ORTH <! "負けず劣らず" !>].
 
 ; 曲げて 
 
-magete_1 := scopal-adv-lex &
+magete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_magete_a_1_rel,
  ORTH <! "曲げて" !>].
 
 ; 真に 
 ; Used 5 times
 
-makotoni_1 := scopal-adv-lex &
+makotoni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_makotoni_a_1_rel,
  ORTH <! "真に" !>].
 
 ; まさか 
 
-masaka_1 := scopal-adv-lex &
+masaka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_masaka_a_1_rel,
  ORTH <! "まさか" !>].
 
 ; 正しく 
 ; Used 15 times
 
-masashiku_1 := scopal-adv-lex &
+masashiku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_masashiku_a_1_rel,
  ORTH <! "正しく" !>].
 
 ; 正に 
 ; Used 2 times
 
-masani_1 := scopal-adv-lex &
+masani_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_masani_a_1_rel,
  ORTH <! "正に" !>].
 
 ; まざまざ 
 
-mazamaza_1 := scopal-adv-lex &
+mazamaza_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mazamaza_a_1_rel,
  ORTH <! "まざまざ" !>].
 
 ;<IJ> ; まして 
 ;<IJ> ; JACY まして: mashite-end2 (v-te-end-lex)
 
-;<IJ> mashite_1 := scopal-adv-lex &
+;<IJ> mashite_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mashite_a_1_rel,
 ;<IJ>  ORTH <! "まして" !>].
 
@@ -21221,26 +21221,26 @@ mazamaza_1 := scopal-adv-lex &
 ;<IJ> ; JACY まず: mazu-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> mazu_1 := scopal-adv-lex &
+;<IJ> mazu_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mazu_a_1_rel,
 ;<IJ>  ORTH <! "まず" !>].
 
 ; またしても 
 
-matashitemo_1 := scopal-adv-lex &
+matashitemo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_matashitemo_a_1_rel,
  ORTH <! "またしても" !>].
 
 ;<IJ> ; まだまだ 
 ;<IJ> ; JACY まだまだ: madamada-adv (scopal-adv-regular-lex)
 
-;<IJ> madamada_1 := scopal-adv-lex &
+;<IJ> madamada_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_madamada_a_1_rel,
 ;<IJ>  ORTH <! "まだまだ" !>].
 
 ; まっしぐら 
 
-masshigura_1 := scopal-adv-lex &
+masshigura_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_masshigura_a_1_rel,
  ORTH <! "まっしぐら" !>].
 
@@ -21248,113 +21248,113 @@ masshigura_1 := scopal-adv-lex &
 ;<IJ> ; JACY 全く: mattaku-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 23 times
 
-;<IJ> mattaku_1 := scopal-adv-lex &
+;<IJ> mattaku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mattaku_a_1_rel,
 ;<IJ>  ORTH <! "全く" !>].
 
 ; 真っ平 
 
-mappira_1 := scopal-adv-lex &
+mappira_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mappira_a_1_rel,
  ORTH <! "真っ平" !>].
 
 ; まもなく 
 ; Used 1 times
 
-mamonaku_1 := scopal-adv-lex &
+mamonaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mamonaku_a_1_rel,
  ORTH <! "まもなく" !>].
 
 ; 丸ごと 
 
-marugoto_1 := scopal-adv-lex &
+marugoto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_marugoto_a_1_rel,
  ORTH <! "丸ごと" !>].
 
 ; まるで 
 ; Used 2 times
 
-marude_1 := scopal-adv-lex &
+marude_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_marude_a_1_rel,
  ORTH <! "まるで" !>].
 
 ;<IJ> ; 万が一 
 ;<IJ> ; JACY 万が一: maNgaichi-adv (isect-adv-lex)
 
-;<IJ> mangaichi_1 := scopal-adv-lex &
+;<IJ> mangaichi_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mangaichi_a_1_rel,
 ;<IJ>  ORTH <! "万が一" !>].
 
 ; まんざら 
 
-manzara_1 := scopal-adv-lex &
+manzara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_manzara_a_1_rel,
  ORTH <! "まんざら" !>].
 
 ; まんべんなく 
 
-manbennaku_1 := scopal-adv-lex &
+manbennaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_manbennaku_a_1_rel,
  ORTH <! "まんべんなく" !>].
 
 ; まんまと 
 
-manmato_1 := scopal-adv-lex &
+manmato_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_manmato_a_1_rel,
  ORTH <! "まんまと" !>].
 
 ; みっちり 
 
-micchiri_1 := scopal-adv-lex &
+micchiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_micchiri_a_1_rel,
  ORTH <! "みっちり" !>].
 
 ; 妙に 
 
-myouni_1 := scopal-adv-lex &
+myouni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_myouni_a_1_rel,
  ORTH <! "妙に" !>].
 
 ; 見る見る 
 
-mirumiru_1 := scopal-adv-lex &
+mirumiru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mirumiru_a_1_rel,
  ORTH <! "見る見る" !>].
 
 ; むしゃむしゃ 
 
-mushamusha_1 := scopal-adv-lex &
+mushamusha_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mushamusha_a_1_rel,
  ORTH <! "むしゃむしゃ" !>].
 
 ; 無性に 
 
-mushouni_1 := scopal-adv-lex &
+mushouni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mushouni_a_1_rel,
  ORTH <! "無性に" !>].
 
 ; むしろ 
 ; Used 2 times
 
-mushiro_1_1 := scopal-adv-lex &
+mushiro_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mushiro_a_1_rel,
  ORTH <! "むしろ" !>].
 
 ; 無理矢理 
 
-muriyari_1 := scopal-adv-lex &
+muriyari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_muriyari_a_1_rel,
  ORTH <! "無理矢理" !>].
 
 ; めきめき 
 
-mekimeki_1 := scopal-adv-lex &
+mekimeki_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mekimeki_a_1_rel,
  ORTH <! "めきめき" !>].
 
 ; めっきり 
 
-mekkiri_1 := scopal-adv-lex &
+mekkiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mekkiri_a_1_rel,
  ORTH <! "めっきり" !>].
 
@@ -21362,13 +21362,13 @@ mekkiri_1 := scopal-adv-lex &
 ;<IJ> ; JACY めったに: mettani-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> mettani_1 := scopal-adv-lex &
+;<IJ> mettani_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mettani_a_1_rel,
 ;<IJ>  ORTH <! "めったに" !>].
 
 ; めらめら 
 
-meramera_1 := scopal-adv-lex &
+meramera_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_meramera_a_1_rel,
  ORTH <! "めらめら" !>].
 
@@ -21376,7 +21376,7 @@ meramera_1 := scopal-adv-lex &
 ;<IJ> ; JACY も: mo-sconj (s-conj1-lex) mo-sconj-np (s-conj-nonprop1-lex) mo (plain-topic-nobj-lex) mo-parg (topic-pobj-lex) mo-saparg (topic-vmod-p-lex) mo-advarg (topic-advarg-lex)
 ;<IJ> ; Used 239 times
 
-;<IJ> mo_1_3 := scopal-adv-lex &
+;<IJ> mo_1_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mo_a_1_rel,
 ;<IJ>  ORTH <! "も" !>].
 
@@ -21384,32 +21384,32 @@ meramera_1 := scopal-adv-lex &
 ;<IJ> ; JACY もし: moshi-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> moshi_1_3 := scopal-adv-lex &
+;<IJ> moshi_1_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_moshi_a_1_rel,
 ;<IJ>  ORTH <! "もし" !>].
 
 ; 文字通り 
 
-mojidoori_1 := scopal-adv-lex &
+mojidoori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mojidoori_a_1_rel,
  ORTH <! "文字通り" !>].
 
 ; もしかしたら 
 
-moshikashitara_1 := scopal-adv-lex &
+moshikashitara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_moshikashitara_a_1_rel,
  ORTH <! "もしかしたら" !>].
 
 ; もしかして 
 
-moshikashite_1 := scopal-adv-lex &
+moshikashite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_moshikashite_a_1_rel,
  ORTH <! "もしかして" !>].
 
 ; もしかすると 
 ; Used 3 times
 
-moshikasuruto_1 := scopal-adv-lex &
+moshikasuruto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_moshikasuruto_a_1_rel,
  ORTH <! "もしかすると" !>].
 
@@ -21417,26 +21417,26 @@ moshikasuruto_1 := scopal-adv-lex &
 ;<IJ> ; JACY もしも: moshimo-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> moshimo_1 := scopal-adv-lex &
+;<IJ> moshimo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_moshimo_a_1_rel,
 ;<IJ>  ORTH <! "もしも" !>].
 
 ; もしや 
 
-moshiya_1 := scopal-adv-lex &
+moshiya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_moshiya_a_1_rel,
  ORTH <! "もしや" !>].
 
 ; もち 
 
-mochi_1_5 := scopal-adv-lex &
+mochi_1_5 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mochi_a_1_rel,
  ORTH <! "もち" !>].
 
 ;<IJ> ; もちろん 
 ;<IJ> ; JACY もちろん: mochiron-hiragana-adv (scopal-adv-regular-lex)
 
-;<IJ> mochiron_1 := scopal-adv-lex &
+;<IJ> mochiron_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mochiron_a_1_rel,
 ;<IJ>  ORTH <! "もちろん" !>].
 
@@ -21444,14 +21444,14 @@ mochi_1_5 := scopal-adv-lex &
 ;<IJ> ; JACY もっと: motto-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> motto_1 := scopal-adv-lex &
+;<IJ> motto_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_motto_a_1_rel,
 ;<IJ>  ORTH <! "もっと" !>].
 
 ; 最も 
 ; Used 76 times
 
-mottomo_1 := scopal-adv-lex &
+mottomo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mottomo_a_1_rel,
  ORTH <! "最も" !>].
 
@@ -21459,68 +21459,68 @@ mottomo_1 := scopal-adv-lex &
 ;<IJ> ; JACY もっぱら: moppara-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> moppara_1 := scopal-adv-lex &
+;<IJ> moppara_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_moppara_a_1_rel,
 ;<IJ>  ORTH <! "もっぱら" !>].
 
 ; 求めて 
 
-motomete_1 := scopal-adv-lex &
+motomete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_motomete_a_1_rel,
  ORTH <! "求めて" !>].
 
 ; もとより 
 
-motoyori_1 := scopal-adv-lex &
+motoyori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_motoyori_a_1_rel,
  ORTH <! "もとより" !>].
 
 ; もはや 
 
-mohaya_1 := scopal-adv-lex &
+mohaya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mohaya_a_1_rel,
  ORTH <! "もはや" !>].
 
 ; もろに 
 
-moroni_1 := scopal-adv-lex &
+moroni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_moroni_a_1_rel,
  ORTH <! "もろに" !>].
 
 ; やがて 
 
-yagate_1 := scopal-adv-lex &
+yagate_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yagate_a_1_rel,
  ORTH <! "やがて" !>].
 
 ; やけに 
 
-yakeni_1 := scopal-adv-lex &
+yakeni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yakeni_a_1_rel,
  ORTH <! "やけに" !>].
 
 ; 休み休み 
 
-yasumiyasumi_1 := scopal-adv-lex &
+yasumiyasumi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yasumiyasumi_a_1_rel,
  ORTH <! "休み休み" !>].
 
 ; やっと 
 ; Used 1 times
 
-yatto_1 := scopal-adv-lex &
+yatto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yatto_a_1_rel,
  ORTH <! "やっと" !>].
 
 ; やっとこ 
 
-yattoko_1_1 := scopal-adv-lex &
+yattoko_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yattoko_a_1_rel,
  ORTH <! "やっとこ" !>].
 
 ; やっぱし 
 
-yappashi_1 := scopal-adv-lex &
+yappashi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yappashi_a_1_rel,
  ORTH <! "やっぱし" !>].
 
@@ -21528,7 +21528,7 @@ yappashi_1 := scopal-adv-lex &
 ;<IJ> ; JACY やっぱり: yappari-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 6 times
 
-;<IJ> yappari_1 := scopal-adv-lex &
+;<IJ> yappari_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yappari_a_1_rel,
 ;<IJ>  ORTH <! "やっぱり" !>].
 
@@ -21536,136 +21536,136 @@ yappashi_1 := scopal-adv-lex &
 ;<IJ> ; JACY やや: yaya-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 12 times
 
-;<IJ> yaya_1_1 := scopal-adv-lex &
+;<IJ> yaya_1_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yaya_a_1_rel,
 ;<IJ>  ORTH <! "やや" !>].
 
 ; 行く行く 
 
-yukuyuku_1 := scopal-adv-lex &
+yukuyuku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yukuyuku_a_1_rel,
  ORTH <! "行く行く" !>].
 
 ; 夢にも 
 
-yumenimo_1 := scopal-adv-lex &
+yumenimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yumenimo_a_1_rel,
  ORTH <! "夢にも" !>].
 
 ; ゆらり 
 
-yurari_1 := scopal-adv-lex &
+yurari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yurari_a_1_rel,
  ORTH <! "ゆらり" !>].
 
 ; ゆるゆる 
 
-yuruyuru_1 := scopal-adv-lex &
+yuruyuru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yuruyuru_a_1_rel,
  ORTH <! "ゆるゆる" !>].
 
 ; 容赦無く 
 
-youshanaku_1 := scopal-adv-lex &
+youshanaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_youshanaku_a_1_rel,
  ORTH <! "容赦無く" !>].
 
 ; 要するに 
 
-yousuruni_1 := scopal-adv-lex &
+yousuruni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yousuruni_a_1_rel,
  ORTH <! "要するに" !>].
 
 ; 要は 
 
-youha_1 := scopal-adv-lex &
+youha_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_youha_a_1_rel,
  ORTH <! "要は" !>].
 
 ; ようやく 
 ; Used 1 times
 
-youyaku_1 := scopal-adv-lex &
+youyaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_youyaku_a_1_rel,
  ORTH <! "ようやく" !>].
 
 ; 良く 
 ; Used 112 times
 
-yoku_1_1 := scopal-adv-lex &
+yoku_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoku_a_1_rel,
  ORTH <! "良く" !>].
 
 ; よくよく 
 
-yokuyoku_1 := scopal-adv-lex &
+yokuyoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yokuyoku_a_1_rel,
  ORTH <! "よくよく" !>].
 
 ; よし 
 ; Used 1 times
 
-yoshi_1_4 := scopal-adv-lex &
+yoshi_1_4 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoshi_a_1_rel,
  ORTH <! "よし" !>].
 
 ; 夜通し 
 ; Used 2 times
 
-yodooshi_1 := scopal-adv-lex &
+yodooshi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yodooshi_a_1_rel,
  ORTH <! "夜通し" !>].
 
 ; 世にも 
 
-yonimo_1 := scopal-adv-lex &
+yonimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yonimo_a_1_rel,
  ORTH <! "世にも" !>].
 
 ;<IJ> ; よほど 
 ;<IJ> ; JACY よほど: yohodo-adv (scopal-adv-regular-lex)
 
-;<IJ> yohodo_1 := scopal-adv-lex &
+;<IJ> yohodo_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yohodo_a_1_rel,
 ;<IJ>  ORTH <! "よほど" !>].
 
 ; よもや 
 ; Used 1 times
 
-yomoya_1 := scopal-adv-lex &
+yomoya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yomoya_a_1_rel,
  ORTH <! "よもや" !>].
 
 ; 喜んで 
 ; Used 2 times
 
-yorokonde_1 := scopal-adv-lex &
+yorokonde_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yorokonde_a_1_rel,
  ORTH <! "喜んで" !>].
 
 ; よろしく 
 ; Used 2 times
 
-yoroshiku_1 := scopal-adv-lex &
+yoroshiku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoroshiku_a_1_rel,
  ORTH <! "よろしく" !>].
 
 ; 楽々 
 
-rakuraku_1 := scopal-adv-lex &
+rakuraku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_rakuraku_a_1_rel,
  ORTH <! "楽々" !>].
 
 ; わいわい 
 
-waiwai_1 := scopal-adv-lex &
+waiwai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_waiwai_a_1_rel,
  ORTH <! "わいわい" !>].
 
 ; わざと 
 ; Used 2 times
 
-wazato_1 := scopal-adv-lex &
+wazato_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_wazato_a_1_rel,
  ORTH <! "わざと" !>].
 
@@ -21673,97 +21673,97 @@ wazato_1 := scopal-adv-lex &
 ;<IJ> ; JACY わざわざ: wazawaza-adv (isect-adv-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> wazawaza_1 := scopal-adv-lex &
+;<IJ> wazawaza_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_wazawaza_a_1_rel,
 ;<IJ>  ORTH <! "わざわざ" !>].
 
 ; 割に 
 
-warini_1 := scopal-adv-lex &
+warini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_warini_a_1_rel,
  ORTH <! "割に" !>].
 
 ; 我先に 
 
-waresakini_1 := scopal-adv-lex &
+waresakini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_waresakini_a_1_rel,
  ORTH <! "我先に" !>].
 
 ; ある限り 
 
-arukagiri_1 := scopal-adv-lex &
+arukagiri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_arukagiri_a_1_rel,
  ORTH <! "ある限り" !>].
 
 ; うだうだ 
 
-udauda_1 := scopal-adv-lex &
+udauda_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_udauda_a_1_rel,
  ORTH <! "うだうだ" !>].
 
 ; かちんかちん 
 
-kachinkachin_1 := scopal-adv-lex &
+kachinkachin_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kachinkachin_a_1_rel,
  ORTH <! "かちんかちん" !>].
 
 ; がりがり 
 
-garigari_1 := scopal-adv-lex &
+garigari_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_garigari_a_1_rel,
  ORTH <! "がりがり" !>].
 
 ; じゅくじゅく 
 
-jukujuku_1 := scopal-adv-lex &
+jukujuku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jukujuku_a_1_rel,
  ORTH <! "じゅくじゅく" !>].
 
 ; しょぼん 
 
-shobon_1 := scopal-adv-lex &
+shobon_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shobon_a_1_rel,
  ORTH <! "しょぼん" !>].
 
 ; ひょいひょい 
 
-hyoihyoi_1 := scopal-adv-lex &
+hyoihyoi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hyoihyoi_a_1_rel,
  ORTH <! "ひょいひょい" !>].
 
 ; ぷつり 
 
-putsuri_1 := scopal-adv-lex &
+putsuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_putsuri_a_1_rel,
  ORTH <! "ぷつり" !>].
 
 ; ぷつん 
 
-putsun_1 := scopal-adv-lex &
+putsun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_putsun_a_1_rel,
  ORTH <! "ぷつん" !>].
 
 ; ぷよぷよ 
 
-puyopuyo_1 := scopal-adv-lex &
+puyopuyo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_puyopuyo_a_1_rel,
  ORTH <! "ぷよぷよ" !>].
 
 ; プリンプリン 
 
-purinpurin_1 := scopal-adv-lex &
+purinpurin_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_purinpurin_a_1_rel,
  ORTH <! "プリンプリン" !>].
 
 ; むにゃむにゃ 
 
-munyamunya_1 := scopal-adv-lex &
+munyamunya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_munyamunya_a_1_rel,
  ORTH <! "むにゃむにゃ" !>].
 
 ; もうちょい 
 
-mouchoi_1 := scopal-adv-lex &
+mouchoi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mouchoi_a_1_rel,
  ORTH <! "もうちょい" !>].
 
@@ -21771,48 +21771,48 @@ mouchoi_1 := scopal-adv-lex &
 ;<IJ> ; JACY より: yori (postp-lex) yori-varg (postp-lex-1)
 ;<IJ> ; Used 127 times
 
-;<IJ> yori_1_3 := scopal-adv-lex &
+;<IJ> yori_1_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yori_a_1_rel,
 ;<IJ>  ORTH <! "より" !>].
 
 ;<IJ> ; あいにく 
 ;<IJ> ; JACY あいにく: ainiku-adv (scopal-adv-regular-lex)
 
-;<IJ> ainiku_1 := scopal-adv-lex &
+;<IJ> ainiku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ainiku_a_1_rel,
 ;<IJ>  ORTH <! "あいにく" !>].
 
 ; 案外 
 ; Used 1 times
 
-angai_1 := scopal-adv-lex &
+angai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_angai_a_1_rel,
  ORTH <! "案外" !>].
 
 ;<IJ> ; あんまり 
 ;<IJ> ; JACY あんまり: aNmari-adv (scopal-adv-regular-lex)
 
-;<IJ> anmari_1 := scopal-adv-lex &
+;<IJ> anmari_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_anmari_a_1_rel,
 ;<IJ>  ORTH <! "あんまり" !>].
 
 ;<IJ> ; いかが 
 ;<IJ> ; JACY いかが: ikaga-adv (adv-wh-lex)
 
-;<IJ> ikaga_1 := scopal-adv-lex &
+;<IJ> ikaga_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ikaga_a_1_rel,
 ;<IJ>  ORTH <! "いかが" !>].
 
 ; 一所懸命 
 ; Used 1 times
 
-isshokenmei_1 := scopal-adv-lex &
+isshokenmei_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_isshokenmei_a_1_rel,
  ORTH <! "一所懸命" !>].
 
 ; 一生懸命 
 
-isshoukenmei_1 := scopal-adv-lex &
+isshoukenmei_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_isshoukenmei_a_1_rel,
  ORTH <! "一生懸命" !>].
 
@@ -21820,7 +21820,7 @@ isshoukenmei_1 := scopal-adv-lex &
 ;<IJ> ; JACY 色々: iroiro-adj (na-adj-lex) iroiro-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 51 times
 
-;<IJ> iroiro_1 := scopal-adv-lex &
+;<IJ> iroiro_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_iroiro_a_1_rel,
 ;<IJ>  ORTH <! "色々" !>].
 
@@ -21828,7 +21828,7 @@ isshoukenmei_1 := scopal-adv-lex &
 ;<IJ> ; JACY 同じ: onaji (noun_mod-lex-l) onaji-kanji-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 96 times
 
-;<IJ> onaji_1 := scopal-adv-lex &
+;<IJ> onaji_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_onaji_a_1_rel,
 ;<IJ>  ORTH <! "同じ" !>].
 
@@ -21836,21 +21836,21 @@ isshoukenmei_1 := scopal-adv-lex &
 ;<IJ> ; JACY 同じ: onaji (noun_mod-lex-l) onaji-kanji-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 96 times
 
-;<IJ> onnaji_1 := scopal-adv-lex &
+;<IJ> onnaji_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_onnaji_a_1_rel,
 ;<IJ>  ORTH <! "同じ" !>].
 
 ; 格別 
 ; Used 2 times
 
-kakubetsu_1 := scopal-adv-lex &
+kakubetsu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kakubetsu_a_1_rel,
  ORTH <! "格別" !>].
 
 ; かちかち 
 ; Used 1 times
 
-kachikachi_1 := scopal-adv-lex &
+kachikachi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kachikachi_a_1_rel,
  ORTH <! "かちかち" !>].
 
@@ -21858,81 +21858,81 @@ kachikachi_1 := scopal-adv-lex &
 ;<IJ> ; JACY かなり: kanari-adv (isect-adv-lex)
 ;<IJ> ; Used 7 times
 
-;<IJ> kanari_1 := scopal-adv-lex &
+;<IJ> kanari_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kanari_a_1_rel,
 ;<IJ>  ORTH <! "かなり" !>].
 
 ; からから 
 
-karakara_1 := scopal-adv-lex &
+karakara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karakara_a_1_rel,
  ORTH <! "からから" !>].
 
 ; ぎしぎし 
 
-gishigishi_1_1 := scopal-adv-lex &
+gishigishi_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gishigishi_a_1_rel,
  ORTH <! "ぎしぎし" !>].
 
 ; きちきち 
 
-kichikichi_1 := scopal-adv-lex &
+kichikichi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kichikichi_a_1_rel,
  ORTH <! "きちきち" !>].
 
 ; ぎょうさん 
 
-gyousan_1 := scopal-adv-lex &
+gyousan_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gyousan_a_1_rel,
  ORTH <! "ぎょうさん" !>].
 
 ; くたくた 
 
-kutakuta_1 := scopal-adv-lex &
+kutakuta_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kutakuta_a_1_rel,
  ORTH <! "くたくた" !>].
 
 ; ぐたぐた 
 
-gutaguta_1 := scopal-adv-lex &
+gutaguta_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gutaguta_a_1_rel,
  ORTH <! "ぐたぐた" !>].
 
 ; 公然 
 ; Used 1 times
 
-kouzen_1 := scopal-adv-lex &
+kouzen_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kouzen_a_1_rel,
  ORTH <! "公然" !>].
 
 ; こちこち 
 
-kochikochi_1 := scopal-adv-lex &
+kochikochi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kochikochi_a_1_rel,
  ORTH <! "こちこち" !>].
 
 ; こつこつ 
 
-kotsukotsu_1_1 := scopal-adv-lex &
+kotsukotsu_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kotsukotsu_a_1_rel,
  ORTH <! "こつこつ" !>].
 
 ; 散々 
 
-sanzan_1 := scopal-adv-lex &
+sanzan_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sanzan_a_1_rel,
  ORTH <! "散々" !>].
 
 ; 充分 
 ; Used 31 times
 
-juubun_1 := scopal-adv-lex &
+juubun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_juubun_a_1_rel,
  ORTH <! "充分" !>].
 
 ; すいすい 
 
-suisui_1_1 := scopal-adv-lex &
+suisui_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_suisui_a_1_rel,
  ORTH <! "すいすい" !>].
 
@@ -21940,27 +21940,27 @@ suisui_1_1 := scopal-adv-lex &
 ;<IJ> ; JACY 随分: zuibun-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> zuibun_1 := scopal-adv-lex &
+;<IJ> zuibun_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zuibun_a_1_rel,
 ;<IJ>  ORTH <! "随分" !>].
 
 ; そっくり 
 ; Used 1 times
 
-sokkuri_1 := scopal-adv-lex &
+sokkuri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sokkuri_a_1_rel,
  ORTH <! "そっくり" !>].
 
 ; 存分 
 
-zonbun_1 := scopal-adv-lex &
+zonbun_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zonbun_a_1_rel,
  ORTH <! "存分" !>].
 
 ; 沢山 
 ; Used 32 times
 
-takusan_1 := scopal-adv-lex &
+takusan_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_takusan_a_1_rel,
  ORTH <! "沢山" !>].
 
@@ -21968,19 +21968,19 @@ takusan_1 := scopal-adv-lex &
 ;<IJ> ; JACY 確か: tashika-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 25 times
 
-;<IJ> tashika_1 := scopal-adv-lex &
+;<IJ> tashika_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tashika_a_1_rel,
 ;<IJ>  ORTH <! "確か" !>].
 
 ; たじたじ 
 
-tajitaji_1 := scopal-adv-lex &
+tajitaji_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tajitaji_a_1_rel,
  ORTH <! "たじたじ" !>].
 
 ; 断固 
 
-danko_1 := scopal-adv-lex &
+danko_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_danko_a_1_rel,
  ORTH <! "断固" !>].
 
@@ -21988,7 +21988,7 @@ danko_1 := scopal-adv-lex &
 ;<IJ> ; JACY 当然: touzeN-adv (isect-adv-lex)
 ;<IJ> ; Used 6 times
 
-;<IJ> touzen_1 := scopal-adv-lex &
+;<IJ> touzen_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_touzen_a_1_rel,
 ;<IJ>  ORTH <! "当然" !>].
 
@@ -21996,38 +21996,38 @@ danko_1 := scopal-adv-lex &
 ;<IJ> ; JACY 特別: tokubetsu-adj (na-adj-lex) tokubetsu (ordinary-nohon-n-lex)
 ;<IJ> ; Used 18 times
 
-;<IJ> tokubetsu_1 := scopal-adv-lex &
+;<IJ> tokubetsu_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tokubetsu_a_1_rel,
 ;<IJ>  ORTH <! "特別" !>].
 
 ; とんとん 
 
-tonton_1 := scopal-adv-lex &
+tonton_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tonton_a_1_rel,
  ORTH <! "とんとん" !>].
 
 ; なまじっか 
 
-namajikka_1 := scopal-adv-lex &
+namajikka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_namajikka_a_1_rel,
  ORTH <! "なまじっか" !>].
 
 ; ばらばら 
 ; Used 5 times
 
-barabara_1 := scopal-adv-lex &
+barabara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_barabara_a_1_rel,
  ORTH <! "ばらばら" !>].
 
 ; ぱらぱら 
 
-parapara_1 := scopal-adv-lex &
+parapara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_parapara_a_1_rel,
  ORTH <! "ぱらぱら" !>].
 
 ; びしょびしょ 
 
-bishobisho_1 := scopal-adv-lex &
+bishobisho_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bishobisho_a_1_rel,
  ORTH <! "びしょびしょ" !>].
 
@@ -22035,89 +22035,89 @@ bishobisho_1 := scopal-adv-lex &
 ;<IJ> ; JACY ひたすら: hitasura-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> hitasura_1 := scopal-adv-lex &
+;<IJ> hitasura_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hitasura_a_1_rel,
 ;<IJ>  ORTH <! "ひたすら" !>].
 
 ; ひたひた 
 
-hitahita_1 := scopal-adv-lex &
+hitahita_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitahita_a_1_rel,
  ORTH <! "ひたひた" !>].
 
 ; べろべろ 
 
-berobero_1 := scopal-adv-lex &
+berobero_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_berobero_a_1_rel,
  ORTH <! "べろべろ" !>].
 
 ; まずまず 
 ; Used 1 times
 
-mazumazu_1 := scopal-adv-lex &
+mazumazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_mazumazu_a_1_rel,
  ORTH <! "まずまず" !>].
 
 ; 真っ直ぐ 
 ; Used 20 times
 
-massugu_1 := scopal-adv-lex &
+massugu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_massugu_a_1_rel,
  ORTH <! "真っ直ぐ" !>].
 
 ; 目一杯 
 
-meippai_1 := scopal-adv-lex &
+meippai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_meippai_a_1_rel,
  ORTH <! "目一杯" !>].
 
 ; めろめろ 
 
-meromero_1 := scopal-adv-lex &
+meromero_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_meromero_a_1_rel,
  ORTH <! "めろめろ" !>].
 
 ; やたら 
 
-yatara_1 := scopal-adv-lex &
+yatara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yatara_a_1_rel,
  ORTH <! "やたら" !>].
 
 ; 余計 
 ; Used 5 times
 
-yokei_1 := scopal-adv-lex &
+yokei_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yokei_a_1_rel,
  ORTH <! "余計" !>].
 
 ; 早 
 
-haya_1 := scopal-adv-lex &
+haya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_haya_a_1_rel,
  ORTH <! "早" !>].
 
 ; 合わせて 
 ; Used 1 times
 
-awasete_1 := scopal-adv-lex &
+awasete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_awasete_a_1_rel,
  ORTH <! "合わせて" !>].
 
 ; 至って 
 
-itatte_1 := scopal-adv-lex &
+itatte_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_itatte_a_1_rel,
  ORTH <! "至って" !>].
 
 ; 押して 
 
-oshite_1 := scopal-adv-lex &
+oshite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_oshite_a_1_rel,
  ORTH <! "押して" !>].
 
 ; その昔 
 
-sonomukashi_1 := scopal-adv-lex &
+sonomukashi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sonomukashi_a_1_rel,
  ORTH <! "その昔" !>].
 
@@ -22125,13 +22125,13 @@ sonomukashi_1 := scopal-adv-lex &
 ;<IJ> ; JACY 何か: naNka-adv (scopal-adv-regular-lex) nanika (ordinary-nohon-n-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> nanika_1 := scopal-adv-lex &
+;<IJ> nanika_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nanika_a_1_rel,
 ;<IJ>  ORTH <! "何か" !>].
 
 ; 何て 
 
-nante_1 := scopal-adv-lex &
+nante_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nante_a_1_rel,
  ORTH <! "何て" !>].
 
@@ -22139,7 +22139,7 @@ nante_1 := scopal-adv-lex &
 ;<IJ> ; JACY なんか: naNka (postp-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> nanka_1_2 := scopal-adv-lex &
+;<IJ> nanka_1_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nanka_a_1_rel,
 ;<IJ>  ORTH <! "なんか" !>].
 
@@ -22147,47 +22147,47 @@ nante_1 := scopal-adv-lex &
 ;<IJ> ; JACY 余り: amari-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 19 times
 
-;<IJ> amari_3 := scopal-adv-lex &
+;<IJ> amari_3 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_amari_a_3_rel,
 ;<IJ>  ORTH <! "余り" !>].
 
 ; あらまし 
 ; Used 1 times
 
-aramashi_2 := scopal-adv-lex &
+aramashi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_aramashi_a_2_rel,
  ORTH <! "あらまし" !>].
 
 ; いかさま 
 
-ikasama_2 := scopal-adv-lex &
+ikasama_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikasama_a_2_rel,
  ORTH <! "いかさま" !>].
 
 ; 勢い 
 ; Used 36 times
 
-ikioi_2 := scopal-adv-lex &
+ikioi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikioi_a_2_rel,
  ORTH <! "勢い" !>].
 
 ; 幾度 
 ; Used 1 times
 
-ikutabi_2 := scopal-adv-lex &
+ikutabi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikutabi_a_2_rel,
  ORTH <! "幾度" !>].
 
 ; 幾度 
 ; Used 1 times
 
-ikudo_2 := scopal-adv-lex &
+ikudo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikudo_a_2_rel,
  ORTH <! "幾度" !>].
 
 ; 幾分 
 
-ikubun_2 := scopal-adv-lex &
+ikubun_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikubun_a_2_rel,
  ORTH <! "幾分" !>].
 
@@ -22195,7 +22195,7 @@ ikubun_2 := scopal-adv-lex &
 ;<IJ> ; JACY いくら: ikura-adv (adv-wh-lex) ikura (wh-word-quantity-lex) ikura-mo (affix-noun-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> ikura_2 := scopal-adv-lex &
+;<IJ> ikura_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ikura_a_2_rel,
 ;<IJ>  ORTH <! "いくら" !>].
 
@@ -22203,26 +22203,26 @@ ikubun_2 := scopal-adv-lex &
 ;<IJ> ; JACY いくらか: ikuraka (wh-word-quantity-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> ikuraka_2 := scopal-adv-lex &
+;<IJ> ikuraka_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ikuraka_a_2_rel,
 ;<IJ>  ORTH <! "いくらか" !>].
 
 ; いちいち 
 
-ichiichi_2 := scopal-adv-lex &
+ichiichi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichiichi_a_2_rel,
  ORTH <! "いちいち" !>].
 
 ; 一円 
 
-ichien_2 := scopal-adv-lex &
+ichien_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichien_a_2_rel,
  ORTH <! "一円" !>].
 
 ; 一段 
 ; Used 3 times
 
-ichidan_2 := scopal-adv-lex &
+ichidan_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichidan_a_2_rel,
  ORTH <! "一段" !>].
 
@@ -22230,40 +22230,40 @@ ichidan_2 := scopal-adv-lex &
 ;<IJ> ; JACY 一番: ichiban-stem (scopal-adv-regular-lex)
 ;<IJ> ; Used 54 times
 
-;<IJ> ichiban_2 := scopal-adv-lex &
+;<IJ> ichiban_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ichiban_a_2_rel,
 ;<IJ>  ORTH <! "一番" !>].
 
 ; 一切 
 ; Used 6 times
 
-issai_2 := scopal-adv-lex &
+issai_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_issai_a_2_rel,
  ORTH <! "一切" !>].
 
 ; 一層 
 ; Used 4 times
 
-issou_2_1 := scopal-adv-lex &
+issou_2_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_issou_a_2_rel,
  ORTH <! "一層" !>].
 
 ; 一体 
 ; Used 2 times
 
-ittai_2 := scopal-adv-lex &
+ittai_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ittai_a_2_rel,
  ORTH <! "一体" !>].
 
 ; 一等 
 
-ittou_2 := scopal-adv-lex &
+ittou_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ittou_a_2_rel,
  ORTH <! "一等" !>].
 
 ; 嫌々 
 
-iyaiya_2 := scopal-adv-lex &
+iyaiya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_iyaiya_a_2_rel,
  ORTH <! "嫌々" !>].
 
@@ -22271,21 +22271,21 @@ iyaiya_2 := scopal-adv-lex &
 ;<IJ> ; JACY いよいよ: iyoiyo-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> iyoiyo_2 := scopal-adv-lex &
+;<IJ> iyoiyo_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_iyoiyo_a_2_rel,
 ;<IJ>  ORTH <! "いよいよ" !>].
 
 ; 生まれ付き 
 ; Used 6 times
 
-umaretsuki_2 := scopal-adv-lex &
+umaretsuki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_umaretsuki_a_2_rel,
  ORTH <! "生まれ付き" !>].
 
 ; 多く 
 ; Used 161 times
 
-ooku_2 := scopal-adv-lex &
+ooku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ooku_a_2_rel,
  ORTH <! "多く" !>].
 
@@ -22293,52 +22293,52 @@ ooku_2 := scopal-adv-lex &
 ;<IJ> ; JACY おおよそ: ooyoso-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> ooyoso_2 := scopal-adv-lex &
+;<IJ> ooyoso_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ooyoso_a_2_rel,
 ;<IJ>  ORTH <! "おおよそ" !>].
 
 ; 思い切り 
 
-omoikiri_2 := scopal-adv-lex &
+omoikiri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_omoikiri_a_2_rel,
  ORTH <! "思い切り" !>].
 
 ; およそ 
 ; Used 1 times
 
-oyoso_2 := scopal-adv-lex &
+oyoso_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_oyoso_a_2_rel,
  ORTH <! "およそ" !>].
 
 ; 折々 
 ; Used 1 times
 
-oriori_2 := scopal-adv-lex &
+oriori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_oriori_a_2_rel,
  ORTH <! "折々" !>].
 
 ; 折り返し 
 
-orikaeshi_2 := scopal-adv-lex &
+orikaeshi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_orikaeshi_a_2_rel,
  ORTH <! "折り返し" !>].
 
 ; 数々 
 ; Used 2 times
 
-kazukazu_2 := scopal-adv-lex &
+kazukazu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kazukazu_a_2_rel,
  ORTH <! "数々" !>].
 
 ; かんかん 
 
-kankan_2 := scopal-adv-lex &
+kankan_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kankan_a_2_rel,
  ORTH <! "かんかん" !>].
 
 ; ぐるり 
 
-gururi_2 := scopal-adv-lex &
+gururi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gururi_a_2_rel,
  ORTH <! "ぐるり" !>].
 
@@ -22346,21 +22346,21 @@ gururi_2 := scopal-adv-lex &
 ;<IJ> ; JACY 結局: kekkyoku-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> kekkyoku_2 := scopal-adv-lex &
+;<IJ> kekkyoku_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kekkyoku_a_2_rel,
 ;<IJ>  ORTH <! "結局" !>].
 
 ; 心持ち 
 ; Used 3 times
 
-kokoromochi_2 := scopal-adv-lex &
+kokoromochi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokoromochi_a_2_rel,
  ORTH <! "心持ち" !>].
 
 ; 刻々 
 ; Used 1 times
 
-kokkoku_2 := scopal-adv-lex &
+kokkoku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokkoku_a_2_rel,
  ORTH <! "刻々" !>].
 
@@ -22368,13 +22368,13 @@ kokkoku_2 := scopal-adv-lex &
 ;<IJ> ; JACY 事実: jijitsu-n (ordinary-nohon-n-lex)
 ;<IJ> ; Used 28 times
 
-;<IJ> jijitsu_2 := scopal-adv-lex &
+;<IJ> jijitsu_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_jijitsu_a_2_rel,
 ;<IJ>  ORTH <! "事実" !>].
 
 ; 始終 
 
-shijuu_2 := scopal-adv-lex &
+shijuu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shijuu_a_2_rel,
  ORTH <! "始終" !>].
 
@@ -22382,7 +22382,7 @@ shijuu_2 := scopal-adv-lex &
 ;<IJ> ; JACY 自体: jitai-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> jitai_2_1 := scopal-adv-lex &
+;<IJ> jitai_2_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_jitai_a_2_rel,
 ;<IJ>  ORTH <! "自体" !>].
 
@@ -22390,14 +22390,14 @@ shijuu_2 := scopal-adv-lex &
 ;<IJ> ; JACY 実際: jissai-adv (scopal-adv-regular-lex) jissai (ordinary-nohon-n-lex)
 ;<IJ> ; Used 35 times
 
-;<IJ> jissai_2 := scopal-adv-lex &
+;<IJ> jissai_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_jissai_a_2_rel,
 ;<IJ>  ORTH <! "実際" !>].
 
 ;<IJ> ; 若干 
 ;<IJ> ; JACY 若干: jakkaN-adv (scopal-adv-regular-lex) jakkan-n (ordinary-nohon-n-lex)
 
-;<IJ> jakkan_2 := scopal-adv-lex &
+;<IJ> jakkan_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_jakkan_a_2_rel,
 ;<IJ>  ORTH <! "若干" !>].
 
@@ -22405,20 +22405,20 @@ shijuu_2 := scopal-adv-lex &
 ;<IJ> ; JACY 少々: shoushou-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> shoushou_2 := scopal-adv-lex &
+;<IJ> shoushou_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shoushou_a_2_rel,
 ;<IJ>  ORTH <! "少々" !>].
 
 ; 四六時中 
 
-shirokujichuu_2 := scopal-adv-lex &
+shirokujichuu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shirokujichuu_a_2_rel,
  ORTH <! "四六時中" !>].
 
 ; 心底 
 ; Used 1 times
 
-shinsoko_2 := scopal-adv-lex &
+shinsoko_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shinsoko_a_2_rel,
  ORTH <! "心底" !>].
 
@@ -22426,14 +22426,14 @@ shinsoko_2 := scopal-adv-lex &
 ;<IJ> ; JACY 全て: subete-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 36 times
 
-;<IJ> subete_2 := scopal-adv-lex &
+;<IJ> subete_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_subete_a_2_rel,
 ;<IJ>  ORTH <! "全て" !>].
 
 ;<IJ> ; せっかく 
 ;<IJ> ; JACY せっかく: sekkaku-adv (isect-adv-lex)
 
-;<IJ> sekkaku_2 := scopal-adv-lex &
+;<IJ> sekkaku_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sekkaku_a_2_rel,
 ;<IJ>  ORTH <! "せっかく" !>].
 
@@ -22441,7 +22441,7 @@ shinsoko_2 := scopal-adv-lex &
 ;<IJ> ; JACY 絶対: zettai-adv (isect-adv-lex) zettai-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> zettai_2 := scopal-adv-lex &
+;<IJ> zettai_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zettai_a_2_rel,
 ;<IJ>  ORTH <! "絶対" !>].
 
@@ -22449,21 +22449,21 @@ shinsoko_2 := scopal-adv-lex &
 ;<IJ> ; JACY 全体: zeNtai (ordinary-nohon-n-lex)
 ;<IJ> ; Used 46 times
 
-;<IJ> zentai_2 := scopal-adv-lex &
+;<IJ> zentai_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zentai_a_2_rel,
 ;<IJ>  ORTH <! "全体" !>].
 
 ; 早々 
 ; Used 1 times
 
-sousou_2 := scopal-adv-lex &
+sousou_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sousou_a_2_rel,
  ORTH <! "早々" !>].
 
 ; 総体 
 ; Used 2 times
 
-soutai_2_1 := scopal-adv-lex &
+soutai_2_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soutai_a_2_rel,
  ORTH <! "総体" !>].
 
@@ -22471,14 +22471,14 @@ soutai_2_1 := scopal-adv-lex &
 ;<IJ> ; JACY そのまま: sonomama-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 15 times
 
-;<IJ> sonomama_2 := scopal-adv-lex &
+;<IJ> sonomama_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sonomama_a_2_rel,
 ;<IJ>  ORTH <! "そのまま" !>].
 
 ;<IJ> ; それなり 
 ;<IJ> ; JACY それなり: sorenari (ordinary-nohon-n-lex)
 
-;<IJ> sorenari_2 := scopal-adv-lex &
+;<IJ> sorenari_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sorenari_a_2_rel,
 ;<IJ>  ORTH <! "それなり" !>].
 
@@ -22486,14 +22486,14 @@ soutai_2_1 := scopal-adv-lex &
 ;<IJ> ; JACY 大体: daitai-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 7 times
 
-;<IJ> daitai_2_1 := scopal-adv-lex &
+;<IJ> daitai_2_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_daitai_a_2_rel,
 ;<IJ>  ORTH <! "大体" !>].
 
 ; 多少 
 ; Used 4 times
 
-tashou_2 := scopal-adv-lex &
+tashou_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tashou_a_2_rel,
  ORTH <! "多少" !>].
 
@@ -22501,34 +22501,34 @@ tashou_2 := scopal-adv-lex &
 ;<IJ> ; JACY ただ: tada-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> tada_2 := scopal-adv-lex &
+;<IJ> tada_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tada_a_2_rel,
 ;<IJ>  ORTH <! "ただ" !>].
 
 ; 多分 
 ; Used 1 times
 
-tabun_2 := scopal-adv-lex &
+tabun_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tabun_a_2_rel,
  ORTH <! "多分" !>].
 
 ; 他方 
 ; Used 13 times
 
-tahou_2 := scopal-adv-lex &
+tahou_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tahou_a_2_rel,
  ORTH <! "他方" !>].
 
 ; だらり 
 
-darari_2 := scopal-adv-lex &
+darari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_darari_a_2_rel,
  ORTH <! "だらり" !>].
 
 ; 段々 
 ; Used 2 times
 
-dandan_2 := scopal-adv-lex &
+dandan_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dandan_a_2_rel,
  ORTH <! "段々" !>].
 
@@ -22536,28 +22536,28 @@ dandan_2 := scopal-adv-lex &
 ;<IJ> ; JACY 近く: chikaku (ordinary-nohon-n-lex)
 ;<IJ> ; Used 14 times
 
-;<IJ> chikaku_2_1 := scopal-adv-lex &
+;<IJ> chikaku_2_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_chikaku_a_2_rel,
 ;<IJ>  ORTH <! "近く" !>].
 
 ; 近頃 
 ; Used 2 times
 
-chikagoro_2 := scopal-adv-lex &
+chikagoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chikagoro_a_2_rel,
  ORTH <! "近頃" !>].
 
 ; 昼夜 
 ; Used 2 times
 
-chuuya_2 := scopal-adv-lex &
+chuuya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chuuya_a_2_rel,
  ORTH <! "昼夜" !>].
 
 ; 遠く 
 ; Used 20 times
 
-tooku_2 := scopal-adv-lex &
+tooku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tooku_a_2_rel,
  ORTH <! "遠く" !>].
 
@@ -22565,41 +22565,41 @@ tooku_2 := scopal-adv-lex &
 ;<IJ> ; JACY 時々: tokidoki-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> tokidoki_2 := scopal-adv-lex &
+;<IJ> tokidoki_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tokidoki_a_2_rel,
 ;<IJ>  ORTH <! "時々" !>].
 
 ; とことん 
 
-tokoton_2 := scopal-adv-lex &
+tokoton_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tokoton_a_2_rel,
  ORTH <! "とことん" !>].
 
 ; 年頃 
 ; Used 2 times
 
-toshigoro_2 := scopal-adv-lex &
+toshigoro_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toshigoro_a_2_rel,
  ORTH <! "年頃" !>].
 
 ; 土台 
 ; Used 2 times
 
-dodai_2 := scopal-adv-lex &
+dodai_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dodai_a_2_rel,
  ORTH <! "土台" !>].
 
 ; 取り分け 
 ; Used 1 times
 
-toriwake_2 := scopal-adv-lex &
+toriwake_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toriwake_a_2_rel,
  ORTH <! "取り分け" !>].
 
 ; どろどろ 
 ; Used 2 times
 
-dorodoro_2_1 := scopal-adv-lex &
+dorodoro_2_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dorodoro_a_2_rel,
  ORTH <! "どろどろ" !>].
 
@@ -22607,69 +22607,69 @@ dorodoro_2_1 := scopal-adv-lex &
 ;<IJ> ; JACY 半ば: nakaba (ordinary-nohon-n-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> nakaba_2 := scopal-adv-lex &
+;<IJ> nakaba_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nakaba_a_2_rel,
 ;<IJ>  ORTH <! "半ば" !>].
 
 ; 何様 
 
-nanisama_2 := scopal-adv-lex &
+nanisama_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nanisama_a_2_rel,
  ORTH <! "何様" !>].
 
 ;<IJ> ; 何分 
 ;<IJ> ; JACY 何分: nanibuN-adv (isect-adv-lex) naNpuN (temp_numeral-whq-lex)
 
-;<IJ> nanibun_2 := scopal-adv-lex &
+;<IJ> nanibun_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nanibun_a_2_rel,
 ;<IJ>  ORTH <! "何分" !>].
 
 ; 何より 
 ; Used 3 times
 
-naniyori_2 := scopal-adv-lex &
+naniyori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naniyori_a_2_rel,
  ORTH <! "何より" !>].
 
 ; 日夜 
 
-nichiya_2 := scopal-adv-lex &
+nichiya_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nichiya_a_2_rel,
  ORTH <! "日夜" !>].
 
 ; 年中 
 ; Used 4 times
 
-nenjuu_2 := scopal-adv-lex &
+nenjuu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nenjuu_a_2_rel,
  ORTH <! "年中" !>].
 
 ; 早く 
 ; Used 19 times
-
-hayaku_2 := scopal-adv-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hayaku_a_2_rel,
- ORTH <! "早く" !>].
+; (MS 2004-06-23) Not necessary, because it can be derived from 早い
+;hayaku_2 := scopal-adv-regular-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hayaku_a_2_rel,
+; ORTH <! "早く" !>].
 
 
 
 ; ぱりぱり 
 
-paripari_2 := scopal-adv-lex &
+paripari_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_paripari_a_2_rel,
  ORTH <! "ぱりぱり" !>].
 
 ; 引き続き 
 ; Used 2 times
 
-hikitsuduki_2 := scopal-adv-lex &
+hikitsuduki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hikitsuduki_a_2_rel,
  ORTH <! "引き続き" !>].
 
 ; 一つ 
 ; Used 49 times
 
-hitotsu_2 := scopal-adv-lex &
+hitotsu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitotsu_a_2_rel,
  ORTH <! "一つ" !>].
 
@@ -22677,34 +22677,34 @@ hitotsu_2 := scopal-adv-lex &
 ;<IJ> ; JACY 一通り: hitotoori-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> hitotoori_2 := scopal-adv-lex &
+;<IJ> hitotoori_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hitotoori_a_2_rel,
 ;<IJ>  ORTH <! "一通り" !>].
 
 ; 一人 
 ; Used 22 times
 
-hitori_2 := scopal-adv-lex &
+hitori_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hitori_a_2_rel,
  ORTH <! "一人" !>].
 
 ; 古く 
 ; Used 17 times
 
-furuku_2 := scopal-adv-lex &
+furuku_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_furuku_a_2_rel,
  ORTH <! "古く" !>].
 
 ; 殆ど 
 ; Used 11 times
 
-hotondo_2 := scopal-adv-lex &
+hotondo_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hotondo_a_2_rel,
  ORTH <! "殆ど" !>].
 
 ; ぽんぽん 
 
-ponpon_2 := scopal-adv-lex &
+ponpon_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ponpon_a_2_rel,
  ORTH <! "ぽんぽん" !>].
 
@@ -22712,14 +22712,14 @@ ponpon_2 := scopal-adv-lex &
 ;<IJ> ; JACY 誠: makoto (ordinary-nohon-n-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> makoto_2 := scopal-adv-lex &
+;<IJ> makoto_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_makoto_a_2_rel,
 ;<IJ>  ORTH <! "誠" !>].
 
 ;<IJ> ; 丸々 
 ;<IJ> ; JACY 丸々: marumaru-adv (isect-adv-lex)
 
-;<IJ> marumaru_2 := scopal-adv-lex &
+;<IJ> marumaru_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_marumaru_a_2_rel,
 ;<IJ>  ORTH <! "丸々" !>].
 
@@ -22727,7 +22727,7 @@ ponpon_2 := scopal-adv-lex &
 ;<IJ> ; JACY 万一: maNichi-adv (isect-adv-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> manichi_2 := scopal-adv-lex &
+;<IJ> manichi_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_manichi_a_2_rel,
 ;<IJ>  ORTH <! "万一" !>].
 
@@ -22735,14 +22735,14 @@ ponpon_2 := scopal-adv-lex &
 ;<IJ> ; JACY 自ら: mizukara-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 11 times
 
-;<IJ> mizukara_2 := scopal-adv-lex &
+;<IJ> mizukara_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mizukara_a_2_rel,
 ;<IJ>  ORTH <! "自ら" !>].
 
 ; 元々 
 ; Used 3 times
 
-motomoto_2 := scopal-adv-lex &
+motomoto_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_motomoto_a_2_rel,
  ORTH <! "元々" !>].
 
@@ -22750,13 +22750,13 @@ motomoto_2 := scopal-adv-lex &
 ;<IJ> ; JACY 約: yaku-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 37 times
 
-;<IJ> yaku_2_1 := scopal-adv-lex &
+;<IJ> yaku_2_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yaku_a_2_rel,
 ;<IJ>  ORTH <! "約" !>].
 
 ; 山々 
 
-yamayama_2 := scopal-adv-lex &
+yamayama_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yamayama_a_2_rel,
  ORTH <! "山々" !>].
 
@@ -22764,14 +22764,14 @@ yamayama_2 := scopal-adv-lex &
 ;<IJ> ; JACY 割合: wariai (ordinary-nohon-n-lex)
 ;<IJ> ; Used 6 times
 
-;<IJ> wariai_2 := scopal-adv-lex &
+;<IJ> wariai_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_wariai_a_2_rel,
 ;<IJ>  ORTH <! "割合" !>].
 
 ; ありのまま 
 ; Used 9 times
 
-arinomama_2 := scopal-adv-lex &
+arinomama_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_arinomama_a_2_rel,
  ORTH <! "ありのまま" !>].
 
@@ -22779,7 +22779,7 @@ arinomama_2 := scopal-adv-lex &
 ;<IJ> ; JACY 一杯: ippai-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> ippai_2_1 := scopal-adv-lex &
+;<IJ> ippai_2_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ippai_a_2_rel,
 ;<IJ>  ORTH <! "一杯" !>].
 
@@ -22787,14 +22787,14 @@ arinomama_2 := scopal-adv-lex &
 ;<IJ> ; JACY ぎりぎり: girigiri-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> girigiri_2 := scopal-adv-lex &
+;<IJ> girigiri_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_girigiri_a_2_rel,
 ;<IJ>  ORTH <! "ぎりぎり" !>].
 
 ; 偶然 
 ; Used 4 times
 
-guuzen_2 := scopal-adv-lex &
+guuzen_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_guuzen_a_2_rel,
  ORTH <! "偶然" !>].
 
@@ -22802,14 +22802,14 @@ guuzen_2 := scopal-adv-lex &
 ;<IJ> ; JACY 結構: kekkou-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> kekkou_2_2 := scopal-adv-lex &
+;<IJ> kekkou_2_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kekkou_a_2_rel,
 ;<IJ>  ORTH <! "結構" !>].
 
 ;<IJ> ; 幸い 
 ;<IJ> ; JACY 幸い: saiwai-adv (scopal-adv-regular-lex)
 
-;<IJ> saiwai_2 := scopal-adv-lex &
+;<IJ> saiwai_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_saiwai_a_2_rel,
 ;<IJ>  ORTH <! "幸い" !>].
 
@@ -22817,28 +22817,28 @@ guuzen_2 := scopal-adv-lex &
 ;<IJ> ; JACY 自然: shizeN (ordinary-nohon-n-lex)
 ;<IJ> ; Used 40 times
 
-;<IJ> shizen_2 := scopal-adv-lex &
+;<IJ> shizen_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shizen_a_2_rel,
 ;<IJ>  ORTH <! "自然" !>].
 
 ; 正直 
 ; Used 2 times
 
-shoujiki_2 := scopal-adv-lex &
+shoujiki_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shoujiki_a_2_rel,
  ORTH <! "正直" !>].
 
 ; 真実 
 ; Used 4 times
 
-shinjitsu_2 := scopal-adv-lex &
+shinjitsu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shinjitsu_a_2_rel,
  ORTH <! "真実" !>].
 
 ; 第一 
 ; Used 6 times
 
-daiichi_2 := scopal-adv-lex &
+daiichi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_daiichi_a_2_rel,
  ORTH <! "第一" !>].
 
@@ -22846,13 +22846,13 @@ daiichi_2 := scopal-adv-lex &
 ;<IJ> ; JACY 大変: taiheN-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 4 times
 
-;<IJ> taihen_2 := scopal-adv-lex &
+;<IJ> taihen_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_taihen_a_2_rel,
 ;<IJ>  ORTH <! "大変" !>].
 
 ; 久々 
 
-hisabisa_2 := scopal-adv-lex &
+hisabisa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hisabisa_a_2_rel,
  ORTH <! "久々" !>].
 
@@ -22860,7 +22860,7 @@ hisabisa_2 := scopal-adv-lex &
 ;<IJ> ; JACY 普通: futsuu (ordinary-nohon-n-lex)
 ;<IJ> ; Used 105 times
 
-;<IJ> futsuu_2 := scopal-adv-lex &
+;<IJ> futsuu_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_futsuu_a_2_rel,
 ;<IJ>  ORTH <! "普通" !>].
 
@@ -22868,7 +22868,7 @@ hisabisa_2 := scopal-adv-lex &
 ;<IJ> ; JACY 今: ima (date-noun-lex)
 ;<IJ> ; Used 38 times
 
-;<IJ> ima_2 := scopal-adv-lex &
+;<IJ> ima_2 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ima_a_2_rel,
 ;<IJ>  ORTH <! "今" !>].
 
@@ -22878,77 +22878,77 @@ hisabisa_2 := scopal-adv-lex &
 
 ; あんぐり 
 
-anguri_2 := scopal-adv-lex &
+anguri_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_anguri_a_2_rel,
  ORTH <! "あんぐり" !>].
 
 ; 寒々 
 
-samuzamu_2 := scopal-adv-lex &
+samuzamu_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_samuzamu_a_2_rel,
  ORTH <! "寒々" !>].
 
 ; しゃあしゃあ 
 ; Used 1 times
 
-shaashaa_2 := scopal-adv-lex &
+shaashaa_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shaashaa_a_2_rel,
  ORTH <! "しゃあしゃあ" !>].
 
 ; のうのう 
 
-nounou_2 := scopal-adv-lex &
+nounou_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nounou_a_2_rel,
  ORTH <! "のうのう" !>].
 
 ; ぶりぶり 
 
-buriburi_2 := scopal-adv-lex &
+buriburi_2 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_buriburi_a_2_rel,
  ORTH <! "ぶりぶり" !>].
 
 ; けんけん 
 
-kenken_3 := scopal-adv-lex &
+kenken_3 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kenken_a_3_rel,
  ORTH <! "けんけん" !>].
 
 ; あったら 
 
-attara_1 := scopal-adv-lex &
+attara_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_attara_a_1_rel,
  ORTH <! "あったら" !>].
 
 ; 辛うじて 
 ; Used 1 times
 
-karoujite_1 := scopal-adv-lex &
+karoujite_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karoujite_a_1_rel,
  ORTH <! "辛うじて" !>].
 
 ; ぐっしょり 
 ; Used 1 times
 
-gusshori_1 := scopal-adv-lex &
+gusshori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gusshori_a_1_rel,
  ORTH <! "ぐっしょり" !>].
 
 ; 刻一刻 
 
-kokuikkoku_1 := scopal-adv-lex &
+kokuikkoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kokuikkoku_a_1_rel,
  ORTH <! "刻一刻" !>].
 
 ; 古来 
 ; Used 2 times
 
-korai_1 := scopal-adv-lex &
+korai_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_korai_a_1_rel,
  ORTH <! "古来" !>].
 
 ; さめざめ 
 
-samezame_1 := scopal-adv-lex &
+samezame_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_samezame_a_1_rel,
  ORTH <! "さめざめ" !>].
 
@@ -22956,45 +22956,45 @@ samezame_1 := scopal-adv-lex &
 ;<IJ> ; JACY 総じて: soujite-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> soujite_1 := scopal-adv-lex &
+;<IJ> soujite_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_soujite_a_1_rel,
 ;<IJ>  ORTH <! "総じて" !>].
 
 ; とうに 
 ; Used 1 times
 
-touni_1 := scopal-adv-lex &
+touni_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_touni_a_1_rel,
  ORTH <! "とうに" !>].
 
 ; ぱたっと 
 
-patatto_1 := scopal-adv-lex &
+patatto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_patatto_a_1_rel,
  ORTH <! "ぱたっと" !>].
 
 ; むちむち 
 
-muchimuchi_1 := scopal-adv-lex &
+muchimuchi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_muchimuchi_a_1_rel,
  ORTH <! "むちむち" !>].
 
 ;<IJ> ; 割と 
 ;<IJ> ; JACY 割と: warito-adv (scopal-adv-regular-lex)
 
-;<IJ> warito_1 := scopal-adv-lex &
+;<IJ> warito_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_warito_a_1_rel,
 ;<IJ>  ORTH <! "割と" !>].
 
 ; 便宜上 
 
-bengijou_1 := scopal-adv-lex &
+bengijou_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_bengijou_a_1_rel,
  ORTH <! "便宜上" !>].
 
 ; 格段 
 
-kakudan_1 := scopal-adv-lex &
+kakudan_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kakudan_a_1_rel,
  ORTH <! "格段" !>].
 
@@ -23004,170 +23004,170 @@ kakudan_1 := scopal-adv-lex &
 
 ; 今し方 
 
-imashigata_1 := scopal-adv-lex &
+imashigata_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_imashigata_a_1_rel,
  ORTH <! "今し方" !>].
 
 ; 逐一 
 
-chikuichi_1 := scopal-adv-lex &
+chikuichi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chikuichi_a_1_rel,
  ORTH <! "逐一" !>].
 
 ; 何等 
 ; Used 1 times
 
-nanra_1 := scopal-adv-lex &
+nanra_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nanra_a_1_rel,
  ORTH <! "何等" !>].
 
 ; うねうね 
 
-uneune_1 := scopal-adv-lex &
+uneune_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_uneune_a_1_rel,
  ORTH <! "うねうね" !>].
 
 ; てんで 
 
-tende_1 := scopal-adv-lex &
+tende_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tende_a_1_rel,
  ORTH <! "てんで" !>].
 
 ; 直に 
 
-jikini_1 := scopal-adv-lex &
+jikini_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jikini_a_1_rel,
  ORTH <! "直に" !>].
 
 ; 易々 
 
-yasuyasu_1 := scopal-adv-lex &
+yasuyasu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yasuyasu_a_1_rel,
  ORTH <! "易々" !>].
 
 ; しこしこ 
 
-shikoshiko_1 := scopal-adv-lex &
+shikoshiko_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shikoshiko_a_1_rel,
  ORTH <! "しこしこ" !>].
 
 ; 繁々 
 
-shigeshige_1 := scopal-adv-lex &
+shigeshige_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shigeshige_a_1_rel,
  ORTH <! "繁々" !>].
 
 ; 一旦 
 
-ittan_1 := scopal-adv-lex &
+ittan_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ittan_a_1_rel,
  ORTH <! "一旦" !>].
 
 ; 中々 
 
-nakanaka_1 := scopal-adv-lex &
+nakanaka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nakanaka_a_1_rel,
  ORTH <! "中々" !>].
 
 ; しこたま 
 
-shikotama_1 := scopal-adv-lex &
+shikotama_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shikotama_a_1_rel,
  ORTH <! "しこたま" !>].
 
 ; むずむず 
 
-muzumuzu_1 := scopal-adv-lex &
+muzumuzu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_muzumuzu_a_1_rel,
  ORTH <! "むずむず" !>].
 
 ; 後程 
 
-nochihodo_1 := scopal-adv-lex &
+nochihodo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nochihodo_a_1_rel,
  ORTH <! "後程" !>].
 
 ; 取り敢えず 
 
-toriaezu_1 := scopal-adv-lex &
+toriaezu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_toriaezu_a_1_rel,
  ORTH <! "取り敢えず" !>].
 
 ; 俄然 
 
-gazen_1 := scopal-adv-lex &
+gazen_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gazen_a_1_rel,
  ORTH <! "俄然" !>].
 
 ; 赤々 
 
-akaaka_1 := scopal-adv-lex &
+akaaka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_akaaka_a_1_rel,
  ORTH <! "赤々" !>].
 
 ; 精々 
 
-seizei_1 := scopal-adv-lex &
+seizei_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_seizei_a_1_rel,
  ORTH <! "精々" !>].
 
 ; ぽうっと 
 
-poutto_1 := scopal-adv-lex &
+poutto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_poutto_a_1_rel,
  ORTH <! "ぽうっと" !>].
 
 ; 遥々 
 
-harubaru_1 := scopal-adv-lex &
+harubaru_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_harubaru_a_1_rel,
  ORTH <! "遥々" !>].
 
 ; がぶり 
 
-gaburi_1 := scopal-adv-lex &
+gaburi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gaburi_a_1_rel,
  ORTH <! "がぶり" !>].
 
 ; 大層 
 
-taisou_1_1 := scopal-adv-lex &
+taisou_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taisou_a_1_rel,
  ORTH <! "大層" !>].
 
 ; 暫し 
 
-shibashi_1 := scopal-adv-lex &
+shibashi_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shibashi_a_1_rel,
  ORTH <! "暫し" !>].
 
 ; みすみす 
 
-misumisu_1 := scopal-adv-lex &
+misumisu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_misumisu_a_1_rel,
  ORTH <! "みすみす" !>].
 
 ; 別けて 
 
-wakete_1 := scopal-adv-lex &
+wakete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_wakete_a_1_rel,
  ORTH <! "別けて" !>].
 
 ; すこぶる 
 
-sukoburu_1 := scopal-adv-lex &
+sukoburu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukoburu_a_1_rel,
  ORTH <! "すこぶる" !>].
 
 ; 難無く 
 
-nannaku_1 := scopal-adv-lex &
+nannaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nannaku_a_1_rel,
  ORTH <! "難無く" !>].
 
 ; ちょぼちょぼ 
 
-chobochobo_1 := scopal-adv-lex &
+chobochobo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chobochobo_a_1_rel,
  ORTH <! "ちょぼちょぼ" !>].
 
@@ -23175,13 +23175,13 @@ chobochobo_1 := scopal-adv-lex &
 ;<IJ> ; JACY 暫く: shibaraku-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 3 times
 
-;<IJ> shibaraku_1 := scopal-adv-lex &
+;<IJ> shibaraku_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shibaraku_a_1_rel,
 ;<IJ>  ORTH <! "暫く" !>].
 
 ; さぞや 
 
-sazoya_1 := scopal-adv-lex &
+sazoya_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sazoya_a_1_rel,
  ORTH <! "さぞや" !>].
 
@@ -23189,13 +23189,13 @@ sazoya_1 := scopal-adv-lex &
 ;<IJ> ; JACY 予め: arakajime-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
 
-;<IJ> arakajime_1 := scopal-adv-lex &
+;<IJ> arakajime_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_arakajime_a_1_rel,
 ;<IJ>  ORTH <! "予め" !>].
 
 ; ほのぼの 
 
-honobono_1 := scopal-adv-lex &
+honobono_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_honobono_a_1_rel,
  ORTH <! "ほのぼの" !>].
 
@@ -23203,152 +23203,152 @@ honobono_1 := scopal-adv-lex &
 ;<IJ> ; JACY ついでに: tsuideni-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> tsuideni_1 := scopal-adv-lex &
+;<IJ> tsuideni_1 := scopal-adv-regular-lex &
 ;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tsuideni_a_1_rel,
 ;<IJ>  ORTH <! "ついでに" !>].
 
 ; 直に 
 
-jikani_1 := scopal-adv-lex &
+jikani_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jikani_a_1_rel,
  ORTH <! "直に" !>].
 
 ; 定めて 
 
-sadamete_1 := scopal-adv-lex &
+sadamete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sadamete_a_1_rel,
  ORTH <! "定めて" !>].
 
 ; 悪しからず 
 
-ashikarazu_1 := scopal-adv-lex &
+ashikarazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ashikarazu_a_1_rel,
  ORTH <! "悪しからず" !>].
 
 ; 懲り懲り 
 
-korigori_1 := scopal-adv-lex &
+korigori_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_korigori_a_1_rel,
  ORTH <! "懲り懲り" !>].
 
 ; 又々 
 
-matamata_1 := scopal-adv-lex &
+matamata_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_matamata_a_1_rel,
  ORTH <! "又々" !>].
 
 ; 長らく 
 
-nagaraku_1 := scopal-adv-lex &
+nagaraku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nagaraku_a_1_rel,
  ORTH <! "長らく" !>].
 
 ; すかさず 
 
-sukasazu_1 := scopal-adv-lex &
+sukasazu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sukasazu_a_1_rel,
  ORTH <! "すかさず" !>].
 
 ; 道理で 
 
-douride_1 := scopal-adv-lex &
+douride_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_douride_a_1_rel,
  ORTH <! "道理で" !>].
 
 ; 僅か 
 ; Used 1 times
 
-wazuka_1 := scopal-adv-lex &
+wazuka_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_wazuka_a_1_rel,
  ORTH <! "僅か" !>].
 
 ; 辛くも 
 
-karakumo_1 := scopal-adv-lex &
+karakumo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_karakumo_a_1_rel,
  ORTH <! "辛くも" !>].
 
 ; 隈無く 
 
-kumanaku_1 := scopal-adv-lex &
+kumanaku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kumanaku_a_1_rel,
  ORTH <! "隈無く" !>].
 
 ; ぴいぴい 
 
-piipii_1 := scopal-adv-lex &
+piipii_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_piipii_a_1_rel,
  ORTH <! "ぴいぴい" !>].
 
 ; 夜な夜な 
 
-yonayona_1 := scopal-adv-lex &
+yonayona_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yonayona_a_1_rel,
  ORTH <! "夜な夜な" !>].
 
 ; ぶつくさ 
 
-butsukusa_1 := scopal-adv-lex &
+butsukusa_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_butsukusa_a_1_rel,
  ORTH <! "ぶつくさ" !>].
 
 ; 自ずと 
 
-onozuto_1 := scopal-adv-lex &
+onozuto_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_onozuto_a_1_rel,
  ORTH <! "自ずと" !>].
 
 ; 尚且つ 
 
-naokatsu_1 := scopal-adv-lex &
+naokatsu_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_naokatsu_a_1_rel,
  ORTH <! "尚且つ" !>].
 
 ; まだしも 
 
-madashimo_1 := scopal-adv-lex &
+madashimo_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_madashimo_a_1_rel,
  ORTH <! "まだしも" !>].
 
 ; 敢えて 
 
-aete_1 := scopal-adv-lex &
+aete_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_aete_a_1_rel,
  ORTH <! "敢えて" !>].
 
 ; 怖々 
 
-kowagowa_1 := scopal-adv-lex &
+kowagowa_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kowagowa_a_1_rel,
  ORTH <! "怖々" !>].
 
 ; とことこ 
 
-tokotoko_1 := scopal-adv-lex &
+tokotoko_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tokotoko_a_1_rel,
  ORTH <! "とことこ" !>].
 
 ; 無論 
 
-muron_1 := scopal-adv-lex &
+muron_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_muron_a_1_rel,
  ORTH <! "無論" !>].
 
 ; 極々 
 
-gokugoku_1 := scopal-adv-lex &
+gokugoku_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gokugoku_a_1_rel,
  ORTH <! "極々" !>].
 
 ; めりめり 
 
-merimeri_1 := scopal-adv-lex &
+merimeri_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_merimeri_a_1_rel,
  ORTH <! "めりめり" !>].
 
 ; けろけろ 
 
-kerokero_1 := scopal-adv-lex &
+kerokero_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kerokero_a_1_rel,
  ORTH <! "けろけろ" !>].
 

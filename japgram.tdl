@@ -147,11 +147,11 @@ utterance_rule-idiom  := turn-type &
 					   CONT.HOOK.LTOP #top]]]>].
 
 
-utterance_rule-empty-frag-p := utterance-plusmessage-type &
-                  [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
-                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
-                    ARGS <[SYNSEM.LOCAL [CAT.HEAD empty-frag-p_head,
-                                        BAR +]]>].
+;utterance_rule-empty-frag-p := utterance-plusmessage-type &
+;                  [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
+;                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
+;                    ARGS <[SYNSEM.LOCAL [CAT.HEAD empty-frag-p_head,
+;                                        BAR +]]>].
 
 ; (ERB 2001-10-31) Moving contrast between imp_rel and polite-imp_rel
 ; to REL feature for k2y purposes (and because we can't see why there
@@ -593,7 +593,8 @@ relative-clause-rule := hadj-final-i &
                                                        ARG2 #ind] !>,
                                 HCONS <! qeq & [HARG #soa,
                                                  LARG #adjhand] !>],
-                       ARGS <[SYNSEM [LOCAL [CAT [HEAD [J-POSTHEAD rels,
+                       ARGS <[SYNSEM [LOCAL [CAT [HEAD [ADJ -,
+							J-POSTHEAD rels,
 						       MAIN-PRD bool],
 						 VAL saturated],
 					    CONT.HOOK[INDEX #adjevent,
@@ -614,10 +615,19 @@ relative-clause-rule := hadj-final-i &
 ; (FCB 2004-02-03) redid to factor out shared parts
 
 
-rel-cl-sbj-gap-rule := rel-cl-gap-rule  &
-		       [ARGS <[SYNSEM.LOCAL.CAT.VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
-						     COMPS onull]],
-			      [SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
+rel-cl-sbj-gap-rule := rel-cl-gap-rule  & 
+		  [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+		   ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ -,
+					    VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+						 COMPS onull]]],
+			 [SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
+
+rel-cl-sbj-gap-adj-rule := rel-cl-gap-rule  & 
+		       [ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ +,
+						 VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+						      COMPS onull]]],
+			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
+
 
 
 ;(CH 2003-08-22) 直接目的語位置に主名詞を関連づける関係節規則
@@ -630,8 +640,9 @@ rel-cl-sbj-gap-rule := rel-cl-gap-rule  &
 ; 				   SUBJ sat-arg]],"を追加
 ; (FCB 2004-02-03) redid to factor out shared parts
 
-rel-cl-obj1-gap-rule := rel-cl-gap-rule &
-			[ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
+rel-cl-obj1-gap-rule := rel-cl-gap-rule & 
+			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+			 ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
 							 COMPS 1-list &
 							      [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
 							       REST onull]]]]]],
@@ -652,7 +663,8 @@ rel-cl-obj1-gap-rule := rel-cl-gap-rule &
 ; need to work on it a bit more
 
 rel-cl-obj2-gap-rule := rel-cl-gap-rule &
-			[ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
+			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+			 ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
 							 COMPS 1-plus-list &
 							      [FIRST onull,
 							       REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind]]]]]],
@@ -672,6 +684,7 @@ rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 
 ; (ERB 2002-01-22) NUCL conj now on supertype.
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-06-25) [HEAD.EMPTY -] to prevent spuriou ambiguity on 食べているご飯 
 
 sentence-te-coordination-rule := sentence-coord-type &
 [SYNSEM [LOCAL [BAR +,
@@ -691,7 +704,7 @@ sentence-te-coordination-rule := sentence-coord-type &
 		      BAR +],
         J-NEEDS-AFFIX -],
        [SYNSEM j-synsem & [LOCAL [BAR +,
-				  CAT #1 & [VAL saturated],
+				  CAT #1 & [VAL saturated, HEAD.EMPTY -],
 				  CONT #3,
 				  BAR #5, 
 				  NUCL #6,
@@ -759,19 +772,23 @@ runon_s := sentence-coord-type &
        [SYNSEM j-synsem & [LOCAL [BAR +,
 				CAT [ HEAD utt-valid &
 					   [ H-TENSE present-past-or-future,
-					     MAIN-PRD + ],
+					     MAIN-PRD +,
+					      EMPTY -],
 				      VAL saturated]]],
 	J-NEEDS-AFFIX -]>].
 
+; (MS 2004-06-25) We need something for the XARG. Try the XARG of the second conjunct.
 
 conj-rule := conj-rule-type &
-                 [SYNSEM [LOCAL.BAR +,
+                 [SYNSEM [LOCAL [BAR +,
+				 CONT.HOOK.XARG #xarg],
 			  MODIFIED.PERIPH +],
                   ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
 						  C-MOD < [MODIFIED.PERIPH #periph] > ],
                                             VAL saturated],
                                        BAR +]],
-                        [SYNSEM j-synsem & [LOCAL.BAR +,
+                        [SYNSEM j-synsem & [LOCAL [BAR +,
+						   CONT.HOOK.XARG #xarg],
 					    MODIFIED.PERIPH #periph]]>].
 
 
@@ -1027,26 +1044,26 @@ nominal-numcl-rule := nominal-numcl-rule-type-noncard.
 ; ; np-frag-rule  -> np-frag-end-rule
 ; ; Comment will be added.
 
-np-frag-rule := np-frag-rule-type.
+;np-frag-rule := np-frag-rule-type.
 
 ; np-frag-end-rule := np-frag-end-rule-type.
 
 ; ; See rule-types.tdl and roots.tdl.
 ; ; AO (2003-08-29) END
 
-pp-frag-rule := pp-frag-rule-type.
+;pp-frag-rule := pp-frag-rule-type.
 
 ;np-quest-frag-rule := np-quest-frag-rule-type & [ARGS < j-sign  , j-sign > ].
 
-np-quest-frag-rule := np-quest-frag-rule-type &
-		      [ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head,
-						  VAL saturated]]],
-			      [SYNSEM.LOCAL.CAT.HEAD s-end_head & [SMOD quest]] >].
+;np-quest-frag-rule := np-quest-frag-rule-type &
+;		      [ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head,
+;						  VAL saturated]]],
+;			      [SYNSEM.LOCAL.CAT.HEAD s-end_head & [SMOD quest]] >].
 
 ; (TT 2003-09-05)
 
-adv-frag-rule := adv-frag-rule-type.
-na-adj-frag-rule := na-adj-frag-rule-type.
+;adv-frag-rule := adv-frag-rule-type.
+;na-adj-frag-rule := na-adj-frag-rule-type.
 
 
 ; (ERB 2001-11-14) Unary rule to bind off QUE values in embedded
@@ -1068,11 +1085,13 @@ embedded-question-rule := embedded-question-rule-type &
 
 ; (MS 2003-09-03) Reactivated this rule.
 ;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
+; (MS 2004-06-25) Linked the XARG to its nonhead-dtr index. No conjunctions should go into this (C-MOD null).
 
 empty-cop-id-rule := empty-head-type &
 		     [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
 					      [H-TENSE present,
 					       MODUS indicative,
+					       SMOD #smod,
 					       MARK null,
 					       MOD null,
 					       J-SPEC null,
@@ -1085,23 +1104,27 @@ empty-cop-id-rule := empty-head-type &
 						COMPS null,
 						SPR null]],
 				     CONT.HOOK [LTOP #top,
+						XARG #argind,
 						INDEX #ind],
 				    CTXT.BACKGROUND <! !>],
 			      NON-LOCAL [QUE <! !>,
-					 ROBUST +]],
+					 ROBUST +],
+			      MODIFIED notmod],
 		      C-CONT [RELS <! equal-relation &
-				     [PRED 'cop_id_rel,
+				     [PRED 'unknown_rel,
 				      LBL #top,
-				      ARG2 #objind,
+				      ARG1 #argind,
 				      ARG0 #ind & [E [TENSE present]]] !>,
 			      HCONS <! !>],
 		      HEAD-DTR.SYNSEM.LOCAL.CONT [RELS <! !>,
 						  HCONS <! !>],
 		      INFLECTED +,
 		      J-NEEDS-AFFIX -,
-		      ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head,
+		      ARGS < [SYNSEM.LOCAL [CAT [HEAD final_head & [EMPTY -,
+								    C-MOD null,
+								    SMOD #smod],
 						  VAL saturated],
-					     CONT.HOOK.INDEX #objind]] >].
+					     CONT.HOOK.INDEX #argind]] >].
 
 
 
@@ -1116,14 +1139,12 @@ empty-copula-rule := empty-head-type &
 					       EMPTY +,
 					       H-TENSE present,
 					       MODUS indicative],
-					 VAL obj-arg & 
-					      [UNSAT -,
-					       COMPS.FIRST #objval & [LOCAL [CONT [HOOK [INDEX #ind,
-											 LTOP #hand],
-										   RELS #liszt,
-										   HCONS #hcons]],
-								      NON-LOCAL #nloc]]],
-				    CONT [HOOK [INDEX #ind,
+					 VAL [UNSAT -,
+					      SUBJ null,
+					      SPR null,
+					       COMPS null]],
+				    CONT [HOOK [XARG #xarg,
+						INDEX #ind,
 						LTOP #hand],
 					  MOD-IND #ind,
 					  MOD-HAND #hand,
@@ -1136,8 +1157,17 @@ empty-copula-rule := empty-head-type &
 		      INFLECTED +,
 		      J-NEEDS-AFFIX -,
 		      C-CONT.RELS <! !>,
-		      ARGS < [SYNSEM #objval & [LOCAL.CAT [HEAD na-adj_head,
-							   VAL saturated]]] >].
+		      ARGS < [SYNSEM [LOCAL [CAT [HEAD na-adj_head,
+							    VAL saturated],
+						       CONT [HOOK [XARG #xarg,
+								   INDEX #ind,
+								   LTOP #hand],
+							     RELS #liszt,
+							     HCONS #hcons]],
+						NON-LOCAL #nloc]] >].
+
+
+
 
 quasi-morph-rule := binary-basic &
 		    [SYNSEM [LOCAL [CAT [HEAD #head,

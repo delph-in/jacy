@@ -29,6 +29,7 @@ j-head :=    head &
           VN bool,
           ADJ bool,
           LIGHT bool,
+	  EMPTY bool,
           MAIN-PRD bool,
           COP-ARG bool,
           MODUS mood].

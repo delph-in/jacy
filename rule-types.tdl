@@ -110,10 +110,10 @@ binary-type-conj := binary-modification-type &
 					VAL #val],
 				   CONT [MOD-IND #ind,
 					 MOD-HAND #hand]],
-		     ARGS <  [LMORPH-BIND-TYPE #lmorph] ,
+		     ARGS <  [LMORPH-BIND-TYPE #lmorph,
+			      SYNSEM.LOCAL.CONT.HOOK.INDEX #ind] ,
 			     [RMORPH-BIND-TYPE #rmorph,
-			      SYNSEM.LOCAL [CONT [MOD-IND #ind,
-						  MOD-HAND #hand],
+			      SYNSEM.LOCAL [CONT [MOD-HAND #hand],
 					    CAT [HEAD #head,
 						 VAL #val]]]
 			     > ].
@@ -272,10 +272,12 @@ basic-head-complement-type := orth-princ &
 					      NUCL #nucl]],
 			       C-CONT [RELS <! !>,
 				       HCONS <! !>],
-			       NON-HEAD-DTR j-sign & [J-NEEDS-AFFIX -],
+			       NON-HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+						      SYNSEM.LOCAL.CAT.HEAD.EMPTY #empt],
 			       HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
 						  SYNSEM [MODIFIED.PERIPH #p,
-							  LOCAL [CONT [MOD-IND #ind,
+							  LOCAL [CAT.HEAD.EMPTY #empt,
+								 CONT [MOD-IND #ind,
 								       MOD-HAND #top],
 								 NUCL #nucl]]]].
 head-complement-type := basic-head-complement-type &
@@ -377,6 +379,7 @@ head-complement2-type := basic-head-complement-type &
 ; compounds are head-adjunct rules, and I crucially want them to
 ; be [NUCL +]...  Moving this constraint to subtypes.
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
+; (MS 2004-06-25) XARG should come from Head-Dtr
 
 
 head-adjunct-rule-type := adjacent_head_check & orth-princ &
@@ -384,7 +387,8 @@ head-adjunct-rule-type := adjacent_head_check & orth-princ &
                           head-adjunct-p &
                           affix-list &
                           [J-NEEDS-AFFIX -,
-                           SYNSEM [LOCAL [ CONT [HOOK.INDEX #ind,
+                           SYNSEM [LOCAL [ CONT [HOOK [INDEX #ind,
+						       XARG #xarg],
 						 MSG #ms],
                                            CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
 					   CAT [VAL #val]],
@@ -392,7 +396,8 @@ head-adjunct-rule-type := adjacent_head_check & orth-princ &
 				   LEX -,
                                    MODIFIED hasmod & [PERIPH #periph]],
                            HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
-                                            SYNSEM [ LOCAL [ CONT [HOOK.INDEX #ind,
+                                            SYNSEM [ LOCAL [ CONT [HOOK [INDEX #ind,
+									 XARG #xarg],
 								  MSG #ms],
 							     CTXT.BACKGROUND [ LIST #1,
                                                                                LAST #3 ],
@@ -410,7 +415,7 @@ head-adjunct-rule-type := adjacent_head_check & orth-princ &
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
 
 
-head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check & orth-princ &
+head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check &  orth-princ &
 					 head-adjunct-p &
 					 affix-list &
                           [J-NEEDS-AFFIX -,
@@ -445,8 +450,7 @@ rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
 		       [SYNSEM [LOCAL [BAR +,
 				      NUCL nucl_minus,
 				      CONT [MOD-IND #ind,
-					    MOD-HAND #top]],
-				NON-LOCAL.UNDERSPEC_ARG -],
+					    MOD-HAND #top]]],
 			C-CONT [RELS <!   message  & 
  				       [PRED proposition_m_rel,
 					LBL #top,
@@ -454,7 +458,8 @@ rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
 				HCONS <! qeq & [HARG #soa,
 						LARG #adjhand] !>],
 			ARGS <[SYNSEM [LOCAL [CAT [HEAD [J-POSTHEAD rels,
-							 MAIN-PRD bool]],
+							 MAIN-PRD bool],
+						   VAL.SPR olist],
 					      CONT.HOOK [LTOP #adjhand],
 					      BAR +,
 					      NUCL not_fin_conj]]],
@@ -597,12 +602,16 @@ ARGS < [SYNSEM.LOCAL [CONT.HOOK.LTOP #lhand]],
 ; (ERB 2002-01-24) Restrict right daughter to [NUCL not_fin_conj] to force
 ; one order of composition in sentences with multiple conjunctions.
 
+; (MS 2004-06-22) Taken out the restriction on [NUCL fin_conj] to try if that
+;  adds massive spurious ambiguity or just corrections.
+
+
 conj-rule-type :=  binary-type-conj & 
                   [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #ctxt1, LAST #ctxt2],
                                  CONT [ HOOK [INDEX #index,
 					      LTOP #handle] ],
 				 CAT.VAL #val,
-                                 NUCL fin_conj]],
+                                 NUCL nucl]],
                    J-NEEDS-AFFIX -,
                    C-CONT [RELS <! !>,
                            HCONS <! !>],
@@ -694,7 +703,7 @@ head-marker-rule := binary &
 
 empty-head-type :=  headed-phrase & j-sign &
                    [SYNSEM [LOCAL [CTXT #1,
-                                   CAT.HEAD #head,
+                                   CAT.HEAD #head & [EMPTY +],
                                    CONT [HOOK.LTOP #hand,
 					 RELS [LIST #firstliszt,
 					       LAST #lastliszt],
@@ -775,18 +784,18 @@ empty-conjunction-type :< empty-preposition-type.
 ; back off).  We probably need to identify some labels in here,
 ; but I'm not inclined to figure it out right now.
 
-empty-cardinal-numcl-type := empty-head-type &
-[ SYNSEM [ LOCAL.CAT.VAL saturated,
-	  LEX + ],
-   C-CONT [RELS <! arg12-relation &
-                   [ PRED 'named_rel,
-		     ARG1 #noun,
-		     ARG2 #card ] !>,
-	   HCONS <! !>],
-  HEAD-DTR num-cl-obj-only-nmod-ind-lex-super &
-           [ SYNSEM [ LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CONT.HOOK.LTOP #card,
-				  HEAD [MOD < [LOCAL [BAR -,
-						      CONT.MOD-IND #noun]] > ]]]]].
+;empty-cardinal-numcl-type := empty-head-type &
+;[ SYNSEM [ LOCAL.CAT.VAL saturated,
+;	  LEX + ],
+;   C-CONT [RELS <! arg12-relation &
+;                   [ PRED 'named_rel,
+;		     ARG1 #noun,
+;		     ARG2 #card ] !>,
+;	   HCONS <! !>],
+;  HEAD-DTR num-cl-obj-only-nmod-ind-lex-super &
+;           [ SYNSEM [ LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CONT.HOOK.LTOP #card,
+;				  HEAD [MOD < [LOCAL [BAR -,
+;						      CONT.MOD-IND #noun]] > ]]]]].
 
 
 
@@ -1889,22 +1898,22 @@ adv_np_rule-type := unary-type &
 ; Comment will be added.
 
 
-np-frag-rule-type := unary-type &
-[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-                            [ MOD null,
-                              QUANTIFIABLE -,
-                              SMOD marked ],
-                       VAL saturated ],
-                 CONT [ RELS #liszt,
-                        HCONS #h-cons,
-                        HOOK.INDEX #index ],
-                 NUCL nucl_minus ],
-	  LEX -],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD noun_head,
-                                VAL saturated ],
-                          CONT [ RELS #liszt,
-                                 HCONS #h-cons,
-                                 HOOK.INDEX #index ]]].
+;np-frag-rule-type := unary-type &
+;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+;                            [ MOD null,
+;                              QUANTIFIABLE -,
+;                              SMOD marked ],
+;                       VAL saturated ],
+;                 CONT [ RELS #liszt,
+;;                        HCONS #h-cons,
+;                        HOOK.INDEX #index ],
+;                 NUCL nucl_minus ],
+;	  LEX -],
+;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD noun_head,
+;                                VAL saturated ],
+;                          CONT [ RELS #liszt,
+;                                 HCONS #h-cons,
+;                                 HOOK.INDEX #index ]]].
 
 
 
@@ -1930,78 +1939,78 @@ number-frag-rule-type := unary-type &
 ;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD topic-vmod-p_head, into vmod-p_head
 
 
-pp-frag-rule-type := unary-type &
-[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-                            [ MOD null,
-                              SMOD marked ],
-                       VAL saturated ],
-                 CONT [ RELS #liszt,
-                        HCONS #h-cons,
-                        HOOK.INDEX #index ],
-                 NUCL nucl_minus ],
-	  LEX -],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
-                                VAL saturated ],
-                          CONT [ RELS #liszt,
-                                 HCONS #h-cons,
-                                 HOOK.INDEX #index ]]].
+;pp-frag-rule-type := unary-type &
+;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+;                            [ MOD null,
+;                              SMOD marked ],
+;                       VAL saturated ],
+;                 CONT [ RELS #liszt,
+;                        HCONS #h-cons,
+;                        HOOK.INDEX #index ],
+;                 NUCL nucl_minus ],
+;	  LEX -],
+;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
+;                                VAL saturated ],
+;                          CONT [ RELS #liszt,
+;                                 HCONS #h-cons,
+;                                 HOOK.INDEX #index ]]].
 
 
 ; (ERB 2002-01-14) This is overgenerating to cases of NP + Sentence ending
 ; in KA.  Try restricting second daughter to being LEX +.
 
-np-quest-frag-rule-type := binary-cont-final-type &
-[SYNSEM [LOCAL [CAT [HEAD utterance_head &
-			  [MOD null,
-			   SMOD quest],
-		     VAL saturated],
-		NUCL nucl_minus],
-	 LEX -], 
- C-CONT [RELS <! [PRED 'cop-id_rel,
-		  LBL #h,
-		  ARG1 #index] !>,
-	 HCONS <! !>],
- ARGS < [SYNSEM.LOCAL.CONT.HOOK.INDEX #index],
-          [SYNSEM [ LOCAL.CONT.HCONS.LIST.FIRST.LARG #h,
-                                  LEX + ]] >].
+;np-quest-frag-rule-type := binary-cont-final-type &
+;[SYNSEM [LOCAL [CAT [HEAD utterance_head &
+;			  [MOD null,
+;			   SMOD quest],
+;		     VAL saturated],
+;		NUCL nucl_minus],
+;	 LEX -], 
+; C-CONT [RELS <! [PRED 'cop-id_rel,
+;		  LBL #h,
+;		  ARG1 #index] !>,
+;	 HCONS <! !>],
+; ARGS < [SYNSEM.LOCAL.CONT.HOOK.INDEX #index],
+;          [SYNSEM [ LOCAL.CONT.HCONS.LIST.FIRST.LARG #h,
+;                                  LEX + ]] >].
 
 ; (TT 2003-09-05) allow 「全然。」
 ;  this rule type is based on np-frag-rule-type
-adv-frag-rule-type := unary-type &
-[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-                            [ MOD null,
-                              QUANTIFIABLE -,
-                              SMOD marked ],
-                       VAL saturated ],
-                 CONT [ RELS #liszt,
-                        HCONS #h-cons,
-                        HOOK.INDEX #index ],
-                 NUCL nucl_minus ],
-	  LEX -],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD adv_head,
-                                VAL saturated ],
-                          CONT [ RELS #liszt,
-                                 HCONS #h-cons,
-                                 HOOK.INDEX #index ]]].
-
+;adv-frag-rule-type := unary-type &
+;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+;                            [ MOD null,
+;                              QUANTIFIABLE -,
+;                              SMOD marked ],
+;                       VAL saturated ],
+;                 CONT [ RELS #liszt,
+;                        HCONS #h-cons,
+;                        HOOK.INDEX #index ],
+;                 NUCL nucl_minus ],
+;	  LEX -],
+;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD adv_head,
+;                                VAL saturated ],
+;                          CONT [ RELS #liszt,
+;                                 HCONS #h-cons,
+;                                 HOOK.INDEX #index ]]].
+;
 ; (TT 2003-09-05) allow 「便利。」
 ;  this rule type is based on np-frag-rule-type
-na-adj-frag-rule-type := unary-type &
-[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-                            [ MOD null,
-                              QUANTIFIABLE -,
-                              SMOD marked ],
-                       VAL saturated ],
-                 CONT [ RELS #liszt,
-                        HCONS #h-cons,
-                        HOOK.INDEX #index ],
-                 NUCL nucl_minus ],
-	  LEX -],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD na-adj_head,
-                                VAL saturated ],
-                          CONT [ RELS #liszt,
-                                 HCONS #h-cons,
-                                 HOOK.INDEX #index ]]].
+;na-adj-frag-rule-type := unary-type &
+;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+;                            [ MOD null,
+;                              QUANTIFIABLE -,
+;                              SMOD marked ],
+;                       VAL saturated ],
+;                 CONT [ RELS #liszt,
+;                        HCONS #h-cons,
+;                        HOOK.INDEX #index ],
+;                 NUCL nucl_minus ],
+;	  LEX -],
+;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD na-adj_head,
+;                                VAL saturated ],
+;                          CONT [ RELS #liszt,
+;                                 HCONS #h-cons,
+;                                 HOOK.INDEX #index ]]].
 
 
 ; (ERB 2001-10-29) Added type to KEY in output of this rule,
