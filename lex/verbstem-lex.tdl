@@ -11,14 +11,13 @@
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
 ;;;Melanie Siegel (MS)|             |Emily Bender (ERB), Francis Bond (FCB), 
-;;;                   |             |(SF), (TT)
+;;;                   |             |Sanae Fujita (SF), Takaaki Tanaka (TT)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 ;;;;;;;;;;;;;C2:K;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 
 aku-stem := intrans-c-stem-lex &
@@ -5469,6 +5468,196 @@ yousuru-stem := v1-kurusuru-stem-lex &
          NON-LOCAL.QUE <! !>],
 ORTH <! "要する" !> ].
 
+; 接する 
+; Used 6 times
+
+sessuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sessuru_2,
+ ORTH <! "接する" !> ].
+
+; 絶する 
+
+zessuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'zessuru_2,
+ ORTH <! "絶する" !> ].
+
+; 脱する 
+
+dassuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dassuru_2,
+ ORTH <! "脱する" !> ].
+
+; 熱する 
+; Used 1 times
+
+nessuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nessuru_2,
+ ORTH <! "熱する" !> ].
+
+; 発する 
+; Used 20 times
+
+hassuru_2_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hassuru_2_1,
+ ORTH <! "発する" !> ].
+
+; 服する 
+
+fukusuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'fukusuru_2,
+ ORTH <! "服する" !> ].
+
+; 没する 
+; Used 1 times
+
+bossuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'bossuru_2,
+ ORTH <! "没する" !> ].
+
+; 決する 
+; Used 2 times
+
+kessuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kessuru_2,
+ ORTH <! "決する" !> ].
+
+; 恋する 
+; Used 1 times
+
+koisuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'koisuru_2,
+ ORTH <! "恋する" !> ].
+
+; 生ずる 
+; Used 3 times
+
+shouzuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shouzuru_2,
+ ORTH <! "生ずる" !> ].
+
+; 案ずる 
+
+anzuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'anzuru_1,
+ ORTH <! "案ずる" !> ].
+
+; 意味する 
+; Used 3 times
+
+imisuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'imisuru_1,
+ ORTH <! "意味する" !> ].
+
+; 演ずる 
+; Used 2 times
+
+enzuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'enzuru_1,
+ ORTH <! "演ずる" !> ].
+
+; 害する 
+
+gaisuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'gaisuru_1,
+ ORTH <! "害する" !> ].
+
+; 禁ずる 
+
+kinzuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kinzuru_1,
+ ORTH <! "禁ずる" !> ].
+
+; 察する 
+
+sassuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sassuru_1,
+ ORTH <! "察する" !> ].
+
+; 制する 
+
+seisuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'seisuru_1,
+ ORTH <! "制する" !> ].
+
+; 損する 
+
+sonsuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sonsuru_1,
+ ORTH <! "損する" !> ].
+
+; 念ずる 
+
+nenzuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nenzuru_1,
+ ORTH <! "念ずる" !> ].
+
+; 罰する 
+; Used 3 times
+
+bassuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'bassuru_1,
+ ORTH <! "罰する" !> ].
+
+; 欲する 
+; Used 1 times
+
+hossuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hossuru_1,
+ ORTH <! "欲する" !> ].
+
+; 命ずる 
+
+meizuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'meizuru_1,
+ ORTH <! "命ずる" !> ].
+
+; 有する 
+; Used 1 times
+
+yuusuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yuusuru_1,
+ ORTH <! "有する" !> ].
+
+; 略する 
+
+ryakusuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ryakusuru_1,
+ ORTH <! "略する" !> ].
+
+; 論ずる 
+; Used 1 times
+
+ronzuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ronzuru_1,
+ ORTH <! "論ずる" !> ].
+
+;<LF> ; 訳す 
+
+yakusu_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yakusu_1,
+ ORTH <! "訳す" !> ].
+
+
+; 蝕する 
+
+shokusuru_2 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shokusuru_2,
+ ORTH <! "蝕する" !> ].
+
+; 食する 
+
+shokusuru_2_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shokusuru_2_1,
+ ORTH <! "食する" !> ].
+
+
+
+; 全うする 
+
+mattousuru_1 := v1-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'mattousuru_1,
+ ORTH <! "全うする" !> ].
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ai-inf-word := v2-infinitive-stem-lex &
@@ -5492,9 +5681,6 @@ tsudukeru-syntactic-vv-stem := syntactic-vv-v-stem-lex &
 jukusu_2 := intrans-c-stem-lex &
 [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jukusu_2,
  ORTH <! "熟す" !> ].
-
-
-
 
 ; あがく 
 
@@ -9557,7 +9743,195 @@ aitaisuru_1 := intrans-kurusuru-stem-lex &
 [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'aitaisuru_1,
  ORTH <! "相対する" !> ].
 
+;;;
+;;; (FCB 2003-12-06) Added a few v2-kurusuru-stem-lex
+;;; For some of them, the ni-kaku is arguably an adjunct 
+;;;
 
+; 発する 
+; Used 20 times
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+hassuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hassuru_1,
+ ORTH <! "発する" !> ].
+
+; 反する 
+; Used 5 times
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+hansuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'hansuru_1,
+ ORTH <! "反する" !> ].
+
+; 接する 
+; Used 6 times
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+sessuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'sessuru_1,
+ ORTH <! "接する" !> ].
+
+; 準ずる 
+
+junzuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'junzuru_1,
+ ORTH <! "準ずる" !> ].
+
+; 属する 
+; Used 23 times
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+zokusuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'zokusuru_1,
+ ORTH <! "属する" !> ].
+
+; 関する 
+; Used 1 times
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+kansuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'kansuru_1,
+ ORTH <! "関する" !> ].
+
+;<LF> ; 対する 
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+taisuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'taisuru_1,
+ ORTH <! "対する" !> ].
+
+; 適する 
+; Used 6 times
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+tekisuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tekisuru_1,
+ ORTH <! "適する" !> ].
+
+
+; 値する 
+; Used 1 times
+; SF (2003-08-28) intrans-kurusuru-stem-lex -> v2-kurusuru-stem-lex 
+
+ataisuru_1 := v2-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ataisuru_1,
+ ORTH <! "値する" !> ].
+
+
+; やって来る 
+; Used 1 times
+
+yattekuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'yattekuru_1,
+ ORTH <! "やって来る" !> ].
+
+
+
+; 甘んずる 
+
+amanzuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'amanzuru_1,
+ ORTH <! "甘んずる" !> ].
+
+; 応ずる 
+
+ouzuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'ouzuru_1,
+ ORTH <! "応ずる" !> ].
+
+
+;<LF> ; 幸いする 
+
+;<LF> saiwaisuru_1 := intrans-kurusuru-stem-lex &
+;<LF> [SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'saiwaisuru_1,
+;<LF>  ORTH <! "幸いする" !> ].
+
+; 熟する 
+; Used 1 times
+
+jukusuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jukusuru_1,
+ ORTH <! "熟する" !> ].
+
+; 徹する 
+
+tessuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tessuru_1,
+ ORTH <! "徹する" !> ].
+
+; 得する 
+
+tokusuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tokusuru_1,
+ ORTH <! "得する" !> ].
+
+; 涙する 
+
+namidasuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'namidasuru_1,
+ ORTH <! "涙する" !> ].
+
+
+; 熟す 
+; Used 5 times
+
+jukusu_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'jukusu_1,
+ ORTH <! "熟す" !> ].
+
+; 絶する 
+
+zessuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'zessuru_1,
+ ORTH <! "絶する" !> ].
+
+; 脱する 
+
+dassuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'dassuru_1,
+ ORTH <! "脱する" !> ].
+
+; 熱する 
+; Used 1 times
+
+nessuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'nessuru_1,
+ ORTH <! "熱する" !> ].
+
+; 服する 
+
+fukusuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'fukusuru_1,
+ ORTH <! "服する" !> ].
+
+; 没する 
+; Used 1 times
+
+bossuru_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'bossuru_1,
+ ORTH <! "没する" !> ].
+
+
+; 食する 
+
+shokusuru_3 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'shokusuru_3,
+ ORTH <! "食する" !> ].
+
+; たむろする 
+
+tamurosuru_1_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'tamurosuru_1,
+ ORTH <! "たむろする" !> ].
+
+; 相対する 
+
+aitaisuru_1_1 := intrans-kurusuru-stem-lex &
+[SYNSEM.LOCAL.LKEYS.--KEYREL.PRED 'aitaisuru_1,
+ ORTH <! "相対する" !> ].
+
+;;;;;;;;;;;;;;;;;; Intransitive c-stem ;;;;;;;;;;;;;;;
 
 ; 染み渡る 
 
