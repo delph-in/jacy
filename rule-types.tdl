@@ -98,7 +98,7 @@ binary-cont-first-type := binary &
 		       j-sign >].
 
 
-binary-modification-type := affix-list & orth-princ & basic-binary-phrase & que-princ.
+binary-modification-type := affix-list & orth-princ & basic-binary-phrase & que-princ & speaker-addr-principle.
 
 
 binary-type-mod := binary-modification-type & binary-headed-phrase &
@@ -143,8 +143,8 @@ unary-type-super :=   phrasal_sign &
                                              LAST #sclast]]],
 			LEX -,
 			NON-LOCAL #nonloc],
-		ORTH #stem,
-                C-CONT mrs & [HOOK #hook,
+ 		ORTH #stem,
+               C-CONT mrs & [HOOK #hook,
                               RELS diff-list & [LIST #list,
                                                    LAST #middle],
                               HCONS diff-list & [LIST #sclist,
@@ -165,7 +165,7 @@ unary-type-super :=   phrasal_sign &
 unary-type := unary-type-super &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL optional-or-saturated ].
 
-head-final-type := binary-headed-phrase &	
+head-final-type := binary-headed-phrase & speaker-addr-principle &	
             [SYNSEM [NON-LOCAL [ROBUST #rob,
 				UNDERSPEC_ARG #uarg],
 		      LOCAL.CTXT.BACKGROUND [LIST #list,
@@ -184,6 +184,7 @@ head-final-type := binary-headed-phrase &
 
 head-initial-type := binary-headed-phrase &
                      affix-list &
+		     speaker-addr-principle &
             [SYNSEM [NON-LOCAL [ROBUST #rob,
 				UNDERSPEC_ARG #uarg],
 		     LOCAL.CTXT.BACKGROUND [LIST #list,
@@ -223,6 +224,7 @@ head-final-type-mod := binary-type-mod &
 
 head-first-type := binary-headed-phrase &	
                    affix-list &
+		   speaker-addr-principle &
                    [SYNSEM [LOCAL.CAT.VAL #val],
                     NON-HEAD-DTR #nh-dtr,
                     HEAD-DTR #head-dtr & [SYNSEM.LOCAL.CAT.VAL #val],
@@ -235,7 +237,7 @@ head-first-type := binary-headed-phrase &
 
 head-subject-rule := head-final-type & 
 		     orth-princ &
-                      scp-sbj & 
+		     scp-sbj & 
 		     que-princ &
                       adjacent_subjbind_check &
                      adjacent_nonhead_check &
@@ -263,14 +265,15 @@ head-subject-rule := head-final-type &
 ; (MS 2003-07-23) Cleaning this up.
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
 
-basic-head-complement-type := orth-princ & 
+basic-head-complement-type := orth-princ &
 			      que-princ &
 			      adjacent_nonhead_check &
+			      speaker-addr-principle &
 			      affix-list &
 			      [SYNSEM [MODIFIED.PERIPH #p,
 				       LEX -,
 				       LOCAL [CONT.HOOK [INDEX #ind,
-						    LTOP #top],
+							 LTOP #top],
 					      NUCL #nucl]],
 			       C-CONT [RELS <! !>,
 				       HCONS <! !>],
@@ -387,6 +390,7 @@ head-complement2-type := basic-head-complement-type &
 head-adjunct-rule-type := adjacent_head_check & orth-princ &
                           adjacent_nonhead_check &
                           head-adjunct-p &
+			  speaker-addr-principle &
                           affix-list &
                           [J-NEEDS-AFFIX -,
                            SYNSEM [LOCAL [ CONT [HOOK [INDEX #ind,
@@ -417,8 +421,9 @@ head-adjunct-rule-type := adjacent_head_check & orth-princ &
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
 
 
-head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check &  orth-princ &
+head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check & orth-princ &
 					 head-adjunct-p &
+					 speaker-addr-principle &
 					 affix-list &
                           [J-NEEDS-AFFIX -,
                            SYNSEM [LOCAL [ CONT [HOOK.INDEX #ind,
@@ -555,7 +560,7 @@ hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-fina
 ; (ERB 2002-01-29) That constraint is too strong for runon_s rule,
 ; so move to head-adjunct-rule-coord-type.
 
-sentence-coord-type :=  binary-type-conj &
+sentence-coord-type :=  binary-type-conj & 
 			[SYNSEM [LOCAL [CONT [HOOK [INDEX #i,
 						    LTOP #hand]],
 	       CAT.VAL #val,
@@ -640,19 +645,6 @@ conj-rule-type :=  binary-type-conj &
 				 J-NEEDS-AFFIX -] > ].
 
 
-;head-specifier-rule-type :=  head-final-type & 
-;			     orth-princ &
-;                             scp-spec & 
-;			     que-princ &
-;                             affix-list &
-;                        [C-CONT [RELS <! !>,
-;                                 HCONS <! !>],
-;			 RMORPH-BIND-TYPE #rmorph,
-;                         HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD #4]],
-;					   MODIFIED.PERIPH #per],
-;				      RMORPH-BIND-TYPE #rmorph],
-;                         NON-HEAD-DTR [SYNSEM [LOCAL [CAT.HEAD [J-SPEC < j-synsem & [LOCAL [CAT.HEAD #4],
-;									      MODIFIED.PERIPH #per] > ]]]]].
 
 head-specifier-rule-type :=  head-final-type & 
 			     orth-princ &
@@ -677,6 +669,7 @@ head-specifier-rule-type :=  head-final-type &
 head-marker-rule := binary & 
                     scp-marking & 
                    affix-list &
+		    speaker-addr-principle &
                     [SYNSEM.LOCAL [CAT [VAL #val,
                                         HEAD.FORMAL.SHON #sh],
 	                           CONT.HOOK [INDEX #ind,
@@ -1366,6 +1359,7 @@ adj2v-rule := intrans-v-stem-lex &
              [SYNSEM.LKEYS.KEYREL.PRED #rel,
             ARGS < i-adj-stem-lex & [SYNSEM.LKEYS.KEYREL.PRED #rel]>].    
 
+
 adj2n-rule := ordinary-nohon-n-lex &
             [SYNSEM [LKEYS.KEYREL.PRED #rel,
 		     LOCAL.BAR +],
@@ -1373,7 +1367,7 @@ adj2n-rule := ordinary-nohon-n-lex &
             ORTH #stem,
             ARGS < i-adj-stem-lex & [ORTH #stem,
 				     SYNSEM.LKEYS.KEYREL.PRED #rel,
-				     INFLECTED -]>].  
+				     INFLECTED -]>].   
 
 v2vn-rule := j-lexeme-to-word-rule &
              [LMORPH-BIND-TYPE #morph,
@@ -1616,7 +1610,7 @@ subj-casechange-rule := phrasal_sign & headed-phrase & lex-rule &
                                        BAR #bar_h],
 				 LEX #lex_h,
                                 NON-LOCAL #nonloc_h],
-			ORTH #stem,
+			 ORTH #stem,
 			 NEEDS-AFFIX #aff,
 			 J-NEEDS-AFFIX #aff,
                         HEAD-DTR #hdtr & [SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & [FIRST [OPT bool,
@@ -1821,9 +1815,8 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 ; ERB (2001-09-24) Overhauling the date expressions.  They will be
 ; nouns to start with, so we don't need this.
 
-
 numcl2noun-rule-type :=  ordinary-nohon-n-lex &
-                         [SYNSEM.LKEYS [KEYREL.PRED 'numcl],
+                         [SYNSEM.LKEYS.KEYREL.PRED 'numcl,
                           INFLECTED +,
                           ORTH #stem,
                           ARGS < spr-only-num-cl-lex & [ORTH #stem]>].   
@@ -2046,8 +2039,8 @@ na2adv-rule :=  lexical_sign-word & lex-rule &
              INFLECTED +,
              NEEDS-AFFIX -,
              J-NEEDS-AFFIX -,
-             ORTH #stem,
-            ARGS < [SYNSEM.LOCAL.CAT.HEAD na-adj-basic_head,
+              ORTH #stem,
+           ARGS < [SYNSEM.LOCAL.CAT.HEAD na-adj-basic_head,
 		    ORTH #stem] > ].    
 
 ; (ERB 2001-11-14) Unary rule to bind off QUE values in embedded
@@ -2162,8 +2155,10 @@ cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
 		ARGS < card-lex & [SYNSEM.LOCAL.CONT.RELS.LIST.REST.FIRST times-relation & [LBL #term1]] >,
 		INFLECTED +].
 
+; (MS 2005-03-30) This shouldn't allow copula in the second arg.
+
 vstem-vstem-rule-type := head-final-type & 
-		    orth-princ &
+			 orth-princ &
 			 que-princ &
 		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
 				    BAR -],
@@ -2177,7 +2172,8 @@ vstem-vstem-rule-type := head-final-type &
 						   BAR -],
 					    LEX +],
 				   RMORPH-BIND-TYPE #im & i-morph],
-		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -,
+								       COP -],
 						   VAL.UNSAT +],
 					      CONT.HOOK.XARG #arg1,
 					      BAR -],
@@ -2188,7 +2184,7 @@ vstem-vstem-rule-type := head-final-type &
  			       RMORPH-BIND-TYPE #rmorphbind]].
 
 adj-nominal-suffix-type := head-final-type & 
-			   orth-princ &
+			     orth-princ &
 			   [SYNSEM.LOCAL [CAT [HEAD noun_head &
 						    [SMOD unmarked],
 					       VAL spr-arg & [ UNSAT -]]

@@ -167,20 +167,26 @@ sat-check-binary:=  binary & [ARGS [FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ olist,
 ;shinai to ikemaseN
 
 ; (MS 2003-07-15) Not used any more.
+; (MS 2005-03-09) But we need to propate this information for, e.g. jibun!
 
-;speaker-addr-principle := binary & [SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
-;                                                                  SPEAKER #2],
-;                                                       EMPATHY [EMPER #sp,
-;                                                                EMPEE #emp]],
-;                             NON-HEAD-DTR.SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
-;                                                                      SPEAKER #2],
-;                                                            EMPATHY [EMPER #sp,
-;                                                                     EMPEE #emp]],
-;                             HEAD-DTR.SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
-;                                                                   SPEAKER #2],
-;                                                         EMPATHY [EMPER #sp,
-;                                                                  EMPEE #emp]]].
-;
+speaker-addr-principle := phrasal_sign & [SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #add,
+                                                                  SPEAKER #sp],
+                                                       EMPATHY [EMPER #sp,
+                                                                EMPEE #emp]],
+                             ARGS < [SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #add,
+                                                                      SPEAKER #sp],
+                                                            EMPATHY [EMPER #sp,
+                                                                     EMPEE #emp]]],
+				    [SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #add,
+									    SPEAKER #sp],
+								 EMPATHY [EMPER #sp,
+									  EMPEE #emp]]] >].
+
+;speaker-addr-principle := binary & [SYNSEM.LOCAL.CTXT [EMPATHY [EMPEE #emp]],
+;                             NON-HEAD-DTR.SYNSEM.LOCAL.CTXT [EMPATHY [EMPEE #emp]],
+;                             HEAD-DTR.SYNSEM.LOCAL.CTXT [EMPATHY [EMPEE #emp]]].
+
+
 ; (MS 2003-07-15) Not used any more.
 
 ;speaker-addr-principle-unary  := unary-type & [SYNSEM.LOCAL.CTXT [C-INDICES [ADDRESSEE #1,
@@ -231,6 +237,7 @@ liszt-princ := phrasal_sign &
                                                  HCONS [LIST #scmiddle1,
                                                          LAST #scmiddle2]]]]] > ].
 
+
 que-princ := phrasal_sign & 
 	     [ SYNSEM.NON-LOCAL.QUE [ LIST #firstque,
 				      LAST #lastque ],
@@ -238,3 +245,4 @@ que-princ := phrasal_sign &
 					      LAST #middleque ]],
 		      [SYNSEM.NON-LOCAL.QUE [ LIST #middleque,
 					      LAST #lastque ]]> ].
+

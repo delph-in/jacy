@@ -604,7 +604,7 @@ ga-2 := ga-wo-ni-p-lex-2 &
 ;"watakushi ga juuniji ni kaigi ga owarimasu"
 ; (MS 2003-01-16) restricted to the cases, where the subject is saturated and no zero pronoun. therefore, I inserted the zpro_ref-ind to ARG1 in the zpro insertion rules (infl.tdl)
 
-ga-top := topic-vmod-p-lex &
+ga-top := plain-topic-nobj-lex &
        [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
 			   HEAD [PTYPE topic,
 				 MOD < [LOCAL [CAT [VAL [UNSAT -,
@@ -1560,7 +1560,7 @@ sonota := postp-lex &
           ORTH <! "¤½¤Î¤¿" !>].
 
 
-sura-p-nobj := topic-vmod-p-lex &
+sura-p-nobj := plain-topic-nobj-lex &
            [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
                               HEAD [PTYPE shika,
                                     MOD < [LOCAL.CAT.HEAD.MODUS negative] >]],

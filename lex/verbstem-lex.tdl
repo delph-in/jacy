@@ -15623,13 +15623,6 @@ hakobidasu_1 := v1-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hakobidasu_v_1_rel,
  ORTH <! "±¿¤Ó½Ð¤¹" !>].
 
-; Ã¡¤¯ 
-; Used 8 times
-
-hataku_1 := v1-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hataku_v_1_rel,
- ORTH <! "Ã¡¤¯" !>].
-
 
 ; Êü¤Ä 
 ; Used 2 times
@@ -19140,6 +19133,10 @@ tsukeru_1 := v1-v-stem-lex &
 
 tsugeru_1 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsugeru_v_1_rel,
+ ORTH <! "¹ð¤²¤ë" !>].
+
+tsugeru_2 := v5-c-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tsugeru_v_2_rel,
  ORTH <! "¹ð¤²¤ë" !>].
 
 ; ÀÑ¤ß¾å¤²¤ë 

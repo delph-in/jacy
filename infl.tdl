@@ -1048,8 +1048,8 @@ numeral-classifier-sbj-float :=
 floated-ind-sbj-num-cl-lex &
 [SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
 	       CONT.RELS #rels],
- ORTH #stem,
- ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
+  ORTH #stem,
+ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
 			   CONT.RELS #rels],
 	     ORTH #stem]].
 
@@ -1057,8 +1057,8 @@ numeral-classifier-obj-float :=
 floated-ind-obj-num-cl-lex &
 [SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
 	       CONT.RELS #rels],
- ORTH #stem,
- ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
+  ORTH #stem,
+ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
 			   CONT.RELS #rels],
 	     ORTH #stem]].
 

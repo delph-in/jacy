@@ -4599,7 +4599,7 @@ pron-thirdsgneut-ref-lex &
 ;		指すものを軽く敬っている
 ;		はたしてこの書き方で動くのか...
 
-achira_1 := pron-thirdsgneutahon-lex &
+achira_1 := pron-thirdsgneutahon-ref-lex &
 [ORTH <! "あちら" !>].
 
 asoko :=
@@ -4664,6 +4664,11 @@ title-pers-honsubj-lex &
 keNkyuushitsu-inst :=
 title-inst-lex &
 [ORTH <! "研究室" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_kenkyuushitsu_n_rel].
+
+keNkyuushitsu-chasen-inst :=
+title-inst-lex &
+[ORTH <! "研究","室" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kenkyuushitsu_n_rel].
 
 keNkyuushitsu-loc :=

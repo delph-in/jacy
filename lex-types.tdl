@@ -355,10 +355,12 @@ name_head-avm := name_head &
 		  VN -,
                   QUANTIFIABLE -].
 
-pn_head :< name_head-avm.
+; (MS 2005-03-15) For documentation purposes, changed pn_head to surname_head
+
+surname_head :< name_head-avm.
 
 
-pn_head-avm := pn_head & 
+surname_head-avm := surname_head & 
                [MOD null,
 		J-POSTHEAD left].
 
@@ -1560,7 +1562,8 @@ ga-wo-ni-p-lex := case-p-lex &
                   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
 
 ga-wo-ni-p-lex-2 := case-p-lex & 
-                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD adv_head].
+                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD adv_head,
+							   CONT.HOOK.INDEX event]].
 
 ;(MS 2002-1-7) restricted this to postpositions, in order to keep NO GA out.
 ; (MS 2004-06-25) INDEX and XARG must be the same, otherwise the phrase cannot be selected for.
@@ -2465,6 +2468,9 @@ possibly-adv-n-lex := ordinary-or-wh-n-lex &
 
 
 ;;; (FCB 2003-08-05) added for mi and sa
+; (MS 2005-03-15) This is not correct: It should take an adjective as argument!
+; FIXME!
+
 adj2n-suffix-lex := n-lex &
 		      [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head-avm &  [J-POSTHEAD right],
 					   VAL noun_sc & [SPR.FIRST #spr]],
@@ -2718,7 +2724,7 @@ person-name-lex := name-lex.
 
 
 surname-lex := person-name-lex & 
-                  [SYNSEM.LOCAL.CAT.HEAD pn_head-avm].
+                  [SYNSEM.LOCAL.CAT.HEAD surname_head-avm].
 
 ippan-name-lex := name-lex & 
                   [SYNSEM.LOCAL.CAT.HEAD ippan_head-avm].
@@ -2737,7 +2743,7 @@ inst_name-lex := name-lex &
                    
 
 agent-name-lex := name-lex & 
-                  [SYNSEM.LOCAL [CAT.HEAD pn_head-avm]].
+                  [SYNSEM.LOCAL [CAT.HEAD surname_head-avm]].
 
 
 product-name-lex := name-lex &
@@ -3840,10 +3846,11 @@ title-lex  := n-lex &
                            NON-LOCAL [QUE <! !>,
                                    AFFIX <! !>]]].                      
                                      
+; (MS 2005-03-15) Institutions can attach to all kinds of names, like 田中大学。
 
 title-inst-lex := title-lex & 
                   [SYNSEM.LOCAL [CAT.VAL.SPR obl-1-arg &
-					     [FIRST [LOCAL [CAT.HEAD inst_name_head]]]]].
+					     [FIRST [LOCAL [CAT.HEAD name_head]]]]].
 
 
 

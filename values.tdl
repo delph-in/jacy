@@ -387,12 +387,13 @@ neut :< gender.
 
 ; (MS 2004-11-30) I want to distinguish between relatives and others,
 ; such that the others don't go into the relative clause rule.
+; (MS 2005-03-29) intersective is not used any more.
 
 posthead :< sort.
 nonrels  :< posthead.
 left :< nonrels.
 right :< nonrels.
-intersective :< nonrels.
+;;intersective :< nonrels.
 rels :< posthead.
 coord :< nonrels.
 

@@ -4133,3 +4133,7 @@ lennon-chasen-surname :=
         [SYNSEM.LKEYS.KEYREL.CARG 'lennon,
          ORTH <! "¥ì","¥Î","¥ó" !>].
 
+naomi :=
+first_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'naomi,
+ORTH <! "Æà½ïÈþ" !>].
