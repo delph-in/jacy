@@ -4390,64 +4390,52 @@ temp_numeral-nonwh-lex &
 
 ;;;;;;;;;;;;;;;;;;;;;;;PRONOUNS;;;;;;;;;;;;;;;;;;;;;;
 
-watakushi := pron-firstsg-ref-lex &
-             [ORTH <! "私" !>,
-              SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+watakushi := pron-firstsgahon-ref-lex &
+             [ORTH <! "私" !>].
 
 ;;;;;;;only spoken language:
 
 atakushi :=
-pron-firstsg-ref-lex &
-[ORTH <! "あたくし" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstsgahon-ref-lex &
+[ORTH <! "あたくし" !>].
 
 watashi :=
-pron-firstsg-ref-lex &
-[ORTH <! "わたし" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstsgahon-ref-lex &
+[ORTH <! "わたし" !>].
 
-temae_2_1 := pron-firstsg-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
- ORTH <! "手前" !>].
+temae_2_1 := pron-firstsgahon-ref-lex &
+[ORTH <! "手前" !>].
 
 atashi :=
-pron-firstsg-ref-lex &
-[ORTH <! "あたし" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstsgahon-ref-lex &
+[ORTH <! "あたし" !>].
 
 boku :=
-pron-firstsg-ref-lex &
-[ORTH <! "ぼく" !>,
- SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+pron-firstsgminusahon-ref-lex &
+[ORTH <! "ぼく" !>].
 
 boku-kanji:=
-pron-firstsg-ref-lex &
-[ORTH <! "僕" !>,
- SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+pron-firstsgminusahon-ref-lex &
+[ORTH <! "僕" !>].
 
 ore :=
-pron-firstsg-ref-lex &
-[ORTH <! "おれ" !>,
- SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+pron-firstsgminusahon-ref-lex &
+[ORTH <! "おれ" !>].
 
 ore-kanji := 
-pron-firstsg-ref-lex &
-[ORTH <! "俺" !>,
- SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+pron-firstsgminusahon-ref-lex &
+[ORTH <! "俺" !>].
 
 shousei :=
-pron-firstsg-ref-lex &
-[ORTH <! "小生" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstsgahon-ref-lex &
+[ORTH <! "小生" !>].
 
-yasei_1_3 := pron-firstsg-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +, 
- ORTH <! "野生" !>].
+yasei_1_3 := pron-firstsgahon-ref-lex &
+[ORTH <! "野生" !>].
 
 kochira :=
-pron-firstpl-ref-lex &
-[ORTH <! "こちら" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstplahon-ref-lex &
+[ORTH <! "こちら" !>].
 
 kocchi :=
 pron-firstpl-ref-lex &
@@ -4462,18 +4450,16 @@ pron-firstpl-ref-lex &
 [ORTH <! "内" !>].
 
 sochira :=
-pron-secondperson-ref-lex &
-[ORTH <! "そちら" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-secondahon-ref-lex &
+[ORTH <! "そちら" !>].
 
 socchi :=
 pron-secondperson-ref-lex &
 [ORTH <! "そっち" !>].
 
 anata :=
-pron-secondperson-ref-lex &
-[ORTH <! "あなた" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-secondahon-ref-lex &
+[ORTH <! "あなた" !>].
 
 kimitachi :=
 pron-secondpl-ref-lex &
@@ -4486,74 +4472,62 @@ pron-secondpl-ref-lex &
 ;you; dear (what a wife calls a husband)
 
 anata-kanji :=
-pron-secondperson-ref-lex &
-[ORTH <! "貴方" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-secondahon-ref-lex &
+[ORTH <! "貴方" !>].
 
 kimi-pron :=
-pron-secondpl-ref-lex &
-[ORTH <! "君" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+pron-secondminusahon-ref-lex &
+[ORTH <! "君" !>].
 
-temee_1_2 := pron-secondperson-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
- ORTH <! "てめえ" !>].
+temee_1_2 := pron-secondminusahon-ref-lex &
+[ORTH <! "てめえ" !>].
 
 onoono_1_1 := pron-secondperson-ref-lex &
 [ORTH <! "各々" !>].
 
 ; (AO 2003-08-07) 御身の「身」
 
-onmi_1 := pron-secondperson-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
- ORTH <! "御","身" !>].
+onmi_1 := pron-secondahon-ref-lex &
+[ORTH <! "御","身" !>].
 
-ware_1_3 := pron-firstsg-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
- ORTH <! "我" !>].
+ware_1_3 := pron-firstsgahon-ref-lex &
+[ORTH <! "我" !>].
 
-sei_1_10 := pron-firstsg-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +, 
- ORTH <! "生" !>].
+sei_1_10 := pron-firstsgahon-ref-lex &
+[ORTH <! "生" !>].
 
-onore_1_2 := pron-firstsg-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
- ORTH <! "己" !>].
+onore_1_2 := pron-firstsgahon-ref-lex &
+[ORTH <! "己" !>].
 
 ; (AO 2003-08-08) 対称の代名詞 相手を見下した言い方
 ;		辞書的には漢字で書くのだろうが、
 ;		「てめえ, あたし, われ」と同様ひらがなで追加
 
-onore_2 := pron-secondperson-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
- ORTH <! "おのれ" !>].
+onore_2 := pron-secondminusahon-ref-lex &
+[ORTH <! "おのれ" !>].
 
 ; (AO 2003-08-07) 対称の代名詞 相手をののしって言う
 ;		辞書的には漢字で書くのだろうが、
 ;		「てめえ、あたし」と同様ひらがなで追加
 
-ware_2_1 := pron-secondperson-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
- ORTH <! "われ" !>].
+ware_2_1 := pron-secondminusahon-ref-lex &
+[ORTH <! "われ" !>].
 
 watakushidomo-firstpl :=
-pron-firstpl-ref-lex &
-[ORTH <! "私","ども" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstplahon-ref-lex &
+[ORTH <! "私","ども" !>].
 
 wareware-firstpl :=
 pron-firstpl-ref-lex &
 [ORTH <! "われわれ" !>].
 
 watashitachi-firstpl :=
-pron-firstpl-ref-lex &
-[ORTH <! "私","達" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstplahon-ref-lex &
+[ORTH <! "私","達" !>].
 
 wareware-kanji-firstpl :=
-pron-firstpl-ref-lex &
-[ORTH <! "我々" !>,
-SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+pron-firstplahon-ref-lex &
+[ORTH <! "我々" !>].
 
 warera_3_1 := pron-firstpl-ref-lex &
 [ORTH <! "我等" !>].
@@ -4563,103 +4537,93 @@ warera_4_1 := pron-firstpl-ref-lex &
 
 sore :=
 pron-demon-lex &
-[ORTH <! "それ" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+[ORTH <! "それ" !>].
 
 sore_2 :=
 pron-demon-lex &
-[ORTH <! "ソレ" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+[ORTH <! "ソレ" !>].
 
+; (MS 2005-03-01) person, number and gender go into the types.
 kare :=
-pron-thirdsg-ref-lex &
-[ORTH <! "彼" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+pron-thirdsgmasc-ref-lex &
+[ORTH <! "彼" !>].
 
 kanojo :=
-pron-thirdsg-ref-lex &
-[ORTH <! "彼女" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN fem, PN threesg]]].
+pron-thirdsgfem-ref-lex &
+[ORTH <! "彼女" !>].
 
 karera :=
-pron-thirdpl-ref-lex &
-[ORTH <! "彼ら" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN andro]]].
+pron-thirdplandro-ref-lex &
+[ORTH <! "彼ら" !>].
 
 sorera :=
-pron-thirdpl-ref-lex &
-[ORTH <! "それら" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+pron-thirdplneut-ref-lex &
+[ORTH <! "それら" !>].
 
 arera :=
-pron-thirdpl-ref-lex &
-[ORTH <! "あれら" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+pron-thirdplneut-ref-lex &
+[ORTH <! "あれら" !>].
 
-arekore_1_2 :=  pron-thirdpl-ref-lex &
-[SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]],
- ORTH <! "あれこれ" !>].
+arekore_1_2 :=  pron-thirdplneut-ref-lex &
+[ORTH <! "あれこれ" !>].
 
 kore :=
 pron-demon-lex &
-[ORTH <! "これ" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+[ORTH <! "これ" !>].
 
 kore-katakana :=
 pron-demon-lex &
-[ORTH <! "コレ" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+[ORTH <! "コレ" !>].
 
 are :=
 pron-demon-lex &
-[ORTH <! "あれ" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+[ORTH <! "あれ" !>].
 
 are_2 :=
 pron-demon-lex &
-[ORTH <! "アレ" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+[ORTH <! "アレ" !>].
+
+; (MS 2005-03-01) The relation names should be romanized Japanese here,
+; because there is a translation mismatch between Japanese and English!
 
 achira :=
 pron-loc-ref-lex &
 [ORTH <! "あちら" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_achira_n_rel]].
 
 soredake :=
-pron-thirdperson-ref-lex &
-[ORTH <! "それだけ" !>,
-SYNSEM.LKEYS.KEYREL [ARG0 [PNG.GEN neut]]].
+pron-thirdsgneut-ref-lex &
+[ORTH <! "それだけ" !>].
 
 ; (AO 2003-08-07) 三人称単数
 ;		指すものを軽く敬っている
 ;		はたしてこの書き方で動くのか...
 
-achira_1 := pron-thirdperson-ref-ahon-lex &
-[SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN neut, PN threesg]],
- ORTH <! "あちら" !>].
+achira_1 := pron-thirdsgneutahon-lex &
+[ORTH <! "あちら" !>].
 
 asoko :=
 pron-loc-ref-lex &
 [ORTH <! "あそこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_asoko_n_rel]].
 
 koko :=
 pron-loc-ref-lex &
 [ORTH <! "ここ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_here_n_rel_rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_koko_n_rel]].
 
 soko :=
 pron-loc-ref-lex &
 [ORTH <! "そこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_soko_n_rel]].
 
 acchi :=
 pron-loc-ref-lex &
 [ORTH <! "あっち" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_acchi_n_rel]].
 
 kanata := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_kanata_n_rel],
  ORTH <! "彼方" !>].
 
 achikochi_1_1 := pron-loc-ref-lex &
@@ -4667,11 +4631,11 @@ achikochi_1_1 := pron-loc-ref-lex &
  ORTH <! "あちこち" !>].
 
 sokora_1_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_sokora_n_1_rel],
  ORTH <! "そこら" !>].
 
 sochira_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_sochira_n_1_rel],
  ORTH <! "そちら" !>].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;TITLE;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -5228,7 +5192,7 @@ ORTH <! "何月" !>].
 
 naNji  :=
 temp_numeral-whq-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_clocktime_n_rel_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_clocktime_n_rel,
 ORTH <! "何時" !>].
 
 naNpuN  :=
@@ -5398,7 +5362,9 @@ reflexive-pronoun-honsbj-lex &
 ;		 ご自分
 ;		御自分, ご自身とは普通書かない
 
-go-jishin_1 := pron-honsubj-selfemp-lex &
+; (MS 2005-03-01) cleaned up pronoun types
+
+go-jishin_1 := reflexive-pronoun-honsbj-lex &
 [ ORTH <! "御","自身" !>].
 
 buka-n := ordinary-nohon-n-lex &
@@ -145798,42 +145764,37 @@ pron-firstpl-ref-lex &
 asuko :=
 pron-loc-ref-lex &
 [ORTH <! "あすこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel]].
 
 ; 誰彼
 
 darekare_kanji :=
-pron-thirdperson-ref-lex &
-[ORTH <! "誰彼" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+pron-thirdsgmasc-ref-lex &
+[ORTH <! "誰彼" !>].
 
 ; 誰かれ
 
 darekare_hiragana :=
-pron-thirdperson-ref-lex &
-[ORTH <! "誰かれ" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+pron-thirdsgmasc-ref-lex &
+[ORTH <! "誰かれ" !>].
 
 ; 誰某
 
 daresore_kanji :=
-pron-thirdperson-ref-lex &
-[ORTH <! "誰某" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+pron-thirdsgmasc-ref-lex &
+[ORTH <! "誰某" !>].
 
 ; 誰それ
 
 daresore_hiragana :=
-pron-thirdperson-ref-lex &
-[ORTH <! "誰それ" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+pron-thirdsgmasc-ref-lex &
+[ORTH <! "誰それ" !>].
 
 ; 誰々
 
 daredare :=
-pron-thirdperson-ref-lex &
-[ORTH <! "誰々" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+pron-thirdsgmasc-ref-lex &
+[ORTH <! "誰々" !>].
 
 ; 脚
 

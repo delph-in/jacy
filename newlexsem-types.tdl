@@ -71,13 +71,15 @@ ppron-sem-type := pron-sem-type &
 lpron-sem-type := mod-id-nominal-sign-sem-type &
                   [HOOK [LTOP #hand,
 			 INDEX #ind],
-                   RELS  <! arg1-relation   & [LBL #hand,
-                                       ARG1 #ind],
+                   RELS  <! arg0-relation   & [LBL #hand,
+                                       ARG0 #ind],
                           quant-relation & 
 			  [PRED def_rel,
 			   ARG0 #ind,
 			   RSTR #restr],
-                          place-relation !>,
+                          place-relation &
+                            [LBL #hand,
+			     ARG0 #ind ]!>,
                    HCONS <! qeq &
                            [HARG #restr,
                             LARG #hand] !> ].

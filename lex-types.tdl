@@ -2548,6 +2548,14 @@ pron-secondperson-ref-lex := pers-pron-lex &
                                                       HONORER #2,
                                                       HONORED #1] !>]]]].
 
+; (MS 2005-03-01) added addressee honorification: そちら, 君
+
+pron-secondahon-ref-lex := pron-secondperson-ref-lex &
+			   [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+pron-secondminusahon-ref-lex := pron-secondperson-ref-lex &
+			   [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
 ; (MS 2005-02-28) added the clear plural cases, such as 君達
 
 pron-secondpl-ref-lex := pron-secondperson-ref-lex &
@@ -2562,15 +2570,26 @@ pron-secondsg-ref-lex := pron-secondperson-ref-lex &
 ; (MS 2005-02-28) renamed pron-sp-add-ref-lex. We do not need the distinction
 ; between inclusion of the addressee and exclusion, because the pronouns don't give
 ; this distinction. This can inherit from pron-firstperson-ref-lex. 私達
+;  (MS 2005-03-01) added types for honorification: こちら
 
 pron-firstpl-ref-lex := pron-firstperson-ref-lex &
                        [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN onepl].
+
+pron-firstplahon-ref-lex := pron-firstpl-ref-lex &
+			    [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 ; (MS 2005-02-28) added the clear singular first person pronoun type. 私
 
 pron-firstsg-ref-lex := pron-firstperson-ref-lex &
                        [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN onesg].
 
+; (MS 2005-03-01) added types for honorification: 私、ぼく
+
+pron-firstsgahon-ref-lex := pron-firstsg-ref-lex &
+			    [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+pron-firstsgminusahon-ref-lex := pron-firstsg-ref-lex &
+			    [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 
 ; (MS 2005-02-28) renamed pron-ent-ref-lex.
 
@@ -2583,17 +2602,43 @@ pron-thirdperson-ref-lex :=  pers-pron-lex &
 pron-thirdsg-ref-lex := pron-thirdperson-ref-lex  &
                   [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN threesg]]].
 
+; (MS 2005-03-01) we need gender for the third person singular. 彼、彼女, それだけ
+
+pron-thirdsgfem-ref-lex := pron-thirdsg-ref-lex &
+			   [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN fem].
+
+pron-thirdsgmasc-ref-lex := pron-thirdsg-ref-lex &
+			   [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN masc].
+
+pron-thirdsgneut-ref-lex := pron-thirdsg-ref-lex &
+			   [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut].
+
+; (MS 2005-03-01) added honorification: あちら
+
+pron-thirdsgneutahon-ref-lex := pron-thirdsgneut-ref-lex &
+			    [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
 ; (MS 2005-02-28) added the clear plural third person pronoun type. 彼ら
 
 pron-thirdpl-ref-lex := pron-thirdperson-ref-lex  &
                   [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN threepl]]].
 
+; (MS 2005-03-01) third person plural can be andro (彼ら) or neutr (それら).
 
-;pron-thirdperson-ref-ahon-lex := pron-thirdperson-ref-lex &
-;			 [ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +]. 
+pron-thirdplandro-ref-lex := pron-thirdpl-ref-lex &
+			     [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN andro].
+
+
+pron-thirdplneut-ref-lex := pron-thirdpl-ref-lex &
+			     [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut].
+
+
+
+; (MS 2005-03-01) gender neutr for all demonstrative pronouns. 
 
 pron-demon-lex := pron-lex &
-                  [SYNSEM [LKEYS.KEYREL #key & [ARG0 #i],
+                  [SYNSEM [LKEYS.KEYREL #key & [ARG0 #i & [PNG.GEN neut]],
 			   LOCAL.CONT ppron-sem-type &
 					  [RELS <! #key & 
 						 generic-nom-relation,
