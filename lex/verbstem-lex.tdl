@@ -20879,8 +20879,15 @@ karonjiru_1 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'karonjiru_1,
  ORTH <! "·Ú¤ó¤¸¤ë" !> ].
 
-; (MS 2004-01-15) New entry
+; (MS 2004-01-15) New entries
 
 haramodosu := v1-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'haramodosu,
- ORTH <! "Ê§Ìá" !> ].
+ ORTH <! "Ê§Ìá¤¹" !> ].
+
+haramodosu-chasen := v1-c-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED 'haramodosu,
+ ORTH <! "Ê§","Ìá¤¹" !> ].
+
+
+
