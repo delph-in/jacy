@@ -4397,7 +4397,9 @@ zonjiageru-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_zonjiageru_v_rel]],
 ORTH <! "存じ上げる" !>].
 
-hikiageru-stem := intrans-v-stem-lex &
+; (MS 2004-11-18) This should be transitive: 物価 が 引き上げ られる
+
+hikiageru-stem := v1-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hikiageru_v_rel]],
 ORTH <! "引き上げる" !>].
 

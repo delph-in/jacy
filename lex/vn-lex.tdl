@@ -7792,10 +7792,14 @@ sanpu_1 := vn-intrans-lex &
  ORTH <! "»¶ÉÛ" !>].
 
 ; »¶Êâ 
+; (MS 2004-11-18) This should be rather transitive:
+; ¸ø±à¤ò»¶Êâ¤·¤¿
 
-sanpo_1 := vn-intrans-lex &
+sanpo_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sanpo_vn_1_rel,
  ORTH <! "»¶Êâ" !>].
+
+
 
 ; »¶Íð 
 ; Used 1 times

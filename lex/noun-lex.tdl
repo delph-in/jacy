@@ -13094,10 +13094,12 @@ sanpatsu_2 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sanpatsu_n_2_rel,
  ORTH <! "»¶È±" !>].
 
+; (MS 2004-11-18) we don't need this, because there
+; is an entry in vn-lex.
 
-sanpo_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sanpo_n_2_rel,
- ORTH <! "»¶Êâ" !>].
+;sanpo_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sanpo_n_2_rel,
+; ORTH <! "»¶Êâ" !>].
 
 
 

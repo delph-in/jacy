@@ -1077,15 +1077,14 @@ sbj-arg := j-valence &
 		SUBJ opt-1-arg,
 		COMPS null].
 
+
+; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
+
 sbj-obj-arg := j-valence &
                [SPR null,
 		SUBJ opt-1-arg,
 		COMPS 1-list].
 
-sbj-obj2-arg := j-valence &
-               [SPR null,
-                   SUBJ opt-1-arg,
-                   COMPS 1-list].
 
 sbj-obj-obj2-arg := j-valence &
                [SPR null,
@@ -1228,17 +1227,23 @@ ga-wo_transitive := sbj-obj-arg &
 ;                           COMPS opt-1-arg &
 ;			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
 
-ga-ni_transitive := sbj-obj2-arg &
+; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
+
+ga-ni_transitive := sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
                           COMPS < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] > ].
 
-adv_transitive := sbj-obj2-arg &
+; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
+
+adv_transitive := sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
 		     COMPS obl-1-arg &
 			   < [LOCAL.CAT.HEAD base-adv_head] >].
 
 
-naru_transitive :=  sbj-obj2-arg &
+; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
+
+naru_transitive :=  sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
                           COMPS obl-1-arg &
 			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] > ].
@@ -1347,10 +1352,8 @@ light_transitive := j-valence &
 
 
 
-; (ERB 2001-09-03) Type for dekiru with ga-marked object, suppressed
-; subject.  Assuming value of OBJ is always a ga-or-wo marked noun.
-
-
+; (MS 2004-11-18) Type for obj-id. The comps list of the specifier should be emptied.
+; 私 が 先生 に 本 を 買っ て もらっ た
 
 aux_transitive  :=  sbj-obj-spr-arg & 
           [SPR obl-1-arg &
@@ -1358,8 +1361,7 @@ aux_transitive  :=  sbj-obj-spr-arg &
 						 COP -,
 						 VN -,
 						 AUX aux_minus],
-			      VAL [COMPS null,
-				   SUBJ null]],
+			      VAL [COMPS null]],
 			 CONT.HOOK.XARG #ind,
 			 NUCL nucl_plus]] >,
 	   COMPS < [OPT + ,
@@ -1388,13 +1390,14 @@ light-aux_transitive  :=  j-valence &
 ; And then took over the COMPS value from the verb to the auxiliary.
 ; (MS 2004-07-09) FORMAL.AHON - restriction on the SPR, to rule out "mashite"
 ; (MS 2004-11-05) AUX aux_minus on the specifier might be too strong: 読んでもらっている
+; (MS 2004-11-17) This is valid for pure-aspect.
 
-aspect_transitive :=  j-valence & 
+pure-aspect_transitive :=  j-valence & 
                       [SPR obl-1-arg &
 			   < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
 							     COP -,
 							     VN -,
-							     AUX aux,
+							     AUX aux_minus_or_complex,
 							     FORMAL.AHON -],
 					  VAL  [SUBJ  #sbj,
 						COMPS #obj]],
@@ -1403,6 +1406,18 @@ aspect_transitive :=  j-valence &
 		       COMPS #obj].
 
 
+; (MS 2004-11-17) In aspect_transitive, we need to link the ARG2 of the verb to the ARG1 of
+; the aspect aux.
+ 
+aspect_transitive :=  sbj-spr-arg & 
+                      [SPR obl-1-arg &
+			   < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
+							     COP -,
+							     VN -,
+							     AUX aux_minus_or_complex,
+							     FORMAL.AHON -]],
+				     NUCL nucl_plus]] >,
+		       SUBJ  < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] > ].
 
 
  
@@ -5330,7 +5345,7 @@ caus-trans-obj2-end-lex := v-op-end-lex &
 					      [FIRST.LOCAL [CONT [HOOK [LTOP #hand,
 									XARG #causee]],
 							     CAT [HEAD verb-stem_head,
-								  VAL sbj-obj2-arg &
+								  VAL sbj-obj-arg &
 								       [UNSAT +,
 									COMPS 1-list & [FIRST #obj-val]]]]],
 					  SUBJ [FIRST [OPT + ,
@@ -5407,6 +5422,9 @@ pass-end-lex :=  v-op-end-lex &
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
 ; (MS 2004-11-15) UNSAT + on the SPR to prevent spurious ambiguity in the case of
 ; ditransitive passives (置かれた)
+; (MS 2004-11-18) Added PASS + to the event Index, such that this appears in the MRS. 
+; Access ARG-S instead of RELS.LIST.FIRST.
+
 
 simple-pass-end-lex :=   pass-end-lex &
                [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
@@ -5415,22 +5433,27 @@ simple-pass-end-lex :=   pass-end-lex &
 								  CONT.HOOK.INDEX #surfobjind]] >,
 					 SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
 								       LTOP #hand,
-								       XARG #surfobjind],
-								 RELS.LIST.FIRST arg12-relation & [ARG2 #surfsbjind]],
+								       XARG #surfobjind]],
+							   ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
+								   [LOCAL.CONT.HOOK.INDEX #surfsbjind] >,
 							   CAT.VAL sbj-obj-arg & [UNSAT +]]]],
 				    HEAD.KEYS.KEY pass_rel],
 			      
 			       CONT [RELS <! !>,
-				     HOOK.INDEX #event,
+				     HOOK.INDEX #event & [E.PASS +],
 				     HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfobjind],
 			LKEYS.KEYREL pass-relation &  [LBL #hand]],
 		LMORPH-BIND-TYPE pass-morph].
 
+
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
 ; (MS 2004-11-12) This seems to have mixed ARG2 and ARG3 in the arg123-relation.
 ; I have corrected that.
 ; (MS 2004-11-15) UNSAT + to prevent spurious ambiguity. 
+; (MS 2004-11-20) Access ARG-S instead of RELS.LIST.FIRST!
+; (MS 2004-11-22) Restricted to SPRs with sbj-obj-obj2-arg, namely ditransitives.
+
 
 ditrans-pass-end-lex :=   pass-end-lex &
                [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
@@ -5441,22 +5464,24 @@ ditrans-pass-end-lex :=   pass-end-lex &
                                                              CONT.HOOK.INDEX #surfobj2ind]] >,
 					 SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
 									XARG #surfobj2ind,
-									LTOP #hand],
-								  RELS.LIST.FIRST arg123-relation & [ARG1 #surfobj2ind,
-												     ARG2 #surfsbjind,
-												     ARG3 #surfobjind]],
-							    CAT.VAL [SUBJ 1-list & < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
-								     COMPS 2-comps-list & 
-									  < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
-									    #objval & [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >]]]],
+									LTOP #hand]],
+							    CAT.VAL sbj-obj-obj2-arg,
+							    ARG-S < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+									    CONT.HOOK.INDEX #surfobj2ind]],
+								    [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE wo],
+									    CONT.HOOK.INDEX #surfsbjind]],
+								    #objval & [LOCAL [CAT.HEAD case-p_head & [CASE ni],
+										      CONT.HOOK.INDEX #surfobjind]] >]]],
 				    HEAD.KEYS.KEY pass_rel],
 				    
 				   CONT [RELS <! !>,
-					 HOOK.INDEX #event,
+					 HOOK.INDEX #event & [E.PASS +],
 					 HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfobj2ind],
 			LKEYS.KEYREL pass-relation & [LBL #hand]],
 		LMORPH-BIND-TYPE pass-morph].
+
+
 
 ;(MS-2001-11-06) Emily wants the adversative passive not to add any semantics to the RELS. That's why I take the KEY out of the RELS and make the HCONS empty. But I am not sure if this is right: watashi ga otouto ni keeki wo taberareta.???
 
@@ -5482,15 +5507,6 @@ adversative-pass-end-lex := pass-end-lex &
 						     
 
 
-;adversative-intrans-pass-end-lex := adversative-pass-end-lex &
-;                [SYNSEM [LOCAL [CAT [VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
-;								      CONT.HOOK.INDEX #surfobjind]]>,
-;					 SPR < [LOCAL [CAT.VAL sbj-arg,
-;						       CONT.HOOK.XARG #surfobjind]] >],
-;				     HEAD.KEYS.KEY pass_rel],
-;			       CTXT.EMPATHY.EMPEE #surfobjind],
-;			 LKEYS.KEYREL adversative-intrans-relation & 
-;			       [ARG2 #surfobjind]]].
 
 adversative-intrans-pass-end-lex := adversative-pass-end-lex &
                 [SYNSEM [LOCAL [CAT [VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
@@ -5512,7 +5528,32 @@ adversative-trans-pass-end-lex := adversative-pass-end-lex &
 			       CTXT.EMPATHY.EMPEE #surfsbjind]]].
 
 
+; (MS 2004-11-20) Passive ending for light verbs. This one is tricky, because we need to access
+; the argument structure of the specifier of the specifier (namely, the VN). ARG-S is the right place
+; to access these!
 
+
+
+lightverb-pass-end-lex :=   pass-end-lex &
+               [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+							    CONT.HOOK.INDEX #surfsbjind]],
+					 COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+								  CONT.HOOK.INDEX #surfobjind]] >,
+					 SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
+								       LTOP #hand,
+								       XARG #surfobjind]],
+							   CAT.VAL light_transitive & [UNSAT +,
+										       SPR.FIRST.LOCAL.CAT.VAL sbj-obj-arg],
+							   ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
+								   [LOCAL.CONT.HOOK.INDEX #surfsbjind] >]]],
+				    HEAD.KEYS.KEY pass_rel],
+			      
+			       CONT [RELS <! !>,
+				     HOOK.INDEX #event & [E.PASS +],
+				     HCONS <! !>],
+			       CTXT.EMPATHY.EMPEE #surfobjind],
+			LKEYS.KEYREL pass-relation &  [LBL #hand]],
+		LMORPH-BIND-TYPE pass-morph].
 
 ; (ERB 2002-01-02) Adding a vn-vend-rule (parallel to vstem-vend-rule)
 ; for VN + ください.  To keep that rule from massively overgenerating
@@ -7003,12 +7044,13 @@ reg-cop-lex := cop-light-lex.
 
 
 
+; (MS 2004-11-17) Not all auxiliaries have a key relation. That's why I took this
+; out here.
+
 aux-top-stem-lex := verb-stem-lex & lexical_sign-word &
               [SYNSEM [LOCAL [CAT [HEAD aux-stem_head &
                                         [H-TENSE #tense]],
-                              CONT [HOOK.INDEX [E [TENSE #tense]],
-                                    RELS.LIST.FIRST #key]],
-		       LKEYS.KEYREL #key,
+                              CONT [HOOK.INDEX [E [TENSE #tense]]]],
                        NON-LOCAL.QUE <! !>,
 		       MODIFIED.PERIPH +]].
 
@@ -7158,11 +7200,13 @@ light-obj-id-shon-kurusuru-stem-lex := light-obj-id-shon-stem-lex & [STEMTYPE ku
 
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-11-17) Some aspect auxiliaries add a relation (見る, みせる)
 
-aspect-stem-lex  := aux-top-stem-lex &
+ complex-aspect-stem-lex  := aux-top-stem-lex &
 [SYNSEM [LOCAL [CAT [VAL aspect_transitive &
                           [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
-			   SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand],
+			   SPR.FIRST.LOCAL [CAT.VAL.SUBJ.FIRST #sbj,
+					    CONT.HOOK.LTOP #ohand]],
 		     HEAD.AUX aspect_aux],
 		CONT [RELS diff-list & <! #key,
 				       message &
@@ -7177,6 +7221,60 @@ aspect-stem-lex  := aux-top-stem-lex &
                            [ARG1 #sbjind,
                             ARG2 #chand,
                             ARG0 #event]]].
+
+
+complex-aspect-v-stem-lex := complex-aspect-stem-lex & [STEMTYPE v-stem].
+complex-aspect-c-stem-lex := complex-aspect-stem-lex & [STEMTYPE c-stem].
+complex-aspect-c2-stem-lex := complex-aspect-stem-lex & [STEMTYPE c2-stem].
+complex-aspect-kurusuru-stem-lex := complex-aspect-stem-lex & [STEMTYPE kurusuru-stem].
+
+complex-aspect-minus_shon-stem-lex := complex-aspect-stem-lex &
+                           [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+					       VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+							       CONT.HOOK.INDEX #2]],
+					  CONT.HOOK.INDEX #3,
+					  CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+									       [HONORED #2,
+										BEARER #3,
+										POLARITY -] !>]]].
+
+complex-aspect-minus_shon-v-stem-lex := complex-aspect-minus_shon-stem-lex & [STEMTYPE v-stem].
+complex-aspect-minus_shon-c-stem-lex := complex-aspect-minus_shon-stem-lex & [STEMTYPE c-stem].
+complex-aspect-minus_shon-c2-stem-lex := complex-aspect-minus_shon-stem-lex & [STEMTYPE c2-stem].
+complex-aspect-minus_shon-kurusuru-stem-lex := complex-aspect-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+complex-aspect-shon-stem-lex := complex-aspect-stem-lex &
+[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+complex-aspect-shon-v-stem-lex := complex-aspect-shon-stem-lex & [STEMTYPE v-stem].
+complex-aspect-shon-c-stem-lex := complex-aspect-shon-stem-lex & [STEMTYPE c-stem].
+complex-aspect-shon-c2-stem-lex := complex-aspect-shon-stem-lex & [STEMTYPE c2-stem].
+complex-aspect-shon-kurusuru-stem-lex := complex-aspect-shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+
+; (MS 2004-11-17) This one now links the first complement of the verb to the ARG1 of the complex.
+
+aspect-stem-lex  := aux-top-stem-lex &
+[SYNSEM [LOCAL [CAT [VAL aspect_transitive &
+                          [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
+			   SPR.FIRST.LOCAL [CAT.VAL sbj-obj-arg & [COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+					    CONT.HOOK [INDEX #event,
+						       LTOP #ltop,
+						       XARG zpro_ref-ind]]],
+		     HEAD.AUX aspect_aux],
+		CONT [HOOK [INDEX #event,
+			    LTOP #ltop],
+		      RELS <! !>,
+		      HCONS <! !> ],
+	       ARG-S < #sbj >]]].
+
 
 aspect-v-stem-lex := aspect-stem-lex & [STEMTYPE v-stem].
 aspect-c-stem-lex := aspect-stem-lex & [STEMTYPE c-stem].
@@ -7244,12 +7342,12 @@ pure-aspect-stem-lex := verb-stem-lex &
 [SYNSEM [ LOCAL [CAT [ HEAD aux-stem_head & 
                             [ H-TENSE #tense,
 			      AUX aspect_aux],
-                       VAL aspect_transitive &
+                       VAL pure-aspect_transitive &
                             [SUBJ.FIRST #sbj,
 			     SPR.FIRST.LOCAL [ CONT.HOOK [ LTOP #ohand,
-							   INDEX [SORT #sort,
-								  INSTLOC #instloc,
-								  E.MOOD #mood]]]]],
+							   INDEX #event & [SORT #sort,
+									   INSTLOC #instloc,
+									   E.MOOD #mood]]]]],
                  CONT [RELS <! !>,
                        HOOK [INDEX [ E [TENSE #tense,
 					MOOD #mood],
@@ -7258,7 +7356,8 @@ pure-aspect-stem-lex := verb-stem-lex &
 			     LTOP #ohand],
                        HCONS <! !> ],
 		 ARG-S < #sbj >],
-	  LKEYS.KEYREL.PRED 'aspect,
+	  LKEYS.KEYREL [PRED 'aspect,
+			ARG0 #event],
 	  MODIFIED.PERIPH +,
 	  NON-LOCAL.QUE <! !>]].
 
@@ -7819,7 +7918,7 @@ syntactic-vv-stem_head  := other-verb-stem_head &
 
 syntactic-vv-stem-lex := verb-stem-lex & lexical_sign-word &
  [SYNSEM [LOCAL [CAT [HEAD syntactic-vv-stem_head & [H-TENSE #tense],
-		      VAL aspect_transitive &
+		      VAL pure-aspect_transitive &
 			   [SUBJ.FIRST #sbj & [LOCAL [CONT.HOOK.INDEX #sbjind,
 						      CAT.HEAD case-p_head &
 								      [CASE ni-or-ga]]],

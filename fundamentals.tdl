@@ -193,3 +193,10 @@ wg-handel-id := relation &
 
 
 
+; (MS 2004-11-18) We want some hint about passivization in the MRS (and RMRS)!
+
+tam := avm &
+  [ TENSE tense,
+    ASPECT aspect,
+    MOOD mood,
+    PASS bool ]. 

@@ -736,6 +736,14 @@ reru-intrans-adv-pass-end := adversative-intrans-pass-end-lex &
             STEMTYPE v-stem].
 
 
+reru-light-pass-end := lightverb-pass-end-lex &
+           [ORTH <! "れる" !>,
+            INFLECTED -,
+            SYNSEM [LOCAL.CAT.HEAD [MODUS passive]],
+            LMORPH-BIND-TYPE pass-c-stem-morph,
+            STEMTYPE v-stem].
+
+
 rareru-intrans-adv-pass-end := adversative-intrans-pass-end-lex &
            [ORTH <! "られる" !>,
             INFLECTED -,

@@ -96,8 +96,7 @@ ORTH <! "いらっしゃる" !>].
 
 aru-aux-stem  :=
 aspect-c-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective,
-	 LKEYS.KEYREL.PRED '_aru_v_rel],
+[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
 ORTH <! "ある" !>].
 
 ; (AO 2003-08-06) 「在る」の補助動詞はない
@@ -109,8 +108,7 @@ ORTH <! "ある" !>].
 
 aru-kanji-aux-stem  :=
 aspect-c-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective,
-	       LKEYS.KEYREL.PRED '_aru_v_rel],
+[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
 ORTH <! "在る" !>].
 
 ; Used 51 times
@@ -152,13 +150,13 @@ pure-aspect-c-stem-lex &
   ORTH <! "しまう" !>].
 
 miru-aux-stem :=
-aspect-v-stem-lex &
+complex-aspect-v-stem-lex &
 [SYNSEM [LKEYS.KEYREL.PRED '_miru_aux,
 	 LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
 ORTH <! "見る" !>].
 
 miru-hiragana-aux-stem :=
-aspect-v-stem-lex &
+complex-aspect-v-stem-lex &
 [SYNSEM [LKEYS.KEYREL.PRED '_miru_aux,
 	       LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
 ORTH <! "みる" !>].
@@ -167,7 +165,7 @@ ORTH <! "みる" !>].
 ; I am not sure if this is modal or not
 
 miseru-hiragana-aux-stem :=
-aspect-v-stem-lex &
+complex-aspect-v-stem-lex &
 [SYNSEM [LKEYS.KEYREL.PRED '_miseru_aux,
 	       LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
 ORTH <! "みせる" !>].
@@ -175,21 +173,19 @@ ORTH <! "みせる" !>].
 ; Used 10 times
 
 miseru-kanji-aux-stem :=
-aspect-v-stem-lex &
+complex-aspect-v-stem-lex &
 [SYNSEM [LKEYS.KEYREL.PRED '_miseru_aux,
 	       LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
 ORTH <! "見せる" !>].
 
 gozaru-aux-hiragana-stem :=
 aspect-c2-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective,
-	       LKEYS.KEYREL.PRED '_gozaru_v_rel],
+[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
 ORTH <! "ござる" !>].
 
 gozaru-aux-kanji-stem :=
 aspect-c2-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective,
-                    LKEYS.KEYREL.PRED '_gozaru_v_rel],
+[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
 ORTH <! "御座る" !>].
 
 
