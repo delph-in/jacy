@@ -178,11 +178,7 @@ wg-handel-lex-mrs-basic :< j-mrs.
 wg-handel-lex-mrs := wg-handel-lex-mrs-basic.
 
 
-mod-id-mrs := j-mrs &
-              [ MOD-IND #ind,
-                MOD-HAND #hand,
-                HOOK [INDEX #ind,
-		      LTOP #hand ]].
+mod-id-mrs := j-mrs.
 
 mod-id-wg-handel-mrs := mod-id-mrs & wg-handel-lex-mrs.
 

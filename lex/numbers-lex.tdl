@@ -75,7 +75,7 @@ juu_card4 := card_2_spr_object &
 [ SYNSEM.LKEYS.KEYREL.CARG "10",
   ORTH <! "½½" !>].
 
-juu_card4 := card_2_object_only & 
+juu_card5 := card_2_object_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "10",
   ORTH <! "£±" !>].
 

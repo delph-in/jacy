@@ -106,18 +106,19 @@ binary-type-mod := binary-modification-type & binary-headed-phrase &
 			    LEX -],
                     HEAD-DTR.SYNSEM [LOCAL [CAT [VAL #val]]]].
 
+; (MS 2004-12-22) This shouldn't inherit the LTOP from its second arg.
+; (see sentence-te-coordination)
+
 binary-type-conj := binary-modification-type & 
                     [LMORPH-BIND-TYPE #lmorph,
                      RMORPH-BIND-TYPE #rmorph,
                      SYNSEM.LOCAL [CAT [HEAD #head,
 					VAL #val],
-				   CONT.HOOK [INDEX #ind,
-					      LTOP#hand]],
+				   CONT.HOOK [INDEX #ind]],
 		     ARGS <  [LMORPH-BIND-TYPE #lmorph,
 			      SYNSEM.LOCAL.CONT.HOOK.INDEX #ind] ,
 			     [RMORPH-BIND-TYPE #rmorph,
-			      SYNSEM.LOCAL [CONT.HOOK [LTOP #hand],
-					    CAT [HEAD #head,
+			      SYNSEM.LOCAL [CAT [HEAD #head,
 						 VAL #val]]]
 			     > ].
 
@@ -128,6 +129,7 @@ binary-type-conj := binary-modification-type &
 ;                       HEAD-DTR.SYNSEM.LOCAL.CAT [HEAD #head]].
 
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 unary-type-super :=   phrasal_sign &
                [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
@@ -135,8 +137,6 @@ unary-type-super :=   phrasal_sign &
                                      EMPATHY [EMPER #sp,
                                               EMPEE #emp]],
                                CONT [HOOK #hook,
-	                             MOD-IND #modind,
-	                             MOD-HAND #modhd,
                                      RELS [LIST #list,
                                             LAST #last],
                                      HCONS [LIST #sclist,
@@ -155,8 +155,6 @@ unary-type-super :=   phrasal_sign &
                                                                     EMPEE #emp]],
                                                      CONT [RELS [LIST #middle,
                                                                   LAST #last],
-	                                                   MOD-IND #modind,
-	                                                   MOD-HAND #modhd,
                                                            HCONS [LIST #scmiddle,
                                                                    LAST #sclast]]],
 					      NON-LOCAL #nonloc],
@@ -233,6 +231,7 @@ head-first-type := binary-headed-phrase &
 
 
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 head-subject-rule := head-final-type & 
 		     orth-princ &
@@ -242,15 +241,15 @@ head-subject-rule := head-final-type &
                      adjacent_nonhead_check &
                      affix-list &
                      [J-NEEDS-AFFIX -,
-                      SYNSEM [LOCAL [CONT [MOD-IND #ind,
-		                     	   MOD-HAND #top],
+                      SYNSEM [LOCAL [CONT.HOOK [INDEX #ind,
+						LTOP #top],
 				     CAT.POSTHEAD +],
 			      LEX -],
                       C-CONT [RELS <! !>,
                               HCONS <! !>],
                       HEAD-DTR [J-NEEDS-AFFIX -,
-	                        SYNSEM [LOCAL [CONT [MOD-IND #ind,
-						     MOD-HAND #top],
+	                        SYNSEM [LOCAL [CONT.HOOK [INDEX #ind,
+							  LTOP #top],
 					       BAR +]]]].
 
 
@@ -270,8 +269,8 @@ basic-head-complement-type := orth-princ &
 			      affix-list &
 			      [SYNSEM [MODIFIED.PERIPH #p,
 				       LEX -,
-				       LOCAL [CONT [MOD-IND #ind,
-						    MOD-HAND #top],
+				       LOCAL [CONT.HOOK [INDEX #ind,
+						    LTOP #top],
 					      NUCL #nucl]],
 			       C-CONT [RELS <! !>,
 				       HCONS <! !>],
@@ -280,8 +279,8 @@ basic-head-complement-type := orth-princ &
 			       HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
 						  SYNSEM [MODIFIED.PERIPH #p,
 							  LOCAL [CAT.HEAD.EMPTY #empt,
-								 CONT [MOD-IND #ind,
-								       MOD-HAND #top],
+								 CONT.HOOK [INDEX #ind,
+									    LTOP #top],
 								 NUCL #nucl]]]].
 head-complement-type := basic-head-complement-type &
 			scp-obj & 
@@ -448,12 +447,13 @@ head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check &  orth-princ &
 
 ; (MS 2004-04-01) We decided to give the gap rules a UNDERSPEC_ARG - feature,
 ;  such that this can be selected by the root node type.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
 		       [SYNSEM [LOCAL [BAR +,
 				      NUCL nucl_minus,
-				      CONT [MOD-IND #ind,
-					    MOD-HAND #top]]],
+				      CONT.HOOK [INDEX #ind,
+						 LTOP #top]]],
 			C-CONT [RELS <!   message  & 
  				       [PRED proposition_m_rel,
 					LBL #top,
@@ -469,8 +469,8 @@ rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
                               [SYNSEM j-synsem & 
 				      [LOCAL [CAT.HEAD noun_head,
 					      BAR +,
-					      CONT [MOD-IND #ind,
-						    HOOK [LTOP #top]]]]]>].
+					      CONT [HOOK [INDEX #ind,
+							  LTOP #top]]]]]>].
 
 
 
@@ -486,21 +486,20 @@ head-adjunct-rule-first := head-first-type-mod & head-adjunct-rule-type &
                            [ C-CONT [ RELS <! !>,
                                       HCONS <! !>]].
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 head-adjunct-rule-intersective := head-adjunct-rule-type &
-[ SYNSEM.LOCAL.CONT [ HOOK.LTOP #top,
-                      MOD-IND #mod-ind,
-                      MOD-HAND #mod-hand ],
+[ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
+			    INDEX #mod-ind]],
   NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
-  HEAD-DTR.SYNSEM.LOCAL.CONT [ HOOK.LTOP #top,
-                               MOD-IND #mod-ind,
-                               MOD-HAND #mod-hand ]].
+  HEAD-DTR.SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
+				     INDEX #mod-ind] ]].
                                   
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 head-adjunct-rule-scopal := head-adjunct-rule-type &
-[ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
-			    INDEX #ind],
-                      MOD-IND #ind,
-                      MOD-HAND #top ],
+[ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top] ],
   NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL scopal_mod] >,
                              CONT [ HOOK.LTOP #top ]]].
                                  
@@ -515,15 +514,14 @@ hadj-first-i := head-adjunct-rule-first & head-adjunct-rule-intersective.
 
 ;(CH 2003-08-22) gapÍ­¤ê´Ø·¸Àá¤Î¤¿¤á¤Îµ¬Â§
 ;(CH 2003-08-22) "HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD noun_head" ¤òÄÉ²Ã
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-final-type-mod &
-[ SYNSEM.LOCAL.CONT [ HOOK.LTOP #top,
-                      MOD-IND #mod-ind,
-                      MOD-HAND #mod-hand ],
+[ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
+			    INDEX #mod-ind]],
   NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
-  HEAD-DTR.SYNSEM.LOCAL [ CONT [ HOOK.LTOP #top,
-				 MOD-IND #mod-ind,
-				 MOD-HAND #mod-hand ],
+  HEAD-DTR.SYNSEM.LOCAL [ CONT [ HOOK [LTOP #top,
+				       INDEX #mod-ind]],
 			  CAT.HEAD noun_head ]].
 
 
@@ -558,8 +556,8 @@ hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-fina
 ; so move to head-adjunct-rule-coord-type.
 
 sentence-coord-type :=  binary-type-conj &
-[SYNSEM [LOCAL [CONT [HOOK [INDEX #i,
-			   LTOP #hand]],
+			[SYNSEM [LOCAL [CONT [HOOK [INDEX #i,
+						    LTOP #hand]],
 	       CAT.VAL #val,
                NUCL te_conj],   
 	 LEX -],
@@ -583,7 +581,7 @@ sentence-coord-type :=  binary-type-conj &
                   LARG #lhand]!>],
 ARGS < [SYNSEM.LOCAL [CONT.HOOK.LTOP #lhand]],
        [SYNSEM.LOCAL [CONT.HOOK [LTOP #rhand,
-				   INDEX #i],
+				 INDEX #i],
 			CAT.VAL #val]] > ].
 
 
@@ -674,19 +672,21 @@ head-specifier-rule-type :=  head-final-type &
 								      MODIFIED.PERIPH #per] > ].
    
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 head-marker-rule := binary & 
                     scp-marking & 
                    affix-list &
                     [SYNSEM.LOCAL [CAT [VAL #val,
                                         HEAD.FORMAL.SHON #sh],
-	                           CONT [MOD-IND #ind,
-	                                 MOD-HAND #top],
+	                           CONT.HOOK [INDEX #ind,
+					      LTOP #top],
                                    CTXT.BACKGROUND diff-list & [LIST #1, LAST #2]],
                      C-CONT [RELS <! !>,
                              HCONS <! !>],
                      HEAD-DTR #head-dtr & [SYNSEM [LOCAL [CAT.HEAD  #5 & [FORMAL.SHON #sh],
-							  CONT [MOD-IND #ind,
-								MOD-HAND #top],
+							  CONT.HOOK [INDEX #ind,
+								LTOP #top],
 							  CTXT.BACKGROUND [LIST #3,LAST #2]],
 						   MODIFIED.PERIPH #per]],
                      NON-HEAD-DTR #nh-dtr & [SYNSEM.LOCAL [CAT [HEAD.MARK < j-synsem & 
@@ -1081,6 +1081,7 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
 ; "SYNSEM.LOCAL.CAT.HEAD.C-MOD.FIRST.LOCAL.CAT.HEAD verb_head & [MAIN-PRD +]..."
 ;  ---> "SYNSEM.LOCAL.CAT.HEAD.C-MOD.FIRST.LOCAL.CAT.HEAD verb_head..."
 ;
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 conditional-lexeme-to-word-rule  := lex-rule & v-lex &
                [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
@@ -1094,8 +1095,8 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
                                           FORMAL #formal,
                                           COP-ARG -,
 					  C-MOD < [LOCAL [CAT.HEAD verb_head,
-						     CONT [MOD-HAND #main,
-							   MOD-IND #ind],
+						     CONT.HOOK [LTOP #main,
+								INDEX #ind],
 						     BAR +]] > ],
                                     VAL #sc],
                                CONT [HOOK [LTOP #tophand,
@@ -1280,6 +1281,7 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 ; for nominalized verbal nouns like (do-parse-tty "ÊÙ¶¯")
 
 ; (MS 2003-12-09) coindexed ARG0 of the vn with ARG0 of the resulting noun.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 vn2n-rule-super :=  n-lex-super &
             [SYNSEM [LOCAL [CAT [HEAD noun_head &
@@ -1296,9 +1298,8 @@ vn2n-rule-super :=  n-lex-super &
 					LBL #prpstn-hand,
 					MARG #soa],
                                         #vn-key !>,
-                                 MOD-IND #modind,
-                                 MOD-HAND #vn-hand,
-                                 HOOK.LTOP #nom-hand,
+                                 HOOK [LTOP #nom-hand,
+				       INDEX #modind],
                                  HCONS <! qeq &
                                          [HARG #soa,
                                           LARG #vn-hand] !>],
@@ -1454,13 +1455,12 @@ adjpolite-rule := i-adj-stem-lex &
                               INFLECTED -]].
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 word2word-rule := j-sign & phrase-or-lexrule &
             [SYNSEM [LOCAL [CAT [HEAD #head],
                             BAR #bar,
                             CONT [HOOK #hook,
-	                          MOD-IND #modind,
-	                          MOD-HAND #modhd,
                                   RELS diff-list & [LIST #list,
 						    LAST #last],
                                   HCONS [LIST #hclist,
@@ -1480,8 +1480,6 @@ word2word-rule := j-sign & phrase-or-lexrule &
              ARGS <[SYNSEM [LOCAL [CAT [HEAD #head],
                                    BAR #bar,
                                    CONT [HOOK #hook,
-	                                 MOD-IND #modind,
-	                                 MOD-HAND #modhd,
                                          RELS [LIST #list,
                                                 LAST #middle],
                                          HCONS [LIST #hclist,
@@ -1516,13 +1514,12 @@ naadj-zpro-insertion-rule := word2word-rule &
 
 
 ; (ERB 2002-01-14) MOD-IND and MOD-HAND from head-daughter.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 prefix-rule :=  head-final-type-mod &
                 head-adjunct-p &
                 [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
-				CONT [HOOK #hook,
-                                     MOD-IND #mi,
-                                     MOD-HAND #mh],
+				CONT [HOOK #hook],
 				CAT.VAL #val]],
 		 C-CONT [RELS <! !>,
 			 HCONS <! !>],
@@ -1532,18 +1529,16 @@ prefix-rule :=  head-final-type-mod &
 			 J-NEEDS-AFFIX -],
 		 HEAD-DTR j-sign & 
 			[SYNSEM [LOCAL [CTXT.BACKGROUND [list #1,last #3],
-					CONT [HOOK #hook,
-					      MOD-IND #mi,
-					      MOD-HAND #mh],
+					CONT [HOOK #hook],
 					CAT.VAL #val]],
 				 J-NEEDS-AFFIX -]].
+
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 suffix-rule :=  head-first-type-mod &
                 head-adjunct-p &
                 [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
-				CONT [HOOK #hook,
-                                     MOD-IND #mi,
-                                     MOD-HAND #mh],
+				CONT [HOOK #hook],
 				CAT.VAL #val]],
 		 C-CONT [RELS <! !>,
 			 HCONS <! !>],
@@ -1553,9 +1548,7 @@ suffix-rule :=  head-first-type-mod &
 			 J-NEEDS-AFFIX -],
 		 HEAD-DTR j-sign & 
 			[SYNSEM [LOCAL [CTXT.BACKGROUND [list #1,last #3],
-					CONT [HOOK #hook,
-					      MOD-IND #mi,
-					      MOD-HAND #mh],
+					CONT [HOOK #hook],
 					CAT.VAL #val]],
 				 J-NEEDS-AFFIX -]].
 
@@ -1762,6 +1755,7 @@ nominal-numcl-rule-card := nominal-numcl-rule-type &
 ; is only one element long.  Also need PRED value and appropriate linking
 ; between that relation and the MOD value the numeral classifier was
 ; expecting.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 [ C-CONT common-noun-sem-type &
@@ -1770,8 +1764,8 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 	   RELS <! [ PRED 'noun_relation,
 		     ARG0 #arg,
 		     LBL #hand ] !> ],
-  ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #arg,
-							  MOD-HAND #hand ]].
+  ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #arg,
+							       LTOP #hand ]].
 
 ; For ±ß¡¢¥É¥ë¡¢³¬¡¢etc.
 
@@ -2081,12 +2075,11 @@ na2adv-rule :=  lexical_sign-word & lex-rule &
 ; the QUE passing is in in too fundamental of a way right now.)
 ; The actual constraints that I believe to really be specific to this
 ; type are all on the instance in japgram.tdl.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 embedded-question-rule-type := headed-phrase &
 [SYNSEM [ LEX -,
-	  LOCAL [ CONT [ MOD-IND #ind,
-			 MOD-HAND #top,
-			 HOOK [LTOP #h,
+	  LOCAL [ CONT [ HOOK [LTOP #h,
 			       INDEX #i]],
 		  NUCL #nucl,
                   CAT [ HEAD #head,
@@ -2100,9 +2093,7 @@ embedded-question-rule-type := headed-phrase &
          HCONS <! !>],
  HEAD-DTR j-sign & #head-dtr & 
              [ J-NEEDS-AFFIX -,
-               SYNSEM [ LOCAL [ CONT [ MOD-IND #ind,
-                                       MOD-HAND #top,
-                                       HOOK [LTOP #h,
+               SYNSEM [ LOCAL [ CONT [ HOOK [LTOP #h,
 					     INDEX #i]],
                                 CAT [ HEAD #head,
                                       VAL [COMPS [FIRST #objval & [OPT bool],
@@ -2128,14 +2119,13 @@ embedded-question-rule-type := headed-phrase &
 ; (ERB 2002-01-02) go+VN is [J-NEEDS-AFFIX -], and so vn-vend-rule
 ; isn't licensing go+VN+kudasai.  Try moving [J-NEEDS-AFFIX +] on 
 ; vstem daugther to vstem-vend-rule (subtype).
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 stem-end-rule-type := head-specifier-rule-type & 
                  [SYNSEM [LOCAL [BAR +,
                                 NUCL nucl_plus,
                                 CAT.VAL [UNSAT #unsat],
-				CONT [MOD-IND #modind,
-				      MOD-HAND #modhd,
-				      HOOK #hook]],
+				CONT [HOOK #hook]],
 			  LEX +],
                   J-NEEDS-AFFIX #aff,
                   LMORPH-BIND-TYPE nomorphbind,
@@ -2143,9 +2133,7 @@ stem-end-rule-type := head-specifier-rule-type &
                   ARGS < [SYNSEM j-synsem & [LOCAL [CAT [VAL [UNSAT #unsat]]]],
 			  RMORPH-BIND-TYPE  #mt,	
 			  INFLECTED +],
-			  [SYNSEM j-synsem & [LOCAL [CONT [MOD-IND #modind,
-							 MOD-HAND #modhd,
-							 HOOK #hook]],
+			  [SYNSEM j-synsem & [LOCAL [CONT [HOOK #hook]],
 					    MODIFIED.PERIPH -],
 			   LMORPH-BIND-TYPE #mt,
 			   RMORPH-BIND-TYPE #rm,

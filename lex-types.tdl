@@ -4975,21 +4975,19 @@ naadj2v-end-lex := lexical_sign-word &
 ; (ERB 2001-11-28) Replace KEY.LBL with LTOP.
 
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
 v-neg-end-lex := v-noncaus-op-end-lex &
                  [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS negative,
 							    KEYS.KEY #negrel],
-				      VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
-								 HOOK.LTOP #v-hd,
-								 MOD-IND #event]]],
+				      VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd,
+								       INDEX #event]]]],
 				 CONT [RELS <! neg-relation &  #keyrel & [ARG1 #neg-arg,
 									  PRED #negrel,
 									  LBL #top] !>,
 				       HOOK [LTOP #top,
 					     INDEX #event & [E.MOOD indicative]],
-				       MOD-HAND #modhd,
-				       MOD-IND #event,
 				       HCONS <! qeq & [LARG #v-hd,
 							HARG #neg-arg] !>]],
 			  LKEYS.KEYREL #keyrel]].
@@ -5210,11 +5208,11 @@ v-imperative-tense-end-lex := v-tense-end-lex-super &
 ; be looking at LTOP and INDEX and not KEY. 
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 tai-end-lex-basic := v-noncaus-op-end-lex &
                [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [KEYS.KEY #pred],
                                    VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #ohand,
-								    INDEX #modind,
 								    XARG #sbjind]]]],
                               CONT [RELS <! tai-relation & #key & [ARG1 #sbjind,
 								   ARG2 #chand,
@@ -5227,8 +5225,6 @@ tai-end-lex-basic := v-noncaus-op-end-lex &
 					   MARG #soa] !>,
                                     HOOK [INDEX #event,
 					  LTOP #top],
-				    MOD-IND #modind,
-				    MOD-HAND #ohand,
                                     HCONS <! qeq & [LARG #ohand,
                                                      HARG #soa] !>],
                               CTXT subj-honor-ctxt &
@@ -5281,7 +5277,7 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
 										      INDEX #ind]]] >,
                                                               MOD < [LOCAL [CAT.HEAD verb_head,
 									    BAR +],
-								     LEX -] >,
+								     LEX bool] >,
                                                               MARK null,
                                                               J-SPEC null,
 								 J-POSTHEAD left,
@@ -5400,6 +5396,7 @@ prpstn-introducing-end-lex := v-noncaus-op-end-lex &
 ; (MS 2003-12-19) Matrix 0.6
 
 ; (MS 2004-11-22) The cause-relation should not include the wo-complement.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 caus-trans-obj-end-lex := v-op-end-lex &
                 [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
@@ -5419,8 +5416,6 @@ caus-trans-obj-end-lex := v-op-end-lex &
 				CONT [HOOK [INDEX #event,
 					    LTOP #top,
 					    XARG #causer],
-				      MOD-IND #event,
-				      MOD-HAND #top,
 				      RELS <! #key & [PRED 'cause], 
 					     message &
 					    [PRED proposition_m_rel,
@@ -5469,6 +5464,7 @@ caus-trans-obj-end-lex := v-op-end-lex &
 ;							  LBL #top]]].
 
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 caus-intrans-end-lex := v-op-end-lex &
                 [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
@@ -5487,8 +5483,6 @@ caus-intrans-end-lex := v-op-end-lex &
 									     COMPS null]]]]]],
 				CONT [HOOK [INDEX #event,
 					    LTOP #top],
-				      MOD-IND #event,
-				      MOD-HAND #top,
 				      RELS <!  #key & [PRED 'cause], 
                                                message &
 					    [PRED proposition_m_rel,
@@ -5505,14 +5499,12 @@ caus-intrans-end-lex := v-op-end-lex &
 
 
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 pass-end-lex :=  v-op-end-lex &
                  [SYNSEM [LOCAL [CAT [HEAD pass-end_head,
                                      VAL.SPR obl-1-arg],
-                                CONT [HOOK [LTOP #top,
-					    INDEX #ind],
-				      MOD-IND #ind,
-				      MOD-HAND #top]],
+                                CONT [HOOK [LTOP #top]]],
 			  LKEYS.KEYREL.LBL #top,
 			  MODIFIED.PERIPH +]].
 
@@ -5784,6 +5776,7 @@ v-contracted-aux-end-lex := v-op-end-lex &
 ; (MS 2004-11-08) AUX aux_minus on the SPR seems to be too strict: 帰って来やすい
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 v2adj-end-lex := v-op-end-lex &
 [SYNSEM [LKEYS.KEYREL #key,
@@ -5800,8 +5793,6 @@ v2adj-end-lex := v-op-end-lex &
 			  COMPS #verbcomps]],
 		CONT [HOOK [LTOP #adjhd,
 			    INDEX #ind],
-		      MOD-IND #ind,
-		      MOD-HAND #adjhd,
 		      RELS <! arg12-relation & #key & [LBL #adjhd,
 						  ARG0 #ind,
 						  ARG2 #prpstn-hd],
@@ -5894,6 +5885,8 @@ v2adj-end-v2-nmod-lex := v2adj-nmod-end-lex &
 							     CAT.VAL.COMPS null]]],
 				  LKEYS.KEYREL.ARG1 #verbobj]].
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 v2na-end-lex := v-op-end-lex &
 [J-NEEDS-AFFIX -,
  LMORPH-BIND-TYPE i-morph,
@@ -5910,20 +5903,19 @@ v2na-end-lex := v-op-end-lex &
 						 HEAD.MAIN-PRD -]]]]],
                CONT [HOOK [INDEX #event,
 			   LTOP #top],
-		     MOD-HAND #top,
-		     MOD-IND #event,
                      RELS <! #key !>,
                      HCONS <! qeq & [HARG #h2,LARG #h1] !>]]]].
 
 ;"出来るだけ", "食べられるだけ"
 
 ; (MS 2003-12-17) Changing the semantics of adverbs (Matrix)
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
                                                  
 v2adv-end-lex := lexical_sign-word &
                [SYNSEM  j-synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal_mod & 
-									     [CONT [MOD-HAND #handel,
-										    MOD-IND #ind]]] >,
+									     [CONT.HOOK [LTOP #handel,
+											 INDEX #ind]]] >,
 								     COP-ARG +,
 								   J-POSTHEAD left],
 					      VAL obj-arg &
@@ -5977,34 +5969,29 @@ v2n-end-lex :=  nom-lex &
 
 
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 adj2v-end-lex := prpstn-introducing-end-lex &
 		 [SYNSEM [LKEYS.KEYREL [PRED 'seem,
 					    LBL #top],
 			  LOCAL [CAT [HEAD v-op-end_head & [KEYS.KEY seem_rel],
-				      VAL.SPR.FIRST.LOCAL [CAT.HEAD.ADJ +,
-							   CONT [MOD-IND #modind,
-								 MOD-HAND #modhd]]],
+				      VAL.SPR.FIRST.LOCAL.CAT.HEAD.ADJ +],
 				 CONT [HOOK [LTOP #top,
-					     INDEX.E.MOOD indicative],
-				       MOD-IND #modind,
-				       MOD-HAND #modhd]],
+					     INDEX.E.MOOD indicative]]],
 			  MODIFIED.PERIPH +],
 		  J-NEEDS-AFFIX +,
 		  LMORPH-BIND-TYPE shortadj-morph,
 		  STEMTYPE c-stem].
 				       
 
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 garu-end-lex := prpstn-introducing-end-lex &
                [SYNSEM [LKEYS.KEYREL [LBL #top,
 				      PRED 'seem],
-			LOCAL [CAT [HEAD.KEYS.KEY seem_rel,
-				    VAL.SPR.FIRST.LOCAL.CONT.HOOK [LTOP #ohand,
-								  INDEX #modind]],
+			LOCAL [CAT [HEAD.KEYS.KEY seem_rel],
                               CONT [HOOK [LTOP #top,
-					  INDEX.E.MOOD indicative],
-				    MOD-IND #modind,
-				    MOD-HAND #ohand]],
+					  INDEX.E.MOOD indicative]]],
 			MODIFIED.PERIPH +],
 		J-NEEDS-AFFIX +,
                 LMORPH-BIND-TYPE i-morph,
@@ -6012,6 +5999,7 @@ garu-end-lex := prpstn-introducing-end-lex &
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
 mai-end-lex := v-noncaus-op-end-lex &
@@ -6020,13 +6008,9 @@ mai-end-lex := v-noncaus-op-end-lex &
 							    ARG1 #h3],
 			LOCAL [CAT [HEAD v-op-end_head,
                                    VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
-								    XARG #x1],
-							      MOD-IND #modind,
-							      MOD-HAND #modhd]]],
+								    XARG #x1]]]],
                               CONT [HOOK [INDEX #event,
 					  LTOP #top],
-				    MOD-IND #modind,
-				    MOD-HAND #modhd,
                                     RELS <! #key,
                                              want2-relation & [LBL #h3,
                                                           ARG0 #event,
@@ -6069,6 +6053,7 @@ beki-end-lex:= v-noncaus-op-end-lex &
 
 ; (MS 2002-01-16) Added restrictions on subcategorization. 
 ; (MS 2003-12-17) Adapting to Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 kudasai-vn-end := v-end-lex &
 [J-NEEDS-AFFIX -,
@@ -6086,8 +6071,6 @@ kudasai-vn-end := v-end-lex &
 						       INDEX #ind]]]]]],
 	       CONT [HOOK [LTOP #top,
 			   INDEX #ind],
-                     MOD-IND #ind,
-                     MOD-HAND #sprh,
                      RELS <! message & [PRED command_m_rel,
                                          LBL #top,
                                          MARG #soah] !>,
@@ -7153,6 +7136,7 @@ cop-neg-lex := nonaux-lex &
 ; (MS 2003-12-19) Matrix 0.6
 
 ; (MS 2004-08-25) I now call them cop-light-lex.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 cop-light-lex := nonaux-lex &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
@@ -7164,9 +7148,7 @@ cop-light-lex := nonaux-lex &
 									 CAT.HEAD.H-TENSE #tense,
 									 NUCL not_fin_conj]]]]],
 	       
-	       CONT [HOOK #hook & [INDEX #ind, LTOP #hand],
-		     MOD-IND #ind,
-                     MOD-HAND #hand,
+	       CONT [HOOK #hook,
 		     RELS <! !> ,
 		     HCONS <! !>],
 	       CTXT.BACKGROUND <! !>,
@@ -7962,16 +7944,13 @@ light-stem-base-lex := verb-stem-lex-super &
 ; (Remember: Content raising words should have empty WLINKs.)
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
 light-stem-lex := light-stem-base-lex &
 [ SYNSEM [LOCAL [CAT.VAL.SPR.FIRST [LOCAL.CONT simple-verb-sem-type &
-                                              [HOOK #hook,
-                                               MOD-HAND #mod-hand,
-                                               MOD-IND #mod-ind]],
+                                              [HOOK #hook]],
                 CONT [HOOK #hook,
-                      MOD-HAND #mod-hand,
-                      MOD-IND #mod-ind,
                       RELS <! !>,
                       HCONS <! !>]]]].
 
@@ -8032,18 +8011,15 @@ light-minus_shon-c-stem-lex := light-minus_shon-stem-lex & [STEMTYPE c-stem].
 
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 quasi-light-lex :=  light-stem-base-lex & lexical_sign-word &
-[SYNSEM [LOCAL [CAT.VAL.SPR.FIRST [LOCAL.CONT [ MOD-IND #modind,
-                                               MOD-HAND #modhand,
-						HOOK.LTOP #ohand ]],
+[SYNSEM [LOCAL [CAT.VAL.SPR.FIRST [LOCAL.CONT [ HOOK.LTOP #ohand ]],
 		CONT [RELS <! #key,
 			    message &
 			    [PRED proposition_m_rel,
 			     LBL #chand,
 			     MARG #soa] !>,
-                     MOD-IND #modind,
-                     MOD-HAND #modhand,
                      HOOK [INDEX #event,
 			   LTOP #top],
                      HCONS <! qeq & [LARG #ohand,

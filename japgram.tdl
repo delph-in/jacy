@@ -262,14 +262,15 @@ adv_np_rule := adv_np_rule-type.
 ; words like 間 from being the first argument in a compound.
 
 ; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
 compound-noun-rule := empty-head-type & 
 [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & 
                           [MOD < [LOCAL [CAT [HEAD ordinary-or-date-noun_head,
                                             VAL.SPR 1-list],
-                                       CONT [MOD-HAND #hhand,
-                                             MOD-IND #hinst]],
+                                       CONT.HOOK [LTOP #hhand,
+						  INDEX #hinst]],
                                 MODIFIED.PERIPH -]>,
                            J-POSTHEAD #ph],
                      VAL saturated],
@@ -293,12 +294,13 @@ compound-noun-rule := empty-head-type &
 			   LKEYS.KEYREL.PRED atom]].
 
 ; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 compound-exceptional-noun-rule := empty-head-type & 
 [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD exceptional_noun_head,
                                                                 VAL.SPR 1-list],
-                                                           CONT [MOD-HAND #hhand,
-                                                                 MOD-IND #hinst]],
+                                                           CONT.HOOK [LTOP #hhand,
+								      INDEX #hinst]],
                                                     MODIFIED.PERIPH -] > ],
                      VAL saturated],
                 BAR -],
@@ -323,12 +325,13 @@ compound-exceptional-noun-rule := empty-head-type &
 
 
 ; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 compound-name-rule := empty-head-type & 
               [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD name_head,
                                                                             VAL.SPR 1-list],
-                                                                       CONT [MOD-HAND #hhand,
-                                                                             MOD-IND #hinst]],
+                                                                       CONT.HOOK [LTOP #hhand,
+										  INDEX #hinst]],
 								 MODIFIED.PERIPH -] > ],
                                   VAL saturated],
                              BAR -],
@@ -624,8 +627,8 @@ relative-clause-rule := hadj-final-i &
                                             NUCL not_fin_conj]]],
                               [SYNSEM j-synsem & [LOCAL [CAT.HEAD noun_head,
 							 BAR +,
-							 CONT [MOD-IND #ind,
-							       HOOK.LTOP #top]]]]>].
+							 CONT.HOOK [INDEX #ind,
+								    LTOP #top]]]]>].
 
 ;(CH 2003-08-22) 主語位置に主名詞を関連づける関係節規則
 ; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"を削除
@@ -715,7 +718,6 @@ sentence-te-coordination-rule := sentence-coord-type &
 		CONT.HOOK.XARG #xarg]],
  C-CONT.RELS.LIST.FIRST.PRED 'coord,
  ARGS <[SYNSEM.LOCAL [CAT [HEAD verb_head-super & [J-POSTHEAD coord,
-						   H-TENSE te,
 						   C-MOD < j-synsem & [LOCAL [CAT #1, 
 									      CONT #3,
 									      BAR #5, 
@@ -944,23 +946,24 @@ vend-vend-rule  := head-marker-rule &
 ; (ERB 2002-01-02) For some reason, we weren't copying up the
 ; MOD-IND and MOD-HAND in this rule. It might be a more general
 ; problem, but fixing it here for now.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 head-specifier-rule := head-specifier-rule-type &
                         adjacent-spr-check &
                        [SYNSEM [LOCAL [BAR #bar,
 				       CAT.VAL [UNSAT -,
 						SPR null],
-				       CONT [HOOK.XARG #xarg,
-					     MOD-IND #mind,
-					     MOD-HAND #mhand]],
+				       CONT.HOOK [XARG #xarg,
+						  INDEX #mind,
+						  LTOP #mhand]],
 				LEX -,
 				MODIFIED.PERIPH #per],
 			ARGS <[SYNSEM j-synsem & [MODIFIED.PERIPH #per],
                               J-NEEDS-AFFIX -],
                              [SYNSEM j-synsem & [LOCAL [BAR #bar,
-                                                      CONT [HOOK.XARG #xarg,
-							    MOD-IND #mind,
-                                                            MOD-HAND #mhand]]]]>].
+                                                      CONT.HOOK [XARG #xarg,
+								 INDEX #mind,
+								 LTOP #mhand]]]]>].
 
 
 
