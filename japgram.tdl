@@ -918,15 +918,21 @@ garu-sbj-change-rule := subj-casechange-rule &
 ; (ERB 2001-11-01) Breaking this up into three rules.  See notes
 ; in ruletypes.tdl.
 
+; (ERB 2004-1-20) Trying to conflate the two noncards.
 
-nominal-numcl-rule-nomod := nominal-numcl-rule-nomod &
-                      [ SYNSEM.LOCAL.BAR bool ].
+;nominal-numcl-rule-nomod := nominal-numcl-rule-nomod &
+;                      [ SYNSEM.LOCAL.BAR bool ].
 
-nominal-numcl-rule-mod := nominal-numcl-rule-mod &
-                     [ SYNSEM.LOCAL.BAR bool ].
+;nominal-numcl-rule-mod := nominal-numcl-rule-mod &
+;                     [ SYNSEM.LOCAL.BAR bool ].
 
-nominal-numcl-rule-card := nominal-numcl-rule-card &
-                      [ SYNSEM.LOCAL.BAR + ].
+nominal-numcl-rule := nominal-numcl-rule-type-noncard.
+
+; (ERB 2004-1-20) Try getting rid of this one in favor of
+; always jusing the noncard variant.
+
+;nominal-numcl-rule-card := nominal-numcl-rule-card &
+;                      [ SYNSEM.LOCAL.BAR + ].
 
 ; ERB (2001-09-24) Overhauling the date expressions.  They will be
 ; nouns to start with, so we don't need this.
@@ -934,7 +940,13 @@ nominal-numcl-rule-card := nominal-numcl-rule-card &
 ;nominal-date-rule :=  nominal-date-rule-type &
 ;                      [ SYNSEM.LOCAL.BAR + ].
 
-empty-cardinal-numcl-rule := empty-cardinal-numcl-type.
+; (ERB 2004-1-20) This seems to be working now, but it's creating
+; huge amounts of ambiguity.  I suggest leaving it out until we 
+; have a means of putting in sortal constraints to keep these guys
+; from serving as modifiers of other number names which are 
+; serving as nouns.
+
+; empty-cardinal-numcl-rule := empty-cardinal-numcl-type.
 
 ; AO (2003-09-04) 
 ; np-frag-rule is needed again.

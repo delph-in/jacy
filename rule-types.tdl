@@ -719,13 +719,27 @@ empty-conjunction-type :< empty-preposition-type.
 ; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
 ; (MS 2003-12-19) Matrix 0.6
 
+; (ERB 2004-1-20) Trying out a new analysis in which these guys
+; introduce a named-relation that relates the card-rel to the 
+; modified noun.  Somewhat different from solution in the ERG,
+; because I believe they can show up as modifiers.  Putting the named-rel
+; in at this level allows me to get away with just one nominal-numcl
+; rule (I think--ambiguity with compound nouns might force me to
+; back off).  We probably need to identify some labels in here,
+; but I'm not inclined to figure it out right now.
+
 empty-cardinal-numcl-type := empty-head-type &
 [ SYNSEM [ LOCAL.CAT.VAL saturated,
 	  LEX + ],
-   C-CONT [RELS <! !>,
+   C-CONT [RELS <! arg12-relation &
+                   [ PRED 'named_rel,
+		     ARG1 #noun,
+		     ARG2 #card ] !>,
 	   HCONS <! !>],
   HEAD-DTR num-cl-obj-only-nmod-ind-lex-super &
-           [ SYNSEM [ LOCAL.CAT [ HEAD [MOD < [LOCAL.BAR -] > ]]]]].
+           [ SYNSEM [ LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CONT.HOOK.LTOP #card,
+				  HEAD [MOD < [LOCAL [BAR -,
+						      CONT.MOD-IND #noun]] > ]]]]].
 
 
 
@@ -1643,13 +1657,25 @@ nominal-numcl-rule-card := nominal-numcl-rule-type &
 ;				     LBL #hand],
 ;		     LOCAL.CONT.HOOK.LTOP #hand ]].
 
+; (ERB 2004-1-20) Should be able to do with only one of these now, not two,
+; since both individuating and measure NumCls are treated as modifying
+; nouns in their fundamental use.
+
+; (ERB 2004-1-20) This said C-CONT.RELS <! !>, but that's inconsistent
+; with common-noun-sem-type.  What it needs to say is that the RELS list
+; is only one element long.  Also need PRED value and appropriate linking
+; between that relation and the MOD value the numeral classifier was
+; expecting.
+
 nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 [ C-CONT common-noun-sem-type &
          [ HOOK [LTOP #hand,
 		 INDEX #arg],
-           RELS <! !>],
-  ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [LTOP #hand,
-				     XARG #arg]].
+	   RELS <! [ PRED 'noun_relation,
+		     ARG0 #arg,
+		     LBL #hand ] !> ],
+  ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #arg,
+							  MOD-HAND #hand ]].
 
 ; For ±ß¡¢¥É¥ë¡¢³¬¡¢etc.
 
@@ -1673,10 +1699,12 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 ;								 PRED #rel],
 ;			      ARGS.FIRST.SYNSEM.LKEYS [KEYREL [WLINK #label],
 ;						       ALTKEYREL noun-relation & [ PRED #rel ]]].
-								
-nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
-			    [ SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED #rel,
-			      ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD.KEYS.ALTKEY #rel]].
+							
+; (ERB 2004-1-20) See notes at nomincal-numcl-rule-type-noncard.
+	
+;nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
+;			    [ SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED #rel,
+;			      ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD.KEYS.ALTKEY #rel]].
 								
 
 ; For É¤¡¢ËÜ¡¢Ëç¡¢etc.
@@ -1695,9 +1723,11 @@ nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
 ;  ARGS.FIRST.SYNSEM.LKEYS [ KEYREL reg-quantity-relation,
 ;			    ALTKEYREL no-relation ]].
 
-nominal-numcl-rule-mod := nominal-numcl-rule-type-noncard &
-[ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.KEYS [ KEY quantity_rel,
-					  ALTKEY no_rel ]].
+; (ERB 2004-1-20) See notes at nomincal-numcl-rule-type-noncard.
+
+;nominal-numcl-rule-mod := nominal-numcl-rule-type-noncard &
+;[ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.KEYS [ KEY quantity_rel,
+;					  ALTKEY no_rel ]].
 
 ; ERB (2001-08-28)
 ; ERB (2001-09-24) Overhauling the date expressions.  They will be

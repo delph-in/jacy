@@ -944,7 +944,7 @@ int_head := init_head &
              J-POSTHEAD left,
              MARK null,
              J-SPEC 1-list,
-             COP-ARG - ].
+             COP-ARG -].
 
 int_head-avm := int_head &
                 [MOD null].
@@ -2804,6 +2804,13 @@ noun-mod-ind-num-cl-lex := individuating-num-cl-lex &
 ; as it might end up being identified with the LTOP
 ; of the SPR or with the plus-relation.
 
+; (ERB 2004-1-20) At the moment, the only connection between the
+; measure phrase semantics and the degree-rel is through label
+; sharing.  Dan seemed to think that this might need to be
+; elaborated at some point, but this will do for now.  In
+; the paper (Bender & Siegel 2004, IJCNLP-04) I'm going to 
+; write as if there were another role (EARG, for Extent ARG)
+; in the degree-rel to tie things together.
 
 measure-num-cl-lex := numeral-classifier &
 [ SYNSEM [ LKEYS.KEYREL #key,
@@ -3966,7 +3973,7 @@ card-lex-super := lexical_sign-word &
                             AFFIX <! !>]], 
 	     INFLECTED +].
 
-card-lex := lexical_sign-word & 
+card-lex := card-lex-super & 
             [SYNSEM [LOCAL [CAT.HEAD.KEYS.KEY #pred,
 			    CONT card-sem-type & [ RELS.LIST.FIRST #key]],
 		     NON-LOCAL [QUE <! !>,
