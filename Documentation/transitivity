@@ -1,12 +1,25 @@
-v1: ga-wo
-v2: ga-ni
-v3: ga-to(1)
-v4: ditrans
-v5: ga-to(2)
-v6: ga-to-ni
-v7: ga-wo-to
-aru: aru
-mental: mental
-to_intrans: to
-cop-id: cop-id
-cop: cop
+Transitivity	Valence			Example
+-------------------------------------------------
+intrans: 	ga			warau
+intransarg2: 	to (opt)		miataru
+v1: 		ga-wo (opt)		utsu
+v1a: 		ga-wo (obl)		kudasaru (only)
+v2: 		ga-ni (opt)		ataru
+v2a: 		ga-{ni or to} (obl)	naru (only)
+v3: 		ga-to (obl)		kataru
+v4: 		ga-wo (opt) -ni (opt)	ditransitive
+v5: 		ga-to (opt)		tsukiau, karamu
+v5a: 		ga-to (obl)		oshieru, etc (only)
+v6: 		ga- {ni or to} (opt)	meguriau
+v7: 		ga-wo (opt) - to (obl)	omou (commented out)
+v8: 		ga-noun argument (obl)	wasureru
+mental: 	ga- {ga or wo}(opt)	wakaru
+aru: 		aru
+cop: 		cop
+cop-id: 	cop-id
+
+Obligatory arguments: it is not allowed to have zero pronouns for them.
+Additionally, they may not scramble.
+
+Mental also seems to allow "ni"
+
