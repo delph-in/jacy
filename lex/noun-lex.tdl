@@ -294,10 +294,10 @@ ordinary-nohon-n-lex &
 [ORTH <! "朝食" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_choushoku_n_rel]].
 
-choushoku-meeting :=
-ordinary-nohon-n-lex &
-[ORTH <! "朝食" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_choushoku_n_rel]].
+;choushoku-meeting :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "朝食" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_choushoku_n_rel]].
 
 ;second third of a month
 
@@ -321,10 +321,10 @@ ordinary-nohon-n-lex &
 [ORTH <! "昼食" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_chuushoku_n_rel]].
 
-chuushoku-meeting :=
-ordinary-nohon-n-lex &
-[ORTH <! "昼食" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_chuushoku_n_rel]].
+;chuushoku-meeting :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "昼食" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_chuushoku_n_rel]].
 
 chuushokugo :=
 ordinary-nohon-n-lex &
@@ -402,6 +402,8 @@ furitsu :=
 ordinary-nohon-n-lex &
 [ORTH <! "府立" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_furitsu_n_rel]].
+
+; 風
 
 fuu :=
 ordinary-nohon-n-lex &
@@ -2146,20 +2148,20 @@ ordinary-nohon-n-lex &
 [ORTH <! "夕飯" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_yuuhan_n_rel]].
 
-yuuhaN-meeting :=
-ordinary-nohon-n-lex &
-[ORTH <! "夕飯" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_yuuhan_n_rel]].
+;yuuhaN-meeting :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "夕飯" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_yuuhan_n_rel]].
 
 yuushoku-food :=
 ordinary-nohon-n-lex &
 [ORTH <! "夕食" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_yuushoku_n_rel]].
 
-yuushoku-meeting :=
-ordinary-nohon-n-lex &
-[ORTH <! "夕食" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_yuushoku_n_rel]].
+;yuushoku-meeting :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "夕食" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_yuushoku_n_rel]].
 
 zachou :=
 ordinary-nohon-n-lex &
@@ -5952,10 +5954,10 @@ ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL [PRED '_yado_n_rel],
 ORTH <! "お宿" !>].
 
-shinai-2-noun := 
-ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shinai_n_rel,
-ORTH <! "市内" !>].
+;shinai-2-noun := 
+;ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shinai_n_rel,
+;ORTH <! "市内" !>].
 
 shinai-2b-noun := 
 ordinary-nohon-n-lex &
@@ -6645,7 +6647,6 @@ rira-noun :=
 ordinary-nohon-n-lex &
 [ORTH <! "リラ" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_rira_n_rel]].
-
 
 gaikoku-noun :=
 ordinary-nohon-n-lex &
@@ -7363,6 +7364,11 @@ tanni-noun :=
 ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tanni_n_rel,
 ORTH <! "単位" !>].
+
+tani-noun :=
+ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tani_n_rel,
+ORTH <! "谷" !>].
 
 tanka-noun :=
 ordinary-nohon-n-lex &
@@ -22274,9 +22280,9 @@ youkai_3 := ordinary-nohon-n-lex &
 
 ; 溶解 
 
-youkai_3_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_youkai_n_3_rel,
- ORTH <! "溶解" !>].
+;youkai_3_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_youkai_n_3_rel,
+; ORTH <! "溶解" !>].
 
 ; 寄せ書き 
 
@@ -22459,9 +22465,9 @@ rajio_2 := ordinary-nohon-n-lex &
 
 ; リーダー 
 
-ri-da-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ri_n_da_rel,
- ORTH <! "リーダー" !>].
+;ri-da-_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ri_n_da_rel,
+; ORTH <! "リーダー" !>].
 
 ; ワーク 
 
@@ -26403,9 +26409,9 @@ senjou_2 := ordinary-nohon-n-lex &
 
 ; 洗浄 
 
-senjou_2_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_senjou_n_2_rel,
- ORTH <! "洗浄" !>].
+;senjou_2_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_senjou_n_2_rel,
+; ORTH <! "洗浄" !>].
 
 ; 先制 
 
@@ -30580,9 +30586,9 @@ aori_1 := ordinary-nohon-n-lex &
 
 ; あおり 
 
-aori_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_aori_n_1_rel,
- ORTH <! "あおり" !>].
+;aori_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_aori_n_1_rel,
+; ORTH <! "あおり" !>].
 
 ; 赤い羽根 
 
@@ -31514,9 +31520,9 @@ adana_1 := ordinary-nohon-n-lex &
 ; あだな 
 ; Used 1 times
 
-adana_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_adana_n_1_rel,
- ORTH <! "あだな" !>].
+;adana_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_adana_n_1_rel,
+; ORTH <! "あだな" !>].
 
 ; アダプター 
 
@@ -32106,9 +32112,9 @@ ama_1_2 := ordinary-nohon-n-lex &
 ; アマ 
 ; Used 1 times
 
-ama_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ama_n_1_rel,
- ORTH <! "アマ" !>].
+;ama_1_3 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ama_n_1_rel,
+; ORTH <! "アマ" !>].
 
 ; 雨足 
 
@@ -32857,9 +32863,9 @@ anko_1 := ordinary-nohon-n-lex &
 ; あんこ 
 ; Used 6 times
 
-anko_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_anko_n_1_rel,
- ORTH <! "あんこ" !>].
+;anko_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_anko_n_1_rel,
+; ORTH <! "あんこ" !>].
 
 ; 暗坑 
 
@@ -35118,9 +35124,9 @@ ibu_1 := ordinary-nohon-n-lex &
 
 ; イブ 
 
-ibu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ibu_n_1_rel,
- ORTH <! "イブ" !>].
+;ibu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ibu_n_1_rel,
+; ORTH <! "イブ" !>].
 
 ; 衣服 
 ; Used 36 times
@@ -35248,9 +35254,9 @@ imo_1 := ordinary-nohon-n-lex &
 
 ; いも 
 
-imo_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_imo_n_1_rel,
- ORTH <! "いも" !>].
+;imo_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_imo_n_1_rel,
+; ORTH <! "いも" !>].
 
 ; 芋づる 
 
@@ -35935,9 +35941,9 @@ u_1 := ordinary-nohon-n-lex &
 
 ; 卯 
 
-u_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_u_n_1_rel,
- ORTH <! "卯" !>].
+;u_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_u_n_1_rel,
+; ORTH <! "卯" !>].
 
 u_1_2 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_u_n_1_rel,
@@ -36197,9 +36203,9 @@ uesutorain_1 := ordinary-nohon-n-lex &
 ; ウエスト 
 ; Used 1 times
 
-uesuto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uesuto_n_1_rel,
- ORTH <! "ウエスト" !>].
+;uesuto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_uesuto_n_1_rel,
+; ORTH <! "ウエスト" !>].
 
 ; ウエディング 
 
@@ -36953,9 +36959,9 @@ uni_1 := ordinary-nohon-n-lex &
 ; うに 
 ; Used 3 times
 
-uni_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uni_n_1_rel,
- ORTH <! "うに" !>].
+;uni_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_uni_n_1_rel,
+; ORTH <! "うに" !>].
 
 ; うねり 
 
@@ -37700,9 +37706,9 @@ ei_1_2 := ordinary-nohon-n-lex &
 
 ; えい 
 
-ei_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ei_n_1_rel,
- ORTH <! "えい" !>].
+;ei_1_3 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ei_n_1_rel,
+; ORTH <! "えい" !>].
 
 ; 英 
 
@@ -39902,9 +39908,9 @@ okaka_1 := ordinary-nohon-n-lex &
 
 ; おかか 
 
-okaka_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_okaka_n_1_rel,
- ORTH <! "おかか" !>].
+;okaka_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_okaka_n_1_rel,
+; ORTH <! "おかか" !>].
 
 ; お抱え 
 
@@ -41188,9 +41194,9 @@ ofureko_1 := ordinary-nohon-n-lex &
 
 ; オフ 
 
-ofu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ofu_n_1_rel,
- ORTH <! "オフ" !>].
+;ofu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ofu_n_1_rel,
+; ORTH <! "オフ" !>].
 
 ; オフィスレディー 
 ; Used 1 times
@@ -43596,9 +43602,9 @@ kaki_1_8 := ordinary-nohon-n-lex &
 
 ; 花期 
 
-kaki_1_9 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kaki_n_1_rel,
- ORTH <! "花期" !>].
+;kaki_1_9 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kaki_n_1_rel,
+; ORTH <! "花期" !>].
 
 ; 鍵 
 ; Used 14 times
@@ -45600,9 +45606,9 @@ gatto_1 := ordinary-nohon-n-lex &
 ; ガット 
 ; Used 1 times
 
-gatto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gatto_n_1_rel,
- ORTH <! "ガット" !>].
+;gatto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_gatto_n_1_rel,
+; ORTH <! "ガット" !>].
 
 ; 活動家 
 
@@ -46018,9 +46024,9 @@ kabu_1_1 := ordinary-nohon-n-lex &
 
 ; かぶ 
 
-kabu_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kabu_n_1_rel,
- ORTH <! "かぶ" !>].
+;kabu_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kabu_n_1_rel,
+; ORTH <! "かぶ" !>].
 
 ; カフェイン 
 ; Used 2 times
@@ -46158,9 +46164,9 @@ kama_1_2 := ordinary-nohon-n-lex &
 ; 釜 
 ; Used 2 times
 
-kama_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kama_n_1_rel,
- ORTH <! "釜" !>].
+;kama_1_3 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kama_n_1_rel,
+; ORTH <! "釜" !>].
 
 ; 蒲 
 
@@ -46171,9 +46177,9 @@ kama_1_4 := ordinary-nohon-n-lex &
 ; 釜 
 ; Used 2 times
 
-kama_1_5 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kama_n_1_rel,
- ORTH <! "釜" !>].
+;kama_1_5 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kama_n_1_rel,
+; ORTH <! "釜" !>].
 
 ; 鎌 
 
@@ -46235,9 +46241,9 @@ kamasu_1 := ordinary-nohon-n-lex &
 
 ; かます 
 
-kamasu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kamasu_n_1_rel,
- ORTH <! "かます" !>].
+;kamasu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kamasu_n_1_rel,
+; ORTH <! "かます" !>].
 
 ; かまど 
 
@@ -46841,9 +46847,9 @@ karei_1_1 := ordinary-nohon-n-lex &
 
 ; 家令 
 
-karei_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_karei_n_1_rel,
- ORTH <! "家令" !>].
+;karei_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_karei_n_1_rel,
+; ORTH <! "家令" !>].
 
 ; 過冷 
 
@@ -46861,9 +46867,9 @@ karei_1_4 := ordinary-nohon-n-lex &
 ; かれい 
 ; Used 1 times
 
-karei_1_5 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_karei_n_1_rel,
- ORTH <! "かれい" !>].
+;karei_1_5 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_karei_n_1_rel,
+; ORTH <! "かれい" !>].
 
 ; カレー 
 
@@ -47230,9 +47236,9 @@ kankan_1_1 := ordinary-nohon-n-lex &
 
 ; かんかん 
 
-kankan_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kankan_n_1_rel,
- ORTH <! "かんかん" !>].
+;kankan_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kankan_n_1_rel,
+; ORTH <! "かんかん" !>].
 
 ; 看貫 
 
@@ -47242,9 +47248,9 @@ kankan_1_3 := ordinary-nohon-n-lex &
 
 ; かんかん 
 
-kankan_1_4 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kankan_n_1_rel,
- ORTH <! "かんかん" !>].
+;kankan_1_4 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kankan_n_1_rel,
+; ORTH <! "かんかん" !>].
 
 ; カンカン 
 
@@ -49258,9 +49264,9 @@ kibidango_1 := ordinary-nohon-n-lex &
 
 ; きび団子 
 
-kibidango_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kibidango_n_1_rel,
- ORTH <! "きび団子" !>].
+;kibidango_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kibidango_n_1_rel,
+; ORTH <! "きび団子" !>].
 
 ; 気品 
 
@@ -49722,9 +49728,9 @@ kyappu_1 := ordinary-nohon-n-lex &
 
 ; キャップ 
 
-kyappu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kyappu_n_1_rel,
- ORTH <! "キャップ" !>].
+;kyappu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kyappu_n_1_rel,
+; ORTH <! "キャップ" !>].
 
 ; ギャップ 
 
@@ -52223,9 +52229,9 @@ kushi_1_1 := ordinary-nohon-n-lex &
 ; くし 
 ; Used 1 times
 
-kushi_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kushi_n_1_rel,
- ORTH <! "くし" !>].
+;kushi_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kushi_n_1_rel,
+; ORTH <! "くし" !>].
 
 ; 九字 
 
@@ -52924,9 +52930,9 @@ kuracchi_1 := ordinary-nohon-n-lex &
 ; クラッチ 
 ; Used 2 times
 
-kuracchi_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuracchi_n_1_rel,
- ORTH <! "クラッチ" !>].
+;kuracchi_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kuracchi_n_1_rel,
+; ORTH <! "クラッチ" !>].
 
 ; グラデーション 
 
@@ -54517,7 +54523,7 @@ kezome_1 := ordinary-nohon-n-lex &
 ; 下駄 
 ; Used 2 times
 
-geta_1 := ordinary-nohon-n-lex &
+geta_kanji := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_geta_n_1_rel,
  ORTH <! "下駄" !>].
 
@@ -55758,9 +55764,9 @@ go_1_4 := ordinary-nohon-n-lex &
 
 ; 呉 
 
-go_1_5 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_go_n_1_rel,
- ORTH <! "呉" !>].
+;go_1_5 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_go_n_1_rel,
+; ORTH <! "呉" !>].
 
 ; コア 
 
@@ -58582,9 +58588,9 @@ kokku_1 := ordinary-nohon-n-lex &
 ; コック 
 ; Used 1 times
 
-kokku_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kokku_n_1_rel,
- ORTH <! "コック" !>].
+;kokku_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kokku_n_1_rel,
+; ORTH <! "コック" !>].
 
 ; コックピット 
 
@@ -59650,9 +59656,9 @@ goro_1 := ordinary-nohon-n-lex &
 ; ゴロ 
 ; Used 1 times
 
-goro_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_goro_n_1_rel,
- ORTH <! "ゴロ" !>].
+;goro_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_goro_n_1_rel,
+; ORTH <! "ゴロ" !>].
 
 ; 頃合い 
 ; Used 3 times
@@ -59731,9 +59737,9 @@ koron_1 := ordinary-nohon-n-lex &
 
 ; コロン 
 
-koron_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_koron_n_1_rel,
- ORTH <! "コロン" !>].
+;koron_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_koron_n_1_rel,
+; ORTH <! "コロン" !>].
 
 ; コロンビア 
 
@@ -61845,9 +61851,9 @@ saron_1 := ordinary-nohon-n-lex &
 
 ; サロン 
 
-saron_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_saron_n_1_rel,
- ORTH <! "サロン" !>].
+;saron_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_saron_n_1_rel,
+; ORTH <! "サロン" !>].
 
 ; 沢 
 ; Used 1 times
@@ -62265,9 +62271,9 @@ sando_1_1 := ordinary-nohon-n-lex &
 ; サンド 
 ; Used 1 times
 
-sando_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sando_n_1_rel,
- ORTH <! "サンド" !>].
+;sando_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sando_n_1_rel,
+; ORTH <! "サンド" !>].
 
 ; サンドイッチ 
 
@@ -62962,9 +62968,9 @@ shiori_1 := ordinary-nohon-n-lex &
 
 ; しおり 
 
-shiori_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shiori_n_1_rel,
- ORTH <! "しおり" !>].
+;shiori_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shiori_n_1_rel,
+; ORTH <! "しおり" !>].
 
 ; 鹿 
 ; Used 3 times
@@ -72589,9 +72595,9 @@ sutaffu_1 := ordinary-nohon-n-lex &
 ; スタッフ 
 ; Used 1 times
 
-sutaffu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sutaffu_n_1_rel,
- ORTH <! "スタッフ" !>].
+;sutaffu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sutaffu_n_1_rel,
+; ORTH <! "スタッフ" !>].
 
 ; スタミナ 
 
@@ -72895,9 +72901,9 @@ sutorippu_1 := ordinary-nohon-n-lex &
 
 ; ストリップ 
 
-sutorippu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sutorippu_n_1_rel,
- ORTH <! "ストリップ" !>].
+;sutorippu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sutorippu_n_1_rel,
+; ORTH <! "ストリップ" !>].
 
 ; ストレス 
 
@@ -74828,9 +74834,9 @@ seki_1_3 := ordinary-nohon-n-lex &
 
 ; 積 
 
-seki_1_4 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_seki_n_1_rel,
- ORTH <! "積" !>].
+;seki_1_4 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_seki_n_1_rel,
+; ORTH <! "積" !>].
 
 ; 籍 
 ; Used 3 times
@@ -75258,9 +75264,9 @@ setomono_1 := ordinary-nohon-n-lex &
 
 ; 瀬戸 
 
-seto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_seto_n_1_rel,
- ORTH <! "瀬戸" !>].
+;seto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_seto_n_1_rel,
+; ORTH <! "瀬戸" !>].
 
 ; 瀬戸際 
 
@@ -76106,9 +76112,9 @@ sentan_1 := ordinary-nohon-n-lex &
 ; 先端 
 ; Used 13 times
 
-sentan_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sentan_n_1_rel,
- ORTH <! "先端" !>].
+;sentan_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sentan_n_1_rel,
+; ORTH <! "先端" !>].
 
 ; 戦地 
 
@@ -76413,9 +76419,9 @@ zenmai_1 := ordinary-nohon-n-lex &
 ; ぜんまい 
 ; Used 2 times
 
-zenmai_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_zenmai_n_1_rel,
- ORTH <! "ぜんまい" !>].
+;zenmai_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_zenmai_n_1_rel,
+; ORTH <! "ぜんまい" !>].
 
 ; 専務 
 
@@ -77339,16 +77345,16 @@ soba_1 := ordinary-nohon-n-lex &
 ; そば 
 ; Used 7 times
 
-soba_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_soba_n_1_rel,
- ORTH <! "そば" !>].
+;soba_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_soba_n_1_rel,
+; ORTH <! "そば" !>].
 
 ; そば 
 ; Used 7 times
 
-soba_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_soba_n_1_rel,
- ORTH <! "そば" !>].
+;soba_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_soba_n_1_rel,
+; ORTH <! "そば" !>].
 
 ; そばかす 
 
@@ -77358,9 +77364,9 @@ sobakasu_1 := ordinary-nohon-n-lex &
 
 ; そばかす 
 
-sobakasu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sobakasu_n_1_rel,
- ORTH <! "そばかす" !>].
+;sobakasu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sobakasu_n_1_rel,
+; ORTH <! "そばかす" !>].
 
 ; ソビエト 
 ; Used 1 times
@@ -77644,9 +77650,9 @@ tai_1_1 := ordinary-nohon-n-lex &
 
 ; タイ 
 
-tai_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tai_n_1_rel,
- ORTH <! "タイ" !>].
+;tai_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_tai_n_1_rel,
+; ORTH <! "タイ" !>].
 
 ; タイ記録 
 
@@ -78703,9 +78709,9 @@ taimu_1 := ordinary-nohon-n-lex &
 ; タイム 
 ; Used 1 times
 
-taimu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taimu_n_1_rel,
- ORTH <! "タイム" !>].
+;taimu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taimu_n_1_rel,
+; ORTH <! "タイム" !>].
 
 ; タイムアップ 
 
@@ -79587,9 +79593,9 @@ tappu_1 := ordinary-nohon-n-lex &
 
 ; タップ 
 
-tappu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tappu_n_1_rel,
- ORTH <! "タップ" !>].
+;tappu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_tappu_n_1_rel,
+; ORTH <! "タップ" !>].
 
 ; タップダンス 
 
@@ -80176,9 +80182,9 @@ taruto_1 := ordinary-nohon-n-lex &
 
 ; タルト 
 
-taruto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taruto_n_1_rel,
- ORTH <! "タルト" !>].
+;taruto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taruto_n_1_rel,
+; ORTH <! "タルト" !>].
 
 ; だるま 
 ; Used 2 times
@@ -81617,9 +81623,9 @@ chakku_1 := ordinary-nohon-n-lex &
 
 ; チャック 
 
-chakku_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chakku_n_1_rel,
- ORTH <! "チャック" !>].
+;chakku_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chakku_n_1_rel,
+; ORTH <! "チャック" !>].
 
 ; 茶漬け 
 
@@ -82000,9 +82006,9 @@ chuugoku_1 := ordinary-nohon-n-lex &
 ; 中国 
 ; Used 43 times
 
-chuugoku_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuugoku_n_1_rel,
- ORTH <! "中国" !>].
+;chuugoku_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuugoku_n_1_rel,
+; ORTH <! "中国" !>].
 
 ; 中国地方 
 ; Used 7 times
@@ -82604,9 +82610,9 @@ choki_1 := ordinary-nohon-n-lex &
 ; ちょき 
 ; Used 1 times
 
-choki_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_choki_n_1_rel,
- ORTH <! "ちょき" !>].
+;choki_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_choki_n_1_rel,
+; ORTH <! "ちょき" !>].
 
 ; 直接税 
 
@@ -82766,9 +82772,9 @@ chiri_1_1 := ordinary-nohon-n-lex &
 
 ; ちり 
 
-chiri_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chiri_n_1_rel,
- ORTH <! "ちり" !>].
+;chiri_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chiri_n_1_rel,
+; ORTH <! "ちり" !>].
 
 ; チリ 
 ; Used 1 times
@@ -88501,9 +88507,9 @@ torakkukyougi_1 := ordinary-nohon-n-lex &
 ; トラック 
 ; Used 1 times
 
-torakku_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_torakku_n_1_rel,
- ORTH <! "トラック" !>].
+;torakku_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_torakku_n_1_rel,
+; ORTH <! "トラック" !>].
 
 ; ドラッグ 
 
@@ -90556,9 +90562,9 @@ nanbu_1 := ordinary-nohon-n-lex &
 ; 南部 
 ; Used 10 times
 
-nanbu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nanbu_n_1_rel,
- ORTH <! "南部" !>].
+;nanbu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nanbu_n_1_rel,
+; ORTH <! "南部" !>].
 
 ; 南米 
 ; Used 5 times
@@ -91192,9 +91198,9 @@ nikkou_1 := ordinary-nohon-n-lex &
 ; 日光 
 ; Used 8 times
 
-nikkou_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nikkou_n_1_rel,
- ORTH <! "日光" !>].
+;nikkou_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nikkou_n_1_rel,
+; ORTH <! "日光" !>].
 
 ; 日光浴 
 
@@ -93296,9 +93302,9 @@ noshi_1 := ordinary-nohon-n-lex &
 
 ; のし 
 
-noshi_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_noshi_n_1_rel,
- ORTH <! "のし" !>].
+;noshi_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_noshi_n_1_rel,
+; ORTH <! "のし" !>].
 
 ; ノズル 
 
@@ -94439,9 +94445,9 @@ baito_1 := ordinary-nohon-n-lex &
 ; バイト 
 ; Used 1 times
 
-baito_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_baito_n_1_rel,
- ORTH <! "バイト" !>].
+;baito_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_baito_n_1_rel,
+; ORTH <! "バイト" !>].
 
 ; 配当金 
 ; Used 2 times
@@ -95215,9 +95221,9 @@ hasami_1 := ordinary-nohon-n-lex &
 ; はさみ 
 ; Used 5 times
 
-hasami_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hasami_n_1_rel,
- ORTH <! "はさみ" !>].
+;hasami_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hasami_n_1_rel,
+; ORTH <! "はさみ" !>].
 
 ; 破産宣告 
 
@@ -95426,9 +95432,9 @@ pasu_1 := ordinary-nohon-n-lex &
 ; パス 
 ; Used 2 times
 
-pasu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pasu_n_1_rel,
- ORTH <! "パス" !>].
+;pasu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pasu_n_1_rel,
+; ORTH <! "パス" !>].
 
 ; パスポート 
 ; Used 2 times
@@ -95490,9 +95496,9 @@ pasuta_1 := ordinary-nohon-n-lex &
 
 ; パスタ 
 
-pasuta_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pasuta_n_1_rel,
- ORTH <! "パスタ" !>].
+;pasuta_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pasuta_n_1_rel,
+; ORTH <! "パスタ" !>].
 
 ; パステル 
 
@@ -95650,9 +95656,9 @@ hatahata_1 := ordinary-nohon-n-lex &
 
 ; はたはた 
 
-hatahata_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hatahata_n_1_rel,
- ORTH <! "はたはた" !>].
+;hatahata_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hatahata_n_1_rel,
+; ORTH <! "はたはた" !>].
 
 ; バタフライ 
 
@@ -95782,9 +95788,9 @@ batsu_1 := ordinary-nohon-n-lex &
 
 ; ばつ 
 
-batsu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_batsu_n_1_rel,
- ORTH <! "ばつ" !>].
+;batsu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_batsu_n_1_rel,
+; ORTH <! "ばつ" !>].
 
 ; 罰 
 ; Used 2 times
@@ -95909,9 +95915,9 @@ pakku_1 := ordinary-nohon-n-lex &
 ; パック 
 ; Used 1 times
 
-pakku_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pakku_n_1_rel,
- ORTH <! "パック" !>].
+;pakku_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pakku_n_1_rel,
+; ORTH <! "パック" !>].
 
 ; 白血球 
 
@@ -96013,9 +96019,9 @@ batteingu_1 := ordinary-nohon-n-lex &
 
 ; バッティング 
 
-batteingu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_batteingu_n_1_rel,
- ORTH <! "バッティング" !>].
+;batteingu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_batteingu_n_1_rel,
+; ORTH <! "バッティング" !>].
 
 ; 発展途上国 
 
@@ -96057,9 +96063,9 @@ batto_1 := ordinary-nohon-n-lex &
 ; バット 
 ; Used 3 times
 
-batto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_batto_n_1_rel,
- ORTH <! "バット" !>].
+;batto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_batto_n_1_rel,
+; ORTH <! "バット" !>].
 
 ; バッド 
 
@@ -96797,9 +96803,9 @@ hamusando_1 := ordinary-nohon-n-lex &
 ; ハム 
 ; Used 1 times
 
-hamu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hamu_n_1_rel,
- ORTH <! "ハム" !>].
+;hamu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hamu_n_1_rel,
+; ORTH <! "ハム" !>].
 
 ; 場面 
 ; Used 17 times
@@ -97228,9 +97234,9 @@ barubu_1 := ordinary-nohon-n-lex &
 
 ; バルブ 
 
-barubu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_barubu_n_1_rel,
- ORTH <! "バルブ" !>].
+;barubu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_barubu_n_1_rel,
+; ORTH <! "バルブ" !>].
 
 ; パルプ 
 ; Used 1 times
@@ -97384,9 +97390,9 @@ ban_1_1 := ordinary-nohon-n-lex &
 
 ; バン 
 
-ban_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ban_n_1_rel,
- ORTH <! "バン" !>].
+;ban_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ban_n_1_rel,
+; ORTH <! "バン" !>].
 
 ; パン 
 ; Used 15 times
@@ -97411,16 +97417,16 @@ panshoku_1 := ordinary-nohon-n-lex &
 ; パン 
 ; Used 15 times
 
-pan_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pan_n_1_rel,
- ORTH <! "パン" !>].
+;pan_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pan_n_1_rel,
+; ORTH <! "パン" !>].
 
 ; パン 
 ; Used 15 times
 
-pan_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pan_n_1_rel,
- ORTH <! "パン" !>].
+;pan_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pan_n_1_rel,
+; ORTH <! "パン" !>].
 
 ; 半永久 
 ; Used 1 times
@@ -97871,16 +97877,16 @@ bando_1 := ordinary-nohon-n-lex &
 ; バンド 
 ; Used 2 times
 
-bando_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_bando_n_1_rel,
- ORTH <! "バンド" !>].
+;bando_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_bando_n_1_rel,
+; ORTH <! "バンド" !>].
 
 ; バンド 
 ; Used 2 times
 
-bando_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_bando_n_1_rel,
- ORTH <! "バンド" !>].
+;bando_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_bando_n_1_rel,
+; ORTH <! "バンド" !>].
 
 ; バンドマン 
 
@@ -100020,15 +100026,15 @@ hibi_1 := ordinary-nohon-n-lex &
 
 ; ひび 
 
-hibi_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hibi_n_1_rel,
- ORTH <! "ひび" !>].
+;hibi_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hibi_n_1_rel,
+; ORTH <! "ひび" !>].
 
 ; ひび 
 
-hibi_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hibi_n_1_rel,
- ORTH <! "ひび" !>].
+;hibi_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hibi_n_1_rel,
+; ORTH <! "ひび" !>].
 
 ; 響き 
 ; Used 3 times
@@ -100997,9 +101003,9 @@ pin_1 := ordinary-nohon-n-lex &
 ; ピン 
 ; Used 4 times
 
-pin_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pin_n_1_rel,
- ORTH <! "ピン" !>].
+;pin_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pin_n_1_rel,
+; ORTH <! "ピン" !>].
 
 ; 品位 
 ; Used 3 times
@@ -101390,9 +101396,9 @@ fanreta-_1 := ordinary-nohon-n-lex &
 
 ; ファン 
 
-fan_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fan_n_1_rel,
- ORTH <! "ファン" !>].
+;fan_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_fan_n_1_rel,
+; ORTH <! "ファン" !>].
 
 ; ファンタジー 
 
@@ -101432,9 +101438,9 @@ fuiuchi_1 := ordinary-nohon-n-lex &
 
 ; ふい 
 
-fui_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fui_n_1_rel,
- ORTH <! "ふい" !>].
+;fui_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_fui_n_1_rel,
+; ORTH <! "ふい" !>].
 
 ; 部位 
 
@@ -102096,9 +102102,9 @@ fuki_1_3 := ordinary-nohon-n-lex &
 
 ; ふき 
 
-fuki_1_4 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fuki_n_1_rel,
- ORTH <! "ふき" !>].
+;fuki_1_4 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_fuki_n_1_rel,
+; ORTH <! "ふき" !>].
 
 ; 武器 
 ; Used 6 times
@@ -102586,16 +102592,16 @@ fusuma_1 := ordinary-nohon-n-lex &
 ; ふすま 
 ; Used 1 times
 
-fusuma_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fusuma_n_1_rel,
- ORTH <! "ふすま" !>].
+;fusuma_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_fusuma_n_1_rel,
+; ORTH <! "ふすま" !>].
 
 ; ふすま 
 ; Used 1 times
 
-fusuma_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fusuma_n_1_rel,
- ORTH <! "ふすま" !>].
+;fusuma_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_fusuma_n_1_rel,
+; ORTH <! "ふすま" !>].
 
 ; 不整脈 
 
@@ -103407,9 +103413,9 @@ furaikyuu_1 := ordinary-nohon-n-lex &
 ; フライ 
 ; Used 1 times
 
-furai_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_furai_n_1_rel,
- ORTH <! "フライ" !>].
+;furai_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_furai_n_1_rel,
+; ORTH <! "フライ" !>].
 
 ; フライパン 
 
@@ -103612,9 +103618,9 @@ furasshu_1 := ordinary-nohon-n-lex &
 
 ; フラッシュ 
 
-furasshu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_furasshu_n_1_rel,
- ORTH <! "フラッシュ" !>].
+;furasshu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_furasshu_n_1_rel,
+; ORTH <! "フラッシュ" !>].
 
 ; プラットホーム 
 ; Used 1 times
@@ -103704,9 +103710,9 @@ buranchi_1 := ordinary-nohon-n-lex &
 
 ; ブランチ 
 
-buranchi_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_buranchi_n_1_rel,
- ORTH <! "ブランチ" !>].
+;buranchi_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_buranchi_n_1_rel,
+; ORTH <! "ブランチ" !>].
 
 ; フランチャイズ 
 
@@ -104933,9 +104939,9 @@ pea_1 := ordinary-nohon-n-lex &
 
 ; ペア 
 
-pea_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pea_n_1_rel,
- ORTH <! "ペア" !>].
+;pea_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pea_n_1_rel,
+; ORTH <! "ペア" !>].
 
 ; ペアリング 
 
@@ -105404,9 +105410,9 @@ besutowan_1 := ordinary-nohon-n-lex &
 ; ベスト 
 ; Used 1 times
 
-besuto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_besuto_n_1_rel,
- ORTH <! "ベスト" !>].
+;besuto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_besuto_n_1_rel,
+; ORTH <! "ベスト" !>].
 
 ; へそ 
 ; Used 1 times
@@ -105443,9 +105449,9 @@ heta_1 := ordinary-nohon-n-lex &
 
 ; へた 
 
-heta_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_heta_n_1_rel,
- ORTH <! "へた" !>].
+;heta_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_heta_n_1_rel,
+; ORTH <! "へた" !>].
 
 ; 隔たり 
 ; Used 23 times
@@ -105598,9 +105604,9 @@ pettofu-do_1 := ordinary-nohon-n-lex &
 ; ペット 
 ; Used 3 times
 
-petto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_petto_n_1_rel,
- ORTH <! "ペット" !>].
+;petto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_petto_n_1_rel,
+; ORTH <! "ペット" !>].
 
 ; ペッパー 
 ; Used 3 times
@@ -105947,9 +105953,9 @@ ben_1 := ordinary-nohon-n-lex &
 ; 弁 
 ; Used 3 times
 
-ben_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ben_n_1_rel,
- ORTH <! "弁" !>].
+;ben_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ben_n_1_rel,
+; ORTH <! "弁" !>].
 
 ; ペン 
 ; Used 5 times
@@ -108014,9 +108020,9 @@ homosapiensu_1 := ordinary-nohon-n-lex &
 
 ; ホモ 
 
-homo_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_homo_n_1_rel,
- ORTH <! "ホモ" !>].
+;homo_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_homo_n_1_rel,
+; ORTH <! "ホモ" !>].
 
 ; ぼや 
 
@@ -109929,9 +109935,9 @@ mamushi_1 := ordinary-nohon-n-lex &
 
 ; まむし 
 
-mamushi_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mamushi_n_1_rel,
- ORTH <! "まむし" !>].
+;mamushi_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_mamushi_n_1_rel,
+; ORTH <! "まむし" !>].
 
 ; 豆電球 
 
@@ -110366,9 +110372,9 @@ manma_1 := ordinary-nohon-n-lex &
 
 ; まんま 
 
-manma_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_manma_n_1_rel,
- ORTH <! "まんま" !>].
+;manma_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_manma_n_1_rel,
+; ORTH <! "まんま" !>].
 
 ; 満面 
 
@@ -110489,7 +110495,7 @@ mikaeri_1 := ordinary-nohon-n-lex &
 
 ; 磨き 
 
-migaki_1 := ordinary-nohon-n-lex &
+migaki_kanji := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_migaki_n_1_rel,
  ORTH <! "磨き" !>].
 
@@ -111049,9 +111055,9 @@ mizo_1_1 := ordinary-nohon-n-lex &
 ; 溝 
 ; Used 3 times
 
-mizo_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mizo_n_1_rel,
- ORTH <! "溝" !>].
+;mizo_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_mizo_n_1_rel,
+; ORTH <! "溝" !>].
 
 ; 晦日 
 
@@ -113380,9 +113386,9 @@ metaru_1 := ordinary-nohon-n-lex &
 
 ; メタル 
 
-metaru_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_metaru_n_1_rel,
- ORTH <! "メタル" !>].
+;metaru_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_metaru_n_1_rel,
+; ORTH <! "メタル" !>].
 
 ; メダル 
 ; Used 5 times
@@ -113625,9 +113631,9 @@ menko_1 := ordinary-nohon-n-lex &
 
 ; めんこ 
 
-menko_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_menko_n_1_rel,
- ORTH <! "めんこ" !>].
+;menko_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_menko_n_1_rel,
+; ORTH <! "めんこ" !>].
 
 ; 免罪 
 
@@ -114154,9 +114160,9 @@ mochi_1_2 := ordinary-nohon-n-lex &
 
 ; もち 
 
-mochi_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mochi_n_1_rel,
- ORTH <! "もち" !>].
+;mochi_1_3 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_mochi_n_1_rel,
+; ORTH <! "もち" !>].
 
 ; 持ち味 
 ; Used 3 times
@@ -118002,15 +118008,15 @@ rakku_1 := ordinary-nohon-n-lex &
 
 ; ラック 
 
-rakku_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rakku_n_1_rel,
- ORTH <! "ラック" !>].
+;rakku_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_rakku_n_1_rel,
+; ORTH <! "ラック" !>].
 
 ; ラック 
 
-rakku_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rakku_n_1_rel,
- ORTH <! "ラック" !>].
+;rakku_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_rakku_n_1_rel,
+; ORTH <! "ラック" !>].
 
 ; ラッコ 
 
@@ -118047,9 +118053,9 @@ rappu_1 := ordinary-nohon-n-lex &
 ; ラップ 
 ; Used 1 times
 
-rappu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rappu_n_1_rel,
- ORTH <! "ラップ" !>].
+;rappu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_rappu_n_1_rel,
+; ORTH <! "ラップ" !>].
 
 ; ラテン 
 
@@ -118128,9 +118134,9 @@ ramu_1 := ordinary-nohon-n-lex &
 
 ; ラム 
 
-ramu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ramu_n_1_rel,
- ORTH <! "ラム" !>].
+;ramu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ramu_n_1_rel,
+; ORTH <! "ラム" !>].
 
 ; ラムネ 
 
@@ -118221,9 +118227,9 @@ ranchi_1 := ordinary-nohon-n-lex &
 
 ; ランチ 
 
-ranchi_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ranchi_n_1_rel,
- ORTH <! "ランチ" !>].
+;ranchi_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ranchi_n_1_rel,
+; ORTH <! "ランチ" !>].
 
 ; ランデブー 
 
@@ -118283,9 +118289,9 @@ ranpu_1 := ordinary-nohon-n-lex &
 
 ; ランプ 
 
-ranpu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ranpu_n_1_rel,
- ORTH <! "ランプ" !>].
+;ranpu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ranpu_n_1_rel,
+; ORTH <! "ランプ" !>].
 
 ; リアカー 
 
@@ -119797,9 +119803,9 @@ re-za-deisuku_1 := ordinary-nohon-n-lex &
 ; レーザー 
 ; Used 1 times
 
-re-za-_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_re_n_za_rel,
- ORTH <! "レーザー" !>].
+;re-za-_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_re_n_za_rel,
+; ORTH <! "レーザー" !>].
 
 ; レーシングカー 
 
@@ -120638,15 +120644,15 @@ ro-n_1 := ordinary-nohon-n-lex &
 
 ; ローン 
 
-ro-n_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ro_n_rel,
- ORTH <! "ローン" !>].
+;ro-n_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ro_n_rel,
+; ORTH <! "ローン" !>].
 
 ; ローン 
 
-ro-n_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ro_n_rel,
- ORTH <! "ローン" !>].
+;ro-n_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ro_n_rel,
+; ORTH <! "ローン" !>].
 
 ; 六時 
 
@@ -120676,9 +120682,9 @@ roketto_1 := ordinary-nohon-n-lex &
 ; ロケット 
 ; Used 2 times
 
-roketto_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_roketto_n_1_rel,
- ORTH <! "ロケット" !>].
+;roketto_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_roketto_n_1_rel,
+; ORTH <! "ロケット" !>].
 
 ; ロケット弾 
 
@@ -120767,9 +120773,9 @@ rokkukuraimingu_1 := ordinary-nohon-n-lex &
 ; ロック 
 ; Used 1 times
 
-rokku_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rokku_n_1_rel,
- ORTH <! "ロック" !>].
+;rokku_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_rokku_n_1_rel,
+; ORTH <! "ロック" !>].
 
 ; ロックミュージック 
 ; Used 1 times
@@ -126948,9 +126954,9 @@ byoudou_1 := ordinary-nohon-n-lex &
 ; ひらめ 
 ; Used 1 times
 
-hirame_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hirame_n_1_rel,
- ORTH <! "ひらめ" !>].
+;hirame_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hirame_n_1_rel,
+; ORTH <! "ひらめ" !>].
 
 ; 非力 
 
@@ -127044,9 +127050,9 @@ fuun_1 := ordinary-nohon-n-lex &
 
 ; フェア 
 
-fea_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fea_n_1_rel,
- ORTH <! "フェア" !>].
+;fea_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_fea_n_1_rel,
+; ORTH <! "フェア" !>].
 
 ; 不衛生 
 
@@ -127635,9 +127641,9 @@ purofesshonaru_1 := ordinary-nohon-n-lex &
 
 ; 平安 
 
-heian_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_heian_n_1_rel,
- ORTH <! "平安" !>].
+;heian_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_heian_n_1_rel,
+; ORTH <! "平安" !>].
 
 ; 平穏 
 
@@ -128940,9 +128946,9 @@ seiki_1_2 := ordinary-nohon-n-lex &
 
 ; せき 
 
-seki_1_7 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_seki_n_1_rel,
- ORTH <! "せき" !>].
+;seki_1_7 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_seki_n_1_rel,
+; ORTH <! "せき" !>].
 
 ; 隻 
 
@@ -129073,9 +129079,9 @@ hai_1_6 := ordinary-nohon-n-lex &
 ; バイト 
 ; Used 1 times
 
-baito_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_baito_n_1_rel,
- ORTH <! "バイト" !>].
+;baito_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_baito_n_1_rel,
+; ORTH <! "バイト" !>].
 
 ;(TT 2003-08-15) 一般名詞を登録
 hako_1 := ordinary-nohon-n-lex &
@@ -129123,9 +129129,9 @@ bareru_1 := ordinary-nohon-n-lex &
 
 ; ピッチ 
 
-picchi_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_picchi_n_1_rel,
- ORTH <! "ピッチ" !>].
+;picchi_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_picchi_n_1_rel,
+; ORTH <! "ピッチ" !>].
 
 ; 俵 
 ; Used 1 times
@@ -129305,9 +129311,9 @@ ru-buru_1 := ordinary-nohon-n-lex &
 
 ; ルックス 
 
-rukkusu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rukkusu_n_1_rel,
- ORTH <! "ルックス" !>].
+;rukkusu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_rukkusu_n_1_rel,
+; ORTH <! "ルックス" !>].
 
 ; 列 
 ; Used 2 times
@@ -129971,9 +129977,9 @@ fuzei_1 := ordinary-nohon-n-lex &
 ; 弁 
 ; Used 3 times
 
-ben_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ben_n_1_rel,
- ORTH <! "弁" !>].
+;ben_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ben_n_1_rel,
+; ORTH <! "弁" !>].
 
 ; 坊主 
 
@@ -130939,9 +130945,9 @@ kazukazu_1 := ordinary-nohon-n-lex &
 
 ; かんかん 
 
-kankan_1_6 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kankan_n_1_rel,
- ORTH <! "かんかん" !>].
+;kankan_1_6 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kankan_n_1_rel,
+; ORTH <! "かんかん" !>].
 
 ; ぐるり 
 
@@ -131168,9 +131174,9 @@ hotondo_1 := ordinary-nohon-n-lex &
 
 ; ぽんぽん 
 
-ponpon_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ponpon_n_1_rel,
- ORTH <! "ぽんぽん" !>].
+;ponpon_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ponpon_n_1_rel,
+; ORTH <! "ぽんぽん" !>].
 
 ; 元々 
 ; Used 3 times
@@ -132497,9 +132503,9 @@ koku_1_3 := ordinary-nohon-n-lex &
 
 ; こく 
 
-koku_1_4 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_koku_n_1_rel,
- ORTH <! "こく" !>].
+;koku_1_4 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_koku_n_1_rel,
+; ORTH <! "こく" !>].
 
 ; 鵠 
 
@@ -133615,9 +133621,9 @@ hyoudai_1 := ordinary-nohon-n-lex &
 
 ; ビラ 
 
-bira_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_bira_n_1_rel,
- ORTH <! "ビラ" !>].
+;bira_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_bira_n_1_rel,
+; ORTH <! "ビラ" !>].
 
 ; ファッションブック 
 
@@ -134147,9 +134153,9 @@ raiteingu_1 := ordinary-nohon-n-lex &
 
 ; ライティング 
 
-raiteingu_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_raiteingu_n_1_rel,
- ORTH <! "ライティング" !>].
+;raiteingu_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_raiteingu_n_1_rel,
+; ORTH <! "ライティング" !>].
 
 ; 乱筆 
 
@@ -135918,9 +135924,9 @@ gunshikin_1 := ordinary-nohon-n-lex &
 
 ; 代弁 
 
-daiben_1_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_daiben_n_1_rel,
- ORTH <! "代弁" !>].
+;daiben_1_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_daiben_n_1_rel,
+; ORTH <! "代弁" !>].
 
 ; 苔 
 ; Used 2 times
@@ -138215,9 +138221,9 @@ kirenaga_1 := ordinary-nohon-n-lex &
 
 ; ハイファイ 
 
-haifai_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_haifai_n_1_rel,
- ORTH <! "ハイファイ" !>].
+;haifai_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_haifai_n_1_rel,
+; ORTH <! "ハイファイ" !>].
 
 ; 爪弾き 
 
@@ -145396,18 +145402,508 @@ SYNSEM [LKEYS.KEYREL.PRED '_teinei_n_4_rel,
 	LOCAL.BAR -]].
 
 
-; (MS 2004-12-21) we need an entry for the usual noun 事:
-; 事を行うのに。。。
+;;;Kuribayashi
+;;;04-12-22
 
-koto-n :=
-ordinary-nohon-n-lex &
-[ORTH <! "事" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].
+; 風
 
-koto-hiragana-n :=
+kaze-wind :=
 ordinary-nohon-n-lex &
-[ORTH <! "こと" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].
+[ORTH <! "風" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kaze_1_n_rel]].
+
+; 風邪
+
+kaze-cold :=
+ordinary-nohon-n-lex &
+[ORTH <! "風邪" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kaze_2_n_rel]].
+
+; 後継ぎ 
+
+atotsugi_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_atotsugi_n_2_rel,
+ ORTH <! "後継ぎ" !>].
+
+; 羽根
+
+hane_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hane_n_2_rel,
+ ORTH <! "羽根" !>].
+
+; 灯り 
+
+akari_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_akari_n_2_rel,
+ ORTH <! "灯り" !>].
+
+;;;04-12-24
+
+; 館
+
+yakata_1 :=   ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yakata_n_1_rel,
+ ORTH <! "館" !>].
+
+; 屋形
+
+yakata_2 :=   ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yakata_n_2_rel,
+ ORTH <! "屋形" !>].
+
+; はずみ 
+
+hazumi_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hazumi_n_2_rel,
+ ORTH <! "はずみ" !>].
+
+; 玉
+
+tama_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tama_n_2_rel,
+ ORTH <! "玉" !>].
+
+; 珠
+
+tama_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tama_n_3_rel,
+ ORTH <! "珠" !>].
+
+; カビ 
+
+kabi_katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kabi_n_2_rel,
+ ORTH <! "カビ" !>].
+
+; こなし 
+
+konashi_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_konashi_n_1_rel,
+ ORTH <! "こなし" !>].
+
+; みがき 
+
+migaki_hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_migaki_n_2_rel,
+ ORTH <! "みがき" !>].
+
+; 反
+; han_1(ordinary-nohon-n-lex)を追加すべきかどうか
+
+han_2 := ordinary-prefix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_han_n_2_rel,
+ ORTH <! "反" !>].
+
+; ツレ
+
+tsure_nou_kyougen := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tsure_n_2_rel,
+ ORTH <! "ツレ" !>].
+
+; 登り口 
+
+noboriguchi_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_noboriguchi_n_2_rel,
+ ORTH <! "登り口" !>].
+
+; 謀り 
+
+hakari_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hakari_n_2_rel,
+ ORTH <! "謀り" !>].
+
+; 測り 
+
+hakari_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hakari_n_3_rel,
+ ORTH <! "測り" !>].
+
+; ゲタ
+
+geta_katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_geta_n_2_rel,
+ ORTH <! "ゲタ" !>].
+
+; 庫
+
+ko-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ko_n_suffix_rel,
+ ORTH <! "庫" !>].
+
+; 雄鶏
+
+ondori_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ondori_n_2_rel,
+ ORTH <! "雄鶏" !>].
+
+; 単
+
+hitoe_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hitoe_n_2_rel,
+ ORTH <! "単" !>].
+
+; 単衣
+
+hitoe_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hitoe_n_3_rel,
+ ORTH <! "単衣" !>].
+
+; 点前
+
+temae_sadou := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_temae_n_3_rel,
+ ORTH <! "点前" !>].
+
+; 閉め切り
+
+shimekiri_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shimekiri_n_2_rel,
+ ORTH <! "閉め切り" !>].
+
+; 陽
+
+hi_taiyou := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hi_n_2_rel,
+ ORTH <! "陽" !>].
+
+; 灯
+
+tou-suffix-akari := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tou_n_suffix_akari_rel,
+ ORTH <! "灯" !>].
+
+; 業
+
+gyou-suffix-nariwai := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_gyou_n_suffix_nariwai_rel,
+ ORTH <! "業" !>].
+
+; 費
+
+hi-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hi_n_suffix_rel,
+ ORTH <! "費" !>].
+
+; 産
+
+san-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_san_n_suffix_rel,
+ ORTH <! "産" !>].
+
+; 士
+
+shi-suffix-hito := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shi_n_suffix_hito_rel,
+ ORTH <! "士" !>].
+
+; 展
+
+ten-suffix-tenrankai := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ten_n_suffix_tenraikai_rel,
+ ORTH <! "展" !>].
+
+; 舟 
+
+fune_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fune_n_2_rel,
+ ORTH <! "舟" !>].
+
+; 卸し
+
+oroshi_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_oroshi_n_2_rel,
+ ORTH <! "卸し" !>].
+
+; 弾
+
+tama_4 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tama_n_4_rel,
+ ORTH <! "弾" !>].
+
+; 賃
+
+chin-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_chin_n_suffix_rel,
+ ORTH <! "賃" !>].
+
+; 領
+
+ryou-suffix-ryoudo := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ryou_n_suffix_ryoudo_rel,
+ ORTH <! "領" !>].
+
+;;;04-12-27
+
+; 帽
+
+bou-suffix-boushi := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_bou_n_suffix_boushi_rel,
+ ORTH <! "帽" !>].
+
+; 腺 
+
+sen_3-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sen_n_3_suffix_rel,
+ ORTH <! "腺" !>].
+
+; 腺
+
+sen_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sen_n_3_rel,
+ ORTH <! "腺" !>].
+
+; 街
+
+machi_3 :=
+ordinary-nohon-n-lex &
+[ORTH <! "街" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_machi_n_3_rel]].
+
+; 街
+
+gai-suffix-machi :=
+ordinary-suffix-n-lex &
+[ORTH <! "街" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_gai_n_suffix_machi_rel]].
+
+; ふう
+
+fuu-suffix_hiragana := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_hiragana_rel,
+ ORTH <! "ふう" !>].
+
+; 風
+
+fuu-suffix_kanji := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_kanji_rel,
+ ORTH <! "風" !>].
+
+; 猛
+
+mou-prefix := ordinary-prefix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_mou_n_prefix_rel,
+ ORTH <! "猛" !>].
+
+; 省
+
+shou-yakusho := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shou_n_yakusho_rel,
+ ORTH <! "省" !>].
+
+; 省
+
+shou-suffix-yakusho := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shou_n_suffix_yakusho_rel,
+ ORTH <! "省" !>].
+
+; 流
+
+ryuu-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ryuu_n_suffix_rel,
+ ORTH <! "流" !>].
+
+; 老
+
+rou-prefix-roujin := ordinary-prefix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_rou_n_prefix_roujin_rel,
+ ORTH <! "老" !>].
+
+; 圏
+
+ken-suffix-hani := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ken_n_suffix_hani_rel,
+ ORTH <! "圏" !>].
+
+; 準
+
+jun-prefix := ordinary-prefix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_jun_n_prefix_rel,
+ ORTH <! "準" !>].
+
+; ばなし
+
+banashi-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_banashi_n_suffix_rel,
+ ORTH <! "ばなし" !>].
+
+;;;04-12-28
+
+; 妃
+
+kisaki_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kisaki_n_1_rel,
+ ORTH <! "妃" !>].
+
+; 妃
+
+hi-suffix-kisaki := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hi_n_suffix_kisaki_rel,
+ ORTH <! "妃" !>].
+
+; 后
+
+kisaki_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kisaki_n_2_rel,
+ ORTH <! "后" !>].
+
+; 商
+
+shou-suffix-akinai := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shou_n_suffix_akinai_rel,
+ ORTH <! "商" !>].
+
+; 族
+
+zoku-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_zoku_n_suffix_rel,
+ ORTH <! "族" !>].
+
+; 調
+
+chou-suffix_2 := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_chou_n_suffix_2_rel,
+ ORTH <! "調" !>].
+
+; 歴
+
+reki-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_reki_n_suffix_rel,
+ ORTH <! "歴" !>].
+
+; 俺
+
+ore-firstpl_kanji :=
+pron-firstpl-ref-lex &
+[ORTH <! "俺" !>].
+
+; おれ
+
+ore-firstpl_hiragana :=
+pron-firstpl-ref-lex &
+[ORTH <! "おれ" !>].
+
+; オレ
+
+ore-firstpl_katakana :=
+pron-firstpl-ref-lex &
+[ORTH <! "オレ" !>].
+
+; 我が輩
+
+wagahai-firstpl_1 :=
+pron-firstpl-ref-lex &
+[ORTH <! "我が輩" !>].
+
+; 我輩
+
+wagahai-firstpl_2 :=
+pron-firstpl-ref-lex &
+[ORTH <! "我輩" !>].
+
+; わし
+
+washi-firstpl :=
+pron-firstpl-ref-lex &
+[ORTH <! "わし" !>].
+
+; おいら
+
+oira-firstpl :=
+pron-firstpl-ref-lex &
+[ORTH <! "おいら" !>].
+
+; 俺様
+
+oresama-firstpl :=
+pron-firstpl-ref-lex &
+[ORTH <! "俺様" !>].
+
+; あすこ
+
+asuko :=
+pron-loc-ref-lex &
+[ORTH <! "あすこ" !>,
+SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel]].
+
+; 誰彼
+
+darekare_kanji :=
+pron-ent-ref-lex &
+[ORTH <! "誰彼" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+; 誰かれ
+
+darekare_hiragana :=
+pron-ent-ref-lex &
+[ORTH <! "誰かれ" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+; 誰某
+
+daresore_kanji :=
+pron-ent-ref-lex &
+[ORTH <! "誰某" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+; 誰それ
+
+daresore_hiragana :=
+pron-ent-ref-lex &
+[ORTH <! "誰それ" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+; 誰々
+
+daredare :=
+pron-ent-ref-lex &
+[ORTH <! "誰々" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+; 脚
+
+ashi_1 :=
+ordinary-nohon-n-lex &
+[ORTH <! "脚" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ashi_n_1_rel]].
+
+
+; 滴
+
+shizuku_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shizuku_n_1_rel,
+ ORTH <! "滴" !>].
+
+; 弦
+
+gen_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_gen_n_2_rel,
+ ORTH <! "弦" !>].
+
+; 校
+
+kou-suffix-gakkou := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kou_n_suffix_gakkou_rel,
+ ORTH <! "校" !>].
+
+; 誌
+
+shi-suffix-publication := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shi_n_suffix_publication_rel,
+ ORTH <! "誌" !>].
+
+; 極
+
+kyoku_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kyoku_n_3_rel,
+ ORTH <! "極" !>].
+
+; 艇
+
+tei-suffix-fune := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tei_n_suffix_fune_rel,
+ ORTH <! "艇" !>].
+
 
 biru-building-n :=
 ordinary-nohon-n-lex &

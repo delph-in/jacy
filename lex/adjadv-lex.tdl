@@ -56,8 +56,6 @@ na-adj-lex &
 [ORTH <! "大","じ","ょ","うぶ" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_daijoubu_a_rel].
 
-
-
 chuutohaNpa-adj :=
 na-adj-lex &
 [ORTH <! "中途半端" !>,
@@ -6188,9 +6186,9 @@ karei_1_6 := na-adj-lex &
 
 ; 華麗 
 
-karei_1_7 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_karei_a_1_rel,
- ORTH <! "華麗" !>].
+;karei_1_7 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_karei_a_1_rel,
+; ORTH <! "華麗" !>].
 
 ; 軽やか 
 
@@ -6232,15 +6230,15 @@ kankan_1_8 := na-adj-lex &
 
 ; かんかん 
 
-kankan_1_9 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kankan_a_1_rel,
- ORTH <! "かんかん" !>].
+;kankan_1_9 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kankan_a_1_rel,
+; ORTH <! "かんかん" !>].
 
 ; かんかん 
 
-kankan_1_10 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kankan_a_1_rel,
- ORTH <! "かんかん" !>].
+;kankan_1_10 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kankan_a_1_rel,
+; ORTH <! "かんかん" !>].
 
 ; がんがん 
 
@@ -8131,30 +8129,30 @@ toutou_1_1 := na-adj-lex &
 ; とうとう 
 ; Used 3 times
 
-toutou_1_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
- ORTH <! "とうとう" !>].
+;toutou_1_2 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
+; ORTH <! "とうとう" !>].
 
 ; とうとう 
 ; Used 3 times
 
-toutou_1_3 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
- ORTH <! "とうとう" !>].
+;toutou_1_3 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
+; ORTH <! "とうとう" !>].
 
 ; とうとう 
 ; Used 3 times
 
-toutou_1_4 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
- ORTH <! "とうとう" !>].
+;toutou_1_4 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
+; ORTH <! "とうとう" !>].
 
 ; とうとう 
 ; Used 3 times
 
-toutou_1_5 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
- ORTH <! "とうとう" !>].
+;toutou_1_5 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toutou_a_1_rel,
+; ORTH <! "とうとう" !>].
 
 ; 堂々 
 
@@ -21127,9 +21125,9 @@ hotohoto_1 := scopal-adv-regular-lex &
 
 ; ほとほと 
 
-hotohoto_1_1 := scopal-adv-regular-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hotohoto_a_1_rel,
- ORTH <! "ほとほと" !>].
+;hotohoto_1_1 := scopal-adv-regular-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hotohoto_a_1_rel,
+; ORTH <! "ほとほと" !>].
 
 ;<IJ> ; ほぼ 
 ;<IJ> ; JACY ほぼ: hobo-adv (scopal-adv-regular-lex)
@@ -21938,9 +21936,9 @@ kochikochi_1 := scopal-adv-regular-lex &
 
 ; こつこつ 
 
-kotsukotsu_1_1 := scopal-adv-regular-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kotsukotsu_a_1_rel,
- ORTH <! "こつこつ" !>].
+;kotsukotsu_1_1 := scopal-adv-regular-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kotsukotsu_a_1_rel,
+; ORTH <! "こつこつ" !>].
 
 ; 散々 
 
@@ -21957,9 +21955,9 @@ juubun_1 := scopal-adv-regular-lex &
 
 ; すいすい 
 
-suisui_1_1 := scopal-adv-regular-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suisui_a_1_rel,
- ORTH <! "すいすい" !>].
+;suisui_1_1 := scopal-adv-regular-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_suisui_a_1_rel,
+; ORTH <! "すいすい" !>].
 
 ;<IJ> ; 随分 
 ;<IJ> ; JACY 随分: zuibun-kanji-adv (scopal-adv-regular-lex)
@@ -22624,9 +22622,9 @@ toriwake_2 := scopal-adv-regular-lex &
 ; どろどろ 
 ; Used 2 times
 
-dorodoro_2_1 := scopal-adv-regular-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dorodoro_a_2_rel,
- ORTH <! "どろどろ" !>].
+;dorodoro_2_1 := scopal-adv-regular-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_dorodoro_a_2_rel,
+; ORTH <! "どろどろ" !>].
 
 ;<IJ> ; 半ば 
 ;<IJ> ; JACY 半ば: nakaba (ordinary-nohon-n-lex)

@@ -1,3 +1,23 @@
+;;; -*- Mode: TDL; Coding: euc-jp -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: vn-lex.tdl
+;;;      module: lexicon
+;;;     version: lkb-2
+;;;  written by: Melanie Siegel
+;;; last update: 
+;;;  updated by: Melanie Siegel/Emily Bender
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;;    Melanie Siegel |    2003     |Atsuko Shimada,  
+;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF), 
+;;;                   |             |Takaaki Tanaka (TT), Francis Bond (FCB)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 hiratsuka :=
 surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'hiratsuka,
@@ -1439,10 +1459,10 @@ inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'amushutattopaakuhoteru,
 ORTH <! "アムシュタットパークホテル" !>].
 
-ana :=
-surname-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'ana,
-ORTH <! "アナ" !>].
+;ana :=
+;surname-lex &
+;[SYNSEM.LKEYS.KEYREL.CARG 'ana,
+;ORTH <! "アナ" !>].
 
 atoraNta :=
 inst_name-lex &

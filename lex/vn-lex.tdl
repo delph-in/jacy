@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: vn-lex.tdl
@@ -12,7 +12,7 @@
 ;;; ------------------|-------------|------------------------------------------
 ;;;    Melanie Siegel |    2003     |Atsuko Shimada,  
 ;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF), 
-;;;                   |             |Takaaki Tanaka (TT)
+;;;                   |             |Takaaki Tanaka (TT), Francis Bond (FCB)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -16356,9 +16356,9 @@ youkai_1_1 := vn-intrans-lex &
 
 ; ÍÏ²ò 
 
-youkai_1_2 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_youkai_vn_1_rel,
- ORTH <! "ÍÏ²ò" !>].
+;youkai_1_2 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_youkai_vn_1_rel,
+; ORTH <! "ÍÏ²ò" !>].
 
 
 ; ´ó¤»½ñ¤­ 
@@ -19332,11 +19332,11 @@ youkai_2 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_youkai_vn_2_rel,
  ORTH <! "ÍÏ²ò" !>].
 
-; ÍÏ²ò 
-
-youkai_2_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_youkai_vn_2_rel,
- ORTH <! "ÍÏ²ò" !>].
+;; ÍÏ²ò 
+;
+;youkai_2_1 := vn-trans1-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_youkai_vn_2_rel,
+; ORTH <! "ÍÏ²ò" !>].
 
 ; ´ó¤»½ñ¤­ 
 
@@ -23349,9 +23349,9 @@ senjou_1_2 := vn-trans1-lex &
 
 ; Àö¾ô 
 
-senjou_1_3 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_senjou_vn_1_rel,
- ORTH <! "Àö¾ô" !>].
+;senjou_1_3 := vn-trans1-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_senjou_vn_1_rel,
+; ORTH <! "Àö¾ô" !>].
 
 ; ÀèÀ© 
 
@@ -27925,9 +27925,9 @@ daiben_2 := vn-trans1-lex &
 
 ; ÂåÊÛ 
 
-daiben_2_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_daiben_vn_2_rel,
- ORTH <! "ÂåÊÛ" !>].
+;daiben_2_1 := vn-trans1-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_daiben_vn_2_rel,
+; ORTH <! "ÂåÊÛ" !>].
 
 ; Æ¤µÄ 
 

@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -1769,10 +1769,6 @@ shi-shi-_2 := num-cl-spr-only-ind-lex &
 nensei_numcl := num-cl-spr-only-ind-lex &
 [ ORTH <! "Ç¯À¸" !>].
 
-kakuni_numcl := num-cl-spr-only-meas-lex &
-[ ORTH <! "¥«¹ñ" !>,
-  SYNSEM.LKEYS.KEYREL.PRED '_kakuni_numcl_rel].
-
 ; (MS 2004-04-02) new entries
 
 kaisen_numcl := num-cl-spr-only-ind-lex &
@@ -1783,5 +1779,229 @@ kaisen_numcl := num-cl-spr-only-ind-lex &
 dai_numcl_2 := num-cl-obj-only-meas-lex &
 [ ORTH <! "Âè" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_dai_numcl_2_rel].
+
+;;;Kuribayashi
+;;;04-12-28
+
+; ¸÷Ç¯
+
+kounen_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "¸÷Ç¯" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kounen_numcl_rel].
+
+; µÓ
+
+kyaku_numcl-ashi := num-cl-spr-only-ind-lex &
+[ ORTH <! "µÓ" !>].
+
+; Å©
+
+teki_numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "Å©" !>].
+
+; ¸¹
+
+gen_numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "¸¹" !>].
+
+; ¹»
+
+kou_numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "¹»" !>].
+
+; »ï
+
+shi_numcl-publication := num-cl-spr-only-ind-lex &
+[ ORTH <! "»ï" !>].
+
+; ¥ö¹ñ
+
+kakoku_numcl-a := num-cl-spr-only-ind-lex &
+[ ORTH <! "¥ö¹ñ" !>].
+
+; ¥«¹ñ
+
+kakoku_numcl-b := num-cl-spr-only-ind-lex &
+[ ORTH <! "¥«¹ñ" !>].
+
+; ¥õ¹ñ
+
+kakoku_numcl-c := num-cl-spr-only-ind-lex &
+[ ORTH <! "¥õ¹ñ" !>].
+
+; ¤«¹ñ
+
+kakoku_numcl-d := num-cl-spr-only-ind-lex &
+[ ORTH <! "¤«¹ñ" !>].
+
+; ²Õ¹ñ
+
+kakoku_numcl-e := num-cl-spr-only-ind-lex &
+[ ORTH <! "²Õ¹ñ" !>].
+
+; ²Õ·î
+
+kagetsu_numcl-e := num-cl-spr-only-meas-lex &
+[ ORTH <! "²Õ·î" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kagetsu_numcl_rel].
+
+;;;05-01-11
+
+; Ê¿Êý¥á¡¼¥È¥ë
+
+heihoumeetoru_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "Ê¿Êý¥á¡¼¥È¥ë" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_heihoumeetoru_numcl_rel].
+
+; Ê¿Êý¥­¥í¥á¡¼¥È¥ë
+
+heihoukiromeetoru_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "Ê¿Êý¥­¥í¥á¡¼¥È¥ë" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_heihoukiromeetoru_numcl_rel].
+
+; ´Ó
+
+kan_numcl_1 := num-cl-spr-only-meas-lex &
+[ ORTH <! "´Ó" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kan_numcl_1_rel].
+
+
+; Ìè
+
+monme_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "Ìè" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_monme_numcl_rel].
+
+
+; ¥Ð¡¼¥ë
+
+baaru_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "¥Ð¡¼¥ë" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_baaru_numcl_rel].
+
+; ¶Ô
+
+kin_numcl-weight := num-cl-spr-only-meas-lex &
+[ ORTH <! "¶Ô" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kin_numcl_weight_rel].
+
+kin_numcl-bread := num-cl-spr-only-ind-lex &
+[ ORTH <! "¶Ô" !>].
+
+; ¾ò
+
+jou_numcl_4 := num-cl-spr-only-ind-lex &
+[ ORTH <! "¾ò" !>].
+
+; ¥ö¾ò
+
+kajou_numcl-a := num-cl-spr-only-ind-lex &
+[ ORTH <! "¥ö¾ò" !>].
+
+; ¥«¾ò
+
+kajou_numcl-b := num-cl-spr-only-ind-lex &
+[ ORTH <! "¥«¾ò" !>].
+
+; ¥õ¾ò
+
+kajou_numcl-c := num-cl-spr-only-ind-lex &
+[ ORTH <! "¥õ¾ò" !>].
+
+; ¤«¾ò
+
+kajou_numcl-d := num-cl-spr-only-ind-lex &
+[ ORTH <! "¤«¾ò" !>].
+
+; ²Õ¾ò
+
+kajou_numcl-e := num-cl-spr-only-ind-lex &
+[ ORTH <! "²Õ¾ò" !>].
+
+; ¤±¤¿
+;;; ¡Ö·å¡×¡Ö¥±¥¿¡×¤È¤â¤Ëmeas¤ÇÅÐÏ¿¤µ¤ì¤Æ¤¤¤ë¤Î¤Ç¤³¤³¤Ç¤â¤½¤ì¤ËÊï¤Ã¤¿
+
+keta_numcl_hiragana := num-cl-spr-only-meas-lex &
+[ ORTH <! "¤±¤¿" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_keta_numcl_hiragana_rel].
+
+
+; À£
+
+sun_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "À£" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_sun_numcl_rel].
+
+; ¾£
+
+keta_numcl_masu := num-cl-spr-only-meas-lex &
+[ ORTH <! "¾£" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_shou_numcl_masu_rel].
+
+; ¥Ú¥ó¥¹
+
+pensu_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "¥Ú¥ó¥¹" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_pensu_numcl_rel].
+
+; ¥Ç¥·¥ê¥Ã¥È¥ë
+
+deshirittoru_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "¥Ç¥·¥ê¥Ã¥È¥ë" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_deshirittoru_numcl_rel].
+
+; ¥Ê¥Î¥á¡¼¥È¥ë
+
+nanomeetoru_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "¥Ê¥Î¥á¡¼¥È¥ë" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_nanomeetoru_numcl_rel].
+
+; ¥Ø¥¯¥È¥Ñ¥¹¥«¥ë
+
+hekutopasukaru_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "¥Ø¥¯¥È¥Ñ¥¹¥«¥ë" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_hekutopasukaru_numcl_rel].
+
+; £í
+
+meetoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£í" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_meetoru_numcl_alphabet_rel].
+
+; £ã£í
+
+senchimeetoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ã£í" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_senchimeetoru_numcl_alphabet_rel].
+
+; £ë£í
+
+kiromeetoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ë£í" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kiromeetoru_numcl_alphabet_rel].
+
+; £ì
+
+rittoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ì" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_rittoru_numcl_alphabet_rel].
+
+; £í£ì
+
+miririttoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£í£ì" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_miririttoru_numcl_alphabet_rel].
+
+; £ä£ì
+
+deshirittoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ä£ì" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_deshirittoru_numcl_alphabet_rel].
+
+; £ë£ì
+
+kirorittoru_numcl_alphabet := num-cl-spr-only-meas-lex &
+[ ORTH <! "£ë£ì" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_kirorittoru_numcl_alphabet_rel].
 
 

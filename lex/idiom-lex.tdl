@@ -207,7 +207,7 @@ karadagaaku-multi := excl-lex &
 
 
 gomeNnasai-multi := excl-lex &
-                    [ORTH <! "ごめんなさい" !>,
+                    [ORTH <! "ごめん", "なさい" !>,
           SYNSEM.LKEYS.KEYREL [PRED '_gomeNnasai_idiom_rel]].
 
 

@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Package: DISCO; Coding: euc-jp  -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -730,10 +730,10 @@ noun_mod-lex-l &
 	 LKEYS.KEYREL.PRED '_ichiban_nmod_rel]].
 
 
-soshitara-multi :=
-                  interj-lex &
-                  [ORTH <! "そしたら" !>,
-                   SYNSEM.LKEYS.KEYREL.PRED '_soshitara_interj_rel].
+;soshitara-multi :=
+;                  interj-lex &
+;                  [ORTH <! "そしたら" !>,
+;                   SYNSEM.LKEYS.KEYREL.PRED '_soshitara_interj_rel].
 
 soudesune-interj-multi := interj-lex &
 		            [ORTH <! "そう",  "です",  "ね" !>,
@@ -810,10 +810,10 @@ SYNSEM.LKEYS.KEYREL.PRED '_gotoni_nmod_rel].
 
 ;now, well, why then
 
-sate :=
-interj-lex &
-[ORTH <! "さて" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_sate_interj_rel].
+;sate :=
+;interj-lex &
+;[ORTH <! "さて" !>,
+; SYNSEM.LKEYS.KEYREL.PRED '_sate_interj_rel].
 
 shikashinagara :=
 interj-lex &
