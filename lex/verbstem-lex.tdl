@@ -1,4 +1,4 @@
-;;;; -*- Mode: TDL; Package: DISCO -*-
+;;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -1090,6 +1090,10 @@ haru-stem :=  v4-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_haru_v_rel]],
                    ORTH <! "張る" !>].
 
+haru-1-stem :=  v4-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_haru_v_1_rel]],
+                   ORTH <! "貼る" !>].
+
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 hasamaru-stem :=  intrans-c-stem-lex &
@@ -1214,6 +1218,14 @@ ORTH <! "諮る" !>].
 
 hakaru-3a-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hakaru_a_3a_rel]],
+ORTH <! "はかる" !>].
+
+hakaru-4-stem := v1-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hakaru_a_4_rel]],
+ORTH <! "測る" !>].
+
+hakaru-4a-stem := v1-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hakaru_a_4a_rel]],
 ORTH <! "はかる" !>].
 
 hashiru-stem :=   v1-c-stem-lex &

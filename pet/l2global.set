@@ -1,4 +1,4 @@
-;; command line settings
+;; command line settings ;;; -*- Mode: TDL; -*-
 verbose := 0.
 limit := 10000.
 memlimit := 32.

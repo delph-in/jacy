@@ -1,4 +1,4 @@
-;;; flop.settings - 5/2000 uc@coli.uni-sb.de
+;;; flop.settings - 5/2000 uc@coli.uni-sb.de   -*- Mode: TDL; -*-
 ;;;
 ;;; this file contains settings for FLOP
 ;;; 
@@ -57,3 +57,4 @@ dont-expand := lex-entry.
 ;; `pseudo' types outside the type hierarchy. these are ignored for
 ;; appropriateness, expansion etc.
 pseudo-types := $qc_unif_trad $qc_unif_set.
+;pseudo-types :=  $qc_paths_set $qc_paths_traditional.

@@ -1,4 +1,4 @@
-;; -*- Mode: TDL; Package: DISCO -*-
+;;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -448,7 +448,7 @@ comma-advp := adv-p-lex-1 &
               ORTH <! "、" !>].
 
 ; (not FCB 2003-08-13)  Evil hack
-; FIXME: fix the inpout text
+; FIXME: fix the input text
 comma-no-nmod-1 := nounmod-p-lex &
            [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
 			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
@@ -1052,10 +1052,16 @@ niatari-varg := postp-lex-varg &
          ORTH <! "に当たり" !>]. 
 
 
-niataru-narg := postp-lex &
+niataru-hiragana-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED '_niataru_p_rel] !>],
+         ORTH <! "にあたる" !>]. 
+
+niataru-kanji-narg := postp-lex &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_niataru_p_rel] !>],
          ORTH <! "に当たる" !>]. 
+
 
 ;配当金の受領にあたっては、お届け印を押捺する必要がありますが、milka.comで株式を買った場合のお届け印はどのようになるのでしょうか。
 niatatte-hiragana-narg := postp-lex &
@@ -1068,6 +1074,16 @@ niatatte-hiragana-varg := postp-lex-varg &
         [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
                        CONT.RELS <! [PRED '_niatatte_p_rel] !>],
          ORTH <! "にあたって" !>]. 
+
+niatatte-kanji-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED '_niatatte_p_rel] !>],
+         ORTH <! "に当たって" !>]. 
+
+niatatte-kanji-varg := postp-lex-varg &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED '_niatatte_p_rel] !>],
+         ORTH <! "に当たって" !>]. 
 
 ;"kaigi ga gogo  ni haitte  orimashite."
 ni-case := ga-wo-ni-p-lex &

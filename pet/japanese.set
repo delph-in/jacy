@@ -1,4 +1,4 @@
-;;;; settings for CHEAP
+;;;; settings for CHEAP 		-*- Mode: TDL; Coding: euc-jp -*-
 
 encoding := EUC-JP.
 
@@ -76,6 +76,7 @@ start-symbols := $utterance-root.
 
 ;; name of type containing quick check structure
 qc-structure := $qc_unif_set.
+;qc-structure := $qc_paths_set.
 
 ;; names of attributes not to pass from daughter to mother in parsing
 deleted-daughters := ARGS HEAD-DTR NON-HEAD-DTR.

@@ -1,5 +1,4 @@
-;; -*- Mode: TDL; Package: DISCO -*-
-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: lex-types.tdl
 ;;;      module: Basis

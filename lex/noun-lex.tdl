@@ -1,4 +1,4 @@
-;; -*- Mode: TDL; Package: DISCO -*-
+;;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: noun-lex.tdl
@@ -4425,6 +4425,16 @@ pron-sp-ref-lex &
 boku-kanji:=
 pron-sp-ref-lex &
 [ORTH <! "ËÍ" !>,
+ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+ore :=
+pron-sp-ref-lex &
+[ORTH <! "¤ª¤ì" !>,
+ SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+ore-kanji := 
+pron-sp-ref-lex &
+[ORTH <! "²¶" !>,
  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 
 shousei :=
@@ -79729,6 +79739,12 @@ tanabota_1 := ordinary-nohon-n-lex &
 dani_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dani_n_1_rel,
  ORTH <! "¥À¥Ë" !>].
+
+; Ã« 
+
+tani_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tani_n_1_rel,
+ ORTH <! "Ã«" !>].
 
 ; Ã«Àî 
 

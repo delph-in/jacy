@@ -1,6 +1,5 @@
-Performace tweaks
+Performace tweaks				 Francis Bond
 -----------------
-
 
 Make sure the two quick-check files are kept up to date.
 
@@ -12,8 +11,10 @@ Generate as follows:
 ====================
 PET (hinoki):
 -------------
-Make sure yor grammar is up-to-date:
-flop japanese.tdl
+Make sure:
+ - you are using compatible versions of flop and cheap
+ - your grammar is up-to-date:
+   flop japanese.tdl
 
 mv pet/qc.tdl pet/qc.tdl.old
 
