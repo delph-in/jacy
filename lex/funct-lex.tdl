@@ -452,6 +452,7 @@ hon-prefix-lex &
                         MOD < [LOCAl [CAT [HEAD ordinary_noun_head,
 					VAL.SPR 1-list],
                                    BAR +]] > ]].
+
 go-hon-kanji-vnpref :=
 hon-prefix-lex &
 [ORTH <! "¸æ" !>,

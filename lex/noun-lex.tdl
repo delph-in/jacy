@@ -7542,6 +7542,7 @@ kiNkou-noun :=
 ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'kinkou,
 ORTH <! "¶á¹Ù" !>].
+
 nihongo-noun  :=
 ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'nihongo,
@@ -7787,6 +7788,7 @@ nanika-multi := ordinary-nohon-plusbar-n-lex &
                                 [ORTH <! "²¿",  "¤«" !>,
                                  SYNSEM [LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED 'indef,
 					 LKEYS.KEYREL.PRED 'nanika]].
+
 toshiba-503-multi :=
 ordinary-nohon-n-lex &
 [ORTH <! "Åì¼Ç", "503" !>,

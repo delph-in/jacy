@@ -159,6 +159,7 @@ shitsureiitashimasu-multi  := excl-lex &
                         [ORTH <! "失礼",  "いたし","ます" !>,
                          SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
                                        LKEYS.KEYREL.PRED 'shitsureishimasu]].
+
 arigatou := excl-lex &
                      [ORTH <! "ありがとう" !>,
                          SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
