@@ -1530,6 +1530,12 @@ subj-casechange-rule := phrasal_sign & headed-phrase & lex-rule &
 ; 三ドル.  Just plain 三 needs to involve a named relation.  So, making
 ; three separate rules in place of this one.
 
+; (ERB 2003-11-12) Added KEYS.KEY reg-nom-rel here.  This is the underspecified
+; nominal relation introduced by the uler (cleaner to do it in C-CONT then?),
+; that gets specialized only in the case of nominal-numcl-rule2 (for ,
+; etc.).  ... except that that's not consistent with named-card-rel on
+; one of the subtypes, so move this down to noncard.  (Might be okay once
+; we clarify what relation type to use for named-card-rel.
 
 
 nominal-numcl-rule-type := unary-type &
@@ -1537,12 +1543,19 @@ nominal-numcl-rule-type := unary-type &
 							VN -,
 							KEYS.MESSAGE no-msg],
                          VAL noun_sc ],
-                   CONT [ HCONS <! !> ]]],
+                    CONT [ HCONS <! !> ]]],
   ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head,
                                 VAL saturated ],
                           BAR +]].
 
 ; For numbers used as numeral classifiers used as nouns
+
+; (ERB 2003-11-12) Previous hack of giving these guys a PRED value that is
+; inconsistent with string doesn't work with the Matrix definition of the type
+; relation.  In order to avoid positing a special feature to keep them out
+; of the compounds rule, try making them BAR +.  What might that break?
+; ... That wasn't the problem, as it's not nominal-numcl-rule3 that's showing
+; up there, but rather 1 (and maybe 2).
 
 nominal-numcl-rule-card := nominal-numcl-rule-type &
 [ SYNSEM.LOCAL.LKEYS.--KEYREL #key & named-card_rel &
@@ -1553,32 +1566,53 @@ nominal-numcl-rule-card := nominal-numcl-rule-type &
            RELS <! !>],
   ARGS.FIRST.SYNSEM.LOCAL.LKEYS.--KEYREL #key ].
            
+; (ERB 2003-11-12) Try constraining the KEY relation here to be
+; regular-quantity-rel to keep bare numerals out of these ones.
+; That seems to do the trick, although it will probably need
+; revisiting if we make reg-quantity-rel just a particular adjectival
+; rel.
+
+; (ERB 2003-11-12) Put reg-nom-rel on KEY.  See notes at nominal-numcl-rule-type
+; above.
 
 nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
-[ SYNSEM.LOCAL.LKEYS.--KEYREL #nounkey & [ARG0 #arg,
+[ SYNSEM.LOCAL.LKEYS.--KEYREL #nounkey & reg-nom_rel & [ARG0 #arg,
 				    LBL #hand],
   C-CONT common-noun-sem-type &
          [ HOOK [LTOP #hand,
 		 INDEX #arg],
            RELS <! #nounkey !>],
-  ARGS.FIRST.SYNSEM.LOCAL [LKEYS.--KEYREL [ARG1 #arg,
+  ARGS.FIRST.SYNSEM.LOCAL [LKEYS.--KEYREL reg-quantity_rel &
+                                    [ARG1 #arg,
 				     LBL #hand],
 			   CONT.HOOK.LTOP #hand ]].
 
 
 ; For 円、ドル、階、etc.
 
+
+; (ERB 2003-11-12) Change relation to norm-relation on ALTKEY
+; of daughter, to keep ??? type out of this rule.
+
+; (MS 2003-12-02) norm-relation has no definition???
+
 nominal-numcl-rule-nomod := nominal-numcl-rule-type-noncard &
 [ SYNSEM.LOCAL.LKEYS.--KEYREL [WLINK #label,
 			 PRED #rel],
   ARGS.FIRST.SYNSEM.LOCAL.LKEYS [--KEYREL [WLINK #label],
-				 --ALTKEYREL relation & [ PRED #rel ]]].
+				 --ALTKEYREL [ PRED #rel ]]].
+
+
+;;				 --ALTKEYREL norm-relation & [ PRED #rel ]]].
 
 ; For 匹、本、枚、etc.
 ; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
 
+; (ERB 2003-11-12) For printing of MRSs, put in a PRED value
+; on the KEY.
+
 nominal-numcl-rule-mod := nominal-numcl-rule-type-noncard &
-[ ARGS.FIRST.SYNSEM.LOCAL.LKEYS [--KEYREL reg-quantity_rel ]].
+[ ARGS.FIRST.SYNSEM.LOCAL.LKEYS.--KEYREL reg-quantity_rel & [PRED 'reg-nom_rel]].
 
 
 ; ERB (2001-08-28)
