@@ -880,11 +880,13 @@ na-vend-rule := stem-end-rule-type &
 
 ; (MS 2004-11-08) This one should keep the LMORPH-BIND-TPYE: 来やすい
 ; (MS 2004-12-21) This doesn't necessarily have to be FIN +: 偽りなく
+; (S 2005-01-06) Copy up ARG-S.
 
 unary-vstem-vend-rule := unary-type-super &
  [SYNSEM [LOCAL [CAT #cat,
 		 CONT #cont,
 		 CTXT #ctxt,
+		 ARG-S #args,
 		 BAR +]],
   J-NEEDS-AFFIX -,
   LMORPH-BIND-TYPE #lmorph,
@@ -894,6 +896,7 @@ unary-vstem-vend-rule := unary-type-super &
 							    EMPTY -]],
 			CONT #cont,
 			CTXT #ctxt,
+			 ARG-S #args,
 			BAR -],
 		  LEX +],
 	  LMORPH-BIND-TYPE #lmorph,

@@ -2,6 +2,82 @@
 ;;;;;;;;COPULA;;;;;;;;;;;;;;;;
 
 
+cop_rule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "desu-v-cop-lex" ].
+
+
+cop_rule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "da-v-cop-lex" ].
+
+cop_rule_3 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "na-v-cop-lex" ].
+
+cop_rule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "na-cop-lex" ].
+
+cop_rule_5 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST never_unify_rel ],
+  OUTPUT "degozaru-cop-multi" ].
+
+cop_rule_6 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "deareba-cop-lex" ].
+
+cop_rule_7 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "datta-v-cop-lex" ].
+
+cop_rule_8 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ndesu-v-cop-lex" ].
+
+cop_rule_9 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "deshitara-cop-lex" ].
+
+cop_rule_10 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "deshou-v-cop-lex" ].
+
+cop_rule_12 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "de-v-cop-lex" ].
+
+cop_rule_13 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dearu-v-cop-lex" ].
+
+cop_rule_14 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "naNdesu-cop-multi" ].
+
+cop_rule_15 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nodesu-v-cop-lex" ].
+
+cop_rule_16 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nodeshou-v-cop-lex" ].
+
+cop_rule_17 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ndeshou-v-cop-lex" ].
+
+cop_rule_18 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "noda-v-cop-lex" ].
+
+cop_rule_19 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dai-v-cop-lex" ].
+
+cop_rule_20 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nda-v-cop-lex" ].
 
 cop_rule_21 := generator_rule &
  [ CONDITION  [ RELS <! na-adj-relation !> ],
@@ -14,6 +90,27 @@ cop_rule_22 := generator_rule &
 cop_rule_23 := generator_rule &
  [ CONDITION  [ RELS <! na-adj-relation !> ],
   OUTPUT "da-v-cop-stem" ].
+
+
+cop_rule_24 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kashira-cop-lex" ].
+
+cop_rule_25 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kanaa-cop-lex" ].
+
+cop_rule_26 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nodesu-chasen-v-cop-lex" ].
+
+cop_rule_27 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ndarou-v-cop-lex" ].
+
+cop_rule_28 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nara-cop-lex" ].
 
 
 
@@ -89,9 +186,11 @@ no_part_genrule_1 := generator_rule &
  [ CONDITION  [ RELS.LIST.FIRST const-relation ],
   OUTPUT "no-nspec-4" ].
 
+
 wa_part_genrule_2  := generator_rule &
  [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
   OUTPUT "wa-in-copula-sent" ].
+
 
 
 ;;;;;;;;;LIGHT VERBS;;;;;;;;;;
@@ -122,6 +221,58 @@ light_genrule_6 := generator_rule &
 
 ;;;;;;;;HESITATIONS;;;;;;;;;;;
 
+hes_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "maa-hes" ].
+
+hes_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ma" ].
+
+;hes_genrule_3 := generator_rule &
+; [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+;  OUTPUT "nee" ].
+
+hes_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fuN" ].
+
+hes_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "uuN" ].
+
+hes_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "yaa" ].
+
+hes_genrule_7 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "naa-hes" ].
+
+hes_genrule_8 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "a" ].
+
+hes_genrule_9 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "aa" ].
+
+hes_genrule_10 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "eeto-hes" ].
+
+hes_genrule_11 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "soudesune-hes-multi" ].
+
+hes_genrule_12 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "chottone-multi" ].
+
+
+hes_genrule_14 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nee" ].
 
 
 ;;;;;;;;;AUXILIARIES
@@ -321,11 +472,28 @@ tenseend_genrule_16 :=  generator_rule &
  [ CONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "te-end" ].
 
+
 tenseend_genrule_5 :=  generator_rule &
  [ CONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "you-end" ].
 
 
+na2adv_genrule := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ni-end" ].
+
+contracted-aux_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jau-end" ].
+
+contracted-aux_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jau-chasen-end" ].
+
+
+tenseend_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "you-end" ].
 
 
 ;;;SYMBOLS;;;;;;;;;;
@@ -358,6 +526,11 @@ comma_genrule_7 :=  generator_rule &
  [ CONDITION  [ RELS.LIST.FIRST event-relation ],
   OUTPUT "comma-interjmod" ].
 
+
+
+quotation_genrule_1 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-name-init" ].
 
 karasign_part_genrule := generator_rule &
  [ CONDITION  [ RELS.RELS.FIRST const-relation ],
@@ -439,17 +612,31 @@ to-conj-pobj_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "to-conj-pobj" ].
 
+quotation_genrule_2 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-name-end" ].
+
 ndesu-v-cop-lex_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "ndesu-v-cop-lex" ].
+
+quotation_genrule_3 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-name-init2" ].
 
 soudesune-hes-multi_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "soudesune-hes-multi" ].
 
+
 quotation-name-end2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "quotation-name-end2" ].
+
+
+quotation_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-noun-init" ].
 
 gou_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -479,25 +666,46 @@ fi-to_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "fi-to_2" ].
 
+quotation_genrule_6 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-noun-end" ].
+
 de-v-cop-lex_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "de-v-cop-lex" ].
+
+quotation_genrule_7 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-noun-init-2" ].
 
 o-3_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "o-3" ].
 
+quotation_genrule_8 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-noun-end-2" ].
+
 mori_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "mori_2" ].
+
+quotation_genrule_9 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-sentence-init" ].
 
 o-2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "o-2" ].
 
+
 quotation-sentence-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "quotation-sentence-end" ].
+
+quotation_genrule_11 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-sentence-init2" ].
 
 no_numcl-2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -559,13 +767,19 @@ you-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "you-end" ].
 
+quotation_genrule_12 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-sentence-end2" ].
+
 quotation-name-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "quotation-name-end" ].
 
+
 quotation-noun-init2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "quotation-noun-init2" ].
+
 
 ken_numcl_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -771,6 +985,10 @@ quotation-noun-end2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "quotation-noun-end2" ].
 
+quotation_genrule_15 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-noun-init3" ].
+
 tsui_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "tsui_2" ].
@@ -934,6 +1152,7 @@ shimau-aux-stem_gr := generator_rule &
 quotation-noun-end3_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "quotation-noun-end3" ].
+
 
 quotation-sap-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -1343,6 +1562,11 @@ quotation-sap-init_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "quotation-sap-init" ].
 
+
+quotation_genrule_18 :=  generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "quotation-sap-end" ].
+
 nasai-chasen-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "nasai-chasen-end" ].
@@ -1479,6 +1703,10 @@ ga-2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "ga-2" ].
 
+colon_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "colon" ].
+
 ha_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "ha_2" ].
@@ -1498,6 +1726,11 @@ banme_numcl_gr := generator_rule &
 colon-2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "colon-2" ].
+
+
+brackets_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "angle-brackets-init" ].
 
 ni-case_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -1526,6 +1759,21 @@ bangou_numcl-1_gr := generator_rule &
 angle-brackets-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "angle-brackets-end" ].
+
+
+brackets_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "angle-double-brackets-init" ].
+
+brackets_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "angle-double-brackets-end" ].
+
+
+
+parent_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "parenthesis-init" ].
 
 jiku_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -1567,29 +1815,55 @@ kanaa-cop-lex_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "kanaa-cop-lex" ].
 
+parent_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "parenthesis-end" ].
+
 mashita-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "mashita-end" ].
+
+parent_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "parenthesis-j-init" ].
 
 rareru-ditrans-pass-ganiwo-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "rareru-ditrans-pass-ganiwo-end" ].
 
+parent_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "parenthesis-j-end" ].
+
 go-hon-kanji-vnpref_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "go-hon-kanji-vnpref" ].
+
+karasign_part_genrule := generator_rule &
+ [ CONDITION  [ RELS.RELS.FIRST const-relation ],
+  OUTPUT "karasign-nspec" ].
 
 bariki_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "bariki_2" ].
 
+
 rareru-honorific-pass-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "rareru-honorific-pass-end" ].
 
+
+honpref_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-hon-vnpref" ].
+
 itasu-kanji-light_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "itasu-kanji-light" ].
+
+honpref_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-hon-npref" ].
 
 doru_numcl_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -1611,9 +1885,14 @@ rittoru_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "rittoru_2" ].
 
+
 degozaru-cop-multi_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "degozaru-cop-multi" ].
+
+honpref_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-hon-napref" ].
 
 kai_2_1_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -1639,17 +1918,32 @@ deareba-cop-lex_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "deareba-cop-lex" ].
 
+
+honpref_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-npref" ].
+
 generic_adj_te_infl_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "generic_adj_te_infl" ].
+
 
 eeto-hes_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "eeto-hes" ].
 
+
+honpref_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-vnpref" ].
+
 comma-te-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "comma-te-end" ].
+
+honpref_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-kanji-npref" ].
 
 reru-light-pass-end_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -1691,14 +1985,2149 @@ hatsu_2_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "hatsu_2" ].
 
+honpref_genrule_7 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-kanji-vnpref" ].
+
 ninaru-multi_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "ninaru-multi" ].
+
+honpref_genrule_8 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-katakana-npref" ].
 
 moushiageru-hiragana-light_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "moushiageru-hiragana-light" ].
 
+;;;;;;;;;;NUMERAL CLASSIFIERS;;;;;;;;;
+
+
+numcl_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nin_numcl"].
+
+numcl_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mei_numcl"].
+
+numcl_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi_numcl"].
+
+numcl_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ko_numcl"].
+
+numcl_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsu_numcl"].
+
+numcl_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hon_numcl"].
+
+numcl_genrule_7 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hai_numcl"].
+
+numcl_genrule_8 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "satsu_numcl"].
+
+numcl_genrule_9 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mai_numcl"].
+
+numcl_genrule_10 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ki_numcl"].
+
+numcl_genrule_12 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tou_numcl"].
+
+numcl_genrule_13 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hiki_numcl"].
+
+numcl_genrule_14 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "wa_numcl"].
+
+numcl_genrule_15 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "satsu-2_numcl"].
+
+numcl_genrule_16 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsubu_numcl"].
+
+numcl_genrule_17 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ken_numcl"].
+
+numcl_genrule_18 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bit_numcl"].
+
+numcl_genrule_19 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kabu_numcl"].
+
+numcl_genrule_20 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bu_numcl"].
+
+numcl_genrule_21 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "souba_numcl"].
+
+numcl_genrule_22 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hako_numcl"].
+
+numcl_genrule_23 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ban_numcl"].
+
+numcl_genrule_24 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jou-numcl"].
+
+numcl_genrule_25 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "gou_numcl"].
+
+numcl_genrule_26 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "no_numcl-1"].
+
+numcl_genrule_27 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "no_numcl-2"].
+
+numcl_genrule_30 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bangou_numcl-1"].
+
+
+numcl_genrule_36 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "doru_numcl"].
+
+numcl_genrule_81 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shu_numcl"].
+
+numcl_genrule_82 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kirowatto_numcl"].
+
+numcl_genrule_83 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "boruto_numcl"].
+
+numcl_genrule_84 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rippoumeetoru_numcl"].
+
+numcl_genrule_85 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bai_numcl"].
+
+
+numcl_genrule_88 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ka_numcl"].
+
+
+numcl_genrule_92 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "suji_9"].
+
+numcl_genrule_93 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dan_3"].
+
+numcl_genrule_94 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fushi_9"].
+
+numcl_genrule_95 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ten_4"].
+
+numcl_genrule_96 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tokoro_4"].
+
+numcl_genrule_97 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "me_4"].
+
+numcl_genrule_98 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "daun_4"].
+
+numcl_genrule_99 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsuuwa_3"].
+
+numcl_genrule_100 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "setto_3"].
+
+numcl_genrule_102 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-mu_2"].
+
+numcl_genrule_103 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ori_2"].
+
+numcl_genrule_104 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kai_2"].
+
+numcl_genrule_105 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kai_2_1"].
+
+numcl_genrule_106 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kakae_2"].
+
+numcl_genrule_107 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasane_2"].
+
+numcl_genrule_108 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_2"].
+
+numcl_genrule_109 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2b"].
+
+numcl_genrule_110 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2c"].
+
+numcl_genrule_111 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2d"].
+
+numcl_genrule_112 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2e"].
+
+numcl_genrule_113 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "karatto_2"].
+
+
+numcl_genrule_116 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kyaku_2"].
+
+numcl_genrule_118 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kyoku_2"].
+
+
+numcl_genrule_122 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kirorittoru_2"].
+
+numcl_genrule_123 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ku_2"].
+
+numcl_genrule_124 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "gu_2"].
+
+numcl_genrule_125 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ku-ru_2"].
+
+numcl_genrule_126 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kuo-ta-_2"].
+
+numcl_genrule_128 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kumi_2"].
+
+numcl_genrule_130 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ken_2"].
+
+numcl_genrule_131 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ko_2"].
+
+numcl_genrule_132 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "koma_2"].
+
+numcl_genrule_133 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sai_2"].
+
+numcl_genrule_134 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "saikuru_2"].
+
+numcl_genrule_135 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sao_2"].
+
+numcl_genrule_136 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi_2"].
+
+numcl_genrule_137 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi_2_1"].
+
+numcl_genrule_138 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jiku_2"].
+
+
+numcl_genrule_140 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jigen_2_1"].
+
+numcl_genrule_141 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shime_2"].
+
+numcl_genrule_142 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shasen_2"].
+
+numcl_genrule_143 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shuu_2"].
+
+numcl_genrule_144 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shuu_2_1"].
+
+numcl_genrule_145 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shuukan_2"].
+
+numcl_genrule_146 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jun_2"].
+
+numcl_genrule_147 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jou_2"].
+
+numcl_genrule_148 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sutoro-ku_2"].
+
+numcl_genrule_149 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seiki_2"].
+
+numcl_genrule_150 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2"].
+
+numcl_genrule_151 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2_1"].
+
+numcl_genrule_152 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2_2"].
+
+numcl_genrule_153 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2_3"].
+
+numcl_genrule_156 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "soroi_2"].
+
+numcl_genrule_157 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "da-su_2"].
+
+numcl_genrule_158 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dasuu_2"].
+
+numcl_genrule_159 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "taba_2"].
+
+numcl_genrule_160 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "chie-n_2"].
+
+numcl_genrule_161 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsui_2"].
+
+numcl_genrule_162 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsutsumi_2"].
+
+numcl_genrule_163 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsubo_2"].
+
+numcl_genrule_164 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "to_2"].
+
+numcl_genrule_165 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "toori_2"].
+
+numcl_genrule_166 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nagare_2"].
+
+numcl_genrule_167 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nigiri_2"].
+
+numcl_genrule_168 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nyu-ton_2"].
+
+numcl_genrule_169 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ha_2"].
+
+numcl_genrule_170 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hai_2"].
+
+numcl_genrule_171 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hai_2_1"].
+
+numcl_genrule_172 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "baito_2"].
+
+numcl_genrule_173 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hashira_2"].
+
+numcl_genrule_174 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pasukaru_2"].
+
+numcl_genrule_175 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hatsu_2"].
+
+numcl_genrule_176 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "haba_2"].
+
+numcl_genrule_177 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hari_2"].
+
+numcl_genrule_178 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bariki_2"].
+
+numcl_genrule_179 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bareru_2"].
+
+numcl_genrule_180 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "picchi_2"].
+
+numcl_genrule_181 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hyou_2"].
+
+numcl_genrule_182 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hyou_2_1"].
+
+numcl_genrule_184 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fi-to_2"].
+
+numcl_genrule_185 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fuku_2"].
+
+numcl_genrule_186 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fude_2"].
+
+numcl_genrule_187 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "furi_2"].
+
+numcl_genrule_188 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pe-ji_2"].
+
+numcl_genrule_189 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hekuta-ru_2"].
+
+numcl_genrule_190 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "herutsu_2"].
+
+numcl_genrule_191 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hen_2"].
+
+numcl_genrule_192 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hen_2_1"].
+
+numcl_genrule_193 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ho_2"].
+
+numcl_genrule_194 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pointo_2"].
+
+numcl_genrule_195 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pondo_2"].
+
+numcl_genrule_196 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "maki_2"].
+
+numcl_genrule_197 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "maku_2"].
+
+numcl_genrule_198 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mikuron_2"].
+
+numcl_genrule_199 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "miriba-ru_2"].
+
+numcl_genrule_200 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mirime-toru_2"].
+
+numcl_genrule_201 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "miririttoru_2"].
+
+numcl_genrule_203 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "me-ta-_2"].
+
+numcl_genrule_204 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "messhu_2"].
+
+numcl_genrule_205 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "men_2"].
+
+numcl_genrule_206 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "moto_2"].
+
+numcl_genrule_207 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mori_2"].
+
+numcl_genrule_208 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mon_2"].
+
+numcl_genrule_209 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ya-do_2"].
+
+numcl_genrule_211 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rittoru_2"].
+
+numcl_genrule_212 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ru-buru_2"].
+
+numcl_genrule_213 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rukkusu_2"].
+
+numcl_genrule_214 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "retsu_2"].
+
+numcl_genrule_215 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rentogen_2"].
+
+numcl_genrule_216 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "watari_2"].
+
+numcl_genrule_219 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kin_2"].
+
+numcl_genrule_220 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "miri_2"].
+
+numcl_genrule_221 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "yama_2"].
+
+numcl_genrule_223 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "koshi_3"].
+
+numcl_genrule_224 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "za_3"].
+
+numcl_genrule_225 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jou_3"].
+
+numcl_genrule_226 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sou_3"].
+
+numcl_genrule_227 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "chaku_3"].
+
+numcl_genrule_228 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ha_3"].
+
+numcl_genrule_229 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fuu_3"].
+
+numcl_genrule_230 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mawari_3"].
+
+numcl_genrule_231 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "moji_3"].
+
+numcl_genrule_232 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsuu_3"].
+
+numcl_genrule_233 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "te_3"].
+
+numcl_genrule_234 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rinku_3"].
+
+numcl_genrule_236 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dai_numcl"].
+
+numcl_genrule_239 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "zen_numcl"].
+
+numcl_genrule_240 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sou_numcl"].
+
+numcl_genrule_241 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "banme_numcl"].
+
+numcl_genrule_243 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "gou_2"].
+
+numcl_genrule_244 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "megaherutsu_2"].
+
+numcl_genrule_245 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dai_3"].
+
+numcl_genrule_246 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "a-ru_2"].
+
+numcl_genrule_247 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi-shi-_2"].
+
+numcl_genrule_248 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nensei_numcl"].
+
+numcl_genrule_250 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kaisen_numcl"].
+
+cop_rule_21 := generator_rule &
+ [ CONDITION  [ RELS <! na-adj-relation !> ],
+  OUTPUT "dearu-v-cop-stem" ].
+
+cop_rule_22 := generator_rule &
+ [ CONDITION  [ RELS <! na-adj-relation !> ],
+  OUTPUT "desu-v-cop-stem" ].
+
+cop_rule_23 := generator_rule &
+ [ CONDITION  [ RELS <! na-adj-relation !> ],
+  OUTPUT "da-v-cop-stem" ].
+
+ga_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS <! adv-relation !> ],
+  OUTPUT "ga-2" ].
+
+ga_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "ga-3" ].
+
+wo_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "o" ].
+
+wo_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS <! adv-relation !> ],
+  OUTPUT "o-2" ].
+
+wo_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "o-3" ].
+
+
+ni_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "ni-case" ].
+
+ni_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS <! adv-relation !> ],
+  OUTPUT "ni-case-2" ].
+
+ni_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "ni-case-3" ].
+
+kara_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "kara-case" ].
+
+kara_sign_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "kara-sign-case" ].
+
+no_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "no-case" ].
+
+dake_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "dake-case" ].
+
+to_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "to-comp1" ].
+
+to_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "to-comp3" ].
+
+to_part_genrule_4  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "to-conj-pobj" ].
+
+
+no_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST const-relation ],
+  OUTPUT "no-nspec-4" ].
+
+wa_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "wa-in-copula-sent" ].
+
+
+
+;;;;;;;;;LIGHT VERBS;;;;;;;;;;
+
+light_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "suru-light-stem" ].
+
+light_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "itasu-light" ].
+
+light_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "itasu-kanji-light" ].
+
+light_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "ninaru-multi" ].
+
+light_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "moushiageru-light" ].
+
+light_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "moushiageru-hiragana-light" ].
+
+;;;;;;;;HESITATIONS;;;;;;;;;;;
+
+
+
+;;;;;;;;;AUXILIARIES
+
+aux_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT terminative] !> ],
+  OUTPUT "jau-end" ].
+
+aux_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT terminative] !> ],
+  OUTPUT "chau-end" ].
+
+aux_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "teru-end" ].
+
+aux_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT terminative] !> ],
+  OUTPUT "shimau-aux-stem" ].
+
+aux_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "oru-aux-stem" ].
+
+aux_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "iru-aux-stem" ].
+
+aux_genrule_7 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT prospective] !> ],
+  OUTPUT "oku-aux-stem" ].
+
+aux_genrule_8 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT inceptive] !> ],
+  OUTPUT "iku-aux-stem" ].
+
+aux_genrule_9 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfect_progressive] !> ],
+  OUTPUT "kuru-aux-stem" ].
+
+aux_genrule_10 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT inceptive] !> ],
+  OUTPUT "mairu-aux-stem" ].
+
+aux_genrule_11 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "aru-kanji-aux-stem" ].
+
+aux_genrule_12 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "aru-aux-stem" ].
+
+aux_genrule_13 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT prospective] !> ],
+  OUTPUT "oku-aux-kanji-stem" ].
+
+aux_genrule_14 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "gozaru-aux-hiragana-stem" ].
+
+aux_genrule_15 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT inceptive] !> ],
+  OUTPUT "iku-aux-hiragana-stem" ].
+
+aux_genrule_16 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "irassharu-aux-stem" ].
+
+aux_genrule_17 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "iru-aux-kanji-stem" ].
+
+aux_genrule_14 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "gozaru-aux-kanji-stem" ].
+
+;;;;ENDINGS;;;;;;;
+
+passend_genrule_1 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "reru-simple-pass-end" ].
+
+passend_genrule_2 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "rareru-simple-pass-end" ].
+
+
+passend_genrule_6 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "reru-honorific-pass-end" ].
+
+passend_genrule_7 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "rareru-honorific-pass-end" ].
+
+passend_genrule_8 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST arg123-relation ],
+  OUTPUT "reru-ditrans-pass-ganiwo-end" ].
+
+passend_genrule_9 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST arg123-relation ],
+  OUTPUT "rareru-ditrans-pass-ganiwo-end" ].
+
+passend_genrule_10 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST arg123-relation ],
+  OUTPUT "reru-ditrans-pass-ganini-end" ].
+
+passend_genrule_11 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "reru-light-pass-end" ].
+
+passend_genrule_12 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "rareru-ditrans-pass-ganini-end" ].
+
+
+
+tenseend_genrule_1 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end" ].
+
+tenseend_genrule_2 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end2" ].
+
+tenseend_genrule_3 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "tari-end" ].
+
+tenseend_genrule_4 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "dari-end" ].
+
+tenseend_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashou-end" ].
+
+tenseend_genrule_6 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashita-end" ].
+
+tenseend_genrule_7 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "nasai-chasen-end" ].
+
+tenseend_genrule_8 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "nasai-end" ].
+
+tenseend_genrule_9 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "u-end" ].
+
+tenseend_genrule_10 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "masu-end" ].
+
+tenseend_genrule_11 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end" ].
+
+tenseend_genrule_12 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end2" ].
+
+tenseend_genrule_13 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "ta-end" ].
+
+tenseend_genrule_14 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "da-end" ].
+
+tenseend_genrule_15 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "de-end" ].
+
+tenseend_genrule_16 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "te-end" ].
+
+tenseend_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "you-end" ].
+
+
+
+
+;;;SYMBOLS;;;;;;;;;;
+
+comma_genrule_1 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-te-end" ].
+
+comma_genrule_2 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-vmod1" ].
+
+comma_genrule_3 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-vmod2" ].
+
+comma_genrule_4 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-advmod" ].
+
+comma_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-pmod" ].
+
+comma_genrule_6 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-infvmod" ].
+
+ 
+comma_genrule_7 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-interjmod" ].
+
+
+karasign_part_genrule := generator_rule &
+ [ CONDITION  [ RELS.RELS.FIRST const-relation ],
+  OUTPUT "karasign-nspec" ].
+
+;;;;;;;;;;HONORIFIC PREFIXES
+
+
+honpref_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-hon-vnpref" ].
+
+honpref_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-hon-npref" ].
+
+
+honpref_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-hon-napref" ].
+
+
+honpref_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-npref" ].
+
+
+honpref_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-vnpref" ].
+
+honpref_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-kanji-npref" ].
+
+honpref_genrule_7 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-kanji-vnpref" ].
+
+honpref_genrule_8 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "go-hon-katakana-npref" ].
+
+
+
+;;;;;;;;;;NUMERAL CLASSIFIERS;;;;;;;;;
+
+numcl_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nin_numcl"].
+
+numcl_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mei_numcl"].
+
+numcl_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi_numcl"].
+
+numcl_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ko_numcl"].
+
+numcl_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsu_numcl"].
+
+numcl_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hon_numcl"].
+
+numcl_genrule_7 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hai_numcl"].
+
+numcl_genrule_8 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "satsu_numcl"].
+
+numcl_genrule_9 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mai_numcl"].
+
+numcl_genrule_10 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ki_numcl"].
+
+numcl_genrule_12 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tou_numcl"].
+
+numcl_genrule_13 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hiki_numcl"].
+
+numcl_genrule_14 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "wa_numcl"].
+
+numcl_genrule_15 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "satsu-2_numcl"].
+
+numcl_genrule_16 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsubu_numcl"].
+
+numcl_genrule_17 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ken_numcl"].
+
+numcl_genrule_18 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bit_numcl"].
+
+numcl_genrule_19 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kabu_numcl"].
+
+numcl_genrule_20 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bu_numcl"].
+
+numcl_genrule_21 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "souba_numcl"].
+
+numcl_genrule_22 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hako_numcl"].
+
+numcl_genrule_23 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ban_numcl"].
+
+numcl_genrule_24 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jou-numcl"].
+
+numcl_genrule_25 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "gou_numcl"].
+
+numcl_genrule_26 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "no_numcl-1"].
+
+numcl_genrule_27 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "no_numcl-2"].
+
+numcl_genrule_30 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bangou_numcl-1"].
+
+
+numcl_genrule_36 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "doru_numcl"].
+
+numcl_genrule_81 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shu_numcl"].
+
+numcl_genrule_82 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kirowatto_numcl"].
+
+numcl_genrule_83 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "boruto_numcl"].
+
+numcl_genrule_84 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rippoumeetoru_numcl"].
+
+numcl_genrule_85 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bai_numcl"].
+
+
+numcl_genrule_88 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ka_numcl"].
+
+
+numcl_genrule_92 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "suji_9"].
+
+numcl_genrule_93 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dan_3"].
+
+numcl_genrule_94 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fushi_9"].
+
+numcl_genrule_95 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ten_4"].
+
+numcl_genrule_96 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tokoro_4"].
+
+numcl_genrule_97 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "me_4"].
+
+numcl_genrule_98 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "daun_4"].
+
+numcl_genrule_99 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsuuwa_3"].
+
+numcl_genrule_100 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "setto_3"].
+
+numcl_genrule_102 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "o-mu_2"].
+
+numcl_genrule_103 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ori_2"].
+
+numcl_genrule_104 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kai_2"].
+
+numcl_genrule_105 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kai_2_1"].
+
+numcl_genrule_106 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kakae_2"].
+
+numcl_genrule_107 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasane_2"].
+
+numcl_genrule_108 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_2"].
+
+numcl_genrule_109 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2b"].
+
+numcl_genrule_110 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2c"].
+
+numcl_genrule_111 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2d"].
+
+numcl_genrule_112 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kasho_numcl-2e"].
+
+numcl_genrule_113 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "karatto_2"].
+
+
+numcl_genrule_116 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kyaku_2"].
+
+numcl_genrule_118 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kyoku_2"].
+
+
+numcl_genrule_122 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kirorittoru_2"].
+
+numcl_genrule_123 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ku_2"].
+
+numcl_genrule_124 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "gu_2"].
+
+numcl_genrule_125 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ku-ru_2"].
+
+numcl_genrule_126 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kuo-ta-_2"].
+
+numcl_genrule_128 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kumi_2"].
+
+numcl_genrule_130 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ken_2"].
+
+numcl_genrule_131 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ko_2"].
+
+numcl_genrule_132 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "koma_2"].
+
+numcl_genrule_133 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sai_2"].
+
+numcl_genrule_134 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "saikuru_2"].
+
+numcl_genrule_135 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sao_2"].
+
+numcl_genrule_136 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi_2"].
+
+numcl_genrule_137 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi_2_1"].
+
+numcl_genrule_138 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jiku_2"].
+
+
+numcl_genrule_140 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jigen_2_1"].
+
+numcl_genrule_141 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shime_2"].
+
+numcl_genrule_142 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shasen_2"].
+
+numcl_genrule_143 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shuu_2"].
+
+numcl_genrule_144 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shuu_2_1"].
+
+numcl_genrule_145 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shuukan_2"].
+
+numcl_genrule_146 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jun_2"].
+
+numcl_genrule_147 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jou_2"].
+
+numcl_genrule_148 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sutoro-ku_2"].
+
+numcl_genrule_149 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seiki_2"].
+
+numcl_genrule_150 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2"].
+
+numcl_genrule_151 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2_1"].
+
+numcl_genrule_152 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2_2"].
+
+numcl_genrule_153 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "seki_2_3"].
+
+numcl_genrule_156 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "soroi_2"].
+
+numcl_genrule_157 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "da-su_2"].
+
+numcl_genrule_158 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dasuu_2"].
+
+numcl_genrule_159 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "taba_2"].
+
+numcl_genrule_160 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "chie-n_2"].
+
+numcl_genrule_161 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsui_2"].
+
+numcl_genrule_162 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsutsumi_2"].
+
+numcl_genrule_163 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsubo_2"].
+
+numcl_genrule_164 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "to_2"].
+
+numcl_genrule_165 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "toori_2"].
+
+numcl_genrule_166 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nagare_2"].
+
+numcl_genrule_167 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nigiri_2"].
+
+numcl_genrule_168 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nyu-ton_2"].
+
+numcl_genrule_169 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ha_2"].
+
+numcl_genrule_170 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hai_2"].
+
+numcl_genrule_171 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hai_2_1"].
+
+numcl_genrule_172 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "baito_2"].
+
+numcl_genrule_173 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hashira_2"].
+
+numcl_genrule_174 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pasukaru_2"].
+
+numcl_genrule_175 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hatsu_2"].
+
+numcl_genrule_176 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "haba_2"].
+
+numcl_genrule_177 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hari_2"].
+
+numcl_genrule_178 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bariki_2"].
+
+numcl_genrule_179 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "bareru_2"].
+
+numcl_genrule_180 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "picchi_2"].
+
+numcl_genrule_181 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hyou_2"].
+
+numcl_genrule_182 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hyou_2_1"].
+
+numcl_genrule_184 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fi-to_2"].
+
+numcl_genrule_185 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fuku_2"].
+
+numcl_genrule_186 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fude_2"].
+
+numcl_genrule_187 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "furi_2"].
+
+numcl_genrule_188 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pe-ji_2"].
+
+numcl_genrule_189 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hekuta-ru_2"].
+
+numcl_genrule_190 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "herutsu_2"].
+
+numcl_genrule_191 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hen_2"].
+
+numcl_genrule_192 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "hen_2_1"].
+
+numcl_genrule_193 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ho_2"].
+
+numcl_genrule_194 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pointo_2"].
+
+numcl_genrule_195 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "pondo_2"].
+
+numcl_genrule_196 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "maki_2"].
+
+numcl_genrule_197 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "maku_2"].
+
+numcl_genrule_198 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mikuron_2"].
+
+numcl_genrule_199 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "miriba-ru_2"].
+
+numcl_genrule_200 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mirime-toru_2"].
+
+numcl_genrule_201 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "miririttoru_2"].
+
+numcl_genrule_203 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "me-ta-_2"].
+
+numcl_genrule_204 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "messhu_2"].
+
+numcl_genrule_205 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "men_2"].
+
+numcl_genrule_206 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "moto_2"].
+
+numcl_genrule_207 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mori_2"].
+
+numcl_genrule_208 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mon_2"].
+
+numcl_genrule_209 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ya-do_2"].
+
+numcl_genrule_211 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rittoru_2"].
+
+numcl_genrule_212 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ru-buru_2"].
+
+numcl_genrule_213 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rukkusu_2"].
+
+numcl_genrule_214 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "retsu_2"].
+
+numcl_genrule_215 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rentogen_2"].
+
+numcl_genrule_216 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "watari_2"].
+
+numcl_genrule_219 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kin_2"].
+
+numcl_genrule_220 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "miri_2"].
+
+numcl_genrule_221 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "yama_2"].
+
+numcl_genrule_223 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "koshi_3"].
+
+numcl_genrule_224 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "za_3"].
+
+numcl_genrule_225 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "jou_3"].
+
+numcl_genrule_226 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sou_3"].
+
+numcl_genrule_227 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "chaku_3"].
+
+numcl_genrule_228 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "ha_3"].
+
+numcl_genrule_229 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "fuu_3"].
+
+numcl_genrule_230 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "mawari_3"].
+
+numcl_genrule_231 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "moji_3"].
+
+numcl_genrule_232 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "tsuu_3"].
+
+numcl_genrule_233 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "te_3"].
+
+numcl_genrule_234 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "rinku_3"].
+
+numcl_genrule_236 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dai_numcl"].
+
+numcl_genrule_239 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "zen_numcl"].
+
+numcl_genrule_240 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "sou_numcl"].
+
+numcl_genrule_241 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "banme_numcl"].
+
+numcl_genrule_243 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "gou_2"].
+
+numcl_genrule_244 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "megaherutsu_2"].
+
+numcl_genrule_245 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "dai_3"].
+
+numcl_genrule_246 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "a-ru_2"].
+
+numcl_genrule_247 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "shi-shi-_2"].
+
+numcl_genrule_248 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "nensei_numcl"].
+
+numcl_genrule_250 := generator_rule &
+ [ CONDITION  [ RELS <! [PRED never_unify_rel] !> ],
+  OUTPUT "kaisen_numcl"].
+
+cop_rule_21 := generator_rule &
+ [ CONDITION  [ RELS <! na-adj-relation !> ],
+  OUTPUT "dearu-v-cop-stem" ].
+
+cop_rule_22 := generator_rule &
+ [ CONDITION  [ RELS <! na-adj-relation !> ],
+  OUTPUT "desu-v-cop-stem" ].
+
+cop_rule_23 := generator_rule &
+ [ CONDITION  [ RELS <! na-adj-relation !> ],
+  OUTPUT "da-v-cop-stem" ].
+
+ga_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS <! adv-relation !> ],
+  OUTPUT "ga-2" ].
+
+ga_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "ga-3" ].
+
+wo_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "o" ].
+
+wo_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS <! adv-relation !> ],
+  OUTPUT "o-2" ].
+
+wo_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "o-3" ].
+
+
+ni_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "ni-case" ].
+
+ni_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS <! adv-relation !> ],
+  OUTPUT "ni-case-2" ].
+
+ni_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "ni-case-3" ].
+
+kara_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "kara-case" ].
+
+kara_sign_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "kara-sign-case" ].
+
+no_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "no-case" ].
+
+dake_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "dake-case" ].
+
+to_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "to-comp1" ].
+
+to_part_genrule_3  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "to-comp3" ].
+
+to_part_genrule_4  := generator_rule &
+ [ CONDITION  [ RELS <! prep-mod-relation !> ],
+  OUTPUT "to-conj-pobj" ].
+
+
+no_part_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST const-relation ],
+  OUTPUT "no-nspec-4" ].
+
+wa_part_genrule_2  := generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST noun-relation ],
+  OUTPUT "wa-in-copula-sent" ].
+
+
+
+;;;;;;;;;LIGHT VERBS;;;;;;;;;;
+
+light_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "suru-light-stem" ].
+
+light_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "itasu-light" ].
+
+light_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "itasu-kanji-light" ].
+
+light_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "ninaru-multi" ].
+
+light_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "moushiageru-light" ].
+
+light_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation !> ],
+  OUTPUT "moushiageru-hiragana-light" ].
+
+;;;;;;;;HESITATIONS;;;;;;;;;;;
+
+
+
+;;;;;;;;;AUXILIARIES
+
+aux_genrule_1 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT terminative] !> ],
+  OUTPUT "jau-end" ].
+
+aux_genrule_2 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT terminative] !> ],
+  OUTPUT "chau-end" ].
+
+aux_genrule_3 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "teru-end" ].
+
+aux_genrule_4 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT terminative] !> ],
+  OUTPUT "shimau-aux-stem" ].
+
+aux_genrule_5 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "oru-aux-stem" ].
+
+aux_genrule_6 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "iru-aux-stem" ].
+
+aux_genrule_7 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT prospective] !> ],
+  OUTPUT "oku-aux-stem" ].
+
+aux_genrule_8 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT inceptive] !> ],
+  OUTPUT "iku-aux-stem" ].
+
+aux_genrule_9 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfect_progressive] !> ],
+  OUTPUT "kuru-aux-stem" ].
+
+aux_genrule_10 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT inceptive] !> ],
+  OUTPUT "mairu-aux-stem" ].
+
+aux_genrule_11 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "aru-kanji-aux-stem" ].
+
+aux_genrule_12 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "aru-aux-stem" ].
+
+aux_genrule_13 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT prospective] !> ],
+  OUTPUT "oku-aux-kanji-stem" ].
+
+aux_genrule_14 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "gozaru-aux-hiragana-stem" ].
+
+aux_genrule_15 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT inceptive] !> ],
+  OUTPUT "iku-aux-hiragana-stem" ].
+
+aux_genrule_16 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "irassharu-aux-stem" ].
+
+aux_genrule_17 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT progressive] !> ],
+  OUTPUT "iru-aux-kanji-stem" ].
+
+aux_genrule_14 := generator_rule &
+ [ CONDITION  [ RELS <! event-relation &
+	                 [ARG0.E.ASPECT perfective] !> ],
+  OUTPUT "gozaru-aux-kanji-stem" ].
+
+;;;;ENDINGS;;;;;;;
+
+passend_genrule_1 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "reru-simple-pass-end" ].
+
+passend_genrule_2 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "rareru-simple-pass-end" ].
+
+
+passend_genrule_6 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "reru-honorific-pass-end" ].
+
+passend_genrule_7 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "rareru-honorific-pass-end" ].
+
+passend_genrule_8 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST arg123-relation ],
+  OUTPUT "reru-ditrans-pass-ganiwo-end" ].
+
+passend_genrule_9 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST arg123-relation ],
+  OUTPUT "rareru-ditrans-pass-ganiwo-end" ].
+
+passend_genrule_10 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST arg123-relation ],
+  OUTPUT "reru-ditrans-pass-ganini-end" ].
+
+passend_genrule_11 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "reru-light-pass-end" ].
+
+passend_genrule_12 :=  generator_rule &
+ [ CONDITION  [ RELS <! arg12-relation !> ],
+  OUTPUT "rareru-ditrans-pass-ganini-end" ].
+
+
+
+tenseend_genrule_1 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end" ].
+
+tenseend_genrule_2 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end2" ].
+
+tenseend_genrule_3 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "tari-end" ].
+
+tenseend_genrule_4 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "dari-end" ].
+
+tenseend_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashou-end" ].
+
+tenseend_genrule_6 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashita-end" ].
+
+tenseend_genrule_7 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "nasai-chasen-end" ].
+
+tenseend_genrule_8 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "nasai-end" ].
+
+tenseend_genrule_9 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "u-end" ].
+
+tenseend_genrule_10 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "masu-end" ].
+
+tenseend_genrule_11 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end" ].
+
+tenseend_genrule_12 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "mashite-end2" ].
+
+tenseend_genrule_13 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "ta-end" ].
+
+tenseend_genrule_14 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "da-end" ].
+
+tenseend_genrule_15 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "de-end" ].
+
+tenseend_genrule_16 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "te-end" ].
+
+tenseend_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "you-end" ].
+
+
+
+
+;;;SYMBOLS;;;;;;;;;;
+
+comma_genrule_1 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-te-end" ].
+
+comma_genrule_2 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-vmod1" ].
+
+comma_genrule_3 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-vmod2" ].
+
+comma_genrule_4 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-advmod" ].
+
+comma_genrule_5 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-pmod" ].
+
+comma_genrule_6 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-infvmod" ].
+
+ 
+comma_genrule_7 :=  generator_rule &
+ [ CONDITION  [ RELS.LIST.FIRST event-relation ],
+  OUTPUT "comma-interjmod" ].
+
+
+karasign_part_genrule := generator_rule &
+ [ CONDITION  [ RELS.RELS.FIRST const-relation ],
+  OUTPUT "karasign-nspec" ].
+
+
 shi_numcl_gr := generator_rule &
 [ CONDITION [ RELS <! [ PRED "non_existing_rel" ] !> ],
   OUTPUT "shi_numcl" ].
+

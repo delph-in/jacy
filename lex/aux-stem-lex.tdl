@@ -118,6 +118,14 @@ pure-aspect-kurusuru-stem-lex &
 [SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT perfect_progressive],
 ORTH <! "来る" !>].
 
+; (MS 2005-01-10) This should be in as Hiragana as well, shouldn't it?
+
+kuru-hiragana-aux-stem  :=
+pure-aspect-kurusuru-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT perfect_progressive],
+ORTH <! "くる" !>].
+
+
 kureru-aux-stem  :=
 perspective-v-stem-lex &
 [ORTH <! "くれる" !>,

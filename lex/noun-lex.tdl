@@ -3456,12 +3456,12 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_hakubutsukan_n_rel]].
 
 shin-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "新" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_shin_n_rel]].
 
 chaku :=
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [ORTH <! "着" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_chaku_n_rel].
 
@@ -5482,7 +5482,7 @@ ORTH <! "不安" !>].
 ;Stil
 
 buri-1-noun := 
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_buri_n_rel,
 ORTH <! "ぶり" !>].
 
@@ -5876,22 +5876,22 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_somosomo_n_rel]].
 
 fu-prefix-1 :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "不" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_fu_n_1_rel].
 
 yoku-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "翌" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_yoku_n_rel].
 
 kai-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "快" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kai_n_rel].
 
 sai-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "最" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_sai_n_rel].
 
@@ -5982,7 +5982,7 @@ ordinary-nohon-n-lex &
 ORTH <! "方針" !>].
 
 sha-sc-noun := 
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sha_n_rel,
 ORTH <! "者" !>].
 
@@ -6111,7 +6111,7 @@ ordinary-nohon-n-lex &
 ORTH <! "手数料" !>].
 
 kan-noun := 
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kan_n_rel,
 ORTH <! "間" !>].
 
@@ -6206,7 +6206,7 @@ ORTH <! "ＡＴＭ" !>].
 ;addressed to
 
 ate-noun :=
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ate_n_rel,
 ORTH <! "あて" !>].
 
@@ -7405,7 +7405,7 @@ ordinary-nohon-n-lex &
 ORTH <! "端株" !>].
 
 kai-suffix :=
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [ORTH <! "回" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kai_n_rel].
 
@@ -7441,7 +7441,7 @@ ORTH <! "端末" !>].
 
 
 kyoku-suffix :=
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [ORTH <! "局" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kyoku_n_rel].
 
@@ -7486,7 +7486,7 @@ ordinary-nohon-n-lex &
 ORTH <! "チャート" !>].
 
 gen-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "原" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_gen_n_rel].
 
@@ -7757,7 +7757,7 @@ ordinary-nohon-n-lex &
 ORTH <! "最寄り" !>].
 
 zen-noun :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zen_n_rel,
 ORTH <! "全" !>].
 
@@ -8229,28 +8229,28 @@ SYNSEM.LKEYS.KEYREL.PRED '_kari_n_rel].
 ;current
 
 gen-prefix-2 :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "現" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_gen_n_rel].
 
 ;opposite
 
 mukai-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "向" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mukai_n_rel].
 
 ;beginning
 
 sho-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "諸" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_sho_n_rel].
 
 ;right, good
 
 tadashi-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "正" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_tadashi_n_rel].
 
@@ -8260,58 +8260,58 @@ ordinary-nohon-n-lex &
 ORTH <! "貸" !>].
 
 dai-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "大" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_dai_n_rel].
 
 tou-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "当" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_tou_n_rel].
 
 ;identical, same
 
 dou-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "同" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_dou_n_rel].
 
 ;anit-
 
 hi-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "非" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_hi_n_rel].
 
 mi-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "未" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mi_n_rel].
 
 ;ambiguous
 
 ryou-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "両" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_ryou_n_rel].
 
 zan-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "残" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_zan_n_rel].
 
 fu-prefix-2 :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "振" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_fu_n_2_rel].
 
 bou-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "某" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_bou_n_rel].
 
 hai-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "配" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_hai_n_rel].
 
@@ -8526,7 +8526,7 @@ ORTH <! "前金" !>].
 ;system
 
 sei-suffix-noun :=
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sei_n_rel,
 ORTH <! "制" !>].
 
@@ -8721,7 +8721,7 @@ ORTH <! "現住所" !>].
 ;desire; wish; request; prayer; petition; application
 
 negai-suffix-noun := 
-ordinary-nohon-minusbar-right-n-lex &
+ordinary-suffix-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_negai_n_rel,
 ORTH <! "願" !>].
 
@@ -145370,7 +145370,7 @@ ge-suffix := ordinary-suffix-n-lex &
 ; anti-
 
 kou-prefix :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "抗" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kou_n_rel]].
 
@@ -145378,7 +145378,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_kou_n_rel]].
 ; importance
 
 jouyou-importance :=
-ordinary-nohon-minusbar-left-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "重要" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_jouyou_n_3_rel]].
 
@@ -145394,4 +145394,23 @@ ordinary-nohon-n-lex &
 [ORTH <! "丁寧" !>,
 SYNSEM [LKEYS.KEYREL.PRED '_teinei_n_4_rel,
 	LOCAL.BAR -]].
+
+
+; (MS 2004-12-21) we need an entry for the usual noun 事:
+; 事を行うのに。。。
+
+koto-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "事" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].
+
+koto-hiragana-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "こと" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_koto_n_rel].
+
+biru-building-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "ビル" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_biru_n_building_rel].
 

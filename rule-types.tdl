@@ -878,21 +878,12 @@ lexeme-rule := lexeme & inflecting-lex-rule &
 		       SYNSEM #synsem]>,
                 INFLECTED +].
 
-;lexeme-rule := lexeme & inflecting-lex-rule &
-;               [SYNSEM #synsem  & 
-;                       [LOCAL.CONT.RELS diff-list],
-;                NEEDS-AFFIX +,
-;		J-NEEDS-AFFIX +,
-;                LMORPH-BIND-TYPE #lmorph,
-;                ARGS <[SYNSEM #synsem,
-;                       INFLECTED -,
-;                       LMORPH-BIND-TYPE #lmorph]>,
-;                INFLECTED +].
 
 
 ; (ERB 2001-10-17) Added subtypes of lexical_sign.  See notes in
 ; fundamentals.tdl.
 ; (MS 2004-11-08) Shouldn't that keep the LMORPH-BIND-TYPE?
+; (MS 2005-01-06) This should copy ARG-S.
 
 word-rule-basic := lexical_sign-rule &  
                [SYNSEM [LOCAL [CAT [HEAD [AUX #aux,
@@ -909,7 +900,8 @@ word-rule-basic := lexical_sign-rule &
                                CONT #cont & [RELS diff-list,
                                              HOOK.INDEX event & 
                                                    [E [TENSE #tense]]],
-                               CTXT #ctxt],
+                               CTXT #ctxt,
+			       ARG-S #args],
 			LKEYS #keys,
                         NON-LOCAL #nonloc],
 		J-NEEDS-AFFIX -,
@@ -926,7 +918,8 @@ word-rule-basic := lexical_sign-rule &
 								 H-TENSE #tense],
 							   VAL #sc],
 						      CONT #cont,
-						      CTXT #ctxt],
+						      CTXT #ctxt,
+						      ARG-S #args],
 					       LKEYS #keys,
 					       NON-LOCAL #nonloc],
 				       LMORPH-BIND-TYPE #lmorph,
@@ -1457,6 +1450,7 @@ adjpolite-rule := i-adj-stem-lex &
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
+
 word2word-rule := j-sign & phrase-or-lexrule &
             [SYNSEM [LOCAL [CAT [HEAD #head],
                             BAR #bar,
@@ -1686,14 +1680,18 @@ subj-casechange-rule := phrasal_sign & headed-phrase & lex-rule &
 ; one of the subtypes, so move this down to noncard.  (Might be okay once
 ; we clarify what relation type to use for named-card-rel.
 
+; (MS 2005-01-07) Using EMPTY to prevent floated quantifiers to go into this rule.
+; (MS 2005-01-10) Using BAR + to prevent the pumped-to-noun numcl's to be in
+; compound noun constructions.
 
 nominal-numcl-rule-type := unary-type &
 [ SYNSEM [ LOCAL [ CAT [ HEAD ordinary_noun_head-avm & [QUANTIFIABLE -, 
 							VN -],
                          VAL noun_sc ],
                     CONT [ HCONS <! !>,
-			   MSG no-msg]]],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head,
+			   MSG no-msg],
+		   BAR +]],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head & [EMPTY +],
 				  VAL saturated ],
 			    BAR +]].
 

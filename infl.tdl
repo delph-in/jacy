@@ -826,19 +826,21 @@ n2predadj-rule &
 
 ; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
 ; Moving to XARG instead.
-
+; (MS 2005-01-06) Copy up ARG-S.
 
 
 subj-zpro-ins-lrule := zpro-insertion-rule &
 [SYNSEM [LOCAL [CAT.VAL [SUBJ null,
 			COMPS #comps,
 			SPR #spr],
-	       CONT.HOOK.XARG zpro_ref-ind]],
+		CONT.HOOK.XARG zpro_ref-ind,
+		ARG-S #args]],
  ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
 						       EMPTY -],
                                 VAL [SUBJ opt-1-arg,
 				     COMPS #comps,
-				     SPR #spr]]]]].
+				     SPR #spr]],
+			   ARG-S #args]]].
 
 ; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
 ; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
@@ -1037,3 +1039,26 @@ j-lexeme-to-word-rule &
  ARGS.FIRST [STEMTYPE regular-stem,
              SYNSEM.LOCAL.CAT.HEAD verb-stem_head,
 	     RMORPH-BIND-TYPE morphbindtype]].
+
+; (MS 2005-01-06) Floated numeral classifiers, counting subjects.
+; (MS 2005-01-10) These should copy the RELS from their ARGS, because
+; measuring classifiers might have quite complicated ARGS: りんごを四キロ買った
+
+numeral-classifier-sbj-float :=
+floated-ind-sbj-num-cl-lex &
+[SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
+	       CONT.RELS #rels],
+ ORTH #stem,
+ ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
+			   CONT.RELS #rels],
+	     ORTH #stem]].
+
+numeral-classifier-obj-float :=
+floated-ind-obj-num-cl-lex &
+[SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
+	       CONT.RELS #rels],
+ ORTH #stem,
+ ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
+			   CONT.RELS #rels],
+	     ORTH #stem]].
+

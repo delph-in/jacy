@@ -1,6 +1,6 @@
 ;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
 (lkb-load-lisp (parent-directory) "Version.lsp")
-(setf *grammar-version* "Japanese (lexdb-03)")
+(setf *grammar-version* "JACY Dec.2004")
 (setf *grammar-directory* (parent-directory)) ; needed for MRS
 (load-lkb-preferences (this-directory) "user-prefs.lsp")
 (lkb-load-lisp (this-directory) "globals.lsp")

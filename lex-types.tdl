@@ -307,7 +307,6 @@ exceptional_noun_head := nom_head-avm & [MOD null,
 					 NO-MOD -, 
 					 QUANTIFIABLE -].
 
-
 exceptional_noun_nmod_head := nom_head-avm & [J-SPEC null, 
 					      QUANTIFIABLE -, 
 					      MOD < [LOCAL.CAT.HEAD noun_head]>, 
@@ -426,11 +425,19 @@ num-cl_head := init_head &
 ; MOD.HEAD value is.
 
 num-cl-mod_head := num-cl_head &
-                   [ MOD < [LOCAL.CAT [ HEAD noun-or-case-p_head,
-					VAL saturated ]] > ].
+                   [ MOD < synsem > ].
 
 num-cl-n-or-p-mod_head := num-cl-mod_head & 
-                          [ J-POSTHEAD right ].
+                          [MOD < [LOCAL.CAT [ HEAD noun-or-case-p_head,
+					      VAL saturated ]] > , 
+			   J-POSTHEAD right ].
+
+; (MS 2004-12-27) Floated numeral classifiers
+; (MS 2005-01-07) Using EMPTY to prevent floated quantifiers to go into the nominal-numcl-rule.
+
+num-cl-float_head := num-cl-mod_head &
+                   [ MOD < [LOCAL scopal_mod & [CAT [ HEAD verb_head]]] >,
+		     EMPTY -].
 
 ; »÷°¢πÊ
 
@@ -440,9 +447,16 @@ num-cl-n-or-p-mod_head := num-cl-mod_head &
 ; (MS 2004-11-30) But these should not go into the relative clause rule.
 ; That's why they get the J-POSTHEAD nonrels.
 
+; (MS 2005-01-10) The modified noun should be saturated to prevent spurious
+; ambiguity in e.g., «≠∆Û…§§ÚªÙ§¶
+; The J-POSTHEAD should be right, because pre-nominal numeral classifiers are not 
+; possible: *∆Û…§«≠§ÚªÙ§¶
+
 num-cl-nmod_head := num-cl-mod_head &
-                    [ MOD < [LOCAL.CAT.HEAD noun_head ] >,
-		      J-POSTHEAD nonrels].
+                    [ MOD < [LOCAL.CAT [HEAD noun_head,
+					VAL saturated]] >,
+		      J-POSTHEAD right].
+
 
 ; ±ﬂ°¢≥¨°¢etc.
 
@@ -1266,7 +1280,6 @@ adv_transitive := sbj-obj-arg &
 		     COMPS obl-1-arg &
 			   < [LOCAL.CAT.HEAD adv_head] >].
 
-
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
 
 naru_transitive :=  sbj-obj-arg &
@@ -1695,18 +1708,22 @@ parentmod-p-lex := parmod-p-lex &
 ; (MS 2002-09-10) This should also hold for "°¡".
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
-
+; (MS 2004-12-27) Work on floated numeral classifiers
+; (MS 2005-01-07) Using EMPTY to prevent floated quantifiers to go into the nominal-numcl-rule.
 
 nmod-numcl-p-lex := nmod-p-lex &
 [ SYNSEM.LOCAL [ CAT [ VAL.COMPS.FIRST.LOCAL.CAT.HEAD num-cl-mod_head &
-                                                     [ MOD < [LOCAL.CONT.HOOK [ INDEX #modind,
-										LTOP #hand ] ] > ],
+                                                     [ MOD < [LOCAL [CONT.HOOK [ XARG #xarg,
+										 INDEX #modind,
+										 LTOP #hand ] ]] >,
+						       EMPTY +],
                        HEAD [ MOD < [ LOCAL.CONT.HOOK [INDEX #modind,
-						       LTOP #hand],
+						       LTOP #hand ] ,
                                     MODIFIED.PERIPH + ]>,
                               PTYPE overt,
                               J-SPEC null ]],
-                 CONT [ RELS <! !>,
+                 CONT [ HOOK.XARG #xarg,
+			RELS <! !>,
                         HCONS <! !> ]]].
                        
 ; (ERB 2001-09-03) Adding constraint that the INDEX of vmod-p-lex be
@@ -2913,7 +2930,9 @@ spr-obj-num-cl-lex := numeral-classifier &
 
 ; (ERB 2004-1-18) Constraints on the SPR don't belong here,
 ; as a few oddballs actually take a COMPS instead.  
+
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 
 individuating-num-cl-lex := numeral-classifier &
   [ SYNSEM.LOCAL [ CAT.HEAD num-cl-mod_head & 
@@ -2935,8 +2954,12 @@ individuating-num-cl-lex := numeral-classifier &
 ; the supposedly floated quantifier is attaching low), but the MRS
 ; looks fine, so leave it for now.
 
+; (MS 2005-01-07) Changing the head from num-cl-n-or-p-mod_head to num-cl-nmod_head,
+; because I don't need the p-modification any more, because I have introduced the 
+; floating rules.
+
 anymod-ind-num-cl-lex := individuating-num-cl-lex &
-[ SYNSEM.LOCAL.CAT.HEAD num-cl-n-or-p-mod_head &
+[ SYNSEM.LOCAL.CAT.HEAD num-cl-nmod_head &
                         [ MOD < [LOCAL.NUCL nucl_plus ] > ]].
 
 ; (ERB 2001-09-12) Some num-cl like things can't "float" (i.e., show 
@@ -2944,6 +2967,33 @@ anymod-ind-num-cl-lex := individuating-num-cl-lex &
 
 noun-mod-ind-num-cl-lex := individuating-num-cl-lex &
 [ SYNSEM.LOCAL.CAT.HEAD num-cl-nmod_head ].
+
+
+; (MS 2004-12-27) Floated numeral classifiers, modifying verbs,
+; semantically counting their subjects. This type is needed for 
+; the lexical rule that makes the numeral classifier float.
+; only for non-zpros.
+
+floated-num-cl-lex := numeral-classifier &
+[ SYNSEM.LOCAL [CAT [HEAD num-cl-float_head &
+			  [MOD < [ LOCAL.CONT.HOOK [LTOP #top,
+						    INDEX #ind]] >],
+		     VAL [SPR.FIRST.LOCAL.CONT.HOOK [XARG #xarg],
+			  COMPS < >,
+			  SUBJ < >]],
+		CONT [HOOK [LTOP #top,
+			    INDEX #ind,
+			    XARG #xarg],
+		      HCONS <! !>]]].
+
+floated-ind-sbj-num-cl-lex := floated-num-cl-lex &
+[ SYNSEM.LOCAL [CAT [HEAD [MOD < [ LOCAL.CONT.HOOK.XARG #xarg & full_ref-ind] >],
+		     VAL [SPR.FIRST.LOCAL.CONT.HOOK [XARG #xarg]]]]].
+
+floated-ind-obj-num-cl-lex := floated-num-cl-lex &
+[ SYNSEM.LOCAL [CAT [HEAD [MOD < [ LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK [INDEX #xarg & full_ref-ind]] >],
+		     VAL [SPR.FIRST.LOCAL.CONT.HOOK [XARG #xarg]]]]].
+
 
 ; (ERB 2004-1-18) These ones are differentiated from the 
 ; individuating ones by their semantic contribution (and
@@ -3593,20 +3643,17 @@ ordinary-nohon-indef-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.CAT.VAL.SPR.F
 ordinary-nohon-minusbar-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.BAR -].
 ordinary-nohon-plusbar-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.BAR +].
 
-ordinary-nohon-minusbar-right-n-lex := ordinary-nohon-minusbar-n-lex & 
+; (MS 2004-12-24) Changed the name from ordinary-nohon-minusbar-right-n-lex.
+
+ordinary-suffix-n-lex := ordinary-nohon-minusbar-n-lex & 
 				       [SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD right].
 
-ordinary-nohon-minusbar-left-n-lex := ordinary-nohon-minusbar-n-lex & 
+; (MS 2004-12-24) Changed the name from ordinary-nohon-minusbar-left-n-lex.
+
+ordinary-prefix-n-lex := ordinary-nohon-minusbar-n-lex & 
 				       [SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD left].
 
-;;; (FCB 2003-08-05) This doesn't seem to restrict things to the left!
-ordinary-prefix-n-lex := ordinary-n-lex & 
-			 [SYNSEM.LOCAL [CAT.HEAD.J-POSTHEAD left,
-              				BAR -]].
-;;; (FCB 2003-08-05) This doesn't seem to restrict things to the right!
-ordinary-suffix-n-lex := ordinary-n-lex & 
-			 [SYNSEM.LOCAL [CAT.HEAD.J-POSTHEAD right,
-              				BAR -]].
+
 
 ordinary-honsubj-n-lex := ordinary-n-lex &
 [SYNSEM.LOCAL [CAT.HEAD.FORMAL.SHON +,
@@ -5551,6 +5598,7 @@ simple-pass-end-lex :=   pass-end-lex &
 ; (MS 2004-11-22) Restricted to SPRs with sbj-obj-obj2-arg, namely ditransitives.
 
 
+
 ditrans-pass-end-ganini-lex :=   pass-end-lex &
                [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
 					 SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
@@ -7178,9 +7226,13 @@ n-cop-lex := cop-light-lex &
                    VAL.COMPS.FIRST.LOCAL.CAT.HEAD [H-TENSE #tense,
                                                   MODUS #mood]]].
 
+
 reg-cop-lex := cop-light-lex.
 
 
+
+; (MS 2004-11-17) Not all auxiliaries have a key relation. That's why I took this
+; out here.
 
 ; (MS 2004-11-17) Not all auxiliaries have a key relation. That's why I took this
 ; out here.
