@@ -596,10 +596,13 @@ ga := ga-wo-ni-p-lex &
        [ORTH <! "が" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
 
+; (MS 2005-04-07) It seems that we don't need these any more.
+; adverb +  case particle is elliptical or ungrammatical, as the NTT
+; people say.
 
-ga-2 := ga-wo-ni-p-lex-2 & 
-       [ORTH <! "が" !>,
-       SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
+;ga-2 := ga-wo-ni-p-lex-2 & 
+;       [ORTH <! "が" !>,
+;       SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
 
 ;"watakushi ga juuniji ni kaigi ga owarimasu"
 ; (MS 2003-01-16) restricted to the cases, where the subject is saturated and no zero pronoun. therefore, I inserted the zpro_ref-ind to ARG1 in the zpro insertion rules (infl.tdl)
@@ -1097,10 +1100,13 @@ ni-case := ga-wo-ni-p-lex &
             [ORTH <! "に" !>,
              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
 
+; (MS 2005-04-07) It seems that we don't need these any more.
+; adverb +  case particle is elliptical or ungrammatical, as the NTT
+; people say.
 
-ni-case-2 := ga-wo-ni-p-lex-2 &
-             [ORTH <! "に" !>,
-              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
+;ni-case-2 := ga-wo-ni-p-lex-2 &
+;             [ORTH <! "に" !>,
+;              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
 
 ;"何日からになりますか"
 ni-case-3 := ga-wo-ni-p-lex-3 &
@@ -1465,10 +1471,13 @@ o := ga-wo-ni-p-lex &
        [ORTH <! "を" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
 
+; (MS 2005-04-07) It seems that we don't need these any more.
+; adverb + case particle is elliptical or ungrammatical, as the NTT
+; people say.
 
-o-2 := ga-wo-ni-p-lex-2 & 
-       [ORTH <! "を" !>,
-       SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
+;o-2 := ga-wo-ni-p-lex-2 & 
+;       [ORTH <! "を" !>,
+;       SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
 
 
 o-3 := ga-wo-ni-p-lex-3 & 

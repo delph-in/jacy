@@ -308,10 +308,11 @@ exceptional_noun_head := nom_head-avm & [MOD null,
 					 NO-MOD -, 
 					 QUANTIFIABLE -].
 
-exceptional_noun_nmod_head := nom_head-avm & [J-SPEC null, 
-					      QUANTIFIABLE -, 
-					      MOD < [LOCAL.CAT.HEAD noun_head]>, 
-					      J-POSTHEAD rels].
+; (MS 2005-03-30) This seems not to be in use any more.
+;exceptional_noun_nmod_head := nom_head-avm & [J-SPEC null, 
+;					      QUANTIFIABLE -, 
+;					      MOD < [LOCAL.CAT.HEAD noun_head]>, 
+;					      J-POSTHEAD rels].
 
                   
 relational_noun_head := ordinary_noun_head & [MOD null,J-SPEC null, VN -].
@@ -947,11 +948,12 @@ na-adj-end_head := na-adj_head & verbend_head-unmarked & [POS adj,
 							  MOD null,
 							  J-SPEC.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
-exceptional-adj_head := adj_head &
-                        [MOD < [LOCAL.CAT.HEAD ordinary_noun_head ] >,
-                         POS adj,
-                         J-SPEC null,
-                         MARK null].
+; (MS 2005-03-30) This seems not to be used any more.
+;exceptional-adj_head := adj_head &
+;                        [MOD < [LOCAL.CAT.HEAD ordinary_noun_head ] >,
+;                         POS adj,
+;                         J-SPEC null,
+;                         MARK null].
 
 ; (ERB 2001-01-02) [MOD ... NUCL +] is too restrictive if
 ; we want head-adjunct rules to be [NUCL -] on the mother.
@@ -1560,6 +1562,10 @@ case-p-lex := p-lex &
 
 ga-wo-ni-p-lex := case-p-lex & 
                   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
+
+; (MS 2005-04-07) It seems that we don't need these any more.
+; adverb +  case particle is elliptical or ungrammatical, as the NTT
+; people say.
 
 ga-wo-ni-p-lex-2 := case-p-lex & 
                   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD adv_head,
@@ -4171,14 +4177,15 @@ na-adj-lex := na-adj-basic-lex & [SYNSEM.NON-LOCAL [QUE <! !>]].
 na-adj-negative-lex := na-adj-lex & [SYNSEM [LOCAL.CAT.HEAD.MODUS negative,
                                              NON-LOCAL [QUE <! !>]]].
 
-exceptional-adj-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD exceptional-adj_head,
-                                                      VAL adj_sc & [SUBJ #sbj & [FIRST.LOCAL.CONT.HOOK.INDEX #arg]]],
-						 ARG-S #sbj,
-                                                CONT na-adj-sem-type & [RELS <! #key !>,
-									HOOK.XARG #arg],
-                                                BAR +],
-					  LKEYS.KEYREL #key & [ARG1 #arg],
-                                          NON-LOCAL [QUE <! !>]]].
+; (MS 2005-03-30) This seems not to be used any more.
+;exceptional-adj-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD exceptional-adj_head,
+;                                                      VAL adj_sc & [SUBJ #sbj & [FIRST.LOCAL.CONT.HOOK.INDEX #arg]]],
+;						 ARG-S #sbj,
+;                                                CONT na-adj-sem-type & [RELS <! #key !>,
+;									HOOK.XARG #arg],
+;                                                BAR +],
+;					  LKEYS.KEYREL #key & [ARG1 #arg],
+;                                          NON-LOCAL [QUE <! !>]]].
 
 na-adj-wh-lex := na-adj-basic-lex &
              [SYNSEM [NON-LOCAL.QUE <! #top !>,
