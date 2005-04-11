@@ -1263,29 +1263,29 @@ SYNSEM.LKEYS.KEYREL.PRED '_dekirudake_a_rel].
 ikaga-adv :=
 adv-wh-lex &
 [ORTH <! "いかが" !>,
-SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel_rel].
+SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel].
 
 ikaga-kanji-adv := 
 adv-wh-lex &
 [ORTH <! "如何" !>,
-SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel_rel].
+SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel].
 
 ; (ERB 2001-09-06) Changing this so it can only modify lexical verbs.
 
 dou-adv :=
 lex-mod-adv-wh-lex &
 [ORTH <! "どう" !>,
-SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel_rel].
+SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel].
 
 donokurai-adv :=
 adv-wh-lex &
 [ORTH <! "どのくらい" !>,
-SYNSEM.LKEYS.ALTKEYREL.PRED '_extent_a_rel_rel].
+SYNSEM.LKEYS.ALTKEYREL.PRED '_extent_a_rel].
 
 donokurai-multi-adv :=
 adv-wh-lex &
 [ORTH <! "どの","くらい" !>,
-SYNSEM.LKEYS.ALTKEYREL.PRED '_extent_a_rel_rel].
+SYNSEM.LKEYS.ALTKEYREL.PRED '_extent_a_rel].
 
 
 
@@ -2112,7 +2112,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_dondon_a_rel].
 naze-adv :=
 adv-wh-lex &
 [ORTH <! "なぜ" !>,
-SYNSEM.LKEYS.ALTKEYREL.PRED '_reason_a_rel_rel].
+SYNSEM.LKEYS.ALTKEYREL.PRED '_reason_a_rel].
 
 ;tremble, get nervous, be excited
 
@@ -2157,7 +2157,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_akumade_a_rel].
 ikani-adv :=
 adv-wh-lex &
 [ORTH <! "いかに" !>,
-SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel_rel].
+SYNSEM.LKEYS.ALTKEYREL.PRED '_way_a_rel].
 
 ikura-adv :=
 adv-wh-lex &

@@ -179,7 +179,7 @@ utterance_rule-command := utterance-plusmessage-type &
 
 
 
-; (MS 2004-12-14) an utterance rule for sentences with an infinite ending, like "’’µ¶’’¤ê’’¤Ê’’¤¯",
+; (MS 2004-12-14) an utterance rule for sentences with an infinite ending, like "’’’µ¶’’’¤ê’’’¤Ê’’’¤¯",
 ; at the moment restricted to adjectives.
 
 utterance_rule-decl-infinite := utterance-plusmessage-type &
@@ -259,10 +259,13 @@ adv_np_rule := adv_np_rule-type.
 ; (ERB 2002-01-28) MOD...HEAD is ordinary-or-date-noun_head to allow
 ; nouns like TOKI as head of compounds. (Was just ordinary_noun_head)
 ; (MS 2002-06-11) The POSTHEAD is unified with the POSTHEAD of the argument. Thus, I can prevent
-; words like ’’´Ö from being the first argument in a compound.
+; words like ’’’´Ö from being the first argument in a compound.
 
 ; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
+; (MS 2005-04-11) If the LKEYS.KEYREL.PRED is atom, we cannot parse more than two nouns in a compound.
+; So, I'll take this restriction out.
 
 
 compound-noun-rule := empty-head-type & 
@@ -290,8 +293,7 @@ compound-noun-rule := empty-head-type &
  NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD noun_head & [J-POSTHEAD #ph],
                                 VAL saturated],
                            CONT [ HOOK.INDEX #nhinst],
-			   BAR -],
-			   LKEYS.KEYREL.PRED atom]].
+			   BAR -]]].
 
 ; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
@@ -439,7 +441,7 @@ head_subj_rule := head-subject-rule & [SYNSEM.LOCAL.BAR +].
 
 ; (ERB 2001-08-06) Splitting this in two for Smith-style number names.
 
-; (MS 2001-11-14) Took the BAR + restriction out in order to make compounds with subcategorizing nouns possible (’’¿¶’’¹þ’’Àè’’»Ø’’Äê). Let's see if that overgenerates.
+; (MS 2001-11-14) Took the BAR + restriction out in order to make compounds with subcategorizing nouns possible (’’’¿¶’’’¹þ’’’Àè’’’»Ø’’’Äê). Let's see if that overgenerates.
 ; (MS 2001-11-19) It does. Let's take the BAR from the head-dtr.
 ; (MS 2001-11-20) Still too much ambiguity. Everything is BAR + again.
 
@@ -548,7 +550,7 @@ head-adjunct-rule-first-i := hadj-first-i &
                                              BAR +]]>].
 
 ; (ERB 2001-11-28) Rule for scopal modifiers.
-; For some reason, ’’¿·’’¤·’’¤¤ could be the modifier here until I put
+; For some reason, ’’’¿·’’’¤·’’’¤¤ could be the modifier here until I put
 ; in the constraint [VAL saturated].  I don't see why that should
 ; change things.  (If I type the MOD.LOCAL of everything, it will
 ; be doubly ruled out, but that's a separate issue.)
@@ -593,18 +595,18 @@ head-adjunct-rule-first-s := hadj-first-s &
 ; to prefer low attachment of relative clauses: rel-cl-rule-1 requires a [NUCL
 ; +] head daughter, while rel-cl-rule-2 requires a [NUCL -] head
 ; daughter.
-;(CH 2003-08-15)  ’’¼ç’’Ì¾’’»ì’’¤ò’’´Ø’’·¸’’Àá’’¤Î’’¤É’’¤³’’¤Ë’’¤â’’´Ø’’Ï¢’’¤Å’’¤±’’¤Ê’’¤¤ (non gapped)
-; *** 2003-08-14 ’’¤Î Melanie Siegel ’’¤µ’’¤ó’’¤Î’’¾ð’’Êó’’¤Ë’’´ð’’¤Å’’¤¯’’½¤’’Àµ ***
+;(CH 2003-08-15)  ’’’¼ç’’’Ì¾’’’»ì’’’¤ò’’’´Ø’’’·¸’’’Àá’’’¤Î’’’¤É’’’¤³’’’¤Ë’’’¤â’’’´Ø’’’Ï¢’’’¤Å’’’¤±’’’¤Ê’’’¤¤ (non gapped)
+; *** 2003-08-14 ’’’¤Î Melanie Siegel ’’’¤µ’’’¤ó’’’¤Î’’’¾ð’’’Êó’’’¤Ë’’’´ð’’’¤Å’’’¤¯’’’½¤’’’Àµ ***
 ; there are three thing to change on the first daughter:
 ; 1) MAIN-PRD bool
 ; 2) NUCL not_fin_conj
 ; 3) The co-indexing of #adjevent to CONT.HOOK.INDEX instead of ARG0.
 ;
 ;(CH 2003-08-22)
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" ’’¤ò’’ÄÉ’’²Ã
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" ’’’¤ò’’’ÄÉ’’’²Ã
 
 ; (MS 2004-12-13) This had [ADJ -] on its argument, preventing the correct
-; reading for ’’ÌÜ’’¤¬’’Èþ’’¤·’’¤¤’’Ç­.
+; reading for ’’’ÌÜ’’’¤¬’’’Èþ’’’¤·’’’¤¤’’’Ç­.
 
 relative-clause-rule := hadj-final-i &
                       [SYNSEM.LOCAL [BAR +,
@@ -632,12 +634,12 @@ relative-clause-rule := hadj-final-i &
 							 CONT.HOOK [INDEX #ind,
 								    LTOP #top]]]]>].
 
-;(CH 2003-08-22) ’’¼ç’’¸ì’’°Ì’’ÃÖ’’¤Ë’’¼ç’’Ì¾’’»ì’’¤ò’’´Ø’’Ï¢’’¤Å’’¤±’’¤ë’’´Ø’’·¸’’Àá’’µ¬’’Â§
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"’’¤ò’’ºï’’½ü
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind"’’¤ò’’ÄÉ’’²Ã
+;(CH 2003-08-22) ’’’¼ç’’’¸ì’’’°Ì’’’ÃÖ’’’¤Ë’’’¼ç’’’Ì¾’’’»ì’’’¤ò’’’´Ø’’’Ï¢’’’¤Å’’’¤±’’’¤ë’’’´Ø’’’·¸’’’Àá’’’µ¬’’’Â§
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"’’’¤ò’’’ºï’’’½ü
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind"’’’¤ò’’’ÄÉ’’’²Ã
 ;(CH 2003-08-26)
 ; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
-;                                   COMPS sat-arg]]"’’¤ò’’ÄÉ’’²Ã
+;                                   COMPS sat-arg]]"’’’¤ò’’’ÄÉ’’’²Ã
 ; (FCB 2004-02-03) redid to factor out shared parts
 
 ; (MS 2004-12-22) Why did we have two rules for adjectives and non-adjectives? I'll take that out.
@@ -657,14 +659,14 @@ rel-cl-sbj-gap-rule := rel-cl-gap-rule  &
 
 
 
-;(CH 2003-08-22) ’’Ä¾’’ÀÜ’’ÌÜ’’Åª’’¸ì’’°Ì’’ÃÖ’’¤Ë’’¼ç’’Ì¾’’»ì’’¤ò’’´Ø’’Ï¢’’¤Å’’¤±’’¤ë’’´Ø’’·¸’’Àá’’µ¬’’Â§
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"’’¤ò’’ºï’’½ü
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind"’’¤ò’’ÄÉ’’²Ã
+;(CH 2003-08-22) ’’’Ä¾’’’ÀÜ’’’ÌÜ’’’Åª’’’¸ì’’’°Ì’’’ÃÖ’’’¤Ë’’’¼ç’’’Ì¾’’’»ì’’’¤ò’’’´Ø’’’Ï¢’’’¤Å’’’¤±’’’¤ë’’’´Ø’’’·¸’’’Àá’’’µ¬’’’Â§
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"’’’¤ò’’’ºï’’’½ü
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind"’’’¤ò’’’ÄÉ’’’²Ã
 ;(CH 2003-08-26)
 ; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [COMPS 1-list &
 ; 					 [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
 ; 					  REST sat-arg],
-; 				   SUBJ sat-arg]],"’’¤ò’’ÄÉ’’²Ã
+; 				   SUBJ sat-arg]],"’’’¤ò’’’ÄÉ’’’²Ã
 ; (FCB 2004-02-03) redid to factor out shared parts
 
 rel-cl-obj1-gap-rule := rel-cl-gap-rule & 
@@ -676,20 +678,20 @@ rel-cl-obj1-gap-rule := rel-cl-gap-rule &
 			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind ]>].
 
 
-;(CH 2003-08-22) ’’´Ö’’ÀÜ’’ÌÜ’’Åª’’¸ì’’°Ì’’ÃÖ’’¤Ë’’¼ç’’Ì¾’’»ì’’¤ò’’´Ø’’Ï¢’’¤Å’’¤±’’¤ë’’´Ø’’·¸’’Àá’’µ¬’’Â§
-; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"’’¤ò’’ºï’’½ü
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind"’’¤ò’’ÄÉ’’²Ã
+;(CH 2003-08-22) ’’’´Ö’’’ÀÜ’’’ÌÜ’’’Åª’’’¸ì’’’°Ì’’’ÃÖ’’’¤Ë’’’¼ç’’’Ì¾’’’»ì’’’¤ò’’’´Ø’’’Ï¢’’’¤Å’’’¤±’’’¤ë’’’´Ø’’’·¸’’’Àá’’’µ¬’’’Â§
+; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated"’’’¤ò’’’ºï’’’½ü
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind"’’’¤ò’’’ÄÉ’’’²Ã
 ;(CH 2003-08-26) 
 ; "ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [COMPS 1-plus-list &
 ; 					 [REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind,
 ; 					  FIRST sat-arg],
-; 				   SUBJ sat-arg]],"’’¤ò’’ÄÉ’’²Ã
+; 				   SUBJ sat-arg]],"’’’¤ò’’’ÄÉ’’’²Ã
 ; (FCB 2004-02-03) redid to factor out shared parts 
 ; FIXME: NOT WORKING
 ; NOTE without this rule, the rel-cl-gap-rule can be just rel-cl-gap-rule := hadj-final-i  & ...
 ; need to work on it a bit more
 ;
-; (MS 2004-11-30) The first complement should not be restricted to be bound: ’’ÃÖ’’¤¯’’¥Æ’’¡¼’’¥Ö’’¥ë
+; (MS 2004-11-30) The first complement should not be restricted to be bound: ’’’ÃÖ’’’¤¯’’’¥Æ’’’¡¼’’’¥Ö’’’¥ë
 
 rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
@@ -712,7 +714,7 @@ rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 
 ; (ERB 2002-01-22) NUCL conj now on supertype.
 ; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-06-25) [HEAD.EMPTY -] to prevent spuriou ambiguity on ’’¿©’’¤Ù’’¤Æ’’¤¤’’¤ë’’¤´’’ÈÓ 
+; (MS 2004-06-25) [HEAD.EMPTY -] to prevent spuriou ambiguity on ’’’¿©’’’¤Ù’’’¤Æ’’’¤¤’’’¤ë’’’¤´’’’ÈÓ 
 
 sentence-te-coordination-rule := sentence-coord-type &
 [SYNSEM [LOCAL [BAR +,
@@ -767,7 +769,7 @@ sentence-te-coordination-rule := sentence-coord-type &
 ; (MS 2002-1-7) I'll restrict the rule a little bit further to non-adjectives. 
 ; Also, both verbs are MAIN-PRD +. This prevents NA to be the first verb.
 ; MODUS nonoperative prevents NAI to be the first verb. It has to be seen if that is too restrictive...
-; (MS 2002-1-7) It is: "’’É½’’¼¨’’¤Ç’’¤­’’¤Þ’’¤»’’¤ó’’¤Ç’’¤·’’¤¿’’¿½’’¤·’’Ìõ’’¤´’’¤¶’’¤¤’’¤Þ’’¤»’’¤ó.
+; (MS 2002-1-7) It is: "’’’É½’’’¼¨’’’¤Ç’’’¤­’’’¤Þ’’’¤»’’’¤ó’’’¤Ç’’’¤·’’’¤¿’’’¿½’’’¤·’’’Ìõ’’’¤´’’’¤¶’’’¤¤’’’¤Þ’’’¤»’’’¤ó.
 ; (MS 2002-1-10) Another restriction is EMPTY - in the head of the first argument. 
 ;  This prevents an empty-cop-id-rule or an empty-cop-rule to be applied to this.
 
@@ -777,8 +779,8 @@ sentence-te-coordination-rule := sentence-coord-type &
 ; in cheap at least this rule is restricted to spanning-only-edges.)
 ; (MS 2002-05-28) If we want the first sentence to have an SAP, we need utt-valid there, too.
 ; (MS 2002-06-05) Maybe that's not a good idea, leads to spurious ambiguity in, e.g.,
-;  ’’¤´’’ÈÓ’’¤ò’’¿©’’¤Ù’’¤ë’’¤«’’¤è’’¤¤
-; (MS 2002-06-19) But we seem to need this anyway: "’’¸ý’’ºÂ’’¿¶’’ÂØ’’°Í’’Íê’’½ñ’’Á÷’’¤Ã’’¤Æ’’¤¯’’¤À’’¤µ’’¤¤,’’¤ª’’´ê’’¤¤’’¤·’’¤Þ’’¤¹"
+;  ’’’¤´’’’ÈÓ’’’¤ò’’’¿©’’’¤Ù’’’¤ë’’’¤«’’’¤è’’’¤¤
+; (MS 2002-06-19) But we seem to need this anyway: "’’’¸ý’’’ºÂ’’’¿¶’’’ÂØ’’’°Í’’’Íê’’’½ñ’’’Á÷’’’¤Ã’’’¤Æ’’’¤¯’’’¤À’’’¤µ’’’¤¤,’’’¤ª’’’´ê’’’¤¤’’’¤·’’’¤Þ’’’¤¹"
 ; (MS 2002-06-20) Trying to restrict this with  NUCL nucl_plus.
 
 
@@ -880,8 +882,8 @@ na-vend-rule := stem-end-rule-type &
 	  SYNSEM.LOCAL.CAT.HEAD verbend_head] >].
 
 
-; (MS 2004-11-08) This one should keep the LMORPH-BIND-TPYE: ’’Íè’’¤ä’’¤¹’’¤¤
-; (MS 2004-12-21) This doesn't necessarily have to be FIN +: ’’µ¶’’¤ê’’¤Ê’’¤¯
+; (MS 2004-11-08) This one should keep the LMORPH-BIND-TPYE: ’’’Íè’’’¤ä’’’¤¹’’’¤¤
+; (MS 2004-12-21) This doesn't necessarily have to be FIN +: ’’’µ¶’’’¤ê’’’¤Ê’’’¤¯
 ; (S 2005-01-06) Copy up ARG-S.
 
 unary-vstem-vend-rule := unary-type-super &
@@ -905,10 +907,10 @@ unary-vstem-vend-rule := unary-type-super &
 	  J-NEEDS-AFFIX -] >].
 
 
-; (ERB 2002-01-02) Getting double parses for "’’¤ª’’Á÷’’¤ê’’¤¤’’¤¿’’¤À’’¤­’’¤¿’’¤¤"
-; because ’’¤¤’’¤¿’’¤À’’¤­’’¤¿’’¤¤ is compatible with the head of hsr and the
+; (ERB 2002-01-02) Getting double parses for "’’’¤ª’’’Á÷’’’¤ê’’’¤¤’’’¤¿’’’¤À’’’¤­’’’¤¿’’’¤¤"
+; because ’’’¤¤’’’¤¿’’’¤À’’’¤­’’’¤¿’’’¤¤ is compatible with the head of hsr and the
 ; vend of vn-vend-rule.  (Similar problems don't arise with 
-; ’’¿©’’¤Ù’’¤Æ’’¤¤’’¤¿’’¤À’’¤­’’¤¿’’¤¤ because ’’¿©’’¤Ù’’¤Æ is also [HEAD v-end_head] and
+; ’’’¿©’’’¤Ù’’’¤Æ’’’¤¤’’’¤¿’’’¤À’’’¤­’’’¤¿’’’¤¤ because ’’’¿©’’’¤Ù’’’¤Æ is also [HEAD v-end_head] and
 ; therefore incompatible with the vstem-vend rule.)  This is a
 ; bit of a hack, but keep the vn-vend-rule from appying in these
 ; cases by requiring vend to be [AUX -].
@@ -995,7 +997,7 @@ tai-obj-change-rule :=  obj-casechange-rule &
 
 
 
-;; ’’µ¡’’´Ø’’¤Î’’ÊÑ’’¹¹’’¤·’’¤¿’’¤¤
+;; ’’’µ¡’’’´Ø’’’¤Î’’’ÊÑ’’’¹¹’’’¤·’’’¤¿’’’¤¤
 
 vn-light-obj-change-rule-case-p  :=  obj-casechange-rule &
                        [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
@@ -1037,8 +1039,8 @@ garu-sbj-change-rule := subj-casechange-rule &
 
 
 ; (ERB 2001-09-20) We want currency NumClPs at least to be possible
-; left daughters of compounds for things like ’’É´’’±ß’’¥Î’’¡¼’’¥È or
-; ’’Æó’’Ëü’’¥É’’¥ë’’¼Ö.  That these are actually compounds is shown by the
+; left daughters of compounds for things like ’’’É´’’’±ß’’’¥Î’’’¡¼’’’¥È or
+; ’’’Æó’’’Ëü’’’¥É’’’¥ë’’’¼Ö.  That these are actually compounds is shown by the
 ; pronunciation of the latter (niman doru guruma), which involves rendaku.
 ; (MS 2001-10-10) But if you restrict them to be BAR -, they can (e.g.) not be modified. Let them be BAR bool and everything is possible?
 
@@ -1120,7 +1122,7 @@ embedded-question-rule := embedded-question-rule-type &
  NON-HEAD-DTR.SYNSEM.NON-LOCAL.AFFIX #affixlist].
 
 ; (MS 2001-11-23) rule for colon sentences.
-; ’’¿·’’½»’’½ê : AddressErsatz.
+; ’’’¿·’’’½»’’’½ê : AddressErsatz.
 
 ; (MS 2003-09-03) Reactivated this rule.
 ;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
@@ -1232,9 +1234,9 @@ quasi-morph-rule := binary-basic &
 
 
 
-;(CH 2003-08-15) ’’Æ°’’»ì’’¸ì’’´´’’¡Ü’’Æ°’’»ì’’¸ì’’´´
-;(FIXME) semantics ’’¤¬’’¤ª’’¤«’’¤·’’¤¤’’¾ì’’¹ç’’¤¬’’¤¢’’¤ë’’¡£
-; ex) V2’’¤¬V1’’¤Î’’¥¤’’¥Ù’’¥ó’’¥È’’¤ò’’¼è’’¤ë’’¾ì’’¹ç’’¤Î’’²ò’’¼á’’¤¬’’¤Ç’’¤­’’¤Ê’’¤¤’’¡£
+;(CH 2003-08-15) ’’’Æ°’’’»ì’’’¸ì’’’´´’’’¡Ü’’’Æ°’’’»ì’’’¸ì’’’´´
+;(FIXME) semantics ’’’¤¬’’’¤ª’’’¤«’’’¤·’’’¤¤’’’¾ì’’’¹ç’’’¤¬’’’¤¢’’’¤ë’’’¡£
+; ex) V2’’’¤¬V1’’’¤Î’’’¥¤’’’¥Ù’’’¥ó’’’¥È’’’¤ò’’’¼è’’’¤ë’’’¾ì’’’¹ç’’’¤Î’’’²ò’’’¼á’’’¤¬’’’¤Ç’’’¤­’’’¤Ê’’’¤¤’’’¡£
 ; almost lost the ambiguity with VAL.UNSAT +
 ; but for some reason subj-zpro-ins-lrule won't run after the vstem-vstem rule
 ; because of a conflict of SUBJ NUL and sat-arg-list
@@ -1253,15 +1255,15 @@ vstem-vstem-rule := vstem-vstem-rule-type.
 
 
 ;(CH 2003-08-27)
-; ’’·Á’’ÍÆ’’»ì’’¤ò’’Ì¾’’»ì’’¤Ë’’ÊÑ’’¤¨’’¤ë’’¡£
-;’’¡Ö’’¸Å ’’¤µ’’¡×’’¤Ê’’¤É’’¤ò’’²ò’’ÀÏ’’¤¹’’¤ë’’¤¿’’¤á’’¡£
+; ’’’·Á’’’ÍÆ’’’»ì’’’¤ò’’’Ì¾’’’»ì’’’¤Ë’’’ÊÑ’’’¤¨’’’¤ë’’’¡£
+;’’’¡Ö’’’¸Å ’’’¤µ’’’¡×’’’¤Ê’’’¤É’’’¤ò’’’²ò’’’ÀÏ’’’¤¹’’’¤ë’’’¤¿’’’¤á’’’¡£
 ; (MS 2005-02-14) Moved the definitions to rule-types.tdl.
 
 adj-nominal-suffix-rule := adj-nominal-suffix-type.
 
 
 ; ADV -> NOUN
-; ’’¡Ö’’½Å’’Í× ’’¤µ’’¡×
+; ’’’¡Ö’’’½Å’’’Í× ’’’¤µ’’’¡×
 
 ; adv-nominal-suffix-rule := head-final-type & 
 ; 			   orth-princ &
