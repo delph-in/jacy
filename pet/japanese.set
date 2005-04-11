@@ -214,7 +214,7 @@ posmapping :=
   その他-間投+n-n                                $generic_interj-lex
   フィラー+n-n                                   $generic_hes-lex
   名詞-サ変接続+n-n                              $generic_vn-lex
-  動詞-自立+カ変・クル-基本形		         $generic_verb	_ru_infl
+  動詞-自立+カ変・クル-基本形		         $generic_verb_ru_infl
   動詞-自立+カ変・クル-未然形		         $generic_verb_a_infl
   動詞-自立+カ変・クル-連用タ接続		 $generic_verb_t_infl
   動詞-自立+カ変・クル-仮定形		         $generic_verb_cond_infl
