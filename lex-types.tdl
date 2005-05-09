@@ -1559,48 +1559,60 @@ case-p-lex := p-lex &
                                  RELS <! !>,
                                  HCONS <! !>]]]].
 
+; (MS 2005-05-06) renamed ga-wo-ni-p-lex (cleaning up particles).
 
-ga-wo-ni-p-lex := case-p-lex & 
+case-p-lex-np := case-p-lex & 
                   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
 
 ; (MS 2005-04-07) It seems that we don't need these any more.
 ; adverb +  case particle is elliptical or ungrammatical, as the NTT
 ; people say.
 
-ga-wo-ni-p-lex-2 := case-p-lex & 
-                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD adv_head,
-							   CONT.HOOK.INDEX event]].
+;ga-wo-ni-p-lex-2 := case-p-lex & 
+;                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD adv_head,
+;							   CONT.HOOK.INDEX event]].
 
 ;(MS 2002-1-7) restricted this to postpositions, in order to keep NO GA out.
 ; (MS 2004-06-25) INDEX and XARG must be the same, otherwise the phrase cannot be selected for.
+; (MS 2005-05-06) renamed ga-wo-ni-p-lex-3 (cleaning up particles).
 
-ga-wo-ni-p-lex-3 := case-p-lex & 
+case-p-lex-postp := case-p-lex & 
                   [SYNSEM.LOCAL [CONT.HOOK.INDEX #ind,
 				 CAT.VAL.COMPS.FIRST.LOCAL [CONT.HOOK.XARG #ind,
 							    CAT.HEAD postp_head & [PTYPE nontop,
 										   CASE mod]]]].
+; (MS 2005-05-06) renamed to-case-lex (cleaning up particles).
+; BUT I really don't know what this is for. Commented it out until
+; I can find a good example.
+;case-p-lex-vmodp := case-p-lex & 
+;                  [SYNSEM.LOCAL [CONT.HOOK.INDEX #ind,
+;				 CAT.VAL.COMPS.FIRST.LOCAL [CONT.HOOK.XARG #ind,
+;							    CAT.HEAD vmod-p_head & [PTYPE nontop]]]].
 
 ; "何日くらいかかるかを教える"
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-05-06) This is rather a complementizer. Took that out and gave the o-4 the type
+; comp-prpstn-lex.
+;ga-wo-ni-p-lex-4 := comp-prpstn-lex &
+;		    [SYNSEM.LOCAL [CAT [HEAD case-p_head,
+;					VAL.COMPS.FIRST [LOCAL [CONT.HOOK.LTOP #ohand,
+;								CAT.VAL saturated]]],
+;                          CONT [RELS <! message &
+;				      [PRED proposition_m_rel,
+;				       LBL #chand,
+;				       MARG #soa] !>,
+;                                HOOK.LTOP #chand,
+;                                HCONS <! qeq & [LARG #ohand,
+;                                                 HARG #soa] !>]]].
 
-ga-wo-ni-p-lex-4 := p-lex-c &
-		    [SYNSEM.LOCAL [CAT [HEAD case-p_head,
-					VAL.COMPS.FIRST [LOCAL [CONT.HOOK.LTOP #ohand,
-								CAT.VAL saturated]]],
-                          CONT [RELS <! message &
-				      [PRED proposition_m_rel,
-				       LBL #chand,
-				       MARG #soa] !>,
-                                HOOK.LTOP #chand,
-                                HCONS <! qeq & [LARG #ohand,
-                                                 HARG #soa] !>]]].
 
+; (MS 2005-05-06) We seem not to need this any more, as the ni-case-5 is replaced with
+; naadj2adv-end-lex.
+;ga-wo-ni-p-lex-5 := case-p-lex & 
+;                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
-
-ga-wo-ni-p-lex-5 := case-p-lex & 
-                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
-
-to-case-lex :< case-p-lex.
+; (MS 2005-05-06) renamed particles (case-p-lex-np and case-p-lex-vmodp).
+;to-case-lex :< case-p-lex.
 
 ; (ERB 2002-02-14) This should take the LTOP of its OBJ for the LARG
 ; handle, not KEY.LBL.  (Problem was embedded conjoined sentences where
@@ -1618,19 +1630,21 @@ comp-lex := p-lex-c &
 comp-prpstn-lex := comp-lex &
                    [SYNSEM.LOCAL.CONT.RELS <! message & [PRED proposition_m_rel] !>].
 
-comp-copinsert-lex := p-lex-c &
-            [SYNSEM [LOCAL [CAT [HEAD case-p_head & [CASE to],
-                                VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
-						       CONT.HOOK [INDEX #oind]]],
-                          CONT [RELS <! message & #key & [LBL #phand,
-							  MARG #soa], 
-				            [PRED 'cop_id_rel,
-					     ARG2 #oind,
-					     LBL #cophand] !>,
-                                HOOK.LTOP #phand,
-                                HCONS <! qeq & [LARG #cophand,
-                                                 HARG #soa] !>]],
-		     LKEYS.KEYREL #key]].
+; (MS 2005-05-09) I don't see why we need this: a copula is inserted
+; even with the comp-prpstn-lex.
+;comp-copinsert-lex := p-lex-c &
+;            [SYNSEM [LOCAL [CAT [HEAD case-p_head & [CASE to],
+;                                VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
+;						       CONT.HOOK [INDEX #oind]]],
+;                          CONT [RELS <! message & #key & [LBL #phand,
+;							  MARG #soa], 
+;				            [PRED 'cop_id_rel,
+;					     ARG2 #oind,
+;					     LBL #cophand] !>,
+;                                HOOK.LTOP #phand,
+;                                HCONS <! qeq & [LARG #cophand,
+;                                                 HARG #soa] !>]],
+;		     LKEYS.KEYREL #key]].
 
 ; (ERB 2002-02-11) Hack to keep these guys out of the orindary
 ; head-complement-hf rule, now that I've made the embedded-question-rule
@@ -1961,14 +1975,14 @@ topic-advarg-lex := plain-topic-vmod-p-lex &
 adv-p-lex := vmod-p-lex & 
              [SYNSEM.LOCAL.CAT.HEAD adv-p_head].
 
-adv-p-lex-1 :=  adv-p-lex & 
+adv-p-lex-np :=  adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
 
 
-adv-p-lex-3 := adv-p-lex & 
+adv-p-lex-iadj := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD i-adj_head].
 
-adv-p-lex-4 := adv-p-lex & 
+adv-p-lex-p := adv-p-lex & 
             [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE nontop]]].
 
 ; (ERB 2002-01-10) To keep this from attaching to "empty-copula-id-rule"
@@ -1976,16 +1990,16 @@ adv-p-lex-4 := adv-p-lex &
 ; solution...
 ; (MS 2002-05-28) VN - to prevent ambiguity.
 
-adv-p-lex-5 := adv-p-lex & 
+adv-p-lex-vp := adv-p-lex & 
 [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & 
                                                 [FORMAL.AHON -,
                                                  VN -,
                                                  COP -]].
 
-adv-p-lex-6 := adv-p-lex & 
+adv-p-lex-naadj := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
-adv-p-lex-7 := adv-p-lex & 
+adv-p-lex-parent := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD parent-end_head].
 
 

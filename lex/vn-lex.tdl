@@ -7020,8 +7020,9 @@ kenon_1 := vn-intrans-lex &
 
 ; ·ö²Þ 
 ; Used 2 times
+; (MS 2005-05-06) This should be vn-trans3-lex: "²Ö»Ò¤È·ö²Þ¤·¤¿"
 
-kenka_1 := vn-intrans-lex &
+kenka_1 := vn-trans3-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kenka_vn_1_rel,
  ORTH <! "·ö²Þ" !>].
 

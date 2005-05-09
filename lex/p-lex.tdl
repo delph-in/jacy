@@ -409,7 +409,7 @@ bakari-narg := postp-lex &
          ORTH <! "ばかり" !>]. 
 
 
-bakari-parg := adv-p-lex-4 &  
+bakari-parg := adv-p-lex-p &  
                  [SYNSEM.LOCAL [CAT [HEAD [PTYPE bakari,
 					   MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] >],
 				     VAL.COMPS.FIRST.LOCAL.CAT.HEAD [PTYPE to,
@@ -420,29 +420,29 @@ bakari-parg := adv-p-lex-4 &
 
 ; (ERB 2001-12-20) language server is now normalizing fw characters
 ; to hw characters, so we need hw colon, too.
-colon := ga-wo-ni-p-lex & 
+colon := case-p-lex-np & 
        [ORTH <! "：" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE overt]]].
 
 
-colon-2 := ga-wo-ni-p-lex & 
+colon-2 := case-p-lex-np & 
        [ORTH <! ":" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE overt]]].
 
 ; (ERB 2001-12-20) language server is now normalizing fw characters
 ; to hw characters, so we need hw colon, too.
-colon-advp := adv-p-lex-1 &
+colon-advp := adv-p-lex-np &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE comma],
                                     CONT.RELS <! [PRED '_wa_p_rel] !>],
               ORTH <! "：" !>].
 
 
-colon-advp-2 := adv-p-lex-1 &
+colon-advp-2 := adv-p-lex-np &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE comma],
                                     CONT.RELS <! [PRED '_wa_p_rel] !>],
               ORTH <! ":" !>].
 
-comma-advp := adv-p-lex-1 &
+comma-advp := adv-p-lex-np &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE comma],
                                     CONT.RELS <! [PRED '_wa_p_rel] !>],
               ORTH <! "、" !>].
@@ -463,7 +463,7 @@ comma-sap  := s-conj1-lex &
 
 
 ;"三井化学だけ旧住所です"
-dake-case := ga-wo-ni-p-lex &
+dake-case := case-p-lex-np &
              [ORTH <! "だけ" !>,
               SYNSEM.LOCAL [CAT.HEAD [CASE ga-or-wo,PTYPE dake]]].
 
@@ -491,28 +491,28 @@ dash-nmod := nounmod-p-lex &
             ORTH <! "／" !>].
 
 
-datte := adv-p-lex-1 &  
+datte := adv-p-lex-np &  
                  [SYNSEM.LOCAL [CAT.HEAD.PTYPE de,
                                 CONT.RELS <! [PRED '_datte_p_rel] !>],
                   ORTH <! "だって" !>].
 
 ;"hai kochira wa sore de kekkou desu."
 ;"sore de yoroshiku onegai itashimasu"
-de-advp-main-1 := adv-p-lex-1 &  
+de-advp-main-1 := adv-p-lex-np &  
                   [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
                                           MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] >],
                                  CONT.RELS <! [PRED '_de_p_rel] !>],
                    ORTH <! "で" !>].
 
 
-de-advp-main-3 := adv-p-lex-3 &  
+de-advp-main-3 := adv-p-lex-iadj &  
                   [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
                                           MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] >],
                                  CONT.RELS <! [PRED '_de_p_rel] !>],
                    ORTH <! "で" !>].
 
 
-de-advp-main-4 := adv-p-lex-4 &  
+de-advp-main-4 := adv-p-lex-p &  
                   [SYNSEM.LOCAL [CAT [HEAD [PTYPE de,
 					    MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] >],
 				      VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
@@ -520,21 +520,21 @@ de-advp-main-4 := adv-p-lex-4 &
                    ORTH <! "で" !>].
 
 
-de-advp-sub-1 := adv-p-lex-1 &  
+de-advp-sub-1 := adv-p-lex-np &  
                  [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
                                           MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] >],
                                 CONT.RELS <! [PRED '_de_p_rel] !>],
                   ORTH <! "で" !>].
 
 
-de-advp-sub-3 := adv-p-lex-3 &  
+de-advp-sub-3 := adv-p-lex-iadj &  
                  [SYNSEM.LOCAL [CAT.HEAD [PTYPE de,
                                           MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] >],
                                 CONT.RELS <! [PRED '_de_p_rel] !>],
                   ORTH <! "で" !>].
 
 
-de-advp-sub-4 := adv-p-lex-4 &  
+de-advp-sub-4 := adv-p-lex-p &  
 		 [SYNSEM.LOCAL [CAT [HEAD [PTYPE de,
 					   MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] >],
 				     VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
@@ -592,7 +592,7 @@ e-sub := postp-lex &
 
 
 ;"naN nichi ga yoroshii deshou ka."
-ga := ga-wo-ni-p-lex & 
+ga := case-p-lex-np & 
        [ORTH <! "が" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
 
@@ -619,7 +619,7 @@ ga-top := plain-topic-nobj-lex &
 
 
 
-ga-3 := ga-wo-ni-p-lex-3 & 
+ga-3 := case-p-lex-postp & 
        [ORTH <! "が" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE ga, PTYPE ga]]].
 
@@ -681,8 +681,7 @@ ja-p := topic-nobj-lex &
 ka-comp-varg := comp-int-lex &
             [ORTH <! "か" !>,
              SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
-                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [SMOD decl,
-                                                                            MAIN-PRD -]]]]].
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [MAIN-PRD -]]]]].
 
 
 kadouka-comp-naarg := comp-int-lex &
@@ -695,8 +694,7 @@ kadouka-comp-naarg := comp-int-lex &
 kadouka-comp-varg := comp-int-lex &
             [ORTH <! "か","どう","か" !>,
              SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
-                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [SMOD unmarked,
-                                                                            MAIN-PRD -],
+                                VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [MAIN-PRD -],
                                                 NON-LOCAL.QUE <! !>]]]].
 
 
@@ -720,10 +718,13 @@ kamo-naarg := comp-prpstn-lex &
 
 
 ;"あれは鈴木先生かもしれないよ。"
-kamo-narg := comp-copinsert-lex &
-        [SYNSEM [LOCAL.CAT.HEAD.PTYPE kamo,
-		 LKEYS.KEYREL.PRED abstr-ques_m_rel],
-         ORTH <! "かも" !>]. 
+; (MS 2005-05-09) I don't see why we need this: a copula is inserted
+; even with the comp-prpstn-lex.
+
+;kamo-narg := comp-copinsert-lex &
+;        [SYNSEM [LOCAL.CAT.HEAD.PTYPE kamo,
+;		 LKEYS.KEYREL.PRED abstr-ques_m_rel],
+;         ORTH <! "かも" !>]. 
 
 
 kana :=
@@ -765,10 +766,9 @@ kara-cardmod3 := nounmod-p-lex &
             ORTH <! "―" !>].
 
 ;Hack for Verbmobil kara-made interpretation
-kara-case := case-p-lex & 
+kara-case := case-p-lex-np & 
              [ORTH <! "から" !>,
-              SYNSEM.LOCAL [CAT [HEAD [CASE kara-case, PTYPE kara],
-                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+              SYNSEM.LOCAL [CAT [HEAD [CASE kara-case, PTYPE kara]],
                            CONT.RELS <! !>]].
 
 
@@ -822,10 +822,9 @@ kara-parentarg := vmod-p-lex &
                                 CONT.RELS <! [PRED '_kara_p_rel] !>],
 		   ORTH <! "から" !>].
 
-kara-sign-case := case-p-lex & 
+kara-sign-case := case-p-lex-np & 
              [ORTH <! "〜" !>,
-              SYNSEM.LOCAL [CAT [HEAD [CASE kara-case, PTYPE kara],
-                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+              SYNSEM.LOCAL [CAT [HEAD [CASE kara-case, PTYPE kara]],
                            CONT.RELS <! !>]].
 
 
@@ -1042,7 +1041,7 @@ ne := s-end1-declint-lex &
 
 
 
-ni-adjarg := adv-p-lex-3 &
+ni-adjarg := adv-p-lex-iadj &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
                             CONT.RELS <! [PRED '_ni_p_rel] !>],
               ORTH <! "に" !>].
@@ -1096,7 +1095,7 @@ niatatte-hiragana-varg := postp-lex-varg &
          ORTH <! "にあたって" !>]. 
 
 ;"kaigi ga gogo  ni haitte  orimashite."
-ni-case := ga-wo-ni-p-lex &
+ni-case := case-p-lex-np &
             [ORTH <! "に" !>,
              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
 
@@ -1109,7 +1108,7 @@ ni-case := ga-wo-ni-p-lex &
 ;              SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
 
 ;"何日からになりますか"
-ni-case-3 := ga-wo-ni-p-lex-3 &
+ni-case-3 := case-p-lex-postp &
              [ORTH <! "に" !>,
               SYNSEM.LOCAL [CAT.HEAD [CASE ni,PTYPE ni]]].
 
@@ -1171,14 +1170,14 @@ nimokakarawazu := postp-lex &
            ORTH <! "にもかかわらず" !>]. 
 
 
-ni-naarg := adv-p-lex-6 &
+ni-naarg := adv-p-lex-naadj &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
                             CONT.RELS <! [PRED '_ni_p_rel] !>],
               ORTH <! "に" !>].
 
 ;"naNji ni itashimasu ka."
 ;"asa wa watashi wa osoi ni koshita koto wa nai no desu ga."
-ni-narg := adv-p-lex-1 &
+ni-narg := adv-p-lex-np &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
                                     CONT.RELS <! [PRED '_ni_p_rel] !>],
               ORTH <! "に" !>].
@@ -1209,13 +1208,13 @@ niokeru := nounmod-p-lex &
          ORTH <! "における" !>]. 
 
 
-ni-parentarg := adv-p-lex-7 &
+ni-parentarg := adv-p-lex-parent &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
                             CONT.RELS <! [PRED '_ni_p_rel] !>],
               ORTH <! "に" !>].
 
 
-ni-parg := adv-p-lex-4 &
+ni-parg := adv-p-lex-p &
              [SYNSEM.LOCAL [CAT [HEAD [PTYPE ni,
 				       MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] >],
 				 VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case],
@@ -1280,14 +1279,14 @@ nitaisuru := nounmod-p-lex &
                   ORTH <! "に対する" !>]. 
 
 ;マクドナルドの株を公募価格にて購入したいのですが、インターネットで購入出来ますか？
-nite := adv-p-lex-1 &  
+nite := adv-p-lex-np &  
                  [SYNSEM.LOCAL [CAT.HEAD.PTYPE de,
                                 CONT.RELS <! [PRED '_nite_p_rel] !>],
                   ORTH <! "にて" !>].
 
 ;but sometimes CHASEN segments it!
 ;今日の遠足はここにて解散します。
-nite-chasen := adv-p-lex-1 &  
+nite-chasen := adv-p-lex-np &  
                  [SYNSEM.LOCAL [CAT.HEAD.PTYPE de,
                                CONT.RELS <! [PRED '_nite_p_rel] !>],
                   ORTH <! "に","て" !>].
@@ -1337,7 +1336,7 @@ nitsukimashite  := postp-lex &
                   ORTH <! "につきまして" !>]. 
 
 
-ni-varg := adv-p-lex-5 &
+ni-varg := adv-p-lex-vp &
              [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
                             CONT.RELS <! [PRED '_ni_p_rel] !>],
               ORTH <! "に" !>].
@@ -1367,10 +1366,9 @@ niyotte := postp-lex &
          ORTH <! "によって" !>].
 
 
-no-case := case-p-lex & 
+no-case := case-p-lex-np & 
              [ORTH <! "の" !>,
-              SYNSEM.LOCAL [CAT [HEAD [CASE no-case, PTYPE ga],
-                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head],
+              SYNSEM.LOCAL [CAT [HEAD [CASE no-case, PTYPE ga]],
                            CONT.RELS <! !>]].
 
 
@@ -1467,7 +1465,7 @@ noyotte := postp-lex &
          ORTH <! "の","よっ","て" !>].
 
 ;"raigetsu no kokusai kaigi no uchiawase o shi tai N desu kedomo."
-o := ga-wo-ni-p-lex & 
+o := case-p-lex-np & 
        [ORTH <! "を" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
 
@@ -1480,14 +1478,16 @@ o := ga-wo-ni-p-lex &
 ;       SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
 
 
-o-3 := ga-wo-ni-p-lex-3 & 
+o-3 := case-p-lex-postp & 
        [ORTH <! "を" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE wo, PTYPE wo]]].
 
+; (MS 2005-05-06) This is rather a complementizer than a case particle.
+; "何日くらいかかるかを教える"
 
-o-4 := ga-wo-ni-p-lex-4 &
+o-4 := comp-prpstn-lex &
        [ORTH <! "を" !>,
-       SYNSEM.LOCAL.CAT [HEAD [CASE wo, PTYPE wo],
+       SYNSEM.LOCAL.CAT [HEAD [PTYPE wo],
 			 VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap_head & [SMOD quest]]].
 
 
@@ -1586,14 +1586,14 @@ sura-p-pobj := topic-vmod-p-lex &
             ORTH <! "すら" !>].
 
 
-to-advp-exh-1  := adv-p-lex-1 & 
+to-advp-exh-1  := adv-p-lex-np & 
                      [SYNSEM.LOCAL [CAT.HEAD [PTYPE to,
                                              MOD < [LOCAL.CAT [VAL.COMPS null]] >],
                                     CONT.RELS <! [PRED '_to_p_with_rel] !>],
                       ORTH <! "と" !>].
 
 ;"seNsei to teNjikai o goissho sasete itadaku."
-to-advp-exh-4  := adv-p-lex-4 & 
+to-advp-exh-4  := adv-p-lex-p & 
                      [SYNSEM.LOCAL [CAT [HEAD [PTYPE to,
                                               MOD < [LOCAL.CAT [VAL.COMPS null,
 							     HEAD.MAIN-PRD +]] >],
@@ -1601,17 +1601,20 @@ to-advp-exh-4  := adv-p-lex-4 &
                                     CONT.RELS <! [PRED '_to_p_with_rel] !>],
                       ORTH <! "と" !>].
 
+; (MS 2005-05-06) renamed to-case-lex (cleaning up particles).
 
-to-comp1 := to-case-lex &
+to-comp1 := case-p-lex-np &
              [ORTH <! "と" !>,
-              SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
-                                 VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head]]].
+              SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to]]]].
 
+; (MS 2005-05-06) renamed to-case-lex (cleaning up particles).
+; BUT I really don't know what this is for. Commented it out until
+; I can find a good example.
 
-to-comp3 := to-case-lex &
-            [ORTH <! "と" !>,
-             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
-                                VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head & [PTYPE nontop]]]].
+;to-comp3 := case-p-lex-vmodp &
+;            [ORTH <! "と" !>,
+;             SYNSEM.LOCAL [CAT [HEAD [CASE to,PTYPE to],
+;                                VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head & [PTYPE nontop]]]].
 
 
 to-comp-quotarg :=  comp-prpstn-lex &
@@ -1827,7 +1830,7 @@ wa-varg := topic-vobj-lex &
 ;(MS 2004-08-24) I want to link the wa phrase in copula sentences to ARG1.
 ; e.g.: これは花です。
 
-wa-in-copula-sent := ga-wo-ni-p-lex & 
+wa-in-copula-sent := case-p-lex-np & 
        [ORTH <! "は" !>,
        SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE wa]]].
 

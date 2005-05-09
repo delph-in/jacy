@@ -998,7 +998,7 @@ ga-no-conversion-rule := subj-casechange-rule &
 							H-TENSE present-or-past]],
 					      BAR -],
                                 INFLECTED +,
-                                J-NEEDS-AFFIX -] >].
+                                J-NEEDS-AFFIX bool] >].
 
 wo-no-conversion-rule := obj-casechange-rule &
                        [SYNSEM.LOCAL [CAT.VAL.COMPS obl-arg & [FIRST [LOCAL.CAT.HEAD [PTYPE ga,
