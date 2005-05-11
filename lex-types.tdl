@@ -625,14 +625,15 @@ vmod-p_head-avm := vmod-p_head &
 topic-vmod-p_head := vmod-p_head-avm & [PTYPE topic,
                                         COP-ARG -].
 
-uttmod-p_head := mod-p_head-avm &
-               [J-SPEC null,
-                MOD < [LOCAL [CAT.HEAD verb_head & [FIN +,
-                                                          MAIN-PRD +],
-                                     BAR +,
-				     NUCL nucl_bool]] >,
-                J-POSTHEAD left,
-                COP-ARG -].
+; (MS 2005-05-10) Not used any more.
+;uttmod-p_head := mod-p_head-avm &
+;               [J-SPEC null,
+;                MOD < [LOCAL [CAT.HEAD verb_head & [FIN +,
+;                                                          MAIN-PRD +],
+;                                     BAR +,
+;				     NUCL nucl_bool]] >,
+;                J-POSTHEAD left,
+;                COP-ARG -].
 
 
 
@@ -1812,8 +1813,9 @@ vmod-p-lex :=  vmod-p-lex-super &
 			     CONT prep-sem-type &
 					     [HOOK.INDEX #ind]]]].
 
-uttmod-p-lex  :=  mod-p-lex & 
-                  [SYNSEM.LOCAL.CAT.HEAD uttmod-p_head].
+; (MS 2005-05-10) Not used any more.
+;uttmod-p-lex  :=  mod-p-lex & 
+;                  [SYNSEM.LOCAL.CAT.HEAD uttmod-p_head].
 
 postp-lex-general := vmod-p-lex &
              [SYNSEM.LOCAL.CAT.HEAD postp_head].
@@ -1878,7 +1880,9 @@ postp-lex-coord := postp-lex-general &
 ; having ARG = event of MOD and ARG2 = index of OBJ.  Undoing constraints
 ; associated with having ARG = index of OBJ.
 
-topic-vmod-p-lex := vmod-p-lex-super &
+; (MS 2005-05-11) In cleaning up particles, renaming topic-vmod-p-lex
+
+topic-p-lex := vmod-p-lex-super &
                     [SYNSEM [LKEYS.KEYREL prep-mod-relation &
 					[ ARG2 #ind,
 					  ARG0.E.TENSE no_tense ],
@@ -1889,7 +1893,7 @@ topic-vmod-p-lex := vmod-p-lex-super &
 ; (ERB 2002-01-10) Experimenting with treating particle uses of など
 ; as contributing topic semantics in addition to nado relation.
 
-plain-topic-vmod-p-lex := topic-vmod-p-lex.
+;plain-topic-vmod-p-lex := topic-vmod-p-lex.
 
 ; (ERB 2001-09-13) Want pobj wa to pass up any constraints its OBJ had on the
 ; OBJ's MOD's LTOP as well.
@@ -1908,13 +1912,14 @@ plain-topic-vmod-p-lex := topic-vmod-p-lex.
 ; restrict the ambiguity in the case of  には, but there a problem with のは.
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-05-11) Linking XARG of the complement to ARG1, instead of INDEX.
 
-topic-pobj-lex := plain-topic-vmod-p-lex & 
+topic-pobj-lex := topic-p-lex & 
 [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD p_head & 
 						     [PTYPE nontop,
 						      MOD #mod,
 						      CASE mod],
-					   CONT.HOOK.INDEX #objind],
+					   CONT.HOOK.XARG #objind],
                     HEAD.MOD #mod & < [LOCAL.CONT.MOD-HAND #modtop] > ],
 	       CONT [ HOOK.LTOP #modtop,
 		      RELS.LIST.FIRST [ARG1 #objind]]]].
@@ -1922,7 +1927,7 @@ topic-pobj-lex := plain-topic-vmod-p-lex &
 ; (ERB 2001-09-06) Moving some constraints on narg wa here.
 ; (MS 2003-12-19) Matrix 0.6
 
-topic-nobj-lex := topic-vmod-p-lex &
+topic-nobj-lex := topic-p-lex &
 [SYNSEM [LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [ CAT.HEAD noun_head,
 					     CONT.HOOK.INDEX #objind ]]],
 	 LKEYS.KEYREL.ARG1 #objind]].
@@ -1930,7 +1935,7 @@ topic-nobj-lex := topic-vmod-p-lex &
 ; (ERB 2002-01-10) Experimenting with treating particle uses of など
 ; as contributing topic semantics in addition to nado relation.
 
-plain-topic-nobj-lex := topic-nobj-lex & plain-topic-vmod-p-lex.
+plain-topic-nobj-lex := topic-nobj-lex.
 
 
 topic-plus-nobj-lex := topic-nobj-lex &
@@ -1944,7 +1949,7 @@ topic-plus-nobj-lex := topic-nobj-lex &
 ; (ERB 2001-09-06) Moving some constraints on varg, comparg, & advarg wa here.
 ; (MS 2003-12-19) Matrix 0.6
 
-topic-vobj-lex := plain-topic-vmod-p-lex &
+topic-vobj-lex := topic-p-lex &
 [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT [ HEAD sentence-valid & 
                                                       [VN -,
                                                        COP -,
@@ -1957,7 +1962,7 @@ topic-vobj-lex := plain-topic-vmod-p-lex &
 ; (ERB 2001-10-03) Complementizer to is actually a case-p_head, and in
 ; this case we want to grab the index, since it doesn't contribute a relation. 
 
-topic-cobj-lex := plain-topic-vmod-p-lex &
+topic-cobj-lex := topic-p-lex &
 [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [ CAT.HEAD case-p_head & [PTYPE to],
                                            CONT.HOOK.INDEX #objind ]],
                CONT.RELS <! [ARG1 #objind ] !>]].
@@ -1966,11 +1971,16 @@ topic-cobj-lex := plain-topic-vmod-p-lex &
 ; (MS 2003-12-19) Matrix 0.6 
 
 
-topic-advarg-lex := plain-topic-vmod-p-lex &
+topic-advarg-lex := topic-p-lex &
 [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST [LOCAL [CAT.HEAD adv_head & [KEYS.KEY adv_rel],
 					    CONT.HOOK.INDEX #objind]]],
 	       CONT [RELS <! [ARG1 #objind] !>]]].
 
+
+topic-cardarg-lex := topic-p-lex &
+[SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST [LOCAL [CAT.HEAD int_head,
+					    CONT.HOOK.INDEX #objind]]],
+	       CONT [RELS <! [ARG1 #objind] !>]]].
 
 adv-p-lex := vmod-p-lex & 
              [SYNSEM.LOCAL.CAT.HEAD adv-p_head].
@@ -7886,6 +7896,7 @@ light-perspective-shon-arg1emp-c-stem-lex := light-perspective-shon-arg1emp-stem
 light-perspective-shon-arg1emp-c2-stem-lex := light-perspective-shon-arg1emp-stem-lex & [STEMTYPE c2-stem].
 light-perspective-shon-arg1emp-kurusuru-stem-lex := light-perspective-shon-arg1emp-stem-lex & [STEMTYPE kurusuru-stem].
 
+
 base-adj-stem-lex := verb-stem-lex-base &
 [SYNSEM [LOCAL [CAT [HEAD i-adj-stem_head &
                           [H-TENSE #tense]],
@@ -7899,14 +7910,18 @@ base-adj-stem-lex := verb-stem-lex-base &
 ; got left with no labels.  Trying this type as a place to put them
 ; back in.  (one type up --- base-adj-stem-lex --- would also include
 ; nai-adj).
+; (MS 2005-05-11) This should combine HEAD.KEYS.KEYREL with PRED, shouldn't it?
+; Otherwise we get garu-sbj-change-rule for i-adj.
 
 adj-stem-lex := base-adj-stem-lex & lexical_sign-word &
-[SYNSEM [LOCAL.CONT simple-verb-sem-type &
-                   [RELS <! #key !>,
-                    HCONS <! !>,
-		    HOOK [INDEX #ind,
+[SYNSEM [LOCAL [CONT simple-verb-sem-type &
+		     [RELS <! #key !>,
+		      HCONS <! !>,
+		      HOOK [INDEX #ind,
 			 LTOP #top]],
+		CAT.HEAD.KEYS.KEY #keyrel],
 	 LKEYS.KEYREL #key & [ ARG0 #ind,
+			       PRED #keyrel,
 				 LBL #top]],
  STEMTYPE adj-stem].
 

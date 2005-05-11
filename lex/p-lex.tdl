@@ -544,8 +544,7 @@ de-advp-sub-4 := adv-p-lex-p &
 
 ;"誰 でも 利用 でき ます か "
 demo := plain-topic-nobj-lex &
-	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
-                                     HEAD.PTYPE mo],
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE mo,
                                 CONT.RELS <! [PRED '_demo_p_rel] !>],
                    ORTH <! "でも" !>].
 
@@ -578,8 +577,7 @@ e-main := postp-lex &
 
 
 equal-topic  := plain-topic-nobj-lex &
-	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
-                                     HEAD.PTYPE topic],
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE topic,
                                 CONT.RELS <! [PRED '_equal_p_rel] !>],
                    ORTH <! "＝" !>].
 
@@ -608,12 +606,11 @@ ga := case-p-lex-np &
 ; (MS 2003-01-16) restricted to the cases, where the subject is saturated and no zero pronoun. therefore, I inserted the zpro_ref-ind to ARG1 in the zpro insertion rules (infl.tdl)
 
 ga-top := plain-topic-nobj-lex &
-       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-			   HEAD [PTYPE topic,
+       [SYNSEM.LOCAL [CAT.HEAD [PTYPE topic,
 				 MOD < [LOCAL [CAT [VAL [UNSAT -,
 							 SUBJ null],
 						    HEAD.EMPTY -],
-					       CONT.HOOK.XARG full_ref-ind]] >]],
+					       CONT.HOOK.XARG full_ref-ind]] >],
 		      CONT.RELS <! [PRED '_ga_p_rel] !>],
 	ORTH <! "が" !>].
 
@@ -669,12 +666,11 @@ hodo-varg := postp-lex-varg &
          ORTH <! "ほど" !>]. 
 
 
-ja-p := topic-nobj-lex &
-       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-                                   HEAD [PTYPE wa,
-                                         MOD < [LOCAL.CAT.HEAD i-adj_head & 
-                                               [MODUS negative]] >]],
-                          CONT.RELS <! [PRED '_wa_p_rel] !>],
+ja-p := plain-topic-nobj-lex &
+	[SYNSEM.LOCAL [CAT.HEAD [PTYPE wa,
+				  MOD < [LOCAL.CAT.HEAD i-adj_head & 
+							[MODUS negative]] >],
+		       CONT.RELS <! [PRED '_wa_p_rel] !>],
        ORTH <! "じゃ" !>].
 
 
@@ -876,8 +872,7 @@ keredo-send := s-end1-decl-lex &
 ;"kochira  koso onegai shimasu."
 ;"kochira koso omachi shite orimasu."
 koso-nobj := plain-topic-nobj-lex &
-       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-                         HEAD.PTYPE koso],
+       [SYNSEM.LOCAL [CAT.HEAD.PTYPE koso,
                       CONT.RELS <! [PRED '_koso_p_rel] !>],
        ORTH <! "こそ" !>].
 
@@ -931,8 +926,7 @@ made-topic := topic-advarg-lex &
 
 ;"suiyoubi wa watashi mo gogo wa aite iru N desu ga."
 mo := plain-topic-nobj-lex &
-	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
-                                     HEAD.PTYPE mo],
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE mo,
                                 CONT.RELS <! [PRED '_mo_p_rel] !>],
                    ORTH <! "も" !>].
 
@@ -952,11 +946,12 @@ mo-parg := topic-pobj-lex &
                  ORTH <! "も" !>].
 
 ;"sumimaseN yahari desu ne chotto youji ga hairu ka mo shirenai node"
-mo-saparg := topic-vmod-p-lex &
-	       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap1_head,
-                                   HEAD.PTYPE mo],
-                              CONT.RELS <! [PRED '_mo_p_rel] !>],
-                 ORTH <! "も" !>].
+; (MS 2005-05-11) This is not needed any more, because we have kamo-case!
+;mo-saparg := topic-vmod-p-lex &
+;	       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap1_head,
+;                                   HEAD.PTYPE mo],
+;                              CONT.RELS <! [PRED '_mo_p_rel] !>],
+;                 ORTH <! "も" !>].
 
 ; (MS 2004-12-21) This is for mo that takes a verbal argument: 寝てもいい
 mo-varg := topic-vobj-lex &
@@ -1387,8 +1382,7 @@ nokawo-comp-varg := comp-int-lex &
 
 
 nomi-topic := plain-topic-nobj-lex &
-	         [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head, 
-                                     HEAD.PTYPE topic],
+	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE topic,
                                 CONT.RELS <! [PRED '_nomi_p_rel] !>],
                    ORTH <! "のみ" !>].
 
@@ -1445,15 +1439,13 @@ no-nspec-3 := nspec-p-lex &
 
 ; (TT 2003-08-15) 漢字見出しを追加
 notame-kanji-p := plain-topic-nobj-lex &
-       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-                         HEAD.PTYPE notame],
+       [SYNSEM.LOCAL [CAT.HEAD.PTYPE notame,
                       CONT.RELS <! [PRED '_notame_p_rel] !>],
        ORTH <! "の","為" !>].
 
 ; "引越しのため住所変更になりました。"
 notame-p := plain-topic-nobj-lex &
-       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-                         HEAD.PTYPE notame],
+       [SYNSEM.LOCAL [CAT.HEAD.PTYPE notame,
                       CONT.RELS <! [PRED '_notame_p_rel] !>],
        ORTH <! "の","ため" !>].
 
@@ -1527,18 +1519,16 @@ sae := postp-lex &
          ORTH <! "さえ" !>].
 
 
-shika-cardarg := topic-vmod-p-lex &
-                 [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD int_head,
-                                    HEAD [PTYPE shika,
+shika-cardarg := topic-cardarg-lex &
+                 [SYNSEM.LOCAL [CAT [HEAD [PTYPE shika,
                                           MOD < [LOCAL.CAT.HEAD.MODUS negative] >]],
                                 CONT.RELS <! [PRED '_shika_p_rel] !>],
                   ORTH <! "しか" !>].
 
 
-shika-p-nobj := topic-nobj-lex &
-           [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-                              HEAD [PTYPE shika,
-                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] >]],
+shika-p-nobj := plain-topic-nobj-lex &
+           [SYNSEM.LOCAL [CAT.HEAD [PTYPE shika,
+                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] >],
                           CONT.RELS <! [PRED '_shika_p_rel] !>],
             ORTH <! "しか" !>].
 
@@ -1570,18 +1560,15 @@ sonota := postp-lex &
 
 
 sura-p-nobj := plain-topic-nobj-lex &
-           [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-                              HEAD [PTYPE shika,
-                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] >]],
+           [SYNSEM.LOCAL [CAT.HEAD [PTYPE shika,
+                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] >],
                           CONT.RELS <! [PRED '_sura_p_rel] !>],
             ORTH <! "すら" !>].
 
 
-sura-p-pobj := topic-vmod-p-lex &
-           [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [CASE mod,
-                                                                      PTYPE overt],
-                              HEAD [PTYPE shika,
-                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] >]],
+sura-p-pobj := topic-pobj-p-lex &
+           [SYNSEM.LOCAL [CAT.HEAD [PTYPE shika,
+                                    MOD < [LOCAL.CAT.HEAD.MODUS negative] >],
                           CONT.RELS <! [PRED '_sura_p_rel] !>],
             ORTH <! "すら" !>].
 
@@ -1753,16 +1740,19 @@ toshite-multi := postp-lex &
                                CONT.RELS <! [PRED '_toshite_p_rel] !>],
                  ORTH <! "と",  "し","て" !>]. 
 
-
-toshite-varg := topic-vmod-p-lex &
+; (MS 2005-05-11) This is a strange topic particle that connects verbal heads, as in
+; "食べるとして寝る". 
+toshite-varg := topic-p-lex &
 		[ORTH <! "として" !>,
-		 SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [FIN +,
-									       VN -,
-									       COP -,
-									       ADJ -,
-									       FORMAL.AHON -,
-									       MAIN-PRD -]],
-			       CONT.RELS <! [PRED '_toshite_p_rel] !>]].
+		 SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD verb_head & [FIN +,
+										 VN -,
+										 COP -,
+										 ADJ -,
+										 FORMAL.AHON -,
+										 MAIN-PRD -],
+							   CONT.HOOK.INDEX #objind]],
+			       CONT [RELS <! [PRED '_toshite_p_rel,
+					      ARG1 #objind] !>]]].
 
 
 totomoni := postp-lex &
@@ -1789,8 +1779,7 @@ tteiunowa := plain-topic-nobj-lex &
 
 ;"外貨預金ってなんですか"
 tte-narg := plain-topic-nobj-lex &
-       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
-                          HEAD.PTYPE wa],
+       [SYNSEM.LOCAL [CAT.HEAD.PTYPE wa,
                       CONT.RELS <! [PRED '_wa_p_rel] !>],
         ORTH <! "って" !>].
 
@@ -1829,10 +1818,19 @@ wa-varg := topic-vobj-lex &
 
 ;(MS 2004-08-24) I want to link the wa phrase in copula sentences to ARG1.
 ; e.g.: これは花です。
+; (MS 2005-05-11) But if we introduce wa-case, this is not needed.
 
-wa-in-copula-sent := case-p-lex-np & 
+;wa-in-copula-sent := case-p-lex-np & 
+;       [ORTH <! "は" !>,
+;       SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE wa]]].
+
+; (MS 2005-05-11) This is the topic marker that replaces case particles,
+; such that we have massive ambiguity whenever case particles occur. 
+
+wa-case := case-p-lex-np & 
        [ORTH <! "は" !>,
-       SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE wa]]].
+       SYNSEM [LOCAL [CAT.HEAD [CASE ga-or-wo, PTYPE wa]],
+	       NON-LOCAL.UNDERSPEC_ARG -]].
 
 yori := postp-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE yori,
@@ -1969,7 +1967,7 @@ moshikuwa := n_conj-p-lex &
 
 nado-kanji-nobj := topic-plus-nobj-lex &
              [ SYNSEM.LKEYS [ KEYREL.PRED '_wa,
-                                   ALTKEYREL.PRED '_nado_conj_rel],
+			      ALTKEYREL.PRED '_nado_conj_rel],
                ORTH <! "等" !> ].
 
 
