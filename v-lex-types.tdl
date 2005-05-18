@@ -146,7 +146,7 @@ vn-trans3-lex := vn-sbj-comps-lex &
 				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
 		     LKEYS [KEYREL [ARG1 #sbjind,
-				      ARG2 #objind]]]].
+				    ARG2 #objind]]]].
 
 vn-trans8-lex := vn-sbj-comps-lex &
             [SYNSEM [LOCAL.CAT.VAL sbj-narg_transitive &

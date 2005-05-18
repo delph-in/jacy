@@ -21,7 +21,7 @@
 
 :begin :instance :status rule.
 :include "japgram.tdl".
-;:include "relative-clauses.tdl".
+:include "ambiguous-rules.tdl".
 :end :instance.
 
 :begin :instance :status lex-rule.
@@ -42,6 +42,7 @@
 :include "lex/verbstem-lex.tdl".
 :include "lex/vn-lex.tdl".
 :include "lex/v-ends-lex.tdl".
+:include "lex/ambiguous-lex.tdl".
 :end :instance.
 
 :begin :instance :status generic-lex-entry.

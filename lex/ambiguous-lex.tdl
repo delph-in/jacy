@@ -1,0 +1,11 @@
+; (MS 2005-05-11) This is the topic marker that replaces case particles,
+; such that we have massive ambiguity whenever case particles occur. 
+; (MS 2005-05-13) It sets empathy to the entity it attaches to.
+
+wa-case := case-p-lex-np & 
+       [ORTH <! "¤Ï" !>,
+       SYNSEM [LOCAL [CAT.HEAD [CASE ga-or-wo, PTYPE wa],
+		      CONT.HOOK.XARG #emp,
+		      CTXT.EMPATHY.EMPEE #emp],
+	       NON-LOCAL.UNDERSPEC_ARG -]].
+

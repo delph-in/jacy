@@ -101,9 +101,9 @@ pp_mod_head :< final_head.
 pp_mod_head-avm :=  pp_mod_head &
                       [POS pp_mod,
                        MARK null,
-                       MOD < [LOCAL [CAT [HEAD postp_head,
-                                                 VAL saturated],
-                                            BAR bool]] >,
+                       MOD < [LOCAL [CAT [HEAD vmod-p_head,
+					  VAL saturated],
+				     BAR bool]] >,
                        C-MOD null,
                        J-SPEC null,
                        COP-ARG -].
@@ -750,14 +750,16 @@ sap_head := p_head-avm &
              PTYPE sentence-particle,
              J-POSTHEAD left] .
 
-sap1_head := final_head &
-            [POS sap,
-             J-SPEC null,
-             MARK null,
-             MOD 0-1-list,
-             SMOD unmarked,
-             J-POSTHEAD left,
-             COP-ARG -] .
+
+; (MS 2005-05-17) This is not needed any more!
+;sap1_head := p_head-avm &
+;            [POS sap,
+;             J-SPEC null,
+;             MARK null,
+;             MOD 0-1-list,
+;             SMOD unmarked,
+;             J-POSTHEAD left,
+;             COP-ARG -] .
 
 ; (ERB 2001-09-06) Conjunctions should only modify finite sentences.
 
@@ -790,13 +792,13 @@ s-conj_head := sap_head &
 ; actually HEAD v-end_head.  So, change [HEAD s-end_head] to 
 ; [HEAD utt-valid & [SMOD marked]].  (utt-valid groups together 
 ; sentence-valid and s-end_head.
+; (MS 2005-05-18) But this prevents "食べたから寢た" from parsing. So, I took the restriction out.
 
 s-conj-nonprop_head := sap_head &
                [MOD null,
 		COP-ARG -,
                 C-MOD < [LOCAL [CAT [HEAD utt-valid & 
-                                      [ SMOD marked,
-                                        FIN + ],
+                                      [ FIN + ],
                                  VAL saturated],
                             BAR +]] >,
                 J-POSTHEAD left].
@@ -1232,8 +1234,9 @@ eval-adj_sc := obj-arg &
 ;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
 ; (MS 2004-06-25) The restriction on EMPTY - is not useful. It prevents the parsing of, e.g.
 ; 子供は学生と大人が先生だ。
+; (MS 2005-05-17) Trying to put sentence particles into the type hierarchy of particles.
 
-sap_sc := obj-arg &
+sap_sc := p_sat &
                 [COMPS obl-1-arg &
 		       < [LOCAL [CAT [HEAD sentence-valid & 
 					   [MODUS uttmodus,
@@ -1688,14 +1691,15 @@ nmod-p-lex :=  mod-p-lex &
             [SYNSEM [LOCAL.CAT.HEAD overt-nmod-p_head,
                      MODIFIED.PERIPH -]].
 
-parmod-p-lex :=  mod-p-lex & 
-            [SYNSEM [LOCAL.CAT.HEAD nmod-p_head-avm & [MOD < [LOCAL.CAT [HEAD brackets-or-quotations-end_head,
-									 VAL saturated]] > ],
-                     MODIFIED.PERIPH +]].
+;(MS 2005-05-14) This is not used any more. The parentheses do not build the heads.
+;parmod-p-lex :=  mod-p-lex & 
+;            [SYNSEM [LOCAL.CAT.HEAD nmod-p_head-avm & [MOD < [LOCAL.CAT [HEAD brackets-or-quotations-end_head,
+;									 VAL saturated]] > ],
+;                     MODIFIED.PERIPH +]].
 
 
 
-n-conj-lex := p-lex-c &
+conj-lex := p-lex-c &
               [SYNSEM [LOCAL [CAT.HEAD n_conj_head],
 		       MODIFIED.PERIPH +]].
 
@@ -1717,19 +1721,21 @@ nounmod-p-lex := nmod-p-lex &
 				      HCONS <! !>]]]].
 
 
-parentmod-p-lex := parmod-p-lex &
-                 [SYNSEM [LKEYS.KEYREL #key & prep-mod-relation &
-                                         [ARG2 #mod, 
-					  ARG0.E.TENSE no_tense,
-                                          LBL #handle,
-                                          ARG1 #arg],
-			  LOCAL [CAT [HEAD.MOD <[LOCAL.CONT.HOOK [INDEX #mod,
-								  LTOP #handle]]>,
-				      VAL.COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #arg]],
-				 CONT prep-sem-type &
-				     [RELS.LIST.FIRST #key,
-				      HOOK.INDEX #mod,
-				      HCONS <! !>]]]].
+;(MS 2005-05-14) This is not used any more. The parentheses do not build the heads.
+
+;parentmod-p-lex := parmod-p-lex &
+;                 [SYNSEM [LKEYS.KEYREL #key & prep-mod-relation &
+;                                         [ARG2 #mod, 
+;					  ARG0.E.TENSE no_tense,
+;                                          LBL #handle,
+;                                          ARG1 #arg],
+;			  LOCAL [CAT [HEAD.MOD <[LOCAL.CONT.HOOK [INDEX #mod,
+;								  LTOP #handle]]>,
+;				      VAL.COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #arg]],
+;				 CONT prep-sem-type &
+;				     [RELS.LIST.FIRST #key,
+;				      HOOK.INDEX #mod,
+;				      HCONS <! !>]]]].
 
 ; (ERB 2001-08-09) Type for the "no" that connects NumClP to nouns
 ; (ERB 2001-11-28) Replace INDEX and LTOP with MOD-IND and MOD-HAND.
@@ -1880,7 +1886,8 @@ postp-lex-coord := postp-lex-general &
 ; having ARG = event of MOD and ARG2 = index of OBJ.  Undoing constraints
 ; associated with having ARG = index of OBJ.
 
-; (MS 2005-05-11) In cleaning up particles, renaming topic-vmod-p-lex
+; (MS 2005-05-11) In cleaning up particles, renaming topic-vmod-p-lex.
+; (MS 2005-05-13) Topic particles should set speaker empathy.
 
 topic-p-lex := vmod-p-lex-super &
                     [SYNSEM [LKEYS.KEYREL prep-mod-relation &
@@ -1934,17 +1941,19 @@ topic-nobj-lex := topic-p-lex &
 
 ; (ERB 2002-01-10) Experimenting with treating particle uses of など
 ; as contributing topic semantics in addition to nado relation.
+; (MS 2005-05-13) But why should that be different to the treatment of, e.g.
+; demo, nanka and others?
 
-plain-topic-nobj-lex := topic-nobj-lex.
+;plain-topic-nobj-lex := topic-nobj-lex.
 
 
-topic-plus-nobj-lex := topic-nobj-lex &
-[ SYNSEM [LKEYS.ALTKEYREL #altkey & adj-relation &
-                               [ LBL #hand,
-                                 ARG1 #ind ],
-	  LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
-							LTOP #hand ],
-		  CONT [ RELS <! relation, #altkey !> ]]]].
+;topic-plus-nobj-lex := topic-nobj-lex &
+;[ SYNSEM [LKEYS.ALTKEYREL #altkey & adj-relation &
+;                               [ LBL #hand,
+;                                 ARG1 #ind ],
+;	  LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK [ INDEX #ind,
+;							LTOP #hand ],
+;		  CONT [ RELS <! relation, #altkey !> ]]]].
 
 ; (ERB 2001-09-06) Moving some constraints on varg, comparg, & advarg wa here.
 ; (MS 2003-12-19) Matrix 0.6
@@ -2021,7 +2030,7 @@ adv-p-lex-parent := adv-p-lex &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
-n_conj-p-lex := n-conj-lex & 
+n_conj-p-lex := conj-lex & 
             [SYNSEM [LKEYS.KEYREL conjunction-relation & #key &
                                     [C-ARG #index,
 				     LBL #hndl,
@@ -2048,30 +2057,36 @@ hyphen-conj-p-lex := n_conj-p-lex &
                                VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD noun_head]]],
 		     LKEYS.KEYREL.PRED 'to_and]].
 
-postp-conj-p-lex := mod-p-lex & 
-            [SYNSEM [LKEYS.KEYREL #key & [L-INDEX #arg,
-					  R-INDEX #mod],
-		     LOCAL [CAT [HEAD nmod-p_head-avm & [MOD < [LOCAL [CAT.HEAD postp_head,
-								       CONT [HOOK.INDEX #mod]]] >,
-							 J-POSTHEAD left],
-                               VAL.COMPS.FIRST.LOCAL [CAT.HEAD postp_head,
-						      CONT [HOOK.INDEX #arg]]],
-			    CONT n-conj-sem-type &
-                               [HCONS <! !>,
-				RELS <! #key !>]]]].
 
-casep-conj-p-lex := mod-p-lex & 
-            [SYNSEM [LKEYS.KEYREL #key & [L-INDEX #arg,
-                                     R-INDEX #mod],
-		     LOCAL [CAT [HEAD nmod-p_head-avm & [MOD < [LOCAL [CAT.HEAD case-p_head & [CASE #case,
-											       PTYPE to],
-								       CONT [HOOK.INDEX #mod]]] >,
-							 J-POSTHEAD left],
-                               VAL.COMPS.FIRST.LOCAL [CAT.HEAD case-p_head & [CASE #case,
-									      PTYPE to],
-						      CONT [HOOK.INDEX #arg]]],
+; (MS 2005-05-17) I am not sure that we need this. The only instance is "か", as in "東京からか". 
+; Taking the entry out.
+
+;postp-conj-p-lex := mod-p-lex & 
+;            [SYNSEM [LKEYS.KEYREL #key & [L-INDEX #arg,
+;					  R-INDEX #mod],
+;		     LOCAL [CAT [HEAD nmod-p_head-avm & [MOD < [LOCAL [CAT.HEAD postp_head,
+;								       CONT [HOOK.INDEX #mod]]] >,
+;							 J-POSTHEAD left],
+;                               VAL.COMPS.FIRST.LOCAL [CAT.HEAD postp_head,
+;						      CONT [HOOK.INDEX #arg]]],
+;			    CONT n-conj-sem-type &
+;                               [HCONS <! !>,
+;				RELS <! #key !>]]]].
+
+compl-conj-p-lex := conj-lex & 
+            [SYNSEM [LKEYS.KEYREL #key & [C-ARG #index,
+					  L-HNDL #arg,
+					  R-HNDL #mod],
+		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD case-p_head & [CASE #case,
+									       PTYPE to],
+						       CONT [HOOK.LTOP #mod]]] >,
+				       J-POSTHEAD left],
+				 VAL.COMPS.FIRST.LOCAL [CAT.HEAD case-p_head & [CASE #case,
+										PTYPE to],
+							CONT [HOOK.LTOP #arg]]],
 			    CONT n-conj-sem-type &
 				[HCONS <! !>,
+				 HOOK.INDEX conj-ref-ind & #index,
 				 RELS <! #key !>]]]].
 
 
@@ -2150,8 +2165,9 @@ hes-lex   := lexical_sign-word &
 
 
 
+; (MS 2005-05-17) Trying to put sentence particles into the type hierarchy of particles.
 
-sap-lex  := lexical_sign-word & 
+sap-lex  := p-lex-c & 
             [SYNSEM [LOCAL [CAT [HEAD sap_head & [FORMAL.SHON #1], 
                                  VAL sap_sc & [COMPS #comps & [FIRST.LOCAL.CAT.HEAD.FORMAL.SHON #1]]],
                             CTXT.BACKGROUND <! !>,
@@ -2166,15 +2182,16 @@ sap-lex  := lexical_sign-word &
 
 ; (ERB 2002-01-14) comma_s-conj is taking sentences ending in 
 ; no+de as its OBJ.  
+; (MS 2005-05-17) This is not needed any more!
 
-sap1-lex  := lexical_sign-word & 
-            [SYNSEM [LOCAL [CAT [HEAD sap1_head & [FORMAL.SHON #1], 
-                                 VAL sap_sc & [COMPS #comps & [FIRST.LOCAL.CAT.HEAD.FORMAL.SHON #1]]],
-                            CTXT.BACKGROUND <! !>,
-			    ARG-S #comps],
-                     NON-LOCAL [QUE <! !>,
-                             AFFIX <! !>]],
-             INFLECTED +].
+;sap1-lex  := lexical_sign-word & 
+;            [SYNSEM [LOCAL [CAT [HEAD sap1_head & [FORMAL.SHON #1], 
+;                                 VAL sap_sc & [COMPS #comps & [FIRST.LOCAL.CAT.HEAD.FORMAL.SHON #1]]],
+;                            CTXT.BACKGROUND <! !>,
+;			    ARG-S #comps],
+;                     NON-LOCAL [QUE <! !>,
+;                             AFFIX <! !>]],
+;             INFLECTED +].
 
 ; (ERB 2002-01-24) To force one order of combination in clauses with
 ; multiple conjunctions, require OBJ to be NUCL not_fin_conj.  (This
@@ -2744,6 +2761,7 @@ name-lex  := n-lex &
                                       [RELS <! #key !>,
 				       HOOK.INDEX #ind,
                                        HCONS <! !>],
+				  CTXT.BACKGROUND <! !>,
 				  ARG-S < #spr >],
 			   LKEYS.KEYREL named-relation & #key & [ARG0 #ind],
                            NON-LOCAL [QUE 0-dlist,

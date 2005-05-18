@@ -1,0 +1,116 @@
+; (MS 2004-04-02) Empty case particles. Try to restrict: to case particle function and lexical nouns.
+; I'm sure this will add loads of ambiguity. Only for parsing spoken Japanese!
+; (MS 2004-12-14) RELS and HCONS and HOOK should come from the argument.
+; (MS 2004-12-16) Maybe this adds too much ambiguity. Taking it out again.
+
+;pp_np_rule-case := empty-preposition-type &
+;              [SYNSEM [LOCAL [CAT [HEAD empty-case-p_head & [CASE ga-or-wo],
+;				   VAL.COMPS < >],
+;			      CONT [HOOK #hook,
+;				    RELS #rels,
+;				    HCONS #hcons]],
+;		       NON-LOCAL.ROBUST +],
+;	       C-CONT.RELS <! !>, 
+;	       ARGS.FIRST.SYNSEM [LEX +,
+;				  LOCAL [CONT [HOOK #hook,
+;					       RELS #rels,
+;					       HCONS #hcons],
+;					 CAT.VAL saturated]]].
+
+
+; (MS 2004-12-22) Why did we have two rules for adjectives and non-adjectives? I'll take that out.
+
+rel-cl-sbj-gap-rule := rel-cl-gap-rule  & 
+		  [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+		   ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ bool,
+					    VAL [SUBJ opt-1-arg & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+						 COMPS onull]]],
+			 [SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
+
+
+
+
+rel-cl-obj1-gap-rule := rel-cl-gap-rule & 
+			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+			 ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
+							 COMPS opt-1-arg &
+							      [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
+							       REST onull]]]]]],
+			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind ]>].
+
+
+
+
+rel-cl-obj2-gap-rule := rel-cl-gap-rule &
+			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+			 ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
+							 COMPS 1-plus-list &
+							      [REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind]]]]]],
+			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind ]>].
+
+
+
+
+; (ERB 2001-12-13) For cases where the splitter can't break apart
+; two sentences for lack of punctuation.  This rule allows two sentences
+; be coordinated with no overt marking of it.  In pet/japanese.set
+; it is marked as a spanning-only-rule so that it can only apply at
+; the very top of the tree.  I guess that won't be true in the lkb??
+
+; (ERB 2001-12-13) This is causing some memory problems with cheap.
+; Perhaps the problem is that nothing is requiring the second daughter
+; to be a sentence.  Adding that.
+
+; (ERB 2001-12-13) Still causing memory problems, so commenting this
+; out (as well as its ranking in japanese.set) until I can consult
+; with Uli on Monday.
+
+; (ERB 2001-12-17) Uli fixed the problem: the spanning-only-rules 
+; condition wasn't really being checked.  But this is still producing
+; way too many parses.  Part of the problem is that te forms are 
+; [H-TENSE tensed] instead of [H-TENSE te] (in order to get the pure
+; aspect analysis of the aspect auxiliaries).  So, try blocking the
+; te forms in the left daughter here by requiring [FIN +].
+
+; (ERB 2002-01-02) Don't want this to be [NUCL +] on the
+; second daughter, if hadj rules are going to be [NUCL -].
+
+; (MS 2002-1-7) I'll restrict the rule a little bit further to non-adjectives. 
+; Also, both verbs are MAIN-PRD +. This prevents NA to be the first verb.
+; MODUS nonoperative prevents NAI to be the first verb. It has to be seen if that is too restrictive...
+; (MS 2002-1-7) It is: "表示できませんでした申し訳ございません.
+; (MS 2002-1-10) Another restriction is EMPTY - in the head of the first argument. 
+;  This prevents an empty-cop-id-rule or an empty-cop-rule to be applied to this.
+
+; (ERB 2002-01-22) NUCL conj now on supertype.
+; (ERB 2002-01-29) If we want runon_s with SAPs on the end, we need the
+; head-dtr here to be utt-valid instead of verb_head.  (Remembering that
+; in cheap at least this rule is restricted to spanning-only-edges.)
+; (MS 2002-05-28) If we want the first sentence to have an SAP, we need utt-valid there, too.
+; (MS 2002-06-05) Maybe that's not a good idea, leads to spurious ambiguity in, e.g.,
+;  ご飯を食べるかよい
+; (MS 2002-06-19) But we seem to need this anyway: "口座振替依頼書送ってください,お願いします"
+; (MS 2002-06-20) Trying to restrict this with  NUCL nucl_plus.
+
+
+
+runon_s := sentence-coord-type &
+[SYNSEM [LOCAL [BAR +,
+		CAT.VAL saturated],
+	 NON-LOCAL.ROBUST +],
+ ARGS <[SYNSEM.LOCAL [CAT [HEAD utt-valid & [H-TENSE present-past-or-future,
+					     FIN +,
+                                             EMPTY -,
+					     ADJ -,
+					     MAIN-PRD +],
+			   VAL saturated],
+		      BAR +,
+		      NUCL nucl_plus],
+		J-NEEDS-AFFIX -],
+       [SYNSEM j-synsem & [LOCAL [BAR +,
+				CAT [ HEAD utt-valid &
+					   [ H-TENSE present-past-or-future,
+					     MAIN-PRD +,
+					      EMPTY -],
+				      VAL saturated]]],
+	J-NEEDS-AFFIX -]>].

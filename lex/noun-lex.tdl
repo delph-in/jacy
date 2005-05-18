@@ -4104,10 +4104,6 @@ ordinary-nohon-n-lex &
 [ORTH <! "³¨" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_e_n_rel]].
 
-imi :=
-ordinary-nohon-n-lex &
-[ORTH <! "°ÕÌ£" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_imi_n_rel]].
 
 dochiraka :=
 ordinary-nohon-n-lex &

@@ -63,6 +63,19 @@ kedomo-send := s-end1-decl-lex &
           [ORTH <! "けども" !>].
 
 
+matawa-sconj := s-conj1-decl-lex &
+          [ORTH <! "または" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
+
+kamatawa-sconj := s-conj1-decl-lex &
+          [ORTH <! "か","または" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
+
+kacommamatawa-sconj := s-conj1-decl-lex &
+          [ORTH <! "か","、","または" !>,
+	      SYNSEM.LKEYS.KEYREL.PRED 's-conj_rel].
+
+
 ;"ogenki desu ka."
 ;"muzukashii ka to omoimasu."
 
@@ -463,16 +476,22 @@ comma-sap  := s-conj1-lex &
 
 
 ;"三井化学だけ旧住所です"
-dake-case := case-p-lex-np &
+; (MS 2005-05-13) This is not a case particle, but a topic particle:
+; It replaces the case particle and adds semantics!
+
+dake-topic := topic-nobj-lex &
              [ORTH <! "だけ" !>,
-              SYNSEM.LOCAL [CAT.HEAD [CASE ga-or-wo,PTYPE dake]]].
+	      SYNSEM.LOCAL [CAT.HEAD.PTYPE dake,
+                                CONT.RELS <! [PRED '_dake_p_rel] !>]].
+
 
 ;"僕にだけ話して下さい。"
-dake-pobj := topic-pobj-lex &
-       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head,
-                         HEAD.PTYPE dake],
-                      CONT.RELS <! [PRED '_dake_p_rel] !>],
-       ORTH <! "だけ" !>].
+; (MS 2005-05-13) But this is rather head-initial modification.
+;dake-pobj := topic-pobj-lex &
+;       [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head,
+;                         HEAD.PTYPE dake],
+;                      CONT.RELS <! [PRED '_dake_p_rel] !>],
+;       ORTH <! "だけ" !>].
 
 
 dash-cardmod := nounmod-p-lex &
@@ -543,7 +562,7 @@ de-advp-sub-4 := adv-p-lex-p &
 
 
 ;"誰 でも 利用 でき ます か "
-demo := plain-topic-nobj-lex &
+demo := topic-nobj-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE mo,
                                 CONT.RELS <! [PRED '_demo_p_rel] !>],
                    ORTH <! "でも" !>].
@@ -576,7 +595,7 @@ e-main := postp-lex &
 
 
 
-equal-topic  := plain-topic-nobj-lex &
+equal-topic  := topic-nobj-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE topic,
                                 CONT.RELS <! [PRED '_equal_p_rel] !>],
                    ORTH <! "＝" !>].
@@ -605,7 +624,7 @@ ga := case-p-lex-np &
 ;"watakushi ga juuniji ni kaigi ga owarimasu"
 ; (MS 2003-01-16) restricted to the cases, where the subject is saturated and no zero pronoun. therefore, I inserted the zpro_ref-ind to ARG1 in the zpro insertion rules (infl.tdl)
 
-ga-top := plain-topic-nobj-lex &
+ga-top := topic-nobj-lex &
        [SYNSEM.LOCAL [CAT.HEAD [PTYPE topic,
 				 MOD < [LOCAL [CAT [VAL [UNSAT -,
 							 SUBJ null],
@@ -666,7 +685,7 @@ hodo-varg := postp-lex-varg &
          ORTH <! "ほど" !>]. 
 
 
-ja-p := plain-topic-nobj-lex &
+ja-p := topic-nobj-lex &
 	[SYNSEM.LOCAL [CAT.HEAD [PTYPE wa,
 				  MOD < [LOCAL.CAT.HEAD i-adj_head & 
 							[MODUS negative]] >],
@@ -871,7 +890,7 @@ keredo-send := s-end1-decl-lex &
 
 ;"kochira  koso onegai shimasu."
 ;"kochira koso omachi shite orimasu."
-koso-nobj := plain-topic-nobj-lex &
+koso-nobj := topic-nobj-lex &
        [SYNSEM.LOCAL [CAT.HEAD.PTYPE koso,
                       CONT.RELS <! [PRED '_koso_p_rel] !>],
        ORTH <! "こそ" !>].
@@ -925,7 +944,7 @@ made-topic := topic-advarg-lex &
                    ORTH <! "まで" !>].  
 
 ;"suiyoubi wa watashi mo gogo wa aite iru N desu ga."
-mo := plain-topic-nobj-lex &
+mo := topic-nobj-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE mo,
                                 CONT.RELS <! [PRED '_mo_p_rel] !>],
                    ORTH <! "も" !>].
@@ -1009,7 +1028,7 @@ nanode-np := s-conj-nonprop1-lex &
 		   LKEYS.KEYREL.PRED '_nanode_p_rel]].
 
 ;"FourDigitErsatz円なのは、どうしてですか。"
-nanowa := plain-topic-nobj-lex &
+nanowa := topic-nobj-lex &
 	         [SYNSEM.LOCAL [CONT.RELS <! [PRED '_wa_p_rel] !>],
          ORTH <! "な","の","は" !>]. 
 
@@ -1381,7 +1400,7 @@ nokawo-comp-varg := comp-int-lex &
                                 VAL.COMPS.FIRST [LOCAL.CAT.HEAD verb_head & [MAIN-PRD -]]]]].
 
 
-nomi-topic := plain-topic-nobj-lex &
+nomi-topic := topic-nobj-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE topic,
                                 CONT.RELS <! [PRED '_nomi_p_rel] !>],
                    ORTH <! "のみ" !>].
@@ -1438,13 +1457,13 @@ no-nspec-3 := nspec-p-lex &
 
 
 ; (TT 2003-08-15) 漢字見出しを追加
-notame-kanji-p := plain-topic-nobj-lex &
+notame-kanji-p := topic-nobj-lex &
        [SYNSEM.LOCAL [CAT.HEAD.PTYPE notame,
                       CONT.RELS <! [PRED '_notame_p_rel] !>],
        ORTH <! "の","為" !>].
 
 ; "引越しのため住所変更になりました。"
-notame-p := plain-topic-nobj-lex &
+notame-p := topic-nobj-lex &
        [SYNSEM.LOCAL [CAT.HEAD.PTYPE notame,
                       CONT.RELS <! [PRED '_notame_p_rel] !>],
        ORTH <! "の","ため" !>].
@@ -1526,7 +1545,7 @@ shika-cardarg := topic-cardarg-lex &
                   ORTH <! "しか" !>].
 
 
-shika-p-nobj := plain-topic-nobj-lex &
+shika-p-nobj := topic-nobj-lex &
            [SYNSEM.LOCAL [CAT.HEAD [PTYPE shika,
                                     MOD < [LOCAL.CAT.HEAD.MODUS negative] >],
                           CONT.RELS <! [PRED '_shika_p_rel] !>],
@@ -1559,14 +1578,14 @@ sonota := postp-lex &
           ORTH <! "そのた" !>].
 
 
-sura-p-nobj := plain-topic-nobj-lex &
+sura-p-nobj := topic-nobj-lex &
            [SYNSEM.LOCAL [CAT.HEAD [PTYPE shika,
                                     MOD < [LOCAL.CAT.HEAD.MODUS negative] >],
                           CONT.RELS <! [PRED '_sura_p_rel] !>],
             ORTH <! "すら" !>].
 
 
-sura-p-pobj := topic-pobj-p-lex &
+sura-p-pobj := topic-pobj-lex &
            [SYNSEM.LOCAL [CAT.HEAD [PTYPE shika,
                                     MOD < [LOCAL.CAT.HEAD.MODUS negative] >],
                           CONT.RELS <! [PRED '_sura_p_rel] !>],
@@ -1773,12 +1792,12 @@ tou-p := postp-lex &
          ORTH <! "とう" !>]. 
 
 ;ヘルプっていうのは、IEのヘルプではなく、おたくの”ブラウザーチェック”のなかの文面で見たんですよ。
-tteiunowa := plain-topic-nobj-lex &
+tteiunowa := topic-nobj-lex &
 	         [SYNSEM.LOCAL [CONT.RELS <! [PRED '_toiu_p_rel] !>],
          ORTH <! "っていう","の","は" !>]. 
 
 ;"外貨預金ってなんですか"
-tte-narg := plain-topic-nobj-lex &
+tte-narg := topic-nobj-lex &
        [SYNSEM.LOCAL [CAT.HEAD.PTYPE wa,
                       CONT.RELS <! [PRED '_wa_p_rel] !>],
         ORTH <! "って" !>].
@@ -1796,7 +1815,7 @@ wa-comparg := topic-cobj-lex &
                ORTH <! "は" !>].
 
 
-wa-narg := plain-topic-nobj-lex &
+wa-narg := topic-nobj-lex &
            [SYNSEM.LOCAL [CONT.RELS <! [PRED '_wa_p_rel] !>,
                           CAT.HEAD.PTYPE wa],
             ORTH <! "は" !>].
@@ -1824,13 +1843,7 @@ wa-varg := topic-vobj-lex &
 ;       [ORTH <! "は" !>,
 ;       SYNSEM.LOCAL [CAT.HEAD [CASE coparg, PTYPE wa]]].
 
-; (MS 2005-05-11) This is the topic marker that replaces case particles,
-; such that we have massive ambiguity whenever case particles occur. 
 
-wa-case := case-p-lex-np & 
-       [ORTH <! "は" !>,
-       SYNSEM [LOCAL [CAT.HEAD [CASE ga-or-wo, PTYPE wa]],
-	       NON-LOCAL.UNDERSPEC_ARG -]].
 
 yori := postp-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE yori,
@@ -1912,9 +1925,11 @@ s-conj1-decl-lex &
  [ORTH <! "か" !>,
   SYNSEM.LKEYS.KEYREL.PRED  '_ka_conj_rel].
 
-ka-postp-conj := postp-conj-p-lex &
-       [ORTH <! "か" !>,
-        SYNSEM.LKEYS.KEYREL.PRED '_ka_conj_rel].
+; (MS 2005-05-17) I am not sure that we need this. The only instance is "か", as in "東京からか". 
+; Taking the entry out.
+;ka-postp-conj := postp-conj-p-lex &
+;       [ORTH <! "か" !>,
+;        SYNSEM.LKEYS.KEYREL.PRED '_ka_conj_rel].
 
 
 ka2 := n_conj-p-lex &
@@ -1947,13 +1962,31 @@ matawa-conj := n_conj-p-lex &
 	         [ORTH <! "または" !>,
                   SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
+matawa-chasen-conj := n_conj-p-lex &
+	         [ORTH <! "また","は" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
+
+
+
 matawa-kanji-conj := n_conj-p-lex &
 	         [ORTH <! "又は" !>,
                   SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
+; "現金かまたは小切手です"
+
+kamatawa-conj := n_conj-p-lex &
+	         [ORTH <! "か","または" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
+
+; "現金か、または小切手です"
+
+kacommamatawa-conj := n_conj-p-lex &
+	         [ORTH <! "か","、","または" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
+
 ; "申し込みがされていないのか、または、事務手続き上遅れているのか、確認していただきたい。"
 
-matawa-casep-conj := casep-conj-p-lex &
+matawa-casep-conj := compl-conj-p-lex &
 		     [ORTH <! "または" !>,
 		      SYNSEM.LKEYS.KEYREL.PRED '_matawa_conj_rel].
 
@@ -1965,13 +1998,13 @@ moshikuwa := n_conj-p-lex &
              [ORTH <! "もしくは" !>,
                 SYNSEM.LKEYS.KEYREL.PRED '_moshikuwa_conj_rel].
 
-nado-kanji-nobj := topic-plus-nobj-lex &
+nado-kanji-nobj := topic-nobj-lex &
              [ SYNSEM.LKEYS [ KEYREL.PRED '_wa,
 			      ALTKEYREL.PRED '_nado_conj_rel],
                ORTH <! "等" !> ].
 
 
-nado-nobj := topic-plus-nobj-lex &
+nado-nobj := topic-nobj-lex &
              [ SYNSEM.LKEYS [ KEYREL.PRED '_wa,
                                    ALTKEYREL.PRED '_nado_conj_rel],
                ORTH <! "など" !> ].
