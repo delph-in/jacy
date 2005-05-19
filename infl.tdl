@@ -81,7 +81,7 @@ lexeme-rule &
 ;; (MS 2003-12-11) These can be restricted a bit.
 
 i-lexeme-v-stem-infl-rule := 
-%suffix (!v¤ë !v) (¥±¤ë ¥±) (¥ì¤ë ¥ì) (°Ê¤ë °Ê) (°Ô¤ë °Ô) (°×¤ë °×) (°ã¤ë °ã) (±Û¤ë ±Û) (±Þ¤ë ±Þ) (²¼¤ë ²¼) (²½¤ë ²½) (²Í¤ë ²Í) (³Í¤ë ³Í) (³Ý¤ë ³Ý) (´³¤ë ´³) (´¹¤ë ´¹) (´Ç¤ë ´Ç) (´Ñ¤ë ´Ñ) (µ¤¤ë µ¤) (µº¤ë µº) (µÍ¤ë µÍ) (µï¤ë µï) (¶ï¤ë ¶ï) (·Ð¤ë ·Ð) (·Þ¤ë ·Þ) (·ó¤ë ·ó) (·ü¤ë ·ü) (¸«¤ë ¸«) (¸Ï¤ë ¸Ï) (¸Ü¤ë ¸Ü) (¹µ¤ë ¹µ) (¹½¤ë ¹½) (¹Ê¤ë ¹Ê) (»÷¤ë »÷) (¼Í¤ë ¼Í) (¼Î¤ë ¼Î) (¼Ñ¤ë ¼Ñ) (¼õ¤ë ¼õ) (½¸¤ë ½¸) (½Ð¤ë ½Ð) (½á¤ë ½á) (½é¤ë ½é) (¾Ã¤ë ¾Ã) (¾Ç¤ë ¾Ç) (¾Ê¤ë ¾Ê) (¾å¤ë ¾å) (¿²¤ë ¿²) (¿Ç¤ë ¿Ç) (À°¤ë À°) (À¸¤ë À¸) (À÷¤ë À÷) (Áê¤ë Áê) (ÂØ¤ë ÂØ) (Ãå¤ë Ãå) (Ãò¤ë Ãò) (Ãø¤ë Ãø) (ÅÁ¤ë ÅÁ) (Åê¤ë Åê) (Åö¤ë Åö) (ÆÀ¤ë ÆÀ) (Æþ¤ë Æþ) (È´¤ë È´) (ÈÜ¤ë ÈÜ) (Èö¤ë Èö) (ÉÕ¤ë ÉÕ) (Ê¬¤ë Ê¬) (ÊÄ¤ë ÊÄ) (ÊÑ¤ë ÊÑ) (Êë¤ë Êë) (Êø¤ë Êø) (Ëº¤ë Ëº) (ÍÈ¤ë ÍÈ) (ÍÏ¤ë ÍÏ) (Íè¤ë Íè) (Íî¤ë Íî) (Í÷¤ë Í÷) (Î©¤ë Î©) (Î±¤ë Î±) (ÚÎ¤ë ÚÎ) (ßõ¤ë ßõ) (âË¤ë âË) (åþ¤ë åþ) (éÌ¤ë éÌ) (ëµ¤ë ëµ) (ë·¤ë ë·) (í¿¤ë í¿) (îÅ¤ë îÅ) (ïÉ¤ë ïÉ) (ñÜ¤ë ñÜ)
+%suffix (!v¤ë !v) (¥±¤ë ¥±) (¥ì¤ë ¥ì) (°Ê¤ë °Ê) (°Ô¤ë °Ô) (°×¤ë °×) (°ã¤ë °ã) (±Û¤ë ±Û) (±Þ¤ë ±Þ) (²¼¤ë ²¼) (²½¤ë ²½) (²Í¤ë ²Í) (³Í¤ë ³Í) (³Ý¤ë ³Ý) (´³¤ë ´³) (´¹¤ë ´¹) (´Ç¤ë ´Ç) (´Ñ¤ë ´Ñ) (µ¤¤ë µ¤) (µº¤ë µº) (µÍ¤ë µÍ) (µï¤ë µï) (¶ï¤ë ¶ï) (·Ð¤ë ·Ð) (·Þ¤ë ·Þ) (·ó¤ë ·ó) (·ü¤ë ·ü) (¸«¤ë ¸«) (¸Ï¤ë ¸Ï) (¸Ü¤ë ¸Ü) (¹µ¤ë ¹µ) (¹½¤ë ¹½) (¹Ê¤ë ¹Ê) (»÷¤ë »÷) (¼Í¤ë ¼Í) (¼Î¤ë ¼Î) (¼Ñ¤ë ¼Ñ) (¼õ¤ë ¼õ) (½¸¤ë ½¸) (½Ð¤ë ½Ð) (½á¤ë ½á) (½é¤ë ½é) (¾Ã¤ë ¾Ã) (¾Ç¤ë ¾Ç) (¾Ê¤ë ¾Ê) (¾å¤ë ¾å) (¿²¤ë ¿²) (¿Ç¤ë ¿Ç) (À°¤ë À°) (À¸¤ë À¸) (À÷¤ë À÷) (Áê¤ë Áê) (ÂØ¤ë ÂØ) (Ãå¤ë Ãå) (Ãò¤ë Ãò) (Ãø¤ë Ãø) (ÅÁ¤ë ÅÁ) (Åê¤ë Åê) (Åö¤ë Åö) (ÆÀ¤ë ÆÀ) (Æþ¤ë Æþ) (È´¤ë È´) (ÈÜ¤ë ÈÜ) (Èö¤ë Èö) (ÉÕ¤ë ÉÕ) (Ê¬¤ë Ê¬) (ÊÄ¤ë ÊÄ) (ÊÑ¤ë ÊÑ) (Êë¤ë Êë) (Êø¤ë Êø) (Ëº¤ë Ëº) (ÍÈ¤ë ÍÈ) (ÍÏ¤ë ÍÏ) (Íè¤ë Íè) (Íî¤ë Íî) (Í÷¤ë Í÷) (Î©¤ë Î©) (Î±¤ë Î±) (ÚÎ¤ë ÚÎ) (ßõ¤ë ßõ) (âË¤ë âË) (åþ¤ë åþ) (éÌ¤ë éÌ) (ëµ¤ë ëµ) (ë·¤ë ë·) (í¿¤ë í¿) (îÅ¤ë îÅ) (ïÉ¤ë ïÉ) (ñÜ¤ë ñÜ) (¿²¤ë ¿²) (Õê¤ë Õê)
 lexeme-rule &
 [RMORPH-BIND-TYPE vstem-morph,
  ARGS.FIRST.STEMTYPE v-stem].
@@ -716,9 +716,9 @@ v2vn-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;V->N;;;;;;;;;;;;;;;;;;;;
 
-v2n-infl-rule :=
+v2n-kata-infl-rule :=
 %suffix (!v¤ë !vÊý) (¤¯ ¤­Êý) (¤ë ¤êÊý) (¤¦ ¤¤Êý) (¤¹ ¤·Êý) (¤à ¤ßÊý) (¤° ¤®Êý) (¤Ö ¤ÓÊý)  (¤Ä ¤ÁÊý) (¤Ì ¤ËÊý)
-v2n-rule &
+v2n-kata-rule &
 [ARGS.FIRST [STEMTYPE regular-stem,
              RMORPH-BIND-TYPE morphbindtype,
              INFLECTED -]].
@@ -1048,8 +1048,8 @@ numeral-classifier-sbj-float :=
 floated-ind-sbj-num-cl-lex &
 [SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
 	       CONT.RELS #rels],
-  ORTH #stem,
-ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
+ ORTH #stem,
+ ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
 			   CONT.RELS #rels],
 	     ORTH #stem]].
 
@@ -1057,8 +1057,8 @@ numeral-classifier-obj-float :=
 floated-ind-obj-num-cl-lex &
 [SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
 	       CONT.RELS #rels],
-  ORTH #stem,
-ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
+ ORTH #stem,
+ ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
 			   CONT.RELS #rels],
 	     ORTH #stem]].
 

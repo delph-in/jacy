@@ -1129,7 +1129,8 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
 adj2adv-rule  := isect-adv-lex & lex-rule &
                [SYNSEM [LKEYS.KEYREL [ PRED #rel,
 				       WLINK #label ],
-			LOCAL [CTXT #ctxt,
+			LOCAL [CAT.HEAD adv_head,
+			       CTXT #ctxt,
 			       CONT.HOOK #hook],
 			NON-LOCAL #nonloc],
                 J-NEEDS-AFFIX -,
@@ -1331,8 +1332,8 @@ vn2n-rule-nspecarg2 :=  vn2n-rule-super &
 		     NON-LOCAL.UNDERSPEC_ARG -],
 	     ARGS.FIRST.SYNSEM [LKEYS.KEYREL.ARG2 #arg2]].
 
-
-v2n-rule := n-lex-super &
+; (FCB 2005-04-09) fixed scope problem, harmonized predname with spaced kata
+v2n-kata-rule := n-lex-super &
             [SYNSEM [LOCAL [CAT [HEAD nom_head &
                                       [ MOD null,
 					VN -,
@@ -1340,14 +1341,16 @@ v2n-rule := n-lex-super &
 				 VAL spr-arg & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head,
 								 CONT.HOOK.INDEX #ind]]],
 			    CONT nom-pred-sem-type &
-				[RELS <! [ARG1 #prpstn-hd],
+				[RELS <! #key,
 					message & 
 				       [PRED proposition_m_rel,
 					LBL #prpstn-hd,
 					 MARG #prpstn-soa],
 					#v-key & [ARG2 #ind] !>,
 				 HCONS <! qeq & [HARG #prpstn-soa,LARG #v-hd] !>]],
-		     LKEYS.KEYREL.PRED 'kata,
+		     LKEYS.KEYREL #key &
+			   [ PRED '_kata_v_rel, 
+			     ARG1 #prpstn-hd],
 		     NON-LOCAL [QUE <! !>,
 			     AFFIX <! !>]],
 	     ARGS < [SYNSEM [LOCAL.CAT [HEAD verb-stem_head],
