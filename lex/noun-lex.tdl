@@ -13,6 +13,7 @@
 ;;;    Melanie Siegel |    2003     |Francis Bond (FCB), Atsuko Shimada,  
 ;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF), 
 ;;;                   |             |Akira Ohtani (AO), Takaaki Tanaka (TT)
+;;;                   |             |Takayuki Kuribayashi (TK)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -3048,8 +3049,13 @@ ordinary-nohon-n-lex &
 [ORTH <! "際" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sai_n_rel]].
 
+;;(TK 05-03-02 changed to ordinary-prefix)
+;sai-repeated :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "再" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_sai_n_repeated_rel]].
 sai-repeated :=
-ordinary-nohon-n-lex &
+ordinary-prefix-n-lex &
 [ORTH <! "再" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sai_n_repeated_rel]].
 
@@ -4104,6 +4110,10 @@ ordinary-nohon-n-lex &
 [ORTH <! "絵" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_e_n_rel]].
 
+imi :=
+ordinary-nohon-n-lex &
+[ORTH <! "意味" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_imi_n_rel]].
 
 dochiraka :=
 ordinary-nohon-n-lex &
@@ -4660,11 +4670,6 @@ title-pers-honsubj-lex &
 keNkyuushitsu-inst :=
 title-inst-lex &
 [ORTH <! "研究室" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_kenkyuushitsu_n_rel].
-
-keNkyuushitsu-chasen-inst :=
-title-inst-lex &
-[ORTH <! "研究","室" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kenkyuushitsu_n_rel].
 
 keNkyuushitsu-loc :=
@@ -9341,12 +9346,13 @@ ordinary-nohon-n-lex &
 	[SYNSEM.LKEYS.KEYREL.PRED '_ori_n_rel,
           ORTH <! "折" !>].
 
-;cage
-
-ori-hiragana-noun :=  
-ordinary-nohon-n-lex &
-	[SYNSEM.LKEYS.KEYREL.PRED '_ori_n_rel,
-          ORTH <! "おり" !>].
+;;;(TK 05-02-24 commentout)
+;;cage
+;
+;ori-hiragana-noun :=  
+;ordinary-nohon-n-lex &
+;	[SYNSEM.LKEYS.KEYREL.PRED '_ori_n_rel,
+;          ORTH <! "おり" !>].
 
 daitou-noun :=  
 ordinary-nohon-n-lex &
@@ -145846,4 +145852,392 @@ biru-building-n :=
 ordinary-nohon-n-lex &
 [ORTH <! "ビル" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_biru_n_building_rel].
+
+
+;Kuribayashi(05-02-24)
+
+; (FCB 2005-05-20) Don't allow this
+;自分
+; jibun_2 :=
+; ordinary-nohon-n-lex &
+; [ORTH <! "自分" !>,
+; SYNSEM.LKEYS.KEYREL [PRED '_jibun_2_rel]].
+
+
+;お前
+
+;omae_1_kanji := pron-add-ref-lex &
+; (MS 2005-02-28) renamed pron-add-ref-lex. そちら
+omae_1_kanji := pron-secondperson-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
+ ORTH <! "お前" !>].
+
+
+;おまえ
+
+;omae_1_hiragana := pron-add-ref-lex &
+; (MS 2005-02-28) renamed pron-add-ref-lex. そちら
+omae_1_hiragana := pron-secondperson-ref-lex &
+[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
+ ORTH <! "おまえ" !>].
+
+
+;林
+
+hayashi_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hayashi_n_rel,
+ ORTH <! "林" !>].
+
+
+rin-suffix := ordinary-suffix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_rin_n_suffix_rel,
+ ORTH <! "林" !>].
+
+
+;根本
+
+nemoto_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_nemoto_2_rel,
+ ORTH <! "根本" !>].
+
+
+konpon_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_konpon_n_rel,
+ ORTH <! "根本" !>].
+
+
+;経済
+
+keizai_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_keizai_n_rel,
+ ORTH <! "経済" !>].
+
+
+;工業
+
+kougyou_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kougyou_n_rel,
+ ORTH <! "工業" !>].
+
+
+;精神
+
+seishin_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_seishin_n_rel,
+ ORTH <! "精神" !>].
+
+
+;床
+
+yuka_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yuka_n_rel,
+ ORTH <! "床" !>].
+
+
+toko-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_toko_n_rel,
+ ORTH <! "床" !>].
+
+
+;半月
+
+hangetsu_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "半月" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_hangetsu_n_rel]].
+
+
+;ゆかり
+
+yukari-hiragana :=
+ordinary-nohon-n-lex &
+[ORTH <! "ゆかり" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_yukari_n_rel]].
+
+;所縁
+
+yukari-kanji :=
+ordinary-nohon-n-lex &
+[ORTH <! "所縁" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_yukari_n_kanji_rel]].
+
+
+;山田
+
+yamada_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "山田" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_yamada_n_rel]].
+
+
+;奴
+
+;yatsu_pron := pron-ent-ref-lex &
+; (MS 2005-02-28) renamed pron-ent-ref-lex.
+yatsu_pron := pron-thirdperson-ref-lex &
+[ORTH <! "奴" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+;あいつ
+
+;aitsu_pron := pron-ent-ref-lex &
+; (MS 2005-02-28) renamed pron-ent-ref-lex.
+aitsu_pron := pron-thirdperson-ref-lex &
+[ORTH <! "あいつ" !>,
+SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+
+
+;丸
+
+maru_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "丸" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_maru_n_rel]].
+
+maru-prefix := ordinary-prefix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_maru_n_prefix_rel,
+ ORTH <! "丸" !>].
+
+;;(05-02-25)
+
+;大変
+
+taihen-ichidaiji :=
+ordinary-nohon-n-lex &
+[ORTH <! "大変" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_taihen_n_ichidaiji_rel]].
+
+
+;知恵
+
+chie_1 :=
+ordinary-nohon-n-lex &
+[ORTH <! "知恵" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_chie_n_1_rel]].
+
+;智恵
+
+chie_2 :=
+ordinary-nohon-n-lex &
+[ORTH <! "智恵" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_chie_n_2_rel]].
+
+;智慧
+
+chie_3 :=
+ordinary-nohon-n-lex &
+[ORTH <! "智慧" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_chie_n_3_rel]].
+
+;知惠
+
+chie_4 :=
+ordinary-nohon-n-lex &
+[ORTH <! "知惠" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_chie_n_4_rel]].
+
+
+;FIXME
+;ノーモア
+no-moa-prefix := ordinary-prefix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_no-moa_n_prefix_rel,
+ ORTH <! "ノーモア" !>].
+
+;(05-02-28)
+
+;幸い
+
+saiwai_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "幸い" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_saiwai_n_rel]].
+
+;本当（hontou）
+
+hontou_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "本当" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_hontou_n_rel]].
+
+;逐一
+
+chikuichi_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "逐一" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_chikuichi_n_rel]].
+
+;結局
+;;ex.「この物語の結局はつまらないものだった」
+kekkyoku_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "結局" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kekkyoku_n_rel]].
+
+;それぞれ
+
+sorezore_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "それぞれ" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sorezore_n_rel]].
+
+;大方
+
+ookata_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "大方" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ookata_n_rel]].
+
+;(05-03-01)
+
+;ぎりぎり
+
+girigiri_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "ぎりぎり" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_girigiri_n_rel]].
+
+;私
+; (FCB 2005-03-12) made into prefix
+; for things like 私事
+
+watakushi-prefix-n :=
+ordinary-prefix-n-lex &
+[ORTH <! "私" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_watakushi_prefix_rel]].
+
+;そこいら
+
+sokoira_1 := pron-loc-ref-lex &
+[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
+ ORTH <! "そこいら" !>].
+
+;上手
+
+jouzu_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "上手" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_jouzu_n_rel]].
+
+uwate_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "上手" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_uwate_n_rel]].
+
+;値
+
+atai_1 :=
+ordinary-nohon-n-lex &
+[ORTH <! "値" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_atai_n_1_rel]].
+
+;値い
+
+atai_2 :=
+ordinary-nohon-n-lex &
+[ORTH <! "値い" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_atai_n_2_rel]].
+
+;;;("司会者"の意で)
+
+shikai-shikaisha :=
+ordinary-nohon-n-lex &
+[ORTH <! "司会" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_shikai_n_shukaisha_rel]].
+
+;マイナス
+
+mainasu_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "マイナス" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_mainasu_n_rel]].
+
+;大事
+
+daiji-kotogara :=
+ordinary-nohon-n-lex &
+[ORTH <! "大事" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_daiji_n_kotogara_rel]].
+
+;本
+
+hon-prefix := ordinary-prefix-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hon_n_prefix_rel,
+ ORTH <! "本" !>].
+
+;;(05-03-02)
+
+;サービス
+
+sa-bisu_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "サービス" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sa-bisu_n_rel]].
+
+;せっかく,折角(FIXME)
+
+sekkaku_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "せっかく" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sekkaku_n_rel]].
+
+sekkaku_noun-kanji :=
+ordinary-nohon-n-lex &
+[ORTH <! "折角" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sekkaku_n_kanji_rel]].
+
+;カフェテリア
+
+kafeteria_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "カフェテリア" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kafeteria_n_rel]].
+
+;産業
+
+sangyou-seisan :=
+ordinary-nohon-n-lex &
+[ORTH <! "産業" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sangyou_n_rel]].
+
+;商業
+
+shougyou_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "商業" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_shougyou_n_rel]].
+
+;桜
+
+sakura_noun-kanji :=
+ordinary-nohon-n-lex &
+[ORTH <! "桜" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sakura_n_kanji_rel]].
+
+;是非
+
+zehi_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "是非" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_zehi_n_rel]].
+
+;秘書
+
+hisho_2 :=
+ordinary-nohon-n-lex &
+[ORTH <! "秘書" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_hisho_n_2_rel]].
+
+;なす
+
+nasu-hiragana_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "なす" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_nasu_n_rel]].
+
+;茄子
+
+nasu-kanji_noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "茄子" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_nasu_n_rel]].
 
