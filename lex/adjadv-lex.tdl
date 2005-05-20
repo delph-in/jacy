@@ -8,11 +8,11 @@
 ;;; last update: 
 ;;;  updated by:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; author            | date        | modification
-;;; ------------------|-------------|------------------------------------------
-;;; Melanie Siegel    |             | Emily Bender (ERB), Atsuko Shimada, 
-;;;                   |             | Sanae Fujita (SF), Takaaki Tanaka (TT)
-;;;                   |             | Francis Bond (FCB)
+;;; author            | date    | modification
+;;; ------------------|---------|---------------------------------------------
+;;; Melanie Siegel    |         | Emily Bender (ERB), Atsuko Shimada, 
+;;;                   |         | Sanae Fujita (SF), Takaaki Tanaka (TT)
+;;;                   |         | Francis Bond (FCB), Takayuki Kuribayashi (TK)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1103,10 +1103,11 @@ scopal-adv-regular-lex &
 [ORTH <! "それほど" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_sorehodo_a_rel].
 
-sumuuzu-adv :=
-isect-adv-lex &
-[ORTH <! "スムーズ" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_sumuuzu_a_rel].
+;;(TK 05-02-28 commentout)
+;sumuuzu-adv :=
+;isect-adv-lex &
+;[ORTH <! "スムーズ" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_sumuuzu_a_rel].
 
 tagai-adv :=
 isect-adv-lex &
@@ -1164,10 +1165,11 @@ isect-adv-lex &
 [ORTH <! "初めて" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_hajimete_a_rel].
 
-nomi-adv :=
-scopal-adv-regular-lex &
-[ORTH <! "のみ" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_nomi_a_rel].
+;;(TK 05-02-24 commentout)
+;nomi-adv :=
+;scopal-adv-regular-lex &
+;[ORTH <! "のみ" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_nomi_a_rel].
 
 ittai-adv :=
 scopal-adv-regular-lex &
@@ -1229,11 +1231,11 @@ scopal-adv-regular-lex &
 [ORTH <! "一通り" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_hitotoori_a_rel].
 
-
-shiro-adv :=
-scopal-adv-regular-lex &
-[ORTH <! "白" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_shiro_a_rel].
+;;(TK 05-02-28 commentout)
+;shiro-adv :=
+;scopal-adv-regular-lex &
+;[ORTH <! "白" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_shiro_a_rel].
 
 hikitsuduki-adv :=
 scopal-adv-regular-lex &
@@ -1722,10 +1724,14 @@ i-adj-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yasui_a_rel,
 ORTH <! "安","い" !>].
 
-yasui-eval-adj  :=
-eval-opt-i-adj-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yasui_eval_a_rel,
-ORTH <! "やすい" !>].
+;;; (FCB and TH 2005-03-10) 
+;;; FIXME - this shouldn't come after て
+;;; and yasui isn't of this type anyway
+
+;yasui-eval-adj  :=
+;eval-opt-i-adj-stem-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_yasui_eval_a_rel,
+;ORTH <! "やすい" !>].
 
 arigatai-adj  :=
 i-adj-stem-lex &
@@ -1761,10 +1767,11 @@ isect-adv-lex &
 [ORTH <! "何でも" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_nandemo_a_rel].
 
-hontoni-adv :=
-scopal-adv-regular-lex &
-[ORTH <! "本当に" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_hontoni_a_rel].
+;(TK 05-02-28 commentout  「本当」na-adjを復活)
+;hontoni-adv :=
+;scopal-adv-regular-lex &
+;[ORTH <! "本当に" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_hontoni_a_rel].
 
 
 akiraka :=
@@ -2050,11 +2057,12 @@ scopal-adv-regular-lex &
 SYNSEM.LKEYS.KEYREL.PRED '_omouzonbun_a_rel].
 
 ;accustomed to
+;(Kuribayashi 05-02-23 shineni->tsuneni)
 
-shineni-adv :=
+tsuneni-adv :=
 isect-adv-lex &
 [ORTH <! "常に" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_shineni_a_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_tsuneni_a_rel].
 
 ;at least
 
@@ -2280,10 +2288,11 @@ i-adj-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_subayai_a_rel,
 ORTH <! "素早い" !>].
 
+;(Kuribayashi 05-02-23 bazukashii->hazukashii)
 
-bazukashii-adj :=
+hazukashii-adj :=
 i-adj-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_bazukashii_a_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hazukashii_a_rel,
 ORTH <! "恥ずかしい" !>].
 
 ichijirushii-adj :=
@@ -2866,11 +2875,11 @@ shitsurei-stem :=
          ORTH <! "失礼" !>].
 
 ;"日本語が上手になった。"
-
-jouzu-adv-stem :=  
-        isect-adv-lex &
-        [SYNSEM.LKEYS.KEYREL.PRED '_jouzu_a_rel,
-         ORTH <! "上手" !>].
+;;(TK 05-03-01 commentout)
+;jouzu-adv-stem :=  
+;        isect-adv-lex &
+;        [SYNSEM.LKEYS.KEYREL.PRED '_jouzu_a_rel,
+;         ORTH <! "上手" !>].
 
 jouzu-naadj-stem :=  
         na-adj-lex &
@@ -2928,12 +2937,13 @@ onajiku-stem :=
         [SYNSEM.LKEYS.KEYREL.PRED '_onajiku_a_rel,
          ORTH <! "同じく" !>].
 
+;;(TK 05-02-24 commentout , pp_mod-lex-rが追加されているため
 ;"手紙は友達からだけではなく、先生からも来ました。"
-
-dake-adv :=
-isect-adv-lex &
-[ORTH <! "だけ" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_dake_a_rel].
+;
+;dake-adv :=
+;isect-adv-lex &
+;[ORTH <! "だけ" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_dake_a_rel].
 
 ;lonely, lonesome
 
@@ -5988,10 +5998,13 @@ omotage_1 := na-adj-lex &
  ORTH <! "重たげ" !>].
 
 ; 主な 
-
-omona_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_omona_a_1_rel,
- ORTH <! "主な" !>].
+;;(TK 05-03-02 changed to "主")
+;omona_1 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_omona_a_1_rel,
+; ORTH <! "主な" !>].
+omo_1 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_omo_a_1_rel,
+ ORTH <! "主" !>].
 
 ; 愚か 
 ; Used 1 times
@@ -7486,10 +7499,10 @@ sumiyaka_1 := na-adj-lex &
 ;<IJ> ; スムーズ 
 ;<IJ> ; JACY スムーズ: sumuuzu-adv (isect-adv-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> sumu-zu_1 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sumu_a_zu_1_rel,
-;<IJ>  ORTH <! "スムーズ" !>].
+;;(TK 05-02-28 na-adj復活)
+sumu-zu_1 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sumu_a_zu_1_rel,
+ ORTH <! "スムーズ" !>].
 
 ; スリム 
 
@@ -9720,10 +9733,10 @@ hidai_3 := na-adj-lex &
 ;<IJ> ; 貧乏 
 ;<IJ> ; JACY 貧乏: biNbou (ordinary-nohon-n-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> binbou_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_binbou_a_3_rel,
-;<IJ>  ORTH <! "貧乏" !>].
+;;(TK 05-03-01 na-adj復活)
+binbou_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_binbou_a_3_rel,
+ ORTH <! "貧乏" !>].
 
 ; 不自由 
 ; Used 1 times
@@ -9735,18 +9748,18 @@ fujiyuu_3 := na-adj-lex &
 ;<IJ> ; 不足 
 ;<IJ> ; JACY 不足: fusoku-vn (vn-intrans-lex)
 ;<IJ> ; Used 15 times
-
-;<IJ> fusoku_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_fusoku_a_3_rel,
-;<IJ>  ORTH <! "不足" !>].
+;;(TK 05-03-01 na-adj復活)
+fusoku_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fusoku_a_3_rel,
+ ORTH <! "不足" !>].
 
 ;<IJ> ; 満足 
 ;<IJ> ; JACY 満足: maNzoku (ordinary-nohon-n-lex)
 ;<IJ> ; Used 9 times
-
-;<IJ> manzoku_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_manzoku_a_3_rel,
-;<IJ>  ORTH <! "満足" !>].
+;;(TK 05-03-01 na-adj復活)
+manzoku_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_manzoku_a_3_rel,
+ ORTH <! "満足" !>].
 
 ; 密接 
 ; Used 2 times
@@ -10112,10 +10125,10 @@ takusan_2 := na-adj-lex &
 ;<IJ> ; 確か 
 ;<IJ> ; JACY 確か: tashika-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 25 times
-
-;<IJ> tashika_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tashika_a_2_rel,
-;<IJ>  ORTH <! "確か" !>].
+;;(TK 05-03-01 na-adj復活)
+tashika_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tashika_a_2_rel,
+ ORTH <! "確か" !>].
 
 ; たじたじ 
 
@@ -10132,10 +10145,10 @@ danko_2 := na-adj-lex &
 ;<IJ> ; 当然 
 ;<IJ> ; JACY 当然: touzeN-adv (isect-adv-lex)
 ;<IJ> ; Used 6 times
-
-;<IJ> touzen_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_touzen_a_2_rel,
-;<IJ>  ORTH <! "当然" !>].
+;;(TK 05-03-01 na-adj復活)
+touzen_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_touzen_a_2_rel,
+ ORTH <! "当然" !>].
 
 ; とんとん 
 
@@ -11510,10 +11523,10 @@ saikou_2 := na-adj-lex &
 ;<IJ> ; 最低 
 ;<IJ> ; JACY 最低: saitei-adv (isect-adv-lex) saitei-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 2 times
-
-;<IJ> saitei_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_saitei_a_2_rel,
-;<IJ>  ORTH <! "最低" !>].
+;;(TK 05-03-01 na-adj復活)
+saitei_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_saitei_a_2_rel,
+ ORTH <! "最低" !>].
 
 ; 最適 
 
@@ -11663,10 +11676,10 @@ shuyou_2 := na-adj-lex &
 ;<IJ> ; 順 
 ;<IJ> ; JACY 順: jun-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 4 times
-
-;<IJ> jun_2_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_jun_a_2_rel,
-;<IJ>  ORTH <! "順" !>].
+;(TK 05-02-28 na-adj復活)
+jun_2_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_jun_a_2_rel,
+ ORTH <! "順" !>].
 
 ; 純潔 
 
@@ -11723,10 +11736,10 @@ joukigen_2 := na-adj-lex &
 
 ;<IJ> ; 詳細 
 ;<IJ> ; JACY 詳細: shousai-noun (ordinary-nohon-n-lex)
-
-;<IJ> shousai_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shousai_a_2_rel,
-;<IJ>  ORTH <! "詳細" !>].
+;(TK 05-02-28 na-adj復活)
+shousai_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shousai_a_2_rel,
+ ORTH <! "詳細" !>].
 
 ; 上々 
 
@@ -11926,10 +11939,10 @@ seiei_2 := na-adj-lex &
 ;<IJ> ; 正確 
 ;<IJ> ; JACY 正確: seikaku-punctuality (ordinary-nohon-n-lex)
 ;<IJ> ; Used 5 times
-
-;<IJ> seikaku_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_seikaku_a_2_rel,
-;<IJ>  ORTH <! "正確" !>].
+;;(TK 05-03-02 na-adj復活)
+seikaku_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_seikaku_a_2_rel,
+ ORTH <! "正確" !>].
 
 ; 正規 
 ; Used 1 times
@@ -12075,10 +12088,10 @@ sokonuke_2 := na-adj-lex &
 ;<IJ> ; ソフト 
 ;<IJ> ; JACY ソフト: sofuto-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> sofuto_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sofuto_a_2_rel,
-;<IJ>  ORTH <! "ソフト" !>].
+;;(TK 05-03-02 na-adj復活)
+sofuto_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sofuto_a_2_rel,
+ ORTH <! "ソフト" !>].
 
 ; ソフトタッチ 
 
@@ -12109,10 +12122,10 @@ soresouou_2 := na-adj-lex &
 ;<IJ> ; 損 
 ;<IJ> ; JACY 損: son-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 2 times
-
-;<IJ> son_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_son_a_2_rel,
-;<IJ>  ORTH <! "損" !>].
+;;(TK 05-02-28 na-adj復活)
+son_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_son_a_2_rel,
+ ORTH <! "損" !>].
 
 ; 尊厳 
 ; Used 2 times
@@ -13237,10 +13250,10 @@ buaisou_2 := na-adj-lex &
 ;<IJ> ; 不安 
 ;<IJ> ; JACY 不安: fuan-1-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 8 times
-
-;<IJ> fuan_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_fuan_a_2_rel,
-;<IJ>  ORTH <! "不安" !>].
+;(TK 05-02-28 na-adj復活)
+fuan_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fuan_a_2_rel,
+ ORTH <! "不安" !>].
 
 ; ファンシー 
 
@@ -14004,10 +14017,10 @@ berabou_2 := na-adj-lex &
 ;<IJ> ; 変 
 ;<IJ> ; JACY 変: heN-change (ordinary-nohon-n-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> hen_2_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hen_a_2_rel,
-;<IJ>  ORTH <! "変" !>].
+;(TK 05-02-28 na-adj復活)
+hen_2_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hen_a_2_rel,
+ ORTH <! "変" !>].
 
 ;<IJ> ; 便 
 ;<IJ> ; JACY 便: biN (ordinary-nohon-n-lex)
@@ -14105,18 +14118,18 @@ honki_2 := na-adj-lex &
 ;<IJ> ; 本当 
 ;<IJ> ; JACY 本当: hoNto (ordinary-nohon-n-lex)
 ;<IJ> ; Used 15 times
-
-;<IJ> honto_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_honto_a_2_rel,
-;<IJ>  ORTH <! "本当" !>].
+;(TK 05-02-28 na-adj復活)
+honto_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_honto_a_2_rel,
+ ORTH <! "本当" !>].
 
 ;<IJ> ; 本当 
 ;<IJ> ; JACY 本当: hoNto (ordinary-nohon-n-lex)
 ;<IJ> ; Used 15 times
-
-;<IJ> hontou_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hontou_a_2_rel,
-;<IJ>  ORTH <! "本当" !>].
+;(TK 05-02-28 na-adj復活)
+hontou_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hontou_a_2_rel,
+ ORTH <! "本当" !>].
 
 ; マイナー 
 
@@ -14813,10 +14826,10 @@ yuugen_2 := na-adj-lex &
 ;<IJ> ; 有効 
 ;<IJ> ; JACY 有効: yuukou (ordinary-nohon-n-lex)
 ;<IJ> ; Used 4 times
-
-;<IJ> yuukou_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yuukou_a_2_rel,
-;<IJ>  ORTH <! "有効" !>].
+;;(TK 05-02-28 na-adj復活)
+yuukou_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yuukou_a_2_rel,
+ ORTH <! "有効" !>].
 
 ; 優柔不断 
 
@@ -15137,25 +15150,25 @@ guuzen_3 := na-adj-lex &
 ;<IJ> ; 結構 
 ;<IJ> ; JACY 結構: kekkou-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 2 times
-
-;<IJ> kekkou_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kekkou_a_3_rel,
-;<IJ>  ORTH <! "結構" !>].
+;(TK 05-02-28 na-adj復活)
+kekkou_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kekkou_a_3_rel,
+ ORTH <! "結構" !>].
 
 ;<IJ> ; 幸い 
 ;<IJ> ; JACY 幸い: saiwai-adv (scopal-adv-regular-lex)
-
-;<IJ> saiwai_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_saiwai_a_3_rel,
-;<IJ>  ORTH <! "幸い" !>].
+;(TK 05-02-28 na-adj復活)
+ saiwai_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_saiwai_a_3_rel,
+ ORTH <! "幸い" !>].
 
 ;<IJ> ; 自然 
 ;<IJ> ; JACY 自然: shizeN (ordinary-nohon-n-lex)
 ;<IJ> ; Used 40 times
-
-;<IJ> shizen_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shizen_a_3_rel,
-;<IJ>  ORTH <! "自然" !>].
+;(TK 05-02-28 na-adj復活)
+shizen_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shizen_a_3_rel,
+ ORTH <! "自然" !>].
 
 ; 正直 
 ; Used 2 times
@@ -15195,10 +15208,10 @@ hisabisa_3 := na-adj-lex &
 ;<IJ> ; 普通 
 ;<IJ> ; JACY 普通: futsuu (ordinary-nohon-n-lex)
 ;<IJ> ; Used 105 times
-
-;<IJ> futsuu_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_futsuu_a_3_rel,
-;<IJ>  ORTH <! "普通" !>].
+;;(TK 05-03-01 na-adj復活)
+futsuu_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_futsuu_a_3_rel,
+ ORTH <! "普通" !>].
 
 
 ; 浅はか 
@@ -21605,6 +21618,14 @@ yoku_1_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoku_a_1_rel,
  ORTH <! "良く" !>].
 
+; 勢い 良く 
+; FCB used at least 40 times
+; FIXME - should give this more structure
+
+ikioi_yoku_1 := scopal-adv-regular-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ikioiyoku_a_1_rel,
+ ORTH <! "勢い", "良く" !>].
+
 ; よくよく 
 
 yokuyoku_1 := scopal-adv-regular-lex &
@@ -23376,3 +23397,72 @@ scopal-adv-regular-lex &
 [SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY '_neg_v_rel,
 	 LKEYS.KEYREL.PRED '_amari_a_rel],
  ORTH <! "あまり" !>].
+
+;(TK:TakaYUki Kuribayashi 05-02-25)
+
+;心配
+
+shinpai-adj :=
+na-adj-lex &
+[ORTH <! "心配" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_shinpai_a_rel].
+
+;たいへん
+
+taihen-adj :=
+na-adj-lex &
+[ORTH <! "たいへん" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_taihen_a_rel].
+
+;大変
+
+taihen-kanji-adj :=
+na-adj-lex &
+[ORTH <! "大変" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_taihen_a_rel].
+
+;突然
+
+totsuzen-adj :=
+na-adj-lex &
+[ORTH <! "突然" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_totsuzen_a_rel].
+
+;(05-03-01)
+
+;上手
+
+uwate-adj :=
+na-adj-lex &
+[ORTH <! "上手" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_uwate_a_rel].
+
+;(05-03-02)
+
+;一緒
+
+issho-adj :=
+na-adj-lex &
+[ORTH <! "一緒" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_issho_a_rel].
+
+;欲しい
+
+hoshii-kanji-adj := i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hoshii_a_kanji_rel,
+ ORTH <! "欲しい" !>].
+
+;てき面
+
+tekimen-adj :=
+na-adj-lex &
+[ORTH <! "てき面" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_tekimen_a_rel].
+
+;滅法
+
+meppou-adj :=
+na-adj-lex &
+[ORTH <! "滅法" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_meppou_a_rel].
+
