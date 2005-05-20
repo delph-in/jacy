@@ -1999,14 +1999,14 @@ moshikuwa := n_conj-p-lex &
                 SYNSEM.LKEYS.KEYREL.PRED '_moshikuwa_conj_rel].
 
 nado-kanji-nobj := topic-nobj-lex &
-             [ SYNSEM.LKEYS [ KEYREL.PRED '_wa,
-			      ALTKEYREL.PRED '_nado_conj_rel],
+             [ SYNSEM.LOCAL [CAT.HEAD.PTYPE wa,
+                      CONT.RELS <! [PRED '_nado_p_rel] !>],
                ORTH <! "Åù" !> ].
 
 
 nado-nobj := topic-nobj-lex &
-             [ SYNSEM.LKEYS [ KEYREL.PRED '_wa,
-                                   ALTKEYREL.PRED '_nado_conj_rel],
+             [ SYNSEM.LOCAL [CAT.HEAD.PTYPE wa,
+                      CONT.RELS <! [PRED '_nado_p_rel] !>],
                ORTH <! "¤Ê¤É" !> ].
 
 nanode := s-conj1-decl-lex &
