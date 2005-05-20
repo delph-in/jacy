@@ -265,11 +265,12 @@ pred-sem-type :< wg-handel-lex-mrs-basic.
 
 verb-sem-type :< pred-sem-type.
 
-aux-sem-type := pred-sem-type &
-		[MOD-IND #ind,
-		 MOD-HAND #hand,
-		 HOOK [INDEX #ind,
-		       LTOP #hand]].
+;(FCB 2005-04-09) no one seems to be using this
+; aux-sem-type := pred-sem-type &
+; 		[MOD-IND #ind,
+; 		 MOD-HAND #hand,
+; 		 HOOK [INDEX #ind,
+; 		       LTOP #hand]].
 
 simple-verb-sem-type := verb-sem-type &
                  [ HOOK [INDEX #ind,
