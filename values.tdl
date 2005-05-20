@@ -215,7 +215,7 @@ wa  :< topic.
 shika  :< topic.
 dake :< topic.
 nanka  :< postp-case.
-e  :< postp-case.
+he  :< postp-case.
 sonota  :< postp-case.
 tomo  :< postp-case.
 nado  :< nontop.
@@ -255,15 +255,16 @@ modified :<  modify.
 ;word :< word-status.
 ;stem :< word-status.
 
+; (FCB 2005-05-05) Not used any more?
 
-vref :< sort.
-he :< vref.
-sp :< vref.
-sp_he :< vref.
-top :< vref.
-third :< vref.
-thirdpl :< third.
-firstpl :< sp.
+;vref :< sort.
+;he :< vref.
+;sp :< vref.
+;sp_he :< vref.
+;top :< vref.
+;third :< vref.
+;thirdpl :< third.
+;firstpl :< sp.
 
 vtype :< sort.
 std-or-demon :< vtype.
@@ -415,10 +416,10 @@ nucl_minus := nucl_bool.
 ; be able to state where zpros can be inserted.
 
 aux :< sort.
-aux_plus :< aux.
-aux_minus_or_complex :< aux.
-aux_minus :< aux_minus_or_complex.
-aspect_aux :< aux_plus.
+aux_plus := aux.
+aux_minus_or_complex := aux.
+aux_minus := aux_minus_or_complex.
+aspect_aux := aux_plus.
 complex_aux := aux_plus & aux_minus_or_complex.
 
 

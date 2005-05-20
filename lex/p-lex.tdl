@@ -1,4 +1,4 @@
-;; -*- Mode: TDL; Package: DISCO -*-
+;; -*- Mode: TDL; Coding: euc-jp  -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -461,7 +461,7 @@ comma-advp := adv-p-lex-np &
               ORTH <! "กข" !>].
 
 ; (not FCB 2003-08-13)  Evil hack
-; FIXME: fix the inpout text
+; FIXME: fix the input text
 comma-no-nmod-1 := nounmod-p-lex &
            [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
 			       VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]],
@@ -588,7 +588,7 @@ dewa-advarg := topic-advarg-lex &
 
 
 e-main := postp-lex &
-	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE e,
+	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE he,
                                           MOD < [LOCAL.CAT.HEAD.MAIN-PRD +] >],
                                  CONT.RELS <! [PRED '_e_p_rel] !>],
                     ORTH <! "คุ" !>].
@@ -602,7 +602,7 @@ equal-topic  := topic-nobj-lex &
 
 ;"watakushi no keNkyuushitsu  no hou e moushiwake gozaimaseN ga."
 e-sub := postp-lex &
-	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE e,
+	          [SYNSEM.LOCAL [CAT.HEAD [PTYPE he,
                                            MOD < [LOCAL.CAT.HEAD.MAIN-PRD -] >],
                                  CONT.RELS <! [PRED '_e_p_rel] !>],
                     ORTH <! "คุ" !>].
