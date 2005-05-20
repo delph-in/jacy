@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO; Coding: euc-jp  -*-
+;;; -*- Mode: TDL; Coding: euc-jp  -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -8,11 +8,11 @@
 ;;; last update: %G% --- %U%
 ;;;  updated by: 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; author            | date        | modification
-;;; ------------------|-------------|------------------------------------------
-;;;Melanie Siegel (MS)|             |Emily Bender (ERB), Sanae Fujita (SF), 
-;;;                   |             |Takaaki Tanaka (TT), Chikara Hashimoto (CH),
-;;;                   |             |Francis Bond (FCB)
+;;; author            | date     | modification
+;;; ------------------|----------|---------------------------------------------
+;;;Melanie Siegel (MS)|          |Emily Bender (ERB), Sanae Fujita (SF), 
+;;;                   |          |Takaaki Tanaka (TT), Chikara Hashimoto (CH),
+;;;                   |          |Francis Bond (FCB), Takyuki Kuribayashi (TK)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1994,9 +1994,8 @@ arayuru_1 := noun_mod-lex-l &
 ;(CH 2003-08-08) 連体の「ある」はなかったので追加
 ; (MS 2003-12-22) LEX + against spurious ambiguity.
 
-aru_13 := noun_mod-lex-l &
-[SYNSEM [LKEYS.KEYREL.PRED '_aru_nmod_11_rel,
-	 LOCAL.CAT.HEAD.MOD.FIRST.LEX +],
+aru_det := det-lex  &
+[SYNSEM.LKEYS.KEYREL.PRED '_aru_det_rel,
  ORTH <! "ある" !> ].
 
 ; いかなる 
@@ -2159,9 +2158,10 @@ yokuyoku_1_2 := noun_mod-lex-l &
 ; Used 28 times
 ;(CH 2003-08-08) JACYではordinary-nohon-n-lexとして既に
 ; 名詞に接続可能なのでいい？
-;<IJ> moto_1_1 := noun_mod-lex-l &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_moto_11_rel,
-;<IJ>  ORTH <! "元" !> ].
+;;(TK 05-03-01 noun_mod-lex-l復活 ordinary-nohon-n-lexとは区別が必要)
+moto_1_1 := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_moto_11_rel,
+ ORTH <! "元" !> ].
 
 ;<IJ> ; 本 
 ;<IJ> ; JACY 本: hon (ordinary-nohon-n-lex) moto-2 (ordinary-nohon-n-lex) hon_numcl (num-cl-mod-lex)
@@ -2169,9 +2169,10 @@ yokuyoku_1_2 := noun_mod-lex-l &
 
 ;(CH 2003-08-08) JACYではordinary-nohon-n-lexとして既に
 ; 名詞に接続可能なのでいい？
-;<IJ> hon_1 := noun_mod-lex-l &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hon_nmod_1_rel,
-;<IJ>  ORTH <! "本" !> ].
+;;(TK 05-03-01 noun_mod-lex-l復活 ordinary-nohon-n-lexとは区別が必要)
+hon_1 := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_hon_nmod_1_rel,
+ ORTH <! "本" !> ].
 
 
 kano_1 := noun_mod-lex-l &
@@ -2195,3 +2196,4 @@ ORTH <! "だけ" !> ].
 bakari-ppmod := pp_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_bakari_ppmod_rel,
 ORTH <! "ばかり" !> ].
+
