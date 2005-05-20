@@ -13,6 +13,7 @@
 ;;;    Melanie Siegel |    2003     |Atsuko Shimada,  
 ;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF), 
 ;;;                   |             |Takaaki Tanaka (TT), Francis Bond (FCB)
+;;;                   |             |Takayuki Kuribayashi (TK)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -4133,7 +4134,19 @@ lennon-chasen-surname :=
         [SYNSEM.LKEYS.KEYREL.CARG 'lennon,
          ORTH <! "伊","用","件" !>].
 
-naomi :=
-first_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'naomi,
-ORTH <! "ぼ踝��" !>].
+
+;;(TK:TakaYUki Kuribayashi 05-03-02)
+
+;綵
+
+sakura-firstname := first_name-lex & 
+	[SYNSEM.LKEYS.KEYREL.CARG 'sakura,
+          ORTH <! "綵" !>].
+
+francis-firstname := first_name-lex & 
+	[SYNSEM.LKEYS.KEYREL.CARG 'francis,
+          ORTH <! "白仿件扑旦" !>].
+
+bond-surname :=  surname-lex & 
+        [SYNSEM.LKEYS.KEYREL.CARG 'bond,
+         ORTH <! "示件玉" !>].

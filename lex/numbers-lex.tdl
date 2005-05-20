@@ -243,7 +243,8 @@ ban_numcl := num-cl-spr-only-ind-nmod-lex &
 [ ORTH <! "番" !>,
   SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
-jou-numcl := num-cl-spr-only-ind-nmod-lex &
+;;(TK 05-02-24 changed to "juu")
+juu-numcl := num-cl-spr-only-ind-nmod-lex &
 [ ORTH <! "重" !>,
   SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
@@ -423,9 +424,10 @@ kouza_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "口座" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_kouza_numcl_rel].
 
-genzai_numcl := num-cl-spr-only-meas-lex &
-[ ORTH <! "現在" !>,
-  SYNSEM.LKEYS.KEYREL.PRED '_genzai_numcl_rel].
+;;(TK 05-03-01 commentout)
+;genzai_numcl := num-cl-spr-only-meas-lex &
+;[ ORTH <! "現在" !>,
+;  SYNSEM.LKEYS.KEYREL.PRED '_genzai_numcl_rel].
 
 ; (ERB 2001-12-05) Things that optionally take 半.
 
