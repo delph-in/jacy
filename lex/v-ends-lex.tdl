@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -10,9 +10,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
-;;;    Melanie Siegel |    2003     |Francis Bond (FCB), 
-;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF), 
-;;;                   |             | Takaaki Tanaka (TT)
+;;;    Melanie Siegel |    2003     |Emily Bender (ERB), Sanae Fujita (SF), 
+;;;                   |             |Francis Bond (FCB), Takaaki Tanaka (TT)
+;;;                   |             |Chikara Hashimoto (CH)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -110,10 +110,15 @@ te-end := v-te-end-lex &
 	    SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
             LMORPH-BIND-TYPE t-morph].
 
+de-end := v-te-end-lex &
+           [ORTH <! "で" !>,
+	    SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
+                 LMORPH-BIND-TYPE nd-morph].
+
 ; (MS 2002-05-08) The comma seems to work similar to the TE ending in the conjunctive domain.
 ; (MS & FCB 2003-10-29) extended that to i-or-t-morph to cope for: 
 ; 走り 、 寝る as well as,  美しく 、 良い
-; At present JACY doesn'_t accept either of these without the comma
+; At present JACY doesn't accept either of these without the comma
 ; maybe it should, although that would greatly increase ambiguity
 
 comma-te-end := comma-coord-end-lex &
@@ -121,13 +126,18 @@ comma-te-end := comma-coord-end-lex &
 	    LMORPH-BIND-TYPE i-or-t-morph].
 
 
-; (ERB 2001-11-12) Experimenting with making te form TENSE tensed
-; instead of TENSE te.
+;(CH 2005-03-10)
+; solution to parse 「ボールを進んで打つ」「ボールを続けて打つ」.
+; I'm not sure if this is correct...
+te-adjunct := te-adjunct-lex &
+             [SYNSEM.LKEYS.KEYREL.PRED '_te_adjunct_rel,
+	      LMORPH-BIND-TYPE t-morph,
+              ORTH <! "て" !>].
 
-de-end := v-te-end-lex &
-           [ORTH <! "で" !>,
-	    SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
-                  LMORPH-BIND-TYPE nd-morph].
+de-adjunct := te-adjunct-lex &
+             [SYNSEM.LKEYS.KEYREL.PRED '_te_adjunct_rel,
+	      LMORPH-BIND-TYPE nd-morph,
+              ORTH <! "で" !>].
 
 
 ;finite-present-polite-negative
