@@ -1287,17 +1287,38 @@ ga-ni_transitive := sbj-obj-arg &
 
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
 
-adv_transitive := sbj-obj-arg &
+naru_adv_transitive := sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
 		     COMPS obl-1-arg &
 			   < [LOCAL.CAT.HEAD adv_head] >].
 
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
+; (FCB 2005-03-22) removed this as we now treat the ni-or-to as optional
 
-naru_transitive :=  sbj-obj-arg &
+; naru_noun_transitive :=  sbj-obj-arg &
+;                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+;                           COMPS obl-1-arg &
+; 			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] > ].
+
+; (FCB and CH 2005-034-12) for complement suru 
+; (do-parse-tty "彼 が 鈍 を 銀 に し た") "he made lead into silver"
+; FIXME now also parses  (do-parse-tty "彼 が 鈍 を とても し た") 
+; need to distinguish 綺麗に/美しく from real adverbs
+suru_noun_ditransitive :=  sbj-obj-obj2-arg &
                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
-                          COMPS obl-1-arg &
-			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] > ].
+		     COMPS
+			  < [OPT + ,
+			     LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]], 
+			    [OPT -,
+			     LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
+
+suru_adv_ditransitive :=  sbj-obj-obj2-arg &
+                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+		     COMPS
+			  < [OPT + ,
+			     LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]], 
+			    [OPT -,
+			     LOCAL.CAT.HEAD adv_head] >].
 
 
 ga-to_transitive1 := sbj-obj-arg &
@@ -1448,20 +1469,23 @@ light-aux_transitive  :=  j-valence &
 ; (MS 2004-07-09) FORMAL.AHON - restriction on the SPR, to rule out "mashite"
 ; (MS 2004-11-05) AUX aux_minus on the specifier might be too strong: 読んでもらっている
 ; (MS 2004-11-17) This is valid for pure-aspect.
-
+; (CH 2005-03-18)
+; added [SPR.FIRST.LOCAL.CAT.HEAD.MOD null] to disallow te-adjunct
+; in the SPR.
+; 「で」 in 「読んでいる」 should be te-end-lex rather than te-adjunct.
 pure-aspect_transitive :=  j-valence & 
-                      [SPR obl-1-arg &
-			   < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
-							     COP -,
-							     VN -,
-							     AUX aux_minus_or_complex,
-							     FORMAL.AHON -],
-					  VAL  [SUBJ  #sbj,
-						COMPS #obj]],
-				     NUCL nucl_plus]] >,
-		       SUBJ #sbj,
-		       COMPS #obj].
-
+ [SPR obl-1-arg &
+      < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
+					COP -,
+					MOD null,
+					VN -,
+					AUX aux_minus_or_complex,
+					FORMAL.AHON -],
+		     VAL  [SUBJ  #sbj,
+			   COMPS #obj]],
+		NUCL nucl_plus]] >,
+  SUBJ #sbj,
+  COMPS #obj].
 
 ; (MS 2004-11-17) In aspect_transitive, we need to link the ARG2 of the verb to the ARG1 of
 ; the aspect aux.
@@ -2208,6 +2232,7 @@ sap-lex  := p-lex-c &
 ; (I don't want it to trigger for coord) 食べて、笑った。
 ; (FCB 2005-01-30) Add EMPTY - restriction on main verb.  
 ; Otherwise there is a lot of ambiguity with fragments
+; (FCB 2005-04-12) FIXME - can we put the EMPTY - restriction on the complement back?
 
 s-conj-lex := sap-lex &
               [SYNSEM [LOCAL [CAT [HEAD s-conj_head &
@@ -2802,10 +2827,13 @@ product-name-lex := name-lex &
 ; lexical_sign-word.  nom-lex inherits from this supertype.
 ; Non-nominalizer subtypes of nom-lex will also get 
 ; lexical_sign-word.
+; (FCB 2005-04-11) Added  SYNSEM.LOCAL.CAT.HEAD.MOD null, to stop 
+; interjections popping up all over the place in (do-parse-tty "この こと が 起きる")
 
 nom-lex := n-lex-super & 
-           [SYNSEM [LOCAL [CAT [HEAD nom_head-avm,
-                                VAL.SPR #spr],
+           [SYNSEM [LOCAL [CAT [HEAD nom_head-avm & 
+				     [MOD null],
+				VAL.SPR #spr],
                             CTXT.BACKGROUND <! !>,
 			   ARG-S #spr,
                           BAR +],
@@ -3100,10 +3128,12 @@ noun-mod-ind-num-cl-lex := individuating-num-cl-lex &
 
 ; (FCB 2005-02-10) Adverbial numeral classifiers
 ; this is a supertype for event and floating classifiers
+;;; (FCB 2005-01-28) added J-POSTHEAD left so they only modify following verbs
 
 adv-num-cl-lex := numeral-classifier &
 [ SYNSEM.LOCAL [CAT [HEAD num-cl-adv_head &
-			  [MOD < [ LOCAL.CONT.HOOK [LTOP #top,
+			  [J-POSTHEAD left,
+			   MOD < [ LOCAL.CONT.HOOK [LTOP #top,
 						    INDEX #ind]] >],
 		     VAL [COMPS < >,
 			  SUBJ < >]],
@@ -3131,11 +3161,10 @@ floated-ind-obj-num-cl-lex := floated-num-cl-lex &
 
 ; (FCB 2005-01-17) Added event classifiers
 ; 回、遍、度  not sure about 発, 拳 etc
-;;; (FCB 2005-01-28) added J-POSTHEAD left so they only modify following verbs
+
 
 event-num-cl-lex := adv-num-cl-lex & 
-[ SYNSEM.LOCAL [CAT [HEAD num-cl-event_head &
-			  [J-POSTHEAD left],
+[ SYNSEM.LOCAL [CAT [HEAD num-cl-event_head,
 		     VAL [SPR.FIRST.LOCAL.CONT.HOOK [LTOP #top,
 						     XARG #ind]]],
 		CONT [HOOK [LTOP #top,
@@ -3482,8 +3511,9 @@ pp_mod-lex-r := pp_mod-lex &
 
 
 
-;(MS 2001-10-23) this shall be for ookina, chiisana
-
+; (MS 2001-10-23) this shall be for ookina, chiisana
+; (FCB 2005-04-09) linked LBL so that it scopes
+; should really reify some of this out with i-adj and na-adj I suppose
 pred-adj-lex := lexical_sign-word &
             [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
                                       [MOD < [LOCAL intersective_mod & [CAT [HEAD ordinary_noun_head,
@@ -3505,9 +3535,14 @@ pred-adj-lex := lexical_sign-word &
                                       [SUBJ #sbj & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind]]],
 			    ARG-S #sbj,
                             CONT [RELS <! #key !>,
-				  HOOK.XARG #sbjind,
+				  HOOK [XARG #sbjind,
+					INDEX #ind,
+					LTOP #top],
                                   HCONS <! !>]],
-		     LKEYS.KEYREL #key & [ARG1 #sbjind],
+		     LKEYS.KEYREL #key & 
+			   [LBL #top,
+			    ARG0 #ind,
+			    ARG1 #sbjind],
                      NON-LOCAL [QUE <! !>,
                              AFFIX <! !>]], 
              INFLECTED +].
@@ -3533,12 +3568,15 @@ hon-prefix-lex := lexical_sign-affix &
 ; semantically, all of these guys should have empty WLINK values.
 
 ; (MS 2003-08-22) Added scopal_mod information just to avoid spurious ambiguity.
+; (FCB 2005-04-12) To get the MRS to scope link LTOP.
 
 comma-lex := lexical_sign &
              [SYNSEM [LOCAL [CAT [VAL saturated,
-				  HEAD.MOD < [LOCAL scopal_mod] >],
+				  HEAD.MOD < [LOCAL scopal_mod &
+						    [CONT.HOOK.LTOP #ltop]] >],
 			     ARG-S < >,
-                             CONT[ RELS <! !>,
+                             CONT[ HOOK.LTOP #ltop,
+                                   RELS <! !>,
                                    HCONS <! !> ],
                              CTXT.BACKGROUND <! !>],
                       NON-LOCAL [QUE <! !>,
@@ -4065,6 +4103,7 @@ wh-word-honsubj-lex := wh-word-person-lex &
 ; (FCB 2004-01-07) Fixed problem with koto HOOK by coindexing INDEX with ARG0
 ; (MS 2004-12-17) But it should not take an empty copula.
 ; (MS 2005-01-26) BAR + on the SPR is not right, VNs for nom-pred-vn-lex are not BAR +
+; (FCB 2005-03-01) but we need BAR+ on the SPR for nom-pred-lex
 
 nom-pred-lex-basic := nom-lex & 
        [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST [LOCAL [CONT.HOOK.LTOP #verb-hand,
@@ -4095,9 +4134,11 @@ nom-pred-lex-basic := nom-lex &
                                     LARG #verb-hand] !> ]],
 		LKEYS.KEYREL.PRED #k-pred]].
 
-nom-pred-lex := nom-pred-lex-basic & [SYNSEM.LOCAL.CAT [HEAD.MOD null,
-							VAL nom_sc & [SPR.FIRST.LOCAL.CAT.VAL saturated]]].
-
+; (FCB 2005-03-01) added BAR+ on the SPR for nom-pred-lex
+; removes spurious ambiguity for e.g., (do-parse-tty "見積もる こと")
+nom-pred-lex := nom-pred-lex-basic & 
+ [SYNSEM.LOCAL.CAT [VAL nom_sc & [SPR.FIRST.LOCAL[ CAT.VAL saturated,
+						   BAR +]]]].
 
 nom-pred-vn-lex := nom-pred-lex &
 		   [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD vn_head].
@@ -4161,6 +4202,9 @@ nom-exceptional-common-lex := nom-common-lex &
 
 ; (MS 2003-01-15) The co-indexing of the SPRs handel with the LTOP handel leads to not scoping MRSs. Took that out.
 ; (MS 2003-12-17) Adapting to Matrix Ver. 0.6: unspec_rel is now unspec-compound-relation
+
+; (FCB 2005-04-11) Added  SYNSEM.LOCAL.CAT.HEAD.MOD null, to stop 
+; interjections popping up all over the place in (do-parse-tty "これ の こと が 起きる")
 
 nom-dummy-lex := nom-lex & lexical_sign-word &
        [SYNSEM [LOCAL [CAT [VAL nom_sc & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
@@ -5067,6 +5111,9 @@ v-end-lex := lexical_sign-affix &
 ; (MS 2004-12-03) The PRED value should be copied into the relation for indexing.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
+; (FCB 2005-04-09) in order to allow a handle as ARG1
+; change na-adj-sem-type-basic to pred-sem-type, relation type to arg1-relation
+
 na-end-lex := lexical_sign-word &
               [J-NEEDS-AFFIX -,
 	       SYNSEM j-synsem &
@@ -5080,17 +5127,17 @@ na-end-lex := lexical_sign-word &
 							    CONT [HOOK [XARG #xarg,
 									LTOP #adjhand]]],
 						     LEX +]]]],
-			      CONT na-adj-sem-type-basic &
+			      CONT pred-sem-type &
 				  [HOOK [LTOP #hand,
 					  INDEX #event,
 					  XARG #xarg],
-				   RELS <! [PRED #pred] !>,
+				   RELS <! #key !>,
 				   HCONS <! qeq & [HARG #arghd, LARG #adjhand] !>]],
-		       LKEYS.KEYREL [PRED #pred,
-				     ARG1 #arghd,
-				     LBL #hand,
-				     ARG0 #event],
-                       NON-LOCAL [QUE <! !>,
+		       LKEYS.KEYREL #key & arg1-relation &
+			     [ARG0 #event,
+			      ARG1 handle & #arghd ,
+			      LBL #hand],
+		       NON-LOCAL [QUE <! !>,
                                AFFIX <! !>]],
 	       INFLECTED +,
 	       LMORPH-BIND-TYPE i-or-shortadj-morph].
@@ -5310,6 +5357,37 @@ v-tense-end-lex := v-tense-end-lex-super &
 ; (MS 2004-04-02) changed C-MOD verb_head to sentence-valid, to allow also excl's in the sentence coordination.
 ; (MS 2004-07-09) took AHON - out, to account for まして. Instead, co-indexed AHON of the C-MOD
 ; with AHON of the HEAD to allow S-mashite...masu and S-te...ta, but not S-mashite...ta.
+
+
+
+;(CH 2005-03-10)
+; ad hoc solution to parse 「太郎がボールを進んで打つ」「太郎がボールを続けて打つ」.
+; I'm not sure if this is correct...
+; I intended to make this somewhat parallel to intersective adverbs like 素早く.
+; Ideally the subject of 打つ should control that of 進む or 続ける.
+; But adjuncts like 進んで or 続けて cannot be gapped in JACY, and thus the subject of 進む
+; or 続ける should be a zero pronoun. However, zpro_ref-ind and full_ref-ind (太郎) are incompatible.
+; Therefore, the control relation would not be easy to develop unless we introduce an additional
+; head-adjunct-rule-type.
+; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD utt-valid] prevents this from modifying utterance.
+; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.COP -] prevents this from modifying copula verbs
+; including those that are derived from NP via empty-cop-rule.
+te-adjunct-lex := v-tense-end-lex &
+ [J-NEEDS-AFFIX -,
+  SYNSEM [LOCAL [CAT [HEAD [FIN -,
+			    MARK null,
+			    COP-ARG -,
+			    C-MOD null,
+			    MOD <[LOCAL intersective_mod &
+					[CAT.HEAD utt-valid & [COP -],
+					 CONT.HOOK [LTOP #handel,
+						    INDEX #ind]]]>,
+			    J-POSTHEAD left]],
+		 CONT [HOOK [INDEX #ind & [E.MOOD indicative]]]],
+	  LKEYS.KEYREL [ARG0 #ind,
+			LBL #handel],
+	  NON-LOCAL.QUE <! !>]].
+
 
 te-end-lex-basic := v-tense-end-lex &
 	      [J-NEEDS-AFFIX -,
@@ -6136,7 +6214,7 @@ v2adv-end-lex := lexical_sign-word &
 					       AFFIX <! !>]],
                       INFLECTED +].     
 
-
+;(CH 2005-04-09) added [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.BAR -].
 v2n-end-lex :=  nom-lex &
 		[SYNSEM [LKEYS.KEYREL #key & [ARG0 #i],
 			 LOCAL [CAT.VAL nom_sc & [SPR.FIRST [LOCAL [CAT [HEAD verb_head &
@@ -6146,6 +6224,7 @@ v2n-end-lex :=  nom-lex &
 									       VN -,
 									       MAIN-PRD -],
 									 VAL saturated],
+								    BAR -,
 								    CONT.HOOK.LTOP #v-hd,
 								    NUCL nucl_plus]]],
 				CONT nom-pred-sem-type &
@@ -6555,35 +6634,47 @@ v2-infinitive-minusshon-stem-lex := v2-minusshon-stem-lex & [STEMTYPE infinitive
 
 ; (MS 2004-12-20) Just identify the COMPS...LTOP with the KEYREL...LBL, not go via COMPS..MOD..LTOP.
 ; 元気になる
+; (FCB and CH 2005-03-12) super type for subject-complement verbs v2a and v2b
+; (and Dan and all) added a proposition, cleaned up the MRS
+v-sc-stem-lex := v-stem-lex &
+		 [SYNSEM [LOCAL [CAT [HEAD.COP -,
+				      VAL.SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
+				 CONT [HOOK [XARG #sbjind,
+					     INDEX event],
+				       RELS.LIST < #key,
+						   message &
+						   [PRED proposition_m_rel,
+						    LBL #phand,
+						    MARG #soa ], ... >,
+				       HCONS  <! qeq & [HARG #soa] !> ]],
+			  LKEYS.KEYREL arg1-relation & #key &
+				[ARG1 #phand],
+			  NON-LOCAL.QUE <! !>]].
 
-v2a-stem-lex := v-stem-lex &
-                [SYNSEM [LOCAL [CAT [HEAD.COP -,
-                                     VAL adv_transitive &
-					      [COMPS.FIRST.LOCAL [CONT [HOOK [INDEX #objind,
-									      LTOP #hand]]],
-				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
-				
-				CONT [HOOK [XARG #sbjind,
-					    INDEX event],
-				      RELS <!  #key & [LBL #hand],
-					      [PRED 'cop_id_rel,
-					       ARG0 #ind & event,
-					       ARG1 #sbjind,
-					       ARG2 #objind,
-					       LBL #hand] !>,
-				      HCONS  <! !> ]],
-			 LKEYS.KEYREL arg12-relation & #key &
-                                     [ARG1 #sbjind,
-                                      ARG2 #ind],
-			 NON-LOCAL.QUE <! !>]].
+v-sc-n-stem-lex := v-sc-stem-lex &
+ [SYNSEM [LOCAL [CAT [VAL ga-to-ni_transitive &
+			  [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
+			   COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #compind]],
+		 CONT [RELS <! relation, relation,
+			     [PRED 'cop_id_rel,
+			      ARG1 #sbjind,
+			      ARG2 #compind,
+			      LBL #chand] !>,
+		       HCONS  <! [LARG #chand] !> ]]]].
+
+v-sc-a-stem-lex := v-sc-stem-lex &
+ [SYNSEM.LOCAL [CAT [VAL naru_adv_transitive &
+			 [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
+			  COMPS.FIRST.LOCAL.CONT.HOOK [XARG #sbjind,
+						       LTOP #chand]]],
+		CONT [RELS <! relation, relation !>,
+		      HCONS  <! [LARG #chand] !> ]]].
 
 
-
-
-v2a-nohon-stem-lex := v2a-stem-lex &
+v2a-nohon-stem-lex := v-sc-a-stem-lex &
                      [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
 
-v2a-shon-stem-lex  := v2a-stem-lex &
+v2a-shon-stem-lex  := v-sc-a-stem-lex &
                      [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                                          VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                                                 CONT.HOOK.INDEX #2]],
@@ -6593,7 +6684,7 @@ v2a-shon-stem-lex  := v2a-stem-lex &
                                                        BEARER #3,
                                                        POLARITY +] !>]]].
 
-v2a-minusshon-stem-lex  := v2a-stem-lex &
+v2a-minusshon-stem-lex  := v-sc-a-stem-lex &
                      [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
                                          VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
                                                                 CONT.HOOK.INDEX #2]],
@@ -6618,33 +6709,10 @@ v2a-v-minusshon-stem-lex := v2a-minusshon-stem-lex & [STEMTYPE v-stem].
 
 ; (MS 2004-03-22) added to parse 男になる with a copula semantics embedded.
 
- v2b-stem-lex := v-stem-lex &
-                [SYNSEM [LOCAL [CAT [HEAD.COP -,
-                                     VAL naru_transitive &
-                                      [COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind,
-				       SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind]],
-				
-				CONT [HOOK [XARG #sbjind,
-					    INDEX event],
-				      RELS <!  #key & [LBL #hand],
-					      [PRED 'cop_id_rel,
-					       ARG0 #ind & event,
-					       ARG1 #sbjind,
-					       ARG2 #objind,
-					       LBL #hand] !>,
-				      HCONS  <! !> ]],
-			 LKEYS.KEYREL arg12-relation & #key &
-                                     [ARG1 #sbjind,
-                                      ARG2 #ind],
-			 NON-LOCAL.QUE <! !>]].
-
-
-
-
-v2b-nohon-stem-lex := v2b-stem-lex &
+v2b-nohon-stem-lex := v-sc-n-stem-lex &
                      [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
 
-v2b-shon-stem-lex  := v2b-stem-lex &
+v2b-shon-stem-lex  := v-sc-n-stem-lex &
                      [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                                          VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                                                 CONT.HOOK.INDEX #2]],
@@ -6654,7 +6722,7 @@ v2b-shon-stem-lex  := v2b-stem-lex &
                                                        BEARER #3,
                                                        POLARITY +] !>]]].
 
-v2b-minusshon-stem-lex  := v2b-stem-lex &
+v2b-minusshon-stem-lex  := v-sc-n-stem-lex &
                      [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
                                          VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
                                                                 CONT.HOOK.INDEX #2]],
@@ -6664,20 +6732,90 @@ v2b-minusshon-stem-lex  := v2b-stem-lex &
                                                        BEARER #3,
                                                        POLARITY -] !>]]].
 
+; (FCB and CH 2005-03-12) This can only be 成る (c-stem)
 
-
-v2b-c2-stem-lex := v2b-nohon-stem-lex & [STEMTYPE c2-stem].
 v2b-c-stem-lex := v2b-nohon-stem-lex & [STEMTYPE c-stem].
-v2b-v-stem-lex := v2b-nohon-stem-lex & [STEMTYPE v-stem].
 
-v2b-c2-shon-stem-lex := v2b-shon-stem-lex & [STEMTYPE c2-stem].
 v2b-c-shon-stem-lex := v2b-shon-stem-lex & [STEMTYPE c-stem].
-v2b-v-shon-stem-lex := v2b-shon-stem-lex & [STEMTYPE v-stem].
 
-v2b-c2-minusshon-stem-lex := v2b-minusshon-stem-lex & [STEMTYPE c2-stem].
-v2b-c-minusshon-stem-lex := v2b-minusshon-stem-lex & [STEMTYPE c-stem].
-v2b-v-minusshon-stem-lex := v2b-minusshon-stem-lex & [STEMTYPE v-stem].
-              
+
+; (FCB and CH 2005-03-12) for complement suru 
+; (do-parse-tty "彼 が 銀 を 金 に し た") "he made lead into silver"
+; (FCB 2005-03-22) added in proposition (like v-sc-stem-lex)
+; FIXME: could still reify a bit with v-sc-stem-lex
+; FIXME: should maybe not be PRED 'cop_id_rel, but something similar
+
+v-soc-stem-lex := v-stem-lex &
+ [SYNSEM [LOCAL [CAT [HEAD.COP -,
+		      VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+		 CONT [HOOK [XARG #sbjind,
+			     INDEX event],
+		       RELS.LIST <  #key,
+			       message & 
+			       [PRED proposition_m_rel,
+				LBL #phand,
+				MARG #soa ], ...  >,
+		       HCONS  <! qeq & [HARG #soa] !> ]],
+	  LKEYS.KEYREL arg12-relation & #key &
+		[ARG1 #sbjind,
+		 ARG2 #phand],
+	  NON-LOCAL.QUE <! !>]].
+
+v-soc-adv-stem-lex := v-soc-stem-lex &
+ [SYNSEM.LOCAL [CAT.VAL suru_adv_ditransitive &
+			[COMPS < [LOCAL.CONT.HOOK.INDEX #objind],
+				 [LOCAL.CONT.HOOK [XARG  #objind,
+						   LTOP  #chand]] >] ,
+		CONT [RELS <! relation, relation !>,
+		      HCONS  <! [LARG #chand] !> ]]].
+
+v-soc-noun-stem-lex := v-soc-stem-lex &
+ [SYNSEM.LOCAL [CAT.VAL suru_noun_ditransitive &
+			[COMPS < [LOCAL.CONT.HOOK.INDEX #objind],
+				 [LOCAL.CONT.HOOK.INDEX #compind] >],
+		CONT [RELS <! relation, relation,
+			    [PRED 'cop_id_rel,
+			     ARG1 #objind,
+			     ARG2 #compind,
+			     LBL #chand] !>,
+		      HCONS  <! [LARG #chand] !>]]].
+
+;; plus honorification SCO-noun
+v-soc-noun-nohon-stem-lex := v-soc-noun-stem-lex &
+                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+v-soc-noun-shon-stem-lex  := v-soc-noun-stem-lex &
+                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                                                CONT.HOOK.INDEX #2]],
+                                    CONT.HOOK.INDEX #3,
+                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                                      [HONORED #2,
+                                                       BEARER #3,
+                                                       POLARITY +] !>]]].
+;; plus honorification SCO-adv
+v-soc-adv-nohon-stem-lex := v-soc-adv-stem-lex &
+                     [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+v-soc-adv-shon-stem-lex  := v-soc-adv-stem-lex &
+                     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                                         VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                                                CONT.HOOK.INDEX #2]],
+                                    CONT.HOOK.INDEX #3,
+                                    CTXT subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                                      [HONORED #2,
+                                                       BEARER #3,
+                                                       POLARITY +] !>]]].
+; (FCB and CH 2005-03-12) This can be する なさる (c-stem)
+
+;する
+v-soc-noun-kurusuru-stem-lex := v-soc-noun-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+v-soc-adv-kurusuru-stem-lex := v-soc-adv-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+
+;なさる
+v-soc-noun-c2-shon-stem-lex := v-soc-noun-shon-stem-lex & [STEMTYPE c2-stem].
+v-soc-adv-c2-shon-stem-lex := v-soc-adv-shon-stem-lex & [STEMTYPE c2-stem].
+            
 
 v5-stem-lex := v-sbj-comps-stem-lex &
                [SYNSEM [LOCAL [CAT [HEAD.COP -,
@@ -7685,19 +7823,23 @@ aspect-shon-kurusuru-stem-lex := aspect-shon-stem-lex & [STEMTYPE kurusuru-stem]
 ; (MS 2005-01-11) The XARG should be identified with the verb, otherwise
 ; we get a reading where the aspect verb undergoes zero pronominalization,
 ; while the main verb doesn't (友達を三人待っています)
+; (FCB 2005-05-06) added restriction: SPR.FIRST.LOCAL.CAT.HEAD v-end_head 
+; to stop overgeneration (勉強 し いる)
+
 
 pure-aspect-stem-lex := verb-stem-lex &
-[SYNSEM [ LOCAL [CAT [ HEAD aux-stem_head & 
-                            [ H-TENSE #tense,
-			      AUX aspect_aux],
-                       VAL pure-aspect_transitive &
-                            [SUBJ.FIRST #sbj,
-			     SPR.FIRST.LOCAL [ CONT.HOOK [ LTOP #ohand,
-							   INDEX #event & [SORT #sort,
-									   E.MOOD #mood],
-							   XARG #xarg]]]],
-                 CONT [RELS <! !>,
-                       HOOK [INDEX [ E [TENSE #tense,
+ [SYNSEM [ LOCAL [CAT [ HEAD aux-stem_head & 
+			     [ H-TENSE #tense,
+			       AUX aspect_aux],
+			VAL pure-aspect_transitive &
+			     [SUBJ.FIRST #sbj,
+			      SPR.FIRST.LOCAL [ CAT.HEAD v-end_head,
+						CONT.HOOK [ LTOP #ohand,
+							    INDEX #event & [SORT #sort,
+									    E.MOOD #mood],
+							    XARG #xarg]]]],
+		  CONT [RELS <! !>,
+			HOOK [INDEX [ E [TENSE #tense,
 					MOOD #mood],
 				     SORT #sort],
 			     XARG #xarg,
@@ -8282,17 +8424,228 @@ quasi-light-nohon-c-stem-lex := quasi-light-nohon-stem-lex & [STEMTYPE c-stem].
 lexeme :< lexical_sign.
 
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;  VP embedding Syntactic V-Vs
+;;
+;; (cf. syntactic-vv-stem_head in lex-types.tdl
+;;      syn-vv-vp-stem_head in lex-types.tdl
+;;      syntactic-vv-vp-stem-lex in lex-types.tdl
+;;      syn-vv-raising-stem-lex in lex-types.tdl
+;;      syn-vv-raising-{v/c/c2/kurusuru}-stem-lex in lex-types.tdl
+;;      syn-vv-control-stem-lex in lex-types.tdl
+;;      syn-vv-control-{v/c/c2/kurusuru}-stem-lex in lex-types.tdl
+;;      infinitive-infl-rule-for-syntactic-VV in infl.tdl)
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(CH 2005-04-09)
+; v-stem_head と同じ
+; 統語的複合動詞の V2 のためのタイプ
+syntactic-vv-stem_head  := other-verb-stem_head &
+			   [AUX aux_minus,
+			    LIGHT -,
+			    ADJ -,
+			    COP -].
+
+;(CH 2005-04-09)
+; head for VP embedding V-Vs
+syn-vv-vp-stem_head := syntactic-vv-stem_head &
+		       [MODUS nonpassive].
+
+;(CH 2005-04-09)
+; Raising V-V と Control V-V の上位タイプ
+; restricted the VP's COMPS to be <> (SPR should be a VP),
+; and added the identities between SUBJs and COMPSs.
+; syntactic-vv-vp-stem-lex := verb-stem-lex & lexical_sign-word &
+;  [SYNSEM [LOCAL [CAT [HEAD syn-vv-vp-stem_head & [H-TENSE #tense],
+; 		      VAL aspect_transitive &
+; 			   [SUBJ < #sbj >,
+; 			    COMPS #obj & <>,
+; 			    SPR < [LOCAL [CONT.HOOK.LTOP #ohand,
+; 					  CAT [VAL [SUBJ < #sbj >,
+; 						    COMPS #obj ]]]] > ]],
+; 		 CONT [HOOK.INDEX #event & [E [TENSE #tense]],
+; 		       HCONS <! qeq & [LARG #ohand,
+; 				       HARG #soa] !>,
+; 		       RELS diff-list & <! #key,
+; 					 message &
+; 					 [PRED proposition_m_rel,
+; 					  MARG #soa] !>],
+; 		 ARG-S < #sbj >],
+; 	  LKEYS.KEYREL #key & 
+; 		[ARG0 #event],
+; 	  NON-LOCAL.QUE <! !>,
+; 	  MODIFIED.PERIPH +]].
+
+;(CH 2005-04-09) [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.FIN -]
+;(CH 2005-04-09) [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.BAR +]
+;(CH 2005-04-09) verb-stem_head --> ordinary-verb-stem_head
+syntactic-vv-vp-stem-lex := verb-stem-lex & lexical_sign-word &
+ [SYNSEM [LOCAL [CAT [HEAD syn-vv-vp-stem_head & [H-TENSE #tense],
+		      VAL aspect_transitive &
+			   [SUBJ < #sbj >,
+			    COMPS #obj & <>,
+			    SPR < [LOCAL [CONT.HOOK.LTOP #ohand,
+					  CAT [HEAD ordinary-verb-stem_head & [FIN -],
+					       VAL [SUBJ < #sbj >,
+						    COMPS #obj ]],
+					  BAR +]] > ]],
+		 CONT [HOOK.INDEX #event & [E [TENSE #tense]],
+		       HCONS <! qeq & [LARG #ohand,
+				       HARG #soa] !>,
+		       RELS diff-list & <! #key,
+					 message &
+					 [PRED proposition_m_rel,
+					  MARG #soa] !>],
+		 ARG-S < #sbj >],
+	  LKEYS.KEYREL #key & 
+		[ARG0 #event],
+	  NON-LOCAL.QUE <! !>,
+	  MODIFIED.PERIPH +]].
+
+;(CH 2005-04-09)
+; Raising 版の統語的複合
+syn-vv-raising-stem-lex := syntactic-vv-vp-stem-lex &
+ [SYNSEM [ LOCAL [ CONT.RELS <! #key, [ LBL #chand ] !> ],
+	   LKEYS.KEYREL #key & arg1-relation & [ ARG1 #chand ]]].
+
+syn-vv-raising-v-stem-lex := syn-vv-raising-stem-lex & [STEMTYPE v-stem].
+syn-vv-raising-c-stem-lex := syn-vv-raising-stem-lex & [STEMTYPE c-stem].
+;syn-vv-raising-c2-stem-lex := syn-vv-raising-non-aa-stem-lex & [STEMTYPE c2-stem].
+;syn-vv-raising-kurusuru-stem-lex := syn-vv-raising-non-aa-stem-lex & [STEMTYPE kurusuru-stem].
+
+;(CH 2005-04-09)
+; Control 版の統語的複合
+syn-vv-control-stem-lex := syntactic-vv-vp-stem-lex &
+ [SYNSEM [ LOCAL [ CAT.VAL.SUBJ < [ LOCAL.CONT.HOOK.INDEX #sbjind ] >,
+                   CONT.RELS <! #key, [ LBL #chand ] !> ],
+           LKEYS.KEYREL #key & arg12-relation & 
+                 [ ARG1 #sbjind, ARG2 #chand ]]].
+
+syn-vv-control-v-stem-lex := syn-vv-control-stem-lex & [STEMTYPE v-stem].
+syn-vv-control-c-stem-lex := syn-vv-control-stem-lex & [STEMTYPE c-stem].
+;syn-vv-control-c2-stem-lex := syn-vv-control-stem-lex & [STEMTYPE c2-stem].
+;syn-vv-control-kurusuru-stem-lex := syn-vv-control-stem-lex & [STEMTYPE kurusuru-stem].
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;  V embedding Syntactic V-Vs  ( Kageyama's (1993) V' complement type )
+;;
+;; (cf. syn-vv-vbar-stem_head in lex-types.tdl
+;;      syn-vv-vbar-stem_transitive in lex-types.tdl
+;;      syntactic-vv-vbar-stem-lex in lex-types.tdl
+;;      syntactic-vv-intrans-vbar-stem-lex in lex-types.tdl
+;;      syntactic-vv-monotrans-vbar-stem-lex in lex-types.tdl
+;;      syntactic-vv-ditrans-vbar-stem-lex in lex-types.tdl
+;;      vbar-monotransitivization-lrules in infl.tdl
+;;      vbar-ditransitivization-lrules in infl.tdl)
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(CH 2005-04-09)
+; head for V embedding V-Vs
+syn-vv-vbar-stem_head := syntactic-vv-stem_head.
+
+;(CH 2005-04-09)
+; based on light_transitive
+;(CH 2005-04-09)
+; verb-stem_head --> ordinary-verb-stem_head
+syn-vv-vbar-stem_transitive := j-valence &
+ [SPR  obl-1-arg &
+       < [LOCAL [CAT [HEAD ordinary-verb-stem_head & [MAIN-PRD -],
+		      VAL [SUBJ #sbj,
+			   COMPS #comps]],
+		 BAR +],
+	  LEX +] >,
+  SUBJ #sbj,
+  COMPS #comps].
+
+;(CH 2005-04-09)
+; added [SYNSEM.LOCAL.CONT.HOOK.XARG #sbjind] so that XARG is linked to ARG1.
+syntactic-vv-vbar-stem-lex := verb-stem-lex & lexical_sign-word &
+ [SYNSEM [LOCAL [CAT [HEAD syn-vv-vbar-stem_head & [H-TENSE #tense],
+		      VAL syn-vv-vbar-stem_transitive &
+			   [SUBJ.FIRST #sbj & 
+				       [LOCAL [CAT.HEAD case-p_head &
+							[CASE ni-or-ga],
+					       CONT.HOOK.INDEX #sbjind]],
+			    SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand]],
+		 CONT [HOOK [INDEX #event & [E [TENSE #tense]],
+			     XARG #sbjind],
+		       HCONS <! qeq & [LARG #ohand,
+				       HARG #soa] !>,
+		       RELS diff-list & <! #key, message &
+					 [PRED proposition_m_rel,
+					  MARG #soa] !>],
+		 ARG-S < #sbj >],
+	  LKEYS.KEYREL #key & arg1-relation &
+		[ARG1 #sbjind,
+		 ARG0 #event],
+	  NON-LOCAL.QUE <! !>,
+	  MODIFIED.PERIPH +]].
+
+;(CH 2005-04-09)
+; for an intransitive V1
+syntactic-vv-intrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
+ [SYNSEM [LOCAL [CONT.RELS <! [], [LBL #chand] !>,
+		 CAT.VAL.SPR <[LOCAL.CAT.VAL [COMPS null]]>],
+	  LKEYS.KEYREL arg12-relation &
+		[ARG2 #chand]]].
+
+syn-vv-intrans-vbar-v-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE v-stem].
+syn-vv-intrans-vbar-c-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE c-stem].
+;syn-vv-intrans-vbar-c2-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE c2-stem].
+;syn-vv-intrans-vbar-kurusuru-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
+
+;(CH 2005-04-09)
+; for a monotransitive V1
+syntactic-vv-monotrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
+ [SYNSEM [LOCAL [CAT [VAL [COMPS <[LOCAL.CONT.HOOK.INDEX #objind]>,
+			   SPR.FIRST.LOCAL.CAT.VAL.COMPS 1-list]],
+		 CONT.RELS <! [], [LBL #chand] !>],
+	  LKEYS.KEYREL arg123-relation &
+		[ARG2 #objind,
+		 ARG3 #chand]]].
+
+syn-vv-monotrans-vbar-v-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE v-stem].
+syn-vv-monotrans-vbar-c-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE c-stem].
+;syn-vv-monotrans-vbar-c2-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE c2-stem].
+;syn-vv-monotrans-vbar-kurusuru-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
+
+;(CH 2005-04-09)
+; for a ditransitive V1
+syntactic-vv-ditrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
+ [SYNSEM [LOCAL [CAT [VAL [COMPS <[LOCAL.CONT.HOOK.INDEX #objind],
+				  [LOCAL.CONT.HOOK.INDEX #obj2ind]>,
+			   SPR.FIRST.LOCAL.CAT.VAL.COMPS 2-comps-list]],
+		 CONT.RELS <! [], [LBL #chand] !>],
+	  LKEYS.KEYREL arg1234-relation &
+		[ARG2 #objind,
+		 ARG3 #obj2ind,
+		 ARG4 #chand]]].
+
+syn-vv-ditrans-vbar-v-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE v-stem].
+syn-vv-ditrans-vbar-c-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE c-stem].
+;syn-vv-ditrans-vbar-c2-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE c2-stem].
+;syn-vv-ditrans-vbar-kurusuru-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
+
+
+; OBSOLETE
+;(CH 2005-04-09)
+; below are removed syntactic V-V types because they are obsolete.
 ;(CH 2003-08-27)
 ; v-stem_head と同じ
 ; 統語的複合動詞VVの V2 のためのタイプ
 ; (cf. infinitive-infl-rule-for-syntactic-VV in infl.tdl
 ;      tsudukeru-syntactic-vv-stem in verbstem-lex.tdl)
-syntactic-vv-stem_head  := other-verb-stem_head &
-			   [AUX aux_minus,
-			    MODUS nonpassive,
-			    LIGHT -,
-			    ADJ -].
-
+;syntactic-vv-stem_head  := other-verb-stem_head &
+;			   [AUX aux_minus,
+;			    MODUS nonpassive,
+;			    LIGHT -,
+;			    ADJ -].
 ;(CH 2003-08-27)
 ; aspect-stem-lex と aux-top-stem-lex を混ぜた。
 ; HEAD は syntactic-vv-stem_head。
@@ -8300,38 +8653,33 @@ syntactic-vv-stem_head  := other-verb-stem_head &
 ; 統語的複合動詞VVの V2 のためのタイプ
 ; (cf. infinitive-infl-rule-for-syntactic-VV in infl.tdl
 ;      tsudukeru-syntactic-vv-stem in verbstem-lex.tdl)
-
-syntactic-vv-stem-lex := verb-stem-lex & lexical_sign-word &
- [SYNSEM [LOCAL [CAT [HEAD syntactic-vv-stem_head & [H-TENSE #tense],
-		      VAL pure-aspect_transitive &
-			   [SUBJ.FIRST #sbj & [LOCAL [CONT.HOOK.INDEX #sbjind,
-						      CAT.HEAD case-p_head &
-								      [CASE ni-or-ga]]],
-			    SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand]],
-		 CONT [HOOK.INDEX #event & [E [TENSE #tense]],
-		       HCONS <! qeq & [LARG #ohand,
-				       HARG #soa] !>,
-		       RELS diff-list & <! #key,
-					 message &
-					 [PRED proposition_m_rel,
-					  LBL #chand,
-					  MARG #soa] !>],
-		 ARG-S < #sbj >],
-	  LKEYS.KEYREL #key & arg12-relation &
-		     [ARG1 #sbjind,
-		      ARG2 #chand,
-		      ARG0 #event],
-	  NON-LOCAL.QUE <! !>,
-	  MODIFIED.PERIPH +]].
-
+;syntactic-vv-stem-lex := verb-stem-lex & lexical_sign-word &
+; [SYNSEM [LOCAL [CAT [HEAD syntactic-vv-stem_head & [H-TENSE #tense],
+;		      VAL pure-aspect_transitive &
+;			   [SUBJ.FIRST #sbj & [LOCAL [CONT.HOOK.INDEX #sbjind,
+;						      CAT.HEAD case-p_head &
+;								      [CASE ni-or-ga]]],
+;			    SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand]],
+;		 CONT [HOOK.INDEX #event & [E [TENSE #tense]],
+;		       HCONS <! qeq & [LARG #ohand,
+;				       HARG #soa] !>,
+;		       RELS diff-list & <! #key,
+;					 message &
+;					 [PRED proposition_m_rel,
+;					  LBL #chand,
+;					  MARG #soa] !>],
+;		 ARG-S < #sbj >],
+;	  LKEYS.KEYREL #key & arg12-relation &
+;		     [ARG1 #sbjind,
+;		      ARG2 #chand,
+;		      ARG0 #event],
+;	  NON-LOCAL.QUE <! !>,
+;	  MODIFIED.PERIPH +]].
 ;(CH 2003-08-27)
 ; 統語的複合動詞VVの V2 のためのタイプ
 ; (cf. infinitive-infl-rule-for-syntactic-VV in infl.tdl
 ;      tsudukeru-syntactic-vv-stem in verbstem-lex.tdl)
-syntactic-vv-v-stem-lex := syntactic-vv-stem-lex & [STEMTYPE v-stem].
-syntactic-vv-c-stem-lex := syntactic-vv-stem-lex & [STEMTYPE c-stem].
-syntactic-vv-c2-stem-lex := syntactic-vv-stem-lex & [STEMTYPE c2-stem].
-syntactic-vv-kurusuru-stem-lex := syntactic-vv-stem-lex & [STEMTYPE kurusuru-stem].
-
-
-
+;syntactic-vv-v-stem-lex := syntactic-vv-stem-lex & [STEMTYPE v-stem].
+;syntactic-vv-c-stem-lex := syntactic-vv-stem-lex & [STEMTYPE c-stem].
+;syntactic-vv-c2-stem-lex := syntactic-vv-stem-lex & [STEMTYPE c2-stem].
+;syntactic-vv-kurusuru-stem-lex := syntactic-vv-stem-lex & [STEMTYPE kurusuru-stem].

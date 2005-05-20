@@ -206,24 +206,31 @@ potential-lexeme-to-word-rule &
 ; a comma in order reduce ambiguity introduced by this rule.  General
 ; strategy: these guys are CMOD none, but get picked up by a special
 ; comma that has the right CMOD value for the sentence-te-coordination-rule.
+;(CH 2005-04-09)
+; added the identity of HEAD values (#head).
+;(CH 2005-04-09) added [SYNSEM.LOCAL.BAR -] to reduce the ambiguity involving 
+; unary-vstem-vend-rule.
 
-
+;(CH 2005-04-09)
+; removed [J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,] to use this for 
+; syntactic V-Vs, too.  Tried making it no_tense.
 infinitive-lexeme-1-infl-rule :=
 %suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
- SYNSEM.LOCAL [CAT.HEAD [H-TENSE tensed,
+ SYNSEM.LOCAL [CAT.HEAD #head &
+			[H-TENSE no_tense,
                         MODUS infinitive,
                         MOD null,
                         VN -,
                         C-MOD null,
                         MARK null,
-                        J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,
                         J-POSTHEAD coord,
                         COP-ARG -,
-                        FIN -]],
+                        FIN -],
+	BAR -],
  ARGS.FIRST [STEMTYPE regular-stem,
-             SYNSEM.LOCAL.CAT.HEAD verb-stem_head,
+             SYNSEM.LOCAL.CAT.HEAD #head & verb-stem_head,
 	     RMORPH-BIND-TYPE morphbindtype]].
 
 
@@ -906,6 +913,24 @@ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
 				    SPR #spr]]]]].
 
 
+
+; (CH 2005-03-18) added to allow "彼 が [zero 銀を] 金 に し た" to
+; be interpreted as a v-soc-stem-lex type.
+obj2-soc-suru-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
+			COMPS obl-1-arg & < [LOCAL #obj] >,
+			SPR #spr],
+	       ARG-S < #subj , [LOCAL #obj]  >],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-stem_head & [ LIGHT -, 
+						    EMPTY -,
+						    COP -],
+                               VAL [SUBJ < #subj >,
+				    COMPS < [OPT + ], [LOCAL #obj,
+						       OPT -]  >,
+				    SPR #spr]]]]].
+
+
 ; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
 ; Moving to XARG instead.
 
@@ -1022,23 +1047,91 @@ wo-no-conversion-rule := obj-casechange-rule &
 ; nom_head を final_head にしただけ。
 ; (cf. syntactic-vv-stem_head, syntactic-vv-stem-lex in lex-types.tdl
 ;      tsudukeru-syntactic-vv-stem in verbstem-lex.tdl)
-infinitive-infl-rule-for-syntactic-VV :=
-%suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に)
-j-lexeme-to-word-rule &
-[RMORPH-BIND-TYPE inf-morph,
- SYNSEM.LOCAL [CAT.HEAD [H-TENSE tensed,
-                        MODUS infinitive,
-                        MOD null,
-                        VN -,
-                        C-MOD null,
-                        MARK null,
-                        J-SPEC.FIRST.LOCAL.CAT.HEAD syntactic-vv-stem_head,
-                        J-POSTHEAD coord,
-                        COP-ARG -,
-                        FIN -]],
- ARGS.FIRST [STEMTYPE regular-stem,
-             SYNSEM.LOCAL.CAT.HEAD verb-stem_head,
-	     RMORPH-BIND-TYPE morphbindtype]].
+;(CH 2005-03-30)
+; added the identity of HEAD values (#head).
+;(CH 2005-04-09) added [SYNSEM.LOCAL.BAR -] to reduce the ambiguity involving 
+; unary-vstem-vend-rule.
+;(CH 2005-04-09)
+; removed because revised infinitive-lexeme-1-infl-rule should take care of
+; syntactic V-Vs, too.
+; infinitive-infl-rule-for-syntactic-VV :=
+; %suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に)
+; j-lexeme-to-word-rule &
+; [RMORPH-BIND-TYPE inf-morph,
+;  SYNSEM.LOCAL [CAT.HEAD #head &
+; 			[H-TENSE tensed,
+;                         MODUS infinitive,
+;                         MOD null,
+;                         VN -,
+;                         C-MOD null,
+;                         MARK null,
+;                         J-SPEC.FIRST.LOCAL.CAT.HEAD syntactic-vv-stem_head,
+;                         J-POSTHEAD coord,
+;                         COP-ARG -,
+;                         FIN -],
+; 		BAR -],
+;  ARGS.FIRST [STEMTYPE regular-stem,
+;              SYNSEM.LOCAL.CAT.HEAD #head & verb-stem_head,
+; 	     RMORPH-BIND-TYPE morphbindtype]].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;(CH 2005-04-09)
+;;
+;;  V embedding `Alternation' Lexical Rules
+;;
+;;    intransitive  --> monotransitive
+;;                  --> ditransitive
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+
+
+vbar-monotransitivization-v-lrule := syn-vv-monotrans-vbar-v-stem-lex &
+ [ORTH #orth,
+  SYNSEM.LKEYS [KEYREL [PRED #pred]],
+  ARGS < syn-vv-intrans-vbar-v-stem-lex &
+	 [ ORTH #orth,
+	   SYNSEM.LKEYS [KEYREL [PRED #pred]]] >].
+
+vbar-ditransitivization-v-lrule := syn-vv-ditrans-vbar-v-stem-lex &
+[ ORTH #orth,
+  SYNSEM.LKEYS [KEYREL [PRED #pred]],
+  ARGS < syn-vv-intrans-vbar-v-stem-lex & [ ORTH #orth,
+					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
+
+vbar-monotransitivization-c-lrule := syn-vv-monotrans-vbar-c-stem-lex &
+[ ORTH #orth,
+  SYNSEM.LKEYS [KEYREL [PRED #pred]],
+  ARGS < syn-vv-intrans-vbar-c-stem-lex & [ ORTH #orth,
+					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
+
+vbar-ditransitivization-c-lrule := syn-vv-ditrans-vbar-c-stem-lex &
+[ ORTH #orth,
+  SYNSEM.LKEYS [KEYREL [PRED #pred]],
+  ARGS < syn-vv-intrans-vbar-c-stem-lex & [ ORTH #orth,
+					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
+
+; vbar-monotransitivization-c2-lrule := syn-vv-monotrans-vbar-c2-stem-lex &
+; [ ORTH #orth,
+;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
+;   ARGS < syn-vv-intrans-vbar-c2-stem-lex & [ ORTH #orth,
+; 					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
+; vbar-ditransitivization-c2-lrule := syn-vv-ditrans-vbar-c2-stem-lex &
+; [ ORTH #orth,
+;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
+;   ARGS < syn-vv-intrans-vbar-c2-stem-lex & [ ORTH #orth,
+; 					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
+; vbar-monotransitivization-kurusuru-lrule := syn-vv-monotrans-vbar-kurusuru-stem-lex &
+; [ ORTH #orth,
+;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
+;   ARGS < syn-vv-intrans-vbar-kurusuru-stem-lex & [ ORTH #orth,
+; 						   SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
+; vbar-ditransitivization-kurusuru-lrule := syn-vv-ditrans-vbar-kurusuru-stem-lex &
+; [ ORTH #orth,
+;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
+;   ARGS < syn-vv-intrans-vbar-kurusuru-stem-lex & [ ORTH #orth,
+; 						   SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
+
+
+
 
 ; (MS 2005-01-06) Floated numeral classifiers, counting subjects.
 ; (MS 2005-01-10) These should copy the RELS from their ARGS, because
