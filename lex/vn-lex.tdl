@@ -13,6 +13,8 @@
 ;;;    Melanie Siegel |    2003     |Atsuko Shimada,  
 ;;;                   |             |Emily Bender (ERB), Sanae Fujita (SF), 
 ;;;                   |             |Takaaki Tanaka (TT), Francis Bond (FCB)
+;;;                   |             |Shigeko Nariyama (SN)
+;;;                   |             |Takayuki Kuribayashi (TK)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -386,10 +388,11 @@ vn-trans1-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_kansei_vn_rel]],
 ORTH <! "完成" !>].
 
-hisho-vn :=
-vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_hisho_vn_rel]],
-ORTH <! "秘書" !>].
+;;(TK 05-03-02 「秘書する」という言い方はしない？？)
+;hisho-vn :=
+;vn-intrans-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_hisho_vn_rel]],
+;ORTH <! "秘書" !>].
 
 gaishutsu-vn :=
 vn-intrans-lex &
@@ -680,16 +683,17 @@ vn-trans1-lex &
 ORTH <! "視" !>].
 
 ;value
-
-atai-1-vn := 
-vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_atai_vn_rel,
-ORTH <! "値い" !>].
-
-atai-1b-vn := 
-vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_atai_vn_b_rel,
-ORTH <! "値" !>].
+;;(TK 05-03-01 commentout)
+;;"value"の語義の、動詞の部分については「値い」「値」にあてはまらない
+;atai-1-vn := 
+;vn-trans1-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_atai_vn_rel,
+;ORTH <! "値い" !>].
+;
+;atai-1b-vn := 
+;vn-trans1-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_atai_vn_b_rel,
+;ORTH <! "値" !>].
 
 ;abuse
 
@@ -1821,13 +1825,6 @@ vn-trans1-lex &
 	[SYNSEM.LKEYS.KEYREL.PRED '_rendou_vn_rel,
           ORTH <! "連動" !>].
 
-;coming into existence; arrangements; establishment; completion
-
-seiritsu-vn := 
-vn-trans1-lex & 
-	[SYNSEM.LKEYS.KEYREL.PRED '_seiritsu_vn_rel,
-          ORTH <! "成立" !>].
-
 ;reception 
 
 jushin-vn := 
@@ -2072,9 +2069,8 @@ vn-trans1-lex &
           ORTH <! "削除" !>].
 
 ;establishing; proving; identifying; confirming
-
-hanmei-vn := 
-vn-trans1-lex & 
+;;(TK 05-03-02 changed to vn-intrans-lex)
+hanmei-vn := vn-intrans-lex & 
 	[SYNSEM.LKEYS.KEYREL.PRED '_hanmei_vn_rel,
           ORTH <! "判明" !>].
 
@@ -2543,11 +2539,11 @@ jikkou-vn :=
          ORTH <! "実行" !>].
 
 ; (SF 2003-08-25)
-
-souritsu-vn :=
-vn-intrans-lex &
-[ORTH <! "創立" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_souritsu_vn_rel]].
+;;(TK 05-03-02 おそらくintransで使うことはない？？)
+;souritsu-vn :=
+;vn-intrans-lex &
+;[ORTH <! "創立" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_souritsu_vn_rel]].
 
 ; SF 2003-08-25
 
@@ -16312,10 +16308,10 @@ michishirube_1 := vn-intrans-lex &
 
 ; 命令 
 ; Used 13 times
-
-meirei_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_meirei_vn_1_rel,
- ORTH <! "命令" !>].
+; (SN 2005-03-31 - only need transitive) 
+;meirei_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_meirei_vn_1_rel,
+; ORTH <! "命令" !>].
 
 ; 免税 
 
@@ -16436,9 +16432,9 @@ rongi_1 := vn-intrans-lex &
 ; 決する 
 ; Used 2 times
 
-kessuru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kessuru_vn_1_rel,
- ORTH <! "決する" !>].
+;kessuru_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kessuru_vn_1_rel,
+; ORTH <! "決する" !>].
 
 ; 恋する 
 ; Used 1 times
@@ -16450,9 +16446,9 @@ koisuru_1 := vn-intrans-lex &
 ; 生ずる 
 ; Used 3 times
 
-shouzuru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shouzuru_vn_1_rel,
- ORTH <! "生ずる" !>].
+;shouzuru_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shouzuru_vn_1_rel,
+ ;ORTH <! "生ずる" !>].
 
 ; アタック 
 
@@ -16609,15 +16605,15 @@ heigou_1 := vn-intrans-lex &
 
 ; 蝕する 
 
-shokusuru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shokusuru_vn_1_rel,
- ORTH <! "蝕する" !>].
+;shokusuru_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shokusuru_vn_1_rel,
+; ORTH <! "蝕する" !>].
 
 ; 食する 
 
-shokusuru_1_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shokusuru_vn_1_rel,
- ORTH <! "食する" !>].
+;shokusuru_1_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shokusuru_vn_1_rel,
+; ORTH <! "食する" !>].
 
 ; 野生 
 ; Used 2 times
@@ -28464,3 +28460,115 @@ matsuri := vn-intrans-lex &
 imi-vn := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_imi_vn_1_rel,
  ORTH <! "意味" !>].
+
+
+;;(TK:TakaYUki Kuribayashi)
+;;(05-02-25)
+
+;心配
+
+shinpai-vn-transitive :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_shinpai_vn_transitive_rel]],
+ORTH <! "心配" !>].
+
+;撃ち合い
+
+;;（「銃を撃ち合い（撃合い）する」はあまり言えないが「銃の撃ち合い（撃合い）」では
+;;VN2N-INFL-RULE-NSPEC_ARG2を選択したいのでvn-trans1も登録
+
+uchiai-vn-1-intrans := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_vn_1_intrans_rel,
+ ORTH <! "撃ち合い" !>].
+
+uchiai-vn-1-trans1 := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_vn_1_trans1_rel,
+ ORTH <! "撃ち合い" !>].
+
+;撃合い
+
+uchiai-vn-2-intrans := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_vn_2_intrans_rel,
+ ORTH <! "撃合い" !>].
+
+uchiai-vn-2-trans1 := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_vn_2_trans1_rel,
+ ORTH <! "撃合い" !>].
+
+
+;(05-02-28)
+;きちんと
+;ex.「きちんと し た 格好」
+kichinto-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_kichinto_vn_rel]],
+ORTH <! "きちんと" !>].
+
+;幸い
+;ex.「転ん だ こと が 幸い し て 雷 に 打た れ なかっ た」
+saiwai-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_saiwai_vn_rel]],
+ORTH <! "幸い" !>].
+
+;しゃあしゃあ
+
+shaashaa-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_shaashaa_vn_rel]],
+ORTH <! "しゃあしゃあ" !>].
+
+;継続
+
+shinpai-vn-trans1 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_keizoku_vn_trans1_rel]],
+ORTH <! "継続" !>].
+
+;;(05-03-01)
+
+;完成
+
+kansei-vn-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_kansei_vn_intrans_rel]],
+ORTH <! "完成" !>].
+
+;成立
+;coming into existence; arrangements; establishment; completion
+
+seiritsu-vn-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_seiritsu_vn_intrans_rel]],
+ORTH <! "成立" !>].
+
+;終了
+
+shuuryou-vn-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_shuuryou_vn_intrans_rel]],
+ORTH <! "終了" !>].
+
+;;(05-03-02)
+
+;移動
+
+idou-vn-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_idou_vn_intrans_rel]],
+ORTH <! "移動" !>].
+
+;実現
+
+jitsugen-vn-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_jitsugen_vn_intrans_rel]],
+ORTH <! "実現" !>].
+
+;決定
+
+kettei-vn-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_kettei_vn_intrans_rel]],
+ORTH <! "決定" !>].
+
