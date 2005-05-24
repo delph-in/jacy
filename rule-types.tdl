@@ -2158,33 +2158,36 @@ cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
 		ARGS < card-lex & [SYNSEM.LOCAL.CONT.RELS.LIST.REST.FIRST times-relation & [LBL #term1]] >,
 		INFLECTED +].
 
-; (MS 2005-03-30) This shouldn't allow copula in the second arg.
+; ; (MS 2005-03-30) This shouldn't allow copula in the second arg.
+; (FCB 2005-05-24) replaced by richer rules *-lex-vv-rule
+; vstem-vstem-rule-type := head-final-type & 
+; 			 orth-princ &
+; 			 que-princ &
+;  [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
+; 		 BAR -],
+; 	  LEX +],
+;   INFLECTED #infl,
+;   J-NEEDS-AFFIX #aff,
+;   RMORPH-BIND-TYPE #rmorphbind,
+;   NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
+; 				     VAL #val],
+; 				CONT.HOOK.XARG #arg1,
+; 				BAR -],
+; 			 LEX +],
+; 		RMORPH-BIND-TYPE #im & i-morph],
+;   HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -,
+; 						    COP -],
+; 				VAL.UNSAT +],
+; 			   CONT.HOOK.XARG #arg1,
+; 			   BAR -],
+; 		    LEX +],
+; 	    INFLECTED #infl,
+; 	    J-NEEDS-AFFIX #aff,
+; 	    LMORPH-BIND-TYPE #im,
+; 	    RMORPH-BIND-TYPE #rmorphbind]].
 
-vstem-vstem-rule-type := head-final-type & 
-			 orth-princ &
-			 que-princ &
-		    [SYNSEM [LOCAL [CAT.VAL #val & [UNSAT +],
-				    BAR -],
-			     LEX +],
-		     INFLECTED #infl,
-		     J-NEEDS-AFFIX #aff,
-		     RMORPH-BIND-TYPE #rmorphbind,
-		     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD v-stem_head & [EMPTY -],
-							VAL #val],
-						   CONT.HOOK.XARG #arg1,
-						   BAR -],
-					    LEX +],
-				   RMORPH-BIND-TYPE #im & i-morph],
-		     HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD v-stem_head & [EMPTY -,
-								       COP -],
-						   VAL.UNSAT +],
-					      CONT.HOOK.XARG #arg1,
-					      BAR -],
-				       LEX +],
-			       INFLECTED #infl,
-			       J-NEEDS-AFFIX #aff,
-			       LMORPH-BIND-TYPE #im,
- 			       RMORPH-BIND-TYPE #rmorphbind]].
+
+
 
 adj-nominal-suffix-type := head-final-type & 
 			     orth-princ &
@@ -2201,3 +2204,107 @@ adj-nominal-suffix-type := head-final-type &
 							       [J-POSTHEAD right],
 							  VAL.UNSAT +],
 						     BAR -]]]].
+
+
+;;;
+;;; New approach to V-V compound rules
+;;; by CH, modified by FCB
+
+lexical-compound-rule-type := orth-princ & affix-list & que-princ & 
+[SYNSEM [LOCAL [BAR -,
+		CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
+		CONT [HOOK [LTOP #top,
+			    XARG #xarg],
+		      MOD-IND #mod-ind,
+		      MOD-HAND #mod-hand,
+		      MSG #ms,
+		      RELS [LIST #firstliszt,
+			    LAST #lastliszt],
+		      HCONS [LIST #scfirst,
+			     LAST #sclast]]],
+	 NON-LOCAL [REL #rel],
+	 LEX +],
+ C-CONT [RELS diff-list & [LIST #middle2liszt,
+				   LAST #lastliszt],
+	 HCONS diff-list & [LIST #scmiddle2,
+				    LAST #sclast]],
+ ARGS <[SYNSEM [LOCAL [BAR -,
+		       CTXT.BACKGROUND [LIST #3, LAST #2],
+		       CONT [RELS [LIST #middle1liszt,
+				   LAST #middle2liszt],
+			     HCONS [LIST #scmiddle1,
+				    LAST #scmiddle2]]],
+		LEX +]],
+       [SYNSEM [LOCAL [BAR -,
+		       CTXT.BACKGROUND [LIST #1, LAST #3],
+		       CONT [HOOK [LTOP #top,
+				   XARG #xarg],
+			     MOD-IND #mod-ind,
+			     MOD-HAND #mod-hand,
+			     MSG #ms,
+			     RELS [LIST  #firstliszt,
+				   LAST  #middle1liszt],
+			     HCONS [LIST #scfirst,
+				    LAST #scmiddle1]]],
+		NON-LOCAL [REL #rel],
+		LEX +]]>].
+
+
+lexical-vv-rule-type := lexical-compound-rule-type &
+			[INFLECTED #infl,
+			 J-NEEDS-AFFIX #aff,
+			 RMORPH-BIND-TYPE #rmorphbind,
+			 ARGS <[SYNSEM [ LOCAL [CAT [HEAD [EMPTY -],
+						     VAL [UNSAT +,
+							  SUBJ < [LOCAL.CAT.HEAD.CASE ga] >]]]],
+				RMORPH-BIND-TYPE #im & i-morph],
+			       [SYNSEM [LOCAL [CAT [HEAD [EMPTY -],
+						    VAL.UNSAT +]]],
+				INFLECTED #infl,
+				J-NEEDS-AFFIX #aff,
+				LMORPH-BIND-TYPE #im,
+				RMORPH-BIND-TYPE #rmorphbind]>].
+;; (CH 2004-09-09)
+;; this is for introducing vv_rel to V-V's semantics.
+;; identified the handles.
+lexical-vv-vv-rel-rule-type := lexical-vv-rule-type &
+			[SYNSEM.LOCAL.CONT.HOOK [INDEX #ind,
+						 LTOP #lbl],
+			 C-CONT [RELS <! vv-relation &
+				       [LBL #lbl,
+					ARG0 #ind,
+					ARG1 #ind1,
+					ARG2 #ind2]!>,
+				 HCONS <! !>],
+			 ARGS <[SYNSEM [LOCAL [CONT.HOOK [INDEX #ind1,
+							  LTOP #lbl]]]],
+			       [SYNSEM [LOCAL [CONT.HOOK.INDEX #ind2]]]>].
+
+
+;;; (FCB 2005-05-24) took out ARG-ST and MOTION
+lexical-vv-non-motion-rule-type := lexical-vv-vv-rel-rule-type &
+ [SYNSEM [LOCAL [CAT [HEAD #head,
+		      VAL #val]]],
+  ARGS <[SYNSEM.LOCAL [CAT.HEAD v-stem_head]],
+	[SYNSEM [LOCAL [CAT [HEAD v-stem_head & #head, 
+			     VAL #val]]]]>].
+
+
+;;;
+;;; temporary types until we add ARG-ST
+;;;
+
+
+intransitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
+ [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL intransitive &
+				  [SUBJ #sbj],
+  ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.VAL intransitive &
+				  [SUBJ #sbj]].
+
+ga-wo_transitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
+ [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL ga-wo_transitive &
+				  [SUBJ #sbj,
+				   COMPS #cmp],
+  ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.VAL ga-wo_transitive &
+				  [SUBJ #sbj,
+				   COMPS #cmp]].

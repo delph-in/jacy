@@ -1107,9 +1107,14 @@ quasi-morph-rule := binary-basic &
 ; Does the valence come from V1? Identifying the agent?
 
 ; (MS 2005-02-14) Moved the definitions to rule-types.tdl.
+; (FCB 2005-05-24) replaced by richer rules *-lex-vv-rule
+;vstem-vstem-rule := vstem-vstem-rule-type.
 
-vstem-vstem-rule := vstem-vstem-rule-type.
 
+ga-wo_transitive-lex-vv-rule := ga-wo_transitive-lex-vv-rule-type.
+ 
+intransitive-lex-vv-rule := intransitive-lex-vv-rule-type.
+ 
 
 ;(CH 2003-08-27)
 ; 形容詞を名詞に変える。

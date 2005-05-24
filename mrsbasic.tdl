@@ -644,3 +644,19 @@ pass_rel := predsort.
 degree-relation := arg0-relation &
   [ DARG *top*,
     ARG0 individual ].
+
+
+
+; (CH 2004-09-09)
+; introduce vv-relation, which is the supertype of all relations holding between
+; V1 and V2 of lexical V-V compound.
+vv_rel := predsort.
+vv-manner_rel := vv_rel.
+vv-relation := arg12-ev-relation &
+ [PRED vv_rel].
+
+; (CH 2004-09-09)
+; introduce vv-prefix-v1-relation.
+vv-prefix-v1_rel := predsort.
+vv-prefix-v1-relation := arg1-ev-relation &
+ [PRED vv-prefix-v1_rel].
