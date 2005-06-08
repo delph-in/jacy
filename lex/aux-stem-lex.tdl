@@ -87,6 +87,11 @@ pure-aspect-c-stem-lex &
 [SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
 ORTH <! "参る" !>].
 
+mairu-aux-hiragana-stem :=
+pure-aspect-c-stem-lex &
+[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
+ORTH <! "まいる" !>].
+
 ; Used 1 times
 
 irassharu-aux-stem  :=

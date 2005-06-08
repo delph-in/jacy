@@ -206,6 +206,12 @@ interj-lex &
 [ORTH <! "そして" !>,
  SYNSEM.LKEYS.KEYREL.PRED '_soshite_interj_rel].
 
+soosuruto :=
+interj-lex &
+[ORTH <! "そうすると" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_sousuruto_interj_rel].
+
+
 
 soreja  :=
 interj-lex &

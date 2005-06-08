@@ -3028,10 +3028,11 @@ ordinary-nohon-n-lex &
 [ORTH <! "リスト" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_risuto_n_rel]].
 
-ryokou :=
-ordinary-nohon-n-lex &
-[ORTH <! "旅行" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_ryokou_n_rel]].
+; there is an entry in vn-lex!
+;ryokou :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "旅行" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_ryokou_n_rel]].
 
 
 sa-difference :=
@@ -54276,6 +54277,12 @@ keorimono_1 := ordinary-nohon-n-lex &
 kega_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kega_n_1_rel,
  ORTH <! "怪我" !>].
+
+kega-hiragana-n :=ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kega_n_1_rel,
+ ORTH <! "けが" !>].
+
+
 
 ; 怪我人 
 ; Used 2 times
@@ -146241,3 +146248,14 @@ ordinary-nohon-n-lex &
 [ORTH <! "茄子" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_nasu_n_rel]].
 
+hamuretto-noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "ハムレット" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_hamlet_n_rel]].
+
+; generation
+
+seisei-noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "生成" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_seisei_n_rel]].

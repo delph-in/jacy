@@ -2729,10 +2729,10 @@ saraba_1 := vn-intrans-lex &
 
 ; ±¿Å¾ 
 ; Used 11 times
-
-unten_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_unten_vn_1_rel,
- ORTH <! "±¿Å¾" !>].
+; (MS 2005-05-24) We have a vn-trans1-lex already, so don't need this.
+;unten_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_unten_vn_1_rel,
+; ORTH <! "±¿Å¾" !>].
 
 ; ³èÍÑ 
 ; Used 6 times

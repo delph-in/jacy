@@ -1311,7 +1311,7 @@ vn2n-rule-detarg :=  vn2n-rule-super &
 	    VAL.SPR.FIRST.LOCAL.CAT.HEAD det_head & [SMOD decl]]].
 
 ; (MS 2004-03-26) These are used for argument binding in case of something
-;  like ≤÷ª“§Œ Ÿ∂Ø. Thex must be restricted a bit.
+;  like ≤÷ª“§Œ Ÿ∂Ø. They must be restricted a bit.
 	
 
 vn2n-rule-nspecarg1 :=  vn2n-rule-super &

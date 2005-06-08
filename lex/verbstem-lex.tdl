@@ -21767,26 +21767,6 @@ iu-stem-intrans  :=  intrans-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_iu_v_intrans_rel]],
                    ORTH <! "言う" !>].
 
-; (FCB and CH 2005-03-12) for complement suru 
-; (do-parse-tty "彼 が 鈍 を 金 に し た") "he made lead into gold"
-; SOC  subject-object-complement
-
-suru-soc-noun-stem := v-soc-noun-kurusuru-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_suru_v_soc_rel]],
-ORTH <! "する" !>].
-
-suru-soc-adv-stem := v-soc-adv-kurusuru-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_suru_v_soc_rel]],
-ORTH <! "する" !>].
-
-nasaru-soc-noun-stem := v-soc-noun-c2-shon-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_nasaru_v_soc_rel]],
-ORTH <! "なさる" !>].
-
-nasaru-soc-adv-stem := v-soc-adv-c2-shon-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_nasaru_v_soc_rel]],
-ORTH <! "なさる" !>].
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

@@ -546,7 +546,7 @@ inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'kyoudai,
 ORTH <! "京大" !>].
 
-kyouko :=
+kyouko-1-firstname :=
 first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'kyouko,
 ORTH <! "響子" !>].
@@ -4150,3 +4150,27 @@ francis-firstname := first_name-lex &
 bond-surname :=  surname-lex & 
         [SYNSEM.LKEYS.KEYREL.CARG 'bond,
          ORTH <! "ボンド" !>].
+
+youko-firstname := first_name-lex & 
+	[SYNSEM.LKEYS.KEYREL.CARG 'youko,
+          ORTH <! "洋子" !>].
+
+kyouko-2-firstname := first_name-lex & 
+	[SYNSEM.LKEYS.KEYREL.CARG 'kyouko,
+          ORTH <! "京子" !>].
+
+kiguchi-surname := surname-lex & 
+        [SYNSEM.LKEYS.KEYREL.CARG 'kiguchi,
+         ORTH <! "木口" !>].
+
+riizu-surname := surname-lex & 
+        [SYNSEM.LKEYS.KEYREL.CARG 'riizu,
+         ORTH <! "リーズ" !>].
+
+nakayama-surname := surname-lex & 
+        [SYNSEM.LKEYS.KEYREL.CARG 'nakayama,
+         ORTH <! "中山" !>].
+
+jirou-firstname-2 := first_name-lex & 
+	[SYNSEM.LKEYS.KEYREL.CARG 'jirou,
+          ORTH <! "次郎" !>].

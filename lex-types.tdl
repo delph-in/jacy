@@ -776,23 +776,23 @@ sap_head := p_head-avm &
 ; we might think about revamping the way messages are introduced.
 ; Also, we might worry some more about the relative scope of messages
 ; and the conj-rel in different constructions.
-
-s-conj_head := sap_head &
-               [MOD null,
-		CASE con,
-		COP-ARG -,
-                C-MOD < [LOCAL [CAT [HEAD sentence-valid & [MAIN-PRD +,
-                                                        FIN +,
-                                                        SMOD unmarked],
-                                 VAL saturated],
-                            BAR +]] >,
-                J-POSTHEAD left].
+; (MS 2005-06-07) It seems that this one is never applied.
+;s-conj_head := sap_head &
+;               [MOD null,
+;		CASE con,
+;		COP-ARG -,
+;                C-MOD < [LOCAL [CAT [HEAD sentence-valid & [MAIN-PRD +,
+;                                                        FIN +,
+;                                                        SMOD unmarked],
+;                                 VAL saturated],
+;                            BAR +]] >,
+;                J-POSTHEAD left].
 
 ; (ERB 2002-01-07) Want this to apply to vn+kudasai as well, which is
 ; actually HEAD v-end_head.  So, change [HEAD s-end_head] to 
 ; [HEAD utt-valid & [SMOD marked]].  (utt-valid groups together 
 ; sentence-valid and s-end_head.
-; (MS 2005-05-18) But this prevents "食べたから寢た" from parsing. So, I took the restriction out.
+; (MS 2005-05-18) But this prevents "食べたから寝た" from parsing. So, I took the restriction out.
 
 s-conj-nonprop_head := sap_head &
                [MOD null,
@@ -1240,7 +1240,6 @@ sap_sc := p_sat &
                 [COMPS obl-1-arg &
 		       < [LOCAL [CAT [HEAD sentence-valid & 
 					   [MODUS uttmodus,
-					    EMPTY bool,
 					    MAIN-PRD +],
 				      VAL saturated],
 				 BAR +],
@@ -1332,10 +1331,17 @@ ga-to_transitive2 := sbj-obj-arg &
 			  < [LOCAL.CAT.HEAD  case-p_head & [CASE to]] >].
 
 
-ga-to-ni_transitive := sbj-obj-arg &
+ga-to-ni_transitive1 := sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
 		     COMPS opt-1-arg & 
 			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
+
+ga-to-ni_transitive2 := sbj-obj-arg &
+                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+		     COMPS obl-1-arg & 
+			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
+
+
 
 intransitive := sbj-arg &
                 [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
@@ -1853,6 +1859,7 @@ postp-lex-general := vmod-p-lex &
 postp-lex := postp-lex-general & 
              [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head]].
 
+
 postp-lex-varg := postp-lex-general & 
              [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [FORMAL.AHON -, 
 									   MODUS indicative,
@@ -1861,11 +1868,15 @@ postp-lex-varg := postp-lex-general &
 ;(MS 2004-06-25) This is for the second conjunction in, e.g. "犬と猫とがいます"
 ; to avoid spurious ambiguity in "犬と猫といます", I use the trick with the empty RELS
 ; on MOD.
+; (MS 2005-06-02) This second conjunction should not add to the MRS. Therefore, it
+; belongs under mod-p-lex in the type hierarchy, adding an empty RELS list. The head
+; should be postp_head, such that it can be subcategorized for by case particles.
 
-postp-lex-coord := postp-lex-general & 
-             [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
+postp-lex-coord := mod-p-lex & 
+             [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
 						       CONT.HOOK.INDEX conj-ref-ind],
-				HEAD.MOD.FIRST.LOCAL.CONT.RELS <! !>]].
+				 HEAD postp_head & [MOD.FIRST.LOCAL.CONT.RELS <! !>]],
+			    CONT.RELS <! !>]].
 
 
 
@@ -2052,6 +2063,8 @@ adv-p-lex-parent := adv-p-lex &
 ; (MS 2002-1-7) The L-HAND and R-HAND are not bound. 
 ;(MS 2004-06-24) As the n-conjunction gets an index, it should be quantified
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (MS 2005-06-01) I try to unify the coordinated heads. It has to be shown if this
+; is adequate (counterexamples?)
 
 
 n_conj-p-lex := conj-lex & 
@@ -2060,10 +2073,10 @@ n_conj-p-lex := conj-lex &
 				     LBL #hndl,
                                      L-INDEX #arg,
                                      R-INDEX #mod],
-		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD noun_head,
+		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD noun_head & #head,
 						       CONT [HOOK.INDEX #mod]]] >,
 				       J-POSTHEAD left],
-                                VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
+                                VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head & #head,
 						       CONT [HOOK.INDEX #arg],
 						       BAR +]],
 			    CONT n-conj-sem-type &
@@ -2074,11 +2087,10 @@ n_conj-p-lex := conj-lex &
 				HCONS <! qeq & [HARG #rest, LARG #hndl] !>]]]].
 
 
-
+; (MS 2005-06-01) The restriction on the complement (to be a noun_head) was redundant.
 
 hyphen-conj-p-lex := n_conj-p-lex &
-            [SYNSEM [LOCAL [CAT [HEAD.PTYPE to,
-                               VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD noun_head]]],
+            [SYNSEM [LOCAL.CAT.HEAD.PTYPE to,
 		     LKEYS.KEYREL.PRED 'to_and]].
 
 
@@ -2233,50 +2245,51 @@ sap-lex  := p-lex-c &
 ; (FCB 2005-01-30) Add EMPTY - restriction on main verb.  
 ; Otherwise there is a lot of ambiguity with fragments
 ; (FCB 2005-04-12) FIXME - can we put the EMPTY - restriction on the complement back?
+; (MS 2005-06-07) It seems that this one is never applied.
 
-s-conj-lex := sap-lex &
-              [SYNSEM [LOCAL [CAT [HEAD s-conj_head &
-					[C-MOD < [LOCAL [CONT.HOOK [LTOP #main-v-handel,
-								   INDEX.E #tam],
-							 CAT.HEAD.EMPTY -]]> ],
-                                  VAL.COMPS.FIRST [LOCAL [CONT.HOOK [LTOP #subord-v-handel,
-								    INDEX.E #tam,
-								    XARG #xarg],
-							 CAT.HEAD [EMPTY bool,
-								   J-POSTHEAD rels,
-								   FIN +],
-							 NUCL not_fin_conj ]]],
-                             NUCL nucl_minus,
-                             CONT [HOOK [INDEX #ind & event & [E #tam],
-					 LTOP #top,
-					 XARG #xarg],
-                                   RELS <! conjunction-relation & #key &
-                                          [C-ARG #ind,
-					   LBL #top,
-                                           R-HNDL #main,
-                                           L-HNDL #subord],
-                                          message &
-                                          [PRED proposition_m_rel,
-					   LBL #main,
-                                           MARG #prpstnsoa1],
-                                          message &
-                                          [PRED proposition_m_rel,
-					   LBL #subord,
-                                           MARG #prpstnsoa2] !>,
-                                   HCONS <! qeq & [LARG #main-v-handel,
-                                                    HARG #prpstnsoa1],
-                                             qeq & [LARG #subord-v-handel,
-                                                    HARG #prpstnsoa2] !>]],
-		       LKEYS.KEYREL #key,
-		       NON-LOCAL.QUE <! !>]].
+;s-conj-lex := sap-lex &
+;              [SYNSEM [LOCAL [CAT [HEAD s-conj_head &
+;					[C-MOD < [LOCAL [CONT.HOOK [LTOP #main-v-handel,
+;								   INDEX.E #tam],
+;							 CAT.HEAD.EMPTY -]]> ],
+;                                  VAL.COMPS.FIRST [LOCAL [CONT.HOOK [LTOP #subord-v-handel,
+;								    INDEX.E #tam,
+;								    XARG #xarg],
+;							 CAT.HEAD [EMPTY bool,
+;								   J-POSTHEAD rels,
+;								   FIN +],
+;							 NUCL not_fin_conj ]]],
+;                             NUCL nucl_minus,
+;                             CONT [HOOK [INDEX #ind & event & [E #tam],
+;					 LTOP #top,
+;					 XARG #xarg],
+;                                   RELS <! conjunction-relation & #key &
+;                                          [C-ARG #ind,
+;					   LBL #top,
+;                                           R-HNDL #main,
+;                                           L-HNDL #subord],
+;                                          message &
+;                                          [PRED proposition_m_rel,
+;					   LBL #main,
+;                                           MARG #prpstnsoa1],
+;                                          message &
+;                                          [PRED proposition_m_rel,
+;					   LBL #subord,
+;                                           MARG #prpstnsoa2] !>,
+;                                   HCONS <! qeq & [LARG #main-v-handel,
+;                                                    HARG #prpstnsoa1],
+;                                             qeq & [LARG #subord-v-handel,
+;                                                    HARG #prpstnsoa2] !>]],
+;		       LKEYS.KEYREL #key,
+;		       NON-LOCAL.QUE <! !>]].
 
-s-conj1-lex := s-conj-lex & [SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON #1,
-                                               VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
+;s-conj1-lex := s-conj-lex & [SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON #1,
+;                                               VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
 
-s-conj1-decl-lex := s-conj1-lex &
-		    [SYNSEM.LOCAL [CAT.HEAD.SMOD decl]].
+;s-conj1-decl-lex := s-conj1-lex &
+;		    [SYNSEM.LOCAL [CAT.HEAD.SMOD decl]].
 
-s-conj2-lex := s-conj-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+;s-conj2-lex := s-conj-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 ; (ERB 2002-01-07) For conjunctions that allow non-propositional 
 ; right conjuncts.  This type doesn't supply a message for the
@@ -2294,13 +2307,17 @@ s-conj2-lex := s-conj-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 ; (MS 2002-02-07) The problem is that in the case of something like
 ; 食べれば行きますので教えて下さい NODE is not interpreted as an s-conj-lex
 ; and thus the sentence doesn't parse. I'll take that out and make another try.
+; (MS 2005-06-07) These are all decl. They all identify AHON.
 
-s-conj-nonprop-lex := sap-lex &
+s-conj-lex := sap-lex &
               [SYNSEM [LOCAL [CAT [HEAD s-conj-nonprop_head &
                                        [C-MOD < [LOCAL.CONT.HOOK [LTOP #embedded-msg,
-								  INDEX #ind]] > ],
+								  INDEX #ind]] > ,
+					FORMAL.AHON #ahon,
+					SMOD decl],
                                   VAL.COMPS.FIRST.LOCAL [CONT.HOOK.LTOP #subord-v-handel,
-							 CAT.HEAD.EMPTY -,
+							 CAT.HEAD [EMPTY -,
+								   FORMAL.AHON #ahon],
 							 NUCL nucl]],
                              NUCL nucl_minus,
                              CONT [HOOK [INDEX #ind,
@@ -2324,16 +2341,15 @@ s-conj-nonprop-lex := sap-lex &
 		       LKEYS.KEYREL #key,
 		       NON-LOCAL.QUE <! !>]].
 
-s-conj-nonprop1-lex := s-conj-nonprop-lex & 
-                       [SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON #1,
-                                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
 
-s-conj-nonprop1-decl-lex := s-conj-nonprop1-lex &
-			    [SYNSEM.LOCAL [CAT.HEAD.SMOD decl]].
+;s-conj-nonprop1-lex := s-conj-nonprop-lex & 
+;                       [SYNSEM.LOCAL.CAT [HEAD [FORMAL.AHON #1,
+;						SMOD decl],
+;                                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
 
-
-s-conj-nonprop2-lex := s-conj-nonprop-lex & 
-                       [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+; (MS 2005-06-07) We seem not to use this any more.
+;s-conj-nonprop2-lex := s-conj-nonprop-lex & 
+;                       [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 
 
@@ -2367,7 +2383,11 @@ s-end1-declint-lex := s-end1-lex &
 		      NON-LOCAL.QUE 0-dlist]].
 
 s-end1-decl-minusahon-lex := s-end1-decl-lex &
-			      [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+			      [SYNSEM.LOCAL [CAT [HEAD.FORMAL.AHON -,
+						  VAL.COMPS.FIRST [NON-LOCAL.QUE <! !>,
+								   LOCAL.CAT.HEAD.COP +]],
+					     CTXT [C-INDICES.SPEAKER #1,
+						   EMPATHY.EMPEE #1]]].
 
 s-end1-quest-lex := s-end1-lex &
 		    [SYNSEM [LOCAL [CAT.HEAD.SMOD quest,
@@ -6651,8 +6671,11 @@ v-sc-stem-lex := v-stem-lex &
 				[ARG1 #phand],
 			  NON-LOCAL.QUE <! !>]].
 
+; (MS 2005-05-24) Try to make the complement obligatory, to avoid ambiguity.
+; as in 病気になる
+
 v-sc-n-stem-lex := v-sc-stem-lex &
- [SYNSEM [LOCAL [CAT [VAL ga-to-ni_transitive &
+ [SYNSEM [LOCAL [CAT [VAL ga-to-ni_transitive2 &
 			  [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
 			   COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #compind]],
 		 CONT [RELS <! relation, relation,
@@ -7096,7 +7119,7 @@ v4-v-minusshon-stem-lex := v4-minusshon-stem-lex & [STEMTYPE v-stem].
 
 v6-stem-lex := v-sbj-comps-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD.COP -,
-                    VAL ga-to-ni_transitive &
+                    VAL ga-to-ni_transitive1 &
                          [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 			  SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 		CONT [HOOK.XARG #sbjind]],

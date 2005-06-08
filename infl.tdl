@@ -682,16 +682,6 @@ word2word-rule &
                           NUCL nucl_plus],
 		    LEX #lex]].
 
-;;;;;;;;;;;;;;;;;;;;;;;;VN->N;;;;;;;;;;;;;;;;;;;;
-
-vn2n-infl-rule-det :=
-vn2n-rule-detarg.
-
-vn2n-infl-rule-nspec_arg1 :=
-vn2n-rule-nspecarg1.
-
-vn2n-infl-rule-nspec_arg2 :=
-vn2n-rule-nspecarg2.
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ->V;;;;;;;;;;;;;;;;;;;;
@@ -1155,3 +1145,17 @@ floated-ind-obj-num-cl-lex &
 			   CONT.RELS #rels],
 	     ORTH #stem]].
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;VN->N;;;;;;;;;;;;;;;;;;;;
+;; (MS 2005-05-24) These cause ambiguity in all cases of 
+;; N no VN wo suru
+;; Try: 中国語の勉強をする
+
+vn2n-infl-rule-det :=
+vn2n-rule-detarg.
+
+vn2n-infl-rule-nspec_arg1 :=
+vn2n-rule-nspecarg1.
+
+vn2n-infl-rule-nspec_arg2 :=
+vn2n-rule-nspecarg2.

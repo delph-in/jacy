@@ -19763,6 +19763,11 @@ taitei_1 := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taitei_a_1_rel,
  ORTH <! "大抵" !>].
 
+taitei-hiragana-n := scopal-adv-regular-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_taitei_a_1_rel,
+ ORTH <! "たいてい" !>].
+
+
 ; 大分 
 ; Used 1 times
 

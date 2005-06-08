@@ -126,18 +126,7 @@ comma-te-end := comma-coord-end-lex &
 	    LMORPH-BIND-TYPE i-or-t-morph].
 
 
-;(CH 2005-03-10)
-; solution to parse 「ボールを進んで打つ」「ボールを続けて打つ」.
-; I'm not sure if this is correct...
-te-adjunct := te-adjunct-lex &
-             [SYNSEM.LKEYS.KEYREL.PRED '_te_adjunct_rel,
-	      LMORPH-BIND-TYPE t-morph,
-              ORTH <! "て" !>].
 
-de-adjunct := te-adjunct-lex &
-             [SYNSEM.LKEYS.KEYREL.PRED '_te_adjunct_rel,
-	      LMORPH-BIND-TYPE nd-morph,
-              ORTH <! "で" !>].
 
 
 ;finite-present-polite-negative
