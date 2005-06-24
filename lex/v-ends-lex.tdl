@@ -202,7 +202,7 @@ hajimeru-end := v-noncaus-op-end-lex &
 							  HOOK.LTOP #v-hd,
 							  MOD-IND #event],
 					      LKEYS.KEYREL.ARG1 #arg1]],
-			  CONT [RELS <! #key & [ARG4 #arg4,
+			  CONT [RELS <! #key & [ARG2 #arg4,
 						 ARG1 #arg1,
 						 LBL #top],
 				       message & [PRED proposition_m_rel,

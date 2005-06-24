@@ -1583,11 +1583,14 @@ p-lex-c := p-lex & lexical_sign-word.
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
+; (MS 2005-06-20) FORMAL should come from the complement.
+
 
 case-p-lex := p-lex & 
-            [SYNSEM [LOCAL [CAT [HEAD overt-case-p_head,
-                                VAL.COMPS < [LOCAL.CONT [HOOK [INDEX #arg, 
-							       LTOP #hand]]] >],
+            [SYNSEM [LOCAL [CAT [HEAD overt-case-p_head & [FORMAL #formal],
+                                VAL.COMPS < [LOCAL [CAT.HEAD.FORMAL #formal,
+						    CONT [HOOK [INDEX #arg, 
+								LTOP #hand]]]] >],
                            CONT [HOOK [INDEX #arg, 
 				       LTOP #hand],
                                  RELS <! !>,
@@ -4124,11 +4127,13 @@ wh-word-honsubj-lex := wh-word-person-lex &
 ; (MS 2004-12-17) But it should not take an empty copula.
 ; (MS 2005-01-26) BAR + on the SPR is not right, VNs for nom-pred-vn-lex are not BAR +
 ; (FCB 2005-03-01) but we need BAR+ on the SPR for nom-pred-lex
+; (MS 2005-06-24) The verb should be plain form: "食べること", "*食べますこと"
 
 nom-pred-lex-basic := nom-lex & 
        [SYNSEM [LOCAL [CAT [VAL.SPR.FIRST [LOCAL [CONT.HOOK.LTOP #verb-hand,
 						 CAT [HEAD verb_head & [MAIN-PRD -,
 									MODUS uttmodus,
+									FORMAL.AHON -,
 									SMOD unmarked,
 									EMPTY -]],
 						 BAR bool]]],
@@ -5097,6 +5102,7 @@ subj-honor-ctxt := j-ctxt &
 ; and LTOP needs to be moved to subtypes.
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-06-24) We need unificable SHON information between v-end and v-stem.
 
 
 v-end-lex := lexical_sign-affix &
@@ -5104,11 +5110,13 @@ v-end-lex := lexical_sign-affix &
                      [LOCAL [CAT [HEAD v-end_head &
                                        [H-TENSE #tense,
                                         AUX #aux,
-					ADJ #adj],
+					ADJ #adj,
+					FORMAL.SHON #shon],
 				  VAL [SPR obl-1-arg &
 					    [FIRST [LOCAL [CAT [HEAD verb_head & [AUX #aux,
 										  ADJ #adj,
-										H-TENSE #tense],
+										  H-TENSE #tense,
+										  FORMAL.SHON #shon],
 							       VAL [SUBJ #sbj,
 								    COMPS #comps]],
 							  ARG-S #arg-s,
@@ -7500,14 +7508,18 @@ cop-neg-lex := nonaux-lex &
 ; (MS 2004-08-25) I now call them cop-light-lex.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
+; (MS 2005-06-20) These should take their FORMAL information from their complements: yoroshii deshou.
+
 cop-light-lex := nonaux-lex &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
 			   MARK null,
 			   SMOD unmarked,
 			   COP +,
-			   H-TENSE #tense],
+			   H-TENSE #tense,
+			   FORMAL #form],
                     VAL  cop_transitive & [COMPS #comps & [FIRST [LOCAL [CONT [HOOK #hook],
-									 CAT.HEAD.H-TENSE #tense,
+									 CAT.HEAD [H-TENSE #tense,
+										   FORMAL #form],
 									 NUCL not_fin_conj]]]]],
 	       
 	       CONT [HOOK #hook,
@@ -7895,15 +7907,15 @@ pure-aspect-minus_shon-c-stem-lex := pure-aspect-minus_shon-stem-lex & [STEMTYPE
 pure-aspect-minus_shon-c2-stem-lex := pure-aspect-minus_shon-stem-lex & [STEMTYPE c2-stem].
 pure-aspect-minus_shon-kurusuru-stem-lex := pure-aspect-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
 
-pure-aspect-shon-stem-lex := aspect-stem-lex &
-[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
-                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
-                                           CONT.HOOK.INDEX #2 ]],
-               CONT.HOOK.INDEX #3,
-               CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
-                                   [HONORED #2,
-                                    BEARER #3,
-                                    POLARITY +] !>]]].
+pure-aspect-shon-stem-lex := pure-aspect-stem-lex &
+			     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+						 VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+								       CONT.HOOK.INDEX #2 ]],
+					    CONT.HOOK.INDEX #3,
+					    CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+										 [HONORED #2,
+										  BEARER #3,
+										  POLARITY +] !>]]].
 
 pure-aspect-shon-v-stem-lex := pure-aspect-shon-stem-lex & [STEMTYPE v-stem].
 pure-aspect-shon-c-stem-lex := pure-aspect-shon-stem-lex & [STEMTYPE c-stem].
@@ -8161,6 +8173,11 @@ i-adj-stem-lex := adj-stem-lex &
 	 LKEYS [KEYREL arg1-relation &
 			 [ARG1 #inst]]]].
 
+; (MS 2005-06-20) For honorific adjectives like yoroshii.
+
+i-adj-hon-stem-lex := i-adj-stem-lex &
+		      [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
 eval-i-adj-stem-lex := adj-stem-lex &
 [SYNSEM [LOCAL.CAT [HEAD.MODUS indicative,
                     VAL eval-adj_sc &
@@ -8364,12 +8381,13 @@ light-nohon-stem-lex := light-stem-lex &
 light-nohon-kurusuru-stem-lex := light-nohon-stem-lex & [STEMTYPE kurusuru-stem].
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-06-21) It is not right to say something about the subject of the spr. 
+; it can be already bound by a zpro. taking that out (勉強になる)
 
 light-shon-stem-lex := light-stem-lex &
 [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
-                    VAL.SPR.FIRST [LOCAL [CAT.VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +],
-                                          CONT.HOOK [INDEX #3,
-						     XARG #2]]]],
+                    VAL [SPR.FIRST [LOCAL [CONT.HOOK [INDEX #3,
+						     XARG #2]]]]],
                CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
                                    [HONORED #2,
                                     BEARER #3,
@@ -8377,17 +8395,24 @@ light-shon-stem-lex := light-stem-lex &
 
 light-shon-c-stem-lex := light-shon-stem-lex & [STEMTYPE c-stem].
 
+; (MS 2005-06-20) nasaru.
+
+light-shon-c2-stem-lex := light-shon-stem-lex & [STEMTYPE c2-stem].
+
+
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-06-21) It is not right to say something about the subject of the spr. 
+; it can be already bound by a zpro. taking that out (勉強いたす) and binding the
+; honorification to XARG.
 
 light-minus_shon-stem-lex := light-stem-lex &
-[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
-                    VAL.SUBJ.FIRST [LOCAL [CAT.HEAD.FORMAL.SHON -,
-					   CONT.HOOK.XARG #2 ]]],
-               CONT.HOOK.INDEX #3,
+[SYNSEM.LOCAL [CAT.HEAD.FORMAL.SHON -,
+               CONT.HOOK [INDEX #3,
+			  XARG #2],
                CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
-                                   [HONORED #2,
-                                    BEARER #3,
-                                    POLARITY -] !>]]].
+						    [HONORED #2,
+						     BEARER #3,
+						     POLARITY -] !>]]].
 
 light-minus_shon-v-stem-lex := light-minus_shon-stem-lex & [STEMTYPE v-stem].
 light-minus_shon-c-stem-lex := light-minus_shon-stem-lex & [STEMTYPE c-stem].

@@ -1372,6 +1372,9 @@ adj2n-rule := ordinary-nohon-n-lex &
 				     SYNSEM.LKEYS.KEYREL.PRED #rel,
 				     INFLECTED -]>].   
 
+; (MS 2005-06-21) BAR + keeps it from going into zpro rules. Taking that out.
+; お書きになる。
+
 v2vn-rule := j-lexeme-to-word-rule &
              [LMORPH-BIND-TYPE #morph,
 	      INFLECTED +,
@@ -1379,7 +1382,7 @@ v2vn-rule := j-lexeme-to-word-rule &
                                      [MAIN-PRD -,
                                       SMOD unmarked],
                                 VAL #sc],
-			    BAR +],
+			    BAR bool],
               ARGS.FIRST [SYNSEM.LOCAL.CAT [HEAD.LIGHT -,
 					    VAL #sc],
 			  RMORPH-BIND-TYPE #morph & inf-morph]].

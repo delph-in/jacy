@@ -831,10 +831,12 @@ head-specifier-rule := head-specifier-rule-type &
 
 
 
+; (MS 2005-06-20) AHON needs to be copied, because the prefixes are often honorific.
 
 prefix-attach-rule := prefix-rule &
-                      [ARGS < [SYNSEM.LOCAL [BAR -,
-                                             CAT.HEAD hon-prefix_head],
+                      [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON #ahon,
+		       ARGS < [SYNSEM.LOCAL [BAR -,
+                                             CAT.HEAD hon-prefix_head & [FORMAL.AHON #ahon] ],
                                J-NEEDS-AFFIX -],
                               [SYNSEM.LOCAL.BAR bool,
                                J-NEEDS-AFFIX -] >].

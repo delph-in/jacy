@@ -125,7 +125,7 @@ vn-sbj-comps-lex := vn-lex &
 				   CONT.HOOK.XARG #sbjind,
 				   ARG-S < #sbj . #comps >]].
 
-vn-trans1-lex := vn-sbj-comps-lex &
+vn-trans1-super-lex := vn-sbj-comps-lex &
             [SYNSEM [LOCAL.CAT.VAL ga-wo_transitive &
 				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
@@ -134,21 +134,21 @@ vn-trans1-lex := vn-sbj-comps-lex &
 
 
 
-vn-trans2-lex := vn-sbj-comps-lex &
+vn-trans2-super-lex := vn-sbj-comps-lex &
             [SYNSEM [LOCAL.CAT.VAL ga-ni_transitive &
 				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
 		     LKEYS [KEYREL [ARG1 #sbjind,
 				      ARG2 #objind]]]].
 
-vn-trans3-lex := vn-sbj-comps-lex &
+vn-trans3-super-lex := vn-sbj-comps-lex &
             [SYNSEM [LOCAL.CAT.VAL ga-to_transitive2 &
 				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
 		     LKEYS [KEYREL [ARG1 #sbjind,
 				    ARG2 #objind]]]].
 
-vn-trans8-lex := vn-sbj-comps-lex &
+vn-trans8-super-lex := vn-sbj-comps-lex &
             [SYNSEM [LOCAL.CAT.VAL sbj-narg_transitive &
 				   [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 				    SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]],
@@ -156,7 +156,7 @@ vn-trans8-lex := vn-sbj-comps-lex &
 				      ARG2 #objind]],
 		     NON-LOCAL.ROBUST +]].
 
-vn-ditrans-lex := vn-sbj-comps-lex &
+vn-ditrans-super-lex := vn-sbj-comps-lex &
             [SYNSEM [LOCAL.CAT.VAL ditransitive &
                                       [COMPS [FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 					      REST.FIRST.LOCAL.CONT [HOOK.INDEX #obj2ind]],
@@ -165,7 +165,7 @@ vn-ditrans-lex := vn-sbj-comps-lex &
 				      ARG2 #objind,
                                       ARG3 #obj2ind]]]].
 
-vn-intrans-lex := vn-lex &
+vn-intrans-super-lex := vn-lex &
             [SYNSEM [LOCAL [CAT.VAL intransitive &
                                       [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]],
 			    ARG-S < #sbj >,
@@ -174,7 +174,7 @@ vn-intrans-lex := vn-lex &
 
 
 
-vn-ditrans-toni-lex := vn-sbj-comps-lex &
+vn-ditrans-toni-super-lex := vn-sbj-comps-lex &
             [SYNSEM [LOCAL.CAT.VAL ga-wo-toni-ditransitive &
                                       [COMPS [FIRST.LOCAL.CONT [HOOK.INDEX #objind],
 					      REST.FIRST.LOCAL.CONT [HOOK.INDEX #obj2ind]],
@@ -201,15 +201,15 @@ vn-ditrans-toni-lex := vn-sbj-comps-lex &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;VNs;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-vn-ditrans-hhon-lex := vn-ditrans-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
-vn-intrans-hhon-lex := vn-intrans-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
-vn-trans3-hhon-lex := vn-trans3-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
-vn-trans2-hhon-lex := vn-trans2-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
-vn-trans1-hhon-lex := vn-trans1-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-ditrans-hhon-lex := vn-ditrans-super-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-intrans-hhon-lex := vn-intrans-super-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-trans3-hhon-lex := vn-trans3-super-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-trans2-hhon-lex := vn-trans2-super-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+vn-trans1-hhon-lex := vn-trans1-super-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-vn-ditrans-minus_shon-lex := vn-ditrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+vn-ditrans-minus_shon-lex := vn-ditrans-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
 								  VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
 											CONT.HOOK.INDEX #2]],
 							     CONT.HOOK.INDEX #3,
@@ -219,7 +219,7 @@ vn-ditrans-minus_shon-lex := vn-ditrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SH
 										POLARITY -] !>]]].
 
 
-vn-intrans-minus_shon-lex  := vn-intrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+vn-intrans-minus_shon-lex  := vn-intrans-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -228,7 +228,7 @@ vn-intrans-minus_shon-lex  := vn-intrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.S
                                     BEARER #3,
                                     POLARITY -] !>]]].
 
-vn-trans3-minus_shon-lex  := vn-trans3-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+vn-trans3-minus_shon-lex  := vn-trans3-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -237,7 +237,7 @@ vn-trans3-minus_shon-lex  := vn-trans3-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHO
                                     BEARER #3,
                                     POLARITY -] !>]]].
 
-vn-trans2-minus_shon-lex  := vn-trans2-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+vn-trans2-minus_shon-lex  := vn-trans2-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -246,7 +246,7 @@ vn-trans2-minus_shon-lex  := vn-trans2-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHO
                                     BEARER #3,
                                     POLARITY -] !>]]].
 
-vn-trans1-minus_shon-lex  := vn-trans1-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+vn-trans1-minus_shon-lex  := vn-trans1-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -303,7 +303,7 @@ vn-trans1-hhon-minus_shon-lex  := vn-trans1-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-vn-ditrans-shon-lex := vn-ditrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+vn-ditrans-shon-lex := vn-ditrans-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -313,7 +313,7 @@ vn-ditrans-shon-lex := vn-ditrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                                     POLARITY +] !>]]].
 
 
-vn-intrans-shon-lex := vn-intrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+vn-intrans-shon-lex := vn-intrans-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -322,7 +322,7 @@ vn-intrans-shon-lex := vn-intrans-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                                     BEARER #3,
                                     POLARITY +] !>]]].
 
-vn-trans3-shon-lex := vn-trans3-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+vn-trans3-shon-lex := vn-trans3-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -331,7 +331,7 @@ vn-trans3-shon-lex := vn-trans3-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                                     BEARER #3,
                                     POLARITY +] !>]]].
 
-vn-trans2-shon-lex := vn-trans2-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+vn-trans2-shon-lex := vn-trans2-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -340,7 +340,7 @@ vn-trans2-shon-lex := vn-trans2-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                                     BEARER #3,
                                     POLARITY +] !>]]].
 
-vn-trans1-shon-lex := vn-trans1-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+vn-trans1-shon-lex := vn-trans1-super-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                            CONT.HOOK.INDEX #2]],
                CONT.HOOK.INDEX #3,
@@ -399,3 +399,31 @@ vn-trans1-hhon-shon-lex := vn-trans1-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.
 
 vn-trans1-minusbar-lex := vn-trans1-lex &
 			  [SYNSEM.LOCAL.BAR -].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; no honorification needs an empty background. so, I've inserted
+;; the vn-trans1-super-lex types.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+vn-trans1-lex := vn-trans1-super-lex &
+		 [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+vn-trans2-lex := vn-trans2-super-lex &
+		 [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+
+vn-trans3-lex := vn-trans3-super-lex &
+		 [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+vn-trans8-lex := vn-trans8-super-lex &
+		 [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+vn-ditrans-lex := vn-ditrans-super-lex &
+		 [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+vn-ditrans-toni-lex := vn-ditrans-toni-super-lex &
+		 [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+vn-intrans-lex := vn-intrans-super-lex &
+		 [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+

@@ -971,8 +971,8 @@ mo-varg := topic-vobj-lex &
 
 
 mo-sconj-np := s-conj-lex &
-    [ORTH <! "คโ" !>,
-     SYNSEM.LKEYS.KEYREL.PRED '_keredomo_p_rel]. 
+    [ORTH <! "คโ","กข" !>,
+     SYNSEM.LKEYS.KEYREL.PRED '_mo_p_rel]. 
 
 
 na := s-end2-lex &

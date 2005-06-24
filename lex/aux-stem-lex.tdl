@@ -82,13 +82,15 @@ pure-aspect-c2-stem-lex &
 [SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
 ORTH <! "いく" !>].
 
+; (MS 2005-06-24) This should be SHON -.
+
 mairu-aux-stem :=
-pure-aspect-c-stem-lex &
+pure-aspect-minus_shon-c-stem-lex &
 [SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
 ORTH <! "参る" !>].
 
 mairu-aux-hiragana-stem :=
-pure-aspect-c-stem-lex &
+pure-aspect-minus_shon-c-stem-lex &
 [SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
 ORTH <! "まいる" !>].
 

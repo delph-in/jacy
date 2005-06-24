@@ -247,6 +247,14 @@ vn-trans2-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_denwa_vn_rel]],
 ORTH <! "電話" !>].
 
+; (MS 2005-06-21) We have problems with Chasen sometimes
+; tokenizing honorific prefixes and sometimes not.
+
+denwa-hon-vn :=
+vn-trans2-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_denwa_vn_rel]],
+ORTH <! "お","電話" !>].
+
 
 doryoku-vn :=
 vn-trans2-lex &
@@ -28518,57 +28526,62 @@ vn-intrans-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_shaashaa_vn_rel]],
 ORTH <! "しゃあしゃあ" !>].
 
-;継続
-
-shinpai-vn-trans1 :=
-vn-trans1-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_keizoku_vn_trans1_rel]],
-ORTH <! "継続" !>].
 
 ;;(05-03-01)
 
 ;完成
 
-kansei-vn-intrans :=
-vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kansei_vn_intrans_rel]],
-ORTH <! "完成" !>].
+; (MS 2005-06-24) As this is already there as vn-trans1, 
+; this entry is not necessary.
+
+;kansei-vn-intrans :=
+;vn-intrans-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_kansei_vn_intrans_rel]],
+;ORTH <! "完成" !>].
 
 ;成立
 ;coming into existence; arrangements; establishment; completion
 
 seiritsu-vn-intrans :=
 vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_seiritsu_vn_intrans_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_seiritsu_vn_rel]],
 ORTH <! "成立" !>].
 
 ;終了
+; (MS 2005-06-24) As this is already there as vn-trans1, 
+; this entry is not necessary.
 
-shuuryou-vn-intrans :=
-vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_shuuryou_vn_intrans_rel]],
-ORTH <! "終了" !>].
+;shuuryou-vn-intrans :=
+;vn-intrans-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_shuuryou_vn_intrans_rel]],
+;ORTH <! "終了" !>].
 
 ;;(05-03-02)
 
 ;移動
+; (MS 2005-06-24) As these are already there as vn-trans1, 
+; these entries are not necessary.
 
-idou-vn-intrans :=
-vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_idou_vn_intrans_rel]],
-ORTH <! "移動" !>].
+;idou-vn-intrans :=
+;vn-intrans-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_idou_vn_intrans_rel]],
+;ORTH <! "移動" !>].
 
 ;実現
 
-jitsugen-vn-intrans :=
-vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_jitsugen_vn_intrans_rel]],
-ORTH <! "実現" !>].
+;jitsugen-vn-intrans :=
+;vn-intrans-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_jitsugen_vn_intrans_rel]],
+;ORTH <! "実現" !>].
 
 ;決定
 
-kettei-vn-intrans :=
-vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kettei_vn_intrans_rel]],
-ORTH <! "決定" !>].
+;kettei-vn-intrans :=
+;vn-intrans-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_kettei_vn_intrans_rel]],
+;ORTH <! "決定" !>].
 
+o-machi-vn :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_matsu_vn_rel]],
+ORTH <! "お待ち" !>].

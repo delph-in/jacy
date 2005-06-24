@@ -39,6 +39,9 @@ light-minus_shon-c-stem-lex &
 ninaru-multi := light-shon-c-stem-lex &
            [ORTH <! "に",  "なる" !>].
 
+nasaru := light-shon-c2-stem-lex &
+	  [ORTH <! "なさる" !>].
+
 moushiageru-light  :=
 light-minus_shon-v-stem-lex &
 [ORTH <! "申し上げる" !>].

@@ -429,7 +429,7 @@ hon-prefix-lex &
 [ORTH <! "дк" !>,
  SYNSEM.LOCAL.CAT.HEAD [FORMAL.AHON +,
                         MOD < [LOCAl [CAT.HEAD vn_head,
-                                   BAR +]]> ]].
+				      BAR +]]> ]].
 
 o-hon-napref :=
 hon-prefix-lex &

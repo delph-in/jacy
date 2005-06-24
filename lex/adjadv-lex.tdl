@@ -1317,12 +1317,12 @@ i-adj-stem-lex &
 SYNSEM.LKEYS.KEYREL.PRED '_sukunai_a_rel].
 
 yoroshii-adj  :=
-i-adj-stem-lex &
+i-adj-hon-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoroshii_a_rel,
 ORTH <! "宜しい" !>].
 
 yoroshii-hiragana-adj  :=
-i-adj-stem-lex &
+i-adj-hon-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoroshii_a_rel,
 ORTH <! "よろしい" !>].
 

@@ -532,12 +532,14 @@ lexeme-rule &
 ; What shall we do?
 ; (MS 2004-11-09) J-NEEDS-AFFIX + on the argument, such that it doesn't apply
 ; to 食べていない . I further restrict it to adj-stems.
+; (MS 2005-06-20) I don't think that this should be AHON -. How about "yoroshii"?
 
 adj-i-lexeme-infl-rule := 
 word-rule &
 [RMORPH-BIND-TYPE u-morph,
  ARGS.FIRST [STEMTYPE adj-stem,
-	     SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head & [MODUS #modus],
+	     SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head & [MODUS #modus,
+						      FORMAL #form],
 	     J-NEEDS-AFFIX +],
  SYNSEM.LOCAL [CAT.HEAD i-adj-stem_head & 
 			[H-TENSE present,
@@ -552,7 +554,7 @@ word-rule &
                          VN -,
                          C-MOD null,
                          FIN +,
-                         FORMAL.AHON -],
+                         FORMAL #form],
 	       BAR -]].
 
 
@@ -738,7 +740,7 @@ v2n-kata-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VN POLITE;;;;;;;;;;;;;;;;;;;;
 vn-polite-infl-rule :=
-%prefix (知らせ お知らせ) (願い お願い) (送り お送り)
+%prefix (知らせ お知らせ) (願い お願い) (送り お送り) (返し お返し) (電話 お電話)
 vnpolite-rule &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vn_head].
 
