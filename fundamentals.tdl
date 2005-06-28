@@ -199,3 +199,15 @@ tam := avm &
 
 
 never_unify_rel := relation.
+
+;;; (FCB ) added an ARG0 to messages - harmonizing with ERG 
+
+; The ARG0 is the highest scoping event in the relation that 
+; the MARG qeqs.
+
+message := basic_message & arg0-relation & 
+  [ PRED message_m_rel,
+    MARG handle ].
+
+;;; In the brave new world
+; message :+ arg0-relation.
