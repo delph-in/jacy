@@ -165,6 +165,13 @@ FIRST))))
          :output :stream :if-output-exists :append 
          :input :stream :error-output nil)
       (declare (ignore foo #-:allegro pid))
+      ;;
+      ;; while we assert ChaSen to operate in EUC-JP mode, enforce the encoding
+      ;; on the stream talking to the sub-process.
+      ;;
+      #+(and :allegro-version>= (version>= 6 0))
+      (setf (stream-external-format stream) (excl:find-external-format :euc))
+    
       (format stream "~a~%" string)
       (let* ((analyses (loop
                            for form = (read stream nil :eof)
@@ -226,7 +233,7 @@ FIRST))))
 (defun chasen-preprocess-for-pet (input)
   (preprocess-sentence-string input :verbose nil :posp t))
 
-#+(or :pvm :itsdb)
+#+(and :chasen (or :pvm :itsdb))
 (setf tsdb::*tsdb-preprocessing-hook* "lkb::chasen-preprocess-for-pet")
 
 ;;;
