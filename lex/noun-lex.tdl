@@ -4740,7 +4740,8 @@ SYNSEM.LKEYS.KEYREL [PRED '_shuu_n_rel]].
 
 itsu := 
 wh-word-temp-lex &
-[ORTH <! "いつ" !>].
+[ORTH <! "いつ" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_itsuka_n_rel].
 
 itsu-mo := affix-noun-lex &
 [SYNSEM [LKEYS.KEYREL.PRED '_itsu_n_mo_rel,
@@ -4748,7 +4749,8 @@ itsu-mo := affix-noun-lex &
 ORTH <! "いつ" !>].
 
 itsuka := indef-word-temp-lex &
-[ORTH <! "いつか" !>].
+[ORTH <! "いつか" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_itsuka_n_rel].
 
 nani :=
 wh-word-thing-lex &
@@ -10179,7 +10181,7 @@ koohii-noun :=
 	[SYNSEM.LKEYS.KEYREL.PRED '_koohii_n_rel,
          ORTH <! "コーヒー" !>].
 
-;one cup
+;one cup --- should be numeral+classifier
 
 ippai-noun :=  
         ordinary-nohon-n-lex &

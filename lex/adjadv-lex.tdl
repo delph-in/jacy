@@ -123,10 +123,13 @@ SYNSEM.LKEYS.KEYREL.PRED '_hijou_a_rel].
 ;[ORTH <! "比較的" !>,
 ;SYNSEM.LKEYS.KEYREL.PRED '_hikakuteki_a_rel].
 
-ippai-adj :=
-na-adj-lex &
+ippai-adj := na-adj-lex &
 [ORTH <! "いっぱい" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_ippai_a_rel].
+
+ippai-kanji-adj := na-adj-lex &
+ [ORTH <! "一杯" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_ippai_a_rel].
 
 kaNjiN-adj :=
 na-adj-lex &
@@ -15124,13 +15127,6 @@ arinomama_3 := na-adj-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_arinomama_a_3_rel,
  ORTH <! "ありのまま" !>].
 
-;<IJ> ; 一杯 
-;<IJ> ; JACY 一杯: ippai-noun (ordinary-nohon-n-lex)
-;<IJ> ; Used 4 times
-
-;<IJ> ippai_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ippai_a_3_rel,
-;<IJ>  ORTH <! "一杯" !>].
 
 ;<IJ> ; ぎりぎり 
 ;<IJ> ; JACY ぎりぎり: girigiri-adv (scopal-adv-regular-lex)
