@@ -588,12 +588,14 @@ head-adjunct-rule-first-s := hadj-first-s &
 
 ; (MS 2004-12-13) This had [ADJ -] on its argument, preventing the correct
 ; reading for ÌÜ¤¬Èþ¤·¤¤Ç­.
+; (FCB 2005-06-15) Added ARG0 to messages
 
 relative-clause-rule := hadj-final-i &
                       [SYNSEM.LOCAL [BAR +,
                                      NUCL nucl_minus],
                         C-CONT [RELS <!  message & [PRED proposition_m_rel,
 						    LBL #top,
+						    ARG0 #adjevent,
 						    MARG #soa],
                                           prep-mod-relation & [PRED 'topic_rel,
                                                        ARG0.E.TENSE no_tense,

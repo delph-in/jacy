@@ -453,6 +453,7 @@ head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check & orth-princ &
 ; (MS 2004-04-01) We decided to give the gap rules a UNDERSPEC_ARG - feature,
 ;  such that this can be selected by the root node type.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (FCB 2005-06-15) Added ARG0 to the message of the relative clause
 
 rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
 		       [SYNSEM [LOCAL [BAR +,
@@ -462,13 +463,15 @@ rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
 			C-CONT [RELS <!   message  & 
  				       [PRED proposition_m_rel,
 					LBL #top,
+					ARG0 #eventindex,
 					MARG #soa ] !>, 
 				HCONS <! qeq & [HARG #soa,
 						LARG #adjhand] !>],
 			ARGS <[SYNSEM [LOCAL [CAT [HEAD [J-POSTHEAD rels,
 							 MAIN-PRD bool],
 						   VAL.SPR olist],
-					      CONT.HOOK [LTOP #adjhand],
+					      CONT.HOOK [LTOP #adjhand,
+							 INDEX #eventindex],
 					      BAR +,
 					      NUCL not_fin_conj]]],
                               [SYNSEM j-synsem & 
@@ -560,8 +563,10 @@ hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-fina
 ; (ERB 2002-01-29) That constraint is too strong for runon_s rule,
 ; so move to head-adjunct-rule-coord-type.
 
+; (FCB 2005-06-15) Added ARG0 to messages
+
 sentence-coord-type :=  binary-type-conj & 
-			[SYNSEM [LOCAL [CONT [HOOK [INDEX #i,
+			[SYNSEM [LOCAL [CONT [HOOK [INDEX #rindex,
 						    LTOP #hand]],
 	       CAT.VAL #val,
                NUCL te_conj],   
@@ -573,10 +578,12 @@ sentence-coord-type :=  binary-type-conj &
                 message & 
 	       [PRED proposition_m_rel,
 		LBL #prpstnh1,
+		ARG0 #rindex,
                  MARG #prpstnh1soa],
                message & 
                 [PRED proposition_m_rel,
 		LBL #prpstnh2,
+		 ARG0 #lindex,
                  MARG #prpstnh2soa] !>,
          HCONS <! qeq &
                  [HARG #prpstnh1soa,
@@ -584,9 +591,10 @@ sentence-coord-type :=  binary-type-conj &
                  qeq &
                  [HARG #prpstnh2soa,
                   LARG #lhand]!>],
-ARGS < [SYNSEM.LOCAL [CONT.HOOK.LTOP #lhand]],
+ARGS < [SYNSEM.LOCAL [CONT.HOOK [LTOP #lhand,
+				 INDEX #lindex]]],
        [SYNSEM.LOCAL [CONT.HOOK [LTOP #rhand,
-				 INDEX #i],
+				 INDEX #rindex],
 			CAT.VAL #val]] > ].
 
 
@@ -833,11 +841,13 @@ utt-type := utterance-type &
 	     ARGS < [SYNSEM.LOCAL.CONT [HOOK.INDEX #i]] >].
 
 ; (MS 2003-10-09) Problems with Matrix 0.5 MSG type
+; (FCB 2005-06-15) Added ARG0 to messages
 
 utterance-plusmessage-type := utt-type &
                               [C-CONT [HOOK [LTOP #mhand,
 					     INDEX #ind],
 				       RELS <! [MARG #soahand,
+						ARG0 #ind,
 						LBL #mhand ] !>,
                                        HCONS <! qeq & [HARG #soahand, LARG #hdhand] !>],
                                ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [LTOP #hdhand,
@@ -980,6 +990,7 @@ liszt-extending-lrule := lexical_sign-rule & lex-rule &
 ; because quasi-light-verbs can't be verb-stem-lex but should be able
 ; to undergo this rule.
 
+; (FCB 2005-06-15) Added ARG0 to messages
 potential-rule := lex-rule & lexeme &
                   [SYNSEM [LOCAL [CAT [HEAD #head & [MODUS potential],
                                        VAL #sc],
@@ -993,7 +1004,11 @@ potential-rule := lex-rule & lexeme &
 			   MODIFIED.PERIPH #per],
                    J-NEEDS-AFFIX +,
 		   NEEDS-AFFIX +,
-		   C-CONT [RELS <! message & [PRED proposition_m_rel, LBL #chand, MARG #soa],
+		   C-CONT [RELS <! message & 
+				 [PRED proposition_m_rel, 
+				  LBL #chand, 
+				  ARG0 #ind,
+				  MARG #soa],
                                     rareru-relation & #key &[LBL #hand,ARG0 #ind, ARG2 #chand] !>,
                            HCONS <! qeq & [LARG #verb-hd,
                                             HARG #soa] !>],
@@ -1020,6 +1035,7 @@ potential-rule := lex-rule & lexeme &
 
 ; (MS 2004-11-09) The INDEX should come from the argument: 食べて行ける
 
+; (FCB 2005-06-15) Added ARG0 to messages
 potential-lexeme-to-word-rule  := lex-rule & v-lex &
                [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
                                          [AUX #aux,
@@ -1043,6 +1059,7 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
                                message & 
 			      [PRED proposition_m_rel,
 			       LBL #chand,
+			       ARG0 #ind,
 			       MARG #soa] !>,
                         HCONS <! qeq & [LARG #ohand,
                                          HARG #soa] !>],
@@ -1068,6 +1085,7 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
 ;  ---> "SYNSEM.LOCAL.CAT.HEAD.C-MOD.FIRST.LOCAL.CAT.HEAD verb_head..."
 ;
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 
 conditional-lexeme-to-word-rule  := lex-rule & v-lex &
                [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &

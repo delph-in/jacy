@@ -189,33 +189,34 @@ nai-notyetend  := v-noncaus-op-end-lex &
 
 
 
-hajimeru-end := v-noncaus-op-end-lex &
-           [ORTH <! "はじめる" !>,
-	    J-NEEDS-AFFIX +,
-	    INFLECTED -,
-	    LMORPH-BIND-TYPE i-morph,
-	    STEMTYPE v-stem,
-	    SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK < [MODIFIED.PERIPH -,
-							    LOCAL.CAT.HEAD verbend_head] >,
-						      COP-ARG -],
-			       VAL.SPR.FIRST [LOCAL.CONT [MOD-HAND #modhd,
-							  HOOK.LTOP #v-hd,
-							  MOD-IND #event],
-					      LKEYS.KEYREL.ARG1 #arg1]],
-			  CONT [RELS <! #key & [ARG2 #arg4,
-						 ARG1 #arg1,
-						 LBL #top],
-				       message & [PRED proposition_m_rel,
-						  LBL #arg4,
-						  MARG #subprpstn_soa]!>,
-				HOOK [LTOP #top,
-				      INDEX #event & [E.MOOD indicative]],
-				MOD-HAND #modhd,
-				MOD-IND #event,
-				HCONS <! qeq & [LARG #v-hd,
-						 HARG #subprpstn_soa] !>]],
-		    LKEYS.KEYREL #key &  [PRED '_hajimeru_v_rel],
-		    MODIFIED.PERIPH +]].
+
+; hajimeru-end := v-noncaus-op-end-lex &
+;            [ORTH <! "はじめる" !>,
+; 	    J-NEEDS-AFFIX +,
+; 	    INFLECTED -,
+; 	    LMORPH-BIND-TYPE i-morph,
+; 	    STEMTYPE v-stem,
+; 	    SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK < [MODIFIED.PERIPH -,
+; 							    LOCAL.CAT.HEAD verbend_head] >,
+; 						      COP-ARG -],
+; 			       VAL.SPR.FIRST [LOCAL.CONT [MOD-HAND #modhd,
+; 							  HOOK.LTOP #v-hd,
+; 							  MOD-IND #event],
+; 					      LKEYS.KEYREL.ARG1 #arg1]],
+; 			  CONT [RELS <! #key & [ARG4 #arg4,
+; 						 ARG1 #arg1,
+; 						 LBL #top],
+; 				       message & [PRED proposition_m_rel,
+; 						  LBL #arg4,
+; 						  MARG #subprpstn_soa]!>,
+; 				HOOK [LTOP #top,
+; 				      INDEX #event & [E.MOOD indicative]],
+; 				MOD-HAND #modhd,
+; 				MOD-IND #event,
+; 				HCONS <! qeq & [LARG #v-hd,
+; 						 HARG #subprpstn_soa] !>]],
+; 		    LKEYS.KEYREL #key &  [PRED '_hajimeru_v_rel],
+; 		    MODIFIED.PERIPH +]].
 
 arimasen-tai-end := v-neg-end-lex &
            [ORTH <! "あり","ませ","ん" !>,
@@ -1135,15 +1136,17 @@ zaru-wo-emasen-end := v-neg-polite-present-end-lex  &
 	       LMORPH-BIND-TYPE a-morph].
 
 
+; (FCB 2005-06-27) One entry covers all three.
 
-garu-adj2v-end := adj2v-end-lex &
-             [ORTH <! "がる" !>].
-
-garu-na-end := naadj2v-end-lex &
+garu-end := naadj2v-end-lex &
 	       [ORTH <! "がる" !>].
 
-garu-v-end := garu-end-lex &
-             [ORTH <! "がる" !>].
+;garu-adj2v-end := adj2v-end-lex &
+;             [ORTH <! "がる" !>].
+
+
+; garu-v-end := garu-end-lex &
+;              [ORTH <! "がる" !>].
 
 kata-v-end := v2n-end-lex &
 	      [ORTH <! "方" !>,

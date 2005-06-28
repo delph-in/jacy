@@ -73,7 +73,7 @@ ossharu-stem := v5-c2-stem-lex &
                    ORTH <! "おっしゃる" !>].
 
 
-kezuru-stem := v1-c2-stem-lex &
+kezuru-stem := v1-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_kezuru_v_rel]],
                    ORTH <! "削る" !>].
 
@@ -21822,9 +21822,13 @@ eru-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;(CH 2005-04-09)
-hajimeru-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
+hajimeru-syn-vv-raising-kanji-stem := syn-vv-raising-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_rais]],
  ORTH <! "始める" !> ].
+
+hajimeru-syn-vv-raising-hira-stem := syn-vv-raising-v-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_rais]],
+ ORTH <! "はじめる" !>].
 
 ;(CH 2005-04-09)
 tsudukeru-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
@@ -21945,9 +21949,14 @@ au-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;(CH 2005-04-09)
-hajimeru-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-v-stem-lex &
+hajimeru-syn-vv-intrans-vbar-kanji-stem := syn-vv-intrans-vbar-v-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_vemb]],
  ORTH <! "始める" !> ].
+
+hajimeru-syn-vv-intrans-vbar-hira-stem := syn-vv-intrans-vbar-v-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_vemb]],
+ ORTH <! "はじめる" !>].
+
 
 ;(CH 2005-04-09)
 tsudukeru-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-v-stem-lex &
