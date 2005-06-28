@@ -18,7 +18,6 @@
 
 ; (ERB 2002-01-29) Output of this rule should also be SMOD unmarked
 ; to block ambiguity with nonprop conjunctions.  
-
 ; (MS 2004-02-09) BAR -, to block spurious ambiguity in 
 ; 私が笑う
 
@@ -251,7 +250,7 @@ j-lexeme-to-word-rule &
 ;Maybe the feature AUX can be leveraged?
 
 imperative-c2-stem-infl-rule :=
-%suffix (る い)
+%suffix (く け) (る い ) (う う)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE imp-morph,
  SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
@@ -267,7 +266,7 @@ j-lexeme-to-word-rule &
 ; (MS 2004-12-15) For example, 止れ, stop
 
 imperative-c-stem-infl-rule :=
-%suffix (る れ)
+%suffix (く け) (る れ) (う え) (す せ) (む め) (ぐ げ) (ぶ べ) (つ て) (ぬ ね)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE imp-morph,
  SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
@@ -278,6 +277,7 @@ j-lexeme-to-word-rule &
                          J-SPEC null,
                          FIN +]],
  ARGS.FIRST.STEMTYPE c-stem].
+
 
 ;;;;;;;;;;;;;;;;;;;COPULA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
