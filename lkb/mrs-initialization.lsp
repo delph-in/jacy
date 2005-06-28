@@ -10,15 +10,15 @@
 ;;; (when (fboundp 'index-for-generator)
 ;;;   (index-for-generator))
 
-#+mrs(read-mrs-rule-file-aux 
-      (merge-pathnames
-       (make-pathname :directory 
-                      (pathname-directory
-                       (dir-append *grammar-directory* 
-                                   '(:relative "lkb"))))
-      (make-pathname 
-       :name "genrules.mrs"))
-      t)
+;;;#+mrs(read-mrs-rule-file-aux 
+;;;      (merge-pathnames
+;;;       (make-pathname :directory 
+;;;                      (pathname-directory
+;;;                       (dir-append *grammar-directory* 
+;;;                                   '(:relative "lkb"))))
+;;;      (make-pathname 
+;;;       :name "genrules.mrs"))
+;;;      t)
 
 
 

@@ -187,3 +187,29 @@
   #-:psql
   nil)
 
+;;;
+;;; make generation faster
+;;;
+(setf *gen-packing-p* t)
+(setf *gen-filtering-p* t)
+(setf *packing-restrictor*  '(RELS HCONS ORTH STEM RULE-NAME))
+
+;;;
+;;; list of things not to generate even though they maybe contentful
+;;;
+
+(setf *duplicate-lex-ids* 
+  '(;; s-end1-decl-lex - emphatic sentence enders
+    ga-sap keredomo-send kedomo-send ga-sap kedo-send shi-send 
+    yo-2 yo-3 keredo-send exclamation-mark ze zo zo-2 
+    ;; s-end1-decl-minusahon-lex - emphatic sentence enders
+    i-emp
+    ;; variant forms of numbers (hankaku)
+    zero_card_a one_card_a two_card_a three_card_a four_card_a 
+    five_card_a six_card_a seven_card_a eight_card_a nine_card_a 
+    ;; variant forms of numbers (zenkaku)
+    zero_card one_card two_card three_card four_card 
+    five_card six_card seven_card eight_card nine_card 
+    ;;; indefinite pronouns FIXME - improve semantics
+    donna douiu dono-det
+    ))

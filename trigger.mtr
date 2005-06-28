@@ -1,0 +1,1473 @@
+;;; -*- Mode: tdl; -*-
+
+;;;
+;;; Tense & Aspect rules
+;;; 
+
+;;; Past
+ta-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event & [ E.TENSE past ] ] !> ],
+  FLAGS.TRIGGER "ta-end" ].
+
+;;; Terminative
+ shimau-aux-stem_gr := generator_rule &
+ [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT terminative ] ] !> ],
+   FLAGS.TRIGGER "shimau-aux-stem" ].
+
+jau-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jau-end" ].
+
+chau-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "chau-end" ].
+
+;;; Progressive
+te-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
+  FLAGS.TRIGGER "te-end" ].
+
+de-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
+  FLAGS.TRIGGER "de-end" ].
+
+iru-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
+  FLAGS.TRIGGER "iru-aux-stem" ].
+
+teru-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "teru-end" ].
+
+iru-aux-kanji-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "iru-aux-kanji-stem" ].
+
+oru-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "oru-aux-stem" ].
+
+irassharu-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "irassharu-aux-stem" ].
+
+oku-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "oku-aux-stem" ].
+
+oku-aux-kanji-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "oku-aux-kanji-stem" ].
+
+;;; inceptive
+iku-aux-hiragana-stem_gr := generator_rule &
+ [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT inceptive ] ] !> ],
+   FLAGS.TRIGGER "iku-aux-hiragana-stem" ].
+
+iku-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "iku-aux-stem" ].
+
+mairu-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mairu-aux-stem" ].
+
+;;; perfect_progressive
+kuru-hiragana-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT perfect_progressive ] ] !> ],
+  FLAGS.TRIGGER "kuru-hiragana-aux-stem" ].
+
+kuru-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kuru-aux-stem" ].
+
+;;; perfective
+aru-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT perfective ] ] !> ],
+  FLAGS.TRIGGER "aru-aux-stem" ].
+
+aru-kanji-aux-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "aru-kanji-aux-stem" ].
+
+gozaru-aux-hiragana-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "gozaru-aux-hiragana-stem" ].
+
+gozaru-aux-kanji-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "gozaru-aux-kanji-stem" ].
+ 
+
+
+
+;;;
+;;; Case postposition rules 
+;;;
+
+;;; ARG1 is ga
+ga_gr_1 := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event, ARG1 ref-ind & [ PNG j-png ] ] !> ],
+  FLAGS.TRIGGER "ga" ].
+
+;;; ARG2 is ga
+ga_gr_2 := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event, ARG2 ref-ind & [ PNG j-png ] ] !> ],
+  FLAGS.TRIGGER "ga" ].
+
+;;; ARG2 is wo
+wo_gr_1 := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event, ARG2 ref-ind & [ PNG j-png ] ] !> ],
+  FLAGS.TRIGGER "o" ].
+
+;;; FIXME what about Passive ARG1 is wo
+
+;;; ARG1 is ni
+ni_gr_1 := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event, ARG1 ref-ind & [ PNG j-png ] ] !> ],
+  FLAGS.TRIGGER "ni-case" ].
+
+;;; ARG2 is ni
+ni_gr_2 := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event, ARG2 ref-ind & [ PNG j-png ] ] !> ],
+  FLAGS.TRIGGER "ni-case" ].
+
+;;; ARG3 is ni
+ni_gr_3 := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 event, ARG3 ref-ind & [ PNG j-png ] ] !> ],
+  FLAGS.TRIGGER "ni-case" ].
+
+;;; FIXME to, kara, no, wa, ?dake 
+;;; case-markers that follow postpositions
+
+;;;
+;;; Classifier rules
+;;;
+ko_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "card_rel" ] !> ],
+  FLAGS.TRIGGER "ko_numcl" ].
+
+;;;
+;;; Light Verb Rules
+;;;
+
+;;; should look for vn lexical type?
+suru-light-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "~_vn_", ARG0 event  ] !> ],
+  FLAGS.TRIGGER "suru-light-stem" ].
+
+;;; possibly add different politenesses
+
+
+;;;
+;;; NA adjectives
+;;;
+;; should use lexical type
+na-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "~_a_", ARG0 event ] !> ],
+  FLAGS.TRIGGER "na-cop-lex" ].
+
+dearu-v-cop-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "~_a_", ARG0 event ] !> ],
+  FLAGS.TRIGGER "dearu-v-cop-stem" ].
+
+
+
+;;;
+;;; automatically generated rules for all semantically empty lexical entries:
+;;;
+;;; (loop
+;;;     with *package* = (find-package :lkb)
+;;;     for id in mrs::*empty-semantics-lexical-entries*
+;;;     do
+;;;       (format
+;;;        t
+;;;        "~(~a~)_gr := generator_rule &~%~
+;;;         [ CONTEXT [ RELS <! [ PRED \"non_existing_rel\" ] !> ],~%  ~
+;;;           FLAGS.TRIGGER \"~(~a~)\" ].~%~%"
+;;;        id id))
+;;;
+;;; francis and melanie, go through this list to activate the ones you actually
+;;; want to be available; keep in mind that (in the current set-up_ generator
+;;; rules are not type expanded, i.e. you have to supply everything you need in
+;;; a rule yourselves.                                          (25-dec-04; oe)
+;;;        
+
+;;; run on 2005-05-04
+
+karasign-nspec_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "karasign-nspec" ].
+
+no-nspec-4_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "no-nspec-4" ].
+
+o-hon-npref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "o-hon-npref" ].
+
+comma-vmod1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "comma-vmod1" ].
+
+nin_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nin_numcl" ].
+
+ni-case-3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ni-case-3" ].
+
+bit_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "bit_numcl" ].
+
+nensei_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nensei_numcl" ].
+
+seki_2_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "seki_2_2" ].
+
+go-hon-npref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "go-hon-npref" ].
+
+mirime-toru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mirime-toru_2" ].
+
+me_4_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "me_4" ].
+
+haba_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "haba_2" ].
+
+chottone-multi_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "chottone-multi" ].
+
+kakae_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kakae_2" ].
+
+taba_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "taba_2" ].
+
+to-conj-pobj_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "to-conj-pobj" ].
+
+do_event_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "do_event" ].
+
+mori_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mori_2" ].
+
+tsubu_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tsubu_numcl" ].
+
+deshitara-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "deshitara-cop-lex" ].
+
+banme_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "banme_numcl" ].
+
+comma-interjmod_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "comma-interjmod" ].
+
+quotation-noun-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-init" ].
+
+teki_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "teki_numcl" ].
+
+kakoku_numcl-c_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kakoku_numcl-c" ].
+
+kasho_numcl-2b_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kasho_numcl-2b" ].
+
+go-hon-vnpref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "go-hon-vnpref" ].
+
+go-hon-kanji-vnpref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "go-hon-kanji-vnpref" ].
+
+quotation-sap-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-sap-end" ].
+
+nyu-ton_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nyu-ton_2" ].
+
+kakoku_numcl-e_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kakoku_numcl-e" ].
+
+daun_4_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "daun_4" ].
+
+itasu-light_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "itasu-light" ].
+
+to-comp3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "to-comp3" ].
+
+tokoro_4_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tokoro_4" ].
+
+mashou-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mashou-end" ].
+
+retsu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "retsu_2" ].
+
+fuku_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "fuku_2" ].
+
+juu-numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "juu-numcl" ].
+
+satsu-2_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "satsu-2_numcl" ].
+
+pasukaru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "pasukaru_2" ].
+
+te_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "te_3" ].
+
+miri_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "miri_2" ].
+
+jun_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jun_2" ].
+
+satsu_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "satsu_numcl" ].
+
+tsu_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tsu_numcl" ].
+
+hekuta-ru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hekuta-ru_2" ].
+
+kara-case_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kara-case" ].
+
+picchi_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "picchi_2" ].
+
+kyaku_numcl-ashi_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kyaku_numcl-ashi" ].
+
+kakoku_numcl-b_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kakoku_numcl-b" ].
+
+rareru-simple-pass-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rareru-simple-pass-end" ].
+
+dari-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dari-end" ].
+
+tari-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tari-end" ].
+
+naa-hes_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "naa-hes" ].
+
+maa-hes_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "maa-hes" ].
+
+za_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "za_3" ].
+
+kin_numcl-bread_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kin_numcl-bread" ].
+
+
+doru_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "doru_numcl" ].
+
+de-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "de-v-cop-lex" ].
+
+quotation-name-end2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-name-end2" ].
+
+ga-3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ga-3" ].
+
+ka_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ka_numcl" ].
+
+wa_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "wa_numcl" ].
+
+ha_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ha_3" ].
+
+ya-do_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ya-do_2" ].
+
+degozaru-cop-multi_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "degozaru-cop-multi" ].
+
+kara-sign-case_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kara-sign-case" ].
+
+chaku_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "chaku_3" ].
+
+rinku_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rinku_3" ].
+
+soudesune-hes-multi_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "soudesune-hes-multi" ].
+
+angle-double-brackets-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "angle-double-brackets-end" ].
+
+da-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "da-v-cop-lex" ].
+
+na-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "na-v-cop-lex" ].
+
+itasu-kanji-light_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "itasu-kanji-light" ].
+
+nasai-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nasai-end" ].
+
+deareba-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "deareba-cop-lex" ].
+
+shime_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shime_2" ].
+
+mashite-end2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mashite-end2" ].
+
+kirorittoru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kirorittoru_2" ].
+
+kaisen_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kaisen_numcl" ].
+
+angle-double-brackets-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "angle-double-brackets-init" ].
+
+kumi_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kumi_2" ].
+
+nara-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nara-cop-lex" ].
+
+da-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "da-end" ].
+
+furi_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "furi_2" ].
+
+generic_adj_past_infl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "generic_adj_past_infl" ].
+
+miririttoru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "miririttoru_2" ].
+
+parenthesis-j-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "parenthesis-j-init" ].
+
+reru-ditrans-pass-ganini-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "reru-ditrans-pass-ganini-end" ].
+
+eeto-hes_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "eeto-hes" ].
+
+ku-ru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ku-ru_2" ].
+
+dake-case_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dake-case" ].
+
+moushiageru-hiragana-light_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "moushiageru-hiragana-light" ].
+
+moji_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "moji_3" ].
+
+shi_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shi_2" ].
+
+dasuu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dasuu_2" ].
+
+shi_numcl-publication_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shi_numcl-publication" ].
+
+uun_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "uun" ].
+
+fun_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "fun" ].
+
+sutoro-ku_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "sutoro-ku_2" ].
+
+pondo_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "pondo_2" ].
+
+shasen_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shasen_2" ].
+
+desu-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "desu-v-cop-lex" ].
+
+go-hon-katakana-npref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "go-hon-katakana-npref" ].
+
+kajou_numcl-b_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kajou_numcl-b" ].
+
+boruto_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "boruto_numcl" ].
+
+shuukan_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shuukan_2" ].
+
+nodesu-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nodesu-v-cop-lex" ].
+
+seki_2_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "seki_2_3" ].
+
+dai-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dai-v-cop-lex" ].
+
+koshi_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "koshi_3" ].
+
+quotation-noun-init3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-init3" ].
+
+maku_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "maku_2" ].
+
+bu_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "bu_numcl" ].
+
+ha_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ha_2" ].
+
+quotation-name-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-name-init" ].
+
+no-case_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "no-case" ].
+
+ki_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ki_numcl" ].
+
+megaherutsu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "megaherutsu_2" ].
+
+shi-shi-_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shi-shi-_2" ].
+
+seiki_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "seiki_2" ].
+
+go-hon-kanji-npref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "go-hon-kanji-npref" ].
+
+quotation-noun-init2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-init2" ].
+
+wa-in-copula-sent_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "wa-in-copula-sent" ].
+
+colon_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "colon" ].
+
+o-hon-vnpref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "o-hon-vnpref" ].
+
+kajou_numcl-c_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kajou_numcl-c" ].
+
+bariki_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "bariki_2" ].
+
+chie-n_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "chie-n_2" ].
+
+hyou_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hyou_2" ].
+
+jiku_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jiku_2" ].
+
+shuu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shuu_2" ].
+
+comma-vmod2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "comma-vmod2" ].
+
+angle-brackets-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "angle-brackets-end" ].
+
+o-hon-napref_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "o-hon-napref" ].
+
+quotation-noun-end-2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-end-2" ].
+
+baito_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "baito_2" ].
+
+ndeshou-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ndeshou-v-cop-lex" ].
+
+setto_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "setto_3" ].
+
+kasane_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kasane_2" ].
+
+parenthesis-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "parenthesis-init" ].
+
+nagare_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nagare_2" ].
+
+kirowatto_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kirowatto_numcl" ].
+
+a_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "a" ].
+
+quotation-name-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-name-end" ].
+
+you-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "you-end" ].
+
+kajou_numcl-e_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kajou_numcl-e" ].
+
+jou_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jou_2" ].
+
+gou_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "gou_2" ].
+
+mon_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mon_2" ].
+
+tsuuwa_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tsuuwa_3" ].
+
+de-adjunct_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "de-adjunct" ].
+
+te-adjunct_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "te-adjunct" ].
+
+ori_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ori_2" ].
+
+quotation-sap-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-sap-init" ].
+
+pe-ji_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "pe-ji_2" ].
+
+dai_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dai_3" ].
+
+dan_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dan_3" ].
+
+ku_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ku_2" ].
+
+gu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "gu_2" ].
+
+quotation-sentence-end2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-sentence-end2" ].
+
+kyoku_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kyoku_2" ].
+
+ten_4_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ten_4" ].
+
+kyaku_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kyaku_2" ].
+
+generic_adj_short_infl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "generic_adj_short_infl" ].
+
+soroi_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "soroi_2" ].
+
+reru-light-pass-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "reru-light-pass-end" ].
+
+koma_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "koma_2" ].
+
+ninaru-multi_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ninaru-multi" ].
+
+mashita-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mashita-end" ].
+
+reru-simple-pass-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "reru-simple-pass-end" ].
+
+kin_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kin_2" ].
+
+mashite-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mashite-end" ].
+
+ndarou-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ndarou-v-cop-lex" ].
+
+kashira-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kashira-cop-lex" ].
+
+kuo-ta-_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kuo-ta-_2" ].
+
+quotation-noun-init-2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-init-2" ].
+
+comma-pmod_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "comma-pmod" ].
+
+ru-buru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ru-buru_2" ].
+
+comma-te-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "comma-te-end" ].
+
+tsubo_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tsubo_2" ].
+
+hiki_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hiki_numcl" ].
+
+kasho_numcl-2c_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kasho_numcl-2c" ].
+
+no_numcl-2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "no_numcl-2" ].
+
+reru-honorific-pass-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "reru-honorific-pass-end" ].
+
+parenthesis-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "parenthesis-end" ].
+
+moto_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "moto_2" ].
+
+messhu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "messhu_2" ].
+
+fude_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "fude_2" ].
+
+kakoku_numcl-d_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kakoku_numcl-d" ].
+
+moushiageru-light_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "moushiageru-light" ].
+
+fushi_9_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "fushi_9" ].
+
+rareru-honorific-pass-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rareru-honorific-pass-end" ].
+
+kai_event_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kai_event" ].
+
+deshou-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "deshou-v-cop-lex" ].
+
+aa_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "aa" ].
+
+kasho_numcl-2d_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kasho_numcl-2d" ].
+
+dearu-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dearu-v-cop-lex" ].
+
+to_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "to_2" ].
+
+kasho_numcl-2e_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kasho_numcl-2e" ].
+
+saikuru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "saikuru_2" ].
+
+rareru-ditrans-pass-ganini-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rareru-ditrans-pass-ganini-end" ].
+
+quotation-noun-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-end" ].
+
+ndesu-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ndesu-v-cop-lex" ].
+
+quotation-sentence-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-sentence-init" ].
+
+shi_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shi_numcl" ].
+
+nodeshou-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nodeshou-v-cop-lex" ].
+
+quotation-sentence-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-sentence-end" ].
+
+ho_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ho_2" ].
+
+ko_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ko_2" ].
+
+da-v-cop-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "da-v-cop-stem" ].
+
+shu_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shu_numcl" ].
+
+comma-infvmod_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "comma-infvmod" ].
+
+u-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "u-end" ].
+
+hyou_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hyou_2_1" ].
+
+mei_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mei_numcl" ].
+
+ken_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ken_numcl" ].
+
+gen_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "gen_numcl" ].
+
+bangou_numcl-1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "bangou_numcl-1" ].
+
+shi_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shi_2_1" ].
+
+hen_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hen_2_1" ].
+
+zen_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "zen_numcl" ].
+
+rukkusu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rukkusu_2" ].
+
+a-ru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "a-ru_2" ].
+
+jou_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jou_3" ].
+
+sou_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "sou_3" ].
+
+kakoku_numcl-a_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kakoku_numcl-a" ].
+
+parenthesis-j-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "parenthesis-j-end" ].
+
+yaa_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "yaa" ].
+
+suru-light-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "suru-light-stem" ].
+
+watari_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "watari_2" ].
+
+datta-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "datta-v-cop-lex" ].
+
+jou_numcl_4_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jou_numcl_4" ].
+
+fi-to_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "fi-to_2" ].
+
+miriba-ru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "miriba-ru_2" ].
+
+jau-chasen-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jau-chasen-end" ].
+
+angle-brackets-init_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "angle-brackets-init" ].
+
+o-mu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "o-mu_2" ].
+
+mawari_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mawari_3" ].
+
+hai_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hai_numcl" ].
+
+bai_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "bai_numcl" ].
+
+dai_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dai_numcl" ].
+
+mai_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mai_numcl" ].
+
+ban_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ban_numcl" ].
+
+hai_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hai_2_1" ].
+
+generic_adj_a_infl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "generic_adj_a_infl" ].
+
+kai_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kai_2_1" ].
+
+ni-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ni-end" ].
+
+nodesu-chasen-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nodesu-chasen-v-cop-lex" ].
+
+kabu_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kabu_numcl" ].
+
+generic_hes-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "generic_hes-lex" ].
+
+nandesu-cop-multi_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nandesu-cop-multi" ].
+
+karatto_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "karatto_2" ].
+
+hashira_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hashira_2" ].
+
+noda-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "noda-v-cop-lex" ].
+
+generic_adj_kere_infl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "generic_adj_kere_infl" ].
+
+kajou_numcl-a_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kajou_numcl-a" ].
+
+hon_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hon_numcl" ].
+
+nda-v-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nda-v-cop-lex" ].
+
+seki_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "seki_2_1" ].
+
+sao_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "sao_2" ].
+
+seki_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "seki_2" ].
+
+rentogen_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rentogen_2" ].
+
+hai_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hai_2" ].
+
+gou_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "gou_numcl" ].
+
+kou_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kou_numcl" ].
+
+sou_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "sou_numcl" ].
+
+tou_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tou_numcl" ].
+
+sai_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "sai_2" ].
+
+nee_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nee" ].
+
+suji_9_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "suji_9" ].
+
+nasai-chasen-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nasai-chasen-end" ].
+
+masu-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "masu-end" ].
+
+me-ta-_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "me-ta-_2" ].
+
+maki_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "maki_2" ].
+
+hari_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hari_2" ].
+
+desu-v-cop-stem_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "desu-v-cop-stem" ].
+
+comma-advmod_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "comma-advmod" ].
+
+quotation-noun-end2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-end2" ].
+
+da-su_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "da-su_2" ].
+
+quotation-noun-end3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-noun-end3" ].
+
+tsutsumi_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tsutsumi_2" ].
+
+kanaa-cop-lex_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kanaa-cop-lex" ].
+
+rittoru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rittoru_2" ].
+
+toori_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "toori_2" ].
+
+quotation-name-init2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-name-init2" ].
+
+colon-2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "colon-2" ].
+
+yama_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "yama_2" ].
+
+pointo_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "pointo_2" ].
+
+herutsu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "herutsu_2" ].
+
+reru-ditrans-pass-ganiwo-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "reru-ditrans-pass-ganiwo-end" ].
+
+nigiri_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nigiri_2" ].
+
+bareru_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "bareru_2" ].
+
+generic_adj_i_infl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "generic_adj_i_infl" ].
+
+hatsu_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hatsu_2" ].
+
+hen_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hen_2" ].
+
+ken_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ken_2" ].
+
+men_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "men_2" ].
+
+kajou_numcl-d_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kajou_numcl-d" ].
+
+hen_event_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hen_event" ].
+
+o-3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "o-3" ].
+
+shuu_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shuu_2_1" ].
+
+rippoumeetoru_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rippoumeetoru_numcl" ].
+
+jigen_2_1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "jigen_2_1" ].
+
+generic_adj_te_infl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "generic_adj_te_infl" ].
+
+tsuu_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tsuu_3" ].
+
+souba_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "souba_numcl" ].
+
+tsui_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "tsui_2" ].
+
+mikuron_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mikuron_2" ].
+
+hako_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "hako_numcl" ].
+
+rareru-ditrans-pass-ganiwo-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rareru-ditrans-pass-ganiwo-end" ].
+
+fuu_3_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "fuu_3" ].
+
+no_numcl-1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "no_numcl-1" ].
+
+ma_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ma" ].
+
+to-comp1_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "to-comp1" ].
+
+kasho_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kasho_2" ].
+
+quotation-sentence-init2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "quotation-sentence-init2" ].
