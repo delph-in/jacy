@@ -2254,45 +2254,46 @@ sap-lex  := p-lex-c &
 ; (FCB 2005-06-27) Added ARG0 to messages
 ; (MS 2005-06-07) It seems that this one is never applied.
 ; (FCB 2005-06-29) but it is used by several lexical entries
- s-conj-lex := sap-lex &
-  [SYNSEM [LOCAL [CAT [HEAD s-conj_head &
- 			   [C-MOD < [LOCAL [CONT.HOOK [LTOP #main-v-handel,
- 						       INDEX #main-index,
- 						       INDEX.E #tam],
- 					    CAT.HEAD.EMPTY -]]> ],
- 		      VAL.COMPS.FIRST [LOCAL [CONT.HOOK [LTOP #subord-v-handel,
- 							 INDEX.E #tam,
- 							 INDEX #subord-index,
- 							 XARG #xarg],
- 					      CAT.HEAD [EMPTY bool,
- 							J-POSTHEAD rels,
- 							FIN +],
- 					      NUCL not_fin_conj ]]],
- 		 NUCL nucl_minus,
- 		 CONT [HOOK [INDEX #ind & event & [E #tam],
- 			     LTOP #top,
- 			     XARG #xarg],
- 		       RELS <! conjunction-relation & #key &
- 			     [C-ARG #ind,
- 			      LBL #top,
- 			      R-HNDL #main,
- 			      L-HNDL #subord],
- 			     message &
- 			     [PRED proposition_m_rel,
- 			      LBL #main,
- 			      ARG0 #main-index,
- 			      MARG #prpstnsoa1],
- 			     message &
- 			     [PRED proposition_m_rel,
- 			      LBL #subord,
- 			      ARG0 #subord-index,
- 			      MARG #prpstnsoa2] !>,
- 		       HCONS <! qeq & [LARG #main-v-handel,
- 				       HARG #prpstnsoa1],
- 			      qeq & [LARG #subord-v-handel,
- 				     HARG #prpstnsoa2] !>]],
- 	  LKEYS.KEYREL #key,
- 	  NON-LOCAL.QUE <! !>]].
+; (MS 2005-07-01) but I had renamed the s-conj-nonprop-lex!
+ ;s-conj-lex := sap-lex &
+ ; [SYNSEM [LOCAL [CAT [HEAD s-conj_head &
+ ;			   [C-MOD < [LOCAL [CONT.HOOK [LTOP #main-v-handel,
+ ;						       INDEX #main-index,
+ ;						       INDEX.E #tam],
+ ;					    CAT.HEAD.EMPTY -]]> ],
+ ;		      VAL.COMPS.FIRST [LOCAL [CONT.HOOK [LTOP #subord-v-handel,
+ ;							 INDEX.E #tam,
+ ;							 INDEX #subord-index,
+ ;							 XARG #xarg],
+ ;					      CAT.HEAD [EMPTY bool,
+ ;							J-POSTHEAD rels,
+ ;							FIN +],
+ ;					      NUCL not_fin_conj ]]],
+ ;		 NUCL nucl_minus,
+ ;		 CONT [HOOK [INDEX #ind & event & [E #tam],
+ ;			     LTOP #top,
+ ;			     XARG #xarg],
+ ;		       RELS <! conjunction-relation & #key &
+ ;			     [C-ARG #ind,
+ ;			      LBL #top,
+ ;			      R-HNDL #main,
+ ;			      L-HNDL #subord],
+ ;			     message &
+ ;			     [PRED proposition_m_rel,
+ ;			      LBL #main,
+ ;			      ARG0 #main-index,
+ ;			      MARG #prpstnsoa1],
+ ;			     message &
+ ;			     [PRED proposition_m_rel,
+ ;			      LBL #subord,
+ ;			      ARG0 #subord-index,
+ ;			      MARG #prpstnsoa2] !>,
+ ;		       HCONS <! qeq & [LARG #main-v-handel,
+ ;				       HARG #prpstnsoa1],
+ ;			      qeq & [LARG #subord-v-handel,
+ ;				     HARG #prpstnsoa2] !>]],
+ ;	  LKEYS.KEYREL #key,
+ ;	  NON-LOCAL.QUE <! !>]].
 
 ;s-conj1-lex := s-conj-lex & [SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON #1,
 ;                                               VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
@@ -2322,7 +2323,7 @@ sap-lex  := p-lex-c &
 ; (FCB 2005-06-27) Added ARG0 to messages
 
 
-s-conj-nonprop-lex := sap-lex &
+s-conj-lex := sap-lex &
  [SYNSEM [LOCAL [CAT [HEAD s-conj-nonprop_head &
 			   [C-MOD < [LOCAL.CONT.HOOK [LTOP #main-v-handel,
 						      INDEX #main-index]] >,
