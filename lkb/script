@@ -1,0 +1,98 @@
+;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
+
+;;;
+;;; This script file uses the defaults we prefer to use for 
+;;; treebanking in the Hinoki project:
+;;;   ChaSen off (assuming presegmented input), 
+;;;   precise analysis on (load the ambiguous files). 
+;;;
+;;; (FCB 2005-07-02)
+;(pushnew :chasen *features*)
+
+(lkb-load-lisp (parent-directory) "Version.lsp")
+(setf *grammar-directory* (parent-directory)) ; needed for MRS
+(load-lkb-preferences (this-directory) "user-prefs.lsp")
+(lkb-load-lisp (this-directory) "globals.lsp")
+(lkb-load-lisp (this-directory) "user-fns.lsp")
+
+(lkb-load-lisp (this-directory) "checkpaths.lsp" t)
+
+(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+
+(read-tdl-type-files-aux
+     (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")
+              (lkb-pathname (parent-directory) "matrix.tdl")
+              (lkb-pathname (parent-directory) "mrsbasic.tdl")
+              (lkb-pathname (parent-directory) "newlexsem-types.tdl")
+              (lkb-pathname (parent-directory) "values.tdl")
+              (lkb-pathname (parent-directory) "fundamentals.tdl")
+              (lkb-pathname (parent-directory) "rule-types.tdl")
+              (lkb-pathname (parent-directory) "principles.tdl")
+              (lkb-pathname (parent-directory) "lex-types.tdl")
+              (lkb-pathname (parent-directory) "v-lex-types.tdl")
+	      (lkb-pathname (parent-directory) "mtr.tdl") 
+))
+
+(lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)
+
+(read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
+
+
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
+
+; (Ben Waldron 2003-12-06):
+
+(read-cached-lex-if-available (list
+  (lkb-pathname (parent-directory) "lex/generics.tdl"))) ;; pick an arbitrary file and call it the _main_ lexicon
+(read-cached-sublex-if-available "adjadv" (list  (lkb-pathname 
+                                             (parent-directory) "lex/adjadv-lex.tdl")))
+(read-cached-sublex-if-available "aux-stem" (list (lkb-pathname 
+                                              (parent-directory) "lex/aux-stem-lex.tdl")))
+(read-cached-sublex-if-available "funct-lex" (list  (lkb-pathname 
+                                              (parent-directory) "lex/funct-lex.tdl")))
+(read-cached-sublex-if-available "idiom-lex" (list  (lkb-pathname 
+                                              (parent-directory) "lex/idiom-lex.tdl")))
+(read-cached-sublex-if-available "light-verbs" (list (lkb-pathname 
+                                              (parent-directory) "lex/light-verbs-lex.tdl")))
+(read-cached-sublex-if-available "noun" (list (lkb-pathname 
+                                              (parent-directory) "lex/noun-lex.tdl")))
+(read-cached-sublex-if-available "numbers" (list (lkb-pathname 
+                                              (parent-directory) "lex/numbers-lex.tdl")))
+(read-cached-sublex-if-available "p" (list (lkb-pathname 
+                                            (parent-directory) "lex/p-lex.tdl")))
+(read-cached-sublex-if-available "pn" (list  (lkb-pathname 
+                                              (parent-directory) "lex/pn-lex.tdl")))
+(read-cached-sublex-if-available "verbstem" (list (lkb-pathname 
+                                              (parent-directory) "lex/verbstem-lex.tdl")))
+(read-cached-sublex-if-available "vn" (list (lkb-pathname 
+                                              (parent-directory) "lex/vn-lex.tdl")))
+(read-cached-sublex-if-available "v-ends" (list (lkb-pathname 
+                                                 (parent-directory) "lex/v-ends-lex.tdl")))
+(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
+						 (parent-directory) "lex/ersatz.tdl")))
+(read-cached-sublex-if-available "ambiguous" (list (lkb-pathname 
+                                             (parent-directory) "lex/ambiguous-lex.tdl")))
+
+
+(read-tdl-parse-node-file-aux 
+          (lkb-pathname (parent-directory) "parse-nodes.tdl"))
+
+(read-tdl-psort-file-aux 
+          (lkb-pathname (parent-directory) "roots.tdl"))
+
+;#+unknown-words
+;(lkb-load-lisp "/project/cl/yy/lkb/src/unknown-words/" "grammar-jacy.lisp")
+
+;;;
+;;; finally, use the new transfer component: load any number of rule sets, each
+;;; in a separate file, associated with its identifier.  
+
+#+:mt
+(lkb-load-lisp (this-directory) "mt.lsp" t)
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "trigger.mtr"))
+ "Generator Triggger Rules"
+ :filter nil :task :trigger :recurse nil :subsume t)
