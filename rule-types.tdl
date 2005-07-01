@@ -1287,11 +1287,13 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 
 ; (MS 2003-12-09) coindexed ARG0 of the vn with ARG0 of the resulting noun.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (MS 2005-07-01) Experimenting with making the result VN - . This is needed
+; when coordinating vns and ns, as in: ¾¦Çä ¤ä ±Ç²è
 
 vn2n-rule-super :=  n-lex-super &
             [SYNSEM [LOCAL [CAT [HEAD noun_head &
                                       [ MOD null,
-					VN +,
+					VN -,
                                         J-SPEC.FIRST.LOCAL.CAT.HEAD title_head ],
                                  VAL spr-arg],
                             CONT nom-vn-sem-type &
