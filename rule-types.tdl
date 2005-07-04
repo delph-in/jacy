@@ -741,21 +741,21 @@ empty-head-type :=  headed-phrase & j-sign &
 
 ;empty particles:
 ; (MS 2004-12-14) These shouldn't take a complement
+; (FCB&MS  2005-07-04)  We aren't using these now
+; empty-particle-type := empty-head-type & 
+;                       [SYNSEM.LEX +,
+; 		       C-CONT [RELS <! !>,
+; 			       HCONS <! !>],
+;                        ARGS <[SYNSEM.LOCAL.CAT.HEAD noun_head]>].
 
-empty-particle-type := empty-head-type & 
-                      [SYNSEM.LEX +,
-		       C-CONT [RELS <! !>,
-			       HCONS <! !>],
-                       ARGS <[SYNSEM.LOCAL.CAT.HEAD noun_head]>].
 
-
-empty-preposition-type := empty-particle-type.
+; empty-preposition-type := empty-particle-type.
 
 ;empty-preposition-type := empty-particle-type &
 ;[HEAD-DTR.SYNSEM [LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CONT [HOOK.INDEX #arg]],
 ;		  LKEYS.KEYREL [ARG2 #arg]]].
-
-empty-conjunction-type :< empty-preposition-type.
+; (FCB 2005-07-04) Not used now
+;empty-conjunction-type :< empty-preposition-type.
 
 ; (ERB 2001-09-12) For bare number names used as ordinals.
 ; (ERB 2001-09-19) This is vastly overgenerating because it can modify
@@ -1287,43 +1287,47 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 
 ; (MS 2003-12-09) coindexed ARG0 of the vn with ARG0 of the resulting noun.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (FCB 2005-06-30) put the constructional content into C-CONT (enables generation).
+; (FCB 2005-06-30) uncoindexed  ARG0 of the vn with ARG0 of the resulting noun.
+;                  Dan suggested that this may be incoherent - individual OR event?
 ; (MS 2005-07-01) Experimenting with making the result VN - . This is needed
 ; when coordinating vns and ns, as in: ¾¦Çä ¤ä ±Ç²è
 
-vn2n-rule-super :=  n-lex-super &
+vn2n-rule-super :=  n-lex-super & lex-rule &
             [SYNSEM [LOCAL [CAT [HEAD noun_head &
                                       [ MOD null,
 					VN -,
                                         J-SPEC.FIRST.LOCAL.CAT.HEAD title_head ],
                                  VAL spr-arg],
-                            CONT nom-vn-sem-type &
-                                [RELS <! #key & 
-				       [LBL #nom-hand,
-					ARG1 #prpstn-hand],
-                                        message & 
-				       [PRED proposition_m_rel, 
-					LBL #prpstn-hand,
-					MARG #soa],
-                                        #vn-key !>,
-                                 HOOK [LTOP #nom-hand,
-				       INDEX #modind],
-                                 HCONS <! qeq &
-                                         [HARG #soa,
-                                          LARG #vn-hand] !>],
-	                    BAR bool],
-		     LKEYS.KEYREL #key & [PRED 'noun-relation,ARG0 #arg0],
-                     NON-LOCAL [QUE <! !>,
-                             AFFIX <! !>]],
-             INFLECTED +,
-             ORTH #stem,
-             ARGS < [ORTH #stem,
+			    CONT  nom-vn-sem-type &
+				[HOOK [LTOP #nom-hand,
+					INDEX #modind]],
+			    BAR bool],
+		     NON-LOCAL [QUE <! !>,
+				AFFIX <! !>],
+		     LKEYS.KEYREL #key],
+	     INFLECTED +,
+	     ORTH #stem,
+	     C-CONT [RELS <! #key & noun-arg1-relation &
+			   [PRED 'noun-relation,
+			    LBL #nom-hand,
+			    ARG0 #arg0,
+			    ARG1 #prpstn-hand],
+			   message & 
+			   [PRED proposition_m_rel, 
+			    LBL #prpstn-hand,
+			    ARG0 #arg0,
+			    MARG #soa] !>,
+		     HCONS  <! qeq &
+			     [HARG #soa, LARG #vn-hand] !>],
+	     ARGS < [ORTH #stem,
 		     SYNSEM [LOCAL [ CAT  [HEAD vn_head-avm,
-					  VAL [UNSAT +,
-					       SUBJ.FIRST.OPT +,
-					       COMPS olist]],
-                                    CONT [ HOOK.INDEX #modind]],
-			     LKEYS.KEYREL #vn-key & [LBL #vn-hand,
-						       ARG0 #arg0],
+					   VAL [UNSAT +,
+						SUBJ.FIRST.OPT +,
+						COMPS olist]],
+				     CONT [ HOOK.INDEX #modind]],
+			     LKEYS.KEYREL  [LBL #vn-hand,
+					    ARG0 #arg0],
 			     LEX + ]]>].
 
 vn2n-rule-detarg :=  vn2n-rule-super &
@@ -2331,3 +2335,64 @@ ga-wo_transitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
   ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.VAL ga-wo_transitive &
 				  [SUBJ #sbj,
 				   COMPS #cmp]].
+
+
+
+;expanded from ordinary_noun_head to noun_head: dore kurai.
+
+; (ERB 2001-10-10) For constructing k2ys it's helpful to have
+; the unspecified relation between nouns in an nn compound not
+; be an instance of prep_mod_rel.
+; (ERB 2001-10-29) Trying to keep integers promoted to NumClPs
+; promoted to NPs out of this rule.  Trying the hack of giving them a 
+; REL value that is not a string.  So, constraining this guy to
+; be REL string.
+; (ERB 2001-10-29) The REL names, written 'relation, are actually
+; treated as atoms, not strings, by cheap.  This means I need to
+; move this contrast one level up.
+; (MS 2001-11-26) Changed the modification from ordinary-noun_head to noun_head in order to allow compounds with exceptional nouns (mitai).
+; (MS 2001-12-19) This solution gave too many ambiguities. I'll introduce a special rule for exceptional nouns.
+; (ERB 2001-11-26) Like other modifiers, this should grab the MOD-IND
+; and MOD-HAND.
+; (ERB 2001-11-26) But it should pass up the LTOP and INDEX of its MOD value.
+; (ERB 2001-11-26) Experimenting (as we so desire) with using
+; a prep-mod-rel again here to allow compounds with nominalizations
+; as the head.
+; (ERB 2001-11-28) I don't think we need to worry about the INDEX and
+; LTOP on the mother here.  These only show up as non-head daughters of the
+; compounds-rule, which is an intersective head-adj rule and therefore
+; takes the head daugther as the semantic head.
+; (ERB 2001-12-03) ARG3 should be the INDEX of the daughter, not
+; the MOD-IND.
+; (ERB 2002-01-28) MOD...HEAD is ordinary-or-date-noun_head to allow
+; nouns like TOKI as head of compounds. (Was just ordinary_noun_head)
+; (MS 2002-06-11) The POSTHEAD is unified with the POSTHEAD of the argument. Thus, I can prevent
+; words like ´Ö from being the first argument in a compound.
+
+; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
+; (MS 2005-04-11) If the LKEYS.KEYREL.PRED is atom, we cannot parse more than two nouns in a compound.
+; So, I'll take this restriction out.
+; (FCB 2005-06-30) Moved new content into C-CONT, turned it into a unary rule supertype! 
+compound-noun-rule-type := unary-type & 
+ [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & 
+			   [MOD < [LOCAL [CAT.VAL.SPR 1-list,
+					  CONT [ HOOK [LTOP #hhand,
+						      INDEX #hinst]]],
+				   MODIFIED.PERIPH -] >,
+			    J-POSTHEAD #ph],
+		     VAL saturated],
+		BAR -],
+	 MODIFIED.PERIPH +],
+  C-CONT [RELS <! unspec-compound-relation &
+		[LBL #hhand,
+		 PRED "no",
+		 ARG0.E.TENSE no_tense,
+		 ARG2 #hinst,
+		 ARG1 #nhinst] !>,
+	  HCONS <! !>],
+  ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head & [J-POSTHEAD #ph],
+			     VAL saturated],
+			CONT.HOOK.INDEX #nhinst,
+			BAR -]] > ].

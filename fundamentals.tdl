@@ -211,3 +211,23 @@ message := basic_message & arg0-relation &
 
 ;;; In the brave new world
 ; message :+ arg0-relation.
+
+;;; (FCB DPF 2005-06-30) let's pass up HCONS too
+lex-rule := phrase-or-lexrule & word-or-lexrule &
+  [ NEEDS-AFFIX bool,
+    SYNSEM.LOCAL.CONT [RELS [ LIST #first,
+			      LAST #last ],
+		       HCONS [ LIST #hfirst,
+			       LAST #hlast ]],
+    DTR #dtr & word-or-lexrule &
+		[ SYNSEM.LOCAL.CONT [RELS [ LIST #first,
+					    LAST #middle ],
+				     HCONS [ LIST #hfirst,
+					     LAST #hmiddle ]],
+		  ALTS #alts ],
+    C-CONT [RELS [ LIST #middle,
+		   LAST #last ],
+	    HCONS [ LIST #hmiddle,
+		    LAST #hlast ]],
+    ALTS #alts,
+    ARGS < #dtr > ].

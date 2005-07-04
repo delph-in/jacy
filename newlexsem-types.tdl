@@ -111,10 +111,12 @@ nom-pred-sem-type := mod-id-nominal-sign-sem-type &
 ; verb as a target for modification.  This means that the MOD-IND
 ; and the INDEX shouldn't be identified for this type.  See notes
 ; at the vn2n rule in rule-types.tdl.
+;
 
 
-nom-vn-sem-type := nominal-sign-sem-type &
-                   [RELS.LIST.FIRST noun-arg1-relation].
+nom-vn-sem-type := nominal-sign-sem-type.
+; (FCB 2005-06-30) Move this inside the lexical rule
+;              [SYNSEM.LKEYS.KEYREL noun-arg1-relation].
 
 
 adj-sem-type := mod-id-wg-handel-mrs &

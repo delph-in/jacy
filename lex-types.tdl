@@ -2071,6 +2071,7 @@ adv-p-lex-parent := adv-p-lex &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (MS 2005-06-01) I try to unify the coordinated heads. It has to be shown if this
 ; is adequate (counterexamples?)
+; (FCB 2005-06-26) Unifying heads stops things like: ¾¦Çä ¤ä ±Ç²è
 
 
 n_conj-p-lex := conj-lex & 
@@ -2079,10 +2080,10 @@ n_conj-p-lex := conj-lex &
 				     LBL #hndl,
                                      L-INDEX #arg,
                                      R-INDEX #mod],
-		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD noun_head & #head,
+		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD noun_head,
 						       CONT [HOOK.INDEX #mod]]] >,
 				       J-POSTHEAD left],
-                                VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head & #head,
+                                VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
 						       CONT [HOOK.INDEX #arg],
 						       BAR +]],
 			    CONT n-conj-sem-type &
