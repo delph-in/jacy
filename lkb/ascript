@@ -71,8 +71,8 @@
                                               (parent-directory) "lex/vn-lex.tdl")))
 (read-cached-sublex-if-available "v-ends" (list (lkb-pathname 
                                                  (parent-directory) "lex/v-ends-lex.tdl")))
-(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
-						 (parent-directory) "lex/ersatz.tdl")))
+;(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
+;						 (parent-directory) "lex/ersatz.tdl")))
 ;;(read-cached-sublex-if-available "ambiguous" (list (lkb-pathname 
 ;;                                             (parent-directory) "lex/ambiguous-lex.tdl")))
 
