@@ -156,7 +156,7 @@ FIRST))))
   (let* ((string (string-trim '(#\space #\tab) string))
          (command (format 
                    nil 
-                   "~a -F  '(\"%m\" \"%M\" \"%P-+%Tn-%Fn\" \"%y\")\\n'" 
+                   "~a -i e -F  '(\"%m\" \"%M\" \"%P-+%Tn-%Fn\" \"%y\")\\n'" 
                    *chasen-application*)))
     (setf *chasen-readings* nil)
     (multiple-value-bind (stream foo pid)
