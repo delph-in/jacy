@@ -250,6 +250,31 @@ wh-word-quantity-lex &
 [ORTH <! "おいくら" !>,
  SYNSEM.LKEYS.KEYREL [PRED '_quantity_wh_rel]].
 
+; (MS 2005-07-04) This was a prefix-n-lex, a type that doesn't exist any more.
+shin-prefix :=
+noun_mod-lex-l &
+[ORTH <! "新" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_shin_n_rel]].
+
+;niedriger
+
+tei-prefix :=
+noun_mod-lex-l &
+[ORTH <! "低" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_tei_n_rel].
+
+; (SF 2003-08-26)
+
+sou-prefix :=
+noun_mod-lex-l &
+[ORTH <! "総" !>,
+SYNSEM [LKEYS.KEYREL [PRED '_sou_n_prefix_rel]]].
+
+shou-prefix :=
+noun_mod-lex-l &
+[ORTH <! "しょう" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_shou_n_rel].
+
 purasu :=
 noun_mod-lex-l &
 [ORTH <! "プラス" !>,
@@ -2176,9 +2201,9 @@ moto_1_1 := noun_mod-lex-l &
 ;(CH 2003-08-08) JACYではordinary-nohon-n-lexとして既に
 ; 名詞に接続可能なのでいい？
 ;;(TK 05-03-01 noun_mod-lex-l復活 ordinary-nohon-n-lexとは区別が必要)
-hon_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_hon_nmod_1_rel,
- ORTH <! "本" !> ].
+;hon_1 := noun_mod-lex-l &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hon_nmod_1_rel,
+; ORTH <! "本" !> ].
 
 
 kano_1 := noun_mod-lex-l &

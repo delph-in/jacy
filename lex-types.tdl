@@ -266,12 +266,14 @@ noun-or-case-p_head :< final_head.
 
 noun_head :< noun-or-case-p_head.
 
+; (MS 2005-07-04) I want to get rid of the compound-noun-rule, such that I give a value to MOD here.
+
 noun_head-avm :=  noun_head &
                   [POS n,
-                   C-MOD null,
-                   MARK null,
-                   QUANTIFIABLE bool,
-                   COP-ARG -].
+		   C-MOD null,
+		   MARK null,
+		   QUANTIFIABLE bool,
+		   COP-ARG -].
 
 ; (ERB 2002-01-28) Make supertype to ordinary_noun_head and date_noun_head
 ; to allow words like TOKI as heads of compounds.
@@ -281,8 +283,15 @@ ordinary-or-date-noun_head := noun_head-avm.
 ordinary_noun_head := ordinary-or-date-noun_head.
 
 ;(MS 2001-12-14) changing J-SPEC in order to make something like GAKUSEI SAMA possible.
+; (MS 2005-07-04) I want to get rid of the compound-noun-rule, such that I give a value to MOD in noun_head-avm.
+; (was MOD null)
 
-ordinary_noun_head-avm := ordinary_noun_head & [MOD null,J-SPEC.FIRST.LOCAL.CAT.HEAD title_head, VN -].
+ordinary_noun_head-avm := ordinary_noun_head & 
+			  [J-SPEC.FIRST.LOCAL.CAT.HEAD title_head, 
+			   MOD < [LOCAL [CAT [HEAD ordinary-or-date-noun_head]],
+				  MODIFIED.PERIPH -]>,
+			   J-POSTHEAD compound,
+			   VN -].
 
 ;; (FCB 2003-09-04) type for mi and sa
 
@@ -362,8 +371,8 @@ surname_head :< name_head-avm.
 
 
 surname_head-avm := surname_head & 
-               [MOD null,
-		J-POSTHEAD left].
+               [MOD < [LOCAL [CAT.HEAD name_head]] >,
+		J-POSTHEAD compound].
 
 ippan_head :< name_head-avm.
 
@@ -375,7 +384,8 @@ first_name_head :< name_head-avm.
 
 
 first_name_head-avm := first_name_head & 
-                       [MOD null].
+                       [MOD < [LOCAL [CAT.HEAD name_head]] >,
+			J-POSTHEAD compound].
 
 inst_name_head :< name_head-avm.
 
@@ -2533,7 +2543,7 @@ greeting-lex := idiom-lex &
 
 
 n-lex-super := lexical_sign & 
-         [SYNSEM [LOCAL [ CAT.HEAD noun_head-avm,
+         [SYNSEM [LOCAL [ CAT.HEAD noun_head,
 			  CONT [ HOOK [INDEX #ind,
 				       LTOP #top,
 				       XARG nothing]]],
@@ -2543,19 +2553,19 @@ n-lex-super := lexical_sign &
 
 n-lex := n-lex-super & lexical_sign-word.
 
-
-exceptional-n-lex := n-lex &
-[SYNSEM [LOCAL [CAT [HEAD exceptional_noun_head,
-		     VAL noun_sc],
-		CONT common-noun-sem-type & 
-		    [RELS <! #key !>,
-		     HCONS <! !>],
-		BAR -],
-	 LKEYS.KEYREL #key,
-	 NON-LOCAL [QUE <! !>,
-		    AFFIX <! !>]],
- J-NEEDS-AFFIX -,
- INFLECTED +].
+; (MS 2005-07-04) This is nonsense, I think. It was used only for mitai.
+;exceptional-n-lex := n-lex &
+;[SYNSEM [LOCAL [CAT [HEAD exceptional_noun_head,
+;		     VAL noun_sc],
+;		CONT common-noun-sem-type & 
+;		    [RELS <! #key !>,
+;		     HCONS <! !>],
+;		BAR -],
+;	 LKEYS.KEYREL #key,
+;	 NON-LOCAL [QUE <! !>,
+;		    AFFIX <! !>]],
+; J-NEEDS-AFFIX -,
+; INFLECTED +].
 
 
 ordinary-or-wh-n-lex := n-lex &
@@ -3875,14 +3885,15 @@ ordinary-nohon-minusbar-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.BAR -].
 ordinary-nohon-plusbar-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.BAR +].
 
 ; (MS 2004-12-24) Changed the name from ordinary-nohon-minusbar-right-n-lex.
+; (MS 2005-07-04) But we have the noun_mod-lex-r and noun_mod-lex-l for these!
 
-ordinary-suffix-n-lex := ordinary-nohon-minusbar-n-lex & 
-				       [SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD right].
+;ordinary-suffix-n-lex := ordinary-nohon-minusbar-n-lex & 
+;				       [SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD right].
 
 ; (MS 2004-12-24) Changed the name from ordinary-nohon-minusbar-left-n-lex.
 
-ordinary-prefix-n-lex := ordinary-nohon-minusbar-n-lex & 
-				       [SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD left].
+;ordinary-prefix-n-lex := ordinary-nohon-minusbar-n-lex & 
+;				       [SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD left].
 
 
 

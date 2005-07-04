@@ -389,6 +389,7 @@ neut :< gender.
 ; (MS 2004-11-30) I want to distinguish between relatives and others,
 ; such that the others don't go into the relative clause rule.
 ; (MS 2005-03-29) intersective is not used any more.
+; (MS 2005-07-04) we need something for compounds
 
 posthead :< sort.
 nonrels  :< posthead.
@@ -397,6 +398,7 @@ right :< nonrels.
 ;;intersective :< nonrels.
 rels :< posthead.
 coord :< nonrels.
+compound :< nonrels.
 
 ; (ERB 2002-01-24) To keep phrases produced by the conj-rule
 ; from being modified.  The multiple layers here allow for

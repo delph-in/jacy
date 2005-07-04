@@ -214,37 +214,130 @@ adv_np_rule := adv_np_rule-type.
 compound-noun-rule := compound-noun-rule-type &
  [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD ordinary-or-date-noun_head] > ].
 
-compound-exceptional-noun-rule := compound-noun-rule-type &
- [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD exceptional_noun_head] > ].
+<<<<<<< japgram.tdl
+;expanded from ordinary_noun_head to noun_head: dore kurai.
+
+; (ERB 2001-10-10) For constructing k2ys it's helpful to have
+; the unspecified relation between nouns in an nn compound not
+; be an instance of prep_mod_rel.
+; (ERB 2001-10-29) Trying to keep integers promoted to NumClPs
+; promoted to NPs out of this rule.  Trying the hack of giving them a 
+; REL value that is not a string.  So, constraining this guy to
+; be REL string.
+; (ERB 2001-10-29) The REL names, written 'relation, are actually
+; treated as atoms, not strings, by cheap.  This means I need to
+; move this contrast one level up.
+; (MS 2001-11-26) Changed the modification from ordinary-noun_head to noun_head in order to allow compounds with exceptional nouns (mitai).
+; (MS 2001-12-19) This solution gave too many ambiguities. I'll introduce a special rule for exceptional nouns.
+; (ERB 2001-11-26) Like other modifiers, this should grab the MOD-IND
+; and MOD-HAND.
+; (ERB 2001-11-26) But it should pass up the LTOP and INDEX of its MOD value.
+; (ERB 2001-11-26) Experimenting (as we so desire) with using
+; a prep-mod-rel again here to allow compounds with nominalizations
+; as the head.
+; (ERB 2001-11-28) I don't think we need to worry about the INDEX and
+; LTOP on the mother here.  These only show up as non-head daughters of the
+; compounds-rule, which is an intersective head-adj rule and therefore
+; takes the head daugther as the semantic head.
+; (ERB 2001-12-03) ARG3 should be the INDEX of the daughter, not
+; the MOD-IND.
+; (ERB 2002-01-28) MOD...HEAD is ordinary-or-date-noun_head to allow
+; nouns like TOKI as head of compounds. (Was just ordinary_noun_head)
+; (MS 2002-06-11) The POSTHEAD is unified with the POSTHEAD of the argument. Thus, I can prevent
+; words like Дж from being the first argument in a compound.
+
+; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
+; (MS 2005-04-11) If the LKEYS.KEYREL.PRED is atom, we cannot parse more than two nouns in a compound.
+; So, I'll take this restriction out.
+
+
+;compound-noun-rule := empty-head-type & 
+;[SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & 
+;                          [MOD < [LOCAL [CAT [HEAD ordinary-or-date-noun_head,
+;                                            VAL.SPR 1-list],
+;                                       CONT.HOOK [LTOP #hhand,
+;						  INDEX #hinst]],
+;                                MODIFIED.PERIPH -]>,
+;                           J-POSTHEAD #ph],
+;                     VAL saturated],
+;                BAR -],
+;         MODIFIED.PERIPH +],
+; C-CONT [RELS <! !>,
+;         HCONS <! !>],
+; HEAD-DTR.SYNSEM [LOCAL [CONT nncompound-sem-type &
+;			     [RELS <! #key !>,
+;			      HCONS <! !>]],
+;		  LKEYS.KEYREL #key & unspec-compound-relation &
+;			[LBL #hhand,
+;			 PRED "no",
+;			 ARG0.E.TENSE no_tense,
+;			 ARG2 #hinst,
+;			 ARG1 #nhinst]],
+; NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD noun_head & [J-POSTHEAD #ph],
+;                                VAL saturated],
+;                           CONT [ HOOK.INDEX #nhinst],
+;			   BAR -]]].
+
+; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
+; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
+;compound-exceptional-noun-rule := empty-head-type & 
+;[SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD exceptional_noun_head,
+;                                                                VAL.SPR 1-list],
+;                                                           CONT.HOOK [LTOP #hhand,
+;								      INDEX #hinst]],
+;                                                    MODIFIED.PERIPH -] > ],
+;                     VAL saturated],
+;                BAR -],
+;         MODIFIED.PERIPH +],
+; C-CONT [RELS <! !>,
+;         HCONS <! !>],
+; HEAD-DTR.SYNSEM [LOCAL [CONT nncompound-sem-type &
+;			     [RELS <! #key !>,
+;			      HCONS <! !>]],
+;		  LKEYS.KEYREL #key & unspec-compound-relation &
+;			[LBL #hhand,
+;			 PRED "no",
+;			 ARG0.E.TENSE no_tense,
+;			 ARG2 #hinst,
+;			 ARG1 #nhinst]],
+; NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD noun_head,
+;				  VAL saturated],
+;			     CONT [ HOOK.INDEX #nhinst],
+;			     BAR -],
+;			   LKEYS.KEYREL.PRED atom]].
+
 
 
 ; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (MS 2005-03-15) Grab CONT.HOOK.INDEX instead of LKEYS.KEYREL.ARG0!
 
-compound-name-rule := empty-head-type & 
-              [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD name_head,
-                                                                            VAL.SPR 1-list],
-                                                                       CONT.HOOK [LTOP #hhand,
-										  INDEX #hinst]],
-								 MODIFIED.PERIPH -] > ],
-                                  VAL saturated],
-                             BAR -],
-		       MODIFIED.PERIPH +],
-	       C-CONT [RELS <! !>,
-		       HCONS <! !>],
-                HEAD-DTR.SYNSEM [LOCAL [CONT appos-id-sem-type &
-					    [RELS <! #key !>,
-					     HCONS <! !>]],
-				 LKEYS.KEYREL #key &
-				       [LBL #hhand,
-					ARG0 event,
-					ARG1 #nhinst,
-					ARG2 #hinst]],                    
-               NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD name_head,
-                                              VAL saturated],
-					   CONT.HOOK.INDEX #nhinst,
-					   BAR -]]].
+;compound-name-rule := empty-head-type & 
+;              [SYNSEM [LOCAL [CAT [HEAD empty-nmod-p_head & [MOD < [LOCAL [CAT [HEAD name_head,
+;                                                                            VAL.SPR 1-list],
+;                                                                       CONT.HOOK [LTOP #hhand,
+;										  INDEX #hinst]],
+;								 MODIFIED.PERIPH -] > ],
+;                                  VAL saturated],
+;                             BAR -],
+;		       MODIFIED.PERIPH +],
+;	       C-CONT [RELS <! !>,
+;		       HCONS <! !>],
+;                HEAD-DTR.SYNSEM [LOCAL [CONT appos-id-sem-type &
+;					    [RELS <! #key !>,
+;					     HCONS <! !>]],
+;				 LKEYS.KEYREL #key &
+;				       [LBL #hhand,
+;					ARG0 event,
+;					ARG1 #nhinst,
+;					ARG2 #hinst]],                    
+;               NON-HEAD-DTR.SYNSEM [LOCAL [CAT [HEAD name_head,
+;                                              VAL saturated],
+;					   CONT.HOOK.INDEX #nhinst,
+;					   BAR -]]].
 
 
 
@@ -269,16 +362,29 @@ compound-name-rule := empty-head-type &
 
 ; (TT 2003-08-05) add "J-POSTHEAD right"
 ; (TT 2003-08-27) delete "J-POSTHEAD right" because it disabled lkb to parse NNN.
+; (MS 2005-07-04) so, let's try with J-POSTHEAD compound
 
 
 compounds-rule := hadj-final-i &
-                  [C-CONT [RELS <! !>,
+                  [SYNSEM.MODIFIED.PERIPH +,
+		   C-CONT [RELS <! unspec-compound-relation &
+				 [LBL #hhand,
+				  PRED "appos-id_rel",
+				  ARG0.E.TENSE no_tense,
+				  ARG2 #hinst,
+				  ARG1 #nhinst] !>,
                            HCONS <! !>],
-                   ARGS <[SYNSEM.LOCAL [CAT [HEAD final_head & [J-POSTHEAD left, MAIN-PRD -,MOD < [MODIFIED.PERIPH #periph] > ],
+                   ARGS <[SYNSEM.LOCAL [CAT [HEAD final_head & [J-POSTHEAD compound, 
+								MAIN-PRD -,
+								MOD < [MODIFIED.PERIPH #periph] > ],
                                              VAL saturated],
-                                        BAR -]],
-                         [SYNSEM [LOCAL [CAT [HEAD final_head],
-					 BAR -],
+                                        BAR -,
+					CONT.HOOK.INDEX #nhinst]],
+                         [SYNSEM [LOCAL [CAT [HEAD final_head,
+					      VAL saturated],
+					 BAR -,
+					 CONT.HOOK [INDEX #hinst,
+						    LTOP #hhand]],
 				  MODIFIED.PERIPH #periph]]>].
 
 ; (TT 2003-08-29) experimental rules for dealing with prefix and suffix correctly

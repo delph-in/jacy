@@ -3464,13 +3464,9 @@ ordinary-nohon-n-lex &
 [ORTH <! "博物館" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_hakubutsukan_n_rel]].
 
-shin-prefix :=
-ordinary-prefix-n-lex &
-[ORTH <! "新" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_shin_n_rel]].
 
 chaku :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [ORTH <! "着" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_chaku_n_rel].
 
@@ -5117,8 +5113,9 @@ nom-exceptional-pred-lex &
 [ORTH <! "み","たい!" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mitai_n_rel].
 
+; (MS 2005-07-04) we might have to find another soution to this.
 mitai-exceptional-noun :=
-exceptional-n-lex &
+ordinary-nohon-n-lex &
 [ORTH <! "みたい" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mitai_n_rel].
 
@@ -5434,7 +5431,7 @@ ORTH <! "不安" !>].
 ;Stil
 
 buri-1-noun := 
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_buri_n_rel,
 ORTH <! "ぶり" !>].
 
@@ -5480,19 +5477,7 @@ ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL [PRED '_souba_n_rel],
 ORTH <! "相場" !>].
 
-;niedriger
 
-tei-prefix :=
-ordinary-nohon-minusbar-n-lex &
-[ORTH <! "低" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_tei_n_rel].
-
-; (SF 2003-08-26)
-
-sou-prefix :=
-ordinary-prefix-n-lex &
-[ORTH <! "総" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_sou_n_prefix_rel]]].
 
 ;Level, Standard
 
@@ -5817,10 +5802,6 @@ ordinary-nohon-n-lex &
 [ORTH <! "シーズ" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_shiizu_n_rel]].
 
-shou-prefix :=
-ordinary-nohon-minusbar-n-lex &
-[ORTH <! "しょう" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_shou_n_rel].
 
 somosomo-noun :=
 ordinary-nohon-n-lex &
@@ -5828,22 +5809,22 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_somosomo_n_rel]].
 
 fu-prefix-1 :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "不" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_fu_n_1_rel].
 
 yoku-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "翌" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_yoku_n_rel].
 
 kai-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "快" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kai_n_rel].
 
 sai-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "最" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_sai_n_rel].
 
@@ -5934,7 +5915,7 @@ ordinary-nohon-n-lex &
 ORTH <! "方針" !>].
 
 sha-sc-noun := 
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sha_n_rel,
 ORTH <! "者" !>].
 
@@ -6063,7 +6044,7 @@ ordinary-nohon-n-lex &
 ORTH <! "手数料" !>].
 
 kan-noun := 
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kan_n_rel,
 ORTH <! "間" !>].
 
@@ -6158,7 +6139,7 @@ ORTH <! "ＡＴＭ" !>].
 ;addressed to
 
 ate-noun :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ate_n_rel,
 ORTH <! "あて" !>].
 
@@ -7361,7 +7342,7 @@ ordinary-nohon-n-lex &
 ORTH <! "端株" !>].
 
 kai-suffix :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [ORTH <! "回" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kai_n_rel].
 
@@ -7397,7 +7378,7 @@ ORTH <! "端末" !>].
 
 
 kyoku-suffix :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [ORTH <! "局" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kyoku_n_rel].
 
@@ -7442,7 +7423,7 @@ ordinary-nohon-n-lex &
 ORTH <! "チャート" !>].
 
 gen-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "原" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_gen_n_rel].
 
@@ -7713,7 +7694,7 @@ ordinary-nohon-n-lex &
 ORTH <! "最寄り" !>].
 
 zen-noun :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_zen_n_rel,
 ORTH <! "全" !>].
 
@@ -8185,28 +8166,28 @@ SYNSEM.LKEYS.KEYREL.PRED '_kari_n_rel].
 ;current
 
 gen-prefix-2 :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "現" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_gen_n_rel].
 
 ;opposite
 
 mukai-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "向" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mukai_n_rel].
 
 ;beginning
 
 sho-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "諸" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_sho_n_rel].
 
 ;right, good
 
 tadashi-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "正" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_tadashi_n_rel].
 
@@ -8216,58 +8197,58 @@ ordinary-nohon-n-lex &
 ORTH <! "貸" !>].
 
 dai-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "大" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_dai_n_rel].
 
 tou-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "当" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_tou_n_rel].
 
 ;identical, same
 
 dou-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "同" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_dou_n_rel].
 
 ;anit-
 
 hi-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "非" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_hi_n_rel].
 
 mi-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "未" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mi_n_rel].
 
 ;ambiguous
 
 ryou-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "両" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_ryou_n_rel].
 
 zan-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "残" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_zan_n_rel].
 
 fu-prefix-2 :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "振" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_fu_n_2_rel].
 
 bou-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "某" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_bou_n_rel].
 
 hai-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "配" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_hai_n_rel].
 
@@ -8482,7 +8463,7 @@ ORTH <! "前金" !>].
 ;system
 
 sei-suffix-noun :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sei_n_rel,
 ORTH <! "制" !>].
 
@@ -8677,7 +8658,7 @@ ORTH <! "現住所" !>].
 ;desire; wish; request; prayer; petition; application
 
 negai-suffix-noun := 
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_negai_n_rel,
 ORTH <! "願" !>].
 
@@ -70290,7 +70271,7 @@ shiwasu_1 := ordinary-nohon-n-lex &
 ; Used 177 times
 ; SF (2003-08-25) changed  type ordinary-nohon-n-lex to suffix
 
-shin_1 := ordinary-suffix-n-lex &
+shin_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shin_n_1_rel,
  ORTH <! "心" !>].
 
@@ -92098,12 +92079,6 @@ nurumayu_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nurumayu_n_1_rel,
  ORTH <! "ぬるま湯" !>].
 
-; 寝 
-; Used 3 times
-
-ne_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ne_n_1_rel,
- ORTH <! "寝" !>].
 
 ; 根 
 ; Used 13 times
@@ -144283,32 +144258,32 @@ miyabi_1 := ordinary-nohon-n-lex &
 
 ; 純 
 
-jun_2_1 := ordinary-prefix-n-lex &
+jun_2_1 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_jun_n_2_rel,
  ORTH <! "純" !>].
 
 ; 早 
 
-haya_2 := ordinary-prefix-n-lex &
+haya_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_haya_n_2_rel,
  ORTH <! "早" !>].
 
 ; さよなら 
 ; Used 1 times
 
-sayonara_3 := ordinary-prefix-n-lex &
+sayonara_3 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_sayonara_n_3_rel,
  ORTH <! "さよなら" !>].
 
 ; 聖 
 
-sei_3 := ordinary-prefix-n-lex &
+sei_3 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_sei_n_3_rel,
  ORTH <! "聖" !>].
 
 ; ミリ 
 
-miri_3 := ordinary-prefix-n-lex &
+miri_3 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_miri_n_3_rel,
  ORTH <! "ミリ" !>].
 
@@ -144318,27 +144293,27 @@ miri_3 := ordinary-prefix-n-lex &
 ; (TT 2003-08-07)
 ; LOSE : ordinary-nohon-n-lex(yama_27008720_1_1)でカバー可能
 ; e.g.: 「山猫」、「山ぶどう」
-;yama_3 := ordinary-prefix-n-lex &
+;yama_3 := noun_mod-lex-l &
 ;[SYNSEM.LKEYS.KEYREL.PRED '_yama_n_3_rel,
 ; ORTH <! "山" !>].
 
 ; 亜 
 
-a_2 := ordinary-prefix-n-lex &
+a_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_a_n_2_rel,
  ORTH <! "亜" !>].
 
 ; 青 
 ; Used 7 times
 
-ao_2 := ordinary-prefix-n-lex &
+ao_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_ao_n_2_rel,
  ORTH <! "青" !>].
 
 ; 赤 
 ; Used 13 times
 
-aka_2 := ordinary-prefix-n-lex &
+aka_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_aka_n_2_rel,
  ORTH <! "赤" !>].
 
@@ -144347,7 +144322,7 @@ aka_2 := ordinary-prefix-n-lex &
 ; (TT 2003-08-07)
 ; LOSE:  ordinary-nohon-n-lex(waru_29008510_1_1)でカバー可能
 ; e.g.: 「悪条件」、「悪感情」
-;aku_2_1 := ordinary-prefix-n-lex &
+;aku_2_1 := noun_mod-lex-l &
 ;[SYNSEM.LKEYS.KEYREL.PRED '_aku_n_2_rel,
 ; ORTH <! "悪" !>].
 
@@ -144355,13 +144330,13 @@ aka_2 := ordinary-prefix-n-lex &
 ; Used 1 times
 ; (TT 2003-08-07)
 ; e.g. 「あら(粗)塗り」、「あら造り」
-ara_2 := ordinary-prefix-n-lex &
+ara_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_ara_n_2_rel,
  ORTH <! "あら" !>].
 
 ; 浮世 
 
-ukiyo_2 := ordinary-prefix-n-lex &
+ukiyo_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_ukiyo_n_2_rel,
  ORTH <! "浮世" !>].
 
@@ -144370,33 +144345,33 @@ ukiyo_2 := ordinary-prefix-n-lex &
 ; (TT 2003-08-07)
 ; FIXJACY: 複合動詞を生成する(lexical typeが必要)
 ; e.g. 「押し流す」、「押し入る」
-;oshi_2 := ordinary-prefix-n-lex &
+;oshi_2 := noun_mod-lex-l &
 ;[SYNSEM.LKEYS.KEYREL.PRED '_oshi_n_2_rel,
 ; ORTH <! "押し" !>].
 
 ; 鬼 
 ; Used 4 times
 
-oni_2 := ordinary-prefix-n-lex &
+oni_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_oni_n_2_rel,
  ORTH <! "鬼" !>].
 
 ; 怪 
 
-kai_2_2 := ordinary-prefix-n-lex &
+kai_2_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_kai_n_2_rel,
  ORTH <! "怪" !>].
 
 ; 唐 
 
-kara_2_2 := ordinary-prefix-n-lex &
+kara_2_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_kara_n_2_rel,
  ORTH <! "唐" !>].
 
 ; 黄 
 ; Used 4 times
 
-ki_2 := ordinary-prefix-n-lex &
+ki_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_ki_n_2_rel,
  ORTH <! "黄" !>].
 
@@ -144405,7 +144380,7 @@ ki_2 := ordinary-prefix-n-lex &
 ; (TT 2003-08-07)
 ; e.g.: 「草野球」、「草競馬」
 
-kusa_2 := ordinary-prefix-n-lex &
+kusa_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_kusa_n_2_rel,
  ORTH <! "草" !>].
 
@@ -144414,7 +144389,7 @@ kusa_2 := ordinary-prefix-n-lex &
 
 ; (TT 2003-08-07)
 ; e.g.: 「熊蝉」、「熊蜂」
-kuma_2 := ordinary-prefix-n-lex &
+kuma_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_kuma_n_2_rel,
  ORTH <! "熊" !>].
 
@@ -144424,74 +144399,74 @@ kuma_2 := ordinary-prefix-n-lex &
 ; (TT 2003-08-07)
 ; e.g.: 「高原価」、「高視聴率」
 
-kou_2 := ordinary-prefix-n-lex &
+kou_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_kou_n_2_rel,
  ORTH <! "高" !>].
 
 ; サブ 
 
-sabu_2 := ordinary-prefix-n-lex &
+sabu_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_sabu_n_2_rel,
  ORTH <! "サブ" !>].
 
 ; サンタ 
 ; Used 1 times
 
-santa_2 := ordinary-prefix-n-lex &
+santa_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_santa_n_2_rel,
  ORTH <! "サンタ" !>].
 
 ; 小 
 ; Used 11 times
 
-shou_2 := ordinary-prefix-n-lex &
+shou_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_shou_n_2_rel,
  ORTH <! "小" !>].
 
 ; 処女 
 ; Used 1 times
 
-shojo_2 := ordinary-prefix-n-lex &
+shojo_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_shojo_n_2_rel,
  ORTH <! "処女" !>].
 
 ; 素 
 ; Used 30 times
 
-su_2 := ordinary-prefix-n-lex &
+su_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_su_n_2_rel,
  ORTH <! "素" !>].
 
 ; スーパー 
 ; Used 2 times
 
-su-pa-_2 := ordinary-prefix-n-lex &
+su-pa-_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_su_n_pa_rel,
  ORTH <! "スーパー" !>].
 
 ; 続 
 
-zoku_2 := ordinary-prefix-n-lex &
+zoku_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_zoku_n_2_rel,
  ORTH <! "続" !>].
 
 ; 多 
 ; Used 2 times
 
-ta_2_1 := ordinary-prefix-n-lex &
+ta_2_1 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_ta_n_2_rel,
  ORTH <! "多" !>].
 
 ; 短 
 
-tan_2 := ordinary-prefix-n-lex &
+tan_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_tan_n_2_rel,
  ORTH <! "短" !>].
 
 ; 長 
 ; Used 9 times
 
-chou_2_1 := ordinary-prefix-n-lex &
+chou_2_1 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_chou_n_2_rel,
  ORTH <! "長" !>].
 
@@ -144501,7 +144476,7 @@ chou_2_1 := ordinary-prefix-n-lex &
 ; FIXJACY: 複合動詞を生成する(lexical typeが必要)
 ; e.g. 「突き進む」
 
-; tsuki_2 := ordinary-prefix-n-lex &
+; tsuki_2 := noun_mod-lex-l &
 ; [SYNSEM.LKEYS.KEYREL.PRED '_tsuki_n_2_rel,
 ;  ORTH <! "突き" !>].
 
@@ -144511,7 +144486,7 @@ chou_2_1 := ordinary-prefix-n-lex &
 ; FIXJACY: 複合動詞を生成する(lexical typeが必要)
 ; e.g. 「取り囲む」
 
-; tori_2 := ordinary-prefix-n-lex &
+; tori_2 := noun_mod-lex-l &
 ; [SYNSEM.LKEYS.KEYREL.PRED '_tori_n_2_rel,
 ;  ORTH <! "取り" !>].
 
@@ -144520,7 +144495,7 @@ chou_2_1 := ordinary-prefix-n-lex &
 ; (TT 2003-08-07)
 ; e.g. 「生干し」、「生返事」
 
-nama_2 := ordinary-prefix-n-lex &
+nama_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_nama_n_2_rel,
  ORTH <! "生" !>].
 
@@ -144530,70 +144505,70 @@ nama_2 := ordinary-prefix-n-lex &
 ; 建築用語で「水平」「平行」などの意味
 ; e.g. 「布羽目」
 
-nuno_2 := ordinary-prefix-n-lex &
+nuno_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_nuno_n_2_rel,
  ORTH <! "布" !>].
 
 ; 野 
 ; Used 4 times
 
-no_2 := ordinary-prefix-n-lex &
+no_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_no_n_2_rel,
  ORTH <! "野" !>].
 
 ; 姫 
 
-hime_2 := ordinary-prefix-n-lex &
+hime_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_hime_n_2_rel,
  ORTH <! "姫" !>].
 
 ; 副 
 
-fuku_2_1 := ordinary-prefix-n-lex &
+fuku_2_1 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_fuku_n_2_rel,
  ORTH <! "副" !>].
 
 ; 没 
 
-botsu_2 := ordinary-prefix-n-lex &
+botsu_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_botsu_n_2_rel,
  ORTH <! "没" !>].
 
 ; マイクロ 
 
-maikuro_2 := ordinary-prefix-n-lex &
+maikuro_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_maikuro_n_2_rel,
  ORTH <! "マイクロ" !>].
 
 ; 豆 
 ; Used 5 times
 
-mame_2 := ordinary-prefix-n-lex &
+mame_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_mame_n_2_rel,
  ORTH <! "豆" !>].
 
 ; 満 
 ; Used 4 times
 
-man_2 := ordinary-prefix-n-lex &
+man_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_man_n_2_rel,
  ORTH <! "満" !>].
 
 ; ミクロ 
 
-mikuro_2 := ordinary-prefix-n-lex &
+mikuro_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_mikuro_n_2_rel,
  ORTH <! "ミクロ" !>].
 
 ; 闇 
 
-yami_2 := ordinary-prefix-n-lex &
+yami_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_yami_n_2_rel,
  ORTH <! "闇" !>].
 
 ; 有 
 
-yuu_2 := ordinary-prefix-n-lex &
+yuu_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_yuu_n_2_rel,
  ORTH <! "有" !>].
 
@@ -144602,20 +144577,20 @@ yuu_2 := ordinary-prefix-n-lex &
 ; (TT 2003-08-07)
 ; LOSE: 古い用法（のれん分けした店であることを示す） 
 ; e.g.: 「分け花の家」
-; wake_2 := ordinary-prefix-n-lex &
+; wake_2 := noun_mod-lex-l &
 ; [SYNSEM.LKEYS.KEYREL.PRED '_wake_n_2_rel,
 ;  ORTH <! "分け" !>].
 
 ; 弱 
 
-jaku_3 := ordinary-prefix-n-lex &
+jaku_3 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_jaku_n_3_rel,
  ORTH <! "弱" !>].
 
 
 ; 翌々 
 
-yokuyoku_2 := ordinary-prefix-n-lex &
+yokuyoku_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_yokuyoku_n_2_rel,
  ORTH <! "翌々" !>].
 
@@ -144624,7 +144599,7 @@ yokuyoku_2 := ordinary-prefix-n-lex &
 ; (TT 2003-08-08)
 ; e.g.: 「密入国」
 
-mitsu_3 := ordinary-prefix-n-lex &
+mitsu_3 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_mitsu_n_3_rel,
   ORTH <! "密" !>].
 
@@ -144651,7 +144626,7 @@ mi_1_1 := ordinary-nohon-n-lex &
 
 ; (TT 2003-08-07)
 ; FIXJACY: 複合形容詞を生成(lexical typeが必要)
-; kusai_2 := ordinary-suffix-n-lex &
+; kusai_2 := noun_mod-lex-r &
 ; [SYNSEM.LKEYS.KEYREL.PRED '_kusai_n_2_rel,
 ;  ORTH <! "臭い" !>].
 
@@ -144660,14 +144635,14 @@ mi_1_1 := ordinary-nohon-n-lex &
 ; JACY 上: ue (ordinary-nohon-n-lex) jyou-suffix (ordinary-nohon-n-lex)
 ; Used 233 times
 
-jyou-suffix := ordinary-suffix-n-lex &
+jyou-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_jyou_n_rel,
  ORTH <! "上" !>].
 
 ; 限り 
 ; Used 8 times
 
-kagiri_4_1 := ordinary-suffix-n-lex &
+kagiri_4_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kagiri_n_3_rel,
  ORTH <! "限り" !>].
 
@@ -144681,14 +144656,14 @@ SYNSEM [LKEYS.KEYREL [PRED '_mono_n_rel],
 
 ; added by SF (2003-08-22)
 butsu-suffix :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [ORTH <! "物" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_butsu_n_rel].
 
 ; added by SF (2003-08-25)
 
 gawa-suffix :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [ORTH <! "側" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_gawa_n_rel].
 
@@ -144699,20 +144674,20 @@ SYNSEM.LKEYS.KEYREL.PRED '_gawa_n_rel].
 ; 地名をつくる接尾語
 ; e.g.: 「松本平」
 
-taira_1 := ordinary-suffix-n-lex &
+taira_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_taira_n_1_rel,
  ORTH <! "平" !>].
 
 
 ; そこそこ 
 
-sokosoko_1 := ordinary-suffix-n-lex &
+sokosoko_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sokosoko_n_1_rel,
  ORTH <! "そこそこ" !>].
 
 ; ぽっきり 
 
-pokkiri_1 := ordinary-suffix-n-lex &
+pokkiri_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_pokkiri_n_1_rel,
  ORTH <! "ぽっきり" !>].
 
@@ -144721,7 +144696,7 @@ pokkiri_1 := ordinary-suffix-n-lex &
 ; (TT 2003-08-07)
 ; e.g. 「一年生」「研究生」
 
-sei_3_2 := ordinary-suffix-n-lex &
+sei_3_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sei_n_3_rel,
  ORTH <! "生" !>].
 
@@ -144730,7 +144705,7 @@ sei_3_2 := ordinary-suffix-n-lex &
 ; (TT 2003-08-07)
 ; e.g. 「病み上がり」;「女中上がり」
 
-agari_2 := ordinary-suffix-n-lex &
+agari_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_agari_n_2_rel,
  ORTH <! "上がり" !>].
 
@@ -144739,7 +144714,7 @@ agari_2 := ordinary-suffix-n-lex &
 ; (TT 2003-08-07)
 ; e.g. 「食当たり」
 
-atari_2 := ordinary-suffix-n-lex &
+atari_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_atari_n_2_rel,
  ORTH <! "当たり" !>].
 
@@ -144751,7 +144726,7 @@ atari_2 := ordinary-suffix-n-lex &
 ; FIXJACY: サ変名詞を作る lexical type が必要
 ; e.g. 「邪魔者扱い(する)」;「部長扱い(する)」
 
-; atsukai_2 := ordinary-suffix-n-lex &
+; atsukai_2 := noun_mod-lex-r &
 ; [SYNSEM.LKEYS.KEYREL.PRED '_atsukai_n_2_rel,
 ;  ORTH <! "扱い" !>].
 
@@ -144759,7 +144734,7 @@ atari_2 := ordinary-suffix-n-lex &
 ; 医 
 ; Used 1 times
 
-i_2 := ordinary-suffix-n-lex &
+i_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_i_n_2_rel,
  ORTH <! "医" !>].
 
@@ -144767,53 +144742,53 @@ i_2 := ordinary-suffix-n-lex &
 ; 納め 
 ; Used 3 times
 
-osame_2 := ordinary-suffix-n-lex &
+osame_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_osame_n_2_rel,
  ORTH <! "納め" !>].
 
 
 ; 狩り 
 
-kari_2 := ordinary-suffix-n-lex &
+kari_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kari_n_2_rel,
  ORTH <! "狩り" !>].
 
 ; 眼 
 
-gan_2 := ordinary-suffix-n-lex &
+gan_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_gan_n_2_rel,
  ORTH <! "眼" !>].
 
 ; 器 
 ; Used 21 times
 
-ki_2_1 := ordinary-suffix-n-lex &
+ki_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ki_n_2_rel,
  ORTH <! "器" !>].
 
 ; 期 
 ; Used 6 times
 
-ki_2_2 := ordinary-suffix-n-lex &
+ki_2_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ki_n_2_rel,
  ORTH <! "期" !>].
 
 ; 記 
 ; Used 1 times
 
-ki_2_3 := ordinary-suffix-n-lex &
+ki_2_3 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ki_n_2_rel,
  ORTH <! "記" !>].
 
 ; 刻み 
 
-kizami_2 := ordinary-suffix-n-lex &
+kizami_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kizami_n_2_rel,
  ORTH <! "刻み" !>].
 
 ; 気取り 
 
-kidori_2 := ordinary-suffix-n-lex &
+kidori_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kidori_n_2_rel,
  ORTH <! "気取り" !>].
 
@@ -144821,14 +144796,14 @@ kidori_2 := ordinary-suffix-n-lex &
 ; Used 6 times 
 ; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
 
-kyou_2 := ordinary-suffix-n-lex &
+kyou_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kyou_n_2_rel,
  ORTH <! "強" !>].
 
 ; 弱 
 ; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
 
-jaku_2 := ordinary-suffix-n-lex &
+jaku_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_jaku_n_2_rel,
  ORTH <! "弱" !>].
 
@@ -144838,7 +144813,7 @@ jaku_2 := ordinary-suffix-n-lex &
 ; Used 8 times
 ; CHECK me - used in addressed (FCB 2003-12-07)
 
-ku_2_1 := ordinary-suffix-n-lex &
+ku_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ku_n_2_rel,
  ORTH <! "区" !>].
 
@@ -144846,33 +144821,33 @@ ku_2_1 := ordinary-suffix-n-lex &
 ; 群 
 ; CHECKME - used in addressed (FCB 2003-12-07)
 
-gun_2 := ordinary-suffix-n-lex &
+gun_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_gun_n_2_rel,
  ORTH <! "群" !>].
 
 
 ; 崩れ 
 
-kuzure_2 := ordinary-suffix-n-lex &
+kuzure_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kuzure_n_2_rel,
  ORTH <! "崩れ" !>].
 
 ; 軍 
 ; Used 2 times
 
-gun_2_1 := ordinary-suffix-n-lex &
+gun_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_gun_n_2_rel,
  ORTH <! "軍" !>].
 
 ; 権 
 
-ken_2_2 := ordinary-suffix-n-lex &
+ken_2_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ken_n_2_rel,
  ORTH <! "権" !>].
 
 ; 次第 
 
-shidai_2 := ordinary-suffix-n-lex &
+shidai_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shidai_n_2_rel,
  ORTH <! "次第" !>].
 
@@ -144880,86 +144855,86 @@ shidai_2 := ordinary-suffix-n-lex &
 
 ; 衆 
 
-shuu_2_3 := ordinary-suffix-n-lex &
+shuu_2_3 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shuu_n_2_rel,
  ORTH <! "衆" !>].
 
-sho-suffix := ordinary-suffix-n-lex &
+sho-suffix := noun_mod-lex-r &
 [ORTH <! "書" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sho_n_rel]].
 
 ; CHECK me - should be a number expression? (FCB 2003-12-07)
 ; 勝 
 
-shou_2_1 := ordinary-suffix-n-lex &
+shou_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shou_n_2_rel,
  ORTH <! "勝" !>].
 ; 陣 
 ; Used 1 times
 
-jin_2 := ordinary-suffix-n-lex &
+jin_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_jin_n_2_rel,
  ORTH <! "陣" !>].
 
 ; 性 
 ; Used 18 times
 
-sei_2_2 := ordinary-suffix-n-lex &
+sei_2_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sei_n_2_rel,
  ORTH <! "性" !>].
 
 ; 節 
 ; Used 21 times
 
-setsu_2 := ordinary-suffix-n-lex &
+setsu_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_setsu_n_2_rel,
  ORTH <! "節" !>].
 
 ; 線 
 ; Used 53 times
 
-sen_2 := ordinary-suffix-n-lex &
+sen_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sen_n_2_rel,
  ORTH <! "線" !>].
 
 ; 育ち 
 ; Used 3 times
 
-sodachi_2 := ordinary-suffix-n-lex &
+sodachi_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sodachi_n_2_rel,
  ORTH <! "育ち" !>].
 
 ; 隊 
 ; Used 3 times
 
-tai_2 := ordinary-suffix-n-lex &
+tai_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tai_n_2_rel,
  ORTH <! "隊" !>].
 
 ; 質 
 ; Used 19 times
 
-tachi_2 := ordinary-suffix-n-lex &
+tachi_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tachi_n_2_rel,
  ORTH <! "質" !>].
 
 ; 談 
 
-dan_2_1 := ordinary-suffix-n-lex &
+dan_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_dan_n_2_rel,
  ORTH <! "談" !>].
 
 ; 使い 
 ; Used 9 times
 
-tsukai_2 := ordinary-suffix-n-lex &
+tsukai_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsukai_n_2_rel,
  ORTH <! "使い" !>].
 
 ; 付き 
 ; Used 11 times
 
-tsuki_2_1 := ordinary-suffix-n-lex &
+tsuki_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsuki_n_2_rel,
  ORTH <! "付き" !>].
 
@@ -144969,61 +144944,61 @@ tsuki_2_1 := ordinary-suffix-n-lex &
 ; e.g.: 「使い出」「読み出」
 ; FIXME - could constrain this more (FCB 2003-12-07)
 
-de_2 := ordinary-suffix-n-lex &
+de_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_de_n_2_rel,
  ORTH <! "出" !>].
 
 
 ; デー  "valentine'_s day"
 
-de-_2 := ordinary-suffix-n-lex &
+de-_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_de_n_2_rel,
  ORTH <! "デー" !>].
 
 ; 堂 
 ; Used 1 times
 
-dou_2_1 := ordinary-suffix-n-lex &
+dou_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_dou_n_2_rel,
  ORTH <! "堂" !>].
 
 ; 内外 
 
-naigai_2 := ordinary-suffix-n-lex &
+naigai_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_naigai_n_2_rel,
  ORTH <! "内外" !>].
 
 ; 直し 
 ; Used 1 times
 
-naoshi_2 := ordinary-suffix-n-lex &
+naoshi_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_naoshi_n_2_rel,
  ORTH <! "直し" !>].
 
 ; 並 
 ; Used 3 times
 
-nami_2 := ordinary-suffix-n-lex &
+nami_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_nami_n_2_rel,
  ORTH <! "並" !>].
 
 ; 煮 
 ; Used 19 times
 
-ni_2 := ordinary-suffix-n-lex &
+ni_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ni_n_2_rel,
  ORTH <! "煮" !>].
 
 ; 抜き 
 
-nuki_2 := ordinary-suffix-n-lex &
+nuki_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_nuki_n_2_rel,
  ORTH <! "抜き" !>].
 
 ; 逃れ 
 ; Used 4 times
 
-nogare_2 := ordinary-suffix-n-lex &
+nogare_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_nogare_n_2_rel,
  ORTH <! "逃れ" !>].
 
@@ -145032,27 +145007,27 @@ nogare_2 := ordinary-suffix-n-lex &
 ; (TT 2003-08-08)
 ; e.g.: 「自転車乗り」; 「五人乗り」
 
-nori_2 := ordinary-suffix-n-lex &
+nori_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_nori_n_2_rel,
  ORTH <! "乗り" !>].
 
 ; 輩 
 
-hai_2_2 := ordinary-suffix-n-lex &
+hai_2_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_hai_n_2_rel,
  ORTH <! "輩" !>].
 
 ; 判 
 ; Used 3 times
 
-han_2_1 := ordinary-suffix-n-lex &
+han_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_han_n_2_rel,
  ORTH <! "判" !>].
 
 ; 半分 
 ; Used 11 times
 
-hanbun_2 := ordinary-suffix-n-lex &
+hanbun_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_hanbun_n_2_rel,
  ORTH <! "半分" !>].
 
@@ -145060,28 +145035,28 @@ hanbun_2 := ordinary-suffix-n-lex &
 ; 風情 
 ; Used 4 times
 
-fuzei_2 := ordinary-suffix-n-lex &
+fuzei_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_fuzei_n_2_rel,
  ORTH <! "風情" !>].
 
 ; 弁 
 ; Used 3 times
 
-ben_2 := ordinary-suffix-n-lex &
+ben_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ben_n_2_rel,
  ORTH <! "弁" !>].
 
 
 ; 魔 
 
-ma_2_1 := ordinary-suffix-n-lex &
+ma_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ma_n_2_rel,
  ORTH <! "魔" !>].
 
 ; 回し 
 ; Used 6 times
 
-mawashi_2 := ordinary-suffix-n-lex &
+mawashi_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_mawashi_n_2_rel,
  ORTH <! "回し" !>].
 
@@ -145090,21 +145065,21 @@ mawashi_2 := ordinary-suffix-n-lex &
 ; (TT 2003-08-08)
 ; e.g.: 「大金持ち」; 「男持ちの時計」; 「食費は自分持ち」
 
-mochi_2 := ordinary-suffix-n-lex &
+mochi_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_mochi_n_2_rel,
  ORTH <! "持ち" !>].
 
 ; 屋 
 ; Used 5 times
 
-ya_2 := ordinary-suffix-n-lex &
+ya_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ya_n_2_rel,
  ORTH <! "屋" !>].
 
 
 ; 寄り 
 
-yori_2_1 := ordinary-suffix-n-lex &
+yori_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_yori_n_2_rel,
  ORTH <! "寄り" !>].
 
@@ -145113,48 +145088,48 @@ yori_2_1 := ordinary-suffix-n-lex &
 ; (TT 2003-08-08)
 ; e.g.: 「三十かっこうの船員」
 
-kakkou_2_1 := ordinary-suffix-n-lex &
+kakkou_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kakkou_n_2_rel,
  ORTH <! "格好" !>].
 
 ; 語 
 ; Used 181 times
 
-go_2 := ordinary-suffix-n-lex &
+go_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_go_n_2_rel,
  ORTH <! "語" !>].
 
 ; 腰 
 ; Used 16 times
 
-koshi_2 := ordinary-suffix-n-lex &
+koshi_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_koshi_n_2_rel,
  ORTH <! "腰" !>].
 
 ; 座 
 ; Used 1 times
 
-za_2 := ordinary-suffix-n-lex &
+za_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_za_n_2_rel,
  ORTH <! "座" !>].
 
 ; 層 
 ; Used 5 times
 
-sou_2 := ordinary-suffix-n-lex &
+sou_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sou_n_2_rel,
  ORTH <! "層" !>].
 
 ; 派 
 
-ha_2_1 := ordinary-suffix-n-lex &
+ha_2_1 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ha_n_2_rel,
  ORTH <! "派" !>].
 
 
 ; 打 
 
-da_2 := ordinary-suffix-n-lex &
+da_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_da_n_2_rel,
  ORTH <! "打" !>].
 
@@ -145164,7 +145139,7 @@ da_2 := ordinary-suffix-n-lex &
 ; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
 
 
-nai-suffix := ordinary-suffix-n-lex &
+nai-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_nai_n_suffix_rel,
  ORTH <! "内" !>].
 
@@ -145174,7 +145149,7 @@ nai-suffix := ordinary-suffix-n-lex &
 ; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
 
 
-inai-suffix := ordinary-suffix-n-lex &
+inai-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_inai_n_suffix_rel,
  ORTH <! "以内" !>].
 
@@ -145183,92 +145158,92 @@ inai-suffix := ordinary-suffix-n-lex &
 ; e.g.: 「爬虫類_以外_を集める」
 ; CHECKME - joins on to some numeral classifiers (FCB 2003-12-07)
 
-igai-suffix := ordinary-suffix-n-lex &
+igai-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_igai_n_suffix_rel,
  ORTH <! "以外" !>].
 
 
-shou-suffix := ordinary-suffix-n-lex &
+shou-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shou_n_suffix_rel,
  ORTH <! "症" !>].
 
-ban-suffix := ordinary-suffix-n-lex &
+ban-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ban_n_suffix_rel,
  ORTH <! "版" !>].
 
-sei-suffix := ordinary-suffix-n-lex &
+sei-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sei_n_suffix_rel,
  ORTH <! "製" !>].
 
-gama-suffix := ordinary-suffix-n-lex &
+gama-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_gama_n_suffix_rel,
  ORTH <! "がま" !>].
 
 ;; FIXME semantics
-doushi-suffix := ordinary-suffix-n-lex &
+doushi-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_doushi_n_suffix_rel,
  ORTH <! "どうし" !>].
 
-dan-suffix := ordinary-suffix-n-lex &
+dan-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_dan_n_suffix_rel,
  ORTH <! "団" !>].
 
-shi-suffix := ordinary-suffix-n-lex &
+shi-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shi_n_suffix_rel,
  ORTH <! "史" !>].
 
-tou-suffix := ordinary-suffix-n-lex &
+tou-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tou_n_suffix_rel,
  ORTH <! "筒" !>].
 
-ro-suffix := ordinary-suffix-n-lex &
+ro-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ro_n_suffix_rel,
  ORTH <! "路" !>].
 
-ban-1-suffix := ordinary-suffix-n-lex &
+ban-1-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ban_n_1_rel,
  ORTH <! "盤" !>].
 
-zoi-suffix := ordinary-suffix-n-lex &
+zoi-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_zoi_n_suffix_rel,
  ORTH <! "沿い" !>].
 
-chou-suffix := ordinary-suffix-n-lex &
+chou-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_chou_n_suffix_rel,
  ORTH <! "帳" !>].
 
 ;; FIXME semantics
-me-suffix := ordinary-suffix-n-lex &
+me-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_me_n_suffix_rel,
  ORTH <! "め" !>].
 
 ;; FIXME semantics
-goto-suffix := ordinary-suffix-n-lex &
+goto-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_goto_n_suffix_rel,
  ORTH <! "毎" !>].
 
 ;; FIXME semantics
-tachi-suffix := ordinary-suffix-n-lex &
+tachi-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tachi_n_suffix_rel,
  ORTH <! "達" !>].
 
-shou-1-suffix := ordinary-suffix-n-lex &
+shou-1-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shou_n_1_rel,
  ORTH <! "相" !>].
 
-kan-suffix := ordinary-suffix-n-lex &
+kan-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kan_n_suffix_rel,
  ORTH <! "官" !>].
 
-kai-1-suffix := ordinary-suffix-n-lex &
+kai-1-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kai_n_1_rel,
  ORTH <! "界" !>].
 
-doori-suffix := ordinary-suffix-n-lex &
+doori-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_doori_n_suffix_rel,
  ORTH <! "どおり" !>].
 
-zai-suffix := ordinary-suffix-n-lex &
+zai-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_zai_n_suffix_rel,
  ORTH <! "剤" !>].
 
@@ -145325,7 +145300,7 @@ mi-suffix := adj2n-suffix-lex &
 
 
 ; FIXME more like -teki
-ge-suffix := ordinary-suffix-n-lex &
+ge-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ge_n_suffix_rel,
  ORTH <! "げ" !>].
 
@@ -145333,7 +145308,7 @@ ge-suffix := ordinary-suffix-n-lex &
 ; anti-
 
 kou-prefix :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "抗" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kou_n_rel]].
 
@@ -145341,7 +145316,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_kou_n_rel]].
 ; importance
 
 jouyou-importance :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "重要" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_jouyou_n_3_rel]].
 
@@ -145447,7 +145422,7 @@ migaki_hiragana := ordinary-nohon-n-lex &
 ; 反
 ; han_1(ordinary-nohon-n-lex)を追加すべきかどうか
 
-han_2 := ordinary-prefix-n-lex &
+han_2 := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_han_n_2_rel,
  ORTH <! "反" !>].
 
@@ -145483,7 +145458,7 @@ geta_katakana := ordinary-nohon-n-lex &
 
 ; 庫
 
-ko-suffix := ordinary-suffix-n-lex &
+ko-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ko_n_suffix_rel,
  ORTH <! "庫" !>].
 
@@ -145525,37 +145500,37 @@ hi_taiyou := ordinary-nohon-n-lex &
 
 ; 灯
 
-tou-suffix-akari := ordinary-suffix-n-lex &
+tou-suffix-akari := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tou_n_suffix_akari_rel,
  ORTH <! "灯" !>].
 
 ; 業
 
-gyou-suffix-nariwai := ordinary-suffix-n-lex &
+gyou-suffix-nariwai := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_gyou_n_suffix_nariwai_rel,
  ORTH <! "業" !>].
 
 ; 費
 
-hi-suffix := ordinary-suffix-n-lex &
+hi-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_hi_n_suffix_rel,
  ORTH <! "費" !>].
 
 ; 産
 
-san-suffix := ordinary-suffix-n-lex &
+san-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_san_n_suffix_rel,
  ORTH <! "産" !>].
 
 ; 士
 
-shi-suffix-hito := ordinary-suffix-n-lex &
+shi-suffix-hito := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shi_n_suffix_hito_rel,
  ORTH <! "士" !>].
 
 ; 展
 
-ten-suffix-tenrankai := ordinary-suffix-n-lex &
+ten-suffix-tenrankai := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ten_n_suffix_tenraikai_rel,
  ORTH <! "展" !>].
 
@@ -145579,13 +145554,13 @@ tama_4 := ordinary-nohon-n-lex &
 
 ; 賃
 
-chin-suffix := ordinary-suffix-n-lex &
+chin-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_chin_n_suffix_rel,
  ORTH <! "賃" !>].
 
 ; 領
 
-ryou-suffix-ryoudo := ordinary-suffix-n-lex &
+ryou-suffix-ryoudo := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ryou_n_suffix_ryoudo_rel,
  ORTH <! "領" !>].
 
@@ -145593,13 +145568,13 @@ ryou-suffix-ryoudo := ordinary-suffix-n-lex &
 
 ; 帽
 
-bou-suffix-boushi := ordinary-suffix-n-lex &
+bou-suffix-boushi := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_bou_n_suffix_boushi_rel,
  ORTH <! "帽" !>].
 
 ; 腺 
 
-sen_3-suffix := ordinary-suffix-n-lex &
+sen_3-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_sen_n_3_suffix_rel,
  ORTH <! "腺" !>].
 
@@ -145619,25 +145594,25 @@ SYNSEM.LKEYS.KEYREL [PRED '_machi_n_3_rel]].
 ; 街
 
 gai-suffix-machi :=
-ordinary-suffix-n-lex &
+noun_mod-lex-r &
 [ORTH <! "街" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_gai_n_suffix_machi_rel]].
 
 ; ふう
 
-fuu-suffix_hiragana := ordinary-suffix-n-lex &
+fuu-suffix_hiragana := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_hiragana_rel,
  ORTH <! "ふう" !>].
 
 ; 風
 
-fuu-suffix_kanji := ordinary-suffix-n-lex &
+fuu-suffix_kanji := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_kanji_rel,
  ORTH <! "風" !>].
 
 ; 猛
 
-mou-prefix := ordinary-prefix-n-lex &
+mou-prefix := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_mou_n_prefix_rel,
  ORTH <! "猛" !>].
 
@@ -145649,37 +145624,37 @@ shou-yakusho := ordinary-nohon-n-lex &
 
 ; 省
 
-shou-suffix-yakusho := ordinary-suffix-n-lex &
+shou-suffix-yakusho := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shou_n_suffix_yakusho_rel,
  ORTH <! "省" !>].
 
 ; 流
 
-ryuu-suffix := ordinary-suffix-n-lex &
+ryuu-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ryuu_n_suffix_rel,
  ORTH <! "流" !>].
 
 ; 老
 
-rou-prefix-roujin := ordinary-prefix-n-lex &
+rou-prefix-roujin := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_rou_n_prefix_roujin_rel,
  ORTH <! "老" !>].
 
 ; 圏
 
-ken-suffix-hani := ordinary-suffix-n-lex &
+ken-suffix-hani := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_ken_n_suffix_hani_rel,
  ORTH <! "圏" !>].
 
 ; 準
 
-jun-prefix := ordinary-prefix-n-lex &
+jun-prefix := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_jun_n_prefix_rel,
  ORTH <! "準" !>].
 
 ; ばなし
 
-banashi-suffix := ordinary-suffix-n-lex &
+banashi-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_banashi_n_suffix_rel,
  ORTH <! "ばなし" !>].
 
@@ -145693,7 +145668,7 @@ kisaki_1 := ordinary-nohon-n-lex &
 
 ; 妃
 
-hi-suffix-kisaki := ordinary-suffix-n-lex &
+hi-suffix-kisaki := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_hi_n_suffix_kisaki_rel,
  ORTH <! "妃" !>].
 
@@ -145705,25 +145680,25 @@ kisaki_2 := ordinary-nohon-n-lex &
 
 ; 商
 
-shou-suffix-akinai := ordinary-suffix-n-lex &
+shou-suffix-akinai := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shou_n_suffix_akinai_rel,
  ORTH <! "商" !>].
 
 ; 族
 
-zoku-suffix := ordinary-suffix-n-lex &
+zoku-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_zoku_n_suffix_rel,
  ORTH <! "族" !>].
 
 ; 調
 
-chou-suffix_2 := ordinary-suffix-n-lex &
+chou-suffix_2 := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_chou_n_suffix_2_rel,
  ORTH <! "調" !>].
 
 ; 歴
 
-reki-suffix := ordinary-suffix-n-lex &
+reki-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_reki_n_suffix_rel,
  ORTH <! "歴" !>].
 
@@ -145834,13 +145809,13 @@ gen_2 := ordinary-nohon-n-lex &
 
 ; 校
 
-kou-suffix-gakkou := ordinary-suffix-n-lex &
+kou-suffix-gakkou := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_kou_n_suffix_gakkou_rel,
  ORTH <! "校" !>].
 
 ; 誌
 
-shi-suffix-publication := ordinary-suffix-n-lex &
+shi-suffix-publication := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_shi_n_suffix_publication_rel,
  ORTH <! "誌" !>].
 
@@ -145852,7 +145827,7 @@ kyoku_3 := ordinary-nohon-n-lex &
 
 ; 艇
 
-tei-suffix-fune := ordinary-suffix-n-lex &
+tei-suffix-fune := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_tei_n_suffix_fune_rel,
  ORTH <! "艇" !>].
 
@@ -145898,7 +145873,7 @@ hayashi_noun := ordinary-nohon-n-lex &
  ORTH <! "林" !>].
 
 
-rin-suffix := ordinary-suffix-n-lex &
+rin-suffix := noun_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_rin_n_suffix_rel,
  ORTH <! "林" !>].
 
@@ -146003,7 +145978,7 @@ ordinary-nohon-n-lex &
 [ORTH <! "丸" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_maru_n_rel]].
 
-maru-prefix := ordinary-prefix-n-lex &
+maru-prefix := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_maru_n_prefix_rel,
  ORTH <! "丸" !>].
 
@@ -146048,7 +146023,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_chie_n_4_rel]].
 
 ;FIXME
 ;ノーモア
-no-moa-prefix := ordinary-prefix-n-lex &
+no-moa-prefix := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_no-moa_n_prefix_rel,
  ORTH <! "ノーモア" !>].
 
@@ -146110,7 +146085,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_girigiri_n_rel]].
 ; for things like 私事
 
 watakushi-prefix-n :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "私" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_watakushi_prefix_rel]].
 
@@ -146169,7 +146144,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_daiji_n_kotogara_rel]].
 
 ;本
 
-hon-prefix := ordinary-prefix-n-lex &
+hon-prefix := noun_mod-lex-l &
 [SYNSEM.LKEYS.KEYREL.PRED '_hon_n_prefix_rel,
  ORTH <! "本" !>].
 
