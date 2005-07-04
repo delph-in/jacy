@@ -3056,7 +3056,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_sai_n_rel]].
 ;[ORTH <! "ºÆ" !>,
 ;SYNSEM.LKEYS.KEYREL [PRED '_sai_n_repeated_rel]].
 sai-repeated :=
-ordinary-prefix-n-lex &
+noun_mod-lex-l &
 [ORTH <! "ºÆ" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sai_n_repeated_rel]].
 
