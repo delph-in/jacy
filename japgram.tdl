@@ -211,10 +211,10 @@ utterance_rule-decl-infinite := utterance-plusmessage-type &
 adv_np_rule := adv_np_rule-type.
 
 ;  (FCB 2005-06-30) moved supertype into rule-types.
-compound-noun-rule := compound-noun-rule-type &
- [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD ordinary-or-date-noun_head] > ].
+;compound-noun-rule := compound-noun-rule-type &
+; [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD ordinary-or-date-noun_head] > ].
 
-<<<<<<< japgram.tdl
+
 ;expanded from ordinary_noun_head to noun_head: dore kurai.
 
 ; (ERB 2001-10-10) For constructing k2ys it's helpful to have
