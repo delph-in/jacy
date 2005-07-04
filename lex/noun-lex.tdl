@@ -145249,25 +145249,19 @@ zai-suffix := noun_mod-lex-r &
 
 
 ki-suffix :=
-ordinary-nohon-n-lex &
+noun_mod-lex-r &
 [ORTH <! "µ¡" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_ki_n_rel],
-	LOCAL [CAT.HEAD.J-POSTHEAD right,
-	       BAR -]]].
+SYNSEM.LKEYS.KEYREL.PRED '_ki_n_rel].
 
 sho-office-suffix :=
-ordinary-nohon-n-lex &
+noun_mod-lex-r &
 [ORTH <! "½ð" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_sho_n_rel],
-	LOCAL [CAT.HEAD.J-POSTHEAD right,
-	       BAR -]]].
+SYNSEM.LKEYS.KEYREL.PRED '_sho_n_rel].
 
 gaku-suffix :=
-ordinary-nohon-n-lex &
+noun_mod-lex-r &
 [ORTH <! "³Û" !>,
- SYNSEM [LKEYS.KEYREL.PRED '_gaku_n_rel,
-	 LOCAL [CAT.HEAD.J-POSTHEAD right,
-		BAR -]]].
+ SYNSEM.LKEYS.KEYREL.PRED '_gaku_n_rel].
 
 
 
