@@ -1873,7 +1873,8 @@ postp-lex-general := vmod-p-lex &
              [SYNSEM.LOCAL.CAT.HEAD postp_head].
 
 postp-lex := postp-lex-general & 
-             [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head]].
+             [SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+			    CONT.RELS <! relation !>]].
 
 
 postp-lex-varg := postp-lex-general & 
@@ -3540,13 +3541,16 @@ noun_mod-lex-l := noun_mod-lex &
 noun_mod-lex-r := noun_mod-lex &
                   [ SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD right ].
 
+
+; (MS 2005-07-05) changed RELS.LIST.FIRST.LBL #handle to LTOP
+
 pp_mod-lex := lexical_sign-word &
             [SYNSEM [LKEYS.KEYREL #key & [ARG1 #inst, 
 					  LBL #handle],
 		     LOCAL [CAT [HEAD pp_mod_head-avm &
 				      [MOD < [LOCAL intersective_mod &
-						    [ CONT [HOOK.XARG #inst,
-							    RELS.LIST.FIRST.LBL #handle]]] > ], 
+						    [ CONT [HOOK [XARG #inst,
+								  LTOP #handle]]]] > ], 
 				 VAL saturated],
 			    ARG-S < >,
 			    CONT simple-adj-sem-type &
@@ -6182,8 +6186,9 @@ v2adj-nmod-maybeend-lex-v2 := v2adj-nmod-maybeend-lex &
 
 
 v2adj-end-lex-v1 := v2adj-end-lex &
-[SYNSEM [LOCAL.CAT [VAL [SPR.FIRST.LOCAL [CAT.VAL.COMPS 1-list & [FIRST.LOCAL [CAT.HEAD.CASE wo-or-ni,
-										     CONT.HOOK.INDEX #verbobj]]]]],
+[SYNSEM [LOCAL.CAT [VAL [SPR.FIRST.LOCAL [CAT.VAL.COMPS 1-list & 
+							[FIRST.LOCAL [CAT.HEAD.CASE wo-or-ni,
+								      CONT.HOOK.INDEX #verbobj]]]]],
 	 LKEYS.KEYREL.ARG1 #verbobj]].
 
 v2adj-notyetend-lex-v1 := v2adj-end-lex-v1 &
