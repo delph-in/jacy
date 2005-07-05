@@ -1573,7 +1573,7 @@ p-lex := lexical_sign &
 									      QUANTIFIABLE #2],
 								    CONT.HOOK.INDEX #ind]] >]],
                          CTXT.BACKGROUND <! !>,
-			 CONT.HOOK.XARG #ind,
+			 CONT [HOOK.XARG #ind],
                          BAR +,
 			 ARG-S #comps],
                   NON-LOCAL [QUE <! !>,
@@ -1729,8 +1729,8 @@ nspec-p-lex  :=  p-lex-c &
 ; (ERB 2001-11-28) Making all Ps intersective modifiers.
 
 mod-p-lex :=  p-lex-c & 
-            [SYNSEM.LOCAL.CAT [HEAD mod-p_head-avm &
-                                    [ MOD < [LOCAL intersective_mod] > ]]].
+            [SYNSEM.LOCAL.CAT.HEAD mod-p_head-avm &
+				   [ MOD < [LOCAL intersective_mod] > ]].
 
 
 nmod-p-lex :=  mod-p-lex & 
@@ -1851,7 +1851,7 @@ vmod-p-lex-super := mod-p-lex &
                                        [MOD < [LOCAL.CONT.HOOK [LTOP #hand,
 								INDEX #mind]] > ]],
                             CONT [ HOOK [LTOP #hand],
-                                   RELS.LIST.FIRST #key & [ARG2 #mind],
+                                   RELS <! #key & [ARG2 #mind] !>,
                                    HCONS <! !>]]]].
 
 ; (ERB 2001-09-13) Other than wa, these guys are intersective modifiers.
@@ -1947,7 +1947,8 @@ topic-p-lex := vmod-p-lex-super &
 					  ARG0.E.TENSE no_tense ],
 			     LOCAL [ CAT [ HEAD topic-vmod-p_head ],
 				     CONT topic-sem-type  &
-					 [HOOK.INDEX #ind ]]]].
+					 [HOOK.INDEX #ind,
+					  RELS <! relation !>]]]].
 
 ; (ERB 2002-01-10) Experimenting with treating particle uses of ¤Ê¤É
 ; as contributing topic semantics in addition to nado relation.
