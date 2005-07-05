@@ -1762,7 +1762,7 @@ nounmod-p-lex := nmod-p-lex &
 								   LTOP #handle]] >,
 				      VAL.COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #arg]],
 				 CONT prep-sem-type &
-				     [RELS.LIST.FIRST #key,
+				     [RELS <! #key !>,
 				      HOOK.INDEX #mod,
 				      HCONS <! !>]]]].
 
