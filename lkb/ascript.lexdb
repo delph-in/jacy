@@ -33,10 +33,10 @@
 ; (Ben Waldron 2003-12-06):
 
   ;; optionally, use a lexical database; 
-  ;; to activate the DB set *psql-lexicon-parameters* (see globals.lsp)
-  (if *psql-lexicon-parameters*
+  ;; to activate the DB set *lexdb-parameters* (see globals.lsp)
+  (if *lexdb-params*
       (progn
-	(load-psql-lexicon-from-script)
+	(load-lexdb-from-script)
 	(read-cached-sublex-if-available "generics" (list
 					     (lkb-pathname (parent-directory) "lex/generics.skip")))
 	(read-cached-sublex-if-available "adjadv-lex" (list  (lkb-pathname 
@@ -63,7 +63,7 @@
 ;							 (parent-directory) "lex/vn-lex.skip")))
 	(read-cached-sublex-if-available "v-ends-lex" (list (lkb-pathname 
 							     (parent-directory) "lex/v-ends-lex.skip"))))
-    (error))
+    (error "*lexdb-params* unset"))
     
 (read-tdl-parse-node-file-aux 
           (lkb-pathname (parent-directory) "parse-nodes.tdl"))
