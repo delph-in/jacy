@@ -6,8 +6,8 @@
 ;;;   ChaSen off (assuming presegmented input), 
 ;;;   precise analysis on (load the ambiguous files). 
 ;;;
-;;; (FCB 2005-07-02)
-;(pushnew :chasen *features*)
+
+(setf *features* (remove :chasen *features*))
 
 (lkb-load-lisp (parent-directory) "Version.lsp")
 (setf *grammar-directory* (parent-directory)) ; needed for MRS
@@ -16,6 +16,10 @@
 (lkb-load-lisp (this-directory) "user-fns.lsp")
 
 (lkb-load-lisp (this-directory) "checkpaths.lsp" t)
+
+;;; load some patches (;o;)
+(lkb-load-lisp (this-directory) "patches.lisp" t)
+
 
 (lkb-load-lisp (this-directory) "mrsglobals.lisp")
 
@@ -41,38 +45,20 @@
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 
-; (Ben Waldron 2003-12-06):
-
-(read-cached-lex-if-available (list
-  (lkb-pathname (parent-directory) "lex/generics.tdl"))) ;; pick an arbitrary file and call it the _main_ lexicon
-(read-cached-sublex-if-available "adjadv" (list  (lkb-pathname 
-                                             (parent-directory) "lex/adjadv-lex.tdl")))
-(read-cached-sublex-if-available "aux-stem" (list (lkb-pathname 
-                                              (parent-directory) "lex/aux-stem-lex.tdl")))
-(read-cached-sublex-if-available "funct-lex" (list  (lkb-pathname 
-                                              (parent-directory) "lex/funct-lex.tdl")))
-(read-cached-sublex-if-available "idiom-lex" (list  (lkb-pathname 
-                                              (parent-directory) "lex/idiom-lex.tdl")))
-(read-cached-sublex-if-available "light-verbs" (list (lkb-pathname 
-                                              (parent-directory) "lex/light-verbs-lex.tdl")))
-(read-cached-sublex-if-available "noun" (list (lkb-pathname 
-                                              (parent-directory) "lex/noun-lex.tdl")))
-(read-cached-sublex-if-available "numbers" (list (lkb-pathname 
-                                              (parent-directory) "lex/numbers-lex.tdl")))
-(read-cached-sublex-if-available "p" (list (lkb-pathname 
-                                            (parent-directory) "lex/p-lex.tdl")))
-(read-cached-sublex-if-available "pn" (list  (lkb-pathname 
-                                              (parent-directory) "lex/pn-lex.tdl")))
-(read-cached-sublex-if-available "verbstem" (list (lkb-pathname 
-                                              (parent-directory) "lex/verbstem-lex.tdl")))
-(read-cached-sublex-if-available "vn" (list (lkb-pathname 
-                                              (parent-directory) "lex/vn-lex.tdl")))
-(read-cached-sublex-if-available "v-ends" (list (lkb-pathname 
-                                                 (parent-directory) "lex/v-ends-lex.tdl")))
-;(read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
-;						 (parent-directory) "lex/ersatz.tdl")))
-(read-cached-sublex-if-available "ambiguous" (list (lkb-pathname 
-                                             (parent-directory) "lex/ambiguous-lex.tdl")))
+;;; Load the lexicon
+(if   *lexdb-params* ;;; nil
+    ;; Use the database
+    (progn
+      ;; load from database
+      (load-lexdb-from-script)
+      ;; load the things that aren't in the database
+      (read-cached-sublex-if-available 
+       "lexicon" (list (lkb-pathname (parent-directory) "lex/jacy.skip"))))
+  (progn
+    ;; pick an arbitrary file and call it the _main_ lexicon
+    ;; FIXME
+    (read-cached-lex-if-available 
+      (list (lkb-pathname (parent-directory) "lex/jacy.tdl")))))
 
 
 (read-tdl-parse-node-file-aux 
