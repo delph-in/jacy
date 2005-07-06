@@ -144648,11 +144648,9 @@ kagiri_4_1 := noun_mod-lex-r &
 
 
 mono-suffix :=
-ordinary-nohon-n-lex &
+noun_mod-lex-r &
 [ORTH <! "ʪ" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_mono_n_rel],
-	LOCAL [CAT.HEAD.J-POSTHEAD right,
-	       BAR -]]].
+SYNSEM.LKEYS.KEYREL.PRED '_mono_n_rel].
 
 ; added by SF (2003-08-22)
 butsu-suffix :=

@@ -1712,12 +1712,13 @@ subj-casechange-rule := phrasal_sign & headed-phrase & lex-rule &
 
 nominal-numcl-rule-type := unary-type &
 [ SYNSEM [ LOCAL [ CAT [ HEAD ordinary_noun_head-avm & [QUANTIFIABLE -, 
-							VN -],
+							VN -,
+							KEYS.KEY #key],
                          VAL noun_sc ],
                     CONT [ HCONS <! !>,
 			   MSG no-msg],
 		   BAR +]],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head & [EMPTY +],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head & [EMPTY +, KEYS.KEY #key],
 				  VAL saturated ],
 			    BAR +]].
 

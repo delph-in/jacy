@@ -2185,8 +2185,9 @@ det-wh-lex := dt-lex &
 
 
 card2ord-lex := lexical_sign-word & 
-            [SYNSEM [LOCAL [CAT [HEAD card2ord_head-avm & [J-SPEC.FIRST.LOCAL.CONT.HOOK [INDEX #ind,
-											 LTOP #spechand],
+            [SYNSEM [LOCAL [CAT [HEAD card2ord_head-avm & [J-SPEC.FIRST.LOCAL [CAT.HEAD.KEYS.KEY quantity_rel,
+									       CONT.HOOK [INDEX #ind,
+	       									 LTOP #spechand]],
 	                                                   KEYS.KEY def_rel], 
                                  VAL saturated],
                             CTXT.BACKGROUND <! !>,
@@ -2571,12 +2572,12 @@ n-lex := n-lex-super & lexical_sign-word.
 
 
 ordinary-or-wh-n-lex := n-lex &
-                  [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head-avm,
+                  [SYNSEM [LOCAL [CAT [HEAD ordinary_noun_head-avm & [KEYS.KEY #pred],
                                        VAL noun_sc & [SPR.FIRST #spr]],
 				  ARG-S < #spr >,
                                   CONT common-noun-sem-type & [HOOK.INDEX #ind & [PNG.PN three],
 							       RELS <! #key !> ]],
-			   LKEYS.KEYREL #key & [ARG0 #ind],
+			   LKEYS.KEYREL #key & [ARG0 #ind, PRED #pred],
                            NON-LOCAL.AFFIX <! !>]].
 
 ordinary-n-lex := ordinary-or-wh-n-lex &
@@ -3029,10 +3030,12 @@ spr-only-num-cl-lex := numeral-classifier &
                                    [FIRST [OPT - ,
 					   LOCAL [ CAT [ HEAD int_head &
 							      [ ST-ALONE + ],
-							 VAL saturated ]]]]]],
+							 VAL saturated ],
+						   CONT.HOOK.INDEX #arg]]]]],
 		   ARG-S #spr,
 		   CONT num-cl-sem-type &
-			    [MSG no-msg]]]].
+			    [MSG no-msg,
+			     HOOK.XARG #arg]]]].
 
 ; (ERB 2001-08-21) For "numeral classifiers" that go before the
 ; numbers, i.e., $, бЁ, бя...

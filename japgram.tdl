@@ -369,7 +369,7 @@ compounds-rule := hadj-final-i &
                   [SYNSEM.MODIFIED.PERIPH +,
 		   C-CONT [RELS <! unspec-compound-relation &
 				 [LBL #hhand,
-				  PRED "appos-id_rel",
+				  PRED "compound_rel",
 				  ARG0.E.TENSE no_tense,
 				  ARG2 #hinst,
 				  ARG1 #nhinst] !>,
