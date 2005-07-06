@@ -1,0 +1,20 @@
+type TEXT
+orthography TEXT
+keyrel TEXT
+altkey TEXT
+keytag TEXT
+ptype TEXT
+pronunciation TEXT
+semclasses TEXT
+preferences TEXT
+classifier TEXT
+comments TEXT
+exemplars TEXT
+lang TEXT
+country TEXT
+dialect TEXT
+domains TEXT
+genres TEXT
+register TEXT
+confidence real DEFAULT 1
+source TEXT

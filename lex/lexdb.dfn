@@ -1,0 +1,8 @@
+jacy	id	name		symbol
+jacy	orth	orthography		string-list
+jacy	unifs	altkey	(synsem lkeys altkeyrel pred)	mixed
+jacy	unifs	keyrel	(synsem lkeys keyrel pred)	mixed
+jacy	unifs	keytag	(synsem lkeys keyrel carg)	mixed
+jacy 	unifs	ptype	(synsem local cat head ptype)	mixed
+jacy	unifs	orthography	(orth)	string-diff-fs
+jacy	unifs	type	nil	symbol

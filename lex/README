@@ -1,0 +1,13 @@
+The definitions for the lexical database are in:
+================================================
+
+lexdb.fld	The fields
+lexdb.dfn	The links to the grammar
+
+See <http://wiki.delph-in.net/moin/LkbLexDb> for deeper explanation.
+
+The database is called "jacy" and is encoded in UNICODE.
+
+
+
+
