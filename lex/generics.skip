@@ -1,7 +1,0 @@
-
-generic_noun-suffix-lex :=
-ordinary-nohon-n-lex &
-[SYNSEM [ LKEYS.KEYREL.PRED 'generic_noun,
-	  LOCAL.BAR - ],
-ORTH <! "GenericNounSuffixLex" !>].
-
