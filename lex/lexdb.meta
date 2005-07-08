@@ -47,5 +47,5 @@ pub-fn	rev_key_p
 pub-fn	register_modstamp
 pub-fn	dump_public_rev_rev_key_to_tmp_tmp_key
 pub-fn	retrieve_entry_ium
-user	bond
-mod_time	2005-07-06 12:43:56.144692+02
+user	bmw20
+mod_time	2005-07-08 13:17:11.682152+01
