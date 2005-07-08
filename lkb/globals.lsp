@@ -178,16 +178,6 @@
 (setf *gen-packing-p* nil)
 (setf *gen-equate-qeqs-p* t)
 
-;;; connection parameters for lexical database, an association list with fields
-;;; `:host', `:db', `:table', and `:user' (optional) 
-;;; if unset we fall back to .tdl lexicon files
-
-(defparameter *lexdb-params* 
-  #+:psql
-  '((:db "jacy") (:host "localhost") (:table "jacy"))
-  #-:psql
-  nil)
-
 ;;;
 ;;; make generation faster
 ;;;
