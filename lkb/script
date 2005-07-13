@@ -40,7 +40,9 @@
 (lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)
 
 (read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
-
+(load-irregular-spellings 
+ (list
+  (lkb-pathname (parent-directory) "irregs.tab")))
 
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))

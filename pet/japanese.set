@@ -146,6 +146,19 @@ label-path := "SYNSEM.LOCAL.KEYS.KEY.LBL".
 ;; the same, relative to the root of a rel
 label-path-tail := "LBL".
 
+
+; maximum depth for chaining morphological rules
+orthographemics-maximum-chain-depth := 3.
+; minimum stem length to apply morphological rules
+;;; this is useless because ChaSen adds RU to verb stems.
+orthographemics-minimum-stem-length := 1.
+; don't apply the same rule twice to the same lexeme
+orthographemics-duplicate-filter:= false.
+;; only allow cohesive chains (whatever they may be)
+;orthographemics-cohesive-chains:= true.
+
+
+
 ;;;
 ;;; YY-specific settings mapping abstract MRS concepts (roles, relation types
 ;;; et al.) to actual names in the grammar.
@@ -157,6 +170,9 @@ label-path-tail := "LBL".
 ;;;
 ;;; scoring mechanism (fairly embryonic, for now)
 ;;;
+
+;; produced by Dan Def-05/fd-005 (without 116777)
+sm := "f5-005.mem".
 
 ;;; Notes:
 ;;; 

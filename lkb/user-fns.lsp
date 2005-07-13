@@ -118,10 +118,6 @@ FIRST))))
 #+:null
 (loop for c in *punctuation-characters* do (format t "~a" c))
 
-(defparameter *chasen-application* "chasen")
-
-(defparameter *chasen-debug-p* t)
-
 (defun normalize-sentence-string (string)
   (loop
       with padding = 128
@@ -144,15 +140,18 @@ FIRST))))
         (when (and (eq space :space) (not (zerop (fill-pointer result))))
           (decf (fill-pointer result)))
         (return result)))
+
 ;;;
 ;;; Call chasen and format the input appropriately
 ;;;
 
-;;; contains the readings from Chasen
+(defparameter *chasen-application* "chasen")
+
+(defparameter *chasen-debug-p* t)
+
 (defparameter *chasen-readings* nil)
 
-#+:chasen
-(defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
+(defun chasen-preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
   (let* ((string (string-trim '(#\space #\tab) string))
          (command (format 
                    nil 
@@ -217,24 +216,26 @@ FIRST))))
              (loop for analysis in analyses collect (first analysis)))))
          (length full))))))
 
-;;; preprocess without using chasen (used in Hinoki treebank)
+;;;
+;;; Possibly use chasen to process the string
+;;;
 
-
-#-:chasen
 (defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
-  "Trim white space and trailing punctuation"
-  (declare (ignore verbose posp))
-  (normalize-sentence-string (string-trim '(#\space #\tab) string)))
+  (if (find :chasen *features*)
+    (chasen-preprocess-sentence-string string :verbose verbose :posp posp)
+    (normalize-sentence-string (string-trim '(#\space #\tab) string))))
+
 
 ;;;
 ;;; hook for [incr tsdb()] to call when preprocessing input (going to the PET
 ;;; parser or when counting `words' while import test items from a text file).
 ;;;
-(defun chasen-preprocess-for-pet (input)
-  (preprocess-sentence-string input :verbose nil :posp t))
+(defun chasen-preprocess-for-pet (input &optional tagger)
+  (declare (ignore tagger))
+  (chasen-preprocess-sentence-string input :verbose nil :posp t))
 
-#+(and :chasen (or :pvm :itsdb))
-(setf tsdb::*tsdb-preprocessing-hook* "lkb::chasen-preprocess-for-pet")
+#+(or :pvm :itsdb)
+(setf tsdb::*tsdb-preprocessing-hook* "lkb::preprocess-sentence-string")
 
 ;;;
 ;;; pick out rules that change the orthography

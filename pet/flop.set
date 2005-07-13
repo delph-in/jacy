@@ -33,7 +33,7 @@ postload-files := "pet/qc".
 irregs-file := "irregs.tab".
 
 ;; to complete names from irregs.tab
-lex-rule-suffix := "-INFL-RULE".
+lex-rule-suffix := "".
 
 affixes-are-instances.
 

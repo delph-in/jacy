@@ -3,7 +3,7 @@
 ;;;   see `license' for conditions.
 
 ;;;
-;;; course grammar specific globals file
+;;; Grammar specific globals file
 ;;; parameters only - grammar specific functions 
 ;;; should go in user-fns.lsp
 
@@ -55,7 +55,7 @@
 (defparameter *diff-list-last* 'last)
 ;;(def-lkb-parameter *diff-list-last* 'last)
 
-(defparameter *lex-rule-suffix* "-infl-rule"
+(defparameter *lex-rule-suffix* nil
  "creates the inflectional rule name from the information
    in irregs.tab - for PAGE compatability")
 
@@ -177,6 +177,16 @@
 ;;;
 (setf *gen-packing-p* nil)
 (setf *gen-equate-qeqs-p* t)
+
+;;; connection parameters for lexical database, an association list with fields
+;;; `:host', `:db', `:table', and `:user' (optional) 
+;;; if unset we fall back to .tdl lexicon files
+
+(defparameter *lexdb-params* 
+  #+:psql
+  '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t))
+  #-:psql
+  nil)
 
 ;;;
 ;;; make generation faster
