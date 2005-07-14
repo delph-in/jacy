@@ -63,12 +63,15 @@ lexeme-rule &
  SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
  ARGS.FIRST.STEMTYPE c-stem].
 
-;; (FCB 2003-08-07) added u-type (tou and kou - past tense is o-u-ta not
-;;   o-t-ta)
-; (MS 2003-11-27) but this is anyway problematic for Chasen.
+;; (FCB 2003-08-07) added u-type 
+;; 五段・ワ行ウ音便  --- 乞う 問う
+;; (tou and kou - past tense is o-u-ta not o-t-ta)
+;; 五段・ラ行特殊 連用形 --- いらっしゃる
+;; 五段・カ行促音便 --- 行く
+;; only ラ行特殊 連用形 is irregular here:  いらっしゃる → いらっしゃいます
 
 i-lexeme-c2-stem-infl-rule := 
-%suffix (く き) (る い) (う う)
+%suffix (く き) (る い) (う い)
 lexeme-rule &
 [RMORPH-BIND-TYPE i-morph,
  SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
@@ -250,7 +253,7 @@ j-lexeme-to-word-rule &
 ;Maybe the feature AUX can be leveraged?
 
 imperative-c2-stem-infl-rule :=
-%suffix (く け) (る い ) (う う)
+%suffix (く け) (る い ) (う え)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE imp-morph,
  SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
