@@ -1624,10 +1624,10 @@ case-p-lex-np := case-p-lex &
 ; (MS 2005-05-06) renamed ga-wo-ni-p-lex-3 (cleaning up particles).
 
 case-p-lex-postp := case-p-lex & 
-                  [SYNSEM.LOCAL [CONT.HOOK.INDEX #ind,
-				 CAT.VAL.COMPS.FIRST.LOCAL [CONT.HOOK.XARG #ind,
-							    CAT.HEAD postp_head & [PTYPE nontop,
-										   CASE mod]]]].
+ [SYNSEM.LOCAL [CONT.HOOK.INDEX #ind,
+		CAT.VAL.COMPS.FIRST.LOCAL [CONT.HOOK.XARG #ind,
+					   CAT.HEAD postp_head & [PTYPE nontop,
+								  CASE mod]]]].
 ; (MS 2005-05-06) renamed to-case-lex (cleaning up particles).
 ; BUT I really don't know what this is for. Commented it out until
 ; I can find a good example.
@@ -4408,7 +4408,9 @@ isect-adv-lex := adv-lex &
 					   [HOOK.INDEX #ind,
 					    RELS <! #key !>]],
 			   LKEYS.KEYREL #key & adv-relation & 
-				 [ARG0 #ind,
+				 [ARG0 event,
+				  ARG0.E.TENSE no_tense,
+				  ARG1 #ind,
 				  LBL #handel],
 			   NON-LOCAL.QUE <! !>]].
 
