@@ -5,137 +5,137 @@
 ;;; 
 
 ;;; Past
-ta-end_gr := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 event & [ E.TENSE past ] ] !> ],
+ta-end_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ ARG0.E.TENSE past ] !> ],
   FLAGS.TRIGGER "ta-end" ].
 
 ;;; Terminative
- shimau-aux-stem_gr := generator_rule &
+ shimau-aux-stem_gr := arg0e_gr &
  [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT terminative ] ] !> ],
    FLAGS.TRIGGER "shimau-aux-stem" ].
 
-jau-end_gr := generator_rule &
+jau-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "jau-end" ].
 
-chau-end_gr := generator_rule &
+chau-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "chau-end" ].
 
 ;;; Progressive
-te-end_gr := generator_rule &
+te-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
   FLAGS.TRIGGER "te-end" ].
 
-de-end_gr := generator_rule &
+de-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
   FLAGS.TRIGGER "de-end" ].
 
-iru-aux-stem_gr := generator_rule &
+iru-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
   FLAGS.TRIGGER "iru-aux-stem" ].
 
-teru-end_gr := generator_rule &
+teru-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "teru-end" ].
 
-iru-aux-kanji-stem_gr := generator_rule &
+iru-aux-kanji-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "iru-aux-kanji-stem" ].
 
-oru-aux-stem_gr := generator_rule &
+oru-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "oru-aux-stem" ].
 
-irassharu-aux-stem_gr := generator_rule &
+irassharu-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "irassharu-aux-stem" ].
 
-oku-aux-stem_gr := generator_rule &
+oku-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "oku-aux-stem" ].
 
-oku-aux-kanji-stem_gr := generator_rule &
+oku-aux-kanji-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "oku-aux-kanji-stem" ].
 
 ;;; inceptive
-iku-aux-hiragana-stem_gr := generator_rule &
+iku-aux-hiragana-stem_gr := arg0e_gr &
  [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT inceptive ] ] !> ],
    FLAGS.TRIGGER "iku-aux-hiragana-stem" ].
 
-iku-aux-stem_gr := generator_rule &
+iku-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "iku-aux-stem" ].
 
-mairu-aux-stem_gr := generator_rule &
+mairu-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "mairu-aux-stem" ].
 
 ;;; perfect_progressive
-kuru-hiragana-aux-stem_gr := generator_rule &
+kuru-hiragana-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT perfect_progressive ] ] !> ],
   FLAGS.TRIGGER "kuru-hiragana-aux-stem" ].
 
-kuru-aux-stem_gr := generator_rule &
+kuru-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "kuru-aux-stem" ].
 
 ;;; perfective
-aru-aux-stem_gr := generator_rule &
+aru-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT perfective ] ] !> ],
   FLAGS.TRIGGER "aru-aux-stem" ].
 
-aru-kanji-aux-stem_gr := generator_rule &
+aru-kanji-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "aru-kanji-aux-stem" ].
 
-gozaru-aux-hiragana-stem_gr := generator_rule &
+gozaru-aux-hiragana-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "gozaru-aux-hiragana-stem" ].
 
-gozaru-aux-kanji-stem_gr := generator_rule &
+gozaru-aux-kanji-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "gozaru-aux-kanji-stem" ].
  
+;;;
+;;; Passive
+;;;
 
-
+rareru-simple-pass-end_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ ARG0.E.PASS + ] !> ],
+  FLAGS.TRIGGER "rareru-simple-pass-end" ].
 
 ;;;
 ;;; Case postposition rules 
 ;;;
 
 ;;; ARG1 is ga
-ga_gr_1 := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 event, ARG1 ref-ind & [ PNG j-png ] ] !> ],
+ga_gr_1 := arg0e-1x_gr &
+[ CONTEXT [ RELS <!  [ ARG0.E.PASS - ] !> ],
   FLAGS.TRIGGER "ga" ].
 
 ;;; ARG2 is ga
-ga_gr_2 := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 event, ARG2 ref-ind & [ PNG j-png ] ] !> ],
-  FLAGS.TRIGGER "ga" ].
+ga_gr_2 := arg0e-2x_gr &
+[ FLAGS.TRIGGER "ga" ].
 
 ;;; ARG2 is wo
-wo_gr_1 := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 event, ARG2 ref-ind & [ PNG j-png ] ] !> ],
-  FLAGS.TRIGGER "o" ].
+wo_gr_1 := arg0e-2x_gr &
+[ FLAGS.TRIGGER "o" ].
 
 ;;; FIXME what about Passive ARG1 is wo
 
 ;;; ARG1 is ni
-ni_gr_1 := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 event, ARG1 ref-ind & [ PNG j-png ] ] !> ],
-  FLAGS.TRIGGER "ni-case" ].
+ni_gr_1 := arg0e-1x_gr &
+[ FLAGS.TRIGGER "ni-case" ].
 
 ;;; ARG2 is ni
-ni_gr_2 := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 event, ARG2 ref-ind & [ PNG j-png ] ] !> ],
-  FLAGS.TRIGGER "ni-case" ].
+ni_gr_2 := arg0e-2x_gr &
+[ FLAGS.TRIGGER "ni-case" ].
 
 ;;; ARG3 is ni
-ni_gr_3 := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 event, ARG3 ref-ind & [ PNG j-png ] ] !> ],
-  FLAGS.TRIGGER "ni-case" ].
+ni_gr_3 := arg0e-3x_gr &
+[ FLAGS.TRIGGER "ni-case" ].
 
 ;;; FIXME to, kara, no, wa, ?dake 
 ;;; case-markers that follow postpositions
@@ -152,8 +152,8 @@ ko_numcl_gr := generator_rule &
 ;;;
 
 ;;; should look for vn lexical type?
-suru-light-stem_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "~_vn_", ARG0 event  ] !> ],
+suru-light-stem_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ PRED "~_vn_" ] !> ],
   FLAGS.TRIGGER "suru-light-stem" ].
 
 ;;; possibly add different politenesses
@@ -163,12 +163,12 @@ suru-light-stem_gr := generator_rule &
 ;;; NA adjectives
 ;;;
 ;; should use lexical type
-na-cop-lex_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "~_a_", ARG0 event ] !> ],
+na-cop-lex_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ PRED "~_a_"] !> ],
   FLAGS.TRIGGER "na-cop-lex" ].
 
-dearu-v-cop-stem_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "~_a_", ARG0 event ] !> ],
+dearu-v-cop-stem_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ PRED "~_a_" ] !> ],
   FLAGS.TRIGGER "dearu-v-cop-stem" ].
 
 
@@ -402,10 +402,6 @@ kyaku_numcl-ashi_gr := generator_rule &
 kakoku_numcl-b_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "kakoku_numcl-b" ].
-
-rareru-simple-pass-end_gr := generator_rule &
-[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
-  FLAGS.TRIGGER "rareru-simple-pass-end" ].
 
 dari-end_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],

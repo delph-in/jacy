@@ -5856,7 +5856,7 @@ pass-end-lex :=  v-op-end-lex &
 ; (MS 2004-11-30) It is too strict to say that the valence of the SPR should be sbj-obj-arg. 
 ; There could be a SPR (in case of causative-passive).
 ; (MS 2004-12-14) The SPR must be [LIGHT -], because we have a new rule for light passives.
-
+; (FCB 2005-07-22) Added 
 
 simple-pass-end-lex :=   pass-end-lex &
                [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
@@ -5870,7 +5870,10 @@ simple-pass-end-lex :=   pass-end-lex &
 								   [LOCAL.CONT.HOOK.INDEX #surfsbjind] >,
 							   CAT [VAL [UNSAT +,
 								    SUBJ opt-1-arg,
-								    COMPS 1-list],
+								    COMPS 1-list &
+									   < [LOCAL [CAT.HEAD case-p_head & 
+											      [CASE wo]]] > 
+									   ],
 								HEAD.LIGHT -]]]],
 				    HEAD.KEYS.KEY pass_rel],
 			      

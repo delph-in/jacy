@@ -55,8 +55,29 @@ monotonic_omtr := monotonic_mtr & optional_mtr.
 optional_mtr := mrs_transfer_rule &
 [ FLAGS.OPTIONAL + ].
 
+
 ;;;
 ;;; a few `special-purpose' types, transfer operators in a sense
 ;;;
 +upcase+ := string.
 +downcase+ := string.
+
+;;;
+;;; general rule types
+;;;
+
+arg0e_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 #e & event ] !> ],
+  FLAGS.EQUAL < #e > ].
+
+arg0e-1x_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG1 #i & ref-ind ] !> ],
+  FLAGS.EQUAL < #e, #i > ].
+
+arg0e-2x_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG2 #i & ref-ind ] !> ],
+  FLAGS.EQUAL < #e, #i > ].
+
+arg0e-3x_gr := generator_rule &
+[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG3 #i & ref-ind ] !> ],
+  FLAGS.EQUAL < #e, #i > ].
