@@ -46,10 +46,10 @@ generator_rule := mrs_transfer_rule &
 [ INPUT.RELS <! !> ].
 
 monotonic_mtr := mrs_transfer_rule &
-[ CONTEXT.HOOK.LTOP #h,
-  INPUT.HOOK.LTOP #h,
-  OUTPUT.HOOK.LTOP #h ].
-  
+[ CONTEXT.HOOK [ LTOP #h, INDEX #i ],
+  INPUT.HOOK [ LTOP #h, INDEX #i ],
+  OUTPUT.HOOK [ LTOP #h, INDEX #i ] ].
+
 monotonic_omtr := monotonic_mtr & optional_mtr.
 
 optional_mtr := mrs_transfer_rule &

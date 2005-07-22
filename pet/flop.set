@@ -56,5 +56,6 @@ dont-expand := lex-entry.
 
 ;; `pseudo' types outside the type hierarchy. these are ignored for
 ;; appropriateness, expansion etc.
-pseudo-types := $qc_unif_trad $qc_unif_set.
-;pseudo-types :=  $qc_paths_set $qc_paths_traditional.
+pseudo-types := 
+  $qc_unif_trad $qc_unif_set $qc_subs_trad $qc_subs_set
+  $qc_unif_trad_pack $qc_unif_set_pack $qc_subs_trad_pack $qc_subs_set_pack.

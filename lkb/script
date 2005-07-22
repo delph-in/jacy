@@ -76,7 +76,7 @@
 ;;;
 ;;; finally, use the new transfer component: load any number of rule sets, each
 ;;; in a separate file, associated with its identifier.  
-
+;;;
 #+:mt
 (lkb-load-lisp (this-directory) "mt.lsp" t)
 #+:mt
@@ -85,3 +85,10 @@
   (lkb-pathname (parent-directory) "trigger.mtr"))
  "Generator Triggger Rules"
  :filter nil :task :trigger :recurse nil :subsume t)
+
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "paraphraser.mtr"))
+ "JaJa Paraphraser"
+ :filter nil :task :paraphrase)

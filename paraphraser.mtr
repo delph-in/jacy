@@ -1,0 +1,5 @@
+;;; -*- Mode: tdl; Coding: euc-jp; -*-
+
+itadaku_taberu := monotonic_mtr &
+[ INPUT.RELS <! [ PRED "_itadaku_v_rel" ] !>,
+  OUTPUT.RELS <! +copy+ & [ PRED "_taberu_v_rel" ] !> ].
