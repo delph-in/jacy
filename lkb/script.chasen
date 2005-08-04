@@ -1,0 +1,94 @@
+;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
+
+;;;
+;;; This script file uses the defaults we prefer to use for 
+;;; treebanking in the Hinoki project:
+;;;   ChaSen off (assuming presegmented input), 
+;;;   precise analysis on (load the ambiguous files). 
+;;;
+
+(setf *features* (remove :chasen *features*))
+(pushnew :chasen *features*)
+
+(lkb-load-lisp (parent-directory) "Version.lsp")
+(setf *grammar-directory* (parent-directory)) ; needed for MRS
+(load-lkb-preferences (this-directory) "user-prefs.lsp")
+(lkb-load-lisp (this-directory) "globals.lsp")
+(lkb-load-lisp (this-directory) "user-fns.lsp")
+
+(lkb-load-lisp (this-directory) "checkpaths.lsp" t)
+
+;;; load some patches (;o;)
+(lkb-load-lisp (this-directory) "patches.lisp" t)
+
+
+(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+
+(read-tdl-type-files-aux
+     (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")
+              (lkb-pathname (parent-directory) "matrix.tdl")
+              (lkb-pathname (parent-directory) "mrsbasic.tdl")
+              (lkb-pathname (parent-directory) "newlexsem-types.tdl")
+              (lkb-pathname (parent-directory) "values.tdl")
+              (lkb-pathname (parent-directory) "fundamentals.tdl")
+              (lkb-pathname (parent-directory) "rule-types.tdl")
+              (lkb-pathname (parent-directory) "principles.tdl")
+              (lkb-pathname (parent-directory) "lex-types.tdl")
+              (lkb-pathname (parent-directory) "v-lex-types.tdl")
+	      (lkb-pathname (parent-directory) "mtr.tdl") 
+))
+
+(lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)
+
+(read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
+(load-irregular-spellings 
+ (list
+  (lkb-pathname (parent-directory) "irregs.tab")))
+
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
+
+;;; Load the lexicon
+(if   *lexdb-params* ;;; nil
+    ;; Use the database
+    (progn
+      ;; load from database
+      (load-lexdb-from-script)
+      ;; load the things that aren't in the database
+      (read-cached-sublex-if-available 
+       "lexicon" (list (lkb-pathname (parent-directory) "lex/jacy.skip"))))
+  (progn
+    ;; pick an arbitrary file and call it the _main_ lexicon
+    ;; FIXME
+    (read-cached-lex-if-available 
+      (list (lkb-pathname (parent-directory) "lex/jacy.tdl")))))
+
+
+(read-tdl-parse-node-file-aux 
+          (lkb-pathname (parent-directory) "parse-nodes.tdl"))
+
+(read-tdl-psort-file-aux 
+          (lkb-pathname (parent-directory) "roots.tdl"))
+
+;#+unknown-words
+;(lkb-load-lisp "/project/cl/yy/lkb/src/unknown-words/" "grammar-jacy.lisp")
+
+;;;
+;;; if the preprocessor code is loaded (which it is by default), load the 
+;;; finite-state rules; these get applied in our preprocess-sentence-string().
+;;;
+#+:preprocessor
+(read-preprocessor (lkb-pathname (parent-directory) "preprocessor.fsr"))
+
+;;;
+;;; finally, use the new transfer component: load any number of rule sets, each
+;;; in a separate file, associated with its identifier.  
+;;;
+#+:mt
+(lkb-load-lisp (this-directory) "mt.lsp" t)
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "trigger.mtr"))
+ "Generator Triggger Rules"
+ :filter nil :task :trigger :recurse nil :subsume t)
