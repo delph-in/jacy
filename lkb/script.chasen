@@ -49,19 +49,24 @@
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 
 ;;; Load the lexicon
-(if   *lexdb-params* ;;; nil
+(if  nil ;  *lexdb-params* ;;; nil
     ;; Use the database
     (progn
       ;; load from database
       (load-lexdb-from-script)
       ;; load the things that aren't in the database
       (read-cached-sublex-if-available 
-       "lexicon" (list (lkb-pathname (parent-directory) "lex/jacy.skip"))))
+       "lexicon" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")))
+      ;;; load the generic lexical types
+      (read-cached-sublex-if-available 
+       "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl"))))
   (progn
-    ;; pick an arbitrary file and call it the _main_ lexicon
-    ;; FIXME
+    ;; Load the main lexicon
     (read-cached-lex-if-available 
-      (list (lkb-pathname (parent-directory) "lex/jacy.tdl")))))
+     (list (lkb-pathname (parent-directory) "lex/lexicon.tdl")))
+      ;;; load the generic lexical types
+    (read-cached-sublex-if-available 
+     "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))))
 
 
 (read-tdl-parse-node-file-aux 
@@ -86,9 +91,17 @@
 ;;;
 #+:mt
 (lkb-load-lisp (this-directory) "mt.lsp" t)
+;;; trigger rules for generation
 #+:mt
 (mt:read-transfer-rules 
  (list
   (lkb-pathname (parent-directory) "trigger.mtr"))
  "Generator Triggger Rules"
- :filter nil :task :trigger :recurse nil :subsume t)
+ :filter nil :task :trigger :recurse nil :subsume nil)
+;;; transfer rules for paraphrasing
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "paraphraser.mtr"))
+ "JaJa Paraphraser"
+ :filter nil :task :paraphrase)
