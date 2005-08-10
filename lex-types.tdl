@@ -3254,6 +3254,7 @@ event-num-cl-lex := adv-num-cl-lex &
 ; write as if there were another role (EARG, for Extent ARG)
 ; in the degree-rel to tie things together.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (FCB 2005-08-07) fixed 'unspec_adj_rel, specified ARG0 to event
 
 measure-num-cl-lex := numeral-classifier &
 [ SYNSEM [ LKEYS.KEYREL #key,
@@ -3271,10 +3272,11 @@ measure-num-cl-lex := numeral-classifier &
 				degree-relation &
 				[ LBL #larg,
 				  PRED 'degree_rel,
-				  DARG #darg ],
+				  ARG1 #darg ],
 				arg1-relation &
 				[ LBL #ltop,
-				  PRED #darg & 'unspec_adj_rel,
+				  PRED 'unspec_adj_rel,
+				  ARG0 event & #darg, 
 				  ARG1 #ind ], ... >,
 			  HCONS <! qeq & 
 				 [ HARG #harg,
