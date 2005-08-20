@@ -336,3 +336,23 @@ set in the code")
 
 (defparameter *mrs-rule-condition-path* (list (vsym "CONDITION")))
 
+
+;;; Filter out uninformative information on the MRS attributes
+(setf %mrs-extras-filter%
+  ;;
+  ;; _fix_me_
+  ;; even without the full SEMI, we should compute these.  (21-nov-03; oe)
+  ;;
+  (list
+   (cons (mrs::vsym "SORT") (mrs::vsym "semsort"))
+   (cons (mrs::vsym "E.ASPECT") (mrs::vsym "aspect"))
+   (cons (mrs::vsym "E.PASS") (mrs::vsym "bool"))))
+
+
+;;;  Set defaults for unspecified attributes
+
+(defparameter %mrs-extras-defaults%
+  (list
+   (list (vsym "E") 
+         (cons (vsym "E.ASPECT") (vsym "default_aspect"))
+         (cons (vsym "E.PASS") (vsym "-")))))
