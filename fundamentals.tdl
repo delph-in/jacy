@@ -141,20 +141,13 @@ j-sign := sign &
 	 J-NEEDS-AFFIX bool].
    	
 
-
-lexical-entry :< avm,
-                status: c-lex-entry.
-
-
-
 ; So, I'm going to take the constraint off of lexical_sign, make
 ; three subtypes of lexical_sign (lexical_sign-word, lexical_sign-affix,
 ; and lexical_sign-rule) and make the constraint live on the first 
 ; of these.
 
 
-lexical_sign := lexical-entry & word &
-                j-sign &
+lexical_sign := word & j-sign &
                [SYNSEM j-lex-synsem & [LOCAL [CAT.VAL.UNSAT +],
 				       LEX +],
                 STEMTYPE stemtype].
