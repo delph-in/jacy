@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Package: DISCO -*-
+;;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -53,6 +53,8 @@ progressive :< aspect.
 inceptive :< aspect.
 perfect_progressive :< aspect.
 modal :< aspect.
+;;; the value for sentences with no special marking
+default_aspect :< aspect.  
 
 ;tense :< sort.
 tensed :< tense.
@@ -184,7 +186,7 @@ kara-case :< ni-or-kara.
 ; value.  (Probably need more fundamental change to analysis -- 
 ; perhaps when we overhaul the clause analysis.)
 ; (MS 2004-12-13) Why was made in topic? This lead to unwanted unifications!
-; took that out ($B8$$J$I$NF0J*(B got a reading, where the nado got PTYPE made).
+; took that out (¸¤¤Ê¤É¤ÎÆ°Êª got a reading, where the nado got PTYPE made).
 
 
 to-comp := case.
@@ -378,7 +380,7 @@ twopl := two & pl.
 threepl := three & pl.
 
 
-; (MS 2005-03-01) andro should be fem or masc, but not neut ($BH`$i(B)
+; (MS 2005-03-01) andro should be fem or masc, but not neut (Èà¤é)
 gender :< sort.
 andro :< gender.
 fem :< andro.
