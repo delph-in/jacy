@@ -640,8 +640,8 @@ pass_rel := predsort.
 
 ; (ERB 2004-1-18) Copied from ERG for measure NP numeral
 ; classifier phrases.
-; (FCB 2005-08-09) changed DARG to ARG1 (trying to reduce the types of arguments)
-
+; (FCB 2005-08-09) changed DARG to ARG1 
+; (trying to reduce the types of arguments)
 degree-relation := arg1-relation.
 
 
