@@ -151,7 +151,9 @@ FIRST))))
 
 (defparameter *chasen-readings* nil)
 
-(defun chasen-preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
+(defun chasen-preprocess-sentence-string (string
+					  &key (verbose *chasen-debug-p*) posp)
+  
   (let* ((string (string-trim '(#\space #\tab) string))
          (command (format 
                    nil 
@@ -178,6 +180,7 @@ FIRST))))
                                      (and (symbolp form)
                                           (eq (intern form :keyword) :eos)))
                            collect form))
+	     (length 0)
              full)
         (close stream)
         #+:allegro 
@@ -188,6 +191,9 @@ FIRST))))
             with id = 0
             for analysis in analyses
             for form = (first analysis)
+	    for yy = (when *preprocessor*
+		       (lkb::preprocess
+			form :globalp nil :format :list :verbose nil))
             for pos = (third analysis)
             when verbose do
               (format 
@@ -195,17 +201,34 @@ FIRST))))
                "  form: `~a'; stem: `~a'; analysis: `~a' ; reading : `~a'~%"
                form (second analysis) pos (fourth analysis))
             unless (punctuationp form) do
-              (push (format 
-                     nil 
-                     "(~d, ~d, ~d, 1, \"~a\" \"~a\", 0, \"null\", \"~a\" 1.0)" 
-                     (incf id)
-                     i (incf i) form (second analysis) pos)
-                    full)
+	      (incf length)
+	      (if yy
+		(loop
+		    with start = i with end = (incf i)
+		    initially (setf (first analysis) (fourth (first yy)))
+		    for foo in yy
+		    do
+		      (push 
+		       (format 
+			nil 
+			"(~d, ~d, ~d, 1, \"~a\" \"~a\", ~
+                         0, \"null\", \"~a\" 1.0)" 
+			(incf id) start end
+			(fourth foo) (fifth foo) pos)
+		       full))
+		(push
+		 (format 
+		  nil 
+		  "(~d, ~d, ~d, 1, \"~a\" \"~a\", 0, \"null\", \"~a\" 1.0)" 
+		  (incf id)
+		  i (incf i) form (second analysis) pos)
+		 full))
 	    ;; collects readings
 	    unless (punctuationp form) do
 	      (push (fourth analysis) *chasen-readings*)
-            finally (setf *chasen-readings* (reverse *chasen-readings*))
-		    (when verbose (format t "~%")))
+            finally
+	      (setf *chasen-readings* (reverse *chasen-readings*))
+	      (when verbose (format t "~%")))
         (values
          (if posp
            (format nil "~{~a~^ ~}" (reverse full))
@@ -214,7 +237,7 @@ FIRST))))
              nil 
              "~{~a~^ ~}" 
              (loop for analysis in analyses collect (first analysis)))))
-         (length full))))))
+         length)))))
 
 ;;;
 ;;; Possibly use chasen to process the string
@@ -223,7 +246,9 @@ FIRST))))
 (defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
   (if (find :chasen *features*)
     (chasen-preprocess-sentence-string string :verbose verbose :posp posp)
-    (normalize-sentence-string (string-trim '(#\space #\tab) string))))
+    (if *preprocessor*
+      (preprocess string :format :lkb :verbose nil)
+      (normalize-sentence-string (string-trim '(#\space #\tab) string)))))
 
 
 ;;;
