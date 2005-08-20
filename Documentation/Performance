@@ -13,6 +13,8 @@ Generate as follows:
 ====================
 PET (hinoki):
 -------------
+FIXME: maybe use a larger test set (1-2,000)
+
 Make sure:
  - you are using compatible versions of flop and cheap
  - your grammar is up-to-date:
@@ -21,7 +23,7 @@ Make sure:
 mv pet/qc.tdl pet/qc.tdl.old
 
 cat delphin/grammars/japanese/testsuites/hinoki-test-a.100 | \
-cheap -compute-qc=pet/qc.tdl japanese
+cheap -packing=7 -compute-qc=pet/qc.tdl japanese
 
 
 ### can do this for vanilla, but need to have the chasen preprocessor
@@ -33,6 +35,8 @@ flop japanese.tdl
 Note: This is slow, as quick-check is, off course, turned off.  Flop
 is also slow at the moment.  Otherwise you should use the mode you
 would normally use (e.g. with packing if you use packing).
+
+Try with more sentences, then cut all paths below the first 50.
 
 
 FCB: I should write a script to do this.

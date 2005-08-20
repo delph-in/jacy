@@ -1,4 +1,16 @@
 ;;; -*-  Coding: euc-jp -*-
+
+
+Update script.chasen
+
+------------------------------------------------------------------------
+FCB 2005-05-25
+------------------------------------------------------------------------
+
+(do-parse-tty "する 木")
+
+spurious ambiguity with suru-soc
+
 ------------------------------------------------------------------------
 FCB 2005-04-25
 ------------------------------------------------------------------------
@@ -21,17 +33,6 @@ FCB 2005-04-25
 
 scope problems with defintion quotation
 
-------------------------------------------------------------------------
-FRANCIS
-------------------------------------------------------------------------
-(do-parse-tty "日常 の 行い が 確か で ある 。")
-There is a difference in the parse output between pet and the lkb
-Only pet gives - utterance_rule-wh-without-ka !
-
-As pet is less restrictive than the lkb, it causes immense trouble
-when updateing or annotating.
-
-So - commenting out utterance_rule-wh-without-ka so I can update.
 
 ------------------------------------------------------------------------
 FRANCIS
@@ -46,12 +47,7 @@ FRANCIS
 ERROR with parse of "東京 へ の 道"
 (and in general all such postposition -no sentences) 
 
-------------------------------------------------------------------------
-FRANCIS
-------------------------------------------------------------------------
-Lexical types fail to unify
-`$nakereba-narimasen-end'
-`$zaru-wo-emasen-end'
+
 ------------------------------------------------------------------------
 FRANCIS
 ------------------------------------------------------------------------
@@ -63,13 +59,6 @@ TAI-OBJ-CHANGE-RULE
 SF fixed by adding KEY - 
 
 Now only get adversative passive!
-
-------------------------------------------------------------------------
-FRANCIS
-------------------------------------------------------------------------
-
-Somewhere along the line we seem to have lost the V-V verbs...
- (do-parse-tty "移り 動く")
 
 ------------------------------------------------------------------------
 FRANCIS
@@ -512,3 +501,22 @@ v1-kurusuru-stem（「発する」など）
      ただし、「する」「要する」「愛する」「達する」「屈する」は例外。
 
 
+
+========================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+========================================================================
+Fixed
+
+
+------------------------------------------------------------------------
+FRANCIS
+------------------------------------------------------------------------
+(do-parse-tty "日常 の 行い が 確か で ある 。")
+There is a difference in the parse output between pet and the lkb
+Only pet gives - utterance_rule-wh-without-ka !
+
+As pet is less restrictive than the lkb, it causes immense trouble
+when updateing or annotating.
+
+lkb/pet did different things if a rule inhereited from two supertypes
+directly. We no longer do so!

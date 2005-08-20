@@ -1,0 +1,163 @@
+Changes:
+--------
+
+(1) comment out the loading of genrules.mrs in
+mrs-initialization.lsp.
+
+(1.1) Add the loading of mt.lsp and trigger.mtr in (a)script
+(1.2) commented out the loading of the type file mrsmunge.tdl
+(1.3) added the loading of the type file mtr.tdl
+
+(3) added new rules in trigger.mtr
+
+(4)  In globals.lsp
+(4.1) added list of contentful things not to generate in 
+
+(setf *duplicate-lex-ids* 
+  '(;; s-end1-decl-lex - emphatic sentence enders
+    ga-sap keredomo-send kedomo-send ga-sap kedo-send shi-send 
+    yo-2 yo-3 keredo-send exclamation-mark ze zo zo-2 
+    ;; s-end1-decl-minusahon-lex - emphatic sentence enders
+    i-emp
+    ;; variant forms of numbers (hankaku)
+    zero_card_a one_card_a two_card_a three_card_a four_card_a 
+    five_card_a six_card_a seven_card_a eight_card_a nine_card_a 
+    ;; variant forms of numbers (zenkaku)
+    zero_card one_card two_card three_card four_card 
+    five_card six_card seven_card eight_card nine_card 
+    ;;; indefinite pronouns FIXME - improve semantics
+    donna douiu dono-det
+    ))
+
+(4.2) 
+;;;
+;;; make generation faster
+;;;
+(setf *gen-packing-p* t)
+(setf *gen-filtering-p* t)
+(setf *packing-restrictor*  '(RELS HCONS ORTH STEM RULE-NAME))
+
+------------------------------------
+
+(5) In MRS globals.lsp:
+;;; Filter out uninformative information on the MRS attributes
+;;; This will probably change soon
+(setf %mrs-extras-filter%
+  (list
+   (cons (mrs::vsym "SORT") (mrs::vsym "semsort"))
+   (cons (mrs::vsym "E.ASPECT") (mrs::vsym "aspect"))
+   (cons (mrs::vsym "E.PASS") (mrs::vsym "bool"))))
+
+;;; Fix defaults for unspecified attributes
+(defparameter %mrs-extras-defaults%
+  (list
+   (list (vsym "E") 
+         (cons (vsym "E.ASPECT") (vsym "default_aspect"))
+         (cons (vsym "E.PASS") (vsym "-")))))
+
+
+
+
+
+========================================================================
+
+Strings whose first character is a tilde will be interpreted as perl res
+"~.*_s_"
+
+
+
+Problem: Type "e" is used in the new genrules (mrs.tdl)
+	 I will try and change "e" to "he"
+
+(1) commented out vref in values.tdl (not used!)
+    this frees up "he"
+
+(2) Changed postp-case "e" to "he" in values.tdl
+
+(3) Changed "e" to "he" for e-main and e-sub
+
+
+========================================================================
+
+Problem: All classifiers become "ko"
+
+Problem: can't distinguish between na-adj, sahen, etc
+
+Strings whose first character is a tilde will be interpreted as perl res
+"~.*_s_"
+
+-> should have access to the lexical types in the generator.
+	 
+
+Non generator problems: i-emp appearing on benkyou-suru, kirei, ...
+	      
+Should I just list all the funny SAPs to reduce ambiguity?  I have no
+way to generate them when I want them now, ... (and i don't really
+want them now).
+
+Problem: progressive unifies with tense!
+
+(do-parse-tty " Ÿ∂Ø §∑ §∆ §§§Î") generates  (do-parse-tty " Ÿ∂Ø §π§Î")
+========================================================================
+reload generation rules
+
+
+(progn 
+  (mt:initialize-transfer) 
+  (mt:read-transfer-rules 
+   (list
+    "~/delphin/grammars/japanese/generation.mtr")
+   "Generator Triggger Rules"
+   :filter nil :task :trigger :recurse nil :subsume nil))
+
+
+
+========================================================================
+Is there a clever way of checking changes beyond
+
+(1) update - somewhat expensive
+
+(2) reparse (where can I flop)?
+    check against a gold standard to see if the desired parse is still
+    in there (compare detail derivation?)
+
+     can I do this for batches, ...
+
+     how much data should I be checking against, ...
+
+------------------------------------------------------------------------
+I see two things in generation
+
+(1) adding things in
+
+   need to check generation cover
+
+(2) fixing spurious ambiguity in the grammar
+
+   need to check analysis cover
+
+========================================================================
+How to write out MRSs when parsing
+
+ (setf tsdb::*tsdb-semantix-hook* "mrs::get-mrs-string")
+
+========================================================================
+v2n-kata-rule is adding content in a deprecated manner.  This means
+that the rules is generated even though it adds content.
+
+we can also constrain ga-no a bit more for different inflections.
+
+Can we get rid of the ersatz thingies?
+
+We should also constrain "you" etc a bit more
+
+We should also constrain "donna" etc a bit more
+FIXME [now commented out in *duplicate-lex-ids* ]
+
+========================================================================
+
+Why can we parse but not generate?
+
+(do-parse-tty "∏§ «≠")
+
+It makes noun-compounds but not then the n-infl....

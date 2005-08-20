@@ -1,0 +1,9 @@
+Link delphin/grammars/japanese/tsdb/gold
+$TSDBHOME/gold/jacy
+
+When you have a new grammar, parse vanilla with all the right settings
+e.g., :chasen 10000 edges
+
+Then compare it with the current gold to see that all is well, update
+from gold, treebank it and compress it [file | compress] into 
+$TSDBHOME/gold/jacy.
