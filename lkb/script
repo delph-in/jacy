@@ -9,6 +9,8 @@
 
 (setf *features* (remove :chasen *features*))
 
+;(pushnew :chasen *features*) ;;bmw
+
 (lkb-load-lisp (parent-directory) "Version.lsp")
 (setf *grammar-directory* (parent-directory)) ; needed for MRS
 (load-lkb-preferences (this-directory) "user-prefs.lsp")
@@ -48,7 +50,7 @@
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 
 ;;; Load the lexicon
-(if  nil ;  *lexdb-params* ;;; nil
+(if  *lexdb-params* ;;; nil
     ;; Use the database
     (progn
       ;; load from database
