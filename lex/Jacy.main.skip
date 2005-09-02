@@ -67,13 +67,6 @@ no-nspec-3 := nspec-p-lex &
                           VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [ H-TENSE te,
                                                                      VN - ] ] ].
 
-de-advp-sub-4 := adv-p-lex-p &
- [ ORTH <! "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_de_p_rel",
-            LOCAL.CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE de ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case ] ] ].
-
 tagaru-end := tai-end-lex &
  [ LMORPH-BIND-TYPE i-morph,
    ORTH <! "たがる" !>,
@@ -144,7 +137,7 @@ tara-chasen-end := v-cond-end-lex &
 
 dearu-v-cop-id-stem := cop-id-noquest-stem-lex &
  [ ORTH <! "で", "ある" !>,
-   STEMTYPE c2-stem ].
+   STEMTYPE c-stem ].
 
 saseru-intrans-end := caus-intrans-end-lex &
  [ INFLECTED -,
@@ -262,7 +255,7 @@ kodomotachi-noun := ordinary-nohon-n-lex &
 
 miseru-kanji-aux-stem := complex-aspect-v-stem-lex &
  [ ORTH <! "見せる" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_miseru_aux",
+   SYNSEM [ LKEYS.KEYREL.PRED "_miseru_v_aux",
             LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
 
 noka-comp-varg := comp-int-lex &
@@ -460,6 +453,11 @@ to-comp-quotarg := comp-prpstn-lex &
                                  PTYPE to ],
                           VAL.COMPS.FIRST.LOCAL.CAT.HEAD quotation-sentence-end_head ] ].
 
+arrow-p-lex := postp-lex &
+ [ ORTH <! "→" !>,
+   SYNSEM [ KEYS.KEYREL.PRED "_kara_p_rel",
+            LOCAL.CAT.HEAD.PTYPE kara ] ].
+
 o-hon-vnpref := hon-prefix-lex &
  [ ORTH <! "お" !>,
    SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
@@ -548,6 +546,12 @@ i-sap := s-end1-quest-minusahon-lex &
    SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [ LOCAL.CAT.HEAD.COP +,
                                                 NON-LOCAL.QUE 1-dlist ] ].
 
+de-advp-4 := adv-p-lex-p &
+ [ ORTH <! "で" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "_de_p_rel",
+            LOCAL.CAT [ HEAD.PTYPE de,
+                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case ] ] ].
+
 iu-stem2a := v1-c-stem-lex &
  [ ORTH <! "いう" !>,
    RMORPH-BIND-TYPE nomorphbind,
@@ -605,12 +609,6 @@ itadaku-aux-stem-2 := aux-obj-id-minus_shon-c-stem-lex &
    SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
                              PRED "_itadaku_v_rel" ],
             LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
-
-e-main := postp-lex &
- [ ORTH <! "へ" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_e_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE he ] ] ].
 
 kashira-cop-id-lex := cop-id-quest-stem-lex &
  [ ORTH <! "かしら" !>,
@@ -756,7 +754,7 @@ mashite-end := v-te-end-lex &
 
 miru-hiragana-aux-stem := complex-aspect-v-stem-lex &
  [ ORTH <! "みる" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_miru_aux",
+   SYNSEM [ LKEYS.KEYREL.PRED "_miru_v_aux",
             LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
 
 mashita-end := v-past-tense-end-lex &
@@ -813,7 +811,7 @@ tassuru-stem := v1-kurusuru-stem-lex &
 
 dearu-v-cop-stem := reg-cop-stem-lex &
  [ ORTH <! "で", "ある" !>,
-   STEMTYPE c2-stem,
+   STEMTYPE c-stem,
    SYNSEM.LOCAL.CAT.HEAD.MODUS indicative ].
 
 to-conj-nobj := n_conj-p-lex &
@@ -1173,12 +1171,6 @@ o-3 := case-p-lex-postp &
    SYNSEM.LOCAL.CAT.HEAD [ CASE wo,
                                  PTYPE wo ] ].
 
-de-advp-main-1 := adv-p-lex-np &
- [ ORTH <! "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_de_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE de ] ] ].
-
 kara-vtearg := vmod-p-lex &
  [ ORTH <! "から" !>,
    SYNSEM [ LKEYS.KEYREL.PRED "_kara_p_rel",
@@ -1196,12 +1188,6 @@ desu-v-cop-stem := reg-cop-stem-lex &
  [ ORTH <! "です" !>,
    STEMTYPE desu-stem,
    SYNSEM.LOCAL.CAT.HEAD.MODUS indicative ].
-
-kara-sub := postp-lex &
- [ ORTH <! "から" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_kara_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE kara ] ] ].
 
 shitsureiitashimasu-multi := excl-lex &
  [ ORTH <! "失礼", "いたし", "ます" !>,
@@ -1233,12 +1219,6 @@ kara-cardmod3 := nounmod-p-lex &
             LOCAL.CAT [ HEAD.PTYPE nattr,
                           VAL.COMPS.FIRST synsem & [ LOCAL [ BAR +,
                                                         CAT.HEAD int_head ] ] ] ] ].
-
-arrow-main := postp-lex &
- [ ORTH <! "→" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_kara_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE kara ] ] ].
 
 kadouka-comp-varg := comp-int-lex &
  [ ORTH <! "か", "どう", "か" !>,
@@ -1337,12 +1317,6 @@ irassharu-stem := intrans-c2-stem-lex &
    SYNSEM [ LKEYS.KEYREL.PRED "_irassharu_v_rel",
             LOCAL.BAR - ] ].
 
-de-advp-sub-1 := adv-p-lex-np &
- [ ORTH <! "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_de_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE de ] ] ].
-
 dousuru-stem := v1-kurusuru-stem-lex &
  [ ORTH <! "どう", "する" !>,
    SYNSEM [ LKEYS.KEYREL.PRED "_dousuru_v_rel",
@@ -1371,7 +1345,7 @@ sumimasen-idiom := excl-lex &
 
 miseru-hiragana-aux-stem := complex-aspect-v-stem-lex &
  [ ORTH <! "みせる" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_miseru_aux",
+   SYNSEM [ LKEYS.KEYREL.PRED "_miseru_v_aux",
             LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
 
 reru-trans-adv-pass-end := adversative-trans-pass-end-lex &
@@ -1392,12 +1366,6 @@ mashou-end := v-consultative-tense-end-lex &
  [ LMORPH-BIND-TYPE i-morph,
    ORTH <! "ましょ", "う" !>,
    SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
-
-arrow-sub := postp-lex &
- [ ORTH <! "→" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_kara_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE kara ] ] ].
 
 seru-trans-obj-end := caus-trans-obj-end-lex &
  [ INFLECTED -,
@@ -1476,7 +1444,7 @@ asoko := pron-loc-ref-lex &
 
 miru-aux-stem := complex-aspect-v-stem-lex &
  [ ORTH <! "見る" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_miru_aux",
+   SYNSEM [ LKEYS.KEYREL.PRED "_miru_v_aux",
             LOCAL.CONT.HOOK.INDEX.E.ASPECT modal ] ].
 
 tara-end := v-cond-end-lex &
@@ -1822,12 +1790,6 @@ koko := pron-loc-ref-lex &
  [ ORTH <! "ここ" !>,
    SYNSEM.LOCAL.CONT.RELS.LIST.FIRST.PRED "_koko_n_rel" ].
 
-e-sub := postp-lex &
- [ ORTH <! "へ" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_e_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE he ] ] ].
-
 mairu-aux-stem := pure-aspect-minus_shon-c-stem-lex &
  [ ORTH <! "参る" !>,
    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
@@ -1863,19 +1825,6 @@ ohayou := greeting-lex &
 mairu-aux-hiragana-stem := pure-aspect-minus_shon-c-stem-lex &
  [ ORTH <! "まいる" !>,
    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
-
-de-advp-main-3 := adv-p-lex-iadj &
- [ ORTH <! "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_de_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE de ] ] ].
-
-de-advp-main-4 := adv-p-lex-p &
- [ ORTH <! "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_de_p_rel",
-            LOCAL.CAT [ HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE de ],
-                          VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case ] ] ].
 
 iku-aux-hiragana-stem := pure-aspect-c2-stem-lex &
  [ ORTH <! "いく" !>,
@@ -2131,24 +2080,12 @@ colon := case-p-lex-np &
    SYNSEM.LOCAL.CAT.HEAD [ CASE coparg,
                                  PTYPE overt ] ].
 
-kara-main := postp-lex &
- [ ORTH <! "から" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_kara_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >,
-                                 PTYPE kara ] ] ].
-
 go-hon-katakana-npref := hon-prefix-lex &
  [ ORTH <! "ゴ" !>,
    SYNSEM.LOCAL.CAT.HEAD [ FORMAL.AHON +,
                                  MOD < [ LOCAL [ BAR +,
                                                CAT [ HEAD ordinary_noun_head,
                                                      VAL.SPR 1-list ] ] ] > ] ].
-
-de-advp-sub-3 := adv-p-lex-iadj &
- [ ORTH <! "で" !>,
-   SYNSEM [ LKEYS.KEYREL.PRED "_de_p_rel",
-            LOCAL.CAT.HEAD [ MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >,
-                                 PTYPE de ] ] ].
 
 dai-cop-id := cop-id-ordinary-stem-lex &
  [ ORTH <! "だい" !>,
