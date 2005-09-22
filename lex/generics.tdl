@@ -1,146 +1,149 @@
+; (MS 2005-07-18) We need to make the ORTH and CARG values to be *top*,
+; in order to get the entries for the Heart-of-Gold machinery working.
+ 
 generic_noun-lex :=
 ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_noun,
-ORTH <! "GenericNounLex" !>].
+ORTH <! *top* !>].
 
 generic_noun-suffix-lex :=
 ordinary-nohon-n-lex &
 [SYNSEM [ LKEYS.KEYREL.PRED 'generic_noun,
 	  LOCAL.BAR - ],
-ORTH <! "GenericNounSuffixLex" !>].
+ORTH <! *top* !>].
 
 ;;; Assume an unknown joshuushi is a measure noun (FCB 2004-02-11)
 generic_num-cl-lex :=
 num-cl-spr-only-meas-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_numcl,
-ORTH <! "GenericNumClLex" !>].
+ORTH <! *top* !>].
 
 generic_name-lex := ippan-name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'generic_name,
-ORTH <! "GenericName" !>].
+[SYNSEM.LKEYS.KEYREL.CARG *top*,
+ORTH <! *top* !>].
 
 generic_person_name-lex := person-name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'generic_person,
-ORTH <! "GenericPersonName" !>].
+[SYNSEM.LKEYS.KEYREL.CARG *top*,
+ORTH <! *top* !>].
 
 generic_surname-lex := surname-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'generic_surname,
-ORTH <! "GenericSurname" !>].
+[SYNSEM.LKEYS.KEYREL.CARG *top*,
+ORTH <! *top* !>].
 
 generic_first_name-lex := first_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'generic_firstname,
-ORTH <! "GenericFirstName" !>].
+[SYNSEM.LKEYS.KEYREL.CARG *top*,
+ORTH <! *top* !>].
 
 generic_inst_name-lex := inst_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'generic_instname,
-ORTH <! "GenericInstName" !>].
+[SYNSEM.LKEYS.KEYREL.CARG *top*,
+ORTH <! *top* !>].
 
 generic_loc_name-lex := loc_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'generic_locname,
-ORTH <! "GenericLocName" !>].
+[SYNSEM.LKEYS.KEYREL.CARG *top*,
+ORTH <! *top* !>].
 
 generic_number-lex := card-no-object-no-specifier &
-[SYNSEM.LKEYS.KEYREL.CARG 'generic_number,
-ORTH <! "GenericNumber" !>].
+[SYNSEM.LKEYS.KEYREL.CARG *top*,
+ORTH <! *top* !>].
 
 generic_na-adj-lex :=
 na-adj-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_na-adj,
-ORTH <! "GenericNaAdj" !>].
+ORTH <! *top* !>].
 
 generic_scopal_adv-lex :=
 scopal-adv-lex &
-[ORTH <! "GenericScopalAdv" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_scopal_adv].
 
 generic_dim_adv-lex :=
 scopal-adv-lex &
-[ORTH <! "GenericDimAdv" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_dim_adv].
 
 generic_adj_te_infl := generic_adj_te_infl-lex &
-[ORTH <! "GenericAdjTeInfl" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_adj].
 
 generic_adj_a_infl := generic_adj_a_infl-lex &
-[ORTH <! "GeneridAdjAInfl" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_adj].
 
 generic_adj_past_infl := generic_adj_past_infl-lex &
-[ORTH <! "GenericAdjPastInfl" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_adj].
 
 generic_adj_i_infl := generic_adj_i_infl-lex &
-[ORTH <! "GenericAdjIInfl" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_adj].
 
 generic_adj_kere_infl := generic_adj_kere_infl-lex &
-[ORTH <! "GenericAdjKereInfl" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_adj].
 
 generic_adj_short_infl := generic_adj_short_infl-lex &
-[ORTH <! "GenericAdjShortInfl" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_adj].
 
 generic_adj2adv_infl := scopal-adv-lex &
-[ORTH <! "GenericAdjAdvInfl" !>,
+[ORTH <! *top* !>,
 SYNSEM.LKEYS.KEYREL.PRED 'generic_adj2adv].
 
 generic_excl-lex := excl-lex &
-[ORTH <! "GenericExcl" !>,
+[ORTH <! *top* !>,
  SYNSEM.LKEYS.KEYREL.PRED 'generic_excl].
 
 generic_interj-lex := interj-lex &
-[ORTH <! "GenericInterj" !>,
+[ORTH <! *top* !>,
  SYNSEM.LKEYS.KEYREL.PRED 'int].
 
 generic_hes-lex := hes-lex &
-[ORTH <! "GenericHes" !>].
+[ORTH <! *top* !>].
 
 generic_verb_ru_infl :=
 generic_verb_ru_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbRuInfl" !>].
+ORTH <! *top* !>].
 
 generic_verb_i_infl :=
 generic_verb_i_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbIInfl" !>].
+ORTH <! *top* !>].
 
 generic_verb_morphbind_infl :=
 generic_verb_morphbind_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbMorphbindInfl" !>].
+ORTH <! *top* !>].
 
 generic_verb_a_infl :=
 generic_verb_a_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbAInfl" !>].
+ORTH <! *top* !>].
 
 generic_verb_t_infl :=
 generic_verb_t_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbTInfl" !>].
+ORTH <! *top* !>].
 
 generic_verb_cond_infl :=
 generic_verb_cond_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbCondInfl" !>].
+ORTH <! *top* !>].
 
 generic_verb_o_infl :=
 generic_verb_o_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbOInfl" !>].
+ORTH <! *top* !>].
 
 generic_verb_vstem_infl :=
 generic_verb_vstem_infl-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVerbVstemInfl" !>].
+ORTH <! *top* !>].
 
 generic_vn-lex :=
 vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
-ORTH <! "GenericVN" !>].
+ORTH <! *top* !>].
 
 
 

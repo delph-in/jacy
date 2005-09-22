@@ -53,7 +53,8 @@
       (load-lexdb-from-script)
       ;; load the things that aren't in the database
       (read-cached-sublex-if-available 
-       "lexicon" (list (lkb-pathname (parent-directory) "lex/jacy.skip"))))
+       "lexicon" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")
+		       (lkb-pathname (parent-directory) "lex/add-lex.tdl" ))))
   (progn
     ;; pick an arbitrary file and call it the _main_ lexicon
     ;; FIXME

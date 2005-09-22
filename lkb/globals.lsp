@@ -180,6 +180,7 @@
 
 ;;; connection parameters for lexical database, an association list with fields
 ;;; `:host', `:db', `:table', and `:user' (optional) 
+;;; was for me (MS):   '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t) (:user "siegel"))
 ;;; if unset we fall back to .tdl lexicon files
 
 (defparameter *lexdb-params* 

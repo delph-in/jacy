@@ -6781,19 +6781,19 @@ SYNSEM.LKEYS.KEYREL.PRED '_kurai_n_rel].
 ;SYNSEM.LKEYS.KEYREL [PRED '_ichiban_n_rel]].
 
 saikin :=
-possibly-adv-n-lex &
+date-noun-adv-lex &
 [ORTH <! "最近" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_saikin_n_rel]].
 
 saichuu :=
-possibly-adv-n-lex &
+date-noun-lex &
 [ORTH <! "最中" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_saichuu_n_rel]].
 
 ;ago; since; before; previous
 
 izen-noun :=  
-possibly-adv-n-lex &
+date-noun-lex &
 	[SYNSEM.LKEYS.KEYREL.PRED '_izen_n_rel,
           ORTH <! "以前" !>].
 

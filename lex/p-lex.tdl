@@ -1178,6 +1178,11 @@ ni-narg := adv-p-lex-np &
                                     CONT.RELS <! [PRED '_ni_p_rel] !>],
               ORTH <! "¤Ë" !>].
 
+ni-datearg := adv-p-lex-date &
+             [SYNSEM.LOCAL [CAT.HEAD [PTYPE ni],
+                                    CONT.RELS <! [PRED '_ni_p_rel] !>],
+              ORTH <! "¤Ë" !>].
+
 
 ni-nmod-1 := nounmod-p-lex &
            [SYNSEM.LOCAL [CAT [HEAD [PTYPE ni,

@@ -733,7 +733,7 @@ vn-light-rule := head-marker-rule &
 vstem-vend-rule := stem-end-rule-type &
 		   [ SYNSEM [LOCAL.CAT.VAL.SPR null,
 			     MODIFIED.PERIPH #per],
-		     ARGS < [ SYNSEM [LOCAL.CAT.HEAD ordinary-verb-stem_head & [LIGHT #light],
+		     ARGS < [ SYNSEM [LOCAL.CAT [HEAD ordinary-verb-stem_head & [LIGHT #light]],
 				      MODIFIED.PERIPH #per],
 			      J-NEEDS-AFFIX + ],
 			    [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light]] >].

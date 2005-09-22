@@ -217,7 +217,7 @@ potential-lexeme-to-word-rule &
 ; removed [J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,] to use this for 
 ; syntactic V-Vs, too.  Tried making it no_tense.
 infinitive-lexeme-1-infl-rule :=
-%suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に)
+%suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に) (見る 見)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
  SYNSEM.LOCAL [CAT.HEAD #head &
@@ -253,7 +253,7 @@ j-lexeme-to-word-rule &
 ;Maybe the feature AUX can be leveraged?
 
 imperative-c2-stem-infl-rule :=
-%suffix (く け) (る い ) (う え)
+%suffix (く け) (る い) (う う)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE imp-morph,
  SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,

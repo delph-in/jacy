@@ -494,9 +494,12 @@ noun-arg1-relation := noun-relation & arg1-relation.
 const-value-relation := relation &
   [ CARG *top* ].
 
+; (MS 2005-07-18) In order to get the generics entries into the grammar,
+; CARG should be *top* instead of string
+
 named-relation := noun-relation & const-value-relation &
   [ PRED named_rel,
-    CARG string ].
+    CARG *top* ].
 
 ; Preposition relations
 

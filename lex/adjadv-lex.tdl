@@ -364,7 +364,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_moshi_a_rel].
 sukoshi-adv :=
 scopal-adv-regular-lex &
 [ORTH <! "¾¯¤·" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_sukoshi_a_isect_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_sukoshi_a_scopal_rel].
 
 tadaima-adv :=
 scopal-adv-regular-lex &

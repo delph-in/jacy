@@ -2047,9 +2047,18 @@ topic-cardarg-lex := topic-p-lex &
 adv-p-lex := vmod-p-lex & 
              [SYNSEM.LOCAL.CAT.HEAD adv-p_head].
 
-adv-p-lex-np :=  adv-p-lex & 
-            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
+; (MS 2005-08-17) We want date-noun-lex to occur with or without に, but 
+; date-noun-adv-lex never to occur with に. In order to do so, I restrict 
+; the adv-p-lex-np semantically to non-date-nouns and invent a second one 
+; for date nouns.
 
+adv-p-lex-np :=  adv-p-lex & 
+            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST reg-nom-relation,
+						     CAT.HEAD noun_head]].
+
+adv-p-lex-date :=  adv-p-lex & 
+            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST niarg-relation,
+						     CAT.HEAD noun_head]].
 
 adv-p-lex-iadj := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD i-adj_head].
@@ -2585,14 +2594,16 @@ ordinary-n-lex := ordinary-or-wh-n-lex &
                            LOCAL.CONT [HCONS <! !>]],
                    STEMTYPE noun-stem].
 
-possibly-adv-n-lex := ordinary-or-wh-n-lex & 
-                      [STEMTYPE poss-adv-stem,
-                       SYNSEM [NON-LOCAL.QUE <! !>,
-                               LOCAL [CONT common-noun-sem-type &
-                                          [HCONS <! !>,
-					   HOOK.INDEX #ind,
-                                           RELS <! #key !>]],
-			       LKEYS.KEYREL #key & [ARG0 #ind]]].
+; (MS 2005-09-02) This is not necessary any more. We move the entries to date-noun-lex.
+
+;possibly-adv-n-lex := ordinary-or-wh-n-lex & 
+;                      [STEMTYPE poss-adv-stem,
+;                       SYNSEM [NON-LOCAL.QUE <! !>,
+;                               LOCAL [CONT common-noun-sem-type &
+;                                          [HCONS <! !>,
+;					   HOOK.INDEX #ind,
+;                                           RELS <! #key !>]],
+;			       LKEYS.KEYREL #key & [ARG0 #ind]]].
 
 
 ;;; (FCB 2003-08-05) added for mi and sa
@@ -5006,6 +5017,10 @@ date-noun-lex := date-n-lex &
 date-noun-minusbar-lex := date-noun-lex &
 			  [SYNSEM.LOCAL.BAR -].
 
+; (MS 2005-08-17) This is necessary to prevent spurious ambiguity:
+; 間 (kan) is a noun_mod-lex-r and 間 (aida) a date-noun-plusbar-lex.
+; The date-noun-plusbar-lex cannot be part of a compound!
+
 date-noun-plusbar-lex := date-noun-lex &
 			  [SYNSEM.LOCAL.BAR +].
 
@@ -5768,7 +5783,37 @@ caus-trans-obj-end-lex := v-op-end-lex &
 								 LBL #top]]].
 
 
+; (MS 2005-09-21) A second reading of the causative ending propagates the verb stem LTOP and INDEX,
+; such that this can be accessed by adverbs (to account for ambiguity in expressions like "花子が紀子に学校で走らせた")
 
+caus-trans-obj-scope-end-lex := v-op-end-lex &
+                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
+				     VAL [SPR obl-1-arg &
+					      [FIRST [LOCAL [CONT [HOOK [LTOP #hand,
+									 XARG #causee]],
+							     CAT [HEAD verb-stem_head,
+								  VAL sbj-obj-arg &
+								       [UNSAT +,
+									COMPS 1-list & [FIRST #obj-val]]]]]],
+					  SUBJ [FIRST [OPT + ,
+						       LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
+							      CONT.HOOK.INDEX #causer]]],
+					  COMPS < #obj-val,
+						  [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
+							  CONT.HOOK.INDEX #causee]] >]],
+				CONT [HOOK [INDEX #event,
+					    LTOP #hand,
+					    XARG #causer],
+				      RELS <! #key & [PRED 'cause], 
+					     message &
+					    [PRED proposition_m_rel,
+					     LBL #prpstn-hd, 
+					     MARG #prpstn-soa] !>,
+				      HCONS <! qeq & [HARG #prpstn-soa, LARG #hand] !> ]],
+			 LKEYS.KEYREL arg123-relation & #key & [ARG1 #causer,
+								 ARG2 #causee,
+								 ARG3 #prpstn-hd,
+								 ARG0 #event]]].
 
 ;caus-trans-obj2-end-lex := v-op-end-lex &
 ;                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
@@ -5804,6 +5849,7 @@ caus-trans-obj-end-lex := v-op-end-lex &
 
 
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (MS 2005-09-21) linked the SPR-SUBJ to the complement.
 
 caus-intrans-end-lex := v-op-end-lex &
                 [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
@@ -5819,10 +5865,12 @@ caus-intrans-end-lex := v-op-end-lex &
 									       XARG #causee],
 								   CAT [HEAD verb-stem_head,
 									VAL [UNSAT +,
-									     SUBJ 0-1-list,
+									     SUBJ.FIRST.LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
+											       CONT.HOOK.INDEX #causee],
 									     COMPS null]]]]]],
-				CONT [HOOK [INDEX #event,
-					    LTOP #top],
+				CONT [HOOK [INDEX #event & #caused,
+					    LTOP #top,
+					    XARG #causer],
 				      RELS <!  #key & [PRED 'cause], 
                                                message &
 					    [PRED proposition_m_rel,
@@ -5837,7 +5885,40 @@ caus-intrans-end-lex := v-op-end-lex &
 								LBL #top]]].
 
 
+; (MS 2005-09-21) A second reading of the causative ending propagates the verb stem LTOP and INDEX,
+; such that this can be accessed by adverbs (to account for ambiguity in expressions like "花子が紀子に学校で走らせた")
 
+caus-intrans-scope-end-lex := v-op-end-lex &
+                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
+				     VAL [SUBJ.FIRST [OPT + ,
+						      LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
+							     CONT.HOOK.INDEX #causer]],
+					  COMPS 1-list & < [OPT + ,
+							    LOCAL [CAT.HEAD overt-case-p_head & [CASE wo-or-ni],
+								   CONT.HOOK.INDEX #causee]] >,
+					  SPR obl-1-arg &
+						     [FIRST.LOCAL [CONT.HOOK [LTOP #hand,
+									      INDEX #caused,
+									       XARG #causee],
+								   CAT [HEAD verb-stem_head,
+									VAL [UNSAT +,
+									     SUBJ.FIRST.LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
+											       CONT.HOOK.INDEX #causee],
+									     COMPS null]]]]]],
+				CONT [HOOK [INDEX #event & #caused,
+					    LTOP #hand,
+					    XARG #causer],
+				      RELS <!  #key & [PRED 'cause], 
+                                               message &
+					    [PRED proposition_m_rel,
+					     LBL #prpstn-hd, 
+					     ARG0 #caused,
+					     MARG #prpstn-soa] !>,
+				      HCONS <! qeq & [HARG #prpstn-soa, LARG #hand] !> ]],
+			 LKEYS.KEYREL arg123-relation & #key & [ARG1 #causer,
+								ARG2 #causee,
+								ARG3 #prpstn-hd,
+								ARG0 #event]]].
 
 
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
