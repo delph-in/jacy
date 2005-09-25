@@ -9,8 +9,6 @@
 
 (setf *features* (remove :chasen *features*))
 
-;(pushnew :chasen *features*) ;;bmw
-
 (lkb-load-lisp (parent-directory) "Version.lsp")
 (setf *grammar-directory* (parent-directory)) ; needed for MRS
 (load-lkb-preferences (this-directory) "user-prefs.lsp")
@@ -50,7 +48,7 @@
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 
 ;;; Load the lexicon
-(if  *lexdb-params* ;;; nil
+(if nil ;;;  *lexdb-params* ;;; nil
     ;; Use the database
     (progn
       ;; load from database
@@ -65,6 +63,9 @@
     ;; Load the main lexicon
     (read-cached-lex-if-available 
      (list (lkb-pathname (parent-directory) "lex/lexicon.tdl")))
+      ;;; load the new lexical types
+    (read-cached-sublex-if-available 
+     "kyoudai-all" (list (lkb-pathname (parent-directory) "lex/kyoudai-all.tdl")))
       ;;; load the generic lexical types
     (read-cached-sublex-if-available 
      "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))))
@@ -73,7 +74,8 @@
 (read-tdl-parse-node-file-aux 
           (lkb-pathname (parent-directory) "parse-nodes.tdl"))
 
-(read-tdl-psort-file-aux 
+;(read-tdl-psort-file-aux 
+(read-tdl-start-file-aux 
           (lkb-pathname (parent-directory) "roots.tdl"))
 
 ;#+unknown-words
@@ -85,6 +87,14 @@
 ;;;
 #+:preprocessor
 (read-preprocessor (lkb-pathname (parent-directory) "preprocessor.fsr"))
+
+;;;
+;;; when loaded into an environment including [incr tsdb()] and the Redwoods
+;;; tools, also load a Maximum Entropy parse selection model
+;;;
+#+:tsdb
+(tsdb::read-mem (lkb-pathname (parent-directory) "f5-005.mem"))
+
 
 ;;;
 ;;; finally, use the new transfer component: load any number of rule sets, each
