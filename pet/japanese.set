@@ -184,8 +184,9 @@ sm := "f5-005.mem".
 ;;; reason to do otherwise.
 ;;;
 
-
-spanning-only-rules := $runon_s.
+;spanning-only-rules := $runon_s.
+spanning-only-rules := $np-frag $pp-frag $int-adv-frag $pp-np-frag 
+		       $runon_s.
 
 
 

@@ -1927,31 +1927,6 @@ adv_np_rule-type := unary-type &
            HCONS <! !> ]].
 
 
-; AO (2003-09-04)
-; np-frag-rule-type is needed again.
-
-; AO (2003-08-29) BEGIN
-; np-frag-rule-type  -> np-frag-end-rule-type
-; Comment will be added.
-
-
-;np-frag-rule-type := unary-type &
-;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-;                            [ MOD null,
-;                              QUANTIFIABLE -,
-;                              SMOD marked ],
-;                       VAL saturated ],
-;                 CONT [ RELS #liszt,
-;;                        HCONS #h-cons,
-;                        HOOK.INDEX #index ],
-;                 NUCL nucl_minus ],
-;	  LEX -],
-;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD noun_head,
-;                                VAL saturated ],
-;                          CONT [ RELS #liszt,
-;                                 HCONS #h-cons,
-;                                 HOOK.INDEX #index ]]].
-
 
 
 number-frag-rule-type := unary-type &
@@ -1976,22 +1951,22 @@ number-frag-rule-type := unary-type &
 ;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD topic-vmod-p_head, into vmod-p_head
 
 
-pp-frag-rule-type := unary-type &
-[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-                            [ MOD null,
-			      EMPTY +,
-                              SMOD marked ],
-                       VAL saturated ],
-                 CONT [ RELS #liszt,
-                        HCONS #h-cons,
-                        HOOK.INDEX #index ],
-                 NUCL nucl_minus ],
-	  LEX -],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
-                                VAL saturated ],
-                          CONT [ RELS #liszt,
-                                 HCONS #h-cons,
-                                 HOOK.INDEX #index ]]].
+; pp-frag-rule-type := unary-type &
+; [ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+;                             [ MOD null,
+; 			      EMPTY +,
+;                               SMOD marked ],
+;                        VAL saturated ],
+;                  CONT [ RELS #liszt,
+;                         HCONS #h-cons,
+;                         HOOK.INDEX #index ],
+;                  NUCL nucl_minus ],
+; 	  LEX -],
+;   ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
+;                                 VAL saturated ],
+;                           CONT [ RELS #liszt,
+;                                  HCONS #h-cons,
+;                                  HOOK.INDEX #index ]]].
 
 
 ; (ERB 2002-01-14) This is overgenerating to cases of NP + Sentence ending
@@ -2339,3 +2314,124 @@ ga-wo_transitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
 				  [SUBJ #sbj,
 				   COMPS #cmp]].
 
+
+
+;;;
+;;; Rules for fragments
+;;;
+
+;;;
+;;; The basic type creates a proposition with an unknown_relation 
+;;; 
+
+basic-frag-rule := phrasal_sign  & 
+  [ INFLECTED +,
+    SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
+                           VAL saturated ],
+                     CONT.MSG #msg & [ MARG #marg,
+				       ARG0 #ind] ],
+	     NON-LOCAL [QUE <! !>,
+		     AFFIX  <! !>]],
+    C-CONT [ HOOK [LTOP #lbl,
+		   INDEX #ind],
+	     RELS.LIST < #msg &
+			 [ LBL #lbl,
+			   PRED proposition_m_rel ], 
+			 unknown_relation &
+			 [ ARG0 #ind ], ... >,
+	     HCONS.LIST < qeq & [ HARG #marg ], ... > ], 
+    ARGS.FIRST [INFLECTED +,
+		SYNSEM [NON-LOCAL [QUE <! !>,
+			   AFFIX  <! !>]]]].
+
+
+unary-frag-rule := basic-frag-rule & unary-type &
+ [ C-CONT [ RELS  <! relation, 
+		   relation & 
+		   [LBL #ulbl ] !> ,
+	    HCONS <! [ LARG #ulbl ] !> ]].
+
+frag-np-rule := unary-frag-rule &
+ [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD  noun_head & 
+				       [EMPTY -,
+					AUX aux_minus,
+					ADJ -,
+					COP -,
+					C-MOD null,
+					SMOD unmarked],
+				 VAL saturated],
+			   CONT.HOOK.INDEX #ind]] >,
+C-CONT.RELS.LIST.REST.FIRST.ARG #ind ].
+
+frag-vmod-rule := unary-frag-rule &
+ [  ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < synsem &
+					     [ LOCAL intersective_mod ] >,
+				  VAL saturated],
+			    CONT.HOOK [ LTOP #klbl,
+					INDEX #arg ] ] ] >,
+    C-CONT [ RELS.LIST.REST.FIRST [ LBL #klbl,
+				    ARG0 #arg ]]].
+
+frag-pp-rule := frag-vmod-rule &
+[ARGS < [SYNSEM.LOCAL.CAT.HEAD vmod-p_head] > ].
+
+frag-int-adv-rule := frag-vmod-rule &
+[ARGS < [SYNSEM.LOCAL.CAT.HEAD adv_head-avm] > ].
+
+; FIXME - do we want 東京　が　as a constituent?
+; frag_pp_sel_rule := unary_frag_rule &
+;   [ INFLECTD +,
+;     ARGS < [ SYNSEM.LOCAL [ CAT.HEAD prep &
+;                                      [ KEYS.KEY selected_rel ],
+;                             CONT.HOOK [ LTOP #plbl,
+;                                         INDEX #ind ] ] ] >,
+;     C-CONT [ RELS.LIST.REST.FIRST [ LBL #klbl,
+;                                     ARG0 #ind ],
+;              HCONS <! qeq, geq & [ HARG #klbl,
+;                                    LARG #plbl ] !> ] ].
+
+; FIXME (FCB not finished yet)
+; frag-scp-adv-rule := unary-frag-rule &
+;   [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD adv_head-avm &
+; 				       [ MOD < synsem &
+; 					       [ LOCAL scopal_mod &
+; 						       [ CONT [ HOOK.LTOP #klbl,
+; 								MSG no-msg ] ] ] > ]],
+;                             CONT.MSG no-msg ] ] >,
+;     C-CONT [ RELS.LIST.REST.FIRST.LBL #klbl]].
+
+;
+; Fragments with two parts
+;
+
+binary-frag-rule := basic-frag-rule & binary &
+ [ C-CONT [ RELS  <! relation, 
+		   relation & 
+		   [LBL #ulbl ] !> ,
+	    HCONS <! [ LARG #ulbl ] !> ]].
+
+;;; FIXME - share code with PP/NP frag rules
+
+frag-pp-np-rule := binary-frag-rule &
+ [ ARGS <  [ SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head &
+				       [ MOD < synsem &
+					       [ LOCAL intersective_mod ] >],
+				  VAL saturated],
+			    CONT.HOOK [ LTOP #klbl,
+					INDEX #ind ]]],
+	  [SYNSEM.LOCAL [ CAT [ HEAD  noun_head & 
+				      [EMPTY -,
+				       AUX aux_minus,
+				       ADJ -,
+				       COP -,
+				       C-MOD null,
+					SMOD unmarked],
+				VAL saturated],
+			  CONT.HOOK.INDEX #arg]] >,
+  C-CONT [ RELS.LIST.REST.FIRST [ LBL #klbl,
+				  ARG0 #ind,
+				  ARG  #arg ]]].
+
+;;;
+;;; End of fragment rules
+;;;

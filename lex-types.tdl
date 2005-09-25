@@ -41,7 +41,7 @@
 final_head :< j-head.
 init_head :< j-head.
 
-utterance_head :=  final_head &
+utterance_super :=  final_head &
                   [POS utt,
                    MOD null,
                    C-MOD null,
@@ -50,6 +50,8 @@ utterance_head :=  final_head &
                    SMOD marked,
                    COP-ARG -].
 
+utterance_head := utterance_super.
+fragment_head := utterance_super.
 
 temp_mod_head :< final_head.
 
@@ -4412,20 +4414,20 @@ lex-mod-adv-wh-lex := adv-wh-lex &
 ; (MS 2004-11-26) Changing MOD-HAND and MOD-IND in MOD to LTOP and INDEX.
 
 isect-adv-lex := adv-lex &
-                  [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod & 
-							 [CONT.HOOK [LTOP #handel,
-								     INDEX #ind]]] >,
-					    COP-ARG +,
-					    J-POSTHEAD left],
-                                  CONT i-sect-adv-sem-type &
-					   [HOOK.INDEX #ind,
-					    RELS <! #key !>]],
-			   LKEYS.KEYREL #key & adv-relation & 
-				 [ARG0 event,
-				  ARG0.E.TENSE no_tense,
-				  ARG1 #ind,
-				  LBL #handel],
-			   NON-LOCAL.QUE <! !>]].
+ [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod & 
+					[CONT.HOOK [LTOP #handel,
+						    INDEX #ind]]] >,
+			   COP-ARG +,
+			   J-POSTHEAD left],
+		 CONT i-sect-adv-sem-type &
+			  [HOOK.INDEX #ind,
+			   RELS <! #key !>]],
+	  LKEYS.KEYREL #key & adv-relation & 
+		[ARG0 event,
+		 ARG0.E.TENSE no_tense,
+		 ARG1 #ind,
+		 LBL #handel],
+	  NON-LOCAL.QUE <! !>]].
 
 ;a new analysis of degree adverbs is needed here! (MS)
 

@@ -733,7 +733,8 @@ vn-light-rule := head-marker-rule &
 vstem-vend-rule := stem-end-rule-type &
 		   [ SYNSEM [LOCAL.CAT.VAL.SPR null,
 			     MODIFIED.PERIPH #per],
-		     ARGS < [ SYNSEM [LOCAL.CAT [HEAD ordinary-verb-stem_head & [LIGHT #light]],
+		     ARGS < [ SYNSEM [LOCAL.CAT.HEAD ordinary-verb-stem_head & 
+						     [LIGHT #light],
 				      MODIFIED.PERIPH #per],
 			      J-NEEDS-AFFIX + ],
 			    [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light]] >].
@@ -956,33 +957,6 @@ nominal-numcl-rule := nominal-numcl-rule-type-noncard.
 
 ; empty-cardinal-numcl-rule := empty-cardinal-numcl-type.
 
-; AO (2003-09-04) 
-; np-frag-rule is needed again.
-;
-; ; AO (2003-08-29) BEGIN
-; ; np-frag-rule  -> np-frag-end-rule
-; ; Comment will be added.
-
-;np-frag-rule := np-frag-rule-type.
-
-; np-frag-end-rule := np-frag-end-rule-type.
-
-; ; See rule-types.tdl and roots.tdl.
-; ; AO (2003-08-29) END
-
-pp-frag-rule := pp-frag-rule-type.
-
-;np-quest-frag-rule := np-quest-frag-rule-type & [ARGS < j-sign  , j-sign > ].
-
-;np-quest-frag-rule := np-quest-frag-rule-type &
-;		      [ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head,
-;						  VAL saturated]]],
-;			      [SYNSEM.LOCAL.CAT.HEAD s-end_head & [SMOD quest]] >].
-
-; (TT 2003-09-05)
-
-;adv-frag-rule := adv-frag-rule-type.
-;na-adj-frag-rule := na-adj-frag-rule-type.
 
 
 ; (ERB 2001-11-14) Unary rule to bind off QUE values in embedded
@@ -998,99 +972,6 @@ embedded-question-rule := embedded-question-rule-type &
  HEAD-DTR comp-int-lex & 
                    [SYNSEM.NON-LOCAL.AFFIX <! !>],
  NON-HEAD-DTR.SYNSEM.NON-LOCAL.AFFIX #affixlist].
-
-; (MS 2001-11-23) rule for colon sentences.
-; ¿·½»½ê : AddressErsatz.
-
-; (MS 2003-09-03) Reactivated this rule.
-;;; (AO 2003-09-04) MS patch for expressions like "... de, ..." in japanese dictionaries.
-; (MS 2004-06-25) Linked the XARG to its nonhead-dtr index. No conjunctions should go into this (C-MOD null).
-; (MS 2004-08-25) SMOD unmarked, such that it cannot apply to utterances. COP -, such that it cannot apply to copula sentences. 
-; (MS 2004-11-09) AUX aux_minus, such that it cannot apply to auxiliaries.
-; (MS 2004-12-14) Take the CTXT from the argument.
-
-
-empty-cop-id-rule := empty-head-type &
-		     [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
-					      [H-TENSE present,
-					       MODUS indicative,
-					       MARK null,
-					       MOD null,
-					       J-SPEC null,
-					       C-MOD null,
-					       FIN +,
-					       EMPTY +,
-					       MAIN-PRD +],
-					 VAL [UNSAT -,
-						SUBJ null,
-						COMPS null,
-						SPR null]],
-				     CONT.HOOK [LTOP #top,
-						XARG #argind,
-						INDEX #ind],
-				    CTXT #ctxt],
-			      NON-LOCAL [QUE <! !>,
-					 ROBUST +],
-			      MODIFIED notmod],
-		      C-CONT [RELS <! equal-relation &
-				     [PRED 'unknown_rel,
-				      LBL #top,
-				      ARG2 #argind,
-				      ARG0 #ind & [E [TENSE present]]] !>,
-			      HCONS <! !>],
-		      HEAD-DTR.SYNSEM.LOCAL.CONT [RELS <! !>,
-						  HCONS <! !>],
-		      INFLECTED +,
-		      J-NEEDS-AFFIX -,
-		      ARGS < [SYNSEM.LOCAL [CAT [HEAD noun_head & [EMPTY -,
-								    AUX aux_minus,
-								    ADJ -,
-								    COP -,
-								    C-MOD null,
-								    SMOD unmarked],
-						  VAL saturated],
-					     CONT.HOOK.INDEX #argind,
-					    CTXT #ctxt]] >].
-
-
-empty-copula-rule := empty-head-type &
-		     [SYNSEM [LOCAL [CAT [HEAD verb-noninfl_head-avm &
-					      [COP-ARG -,
-					       C-MOD null,
-					       MOD null,
-					       AUX aux_minus,
-					       MARK null,
-					       COP +,
-					       EMPTY +,
-					       H-TENSE present,
-					       MODUS indicative],
-					 VAL [UNSAT -,
-					      SUBJ null,
-					      SPR null,
-					       COMPS null]],
-				    CONT [HOOK [XARG #xarg,
-						INDEX #ind,
-						LTOP #hand],
-					  RELS #liszt,
-					  HCONS #hcons],
-				     CTXT.BACKGROUND <! !>,
-				     BAR +],
-			      LKEYS.KEYREL [LBL #hand],
-			      NON-LOCAL #nloc & [ROBUST +]],
-		      INFLECTED +,
-		      J-NEEDS-AFFIX -,
-		      C-CONT.RELS <! !>,
-		      ARGS < [SYNSEM [LOCAL [CAT [HEAD adj-or-adv_head,
-							    VAL saturated],
-						       CONT [HOOK [XARG #xarg,
-								   INDEX #ind,
-								   LTOP #hand],
-							     RELS #liszt,
-							     HCONS #hcons]],
-						NON-LOCAL #nloc]] >].
-
-
-
 
 quasi-morph-rule := binary-basic &
 		    [SYNSEM [LOCAL [CAT [HEAD #head,
@@ -1160,3 +1041,10 @@ adj-nominal-suffix-rule := adj-nominal-suffix-type.
 ; 				       [J-POSTHEAD right],
 ; 				  VAL.UNSAT +],
 ; 			     BAR -]]]].
+
+;;; Fragment rules
+np-frag := frag-np-rule.
+pp-frag := frag-pp-rule.
+;scp-adv-frag := frag-scp-adv-rule.
+int-adv-frag := frag-int-adv-rule.
+pp-np-frag := frag-pp-np-rule.

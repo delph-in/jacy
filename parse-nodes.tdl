@@ -20,6 +20,9 @@
 ;; labels
 ;; UTT, PP, NP, VP, ADV, ADJ, DET, TEMP_MOD, NOUN_MOD, N, V, VMOD-P, NMOD-P, NSPEC-P, CASE-P, IDIOM, SAP, INTERJ, HES, CARD, CARD_MOD, PUNCT
 
+frg := label &
+       [SYNSEM.LOCAL.CAT.HEAD fragment_head, 
+        LABEL-NAME "FRG"].
 
 utt := label &
        [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD marked],
