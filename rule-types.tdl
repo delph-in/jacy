@@ -1143,23 +1143,24 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
 
 ; (ERB 2001-12-05) Need to copy up WLINK too.
 ; (MS 2004-12-13) Need to copy up the HOOK (not only XARG).
+; (FCB 2005-09-22) Don't copy up hook as the modified verb's hook 
+; should be the hook (from isect-adv-lex)
 
 adj2adv-rule  := isect-adv-lex & lex-rule &
-               [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-				       WLINK #label ],
-			LOCAL [CAT.HEAD adv_head,
-			       CTXT #ctxt,
-			       CONT.HOOK #hook],
-			NON-LOCAL #nonloc],
-                J-NEEDS-AFFIX -,
-		NEEDS-AFFIX -,
-                ARGS < base-adj-stem-lex & [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-								     WLINK #label ],
-						    LOCAL [CTXT #ctxt,
-			                                   CONT.HOOK #hook],
-						    NON-LOCAL #nonloc],
-					    INFLECTED -]>,
-		INFLECTED +].
+ [SYNSEM [LKEYS.KEYREL [ PRED #rel,
+			 WLINK #label ],
+	  LOCAL [CAT.HEAD adv_head,
+		 CTXT #ctxt],
+	  NON-LOCAL #nonloc],
+  J-NEEDS-AFFIX -,
+  NEEDS-AFFIX -,
+  ARGS < base-adj-stem-lex & 
+	 [SYNSEM [LKEYS.KEYREL [ PRED #rel,
+				 WLINK #label ],
+		  LOCAL [CTXT #ctxt],
+		  NON-LOCAL #nonloc],
+	  INFLECTED -]>,
+  INFLECTED +].
 
 
 ;n2adj-rule := na-adj-lex & inflecting-lex-rule &
@@ -1359,29 +1360,46 @@ vn2n-rule-nspecarg2 :=  vn2n-rule-super &
 	     ARGS.FIRST.SYNSEM [LKEYS.KEYREL.ARG2 #arg2]].
 
 ; (FCB 2005-04-09) fixed scope problem, harmonized predname with spaced kata
-v2n-kata-rule := n-lex-super &
-            [SYNSEM [LOCAL [CAT [HEAD nom_head &
-                                      [ MOD null,
-					VN -,
-					J-SPEC null],
-				 VAL spr-arg & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head,
-								 CONT.HOOK.INDEX #ind]]],
-			    CONT nom-pred-sem-type &
-				[RELS <! #key,
-					message & 
-				       [PRED proposition_m_rel,
-					LBL #prpstn-hd,
-					 MARG #prpstn-soa],
-					#v-key & [ARG2 #ind] !>,
-				 HCONS <! qeq & [HARG #prpstn-soa,LARG #v-hd] !>]],
-		     LKEYS.KEYREL #key &
-			   [ PRED '_kata_v_rel, 
-			     ARG1 #prpstn-hd],
-		     NON-LOCAL [QUE <! !>,
-			     AFFIX <! !>]],
-	     ARGS < [SYNSEM [LOCAL.CAT [HEAD verb-stem_head],
-			     LKEYS [KEYREL #v-key & 
-					     [LBL #v-hd]]]] >].
+; moved new predicates to C-CONT
+;n-lex-super-rule :=  n-lex-super & lex-rule.
+; (do-parse-tty "¿©¤ÙÊý") 
+; FIXME only gets ARG2 as spec
+; FIXME doesn't share with vn2n-rule-nspecarg2 or the v2n-end-lex
+v2n-kata-rule :=   n-lex-super & lex-rule &
+ [SYNSEM [LOCAL [CAT [HEAD nom_head &
+			   [ MOD < [LOCAL [CAT [HEAD ordinary_noun_head-avm]],
+				    MODIFIED.PERIPH -]>,
+			     J-POSTHEAD compound,
+			     VN -],
+		      VAL.SPR.FIRST [OPT BOOL, 
+				     LOCAL [CAT.HEAD nspec-p_head,
+					    CONT.HOOK.INDEX #arg2]]],
+		 CONT  [HOOK [LTOP #nom-hand,
+			      INDEX #nom-ind]],
+		 BAR bool],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>]],
+  INFLECTED +,
+  C-CONT [RELS <!  noun-arg1-relation &
+		[PRED "kata_n_rel",
+		 LBL #nom-hand,
+		 ARG0 #nom-ind,
+		 ARG1 #prpstn-hand],
+		message & 
+		[PRED proposition_m_rel, 
+		 LBL #prpstn-hand,
+		 ARG0 #arg0,
+		 MARG #soa] !>,
+	  HCONS  <! qeq &
+		  [HARG #soa, LARG #vn-hand] !>],
+  ARGS < [SYNSEM [LOCAL [CAT  [HEAD verb-stem_head,
+			       VAL [UNSAT +,
+				    SUBJ.FIRST.OPT +,
+				    COMPS olist]],
+			 CONT [ HOOK [INDEX #arg0,
+				      LTOP #vn-hand ],
+				RELS <! [ARG2 #arg2] !> ]],
+		  LEX + ]]>].
 
 
 adj2v-rule := intrans-v-stem-lex &
