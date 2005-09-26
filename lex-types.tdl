@@ -389,6 +389,12 @@ first_name_head-avm := first_name_head &
                        [MOD < [LOCAL [CAT.HEAD name_head]] >,
 			J-POSTHEAD compound].
 
+other_name_head :< name_head-avm.
+
+other_name_head-avm := other_name_head & 
+                       [MOD < [LOCAL [CAT.HEAD name_head]] >,
+			J-POSTHEAD compound].
+
 inst_name_head :< name_head-avm.
 
 inst_name_head-avm := inst_name_head & 
@@ -2868,12 +2874,18 @@ person-name-lex := name-lex.
 surname-lex := person-name-lex & 
                   [SYNSEM.LOCAL.CAT.HEAD surname_head-avm].
 
-ippan-name-lex := name-lex & 
-                  [SYNSEM.LOCAL.CAT.HEAD ippan_head-avm].
-
 first_name-lex := person-name-lex & 
                   [SYNSEM.LOCAL.CAT.HEAD first_name_head-avm].
 
+;;; names which can be first or surname, artists' names
+;;; (do-parse-tty "¥¿¥â¥ê")
+
+other_name-lex := person-name-lex & 
+                  [SYNSEM.LOCAL.CAT.HEAD other_name_head-avm].
+
+
+ippan-name-lex := name-lex & 
+                  [SYNSEM.LOCAL.CAT.HEAD ippan_head-avm].
 
 loc_name-lex := name-lex & 
                 [SYNSEM.LOCAL [CAT.HEAD loc_name_head-avm]].
