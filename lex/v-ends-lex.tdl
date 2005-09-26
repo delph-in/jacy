@@ -1151,3 +1151,23 @@ garu-end := naadj2v-end-lex &
 kata-v-end := v2n-end-lex &
 	      [ORTH <! "方" !>,
 	       SYNSEM.LKEYS.KEYREL.PRED '_kata_v_rel].
+
+saseru-intrans-scope-end := caus-intrans-scope-end-lex &
+           [ORTH <! "させる" !>,
+            LMORPH-BIND-TYPE pass-v-stem-morph,
+            STEMTYPE v-stem].
+
+seru-intrans-scope-end := caus-intrans-scope-end-lex &
+           [ORTH <! "せる" !>,
+            LMORPH-BIND-TYPE pass-c-stem-morph,
+            STEMTYPE v-stem].
+
+seru-trans-obj-scope-end := caus-trans-obj-scope-end-lex &
+           [ORTH <! "せる" !>,
+            LMORPH-BIND-TYPE pass-c-stem-morph,
+            STEMTYPE v-stem].
+
+saseru-trans-obj-scope-end := caus-trans-obj-scope-end-lex &
+           [ORTH <! "させる" !>,
+            LMORPH-BIND-TYPE pass-v-stem-morph,
+            STEMTYPE v-stem].

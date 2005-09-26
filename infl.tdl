@@ -109,9 +109,11 @@ lexeme-rule &
  ARGS.FIRST.STEMTYPE c-stem].
 
 ;; (FCB 2003-08-07) added u-type (tou and kou - past tense is o-u-ta not o-t-ta)
+; (MS 2005-09-22) it is better to list all c2-stem ending in う, otherwise we
+; get a runaway rule!
 
 tt-lexeme-c2-stem-infl-rule := 
-%suffix (く っ) (る っ) (う う)
+%suffix (く っ) (る っ) (問う 問う) (乞う 乞う)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE c2-stem].
@@ -253,7 +255,7 @@ j-lexeme-to-word-rule &
 ;Maybe the feature AUX can be leveraged?
 
 imperative-c2-stem-infl-rule :=
-%suffix (く け) (る い ) (う え)
+%suffix (く け) (る い) (う え)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE imp-morph,
  SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
@@ -718,14 +720,25 @@ v2vn-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;V->N;;;;;;;;;;;;;;;;;;;;
 
-v2n-kata-infl-rule :=
-%suffix (!vる !v方) (く き方) (る り方) (う い方) (す し方) (む み方) (ぐ ぎ方) (ぶ び方)  (つ ち方) (ぬ に方)
+; (MS 2005-09-26) In generation, we allowed 食べリ方
+; so we now have two rules here.
+
+v2n-vstem-kata-infl-rule :=
+%suffix (!vる !v方)
 v2n-kata-rule &
-[ARGS.FIRST [STEMTYPE regular-stem,
+[ARGS.FIRST [STEMTYPE v-stem,
              RMORPH-BIND-TYPE morphbindtype,
              INFLECTED -]].
 
-;;; FIXME - can't we use i-morph? We now allow 食べリ方
+v2n-cstem-kata-infl-rule :=
+%suffix (く き方) (る り方) (う い方) (す し方) (む み方) (ぐ ぎ方) (ぶ び方)  (つ ち方) (ぬ に方)
+v2n-kata-rule &
+[ARGS.FIRST [STEMTYPE cons-stem,
+             RMORPH-BIND-TYPE morphbindtype,
+             INFLECTED -]].
+
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;; VN, N and ADJ POLITE ;;;;;;;;;;;;;;;;
 

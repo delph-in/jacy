@@ -588,13 +588,13 @@ hajimaru-stem := intrans-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_hajimaru_v_rel]],
                    ORTH <! "始まる" !>].
 
-iru_need-stem := intrans-v-stem-lex &
+iru_need-stem := intrans-c-stem-lex &
                    [SYNSEM.LKEYS [KEYREL [PRED '_iru_v_need_rel]],
                    ORTH <! "要る" !>].
 
 ; (MS 2002-09-16) This one leads to spurious ambiguity as soon as iru-aux comes up!
 
-iru_need-hiragana-stem := intrans-v-stem-lex &
+iru_need-hiragana-stem := intrans-c-stem-lex &
 		   [SYNSEM.LKEYS [KEYREL [PRED '_iru_v_need_rel]],
 		    RMORPH-BIND-TYPE nomorphbind,
 		    ORTH <! "いる" !>].

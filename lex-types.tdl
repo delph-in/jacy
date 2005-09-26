@@ -5789,7 +5789,13 @@ caus-trans-obj-end-lex := v-op-end-lex &
 ; such that this can be accessed by adverbs (to account for ambiguity in expressions like "花子が紀子に学校で走らせた")
 
 caus-trans-obj-scope-end-lex := v-op-end-lex &
-                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
+                [INFLECTED -,
+		 SYNSEM [MODIFIED.PERIPH +,
+			 LOCAL [CAT [HEAD caus-end_head &
+					  [MOD < [LOCAL [CAT.HEAD noun_head,
+                                                 BAR +]] >,
+					   C-MOD null,
+					   J-POSTHEAD rels],
 				     VAL [SPR obl-1-arg &
 					      [FIRST [LOCAL [CONT [HOOK [LTOP #hand,
 									 XARG #causee]],
@@ -5891,7 +5897,14 @@ caus-intrans-end-lex := v-op-end-lex &
 ; such that this can be accessed by adverbs (to account for ambiguity in expressions like "花子が紀子に学校で走らせた")
 
 caus-intrans-scope-end-lex := v-op-end-lex &
-                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
+                [INFLECTED -,
+		 SYNSEM [MODIFIED.PERIPH +,
+			 LOCAL [CAT [HEAD caus-end_head &
+					  [MOD < [LOCAL [CAT.HEAD noun_head,
+							 BAR +]] >,
+					   C-MOD null,
+					   J-POSTHEAD rels,
+					   J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
 				     VAL [SUBJ.FIRST [OPT + ,
 						      LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
 							     CONT.HOOK.INDEX #causer]],

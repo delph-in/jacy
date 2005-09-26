@@ -2,12 +2,23 @@
 ; such that we have massive ambiguity whenever case particles occur. 
 ; (MS 2005-05-13) It sets empathy to the entity it attaches to.
 
-wa-case := case-p-lex-np & 
+wa-case-ga := case-p-lex-np & 
        [ORTH <! "は" !>,
-       SYNSEM [LOCAL [CAT.HEAD [CASE ga-or-wo, PTYPE wa],
+       SYNSEM [LOCAL [CAT.HEAD [CASE ga, PTYPE wa],
 		      CONT.HOOK.XARG #emp,
 		      CTXT.EMPATHY.EMPEE #emp],
 	       NON-LOCAL.UNDERSPEC_ARG -]].
+
+; (MS 2005-09-22) It sets empathy to the entity it attaches to, only
+; when it is case ga! If it is a case of object topicalization, the 
+; empathy is rather set to the sentence subject (see Watanabe 2000)
+
+wa-case-wo := case-p-lex-np & 
+       [ORTH <! "は" !>,
+       SYNSEM [LOCAL [CAT.HEAD [CASE wo, PTYPE wa]],
+	       NON-LOCAL.UNDERSPEC_ARG -]].
+
+
 
 ;(CH 2005-03-10)
 ; solution to parse 「ボールを進んで打つ」「ボールを続けて打つ」.
