@@ -5916,7 +5916,7 @@ caus-intrans-scope-end-lex := v-op-end-lex &
 							 BAR +]] >,
 					   C-MOD null,
 					   J-POSTHEAD rels,
-					   J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
+					   J-SPEC < [LOCAL.CAT.HEAD noun_head] >],
 				     VAL [SUBJ.FIRST [OPT + ,
 						      LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
 							     CONT.HOOK.INDEX #causer]],
