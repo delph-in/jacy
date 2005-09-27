@@ -31203,7 +31203,7 @@ ahen_n1 := ordinary-nohon-n-lex &
 ;[ORTH <! "±ïÁÈ" !>, SYNSEM.LKEYS.KEYREL.PRED '_engumi_n_2_rel].
 engumi_v1 :=
 vn-trans3-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_engumi_vn_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_engumi_s_rel]],
 ORTH <! "±ïÁÈ" !>].
 
 ; Freq: 1
