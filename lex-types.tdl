@@ -5797,7 +5797,7 @@ caus-trans-obj-end-lex := v-op-end-lex &
 								 LBL #top]]].
 
 
-; (MS 2005-09-21) A second reading of the causative ending propagates the verb stem LTOP and INDEX,
+; (MS 2005-09-28) A second reading of the causative ending propagates the verb stem INDEX,
 ; such that this can be accessed by adverbs (to account for ambiguity in expressions like "花子が紀子に学校で走らせた")
 
 caus-trans-obj-scope-end-lex := v-op-end-lex &
@@ -5809,7 +5809,8 @@ caus-trans-obj-scope-end-lex := v-op-end-lex &
 					   C-MOD null,
 					   J-POSTHEAD rels],
 				     VAL [SPR obl-1-arg &
-					      [FIRST [LOCAL [CONT [HOOK [LTOP #hand,
+					      [FIRST [LOCAL [CONT [HOOK [LTOP #v-hand,
+									 INDEX #v-event,
 									 XARG #causee]],
 							     CAT [HEAD verb-stem_head,
 								  VAL sbj-obj-arg &
@@ -5821,19 +5822,20 @@ caus-trans-obj-scope-end-lex := v-op-end-lex &
 					  COMPS < #obj-val,
 						  [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
 							  CONT.HOOK.INDEX #causee]] >]],
-				CONT [HOOK [INDEX #event,
-					    LTOP #hand,
+				CONT [HOOK [INDEX #v-event,
+					    LTOP #c-hand,
 					    XARG #causer],
 				      RELS <! #key & [PRED 'cause], 
 					     message &
 					    [PRED proposition_m_rel,
 					     LBL #prpstn-hd, 
 					     MARG #prpstn-soa] !>,
-				      HCONS <! qeq & [HARG #prpstn-soa, LARG #hand] !> ]],
+				      HCONS <! qeq & [HARG #prpstn-soa, LARG #v-hand] !> ]],
 			 LKEYS.KEYREL arg123-relation & #key & [ARG1 #causer,
 								 ARG2 #causee,
 								 ARG3 #prpstn-hd,
-								 ARG0 #event]]].
+								ARG0 event,
+								LBL #c-hand]]].
 
 ;caus-trans-obj2-end-lex := v-op-end-lex &
 ;                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
