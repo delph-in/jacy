@@ -8973,8 +8973,8 @@ ukabu_1 := v2-c-stem-lex &
 
 ; 片付く 
 
-kataduku_1 := intrans-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kataduku_v_1_rel,
+kataduku-stem := intrans-c-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kataduku_v_rel,
  ORTH <! "片付く" !>].
 
 
@@ -12234,8 +12234,8 @@ itadakeru_1 := intrans-v-stem-lex &
 ; 怠ける 
 ; Used 1 times
 
-namakeru_1 := intrans-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_namakeru_v_1_rel,
+namakeru-inchoative-v := intrans-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_namakeru_v_inchoative_rel,
  ORTH <! "怠ける" !>].
 
 
@@ -17875,8 +17875,8 @@ itadakeru_2 := v1-v-stem-lex &
 ; 怠ける 
 ; Used 1 times
 
-namakeru_2 := v1-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_namakeru_v_2_rel,
+namakeru-cause-v := v1-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_namakeru_v_cause_rel,
  ORTH <! "怠ける" !>].
 
 
@@ -18644,9 +18644,10 @@ kurisageru_1 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kurisageru_v_1_rel,
  ORTH <! "繰り下げる" !>].
 
-; 繰り広げる 
+; 繰り広げる
+; spelling variant: 繰広げる 
 
-kurihirogeru_1 := v1-v-stem-lex &
+kurihirogeru-1 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kurihirogeru_v_1_rel,
  ORTH <! "繰り広げる" !>].
 
@@ -19274,9 +19275,11 @@ todomeru_1 := v1-v-stem-lex &
 
 ; 捕える 
 ; Used 7 times
+; (MS 2005-09-27) this is just a spelling variant of とらえる and 捕らえる, 
+; such that these should get the same relation name.
 
 toraeru_1 := v1-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toraeru_v_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_toraeru_v_rel,
  ORTH <! "捕える" !>].
 
 ; 取り入れる 
@@ -20538,7 +20541,7 @@ atetsukeru_1 := v1-v-stem-lex &
 
 ; 釣り上げる 
 
-tsuriageru_1 := v1-v-stem-lex &
+tsuriageru-stem-1 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsuriageru_v_1_rel,
  ORTH <! "釣り上げる" !>].
 
@@ -21972,3 +21975,58 @@ makuru-hiragana-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
 kiru-hiragana-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED 'kiru_vemb]],
  ORTH <! "きる" !> ].
+
+taberu-hiragana-stem := v1-v-stem-lex &
+[SYNSEM [LKEYS [KEYREL.PRED '_taberu_v_rel],
+	 LOCAL.CTXT.BACKGROUND <! !>],
+ORTH <! "たべる" !>].
+
+sugiru-syn-vv-raising-hiragana-stem := syn-vv-raising-v-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED 'sugiru_rais_v_rel]],
+ ORTH <! "すぎる" !> ].
+
+
+; (MS 2005-09-27) spelling variant of とらえる and 捕らえる
+
+toraeru_2 := v1-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_toraeru_v_rel,
+ ORTH <! "捕らえる" !>].
+
+;in kyoudai-all:
+narabekaeru-stem := v1-v-stem-lex &
+[ORTH <! "並べ換える" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_narabekaeru_v_rel].
+
+;in kyoudai-all:
+mieru-hiragana-stem := intrans-v-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_mieru_v_rel]],
+ ORTH <! "みえる" !>].
+
+;in kyoudai-all:
+namakeru-inchoative-hiragana-v := intrans-v-stem-lex &
+[ORTH <! "なまける" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_namakeru_v_inchoative_rel].
+
+;in kyoudai-all:
+namakeru-cause-hiragana-v := v1-v-stem-lex &
+[ORTH <! "なまける" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_namakeru_v_cause_rel].
+
+; (MS 2005-09-27) spelling variant
+
+katadukeru-hiragana-stem := intrans-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_katadukeru_v_rel,
+ ORTH <! "片づける" !>].
+
+; spelling variant
+
+kurihirogeru-stem-2 := v1-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kurihirogeru_v_rel,
+ ORTH <! "繰広げる" !>].
+
+;to hang up; to suspend; to raise; to lift
+
+tsuriageru-stem-2 := v1-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tsuriageru_v_2_rel,
+ ORTH <! "吊り上げる" !>].
+

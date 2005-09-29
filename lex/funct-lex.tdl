@@ -107,23 +107,23 @@ jitsuwa := interj-lex &
 
 kono := det-lex &
          [ORTH <! "この" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_kono_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_kono_q_rel].
 
 sono := det-lex &
          [ORTH <! "その" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_sono_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_sono_q_rel].
 
 sonna := det-lex &
          [ORTH <! "そんな" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_sono_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_sono_q_rel].
 
 kouiu := det-lex &
          [ORTH <! "こういう" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_dem_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_dem_q_rel].
 
 souiu := det-lex &
          [ORTH <! "そういう" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_dem_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_dem_q_rel].
 
 dono-det :=
 det-wh-lex &
@@ -139,21 +139,21 @@ douiu := det-wh-lex &
 
 koushita := det-lex &
          [ORTH <! "こうした" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_dem_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_dem_q_rel].
 
 soushita := det-lex &
          [ORTH <! "そうした" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_dem_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_dem_q_rel].
 
 
 
 ano := det-lex &
          [ORTH <! "あの" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_ano_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_ano_q_rel].
 
 nanrakano := det-lex &
          [ORTH <! "何らかの" !>,
-          SYNSEM.LKEYS.KEYREL.PRED '_nanrakano_det_rel].
+          SYNSEM.LKEYS.KEYREL.PRED '_nanrakano_q_rel].
 
 
 ;"ee kekkou desu"
@@ -205,6 +205,7 @@ soshite :=
 interj-lex &
 [ORTH <! "そして" !>,
  SYNSEM.LKEYS.KEYREL.PRED '_soshite_interj_rel].
+
 
 soosuruto :=
 interj-lex &
@@ -315,7 +316,8 @@ hes-lex &
 konna :=
 det-lex &
 [ORTH <! "こんな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_konna_det_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_konna_q_rel].
+
 
 soreto :=
 interj-lex &
@@ -881,7 +883,7 @@ interj-lex &
 [ORTH <! "或いは" !>,
  SYNSEM.LKEYS.KEYREL.PRED '_aruiwa_interj_rel].
 
-shitagatte :=
+shitagatte-interj :=
 interj-lex &
 [ORTH <! "従って" !>,
  SYNSEM.LKEYS.KEYREL.PRED '_shitagatte_interj_rel].
@@ -2026,7 +2028,7 @@ arayuru_1 := noun_mod-lex-l &
 ; (MS 2003-12-22) LEX + against spurious ambiguity.
 
 aru_det := det-lex  &
-[SYNSEM.LKEYS.KEYREL.PRED '_aru_det_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_aru_q_rel,
  ORTH <! "ある" !> ].
 
 ; いかなる 
@@ -2227,4 +2229,27 @@ ORTH <! "だけ" !> ].
 bakari-ppmod := pp_mod-lex-r &
 [SYNSEM.LKEYS.KEYREL.PRED '_bakari_ppmod_rel,
 ORTH <! "ばかり" !> ].
+
+shitagatte-hiragana-interj :=
+interj-lex &
+[ORTH <! "したがって" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_shitagatte_interj_rel].
+
+
+anna-det :=
+det-lex &
+[ORTH <! "あんな" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_anna_q_rel].
+
+anna-hiragana-det :=
+det-lex &
+[ORTH <! "あん","な" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_anna_q_rel].
+
+; in kyoudai-all
+
+honno-det := det-lex &
+[ORTH <! "ほんの" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_honno_q_rel].
+
 

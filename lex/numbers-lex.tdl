@@ -2073,3 +2073,6 @@ hekutopasukaru_numcl_alphabet := num-cl-spr-only-meas-lex &
 [ ORTH <! "£è£Ð£á" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_hekutopasukaru_numcl_alphabet_rel].
 
+nenkan_numcl := num-cl-spr-only-meas-lex &
+[ ORTH <! "Ç¯´Ö" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_nenkan_numcl_rel].

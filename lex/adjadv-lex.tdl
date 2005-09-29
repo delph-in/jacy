@@ -5730,11 +5730,12 @@ arata_1 := na-adj-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_arata_a_1_rel,
  ORTH <! "新た" !>].
 
-; あんな 
+; あんな
+; (MS 2005-09-27) this should rather be a det: "あんな人は死ねばいい" 
 
-anna_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_anna_a_1_rel,
- ORTH <! "あんな" !>].
+;anna_1 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_anna_a_1_rel,
+; ORTH <! "あんな" !>].
 
 ; イージー 
 
@@ -23466,4 +23467,12 @@ meppou-adj :=
 na-adj-lex &
 [ORTH <! "滅法" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_meppou_a_rel].
+
+; spelling variant
+; in kyoudai-all, but scopal!
+
+awasete-hiragana-adv :=
+isect-adv-lex &
+[ORTH <! "あわせて" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_awasete_a_rel].
 

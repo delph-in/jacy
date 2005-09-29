@@ -4174,3 +4174,11 @@ nakayama-surname := surname-lex &
 jirou-firstname-2 := first_name-lex & 
 	[SYNSEM.LKEYS.KEYREL.CARG 'jirou,
           ORTH <! "次郎" !>].
+
+; (MS 2005-09-29) I'm not sure if this is right:
+; わが町はまだ下水道が完備されていない。
+
+wagamachi-loc :=
+loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'wagamachi,
+ORTH <! "わが","町" !>].

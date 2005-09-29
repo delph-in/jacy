@@ -1369,7 +1369,7 @@ ORTH <! "不足" !>].
 
 gaman-vn :=
 vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gaman_vn_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gaman_s_rel,
 ORTH <! "我慢" !>].
 
 ;increase
@@ -28585,3 +28585,23 @@ o-machi-vn :=
 vn-trans1-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_matsu_vn_rel]],
 ORTH <! "お待ち" !>].
+
+haaku-chasen-vn :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_haaku_vn_rel]],
+ORTH <! "把","握" !>].
+
+;in kyoudai-all:
+
+shoujun-vn := vn-intrans-lex &
+[ORTH <! "照準" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_shoujun_s_rel].
+
+
+
+
+;in kyoudai-all:
+
+gaman-hiragana-vn := vn-trans1-lex &
+[ORTH <! "がまん" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_gaman_s_rel].

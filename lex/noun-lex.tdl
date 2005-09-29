@@ -4022,7 +4022,7 @@ ordinary-nohon-n-lex &
 [ORTH <! "発" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_hatsu_n_rel]].
 
-izure :=
+izure-hiragana-n :=
 ordinary-nohon-n-lex &
 [ORTH <! "いずれ" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_izure_n_rel]].
@@ -15307,10 +15307,11 @@ sessui_2 := ordinary-nohon-n-lex &
  ORTH <! "節水" !>].
 
 ; 接戦 
+; (MS 2005-09-29) There is a vn entry.
 
-sessen_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sessen_n_2_rel,
- ORTH <! "接戦" !>].
+;sessen_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sessen_n_2_rel,
+; ORTH <! "接戦" !>].
 
 ; 節電 
 
@@ -131079,8 +131080,8 @@ hikitsuduki_1 := ordinary-nohon-n-lex &
 ; 一つ 
 ; Used 49 times
 
-hitotsu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hitotsu_n_1_rel,
+hitotsu-n := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hitotsu_n_rel,
  ORTH <! "一つ" !>].
 
 ; 一人 
@@ -146228,3 +146229,60 @@ seisei-noun :=
 ordinary-nohon-n-lex &
 [ORTH <! "生成" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_seisei_n_rel]].
+
+mikan-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "ミカン" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_mikan_n_rel]].
+
+kotoshi-hiragana-n :=
+date-noun-adv-lex &
+[ORTH <! "ことし" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kotoshi_n_rel]].
+
+;in kyoudai-all
+shikata-hiragana-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "しかた" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_shikata_n_rel]].
+
+;in kyoudai-all
+ryuukan_n := ordinary-nohon-n-lex &
+[ORTH <! "流感" !>, SYNSEM.LKEYS.KEYREL.PRED '_ryuukan_n_rel].
+
+kare-hiragana :=
+pron-thirdsgmasc-ref-lex &
+[ORTH <! "かれ" !>].
+
+;in kyoudai-all:
+takoushiki-n := ordinary-nohon-n-lex &
+[ORTH <! "多項式" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_takoushiki_n_rel].
+
+;in kyoudai-all:
+shoujun-n := ordinary-nohon-n-lex &
+[ORTH <! "昇順" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_shoujun_n_rel].
+
+izure-n :=
+ordinary-nohon-n-lex &
+[ORTH <! "何れ" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_izure_n_rel]].
+
+tachi-hiragana-suffix := noun_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED '_tachi_n_suffix_rel,
+ ORTH <! "たち" !>].
+
+; spelling variant
+
+hitotsu-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hitotsu_n_rel,
+ ORTH <! "ひとつ" !>].
+
+
+; in kyoudai-all:
+
+razaanya-n := ordinary-nohon-n-lex &
+[ORTH <! "ラザーニャ" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_razaanya_n_rel].
+

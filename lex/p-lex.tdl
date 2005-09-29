@@ -1090,6 +1090,13 @@ niatatte-hiragana-varg := postp-lex-varg &
                        CONT.RELS <! [PRED '_niatatte_p_rel] !>],
          ORTH <! "にあたって" !>]. 
 
+; 周辺の地価のおよそ八倍の一平方メートルあたり五千六百円にまで
+
+atari-hiragana-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED '_atari_p_rel] !>],
+         ORTH <! "あたり" !>]. 
+
 ;"kaigi ga gogo  ni haitte  orimashite."
 ni-case := case-p-lex-np &
             [ORTH <! "に" !>,
@@ -2058,4 +2065,11 @@ zo := s-end1-decl-lex &
 
 zo-2 := s-end1-decl-lex &
        [ORTH <! "ぞ","〜" !>].
+
+; 周辺の地価のおよそ八倍の一平方メートルあたり五千六百円にまで
+
+atari-hiragana-narg := postp-lex &
+        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
+                       CONT.RELS <! [PRED '_atari_p_rel] !>],
+         ORTH <! "あたり" !>]. 
 
