@@ -400,11 +400,15 @@ inst_name_head :< name_head-avm.
 inst_name_head-avm := inst_name_head & 
                       [MOD null].
 
+; (MS-2005-09-30) Shouldn't the relation between a location name and an institution be a compound?
+; Maybe it should just be a noun: "アメリカ経済"
+
 loc_name_head :< name_head-avm.
 
 loc_name_head-avm := loc_name_head & 
-                     [MOD < [LOCAL.CAT.HEAD inst_name_head] >,
-                      J-POSTHEAD left].
+                     [MOD < [LOCAL.CAT.HEAD noun_head] >,
+                      J-POSTHEAD compound].
+
 
 product_name_head :< name_head-avm.
 
@@ -2871,8 +2875,8 @@ name-lex  := n-lex &
 person-name-lex := name-lex.
 
 
-surname-lex := person-name-lex & 
-                  [SYNSEM.LOCAL.CAT.HEAD surname_head-avm].
+surname-lex := person-name-lex & loc-or-surname-lex &
+                  [SYNSEM.LOCAL.CAT.HEAD surname_head].
 
 first_name-lex := person-name-lex & 
                   [SYNSEM.LOCAL.CAT.HEAD first_name_head-avm].
@@ -2887,11 +2891,11 @@ other_name-lex := person-name-lex &
 ippan-name-lex := name-lex & 
                   [SYNSEM.LOCAL.CAT.HEAD ippan_head-avm].
 
-loc_name-lex := name-lex & 
+loc_name-lex := loc-or-surname-lex & 
                 [SYNSEM.LOCAL [CAT.HEAD loc_name_head-avm]].
                                
 
-inst_name-lex := name-lex & 
+inst_name-lex := loc-or-surname-or-instname-lex &
                   [SYNSEM.LOCAL [CAT.HEAD inst_name_head-avm]].
                                
                    
@@ -2902,6 +2906,15 @@ agent-name-lex := name-lex &
 
 product-name-lex := name-lex &
                   [SYNSEM.LOCAL [CAT.HEAD product_name_head-avm]].
+
+; (MS 2005-09-30) Added types for names that can be ambiguous.
+
+loc-or-surname-or-instname-lex := name-lex &
+                  [SYNSEM.LOCAL [CAT.HEAD name_head & [J-POSTHEAD compound]]].
+
+loc-or-surname-lex :=  loc-or-surname-or-instname-lex.
+
+surname-or-instname-lex := loc-or-surname-or-instname-lex.
 
 ; (ERB 2001-11-07) Need a supertype for nominalizers that is
 ; like nouns but inherits from lexical_sign and not
@@ -3999,29 +4012,18 @@ title-lex  := n-lex &
                                AFFIX <! !>]]].
 
 
-;title-loc-lex :=  n-lex & 
+; (MS 2005-09-30) Let's try to do without this. title-inst-lex should work for locations as well.
+; title-loc-lex :=  n-lex & 
 ;                  [SYNSEM [LOCAL [CAT [HEAD title_head-avm,
 ;                                       VAL loc-title_sc & [COMPS #comps]],
 ;				  ARG-S #comps,
-;				  LKEYS.KEYREL.ARG0 #i,
 ;                                  CONT common-noun-sem-type &
 ;                                      [HOOK.INDEX #i,
-;				       RELS 1-dlist],
+;				       RELS <! #key !>],
 ;                                  BAR +],
+;			   LKEYS.KEYREL #key & [ARG0 #i],
 ;                           NON-LOCAL [QUE <! !>,
-;                                   AFFIX <! !>]]].     
-
- title-loc-lex :=  n-lex & 
-                  [SYNSEM [LOCAL [CAT [HEAD title_head-avm,
-                                       VAL loc-title_sc & [COMPS #comps]],
-				  ARG-S #comps,
-                                  CONT common-noun-sem-type &
-                                      [HOOK.INDEX #i,
-				       RELS <! #key !>],
-                                  BAR +],
-			   LKEYS.KEYREL #key & [ARG0 #i],
-                           NON-LOCAL [QUE <! !>,
-                                   AFFIX <! !>]]].                      
+;                                   AFFIX <! !>]]].                      
                                      
 ; (MS 2005-03-15) Institutions can attach to all kinds of names, like 田中大学。
 

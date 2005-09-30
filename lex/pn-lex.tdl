@@ -451,7 +451,7 @@ first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'keiko,
 ORTH <! "恵子" !>].
 
-keizai :=
+keizai-inst :=
 inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'keizai,
 ORTH <! "経済" !>].
@@ -3992,10 +3992,11 @@ adamusu-surname :=
         [SYNSEM.LKEYS.KEYREL.CARG 'adamusu,
          ORTH <! "アダムス" !>].
 
-furanshisu-firstname :=  
-        first_name-lex & 
-        [SYNSEM.LKEYS.KEYREL.CARG 'furanshisu,
-         ORTH <! "フランシス" !>].
+; (MS 2005-09-30) We have francis-firstname already.
+;furanshisu-firstname :=  
+;        first_name-lex & 
+;        [SYNSEM.LKEYS.KEYREL.CARG 'furanshisu,
+;         ORTH <! "フランシス" !>].
 
 osukaa-firstname :=  
         first_name-lex & 

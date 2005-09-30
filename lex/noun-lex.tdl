@@ -4664,18 +4664,18 @@ title-pers-honsubj-lex &
 ;  ORTH <! "¼ç" !>].
 
 
-keNkyuushitsu-inst :=
+keNkyuushitsu-title :=
 title-inst-lex &
 [ORTH <! "¸¦µæ¼¼" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kenkyuushitsu_n_rel].
 
-keNkyuushitsu-loc :=
-title-loc-lex &
-[ORTH <! "¸¦µæ¼¼" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_kenkyuushitsu_n_rel]].
+;keNkyuushitsu-loc :=
+;title-loc-lex &
+;[ORTH <! "¸¦µæ¼¼" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_kenkyuushitsu_n_rel]].
 
-keNkyuushitsu-chasen-loc :=
-title-loc-lex &
+keNkyuushitsu-chasen-title :=
+title-inst-lex &
 [ORTH <! "¸¦µæ","¼¼" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kenkyuushitsu_n_rel]].
 
@@ -4705,10 +4705,10 @@ title-pers-honsubj-lex &
 
 
 
-daigaku-loc :=
-title-loc-lex &
-[ORTH <! "Âç³Ø" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_daigaku_n_rel]].
+;daigaku-loc :=
+;title-loc-lex &
+;[ORTH <! "Âç³Ø" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_daigaku_n_rel]].
 
 daigaku-inst :=
 title-inst-lex &
@@ -4716,19 +4716,19 @@ title-inst-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_daigaku_n_rel]].
 
 gaidai :=
-title-loc-lex &
+title-inst-lex &
 [ORTH <! "³°Âç" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_gaidai_n_rel]].
 
 ; ±¡ (for small temples)
 
-in_2 := title-loc-lex &
+in_2 := title-inst-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_in_n_2_rel,
  ORTH <! "±¡" !>].
 
 
 shuu-title :=
-title-loc-lex &
+title-inst-lex &
 [ORTH <! "½£" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_shuu_n_rel]].
 

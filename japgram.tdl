@@ -538,10 +538,11 @@ head-adjunct-rule-final-i := hadj-final-i &
 
 ; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
 
-
+; (MS 2005-09-30) The BAR + status on this gave us problems when having nominal suffixes
+; in compounds, such as: "ศฦอัตกอั"
 
 head-adjunct-rule-first-i := hadj-first-i & 
-                      [SYNSEM.LOCAL [BAR +],
+                      [SYNSEM.LOCAL [BAR bool],
                         ARGS <[SYNSEM j-synsem], 
                               [SYNSEM.LOCAL [CAT.HEAD [J-POSTHEAD right, 
                                                        MAIN-PRD -],
