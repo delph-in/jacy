@@ -13543,7 +13543,7 @@ sutorikini-ne_n1 := ordinary-nohon-n-lex &
 ;ken_n2 := ordinary-nohon-n-lex &
 ;[ORTH <! "¸¦" !>, SYNSEM.LKEYS.KEYREL.PRED '_ken_n_2_rel].
 ken-loc :=
-title-loc-lex &
+title-inst-lex &
 [ORTH <! "¸¦" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_ken_n_rel]].
 
