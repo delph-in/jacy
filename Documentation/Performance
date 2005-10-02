@@ -13,24 +13,27 @@ Generate as follows:
 ====================
 PET (hinoki):
 -------------
-FIXME: maybe use a larger test set (1-2,000)
-
 Make sure:
  - you are using compatible versions of flop and cheap
  - your grammar is up-to-date:
-   flop japanese.tdl
 
+
+flop japanese.tdl 
 mv pet/qc.tdl pet/qc.tdl.old
 
-cat delphin/grammars/japanese/testsuites/hinoki-test-a.100 | \
-cheap -packing=7 -compute-qc=pet/qc.tdl japanese
+### Using the Ikehara kinou-shiken-bun
+grep -v '#' testsuites/mt-test-set-1.txt | chasen -F "%m " |\ 
+cheap -limit=100000 -packing -compute-qc=pet/qc.tdl japanese 
+flop japanese
 
+On one line:
+flop japanese.tdl; mv pet/qc.tdl pet/qc.tdl.old; grep -v '#' testsuites/mt-test-set-1.txt | chasen -F "%m " | cheap -packing -compute-qc=pet/qc.tdl japanese;  flop japanese.tdl
 
 ### can do this for vanilla, but need to have the chasen preprocessor
 cut -d@ -f 7 tsdb/skeletons/vanilla/item | cheap -compute-qc=pet/qc.tdl japanese
 
 After you have made the quick check file, you need to rebuild the grammar
-flop japanese.tdl
+
 
 Note: This is slow, as quick-check is, off course, turned off.  Flop
 is also slow at the moment.  Otherwise you should use the mode you
