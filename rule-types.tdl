@@ -1311,7 +1311,7 @@ vn2n-rule-super :=  n-lex-super & lex-rule &
 		     LKEYS.KEYREL #key],
 	     INFLECTED +,
 	     ORTH #stem,
-	     C-CONT [RELS <! #key & noun-arg1-relation &
+	     C-CONT [RELS <! #key & reg-nom-arg1-relation &
 			   [PRED 'noun-relation,
 			    LBL #nom-hand,
 			    ARG0 #arg0,
@@ -1969,22 +1969,22 @@ number-frag-rule-type := unary-type &
 ;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD topic-vmod-p_head, into vmod-p_head
 
 
-; pp-frag-rule-type := unary-type &
-; [ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
-;                             [ MOD null,
-; 			      EMPTY +,
-;                               SMOD marked ],
-;                        VAL saturated ],
-;                  CONT [ RELS #liszt,
-;                         HCONS #h-cons,
-;                         HOOK.INDEX #index ],
-;                  NUCL nucl_minus ],
-; 	  LEX -],
-;   ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
-;                                 VAL saturated ],
-;                           CONT [ RELS #liszt,
-;                                  HCONS #h-cons,
-;                                  HOOK.INDEX #index ]]].
+pp-frag-rule-type := unary-type &
+[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
+                            [ MOD null,
+			      EMPTY +,
+                              SMOD marked ],
+                       VAL saturated ],
+                 CONT [ RELS #liszt,
+                        HCONS #h-cons,
+                        HOOK.INDEX #index ],
+                 NUCL nucl_minus ],
+	  LEX -],
+  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head,
+                                VAL saturated ],
+                          CONT [ RELS #liszt,
+                                 HCONS #h-cons,
+                                 HOOK.INDEX #index ]]].
 
 
 ; (ERB 2002-01-14) This is overgenerating to cases of NP + Sentence ending

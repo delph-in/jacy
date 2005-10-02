@@ -415,3 +415,7 @@ wh-adv-sem-type := mod-id-wg-handel-mrs &
 num-cl-sem-type-super := mod-id-wg-handel-mrs.
 
 num-cl-sem-type := num-cl-sem-type-super.
+
+; (FCB 2005-10-02) added so that vn2n's can become adverbial PPs
+
+reg-nom-arg1-relation := reg-nom-relation & noun-arg1-relation.
