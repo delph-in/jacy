@@ -23476,3 +23476,18 @@ isect-adv-lex &
 [ORTH <! "あわせて" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_awasete_a_rel].
 
+;large-scale
+
+oogakari-adj := 
+na-adj-lex &
+[ORTH <! "大がかり" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_oogakari_a_rel].
+
+
+;superior; better
+
+yoriyoi-adj := 
+i-adj-stem-lex &
+[ORTH <! "より","よい" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_yorisoi_a_rel].
+

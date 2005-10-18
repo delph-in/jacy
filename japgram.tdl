@@ -541,11 +541,17 @@ head-adjunct-rule-final-i := hadj-final-i &
 ; (MS 2005-09-30) The BAR + status on this gave us problems when having nominal suffixes
 ; in compounds, such as: "汎用機用"
 
+; (MS 2005-10-18) So, we need prefix and suffix rules.
+
+; (MS 2005-10-06) Playing around with VAL saturated on the second argument, to avoid
+; spurious ambiguity in 前年三月
+
 head-adjunct-rule-first-i := hadj-first-i & 
-                      [SYNSEM.LOCAL [BAR bool],
+                      [SYNSEM.LOCAL.BAR +,
                         ARGS <[SYNSEM j-synsem], 
-                              [SYNSEM.LOCAL [CAT.HEAD [J-POSTHEAD right, 
-                                                       MAIN-PRD -],
+                              [SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD right, 
+							MAIN-PRD -],
+						  VAL saturated],
                                              BAR +]]>].
 
 ; (ERB 2001-11-28) Rule for scopal modifiers.
@@ -577,6 +583,30 @@ head-adjunct-rule-first-s := hadj-first-s &
 							MAIN-PRD -],
 						  VAL saturated ],
                                             BAR +]]>].
+
+; (MS 2005-10-18) Prefixes and suffixes have a different BAR status. When we want a prefixed noun
+; to  be in a compound, it should not be BAR +: "政界再編成"
+
+prefix-rule := hadj-final-i & 
+                      [C-CONT [RELS <! !>,
+                               HCONS <! !>],
+                       ARGS <[SYNSEM.LOCAL [CAT [HEAD noun_mod_head &
+						      [J-POSTHEAD left,
+                                                       ADJ -,
+                                                       MAIN-PRD -],
+                                                 VAL saturated],
+                                            BAR -]],
+                             [SYNSEM j-synsem & [LOCAL [BAR +]]]>].
+
+suffix-rule := hadj-first-i & 
+                      [ARGS <[SYNSEM j-synsem], 
+                             [SYNSEM.LOCAL [CAT [HEAD noun_mod_head &
+						      [J-POSTHEAD right, 
+						       MAIN-PRD -],
+						  VAL saturated],
+                                             BAR -]]>].
+
+
 
 ; (ERB 2001-11-26) The hallucinated topic-rel should take the MOD-IND
 ; of the head noun as its ARG3, not the INDEX.

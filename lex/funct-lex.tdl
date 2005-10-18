@@ -2253,3 +2253,35 @@ honno-det := det-lex &
  SYNSEM.LKEYS.KEYREL.PRED '_honno_q_rel].
 
 
+
+touzai-nmod :=
+noun_mod-lex-l &
+[ORTH <! "ÅìÀ¾" !>,
+SYNSEM.LKEYS.KEYREL.PRED 'touzai_n_rel].
+
+higashi-nmod :=
+noun_mod-lex-l &
+[ORTH <! "Åì" !>,
+SYNSEM.LKEYS.KEYREL.PRED 'higashi_n_rel].
+
+nishi-nmod :=
+noun_mod-lex-l &
+[ORTH <! "À¾" !>,
+SYNSEM.LKEYS.KEYREL.PRED 'nishi_n_rel].
+
+kita-nmod :=
+noun_mod-lex-l &
+[ORTH <! "kita" !>,
+SYNSEM.LKEYS.KEYREL.PRED 'kita_n_rel].
+
+minami-nmod :=
+noun_mod-lex-l &
+[ORTH <! "minami" !>,
+SYNSEM.LKEYS.KEYREL.PRED 'minami_n_rel].
+
+
+ikou-suffix := noun_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED '_ikou_n_suffix_rel,
+ ORTH <! "°Ê¹ß" !>].
+
+

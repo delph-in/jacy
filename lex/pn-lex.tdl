@@ -4183,3 +4183,28 @@ wagamachi-loc :=
 loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'wagamachi,
 ORTH <! "¤ï¤¬","Ä®" !>].
+
+;in kyoudai-all:
+
+washinton-name := loc-or-surname-lex &
+[ORTH <! "¥ï¥·¥ó¥È¥ó" !>, 
+ SYNSEM.LKEYS.KEYREL.CARG 'washington].
+
+;in kyoudai-all:
+
+oohashi-name := loc-or-surname-or-instname-lex &
+[ORTH <! "Âç¶¶" !>, 
+ SYNSEM.LKEYS.KEYREL.CARG 'oohashi].
+
+
+;in kyoudai-all:
+
+kokuzeikyoku := inst_name-lex &
+[ORTH <! "¹ñÀÇ¶É" !>, 
+ SYNSEM.LKEYS.KEYREL.CARG 'kokuzeikyoku].
+
+
+ibaraki-loc :=
+loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'ibaraki,
+ORTH <! "°ñ¾ë" !>].

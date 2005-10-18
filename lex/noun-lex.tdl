@@ -1393,8 +1393,11 @@ ordinary-nohon-n-lex &
 [ORTH <! "誠" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_makoto_n_rel]].
 
-matsu :=
-ordinary-nohon-n-lex &
+;MS 2005-10-06: This is rather a noun_mod-lex-r:
+; 今月末まで
+
+matsu-nmod :=
+noun_mod-lex-r &
 [ORTH <! "末" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_matsu_n_rel]].
 
@@ -146286,3 +146289,18 @@ razaanya-n := ordinary-nohon-n-lex &
 [ORTH <! "ラザーニャ" !>, 
  SYNSEM.LKEYS.KEYREL.PRED '_razaanya_n_rel].
 
+dake-nmod := noun_mod-lex-r &
+	  [SYNSEM.LKEYS.KEYREL.PRED '_dake_n_nmod_rel,
+	  ORTH <! "だけ" !>]. 
+
+bakari-nmod := noun_mod-lex-r &
+	  [SYNSEM.LKEYS.KEYREL.PRED '_bakari_n_nmod_rel,
+	  ORTH <! "ばかり" !>].
+
+kanari-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kanari_n_rel,
+ ORTH <! "かなり" !>].
+
+kyoukou-n := ordinary-nohon-n-lex &
+[ORTH <! "強硬" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kyoukou_n_rel]].

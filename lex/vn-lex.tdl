@@ -28605,3 +28605,15 @@ shoujun-vn := vn-intrans-lex &
 gaman-hiragana-vn := vn-trans1-lex &
 [ORTH <! "がまん" !>, 
  SYNSEM.LKEYS.KEYREL.PRED '_gaman_s_rel].
+
+
+;in kyoudai-all:
+
+hanyou_vn := vn-trans1-lex &
+[ORTH <! "汎用" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_hanyou_s_rel].
+
+ikkan-vn := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ikkan_vn_rel,
+ ORTH <! "一貫" !>].
+

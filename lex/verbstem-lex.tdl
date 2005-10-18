@@ -832,9 +832,11 @@ sakanoboru-stem :=  intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_sakanoboru_v_rel]],
                    ORTH <! "遡る" !>].
 
-; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
+; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex
+; (MS 2005-10-18) This should be transitive: 
+; "政府としては今後、苦しい対応を迫られることになりそうです。" 
 
-semaru-stem :=  intrans-c-stem-lex &
+semaru-stem :=  v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_semaru_v_rel]],
                    ORTH <! "迫る" !>].
 
@@ -22029,4 +22031,13 @@ kurihirogeru-stem-2 := v1-v-stem-lex &
 tsuriageru-stem-2 := v1-v-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsuriageru_v_2_rel,
  ORTH <! "吊り上げる" !>].
+
+aitsugu-hiragana-stem := intrans-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_aitsugu_v_rel]],
+ORTH <! "あいつぐ" !>].
+
+
+tsukkomu-hiragana-stem := v1-c-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tsukkomu_v_rel,
+ ORTH <! "つっこむ" !>].
 

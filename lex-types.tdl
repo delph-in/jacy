@@ -285,7 +285,8 @@ ordinary-or-date-noun_head := noun_head-avm.
 ordinary_noun_head := ordinary-or-date-noun_head.
 
 ;(MS 2001-12-14) changing J-SPEC in order to make something like GAKUSEI SAMA possible.
-; (MS 2005-07-04) I want to get rid of the compound-noun-rule, such that I give a value to MOD in noun_head-avm.
+; (MS 2005-07-04) I want to get rid of the compound-noun-rule, such that I give a value 
+;   to MOD in noun_head-avm.
 ; (was MOD null)
 
 ordinary_noun_head-avm := ordinary_noun_head & 
@@ -301,10 +302,17 @@ adj2n-suffix_noun_head := ordinary-or-date-noun_head.
 
 adj2n-suffix_noun_head-avm := adj2n-suffix_noun_head  & [MOD null, VN -].
 
+; (MS 2005-10-06) I use this for month names.
 
 date_noun_head := temporal-noun_head & ordinary-or-date-noun_head.
 
-date_noun_head-avm := date_noun_head & [MOD null, J-SPEC null].
+date_noun_head-avm := date_noun_head & [J-SPEC null, 
+					J-POSTHEAD right,
+					VN -,
+					MOD < [LOCAL intersective_mod & 
+						     [CAT [HEAD ordinary-or-date-noun_head,
+							   VAL saturated]],
+					       MODIFIED.PERIPH -] >].
 
 pron_head :< noun_head-avm.
 
@@ -2063,10 +2071,12 @@ adv-p-lex := vmod-p-lex &
 ; date-noun-adv-lex never to occur with に. In order to do so, I restrict 
 ; the adv-p-lex-np semantically to non-date-nouns and invent a second one 
 ; for date nouns.
+; (MS 2005-10-18) This is too strict. We cannot get results for relative sentences plus ni,
+; for example. So, we do a trick and use FIN to distinguish them.
 
 adv-p-lex-np :=  adv-p-lex & 
-            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST reg-nom-relation,
-						     CAT.HEAD noun_head]].
+            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head &
+							      [FIN +]]].
 
 adv-p-lex-date :=  adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST niarg-relation,
@@ -3568,7 +3578,7 @@ noun_mod-lex := lexical_sign-word &
 			    CONT simple-verb-sem-type &
 				[RELS <! #key !>,
                                  HCONS <! !>],
-                            BAR +],
+                            BAR -],
                      NON-LOCAL [QUE <! !>,
                              AFFIX <! !>]], 
              INFLECTED +].
@@ -4825,9 +4835,12 @@ han-lex := lexical_sign-word &
 ; The third is obligatory, and must occur right next to the head.
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-10-06) date_noun_head-avm instead of ordinary_noun_head-avm,
+; because the behaviour in compounds and adjuncts is different:
+; 今年三月
 
 date-lex := n-lex & 
-[ SYNSEM [ LOCAL [ CAT [ HEAD ordinary_noun_head-avm,
+[ SYNSEM [ LOCAL [ CAT [ HEAD date_noun_head-avm,
                          VAL [SPR.FIRST #spr &
 					[OPT + ,
 					LOCAL [ CAT.HEAD det_head,
@@ -5043,7 +5056,8 @@ date-noun-plusbar-lex := date-noun-lex &
 ; 去年、今月、毎日、本日
 
 date-noun-adv-lex := date-n-lex &
-[ SYNSEM.LKEYS.KEYREL non-future-date-relation ]. 
+[ SYNSEM [LOCAL.CAT.HEAD.FIN -,
+	  LKEYS.KEYREL non-future-date-relation ]]. 
 
 
 date-noun-adv-minusbar-lex := date-noun-adv-lex &

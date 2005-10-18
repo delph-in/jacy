@@ -546,6 +546,7 @@ de-advp-sub-4 := adv-p-lex-p &
                   ORTH <! "で" !>].
 
 
+
 ;"誰 でも 利用 でき ます か "
 demo := topic-nobj-lex &
 	         [SYNSEM.LOCAL [CAT.HEAD.PTYPE mo,
@@ -1090,12 +1091,7 @@ niatatte-hiragana-varg := postp-lex-varg &
                        CONT.RELS <! [PRED '_niatatte_p_rel] !>],
          ORTH <! "にあたって" !>]. 
 
-; 周辺の地価のおよそ八倍の一平方メートルあたり五千六百円にまで
 
-atari-hiragana-narg := postp-lex &
-        [SYNSEM.LOCAL [CAT.HEAD.PTYPE nitsuite,
-                       CONT.RELS <! [PRED '_atari_p_rel] !>],
-         ORTH <! "あたり" !>]. 
 
 ;"kaigi ga gogo  ni haitte  orimashite."
 ni-case := case-p-lex-np &
