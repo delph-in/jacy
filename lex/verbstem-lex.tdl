@@ -747,7 +747,10 @@ moushitsukaru-stem :=  v3-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_moushitsukaru_v_rel]],
                    ORTH <! "申し付かる" !>].
 
-naru-stem :=  v2a-c-stem-lex &
+; (MS 2005-10-20) We need this to be optional (v2 instead of v2a), because
+; otherwise we cannot parse "食べればならない"
+
+naru-stem :=  v2-c-stem-lex &
                  [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
                    ORTH <! "なる" !>].
 
@@ -9290,11 +9293,6 @@ tsukidasu_1 := intrans-c-stem-lex &
  ORTH <! "突き出す" !>].
 
 
-; 突っ込む 
-
-tsukkomu_1 := intrans-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tsukkomu_v_1_rel,
- ORTH <! "突っ込む" !>].
 
 ; 突っ張る 
 

@@ -562,9 +562,11 @@ word-rule &
                          FORMAL #form],
 	       BAR -]].
 
+; (MS 2005-10-20) ない can be ね as well as なけれ:
+; 軍事上の機密は守られねばならない。
 
 adj-kere-lexeme-infl-rule := 
-%suffix (い けれ)
+%suffix (い けれ) (ない ね)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-morph,
  ARGS.FIRST.STEMTYPE adj-stem,

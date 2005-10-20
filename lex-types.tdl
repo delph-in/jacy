@@ -6852,6 +6852,7 @@ v-sc-stem-lex := v-stem-lex &
 
 ; (MS 2005-05-24) Try to make the complement obligatory, to avoid ambiguity.
 ; as in 病気になる
+; (MS 2005-10-20) But this way, V-ばならない doesn't work any more!
 
 v-sc-n-stem-lex := v-sc-stem-lex &
  [SYNSEM [LOCAL [CAT [VAL ga-to-ni_transitive2 &

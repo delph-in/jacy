@@ -146304,3 +146304,18 @@ kanari-noun := ordinary-nohon-n-lex &
 kyoukou-n := ordinary-nohon-n-lex &
 [ORTH <! "¶¯¹Å" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kyoukou_n_rel]].
+
+;public
+
+kouteki-n := ordinary-nohon-n-lex &
+[ORTH <! "¸øÅª" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kouteki_n_rel]].
+
+;similarity
+
+douyou_n2 := ordinary-nohon-n-lex &
+[ORTH <! "Æ±ÍÍ" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_douyou_n_2_rel]].
+
+
+
