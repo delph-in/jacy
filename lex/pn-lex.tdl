@@ -3416,7 +3416,7 @@ inst_name-lex &
         [SYNSEM.LKEYS.KEYREL.CARG 'foma,
 	  ORTH <! "フォーマ" !>].
 
-meguro-locname-locname :=
+meguro-locname :=
 loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'meguro,
 ORTH <! "目黒" !>].
@@ -4208,3 +4208,15 @@ ibaraki-loc :=
 loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'ibaraki,
 ORTH <! "茨城" !>].
+
+baker-surname := surname-lex & 
+        [SYNSEM.LKEYS.KEYREL.CARG 'baker,
+         ORTH <! "ベーカー" !>].
+
+
+
+;Czechoslovakia
+
+czechoslovakia-locname := loc_name-lex &
+		       [SYNSEM.LKEYS.KEYREL.CARG 'czechoslovakia,
+		        ORTH <! "チェコスロバキア" !>].

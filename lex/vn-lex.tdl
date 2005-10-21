@@ -28612,3 +28612,10 @@ ikkan-vn := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikkan_s_rel,
  ORTH <! "°ì´Ó" !>].
 
+;welcome
+
+kantai-vn :=  vn-trans1-lex &
+	  [SYNSEM.LKEYS.KEYREL.PRED '_kantai_s_rel,
+	  ORTH <! "´¿ÂÔ" !>].
+
+

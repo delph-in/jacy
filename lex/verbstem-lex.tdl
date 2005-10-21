@@ -21792,32 +21792,32 @@ iu-stem-intrans  :=  intrans-c-stem-lex &
 
 ;(CH 2005-04-09)
 owaru-syn-vv-raising-stem := syn-vv-raising-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'owaru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_owaru_rais_rel]],
  ORTH <! "終わる" !> ].
 
 ;(CH 2005-04-09)
 kakeru-hiragana-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'kakeru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kakeru_rais_rel]],
  ORTH <! "かける" !> ].
 
 ;(CH 2005-04-09)
 dasu-hiragana-syn-vv-raising-stem := syn-vv-raising-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'dasu_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_dasu_rais_rel]],
  ORTH <! "だす" !> ].
 
 ;(CH 2005-04-09)
 dasu-syn-vv-raising-stem := syn-vv-raising-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'dasu_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_dasu_rais_rel]],
  ORTH <! "出す" !> ].
 
 ;(CH 2005-04-09)
 sugiru-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'sugiru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sugiru_rais_rel]],
  ORTH <! "過ぎる" !> ].
 
 ;(CH 2005-04-09)
 eru-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'eru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_eru_rais_rel]],
  ORTH <! "得る" !> ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -21826,26 +21826,26 @@ eru-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
 
 ;(CH 2005-04-09)
 hajimeru-syn-vv-raising-kanji-stem := syn-vv-raising-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_hajimeru_rais_rel]],
  ORTH <! "始める" !> ].
 
 hajimeru-syn-vv-raising-hira-stem := syn-vv-raising-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_hajimeru_rais_rel]],
  ORTH <! "はじめる" !>].
 
 ;(CH 2005-04-09)
 tsudukeru-syn-vv-raising-stem := syn-vv-raising-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'tsudukeru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsudukeru_rais_rel]],
  ORTH <! "続ける" !> ].
 
 ;(CH 2005-04-09)
 makuru-hiragana-syn-vv-raising-stem := syn-vv-raising-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'makuru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_makuru_rais_rel]],
  ORTH <! "まくる" !> ].
 
 ;(CH 2005-04-09)
 kiru-hiragana-syn-vv-raising-stem := syn-vv-raising-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'kiru_rais]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kiru_rais_rel]],
  ORTH <! "きる" !> ].
 
 ;;;;;;;;;;;;;;;;;;;;
@@ -21854,47 +21854,47 @@ kiru-hiragana-syn-vv-raising-stem := syn-vv-raising-c-stem-lex &
 
 ;(CH 2005-04-09)
 sobireru-hiragana-syn-vv-control-stem := syn-vv-control-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'sobireru_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sobireru_ctrl_rel]],
  ORTH <! "そびれる" !> ].
 
 ;(CH 2005-04-09)
 sokoneru-hiragana-syn-vv-control-stem := syn-vv-control-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'sokoneru_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sokoneru_ctrl_rel]],
  ORTH <! "そこねる" !> ].
 
 ;(CH 2005-04-09)
 sokoneru-syn-vv-control-stem := syn-vv-control-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'sokoneru_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sokoneru_ctrl_rel]],
  ORTH <! "損ねる" !> ].
 
 ;(CH 2005-04-09)
 sokonau-hiragana-syn-vv-control-stem := syn-vv-control-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'sokonau_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sokonau_ctrl_rel]],
  ORTH <! "そこなう" !> ].
 
 ;(CH 2005-04-09)
 sokonau-syn-vv-control-stem := syn-vv-control-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'sokonau_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sokonau_ctrl_rel]],
  ORTH <! "損なう" !> ].
 
 ;(CH 2005-04-09)
 okureru-syn-vv-control-stem := syn-vv-control-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'okureru_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_okureru_ctrl_rel]],
  ORTH <! "遅れる" !> ].
 
 ;(CH 2005-04-09)
 akiru-syn-vv-control-stem := syn-vv-control-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'akiru_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_akiru_ctrl_rel]],
  ORTH <! "飽きる" !> ].
 
 ;(CH 2005-04-09)
 tsukeru-hiragana-syn-vv-control-stem := syn-vv-control-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'tsukeru_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsukeru_ctrl_rel]],
  ORTH <! "つける" !> ].
 
 ;(CH 2005-04-09)
 kaneru-hiragana-syn-vv-control-stem := syn-vv-control-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'kaneru_ctrl]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kaneru_ctrl_rel]],
  ORTH <! "かねる" !> ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -21914,37 +21914,37 @@ kaneru-hiragana-syn-vv-control-stem := syn-vv-control-v-stem-lex &
 
 ;(CH 2005-04-09)
 tsukusu-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'tsukusu_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsukusu_vemb_rel]],
  ORTH <! "尽くす" !> ].
 
 ;(CH 2005-04-09)
 nuku-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'nuku_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_nuku_vemb_rel]],
  ORTH <! "抜く" !> ].
 
 ;(CH 2005-04-09)
 oeru-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'oeru_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_oeru_vemb_rel]],
  ORTH <! "終える" !> ].
 
 ;(CH 2005-04-09)
 wasureru-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'wasureru_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_wasureru_vemb_rel]],
  ORTH <! "忘れる" !> ].
 
 ;(CH 2005-04-09)
 naosu-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'naosu_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_naosu_vemb_rel]],
  ORTH <! "直す" !> ].
 
 ;(CH 2005-04-09)
 nokosu-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'nokosu_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_nokosu_vemb_rel]],
  ORTH <! "残す" !> ].
 
 ;(CH 2005-04-09)
 au-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'au_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_au_vemb_rel]],
  ORTH <! "合う" !> ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -21953,27 +21953,27 @@ au-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
 
 ;(CH 2005-04-09)
 hajimeru-syn-vv-intrans-vbar-kanji-stem := syn-vv-intrans-vbar-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_hajimeru_vemb_rel]],
  ORTH <! "始める" !> ].
 
 hajimeru-syn-vv-intrans-vbar-hira-stem := syn-vv-intrans-vbar-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'hajimeru_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_hajimeru_vemb_rel]],
  ORTH <! "はじめる" !>].
 
 
 ;(CH 2005-04-09)
 tsudukeru-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'tsudukeru_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsudukeru_vemb_rel]],
  ORTH <! "続ける" !> ].
 
 ;(CH 2005-04-09)
 makuru-hiragana-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'makuru_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_makuru_vemb_rel]],
  ORTH <! "まくる" !> ].
 
 ;(CH 2005-04-09)
 kiru-hiragana-syn-vv-intrans-vbar-stem := syn-vv-intrans-vbar-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'kiru_vemb]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kiru_vemb_rel]],
  ORTH <! "きる" !> ].
 
 taberu-hiragana-stem := v1-v-stem-lex &
@@ -21982,7 +21982,7 @@ taberu-hiragana-stem := v1-v-stem-lex &
 ORTH <! "たべる" !>].
 
 sugiru-syn-vv-raising-hiragana-stem := syn-vv-raising-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED 'sugiru_rais_v_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sugiru_rais_v_rel]],
  ORTH <! "すぎる" !> ].
 
 

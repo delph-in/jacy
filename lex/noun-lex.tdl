@@ -4646,17 +4646,20 @@ sochira_1 := pron-loc-ref-lex &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;TITLE;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-sama := 
+sama-title := 
 title-pers-honsubj-lex &
-[ORTH <! "ÍÍ" !>].
+[ORTH <! "ÍÍ" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_sama_n_rel].
 
-sama-hiragana := 
+sama-hiragana-title := 
 title-pers-honsubj-lex &
-[ORTH <! "¤µ¤Þ" !>].
+[ORTH <! "¤µ¤Þ" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_sama_n_rel].
 
-dono := 
+dono-title := 
 title-pers-honsubj-lex &
-[ORTH <! "ÅÂ" !>].
+[ORTH <! "ÅÂ" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_dono_n_rel].
 
 
 ;; ¼ç 
@@ -4684,27 +4687,33 @@ SYNSEM.LKEYS.KEYREL [PRED '_kenkyuushitsu_n_rel]].
 
 kyouju-title :=
 title-pers-honsubj-lex &
-[ORTH <! "¶µ¼ø" !>].
+[ORTH <! "¶µ¼ø" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_kyouju_n_rel].
 
 saN-title :=
 title-pers-honsubj-lex &
-[ORTH <! "¤µ¤ó" !>].
+[ORTH <! "¤µ¤ó" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_san_n_rel].
 
-shi_2_2 := 
+shi-title := 
 title-pers-honsubj-lex &
-[ORTH <! "»á" !>].
+[ORTH <! "»á" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_shi_n_rel].
 
-kuN :=
+kuN-title :=
 title-pers-minus-honsubj-lex &
-[ORTH <! "·¯" !>].
+[ORTH <! "·¯" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_kun_n_rel].
 
 seNsei-title :=
 title-pers-honsubj-lex &
-[ORTH <! "ÀèÀ¸" !>].
+[ORTH <! "ÀèÀ¸" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_sensei_n_rel].
 
-shi-title :=
+shi-title-2 :=
 title-pers-honsubj-lex &
-[ORTH <! "»Õ" !>].
+[ORTH <! "»Õ" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_shi_n_2_rel].
 
 
 
@@ -146318,4 +146327,27 @@ douyou_n2 := ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_douyou_n_2_rel]].
 
 
+;one-to-one
 
+ichi-tai-ichi :=
+ordinary-nohon-n-lex &
+[ORTH <! "£±","ÂÐ","£±" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ichitaiichi_n_rel]].
+
+;page
+
+peeji-kanji-n := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_peeji_n_rel,
+ORTH <! "ÊÇ" !>].
+
+
+bakari-pred :=
+nom-pred-lex &
+[ORTH <! "¤Ð¤«¤ê" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_bakari_n_rel]].
+
+;Secretary of State
+
+kokumuchoukan-title := title-pers-honsubj-lex &
+		    [ORTH <! "¹ñÌ³","Ä¹´±" !>,
+		     SYNSEM.LKEYS.KEYREL.PRED '_kokumuchoukan_n_title_rel].

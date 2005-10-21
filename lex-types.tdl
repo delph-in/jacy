@@ -704,11 +704,14 @@ empty-nmod-p_head := nmod-p_head-avm &
                       MOD < [LOCAL.BAR -] >,
                       COP-ARG -].
 
+; (MS 2005-10-21) "C-MOD < [MODIFIED.PERIPH -]" prevents the case of compounds in conjunctions.
+; Changing that.
+
 n_conj_head := p_head-avm & [MOD null,
                              CASE con,
                              PTYPE to,
                              J-SPEC null,
-                             C-MOD < [MODIFIED.PERIPH -] >].
+                             C-MOD < [MODIFIED.PERIPH bool] >].
 
 
 
@@ -4044,12 +4047,13 @@ title-inst-lex := title-lex &
 
 
 
-; (MS 2001-12-14) Changing the SPR from pn_head to noun_head, because some titles (sama) can be attached to functions. e.g. GAKUSEI SAMA. 
+; (MS 2001-12-14) Changing the SPR from pn_head to noun_head, because some titles (sama) can be attached to functions. 
+; e.g. GAKUSEI SAMA. 
+; (MS 2005-10-21) I want the title to have its own pred: it's a difference between "san" and "shachou"!
 
 title-pers-lex := title-lex & 
 [SYNSEM [LOCAL.CAT.VAL.SPR obl-1-arg &
-			   [FIRST [LOCAL [CAT.HEAD noun_head]]],
-	 LKEYS.KEYREL [PRED 'title]]].
+			   [FIRST [LOCAL [CAT.HEAD noun_head]]]]].
 
 
 title-pers-honsubj-lex := title-pers-lex &
