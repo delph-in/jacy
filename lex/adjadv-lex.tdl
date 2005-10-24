@@ -23491,3 +23491,15 @@ i-adj-stem-lex &
 [ORTH <! "より","よい" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_yorisoi_a_rel].
 
+
+; (MS 2005-10-24): "一部破壊されている。"
+
+ichibu-adv :=
+scopal-adv-regular-lex &
+[ORTH <! "一部" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_ichibu_a_rel].
+
+mezamashii_hiragana := i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_mezamashii_a_1_rel,
+ ORTH <! "めざましい" !>].
+

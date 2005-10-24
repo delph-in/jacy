@@ -1666,6 +1666,11 @@ nichikan_numcl := num-cl-spr-only-meas-lex &
 
 ;;; Arabic Numerals
 
+
+zero_card := card_1_no_valence &
+[ SYNSEM.LKEYS.KEYREL.CARG "0",
+  ORTH <! "£°" !>].
+
 one_card := card_ichi_no_valence &
 [ ORTH <! "£±" !>].
 

@@ -16068,7 +16068,7 @@ baizou_1 := vn-intrans-lex &
 ; Used 4 times
 
 hakai_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hakai_s_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hakai_s_inchoative_rel,
  ORTH <! "ÇË²õ" !>].
 
 ; Ë½Ïª 
@@ -19045,7 +19045,7 @@ baizou_2 := vn-trans1-lex &
 ; Used 4 times
 
 hakai_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hakai_s_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hakai_s_cause_rel,
  ORTH <! "ÇË²õ" !>].
 
 ; Ë½Ïª 

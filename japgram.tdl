@@ -1079,3 +1079,4 @@ pp-frag := frag-pp-rule.
 ;scp-adv-frag := frag-scp-adv-rule.
 int-adv-frag := frag-int-adv-rule.
 pp-np-frag := frag-pp-np-rule.
+pp-int-frag := frag-pp-int-rule.

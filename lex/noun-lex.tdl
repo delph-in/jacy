@@ -146351,3 +146351,14 @@ SYNSEM.LKEYS.KEYREL [PRED '_bakari_n_rel]].
 kokumuchoukan-title := title-pers-honsubj-lex &
 		    [ORTH <! "国務","長官" !>,
 		     SYNSEM.LKEYS.KEYREL.PRED '_kokumuchoukan_n_title_rel].
+
+; (MS 2005-10-24): "すべての学科の単位を取った。"
+
+subete-n := ordinary-nohon-n-lex &
+[ORTH <! "すべて" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_subete_n_rel]].
+
+seijou_noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_seijou_n_normality_rel,
+ ORTH <! "正常" !>].
+

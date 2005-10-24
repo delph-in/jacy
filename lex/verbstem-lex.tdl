@@ -8670,10 +8670,11 @@ yukitsuku_1 := intrans-c-stem-lex &
 
 
 ; 行き詰まる 
+; (MS 2005-10-24) there is already ikidumaru.
 
-yukidumaru_1 := intrans-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yukidumaru_v_1_rel,
- ORTH <! "行き詰まる" !>].
+;yukidumaru_1 := intrans-c-stem-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_yukidumaru_v_1_rel,
+; ORTH <! "行き詰まる" !>].
 
 ; 行き届く 
 ; Used 2 times
