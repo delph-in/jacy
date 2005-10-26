@@ -146298,9 +146298,6 @@ razaanya-n := ordinary-nohon-n-lex &
 [ORTH <! "•È•∂°º•À•„" !>, 
  SYNSEM.LKEYS.KEYREL.PRED '_razaanya_n_rel].
 
-dake-nmod := noun_mod-lex-r &
-	  [SYNSEM.LKEYS.KEYREL.PRED '_dake_n_nmod_rel,
-	  ORTH <! "§¿§±" !>]. 
 
 bakari-nmod := noun_mod-lex-r &
 	  [SYNSEM.LKEYS.KEYREL.PRED '_bakari_n_nmod_rel,
@@ -146362,3 +146359,21 @@ seijou_noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_seijou_n_normality_rel,
  ORTH <! "¿µæÔ" !>].
 
+
+;sparsity
+
+kishou-n := ordinary-nohon-n-lex  &
+[SYNSEM.LKEYS.KEYREL.PRED '_kishou_n_rel,
+ ORTH <! "¥ıæØ" !>].
+
+;"∏©§Œ£≥ ¨§Œ£±§ŒÃÃ¿—"
+
+sanbunnoichi-n := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sanbunnoichi_n_rel,
+ ORTH <! "£≥"," ¨§Œ","£±" !>].
+
+;woodland
+
+shinrinchitai-n := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shinrinchitai_n_rel,
+ ORTH <! "øπŒ”√œ¬”" !>].

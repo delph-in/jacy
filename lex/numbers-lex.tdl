@@ -2081,3 +2081,21 @@ hekutopasukaru_numcl_alphabet := num-cl-spr-only-meas-lex &
 nenkan_numcl := num-cl-spr-only-meas-lex &
 [ ORTH <! "Ç¯´Ö" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_nenkan_numcl_rel].
+
+
+zero_card2 := card_2_spr_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "0",
+  ORTH <! "£°" !>].
+
+chichibuorimon-name := inst_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'chichibu,
+ORTH <! "ÃáÉã","¿¥Êª" !>].
+
+one_card4 := card_4_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "1000",
+  ORTH <! "£±" !>].
+
+hundred_card3 := card_3_spr_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "100",
+  ORTH <! "£°","£°" !>].
+

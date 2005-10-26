@@ -1588,6 +1588,15 @@ to-advp-exh-1  := adv-p-lex-np &
                                     CONT.RELS <! [PRED '_to_p_with_rel] !>],
                       ORTH <! "と" !>].
 
+
+; "日本の庭園を内容とする写真集がある。"
+
+to-advp-nonexh  := adv-p-lex-np & 
+                     [SYNSEM.LOCAL [CAT.HEAD [PTYPE to,
+                                             MOD < [LOCAL.CAT [VAL.COMPS 1-list]] >],
+                                    CONT.RELS <! [PRED '_to_p_with_rel] !>],
+                      ORTH <! "と" !>].
+
 ;"seNsei to teNjikai o goissho sasete itadaku."
 to-advp-exh-4  := adv-p-lex-p & 
                      [SYNSEM.LOCAL [CAT [HEAD [PTYPE to,

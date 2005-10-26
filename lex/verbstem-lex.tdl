@@ -22040,3 +22040,10 @@ tsukkomu-hiragana-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tsukkomu_v_rel,
  ORTH <! "つっこむ" !>].
 
+
+;entitle
+	   
+daisuru-vstem :=  v7-kurusuru-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_aisuru_v_rel,
+ ORTH <! "題する" !>].
+

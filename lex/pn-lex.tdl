@@ -4220,3 +4220,10 @@ baker-surname := surname-lex &
 czechoslovakia-locname := loc_name-lex &
 		       [SYNSEM.LKEYS.KEYREL.CARG 'czechoslovakia,
 		        ORTH <! "チェコスロバキア" !>].
+
+;Federation of Economic Organizations
+
+keidanren-name := inst_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'keidanren,
+ORTH <! "経団連" !>].
+

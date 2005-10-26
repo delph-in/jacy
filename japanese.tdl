@@ -30,7 +30,7 @@
 
 :begin :instance :status lex-entry.
 :include "lex/lexicon.tdl".
-:include "lex/kyoudai-all.tdl".
+;;:include "lex/kyoudai-all.tdl".
 ; :include "lex/adjadv-lex.tdl".
 ; :include "lex/aux-stem-lex.tdl".
 ; :include "lex/funct-lex.tdl".

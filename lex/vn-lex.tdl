@@ -22834,7 +22834,7 @@ shingi_1 := vn-trans1-lex &
 ; Used 6 times
 
 shinkou_1_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shinkou_s_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shinkou_s_2_rel,
  ORTH <! "¿®¶Ä" !>].
 
 
@@ -28619,3 +28619,13 @@ kantai-vn :=  vn-trans1-lex &
 	  ORTH <! "´¿ÂÔ" !>].
 
 
+
+;living
+
+seisoku-vn := vn-trans2-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_seisoku_s_rel,
+ORTH <! "À³Â©" !>].
+
+shinkou-vn := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shinkou_s_emerging_rel,
+ORTH <! "¿¶¶½" !>].
