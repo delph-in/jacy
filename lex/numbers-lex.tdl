@@ -2099,3 +2099,34 @@ hundred_card3 := card_3_spr_only &
 [ SYNSEM.LKEYS.KEYREL.CARG "100",
   ORTH <! "£°","£°" !>].
 
+ni_card_twenty := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "20",
+  ORTH <! "£²" !>].
+
+san_card_thirty := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "30",
+  ORTH <! "£³" !>].
+
+yon_card_forty := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "40",
+  ORTH <! "£´" !>].
+
+go_card_fifty := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "50",
+  ORTH <! "£µ" !>].
+
+roku_card_sixty := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "60",
+  ORTH <! "£¶" !>].
+
+shichi_card_seventy := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "70",
+  ORTH <! "£·" !>].
+
+hachi_card_eighty := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "80",
+  ORTH <! "£¸" !>].
+
+kyuu_card_ninety := card_2_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "90",
+  ORTH <! "£¹" !>].

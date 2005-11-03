@@ -4227,3 +4227,23 @@ keidanren-name := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'keidanren,
 ORTH <! "経団連" !>].
 
+
+shimanaikadaigaku-instname := inst_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'shimanaikadaigaku,
+ORTH <! "島根医科大学" !>].
+
+yanaaefu-pn := surname-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'yanaaefu,
+ORTH <! "ヤナーエフ" !>].
+
+takeshita-pn := surname-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'takeshita,
+ORTH <! "竹下" !>].
+
+anman-locname := loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'anman,
+ORTH <! "アンマン" !>].
+
+nihonkoukuu-instname := inst_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'nihonkoukuu,
+ORTH <! "日本航空" !>].

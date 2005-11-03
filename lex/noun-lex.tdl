@@ -22,7 +22,7 @@ keNtou-guess :=
 ordinary-nohon-n-lex &
 [ORTH <! "見当" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kentou_n_rel]].
-
+ 
 idou-difference :=
 ordinary-nohon-n-lex &
 [ORTH <! "異同" !>,
@@ -16499,9 +16499,9 @@ chouka_2 := ordinary-nohon-n-lex &
 
 ; 直進 
 
-chokushin_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chokushin_n_2_rel,
- ORTH <! "直進" !>].
+;chokushin_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chokushin_n_2_rel,
+; ORTH <! "直進" !>].
 
 ; 直属 
 ; Used 1 times
@@ -146377,3 +146377,47 @@ sanbunnoichi-n := ordinary-nohon-n-lex &
 shinrinchitai-n := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shinrinchitai_n_rel,
  ORTH <! "森林地帯" !>].
+
+
+;organism
+seitai_organism-noun := ordinary-nohon-n-lex &
+[ORTH <! "生体" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_seitai_n_organism_rel]].
+
+;clerk
+
+kyokuin-noun := ordinary-nohon-n-lex &
+[ORTH <! "局員" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kyokuin_n_rel]].
+
+;Japanese Yen
+
+nihonen-noun := ordinary-nohon-n-lex &
+[ORTH <! "日本円" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_nihonen_n_rel]].
+
+;employee, servant
+
+juugyouin-noun := ordinary-nohon-n-lex &
+[ORTH <! "従業","員" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_juugyouin_n_rel]].
+
+
+zenmae-noun := date-noun-lex &
+[ORTH <! "全","前" !>, 
+SYNSEM.LKEYS.KEYREL.PRED '_zenmae_n_rel].
+
+;vertical
+
+enchoku-noun := ordinary-nohon-n-lex &
+[ORTH <! "鉛直" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_enchoku_n_rel]].
+
+
+kamigata-noun := ordinary-nohon-n-lex &
+[ORTH <! "上方" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kamikgata_n_up_rel]].
+
+tousoku-noun := ordinary-nohon-n-lex &
+[ORTH <! "等","速" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_tousoku_n_rel]].

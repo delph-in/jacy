@@ -10568,8 +10568,9 @@ chokin_1 := vn-intrans-lex &
  ORTH <! "Ãù¶â" !>].
 
 ; Ä¾¿Ê 
+;rectilinear
 
-chokushin_1 := vn-intrans-lex &
+chokushin_vn := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_chokushin_s_1_rel,
  ORTH <! "Ä¾¿Ê" !>].
 
@@ -28629,3 +28630,17 @@ ORTH <! "À³Â©" !>].
 shinkou-vn := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shinkou_s_emerging_rel,
 ORTH <! "¿¶¶½" !>].
+
+
+;tv performance
+
+terebishutsuen-vn := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_terebishutsuen_s_rel,
+ORTH <! "£Ô£Ö","½Ð±é" !>].
+
+;foreign travel
+
+gaiyuu-vn := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_gaiyuu_s_rel,
+ORTH <! "³°Í·" !>].
+

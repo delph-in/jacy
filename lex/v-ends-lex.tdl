@@ -104,10 +104,10 @@ dari-end := v-coord-end-lex &
 
 ; (ERB 2001-11-12) Experimenting with making te form TENSE tensed
 ; instead of TENSE te.
+; (MS 2005-11-03) This should not be AHON -, otherwise it does not conjoin!
 
 te-end := v-te-end-lex &
            [ORTH <! "¤Æ" !>,
-	    SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
             LMORPH-BIND-TYPE t-morph].
 
 de-end := v-te-end-lex &
