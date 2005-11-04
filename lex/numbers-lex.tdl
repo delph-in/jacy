@@ -2130,3 +2130,7 @@ hachi_card_eighty := card_2_object_only &
 kyuu_card_ninety := card_2_object_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "90",
   ORTH <! "£¹" !>].
+
+sha-numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "¼Ò" !>].
+

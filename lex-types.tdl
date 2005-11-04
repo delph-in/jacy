@@ -303,14 +303,15 @@ adj2n-suffix_noun_head := ordinary-or-date-noun_head.
 adj2n-suffix_noun_head-avm := adj2n-suffix_noun_head  & [MOD null, VN -].
 
 ; (MS 2005-10-06) I use this for month names.
+; (MS 2005-11-04) I date nouns to occur in compounds, such as "Ëè½µÅÚÍËÆü"
 
 date_noun_head := temporal-noun_head & ordinary-or-date-noun_head.
 
 date_noun_head-avm := date_noun_head & [J-SPEC null, 
-					J-POSTHEAD right,
+					J-POSTHEAD compound,
 					VN -,
 					MOD < [LOCAL intersective_mod & 
-						     [CAT [HEAD ordinary-or-date-noun_head,
+						     [CAT [HEAD noun_head-avm,
 							   VAL saturated]],
 					       MODIFIED.PERIPH -] >].
 
@@ -426,9 +427,11 @@ product_name_head-avm := product_name_head &
 temp_numeral_head :< temporal-noun_head.
 
 
+; (MS 2005-11-04) Found examples for compounds of temp_numerals and noun (vn): "¿¼Ìë±Ä¶È"
+; changing the MOD null value.
 
 temp_numeral_head-avm :=  temp_numeral_head & 
-                      [MOD null].
+                      [MOD < [LOCAL.CAT.HEAD noun_head] >].
 
 ; (ERB 2001-08-07) Redoing numeral classifiers...
 ; (ERB 2001-08-07) Copying constraints from expanded def of old
@@ -2852,7 +2855,7 @@ dofm-n-lex := day-lex &
 
 
 mofy-n-lex := day-lex & 
-               [SYNSEM [LOCAL.CAT.HEAD temp_numeral_head-avm,
+               [SYNSEM [LOCAL.CAT.HEAD temp_numeral_head-avm & [J-POSTHEAD compound],
 			LKEYS.KEYREL mofy-relation    ]].
 
 relational-n-lex := n-lex &
@@ -2966,10 +2969,11 @@ temp_numeral-basic-lex  := n-lex &
 
 
 temp_numeral-lex := temp_numeral-basic-lex &
-                    [SYNSEM [LOCAL.CONT common-noun-sem-type &
+                    [SYNSEM [LOCAL [CAT.HEAD.J-POSTHEAD compound,
+				    CONT common-noun-sem-type &
                                         [RELS <! #key !>,
 					 HOOK.INDEX #i,
-                                         HCONS <! !>],
+                                         HCONS <! !>]],
 			     LKEYS.KEYREL #key & [ARG0 #i]]].
 
 temp_numeral-whq-lex := temp_numeral-lex &

@@ -28644,3 +28644,7 @@ gaiyuu-vn := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_gaiyuu_s_rel,
 ORTH <! "³°Í·" !>].
 
+dokujikaihatsu-vn := vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_dokujikaihatsu_s_rel]],
+ORTH <! "ÆÈ¼«","³«È¯" !>].
+

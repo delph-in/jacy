@@ -108742,8 +108742,9 @@ maigou_1 := ordinary-nohon-n-lex &
  ORTH <! "毎号" !>].
 
 ; 毎週 
+; (MS 2005-11-04) This should be date-noun-lex : "毎週土曜日だ"
 
-maishuu_1 := ordinary-nohon-n-lex &
+maishuu_1 := date-noun-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_maishuu_n_1_rel,
  ORTH <! "毎週" !>].
 
@@ -115161,10 +115162,10 @@ yajirushi_1 := ordinary-nohon-n-lex &
 
 ; 社 
 ; Used 7 times
-
-yashiro_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yashiro_n_1_rel,
- ORTH <! "社" !>].
+; (MS 2005-11-04) double entry (sha_1)
+;yashiro_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_yashiro_n_1_rel,
+; ORTH <! "社" !>].
 
 ; やじろべえ 
 
@@ -146421,3 +146422,13 @@ SYNSEM.LKEYS.KEYREL [PRED '_kamikgata_n_up_rel]].
 tousoku-noun := ordinary-nohon-n-lex &
 [ORTH <! "等","速" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_tousoku_n_rel]].
+
+; circumference, surroundings, circulation
+
+mawari-noun := ordinary-nohon-n-lex &
+[ORTH <! "回り" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_mawari_n_surroundings_rel].
+
+indian-noun := ordinary-nohon-n-lex &
+[ORTH <! "インデアン" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_indian_n_rel].
