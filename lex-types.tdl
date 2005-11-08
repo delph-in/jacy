@@ -7907,6 +7907,7 @@ light-obj-id-shon-kurusuru-stem-lex := light-obj-id-shon-stem-lex & [STEMTYPE ku
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-11-17) Some aspect auxiliaries add a relation (見る, みせる)
+; (MS 2005-11-08) The aspect is modal in all cases.
 
  complex-aspect-stem-lex  := aux-top-stem-lex &
 [SYNSEM [LOCAL [CAT [VAL aspect_transitive &
@@ -7920,7 +7921,7 @@ light-obj-id-shon-kurusuru-stem-lex := light-obj-id-shon-stem-lex & [STEMTYPE ku
 					LBL #chand,
 					ARG0 #oindex,
 					MARG #soa] !>,
-                     HOOK.INDEX #event,
+                     HOOK.INDEX #event & [E.ASPECT modal],
                      HCONS <! qeq & [LARG #ohand,
                                       HARG #soa] !> ],
 	       ARG-S < #sbj >],
@@ -8136,15 +8137,23 @@ perspective-stem-lex  := aux-top-stem-lex &
                             ARG3 #chand,
                             ARG0 #event]]].
 
+perspective-arg1emp-stem-lex := perspective-stem-lex &
+				[SYNSEM [LKEYS.KEYREL.ARG1 #ind,
+					 LOCAL.CTXT.EMPATHY.EMPEE #ind]].
 
-perspective-v-stem-lex := perspective-stem-lex & [STEMTYPE v-stem].
-perspective-c-stem-lex := perspective-stem-lex & [STEMTYPE c-stem].
-perspective-c2-stem-lex := perspective-stem-lex & [STEMTYPE c2-stem].
-perspective-kurusuru-stem-lex := perspective-stem-lex & [STEMTYPE kurusuru-stem].
+perspective-arg2emp-stem-lex := perspective-stem-lex &
+				[SYNSEM [LKEYS.KEYREL.ARG2 #ind,
+					 LOCAL.CTXT.EMPATHY.EMPEE #ind]].
+
+
+perspective-arg1emp-v-stem-lex := perspective-arg1emp-stem-lex & [STEMTYPE v-stem].
+perspective-arg1emp-c-stem-lex := perspective-arg1emp-stem-lex & [STEMTYPE c-stem].
+perspective-arg1emp-c2-stem-lex := perspective-arg1emp-stem-lex & [STEMTYPE c2-stem].
+perspective-arg1emp-kurusuru-stem-lex := perspective-arg1emp-stem-lex & [STEMTYPE kurusuru-stem].
 
 
 
-perspective-minus_shon-stem-lex := perspective-stem-lex &
+perspective-arg1emp-minus_shon-stem-lex := perspective-arg1emp-stem-lex &
                            [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
 					       VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
 								     CONT.HOOK.INDEX #2]],
@@ -8154,13 +8163,13 @@ perspective-minus_shon-stem-lex := perspective-stem-lex &
 										BEARER #3,
 										POLARITY -] !>]]].
 
-perspective-minus_shon-v-stem-lex := perspective-minus_shon-stem-lex & [STEMTYPE v-stem].
-perspective-minus_shon-c-stem-lex := perspective-minus_shon-stem-lex & [STEMTYPE c-stem].
-perspective-minus_shon-c2-stem-lex := perspective-minus_shon-stem-lex & [STEMTYPE c2-stem].
-perspective-minus_shon-kurusuru-stem-lex := perspective-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+perspective-arg1emp-minus_shon-v-stem-lex := perspective-arg1emp-minus_shon-stem-lex & [STEMTYPE v-stem].
+perspective-arg1emp-minus_shon-c-stem-lex := perspective-arg1emp-minus_shon-stem-lex & [STEMTYPE c-stem].
+perspective-arg1emp-minus_shon-c2-stem-lex := perspective-arg1emp-minus_shon-stem-lex & [STEMTYPE c2-stem].
+perspective-arg1emp-minus_shon-kurusuru-stem-lex := perspective-arg1emp-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
 
 
-perspective-shon-stem-lex := perspective-stem-lex &
+perspective-arg1emp-shon-stem-lex := perspective-arg1emp-stem-lex &
 [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
                                            CONT.HOOK.INDEX #2]],
@@ -8170,10 +8179,49 @@ perspective-shon-stem-lex := perspective-stem-lex &
                                     BEARER #3,
                                     POLARITY +] !>]]].
 
-perspective-shon-v-stem-lex := perspective-shon-stem-lex & [STEMTYPE v-stem].
-perspective-shon-c-stem-lex := perspective-shon-stem-lex & [STEMTYPE c-stem].
-perspective-shon-c2-stem-lex := perspective-shon-stem-lex & [STEMTYPE c2-stem].
-perspective-shon-kurusuru-stem-lex := perspective-shon-stem-lex & [STEMTYPE kurusuru-stem].
+perspective-arg1emp-shon-v-stem-lex := perspective-arg1emp-shon-stem-lex & [STEMTYPE v-stem].
+perspective-arg1emp-shon-c-stem-lex := perspective-arg1emp-shon-stem-lex & [STEMTYPE c-stem].
+perspective-arg1emp-shon-c2-stem-lex := perspective-arg1emp-shon-stem-lex & [STEMTYPE c2-stem].
+perspective-arg1emp-shon-kurusuru-stem-lex := perspective-arg1emp-shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+perspective-arg2emp-v-stem-lex := perspective-arg2emp-stem-lex & [STEMTYPE v-stem].
+perspective-arg2emp-c-stem-lex := perspective-arg2emp-stem-lex & [STEMTYPE c-stem].
+perspective-arg2emp-c2-stem-lex := perspective-arg2emp-stem-lex & [STEMTYPE c2-stem].
+perspective-arg2emp-kurusuru-stem-lex := perspective-arg2emp-stem-lex & [STEMTYPE kurusuru-stem].
+
+
+
+perspective-arg2emp-minus_shon-stem-lex := perspective-arg2emp-stem-lex &
+                           [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+					       VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+								     CONT.HOOK.INDEX #2]],
+					  CONT.HOOK.INDEX #3,
+					  CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+									       [HONORED #2,
+										BEARER #3,
+										POLARITY -] !>]]].
+
+perspective-arg2emp-minus_shon-v-stem-lex := perspective-arg2emp-minus_shon-stem-lex & [STEMTYPE v-stem].
+perspective-arg2emp-minus_shon-c-stem-lex := perspective-arg2emp-minus_shon-stem-lex & [STEMTYPE c-stem].
+perspective-arg2emp-minus_shon-c2-stem-lex := perspective-arg2emp-minus_shon-stem-lex & [STEMTYPE c2-stem].
+perspective-arg2emp-minus_shon-kurusuru-stem-lex := perspective-arg2emp-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+
+perspective-arg2emp-shon-stem-lex := perspective-arg2emp-stem-lex &
+[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                   [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY +] !>]]].
+
+perspective-arg2emp-shon-v-stem-lex := perspective-arg2emp-shon-stem-lex & [STEMTYPE v-stem].
+perspective-arg2emp-shon-c-stem-lex := perspective-arg2emp-shon-stem-lex & [STEMTYPE c-stem].
+perspective-arg2emp-shon-c2-stem-lex := perspective-arg2emp-shon-stem-lex & [STEMTYPE c2-stem].
+perspective-arg2emp-shon-kurusuru-stem-lex := perspective-arg2emp-shon-stem-lex & [STEMTYPE kurusuru-stem].
+
 
 ; (ERB 2001-12-28) For VN + itadaku, etc.
 ; (MS 2003-12-19) Matrix 0.6

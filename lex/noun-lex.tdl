@@ -53715,7 +53715,7 @@ keikan_1_1 := ordinary-nohon-n-lex &
 ; Used 3 times
 
 keiki_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_keiki_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_keiki_n_condition_rel,
  ORTH <! "·Êµ¤" !>].
 
 ; ·Ú¶âÂ° 
@@ -143558,7 +143558,7 @@ daijinbutsu_1 := ordinary-nohon-n-lex &
 ; ·º´ü 
 
 keiki_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_keiki_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_keiki_n_prison_rel,
  ORTH <! "·º´ü" !>].
 
 ; ÄÇ´ÖÈÄ¥Ø¥ë¥Ë¥¢ 

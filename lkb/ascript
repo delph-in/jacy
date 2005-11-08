@@ -53,13 +53,40 @@
       (load-lexdb-from-script)
       ;; load the things that aren't in the database
       (read-cached-sublex-if-available 
-       "lexicon" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")
-		       (lkb-pathname (parent-directory) "lex/add-lex.tdl" ))))
+       "lexicon" (list (lkb-pathname (parent-directory) "lex/Jacy.skip.tdl")
+		       (lkb-pathname (parent-directory) "lex/add-lex.tdl" )))
+      )
   (progn
     ;; pick an arbitrary file and call it the _main_ lexicon
     ;; FIXME
-    (read-cached-lex-if-available 
-      (list (lkb-pathname (parent-directory) "lex/jacy.tdl")))))
+    (read-cached-lex-if-available (list
+  (lkb-pathname (parent-directory) "lex/adjadv-lex.tdl"))) ;; pick an arbitrary file and call it the _main_ lexicon
+;(read-cached-sublex-if-available "generics" (list  (lkb-pathname 
+;                                             (parent-directory) "lex/generics.tdl")))
+(read-cached-sublex-if-available "aux-stem" (list (lkb-pathname 
+                                              (parent-directory) "lex/aux-stem-lex.tdl")))
+(read-cached-sublex-if-available "funct-lex" (list  (lkb-pathname 
+                                              (parent-directory) "lex/funct-lex.tdl")))
+(read-cached-sublex-if-available "idiom-lex" (list  (lkb-pathname 
+                                              (parent-directory) "lex/idiom-lex.tdl")))
+(read-cached-sublex-if-available "light-verbs" (list (lkb-pathname 
+                                              (parent-directory) "lex/light-verbs-lex.tdl")))
+(read-cached-sublex-if-available "noun" (list (lkb-pathname 
+                                              (parent-directory) "lex/noun-lex.tdl")))
+(read-cached-sublex-if-available "numbers" (list (lkb-pathname 
+                                              (parent-directory) "lex/numbers-lex.tdl")))
+(read-cached-sublex-if-available "p" (list (lkb-pathname 
+                                            (parent-directory) "lex/p-lex.tdl")))
+(read-cached-sublex-if-available "pn" (list  (lkb-pathname 
+                                              (parent-directory) "lex/pn-lex.tdl")))
+(read-cached-sublex-if-available "verbstem" (list (lkb-pathname 
+                                              (parent-directory) "lex/verbstem-lex.tdl")))
+(read-cached-sublex-if-available "vn" (list (lkb-pathname 
+                                              (parent-directory) "lex/vn-lex.tdl")))
+(read-cached-sublex-if-available "v-ends" (list (lkb-pathname 
+                                                 (parent-directory) "lex/v-ends-lex.tdl")))
+(read-cached-sublex-if-available "adds" (list (lkb-pathname 
+						 (parent-directory) "lex/add-lex.tdl")))))
 
     
 (read-tdl-parse-node-file-aux 

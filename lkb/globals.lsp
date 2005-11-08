@@ -183,11 +183,12 @@
 ;;; was for me (MS):   '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t) (:user "siegel"))
 ;;; if unset we fall back to .tdl lexicon files
 
-(defparameter *lexdb-params* 
-  #+:psql
-  '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t))
-  #-:psql
-  nil)
+;(defparameter *lexdb-params* 
+;bmw!!!
+					;  #+:psql
+;  '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t))
+;  #-:psql
+;  nil)
 
 ;;;
 ;;; make generation faster

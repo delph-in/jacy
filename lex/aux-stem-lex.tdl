@@ -29,16 +29,14 @@ pure-aspect-minus_shon-c-stem-lex &
 ORTH <! "おる" !>].
 
 kudasaru-aux-stem :=
-perspective-shon-c2-stem-lex &
+perspective-arg2emp-shon-c2-stem-lex &
 [ORTH <! "下さる" !>,
- SYNSEM [LKEYS.KEYREL [PRED '_kudasaru_v_rel,ARG2 #obj2ind],
-               LOCAL.CTXT.EMPATHY.EMPEE #obj2ind]].
+ SYNSEM.LKEYS.KEYREL.PRED '_kudasaru_v_rel].
 
 kudasaru-aux-stem-2 :=
-perspective-shon-c2-stem-lex &
+perspective-arg2emp-shon-c2-stem-lex &
 [ORTH <! "くださる" !>,
- SYNSEM [LKEYS.KEYREL [PRED '_kudasaru_v_rel,ARG2 #obj2ind],
-	 LOCAL.CTXT.EMPATHY.EMPEE #obj2ind]].
+ SYNSEM.LKEYS.KEYREL.PRED '_kudasaru_v_rel].
 
 
 
@@ -134,10 +132,9 @@ ORTH <! "くる" !>].
 
 
 kureru-aux-stem  :=
-perspective-v-stem-lex &
+perspective-arg2emp-v-stem-lex &
 [ORTH <! "くれる" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_kureru_v_rel,ARG2 #obj2ind],
-              LOCAL.CTXT.EMPATHY.EMPEE #obj2ind]].
+SYNSEM.LKEYS.KEYREL.PRED '_kureru_v_rel].
 
 
 
@@ -166,14 +163,12 @@ pure-aspect-c-stem-lex &
 
 miru-aux-stem :=
 complex-aspect-v-stem-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_miru_aux,
-	 LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
+[SYNSEM.LKEYS.KEYREL.PRED '_miru_v_rel,
 ORTH <! "見る" !>].
 
 miru-hiragana-aux-stem :=
 complex-aspect-v-stem-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_miru_aux,
-	       LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
+[SYNSEM.LKEYS.KEYREL.PRED '_miru_v_rel,
 ORTH <! "みる" !>].
 
 ; (FCB 2003-08-14) やって みせる  
@@ -181,16 +176,14 @@ ORTH <! "みる" !>].
 
 miseru-hiragana-aux-stem :=
 complex-aspect-v-stem-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_miseru_aux,
-	       LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
+[SYNSEM.LKEYS.KEYREL.PRED '_miseru_v_rel,
 ORTH <! "みせる" !>].
 
 ; Used 10 times
 
 miseru-kanji-aux-stem :=
 complex-aspect-v-stem-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_miseru_aux,
-	       LOCAL.CONT.HOOK.INDEX.E.ASPECT modal],
+[SYNSEM.LKEYS.KEYREL.PRED '_miseru_v_rel,
 ORTH <! "見せる" !>].
 
 gozaru-aux-hiragana-stem :=
@@ -205,37 +198,32 @@ ORTH <! "御座る" !>].
 
 
 ageru-aux-stem :=
-perspective-v-stem-lex &
+perspective-arg1emp-v-stem-lex &
 [ORTH <! "あげる" !>,
-SYNSEM[LKEYS.KEYREL [PRED '_ageru_v_rel,ARG1 #sbjind],
-       LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_ageru_v_rel].
 
 ; Used 11 times
 
 ageru-kanji-aux-stem :=
-perspective-v-stem-lex &
+perspective-arg1emp-v-stem-lex &
 [ORTH <! "上げる" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_ageru_v_rel,ARG1 #sbjind],
-              LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_ageru_v_rel].
 
 sashiageru-aux-stem :=
-perspective-minus_shon-v-stem-lex &
+perspective-arg1emp-minus_shon-v-stem-lex &
 [ORTH <! "さしあげる" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_sashiageru_v_rel,ARG1 #sbjind],
-              LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_sashiageru_v_rel].
 
 moushiageru-aux-stem :=
-perspective-shon-c-stem-lex &
+perspective-arg1emp-shon-c-stem-lex &
 [ORTH <! "申し上げる" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_moushiageru_v_rel,ARG1 #sbjind],
-              LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_moushiageru_v_rel].
 
 
 yaru-aux-stem :=
-perspective-shon-c-stem-lex &
+perspective-arg1emp-shon-c-stem-lex &
 [ORTH <! "やる" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_yaru_v_rel,ARG1 #sbjind],
-              LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_yaru_v_rel].
 
 
 morau-aux-stem  :=

@@ -9563,7 +9563,7 @@ zenshou_1_1 := vn-intrans-lex &
 ; Used 4 times
 
 zenshin_1_2 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_zenshin_s_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_zenshin_s_inchoative_rel,
  ORTH <! "Á°¿Ê" !>].
 
 ; Àø¿å 
