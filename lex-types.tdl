@@ -7968,6 +7968,7 @@ complex-aspect-shon-kurusuru-stem-lex := complex-aspect-shon-stem-lex & [STEMTYP
 
 
 ; (MS 2004-11-17) This one now links the first complement of the verb to the ARG1 of the complex.
+; (MS 2005-11-08) These seem all to have perfective aspect.
 
 aspect-stem-lex  := aux-top-stem-lex &
 [SYNSEM [LOCAL [CAT [VAL aspect_transitive &
@@ -7977,7 +7978,7 @@ aspect-stem-lex  := aux-top-stem-lex &
 						       LTOP #ltop,
 						       XARG zpro_ref-ind]]],
 		     HEAD.AUX aspect_aux],
-		CONT [HOOK [INDEX #event,
+		CONT [HOOK [INDEX #event & [E.ASPECT perfective],
 			    LTOP #ltop],
 		      RELS <! !>,
 		      HCONS <! !> ],
@@ -8078,13 +8079,29 @@ pure-aspect-stem-lex := verb-stem-lex &
 	  MODIFIED.PERIPH +,
 	  NON-LOCAL.QUE <! !>]].
 
+pure-aspect-perfprog-stem-lex := pure-aspect-stem-lex &
+[ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfect_progressive ].
 
-pure-aspect-v-stem-lex := pure-aspect-stem-lex & [STEMTYPE v-stem].
-pure-aspect-c-stem-lex := pure-aspect-stem-lex & [STEMTYPE c-stem].
-pure-aspect-c2-stem-lex := pure-aspect-stem-lex & [STEMTYPE c2-stem].
-pure-aspect-kurusuru-stem-lex := pure-aspect-stem-lex & [STEMTYPE kurusuru-stem].
+pure-aspect-inceptive-stem-lex := pure-aspect-stem-lex &
+[ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
 
-pure-aspect-minus_shon-stem-lex := pure-aspect-stem-lex &
+pure-aspect-progressive-stem-lex := pure-aspect-stem-lex &
+[ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
+
+pure-aspect-terminative-stem-lex := pure-aspect-stem-lex &
+[ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT terminative ].
+
+pure-aspect-prospective-stem-lex := pure-aspect-stem-lex &
+[ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT prospective ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+pure-aspect-perfprog-v-stem-lex := pure-aspect-perfprog-stem-lex & [STEMTYPE v-stem].
+pure-aspect-perfprog-c-stem-lex := pure-aspect-perfprog-stem-lex & [STEMTYPE c-stem].
+pure-aspect-perfprog-c2-stem-lex := pure-aspect-perfprog-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-perfprog-kurusuru-stem-lex := pure-aspect-perfprog-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-perfprog-minus_shon-stem-lex := pure-aspect-perfprog-stem-lex &
 [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
                                            CONT.HOOK.INDEX #2]],
@@ -8094,12 +8111,12 @@ pure-aspect-minus_shon-stem-lex := pure-aspect-stem-lex &
                                     BEARER #3,
                                     POLARITY -] !>]]].
 
-pure-aspect-minus_shon-v-stem-lex := pure-aspect-minus_shon-stem-lex & [STEMTYPE v-stem].
-pure-aspect-minus_shon-c-stem-lex := pure-aspect-minus_shon-stem-lex & [STEMTYPE c-stem].
-pure-aspect-minus_shon-c2-stem-lex := pure-aspect-minus_shon-stem-lex & [STEMTYPE c2-stem].
-pure-aspect-minus_shon-kurusuru-stem-lex := pure-aspect-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+pure-aspect-perfprog-minus_shon-v-stem-lex := pure-aspect-perfprog-minus_shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-perfprog-minus_shon-c-stem-lex := pure-aspect-perfprog-minus_shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-perfprog-minus_shon-c2-stem-lex := pure-aspect-perfprog-minus_shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-perfprog-minus_shon-kurusuru-stem-lex := pure-aspect-perfprog-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
 
-pure-aspect-shon-stem-lex := pure-aspect-stem-lex &
+pure-aspect-perfprog-shon-stem-lex := pure-aspect-perfprog-stem-lex &
 			     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
 						 VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
 								       CONT.HOOK.INDEX #2 ]],
@@ -8109,10 +8126,161 @@ pure-aspect-shon-stem-lex := pure-aspect-stem-lex &
 										  BEARER #3,
 										  POLARITY +] !>]]].
 
-pure-aspect-shon-v-stem-lex := pure-aspect-shon-stem-lex & [STEMTYPE v-stem].
-pure-aspect-shon-c-stem-lex := pure-aspect-shon-stem-lex & [STEMTYPE c-stem].
-pure-aspect-shon-c2-stem-lex := pure-aspect-shon-stem-lex & [STEMTYPE c2-stem].
-pure-aspect-shon-kurusuru-stem-lex := pure-aspect-shon-stem-lex & [STEMTYPE kurusuru-stem].
+pure-aspect-perfprog-shon-v-stem-lex := pure-aspect-perfprog-shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-perfprog-shon-c-stem-lex := pure-aspect-perfprog-shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-perfprog-shon-c2-stem-lex := pure-aspect-perfprog-shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-perfprog-shon-kurusuru-stem-lex := pure-aspect-perfprog-shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+pure-aspect-inceptive-v-stem-lex := pure-aspect-inceptive-stem-lex & [STEMTYPE v-stem].
+pure-aspect-inceptive-c-stem-lex := pure-aspect-inceptive-stem-lex & [STEMTYPE c-stem].
+pure-aspect-inceptive-c2-stem-lex := pure-aspect-inceptive-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-inceptive-kurusuru-stem-lex := pure-aspect-inceptive-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-inceptive-minus_shon-stem-lex := pure-aspect-inceptive-stem-lex &
+[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                 [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+pure-aspect-inceptive-minus_shon-v-stem-lex := pure-aspect-inceptive-minus_shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-inceptive-minus_shon-c-stem-lex := pure-aspect-inceptive-minus_shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-inceptive-minus_shon-c2-stem-lex := pure-aspect-inceptive-minus_shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-inceptive-minus_shon-kurusuru-stem-lex := pure-aspect-inceptive-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-inceptive-shon-stem-lex := pure-aspect-inceptive-stem-lex &
+			     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+						 VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+								       CONT.HOOK.INDEX #2 ]],
+					    CONT.HOOK.INDEX #3,
+					    CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+										 [HONORED #2,
+										  BEARER #3,
+										  POLARITY +] !>]]].
+
+pure-aspect-inceptive-shon-v-stem-lex := pure-aspect-inceptive-shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-inceptive-shon-c-stem-lex := pure-aspect-inceptive-shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-inceptive-shon-c2-stem-lex := pure-aspect-inceptive-shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-inceptive-shon-kurusuru-stem-lex := pure-aspect-inceptive-shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+pure-aspect-progressive-v-stem-lex := pure-aspect-progressive-stem-lex & [STEMTYPE v-stem].
+pure-aspect-progressive-c-stem-lex := pure-aspect-progressive-stem-lex & [STEMTYPE c-stem].
+pure-aspect-progressive-c2-stem-lex := pure-aspect-progressive-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-progressive-kurusuru-stem-lex := pure-aspect-progressive-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-progressive-minus_shon-stem-lex := pure-aspect-progressive-stem-lex &
+[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                 [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+pure-aspect-progressive-minus_shon-v-stem-lex := pure-aspect-progressive-minus_shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-progressive-minus_shon-c-stem-lex := pure-aspect-progressive-minus_shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-progressive-minus_shon-c2-stem-lex := pure-aspect-progressive-minus_shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-progressive-minus_shon-kurusuru-stem-lex := pure-aspect-progressive-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-progressive-shon-stem-lex := pure-aspect-progressive-stem-lex &
+			     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+						 VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+								       CONT.HOOK.INDEX #2 ]],
+					    CONT.HOOK.INDEX #3,
+					    CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+										 [HONORED #2,
+										  BEARER #3,
+										  POLARITY +] !>]]].
+
+pure-aspect-progressive-shon-v-stem-lex := pure-aspect-progressive-shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-progressive-shon-c-stem-lex := pure-aspect-progressive-shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-progressive-shon-c2-stem-lex := pure-aspect-progressive-shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-progressive-shon-kurusuru-stem-lex := pure-aspect-progressive-shon-stem-lex & [STEMTYPE kurusuru-stem].
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+pure-aspect-terminative-v-stem-lex := pure-aspect-terminative-stem-lex & [STEMTYPE v-stem].
+pure-aspect-terminative-c-stem-lex := pure-aspect-terminative-stem-lex & [STEMTYPE c-stem].
+pure-aspect-terminative-c2-stem-lex := pure-aspect-terminative-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-terminative-kurusuru-stem-lex := pure-aspect-terminative-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-terminative-minus_shon-stem-lex := pure-aspect-terminative-stem-lex &
+[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                 [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+pure-aspect-terminative-minus_shon-v-stem-lex := pure-aspect-terminative-minus_shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-terminative-minus_shon-c-stem-lex := pure-aspect-terminative-minus_shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-terminative-minus_shon-c2-stem-lex := pure-aspect-terminative-minus_shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-terminative-minus_shon-kurusuru-stem-lex := pure-aspect-terminative-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-terminative-shon-stem-lex := pure-aspect-terminative-stem-lex &
+			     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+						 VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+								       CONT.HOOK.INDEX #2 ]],
+					    CONT.HOOK.INDEX #3,
+					    CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+										 [HONORED #2,
+										  BEARER #3,
+										  POLARITY +] !>]]].
+
+pure-aspect-terminative-shon-v-stem-lex := pure-aspect-terminative-shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-terminative-shon-c-stem-lex := pure-aspect-terminative-shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-terminative-shon-c2-stem-lex := pure-aspect-terminative-shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-terminative-shon-kurusuru-stem-lex := pure-aspect-terminative-shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+pure-aspect-prospective-v-stem-lex := pure-aspect-prospective-stem-lex & [STEMTYPE v-stem].
+pure-aspect-prospective-c-stem-lex := pure-aspect-prospective-stem-lex & [STEMTYPE c-stem].
+pure-aspect-prospective-c2-stem-lex := pure-aspect-prospective-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-prospective-kurusuru-stem-lex := pure-aspect-prospective-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-prospective-minus_shon-stem-lex := pure-aspect-prospective-stem-lex &
+[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+                    VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+                                           CONT.HOOK.INDEX #2]],
+               CONT.HOOK.INDEX #3,
+               CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+                                 [HONORED #2,
+                                    BEARER #3,
+                                    POLARITY -] !>]]].
+
+pure-aspect-prospective-minus_shon-v-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-prospective-minus_shon-c-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-prospective-minus_shon-c2-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-prospective-minus_shon-kurusuru-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+pure-aspect-prospective-shon-stem-lex := pure-aspect-prospective-stem-lex &
+			     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
+						 VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON +,
+								       CONT.HOOK.INDEX #2 ]],
+					    CONT.HOOK.INDEX #3,
+					    CTXT  subj-honor-ctxt & [BACKGROUND <! subj-honor_rel &
+										 [HONORED #2,
+										  BEARER #3,
+										  POLARITY +] !>]]].
+
+pure-aspect-prospective-shon-v-stem-lex := pure-aspect-prospective-shon-stem-lex & [STEMTYPE v-stem].
+pure-aspect-prospective-shon-c-stem-lex := pure-aspect-prospective-shon-stem-lex & [STEMTYPE c-stem].
+pure-aspect-prospective-shon-c2-stem-lex := pure-aspect-prospective-shon-stem-lex & [STEMTYPE c2-stem].
+pure-aspect-prospective-shon-kurusuru-stem-lex := pure-aspect-prospective-shon-stem-lex & [STEMTYPE kurusuru-stem].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (FCB 2005-06-27) Added ARG0 to message  FIXME: should refactor with 3 others

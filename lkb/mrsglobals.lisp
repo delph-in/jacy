@@ -163,9 +163,13 @@ which need not be scoped - pronouns etc.  Not used in current ERG")
 
 ;;; for generation
 
-(defparameter *null-semantics-hack-p* nil
+(defparameter *null-semantics-hack-p* t
   "for debugging - if set, this cheats on null semantic items
    WARNING - do not set when processing in batch mode")
+
+(defparameter *empty-semantics-lexical-entries* '(lkb::ga lkb::o) )
+ 
+
 
 (defparameter *main-semantics-path* 
     `(,(vsym "SYNSEM") ,(vsym "LOCAL") ,(vsym "CONT") 

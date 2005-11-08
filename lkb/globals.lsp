@@ -236,3 +236,5 @@
 ;;; wanted (using an array of Matrix grammars and an interlingua semantics).
 ;;;
 (setf *translate-grid* '(:ja . (:ja)))
+
+(setf *gen-ignore-rules* '(head-complement2-rule))

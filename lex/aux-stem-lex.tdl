@@ -24,9 +24,8 @@
 ;ORTH <! "おる" !>].
 
 oru-aux-stem :=
-pure-aspect-minus_shon-c-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
-ORTH <! "おる" !>].
+pure-aspect-progressive-minus_shon-c-stem-lex &
+[ORTH <! "おる" !>].
 
 kudasaru-aux-stem :=
 perspective-arg2emp-shon-c2-stem-lex &
@@ -41,68 +40,58 @@ perspective-arg2emp-shon-c2-stem-lex &
 
 
 oku-aux-stem :=
-pure-aspect-minus_shon-c-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT prospective],
-ORTH <! "おく" !>].
+pure-aspect-prospective-minus_shon-c-stem-lex &
+[ORTH <! "おく" !>].
 
 ; Used 16 times
 
 oku-aux-kanji-stem :=
-pure-aspect-minus_shon-c-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT prospective],
-ORTH <! "置く" !>].
+pure-aspect-prospective-minus_shon-c-stem-lex &
+[ORTH <! "置く" !>].
 
 
 ; (ERB 2001-11-12) I think this aspect might be better
 ; termed "stative", but we can worry about that later.
 
 iru-aux-stem :=
-pure-aspect-v-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
-ORTH <! "いる" !>].
+pure-aspect-progressive-v-stem-lex &
+[ORTH <! "いる" !>].
 
 ; Used 35 times
 
 iru-aux-kanji-stem :=
-pure-aspect-v-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
-ORTH <! "居る" !>].
+pure-aspect-progressive-v-stem-lex &
+[ORTH <! "居る" !>].
 
 ; Used 103 times
 
 iku-aux-stem :=
-pure-aspect-c2-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
-ORTH <! "行く" !>].
+pure-aspect-inceptive-c2-stem-lex &
+[ORTH <! "行く" !>].
 
 iku-aux-hiragana-stem :=
-pure-aspect-c2-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
-ORTH <! "いく" !>].
+pure-aspect-inceptive-c2-stem-lex &
+[ORTH <! "いく" !>].
 
 ; (MS 2005-06-24) This should be SHON -.
 
 mairu-aux-stem :=
-pure-aspect-minus_shon-c-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
-ORTH <! "参る" !>].
+pure-aspect-inceptive-minus_shon-c-stem-lex &
+[ORTH <! "参る" !>].
 
 mairu-aux-hiragana-stem :=
-pure-aspect-minus_shon-c-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT inceptive],
-ORTH <! "まいる" !>].
+pure-aspect-inceptive-minus_shon-c-stem-lex &
+[ORTH <! "まいる" !>].
 
 ; Used 1 times
 
 irassharu-aux-stem  :=
-pure-aspect-shon-c2-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT progressive],
-ORTH <! "いらっしゃる" !>].
+pure-aspect-progressive-shon-c2-stem-lex &
+[ORTH <! "いらっしゃる" !>].
 
 aru-aux-stem  :=
 aspect-c-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
-ORTH <! "ある" !>].
+[ORTH <! "ある" !>].
 
 ; (AO 2003-08-06) 「在る」の補助動詞はない
 ;		1. 補助動詞の用法は通例「〜てある」ただし文語は別
@@ -113,22 +102,19 @@ ORTH <! "ある" !>].
 
 aru-kanji-aux-stem  :=
 aspect-c-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
-ORTH <! "在る" !>].
+[ORTH <! "在る" !>].
 
 ; Used 51 times
 
 kuru-aux-stem  :=
-pure-aspect-kurusuru-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT perfect_progressive],
-ORTH <! "来る" !>].
+pure-aspect-perfprog-kurusuru-stem-lex &
+[ORTH <! "来る" !>].
 
 ; (MS 2005-01-10) This should be in as Hiragana as well, shouldn't it?
 
 kuru-hiragana-aux-stem  :=
-pure-aspect-kurusuru-stem-lex &
-[SYNSEM.LOCAL.CONT [HOOK.INDEX.E.ASPECT perfect_progressive],
-ORTH <! "くる" !>].
+pure-aspect-perfprog-kurusuru-stem-lex &
+[ORTH <! "くる" !>].
 
 
 kureru-aux-stem  :=
@@ -157,9 +143,8 @@ SYNSEM.LKEYS.KEYREL.PRED '_kureru_v_rel].
 ; ORTH <! "しまう" !>].
 
 shimau-aux-stem :=
-pure-aspect-c-stem-lex &
-[ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT terminative,
-  ORTH <! "しまう" !>].
+pure-aspect-terminative-c-stem-lex &
+[ ORTH <! "しまう" !>].
 
 miru-aux-stem :=
 complex-aspect-v-stem-lex &
@@ -188,13 +173,11 @@ ORTH <! "見せる" !>].
 
 gozaru-aux-hiragana-stem :=
 aspect-c2-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
-ORTH <! "ござる" !>].
+[ORTH <! "ござる" !>].
 
 gozaru-aux-kanji-stem :=
 aspect-c2-stem-lex &
-[SYNSEM [LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective],
-ORTH <! "御座る" !>].
+[ORTH <! "御座る" !>].
 
 
 ageru-aux-stem :=

@@ -1,15 +1,4 @@
 
-gozaru-aux-kanji-stem := aspect-c2-stem-lex &
- [ ORTH <! "御座る" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ].
-
-kuru-hiragana-aux-stem := pure-aspect-kurusuru-stem-lex &
- [ ORTH <! "くる" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfect_progressive ].
-
-mairu-aux-stem := pure-aspect-minus_shon-c-stem-lex &
- [ ORTH <! "参る" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
 
 itadaku-aux-stem := aux-obj-id-minus_shon-c-stem-lex &
  [ ORTH <! "いただく" !>,
@@ -17,22 +6,6 @@ itadaku-aux-stem := aux-obj-id-minus_shon-c-stem-lex &
                              PRED "_itadaku_v_rel" ],
             LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
 
-irassharu-aux-stem := pure-aspect-shon-c2-stem-lex &
- [ ORTH <! "いらっしゃる" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
-
-
-aru-aux-stem := aspect-c-stem-lex &
- [ ORTH <! "ある" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ].
-
-shimau-aux-stem := pure-aspect-c-stem-lex &
- [ ORTH <! "しまう" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT terminative ].
-
-iru-aux-stem := pure-aspect-v-stem-lex &
- [ ORTH <! "いる" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
 
 
 morau-kanji-aux-stem := aux-obj-id-c-stem-lex &
@@ -40,47 +13,6 @@ morau-kanji-aux-stem := aux-obj-id-c-stem-lex &
    SYNSEM [ LKEYS.KEYREL [ ARG1 #1,
                              PRED "_morau_v_rel" ],
             LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
-
-
-
-oru-aux-stem := pure-aspect-minus_shon-c-stem-lex &
- [ ORTH <! "おる" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
-
-kuru-aux-stem := pure-aspect-kurusuru-stem-lex &
- [ ORTH <! "来る" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfect_progressive ].
-
-iku-aux-stem := pure-aspect-c2-stem-lex &
- [ ORTH <! "行く" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
-
-oku-aux-stem := pure-aspect-minus_shon-c-stem-lex &
- [ ORTH <! "おく" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT prospective ].
-
-mairu-aux-hiragana-stem := pure-aspect-minus_shon-c-stem-lex &
- [ ORTH <! "まいる" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
-
-oku-aux-kanji-stem := pure-aspect-minus_shon-c-stem-lex &
- [ ORTH <! "置く" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT prospective ].
-
-
-iku-aux-hiragana-stem := pure-aspect-c2-stem-lex &
- [ ORTH <! "いく" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT inceptive ].
-
-
-gozaru-aux-hiragana-stem := aspect-c2-stem-lex &
- [ ORTH <! "ござる" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ].
-
-
-iru-aux-kanji-stem := pure-aspect-v-stem-lex &
- [ ORTH <! "居る" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT progressive ].
 
 morau-aux-stem := aux-obj-id-c-stem-lex &
  [ ORTH <! "もらう" !>,
@@ -95,9 +27,6 @@ itadaku-aux-stem-2 := aux-obj-id-minus_shon-c-stem-lex &
                              PRED "_itadaku_v_rel" ],
             LOCAL.CTXT.EMPATHY.EMPEE #1 ] ].
 
-aru-kanji-aux-stem := aspect-c-stem-lex &
- [ ORTH <! "在る" !>,
-   SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ].
 
 o-hon-vnpref := hon-prefix-lex &
  [ ORTH <! "お" !>,
