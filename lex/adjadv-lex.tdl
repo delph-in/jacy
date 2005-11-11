@@ -1332,7 +1332,7 @@ ORTH <! "よろしい" !>].
 yoroshii-eval-adj  :=
 eval-opt-i-adj-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yoroshii_a_rel,
-ORTH <! "宜しい" !>].
+ ORTH <! "宜しい" !>].
 
 yoroshii-hiragana-eval-adj  :=
 eval-opt-i-adj-stem-lex &
@@ -1351,16 +1351,13 @@ i-adj-stem-lex &
 ORTH <! "忙しい" !>].
 
 ii-eval-adj  :=
-eval-opt-i-adj-stem-lex &
-[SYNSEM [LOCAL.CAT.HEAD.FORMAL.SHON -,
-	 LKEYS.KEYREL.PRED '_ii_a_rel],
-ORTH <! "いい" !>].
+eval-opt-i-adj-minusshon-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ii_a_rel,
+ ORTH <! "いい" !>].
 
-ii-adj  :=
-i-adj-stem-lex &
-	  [SYNSEM [LOCAL.CAT.HEAD.FORMAL.SHON -,
-		   LKEYS.KEYREL.PRED '_ii_a_rel],
-ORTH <! "いい" !>].
+ii-adj  := i-adj-minusshon-stem-lex &
+	  [SYNSEM.LKEYS.KEYREL.PRED '_ii_a_rel,
+	   ORTH <! "いい" !>].
 
 warui-eval-adj  :=
 eval-opt-i-adj-stem-lex &
@@ -3007,17 +3004,13 @@ itai-stem :=
         [SYNSEM.LKEYS.KEYREL.PRED '_itai_a_rel,
          ORTH <! "痛い" !>].
 
-bakari-adv :=
-scopal-adv-right2left-lex &
+bakari-adv := scopal-adv-right2left-lex &
 [ORTH <! "ばかり" !>,
  SYNSEM.LKEYS.KEYREL.PRED '_bakari_a_rel].
 
-beki-adv :=
-scopal-adv-right2left-lex &
+beki-adv := scopal-adv-right2left-presentmod-lex &
 [ORTH <! "べき" !>,
- SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD [H-TENSE present,
-						  FORMAL.AHON -],
-	 LKEYS.KEYREL.PRED '_beki_a_rel]].
+ SYNSEM.LKEYS.KEYREL.PRED '_beki_a_rel].
 
 rashii-eval-adj := 
 eval-obl-i-adj-stem-lex &
@@ -23389,15 +23382,13 @@ isect-adv-lex &
 [ORTH <! "全部" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_zenbu_a_rel].
 
-amari-kanji-adv := scopal-adv-regular-lex &
-[SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY '_neg_v_rel,
-	 LKEYS.KEYREL.PRED '_amari_a_rel],
+amari-kanji-adv := scopal-adv-regular-negmod-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_amari_a_rel,
  ORTH <! "余り" !>].
 
 amari-hiragana-adv :=
-scopal-adv-regular-lex &
-[SYNSEM [LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY '_neg_v_rel,
-	 LKEYS.KEYREL.PRED '_amari_a_rel],
+scopal-adv-regular-negmod-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_amari_a_rel,
  ORTH <! "あまり" !>].
 
 ;(TK:TakaYUki Kuribayashi 05-02-25)
@@ -23507,4 +23498,6 @@ mezamashii_hiragana := i-adj-stem-lex &
 issoku-adv := isect-adv-lex &
 [ORTH <! "一足" !>, 
 SYNSEM.LKEYS.KEYREL.PRED '_issoku_adv_rel].
+
+
 

@@ -4247,3 +4247,7 @@ ORTH <! "アンマン" !>].
 nihonkoukuu-instname := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'nihonkoukuu,
 ORTH <! "日本航空" !>].
+
+gorbatschow-pn := surname-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'gorbatschow,
+ORTH <! "ゴルバチョフ" !>].

@@ -4595,7 +4595,7 @@ pron-demon-lex &
 achira :=
 pron-loc-ref-lex &
 [ORTH <! "あちら" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_achira_n_rel]].
+SYNSEM.LKEYS.KEYREL.PRED '_achira_n_rel].
 
 soredake :=
 pron-thirdsgneut-ref-lex &
@@ -4611,37 +4611,37 @@ achira_1 := pron-thirdsgneutahon-ref-lex &
 asoko :=
 pron-loc-ref-lex &
 [ORTH <! "あそこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_asoko_n_rel]].
+SYNSEM.LKEYS.KEYREL.PRED '_asoko_n_rel].
 
 koko :=
 pron-loc-ref-lex &
 [ORTH <! "ここ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_koko_n_rel]].
+SYNSEM.LKEYS.KEYREL.PRED '_koko_n_rel].
 
 soko :=
 pron-loc-ref-lex &
 [ORTH <! "そこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_soko_n_rel]].
+SYNSEM.LKEYS.KEYREL.PRED '_soko_n_rel].
 
 acchi :=
 pron-loc-ref-lex &
 [ORTH <! "あっち" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_acchi_n_rel]].
+SYNSEM.LKEYS.KEYREL.PRED '_acchi_n_rel].
 
 kanata := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_kanata_n_rel],
+[SYNSEM.LKEYS.KEYREL.PRED '_kanata_n_rel,
  ORTH <! "彼方" !>].
 
 achikochi_1_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_achikochi_n_1_rel],
+[SYNSEM.LKEYS.KEYREL.PRED '_achikochi_n_1_rel,
  ORTH <! "あちこち" !>].
 
 sokora_1_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_sokora_n_1_rel],
+[SYNSEM.LKEYS.KEYREL.PRED '_sokora_n_1_rel,
  ORTH <! "そこら" !>].
 
 sochira_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_sochira_n_1_rel],
+[SYNSEM.LKEYS.KEYREL.PRED '_sochira_n_1_rel,
  ORTH <! "そちら" !>].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;TITLE;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -4752,8 +4752,7 @@ wh-word-temp-lex &
 SYNSEM.LKEYS.KEYREL.PRED '_itsuka_n_rel].
 
 itsu-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_itsu_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_itsu_n_mo_rel,
 ORTH <! "いつ" !>].
 
 itsuka := indef-word-temp-lex &
@@ -4766,8 +4765,7 @@ wh-word-thing-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_thing_n_rel]].
 
 nani-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_nani_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_nani_n_mo_rel,
 ORTH <! "なに" !>].
 
 dochira-place :=
@@ -4812,8 +4810,7 @@ doko-kanji := wh-word-place-lex &
 [ ORTH <! "何処" !>].
 
 doko-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_doko_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_doko_n_mo_rel,
 ORTH <! "どこ" !>].
 
 dokoka := indef-word-place-lex &
@@ -4828,8 +4825,7 @@ wh-word-thing-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_thing_n_rel]].
 
 dore-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_dore_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_dore_n_mo_rel,
 ORTH <! "どれ" !>].
 
 dare :=
@@ -4843,13 +4839,11 @@ wh-word-person-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_person_n_rel]].
 
 dare-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_dare_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_dare_n_mo_rel,
 ORTH <! "だれ" !>].
 
 dare-mo-2 := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_dare_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_dare_n_mo_rel,
 ORTH <! "誰" !>].
 
 dareka := indef-word-person-lex &
@@ -4874,8 +4868,7 @@ wh-word-quantity-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_quantity_n_rel]].
 
 ikura-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_ikura_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_ikura_n_mo_rel,
 ORTH <! "いくら" !>].
 
 ikutsu :=
@@ -4884,8 +4877,7 @@ wh-word-quantity-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_quantity_n_rel]].
 
 ikutsu-mo := affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_ikutsu_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_ikutsu_n_mo_rel,
 ORTH <! "いくつ" !>].
 
 doreka :=
@@ -6765,18 +6757,14 @@ SYNSEM.LKEYS.KEYREL [PRED '_kodomo_n_rel]].
 
 ;children
 
-kodomotachi-noun :=  
-        ordinary-nohon-n-lex &
-	[SYNSEM.LKEYS.KEYREL [PRED '_kodomotachi_n_rel,
-                                ARG0.PNG.PN threepl],
+kodomotachi-noun :=  ordinary-nohon-threepl-n-lex &
+	[SYNSEM.LKEYS.KEYREL.PRED '_kodomotachi_n_rel,
          ORTH <! "子供","達" !>].
 
 ;people
 
-hitobito-noun :=  
-        ordinary-nohon-n-lex &
-	[SYNSEM.LKEYS.KEYREL [PRED '_hitobito_n_rel,
-				ARG0.PNG.PN threepl],
+hitobito-noun :=  ordinary-nohon-threepl-n-lex &
+	[SYNSEM.LKEYS.KEYREL.PRED '_hitobito_n_rel,
          ORTH <! "人々" !>].
 
 ;amount
@@ -7755,10 +7743,9 @@ ordinary-nohon-n-lex &
  [ORTH <! "新",  "店舗" !>,
   SYNSEM.LKEYS.KEYREL.PRED '_shiNtenpo_n_rel].
 
-nanika-multi := ordinary-nohon-plusbar-n-lex &
+nanika-multi := ordinary-nohon-plusbar-indefspec-n-lex &
                                 [ORTH <! "何",  "か" !>,
-                                 SYNSEM [LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED '_indef_n_rel,
-					 LKEYS.KEYREL.PRED '_nanika_n_rel]].
+                                 SYNSEM.LKEYS.KEYREL.PRED '_nanika_n_rel].
 
 toshiba-503-multi :=
 ordinary-nohon-n-lex &
@@ -7881,11 +7868,9 @@ date-noun-adv-lex &
 [ORTH <! "本日" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_honjitsu_n_rel]].
 
-ima :=
-date-noun-lex &
+ima := date-noun-plusbar-lex &
 [ORTH <! "今" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_ima_n_rel],
-	LOCAL.BAR +]].
+SYNSEM.LKEYS.KEYREL.PRED '_ima_n_rel].
 
 ima-hiragana :=
 date-noun-lex &
@@ -8275,8 +8260,7 @@ ORTH <! "試し" !>].
 
 dochira-mo :=
 affix-noun-lex &
-[SYNSEM [LKEYS.KEYREL.PRED '_dochira_n_mo_rel,
-         NON-LOCAL.AFFIX <! mo !>],
+[SYNSEM.LKEYS.KEYREL.PRED '_dochira_n_mo_rel,
 ORTH <! "どちら" !>].
 
 ;ticket
@@ -145333,11 +145317,9 @@ SYNSEM.LKEYS.KEYREL [PRED '_juu_n_4_rel]].
 
 ; as in 丁寧語 polite language
 
-teinei-n :=
-ordinary-nohon-n-lex &
+teinei-n := ordinary-nohon-minusbar-n-lex &
 [ORTH <! "丁寧" !>,
-SYNSEM [LKEYS.KEYREL.PRED '_teinei_n_4_rel,
-	LOCAL.BAR -]].
+SYNSEM.LKEYS.KEYREL.PRED '_teinei_n_4_rel].
 
 
 ;;;Kuribayashi
@@ -145761,7 +145743,7 @@ pron-firstpl-ref-lex &
 asuko :=
 pron-loc-ref-lex &
 [ORTH <! "あすこ" !>,
-SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel]].
+SYNSEM.LKEYS.KEYREL.PRED '_there_n_rel].
 
 ; 誰彼
 
@@ -145858,18 +145840,16 @@ SYNSEM.LKEYS.KEYREL.PRED '_biru_n_building_rel].
 
 ;omae_1_kanji := pron-add-ref-lex &
 ; (MS 2005-02-28) renamed pron-add-ref-lex. そちら
-omae_1_kanji := pron-secondperson-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
- ORTH <! "お前" !>].
+omae_1_kanji := pron-secondminusahon-ref-lex &
+[ORTH <! "お前" !>].
 
 
 ;おまえ
 
 ;omae_1_hiragana := pron-add-ref-lex &
 ; (MS 2005-02-28) renamed pron-add-ref-lex. そちら
-omae_1_hiragana := pron-secondperson-ref-lex &
-[SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
- ORTH <! "おまえ" !>].
+omae_1_hiragana := pron-secondminusahon-ref-lex &
+[ORTH <! "おまえ" !>].
 
 
 ;林
@@ -145964,17 +145944,15 @@ SYNSEM.LKEYS.KEYREL [PRED '_yamada_n_rel]].
 
 ;yatsu_pron := pron-ent-ref-lex &
 ; (MS 2005-02-28) renamed pron-ent-ref-lex.
-yatsu_pron := pron-thirdperson-ref-lex &
-[ORTH <! "奴" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+yatsu_pron := pron-thirdsgmasc-ref-lex &
+[ORTH <! "奴" !>].
 
 ;あいつ
 
 ;aitsu_pron := pron-ent-ref-lex &
 ; (MS 2005-02-28) renamed pron-ent-ref-lex.
-aitsu_pron := pron-thirdperson-ref-lex &
-[ORTH <! "あいつ" !>,
-SYNSEM.LKEYS.KEYREL.ARG0 [PNG [GEN masc, PN threesg]]].
+aitsu_pron := pron-thirdsgmasc-ref-lex &
+[ORTH <! "あいつ" !>].
 
 
 ;丸
@@ -146098,7 +146076,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_watakushi_prefix_rel]].
 ;そこいら
 
 sokoira_1 := pron-loc-ref-lex &
-[SYNSEM.LOCAL.CONT [RELS.LIST.FIRST.PRED '_there_n_rel_rel],
+[SYNSEM.LKEYS.KEYREL.PRED '_there_n_rel_rel,
  ORTH <! "そこいら" !>].
 
 ;上手
@@ -146432,3 +146410,15 @@ SYNSEM.LKEYS.KEYREL.PRED '_mawari_n_surroundings_rel].
 indian-noun := ordinary-nohon-n-lex &
 [ORTH <! "インデアン" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_indian_n_rel].
+
+;opportunity; chance
+
+keiki-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_keiki_n_chance_rel,
+ ORTH <! "契機" !>].
+
+;Japanese-Soviet relations
+
+nichisokankei-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_nichisokankei_n_rel,
+ ORTH <! "日","ソ","関係" !>].

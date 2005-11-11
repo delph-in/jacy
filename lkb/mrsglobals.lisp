@@ -163,11 +163,11 @@ which need not be scoped - pronouns etc.  Not used in current ERG")
 
 ;;; for generation
 
-(defparameter *null-semantics-hack-p* t
+(defparameter *null-semantics-hack-p* nil
   "for debugging - if set, this cheats on null semantic items
    WARNING - do not set when processing in batch mode")
 
-(defparameter *empty-semantics-lexical-entries* '(lkb::ga lkb::o) )
+;;(defparameter *empty-semantics-lexical-entries* '(lkb::ga lkb::o) )
  
 
 

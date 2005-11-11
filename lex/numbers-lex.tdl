@@ -2134,3 +2134,10 @@ kyuu_card_ninety := card_2_object_only &
 sha-numcl := num-cl-spr-only-ind-lex &
 [ ORTH <! "¼Ò" !>].
 
+
+rei-numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "Îã" !>].
+
+ichi-hundred := card_3_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "100",
+  ORTH <! "£±" !>].

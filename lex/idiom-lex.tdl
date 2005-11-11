@@ -45,17 +45,15 @@ senryaku  := greeting-lex &
           SYNSEM.LKEYS.KEYREL.PRED '_senryaku_idiom_rel].
 
 
-osoreirimasu :=  excl-lex &
+osoreirimasu :=  excl-ahon-lex &
 	 [ORTH <! "恐れ入り","ます" !>,
-          SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                        LKEYS.KEYREL [PRED '_osoreirimasu_idiom_rel]]].
+          SYNSEM.LKEYS.KEYREL.PRED '_osoreirimasu_idiom_rel].
 
 
 
-sumimaseN-idiom := excl-lex &  
+sumimaseN-idiom := excl-ahon-lex &  
 	 [ORTH <! "すみません" !>,
-          SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                        LKEYS.KEYREL [PRED '_sumimaseN_idiom_rel]]].
+          SYNSEM.LKEYS.KEYREL.PRED '_sumimaseN_idiom_rel].
 
 
 doumo-idiom := excl-lex &
@@ -64,30 +62,25 @@ doumo-idiom := excl-lex &
 
 
 
-toNdemoarimaseN := excl-lex &  
+toNdemoarimaseN := excl-ahon-lex &  
 	 [ORTH <! "とんでも","あり","ませ","ん" !>,
-          SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                        LKEYS.KEYREL [PRED '_toNdemonai_idiom_rel]]].
+          SYNSEM.LKEYS.KEYREL.PRED '_toNdemonai_idiom_rel].
 
-toNdemogozaimaseN := excl-lex &  
+toNdemogozaimaseN := excl-ahon-lex &  
 	 [ORTH <! "とんでも","ござい","ませ","ん" !>,
-SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-              LKEYS.KEYREL [PRED '_toNdemonai_idiom_rel]]].
+	  SYNSEM.LKEYS.KEYREL.PRED '_toNdemonai_idiom_rel].
 
-toNdemonai := excl-lex &  
+toNdemonai := excl-ahon-lex &  
 	 [ORTH <! "とんでも","ない" !>,
-SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-              LKEYS.KEYREL [PRED '_toNdemonai_idiom_rel]]].
+	  SYNSEM.LKEYS.KEYREL.PRED '_toNdemonai_idiom_rel].
 
 yoroshikudouzo  := excl-lex &  
 	 [ORTH <! "よろしく","どうぞ" !>,
 	  SYNSEM.LKEYS.KEYREL.PRED '_yoroshikudouzo_idiom_rel].
 
-ohayou :=
-greeting-lex &
+ohayou := greeting-ahon-lex &
 [ORTH <! "お早う" !>,
-SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-              LKEYS.KEYREL.PRED '_ohayougozaimasu_idiom_rel]].
+SYNSEM.LKEYS.KEYREL.PRED '_ohayougozaimasu_idiom_rel].
 
 gomeNnasai := excl-lex &
 	 [ORTH <! "ごめんなさい" !>,
@@ -107,20 +100,17 @@ ohayougozaimasu-multi := greeting-lex &
                    [ORTH <! "お早う",  "ござい","ます" !>,
                     SYNSEM.LKEYS.KEYREL.PRED '_ohayougozaimasu_idiom_rel].
 
-osewasamadegozaimasu-multi := excl-lex &
+osewasamadegozaimasu-multi := excl-ahon-lex &
                         [ORTH <! "おせ",  "わ",  "さま","で","ござい","ます" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_osewasamadegozaimasu_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_osewasamadegozaimasu_idiom_rel].
 
-osewasamadesu-multi := excl-lex &
+osewasamadesu-multi := excl-ahon-lex &
                         [ORTH <! "お世話","様","です" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_osewasamadesu_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_osewasamadesu_idiom_rel].
 
-osewasamadesu-hiragana-multi := excl-lex &
+osewasamadesu-hiragana-multi := excl-ahon-lex &
                         [ORTH <! "お世話","さま","です" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_osewasamadesu_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_osewasamadesu_idiom_rel].
 
 oatsuugozaimasu-multi := greeting-lex &
                    [ORTH <! "お","暑う",  "ござい","ます" !>,
@@ -143,63 +133,52 @@ kochirakoso-multi  := excl-lex &
                  SYNSEM.LKEYS.KEYREL.PRED '_kochirakoso_idiom_rel].
 
 
-shitsureishimasu-multi  := excl-lex &
+shitsureishimasu-multi  := excl-ahon-lex &
 		        [ORTH <! "失礼",  "し","ます" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_shitsureishimasu_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_shitsureishimasu_idiom_rel].
 
-doumoshitsureishimasu-multi  := excl-lex &
+doumoshitsureishimasu-multi  := excl-ahon-lex &
                           [ORTH <! "どうも",  "失礼",  "し","ます" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_shitsureishimasu_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_shitsureishimasu_idiom_rel].
 
 
 
-shitsureiitashimasu-multi  := excl-lex &
+shitsureiitashimasu-multi  := excl-ahon-lex &
                         [ORTH <! "失礼",  "いたし","ます" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_shitsureishimasu_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_shitsureishimasu_idiom_rel].
 
-arigatou := excl-lex &
+arigatou := excl-ahon-lex &
                      [ORTH <! "ありがとう" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_arigatou_idiom_rel]].
+		      SYNSEM.LKEYS.KEYREL.PRED '_arigatou_idiom_rel].
 
-arigatougozaimasu-multi := excl-lex &
+arigatougozaimasu-multi := excl-ahon-lex &
                      [ORTH <! "ありがとう",  "ござい","ます" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_doumoarigatougozaimasu_idiom_rel]].
+		      SYNSEM.LKEYS.KEYREL.PRED '_doumoarigatougozaimasu_idiom_rel].
 
-arigatougozaimashita-1-multi := excl-lex &
+arigatougozaimashita-1-multi := excl-ahon-lex &
                         [ORTH <! "ありがとう",  "ござい","まし","た" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel].
 
-arigatougozaimashita-2-multi := excl-lex &
+arigatougozaimashita-2-multi := excl-ahon-lex &
                         [ORTH <! "有難う",  "ござい","まし","た" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel].
 
-arigatougozaimashita-3-multi := excl-lex &
+arigatougozaimashita-3-multi := excl-ahon-lex &
                         [ORTH <! "有り難う",  "ござい","ます" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel].
 
-doumoarigatougozaimashita-multi := excl-lex &
+doumoarigatougozaimashita-multi := excl-ahon-lex &
                              [ORTH <! "どうも",  "ありがとう",  "ござい","まし","た" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_doumoarigatougozaimashita_idiom_rel].
 
 
-chottosumimaseN-multi := excl-lex &  
+chottosumimaseN-multi := excl-ahon-lex &  
                    [ORTH <! "ちょっと",  "すみません" !>,
-                    SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                  LKEYS.KEYREL.PRED '_sumimasen_idiom_rel]].
+                    SYNSEM.LKEYS.KEYREL.PRED '_sumimasen_idiom_rel].
 
-okagesamade-multi  := excl-lex &
+okagesamade-multi  := excl-ahon-lex &
                 [ORTH <! "おかげ",  "さま","で" !>,
-                 SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                  LKEYS.KEYREL.PRED '_okagesamade_idiom_rel]].
+                 SYNSEM.LKEYS.KEYREL.PRED '_okagesamade_idiom_rel].
 
 karadagaaku-multi := excl-lex &
                [ORTH <! "体",  "が",  "開く" !>,
@@ -220,31 +199,26 @@ gomeNkudasai-multi := excl-lex &
                  SYNSEM.LKEYS.KEYREL [PRED '_gomeNnasai_idiom_rel]].
 
 
-otsukaresamadeshita-multi := greeting-lex &
+otsukaresamadeshita-multi := greeting-ahon-lex &
                        [ORTH <! "おつかれさま",  "でした" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_otsukaresamadeshita_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_otsukaresamadeshita_idiom_rel].
 
  
-shitsureiitashimashita-multi  := greeting-lex &
+shitsureiitashimashita-multi  := greeting-ahon-lex &
 		        [ORTH <! "失礼",  "いたしました" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_shitsureishimashita_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_shitsureishimashita_idiom_rel].
 
-shitsureishimashita-multi  := greeting-lex &
+shitsureishimashita-multi  := greeting-ahon-lex &
                         [ORTH <! "失礼",  "しました" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_shitsureishimashita_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_shitsureishimashita_idiom_rel].
 
-doumoshitsureiitashimasu-multi  := greeting-lex &
+doumoshitsureiitashimasu-multi  := greeting-ahon-lex &
                              [ORTH <! "どうも",  "失礼",  "いたします" !>,
-                              SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_shitsureishimashita_idiom_rel]].
+                              SYNSEM.LKEYS.KEYREL.PRED '_shitsureishimashita_idiom_rel].
 
-doumoarigatougozaimasu-multi := greeting-lex &
+doumoarigatougozaimasu-multi := greeting-ahon-lex &
                           [ORTH <! "どうも",  "ありがとう",  "ございます" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-				 LKEYS.KEYREL.PRED '_arigatougozaimasu_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_arigatougozaimasu_idiom_rel].
 
 
 doumokoNnichiwa-multi  := greeting-lex &
@@ -255,22 +229,19 @@ doumokochirakoso-multi  := excl-lex &
 		        [ORTH <! "どうも",  "こちら",  "こそ" !>,
                           SYNSEM.LKEYS.KEYREL.PRED '_kochirakoso_idiom_rel].
 
-doumosumimaseN-multi := excl-lex &  
+doumosumimaseN-multi := excl-ahon-lex &  
                   [ORTH <! "どうも",  "すみません" !>,
-                         SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                                       LKEYS.KEYREL.PRED '_sumimasen_idiom_rel]].
+                         SYNSEM.LKEYS.KEYREL.PRED '_sumimasen_idiom_rel].
 
-moshiwakenai-multi := excl-lex &  
+moshiwakenai-multi := excl-ahon-lex &  
                 [ORTH <! "もうしわけ",  "ない" !>,
-                 SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                               LKEYS.KEYREL.PRED '_moushiwakenai_idiom_rel]].
+                 SYNSEM.LKEYS.KEYREL.PRED '_moushiwakenai_idiom_rel].
 
 
 
-soudesu-idiom := excl-lex &  
+soudesu-idiom := excl-ahon-lex &  
                 [ORTH <! "そう",  "です" !>,
-                 SYNSEM [LOCAL.CAT.HEAD.FORMAL.AHON +,
-                               LKEYS.KEYREL.PRED '_soudesu_idiom_rel]].
+                 SYNSEM.LKEYS.KEYREL.PRED '_soudesu_idiom_rel].
 
 gottsuandesu-idiom := excl-lex &  
                 [ORTH <! "ご","っ","つ","あん",  "です" !>,

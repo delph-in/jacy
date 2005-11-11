@@ -110,10 +110,13 @@ pp_mod_head-avm :=  pp_mod_head &
                        J-SPEC null,
                        COP-ARG -].
 
+; (MS 2005-11-09) These are all AHON + and modifying BAR +.
+
 hon-prefix_head :=  j-head &
                    [POS prefix,
+		    FORMAL.AHON +,
                     MARK null,
-                    MOD < [LEX +] >,
+                    MOD < [LEX +, LOCAL.BAR +] >,
                     C-MOD null,
                     J-POSTHEAD left,
                     J-SPEC null,
@@ -589,6 +592,16 @@ v-cond-end_head :< v-op-end_head.
 v-pass-caus-end_head := verbend_head-unmarked.
 
 pass-end_head := v-pass-caus-end_head & [MODUS passive].
+
+simple-pass-end_head := pass-end_head & [MOD < [LOCAL [CAT.HEAD noun_head,
+						       BAR +]] >,
+					 J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
+					 FIN +,
+					 J-POSTHEAD rels,
+					 C-MOD null,
+					 FORMAL.AHON -].
+
+
 
 caus-end_head  := v-pass-caus-end_head & [MODUS causative,
 					   MARK < [MODIFIED.PERIPH -] >].
@@ -1637,6 +1650,30 @@ case-p-lex := p-lex &
 case-p-lex-np := case-p-lex & 
                   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
 
+; (MS 2005-11-10) getting rid of skip files.
+
+
+case-p-lex-np-coparg := case-p-lex-np &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE coparg].
+
+case-p-lex-np-ga := case-p-lex-np &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE ga].
+
+case-p-lex-np-wo := case-p-lex-np &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE wo].
+
+case-p-lex-np-to := case-p-lex-np &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE to].
+
+case-p-lex-np-kara := case-p-lex-np &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE kara-case].
+
+case-p-lex-np-ni := case-p-lex-np &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE ni].
+
+case-p-lex-np-no := case-p-lex-np &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE no-case].
+
 ; (MS 2005-04-07) It seems that we don't need these any more.
 ; adverb +  case particle is elliptical or ungrammatical, as the NTT
 ; people say.
@@ -1654,6 +1691,17 @@ case-p-lex-postp := case-p-lex &
 		CAT.VAL.COMPS.FIRST.LOCAL [CONT.HOOK.XARG #ind,
 					   CAT.HEAD postp_head & [PTYPE nontop,
 								  CASE mod]]]].
+
+case-p-lex-postp-ga := case-p-lex-postp &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE ga].
+
+case-p-lex-postp-wo := case-p-lex-postp &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE wo].
+
+case-p-lex-postp-ni := case-p-lex-postp &
+			[SYNSEM.LOCAL.CAT.HEAD.CASE ni].
+
+
 ; (MS 2005-05-06) renamed to-case-lex (cleaning up particles).
 ; BUT I really don't know what this is for. Commented it out until
 ; I can find a good example.
@@ -1706,6 +1754,32 @@ comp-lex := p-lex-c &
 comp-prpstn-lex := comp-lex &
                    [SYNSEM.LOCAL.CONT.RELS <! message & [PRED proposition_m_rel] !>].
 
+; (MS 2005-11-10) getting rid of skip files.
+
+comp-prpstn-lex-sentarg := comp-prpstn-lex &
+			   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD sentence-valid].
+
+comp-prpstn-lex-naarg := comp-prpstn-lex &
+			   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
+
+
+comp-prpstn-lex-questarg := comp-prpstn-lex &
+			   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD sap_head & [SMOD quest]].
+
+comp-prpstn-lex-questarg-to := comp-prpstn-lex-questarg &
+			       [SYNSEM.LOCAL.CAT.HEAD.CASE to].
+
+comp-prpstn-lex-quotarg := comp-prpstn-lex &
+			   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD quotation-sentence-end_head].
+
+comp-prpstn-lex-varg := comp-prpstn-lex &
+			   [SYNSEM.LOCAL.CAT [HEAD.CASE to,
+					      VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [VN -,
+											 MAIN-PRD -]]].
+
+comp-prpstn-lex-quot := comp-prpstn-lex &
+			   [SYNSEM.LOCAL.CAT.HEAD.CASE to].
+
 ; (MS 2005-05-09) I don't see why we need this: a copula is inserted
 ; even with the comp-prpstn-lex.
 ;comp-copinsert-lex := p-lex-c &
@@ -1735,12 +1809,39 @@ comp-int-lex := comp-lex &
                 [SYNSEM.LOCAL [CONT [MSG message,
 				     RELS <! [PRED question_m_rel] !>]]].
 
+; (MS 2005-11-10) getting rid of skip files.
+
+comp-int-lex-varg := comp-int-lex &
+		     [SYNSEM.LOCAL.CAT [HEAD.CASE to,
+					VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [MAIN-PRD -]]].
+
+comp-int-lex-naarg := comp-int-lex &
+		     [SYNSEM.LOCAL.CAT [HEAD.CASE to,
+					VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head]].
+
+comp-int-lex-nonquest := comp-int-lex &
+		     [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.NON-LOCAL.QUE <! !>].
+
+comp-int-lex-naarg-nonquest := comp-int-lex-naarg & comp-int-lex-nonquest.
+
+comp-int-lex-varg-nonquest := comp-int-lex-varg & comp-int-lex-nonquest.
+
+comp-int-lex-unmarked := comp-int-lex &
+			 [SYNSEM.LOCAL.CAT [HEAD.CASE to,
+					    VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [SMOD unmarked]]].
+
+
+
+
+
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-11-09) These all have PTYPE nattr.
 
 nspec-p-lex  :=  p-lex-c & 
                  [SYNSEM [LKEYS.KEYREL #key,
 			  LOCAL [CAT [HEAD nspec-p_head & [J-SPEC.FIRST [LOCAL.CONT.HOOK [INDEX #i,
-											  LTOP #h]]],
+											  LTOP #h]],
+							   PTYPE nattr],
 				      VAL.COMPS.FIRST.LOCAL [CONT [HOOK.INDEX #arg],
 							     CAT.VAL saturated]],
 				
@@ -1752,6 +1853,21 @@ nspec-p-lex  :=  p-lex-c &
 						  [HARG #restr,
 						   LARG #h] !>]]]].
 
+; (MS 2005-11-09) Getting rid of skip files.
+
+nspec-p-nouncomp-lex := nspec-p-lex &
+			[SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
+
+nspec-p-pcomp-lex := nspec-p-lex &
+			[SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD postp_head].
+
+nspec-p-vcomp-lex := nspec-p-lex &
+			[SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & 
+									 [H-TENSE te,
+									  VN -]].
+
+
+
 ; (ERB 2001-11-28) Making all Ps intersective modifiers.
 
 mod-p-lex :=  p-lex-c & 
@@ -1762,6 +1878,19 @@ mod-p-lex :=  p-lex-c &
 nmod-p-lex :=  mod-p-lex & 
             [SYNSEM [LOCAL.CAT.HEAD overt-nmod-p_head,
                      MODIFIED.PERIPH -]].
+
+; (MS 2005-11-09) Getting rid of skip files.
+
+nmod-p-lex-pconj := nmod-p-lex &
+            [SYNSEM [LOCAL [CAT [HEAD [MOD < [LOCAL.CONT [HOOK.INDEX #mod]] >,
+				       J-POSTHEAD left],
+				 VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD p_head & [PTYPE nontop,
+										     CASE mod],
+								  CONT [HOOK.INDEX #arg]]]],
+                           CONT n-conj-sem-type],
+		     LKEYS [KEYREL [L-INDEX #arg,
+				    R-INDEX #mod]]]].
+
 
 ;(MS 2005-05-14) This is not used any more. The parentheses do not build the heads.
 ;parmod-p-lex :=  mod-p-lex & 
@@ -1791,6 +1920,60 @@ nounmod-p-lex := nmod-p-lex &
 				     [RELS <! #key !>,
 				      HOOK.INDEX #mod,
 				      HCONS <! !>]]]].
+
+;(MS 2005-11-09) Getting rid of skip files.
+
+nounmod-p-vcomp-lex := nounmod-p-lex &
+		       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head].
+
+nounmod-p-vcomp-quest-lex := nounmod-p-vcomp-lex &
+		       [SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST [LOCAL.CAT.HEAD [MODUS uttmodus,
+									   FIN +,
+									   FORMAL.AHON -,
+									   MAIN-PRD +],
+							   NON-LOCAL.QUE <! #top !>],
+				      CONT.HOOK.LTOP #top]].
+
+nounmod-p-vcomp-prepmod-lex := nounmod-p-vcomp-lex &
+			       [SYNSEM.LKEYS.KEYREL prep-mod-relation].
+
+nounmod-p-ncomp-lex := nounmod-p-lex &
+		       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD noun_head]].
+
+nounmod-p-ncomp-prepmodrel-lex := nounmod-p-ncomp-lex &
+			     [SYNSEM.LKEYS.KEYREL prep-mod-relation].
+
+nounmod-p-ncomp-vnmod-lex := nounmod-p-ncomp-lex &
+			     [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD.VN +] >,
+				      LKEYS.KEYREL prep-mod-relation]].
+
+nounmod-p-ncomp-relmod-lex := nounmod-p-ncomp-lex &
+			     [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD relational_noun_head] >,
+				      LKEYS.KEYREL prep-mod-relation]].
+
+nounmod-p-exc-ncomp-lex := nounmod-p-lex &
+		       [SYNSEM.LOCAL.CAT [HEAD.PTYPE nattr,
+					  VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD exceptional_noun_head]]].
+
+
+nounmod-p-ncomp-plusbar-lex := nounmod-p-lex &
+		       [SYNSEM.LOCAL.CAT [HEAD.PTYPE nattr,
+					  VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head,
+									   BAR +]]]].
+
+nounmod-p-intcomp-lex := nounmod-p-lex &
+		       [SYNSEM.LOCAL.CAT [HEAD.PTYPE nattr,
+					  VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD int_head,
+									   BAR +]]]].
+
+nounmod-p-pcomp-lex := nounmod-p-lex &
+		       [SYNSEM [LOCAL [CAT [HEAD.PTYPE nattr,
+					    VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD vmod-p_head  & [PTYPE nontop],
+									     CONT.HOOK.XARG #1,
+									     BAR +]]],
+				       CONT.RELS <! prep-mod-relation & [PRED '_no_p_rel] !>],
+				LKEYS.KEYREL.ARG1 #1]].
+
 
 
 ;(MS 2005-05-14) This is not used any more. The parentheses do not build the heads.
@@ -1891,6 +2074,26 @@ vmod-p-lex :=  vmod-p-lex-super &
 			     CONT prep-sem-type &
 					     [HOOK.INDEX #ind]]]].
 
+; (MS 2005-11-10) getting rid of skip files.
+
+vmod-p-lex-parentarg := vmod-p-lex &
+			[SYNSEM.LOCAL.CAT [HEAD postp_head,
+					   VAL.COMPS.FIRST.LOCAL.CAT.HEAD parent-end_head]].
+
+
+vmod-p-lex-vtearg := vmod-p-lex &
+		     [SYNSEM.LOCAL.CAT [HEAD postp_head,
+					VAL.COMPS.FIRST.LOCAL.CAT [HEAD verb_head & [FIN -,
+										     VN -],
+								   VAL saturated]]].
+
+vmod-p-lex-narg := vmod-p-lex &
+		   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
+
+vmod-p-lex-parg := vmod-p-lex &
+		   [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE postp-case]].
+
+
 ; (MS 2005-05-10) Not used any more.
 ;uttmod-p-lex  :=  mod-p-lex & 
 ;                  [SYNSEM.LOCAL.CAT.HEAD uttmod-p_head].
@@ -1920,6 +2123,19 @@ postp-lex-coord := mod-p-lex &
 						       CONT.HOOK.INDEX conj-ref-ind],
 				 HEAD postp_head & [MOD.FIRST.LOCAL.CONT.RELS <! !>]],
 			    CONT.RELS <! !>]].
+
+postp-lex-ahon := postp-lex &
+		  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+postp-lex-main := postp-lex &
+		  [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
+
+postp-lex-sub := postp-lex &
+		  [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
+
+postp-lex-robust := postp-lex &
+		  [SYNSEM.NON-LOCAL.ROBUST +].
+
 
 
 
@@ -1976,6 +2192,19 @@ topic-p-lex := vmod-p-lex-super &
 					 [HOOK.INDEX #ind,
 					  RELS <! relation !>]]]].
 
+;(MS 2005-11-10) getting rid of skip files.
+
+topic-vhead-connect-p-lex := topic-p-lex &
+		[SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD verb_head & [FIN +,
+										 VN -,
+										 COP -,
+										 ADJ -,
+										 FORMAL.AHON -,
+										 MAIN-PRD -],
+							   CONT.HOOK.INDEX #objind]],
+			       CONT [RELS <! [PRED '_toshite_p_rel,
+					      ARG1 #objind] !>]]].
+
 ; (ERB 2002-01-10) Experimenting with treating particle uses of など
 ; as contributing topic semantics in addition to nado relation.
 
@@ -2010,6 +2239,37 @@ topic-pobj-lex := topic-p-lex &
 	       CONT [ HOOK.LTOP #modtop,
 		      RELS.LIST.FIRST [ARG1 #objind]]]].
 
+;(MS 2005-11-09) Getting rid of skip lexicon.
+
+topic-pobj-postpcomp-lex := topic-pobj-lex &
+			    [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE postp-case].
+
+topic-pobj-fullmod-lex := topic-pobj-lex &
+			  [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL [CAT [VAL [UNSAT -,
+									 SUBJ null],
+								    HEAD.EMPTY -],
+							       CONT.HOOK.XARG full_ref-ind]] >].
+
+topic-pobj-fullmod-postpcomp-lex := topic-pobj-fullmod-lex & topic-pobj-postpcomp-lex.
+
+topic-pobj-modcomp-lex := topic-pobj-lex &
+			    [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD [PTYPE nontop,
+									      CASE mod]].
+
+
+topic-pobj-negmod-lex := topic-pobj-lex &
+			    [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD.MODUS negative] >].
+
+topic-pobj-overtmodcomp-lex := topic-pobj-lex &
+			    [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD [PTYPE overt,
+									      CASE mod]].
+
+topic-pobj-overtmodcomp-negmod-lex := topic-pobj-negmod-lex &topic-pobj-overtmodcomp-lex. 
+
+topic-pobj-vmodpcomp-lex := topic-pobj-lex &
+			    [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD vmod-p_head & [PTYPE overt]].
+
+
 ; (ERB 2001-09-06) Moving some constraints on narg wa here.
 ; (MS 2003-12-19) Matrix 0.6
 
@@ -2017,6 +2277,22 @@ topic-nobj-lex := topic-p-lex &
 [SYNSEM [LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [ CAT.HEAD noun_head,
 					     CONT.HOOK.INDEX #objind ]]],
 	 LKEYS.KEYREL.ARG1 #objind]].
+
+;(MS 2005-11-09) Getting rid of skip lexicon.
+
+topic-nobj-fullmod-lex := topic-nobj-lex &
+			  [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL [CAT [VAL [UNSAT -,
+									 SUBJ null],
+								    HEAD.EMPTY -],
+							       CONT.HOOK.XARG full_ref-ind]] >].
+
+topic-nobj-negmod-lex := topic-nobj-lex &
+			 [SYNSEM.LOCAL [CAT.HEAD.MOD < [LOCAL.CAT.HEAD.MODUS negative] >]].
+
+
+topic-nobj-adjmod-lex := topic-nobj-negmod-lex &
+			 [SYNSEM.LOCAL [CAT.HEAD.MOD < [LOCAL.CAT.HEAD i-adj_head] >]].
+
 
 ; (ERB 2002-01-10) Experimenting with treating particle uses of など
 ; as contributing topic semantics in addition to nado relation.
@@ -2047,6 +2323,12 @@ topic-vobj-lex := topic-p-lex &
 					   CONT.HOOK.INDEX #objind]],
                CONT.RELS <! [ ARG1 #objind ] !>]]. 
 
+topic-vobj-lex-neg := topic-vobj-lex &
+		      [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [FIN +,
+										      FORMAL.AHON -],
+					  HEAD [PTYPE shika,
+						MOD < [LOCAL.CAT.HEAD.MODUS negative] >]]]].
+
 ; (ERB 2001-10-03) Complementizer to is actually a case-p_head, and in
 ; this case we want to grab the index, since it doesn't contribute a relation. 
 
@@ -2066,7 +2348,7 @@ topic-advarg-lex := topic-p-lex &
 
 
 topic-cardarg-lex := topic-p-lex &
-[SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST [LOCAL [CAT.HEAD int_head,
+[SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST [LOCAL [CAT.HEAD int_head & [MOD < [LOCAL.CAT.HEAD.MODUS negative] >],
 					    CONT.HOOK.INDEX #objind]]],
 	       CONT [RELS <! [ARG1 #objind] !>]]].
 
@@ -2084,15 +2366,71 @@ adv-p-lex-np :=  adv-p-lex &
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head &
 							      [FIN +]]].
 
+;(MS 2005-11-10) getting rid of skip files.
+
+adv-p-lex-np-sub := adv-p-lex-np &
+		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
+
+adv-p-lex-np-main := adv-p-lex-np &
+		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
+
+adv-p-lex-np-exh := adv-p-lex-np &
+		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.VAL.COMPS null] >].
+
+
+adv-p-lex-np-nonexh := adv-p-lex-np &
+		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.VAL.COMPS 1-list] >].
+
+
 adv-p-lex-date :=  adv-p-lex & 
-            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST niarg-relation,
-						     CAT.HEAD noun_head]].
+            [SYNSEM.LOCAL.CAT [HEAD.PTYPE ni,
+			       VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST niarg-relation,
+						      CAT.HEAD noun_head]]].
 
 adv-p-lex-iadj := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD i-adj_head].
 
+;(MS 2005-11-10) getting rid of skip files.
+adv-p-lex-iadj-main := adv-p-lex-iadj &
+		       [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
+
+adv-p-lex-iadj-sub := adv-p-lex-iadj &
+		       [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
+
+
 adv-p-lex-p := adv-p-lex & 
             [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE nontop]]].
+
+;(MS 2005-11-10) getting rid of skip files.
+
+adv-p-lex-p-main := adv-p-lex-p &
+		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
+
+adv-p-lex-p-sub := adv-p-lex-p &
+		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
+
+
+adv-p-lex-tocomp := adv-p-lex-p &
+		    [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD [PTYPE to, CASE mod]].
+
+adv-p-lex-postp := adv-p-lex-p &
+		    [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD [PTYPE postp-case]].
+
+adv-p-lex-p-exh := adv-p-lex-p &
+		   [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.VAL.COMPS null] >].
+
+
+adv-p-lex-tocomp-main := adv-p-lex-p-main & adv-p-lex-tocomp.
+
+
+adv-p-lex-postp-main := adv-p-lex-p-main & adv-p-lex-postp.
+
+adv-p-lex-postp-sub  := adv-p-lex-p-sub & adv-p-lex-postp.
+
+adv-p-lex-postp-main-exh := adv-p-lex-postp-main & adv-p-lex-p-exh.
+
+
+
 
 ; (ERB 2002-01-10) To keep this from attaching to "empty-copula-id-rule"
 ; Vs, say COP -.  Might be too strong, and there might be another
@@ -2410,6 +2748,13 @@ s-conj-lex := sap-lex &
 	  NON-LOCAL.QUE <! !>]].
 
 
+s-conj-lex-fincomp := s-conj-lex &
+		      [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FIN +].
+
+s-conj-lex-desusapsc := s-conj-lex &
+			[SYNSEM.LOCAL.CAT.VAL desu-sap_sc].
+
+
 ;s-conj-nonprop1-lex := s-conj-nonprop-lex & 
 ;                       [SYNSEM.LOCAL.CAT [HEAD [FORMAL.AHON #1,
 ;						SMOD decl],
@@ -2459,6 +2804,10 @@ s-end1-decl-minusahon-lex := s-end1-decl-lex &
 					     CTXT [C-INDICES.SPEAKER #1,
 						   EMPATHY.EMPEE #1]]].
 
+s-end1-decl-full-lex := s-end1-decl-lex &
+			[SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.EMPTY -].
+
+
 s-end1-quest-lex := s-end1-lex &
 		    [SYNSEM [LOCAL [CAT.HEAD.SMOD quest,
                       CONT.RELS <! message & [ PRED question_m_rel ] !>],
@@ -2472,16 +2821,39 @@ s-end1-quest-minusahon-vcomp-lex := s-end1-quest-minusahon-lex &
 									  LOCAL.CAT.HEAD verb_head]]]]].
 
 
+s-end1-quest-minusahon-copcomp-lex := s-end1-quest-minusahon-lex &
+				      [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [NON-LOCAL.QUE 1-dlist,
+									LOCAL.CAT.HEAD.COP +]].
+
 s-end2-lex := s-end-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+; (MS 2005-11-09) To get rid of skip files.
+
+s-end2-nemasc-lex := s-end2-lex &
+		     [SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
+				    CONT.RELS <! message & [ PRED ne_m_rel] !>,
+				    CTXT.C-INDICES.SPEAKER.PNG.GEN masc]].
+
+s-end2-nefem-lex := s-end2-lex &
+		     [SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
+				    CONT.RELS <! message & [ PRED ne_m_rel] !>,
+				    CTXT.C-INDICES.SPEAKER.PNG.GEN fem]].
+
+s-end2-quest-lex := s-end2-lex &
+		     [SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
+                      CONT.RELS <! message & [ PRED question_m_rel] !>]].
+
 
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-02) For generation, these need PRED values on the arg1-relation.
 ; (FCB 2005-06-27) Added ARG0 to message 
 ; FIXME I am not sure who should be the ARG0 of the main message!
+; (MS 2005-11-09) These all have SMOD decl.
 
 s-ell-end-lex := sap-lex &
- [SYNSEM [LOCAL [CAT [HEAD s-end_head-avm & [EMPTY +],
+ [SYNSEM [LOCAL [CAT [HEAD s-end_head-avm & [EMPTY +,
+					     SMOD decl],
 		      VAL.COMPS.FIRST.LOCAL.CONT.HOOK [LTOP #v-handle,
 						       INDEX #subord-index]],
 		 CONT [HOOK [INDEX #ind,
@@ -2539,10 +2911,26 @@ interj-lex := lexical_sign-word &
                              AFFIX <! !>]],
              INFLECTED +].
 
+; (MS 2005-11-09) Subtypes to get rid of skip files.
+
+interj-bar-lex := interj-lex &
+		  [SYNSEM.LOCAL.BAR +].
+
+interj-robust-lex := interj-lex &
+		  [SYNSEM.NON-LOCAL.ROBUST +].
+
 
 excl-lex := idiom-lex &
             [SYNSEM [LOCAL [CAT.HEAD excl_head,
 			    CONT excl-sem-type]]].
+
+; (MS 2005-11-09) Subtypes to get rid of skip files.
+
+excl-robust-lex := excl-lex &
+		   [SYNSEM.NON-LOCAL.ROBUST +].
+
+excl-ahon-lex := excl-lex &
+		   [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
 
 
 idiom-lex := lexical_sign-word & 
@@ -2569,8 +2957,10 @@ idiom-lex := lexical_sign-word &
 greeting-lex := idiom-lex &
                 [SYNSEM [LOCAL.CONT greeting-sem-type]].
 
+; (MS 2005-11-09) Subtype to get rid of skip files.
 
-
+greeting-ahon-lex := greeting-lex &
+		     [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 
 
@@ -3002,6 +3392,8 @@ temp_numeral-dur-whq-lex := temp_numeral-lex &
                                      LOCAL.CONT.HOOK.LTOP #top]].
 
 
+; (MS 2005-11-09) These all seem to have "mo" affixes.
+
 affix-noun-lex := n-lex &
                   [SYNSEM [LOCAL [CAT [HEAD [MOD null,
                                              C-MOD null,
@@ -3018,7 +3410,7 @@ affix-noun-lex := n-lex &
                                   BAR +],
 			   LKEYS.KEYREL #key & [ARG0 #i],
                            NON-LOCAL [QUE <! !>,
-                                   AFFIX 1-dlist]]].
+				      AFFIX <! mo !> ]]].
                                        
 ;;;;;;;;;;;;;;;;;; numeral classifiers ;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -3561,6 +3953,13 @@ temp_nmod-lex := temp_mod-lex &
 				     HOOK.INDEX #arg,
 				     HCONS <! !>]]]].
 
+; (MS 2005-11-09) Subtype in order to get rid of skip files.
+; This shouldn't undergo the empty rules.
+
+
+temp_nmod-nonempty-lex := temp_nmod-lex &
+			  [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD noun_head-avm & [EMPTY +]] > ].
+			  
 
 
 
@@ -3594,6 +3993,11 @@ noun_mod-lex := lexical_sign-word &
 
 noun_mod-lex-l := noun_mod-lex &
                   [ SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD left ].
+
+; (MS 2005-11-09) Subtype to get rid of skip files.
+
+noun_mod-lex-l-relational := noun_mod-lex-l &
+			     [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD relational_noun_head ].
 
 ; (ERB 2002-01-10) ... and some are posthead, like 等 (distinct
 ; from particle use of 等)  (Assuming this is intersective, may
@@ -3666,6 +4070,8 @@ pred-adj-lex := lexical_sign-word &
              INFLECTED +].
 
 
+; (MS 2005-11-09) Subtypes in order to get rid of skip files.
+
 hon-prefix-lex := lexical_sign-affix &
                   [SYNSEM [LOCAL [CAT [HEAD hon-prefix_head,
                                        VAL saturated],
@@ -3677,6 +4083,18 @@ hon-prefix-lex := lexical_sign-affix &
                            NON-LOCAL [QUE <! !>,
                                    AFFIX <! !>]], 
                    INFLECTED +].
+
+hon-prefix2n-lex := hon-prefix-lex &
+		     [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [HEAD ordinary_noun_head,
+							       VAL.SPR 1-list ]]> ].
+
+hon-prefix2vn-lex := hon-prefix-lex &
+		     [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD vn_head ] > ].
+
+hon-prefix2na-lex := hon-prefix-lex &
+		     [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD na-adj_head ] > ].
+
+
 
 ; (ERB 2001-09-06) Sentences with commas in them have broken HCONS values.  So 
 ; I'm adding HCONS <! !> to see if that helps.                   
@@ -3948,6 +4366,13 @@ ordinary-nohon-indef-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.CAT.VAL.SPR.F
 
 ordinary-nohon-minusbar-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.BAR -].
 ordinary-nohon-plusbar-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.BAR +].
+
+; (MS 2005-11-09) To get rid of skip files.
+
+ordinary-nohon-threepl-n-lex := ordinary-nohon-n-lex & [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN threepl].
+
+ordinary-nohon-plusbar-indefspec-n-lex := ordinary-nohon-plusbar-n-lex & [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED '_indef_n_rel].
+
 
 ; (MS 2004-12-24) Changed the name from ordinary-nohon-minusbar-right-n-lex.
 ; (MS 2005-07-04) But we have the noun_mod-lex-r and noun_mod-lex-l for these!
@@ -4503,6 +4928,10 @@ scopal-adv-regular-lex := scopal-adv-lex &
 			  [SYNSEM.LOCAL.CAT.HEAD [J-POSTHEAD left,
 						  COP-ARG +]].
 
+; (MS 2005-11-09) To get rid of skip files.
+
+scopal-adv-regular-negmod-lex := scopal-adv-regular-lex &
+				 [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY "_neg_v_rel" ].
 
 ; (MS 2004-12-15) This doesn't have to be COMPS null on the modifiee, otherwise we
 ; don't get relative-clause-obj-gap rules. But it should be COP-ARG -, such that
@@ -4512,6 +4941,12 @@ scopal-adv-right2left-lex := scopal-adv-lex &
 			  [SYNSEM.LOCAL.CAT.HEAD [J-POSTHEAD right,
 						  COP-ARG -,
 						  MOD < [LOCAL.CAT.HEAD verb_head] > ]].
+
+
+; (MS 2005-11-09) To get rid of skip files.
+scopal-adv-right2left-presentmod-lex := scopal-adv-right2left-lex &
+					[SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD [H-TENSE present,
+											  FORMAL.AHON -]].
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- numbers;;;;;;;;;;;;;;;;;;
@@ -5051,6 +5486,7 @@ date-n-lex := n-lex &
 date-noun-lex := date-n-lex &
 [ SYNSEM.LKEYS.KEYREL future-date-relation ].
 
+
 date-noun-minusbar-lex := date-noun-lex &
 			  [SYNSEM.LOCAL.BAR -].
 
@@ -5246,6 +5682,9 @@ na-varg-end-lex := na-end-lex &
 			[SYNSEM.LOCAL [CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD verb_head & 
 								       [VN -,
 									FORMAL.AHON -]]].
+na-varg-negspr-end-lex := na-varg-end-lex &
+			  [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS negative].
+
 
 na-naarg-end-lex :=  na-end-lex &
 		     [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD na-adj_head].
@@ -5255,8 +5694,9 @@ na-naarg-end-lex :=  na-end-lex &
 ; such as 元気になる
 
 naadj2adv-end-lex := lexical_sign-word &
-                     [SYNSEM j-synsem &
-                             [LOCAL [CAT [HEAD case-adv_head,
+                     [J-NEEDS-AFFIX -,
+		      SYNSEM j-synsem &
+                             [LOCAL [CAT [HEAD case-adv_head & [J-POSTHEAD left],
 					  VAL obj-arg &
 					       [COMPS #comps & [FIRST [OPT - ,
 								       LOCAL [CAT [HEAD na-adj_head,
@@ -5344,15 +5784,32 @@ v-neg-end-lex := v-noncaus-op-end-lex &
 			  LKEYS.KEYREL #keyrel]].
 
 v-neg-polite-present-end-lex := v-neg-end-lex &
-				[J-NEEDS-AFFIX -,
-				 SYNSEM.LOCAL [CAT.HEAD [MOD null,
-							 C-MOD null,
+				[SYNSEM.LOCAL [CAT.HEAD [C-MOD null,
 							 H-TENSE present,
-							 MARK null,
-							 J-SPEC null,
-							 FIN +,
 							 FORMAL.AHON +],
 					       CONT.HOOK.INDEX.E.MOOD indicative]].
+
+v-neg-plain-present-end-lex := v-neg-end-lex &
+				[SYNSEM.LOCAL.CAT.HEAD [C-MOD null,
+							 H-TENSE present,
+							 FORMAL.AHON -,
+							 COP-ARG -,
+							 FIN +]].
+
+
+v-neg-polite-present-simple-end-lex := v-neg-polite-present-end-lex &
+				       [J-NEEDS-AFFIX -,
+					SYNSEM.LOCAL.CAT.HEAD [MOD null,
+							       FIN +,
+							       MARK null,
+							       J-SPEC null]].
+							       
+
+v-neg-polite-present-end-imorph-lex := v-neg-polite-present-simple-end-lex &
+				       [LMORPH-BIND-TYPE i-morph].
+
+v-neg-polite-present-end-amorph-lex := v-neg-polite-present-simple-end-lex &
+				       [LMORPH-BIND-TYPE a-morph].
 
 v-neg-polite-past-end-lex := v-neg-end-lex &
 			     [J-NEEDS-AFFIX -,
@@ -5362,24 +5819,110 @@ v-neg-polite-past-end-lex := v-neg-end-lex &
 						      MARK null,
 						      J-SPEC null,
 						      FIN +,
-						      FORMAL.AHON +],
-					    CONT.HOOK.INDEX.E.MOOD indicative]].
+						      FORMAL.AHON +]]].
+
+v-neg-polite-past-end-imorph-lex := v-neg-polite-past-end-lex &
+				       [LMORPH-BIND-TYPE i-morph].
+
+v-neg-polite-past-end-taispec-lex := v-neg-polite-past-end-lex &
+				     [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY tai_rel,
+				      LMORPH-BIND-TYPE a-morph].
+
+v-neg-polite-past-end-adjspec-lex := v-neg-polite-past-end-lex &
+				     [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head,
+				      LMORPH-BIND-TYPE a-morph].
+
+v-neg-polite-present-spr-end-lex := v-neg-polite-present-end-lex &
+				    [J-NEEDS-AFFIX -,
+				     SYNSEM.LOCAL.CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+									  BAR +]] >,
+							    MARK null,
+							     FIN +,
+							    J-POSTHEAD rels,
+							    J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
+				     LMORPH-BIND-TYPE a-morph].
+
+v-neg-plain-present-spr-end-lex := v-neg-plain-present-end-lex &
+				   [J-NEEDS-AFFIX -,
+				     SYNSEM.LOCAL.CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+									  BAR +]] >,
+							    MARK null,
+							     FIN +,
+							    J-POSTHEAD rels,
+							    J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
+				     LMORPH-BIND-TYPE a-morph].
+
+v-neg-polite-present-tai-end-lex := v-neg-polite-present-spr-end-lex &
+				    [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL tai-relation].
+
+
+v-neg-polite-present-adjspr-end-lex := v-neg-polite-present-spr-end-lex &
+				    [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head].
+
+
+v-neg-polite-present-namark-end-lex := v-neg-polite-present-end-lex &
+				       [SYNSEM.LOCAL.CAT.HEAD [MOD null,
+							       MARK.FIRST.LOCAL.CAT.HEAD na-adj_head,
+							       J-SPEC null,
+							       FIN -],
+					LMORPH-BIND-TYPE a-morph,
+					RMORPH-BIND-TYPE shortadj-morph].
+
 
 v-finite-present-plain-negative-end-lex := v-neg-end-lex &
-           [J-NEEDS-AFFIX -,
-            SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
-                                    MOD < [LOCAL [CAT.HEAD noun_head,
-                                                BAR +]] >,
-                                    MARK null,
-                                    C-MOD null,
-                                    J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-                                    FIN +,
-                                    J-POSTHEAD rels,
-                                    FORMAL.AHON -]],
-                         CONT.HOOK.INDEX.E.MOOD indicative],
-            LMORPH-BIND-TYPE a-morph,
-            STEMTYPE adj-stem].
+					   [J-NEEDS-AFFIX -,
+					    SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
+								     MOD < [LOCAL [CAT.HEAD noun_head,
+										   BAR +]] >,
+								     MARK null,
+								     C-MOD null,
+								     J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
+								     FIN +,
+								     J-POSTHEAD rels,
+								     FORMAL.AHON -]]],
+					    LMORPH-BIND-TYPE a-morph,
+					    STEMTYPE adj-stem,
+					    INFLECTED +].
 
+v-neg-te-plain-end-lex := v-neg-end-lex &
+			  [J-NEEDS-AFFIX -,
+			   SYNSEM [LOCAL [CAT [HEAD [FIN -,
+						     H-TENSE te,
+						     MOD null,
+						     MARK null,
+						     COP-ARG -,
+						     C-MOD.FIRST.LOCAL [CAT [HEAD verb_head & [MAIN-PRD +]],
+									BAR +],
+						     J-POSTHEAD coord,
+						     FORMAL.AHON -]]]],
+			   LMORPH-BIND-TYPE a-or-aa-morph].
+
+v-neg-te-plain-aamorph-end-lex := v-neg-te-plain-end-lex &
+				  [LMORPH-BIND-TYPE aa-morph].
+
+v-neg-te-plain-amorph-end-lex := v-neg-te-plain-end-lex &
+				  [LMORPH-BIND-TYPE a-morph].
+
+
+
+
+v-naide-end-lex := v-neg-end-lex &
+		   [J-NEEDS-AFFIX -,
+		    SYNSEM [LOCAL [CAT [HEAD [FIN -,
+					      H-TENSE tensed,
+					      J-SPEC < [LOCAL [CAT.HEAD verb_head &
+									[AUX aux_plus],
+							       BAR +],
+							LEX +] >,
+					      MARK null,
+					      COP-ARG -,
+					      MOD < [LOCAL [CAT [HEAD verb_head & [MAIN-PRD +]],
+							    BAR +]] >,
+					      J-POSTHEAD coord,
+					      FORMAL.AHON -],
+					VAL.SPR.FIRST.LOCAL.CAT.VAL.UNSAT bool],
+				   CONT.HOOK.INDEX.E.MOOD indicative]],
+            LMORPH-BIND-TYPE a-morph].
 
 ; (ERB 2002-01-14) HCONS <! !> no longer true of all subtypes.  Move
 ; this to v-simple-end-lex.  Same for identifying LTOP of SPR with LTOP.
@@ -5515,14 +6058,34 @@ v-te-end-lex := te-end-lex-basic &
 				       H-TENSE tensed],
 				 VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #modus]].
 
+v-te-end-tmorph-lex := v-te-end-lex &
+		       [LMORPH-BIND-TYPE t-morph].
+
+v-te-end-ndmorph-lex := v-te-end-lex &
+		       [LMORPH-BIND-TYPE nd-morph].
+
+v-te-end-ahon-lex := v-te-end-lex &
+		     [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
+		      LMORPH-BIND-TYPE i-morph].
+
+
+
 v-coord-end-lex := te-end-lex-basic &
 		   [SYNSEM.LOCAL.CAT.HEAD [J-SPEC null,
 					   FORMAL.AHON -,
 					   MODUS indicative]].
 
+v-coord-end-tmorph-lex := v-coord-end-lex &
+			  [LMORPH-BIND-TYPE t-morph].
+
+v-coord-end-ndmorph-lex := v-coord-end-lex &
+			  [LMORPH-BIND-TYPE nd-morph].
+
+
 comma-coord-end-lex := v-coord-end-lex &
 		       [SYNSEM [LOCAL.CAT.HEAD.J-SPEC null,
-				LKEYS.KEYREL adj-relation & [PRED 'comma]]].
+				LKEYS.KEYREL adj-relation & [PRED 'comma]],
+			LMORPH-BIND-TYPE i-or-t-morph].
 		
 
 v-indicative-tense-end-lex :=   v-tense-end-lex &
@@ -5538,11 +6101,32 @@ v-indicative-tense-end-lex :=   v-tense-end-lex &
                                  VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #modus],
                             CONT.HOOK.INDEX.E.MOOD indicative]]. 
 
+;(MS 2005-11-10) getting rid of skip files.
+
 v-present-tense-end-lex :=  v-indicative-tense-end-lex &
-			    [SYNSEM.LOCAL.CAT.HEAD.H-TENSE present].
+			    [SYNSEM.LOCAL.CAT.HEAD [H-TENSE present,
+						    FORMAL.AHON +,
+						    J-SPEC < [LOCAL.CAT.HEAD exceptional_noun_head] >],
+			     LMORPH-BIND-TYPE i-morph].
 
 v-past-tense-end-lex :=  v-indicative-tense-end-lex &
-			    [SYNSEM.LOCAL.CAT.HEAD.H-TENSE past].
+			    [SYNSEM.LOCAL.CAT.HEAD [H-TENSE past,
+						    J-SPEC < [LOCAL.CAT.HEAD nom_head] >]].
+
+v-past-tense-end-ahon-lex := v-past-tense-end-lex &
+			     [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
+			      LMORPH-BIND-TYPE i-morph].
+			     
+v-past-tense-end-minusahon-lex := v-past-tense-end-lex &
+			     [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -,
+			      INFLECTED +].
+
+v-past-tense-end-minusahon-tmorph-lex := v-past-tense-end-minusahon-lex &
+					 [LMORPH-BIND-TYPE t-morph].
+
+v-past-tense-end-minusahon-ndmorph-lex := v-past-tense-end-minusahon-lex &
+					 [LMORPH-BIND-TYPE nd-morph].
+
 
 v-consultative-tense-end-lex := v-tense-end-lex &
 				[J-NEEDS-AFFIX -,
@@ -5555,8 +6139,29 @@ v-consultative-tense-end-lex := v-tense-end-lex &
 							 FIN +,
 							 MODUS consultative]]].
 
+v-consultative-tense-polite-end-lex := v-consultative-tense-end-lex &
+				       [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+v-consultative-tense-plain-end-lex := v-consultative-tense-end-lex &
+				       [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+
+v-consultative-tense-imorph-end-lex := v-consultative-tense-end-lex &
+				       [LMORPH-BIND-TYPE i-morph].
+
+v-consultative-tense-omorph-end-lex := v-consultative-tense-end-lex &
+				       [LMORPH-BIND-TYPE o-morph].
+
+v-consultative-tense-polite-imorph-end-lex := v-consultative-tense-polite-end-lex & v-consultative-tense-imorph-end-lex.
+
+v-consultative-tense-plain-imorph-end-lex := v-consultative-tense-plain-end-lex & v-consultative-tense-imorph-end-lex.
+
+v-consultative-tense-plain-omorph-end-lex := v-consultative-tense-plain-end-lex & v-consultative-tense-omorph-end-lex.
+
+
 v-imperative-tense-end-lex := v-tense-end-lex-super &
                  [J-NEEDS-AFFIX -,
+		  LMORPH-BIND-TYPE i-morph,
                   SYNSEM.LOCAL.CAT [HEAD [MODUS simple-imperative,
                                           MOD null,
                                           COP-ARG -,
@@ -5620,13 +6225,28 @@ tai-end-lex-basic := v-noncaus-op-end-lex &
 			LKEYS.KEYREL #key],
                 LMORPH-BIND-TYPE i-morph].
 
-
+taku-end-lex := tai-end-lex-basic &
+           [J-NEEDS-AFFIX -,
+            INFLECTED +,
+            SYNSEM.LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT [HEAD verb_head & [MAIN-PRD +]],
+                                                BAR +]] >, 
+                                     H-TENSE te,
+                                     J-POSTHEAD coord,
+                                     MARK null,
+                                     COP-ARG -,
+                                    J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX aux_plus],
+                                                 BAR +],
+					      LEX +] >,
+                                     FIN -,
+                                     FORMAL [SHON -],
+                                     MODUS voluntative]]]].
 
 tai-end-lex := tai-end-lex-basic &
 	       [SYNSEM.LOCAL [CAT.HEAD [MODUS voluntative,
 				       MOD < [LOCAL [CAT.HEAD noun_head,
 						  BAR +]] >,
 				       H-TENSE present,
+					C-MOD null,
 				       J-POSTHEAD rels,
 				       MARK null,
 				       J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,
@@ -5635,12 +6255,22 @@ tai-end-lex := tai-end-lex-basic &
 		J-NEEDS-AFFIX -,
 		INFLECTED +].
 
+tai-minusshon-end-lex := tai-end-lex &
+			 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.SHON -].
+
 tai-notyetend-lex :=  tai-end-lex-basic &
 		      [J-NEEDS-AFFIX +,
 		       INFLECTED -,
 		       SYNSEM [LOCAL.CAT.HEAD [MOD null,
 					       C-MOD null],
 			       MODIFIED.PERIPH +]].
+
+tai-notyetend-adjstem-lex := tai-notyetend-lex &
+			     [STEMTYPE adj-stem].
+
+tai-notyetend-cstem-lex := tai-notyetend-lex &
+			     [STEMTYPE c-stem].
+
 
 ; (ERB 2001-09-06) Currently the MARG of the main prpstn in conditional sentences
 ; QEQs an unbound handle.  I'm hoping to fix this by exposing the handle of the
@@ -5695,7 +6325,54 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
                                                           HARG #prpstnsoa1],
                                                  qeq & [LARG #subord,
                                                         HARG #prpstnsoa2] !>]],
-			     LKEYS.KEYREL #key]].
+			     LKEYS.KEYREL #key],
+		     J-NEEDS-AFFIX -].
+
+v-cond-end-pastspr-lex := v-cond-end-lex &
+			  [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past].
+
+v-cond-end-presentspr-lex := v-cond-end-lex &
+			  [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE present].
+
+v-cond-end-polite-lex := v-cond-end-lex &
+			 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+v-cond-end-plain-lex := v-cond-end-lex &
+			 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+v-cond-end-ind-lex := v-cond-end-lex &
+			 [SYNSEM.LOCAL.CONT.HOOK.INDEX.E.MOOD indicative].
+
+v-cond-end-imorph-lex := v-cond-end-lex &
+			 [LMORPH-BIND-TYPE i-morph].
+
+v-cond-end-tmorph-lex := v-cond-end-lex &
+			 [LMORPH-BIND-TYPE t-morph].
+
+v-cond-end-ndmorph-lex := v-cond-end-lex &
+			 [LMORPH-BIND-TYPE nd-morph].
+
+v-cond-end-condmorph-lex := v-cond-end-lex &
+			 [LMORPH-BIND-TYPE cond-morph].
+
+
+v-cond-end-pastspr-polite-lex := v-cond-end-pastspr-lex & v-cond-end-polite-lex.
+
+v-cond-end-pastspr-polite-imorph-lex := v-cond-end-pastspr-polite-lex & v-cond-end-imorph-lex.
+
+v-cond-end-pastspr-polite-ind-imorph-lex :=  v-cond-end-pastspr-polite-imorph-lex & v-cond-end-ind-lex.
+
+v-cond-end-pastspr-plain-lex := v-cond-end-pastspr-lex & v-cond-end-plain-lex.
+
+v-cond-end-pastspr-plain-tmorph-lex := v-cond-end-pastspr-plain-lex & v-cond-end-tmorph-lex.
+
+v-cond-end-pastspr-plain-ndmorph-lex := v-cond-end-pastspr-plain-lex & v-cond-end-ndmorph-lex.
+
+v-cond-end-pastspr-polite-tmorph-lex := v-cond-end-pastspr-polite-lex & v-cond-end-tmorph-lex.
+
+v-cond-end-pastspr-polite-ndmorph-lex := v-cond-end-pastspr-polite-lex & v-cond-end-ndmorph-lex.
+
+v-cond-end-presentspr-imorph-lex := v-cond-end-presentspr-lex & v-cond-end-imorph-lex.
 
 ; (MS 2001-11-22) RARERU needs an ARG1, if it shall be able to combine with TAI.
 
@@ -5703,7 +6380,8 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
 ; (FCB 2005-06-27) Added ARG0 to message 
 rareru-end-lex :=  v-noncaus-op-end-lex &
  [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK < [MODIFIED.PERIPH -] >,
-					    KEYS.KEY #pred],
+					    KEYS.KEY #pred,
+					    MODUS potential],
 		      VAL.SPR.FIRST [LOCAL.CONT [HOOK [XARG #arg1,
 						       INDEX #o-index,
 						       LTOP #ohand]]]],
@@ -5721,7 +6399,19 @@ rareru-end-lex :=  v-noncaus-op-end-lex &
 			     LTOP #top],
 		       HCONS <! qeq & [LARG #ohand,
 				       HARG #soa] !>]],
-			MODIFIED.PERIPH +]].  
+			MODIFIED.PERIPH +],
+  INFLECTED -]. 
+
+ rareru-end-imorph-lex := rareru-end-lex &
+			  [LMORPH-BIND-TYPE i-morph,
+			   STEMTYPE v-stem].
+
+rareru-end-condmorph-lex := rareru-end-lex &
+			  [LMORPH-BIND-TYPE cond-morph].
+
+rareru-end-condexcmorph-lex := rareru-end-lex &
+			  [LMORPH-BIND-TYPE cond-exceptional-morph].
+
 
 
 ; (ERB 2002-01-02) Adding a vn-vend-rule (parallel to vstem-vend-rule)
@@ -5757,6 +6447,48 @@ v-noncaus-op-end-lex := v-op-end-lex &
 				       CONT.HOOK.XARG #xarg,
 				       ARG-S #args]].
 
+naru-noncaus-end-lex := v-noncaus-op-end-lex &
+	    [INFLECTED -,
+	     LMORPH-BIND-TYPE a-morph,
+	     STEMTYPE c-stem,
+	     SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
+				 VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
+								 INDEX #mod-i],
+							     MOD-HAND #mod-h]],
+			    CONT [HOOK [INDEX #event,
+					LTOP #hd],
+				  MOD-HAND #mod-h,
+				  MOD-IND #mod-i,
+				  RELS <! #key !>,
+				  HCONS <! !>]],
+		     LKEYS.KEYREL #key & adv-relation &
+			   [LBL #hd,
+			    ARG1 #arg-h,
+			    ARG0 #event],
+		     MODIFIED.PERIPH +]].
+
+nai-noncaus-end-lex := v-noncaus-op-end-lex &
+           [J-NEEDS-AFFIX +,
+	    INFLECTED -,
+	    LMORPH-BIND-TYPE a-morph,
+	    STEMTYPE adj-stem,
+	    SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK.FIRST [MODIFIED.PERIPH -,
+							    LOCAL.CAT.HEAD verbend_head],
+						      J-SPEC null,
+						      COP-ARG -],
+			       VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
+							  HOOK.LTOP #v-hd,
+							  MOD-IND #event]]],
+			  CONT [RELS <! #key & [ARG1 #neg-arg,
+						 LBL #top] !>,
+				HOOK [LTOP #top,
+				      INDEX #event & [E.MOOD indicative]],
+				MOD-HAND #modhd,
+				MOD-IND #event,
+				HCONS <! qeq & [LARG #v-hd,
+						 HARG #neg-arg] !>]],
+		    LKEYS.KEYREL #key & neg-relation,
+		    MODIFIED.PERIPH +]].
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (FCB 2005-06-27) Added ARG0 to message 
@@ -5791,7 +6523,11 @@ v-noncaus-op-end-lex := v-op-end-lex &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 caus-trans-obj-end-lex := v-op-end-lex &
-                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
+                [SYNSEM [LOCAL [CAT [HEAD caus-end_head & 
+					  [MOD < [LOCAL [CAT.HEAD noun_head,
+							 BAR +]] >,
+					   C-MOD null,
+					   J-POSTHEAD rels],
 				     VAL [SPR obl-1-arg &
 					      [FIRST [LOCAL [CONT [HOOK [LTOP #hand,
 									 XARG #causee]],
@@ -5818,7 +6554,16 @@ caus-trans-obj-end-lex := v-op-end-lex &
 								 ARG2 #causee,
 								 ARG3 #prpstn-hd,
 								 ARG0 #event,
-								 LBL #top]]].
+								 LBL #top],
+			 MODIFIED.PERIPH +],
+		 STEMTYPE v-stem,
+		 INFLECTED -].
+
+caus-trans-obj-passcmorph-end-lex := caus-trans-obj-end-lex &
+				     [LMORPH-BIND-TYPE pass-c-stem-morph].
+
+caus-trans-obj-passvmorph-end-lex := caus-trans-obj-end-lex &
+				     [LMORPH-BIND-TYPE pass-v-stem-morph].
 
 
 ; (MS 2005-09-28) A second reading of the causative ending propagates the verb stem INDEX,
@@ -5826,6 +6571,7 @@ caus-trans-obj-end-lex := v-op-end-lex &
 
 caus-trans-obj-scope-end-lex := v-op-end-lex &
                 [INFLECTED -,
+		 STEMTYPE v-stem,
 		 SYNSEM [MODIFIED.PERIPH +,
 			 LOCAL [CAT [HEAD caus-end_head &
 					  [MOD < [LOCAL [CAT.HEAD noun_head,
@@ -5860,6 +6606,13 @@ caus-trans-obj-scope-end-lex := v-op-end-lex &
 								 ARG3 #prpstn-hd,
 								ARG0 event,
 								LBL #c-hand]]].
+
+caus-trans-obj-scope-passcmorph-end-lex := caus-trans-obj-scope-end-lex &
+				     [LMORPH-BIND-TYPE pass-c-stem-morph].
+
+caus-trans-obj-scope-passvmorph-end-lex := caus-trans-obj-scope-end-lex &
+				     [LMORPH-BIND-TYPE pass-v-stem-morph].
+
 
 ;caus-trans-obj2-end-lex := v-op-end-lex &
 ;                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
@@ -5898,7 +6651,12 @@ caus-trans-obj-scope-end-lex := v-op-end-lex &
 ; (MS 2005-09-21) linked the SPR-SUBJ to the complement.
 
 caus-intrans-end-lex := v-op-end-lex &
-                [SYNSEM [LOCAL [CAT [HEAD caus-end_head,
+                [SYNSEM [LOCAL [CAT [HEAD caus-end_head &
+					  [MOD < [LOCAL [CAT.HEAD noun_head,
+							 BAR +]] >,
+					   C-MOD null,
+					   J-POSTHEAD rels,
+					   J-SPEC < [LOCAL.CAT.HEAD noun_head] >],
 				     VAL [SUBJ.FIRST [OPT + ,
 						      LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
 							     CONT.HOOK.INDEX #causer]],
@@ -5928,7 +6686,15 @@ caus-intrans-end-lex := v-op-end-lex &
 								ARG2 #causee,
 								ARG3 #prpstn-hd,
 								ARG0 #event,
-								LBL #top]]].
+								LBL #top]],
+		 INFLECTED -,
+		 STEMTYPE v-stem].
+
+caus-intrans-passcmorph-end-lex := caus-intrans-end-lex &
+				   [ LMORPH-BIND-TYPE pass-c-stem-morph ].
+
+caus-intrans-passvmorph-end-lex := caus-intrans-end-lex &
+				   [ LMORPH-BIND-TYPE pass-v-stem-morph ].
 
 
 ; (MS 2005-09-21) A second reading of the causative ending propagates the verb stem LTOP and INDEX,
@@ -5936,6 +6702,7 @@ caus-intrans-end-lex := v-op-end-lex &
 
 caus-intrans-scope-end-lex := v-op-end-lex &
                 [INFLECTED -,
+		 STEMTYPE v-stem,
 		 SYNSEM [MODIFIED.PERIPH +,
 			 LOCAL [CAT [HEAD caus-end_head &
 					  [MOD < [LOCAL [CAT.HEAD noun_head,
@@ -5973,6 +6740,14 @@ caus-intrans-scope-end-lex := v-op-end-lex &
 								ARG3 #prpstn-hd,
 								ARG0 #event]]].
 
+caus-intrans-scope-passvmorph-end-lex := caus-intrans-scope-end-lex &
+					 [LMORPH-BIND-TYPE pass-v-stem-morph].
+
+caus-intrans-scope-passcmorph-end-lex := caus-intrans-scope-end-lex &
+					 [LMORPH-BIND-TYPE pass-c-stem-morph].
+
+
+
 
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
@@ -5995,7 +6770,8 @@ pass-end-lex :=  v-op-end-lex &
 ; (FCB 2005-07-22) Added 
 
 simple-pass-end-lex :=   pass-end-lex &
-               [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+               [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
+				    VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 							    CONT.HOOK.INDEX #surfsbjind]],
 					 COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
 								  CONT.HOOK.INDEX #surfobjind]] >,
@@ -6018,7 +6794,9 @@ simple-pass-end-lex :=   pass-end-lex &
 				     HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfsbjind],
 			LKEYS.KEYREL pass-relation &  [LBL #hand]],
-		LMORPH-BIND-TYPE pass-morph].
+		LMORPH-BIND-TYPE pass-morph,
+		INFLECTED -,
+		STEMTYPE v-stem].
 
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
@@ -6054,7 +6832,16 @@ ditrans-pass-end-ganini-lex :=   pass-end-lex &
 					 HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfsbjind],
 			LKEYS.KEYREL pass-relation & [LBL #hand]],
-		LMORPH-BIND-TYPE pass-morph].
+		LMORPH-BIND-TYPE pass-morph,
+		INFLECTED -,
+		STEMTYPE v-stem].
+
+ditrans-pass-end-ganini-passcmorph-lex := ditrans-pass-end-ganini-lex &
+					  [LMORPH-BIND-TYPE pass-c-stem-morph].
+
+ditrans-pass-end-ganini-passvmorph-lex := ditrans-pass-end-ganini-lex &
+					  [LMORPH-BIND-TYPE pass-v-stem-morph].
+
 
 
 ; (MS 2004-11-25) There is a second type of ditransitive passives:
@@ -6086,8 +6873,14 @@ ditrans-pass-end-ganiwo-lex :=   pass-end-lex &
 					 HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfsbjind],
 			LKEYS.KEYREL pass-relation & [LBL #hand]],
-		LMORPH-BIND-TYPE pass-morph].
+		LMORPH-BIND-TYPE pass-morph,
+		INFLECTED -].
 
+ditrans-pass-end-ganiwo-passcmorph-lex := ditrans-pass-end-ganiwo-lex &
+					  [LMORPH-BIND-TYPE pass-c-stem-morph].
+
+ditrans-pass-end-ganiwo-passvmorph-lex := ditrans-pass-end-ganiwo-lex &
+					  [LMORPH-BIND-TYPE pass-v-stem-morph].
 
 
 
@@ -6099,7 +6892,8 @@ ditrans-pass-end-ganiwo-lex :=   pass-end-lex &
 ; the ARG1 of the verb. Then, we have only one adversative relation, with ARG1 (the surface subject) and ARG2 (the event).
 
 adversative-pass-end-lex := pass-end-lex &
-			    [SYNSEM [LOCAL [CAT [VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+			    [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
+						 VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 									      CONT.HOOK.INDEX #surfsbjind]] >,
 						      SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
 									      CONT.HOOK.LTOP #sprhd]] >],
@@ -6117,11 +6911,26 @@ adversative-pass-end-lex := pass-end-lex &
 
 
 adversative-intrans-pass-end-lex := adversative-pass-end-lex &
-                [SYNSEM [LOCAL [CAT [VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
+                [SYNSEM [LOCAL [CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+							 BAR +]] >,
+					   J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
+					   FIN +,
+					   J-POSTHEAD rels,
+					   C-MOD null,
+					   FORMAL.AHON -],
+				     VAL [COMPS opt-1-arg & < [LOCAL [CAT.HEAD case-p_head & [CASE ni],
 								      CONT.HOOK.INDEX #surfobjind]]>,
 					 SPR < [LOCAL [CAT.VAL sbj-arg,
 						       CONT.HOOK [XARG #surfobjind]]] >]],
-			       CTXT.EMPATHY.EMPEE #surfobjind]]].
+			       CTXT.EMPATHY.EMPEE #surfobjind]],
+		 STEMTYPE v-stem].
+
+adversative-intrans-pass-passvmorph-end-lex := adversative-intrans-pass-end-lex &
+					       [LMORPH-BIND-TYPE pass-v-stem-morph].
+
+adversative-intrans-pass-passcmorph-end-lex := adversative-intrans-pass-end-lex &
+					       [LMORPH-BIND-TYPE pass-c-stem-morph].
+
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
 
@@ -6133,7 +6942,16 @@ adversative-trans-pass-end-lex := adversative-pass-end-lex &
 					  SPR < [LOCAL [CAT.VAL sbj-obj-arg & [COMPS.FIRST #obj],
 							CONT [HOOK [XARG #surfobjind2]]]] >]],
 			       
-			       CTXT.EMPATHY.EMPEE #surfsbjind]]].
+			       CTXT.EMPATHY.EMPEE #surfsbjind]],
+		 INFLECTED -,
+		 STEMTYPE v-stem].
+
+adversative-trans-pass-passvmorph-end-lex := adversative-trans-pass-end-lex &
+					       [LMORPH-BIND-TYPE pass-v-stem-morph].
+
+adversative-trans-pass-passcmorph-end-lex := adversative-trans-pass-end-lex &
+					       [LMORPH-BIND-TYPE pass-c-stem-morph].
+
 
 
 ; (MS 2004-11-20) Passive ending for light verbs. This one is tricky, because we need to access
@@ -6163,7 +6981,9 @@ lightverb-pass-end-lex :=   pass-end-lex &
 				     HCONS <! !>],
 			       CTXT.EMPATHY.EMPEE #surfobjind],
 			LKEYS.KEYREL pass-relation &  [LBL #hand]],
-		LMORPH-BIND-TYPE pass-morph].
+		LMORPH-BIND-TYPE pass-c-stem-morph,
+		INFLECTED -,
+		STEMTYPE v-stem].
 
 ; (ERB 2002-01-02) Adding a vn-vend-rule (parallel to vstem-vend-rule)
 ; for VN + ください.  To keep that rule from massively overgenerating
@@ -6190,7 +7010,15 @@ lightverb-pass-end-lex :=   pass-end-lex &
 
 v-honorific-end-lex := v-simple-end-lex &
 [SYNSEM [LOCAL [CAT [HEAD [ VN #vn,
-                           FORMAL.SHON + ],
+			    FORMAL [SHON +,
+				    AHON -],
+			    MOD < [LOCAL [CAT.HEAD noun_head,
+					  BAR +]] >,
+			    J-POSTHEAD rels,
+			    J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
+			    FIN +,
+			    C-MOD null,
+			    MODUS indicative],
                     VAL.SPR.FIRST [LOCAL [CAT.HEAD.VN #vn & -,
 					  CONT.HOOK.XARG #2]]],
                CONT [HOOK.INDEX #3,
@@ -6199,7 +7027,10 @@ v-honorific-end-lex := v-simple-end-lex &
                                                    [HONORED #2,
                                                     BEARER #3,
                                                     POLARITY +] !>]],
-	 MODIFIED.PERIPH +]].
+	 MODIFIED.PERIPH +],
+ INFLECTED -,
+ LMORPH-BIND-TYPE pass-v-stem-morph,
+ STEMTYPE v-stem].
 
 ; (ERB 2001-11-14) This doesn't get "gohan wo tabechatta" because it requires
 ; tabe to pick up its arguments before combining, and tabe can't combine with
@@ -6234,12 +7065,13 @@ v-honorific-end-lex := v-simple-end-lex &
 
 
 v-contracted-aux-end-lex := v-op-end-lex &
-[SYNSEM [LOCAL [CAT [HEAD contracted-aux_head,
+[SYNSEM [LOCAL [CAT [HEAD contracted-aux_head & [MODUS #modus],
 		     VAL [SUBJ  #subjval,
                           COMPS #compsval,
 			  SPR obl-1-arg &
 				[FIRST [LOCAL [CONT.HOOK #hook,
-					       CAT [HEAD.AUX aux_minus,
+					       CAT [HEAD [AUX aux_minus,
+							  MODUS #modus],
 						    VAL [SUBJ #subjval,
 							 COMPS #compsval]]]]]]],
 		CONT [RELS <! !>,
@@ -6248,6 +7080,28 @@ v-contracted-aux-end-lex := v-op-end-lex &
 	 MODIFIED.PERIPH +],
  INFLECTED bool,
  STEMTYPE otherstem].
+
+v-contracted-aux-progressive-end-lex := v-contracted-aux-end-lex &
+					[J-NEEDS-AFFIX +,
+					 LMORPH-BIND-TYPE t-morph,
+					 SYNSEM.LOCAL [CONT.HOOK.INDEX.E [ ASPECT progressive,
+									   MOOD #modus],
+						       CAT.HEAD.MODUS #modus]].
+
+
+
+v-contracted-aux-terminative-end-lex := v-contracted-aux-end-lex &
+					[J-NEEDS-AFFIX -,
+					 INFLECTED -,
+					 SYNSEM.LOCAL [CAT.HEAD.COP-ARG -,
+						       CONT [HOOK.INDEX.E [MOOD indicative,
+									   ASPECT terminative]]]].
+
+v-contracted-aux-terminative-tmorph-end-lex := v-contracted-aux-terminative-end-lex &
+					       [LMORPH-BIND-TYPE t-morph].
+
+v-contracted-aux-terminative-ndmorph-end-lex := v-contracted-aux-terminative-end-lex &
+					       [LMORPH-BIND-TYPE nd-morph].
 
 
 ;(MS 01-09-19) If the top-handle should be the handle of the subord_rel, we have problems with the restriction that LTOP = KEY.LBL.
@@ -6396,7 +7250,8 @@ v2na-end-lex := v-op-end-lex &
 v2adv-end-lex := lexical_sign-word &
                [SYNSEM  j-synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal_mod & 
 									     [CONT.HOOK [LTOP #handel,
-											 INDEX #ind]]] >,
+											 INDEX #ind],
+									      CAT.HEAD.MODUS voluntative]] >,
 								     COP-ARG +,
 								   J-POSTHEAD left],
 					      VAL obj-arg &
@@ -6414,7 +7269,8 @@ v2adv-end-lex := lexical_sign-word &
 				    LKEYS.KEYREL #key & adv-relation & [LBL #handel],
 				    NON-LOCAL [QUE <! !>,
 					       AFFIX <! !>]],
-                      INFLECTED +].     
+		INFLECTED +,
+		LMORPH-BIND-TYPE mai-morph].     
 
 ;(CH 2005-04-09) added [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.BAR -].
 v2n-end-lex :=  nom-lex &
@@ -6490,7 +7346,14 @@ mai-end-lex := v-noncaus-op-end-lex &
                [SYNSEM [LKEYS.KEYREL #key & neg-relation & [LBL #top, 
 							    PRED 'neg_rel,
 							    ARG1 #h3],
-			LOCAL [CAT [HEAD v-op-end_head,
+			LOCAL [CAT [HEAD v-op-end_head &
+					 [MODUS indicative,
+                                          MOD null,
+                                          C-MOD null,
+                                          H-TENSE present,
+                                          MARK null,
+                                          J-SPEC null,
+                                          FIN +],
                                    VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
 								    INDEX #i1,
 								    XARG #x1]]]],
@@ -6507,19 +7370,30 @@ mai-end-lex := v-noncaus-op-end-lex &
 					   ARG0 #i1,
 					   MARG #h7] !>,
                                     HCONS <! qeq & [HARG #h7,
-                                                     LARG #h1] !>]]]].
+                                                     LARG #h1] !>]]],
+		J-NEEDS-AFFIX -,
+		LMORPH-BIND-TYPE mai-morph].
 
 beki-end-lex:= v-noncaus-op-end-lex &
                [SYNSEM [LKEYS.KEYREL #key & scopal-adv-relation & [PRED '_beki_a_rel,
 								   ARG0 #ind,
 								   ARG1 #h3],
-			LOCAL [CAT [HEAD v-op-end_head,
+			LOCAL [CAT [HEAD v-op-end_head &
+					 [MODUS indicative,
+                                          MOD null,
+                                          C-MOD null,
+                                          H-TENSE present,
+                                          MARK null,
+                                          J-SPEC null,
+                                          FIN +],
                                    VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
 								    INDEX #ind]]]],
                               CONT [HOOK [INDEX #ind],
                                     RELS <! #key !>,
                                     HCONS <! qeq & [HARG #h3,
-                                                     LARG #h1] !>]]]].
+                                                     LARG #h1] !>]]],
+		J-NEEDS-AFFIX -,
+		LMORPH-BIND-TYPE beki-morph].
 
  
 
@@ -6644,13 +7518,30 @@ intrans-minusshon-stem-lex  := intrans-stem-lex &
 
 intrans-c2-stem-lex := intrans-nohon-stem-lex & [STEMTYPE c2-stem,
                                                 SYNSEM.NON-LOCAL.QUE <! !>].
+
+intrans-c2-stem-minusbar-lex := intrans-c2-stem-lex &
+		       [SYNSEM.LOCAL.BAR -].
 intrans-c-stem-lex := intrans-nohon-stem-lex & [STEMTYPE c-stem,
                                                 SYNSEM.NON-LOCAL.QUE <! !>].
+
+intrans-c-stem-normorph-lex := intrans-c-stem-lex &
+			       [RMORPH-BIND-TYPE nomorphbind].
+
+
+
 intrans-c-stem-wh-lex  := intrans-nohon-stem-lex & [STEMTYPE c-stem,
                                                     SYNSEM [LOCAL.CONT.HOOK.LTOP #top,
                                                             NON-LOCAL.QUE <! #top !>]].
 intrans-v-stem-lex := intrans-nohon-stem-lex & [STEMTYPE v-stem,
                                                 SYNSEM.NON-LOCAL.QUE <! !>].
+intrans-v-stem-normorph-lex := intrans-v-stem-lex &
+			       [RMORPH-BIND-TYPE nomorphbind].
+
+intrans-v-stem-bar-lex := intrans-v-stem-lex &
+			  [SYNSEM.LOCAL.BAR +].
+
+intrans-v-stem-normorph-bar-lex := intrans-v-stem-normorph-lex & intrans-v-stem-bar-lex.
+
 intrans-kurusuru-stem-lex := intrans-nohon-stem-lex & [STEMTYPE kurusuru-stem,
                                                 SYNSEM.NON-LOCAL.QUE <! !>].
 
@@ -6765,9 +7656,40 @@ v1-c2-stem-lex := v1-nohon-stem-lex & [STEMTYPE c2-stem,
                                        SYNSEM.NON-LOCAL.QUE <! !>].
 v1-c-stem-lex := v1-nohon-stem-lex & [STEMTYPE c-stem,
                                       SYNSEM.NON-LOCAL.QUE <! !>].
+v1-c-stem-normorph-lex := v1-c-stem-lex &
+			  [RMORPH-BIND-TYPE nomorphbind].
+
 v1-v-stem-lex := v1-nohon-stem-lex & [STEMTYPE v-stem,
                                       SYNSEM.NON-LOCAL.QUE <! !>].
+
+v1-v-stem-normorph-lex := v1-v-stem-lex &
+			  [RMORPH-BIND-TYPE nomorphbind].
+
+v1-v-stem-bar-lex := v1-v-stem-lex &
+		     [SYNSEM.LOCAL.BAR +].
+
+v1-v-stem-normorph-bar-lex := v1-v-stem-normorph-lex & v1-v-stem-bar-lex.
+
+; (MS 2002-05-19) ageru sets the empathy to its agent.
+
+v1-v-stem-arg1emp-lex := v1-v-stem-lex &
+			 [SYNSEM [LKEYS.KEYREL.ARG1 #arg1,
+				  LOCAL.CTXT.EMPATHY.EMPEE #arg1]].
+
 v1-kurusuru-stem-lex := v1-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+
+v1-kurusuru-nonquest-stem-lex := v1-kurusuru-stem-lex &
+				 [SYNSEM.NON-LOCAL.QUE <! !>].
+
+v1-kurusuru-quest-stem-lex := v1-kurusuru-stem-lex &
+				 [SYNSEM [NON-LOCAL.QUE <!#top !>,
+					  LOCAL.CONT.HOOK.LTOP #top]].
+
+v1-kurusuru-overtargs-stem-lex := v1-kurusuru-stem-lex &
+				  [SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST.LOCAL.CAT.HEAD.PTYPE overt,
+							 COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE overt]].
+
+v1-kurusuru-nonquest-overtargs-stem-lex := v1-kurusuru-overtargs-stem-lex & v1-kurusuru-nonquest-stem-lex.
 
 v1-c2-shon-stem-lex := v1-shon-stem-lex & [STEMTYPE c2-stem].
 v1-c-shon-stem-lex := v1-shon-stem-lex & [STEMTYPE c-stem].
@@ -7132,7 +8054,11 @@ v5a-minusshon-stem-lex  := v5a-stem-lex &
 v5a-c2-stem-lex := v5a-nohon-stem-lex & [STEMTYPE c2-stem].
 v5a-c-stem-lex := v5a-nohon-stem-lex & [STEMTYPE c-stem].
 v5a-v-stem-lex := v5a-nohon-stem-lex & [STEMTYPE v-stem].
-v5a-kurusuru-stem-lex := v5a-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+v5a-kurusuru-stem-lex := v5a-nohon-stem-lex & 
+			 [STEMTYPE kurusuru-stem,
+			  SYNSEM [LOCAL.CAT.VAL [SUBJ.FIRST.LOCAL.CAT.HEAD.PTYPE overt,
+						 COMPS.FIRST.LOCAL.CAT.HEAD.PTYPE overt],
+				  NON-LOCAL.QUE <! !>]].
 
 v5a-c2-shon-stem-lex := v5a-shon-stem-lex & [STEMTYPE c2-stem].
 v5a-c-shon-stem-lex := v5a-shon-stem-lex & [STEMTYPE c-stem].
@@ -7409,7 +8335,13 @@ v8-c-shon-stem-lex := v8-shon-stem-lex & [STEMTYPE c-stem,SYNSEM.NON-LOCAL.QUE <
 v8-c2-shon-stem-lex := v8-shon-stem-lex & [STEMTYPE c2-stem,SYNSEM.NON-LOCAL.QUE <! !>].
 v8-v-shon-stem-lex := v8-shon-stem-lex & [STEMTYPE v-stem].
 
-v8-c-minusshon-stem-lex := v8-minusshon-stem-lex & [STEMTYPE c-stem,SYNSEM.NON-LOCAL.QUE <! !>].
+;(MS 2005-11-11) getting rid of skip files.
+
+v8-c-minusshon-stem-lex := v8-minusshon-stem-lex & 
+			   [STEMTYPE c-stem,
+			    SYNSEM [NON-LOCAL.QUE <! !>,
+				    LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.VN -]].
+
 v8-c2-minusshon-stem-lex := v8-minusshon-stem-lex & [STEMTYPE c2-stem,SYNSEM.NON-LOCAL.QUE <! !>].
 v8-v-minusshon-stem-lex := v8-minusshon-stem-lex & [STEMTYPE v-stem,SYNSEM.NON-LOCAL.QUE <! !>].
 
@@ -7536,14 +8468,15 @@ to_intrans-c-stem-lex := to_intrans-stem-lex & [STEMTYPE c-stem].
 to_intrans-c2-stem-lex := to_intrans-stem-lex & [STEMTYPE c2-stem].
 to_intrans-v-stem-lex := to_intrans-stem-lex & [STEMTYPE v-stem].
 
-
+to_intrans-c-stem-normorph-lex := to_intrans-c-stem-lex  &
+			  [RMORPH-BIND-TYPE nomorphbind].
 
 
 cop-id-stem-lex := v-sbj-comps-stem-lex &
 [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
 			  [H-TENSE #tense],
                     VAL cop-id_transitive &
-                         [COMPS.FIRST.LOCAL.CONT [HOOK.INDEX #objind],
+                         [COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind,
 			  SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind]],
 		CONT verb-sem-type &
                    [HOOK [LTOP #hand,
@@ -7562,11 +8495,29 @@ cop-id-stem-lex := v-sbj-comps-stem-lex &
 cop-id-noquest-stem-lex := cop-id-stem-lex &
 			    [ SYNSEM.NON-LOCAL.QUE <! !>].
 
+cop-id-noquest-c2stem-lex := cop-id-noquest-stem-lex &
+			     [STEMTYPE c2-stem].
+
 cop-id-ordinary-stem-lex := cop-id-noquest-stem-lex &
 			    [ SYNSEM.LOCAL.CAT.HEAD.MOD null].
 
+cop-id-ordinary-dastem-lex := cop-id-ordinary-stem-lex &
+			      [STEMTYPE da-stem].
+
+cop-id-ordinary-desustem-lex := cop-id-ordinary-stem-lex &
+			      [STEMTYPE desu-stem].
+
+
 cop-id-conditional-stem-lex:= cop-id-ordinary-stem-lex &
-			      [ SYNSEM.LOCAL.CAT.HEAD.MODUS conditional].
+			      [ SYNSEM.LOCAL.CAT.HEAD.MODUS conditional,
+				STEMTYPE da-stem].
+
+cop-id-ordinary-daiquest-stem-lex := cop-id-ordinary-desustem-lex &
+				     [SYNSEM.LOCAL [CAT [HEAD [MOD null,
+							       J-SPEC null,
+							       MARK null,
+							       FORMAL.AHON -],
+							 VAL.COMPS.FIRST [NON-LOCAL.QUE <! handle !>]]]].
 
 cop-id-quest-stem-lex := cop-id-stem-lex &
 			 [SYNSEM [LOCAL [CAT [HEAD [MODUS indicative,
@@ -7574,9 +8525,20 @@ cop-id-quest-stem-lex := cop-id-stem-lex &
 						   J-SPEC null,
 						   SMOD quest,
 						   MARK null,
-						   FORMAL.AHON -]],
+						   FORMAL.AHON -],
+					      VAL.COMPS.FIRST.LOCAL.CAT.HEAD ordinary_noun_head],
 					 CONT.HOOK.LTOP #h],
-				  NON-LOCAL.QUE <! #h !>]].
+				  NON-LOCAL.QUE <! #h !>],
+			  STEMTYPE desu-stem].
+
+cop-id-quest-stem-noquestincomp-lex := cop-id-quest-stem-lex &
+				 [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.NON-LOCAL.QUE <! !>].
+
+cop-id-quest-stem-masc-lex := cop-id-quest-stem-lex &
+			      [SYNSEM.LOCAL.CTXT.C-INDICES.SPEAKER.PNG.GEN masc].
+
+cop-id-quest-stem-fem-lex := cop-id-quest-stem-lex &
+			      [SYNSEM.LOCAL.CTXT.C-INDICES.SPEAKER.PNG.GEN fem].
 
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
 
@@ -7597,7 +8559,8 @@ cop-id-neg-stem-lex := verb-stem-lex &
                CTXT.BACKGROUND <! !>,
 		ARG-S < #sbj . #comps >],
 	 LKEYS.KEYREL #key,
-         NON-LOCAL.QUE <! !>]].
+         NON-LOCAL.QUE <! !>],
+ STEMTYPE adj-stem].
 
 
 ; (ERB 2002-01-28) To reduce ambiguity, disallow conjoined Ss as
@@ -7631,6 +8594,44 @@ cop-stem-lex := verb-stem-lex &
 n-cop-stem-lex := cop-stem-lex.
 reg-cop-stem-lex := cop-stem-lex & [SYNSEM.LKEYS.KEYREL arg1-ev-relation].
 
+reg-cop-stem-desustem-lex := reg-cop-stem-lex &
+			     [STEMTYPE desu-stem].
+
+reg-cop-stem-dastem-lex := reg-cop-stem-lex &
+			     [STEMTYPE da-stem].
+
+reg-cop-stem-c2stem-lex := reg-cop-stem-lex &
+			     [STEMTYPE c2-stem].
+
+ 
+reg-cop-stem-indicative-lex := reg-cop-stem-lex &
+			       [SYNSEM.LOCAL.CAT.HEAD.MODUS indicative].
+
+reg-cop-stem-nomod-lex := reg-cop-stem-lex & 
+			  [SYNSEM.LOCAL.CAT.HEAD.MOD null].
+
+reg-cop-stem-indicative-desustem-lex := reg-cop-stem-indicative-lex & reg-cop-stem-desustem-lex.
+
+reg-cop-stem-indicative-dastem-lex := reg-cop-stem-indicative-lex & reg-cop-stem-dastem-lex.
+
+reg-cop-stem-indicative-c2stem-lex := reg-cop-stem-indicative-lex & reg-cop-stem-c2stem-lex.
+
+reg-cop-stem-indicative-dastem-nomod-lex := reg-cop-stem-indicative-dastem-lex & reg-cop-stem-nomod-lex.
+
+
+reg-cop-stem-indicative-dastem-nmod-lex := reg-cop-stem-indicative-dastem-lex & 
+					   [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL [CAT.HEAD noun_head,
+										CONT.HOOK.INDEX #ind]] >,
+						    LKEYS.KEYREL.ARG1 #ind]].
+reg-cop-stem-fem-lex := reg-cop-stem-lex &
+			[SYNSEM.LOCAL.CTXT.C-INDICES.SPEAKER.PNG.GEN fem,
+			 STEMTYPE desu-stem].
+
+
+reg-cop-stem-nomod-fem-lex := reg-cop-stem-nomod-lex & reg-cop-stem-fem-lex.
+
+reg-cop-stem-nomod-desustem-lex := reg-cop-stem-nomod-lex & reg-cop-stem-desustem-lex.
+
 ; (ERB 2001-10-25) Using type neg_rel instead of PRED 'neg_rel.
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
 
@@ -7654,7 +8655,8 @@ cop-neg-stem-lex := verb-stem-lex &
                CTXT.BACKGROUND <! !>,
 		ARG-S #comps],
 	 LKEYS.KEYREL #key,
-         NON-LOCAL.QUE <! !>]].
+         NON-LOCAL.QUE <! !>],
+ STEMTYPE adj-stem].
 
 ; (MS 2003-06-23) ではない
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
@@ -7681,7 +8683,8 @@ cop-neg-lex := nonaux-lex &
 	       BAR +],
 	 LKEYS.KEYREL #key & [LBL #hand]],
  INFLECTED +,
- J-NEEDS-AFFIX -].
+ J-NEEDS-AFFIX -,
+ STEMTYPE adj-stem].
 
 
 ; (ERB 2001-12-20) This wasn't saying enough about it's MOD-IND
@@ -7747,6 +8750,43 @@ n-cop-lex := cop-light-lex &
 reg-cop-lex := cop-light-lex.
 
 
+reg-cop-lex-indicative := reg-cop-lex &
+			  [SYNSEM.LOCAL.CAT.HEAD [MODUS indicative,
+						   MOD null,
+						  C-MOD null]].
+
+reg-cop-lex-indicative-nonfinite := reg-cop-lex &
+				 [SYNSEM.LOCAL.CAT.HEAD [MODUS indicative,
+							 MOD null,
+							 FIN -,
+							 MAIN-PRD -,
+							 J-SPEC null,
+							 VN -,
+							 C-MOD < [LOCAL [CAT.HEAD verb_head & [MAIN-PRD +],
+									 BAR +]]>]].
+
+reg-cop-lex-indicative-finite := reg-cop-lex-indicative &
+				 [SYNSEM.LOCAL.CAT.HEAD.FIN +].
+
+
+reg-cop-lex-indicative-plain := reg-cop-lex-indicative &
+				[SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON -,
+						   VAL.COMPS.FIRST [NON-LOCAL.QUE <! handle !>,
+								    LOCAL.CAT.HEAD adv_head]]].
+
+
+reg-cop-lex-conditional := reg-cop-lex &
+			   [SYNSEM.LOCAL [CAT.HEAD [MAIN-PRD -,
+						    MODUS conditional,
+						    C-MOD < [LOCAL [CAT.HEAD verb_head & [MAIN-PRD +],
+								    BAR +]] >,
+						    J-SPEC null,
+						    FIN -,
+						    H-TENSE present,
+						    VN -,
+						    MOD null]]].
+
+
 
 ; (MS 2004-11-17) Not all auxiliaries have a key relation. That's why I took this
 ; out here.
@@ -7760,6 +8800,8 @@ aux-top-stem-lex := verb-stem-lex & lexical_sign-word &
 
 
 ; (FCB 2005-06-27) Added ARG0 to message  FIXME: should refactor with 3 others
+; (MS 2005-11-09) These all unify ARG1 with EMPEE.
+
 aux-obj-id-stem-lex := aux-top-stem-lex &
                   [SYNSEM [LOCAL [CAT [VAL aux_transitive &
                                             [SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind],
@@ -7775,7 +8817,8 @@ aux-obj-id-stem-lex := aux-top-stem-lex &
                                        HOOK.INDEX #event,
                                        HCONS <! qeq & [LARG #ohand,
                                                         HARG #soa] !> ],
-				 ARG-S < #sbj . #comps >],
+				  CTXT.EMPATHY.EMPEE #sbjind,
+				  ARG-S < #sbj . #comps >],
 			   LKEYS.KEYREL #key & arg123-relation &
                                              [ARG1 #sbjind,
                                               ARG2 #obj2ind,
@@ -8587,6 +9630,11 @@ i-adj-stem-lex := adj-stem-lex &
 i-adj-hon-stem-lex := i-adj-stem-lex &
 		      [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
+; (MS 2005-11-09) To get rid of skip files.
+
+i-adj-minusshon-stem-lex := i-adj-stem-lex &
+		      [SYNSEM.LOCAL.CAT.HEAD.FORMAL.SHON -].
+
 eval-i-adj-stem-lex := adj-stem-lex &
 [SYNSEM [LOCAL.CAT [HEAD.MODUS indicative,
                     VAL eval-adj_sc &
@@ -8604,6 +9652,13 @@ eval-obl-i-adj-stem-lex := eval-i-adj-stem-lex &
 eval-opt-i-adj-stem-lex := eval-i-adj-stem-lex &
 			   [SYNSEM.LOCAL.CAT.VAL.COMPS opt-1-arg & 
 						       [FIRST.LOCAL.CAT.HEAD verb_head & [H-TENSE te, FIN -]]].
+
+; (MS 2005-11-09) Subtype to get rid of skip files
+
+eval-opt-i-adj-minusshon-stem-lex := eval-opt-i-adj-stem-lex &
+				     [SYNSEM.LOCAL.CAT.HEAD.FORMAL.SHON - ].
+
+
 
 ;for rashii, in e.g. 静からしい
 
@@ -8873,7 +9928,10 @@ quasi-light-nohon-stem-lex := quasi-light-lex &
 quasi-light-nohon-v-stem-lex := quasi-light-nohon-stem-lex & [STEMTYPE v-stem].
 quasi-light-nohon-c-stem-lex := quasi-light-nohon-stem-lex & [STEMTYPE c-stem].
 
+; (MS 2005-11-09) Subtypes to get rid of skip files.
 
+quasi-light-nohon-v-stem-rareru-lex := quasi-light-nohon-v-stem-lex &
+				       [SYNSEM.LKEYS.KEYREL rareru-relation ].
 
 ; (MS 2003-12-17) We cannot safely switch to the Matrix 0.6 definition of lexeme. 
 ; This needs some fundamental adaptations of the word and lexeme concepts.

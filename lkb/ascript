@@ -51,10 +51,9 @@
     (progn
       ;; load from database
       (load-lexdb-from-script)
-      ;; load the things that aren't in the database
+      ;; load the things that aren't in the database, such as a skip file.
       (read-cached-sublex-if-available 
-       "lexicon" (list (lkb-pathname (parent-directory) "lex/Jacy.skip.tdl")
-		       (lkb-pathname (parent-directory) "lex/add-lex.tdl" )))
+       "lexicon" (list (lkb-pathname (parent-directory) "lex/add-lex.tdl" )))
       )
   (progn
     ;; pick an arbitrary file and call it the _main_ lexicon
@@ -103,11 +102,11 @@
 ;;; in a separate file, associated with its identifier.  
 
 
-;#+:mt
-;(lkb-load-lisp (this-directory) "mt.lsp" t)
-;#+:mt
-;(mt:read-transfer-rules 
-; (list
-;  (lkb-pathname (parent-directory) "trigger.mtr"))
-; "Generator Triggger Rules"
-; :filter nil :task :trigger :recurse nil :subsume t)
+#+:mt
+(lkb-load-lisp (this-directory) "mt.lsp" t)
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "trigger.mtr"))
+ "Generator Triggger Rules"
+ :filter nil :task :trigger :recurse nil :subsume t)

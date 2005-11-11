@@ -212,8 +212,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_yaru_v_rel].
 morau-aux-stem  :=
 aux-obj-id-c-stem-lex &
 [ORTH <! "もらう" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_morau_v_rel,ARG1 #sbjind],
-              LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_morau_v_rel].
 
 
 ; 貰う 
@@ -228,18 +227,15 @@ SYNSEM [LKEYS.KEYREL [PRED '_morau_v_rel,ARG1 #sbjind],
 morau-kanji-aux-stem  :=
 aux-obj-id-c-stem-lex &
 [ORTH <! "貰う" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_morau_v_rel,ARG1 #sbjind],
-	LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_morau_v_rel].
 
 itadaku-aux-stem :=
 aux-obj-id-minus_shon-c-stem-lex &
 [ORTH <! "いただく" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_itadaku_v_rel,ARG1 #sbjind],
-              LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_itadaku_v_rel].
 
 itadaku-aux-stem-2 :=
 aux-obj-id-minus_shon-c-stem-lex &
 [ORTH <! "頂く" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_itadaku_v_rel,ARG1 #sbjind],
-              LOCAL.CTXT.EMPATHY.EMPEE #sbjind]].
+SYNSEM.LKEYS.KEYREL.PRED '_itadaku_v_rel].
 

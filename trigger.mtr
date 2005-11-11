@@ -72,6 +72,10 @@ mairu-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "mairu-aux-stem" ].
 
+mairu-aux-hiragana-stem_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mairu-aux-hiragana-stem" ].
+
 ;;; perfect_progressive
 kuru-hiragana-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT perfect_progressive ] ] !> ],
@@ -1467,3 +1471,24 @@ kasho_2_gr := generator_rule &
 quotation-sentence-init2_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "quotation-sentence-init2" ].
+
+ka-second-conj_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ka-second-conj" ].
+
+to-second-conj_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "to-second-conj" ].
+
+nasaru_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nasaru" ].
+
+rei-numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "rei-numcl" ].
+
+sha-numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "sha-numcl" ].
+

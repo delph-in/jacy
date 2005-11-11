@@ -63,14 +63,12 @@ light-minus_shon-v-stem-lex &
 ; (MS 2001-09-14) Changed that again.
 
 dekiru-light  :=
-quasi-light-nohon-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL rareru-relation,
- ORTH <! "できる" !>].
+quasi-light-nohon-v-stem-rareru-lex &
+[ORTH <! "できる" !>].
 
 dekiru-kanji-light  :=
-quasi-light-nohon-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL rareru-relation,
- ORTH <! "出来る" !>].
+quasi-light-nohon-v-stem-rareru-lex &
+[ORTH <! "出来る" !>].
 
 ;dekiru-light-1 :=
 ;dekiru-light-nochange-lex &
