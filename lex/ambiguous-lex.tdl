@@ -2,12 +2,8 @@
 ; such that we have massive ambiguity whenever case particles occur. 
 ; (MS 2005-05-13) It sets empathy to the entity it attaches to.
 
-wa-case-ga := case-p-lex-np & 
-       [ORTH <! "¤Ï" !>,
-       SYNSEM [LOCAL [CAT.HEAD [CASE ga, PTYPE wa],
-		      CONT.HOOK.XARG #emp,
-		      CTXT.EMPATHY.EMPEE #emp],
-	       NON-LOCAL.UNDERSPEC_ARG -]].
+wa-case-ga := case-p-lex-np-topic & 
+       [ORTH <! "¤Ï" !>].
 
 ; (MS 2005-09-22) It sets empathy to the entity it attaches to, only
 ; when it is case ga! If it is a case of object topicalization, the 

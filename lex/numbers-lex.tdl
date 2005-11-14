@@ -2141,3 +2141,8 @@ rei-numcl := num-cl-spr-only-ind-lex &
 ichi-hundred := card_3_object_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "100",
   ORTH <! "£±" !>].
+
+shin_numcl := num-cl-spr-only-ind-nmod-lex &
+[ ORTH <! "¿³" !>,
+  SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
+

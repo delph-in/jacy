@@ -11311,10 +11311,10 @@ kaisen_2 := ordinary-nohon-n-lex &
  ORTH <! "³«Àï" !>].
 
 
-
-kaidan_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kaidan_n_2_rel,
- ORTH <! "²ñÃÌ" !>].
+; MS 2005-11-14) We have kaidan as vn entry!
+;kaidan_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kaidan_n_2_rel,
+; ORTH <! "²ñÃÌ" !>].
 
 
 
@@ -49866,10 +49866,10 @@ kyu-_1 := ordinary-nohon-n-lex &
 
 ; µí 
 ; Used 20 times
-
-gyuu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gyuu_n_1_rel,
- ORTH <! "µí" !>].
+; (MS 2005-11-14) we have ushi!
+;gyuu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_gyuu_n_1_rel,
+; ORTH <! "µí" !>].
 
 ; µÞ¥«¡¼¥Ö 
 
@@ -104905,10 +104905,10 @@ hei_1_3 := ordinary-nohon-n-lex &
 
 ; ÉÓ 
 ; Used 3 times
-
-hei_1_4 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hei_n_1_rel,
- ORTH <! "ÉÓ" !>].
+; (MS 2005-11-14) We have bin_1!
+;hei_1_4 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hei_n_1_rel,
+; ORTH <! "ÉÓ" !>].
 
 ; æÛ 
 
@@ -108934,10 +108934,11 @@ makizoe_1 := ordinary-nohon-n-lex &
 
 ; ËÒ¾ì 
 ; Used 1 times
+; (MS 2005-11-14) We have bokujou!
 
-makiba_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_makiba_n_1_rel,
- ORTH <! "ËÒ¾ì" !>].
+;makiba_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_makiba_n_1_rel,
+; ORTH <! "ËÒ¾ì" !>].
 
 ; ´¬Êª 
 
@@ -146422,3 +146423,21 @@ keiki-noun := ordinary-nohon-n-lex &
 nichisokankei-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nichisokankei_n_rel,
  ORTH <! "Æü","¥½","´Ø·¸" !>].
+
+;purse
+
+gamaguchi-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_gamaguchi_n_rel,
+ ORTH <! "¤¬¤Þ","¤°¤Á" !>].
+
+; high performance
+
+kouseinou-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kouseinou_n_rel,
+ ORTH <! "¹âÀ­Ç½" !>].
+
+;one revolution; one rotation
+
+ichikaiten-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ichikaiten_n_rel,
+ ORTH <! "°ì","²óÅ¾" !>].

@@ -760,15 +760,19 @@ vn-light-rule := head-marker-rule &
 ; (ERB 2002-01-02) Adding a rule for VN+vends (esp. VN + kudasai).
 ; Pulled out similarities between new rule and vstem-vend-rule to
 ; supertype vstem-vend-rule-type.
+; (MS 2005-11-14) MAIN-PRD should come from the stem, otherwise we get 
+; spurious ambiguity with the ga-no-conversion rule.
                 
 vstem-vend-rule := stem-end-rule-type &
 		   [ SYNSEM [LOCAL.CAT.VAL.SPR null,
 			     MODIFIED.PERIPH #per],
 		     ARGS < [ SYNSEM [LOCAL.CAT.HEAD ordinary-verb-stem_head & 
-						     [LIGHT #light],
+						     [LIGHT #light,
+						      MAIN-PRD #main],
 				      MODIFIED.PERIPH #per],
 			      J-NEEDS-AFFIX + ],
-			    [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light]] >].
+			    [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light,
+								   MAIN-PRD #main]] >].
 
 
 aux-vend-rule := stem-end-rule-type &

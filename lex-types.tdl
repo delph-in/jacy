@@ -1674,6 +1674,12 @@ case-p-lex-np-ni := case-p-lex-np &
 case-p-lex-np-no := case-p-lex-np &
 			[SYNSEM.LOCAL.CAT.HEAD.CASE no-case].
 
+case-p-lex-np-topic := case-p-lex-np &
+		       [SYNSEM [LOCAL [CAT.HEAD [CASE ga, PTYPE wa],
+				       CONT.HOOK.XARG #emp,
+				       CTXT.EMPATHY.EMPEE #emp],
+				NON-LOCAL.UNDERSPEC_ARG -]].
+
 ; (MS 2005-04-07) It seems that we don't need these any more.
 ; adverb +  case particle is elliptical or ungrammatical, as the NTT
 ; people say.
@@ -3262,9 +3268,10 @@ relational-n-lex := n-lex &
 
 ; (MS 2003-07-14) With PRED string (matrix.tdl), it is not possible to use types here and therefore I cannot state PRED def (which overrides PRED udef in the quantify-n-infl-rule). Default-Unification might help here.
 ; (MS 2003-10-08) I'll use the KEY value instead.
+; (MS 2005-11-09) These needed to link the KEYS.KEY, otherwise we parse (and generate) Âè²Ö»Ò
 
 name-lex  := n-lex & 
-                  [SYNSEM [LOCAL [CAT [HEAD name_head-avm,
+                  [SYNSEM [LOCAL [CAT [HEAD name_head-avm & [KEYS.KEY #pred],
                                        VAL noun_sc &
                                           [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
                                   CONT mod-id-nominal-sign-sem-type &
@@ -3273,7 +3280,7 @@ name-lex  := n-lex &
                                        HCONS <! !>],
 				  CTXT.BACKGROUND <! !>,
 				  ARG-S < #spr >],
-			   LKEYS.KEYREL named-relation & #key & [ARG0 #ind],
+			   LKEYS.KEYREL named-relation & #key & [ARG0 #ind, PRED #pred],
                            NON-LOCAL [QUE 0-dlist,
 				      AFFIX <! !>]]].
 

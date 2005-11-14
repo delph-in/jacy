@@ -23499,5 +23499,14 @@ issoku-adv := isect-adv-lex &
 [ORTH <! "一足" !>, 
 SYNSEM.LKEYS.KEYREL.PRED '_issoku_adv_rel].
 
+sokode-chasen := scopal-adv-regular-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sokode_a_2_rel,
+ ORTH <! "そこで" !>].
 
+
+
+yasui-easy-adj  :=
+i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yasui_a_easy_rel,
+ORTH <! "易い" !>].
 

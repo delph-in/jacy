@@ -4251,3 +4251,20 @@ ORTH <! "日本航空" !>].
 gorbatschow-pn := surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'gorbatschow,
 ORTH <! "ゴルバチョフ" !>].
+
+franklin-chasen-pn := surname-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'franklin,
+ORTH <! "フランク","リン" !>].
+
+
+Williams-personname := surname-lex &
+			  [SYNSEM.LKEYS.KEYREL.CARG 'williams,
+			   ORTH <! "ウイリアムス" !>].
+
+US-illinoi-daigaku-instname := inst_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'us_illinoi_daigaku,
+ORTH <! "米","イリノイ","大学" !>].
+
+shakaitou-instname := inst_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'shakaitou,
+ORTH <! "社会党" !>].

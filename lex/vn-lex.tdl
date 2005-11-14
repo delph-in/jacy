@@ -28653,3 +28653,13 @@ ORTH <! "独自","開発" !>].
 zenshin-vn := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zenshin_s_causative_rel,
  ORTH <! "前進" !>].
+
+tousenikkai-vn := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tousenikkai_s_rel,
+ ORTH <! "当選","一","回" !>].
+
+;circular motion
+
+enundou-vn := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_enundou_s_rel,
+ ORTH <! "円運動" !>].

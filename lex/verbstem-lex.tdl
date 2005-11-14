@@ -21876,7 +21876,12 @@ tsukkomu-hiragana-stem := v1-c-stem-lex &
 
 ;entitle
 	   
-daisuru-vstem :=  v7-kurusuru-stem-lex &
+daisuru-stem :=  v7-kurusuru-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_aisuru_v_rel,
  ORTH <! "題する" !>].
 
+;devise
+
+kouzuru-stem := v1-kurusuru-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kouzuru_v_rel,
+ ORTH <! "講ずる" !>].

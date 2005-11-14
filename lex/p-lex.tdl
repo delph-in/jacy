@@ -1000,7 +1000,7 @@ niatatte-hiragana-varg := postp-lex-varg &
 
 
 ;"kaigi ga gogo  ni haitte  orimashite."
-ni-case := case-p-lex-np &
+ni-case := case-p-lex-np-ni &
             [ORTH <! "¤Ë" !>,
              SYNSEM.LOCAL.CAT.HEAD.PTYPE ni].
 
