@@ -556,7 +556,7 @@ e-sub := postp-lex-sub &
 
 
 ;"naN nichi ga yoroshii deshou ka."
-ga := case-p-lex-np & 
+ga := case-p-lex-np-ga & 
        [ORTH <! "¤¬" !>,
 	SYNSEM.LOCAL.CAT.HEAD.PTYPE ga].
 
