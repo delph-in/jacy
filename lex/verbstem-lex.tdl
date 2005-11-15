@@ -21885,3 +21885,7 @@ daisuru-stem :=  v7-kurusuru-stem-lex &
 kouzuru-stem := v1-kurusuru-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kouzuru_v_rel,
  ORTH <! "講ずる" !>].
+
+darou-v-cop-lex  :=
+reg-cop-lex-indicative &
+[ORTH <! "だろ","う" !>].
