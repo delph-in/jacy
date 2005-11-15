@@ -28663,3 +28663,9 @@ tousenikkai-vn := vn-intrans-lex &
 enundou-vn := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_enundou_s_rel,
  ORTH <! "±ß±¿Æ°" !>].
+
+
+;in kyoudai-all
+zeibiki-vn := vn-intrans-lex &
+[ORTH <! "ÀÇ°ú¤­" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_zeibiki_s_rel].

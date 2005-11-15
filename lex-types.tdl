@@ -409,8 +409,12 @@ other_name_head-avm := other_name_head &
 
 inst_name_head :< name_head-avm.
 
+;(MS 2005-11-15) Found examples of compounds with inst-names,
+; such as "¾®ÅÄµÞÊÒÀ¥¹¾¥ÎÅç±ØÁ°". Changing MOD null to noun_head.
+
 inst_name_head-avm := inst_name_head & 
-                      [MOD null].
+                      [MOD < [LOCAL.CAT.HEAD noun_head] >,
+                      J-POSTHEAD compound].
 
 ; (MS-2005-09-30) Shouldn't the relation between a location name and an institution be a compound?
 ; Maybe it should just be a noun: "¥¢¥á¥ê¥«·ÐºÑ"
@@ -1674,11 +1678,26 @@ case-p-lex-np-ni := case-p-lex-np &
 case-p-lex-np-no := case-p-lex-np &
 			[SYNSEM.LOCAL.CAT.HEAD.CASE no-case].
 
+; (MS 2005-05-11) This is the topic marker that replaces case particles,
+; such that we have massive ambiguity whenever case particles occur. 
+
 case-p-lex-np-topic := case-p-lex-np &
-		       [SYNSEM [LOCAL [CAT.HEAD [CASE ga, PTYPE wa],
-				       CONT.HOOK.XARG #emp,
-				       CTXT.EMPATHY.EMPEE #emp],
+		       [SYNSEM [LOCAL.CAT.HEAD.PTYPE wa,
 				NON-LOCAL.UNDERSPEC_ARG -]].
+
+; (MS 2005-05-13) It sets empathy to the entity it attaches to.
+
+case-p-lex-np-topic-ga := case-p-lex-np-topic &
+		       [SYNSEM.LOCAL [CAT.HEAD.CASE ga,
+				      CONT.HOOK.XARG #emp,
+				      CTXT.EMPATHY.EMPEE #emp]].
+
+; (MS 2005-09-22) It sets empathy to the entity it attaches to, only
+; when it is case ga! If it is a case of object topicalization, the 
+; empathy is rather set to the sentence subject (see Watanabe 2000)
+
+case-p-lex-np-topic-wo := case-p-lex-np-topic &
+		       [SYNSEM.LOCAL.CAT.HEAD.CASE wo].
 
 ; (MS 2005-04-07) It seems that we don't need these any more.
 ; adverb +  case particle is elliptical or ungrammatical, as the NTT
@@ -2126,9 +2145,10 @@ postp-lex-varg := postp-lex-general &
 
 postp-lex-coord := mod-p-lex & 
              [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head,
-						       CONT.HOOK.INDEX conj-ref-ind],
+						       CONT.HOOK.INDEX conj-ref-ind & #ind],
 				 HEAD postp_head & [MOD.FIRST.LOCAL.CONT.RELS <! !>]],
-			    CONT.RELS <! !>]].
+			    CONT [HOOK.INDEX #ind,
+				  RELS <! !>]]].
 
 postp-lex-ahon := postp-lex &
 		  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
@@ -6026,6 +6046,10 @@ v-tense-end-lex := v-tense-end-lex-super &
 ; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD utt-valid] prevents this from modifying utterance.
 ; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.COP -] prevents this from modifying copula verbs
 ; including those that are derived from NP via empty-cop-rule.
+; (MS 2005-05-24) This adds massive ambiguity in all cases where there is a
+; verb in te form (such as: ¿©¤Ù¤Æ¤â¤¤¤¤). 
+
+
 te-adjunct-lex := v-tense-end-lex &
  [J-NEEDS-AFFIX -,
   SYNSEM [LOCAL [CAT [HEAD [FIN -,
@@ -6041,6 +6065,13 @@ te-adjunct-lex := v-tense-end-lex &
 	  LKEYS.KEYREL [ARG0 #ind,
 			LBL #handel],
 	  NON-LOCAL.QUE <! !>]].
+
+
+te-adjunct-lex-t := te-adjunct-lex &
+		     [LMORPH-BIND-TYPE t-morph].
+
+te-adjunct-lex-d := te-adjunct-lex &
+		     [LMORPH-BIND-TYPE nd-morph].
 
 
 te-end-lex-basic := v-tense-end-lex &

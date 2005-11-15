@@ -30,7 +30,7 @@
 
 :begin :instance :status lex-entry.
 ;:include "lex/lexicon.tdl".
-;;:include "lex/kyoudai-all.tdl".
+ :include "lex/kyoudai-all.tdl".
  :include "lex/adjadv-lex.tdl".
  :include "lex/aux-stem-lex.tdl".
  :include "lex/funct-lex.tdl".
@@ -38,7 +38,7 @@
  :include "lex/light-verbs-lex.tdl".
  :include "lex/noun-lex.tdl".
  :include "lex/numbers-lex.tdl".
-:include "lex/p-lex.tdl".
+ :include "lex/p-lex.tdl".
  :include "lex/pn-lex.tdl".
  :include "lex/verbstem-lex.tdl".
  :include "lex/vn-lex.tdl".

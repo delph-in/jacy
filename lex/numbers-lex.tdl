@@ -2146,3 +2146,6 @@ shin_numcl := num-cl-spr-only-ind-nmod-lex &
 [ ORTH <! "¿³" !>,
   SYNSEM.LKEYS.KEYREL.PRED 'card-relation].
 
+twohundred-card3 :=  card_3_object_only & 
+[ SYNSEM.LKEYS.KEYREL.CARG "200",
+  ORTH <! "£²" !>].

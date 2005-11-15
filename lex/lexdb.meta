@@ -2,5 +2,5 @@ lexdb-version	4.80
 supported-psql-server	7.4
 supported-psql-server	8.0
 filter	TRUE
-mod_time	-infinity
 user	siegel
+mod_time	2005-11-11 16:08:23.58387+01

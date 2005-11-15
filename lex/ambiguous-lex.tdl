@@ -1,35 +1,23 @@
-; (MS 2005-05-11) This is the topic marker that replaces case particles,
-; such that we have massive ambiguity whenever case particles occur. 
-; (MS 2005-05-13) It sets empathy to the entity it attaches to.
 
-wa-case-ga := case-p-lex-np-topic & 
+wa-case-ga := case-p-lex-np-topic-ga & 
        [ORTH <! "は" !>].
 
-; (MS 2005-09-22) It sets empathy to the entity it attaches to, only
-; when it is case ga! If it is a case of object topicalization, the 
-; empathy is rather set to the sentence subject (see Watanabe 2000)
 
-wa-case-wo := case-p-lex-np & 
-       [ORTH <! "は" !>,
-       SYNSEM [LOCAL [CAT.HEAD [CASE wo, PTYPE wa]],
-	       NON-LOCAL.UNDERSPEC_ARG -]].
+wa-case-wo := case-p-lex-np-topic-wo & 
+       [ORTH <! "は" !>].
 
 
 
 ;(CH 2005-03-10)
 ; solution to parse 「ボールを進んで打つ」「ボールを続けて打つ」.
 ; I'm not sure if this is correct...
-; (MS 2005-05-24) This adds massive ambiguity in all cases where there is a
-; verb in te form (such as: 食べてもいい). 
 
-te-adjunct := te-adjunct-lex &
+te-adjunct := te-adjunct-lex-t &
              [SYNSEM.LKEYS.KEYREL.PRED '_te_adjunct_rel,
-	      LMORPH-BIND-TYPE t-morph,
               ORTH <! "て" !>].
 
-de-adjunct := te-adjunct-lex &
+de-adjunct := te-adjunct-lex-d &
              [SYNSEM.LKEYS.KEYREL.PRED '_te_adjunct_rel,
-	      LMORPH-BIND-TYPE nd-morph,
               ORTH <! "で" !>].
 
 

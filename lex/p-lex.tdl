@@ -1917,3 +1917,33 @@ atari-hiragana-narg := postp-lex &
 		 LKEYS.KEYREL.PRED '_atari_p_rel],
          ORTH <! "あたり" !>]. 
 
+niyori-chasen := postp-lex &
+         [SYNSEM [LOCAL.CAT.HEAD.PTYPE niyotte,
+		  LKEYS.KEYREL.PRED '_niyotte_p_rel],
+         ORTH <! "に","より" !>].
+
+;(MS 2005-11-15): "学校と公園とに行く。"
+
+ni-toarg := adv-p-lex-tocomp &
+	    [SYNSEM [LOCAL.CAT.HEAD.PTYPE ni,
+		     LKEYS.KEYREL.PRED '_ni_p_rel],
+	     ORTH <! "に" !>].
+
+;(MS 2005-11-15): "学校なり公園なりに行け。"
+nari-nconj := n_conj-p-lex &
+      [ORTH <! "なり" !>,
+       SYNSEM.LKEYS.KEYREL.PRED '_nari_p_conj_rel].
+
+
+nari-second-conj := postp-lex-coord &
+	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
+		  ORTH <! "なり" !>].
+
+dano-nconj := n_conj-p-lex &
+      [ORTH <! "だ","の" !>,
+       SYNSEM.LKEYS.KEYREL.PRED '_dano_p_conj_rel].
+
+
+dano-second-conj := postp-lex-coord &
+	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
+		  ORTH <! "だ","の" !>].

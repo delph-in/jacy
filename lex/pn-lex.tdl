@@ -4268,3 +4268,43 @@ ORTH <! "ÊÆ","¥¤¥ê¥Î¥¤","Âç³Ø" !>].
 shakaitou-instname := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'shakaitou,
 ORTH <! "¼Ò²ñÅÞ" !>].
+
+enoshima-locname := loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'enoshima,
+ORTH <! "¹¾¥ÎÅç" !>].
+
+; in kyoudai-all:
+odakyuu_1 := inst_name-lex &
+[ORTH <! "¾®ÅÄµÞ" !>, 
+ SYNSEM.LKEYS.KEYREL.CARG 'odakyuu_1].
+
+katase-locname :=  loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'katase,
+ORTH <! "ÊÒÀ¥" !>].
+
+fujisawa-locname := loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'fujisawa,
+ORTH <! "Æ£Âô" !>].
+
+
+;in kyoudai-all
+fujijuukou-instname := inst_name-lex &
+[ORTH <! "ÉÙ»Î½Å¹©" !>, 
+ SYNSEM.LKEYS.KEYREL.CARG 'fujijuukou].
+
+juuminshutou-instname := inst_name-lex &
+[ORTH <! "¼«Í³Ì±¼çÅÞ" !>, 
+ SYNSEM.LKEYS.KEYREL.CARG 'minshutou].
+
+;in kyoudai-all:
+kaifu-surname := surname-lex &
+[ORTH <! "³¤Éô" !>, 
+ SYNSEM.LKEYS.KEYREL.CARG 'kaifu].
+
+sakai-locname := loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'sakai,
+ORTH <! "ºæ" !>].
+
+kita-locname := loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'kita,
+ORTH <! "ËÌ" !>].
