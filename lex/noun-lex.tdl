@@ -11050,10 +11050,10 @@ eijuu_2 := ordinary-nohon-n-lex &
  ORTH <! "永住" !>].
 
 
-
-eko-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_eko_n__2_rel,
- ORTH <! "エコー" !>].
+;(MS 2005-11-16) We have the vn entry!
+;eko-_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_eko_n__2_rel,
+; ORTH <! "エコー" !>].
 
 
 esuke-pu_2 := ordinary-nohon-n-lex &
@@ -11092,9 +11092,10 @@ entai_2 := ordinary-nohon-n-lex &
  ORTH <! "延滞" !>].
 
 
-entori-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_entori_n__2_rel,
- ORTH <! "エントリー" !>].
+;(MS 2005-11-16) We have the vn entry!
+;entori-_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_entori_n__2_rel,
+; ORTH <! "エントリー" !>].
 
 
 ouin_2 := ordinary-nohon-n-lex &
@@ -13317,7 +13318,7 @@ ji-_2 := ordinary-nohon-n-lex &
 ; Used 1 times
 
 daburyu-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_daburyu_n__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_daburyu_n_2_rel,
  ORTH <! "Ｗ" !>].
 
 ; Ｂ 
@@ -16852,7 +16853,7 @@ tenarai_2 := ordinary-nohon-n-lex &
 ; デビュー 
 
 debyu-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_debyu_n__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_debyuu_n_2_rel,
  ORTH <! "デビュー" !>].
 
 ; 手分け 
@@ -22918,10 +22919,10 @@ osewa_2 := ordinary-nohon-n-lex &
  ORTH <! "御世話" !>].
 
 ; オファー 
-
-ofa-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ofa_n_2_rel,
- ORTH <! "オファー" !>].
+; (MS 2005-11-16) in vn-lex!
+;ofa-_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ofa_n_2_rel,
+; ORTH <! "オファー" !>].
 
 ; お呼び立て 
 
@@ -28718,7 +28719,7 @@ maegari_2 := ordinary-nohon-n-lex &
 ; マスター 
 
 masuta-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_masuta_n_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_masutaa_n_2_rel,
  ORTH <! "マスター" !>].
 
 ; 待ち伏せ 
@@ -29690,15 +29691,15 @@ kanyou_2_1 := ordinary-nohon-n-lex &
  ORTH <! "寛容" !>].
 
 ; クリアー 
-
-kuria-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuria_n_2_rel,
- ORTH <! "クリアー" !>].
+; (MS 2005-11-16) Also in VN!
+;kuria-_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kuriaa_n_2_rel,
+; ORTH <! "クリアー" !>].
 
 ; クリヤー 
 
 kuriya-_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuriya_n_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuriyaa_n_2_rel,
  ORTH <! "クリヤー" !>].
 
 ; 邪魔 
@@ -73566,25 +73567,25 @@ zure_1 := ordinary-nohon-n-lex &
 ; スロー 
 
 suro-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suro_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suroo_n_1_rel,
  ORTH <! "スロー" !>].
 
 ; スローイン 
 
 suro-in_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suro_n_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_surooin_n_rel,
  ORTH <! "スローイン" !>].
 
 ; スローボール 
 
 suro-bo-ru_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suro_n_bo_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suroobooru_n_rel,
  ORTH <! "スローボール" !>].
 
 ; スローガン 
 
 suro-gan_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suro_n_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suroogan_n_rel,
  ORTH <! "スローガン" !>].
 
 ; スロット 
@@ -78705,7 +78706,7 @@ taimuzu_1 := ordinary-nohon-n-lex &
 ; タイムリーヒット 
 
 taimuri-hitto_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taimuri_n_hitto_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_taimuriihitto_n_1_rel,
  ORTH <! "タイムリーヒット" !>].
 
 ; 代名詞 
@@ -104093,7 +104094,7 @@ fure_1 := ordinary-nohon-n-lex &
 ; プレビュー 
 
 purebyu-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_purebyu_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_purebyuu_n_1_rel,
  ORTH <! "プレビュー" !>].
 
 ; フレアー 
@@ -104117,14 +104118,14 @@ pure-ofu_1 := ordinary-nohon-n-lex &
 ; プレーボーイ 
 
 pure-bo-i_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pure_n_bo_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_pureebooi_n_rel,
  ORTH <! "プレーボーイ" !>].
 
 ; プレーボール 
 ; Used 1 times
 
 pure-bo-ru_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pure_n_bo_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_pureebooru_n_rel,
  ORTH <! "プレーボール" !>].
 
 ; ブレーカー 
@@ -108755,7 +108756,7 @@ maitoshi_1 := ordinary-nohon-n-lex &
 ; Used 1 times
 
 maina-ri-gu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_maina_n_ri_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_mainaariigu_n_rel,
  ORTH <! "マイナーリーグ" !>].
 
 ; 毎年 
@@ -109252,19 +109253,19 @@ mazushisa_1 := ordinary-nohon-n-lex &
 ; マスターキー 
 
 masuta-ki-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_masuta_n_ki_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_masutaakii_n_rel,
  ORTH <! "マスターキー" !>].
 
 ; マスタード 
 
 masuta-do_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_masuta_n_do_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_masutaado_n_1_rel,
  ORTH <! "マスタード" !>].
 
 ; マスタードソース 
 
 masuta-doso-su_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_masuta_n_doso_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_masutaadosoosu_n_rel,
  ORTH <! "マスタードソース" !>].
 
 ; マスト 
@@ -125651,7 +125652,7 @@ zubora_1 := ordinary-nohon-n-lex &
 ; スローモーション 
 
 suro-mo-shon_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suro_n_mo_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suroomooshon_n_rel,
  ORTH <! "スローモーション" !>].
 
 ; 精鋭 
@@ -126943,7 +126944,7 @@ buaisou_1 := ordinary-nohon-n-lex &
 ; ファンシー 
 
 fanshi-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fanshi_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fanshii_n_1_rel,
  ORTH <! "ファンシー" !>].
 
 ; 不安定 
@@ -127744,7 +127745,7 @@ honki_1 := ordinary-nohon-n-lex &
 ; マイナー 
 
 maina-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_maina_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_mainaa_n_1_rel,
  ORTH <! "マイナー" !>].
 
 ; 負けず嫌い 
@@ -133810,7 +133811,7 @@ makeppanashi_1 := ordinary-nohon-n-lex &
 ; マスターベーション 
 
 masuta-be-shon_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_masuta_n_be_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_masutaabeshon_n_rel,
  ORTH <! "マスターベーション" !>].
 
 ; 松ヤニ 
@@ -138680,7 +138681,7 @@ yoroi_1 := ordinary-nohon-n-lex &
 ; プレーガイド 
 
 pure-gaido_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pure_n_gaido_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_pureegaido_n_1_rel,
  ORTH <! "プレーガイド" !>].
 
 ; 二度手間 
@@ -145331,14 +145332,14 @@ SYNSEM.LKEYS.KEYREL.PRED '_teinei_n_4_rel].
 kaze-wind :=
 ordinary-nohon-n-lex &
 [ORTH <! "風" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_kaze_1_n_rel]].
+SYNSEM.LKEYS.KEYREL [PRED '_kaze_n_1_rel]].
 
 ; 風邪
 
 kaze-cold :=
 ordinary-nohon-n-lex &
 [ORTH <! "風邪" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_kaze_2_n_rel]].
+SYNSEM.LKEYS.KEYREL [PRED '_kaze_n_2_rel]].
 
 ; 後継ぎ 
 
@@ -145590,19 +145591,19 @@ SYNSEM.LKEYS.KEYREL [PRED '_gai_n_suffix_machi_rel]].
 ; ふう
 
 fuu-suffix_hiragana := noun_mod-lex-r &
-[SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_hiragana_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_rel,
  ORTH <! "ふう" !>].
 
 ; 風
 
 fuu-suffix_kanji := noun_mod-lex-r &
-[SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_kanji_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_suffix_rel,
  ORTH <! "風" !>].
 
 ; 猛
 
 mou-prefix := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_mou_n_prefix_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_mou_n_rel,
  ORTH <! "猛" !>].
 
 ; 省
@@ -145638,7 +145639,7 @@ ken-suffix-hani := noun_mod-lex-r &
 ; 準
 
 jun-prefix := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_jun_n_prefix_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_jun_n_rel,
  ORTH <! "準" !>].
 
 ; ばなし
@@ -145868,7 +145869,7 @@ rin-suffix := noun_mod-lex-r &
 ;根本
 
 nemoto_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nemoto_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nemoto_n_2_rel,
  ORTH <! "根本" !>].
 
 
@@ -145930,7 +145931,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_yukari_n_rel]].
 yukari-kanji :=
 ordinary-nohon-n-lex &
 [ORTH <! "所縁" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_yukari_n_kanji_rel]].
+SYNSEM.LKEYS.KEYREL [PRED '_yukari_n_rel]].
 
 
 ;山田
@@ -145964,7 +145965,7 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_maru_n_rel]].
 
 maru-prefix := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_maru_n_prefix_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_maru_n_rel,
  ORTH <! "丸" !>].
 
 ;;(05-02-25)
@@ -146009,7 +146010,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_chie_n_4_rel]].
 ;FIXME
 ;ノーモア
 no-moa-prefix := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_no-moa_n_prefix_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_no-moa_n_rel,
  ORTH <! "ノーモア" !>].
 
 ;(05-02-28)
@@ -146072,12 +146073,12 @@ SYNSEM.LKEYS.KEYREL [PRED '_girigiri_n_rel]].
 watakushi-prefix-n :=
 noun_mod-lex-l &
 [ORTH <! "私" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_watakushi_prefix_rel]].
+SYNSEM.LKEYS.KEYREL [PRED '_watakushi_n_prefix_rel]].
 
 ;そこいら
 
 sokoira_1 := pron-loc-ref-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_there_n_rel_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_there_n_rel,
  ORTH <! "そこいら" !>].
 
 ;上手
@@ -146130,7 +146131,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_daiji_n_kotogara_rel]].
 ;本
 
 hon-prefix := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_hon_n_prefix_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hon_n_rel,
  ORTH <! "本" !>].
 
 ;;(05-03-02)
@@ -146152,7 +146153,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_sekkaku_n_rel]].
 sekkaku_noun-kanji :=
 ordinary-nohon-n-lex &
 [ORTH <! "折角" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_sekkaku_n_kanji_rel]].
+SYNSEM.LKEYS.KEYREL [PRED '_sekkaku_n_rel]].
 
 ;カフェテリア
 
@@ -146180,7 +146181,7 @@ SYNSEM.LKEYS.KEYREL [PRED '_shougyou_n_rel]].
 sakura_noun-kanji :=
 ordinary-nohon-n-lex &
 [ORTH <! "桜" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_sakura_n_kanji_rel]].
+SYNSEM.LKEYS.KEYREL [PRED '_sakura_n_rel]].
 
 ;是非
 

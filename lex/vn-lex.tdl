@@ -1404,7 +1404,7 @@ ORTH <! "検索" !>].
 
 shoukai-introduce-vn :=
 vn-ditrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shoukai_introduce_s_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shoukai_s_introduce_rel,
 ORTH <! "紹介" !>].
 
 ;claim
@@ -5268,7 +5268,7 @@ ekisaito_1 := vn-intrans-lex &
 ; エコー 
 
 eko-_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_eko_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ekoo_s_1_rel,
  ORTH <! "エコー" !>].
 
 ; エスケープ 
@@ -5344,7 +5344,7 @@ entai_1 := vn-intrans-lex &
 ; エントリー 
 
 entori-_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_entori_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_entorii_s_1_rel,
  ORTH <! "エントリー" !>].
 
 ; 押印 
@@ -8228,7 +8228,7 @@ janpu_1 := vn-intrans-lex &
 ; Used 1 times
 
 shanpu-_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shanpu_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shanpuu_s_1_rel,
  ORTH <! "シャンプー" !>].
 
 ; 集会 
@@ -10935,7 +10935,7 @@ dehairi_1 := vn-intrans-lex &
 ; デビュー 
 
 debyu-_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_debyu_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_debyuu_s_1_rel,
  ORTH <! "デビュー" !>].
 
 ; 手分け 
@@ -12948,7 +12948,7 @@ furan_1 := vn-intrans-lex &
 ; Used 4 times
 
 pure-_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pure_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_puree_s_1_rel,
  ORTH <! "プレー" !>].
 
 ; プログラミング 
@@ -19717,7 +19717,7 @@ insotsu_1 := vn-trans1-lex &
  ORTH <! "引率" !>].
 
 intabyu-_1 := vn-trans1-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_intabyu_s__1_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_intabyuu_s_1_rel,
   ORTH <! "インタビュー" !>].
 
 ; 引用 
@@ -19983,7 +19983,7 @@ osewa_1 := vn-trans1-lex &
 ; オファー 
 
 ofa-_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ofa_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ofaa_s_1_rel,
  ORTH <! "オファー" !>].
 
 ; お呼び立て 
@@ -20336,7 +20336,7 @@ katei_1_2 := vn-trans1-lex &
 ; Used 1 times
 
 kaba-_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kaba_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kabaa_s_1_rel,
  ORTH <! "カバー" !>].
 
 ; がぶ飲み 
@@ -26117,7 +26117,7 @@ maegari_1 := vn-trans1-lex &
 ; マスター 
 
 masuta-_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_masuta_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_masutaa_s_1_rel,
  ORTH <! "マスター" !>].
 
 ; 待ち伏せ 
@@ -27063,7 +27063,7 @@ kanyou_1_1 := vn-trans1-lex &
 ; クリアー 
 
 kuria-_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuria_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuriaa_s_1_rel,
  ORTH <! "クリアー" !>].
 
 ; クリヤー 
@@ -27700,7 +27700,7 @@ hyouban_2 := vn-trans1-lex &
 ; Used 1 times
 
 foro-_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_foro_s__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_foro_s_2_rel,
  ORTH <! "フォロー" !>].
 
 ; 負担 
@@ -27797,7 +27797,7 @@ riri-fu_2 := vn-trans1-lex &
 ; Used 4 times
 
 rire-_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rire_s__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_riree_s_2_rel,
  ORTH <! "リレー" !>].
 
 ; 割引 

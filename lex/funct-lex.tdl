@@ -21,12 +21,12 @@
 ;"hai okagesama de geNki de yatte orimasu."
 
 hai := excl-lex &
-            [ORTH <! "はい" !>,SYNSEM.LKEYS.KEYREL [PRED '_hai_excl_rel]].
+            [ORTH <! "はい" !>,SYNSEM.LKEYS.KEYREL [PRED '_hai_x_rel]].
 
 ;"iie kochira koso doumo arigatou gozaimashita"
 
 iie := excl-lex &
-       [ORTH <! "いいえ" !>,SYNSEM.LKEYS.KEYREL [PRED '_iie_excl_rel]].
+       [ORTH <! "いいえ" !>,SYNSEM.LKEYS.KEYREL [PRED '_iie_x_rel]].
 
 ;"juuyokka juuji omachi shite orimasu node soredewa shitsurei itashimasu"
 ;" soredewa nijuuyokka kayoubi no niji ni sochira no keNkyuushitsu ni ukagau to iu koto de soredewa tanoshimi ni itashite orimasu node yoroshiku onegai itashimasu"
@@ -42,68 +42,68 @@ iie := excl-lex &
 soredewa :=
 interj-lex &
 [ORTH <! "それでは" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_soredewa_interj_rel ].
+ SYNSEM.LKEYS.KEYREL.PRED '_soredewa_a_rel ].
 
 dewa-interj :=
 interj-lex &
 [ORTH <! "では" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_dewa_interj_rel ].
+ SYNSEM.LKEYS.KEYREL.PRED '_dewa_a_rel ].
 
 ;sometimes
 
 tokiniwa :=
 interj-lex &
 [ORTH <! "ときには" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_tokiniwa_interj_rel ].
+ SYNSEM.LKEYS.KEYREL.PRED '_tokiniwa_a_rel ].
 
 ;"maa shucchou no keN naN desu keredomo daitai naNjikaN gurai kakaru deshou ka"
 
 maa-interj := interj-lex &
 	         [ORTH <! "まあ" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_maa_interj_rel ].
+                  SYNSEM.LKEYS.KEYREL.PRED '_maa_a_rel ].
 
 aa-interj := interj-lex &
 	         [ORTH <! "ああ" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_aa_interj_rel ].
+                  SYNSEM.LKEYS.KEYREL.PRED '_aa_a_rel ].
 
 ;well; now; then
 
 sate-interj := interj-lex &
 	         [ORTH <! "さて" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_sate_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_sate_a_rel].
 
 de-interj := interj-lex &
 	         [ORTH <! "で" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_de_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_de_a_rel].
 
 daga-interj := interj-lex &
 	         [ORTH <! "だが" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_daga_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_daga_a_rel].
 
 
 ;"ja yoroshiku onegai shimasu"
 
 ja-interj := interj-lex &
 	         [ORTH <! "じゃ" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_ja_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_ja_a_rel].
 
 ;"jaa sou shimashou"
 
 jaa := interj-lex &
 	         [ORTH <! "じゃあ" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_jaa_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_jaa_a_rel].
 
 ;therefore; consequently
 
 yueni := interj-lex &
 	         [ORTH <! "ゆえに" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_yueni_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_yueni_a_rel].
 
 ;to tell the truth
 
 jitsuwa := interj-lex &
 	         [ORTH <! "実は" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_jitsuwa_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_jitsuwa_a_rel].
 
 kono := det-lex &
          [ORTH <! "この" !>,
@@ -160,7 +160,7 @@ nanrakano := det-lex &
 
 ee-interj := interj-lex &
 	            [ORTH <! "ええ" !>,
-                     SYNSEM.LKEYS.KEYREL.PRED '_ee_interj_rel].
+                     SYNSEM.LKEYS.KEYREL.PRED '_ee_a_rel].
 
 
 
@@ -172,21 +172,21 @@ ee-interj := interj-lex &
 deshitara-interj :=  
 interj-lex &
 [ORTH <! "でしたら" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_deshitara_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_deshitara_a_rel].
 
 ;"demo seNsei ga niji kara yoji haN made gotsugou ga warui N desu yo ne."
 
 demo-interj :=
 interj-lex &
 [ORTH <! "でも" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_demo_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_demo_a_rel].
 
 
 ;"uN kuji kara juuniji made." 
 
 uN := interj-lex &
       [ORTH <! "うん" !>,
-       SYNSEM.LKEYS.KEYREL.PRED '_un_interj_rel].
+       SYNSEM.LKEYS.KEYREL.PRED '_un_a_rel].
 
 
 ;"nijuugonichi wa maa ichinichi aite imasu node."
@@ -204,52 +204,52 @@ ma := hes-lex &
 soshite :=
 interj-lex &
 [ORTH <! "そして" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_soshite_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_soshite_a_rel].
 
 
 soosuruto :=
 interj-lex &
 [ORTH <! "そうすると" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_sousuruto_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_sousuruto_a_rel].
 
 
 
 soreja  :=
 interj-lex &
 [ORTH <! "それじゃ" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_soreja_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_soreja_a_rel].
 
 
 shikashi := 
 interj-lex &
 [ORTH <! "しかし" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_shikashi_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_shikashi_a_rel].
 
 sokode := 
 interj-lex &
 [ORTH <! "そこで" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_sokode_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_sokode_a_rel].
 
 desukara := 
 interj-lex &
 [ORTH <! "ですから" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_desukara_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_desukara_a_rel].
 
 
 sorekara :=
 interj-lex &
 [ORTH <! "それから" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_sorekara_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_sorekara_a_rel].
 
 matawa :=
 interj-lex &
 [ORTH <! "または" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_matawa].
+ SYNSEM.LKEYS.KEYREL.PRED '_matawa_a_rel].
 
 oikura :=
 wh-word-quantity-lex &
 [ORTH <! "おいくら" !>,
- SYNSEM.LKEYS.KEYREL [PRED '_quantity_wh_rel]].
+ SYNSEM.LKEYS.KEYREL [PRED '_quantity_q_wh_rel]].
 
 ; (MS 2005-07-04) This was a prefix-n-lex, a type that doesn't exist any more.
 shin-prefix :=
@@ -269,7 +269,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_tei_n_rel].
 sou-prefix :=
 noun_mod-lex-l &
 [ORTH <! "総" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_sou_n_prefix_rel]]].
+SYNSEM [LKEYS.KEYREL [PRED '_sou_n_rel]]].
 
 shou-prefix :=
 noun_mod-lex-l &
@@ -279,23 +279,23 @@ SYNSEM.LKEYS.KEYREL.PRED '_shou_n_rel].
 purasu :=
 noun_mod-lex-l &
 [ORTH <! "プラス" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_purasu_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_purasu_n_rel].
 
 tashou :=
 noun_mod-lex-l &
 [ORTH <! "たしょう" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_tashou_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_tashou_n_rel].
 
 shikamo := 
 interj-lex &
 [ORTH <! "しかも" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_shikamo_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_shikamo_a_rel].
 
 
 soretomo :=
 interj-lex &
 [ORTH <! "それとも" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_soretomo_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_soretomo_a_rel].
 
 nee :=
 hes-lex &
@@ -322,7 +322,7 @@ det-lex &
 soreto :=
 interj-lex &
 [ORTH <! "それと" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_soreto_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_soreto_a_rel].
 
 
 naa-hes :=
@@ -338,13 +338,13 @@ aa  := hes-lex & [ORTH <! "ああ" !>].
 desunode :=
 interj-lex &
 [ORTH <! "ですので" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_desunode_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_desunode_a_rel].
 
 
 dakara :=
 interj-lex &
 [ORTH <! "だから" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_dakara_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_dakara_a_rel].
 
 
 
@@ -356,7 +356,7 @@ interj-lex &
 no-temp-nmod :=
 temp_nmod-nonempty-lex &
 [ORTH <! "の" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_no_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_no_n_rel].
 
 
 ;"asa no juuji ni rufutohaNza no sumimaseN biN wa naNbiN deshita deshou."
@@ -369,14 +369,14 @@ temp_nmod-nonempty-lex &
 soshitara :=
 interj-lex &
 [ORTH <! "そしたら" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_soshitara_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_soshitara_a_rel].
 
 ;"勤務先だけが以前のままで変更されていません。"
 
 dake-nmod :=
 temp_nmod-lex &
 [ORTH <! "だけ" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_dake_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_dake_n_rel].
 
 
 ;"食べただけです"
@@ -395,42 +395,42 @@ temp_nmod-lex &
 nomi-nmod :=
 temp_nmod-lex &
 [ORTH <! "のみ" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_nomi_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_nomi_n_rel].
 
 ;"e kore de kekkou desu."
 
 e-interj := interj-lex &
 	            [ORTH <! "え" !>,
-                     SYNSEM.LKEYS.KEYREL.PRED '_e_interj_rel].
+                     SYNSEM.LKEYS.KEYREL.PRED '_e_a_rel].
 
 
 ee-excl := excl-lex &
 	            [ORTH <! "ええ" !>,
-                     SYNSEM.LKEYS.KEYREL.PRED '_hai_excl_rel].
+                     SYNSEM.LKEYS.KEYREL.PRED '_hai_x_rel].
 
 eeto-interj := interj-lex &
 	            [ORTH <! "ええと" !>,
-                     SYNSEM.LKEYS.KEYREL.PRED '_eeto_interj_rel].
+                     SYNSEM.LKEYS.KEYREL.PRED '_eeto_a_rel].
 
 ;furthermore; still; yet; more; still more; greater; further; less
 
 nao-interj := interj-lex &
 	            [ORTH <! "なお" !>,
-                     SYNSEM.LKEYS.KEYREL.PRED '_nao_interj_rel].
+                     SYNSEM.LKEYS.KEYREL.PRED '_nao_a_rel].
 
 ieie := excl-lex &
 	            [ORTH <! "いえいえ" !>,
-                     SYNSEM.LKEYS.KEYREL.PRED '_iie_excl_rel].
+                     SYNSEM.LKEYS.KEYREL.PRED '_iie_x_rel].
 
 ano-excl := excl-robust-lex &
 [ORTH <! "あの" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ano_excl_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_ano_x_rel].
 
 
 sorede :=
 interj-lex &
 [ORTH <! "それで" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_sorede_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_sorede_a_rel].
 
 
 
@@ -638,12 +638,12 @@ pred-adj-lex &
 komakana-hiragana :=
 noun_mod-lex-l &
 [ORTH <! "こまかな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_komakana_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_komakana_n_rel].
 
 komakana-kanji :=
 noun_mod-lex-l &
 [ORTH <! "細かな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_komakana_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_komakana_n_rel].
 
 
 
@@ -660,96 +660,96 @@ pred-adj-lex &
 chissana := 
 noun_mod-lex-l &
 [ORTH <! "ちっさな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_chiisai_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_chiisai_n_rel].
 
 chicchana := 
 noun_mod-lex-l &
 [ORTH <! "ちっちゃな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_chiisai_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_chiisai_n_rel].
 
 hyonna := 
 noun_mod-lex-l &
 [ORTH <! "ひょんな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_hyonna_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_hyonna_n_rel].
 
 rokuna := 
 noun_mod-lex-l &
 [ORTH <! "ろくな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_rokuna_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_rokuna_n_rel].
 
 
 onaji := 
 noun_mod-lex-l &
 [ORTH <! "同じ" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_onaji_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_onaji_n_rel].
 
 ironna-kanji  := 
 noun_mod-lex-l &
 [ORTH <! "色んな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ironna_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_ironna_n_rel].
 
 ironna-hiragana  := 
 noun_mod-lex-l &
 [ORTH <! "いろんな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ironna_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_ironna_n_rel].
 
 okashina := 
 noun_mod-lex-l &
 [ORTH <! "おかしな" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_okashina_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_okashina_n_rel].
 
 ;Seems to be segmented in CHASEN now
 
 ;iroirona := 
 ;noun_mod-lex &
 ;[ORTH <! "色々な" !>,
-; SYNSEM.LKEYS.KEYREL.PRED '_iroiro_nmod_rel].
+; SYNSEM.LKEYS.KEYREL.PRED '_iroiro_n_rel].
 
 ;mere,pure
 
 tannaru :=
 noun_mod-lex-l &
 [ORTH <! "単なる" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_tannaru_nmod_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_tannaru_n_rel].
 
 ;additional
 
 saranaru :=
 noun_mod-lex-l &
 [ORTH <! "さらなる" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_saranaru_nmod_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_saranaru_n_rel].
 
 ; (SF 2003-08-25)
 
 touno :=
 noun_mod-lex-l &
 [ORTH <! "当の" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_touno_nmod_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_touno_n_rel].
 
 ichiban-nmod := noun_mod-lex-l-relational &
  [ ORTH <! "一番" !>,
-   SYNSEM.LKEYS.KEYREL.PRED "_ichiban_nmod_rel"].
+   SYNSEM.LKEYS.KEYREL.PRED "_ichiban_n_rel"].
 
 
 ;soshitara-multi :=
 ;                  interj-lex &
 ;                  [ORTH <! "そしたら" !>,
-;                   SYNSEM.LKEYS.KEYREL.PRED '_soshitara_interj_rel].
+;                   SYNSEM.LKEYS.KEYREL.PRED '_soshitara_a_rel].
 
 soudesune-interj-multi := interj-lex &
 		            [ORTH <! "そう",  "です",  "ね" !>,
-                             SYNSEM.LKEYS.KEYREL.PRED '_soudesune_interj_rel].
+                             SYNSEM.LKEYS.KEYREL.PRED '_soudesune_a_rel].
 
 soudesune-hes-multi := hes-lex & 
                   [ORTH <! "そう",  "です",  "ね" !>].
 
 haijaa-multi := interj-lex &
           [ORTH <! "はい",  "じゃあ" !>,
-           SYNSEM.LKEYS.KEYREL.PRED '_haijaa_interj_rel].
+           SYNSEM.LKEYS.KEYREL.PRED '_haijaa_a_rel].
 
 ieie-multi := excl-lex &
               [ORTH <! "いえ",  "いえ" !>,
-               SYNSEM.LKEYS.KEYREL [PRED '_iie_excl_rel]].
+               SYNSEM.LKEYS.KEYREL [PRED '_iie_x_rel]].
 
 ; (MS 2002-1-7) I think we don'_t need these any more.
 
@@ -765,110 +765,110 @@ chottone-multi   := hes-lex &
 
 soudesune-interj := interj-lex &
 		            [ORTH <! "そうですね" !>,
-                             SYNSEM.LKEYS.KEYREL.PRED '_soudesune_interj_rel].
+                             SYNSEM.LKEYS.KEYREL.PRED '_soudesune_a_rel].
 
 ;therefore; consequently; accordingly; because of
 
 yotte-interj := interj-lex &
 		            [ORTH <! "よって" !>,
-                             SYNSEM.LKEYS.KEYREL.PRED '_yotte_interj_rel].
+                             SYNSEM.LKEYS.KEYREL.PRED '_yotte_a_rel].
 
 dato-multi  :=
 interj-lex &
         [ORTH <! "だ",  "と" !>,
-         SYNSEM.LKEYS.KEYREL.PRED '_dato_interj_rel].
+         SYNSEM.LKEYS.KEYREL.PRED '_dato_a_rel].
 
 desune-interj-multi := interj-lex &
                  [ORTH <! "です",  "ね" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_desune_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_desune_a_rel].
 
 desuto-interj-multi := interj-lex &
                  [ORTH <! "です",  "と" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_desuto_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_desuto_a_rel].
 
 atosorekara-multi := interj-lex &
                [ORTH <! "あと",  "それから" !>,
-                SYNSEM.LKEYS.KEYREL.PRED '_atosorekara_interj_rel].
+                SYNSEM.LKEYS.KEYREL.PRED '_atosorekara_a_rel].
 
 soushimashitara-multi :=
                   interj-bar-lex &
                   [ORTH <! "そう",  "しましたら" !>,
-                   SYNSEM.LKEYS.KEYREL.PRED '_soushimashitara_interj_rel].
+                   SYNSEM.LKEYS.KEYREL.PRED '_soushimashitara_a_rel].
 
 
 soushitara-multi :=
                    interj-lex &
                    [ORTH <! "そう",  "したら" !>,
-                   SYNSEM.LKEYS.KEYREL.PRED '_soushitara_interj_rel].
+                   SYNSEM.LKEYS.KEYREL.PRED '_soushitara_a_rel].
 
 ;each
 
 gotoni-temp-nmod  :=
 temp_nmod-lex &
 [ORTH <! "ごと","に" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_gotoni_nmod_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_gotoni_n_rel].
 
 ;now, well, why then
 
 ;sate :=
 ;interj-lex &
 ;[ORTH <! "さて" !>,
-; SYNSEM.LKEYS.KEYREL.PRED '_sate_interj_rel].
+; SYNSEM.LKEYS.KEYREL.PRED '_sate_a_rel].
 
 shikashinagara :=
 interj-lex &
 [ORTH <! "しかしながら" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_shikashinagara_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_shikashinagara_a_rel].
 
 sorenara :=
 interj-lex &
 [ORTH <! "それなら" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_sorenara_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_sorenara_a_rel].
 
 soreni :=
 interj-lex &
 [ORTH <! "それに" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_soreni_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_soreni_a_rel].
 
 tadashi :=
 interj-lex &
 [ORTH <! "ただし" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_tadashi_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_tadashi_a_rel].
 
 chinamini :=
 interj-lex &
 [ORTH <! "ちなみに" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_chinamini_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_chinamini_a_rel].
 
 tsuitewa :=
 interj-lex &
 [ORTH <! "ついては" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_tuitewa_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_tuitewa_a_rel].
 
 aruiwa :=
 interj-lex &
 [ORTH <! "或いは" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_aruiwa_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_aruiwa_a_rel].
 
 shitagatte-interj :=
 interj-lex &
 [ORTH <! "従って" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_shitagatte_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_shitagatte_a_rel].
 
 nao :=
 interj-lex &
 [ORTH <! "尚" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_nao_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_nao_a_rel].
 
 nado-nmod :=
 noun_mod-lex-r &
 [ORTH <! "など" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_nado_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_nado_n_rel].
 
 nado-nmod-kanji :=
 noun_mod-lex-r &
 [ORTH <! "等" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_nado_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_nado_n_rel].
 
 ; "もう半月くらい待つ必要があるようですが"
 
@@ -879,22 +879,22 @@ noun_mod-lex-r &
 kurai-nmod :=
 noun_mod-lex-r &
 [ORTH <! "くらい" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_kurai_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_kurai_n_rel].
 
 gurai-nmod :=
 noun_mod-lex-r &
 [ORTH <! "ぐらい" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_kurai_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_kurai_n_rel].
 
 ;hodo-nmod :=
 ;noun_mod-lex-r &
 ;[ORTH <! "ほど" !>,
-; SYNSEM.LKEYS.KEYREL.PRED '_hodo_nmod_rel].
+; SYNSEM.LKEYS.KEYREL.PRED '_hodo_n_rel].
 
 goro-nmod :=
 noun_mod-lex-r &
 [ORTH <! "ごろ" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_goro_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_goro_n_rel].
 
 ; (TT 2003-09-04) BEGIN
 ; changed lex-types to parse "PRON ijou",
@@ -903,39 +903,39 @@ noun_mod-lex-r &
 ijou-nmod :=
 noun_mod-lex-r &
 [ORTH <! "以上" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ijou_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_ijou_n_rel].
 
 ika-nmod := 
 noun_mod-lex-r &
 [ORTH <! "以下" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ika_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_ika_n_rel].
 
 igai-nmod := 
 noun_mod-lex-r &
 [ORTH <! "以外" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_igai_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_igai_n_rel].
 
 inai-nmod := 
 noun_mod-lex-r &
 [ORTH <! "以内" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_inai_nmod_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_inai_n_rel].
 
 ; (TT 2003-09-04) END
 digit-interj := interj-robust-lex &
 	         [ORTH <! "OneDigitErsatz" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_digit_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_digit_a_rel].
 
 ;"という、ニュースをヤフーの掲示板で読みましたが"
 
 toiu-interj := interj-lex &
 	         [ORTH <! "という" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_toiu_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_toiu_a_rel].
 
 ;"が、変更の場合もコレを提出する事で、以前に登録したものは、削除（無効）になるのですか？"
 
 ga-interj := interj-lex &
 	         [ORTH <! "が" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_ga_interj_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_ga_a_rel].
 
 ;"為念、確認させて頂きたく。"
 ;just to be sure
@@ -943,39 +943,39 @@ ga-interj := interj-lex &
 
 nen-no-tame := interj-lex &
 	         [ORTH <! "為","念" !>,
-                  SYNSEM.LKEYS.KEYREL.PRED '_nen_interj_notame_rel].
+                  SYNSEM.LKEYS.KEYREL.PRED '_nen_a_notame_rel].
 
 ;;;;;;;;;;;;;;;;;;;;NEW ENTRIES FROM AUG 2003;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 a_1_3 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_a_interj_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_a_a_13_rel,
  ORTH <! "あ" !> ].
 
 ; アーメン 
 
 a-men_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_a_interj_men1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_a_a_men1_rel,
  ORTH <! "アーメン" !> ].
 
 ; あっ 
 ; Used 10 times
 
 atsu_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_atsu_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_atsu_a_11_rel,
  ORTH <! "あっ" !> ].
 
 ; あな 
 
 ana_1_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ana_interj_12_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ana_a_12_rel,
  ORTH <! "あな" !> ].
 
 ; あら 
 ; Used 1 times
 
 ara_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ara_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ara_a_11_rel,
  ORTH <! "あら" !> ].
 
 ; 有難う 
@@ -983,20 +983,20 @@ ara_1_1 := interj-lex &
 ; (CH 2003-08-06) 平仮名「ありがとう」がexcl-lexとしてJACYに存在するため
 
 arigatou_1 := excl-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_arigatou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_arigatou_a_1_rel,
  ORTH <! "有難う" !> ].
 
 ; Used 2 times
 ;(CH 2003-08-08) interjとしての用法はなかったので追加
 
 are_1_3 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_are_interj_12_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_are_a_12_rel,
  ORTH <! "あれ" !> ].
 
 ; あれよあれよ 
 
 areyoareyo_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_areyoareyo_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_areyoareyo_a_1_rel,
  ORTH <! "あれよあれよ" !> ].
 
 ;<IJ> ; いいえ 
@@ -1004,13 +1004,13 @@ areyoareyo_1 := interj-lex &
 ;<IJ> ; Used 2 times
 ;(CH 2003-08-08) exclとして登録されているからいい？
 ;<IJ> iie_1 := interj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_iie_interj_1_rel,
+;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_iie_a_1_rel,
 ;<IJ>  ORTH <! "いいえ" !> ].
 
 ; イエス 
 
 iesu_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iesu_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_iesu_a_11_rel,
  ORTH <! "イエス" !> ].
 
 
@@ -1018,68 +1018,68 @@ iesu_1_1 := interj-lex &
 ; Used 1 times
 
 ita_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ita_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ita_a_11_rel,
  ORTH <! "痛" !> ].
 
 
 iya_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iya_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_iya_a_1_rel,
   ORTH <! "いや" !> ].
 
 ; 否 
 ; Used 1 times
 
 iya_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iya_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_iya_a_11_rel,
  ORTH <! "否" !> ].
 
 ; いやいや 
 
 iyaiya_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iyaiya_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_iyaiya_a_11_rel,
  ORTH <! "いやいや" !> ].
 
 ; いやはや 
 
 iyahaya_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iyahaya_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_iyahaya_a_1_rel,
  ORTH <! "いやはや" !> ].
 
 ; ウエルカム 
 
 uerukamu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uerukamu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_uerukamu_a_1_rel,
  ORTH <! "ウエルカム" !> ].
 
 
 ei_1_9 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ei_interj_19_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ei_a_19_rel,
  ORTH <! "えい" !> ].
 
 
 etsu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_etsu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_etsu_a_1_rel,
  ORTH <! "えっ" !> ].
 
 
 oi_1_3 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_oi_interj_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_oi_a_13_rel,
  ORTH <! "おい" !> ].
 
 
 ou_13 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ou_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ou_a_13_rel,
  ORTH <! "おう" !> ].
 
 ; Used 1 times
 
 o-rai_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_o-rai_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_o-rai_a_1_rel,
  ORTH <! "オーライ" !> ].
 
 
 otto_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_otto_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_otto_a_11_rel,
  ORTH <! "おっと" !> ].
 
 
@@ -1087,98 +1087,98 @@ otto_1_1 := interj-lex &
 ;(CH 2003-08-06) 漢字「お早う」がgreeting-lexとしてJACYに存在するため
 
 ohayou_1 := greeting-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ohayou_idiom_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ohayou_x_1_rel,
  ORTH <! "おはよう" !> ].
 
 ; おめでとう 
 ; Used 1 times
 
 omedetou_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_omedetou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_omedetou_a_1_rel,
  ORTH <! "おめでとう" !> ].
 
 
 guddoibuningu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_guddoibuningu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_guddoibuningu_a_1_rel,
  ORTH <! "グッドイブニング" !> ].
 
 
 guddonaito_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_guddonaito_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_guddonaito_a_1_rel,
  ORTH <! "グッドナイト" !> ].
 
 ; Used 2 times
 ;(CH 2003-08-06) 「さようなら」がgreeting-lexとしてJACYに存在するため
 
 guddobai_1 := greeting-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_guddobai_idiom_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_guddobai_x_1_rel,
  ORTH <! "グッドバイ" !> ].
 
 
 guddomo-ningu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_guddomoningu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_guddomoningu_a_1_rel,
  ORTH <! "グッドモーニング" !> ].
 
 
 guddorakku_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_guddorakku_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_guddorakku_a_1_rel,
  ORTH <! "グッドラック" !> ].
 
 
 keigu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_keigu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_keigu_a_1_rel,
  ORTH <! "敬具" !> ].
 
 
 gokigenyou_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gokigenyou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gokigenyou_a_1_rel,
  ORTH <! "ごきげんよう" !> ].
 
 
 gochisousama_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gochisousama_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gochisousama_a_1_rel,
  ORTH <! "ごちそうさま" !> ].
 
 ; Used 1 times
 
 kora_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kora_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kora_a_1_rel,
  ORTH <! "こら" !> ].
 
 
 korya_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_korya_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_korya_a_1_rel,
  ORTH <! "こりゃ" !> ].
 
 ; Used 28 times
 ;(CH 2003-08-08) 登録されていないから追加
 
 kore_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kore_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kore_a_1_rel,
  ORTH <! "これ" !> ].
 
 ; これこれ 
 
 korekore_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_korekore_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_korekore_a_11_rel,
  ORTH <! "これこれ" !> ].
 
 ; これは 
 
 koreha_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_koreha_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_koreha_a_1_rel,
  ORTH <! "これは" !> ].
 
 ; これはこれは 
 
 korehakoreha_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_korehakoreha_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_korehakoreha_a_1_rel,
  ORTH <! "これはこれは" !> ].
 
 ; こんちは 
 
 konchiha_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_konchiha_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_konchiha_a_1_rel,
  ORTH <! "こんちは" !> ].
 
 ; こんにちは 
@@ -1186,65 +1186,65 @@ konchiha_1 := interj-lex &
 ;(CH 2003-08-06) 漢字「今日は」がgreeting-lexとしてJACYに存在するため
 
 konnichiha_1 := greeting-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_konnichiha_idiom_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_konnichiha_x_1_rel,
  ORTH <! "こんにちは" !> ].
 
 
 konbanha_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_konbanha_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_konbanha_a_1_rel,
  ORTH <! "今晩は" !> ].
 
 
 saa_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_saa_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saa_a_1_rel,
  ORTH <! "さあ" !> ].
 
 
 satesate_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_satesate_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_satesate_a_1_rel,
  ORTH <! "さてさて" !> ].
 
 
 sankyu-_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sankyuu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sankyuu_a_1_rel,
  ORTH <! "サンキュー" !> ].
 
 
 shimatta_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shimatta_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shimatta_a_1_rel,
  ORTH <! "しまった" !> ].
 
 
 shimeshime_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shimeshime_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shimeshime_a_1_rel,
  ORTH <! "しめしめ" !> ].
 
 
 shimeta_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shimeta_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shimeta_a_1_rel,
  ORTH <! "しめた" !> ].
 
 ; Used 215 times
 ;(CH 2003-08-08) 登録されていないから追加
 
 sore_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sore_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sore_a_1_rel,
  ORTH <! "それ" !> ].
 
 ; Used 32 times
 ;(CH 2003-08-08) 登録されていないから追加
 
 dou_1_6 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dou_interj_15_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dou_a_15_rel,
  ORTH <! "どう" !> ].
 
 dokkoi_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dokkoi_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dokkoi_a_1_rel,
  ORTH <! "どっこい" !> ].
 
 
 dokkoisho_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dokkoisho_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dokkoisho_a_1_rel,
  ORTH <! "どっこいしょ" !> ].
 
 ; Used 7 times
@@ -1252,100 +1252,100 @@ dokkoisho_1 := interj-lex &
 ;(CH 2003-08-08) 登録されていないから追加
 
 dore_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dore_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dore_a_1_rel,
  ORTH <! "どれ" !> ].
 
 
 donmai_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_donmai_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_donmai_a_1_rel,
  ORTH <! "ドンマイ" !> ].
 
 
 
 nain_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nain_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nain_a_11_rel,
  ORTH <! "ナイン" !> ].
 
 
 nanikuso_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nanikuso_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nanikuso_a_1_rel,
  ORTH <! "なにくそ" !> ].
 
 ; Used 2 times
 ;(CH 2003-08-08) 登録されていないから追加
 
 ne_1_4 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ne_interj_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ne_a_13_rel,
  ORTH <! "ね" !> ].
 
 
 
 
 nokotta_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nokotta_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nokotta_a_1_rel,
  ORTH <! "残った" !> ].
 
 ; Used 673 times
 ;(CH 2003-08-08) 登録されていないから追加
 
 ha_1_8 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ha_interj_17_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ha_a_17_rel,
  ORTH <! "は" !> ].
 
 
 haa_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_haa_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_haa_a_1_rel,
  ORTH <! "はあ" !> ].
 
 
 
 haikei_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_haikei_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_haikei_a_11_rel,
  ORTH <! "拝啓" !> ].
 
 
 haihai_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_haihai_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_haihai_a_1_rel,
  ORTH <! "はいはい" !> ].
 
 
 baibai_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_baibai_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_baibai_a_1_rel,
  ORTH <! "バイバイ" !> ].
 
 
 hajimemashite_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hajimemashite_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hajimemashite_a_1_rel,
  ORTH <! "初めまして" !> ].
 
 
 hate_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hate_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hate_a_11_rel,
  ORTH <! "はて" !> ].
 
 
 hatena_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hatena_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hatena_a_1_rel,
  ORTH <! "はてな" !> ].
 
 
 hare_1_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hare_interj_12_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hare_a_12_rel,
  ORTH <! "はれ" !> ].
 
 
 haro-_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_harou_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_harou_a_11_rel,
  ORTH <! "ハロー" !> ].
 
 
 hiyahiya_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hiyahiya_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hiyahiya_a_1_rel,
  ORTH <! "ひやひや" !> ].
 
 
 burabo-_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_burabou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_burabou_a_1_rel,
  ORTH <! "ブラボー" !> ].
 
 
@@ -1353,42 +1353,42 @@ burabo-_1 := interj-lex &
 ;(CH 2003-08-08) ないから追加
 
 he_1_4 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_he_interj_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_he_a_13_rel,
  ORTH <! "へ" !> ].
 
 
 hei_1_6 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hei_interj_16_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hei_a_16_rel,
  ORTH <! "へい" !> ].
 
 
 hee_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hee_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hee_a_1_rel,
  ORTH <! "へえ" !> ].
 
 
 beranmee_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_beranmee_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_beranmee_a_1_rel,
  ORTH <! "べらんめえ" !> ].
 
 
  hen_1_2 := interj-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_hen_interj_12_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_hen_a_12_rel,
  ORTH <! "へん" !> ].
 
 
 hora_1_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hora_interj_12_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hora_a_12_rel,
  ORTH <! "ほら" !> ].
 
 
 meri-kurisumasu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_meriikurisumasu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_meriikurisumasu_a_1_rel,
  ORTH <! "メリークリスマス" !> ].
 
 
 merushi-_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_merushii_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_merushii_a_1_rel,
  ORTH <! "メルシー" !> ].
 
 
@@ -1396,96 +1396,96 @@ merushi-_1 := interj-lex &
 
 
 motohe_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_motohe_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_motohe_a_1_rel,
  ORTH <! "元へ" !> ].
 
 
 
 
 yahho-_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yahhou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yahhou_a_1_rel,
  ORTH <! "ヤッホー" !> ].
 
 
 yareyare_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yareyare_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yareyare_a_1_rel,
  ORTH <! "やれやれ" !> ].
 
 ; Used 1 times
 ;(CH 2003-08-06) 「はじめまして」と同じ初対面時のあいさつ。「はじめまして」はgreeting-lexとしてJACYに存在する
 youkoso_1 := greeting-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_youkoso_idiom_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_youkoso_x_1_rel,
  ORTH <! "ようこそ" !> ].
 
 ; Used 1 times
 
 yoshi_13 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yoshi_interj_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yoshi_a_13_rel,
  ORTH <! "よし" !> ].
 
 
 yoshiyoshi_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yoshiyoshi_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yoshiyoshi_a_1_rel,
  ORTH <! "よしよし" !> ].
 
 
 waa_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_waa_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_waa_a_1_rel,
  ORTH <! "わあ" !> ].
 
 
 watsu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_watsu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_watsu_a_1_rel,
  ORTH <! "わっ" !> ].
 
 
 wasshoi_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_wasshoi_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_wasshoi_a_1_rel,
  ORTH <! "わっしょい" !> ].
 
 
 wahaha_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_wahaha_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_wahaha_a_1_rel,
  ORTH <! "わはは" !> ].
 
 
 shitsu_1_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shitsu_12_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shitsu_a_12_rel,
  ORTH <! "しっ" !> ].
 
 
 chietsu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chietsu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_chietsu_a_1_rel,
  ORTH <! "ちぇっ" !> ].
 
 
 appare_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_appare_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_appare_a_1_rel,
  ORTH <! "あっぱれ" !> ].
 
 
 sousou_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sousou_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sousou_x_11_rel,
  ORTH <! "草々" !> ].
 
 
 irasshai_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_irasshai_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_irasshai_a_1_rel,
  ORTH <! "いらっしゃい" !> ].
 
 
 redei-_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_redei_interj_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_redei_a_11_rel,
  ORTH <! "レディー" !> ].
 
 
 no-_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nou_a_1_rel,
  ORTH <! "ノー" !> ].
 
 
 awaya_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_awaya_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_awaya_a_1_rel,
  ORTH <! "あわや" !> ].
 
 ;<IJ> ; いかに 
@@ -1493,47 +1493,47 @@ awaya_1 := interj-lex &
 
 ;(CH 2003-08-08) ikani-adv (adv-wh-lex)でいい？
 ;<IJ> ikani_1 := interj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ikani_interj_1_rel,
+;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ikani_a_1_rel,
 ;<IJ>  ORTH <! "いかに" !> ].
 
 
 unun_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_unun_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_unun_a_1_rel,
  ORTH <! "うんうん" !> ].
 
 ; Used 1 times
 
 oioi_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_oioi_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_oioi_a_1_rel,
  ORTH <! "おいおい" !> ].
 
 
 ookini_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ookini_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ookini_a_1_rel,
  ORTH <! "大きに" !> ].
 
 ; Used 1 times
 
 choito_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_choito_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_choito_a_1_rel,
  ORTH <! "ちょいと" !> ].
 
 ; Used 4 times
 ;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
 chotto_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chotto_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_chotto_a_1_rel,
 ORTH <! "ちょっと" !> ].
 
 ; Used 2 times
 ;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
 naruhodo_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_naruhodo_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_naruhodo_a_1_rel,
  ORTH <! "なるほど" !> ].
 
 ; Used 1 times
 
 nanto_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nanto_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nanto_a_1_rel,
  ORTH <! "何と" !> ].
 
 
@@ -1541,141 +1541,141 @@ nanto_1 := interj-lex &
 ;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
 
 mou_1_4 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mou_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_mou_x_13_rel,
  ORTH <! "もう" !> ].
 
 maamaa_1 := interj-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_maamaa_interj_1_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_maamaa_a_1_rel,
   ORTH <! "まあまあ" !> ].
 
 ; Used 1 times
 ;(CH 2003-08-06) 「ごめんなさい」 がexclだから
 gomen_1 := excl-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gomen_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gomen_a_1_rel,
  ORTH <! "ご免" !> ].
 
 
 konchikushou_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_konchikushou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_konchikushou_a_1_rel,
  ORTH <! "こん畜生" !> ].
 
 
 chikushou_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chikushou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_chikushou_a_1_rel,
  ORTH <! "畜生" !> ].
 
 ; Used 2 times
 
 aware_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_aware_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_aware_a_1_rel,
  ORTH <! "哀れ" !> ].
 
 ; Used 1 times
 ;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
 
 tadaima_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tadaima_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tadaima_a_1_rel,
  ORTH <! "只今" !> ].
 
 
 sora_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sora_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sora_a_1_rel,
  ORTH <! "そら" !> ].
 
 
 sorya_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sorya_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sorya_a_1_rel,
  ORTH <! "そりゃ" !> ].
 
 
 nandatte_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nandatte_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nandatte_a_1_rel,
  ORTH <! "何だって" !> ].
 
 
 nanno_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nanno_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nanno_a_1_rel,
  ORTH <! "何の" !> ].
 
 
 shikkei_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shikkei_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shikkei_a_2_rel,
  ORTH <! "失敬" !> ].
 
 
 
 heihei_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_heihei_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_heihei_a_2_rel,
  ORTH <! "へいへい" !> ].
 
 
 ; よちよち 
 
 yochiyochi_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yochiyochi_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yochiyochi_a_2_rel,
  ORTH <! "よちよち" !> ].
 
 ; 万歳 
 
 banzai_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_banzai_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_banzai_a_2_rel,
  ORTH <! "万歳" !> ].
 
 ; Used 2 times
 ;(CH 2003-08-08) <IJ>がついているが実際はJACYに無かったので追加
 shitsurei_2_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shitsurei_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shitsurei_a_2_rel,
  ORTH <! "失礼" !> ].
 
 ; さらば 
 
 saraba_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_saraba_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saraba_a_2_rel,
  ORTH <! "さらば" !> ].
 
 ; さらば 
 
 saraba_4 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_saraba_4_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saraba_a_4_rel,
  ORTH <! "さらば" !> ].
 
 ; ＯＫ 
 
 o-ke-_3 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_oke_interj_3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_oke_a_3_rel,
  ORTH <! "ＯＫ" !> ].
 
 ; おさらば 
 
 osaraba_3 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_osaraba_interj_3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_osaraba_a_3_rel,
  ORTH <! "おさらば" !> ].
 
  kedo_1 := interj-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_kedo_interj_1_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_kedo_a_1_rel,
   ORTH <! "けど" !> ].
 
  keredo_1 := interj-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_keredo_interj_1_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_keredo_a_1_rel,
   ORTH <! "けれど" !> ].
 
 ; されど 
 
 saredo_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_saredo_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saredo_a_1_rel,
  ORTH <! "されど" !> ].
 
 
 ; すると 
 
 suruto_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suruto_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suruto_a_1_rel,
  ORTH <! "すると" !> ].
 
 ; そうしたら 
 
 soushitara_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_soushitara_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_soushitara_a_1_rel,
  ORTH <! "そうしたら" !> ].
 
 
@@ -1683,25 +1683,25 @@ soushitara_1 := interj-lex &
 ; Used 4 times
 
 sonoue_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sonoue_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sonoue_a_1_rel,
  ORTH <! "その上" !> ].
 
 ; その代わり 
 
 sonokawari_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sonokawari_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sonokawari_a_1_rel,
  ORTH <! "その代わり" !> ].
 
 ; そのくせ 
 
 sonokuse_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sonokuse_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sonokuse_a_1_rel,
  ORTH <! "そのくせ" !> ].
 
 ; それでこそ 
 
 soredekoso_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_soredekoso_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_soredekoso_a_1_rel,
  ORTH <! "それでこそ" !> ].
 
 
@@ -1709,106 +1709,106 @@ soredekoso_1 := interj-lex &
 ; Used 2 times
 
 sorenanoni_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sorenanoni_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sorenanoni_a_1_rel,
  ORTH <! "それなのに" !> ].
 
 ; それにしても 
 
 sorenishitemo_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sorenishitemo_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sorenishitemo_a_1_rel,
  ORTH <! "それにしても" !> ].
 
 ; それにもかかわらず 
 ; Used 3 times
 ;FIXJACY (CH 2003-08-06)「ところで」「ところが」がadjadv-lex.tdlにおいてisect-adv-lexになっている
 sorenimokakawarazu_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sorenimokakawarazu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sorenimokakawarazu_a_1_rel,
  ORTH <! "それにもかかわらず" !> ].
 
 ; それはそうと 
 ; Used 1 times
 
 sorehasouto_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sorehasouto_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sorehasouto_a_1_rel,
  ORTH <! "それはそうと" !> ].
 
 ; そんなら 
 
 sonnara_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sonnara_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sonnara_a_1_rel,
  ORTH <! "そんなら" !> ].
 
 ; だけど 
 
 dakedo_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dakedo_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dakedo_a_1_rel,
  ORTH <! "だけど" !> ].
 
 
  tsuide_1_1 := interj-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_tsuide_interj_11_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_tsuide_a_11_rel,
   ORTH <! "次いで" !> ].
 
 ; 次に 
 
 tsugini_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tsugini_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tsugini_a_1_rel,
  ORTH <! "次に" !> ].
 
 ; Used 1083 times
 ;(CH 2003-08-08) conj としての用法があるからいい？
  to_1_9 := interj-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_to_interj_19_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_to_a_19_rel,
   ORTH <! "と" !> ].
 
 ; 何故なら 
 
 nazenara_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nazenara_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nazenara_a_1_rel,
  ORTH <! "何故なら" !> ].
 
 ; 並びに 
 ; Used 2 times
 
 narabini_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_narabini_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_narabini_a_1_rel,
  ORTH <! "並びに" !> ].
 
 ; はたまた 
 
 hatamata_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hatamata_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hatamata_a_1_rel,
  ORTH <! "はたまた" !> ].
 
 ; Used 5 times
 ;(CH 2003-08-08) moshikuwa (n_conj-p-lex)があるからいい？
  moshikuha_1 := interj-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_moshikuha_interj_1_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_moshikuha_a_1_rel,
   ORTH <! "もしくは" !> ].
 
 ; 故に 
 
 yueni_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yueni_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yueni_a_1_rel,
  ORTH <! "故に" !> ].
 
 ; さては 
 
 sateha_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sateha_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sateha_a_1_rel,
  ORTH <! "さては" !> ].
 
 ; さては 
 
 sateha_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sateha_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sateha_a_2_rel,
  ORTH <! "さては" !> ].
 
 
 ; ここに 
 
 kokoni_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kokoni_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kokoni_a_1_rel,
  ORTH <! "ここに" !> ].
 
 
@@ -1817,83 +1817,83 @@ kokoni_1 := interj-lex &
 ;(CH 2003-08-08) ないから追加
 
 ippou_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ippou_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ippou_a_1_rel,
  ORTH <! "一方" !> ].
 
 
 ; Used 2 times
 ;(CH 2003-08-08) somosomo-noun (ordinary-nohon-n-lex)でいい？
 ;<IJ> somosomo_1 := interj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_somosomo_interj_1_rel,
+;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_somosomo_a_1_rel,
 ;<IJ>  ORTH <! "そもそも" !> ].
 
 ; 連れて 
 
 tsurete_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tsurete_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tsurete_a_1_rel,
  ORTH <! "連れて" !> ].
 
 ; とは言うものの 
 
 tohaiumonono_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tohaiumonono_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tohaiumonono_a_1_rel,
  ORTH <! "とは言うものの" !> ].
 
 ; とは言え 
 
 tohaie_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tohaie_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tohaie_a_1_rel,
  ORTH <! "とは言え" !> ].
 
 ; Used 3 times
 ;(CH 2003-08-08) ないから追加
 
 nimokakawarazu_1_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nimokakawarazu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nimokakawarazu_a_1_rel,
  ORTH <! "にもかかわらず" !> ].
 
 
 ; グッド 
 
 guddo_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_guddo_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_guddo_a_2_rel,
  ORTH <! "グッド" !> ].
 
 ; ナイス 
 
 naisu_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_naisu_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_naisu_a_2_rel,
  ORTH <! "ナイス" !> ].
 
 ; よいしょ 
 
 yoisho_3 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yoisho_interj_3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yoisho_a_3_rel,
  ORTH <! "よいしょ" !> ].
 
 ; Used 69 times
 ;(CH 2003-08-08) ないから追加
 
 nani_2_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nani_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nani_a_2_rel,
  ORTH <! "何" !> ].
 
 ; アロハ 
 
 aroha_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_aroha_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_aroha_a_2_rel,
  ORTH <! "アロハ" !> ].
 
 ; ハレルヤ 
 
 hareruya_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hareruya_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hareruya_a_2_rel,
  ORTH <! "ハレルヤ" !> ].
 
 ; 待った 
 
 matta_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_matta_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_matta_a_2_rel,
  ORTH <! "待った" !> ].
 
 ; Used 2 times
@@ -1901,7 +1901,7 @@ matta_2 := interj-lex &
 ;(CH 2003-08-08) ないから追加
 
 yasume_2_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yasume_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yasume_a_2_rel,
  ORTH <! "休め" !> ].
 
 
@@ -1909,7 +1909,7 @@ yasume_2_1 := interj-lex &
 ;(CH 2003-08-06) 「さようなら」がgreeting-lexとしてJACYに存在するため
 
 sayonara_2 := greeting-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sayonara_idiom_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sayonara_x_2_rel,
  ORTH <! "さよなら" !> ].
 
 
@@ -1920,7 +1920,7 @@ sayonara_2 := greeting-lex &
 ;(CH 2003-08-08) ないから追加
 ;(FCB 2003-08-13) adds too much amiguity so removed for the moment.
 ;<IJ> sono_2 := interj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sono_interj_2_rel,
+;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_sono_a_2_rel,
 ;<IJ>  ORTH <! "その" !> ].
 
 ;;;;;
@@ -1932,39 +1932,39 @@ sayonara_2 := greeting-lex &
 ; 喝 
 
 katsu_1_2 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_katsu_interj_12_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_katsu_a_12_rel,
  ORTH <! "喝" !> ].
 
 ; チャオ 
 
 chao_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chao_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_chao_a_1_rel,
  ORTH <! "チャオ" !> ].
 
 ; やれ 
 
 yare_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yare_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yare_a_1_rel,
  ORTH <! "やれ" !> ].
 
 ; それでいて 
 
 soredeite_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_soredeite_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_soredeite_a_1_rel,
  ORTH <! "それでいて" !> ].
 
 ; それ故 
 ; Used 2 times
 
 soreyue_1 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_soreyue_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_soreyue_a_1_rel,
  ORTH <! "それ故" !> ].
 
 ; 己 
 ; Used 1 times
 
 onore_4 := interj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_onore_interj_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_onore_a_2_rel,
  ORTH <! "己" !> ].
 
 ; (TT 2003-08-27) for A 、特に B (experimental)
@@ -1979,14 +1979,14 @@ comma-tokuni-conj := n_conj-p-lex &
 ;(CH 2003-08-08) 連体用法がJACYにはなかったので追加
 
 tada_2_2 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_tada_2_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tada_a_22_rel,
  ORTH <! "ただ" !> ].
 
 ; あらゆる 
 ; Used 6 times
 
 arayuru_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_arayuru_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_arayuru_a_1_rel,
  ORTH <! "あらゆる" !> ].
 
 ; Used 982 times
@@ -2000,32 +2000,32 @@ aru_det := det-lex  &
 ; いかなる 
 
 ikanaru_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_ikanaru_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ikanaru_a_1_rel,
  ORTH <! "いかなる" !> ].
 
 ; 至らぬ 
 
 itaranu_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_itaranu_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_itaranu_a_1_rel,
  ORTH <! "至らぬ" !> ].
 
 ; いわゆる 
 
 iwayuru_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_iwayuru_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_iwayuru_a_1_rel,
  ORTH <! "いわゆる" !> ].
 
 ; 大いなる 
 
 ooinaru_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_ooinaru_interj_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ooinaru_a_1_rel,
  ORTH <! "大いなる" !> ].
 
 
 ;(CH 2003-08-08) 連体の「来る」はJACYにはなかったので追加
 
 kitaru_13 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_kitaru_nmod_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kitaru_n_11_rel,
  ORTH <! "来る" !> ].
 
 
@@ -2033,108 +2033,108 @@ kitaru_13 := noun_mod-lex-l &
 ;(CH 2003-08-08) 連体の「今」はなかったので追加
 
 kon_1_2 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_kon_nmod_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kon_n_11_rel,
  ORTH <! "今" !> ].
 
 ; Used 8 times
 ;(CH 2003-08-08) 連体用法はなかったので追加
 
 saru_1_4 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_saru_nmod_13_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saru_n_13_rel,
  ORTH <! "去る" !> ].
 
 
 ; 底知れぬ 
 
 sokoshirenu_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_sokoshirenu_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sokoshirenu_n_1_rel,
  ORTH <! "底知れぬ" !> ].
 
 ; 素知らぬ 
 
 soshiranu_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_soshiranu_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_soshiranu_n_1_rel,
  ORTH <! "素知らぬ" !> ].
 
 ; 大した 
 ; Used 3 times
 
 taishita_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_taishita_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_taishita_n_1_rel,
  ORTH <! "大した" !> ].
 
 ; 大それた 
 
 daisoreta_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_daisoreta_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_daisoreta_n_1_rel,
  ORTH <! "大それた" !> ].
 
 ; 大の 
 
 daino_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_daino_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_daino_n_1_rel,
  ORTH <! "大の" !> ].
 
 
 ; Used 4 times
 
 chottoshita_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_chottoshita_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_chottoshita_n_1_rel,
  ORTH <! "ちょっとした" !> ].
 
 
 tonda_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_tonda_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tonda_n_1_rel,
  ORTH <! "とんだ" !> ].
 
 
 naki_1_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_naki_nmod_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_naki_n_11_rel,
  ORTH <! "亡き" !> ].
 
 
 hitoshirenu_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_hitoshirenu_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hitoshirenu_n_1_rel,
  ORTH <! "人知れぬ" !> ].
 
 
 futoshita_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_futoshita_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_futoshita_n_1_rel,
  ORTH <! "ふとした" !> ].
 
 ; 見知らぬ 
 ; Used 1 times
 
 mishiranu_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_mishiranu_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_mishiranu_n_1_rel,
  ORTH <! "見知らぬ" !> ].
 
 ; 明 
 ; Used 1 times           ;;; 「次の」「明くる」の意を表しうる！
 
 myou_1_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_myou_nmod_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_myou_n_11_rel,
  ORTH <! "明" !> ].
 
 ; 例の 
 ; Used 2 times
 
 reino_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_reino_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_reino_n_1_rel,
  ORTH <! "例の" !> ].
 
 ; 我が 
 ; Used 1 times
 
 waga_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_waga_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_waga_n_1_rel,
  ORTH <! "我が" !> ].
 
 ; 聖なる 
 ; Used 1 times
 
 seinaru_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_seinaru_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_seinaru_n_1_rel,
  ORTH <! "聖なる" !> ].
 
 
@@ -2149,7 +2149,7 @@ seinaru_1 := noun_mod-lex-l &
 ; 翌々 
 
 yokuyoku_1_2 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_yokuyoku_12_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yokuyoku_n_12_rel,
  ORTH <! "翌々" !> ].
 
 
@@ -2159,7 +2159,7 @@ yokuyoku_1_2 := noun_mod-lex-l &
 ; 名詞に接続可能なのでいい？
 ;;(TK 05-03-01 noun_mod-lex-l復活 ordinary-nohon-n-lexとは区別が必要)
 moto_1_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_moto_11_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_moto_n_11_rel,
  ORTH <! "元" !> ].
 
 ;<IJ> ; 本 
@@ -2170,36 +2170,36 @@ moto_1_1 := noun_mod-lex-l &
 ; 名詞に接続可能なのでいい？
 ;;(TK 05-03-01 noun_mod-lex-l復活 ordinary-nohon-n-lexとは区別が必要)
 ;hon_1 := noun_mod-lex-l &
-;[SYNSEM.LKEYS.KEYREL.PRED '_hon_nmod_1_rel,
+;[SYNSEM.LKEYS.KEYREL.PRED '_hon_n_1_rel,
 ; ORTH <! "本" !> ].
 
 
 kano_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_kano_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kano_n_1_rel,
  ORTH <! "彼の" !> ].
 
 
 tadanaranu_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_tadanaranu_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tadanaranu_n_1_rel,
  ORTH <! "ただならぬ" !> ].
 
 
 nantaru_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_nantaru_nmod_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nantaru_n_1_rel,
 ORTH <! "何たる" !> ].
 
 dake-ppmod := pp_mod-lex-r &
-[SYNSEM.LKEYS.KEYREL.PRED '_dake_ppmod_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dake_p_ppmod_rel,
 ORTH <! "だけ" !> ].
 
 bakari-ppmod := pp_mod-lex-r &
-[SYNSEM.LKEYS.KEYREL.PRED '_bakari_ppmod_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_bakari_p_ppmod_rel,
 ORTH <! "ばかり" !> ].
 
 shitagatte-hiragana-interj :=
 interj-lex &
 [ORTH <! "したがって" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_shitagatte_interj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_shitagatte_a_rel].
 
 
 anna-det :=
@@ -2223,27 +2223,27 @@ honno-det := det-lex &
 touzai-nmod :=
 noun_mod-lex-l &
 [ORTH <! "東西" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'touzai_n_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_touzai_n_rel].
 
 higashi-nmod :=
 noun_mod-lex-l &
 [ORTH <! "東" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'higashi_n_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_higashi_n_rel].
 
 nishi-nmod :=
 noun_mod-lex-l &
 [ORTH <! "西" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'nishi_n_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_nishi_n_rel].
 
 kita-nmod :=
 noun_mod-lex-l &
 [ORTH <! "kita" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'kita_n_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_kita_n_rel].
 
 minami-nmod :=
 noun_mod-lex-l &
 [ORTH <! "minami" !>,
-SYNSEM.LKEYS.KEYREL.PRED 'minami_n_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_minami_n_rel].
 
 
 ikou-suffix := noun_mod-lex-r &

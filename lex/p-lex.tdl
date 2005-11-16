@@ -1759,13 +1759,13 @@ hyphen-conj-2  := hyphen-conj-p-lex &
 ;ka-or :=
 ;s-conj1-decl-lex &
 ; [ORTH <! "か" !>,
-;  SYNSEM.LKEYS.KEYREL.PRED  '_ka_conj_rel].
+;  SYNSEM.LKEYS.KEYREL.PRED  '_ka_c_rel].
 
 ; (MS 2005-05-17) I am not sure that we need this. The only instance is "か", as in "東京からか". 
 ; Taking the entry out.
 ;ka-postp-conj := postp-conj-p-lex &
 ;       [ORTH <! "か" !>,
-;        SYNSEM.LKEYS.KEYREL.PRED '_ka_conj_rel].
+;        SYNSEM.LKEYS.KEYREL.PRED '_ka_c_rel].
 
 
 ka2 := n_conj-p-lex &

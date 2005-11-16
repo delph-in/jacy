@@ -3035,7 +3035,7 @@ n-obl-i-adj-stem-lex &
 ppoi-n2adj := 
 n-obl-i-adj-stem-lex &
 [ORTH <! "っぽい" !>,
- SYNSEM.LKEYS.KEYREL.PRED '_ppoi_adj_rel].
+ SYNSEM.LKEYS.KEYREL.PRED '_ppoi_a_rel].
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -5837,7 +5837,7 @@ iyokuteki_1 := na-adj-lex &
 ; イレギュラー 
 
 iregyura-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iregyura_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_iregyuraa_a_1_rel,
  ORTH <! "イレギュラー" !>].
 
 ; 印象的 
@@ -6617,7 +6617,7 @@ guro-baru_1 := na-adj-lex &
 ; グロッキー 
 
 gurokki-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gurokki_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gurokkii_a_1_rel,
  ORTH <! "グロッキー" !>].
 
 ; グロテスク 
@@ -7523,7 +7523,7 @@ suresure_1 := na-adj-lex &
 ; スロー 
 
 suro-_1_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suro_a__1_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suroo_a_11_rel,
  ORTH <! "スロー" !>].
 
 ; 生産的 
@@ -7614,7 +7614,7 @@ seki_1_10 := na-adj-lex &
 ; セクシー 
 
 sekushi-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sekushi_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sekushii_a_1_rel,
  ORTH <! "セクシー" !>].
 
 ; セクシュアル 
@@ -7860,7 +7860,7 @@ dainamikku_1 := na-adj-lex &
 ; タイムリー 
 
 taimuri-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taimuri_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_taimurii_a_1_rel,
  ORTH <! "タイムリー" !>].
 
 ; ダイレクト 
@@ -8430,7 +8430,7 @@ hasuki-_1 := na-adj-lex &
 ; ハッピー 
 
 happi-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_happi_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_happii_a_1_rel,
  ORTH <! "ハッピー" !>].
 
 ; 鼻高々 
@@ -8467,7 +8467,7 @@ pawafuru_1 := na-adj-lex &
 ; ハングリー 
 
 hanguri-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hanguri_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hangurii_a_1_rel,
  ORTH <! "ハングリー" !>].
 
 ; 反抗的 
@@ -8492,7 +8492,7 @@ hanshateki_1 := na-adj-lex &
 ; ハンディー 
 
 handei-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_handei_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_handei_a_1_rel,
  ORTH <! "ハンディー" !>].
 
 ; 反動的 
@@ -8625,7 +8625,7 @@ fasshonaburu_1 := na-adj-lex &
 ; ファンキー 
 
 fanki-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fanki_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fankii_a_1_rel,
  ORTH <! "ファンキー" !>].
 
 ; ファンタジック 
@@ -8775,7 +8775,7 @@ peshanko_1 := na-adj-lex &
 ; ベター 
 
 beta-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_beta_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_beta_a_1_rel,
  ORTH <! "ベター" !>].
 
 ; ぺちゃんこ 
@@ -8799,7 +8799,7 @@ hetoheto_1 := na-adj-lex &
 ; ヘルシー 
 
 herushi-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_herushi_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_herushii_a_1_rel,
  ORTH <! "ヘルシー" !>].
 
 ; へろへろ 
@@ -9219,7 +9219,7 @@ rakkanteki_1 := na-adj-lex &
 ; Used 1 times
 
 rakki-_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rakki_a__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rakkii_a_1_rel,
  ORTH <! "ラッキー" !>].
 
 ; リアル 
@@ -9900,13 +9900,13 @@ kanyou_3 := na-adj-lex &
 ; クリアー 
 
 kuria-_3 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuria_a__3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuriaa_a_3_rel,
  ORTH <! "クリアー" !>].
 
 ; クリヤー 
 
 kuriya-_3 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuriya_a__3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuriyaa_a_3_rel,
  ORTH <! "クリヤー" !>].
 
 ; 邪魔 
@@ -10403,7 +10403,7 @@ anbaransu_2 := na-adj-lex &
 ; アンラッキー 
 
 anrakki-_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_anrakki_a__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_anrakki_a_2_rel,
  ORTH <! "アンラッキー" !>].
 
 ; 意外 
@@ -11179,7 +11179,7 @@ gurafikku_2 := na-adj-lex &
 ; グラマー 
 
 gurama-_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gurama_a__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_guramaa_a_2_rel,
  ORTH <! "グラマー" !>].
 
 ;<IJ> ; 経済 
@@ -11924,7 +11924,7 @@ zubora_2 := na-adj-lex &
 ; スローモーション 
 
 suro-mo-shon_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suro_a_mo_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suroomooshon_a_rel,
  ORTH <! "スローモーション" !>].
 
 ; 精鋭 
@@ -12316,7 +12316,7 @@ tanchou_2 := na-adj-lex &
 ; ダンディー 
 
 dandei-_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dandei_a__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dandei_a_2_rel,
  ORTH <! "ダンディー" !>].
 
 ; 単刀直入 
@@ -12885,7 +12885,7 @@ haitenpo_2 := na-adj-lex &
 ; ハイパワー 
 
 haipawa-_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_haipawa_a__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_haipawaa_a_2_rel,
  ORTH <! "ハイパワー" !>].
 
 ; バイオレンス 
@@ -13255,7 +13255,7 @@ fuan_2 := na-adj-lex &
 ; ファンシー 
 
 fanshi-_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fanshi_a__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fanshii_a_2_rel,
  ORTH <! "ファンシー" !>].
 
 ; 不安定 
@@ -13889,7 +13889,7 @@ furi_2_1 := na-adj-lex &
 ;<IJ> ; Used 1 times
 
 ;<IJ> furi-_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_furi_a__2_rel,
+;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_furi_a_2_rel,
 ;<IJ>  ORTH <! "フリー" !>].
 
 ; 不利益 
@@ -14096,7 +14096,7 @@ hone_2 := na-adj-lex &
 ; Used 1 times
 
 popyura-_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_popyura_a__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_popyuraa_a_2_rel,
  ORTH <! "ポピュラー" !>].
 
 ; ホモセクシュアル 
@@ -14131,7 +14131,7 @@ hontou_2 := na-adj-lex &
 ; マイナー 
 
 maina-_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_maina_a__2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_mainaa_a_2_rel,
  ORTH <! "マイナー" !>].
 
 ; 負けず嫌い 
@@ -23442,7 +23442,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_issho_a_rel].
 ;欲しい
 
 hoshii-kanji-adj := i-adj-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hoshii_a_kanji_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hoshii_a_rel,
  ORTH <! "欲しい" !>].
 
 ;てき面
@@ -23497,7 +23497,7 @@ mezamashii_hiragana := i-adj-stem-lex &
 
 issoku-adv := isect-adv-lex &
 [ORTH <! "一足" !>, 
-SYNSEM.LKEYS.KEYREL.PRED '_issoku_adv_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_issoku_r_rel].
 
 sokode-chasen := scopal-adv-regular-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sokode_a_2_rel,

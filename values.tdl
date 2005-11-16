@@ -103,6 +103,7 @@ voluntative := operative & uttmodus.
 
 
 indicative := nonoperative & uttmodus & nonpassive.
+subjunctive := indicative.
 
 consultative := nonoperative & uttmodus.
 

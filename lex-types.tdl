@@ -8742,6 +8742,7 @@ cop-neg-lex := nonaux-lex &
 
 ; (MS 2005-06-20) These should take their FORMAL information from their complements: yoroshii deshou.
 
+
 cop-light-lex := nonaux-lex &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
 			   MARK null,
@@ -8792,6 +8793,22 @@ reg-cop-lex-indicative := reg-cop-lex &
 			  [SYNSEM.LOCAL.CAT.HEAD [MODUS indicative,
 						   MOD null,
 						  C-MOD null]].
+
+
+reg-cop-lex-subjunctive := reg-cop-lex &
+			  [SYNSEM.LOCAL [CONT.HOOK.INDEX.E.MOOD subjunctive,
+					 CAT.HEAD [MOD null,
+						   C-MOD null]]].
+
+;でしょう
+reg-cop-lex-subjunctive-polite := reg-cop-lex-subjunctive &
+				  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+;だろう
+reg-cop-lex-subjunctive-plain := reg-cop-lex-subjunctive &
+				  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+
+
 
 reg-cop-lex-indicative-nonfinite := reg-cop-lex &
 				 [SYNSEM.LOCAL.CAT.HEAD [MODUS indicative,

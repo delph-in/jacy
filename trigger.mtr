@@ -123,9 +123,18 @@ ga_gr_1 := arg0e-1x_gr &
 ga_gr_2 := arg0e-2x_gr &
 [ FLAGS.TRIGGER "ga" ].
 
-;;; ARG2 is wo
-wo_gr_1 := arg0e-2x_gr &
+;;; ARG1 is wo
+wo_gr_1 := arg0e-1x_gr &
 [ FLAGS.TRIGGER "o" ].
+
+;;; ARG2 is wo
+wo_gr_2 := arg0e-2x_gr &
+[ FLAGS.TRIGGER "o" ].
+
+;;; ARG3 is wo
+wo_gr_3 := arg0e-3x_gr &
+[ FLAGS.TRIGGER "o" ].
+
 
 ;;; FIXME what about Passive ARG1 is wo
 
@@ -175,6 +184,9 @@ dearu-v-cop-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "~_a_" ] !> ],
   FLAGS.TRIGGER "dearu-v-cop-stem" ].
 
+darou-cop-lex_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ PRED "~_a_"] !> ],
+  FLAGS.TRIGGER "darou-v-cop-lex" ].
 
 
 ;;;
@@ -1480,6 +1492,11 @@ to-second-conj_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "to-second-conj" ].
 
+dano-second-conj_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "dano-second-conj" ].
+
+
 nasaru_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "nasaru" ].
@@ -1491,4 +1508,8 @@ rei-numcl_gr := generator_rule &
 sha-numcl_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "sha-numcl" ].
+
+shin-numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "shin_numcl" ].
 
