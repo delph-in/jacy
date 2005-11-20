@@ -1750,6 +1750,11 @@ zero_card_a := card_2_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "0",
   ORTH <! "0" !>].
 
+;;; for some Japanese newspapers
+zero_card_maru := card_2_no_valence & 
+[ SYNSEM.LKEYS.KEYREL.CARG "0",
+  ORTH <! "○" !>].
+
 hito_card := card_ichi_no_valence &
 [ ORTH <! "ひと" !>].
 
@@ -2149,3 +2154,704 @@ shin_numcl := num-cl-spr-only-ind-nmod-lex &
 twohundred-card3 :=  card_3_object_only & 
 [ SYNSEM.LKEYS.KEYREL.CARG "200",
   ORTH <! "２" !>].
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; FCB 2005-11-20: these should be moved out into the other files
+;;; we will do it as time permits
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;(TK 05-06-10)
+;ずいぶん
+
+zuibun-hiragana-adj :=
+na-adj-lex &
+[ORTH <! "ずいぶん" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_zuibun_a_rel].
+
+;;(TK 05-06-10)
+;大層 たいそう
+;;   ex.「それは大層な話だな」
+
+taisou-adj :=
+na-adj-lex &
+[ORTH <! "大層" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_taisou_a_rel].
+
+taisou-hiragana-adj :=
+na-adj-lex &
+[ORTH <! "たいそう" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_taisou_a_rel].
+
+;;(TK 05-06-13)
+;どんぴしゃり
+;;  ex.「その表現こそどんぴしゃりだ」
+
+donpishari_2 :=
+na-adj-lex &
+[ORTH <! "どんぴしゃり" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_donpishari_a_2_rel].
+
+;;(TK 05-06-23)
+;僅か
+wazuka-kanji-adj :=
+na-adj-lex &
+[ORTH <! "僅か" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_wazuka_a_rel].
+
+;;(TK 05-06-23)
+;わずか
+wazuka-hiragana-adj :=
+na-adj-lex &
+[ORTH <! "わずか" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_wazuka_a_rel].
+
+
+;;(TK:TakaYUki Kuribayashi 05-06-10)
+
+;ご免なさい
+gomeNnasai_2 := excl-lex &
+	 [ORTH <! "ご免なさい" !>,
+          SYNSEM.LKEYS.KEYREL [PRED '_gomeNnasai_idiom_rel]].
+
+;;(TK 05-06-10)
+;ご免 なさい
+gomeNnasai_2-multi := excl-lex &
+	 [ORTH <! "ご免","なさい" !>,
+          SYNSEM.LKEYS.KEYREL [PRED '_gomeNnasai_idiom_rel]].
+
+;;(TK:TakaYUki Kuribayashi 05-06-23)
+;、 即ち
+;;  ex.「教える 人 、 即ち 教師」
+comma-sunawachi-kanji-conj := n_conj-p-lex &
+	         [ORTH <! "、", "即ち" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_sunawachi_conj_rel].
+
+;、 すなわち
+comma-sunawachi-hiragana-conj := n_conj-p-lex &
+	         [ORTH <! "、", "すなわち" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_sunawachi_conj_rel].
+
+
+
+;(TK 05-06-09)
+
+;みんな
+
+minna-hiragana-noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "みんな" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_minna_n_rel]].
+
+;君
+;ex.「仕えるべき君を誤った」
+
+kimi-kunshu :=
+ordinary-nohon-n-lex &
+[ORTH <! "君" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kimi_n_kunshu_rel]].
+
+;(TK 05-06-10)
+;小川
+
+ogawa-noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "小川" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ogawa_n_rel]].
+
+;(TK 05-06-10)
+;領地
+
+ryouchi-noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "領地" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ryouchi_n_rel]].
+
+;(TK 05-06-10)
+;山中
+
+sanchuu-noun :=
+ordinary-nohon-n-lex &
+[ORTH <! "山中" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sanchuu_n_rel]].
+
+;(TK 05-06-10)
+;食
+;ex.「衣食住」「食が細い」
+;「非常食」の場合もこれに含めてよいか
+
+shoku-shokuji :=
+ordinary-nohon-n-lex &
+[ORTH <! "食" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_shoku_n_shokuji_rel]].
+
+;(TK 05-06-10)
+;あたり（「辺り」のエントリに合わせた）
+;;   ex.「今日あたり来るだろう」 「東大寺あたりを散歩する」
+atari_1-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_atari_n_1_hiragana_rel,
+ ORTH <! "あたり" !>].
+
+;(TK 05-06-13)
+;不断
+;ex.「不断の努力」
+
+fudan_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fudan_n_2_rel,
+ ORTH <! "不断" !>].
+
+;;(TK 05-06-13)
+;空（kara）
+;;  ex.「空の瓶を捨てる」
+
+kara-karappo := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kara_n_rel,
+ ORTH <! "空" !>].
+
+;(TK 05-06-15)
+;;中（juu）
+;;  ex.「学校中に広まる」
+juu-kanji := noun_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED '_juu_n_suffix_rel,
+ ORTH <! "中" !>].
+
+;(TK 05-06-15)
+;;薬（yaku）
+;;  ex.「薬の売人を逮捕した」（普通名詞としての用法）
+;;  ex.「外用薬は飲んではいけない」（suffixとしての用法）
+;;ただし、「常備薬」「特効薬」など、１語として登録されているものも
+;;多い
+yaku_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yaku_n_2_rel,
+ ORTH <! "薬" !>].
+
+;(TK 05-06-21)
+;;方々（houbou）
+;;  ex.「花瓶を落として破片が方々に散ってしまった」
+houbou-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_houbou_n_rel,
+ ORTH <! "方々" !>].
+
+;(TK 05-06-22)
+;;度（do）
+;;  ex.「度を越えた飲み方」
+do-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_do_n_rel,
+ ORTH <! "度" !>].
+
+;(TK 05-06-22)
+;;主（aruji）
+;;  ex.「家の主と話す」
+aruji-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_aruji_n_rel,
+ ORTH <! "主" !>].
+
+;(TK 05-06-22)
+;;主（shu）
+;;  ex.「主から領地を賜る」
+shu-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shu_n_rel,
+ ORTH <! "主" !>].
+
+;(TK 05-06-22)
+;;遅く
+;;  ex.「昨日は遅くまで起きていたので、眠い」
+osoku-late := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_osoku_n_rel,
+ ORTH <! "遅く" !>].
+
+;(TK 05-06-23)
+;;大
+;;  ex.「大の字で寝る」（「大の大人」のときの「大の」（noun_mod-lex-l）
+;;                    とは別物）
+;;  ex.「サイズは大しか残っていなかった」」
+;;  ただし、ex.「米粒大の大きさ」のような場合にsuffixとして使ってよいか。
+dai-2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_dai_n_2_rel,
+ ORTH <! "大" !>].
+
+;(TK 05-06-23)
+;;書
+;;  ex.「名人の書を鑑賞する」
+sho-2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sho_n_2_rel,
+ ORTH <! "書" !>].
+
+;(TK 05-06-23)
+;;大体
+;;  ex.「話の大体をつかむ」
+daitai-ooyoso := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_daitai_n_rel,
+ ORTH <! "大体" !>].
+
+;(TK 05-06-23)
+;;割
+;;  ex.「割の良い仕事」
+;;  ex.「値段の割に使えない」
+wari-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_wari_n_rel,
+ ORTH <! "割" !>].
+
+;(TK 05-06-23)
+;;仮
+;;  ex.「仮の住まい」
+kari_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kari_n_3_rel,
+ ORTH <! "仮" !>].
+
+;(TK 05-06-23)
+;;干し
+;;  ex.「干しの具合が甘い」
+;;  ex.「魚のみりん干し」「干しアワビ」のようにprefixやsuffix
+;;  的にも使える？
+hoshi-2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hoshi_n_2_rel,
+ ORTH <! "干し" !>].
+
+;(TK 05-06-23)
+;;学
+;;  ex.「学の在る人」「帝王学」
+gaku_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_gaku_n_1_rel,
+ ORTH <! "学" !>].
+
+;(TK 05-06-23)
+;;どんぶり
+;;  ex.「どんぶり の メニュー が 豊富 だ」
+donburi-hiragana_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_donburi_n_1_rel,
+ ORTH <! "どんぶり" !>].
+
+;(TK 05-06-24)
+;;固まり（「塊」の別表記）
+katamari_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_katamari_n_2_rel,
+ ORTH <! "固まり" !>].
+
+;(TK 05-06-24)
+;;火
+ka_dofw :=
+dofw-n-lex &
+[ORTH <! "火" !>,
+SYNSEM.LKEYS.KEYREL.CARG '_tue].
+
+;(TK 05-06-24)
+;;水
+sui_dofw :=
+dofw-n-lex &
+[ORTH <! "水" !>,
+SYNSEM.LKEYS.KEYREL.CARG '_wed].
+
+;(TK 05-06-27)
+;;独り（「一人」の別表記）
+hitori_3 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hitori_n_3_rel,
+ ORTH <! "独り" !>].
+
+;(TK 05-06-27)
+;家（ka）
+;;  ex.「書道家」「勉強家」
+ka-hito-suffix := noun_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED '_ka_n_hito_suffix_rel,
+ ORTH <! "家" !>].
+
+;(TK 05-07-04)
+;まり
+;;  「まりを突いて遊ぶ」
+mari-noun := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_mari_n_rel,
+ ORTH <! "まり" !>].
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;(TK 05-06-13)
+;;; ordinary-nohon-nohon-n-lex -> relational-n-lex
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;年上
+toshiue_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_toshiue_n_rel,
+ ORTH <! "年上" !>].
+
+;年下
+toshishita_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_toshishita_n_rel,
+ ORTH <! "年下" !>].
+
+;年配
+nenpai_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_nenpai_n_rel,
+ ORTH <! "年配" !>].
+
+;上位
+joui_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_joui_n_rel,
+ ORTH <! "上位" !>].
+
+;下位
+kai_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kai_n_rel,
+ ORTH <! "下位" !>].
+
+;前方
+zenpou_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_zenpou_n_rel,
+ ORTH <! "前方" !>].
+
+;後方
+kouhou_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kouhou_n_rel,
+ ORTH <! "後方" !>].
+
+;上質
+joushitsu_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_joushitsu_n_rel,
+ ORTH <! "上質" !>].
+
+;上級
+joukyuu_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_joukyuu_n_rel,
+ ORTH <! "上級" !>].
+
+;高級
+koukyuu_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_koukyuu_n_rel,
+ ORTH <! "高級" !>].
+
+;多量
+taryou_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_taryou_n_rel,
+ ORTH <! "多量" !>].
+
+;少量
+shouryou_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shouryou_n_rel,
+ ORTH <! "少量" !>].
+
+;外（soto）
+soto_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_soto_n_rel,
+ ORTH <! "外" !>].
+
+;中（naka）
+naka_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_naka_n_rel,
+ ORTH <! "中" !>].
+
+;なか
+naka_hiragana-relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_naka_n_rel,
+ ORTH <! "なか" !>].
+
+;目下（meshita）
+meshita_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_meshita_n_rel,
+ ORTH <! "目下" !>].
+
+;内（uchi）
+uchi_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_uchi_n_rel,
+ ORTH <! "内" !>].
+
+;;05-07-04 追加分
+
+;;ex.「東京より以西で雨が降った」（たまにこのような用法が出てくる）
+
+;以西
+isei_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_isei_n_rel,
+ ORTH <! "以西" !>].
+
+;以北
+ihoku_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ihoku_n_rel,
+ ORTH <! "以北" !>].
+
+;以南
+inan_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_inan_n_rel,
+ ORTH <! "以南" !>].
+
+;以東
+itou_relational := relational-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_itou_n_rel,
+ ORTH <! "以東" !>].
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(TK:TakaYUki Kuribayashi 05-06-22)
+
+you-v-end := v2n-end-lex &
+	      [ORTH <! "よう" !>,
+	       SYNSEM.LKEYS.KEYREL.PRED '_you_v_rel].
+
+guai-v-end := v2n-end-lex &
+	      [ORTH <! "具合" !>,
+	       SYNSEM.LKEYS.KEYREL.PRED '_guai_v_rel].
+
+guai-hiragana-v-end := v2n-end-lex &
+	      [ORTH <! "ぐあい" !>,
+	       SYNSEM.LKEYS.KEYREL.PRED '_guai_v_rel].
+
+;;(TK 05-06-24)
+;tend to (visible indication of tendency)
+
+gimi-kanji-end := v2na-end-lex &
+                 [ORTH <! "気味" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_gimi_v_rel].
+
+;;(TK 05-07-01)
+;;  ex.「飲み放題」「肉の食べ放題」などではtreeができるが
+;;  ex.「言い たい 放題 言う」「わがまま 放題」
+;;  などは解析できない
+;
+;;FIXME
+houdai-v-end := v2n-end-lex &
+	      [ORTH <! "放題" !>,
+	       SYNSEM.LKEYS.KEYREL.PRED '_houdai_v_rel].
+
+
+;;(TK 05-06-10)
+;交替 交代
+;「交替」のみvn-intransでの登録あり。学研や新明解では自動詞的
+;用法しかないが、大辞林では他動詞的用法しかない。
+;実際には他動詞的用法で使われることのほうが多いのではないか。
+;   ex.「投手を交代する」 「同僚と見張りを交代する」
+
+koutai_1-trans1 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_koutai_s_trans1_rel]],
+ORTH <! "交替" !>].
+
+koutai_2-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_koutai_2_s_intrans_rel]],
+ORTH <! "交代" !>].
+
+koutai_2-trans1 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_koutai_2_s_trans1_rel]],
+ORTH <! "交代" !>].
+
+;;(TK 05-06-13)
+;スプレー
+;; ex.「傷口に消毒薬をスプレーする」
+;; ただし、これとex.「壁を青でスプレーする」を同じものと見て良い
+;; かどうか疑問
+supure-_2 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_supure-_s_2_rel]],
+ORTH <! "スプレー" !>].
+
+;;(TK 05-06-13)
+;ぱりぱり
+;;  ex.「シャツがのりでぱりぱりする」
+
+paripari_3 :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_paripari_3_s_rel]],
+ORTH <! "ぱりぱり" !>].
+
+;;(TK 05-06-13)
+;退陣
+;;  ex.「重役全員が退陣して会社を去った」
+
+taijin_2-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_taijin_s_rel]],
+ORTH <! "退陣" !>].
+
+;;(TK 05-06-13)
+;中和
+;;  ex.「酸性雨を中和する」
+
+chuuwa_3 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_chuuwa_s_3_rel]],
+ORTH <! "中和" !>].
+
+;;(TK 05-06-13)
+;火傷
+;;  ex.「右腕を火傷する」
+
+yakedo_2 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_yakedo_s_2_rel]],
+ORTH <! "火傷" !>].
+
+;;(TK 05-06-13)
+;脱臼
+;;  ex.「肩を脱臼した」
+
+dakkyuu_3 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_dakkyuu_s_3_rel]],
+ORTH <! "脱臼" !>].
+
+;;(TK 05-06-13)
+;注意
+;;  ex.「車に注意して歩く」
+
+chuui-vn_2 := 
+vn-trans2-lex & 
+	[SYNSEM.LKEYS.KEYREL.PRED '_chuui_s_2_rel,
+          ORTH <! "注意" !>].
+
+;;(TK 05-06-22)
+;外交
+;;  ex.「外交して営業成績を上げる」
+gaikou-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_gaikou_s_rel]],
+ORTH <! "外交" !>].
+
+;;(TK 05-06-23)
+;妊娠
+;;  ex.「女の子を妊娠する」
+ninshin_2 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_ninshin_s_2_rel]],
+ORTH <! "妊娠" !>].
+
+;;(TK 05-06-23)
+;世間離れ
+;;  ex.「世間離れした考え」
+sekenbanare-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_sekenbanare_s_rel]],
+ORTH <! "世間離れ" !>].
+
+;;(TK 05-06-23)
+;再生
+;;  ex.「レコードを再生する」
+saisei_2 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_saisei_s_2_rel]],
+ORTH <! "再生" !>].
+
+;;(TK 05-06-24)
+;統率
+;;  ex.「軍団を統率する」
+tousotsu-vn :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_tousotsu_s_rel]],
+ORTH <! "統率" !>].
+
+;;(TK 05-06-24)
+;左遷
+;;  ex.「課長が僻地に左遷された」
+sasen-vn :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_sasen_s_rel]],
+ORTH <! "左遷" !>].
+
+;;(TK 05-06-27)
+;舗装
+;;  ex.「あの山道も今では舗装されている」
+hosou-vn :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hosou_s_rel]],
+ORTH <! "舗装" !>].
+
+;;(TK 05-06-27)
+;敬愛
+;;  ex.「庶民から敬愛される国王」
+keiai-vn :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_keiai_s_rel]],
+ORTH <! "敬愛" !>].
+
+;;(TK 05-07-04)
+;減退
+;;  ex.「勢力が減退する」
+gentai-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_gentai_s_rel]],
+ORTH <! "減退" !>].
+
+;;(TK 05-07-04)
+;歯磨き
+;;  ex.「歯磨きして寝る」
+hamigaki-kanji-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hamigaki_s_rel]],
+ORTH <! "歯磨き" !>].
+
+;;(TK 05-07-04)
+;歯みがき
+hamigaki-hiragana-vn :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hamigaki_s_rel]],
+ORTH <! "歯みがき" !>].
+
+;(TK 05-08-10)
+;鉱石
+kouseki_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kouseki_n_2_rel,
+ ORTH <! "鉱石" !>].
+
+;(TK 05-08-10)
+;鉱物
+koubutsu_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_koubutsu_n_2_rel,
+ ORTH <! "鉱物" !>].
+
+;(TK 05-07-05)
+;曲
+;;  ex.「１曲歌わせてください」
+kyoku_numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "曲" !>].
+
+;;(TK 05-07-05)
+;反射
+;;  ex.「鏡が光を反射する」
+hansha_2 :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hansha_s_2_rel]],
+ORTH <! "反射" !>].
+
+;;っぷり
+;;(TK 05-08-11)
+;;  ex.「男っぷりの良い旦那」
+ppuri_1 := noun_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED '_ppuri_suffix_rel,
+ ORTH <! "っぷり" !>].
+
+;;  ex.「戦いっぷりの良いレスラー」
+ppuri_2 := v2n-end-lex &
+	      [ORTH <! "っぷり" !>,
+	       SYNSEM.LKEYS.KEYREL.PRED '_ppuri_v_rel].
+
+;;(TK 05-08-15)
+;再来年度
+sarainendo :=
+date-noun-lex &
+[ORTH <! "再来年度" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_sarainendo_n_rel]].
+
+;(TK 05-08-22)
+;躊躇
+chuucho_3 := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_chuucho_s_3_rel,
+ ORTH <! "躊躇" !>].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(TK 05-09-21)
+;よく（「良く」のひらがな表記）
+yoku-hiragana_adv := isect-adv-lex &
+[ORTH <! "よく" !>, SYNSEM.LKEYS.KEYREL.PRED '_yoku_adv_1_rel].
+
+;(TK 05-09-22)
+;将来
+;（VNとは全く別の語義）
+shourai_2 := ordinary-nohon-n-lex &
+[ORTH <! "将来" !>, SYNSEM.LKEYS.KEYREL.PRED '_shourai_n_2_rel].
+
+
+
+

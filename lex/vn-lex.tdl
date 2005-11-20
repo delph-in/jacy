@@ -38,9 +38,12 @@
 ;[SYNSEM.LKEYS [KEYREL [PRED '_machi_s_rel]],
 ;ORTH <! "待ち" !>].
 
-kettei-vn :=
+; (MS 2005-09-26) If we have a transitive and an intransitive reading,
+; we need distinct relation names.
+
+kettei-vn-cause :=
 vn-trans1-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kettei_s_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kettei_s_cause_rel]],
 ORTH <! "決定" !>].
 
 hikidashi-vn :=
@@ -104,9 +107,12 @@ vn-trans1-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_ichidoku_s_rel]],
 ORTH <! "一読" !>].
 
-idou-vn :=
+; (MS 2005-09-26) If we have a transitive and an intransitive reading,
+; we need distinct relation names.
+
+idou-vn-cause :=
 vn-trans1-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_idou_s_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_idou_s_cause_rel]],
 ORTH <! "移動" !>].
 
 issho-vn :=
@@ -2200,10 +2206,12 @@ vn-trans1-lex &
           ORTH <! "開放" !>].
 
 ;implementation; materialization; realization
+; (MS 2005-09-26) If we have a transitive and an intransitive reading,
+; we need distinct relation names.
 
-jitsugen-vn := 
+jitsugen-vn-cause := 
 vn-trans1-lex & 
-	[SYNSEM.LKEYS.KEYREL.PRED '_jitsugen_s_rel,
+	[SYNSEM.LKEYS.KEYREL.PRED '_jitsugen_s_cause_rel,
           ORTH <! "実現" !>].
 
 ;playback; regeneration; resuscitation; return to life; rebirth; reincarnation; narrow escape; reclamation; regrowth
@@ -9830,10 +9838,12 @@ soshou_1 := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soshou_s_1_rel,
  ORTH <! "訴訟" !>].
 
+;SHADOW
 ; 卒業 
 ; Used 15 times
-
-sotsugyou_1 := vn-intrans-lex &
+;(TK 05-09-15 changed to vn-trans1-lex)
+;sotsugyou_1 := vn-intrans-lex &
+sotsugyou_v1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sotsugyou_s_1_rel,
  ORTH <! "卒業" !>].
 
@@ -10549,8 +10559,12 @@ chousen_1_1 := vn-intrans-lex &
 
 ; 調味 
 ; Used 4 times
-
-choumi_1 := vn-intrans-lex &
+;;(TK 05-06-15 changed to vn-trans1-lex)
+;;  ex.「捌いた魚を調味する」
+;choumi_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_choumi_s_1_rel,
+; ORTH <! "調味" !>].
+choumi_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_choumi_s_1_rel,
  ORTH <! "調味" !>].
 
@@ -11853,10 +11867,11 @@ niramekko_1 := vn-intrans-lex &
 
 ; 妊娠 
 ; Used 2 times
-
-ninshin_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ninshin_s_1_rel,
- ORTH <! "妊娠" !>].
+;;(TK 05-07-01 commentout)
+;;vn-trans1で十分対応できる
+;ninshin_1 := vn-intrans-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ninshin_s_1_rel,
+; ORTH <! "妊娠" !>].
 
 ; 値上がり 
 ; Used 2 times
@@ -12480,7 +12495,7 @@ hankou_1_1 := vn-intrans-lex &
 
 ; 反射 
 ; Used 8 times
-
+;; ex.「音が壁に反射する」
 hansha_1 := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hansha_s_1_rel,
  ORTH <! "反射" !>].
@@ -14918,9 +14933,11 @@ ippen_1_1 := vn-intrans-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ippen_s_1_rel,
  ORTH <! "一変" !>].
 
+; (MS 2005-09-27) If we have a transitive and an intransitive reading,
+; we need distinct relation names.
 
-idou_1 := vn-intrans-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_idou_s_1_rel,
+idou_inchoative := vn-intrans-lex &
+ [SYNSEM.LKEYS.KEYREL.PRED '_idou_s_inchoative_rel,
   ORTH <! "異動" !>].
 
 
@@ -15273,8 +15290,8 @@ ketsudan_1 := vn-intrans-lex &
 ; Used 8 times
 ;conclusion
 
-ketsuron-vn := vn-trans3-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ketsuron_s_rel,
+ketsuron_1 := vn-trans3-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ketsuron_s_1_rel,
  ORTH <! "結論" !>].
 
 ; 減給 
@@ -22483,9 +22500,11 @@ shuuri_1 := vn-trans1-lex &
  ORTH <! "修理" !>].
 
 ; 修了 
+; (MS 2005-09-26) If we have a transitive and an intransitive reading,
+; we need distinct relation names.
 
-shuuryou_1_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shuuryou_s_1_rel,
+shuuryou-vn-cause := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shuuryou_s_cause_rel,
  ORTH <! "修了" !>].
 
 ; 収録 
@@ -22730,7 +22749,7 @@ jouyou_1_2 := vn-trans1-lex &
 
 ; Used 17 times
 ;future
-
+;(TK VNのほうは「future」の意味では使われない)
 shourai_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shourai_s_1_rel,
  ORTH <! "将来" !>].
@@ -28544,38 +28563,49 @@ vn-intrans-lex &
 ORTH <! "成立" !>].
 
 ;終了
-; (MS 2005-06-24) As this is already there as vn-trans1, 
-; this entry is not necessary.
+;;(TK 05-08-10 commentをはずす)
+;; ex.「作業が終了する」
+;; (MS 2005-09-27) If we have an intransitive and a transitive reading,
+;; these should have a different relation!
 
-;shuuryou-vn-intrans :=
-;vn-intrans-lex &
-;[SYNSEM.LKEYS [KEYREL [PRED '_shuuryou_s_intrans_rel]],
-;ORTH <! "終了" !>].
+shuuryou-vn-inchoative :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_shuuryou_s_inchoative_rel]],
+ ORTH <! "終了" !>].
 
 ;;(05-03-02)
 
 ;移動
 ; (MS 2005-06-24) As these are already there as vn-trans1, 
 ; these entries are not necessary.
-
-;idou-vn-intrans :=
-;vn-intrans-lex &
-;[SYNSEM.LKEYS [KEYREL [PRED '_idou_s_intrans_rel]],
-;ORTH <! "移動" !>].
+;;(TK 05-08-10 commentをはずす)
+;; ex.「机が移動する」
+idou-vn-intrans :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_idou_s_intrans_rel]],
+ ORTH <! "移動" !>].
 
 ;実現
+;;(TK 05-08-10 commentをはずす)
+;; ex.「夢が実現した」
+;; (MS 2005-09-27) If we have an intransitive and a transitive reading,
+;; these should have a different relation!
 
-;jitsugen-vn-intrans :=
-;vn-intrans-lex &
-;[SYNSEM.LKEYS [KEYREL [PRED '_jitsugen_s_intrans_rel]],
-;ORTH <! "実現" !>].
+jitsugen-vn-inchoative :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_jitsugen_s_inchoative_rel]],
+ ORTH <! "実現" !>].
 
 ;決定
+;;(TK 05-08-10 commentをはずす)
+;; ex.「試験の日程が決定する」
+;; (MS 2005-09-27) If we have an intransitive and a transitive reading,
+;; these should have a different relation!
 
-;kettei-vn-intrans :=
-;vn-intrans-lex &
-;[SYNSEM.LKEYS [KEYREL [PRED '_kettei_s_intrans_rel]],
-;ORTH <! "決定" !>].
+kettei-vn-inchoative :=
+vn-intrans-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_kettei_s_inchoative_rel]],
+ ORTH <! "決定" !>].
 
 o-machi-vn :=
 vn-trans1-lex &

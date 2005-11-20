@@ -578,10 +578,10 @@ nikui-v2-end := v2adj-nmod-maybeend-lex-v2 &
              [ORTH <! "にくい" !>,
               SYNSEM.LKEYS.KEYREL.PRED '_nikui_v_rel].
 
-
-nikui-v2-notyetend := v2adj-notyetend-lex-v2 &
-             [ORTH <! "にくい" !>,
-             SYNSEM [LKEYS.KEYREL.PRED '_nikui_v_rel]].
+; (FCB 2005-11-17 Duplicate)
+; nikui-v2-notyetend := v2adj-notyetend-lex-v2 &
+;              [ORTH <! "にくい" !>,
+;              SYNSEM [LKEYS.KEYREL.PRED '_nikui_v_rel]].
 
 ;hard to
 
@@ -606,10 +606,10 @@ gatai-v2-end := v2adj-end-v2-nmod-lex &
              [ORTH <! "難い" !>,
               SYNSEM.LKEYS.KEYREL.PRED '_gatai_v_rel].
 
-
-gatai-v2-notyetend := v2adj-notyetend-lex-v2 &
-             [ORTH <! "難い" !>,
-              SYNSEM.LKEYS.KEYREL.PRED '_gatai_v_rel].
+; (FCB 2005-11-17 Duplicate)
+; gatai-v2-notyetend := v2adj-notyetend-lex-v2 &
+;              [ORTH <! "難い" !>,
+;               SYNSEM.LKEYS.KEYREL.PRED '_gatai_v_rel].
 
 
 ;"食べられるだけ食べたい"
@@ -686,6 +686,8 @@ garu-end := naadj2v-end-lex &
 kata-v-end := v2n-end-lex &
 	      [ORTH <! "方" !>,
 	       SYNSEM.LKEYS.KEYREL.PRED '_kata_v_rel].
+
+; (MS 2005-09-26) causative treatment
 
 saseru-intrans-scope-end := caus-intrans-scope-passvmorph-end-lex &
            [ORTH <! "させる" !>].

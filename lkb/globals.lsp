@@ -155,9 +155,9 @@
 ;;;
 (defparameter cdb::*cdb-ascii-p* nil)
 
-;;; for the compare function 
-
-(defparameter *discriminant-path* '(synsem local keys key pred))
+;;;;;; for the compare function 
+;;;
+;;;(defparameter *discriminant-path* '(synsem local keys key pred))
 
 (setf *semantics-index-path* '(synsem local cont hook index))
 

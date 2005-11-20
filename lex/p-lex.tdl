@@ -1253,10 +1253,16 @@ niyori := postp-lex &
          ORTH <! "により" !>].
 
 
-niyoru := postp-lex &
-         [SYNSEM [LOCAL.CAT.HEAD.PTYPE niyotte,
-		  LKEYS.KEYREL.PRED '_niyotte_p_rel],
-         ORTH <! "による" !>].
+;(TK 05-08-25 changed to nounmod-p-lex)
+;niyoru := postp-lex &
+;	  [SYNSEM.LOCAL [CAT.HEAD.PTYPE niyotte],
+;                        SYNSEM.LKEYS.KEYREL.PRED '_niyotte_p_rel,
+;	   ORTH <! "による" !>].
+niyoru := nounmod-p-lex &
+	         [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
+				     VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]]],
+		  SYNSEM.LKEYS.KEYREL.PRED '_niyoru_p_rel,
+		  ORTH <! "による" !>]. 
 
 
 niyotte := postp-lex &

@@ -1,3 +1,28 @@
+;;; -*- Mode: TDL; Coding: euc-jp -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: adjadv-lex.tdl
+;;;      module: lexicon
+;;;     version: %I%
+;;;  written by: Melanie Siegel
+;;; last update: 
+;;;  updated by:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date    | modification
+;;; ------------------|---------|---------------------------------------------
+;;; Melanie Siegel    |         | Francis Bond (FCB)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; FCB prefers to think of this as precise-lex.tdl
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+; (MS 2005-05-11) This is the topic marker that replaces case particles,
+; such that we have massive ambiguity whenever case particles occur. 
+; (MS 2005-05-13) It sets empathy to the entity it attaches to.
+; (MS 2005-09-22) It sets empathy to the entity it attaches to, only
+; when it is case ga! If it is a case of object topicalization, the 
+; empathy is rather set to the sentence subject (see Watanabe 2000)
+
 
 wa-case-ga := case-p-lex-np-topic-ga & 
        [ORTH <! "は" !>].
@@ -5,8 +30,6 @@ wa-case-ga := case-p-lex-np-topic-ga &
 
 wa-case-wo := case-p-lex-np-topic-wo & 
        [ORTH <! "は" !>].
-
-
 
 ;(CH 2005-03-10)
 ; solution to parse 「ボールを進んで打つ」「ボールを続けて打つ」.

@@ -584,10 +584,15 @@ ordinary-nohon-n-lex &
 [ORTH <! "話" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_hanashi_n_rel]].
 
-haNnichi :=
-date-noun-lex &
-[ORTH <! "半日" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_hannichi_n_rel]].
+;(TK 05-08-25 changed to temp_numeral-dur-lex)
+;haNnichi :=
+;date-noun-lex &
+;[ORTH <! "半日" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_hannichi_n_rel]].
+haNnichi  :=
+temp_numeral-dur-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hannichi_n_rel,
+ORTH <! "半日" !>].
 
 happyoukai :=
 ordinary-nohon-n-lex &
@@ -1040,8 +1045,14 @@ ordinary-nohon-n-lex &
 [ORTH <! "会場" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kaijou_n_rel]].
 
-kaku :=
-ordinary-nohon-n-lex &
+;(TK 05-07-05 changed to ordinary-prefix-n-lex)
+;; 「kaku」で普通名詞として使うことはない
+;kaku :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "各" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_kaku_n_rel]].
+kaku-prefix :=
+noun_mod-lex-l &
 [ORTH <! "各" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kaku_n_rel]].
 
@@ -1489,15 +1500,17 @@ ordinary-nohon-n-lex &
 [ORTH <! "内容" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_naiyou_n_rel]].
 
-naka :=
-ordinary-nohon-n-lex &
-[ORTH <! "中" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_naka_n_rel]].
+;;(TK 05-06-13 changed to relational-n-lex)
+;naka :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "中" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_naka_n_rel]].
 
-naka-hiragana-noun :=  
-ordinary-nohon-n-lex &
-	[SYNSEM.LKEYS.KEYREL.PRED '_naka_n_rel,
-          ORTH <! "なか" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;naka-hiragana-noun :=  
+;ordinary-nohon-n-lex &
+;	[SYNSEM.LKEYS.KEYREL.PRED '_naka_n_rel,
+;          ORTH <! "なか" !>].
 
 ;completed
 
@@ -1597,7 +1610,7 @@ ordinary-nohon-n-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_otesuu_n_rel]].
 
 ototoi :=
-ordinary-nohon-n-lex &
+date-noun-adv-lex &
 [ORTH <! "一昨日" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_ototoi_n_rel]].
 
@@ -2325,10 +2338,11 @@ ordinary-nohon-n-lex &
 [ORTH <! "貝" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kai_n_shell_rel]].
 
-kai-rank :=
-ordinary-nohon-n-lex &
-[ORTH <! "下位" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_kai_n_rel]].
+;;(TK 05-06-13 changed to relational-n-lex)
+;kai-rank :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "下位" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_kai_n_rel]].
 
 kaiga :=
 ordinary-nohon-n-lex &
@@ -2906,10 +2920,13 @@ SYNSEM.LKEYS.KEYREL [PRED '_kokoroatari_n_rel]].
 ;[ORTH <! "遅れ" !>,
 ;SYNSEM.LKEYS.KEYREL [PRED '_okure_n_rel]].
 
-omo-main :=
-ordinary-nohon-n-lex &
-[ORTH <! "主" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_omo_n_rel]].
+;;(TK 05-06-22 commentout)
+;; 「主（omo）」は形容動詞として使うことのほうが多い
+;;  のではないか
+;omo-main :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "主" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_omo_n_rel]].
 
 omo-important :=
 ordinary-nohon-n-lex &
@@ -3291,10 +3308,11 @@ ordinary-nohon-n-lex &
 [ORTH <! "それなり" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sorenari_n_rel]].
 
-soto :=
-ordinary-nohon-n-lex &
-[ORTH <! "外" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_soto_n_rel]].
+;;(TK 05-06-13 changed to relational-n-lex)
+;soto :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "外" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_soto_n_rel]].
 
 supootsu :=
 ordinary-nohon-n-lex &
@@ -3621,10 +3639,12 @@ SYNSEM.LKEYS.KEYREL [PRED '_omoi_n_rel]].
 ;[ORTH <! "ピックアップ" !>,
 ;SYNSEM.LKEYS.KEYREL [PRED '_pikkuappu_n_rel]].
 
-risutoappu :=
-ordinary-nohon-n-lex &
-[ORTH <! "リストアップ" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_risutoappu_n_rel]].
+;;(TK 05-06-22 commentout)
+;; vn-trans1でほぼ対応できる
+;risutoappu :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "リストアップ" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_risutoappu_n_rel]].
 
 ;taizai :=
 ;ordinary-nohon-n-lex &
@@ -4025,7 +4045,7 @@ ordinary-nohon-n-lex &
 [ORTH <! "発" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_hatsu_n_rel]].
 
-izure-hiragana-n :=
+izure :=
 ordinary-nohon-n-lex &
 [ORTH <! "いずれ" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_izure_n_rel]].
@@ -4722,12 +4742,12 @@ title-pers-honsubj-lex &
 ;[ORTH <! "大学" !>,
 ;SYNSEM.LKEYS.KEYREL [PRED '_daigaku_n_rel]].
 
-daigaku-inst :=
+daigaku-title :=
 title-inst-lex &
 [ORTH <! "大学" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_daigaku_n_rel]].
 
-gaidai :=
+gaidai-title :=
 title-inst-lex &
 [ORTH <! "外大" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_gaidai_n_rel]].
@@ -5339,10 +5359,11 @@ ordinary-nohon-n-lex &
 [ORTH <! "個人" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kojin_n_rel]].
 
-koukyuu :=
-ordinary-nohon-n-lex &
-[ORTH <! "高級" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_koukyuu_n_rel]].
+;;(TK 05-06-13 changed to relational-n-lex)
+;koukyuu :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "高級" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_koukyuu_n_rel]].
 
 jakkan-n :=
 ordinary-nohon-n-lex &
@@ -5611,10 +5632,15 @@ SYNSEM.LKEYS.KEYREL [PRED '_senshorai_n_rel]].
 
 ;half a year
 
-hantoshi-noun :=
-date-noun-lex &
-[ORTH <! "半年" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_hantoshi_n_rel]].
+;(TK 05-08-25 changed to temp_numeral-dur-lex)
+;hantoshi-noun :=
+;date-noun-lex &
+;[ORTH <! "半年" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_hantoshi_n_rel]].
+hantoshi-noun  :=
+temp_numeral-dur-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hantoshi_n_rel,
+ORTH <! "半年" !>].
 
 ;the past
 
@@ -5647,8 +5673,13 @@ SYNSEM.LKEYS.KEYREL [PRED '_issei_n_rel]].
 ;present
 ; "現在三井住友銀行の口座から引き落としを行っていますが"
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;genzai-noun :=
+;date-noun-adv-lex &
+;[ORTH <! "現在" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_genzai_n_rel]].
 genzai-noun :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "現在" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_genzai_n_rel]].
 
@@ -5666,10 +5697,14 @@ SYNSEM.LKEYS.KEYREL [PRED '_korekara_n_rel]].
 ;[ORTH <! "時" !>,
 ;SYNSEM.LKEYS.KEYREL [PRED '_toki_n_rel]].
 
-toki-hiragana :=
-date-noun-adv-lex &
-[ORTH <! "とき" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_toki_n_rel]].
+;;(TK 05-08-15 changed to nom-common-lex)
+;toki-hiragana :=
+;date-noun-adv-lex &
+;[ORTH <! "とき" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_toki_n_rel]].
+toki-hiragana := nom-common-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_toki_n_rel,
+ ORTH <! "とき" !>].
 
 konnendo-noun :=
 ordinary-nohon-n-lex &
@@ -6780,19 +6815,33 @@ SYNSEM.LKEYS.KEYREL.PRED '_kurai_n_rel].
 ;[ORTH <! "一番" !>,
 ;SYNSEM.LKEYS.KEYREL [PRED '_ichiban_n_rel]].
 
+;;(TK 05-08-15 changed to date-noun-adv-lex)
+;saikin :=
+;possibly-adv-n-lex &
+;[ORTH <! "最近" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_saikin_n_rel]].
 saikin :=
 date-noun-adv-lex &
 [ORTH <! "最近" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_saikin_n_rel]].
 
-saichuu :=
-date-noun-lex &
-[ORTH <! "最中" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_saichuu_n_rel]].
+;;(TK 05-08-15 changed to nom-common-lex)
+;saichuu :=
+;possibly-adv-n-lex &
+;[ORTH <! "最中" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_saichuu_n_rel]].
+saichuu := nom-common-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_saichuu_n_rel,
+ ORTH <! "最中" !>].
 
 ;ago; since; before; previous
 
-izen-noun :=  
+;;(TK 05-08-15 changed to date-noun-lex)
+;izen-noun :=  
+;possibly-adv-n-lex &
+;	[SYNSEM.LKEYS.KEYREL.PRED '_izen_n_rel,
+;          ORTH <! "以前" !>].
+izen-noun :=
 date-noun-lex &
 	[SYNSEM.LKEYS.KEYREL.PRED '_izen_n_rel,
           ORTH <! "以前" !>].
@@ -7811,18 +7860,33 @@ ORTH <! "先月号" !>].
 
 ; (ERB 2001-10-01) Date expressions
 
+;(TK 05-08-12 changed to date-noun-adv-lex)
+;ashita :=
+;date-noun-lex &
+;[ORTH <! "明日" !>,
+; SYNSEM [LKEYS.KEYREL [PRED '_ashita_n_rel]]].
 ashita :=
-date-noun-lex &
+date-noun-adv-lex &
 [ORTH <! "明日" !>,
  SYNSEM [LKEYS.KEYREL [PRED '_ashita_n_rel]]].
 
+;(TK 05-08-12 changed to date-noun-adv-lex)
+;ashita-hiragana :=
+;date-noun-lex &
+;[ORTH <! "あした" !>,
+; SYNSEM [LKEYS.KEYREL [PRED '_ashita_n_rel]]].
 ashita-hiragana :=
-date-noun-lex &
+date-noun-adv-lex &
 [ORTH <! "あした" !>,
  SYNSEM [LKEYS.KEYREL [PRED '_ashita_n_rel]]].
 
+;(TK 05-08-12 changed to date-noun-adv-lex)
+;asu :=
+;date-noun-lex &
+;[ORTH <! "あす" !>,
+; SYNSEM [LKEYS.KEYREL [PRED '_asu_n_rel]]].
 asu :=
-date-noun-lex &
+date-noun-adv-lex &
 [ORTH <! "あす" !>,
  SYNSEM [LKEYS.KEYREL [PRED '_asu_n_rel]]].
 
@@ -7831,20 +7895,35 @@ date-noun-lex &
 [ORTH <! "おととし" !>,
  SYNSEM [LKEYS.KEYREL [PRED '_ototoshi_n_rel]]].
 
-asujuu :=
-date-noun-adv-lex &
-[ORTH <! "明日中" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_asujuu_n_rel]]].
+;(TK 05-08-25)
+;asujuu :=
+;date-noun-adv-lex &
+;[ORTH <! "明日中" !>,
+;SYNSEM [LKEYS.KEYREL [PRED '_asujuu_n_rel]]].
+asujuu  :=
+temp_numeral-dur-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_asujuu_n_rel,
+ORTH <! "明日中" !>].
 
-ichinichichuu-chasen :=
-date-noun-adv-lex &
-[ORTH <! "一","日","中" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_ichinichichuu_n_rel]]].
+;(TK 05-08-25)
+;ichinichichuu-chasen :=
+;date-noun-adv-lex &
+;[ORTH <! "一","日","中" !>,
+;SYNSEM [LKEYS.KEYREL [PRED '_ichinichichuu_n_rel]]].
+ichinichichuu-chasen  :=
+temp_numeral-dur-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ichinichichuu_n_rel,
+ORTH <! "一","日","中" !>].
 
-ichinichichuu :=
-date-noun-adv-lex &
-[ORTH <! "一日中" !>,
-SYNSEM [LKEYS.KEYREL [PRED '_ichinichichuu_n_rel]]].
+;(TK 05-08-25)
+;ichinichichuu :=
+;date-noun-adv-lex &
+;[ORTH <! "一日中" !>,
+;SYNSEM [LKEYS.KEYREL [PRED '_ichinichichuu_n_rel]]].
+ichinichichuu  :=
+temp_numeral-dur-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ichinichichuu_n_rel,
+ORTH <! "一日中" !>].
 
 konotabi :=
 date-noun-adv-lex &
@@ -7863,17 +7942,34 @@ date-noun-adv-lex &
 [ORTH <! "このごろ" !>,
 SYNSEM [LKEYS.KEYREL [PRED '_konogoro_n_rel]]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;honjitsu :=
+;date-noun-adv-lex &
+;[ORTH <! "本日" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_honjitsu_n_rel]].
 honjitsu :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "本日" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_honjitsu_n_rel]].
 
-ima := date-noun-plusbar-lex &
+;(TK 05-08-12 changed to date-noun-adv-lex)
+;ima :=
+;date-noun-lex &
+;[ORTH <! "今" !>,
+;SYNSEM [LKEYS.KEYREL [PRED '_ima_n_rel],
+;	LOCAL.BAR +]].
+ima :=
+date-noun-adv-lex &
 [ORTH <! "今" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_ima_n_rel].
 
+;(TK 05-08-12 changed to date-noun-adv-lex)
+;ima-hiragana :=
+;date-noun-lex &
+;[ORTH <! "いま" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_ima_n_rel]].
 ima-hiragana :=
-date-noun-lex &
+date-noun-adv-lex &
 [ORTH <! "いま" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_ima_n_rel]].
 
@@ -7887,13 +7983,23 @@ date-noun-adv-lex &
 [ORTH <! "こんど" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kondo_n_rel]].
 
-koNgetsu :=
-date-noun-adv-lex &
+;;(TK 05-08-15 changed to date-noun-lex)
+;koNgetsu :=
+;date-noun-adv-lex &
+;[ORTH <! "今月" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_kongetsu_n_rel]].
+kongetsu :=
+date-noun-lex &
 [ORTH <! "今月" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kongetsu_n_rel]].
 
-koNshuu :=
-date-noun-adv-lex &
+;;(TK 05-08-15 changed to date-noun-lex)
+;koNshuu :=
+;date-noun-adv-lex &
+;[ORTH <! "今週" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_konshuu_n_rel]].
+konshuu :=
+date-noun-lex &
 [ORTH <! "今週" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_konshuu_n_rel]].
 
@@ -7909,38 +8015,73 @@ date-noun-adv-lex &
 [ORTH <! "今般" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_konpan_n_rel]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;kotoshi :=
+;date-noun-adv-lex &
+;[ORTH <! "今年" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_kotoshi_n_rel]].
 kotoshi :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "今年" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kotoshi_n_rel]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;kyou :=
+;date-noun-adv-lex &
+;[ORTH <! "今日" !>,
+;SYNSEM [LKEYS.KEYREL [PRED '_kyou_n_rel]]].
 kyou :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "今日" !>,
 SYNSEM [LKEYS.KEYREL [PRED '_kyou_n_rel]]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;kyou-hiragana :=
+;date-noun-adv-minusbar-lex &
+;[ORTH <! "きょう" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_kyou_n_rel].
 kyou-hiragana :=
-date-noun-adv-minusbar-lex &
+date-noun-lex &
 [ORTH <! "きょう" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_kyou_n_rel].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;kinou :=
+;date-noun-adv-lex &
+;[ORTH <! "昨日" !>,
+;SYNSEM [LKEYS.KEYREL [PRED '_kinou_n_rel]]].
 kinou :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "昨日" !>,
 SYNSEM [LKEYS.KEYREL [PRED '_kinou_n_rel]]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;kinou-hiragana :=
+;date-noun-adv-lex &
+;[ORTH <! "きのう" !>,
+;SYNSEM [LKEYS.KEYREL [PRED '_kinou_n_rel]]].
 kinou-hiragana :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "きのう" !>,
 SYNSEM [LKEYS.KEYREL [PRED '_kinou_n_rel]]].
 
+;(TK 05-08-12 changed to date-noun-adv-lex)
+;myounichi :=
+;date-noun-lex &
+;[ORTH <! "明日" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_myounichi_n_rel]].
 myounichi :=
-date-noun-lex &
+date-noun-adv-lex &
 [ORTH <! "明日" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_myounichi_n_rel]].
 
+;(TK 05-08-15 changed to date-noun-adv-lex)
+;asatte :=
+;date-noun-minusbar-lex &
+;[ORTH <! "明後日" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_asatte_n_rel].
 asatte :=
-date-noun-minusbar-lex &
+date-noun-adv-lex &
 [ORTH <! "明後日" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_asatte_n_rel].
 
@@ -7989,13 +8130,23 @@ date-noun-lex &
 [ORTH <! "来週末" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_raishuumatsu_n_rel]].
 
-sakuneN :=
-date-noun-adv-lex &
+;;(TK 05-08-15 changed to date-noun-lex)
+;sakuneN :=
+;date-noun-adv-lex &
+;[ORTH <! "昨年" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_sakunen_n_rel]].
+sakunen :=
+date-noun-lex &
 [ORTH <! "昨年" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sakunen_n_rel]].
 
-sakuneNdo :=
-date-noun-adv-lex &
+;;(TK 05-08-15 changed to date-noun-lex)
+;sakuneNdo :=
+;date-noun-adv-lex &
+;[ORTH <! "昨年度" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_sakunendo_n_rel]].
+sakunendo :=
+date-noun-lex &
 [ORTH <! "昨年度" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sakunendo_n_rel]].
 
@@ -8014,8 +8165,13 @@ date-noun-lex &
 [ORTH <! "先月" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sengetsu_n_rel]].
 
-seNjitsu :=
-date-noun-adv-lex &
+;;(TK 05-08-15 changed to date-noun-lex)
+;seNjitsu :=
+;date-noun-adv-lex &
+;[ORTH <! "先日" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_senjitsu_n_rel]].
+senjitsu :=
+date-noun-lex &
 [ORTH <! "先日" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_senjitsu_n_rel]].
 
@@ -8024,33 +8180,59 @@ date-noun-lex &
 [ORTH <! "当日" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_toujitsu_n_rel]].
 
-ato-hiragana :=
-date-noun-lex &
-[ORTH <! "あと" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_ato_n_rel]].
+;;(TK 05-08-15 changed to ordinary-nohon-n-lex)
+;ato-hiragana :=
+;date-noun-lex &
+;[ORTH <! "あと" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_ato_n_rel]].
+ato-hiragana :=  
+        ordinary-nohon-n-lex &
+	[SYNSEM.LKEYS.KEYREL.PRED '_ato_n_rel,
+         ORTH <! "あと" !>].
 
-ato :=
-date-noun-lex &
-[ORTH <! "後" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_ato_n_rel]].
+
+;;(TK 05-08-15 changed to ordinary-nohon-n-lex)
+;ato :=
+;date-noun-lex &
+;[ORTH <! "後" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_ato_n_rel]].
+ato :=  
+        ordinary-nohon-n-lex &
+	[SYNSEM.LKEYS.KEYREL.PRED '_ato_n_rel,
+         ORTH <! "後" !>].
 
 sakki :=
 date-noun-adv-lex &
 [ORTH <! "さっき" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sakki_n_rel]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;konban :=
+;date-noun-adv-lex &
+;[ORTH <! "今晩" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_konban_n_rel]].
 konban :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "今晩" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_konban_n_rel]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;kesa :=
+;date-noun-adv-lex &
+;[ORTH <! "今朝" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_kesa_n_rel]].
 kesa :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "今朝" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kesa_n_rel]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;imagoro :=
+;date-noun-adv-lex &
+;[ORTH <! "今ごろ" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_imagoro_n_rel]].
 imagoro :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "今ごろ" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_imagoro_n_rel]].
 
@@ -8059,13 +8241,23 @@ date-noun-adv-lex &
 [ORTH <! "今後" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kongo_n_rel]].
 
-seNgo :=
-date-noun-adv-lex &
+;;(TK 05-08-15 changed to date-noun-lex)
+;seNgo :=
+;date-noun-adv-lex &
+;[ORTH <! "戦後" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_sengo_n_rel]].
+sengo :=
+date-noun-lex &
 [ORTH <! "戦後" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_sengo_n_rel]].
 
+;;(TK 05-08-15 changed to date-noun-lex)
+;touji :=
+;date-noun-adv-lex &
+;[ORTH <! "当時" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_touji_n_rel]].
 touji :=
-date-noun-adv-lex &
+date-noun-lex &
 [ORTH <! "当時" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_touji_n_rel]].
 
@@ -8076,17 +8268,27 @@ SYNSEM.LKEYS.KEYREL [PRED '_maido_n_rel]].
 
 ;the next morning
 
-yokuasa := 
-date-noun-adv-lex &
-	[SYNSEM.LKEYS.KEYREL [PRED '_yokuasa_n_rel],
-          ORTH <! "翌朝" !>].
+;;(TK 05-08-15 changed to date-noun-lex)
+;yokuasa := 
+;date-noun-adv-lex &
+;	[SYNSEM.LKEYS.KEYREL [PRED '_yokuasa_n_rel],
+;          ORTH <! "翌朝" !>].
+yokuasa :=
+date-noun-lex &
+[ORTH <! "翌朝" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_yokuasa_n_rel]].
 
 ;forenoon, just before noon
 
-hirumae := 
-date-noun-adv-lex &
-	[SYNSEM.LKEYS.KEYREL [PRED '_hirumae_n_rel],
-          ORTH <! "昼前" !>].
+;;(TK 05-08-15 changed to date-noun-lex)
+;hirumae := 
+;date-noun-adv-lex &
+;	[SYNSEM.LKEYS.KEYREL [PRED '_hirumae_n_rel],
+;          ORTH <! "昼前" !>].
+hirumae :=
+date-noun-lex &
+[ORTH <! "昼前" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_hirumae_n_rel]].
 
 ;after this
 
@@ -8110,36 +8312,55 @@ date-noun-lex &
 [ORTH <! "前年" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_zennen_n_rel]].
 
-dougetsu :=
-date-noun-lex &
-[ORTH <! "同月" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_dougetsu_n_rel]].
+;(TK 05-08-12 changed to  date-noun-adv-lex)
+;dougetsu :=
+;date-noun-lex &
+;[ORTH <! "同月" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_dougetsu_n_rel]].
+dougetsu := date-noun-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_dougetsu_n_rel,
+ ORTH <! "同月" !>].
 
-taNjikaN :=
-date-noun-lex &
-[ORTH <! "短時間" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_tanjikan_n_rel]].
+;;(TK 05-08-25 changed to ordinary-nohon-n-lex)
+;taNjikaN :=
+;date-noun-lex &
+;[ORTH <! "短時間" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_tanjikan_n_rel]].
+taNjikaN  :=
+temp_numeral-dur-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tanjikan_n_rel,
+ORTH <! "短時間" !>].
 
 ;every second
 
-maibyou :=
-date-noun-lex &
-[ORTH <! "毎秒" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_maibyou_n_rel]].
+;(TK 05-08-12 changed to  date-noun-adv-lex)
+;maibyou :=
+;date-noun-lex &
+;[ORTH <! "毎秒" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_maibyou_n_rel]].
+maibyou := date-noun-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_maibyou_n_rel,
+ ORTH <! "毎秒" !>].
 
 ;every morning
 
-maiasa :=
-date-noun-lex &
-[ORTH <! "毎朝" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_maiasa_n_rel]].
+;maiasa :=
+;date-noun-lex &
+;[ORTH <! "毎朝" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_maiasa_n_rel]].
+maiasa := date-noun-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_maiasa_n_rel,
+ ORTH <! "毎朝" !>].
 
 ;every day
 
-mainichi :=
-date-noun-lex &
-[ORTH <! "毎日" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_mainichi_n_rel]].
+;mainichi :=
+;date-noun-lex &
+;[ORTH <! "毎日" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_mainichi_n_rel]].
+mainichi := date-noun-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_mainichi_n_rel,
+ ORTH <! "毎日" !>].
 
 nyuusu-noun :=
 ordinary-nohon-n-lex &
@@ -8183,10 +8404,14 @@ SYNSEM.LKEYS.KEYREL.PRED '_sho_n_rel].
 
 ;right, good
 
-tadashi-prefix :=
-noun_mod-lex-l &
-[ORTH <! "正" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_tadashi_n_rel].
+;;(TK 05-06-13 changed to sei-prefix)
+;tadashi-prefix :=
+;ordinary-prefix-n-lex &
+;[ORTH <! "正" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_tadashi_n_rel].
+sei-prefix := noun_mod-lex-l &
+[ ORTH <! "正" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_sei_n_rel].
 
 kashi-noun :=
 ordinary-nohon-n-lex &
@@ -9367,10 +9592,15 @@ ordinary-nohon-n-lex &
 
 ;half-moon; half month; semicircle
 
-hantsuki-noun :=  
-date-noun-lex &
-	[SYNSEM.LKEYS.KEYREL.PRED '_hantsuki_n_rel,
-          ORTH <! "半月" !>].
+;(TK 05-08-25)
+;hantsuki-noun :=  
+;date-noun-lex &
+;	[SYNSEM.LKEYS.KEYREL.PRED '_hantsuki_n_rel,
+;          ORTH <! "半月" !>].
+hantsuki-noun  :=
+temp_numeral-dur-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hantsuki_n_rel,
+ORTH <! "半月" !>].
 
 ;new and old; incoming and outgoing
 
@@ -10605,10 +10835,15 @@ jitensha-noun :=
 
 ;New Year
 
-shougatsu-noun :=  
-		   date-noun-adv-lex &
-		   [SYNSEM.LKEYS.KEYREL.PRED '_shougatsu_n_rel,
-		    ORTH <! "正月" !>].
+;;(TK 05-08-15 changed to date-noun-lex)
+;shougatsu-noun :=  
+;		   date-noun-adv-lex &
+;		   [SYNSEM.LKEYS.KEYREL.PRED '_shougatsu_n_rel,
+;		    ORTH <! "正月" !>].
+shougatsu-noun :=
+date-noun-lex &
+[ORTH <! "正月" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_shougatsu_n_rel]].
 
 ;pine tree decorations
 
@@ -23391,10 +23626,11 @@ kantei_2 := ordinary-nohon-n-lex &
 ; 観念 
 ; Used 2 times
 ; (TT 2003-08-18) サ変に統合
-
-; kannen_2 := ordinary-nohon-n-lex &
-; [SYNSEM.LKEYS.KEYREL.PRED '_kannen_n_2_rel,
-;  ORTH <! "観念" !>].
+;;(TK 05-06-23 commentを外して復活)
+;;   ex.「逃げられないと分かって観念する」の「観念」とは別物
+kannen_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kannen_n_2_rel,
+ ORTH <! "観念" !>].
 
 ; 完売 
 
@@ -34499,7 +34735,7 @@ ikkoku_1 := ordinary-nohon-n-lex &
 ; 一昨年 
 ; Used 1 times
 
-issakunen_1 := ordinary-nohon-n-lex &
+issakunen_1 := date-noun-adv-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_issakunen_n_1_rel,
  ORTH <! "一昨年" !>].
 
@@ -47907,6 +48143,12 @@ ki_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ki_n_1_rel,
  ORTH <! "木" !>].
 
+; en: seed
+tane_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tane_n_1_rel,
+ ORTH <! "種" !>].
+
+
 ; ギア 
 
 gia_1 := ordinary-nohon-n-lex &
@@ -49130,7 +49372,7 @@ kinenbi_1 := ordinary-nohon-n-lex &
 
 ; 昨日今日 
 
-kinoukyou_1 := ordinary-nohon-n-lex &
+kinoukyou_1 := date-noun-adv-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kinoukyou_n_1_rel,
  ORTH <! "昨日今日" !>].
 
@@ -57023,10 +57265,10 @@ kouhou_1 := ordinary-nohon-n-lex &
 
 ; 後方 
 ; Used 5 times
-
-kouhou_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kouhou_n_1_rel,
- ORTH <! "後方" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;kouhou_1_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kouhou_n_1_rel,
+; ORTH <! "後方" !>].
 
 ; 工房 
 ; Used 1 times
@@ -60927,7 +61169,7 @@ sakusen_1 := ordinary-nohon-n-lex &
 ; 昨晩 
 ; Used 2 times
 
-sakuban_1 := ordinary-nohon-n-lex &
+sakuban_1 := date-noun-adv-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sakuban_n_1_rel,
  ORTH <! "昨晩" !>].
 
@@ -60941,7 +61183,7 @@ sakumotsu_1 := ordinary-nohon-n-lex &
 ; 昨夜 
 ; Used 2 times
 
-sakuya_1 := ordinary-nohon-n-lex &
+sakuya_1 := date-noun-adv-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sakuya_n_1_rel,
  ORTH <! "昨夜" !>].
 
@@ -67878,10 +68120,10 @@ jou_1 := ordinary-nohon-n-lex &
 
 ; 上位 
 ; Used 6 times
-
-joui_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_joui_n_1_rel,
- ORTH <! "上位" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;joui_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_joui_n_1_rel,
+; ORTH <! "上位" !>].
 
 ; 勝因 
 
@@ -68091,10 +68333,10 @@ joukyaku_1 := ordinary-nohon-n-lex &
 
 ; 上級 
 ; Used 5 times
-
-joukyuu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_joukyuu_n_1_rel,
- ORTH <! "上級" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;joukyuu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_joukyuu_n_1_rel,
+; ORTH <! "上級" !>].
 
 ; 消去法 
 
@@ -68246,10 +68488,10 @@ joushiki_1 := ordinary-nohon-n-lex &
 
 ; 上質 
 ; Used 3 times
-
-joushitsu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_joushitsu_n_1_rel,
- ORTH <! "上質" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;joushitsu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_joushitsu_n_1_rel,
+; ORTH <! "上質" !>].
 
 ; 勝者 
 
@@ -68904,10 +69146,10 @@ jouryuusui_1 := ordinary-nohon-n-lex &
 
 ; 少量 
 ; Used 4 times
-
-shouryou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shouryou_n_1_rel,
- ORTH <! "少量" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;shouryou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shouryou_n_1_rel,
+; ORTH <! "少量" !>].
 
 ; 条例 
 
@@ -76334,10 +76576,10 @@ senpou_1 := ordinary-nohon-n-lex &
 
 ; 前方 
 ; Used 6 times
-
-zenpou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_zenpou_n_1_rel,
- ORTH <! "前方" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;zenpou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_zenpou_n_1_rel,
+; ORTH <! "前方" !>].
 
 ; 前方後円墳 
 
@@ -82240,7 +82482,12 @@ choushimono_1 := ordinary-nohon-n-lex &
 ; 長時間 
 ; Used 1 times
 
-choujikan_1 := ordinary-nohon-n-lex &
+;(TK 05-08-25 changed to temp_numeral-dur-lex)
+;choujikan_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_choujikan_n_1_rel,
+; ORTH <! "長時間" !>].
+choujikan_1  :=
+temp_numeral-dur-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_choujikan_n_1_rel,
  ORTH <! "長時間" !>].
 
@@ -87653,10 +87900,10 @@ toshikokka_1 := ordinary-nohon-n-lex &
 
 ; 年上 
 ; Used 8 times
-
-toshiue_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toshiue_n_1_rel,
- ORTH <! "年上" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;toshiue_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toshiue_n_1_rel,
+; ORTH <! "年上" !>].
 
 ; 年男 
 
@@ -87678,10 +87925,10 @@ toshikoshisoba_1 := ordinary-nohon-n-lex &
 
 ; 年下 
 ; Used 8 times
-
-toshishita_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toshishita_n_1_rel,
- ORTH <! "年下" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;toshishita_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toshishita_n_1_rel,
+; ORTH <! "年下" !>].
 
 ; 年月 
 ; Used 12 times
@@ -92744,10 +92991,10 @@ nennai_1 := ordinary-nohon-n-lex &
  ORTH <! "年内" !>].
 
 ; 年配 
-
-nenpai_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nenpai_n_1_rel,
- ORTH <! "年配" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;nenpai_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nenpai_n_1_rel,
+; ORTH <! "年配" !>].
 
 ; 燃費 
 
@@ -123655,10 +123902,11 @@ seiyoufuu_1 := ordinary-nohon-n-lex &
  ORTH <! "西洋風" !>].
 
 ; 世間離れ 
-
-sekenbanare_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sekenbanare_n_1_rel,
- ORTH <! "世間離れ" !>].
+;;(TK 05-06-23 ordinary-nohon-n-lex ->
+;;                   vn-intrans-lex)
+;sekenbanare_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sekenbanare_n_1_rel,
+; ORTH <! "世間離れ" !>].
 
 ; 絶対安静 
 
@@ -125986,10 +126234,10 @@ dame_1 := ordinary-nohon-n-lex &
 
 ; 多量 
 ; Used 8 times
-
-taryou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taryou_n_1_rel,
- ORTH <! "多量" !>].
+;;(TK 05-06-13 changed to relational-n-lex)
+;taryou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taryou_n_1_rel,
+; ORTH <! "多量" !>].
 
 ; 短気 
 
@@ -131241,10 +131489,10 @@ kirikirimai_2 := ordinary-nohon-n-lex &
  ORTH <! "きりきり舞い" !>].
 
 ; 減退 
-
-gentai_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gentai_n_2_rel,
- ORTH <! "減退" !>].
+;(TK 05-07-04 vn-intransを登録したためcommentout)
+;gentai_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_gentai_n_2_rel,
+; ORTH <! "減退" !>].
 
 ; 後進 
 
@@ -131321,10 +131569,10 @@ taikai_2 := ordinary-nohon-n-lex &
  ORTH <! "退会" !>].
 
 ; 退陣 
-
-taijin_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taijin_n_2_rel,
- ORTH <! "退陣" !>].
+;;(TK 05-7-04 vn-trans1追加済のためcommentout)
+;taijin_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taijin_n_2_rel,
+; ORTH <! "退陣" !>].
 
 ; 倒壊 
 
@@ -131611,10 +131859,10 @@ touki_2_1 := ordinary-nohon-n-lex &
 ; 統率 
 ; Used 1 times
 ; (TT 2003-08-18) サ変に統合  -> 消えてたので復活(SF 2003-08-25)
-
-tousotsu_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tousotsu_n_2_rel,
- ORTH <! "統率" !>].
+;;(TK 05-07-04 vn-trans1で登録したのでまたもやサ変に統合)
+;tousotsu_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_tousotsu_n_2_rel,
+; ORTH <! "統率" !>].
 
 ; 品評 
 
@@ -136103,10 +136351,10 @@ magire_1 := ordinary-nohon-n-lex &
  ORTH <! "紛れ" !>].
 
 ; 脱臼 
-
-dakkyuu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dakkyuu_n_1_rel,
- ORTH <! "脱臼" !>].
+;;(TK 05-07-04 VNに統合)
+;dakkyuu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_dakkyuu_n_1_rel,
+; ORTH <! "脱臼" !>].
 
 ; 外堀 
 
@@ -137337,7 +137585,7 @@ peipei_1 := ordinary-nohon-n-lex &
  ORTH <! "ぺいぺい" !>].
 
 ; 歯磨き 
-
+;;（「歯磨き粉」「歯ブラシ」の意味で残した）
 hamigaki_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hamigaki_n_1_rel,
  ORTH <! "歯磨き" !>].
@@ -139687,10 +139935,10 @@ ukagai_1 := ordinary-nohon-n-lex &
  ORTH <! "伺い" !>].
 
 ; 躊躇 
-
-chuucho_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuucho_n_1_rel,
- ORTH <! "躊躇" !>].
+;;(TK 05-08-22 VNに統合)
+;chuucho_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuucho_n_1_rel,
+; ORTH <! "躊躇" !>].
 
 ; 下界 
 
@@ -145312,10 +145560,18 @@ noun_mod-lex-l &
 [ORTH <! "重要" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_jouyou_n_3_rel]].
 
-juu-n :=
-ordinary-nohon-n-lex &
-[ORTH <! "じゅう" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_juu_n_4_rel]].
+;;(TK 05-06-13 changed to ordinary-suffix-n-lex)
+;;ひらがなの「じゅう」を普通名詞 or prefixとして使うことは
+;;おそらくないため、また、
+;;ex.「学校じゅうに広まる」を解析させるため
+;juu-n :=
+;ordinary-nohon-n-lex &
+;[ORTH <! "じゅう" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_juu_n_4_rel]].
+juu-n := noun_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED '_juu_n_suffix_rel,
+ ORTH <! "じゅう" !>].
+
 
 ; as in 丁寧語 polite language
 

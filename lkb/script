@@ -55,20 +55,72 @@
       (load-lexdb-from-script)
       ;; load the things that aren't in the database
       (read-cached-sublex-if-available 
-       "lexicon" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")))
+       "skips" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")))
       ;;; load the generic lexical types
       (read-cached-sublex-if-available 
        "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl"))))
   (progn
-    ;; Load the main lexicon
-    (read-cached-lex-if-available 
-     (list (lkb-pathname (parent-directory) "lex/lexicon.tdl")))
-      ;;; load the new lexical types
+    (read-cached-lex-if-available (list
+				   (lkb-pathname (parent-directory) 
+						 "lex/generics.tdl"))) 
+    ;; pick an arbitrary file and call it the _main_ lexicon
     (read-cached-sublex-if-available 
-     "kyoudai-all" (list (lkb-pathname (parent-directory) "lex/kyoudai-all.tdl")))
-      ;;; load the generic lexical types
+     "adjadv-lex" (list  (lkb-pathname 
+			  (parent-directory) "lex/adjadv-lex.tdl")))
+    (read-cached-sublex-if-available
+     "aux-stem-lex" (list (lkb-pathname 
+			   (parent-directory) "lex/aux-stem-lex.tdl")))
+    (read-cached-sublex-if-available
+     "funct-lex" (list  (lkb-pathname 
+			 (parent-directory) "lex/funct-lex.tdl")))
+    (read-cached-sublex-if-available
+     "idiom-lex" (list  (lkb-pathname 
+			 (parent-directory) "lex/idiom-lex.tdl")))
+    (read-cached-sublex-if-available
+     "light-verbs-lex" (list (lkb-pathname 
+			      (parent-directory) "lex/light-verbs-lex.tdl")))
+    (read-cached-sublex-if-available
+     "noun-lex" (list (lkb-pathname 
+		       (parent-directory) "lex/noun-lex.tdl")))
+    (read-cached-sublex-if-available
+     "numbers-lex" (list (lkb-pathname 
+			  (parent-directory) "lex/numbers-lex.tdl")))
+    (read-cached-sublex-if-available
+     "p-lex" (list (lkb-pathname 
+		    (parent-directory) "lex/p-lex.tdl")))
+    (read-cached-sublex-if-available
+     "pn-lex" (list  (lkb-pathname 
+		      (parent-directory) "lex/pn-lex.tdl")))
+    (read-cached-sublex-if-available
+     "verbstem-lex" (list (lkb-pathname 
+			   (parent-directory) "lex/verbstem-lex.tdl")))
+    (read-cached-sublex-if-available
+     "vn-lex" (list (lkb-pathname 
+		     (parent-directory) "lex/vn-lex.tdl")))
+    (read-cached-sublex-if-available
+     "v-ends-lex" (list (lkb-pathname 
+			 (parent-directory) "lex/v-ends-lex.tdl")))
     (read-cached-sublex-if-available 
-     "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))))
+     "ambiguous-lex" (list (lkb-pathname (parent-directory) 
+				       "lex/ambiguous-lex.tdl")))
+    (read-cached-sublex-if-available 
+     "kyoudai-all" (list (lkb-pathname (parent-directory) 
+				       "lex/kyoudai-all.tdl")))
+    (read-cached-sublex-if-available
+     "ersatz" (list (lkb-pathname (parent-directory)
+				  "lex/ersatz.tdl")))))
+
+  
+;;;  (progn
+;;;    ;; Load the main lexicon
+;;;    (read-cached-lex-if-available 
+;;;     (list (lkb-pathname (parent-directory) "lex/lexicon.tdl")))
+;;;      ;;; load the new lexical types
+;;;    (read-cached-sublex-if-available 
+;;;     "kyoudai-all" (list (lkb-pathname (parent-directory) "lex/kyoudai-all.tdl")))
+;;;      ;;; load the generic lexical types
+;;;    (read-cached-sublex-if-available 
+;;;     "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))))
 
 
 (read-tdl-parse-node-file-aux 
@@ -85,8 +137,8 @@
 ;;; if the preprocessor code is loaded (which it is by default), load the 
 ;;; finite-state rules; these get applied in our preprocess-sentence-string().
 ;;;
-#+:preprocessor
-(read-preprocessor (lkb-pathname (parent-directory) "preprocessor.fsr"))
+;#+:preprocessor
+;(read-preprocessor (lkb-pathname (parent-directory) "preprocessor.fsr"))
 
 ;;;
 ;;; when loaded into an environment including [incr tsdb()] and the Redwoods

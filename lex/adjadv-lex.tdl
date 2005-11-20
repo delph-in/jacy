@@ -5275,10 +5275,12 @@ kedakai_1 := i-adj-stem-lex &
 
 ; 異なり 
 ; Used 4 times
-
-kenari_1 := i-adj-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kenari_a_1_rel,
- ORTH <! "異なり" !>].
+;(TK 05-06-10 commentout)
+;;「異なり」は文語で現在はほとんど使われない。また、活用がi-adjとは
+;;全く違う
+;kenari_1 := i-adj-stem-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kenari_a_1_rel,
+; ORTH <! "異なり" !>].
 
 ; 煙たい 
 
@@ -10094,10 +10096,10 @@ suisui_2 := na-adj-lex &
 ;<IJ> ; 随分 
 ;<IJ> ; JACY 随分: zuibun-kanji-adv (scopal-adv-regular-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> zuibun_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_zuibun_a_2_rel,
-;<IJ>  ORTH <! "随分" !>].
+;;(TK 05-06-10 <IJ>による削除から復活)
+zuibun_2 := na-adj-lex &
+	    [SYNSEM.LKEYS.KEYREL.PRED '_zuibun_a_2_rel,
+	     ORTH <! "随分" !>].
 
 ; そっくり 
 ; Used 1 times
@@ -11001,10 +11003,10 @@ kimama_2 := na-adj-lex &
 ;<IJ> ; 逆 
 ;<IJ> ; JACY 逆: gyaku (ordinary-nohon-n-lex)
 ;<IJ> ; Used 5 times
-
-;<IJ> gyaku_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_gyaku_a_2_rel,
-;<IJ>  ORTH <! "逆" !>].
+;(TK 05-08-26 na-adj復活)
+gyaku_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_gyaku_a_2_rel,
+ ORTH <! "逆" !>].
 
 ; 急 
 ; Used 22 times
@@ -23480,7 +23482,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_oogakari_a_rel].
 yoriyoi-adj := 
 i-adj-stem-lex &
 [ORTH <! "より","よい" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_yorisoi_a_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_yoriyoi_a_rel].
 
 
 ; (MS 2005-10-24): "一部破壊されている。"

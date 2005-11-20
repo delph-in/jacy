@@ -451,7 +451,7 @@ first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'keiko,
 ORTH <! "恵子" !>].
 
-keizai-inst :=
+keizai :=
 inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'keizai,
 ORTH <! "経済" !>].
@@ -847,10 +847,11 @@ surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'oota,
 ORTH <! "太田" !>].
 
-ryouchi :=
-first_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'ryouchi,
-ORTH <! "領地" !>].
+;(TK 05-06-10 commentout)
+;ryouchi :=
+;first_name-lex &
+;[SYNSEM.LKEYS.KEYREL.CARG 'ryouchi,
+;ORTH <! "領地" !>].
 
 ryouichi :=
 first_name-lex &
@@ -923,10 +924,12 @@ surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'sawada,
 ORTH <! "沢田" !>].
 
-seishiN :=
-first_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'seishin,
-ORTH <! "精神" !>].
+;(TK 05-06-10 commentout)
+;人名として使うことはない
+;seishiN :=
+;first_name-lex &
+;[SYNSEM.LKEYS.KEYREL.CARG 'seishin,
+;ORTH <! "精神" !>].
 
 shiNhaNkyuu :=
 inst_name-lex &
@@ -1208,10 +1211,12 @@ first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'yoshinori,
 ORTH <! "良則" !>].
 
-yuka :=
-first_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'yuka,
-ORTH <! "床" !>].
+;(TK 05-06-10 commentout)
+;人名として使うことはない
+;yuka :=
+;first_name-lex &
+;[SYNSEM.LKEYS.KEYREL.CARG 'yuka,
+;ORTH <! "床" !>].
 
 yukako :=
 first_name-lex &

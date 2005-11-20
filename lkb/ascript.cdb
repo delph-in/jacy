@@ -1,6 +1,5 @@
 ;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
 (lkb-load-lisp (parent-directory) "Version.lsp")
-(setf *grammar-version* "Japanese (nov-03)")
 (setf *grammar-directory* (parent-directory)) ; needed for MRS
 (load-lkb-preferences (this-directory) "user-prefs.lsp")
 (lkb-load-lisp (this-directory) "globals.lsp")
@@ -20,12 +19,16 @@
               (lkb-pathname (parent-directory) "principles.tdl")
               (lkb-pathname (parent-directory) "lex-types.tdl")
               (lkb-pathname (parent-directory) "v-lex-types.tdl")
-	      (lkb-pathname (this-directory) "mrsmunge.tdl")
+	      (lkb-pathname (parent-directory) "mtr.tdl")
 ))
 
 (lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)
 
 (read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
+
+;(load-irregular-spellings 
+; (list
+;  (lkb-pathname (parent-directory) "irregs.tab")))
 
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
 ;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "relative-clauses.tdl"))
@@ -61,6 +64,11 @@
 						   (parent-directory) "lex/vn-lex.tdl")))
       (read-cached-sublex-if-available "v-ends-lex" (list (lkb-pathname 
 						       (parent-directory) "lex/v-ends-lex.tdl")))
+      (read-cached-sublex-if-available 
+       "kyoudai-all" (list (lkb-pathname (parent-directory) 
+					"lex/kyoudai-all.tdl")))
+
+      
       (read-cached-sublex-if-available "ersatz" (list (lkb-pathname 
 						       (parent-directory) "lex/ersatz.tdl"))))
 
@@ -88,3 +96,16 @@
 
 (read-tdl-psort-file-aux 
           (lkb-pathname (parent-directory) "roots.tdl"))
+;;;
+;;; finally, use the new transfer component: load any number of rule sets, each
+;;; in a separate file, associated with its identifier.  
+
+
+#+:mt
+(lkb-load-lisp (this-directory) "mt.lsp" t)
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "trigger.mtr"))
+ "Generator Triggger Rules"
+ :filter nil :task :trigger :recurse nil :subsume t)
