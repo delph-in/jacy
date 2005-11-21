@@ -20,7 +20,14 @@
 ;;;
 
 (
- ((:path . "vanilla") (:content . "Basic Japanese Constructions"))
+ ((:path . "vanilla") 
+  (:content . "Basic Japanese Constructions"))
+ ((:path . "kinou1")
+  (:content . "Ikehara Kinou Shikenbun Ch 01-05 (v2)"))
+ ((:path . "kinou2")
+  (:content . "Ikehara Kinou Shikenbun Ch 06-10 (v2)"))
+ ((:path . "kinou3")
+  (:content . "Ikehara Kinou Shikenbun Ch 11-14 (v2)"))
 )
 
 
