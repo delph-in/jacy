@@ -1056,8 +1056,10 @@ ei_1_9 := interj-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ei_a_19_rel,
  ORTH <! "えい" !> ].
 
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-etsu_1 := interj-lex &
+etsu-interj := interj-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_etsu_a_1_rel,
  ORTH <! "えっ" !> ].
 

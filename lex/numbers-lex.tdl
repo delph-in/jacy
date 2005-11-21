@@ -1037,8 +1037,10 @@ guramu_2 := num-cl-spr-only-meas-lex &
 
 ; ¸Í 
 ; Used 11 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-ko_2 := num-cl-spr-only-ind-lex &
+ko-numcl := num-cl-spr-only-ind-lex &
 [ ORTH <! "¸Í" !>].
 
 ; ¥³¥Þ 
@@ -1479,8 +1481,10 @@ mori_2 := num-cl-spr-only-ind-lex &
 
 ; Ìç 
 ; Used 5 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-mon_2 := num-cl-spr-only-ind-lex &
+mon-numcl := num-cl-spr-only-ind-lex &
 [ ORTH <! "Ìç" !>].
 
 ; ¥ä¡¼¥É 
@@ -1490,8 +1494,10 @@ ya-do_2 := num-cl-spr-only-ind-lex &
 
 ; Î¤ 
 ; Used 1 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-ri_2 := num-cl-spr-only-meas-lex &
+ri-numcl := num-cl-spr-only-meas-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ri_n_2_rel,
   ORTH <! "Î¤" !>].
 

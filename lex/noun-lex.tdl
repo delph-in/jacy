@@ -13999,6 +13999,7 @@ ironaoshi_2 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ironaoshi_n_2_rel,
  ORTH <! "色直し" !>].
 
+;in kyoudai-all:
 
 inka_2 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_inka_n_2_rel,
@@ -48138,9 +48139,10 @@ kanwajiten_1 := ordinary-nohon-n-lex &
 ; 木 
 ; JACY 木: moku (dofw-n-lex)
 ; Used 62 times
-
-ki_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ki_n_1_rel,
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
+ki-noun-tree := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ki_n_tree_rel,
  ORTH <! "木" !>].
 
 ; en: seed
@@ -48178,7 +48180,7 @@ kiatsuhaichi_1 := ordinary-nohon-n-lex &
 ; Used 5 times
 
 ki-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ki_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kii_n_1_rel,
  ORTH <! "キー" !>].
 
 ; キーパンチャー 
@@ -52016,8 +52018,10 @@ kinrousha_1 := ordinary-nohon-n-lex &
 
 ; 苦 
 ; Used 1 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-ku_1 := ordinary-nohon-n-lex &
+ku-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ku_n_1_rel,
  ORTH <! "苦" !>].
 
@@ -53940,8 +53944,10 @@ keikan_1_1 := ordinary-nohon-n-lex &
 
 ; 景気 
 ; Used 3 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-keiki_1 := ordinary-nohon-n-lex &
+keiki-noun-condition := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_keiki_n_condition_rel,
  ORTH <! "景気" !>].
 
@@ -60780,7 +60786,7 @@ saidobijinesu_1 := ordinary-nohon-n-lex &
 ; サイドブレーキ 
 
 saidobure-ki_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_saidobure_n_ki_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saidobureeki_n_1_rel,
  ORTH <! "サイドブレーキ" !>].
 
 ; サイドボード 
@@ -62697,8 +62703,10 @@ shi_1_3 := ordinary-nohon-n-lex &
 
 ; 地 
 ; Used 32 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-ji_1 := ordinary-nohon-n-lex &
+ji-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ji_n_1_rel,
  ORTH <! "地" !>].
 
@@ -71049,8 +71057,10 @@ jinshinjiko_1 := ordinary-nohon-n-lex &
  ORTH <! "人身事故" !>].
 
 ; 新星 
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-shinsei_1 := ordinary-nohon-n-lex &
+shinsei-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shinsei_n_1_rel,
  ORTH <! "新星" !>].
 
@@ -76188,8 +76198,10 @@ senzen_1 := ordinary-nohon-n-lex &
 
 ; 前線 
 ; Used 1 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-zensen_1 := ordinary-nohon-n-lex &
+zensen-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zensen_n_1_rel,
  ORTH <! "前線" !>].
 
@@ -88558,8 +88570,10 @@ tome_1 := ordinary-nohon-n-lex &
 
 ; 友 
 ; Used 5 times
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-tomo_1 := ordinary-nohon-n-lex &
+tomo-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tomo_n_1_rel,
  ORTH <! "友" !>].
 
@@ -114879,8 +114893,10 @@ morote_1 := ordinary-nohon-n-lex &
  ORTH <! "諸手" !>].
 
 ; 門下 
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-monka_1 := ordinary-nohon-n-lex &
+monka-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_monka_n_1_rel,
  ORTH <! "門下" !>].
 
@@ -129870,14 +129886,14 @@ ki_1_2 := ordinary-nohon-n-lex &
 ; Used 6 times
 
 ki_1_3 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ki_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ki_n_13_rel,
  ORTH <! "期" !>].
 
 ; 記 
 ; Used 1 times
 
 ki_1_4 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ki_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ki_n_14_rel,
  ORTH <! "記" !>].
 
 ; 刻み 

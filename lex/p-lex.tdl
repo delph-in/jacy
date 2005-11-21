@@ -1258,10 +1258,10 @@ niyori := postp-lex &
 ;	  [SYNSEM.LOCAL [CAT.HEAD.PTYPE niyotte],
 ;                        SYNSEM.LKEYS.KEYREL.PRED '_niyotte_p_rel,
 ;	   ORTH <! "による" !>].
-niyoru := nounmod-p-lex &
-	         [SYNSEM.LOCAL [CAT [HEAD.PTYPE nattr,
-				     VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD noun_head]]]],
-		  SYNSEM.LKEYS.KEYREL.PRED '_niyoru_p_rel,
+; (MS 2005-11-21) New type system without skip files!
+niyoru := nounmod-p-ncomp-lex &
+	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE nattr,
+			  LKEYS.KEYREL.PRED '_niyoru_p_rel],
 		  ORTH <! "による" !>]. 
 
 

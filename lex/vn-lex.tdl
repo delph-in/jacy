@@ -535,7 +535,7 @@ ORTH <! "説明" !>].
 
 shiNpai-vn :=
 vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_shinpai_s_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_shinpai_s_inchoative_rel]],
 ORTH <! "心配" !>].
 
 shukuhaku-vn :=
@@ -23563,8 +23563,10 @@ souji_1 := vn-trans1-lex &
  ORTH <! "掃除" !>].
 
 ; 喪失 
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-soushitsu_1 := vn-trans1-lex &
+soushitsu-vn := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soushitsu_s_1_rel,
  ORTH <! "喪失" !>].
 
@@ -28492,7 +28494,7 @@ imi-vn := vn-trans1-lex &
 
 shinpai-vn-transitive :=
 vn-trans1-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_shinpai_s_transitive_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_shinpai_s_causative_rel]],
 ORTH <! "心配" !>].
 
 ;撃ち合い
@@ -28501,21 +28503,21 @@ ORTH <! "心配" !>].
 ;;VN2N-INFL-RULE-NSPEC_ARG2を選択したいのでvn-trans1も登録
 
 uchiai-vn-1-intrans := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_1_intrans_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_inchoative_rel,
  ORTH <! "撃ち合い" !>].
 
 uchiai-vn-1-trans1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_1_trans1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_causative_rel,
  ORTH <! "撃ち合い" !>].
 
 ;撃合い
 
 uchiai-vn-2-intrans := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_2_intrans_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_inchoative_rel,
  ORTH <! "撃合い" !>].
 
 uchiai-vn-2-trans1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_2_trans1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_uchiai_s_causative_rel,
  ORTH <! "撃合い" !>].
 
 
@@ -28576,13 +28578,11 @@ vn-intrans-lex &
 ;;(05-03-02)
 
 ;移動
-; (MS 2005-06-24) As these are already there as vn-trans1, 
-; these entries are not necessary.
 ;;(TK 05-08-10 commentをはずす)
 ;; ex.「机が移動する」
 idou-vn-intrans :=
 vn-intrans-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_idou_s_intrans_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_idou_s_inchoative_rel]],
  ORTH <! "移動" !>].
 
 ;実現

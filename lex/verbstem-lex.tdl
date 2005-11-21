@@ -524,19 +524,19 @@ agaru_trans-stem := v1-c-stem-lex &
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 agaru_intrans-a-stem  := intrans-c-stem-lex &
-                           [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_intrans_rel]],
+                           [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_inchoative_rel]],
                             ORTH <! "上がる" !>].
 
 agaru_trans-a-stem := v1-c-stem-lex &
-                     [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_trans_rel]],
+                     [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_causative_rel]],
                    ORTH <! "上がる" !>].
 
 agaru_intrans-b-stem  := intrans-c-stem-lex &
-                           [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_intrans_rel]],
+                           [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_inchoative_rel]],
                             ORTH <! "あがる" !>].
 
 agaru_trans-b-stem := v1-c-stem-lex &
-                     [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_trans_rel]],
+                     [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_causative_rel]],
                    ORTH <! "あがる" !>].
 
 
@@ -9586,8 +9586,10 @@ kaeru_2 := v2-c-stem-lex &
 
 
 ; 混む 
+;(MS 2005-11-18) rename the entry, because there is one with the same
+; name in kyoudai-all.
 
-komu_2 := intrans-c-stem-lex &
+komu-stem-2 := intrans-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_komu_v_2_rel,
  ORTH <! "混む" !>].
 
@@ -22263,25 +22265,22 @@ hataraku_2 := v1-c-stem-lex &
 ORTH <! "働く" !>].
 
 ;;(TK 05-06-23)
+; (MS 2005-11-21) New type system without skip files!
 dewanai-kanji-cop-stem :=
 cop-neg-stem-lex &
-[ORTH <! "で","は","無い" !>,
- SYNSEM.LOCAL.CAT.HEAD.MODUS negative,
- STEMTYPE adj-stem].
+[ORTH <! "で","は","無い" !>].
 
 ;;(TK 05-06-23)
+; (MS 2005-11-21) New type system without skip files!
 dewanai-kanji-cop-id-stem :=
 cop-id-neg-stem-lex &
-[ORTH <! "で","は","無い" !>,
- SYNSEM.LOCAL.CAT.HEAD.MODUS negative,
- STEMTYPE adj-stem].
+[ORTH <! "で","は","無い" !>].
 
 ;;(TK 05-06-23)
+; (MS 2005-11-21) New type system without skip files!
 dewanai-kanji-cop-lex :=
 cop-neg-lex &
-[ORTH <! "で","は","無い" !>,
- SYNSEM.LOCAL.CAT.HEAD.MODUS negative,
- STEMTYPE adj-stem].
+[ORTH <! "で","は","無い" !>].
 
 ;;(TK 05-06-23)
 ;究める（「極める」の別表記）
@@ -22317,7 +22316,8 @@ togameru_2 := intrans-v-stem-lex &
 ;(TK 05-09-21)
 ;いれる（「入れる」のひらがな表記）
 ireru-hiragana_stem1 := v1-v-stem-lex &
-[ORTH <! "いれる" !>, SYNSEM.LKEYS.KEYREL.PRED '_ireru_stem_1_rel].
+[ORTH <! "いれる" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_ireru_v_1_rel].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;  syn-vv-stemの追加(TK 05-06-10)

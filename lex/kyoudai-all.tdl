@@ -14888,8 +14888,9 @@ koshi_n3 := ordinary-nohon-n-lex &
 ;(TK 05-08-29)
 ;ji_n1 := ordinary-nohon-n-lex &
 ;[ORTH <! "»ù" !>, SYNSEM.LKEYS.KEYREL.PRED '_ji_n_1_rel].
+
 ji_4 := noun_mod-lex-r &
-[ORTH <! "»ù" !>, SYNSEM.LKEYS.KEYREL.PRED '_ji_1_rel].
+[ORTH <! "»ù" !>, SYNSEM.LKEYS.KEYREL.PRED '_ji_n_1_rel].
 
 ; Freq: 13
 hansenbyou_n1 := ordinary-nohon-n-lex &

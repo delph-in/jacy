@@ -160,6 +160,10 @@ ko_numcl_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "card_rel" ] !> ],
   FLAGS.TRIGGER "ko_numcl" ].
 
+ko-numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "card_rel" ] !> ],
+  FLAGS.TRIGGER "ko-numcl" ].
+
 ;;;
 ;;; Light Verb Rules
 ;;;
@@ -366,6 +370,14 @@ retsu_2_gr := generator_rule &
 fuku_2_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "fuku_2" ].
+
+kyoku_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "kyoku_numcl" ].
+
+mon_numcl_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "mon-numcl" ].
 
 juu-numcl_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -687,6 +699,7 @@ no-case_gr := generator_rule &
 ki_numcl_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "ki_numcl" ].
+
 
 megaherutsu_2_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -1496,6 +1509,9 @@ dano-second-conj_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "dano-second-conj" ].
 
+nari-second-conj_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nari-second-conj" ].
 
 nasaru_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
