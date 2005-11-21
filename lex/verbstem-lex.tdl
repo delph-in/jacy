@@ -514,11 +514,11 @@ anaoru-2-stem  := intrans-c-stem-lex &
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 agaru_intrans-stem  := intrans-c-stem-lex &
-                           [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_rel]],
+                           [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_inchoative_rel]],
                             ORTH <! "上る" !>].
 
 agaru_trans-stem := v1-c-stem-lex &
-                     [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_rel]],
+                     [SYNSEM.LKEYS [KEYREL [PRED '_agaru_v_causative_rel]],
                    ORTH <! "上る" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
