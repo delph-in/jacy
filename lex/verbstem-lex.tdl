@@ -364,7 +364,7 @@ waru-stem := v1-c-stem-lex &
 ORTH <! "割る" !>].
 
 waru-a-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_waru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_waru_v_1_rel]],
 ORTH <! "わる" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
@@ -675,7 +675,7 @@ kawaru-2-stem  :=  intrans-c-stem-lex &
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 kawaru-a-stem  :=  intrans-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_kawaru_v_a_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_kawaru_v_1_rel]],
                    ORTH <! "代わる" !>].
 
 
@@ -743,11 +743,11 @@ mitsukaru-stem :=  intrans-c-stem-lex &
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 mitsukaru-a-stem :=  intrans-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_mitsukaru_v_a_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_mitsukaru_v_1_rel]],
                    ORTH <! "見つかる" !>].
 
 mitsukaru-b-stem :=  intrans-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_mitsukaru_v_b_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_mitsukaru_v_2_rel]],
                    ORTH <! "みつかる" !>].
 
 mitsumoru-stem :=  v1-c-stem-lex &
@@ -1003,11 +1003,11 @@ wakaru-stem :=  mental-c-stem-lex &
                    ORTH <! "分る" !>].
 
 wakaru-a-stem :=  mental-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_1_rel]],
                    ORTH <! "わかる" !>].
 
 wakaru-b-stem :=  mental-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_1_rel]],
                    ORTH <! "分かる" !>].
 
 wakaru-v5a-stem :=  v5a-c-stem-lex &
@@ -1015,11 +1015,11 @@ wakaru-v5a-stem :=  v5a-c-stem-lex &
                    ORTH <! "分る" !>].
 
 wakaru-v5a-a-stem :=  v5a-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_1_rel]],
                    ORTH <! "わかる" !>].
 
 wakaru-v5a-b-stem :=  v5a-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_wakaru_v_1_rel]],
                    ORTH <! "分かる" !>].
 
 wakaru-2-stem := mental-c-stem-lex &
@@ -1607,7 +1607,7 @@ tsuku-stem := intrans-c-stem-lex &
 ORTH <! "点く" !>].
 
 tsuku-a-stem := intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_1_rel]],
 ORTH <! "つく" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
@@ -1892,7 +1892,7 @@ tomonau-stem := v1-c-stem-lex &
 ORTH <! "伴う" !>].
 
 tomonau-a-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tomonau_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tomonau_v_1_rel]],
 ORTH <! "ともなう" !>].
 
 tetsudau-stem := v1-c-stem-lex &
@@ -1950,7 +1950,7 @@ nerau-stem := v1-c-stem-lex &
 ORTH <! "狙う" !>].
 
 nerau-a-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_nerau_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_nerau_v_rel]],
 ORTH <! "ねらう" !>].
 
 
@@ -2421,7 +2421,7 @@ sagasu-stem  := v1-c-stem-lex &
 ORTH <! "探す" !>].
 
 sagasu-a-stem  := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_sagasu_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_sagasu_v_rel]],
 ORTH <! "さがす" !>].
 
 sagasu-2-stem := v1-c-stem-lex &
@@ -2556,7 +2556,7 @@ osu-stem := v1-c-stem-lex &
 ORTH <! "押す" !>].
 
 osu-a-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_osu_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_osu_v_rel]],
 ORTH <! "おす" !>].
 
 ;to take down, to launch, to drop, to lower, to discharge
@@ -3350,7 +3350,7 @@ ORTH <! "遊ぶ" !>].
 
 
 asobu-a-stem := intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_asobu_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_asobu_v_rel]],
 ORTH <! "あそぶ" !>].
 
 hakobu-stem := v1-c-stem-lex &
@@ -3767,7 +3767,7 @@ ORTH <! "手がける" !>].
 ;[SYNSEM.LKEYS [KEYREL [PRED '_tegakeru_v_a_rel]],
 ;ORTH <! "手掛ける" !>].
 tegakeru-a-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tegakeru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tegakeru_v_rel]],
 ORTH <! "手掛ける" !>].
 
 yogoreru-stem := intrans-v-stem-lex &
@@ -3783,7 +3783,7 @@ ORTH <! "止める" !>].
 
 
 yameru-a-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_yameru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_yameru_v_rel]],
 ORTH <! "やめる" !>].
 
 ;resign
@@ -3816,7 +3816,7 @@ wareru-stem := intrans-v-stem-lex &
 ORTH <! "割れる" !>].
 
 wareru-a-stem := intrans-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_wareru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_wareru_v_rel]],
 ORTH <! "われる" !>].
 
 
@@ -4417,7 +4417,7 @@ tsubureru-stem := intrans-v-stem-lex &
 ORTH <! "潰れる" !>].
 
 tsubureru-a-stem := intrans-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsubureru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsubureru_v_rel]],
 ORTH <! "つぶれる" !>].
 
 tsukeru_attach-stem := v1-v-stem-lex &
@@ -4442,7 +4442,7 @@ uketsukeru-stem := v1-v-stem-lex &
 ORTH <! "受け付ける" !>].
 
 uketsukeru-a-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_uketsukeru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_uketsukeru_v_rel]],
 ORTH <! "受けつける" !>].
 
 ;"兼る" should be in Hiragana.  兼る -> かねる
@@ -4685,7 +4685,7 @@ fureru-stem := v1-v-stem-lex &
 ORTH <! "ふれる" !>].
 
 fureru-a-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_fureru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_fureru_v_rel]],
 ORTH <! "振れる" !>].
 
 ; SF (2003-08-28) intrans-v-stem-lex -> v2-v-stem-lex 
@@ -4752,7 +4752,7 @@ kotaeru-stem := intrans-v-stem-lex &
 ORTH <! "答える" !>].
 
 kotaeru-a-stem := intrans-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kotaeru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kotaeru_v_rel]],
 ORTH <! "こたえる" !>].
 
 kowareru-stem := intrans-v-stem-lex &
@@ -4937,7 +4937,7 @@ miru-stem := v1-v-stem-lex &
 ORTH <! "見る" !>].
 
 miru-a-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_miru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_miru_v_rel]],
 ORTH <! "みる" !>].
 
 nobiru-stem := intrans-v-stem-lex &
@@ -5002,7 +5002,7 @@ kiru-1-stem := v1-v-stem-lex &
 ORTH <! "着る" !>].
 
 kiru-1a-stem := v1-v-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kiru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kiru_v_rel]],
 ORTH <! "きる" !>].
 
 kokoromiru-stem := v1-v-stem-lex &
@@ -5269,7 +5269,7 @@ kuru-stem := intrans-kurusuru-stem-lex &
 ORTH <! "来る" !>].
 
 kuru-a-stem := intrans-kurusuru-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_kuru_v_a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_kuru_v_rel]],
 ORTH <! "くる" !>].
 
 ; (MS 2004-04-02) restricted these to prevent spurious ambiguity with empty particles.
@@ -11977,13 +11977,13 @@ hikitsukeru_1 := intrans-v-stem-lex &
 ; 吹き上げる 
 
 fukiageru_1 := intrans-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_inchoative_rel,
  ORTH <! "吹き上げる" !>].
 
 ; 吹き付ける 
 
 fukitsukeru_1 := intrans-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukitsukeru_v_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fukitsukeru_v_inchoative_rel,
  ORTH <! "吹き付ける" !>].
 
 
@@ -17857,13 +17857,13 @@ hikitsukeru_2 := v1-v-stem-lex &
 ; 吹き上げる 
 
 fukiageru_2 := v1-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_causative_rel,
  ORTH <! "吹き上げる" !>].
 
 ; 吹き付ける 
 
 fukitsukeru_2 := v1-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukitsukeru_v_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fukitsukeru_v_causative_rel,
  ORTH <! "吹き付ける" !>].
 
 ; 触れる 
@@ -20984,11 +20984,11 @@ ORTH <! "提げる" !>].
 ;噴き上げる
 
 fukiageru_2_a := v1-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_2_a_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_2_rel,
  ORTH <! "噴き上げる" !>].
 
 fukiageru_1_a := intrans-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_1_a_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fukiageru_v_2_rel,
  ORTH <! "噴き上げる" !>].
 
 ;遇う

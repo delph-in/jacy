@@ -25422,7 +25422,7 @@ hanbetsu_1 := vn-trans1-lex &
 ; £Ð£Ò 
 
 pi-a-ru_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pi_s_a_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_piaru_s_rel,
  ORTH <! "£Ð£Ò" !>].
 
 ; Èþ²½ 
