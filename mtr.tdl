@@ -71,13 +71,13 @@ arg0e_gr := generator_rule &
   FLAGS.EQUAL < #e > ].
 
 arg0e-1x_gr := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG1 #i & ref-ind ] !> ],
+[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG1 #i ] !> ],
   FLAGS.EQUAL < #e, #i > ].
 
 arg0e-2x_gr := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG2 #i & ref-ind ] !> ],
+[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG2 #i ] !> ],
   FLAGS.EQUAL < #e, #i > ].
 
 arg0e-3x_gr := generator_rule &
-[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG3 #i & ref-ind ] !> ],
+[ CONTEXT [ RELS <! [ ARG0 #e & event, ARG3 #i ] !> ],
   FLAGS.EQUAL < #e, #i > ].

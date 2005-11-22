@@ -23512,3 +23512,6 @@ i-adj-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yasui_a_easy_rel,
 ORTH <! "易い" !>].
 
+imahitotsu-na-lex := na-adj-lex &
+ [ ORTH <! "今ひとつ" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "_imahitotsu_a_rel" ].

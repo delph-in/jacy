@@ -1534,7 +1534,17 @@ ka-second-conj := postp-lex-coord &
 	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
 		  ORTH <! "か" !>].
 
+ya-second-conj := postp-lex-coord &
+	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
+		  ORTH <! "や" !>].
 
+yara-second-conj := postp-lex-coord &
+	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
+		  ORTH <! "やら" !>].
+
+yara-second-conj-chasen := postp-lex-coord &
+	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
+		  ORTH <! "や","ら" !>].
 
 
 toitashimashite-multi := postp-lex &
@@ -1565,6 +1575,12 @@ toka-p := postp-lex &
           [SYNSEM [LOCAL.CAT.HEAD.PTYPE toka,
 		   LKEYS.KEYREL.PRED '_toka_p_rel],
            ORTH <! "とか" !>]. 
+
+; (MS 2005-11-21): Sometimes Chasen splits this up.
+toka-p-chasen := postp-lex &
+ [ ORTH <! "と","か" !>,
+   SYNSEM [ LKEYS.KEYREL.PRED "_toka_p_rel",
+            LOCAL.CAT.HEAD.PTYPE toka ] ].
 
 ;"ni juu hachi nichi to ni juu ku nichi wa ryouhou tomo keNkyuu seminaa no tame ichi nichi juu umat te masu."
 ;"toriaezu ichibaN chokkiN de futari tomo aite iru suiyoubi no gogo wa dou deshou ka ."

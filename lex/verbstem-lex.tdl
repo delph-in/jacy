@@ -1233,10 +1233,10 @@ damaru-stem :=  intrans-c-stem-lex &
                    ORTH <! "╠█ды" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
-
-fueru-stem :=  intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_fueru_v_rel]],
-                   ORTH <! "┴¤диды" !>].
+; (MS 2005-11-21) This should be v-stem.
+fueru-stem := intrans-v-stem-lex &
+ [ ORTH <! "┴¤диды" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "_fueru_v_rel" ].
 
 
 hakaru-1-stem :=  v1-c-stem-lex &
