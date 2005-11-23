@@ -115,72 +115,54 @@ rareru-simple-pass-end_gr := arg0e_gr &
 ;;;
 
 ;;; ARG1 is ga
-ga_gr_1ref := arg0e-1x_gr &
-[ CONTEXT [ RELS <!  [ ARG0.E.PASS -, ARG1 ref-ind ] !> ],
-  FLAGS.TRIGGER "ga" ].
+ga_gr_1 := arg0e_gr &
+[ CONTEXT [ RELS <!  [ ARG0.E.PASS -, ARG1 individual & #i ] !> ],
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "ga" ]].
 
-ga_gr_1fullref := arg0e-1x_gr &
-[ CONTEXT [ RELS <!  [ ARG0.E.PASS -, ARG1 full_ref-ind ] !> ],
-  FLAGS.TRIGGER "ga" ].
+wa_gr_1 := arg0e_gr &
+[ CONTEXT [ RELS <!  [ ARG0.E.PASS -, ARG1 individual & #i ] !> ],
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "wa-case-ga" ]].
 
-;;; ARG2 is ga
-ga_gr_2ref := arg0e-2x_gr &
-[ FLAGS.TRIGGER "ga", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind ].
-
-ga_gr_2fullref := arg0e-2x_gr &
-[ FLAGS.TRIGGER "ga", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind ].
-
-;;; ARG3 is ga
-ga_gr_3ref := arg0e-3x_gr &
-[ FLAGS.TRIGGER "ga", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind ].
-
-ga_gr_3fullref := arg0e-3x_gr &
-[ FLAGS.TRIGGER "ga", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind ].
-
-;;; ARG1 is wo
-wo_gr_1ref := arg0e-1x_gr &
-[ FLAGS.TRIGGER "o", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind ].
-
-wo_gr_1fullref := arg0e-1x_gr &
-[ FLAGS.TRIGGER "o", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind ].
 
 ;;; ARG2 is wo
-wo_gr_2ref := arg0e-2x_gr &
-[ FLAGS.TRIGGER "o", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind  ].
+wo_gr_2 := arg0e_gr &
+[ CONTEXT.RELS.LIST.FIRST.ARG2 individual & #i,
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "o" ]].
 
-wo_gr_2fullref := arg0e-2x_gr &
-[ FLAGS.TRIGGER "o", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind ].
+wa_gr_2 := arg0e_gr &
+[ CONTEXT.RELS.LIST.FIRST.ARG2 individual & #i,
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "wa-case-wo" ]].
 
-;;; ARG3 is wo
-wo_gr_3ref := arg0e-3x_gr &
-[ FLAGS.TRIGGER "o", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind  ].
-
-wo_gr_3fullref := arg0e-3x_gr &
-[ FLAGS.TRIGGER "o", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind ].
-
+wo_gr_3 := arg0e_gr &
+[ CONTEXT.RELS.LIST.FIRST.ARG3 individual & #i,
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "o" ]].
 
 ;;; FIXME what about Passive ARG1 is wo
 
 ;;; ARG1 is ni
-ni_gr_1ref := arg0e-1x_gr &
-[ FLAGS.TRIGGER "ni-case", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind ].
+ni_gr_1 := arg0e_gr &
+[ CONTEXT.RELS.LIST.FIRST.ARG1 individual & #i,
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "ni-case" ]].
 
-ni_gr_1fullref := arg0e-1x_gr &
-[ FLAGS.TRIGGER "ni-case", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind  ].
 
 ;;; ARG2 is ni
-ni_gr_2ref := arg0e-2x_gr &
-[ FLAGS.TRIGGER "ni-case", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind ].
+ni_gr_2 := arg0e_gr &
+[ CONTEXT.RELS.LIST.FIRST.ARG2 individual & #i,
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "ni-case" ]].
 
-ni_gr_2fullref := arg0e-2x_gr &
-[ FLAGS.TRIGGER "ni-case", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind  ].
 
 ;;; ARG3 is ni
-ni_gr_3ref := arg0e-3x_gr &
-[ FLAGS.TRIGGER "ni-case", CONTEXT.RELS.LIST.FIRST.ARG1 ref-ind ].
-
-ni_gr_3fullref := arg0e-3x_gr &
-[ FLAGS.TRIGGER "ni-case", CONTEXT.RELS.LIST.FIRST.ARG1 full_ref-ind ].
+ni_gr_3 := arg0e_gr &
+[ CONTEXT.RELS.LIST.FIRST.ARG3 individual & #i,
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "ni-case" ]].
 
 ;;; FIXME to, kara, no, wa, ?dake 
 ;;; case-markers that follow postpositions
@@ -1544,6 +1526,18 @@ dano-second-conj_gr := generator_rule &
 nari-second-conj_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "nari-second-conj" ].
+
+ya-second-conj_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "ya-second-conj" ].
+
+yara-second-conj_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "yara-second-conj" ].
+
+yara-second-conj-chasen_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "yara-second-conj-chasen" ].
 
 nasaru_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
