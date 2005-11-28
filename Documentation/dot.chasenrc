@@ -1,0 +1,113 @@
+;;
+;;  chasenrc for ipadic-2.7.0
+;;
+;; 日本語ラベルと英語ラベルどちらか指定するだけで良い
+;;;
+;;;  grammar.cha/ctypes.cha/cforms.cha location /文法ファイル
+;;;
+;(文法ファイル  /usr/local/lib/chasen/dic/ipadic)
+;(GRAMMAR  /home/bond/logon/naist/ipadic)
+
+;;;
+;;;  dictionary /辞書
+;;;
+(DADIC        chadic)
+
+;;;
+;;;  POS for Unknown words /未知語品詞
+;;;
+;(未知語品詞 (名詞 サ変接続))
+(UNKNOWN_POS (名詞 サ変接続))
+
+;;;
+;;;  output format /出力フォーマット
+;;;
+;(出力フォーマット "%m\t%y\t%M\t%U(%P-)\t%T \t%F \n")     ; default(-f)
+;(OUTPUT_FORMAT "%m\t%y\t%M\t%U(%P-)\t%T \t%F \n")     ; default(-f)
+;(OUTPUT_FORMAT "%m\t%y\t%M\t%P-\t%T \t%F \n")         ; POS name
+;(OUTPUT_FORMAT "%m\t%?U/UNKNOWN/%y/\t%M\t%h/%t/%f\n") ; POS code
+;(OUTPUT_FORMAT "%M\t%P-\n")
+
+;;;
+;;;  output format for compound words /複合語出力
+;;;
+;(複合語出力 "COMPOUND")      ; default
+;(OUTPUT_COMPOUND "COMPOUND")      ; default
+;(OUTPUT_COMPOUND "SEG")
+
+;;;
+;;;  BOS string /BOS文字列
+;;;
+;(BOS文字列 "BOS")      
+;(BOS_STRING "BOS")      
+
+;;;
+;;;  EOS string /EOS文字列
+;;;
+;(EOS文字列 "EOS")      
+;(EOS_STRING "EOS")      
+
+;;;
+;;;  Connection cost for Undefined contexts /未定義連接コスト
+;;;
+;(未定義連接コスト 10000)
+(DEF_CONN_COST 10000)
+
+;;;
+;;;  POS Weight /品詞コスト
+;;;
+;(品詞コスト
+;	((*) 		1)
+;	((UNKNOWN)    30000)
+;)
+(POS_COST
+	((*) 		1)
+	((UNKNOWN)    30000)
+)
+
+;;;
+;;;  connection rules Weight /連接コスト重み
+;;;
+;(連接コスト重み 1)
+(CONN_WEIGHT 1)
+
+;;;
+;;;  morphemes Weight /形態素コスト重み
+;;;
+;(形態素コスト重み 1)
+(MORPH_WEIGHT 1)
+
+;;;
+;;;  cost width /コスト幅
+;;;
+;(コスト幅 0)
+(COST_WIDTH	  0)
+
+;;;
+;;;  composit POSs /連結品詞
+;;;
+;;;  Join multiple numbers and symbols together
+;;;
+;(連結品詞 ((名詞 数))
+;          ((記号 アルファベット)))
+(COMPOSIT_POS ((名詞 数))
+          ((記号 アルファベット)))
+
+;;;
+;;;  POSs as white space /空白品詞
+;;;
+;(空白品詞 (記号 空白))
+;(SPACE_POS (記号 空白))
+
+;;;
+;;;  annotation POSs /注釈
+;;;
+;(注釈 (("<" ">") (記号 一般)))
+;(ANNOTATION (("<" ">") (記号 一般)))
+
+;;;
+;;;  delimiter for option -j /区切り文字
+;;;
+;(区切り文字 "。．、，！？.,!? ")
+;(DELIMITER "。．、，！？.,!? ")
+
