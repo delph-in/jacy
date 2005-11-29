@@ -41,7 +41,12 @@
 final_head :< j-head.
 init_head :< j-head.
 
-utterance_super :=  final_head &
+
+; (MS 2005-11-23) trying to put utterance head a bit deeper under utt-valid
+; (which itself inherits from final_head). Otherwise we cannot parse
+; "これはよく売れるが，しかしあまり効かない薬だ。"
+
+utterance_super :=  utt-valid &
                   [POS utt,
                    MOD null,
                    C-MOD null,

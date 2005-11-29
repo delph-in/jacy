@@ -42,7 +42,7 @@
 (read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
 
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
-;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 
 
 ;;; Load the lexicon

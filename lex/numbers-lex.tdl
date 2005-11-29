@@ -2328,9 +2328,10 @@ juu-kanji := noun_mod-lex-r &
 ;;  ex.「外用薬は飲んではいけない」（suffixとしての用法）
 ;;ただし、「常備薬」「特効薬」など、１語として登録されているものも
 ;;多い
-yaku_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yaku_n_2_rel,
- ORTH <! "薬" !>].
+; (MS 2005-11-23) we have kusuri-noun!
+;yaku_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_yaku_n_2_rel,
+; ORTH <! "薬" !>].
 
 ;(TK 05-06-21)
 ;;方々（houbou）

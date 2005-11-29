@@ -14392,10 +14392,10 @@ juuden_2 := ordinary-nohon-n-lex &
  ORTH <! "Ωº≈≈" !>].
 
 ; Ω¢«§ 
-
-shuunin_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shuunin_n_2_rel,
- ORTH <! "Ω¢«§" !>].
+; MS 2005-11-23: we have a vn entry!
+;shuunin_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shuunin_n_2_rel,
+; ORTH <! "Ω¢«§" !>].
 
 ; Ω≈ £ 
 ; Used 1 times
