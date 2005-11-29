@@ -2860,5 +2860,7 @@ shourai_2 := ordinary-nohon-n-lex &
 [ORTH <! "¾­Íè" !>, SYNSEM.LKEYS.KEYREL.PRED '_shourai_n_2_rel].
 
 
+gousen-numcl := num-cl-spr-only-ind-lex &
+[ ORTH <! "¹æÀþ" !>].
 
 

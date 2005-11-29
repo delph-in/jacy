@@ -2253,3 +2253,7 @@ ikou-suffix := noun_mod-lex-r &
  ORTH <! "°Ê¹ß" !>].
 
 
+zen-prefix :=
+noun_mod-lex-l &
+[ORTH <! "Á°" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_zen_n_rel]].

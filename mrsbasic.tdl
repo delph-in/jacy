@@ -638,6 +638,15 @@ rareru_rel := predsort.
 seem_rel := predsort.
 pass_rel := predsort.
 
+;(MS 2005-11-29) these were still not defined. 
+; Recognized when trying to generate.
+
+degree_rel := predsort.
+unspec_adj_rel := predsort.
+unspec_compound_rel := predsort.
+unspec_rel := predsort.
+number_rel := predsort.
+
 ; (ERB 2004-1-18) Copied from ERG for measure NP numeral
 ; classifier phrases.
 ; (FCB 2005-08-09) changed DARG to ARG1 

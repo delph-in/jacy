@@ -4313,3 +4313,7 @@ ORTH <! "ºæ" !>].
 kita-locname := loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'kita,
 ORTH <! "ËÌ" !>].
+
+enoshima-locname-2 := loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'enoshima,
+ORTH <! "¹¾¤ÎÅç" !>].

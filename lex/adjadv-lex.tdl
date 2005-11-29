@@ -23515,3 +23515,9 @@ ORTH <! "易い" !>].
 imahitotsu-na-lex := na-adj-lex &
  [ ORTH <! "今ひとつ" !>,
    SYNSEM.LKEYS.KEYREL.PRED "_imahitotsu_a_rel" ].
+
+; collapsible
+
+oritatamikanou-adj := na-adj-lex &
+ [ ORTH <! "折りたたみ","可能" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "_oritatamikanou_a_isect_rel" ].

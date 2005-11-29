@@ -25983,10 +25983,10 @@ shoen_2 := ordinary-nohon-n-lex &
 ;  ORTH <! "½üµî" !>].
 
 ; ½è·º 
-
-shokei_2 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shokei_n_2_rel,
- ORTH <! "½è·º" !>].
+; (MS 2005-11-29) we have the Vn entry!
+;shokei_2 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shokei_n_2_rel,
+; ORTH <! "½è·º" !>].
 
 ; ½üÀÒ 
 

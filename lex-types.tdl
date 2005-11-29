@@ -3750,11 +3750,11 @@ measure-num-cl-lex := numeral-classifier &
 				  ARG0 #meas-ind ],
 				degree-relation &
 				[ LBL #larg,
-				  PRED 'degree_rel,
+				  PRED degree_rel,
 				  ARG1 #darg ],
 				arg1-relation &
 				[ LBL #ltop,
-				  PRED 'unspec_adj_rel,
+				  PRED unspec_adj_rel,
 				  ARG0 event & #darg, 
 				  ARG1 #ind ], ... >,
 			  HCONS <! qeq & 
@@ -4757,7 +4757,7 @@ nom-dummy-lex := nom-lex & lexical_sign-word &
                           [HOOK.INDEX #i,
                            RELS diff-list & 
                                  <! #key,
-                                  unspec-compound-relation & [PRED 'unspec_compound_rel,
+                                  unspec-compound-relation & [PRED unspec_compound_rel,
 							      ARG2 #spri,
 							      ARG1 #i] !>,
                            HCONS <! !>]],
@@ -5039,11 +5039,11 @@ nan-card-lex := card-lex-super &
 				   ARG0 #ind,
 				   RSTR #harg ],
 			         noun-relation &
-			         [ PRED 'number_rel,
+			         [ PRED number_rel,
 				   ARG0 #ind,
 				   LBL #larg ],
 			         arg12-relation &
-			         [ PRED 'unspec_rel,
+			         [ PRED unspec_rel,
 				   LBL #ltop,
 				   ARG1 #xarg,
 				   ARG2 #ind ] !>,
@@ -6510,6 +6510,8 @@ naru-noncaus-end-lex := v-noncaus-op-end-lex &
 			    ARG0 #event],
 		     MODIFIED.PERIPH +]].
 
+; (MS 2005-11-29) There were still MOD-IND and MOD-HAND.
+
 nai-noncaus-end-lex := v-noncaus-op-end-lex &
            [J-NEEDS-AFFIX +,
 	    INFLECTED -,
@@ -6519,15 +6521,13 @@ nai-noncaus-end-lex := v-noncaus-op-end-lex &
 							    LOCAL.CAT.HEAD verbend_head],
 						      J-SPEC null,
 						      COP-ARG -],
-			       VAL.SPR.FIRST.LOCAL [CONT [MOD-HAND #modhd,
-							  HOOK.LTOP #v-hd,
-							  MOD-IND #event]]],
-			  CONT [RELS <! #key & [ARG1 #neg-arg,
+			       VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd,
+								INDEX #event]]]],
+			  CONT [RELS <! #key & [ARG0 #event,
+						ARG1 #neg-arg,
 						 LBL #top] !>,
 				HOOK [LTOP #top,
 				      INDEX #event & [E.MOOD indicative]],
-				MOD-HAND #modhd,
-				MOD-IND #event,
 				HCONS <! qeq & [LARG #v-hd,
 						 HARG #neg-arg] !>]],
 		    LKEYS.KEYREL #key & neg-relation,
