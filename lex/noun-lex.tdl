@@ -32720,9 +32720,11 @@ aranami_1 := ordinary-nohon-n-lex &
 ; アラビア 
 ; Used 2 times
 
-arabia_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_arabia_n_1_rel,
- ORTH <! "アラビア" !>].
+
+;(TK 05-11-29 changed to loc_name-lex)
+;arabia_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_arabia_n_1_rel,
+; ORTH <! "アラビア" !>].
 
 ; アラビア人 
 
@@ -32880,9 +32882,10 @@ arufabetto_1 := ordinary-nohon-n-lex &
 ; アルプス 
 ; Used 2 times
 
-arupusu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_arupusu_n_1_rel,
- ORTH <! "アルプス" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;arupusu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_arupusu_n_1_rel,
+; ORTH <! "アルプス" !>].
 
 ; アルペン 
 
@@ -33724,9 +33727,10 @@ ikimono_1 := ordinary-nohon-n-lex &
 ; イギリス 
 ; Used 7 times
 
-igirisu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_igirisu_n_1_rel,
- ORTH <! "イギリス" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;igirisu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_igirisu_n_1_rel,
+; ORTH <! "イギリス" !>].
 
 ; 生き別れ 
 
@@ -34078,15 +34082,17 @@ izumo_1 := ordinary-nohon-n-lex &
 
 ; イスラエル 
 
-isuraeru_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_isuraeru_n_1_rel,
- ORTH <! "イスラエル" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;isuraeru_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_isuraeru_n_1_rel,
+; ORTH <! "イスラエル" !>].
 
 ; イスラエル共和国 
 
-isuraerukyouwakoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_isuraerukyouwakoku_n_1_rel,
- ORTH <! "イスラエル共和国" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;isuraerukyouwakoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_isuraerukyouwakoku_n_1_rel,
+; ORTH <! "イスラエル共和国" !>].
 
 ; イスラム 
 
@@ -35489,9 +35495,10 @@ iyoku_1 := ordinary-nohon-n-lex &
 
 ; イラク 
 
-iraku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iraku_n_1_rel,
- ORTH <! "イラク" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;iraku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_iraku_n_1_rel,
+; ORTH <! "イラク" !>].
 
 ; イラスト 
 ; Used 1 times
@@ -39292,9 +39299,10 @@ oirushokku_1 := ordinary-nohon-n-lex &
 
 ; 欧 
 
-ou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ou_n_1_rel,
- ORTH <! "欧" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;ou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ou_n_1_rel,
+; ORTH <! "欧" !>].
 
 ; 王 
 ; Used 5 times
@@ -54074,9 +54082,10 @@ keishi_1 := ordinary-nohon-n-lex &
 
 ; 警視庁 
 
-keishichou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_keishichou_n_1_rel,
- ORTH <! "警視庁" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;keishichou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_keishichou_n_1_rel,
+; ORTH <! "警視庁" !>].
 
 ; 刑事 
 ; Used 1 times
@@ -68774,9 +68783,10 @@ jounai_1 := ordinary-nohon-n-lex &
 
 ; 湘南 
 
-shounan_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shounan_n_1_rel,
- ORTH <! "湘南" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;shounan_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shounan_n_1_rel,
+; ORTH <! "湘南" !>].
 
 ; 小児 
 ; Used 1 times
@@ -79121,9 +79131,10 @@ dairokkan_1 := ordinary-nohon-n-lex &
 ; 台湾 
 ; Used 1 times
 
-taiwan_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taiwan_n_1_rel,
- ORTH <! "台湾" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;taiwan_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taiwan_n_1_rel,
+; ORTH <! "台湾" !>].
 
 ; 田植え 
 
@@ -82042,9 +82053,10 @@ chuuouamerika_1 := ordinary-nohon-n-lex &
 
 ; 中央アルプス 
 
-chuuouarupusu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuuouarupusu_n_1_rel,
- ORTH <! "中央アルプス" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;chuuouarupusu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuuouarupusu_n_1_rel,
+; ORTH <! "中央アルプス" !>].
 
 ; 中央卸売市場 
 
@@ -91574,9 +91586,10 @@ nihon_1 := ordinary-nohon-n-lex &
 ; 日本アルプス 
 ; Used 1 times
 
-nihonarupusu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nihonarupusu_n_1_rel,
- ORTH <! "日本アルプス" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;nihonarupusu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nihonarupusu_n_1_rel,
+; ORTH <! "日本アルプス" !>].
 
 ; 日本一 
 
@@ -97502,9 +97515,10 @@ haresugata_1 := ordinary-nohon-n-lex &
 
 ; パレスチナ 
 
-paresuchina_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_paresuchina_n_1_rel,
- ORTH <! "パレスチナ" !>].
+;(TK 05-11-29 changed to loc_name-lex)
+;paresuchina_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_paresuchina_n_1_rel,
+; ORTH <! "パレスチナ" !>].
 
 ; パレット 
 
@@ -104838,10 +104852,14 @@ bunkajin_1 := ordinary-nohon-n-lex &
 
 ; 文化の日 
 ; Used 1 times
-
-bunkanohi_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_bunkanohi_n_1_rel,
- ORTH <! "文化の日" !>].
+;(TK 05-11-29 changed to ippan-name-lex)
+;bunkanohi_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_bunkanohi_n_1_rel,
+; ORTH <! "文化の日" !>].
+bunkanohi-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'bunkanohi,
+ORTH <! "文化の日" !>].
 
 ; 文学作品 
 ; Used 1 times
@@ -146714,3 +146732,25 @@ kouseinou-noun := ordinary-nohon-n-lex &
 ichikaiten-noun := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ichikaiten_n_rel,
  ORTH <! "一","回転" !>].
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Chasenの分かち書きの仕方でkyoudai-all.tdlに入らなかった
+;; もの
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(TK 05-11-28)
+enuji-o-_n1 := ordinary-nohon-n-lex &
+[ORTH <! "ＮＧＯ" !>, SYNSEM.LKEYS.KEYREL.PRED '_enuji-o-_n_1_rel].
+
+susuki_n2 := ordinary-nohon-n-lex &
+[ORTH <! "すすき" !>, SYNSEM.LKEYS.KEYREL.PRED '_susuki_n_2_rel].
+
+;(TK 05-11-29)
+furui_n1 := ordinary-nohon-n-lex &
+[ORTH <! "ふるい" !>, SYNSEM.LKEYS.KEYREL.PRED '_furui_n_1_rel].
+
+;(TK 05-11-29)
+o-esu_n2 := ordinary-nohon-n-lex &
+[ORTH <! "ＯＳ" !>, SYNSEM.LKEYS.KEYREL.PRED '_o-esu_n_2_rel].
+

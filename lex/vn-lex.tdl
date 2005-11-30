@@ -2542,10 +2542,12 @@ koshou-vn :=
 
 ;admission, enrollment, entrance
 
-nyuugaku-vn :=  
-        vn-trans1-lex &
-        [SYNSEM.LKEYS.KEYREL.PRED '_nyuugaku_s_rel,
-         ORTH <! "入学" !>].
+;(TK 05-11-29 commentout)
+;「○○を（××に）入学する」という使い方はしない
+;nyuugaku-vn :=  
+;        vn-trans1-lex &
+;        [SYNSEM.LKEYS.KEYREL.PRED '_nyuugaku_s_rel,
+;         ORTH <! "入学" !>].
 
 ;practice, implement
 
@@ -6783,8 +6785,10 @@ keisou_1 := vn-intrans-lex &
  ORTH <! "軽装" !>].
 
 ; Used 2 times
-
-keiyu_1_1 := vn-intrans-lex &
+;(TK 05-11-29 changed to vn-trans1-lex)
+;「経由」は必ず「を」をとる。
+;keiyu_1_1 := vn-intrans-lex &
+keiyu_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_keiyu_s_1_rel,
  ORTH <! "経由" !>].
 
@@ -28699,3 +28703,9 @@ enundou-vn := vn-trans1-lex &
 zeibiki-vn := vn-intrans-lex &
 [ORTH <! "税引き" !>, 
  SYNSEM.LKEYS.KEYREL.PRED '_zeibiki_s_rel].
+
+;(TK 05-11-29)
+;ex.「方針を一転して、店舗を売ることにした」
+itten_v2 := vn-trans1-lex &
+[ORTH <! "一転" !>, SYNSEM.LKEYS.KEYREL.PRED '_itten_s_2_rel].
+

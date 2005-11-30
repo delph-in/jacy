@@ -324,11 +324,12 @@ poru_1 := other_name-lex &
 ORTH <! "¥Ý¥ë" !>].
 
 ; Freq: 14
+;POS
 ;HYOUKI
-;(TK 05-09-22)
+;(TK 05-11-25)
 ;koukyuu_3 := first_name-lex &
 ;[ORTH <! "¹±µ×" !>, SYNSEM.LKEYS.KEYREL.CARG 'koukyuu_3].
-tsunehisa_1 := first_name-lex &
+tsunehisa_1 := other_name-lex &
 [ORTH <! "¹±µ×" !>, SYNSEM.LKEYS.KEYREL.CARG 'tsunehisa_1].
 
 ; Freq: 14
@@ -419,7 +420,10 @@ goran_3 := other_name-lex &
 ORTH <! "¥´¥é¥ó" !>].
 
 ; Freq: 12
-mari_9 := first_name-lex &
+;POS
+;(TK 05-11-25)
+;mari_9 := first_name-lex &
+mari_9 := other_name-lex &
 [ORTH <! "ËüÎ¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'mari_9].
 
 ; Freq: 12
@@ -564,11 +568,15 @@ yoshiko_44 := first_name-lex &
 [ORTH <! "²Â»Ò" !>, SYNSEM.LKEYS.KEYREL.CARG 'yoshiko_44].
 
 ; Freq: 9
+;POS
 ;HYOUKI
-;(TK 05-11-04)
+;FIXME
+;(TK 05-11-28)
+;other(sur,first),loc
+;¤¹¤Ç¤Ëloc_name-lex¤ÎÅÐÏ¿¤¢¤ê
 ;shin_11 := first_name-lex &
 ;[ORTH <! "À¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'shin_11].
-kiyoshi_2 := first_name-lex &
+kiyoshi_2 := other_name-lex &
 [ORTH <! "À¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'kiyoshi_2].
 
 ; Freq: 9
@@ -1008,13 +1016,14 @@ takako_17 := first_name-lex &
 [ORTH <! "¤¿¤«»Ò" !>, SYNSEM.LKEYS.KEYREL.CARG 'takako_17].
 
 ; Freq: 6
+;POS
 ;HYOUKI
 ;FIXME
 ;(TK 05-11-07)
 ;othername(sur,first),loc
 ;yasushi_16 := first_name-lex &
 ;[ORTH <! "ÊÝ" !>, SYNSEM.LKEYS.KEYREL.CARG 'yasushi_16].
-tamotsu_2 := first_name-lex &
+tamotsu_2 := other_name-lex &
 [ORTH <! "ÊÝ" !>, SYNSEM.LKEYS.KEYREL.CARG 'tamotsu_2].
 
 ; Freq: 5
@@ -1153,11 +1162,13 @@ tsuyoshi_14 := other_name-lex &
 ORTH <! "¹ä" !>].
 
 ; Freq: 5
+;BAD
 ;FIXME
-;(TK 05-11-07)
+;(TK 05-11-28)
 ;othername(sur,first),loc
-konan_3 := first_name-lex &
-[ORTH <! "¸ÐÆî" !>, SYNSEM.LKEYS.KEYREL.CARG 'konan_3].
+;¢ªothername¤ËÅý¹ç
+;konan_3 := first_name-lex &
+;[ORTH <! "¸ÐÆî" !>, SYNSEM.LKEYS.KEYREL.CARG 'konan_3].
 
 ; Freq: 5
 ;POS
@@ -1178,11 +1189,13 @@ hari-_1 := first_name-lex &
 [ORTH <! "¥Ï¥ê¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'hari-_1].
 
 ; Freq: 5
+;POS
 ;FIXME
 ;(TK 05-11-07)
 ;othername(sur,first),loc
 ;À«¤È¤·¤Æ¤ÎÆÉ¤ß¤Ï¡Öyoshihira¡×¤«¤â¤·¤ì¤Ê¤¤
-kihei_5 := first_name-lex &
+;kihei_5 := first_name-lex &
+kihei_5 := other_name-lex &
 [ORTH <! "´îÊ¿" !>, SYNSEM.LKEYS.KEYREL.CARG 'kihei_5].
 
 ; Freq: 5
@@ -4209,8 +4222,10 @@ norimoto_1 := other_name-lex &
 [ORTH <! "µª¸µ" !>, SYNSEM.LKEYS.KEYREL.CARG 'norimoto_1].
 
 ; Freq: 1
-gariba-_2 := first_name-lex &
-[ORTH <! "¥¬¥ê¥Ð¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'gariba-_2].
+;BAD
+;(TK 05-11-25)
+;gariba-_2 := first_name-lex &
+;[ORTH <! "¥¬¥ê¥Ð¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'gariba-_2].
 
 ; Freq: 1
 ;BAD
@@ -7772,8 +7787,11 @@ shokuryouchou_1 := inst_name-lex &
 [ORTH <! "¿©ÎÈÄ£" !>, SYNSEM.LKEYS.KEYREL.CARG 'shokuryouchou_1].
 
 ; Freq: 8
-hitachi_3 := inst_name-lex &
-[ORTH <! "ÆüÎ©" !>, SYNSEM.LKEYS.KEYREL.CARG 'hitachi_3].
+;BAD
+;(TK 05-11-28)
+;¢ªloc-or-surname-or-instname-lex¤ËÅý¹ç
+;hitachi_3 := inst_name-lex &
+;[ORTH <! "ÆüÎ©" !>, SYNSEM.LKEYS.KEYREL.CARG 'hitachi_3].
 
 ; Freq: 8
 jieitei-bi-_1 := inst_name-lex &
@@ -7796,7 +7814,10 @@ ji-eichikyu-_1 := inst_name-lex &
 [ORTH <! "£Ç£È£Ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ji-eichikyu-_1].
 
 ; Freq: 8
-touhou_5 := inst_name-lex &
+;POS
+;(TK 05-11-28)
+;touhou_5 := inst_name-lex &
+touhou_5 := loc-or-surname-or-instname-lex &
 [ORTH <! "ÅìÊõ" !>, SYNSEM.LKEYS.KEYREL.CARG 'touhou_5].
 
 ; Freq: 8
@@ -7990,7 +8011,7 @@ pi-eruo-_1 := inst_name-lex &
 ;(TK 05-11-17)
 ;sumappu_1 := inst_name-lex &
 ;[ORTH <! "£Ó£Í£Á£Ð" !>, SYNSEM.LKEYS.KEYREL.CARG 'sumappu_1].
-sumappu--1-ippanname := 
+sumappu-1-ippanname := 
 ippan-name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'sumappu,
 ORTH <! "£Ó£Í£Á£Ð" !>].
@@ -8089,7 +8110,10 @@ ATQT_1 := inst_name-lex &
 [ORTH <! "£Á£Ô¡õ£Ô" !>, SYNSEM.LKEYS.KEYREL.CARG 'ATQT_1].
 
 ; Freq: 4
-se_2 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;se_2 := inst_name-lex &
+se_2 := loc-or-surname-or-instname-lex &
 [ORTH <! "¥»" !>, SYNSEM.LKEYS.KEYREL.CARG 'se_2].
 
 ; Freq: 4
@@ -8918,7 +8942,10 @@ o-i-shi-dei-_1 := inst_name-lex &
 [ORTH <! "£Ï£Å£Ã£Ä" !>, SYNSEM.LKEYS.KEYREL.CARG 'o-i-shi-dei-_1].
 
 ; Freq: 1
-sanga_3 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;sanga_3 := inst_name-lex &
+sanga_3 := loc-or-surname-or-instname-lex &
 [ORTH <! "»°²Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanga_3].
 
 ; Freq: 1
@@ -8958,8 +8985,12 @@ saitamadai_1 := inst_name-lex &
 [ORTH <! "ºë¶ÌÂç" !>, SYNSEM.LKEYS.KEYREL.CARG 'saitamadai_1].
 
 ; Freq: 1
-Nkyou_1 := inst_name-lex &
-[ORTH <! "£Î¶Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'Nkyou_1].
+;HYOUKI
+;(TK 05-11-25)
+;Nkyou_1 := inst_name-lex &
+;[ORTH <! "£Î¶Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'Nkyou_1].
+enukyou_1 := inst_name-lex &
+[ORTH <! "£Î¶Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'enukyou_1].
 
 ; Freq: 1
 toukyoudaigaku_1 := inst_name-lex &
@@ -8974,8 +9005,11 @@ houseidai_1 := inst_name-lex &
 [ORTH <! "Ë¡À¯Âç" !>, SYNSEM.LKEYS.KEYREL.CARG 'houseidai_1].
 
 ; Freq: 1
-nitten_2 := inst_name-lex &
-[ORTH <! "ÆüÅ¸" !>, SYNSEM.LKEYS.KEYREL.CARG 'nitten_2].
+;BAD
+;(TK 05-11-25)
+;¢ªippanname¤ËÅý¹ç
+;nitten_2 := inst_name-lex &
+;[ORTH <! "ÆüÅ¸" !>, SYNSEM.LKEYS.KEYREL.CARG 'nitten_2].
 
 ; Freq: 1
 ecchitei-bi-_1 := inst_name-lex &
@@ -9002,7 +9036,10 @@ kouchikai_1 := inst_name-lex &
 [ORTH <! "¹¨ÃÓ²ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouchikai_1].
 
 ; Freq: 1
-guraman_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;guraman_1 := inst_name-lex &
+guraman_1 := surname-or-instname-lex &
 [ORTH <! "¥°¥é¥Þ¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'guraman_1].
 
 ; Freq: 1
@@ -9014,7 +9051,10 @@ jikoukai_1 := inst_name-lex &
 [ORTH <! "¼«¹©²ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'jikoukai_1].
 
 ; Freq: 1
-rikka-_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;rikka-_1 := inst_name-lex &
+rikka-_1 := surname-or-instname-lex &
 [ORTH <! "¥ê¥Ã¥«¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'rikka-_1].
 
 ; Freq: 1
@@ -9026,20 +9066,36 @@ seiyouken_1 := inst_name-lex &
 [ORTH <! "ÀºÍÜ¸®" !>, SYNSEM.LKEYS.KEYREL.CARG 'seiyouken_1].
 
 ; Freq: 1
-osuto_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;osuto_1 := inst_name-lex &
+osuto_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "¥ª¥¹¥È" !>, SYNSEM.LKEYS.KEYREL.CARG 'osuto_1].
 
 ; Freq: 1
-gariba-_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;gariba-_1 := inst_name-lex &
+gariba-_1 := surname-or-instname-lex &
 [ORTH <! "¥¬¥ê¥Ð¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'gariba-_1].
 
 ; Freq: 1
+;FIXME
+;(TK 05-11-25)
+;other,inst
+;¤¹¤Ç¤Ësurname-lex¤È¤·¤Æ¤ÎÅÐÏ¿¤¢¤ê
 kinokuniya_7 := inst_name-lex &
 [ORTH <! "µª°Ë¹ñ²°" !>, SYNSEM.LKEYS.KEYREL.CARG 'kinokuniya_7].
 
 ; Freq: 1
-daburyu-bi-shi-_1 := inst_name-lex &
-[ORTH <! "£×£Â£Ã" !>, SYNSEM.LKEYS.KEYREL.CARG 'daburyu-bi-shi-_1].
+;POS
+;(TK 05-11-25)
+;daburyu-bi-shi-_1 := inst_name-lex &
+;[ORTH <! "£×£Â£Ã" !>, SYNSEM.LKEYS.KEYREL.CARG 'daburyu-bi-shi-_1].
+daburyu-bi-shi--1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'daburyu-bi-shi-,
+ORTH <! "£×£Â£Ã" !>].
 
 ; Freq: 1
 asahishinbunsha_1 := inst_name-lex &
@@ -9102,7 +9158,10 @@ kabusu_1 := inst_name-lex &
 [ORTH <! "¥«¥Ö¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'kabusu_1].
 
 ; Freq: 1
-hazama_7 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;hazama_7 := inst_name-lex &
+hazama_7 := loc-or-surname-or-instname-lex &
 [ORTH <! "¥Ï¥¶¥Þ" !>, SYNSEM.LKEYS.KEYREL.CARG 'hazama_7].
 
 ; Freq: 1
@@ -9126,7 +9185,10 @@ daihatsu_2 := inst_name-lex &
 [ORTH <! "¥À¥¤¥Ï¥Ä" !>, SYNSEM.LKEYS.KEYREL.CARG 'daihatsu_2].
 
 ; Freq: 1
-main_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;main_1 := inst_name-lex &
+main_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "¥Þ¥¤¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'main_1].
 
 ; Freq: 1
@@ -9150,14 +9212,21 @@ fujikyuu_2 := inst_name-lex &
 [ORTH <! "ÉÙ»ÎµÞ" !>, SYNSEM.LKEYS.KEYREL.CARG 'fujikyuu_2].
 
 ; Freq: 1
-nihonkeizaishinbun_1 := inst_name-lex &
-[ORTH <! "ÆüËÜ·ÐºÑ¿·Ê¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'nihonkeizaishinbun_1].
+;POS
+;(TK 05-11-25)
+;nihonkeizaishinbun_1 := inst_name-lex &
+;[ORTH <! "ÆüËÜ·ÐºÑ¿·Ê¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'nihonkeizaishinbun_1].
+nihonkeizaishinbun-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'nihonkeizaishinbun,
+ORTH <! "ÆüËÜ·ÐºÑ¿·Ê¹" !>].
 
 ; Freq: 1
 eienushi-_1 := inst_name-lex &
 [ORTH <! "£Á£Î£Ã" !>, SYNSEM.LKEYS.KEYREL.CARG 'eienushi-_1].
 
 ; Freq: 1
+;É½µ­¤Ï¤³¤ì¤Ç¤è¤¤¤Î¤«¡©
 iaii_1 := inst_name-lex &
 [ORTH <! "¥¤¡¢¥¢¥¤¡¢¥¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'iaii_1].
 
@@ -9166,12 +9235,19 @@ mitsuizousen_1 := inst_name-lex &
 [ORTH <! "»°°æÂ¤Á¥" !>, SYNSEM.LKEYS.KEYREL.CARG 'mitsuizousen_1].
 
 ; Freq: 1
+;FIXME
+;(TK 05-11-25)
+;other(sur,first),inst
 ka-chisu_1 := inst_name-lex &
 [ORTH <! "¥«¡¼¥Á¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'ka-chisu_1].
 
 ; Freq: 1
-taikan_3 := inst_name-lex &
-[ORTH <! "Âç´Ú" !>, SYNSEM.LKEYS.KEYREL.CARG 'taikan_3].
+;HYOUKI
+;(TK 05-11-25)
+;taikan_3 := inst_name-lex &
+;[ORTH <! "Âç´Ú" !>, SYNSEM.LKEYS.KEYREL.CARG 'taikan_3].
+daikan_3 := inst_name-lex &
+[ORTH <! "Âç´Ú" !>, SYNSEM.LKEYS.KEYREL.CARG 'daikan_3].
 
 ; Freq: 1
 kyatapira-_1 := inst_name-lex &
@@ -9186,6 +9262,9 @@ jietoro_2 := inst_name-lex &
 [ORTH <! "¥¸¥§¥È¥í" !>, SYNSEM.LKEYS.KEYREL.CARG 'jietoro_2].
 
 ; Freq: 1
+;FIXME
+;(TK 05-11-25)
+;¥×¥¨¥ë¥È¥ê¥³¤Î¹ñÌ¾¥³¡¼¥É
 pi-a-ruai_1 := inst_name-lex &
 [ORTH <! "£Ð£Ò£É" !>, SYNSEM.LKEYS.KEYREL.CARG 'pi-a-ruai_1].
 
@@ -9202,15 +9281,24 @@ kagichou_1 := inst_name-lex &
 [ORTH <! "²Êµ»Ä£" !>, SYNSEM.LKEYS.KEYREL.CARG 'kagichou_1].
 
 ; Freq: 1
-misawa_8 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;misawa_8 := inst_name-lex &
+misawa_8 := loc-or-surname-or-instname-lex &
 [ORTH <! "¥ß¥µ¥ï" !>, SYNSEM.LKEYS.KEYREL.CARG 'misawa_8].
 
 ; Freq: 1
+;FIXME
+;(TK 05-11-25)
+;¥Ö¡¼¥¿¥ó²¦¹ñ¤Î¹ñÌ¾¥³¡¼¥É¤Ç¤â¤¢¤ë
 bi-tei-_1 := inst_name-lex &
 [ORTH <! "£Â£Ô" !>, SYNSEM.LKEYS.KEYREL.CARG 'bi-tei-_1].
 
 ; Freq: 1
-isoppu_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;isoppu_1 := inst_name-lex &
+isoppu_1 := other_name-lex &
 [ORTH <! "¥¤¥½¥Ã¥×" !>, SYNSEM.LKEYS.KEYREL.CARG 'isoppu_1].
 
 ; Freq: 1
@@ -9226,10 +9314,16 @@ kyojingun_1 := inst_name-lex &
 [ORTH <! "µð¿Í·³" !>, SYNSEM.LKEYS.KEYREL.CARG 'kyojingun_1].
 
 ; Freq: 1
-kiyomizudera_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;kiyomizudera_1 := inst_name-lex &
+kiyomizudera_1 := loc_name-lex &
 [ORTH <! "À¶¿å»û" !>, SYNSEM.LKEYS.KEYREL.CARG 'kiyomizudera_1].
 
 ; Freq: 1
+;FIXME
+;(TK 05-11-25)
+;other(sur,first),inst
 roido_1 := inst_name-lex &
 [ORTH <! "¥í¥¤¥É" !>, SYNSEM.LKEYS.KEYREL.CARG 'roido_1].
 
@@ -9282,7 +9376,10 @@ marinosu_1 := inst_name-lex &
 [ORTH <! "¥Þ¥ê¥Î¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'marinosu_1].
 
 ; Freq: 1
-higashihonganji_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;higashihonganji_1 := inst_name-lex &
+higashihonganji_1 := loc_name-lex &
 [ORTH <! "ÅìËÜ´ê»û" !>, SYNSEM.LKEYS.KEYREL.CARG 'higashihonganji_1].
 
 ; Freq: 1
@@ -9310,7 +9407,10 @@ kurare_1 := inst_name-lex &
 [ORTH <! "¥¯¥é¥ì" !>, SYNSEM.LKEYS.KEYREL.CARG 'kurare_1].
 
 ; Freq: 1
-misonoza_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;misonoza_1 := inst_name-lex &
+misonoza_1 := loc_name-lex &
 [ORTH <! "¸æ±àºÂ" !>, SYNSEM.LKEYS.KEYREL.CARG 'misonoza_1].
 
 ; Freq: 1
@@ -9346,7 +9446,10 @@ o-eiyu-_1 := inst_name-lex &
 [ORTH <! "£Ï£Á£Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'o-eiyu-_1].
 
 ; Freq: 1
-teigeki_1 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;teigeki_1 := inst_name-lex &
+teigeki_1 := loc_name-lex &
 [ORTH <! "Äë·à" !>, SYNSEM.LKEYS.KEYREL.CARG 'teigeki_1].
 
 ; Freq: 1
@@ -9366,7 +9469,10 @@ touhoudai_1 := inst_name-lex &
 [ORTH <! "ÅìË®Âç" !>, SYNSEM.LKEYS.KEYREL.CARG 'touhoudai_1].
 
 ; Freq: 1
-honda_3 := inst_name-lex &
+;POS
+;(TK 05-11-25)
+;honda_3 := inst_name-lex &
+honda_3 := loc-or-surname-or-instname-lex &
 [ORTH <! "¥Û¥ó¥À" !>, SYNSEM.LKEYS.KEYREL.CARG 'honda_3].
 
 ; Freq: 1
@@ -9394,8 +9500,14 @@ jieia-rutoukai_1 := inst_name-lex &
 [ORTH <! "£Ê£ÒÅì³¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'jieia-rutoukai_1].
 
 ; Freq: 1
-bungeishunjuu_2 := inst_name-lex &
-[ORTH <! "Ê¸·Ý½Õ½©" !>, SYNSEM.LKEYS.KEYREL.CARG 'bungeishunjuu_2].
+;POS
+;(TK 05-11-25)
+;bungeishunjuu_2 := inst_name-lex &
+;[ORTH <! "Ê¸·Ý½Õ½©" !>, SYNSEM.LKEYS.KEYREL.CARG 'bungeishunjuu_2].
+bungeishunjuu-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'bungeishunjuu,
+ORTH <! "Ê¸·Ý½Õ½©" !>].
 
 ; Freq: 1
 esuefushi-_1 := inst_name-lex &
@@ -9422,12 +9534,21 @@ teiken_1 := inst_name-lex &
 [ORTH <! "Äë·ý" !>, SYNSEM.LKEYS.KEYREL.CARG 'teiken_1].
 
 ; Freq: 1
+;FIXME
+;(TK 05-11-25)
+;inst,product
 pansa-_1 := inst_name-lex &
 [ORTH <! "¥Ñ¥ó¥µ¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'pansa-_1].
 
 ; Freq: 1
-shinkashaden_1 := inst_name-lex &
-[ORTH <! "¿·²Ú¼ÒÅÅ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shinkashaden_1].
+;POS
+;(TK 05-11-25)
+;shinkashaden_1 := inst_name-lex &
+;[ORTH <! "¿·²Ú¼ÒÅÅ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shinkashaden_1].
+shinkashaden-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'shinkashaden,
+ORTH <! "¿·²Ú¼ÒÅÅ" !>].
 
 ; Freq: 1
 ko-se-_1 := inst_name-lex &
@@ -9438,8 +9559,10 @@ shisuien_1 := inst_name-lex &
 [ORTH <! "°´¿å±ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shisuien_1].
 
 ; Freq: 1
-iwaki_7 := inst_name-lex &
-[ORTH <! "¤¤¤ï¤­" !>, SYNSEM.LKEYS.KEYREL.CARG 'iwaki_7].
+;BAD
+;(TK 05-11-25)
+;iwaki_7 := inst_name-lex &
+;[ORTH <! "¤¤¤ï¤­" !>, SYNSEM.LKEYS.KEYREL.CARG 'iwaki_7].
 
 ; Freq: 1
 itouchuutekunosaiensu_1 := inst_name-lex &
@@ -26164,7 +26287,7 @@ seichou_n2 := ordinary-nohon-n-lex &
 ;(TK 05-09-15)
 shinchou-1-ippanname := 
 ippan-name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'shinchou-,
+[SYNSEM.LKEYS.KEYREL.CARG 'shinchou,
 ORTH <! "À¶Ä«" !>].
 
 ; Freq: 1
@@ -38763,21 +38886,24 @@ ottsuke_adv4 := scopal-adv-regular-lex &
 
 ; Freq: 301
 ;POS
+;LNAME
 ;(TK 05-09-21)
 ;chiechien_1 := surname-lex &
 chiechien_1 := loc_name-lex &
 [ORTH <! "¥Á¥§¥Á¥§¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'chiechien_1].
 
 ; Freq: 234
-yamahana_1 := surname-lex &
+yamahana_1 := loc-or-surname-lex &
 [ORTH <! "»³²Ö" !>, SYNSEM.LKEYS.KEYREL.CARG 'yamahana_1].
 
 ; Freq: 165
+;SNAME
 kurinton_1 := surname-lex &
 [ORTH <! "¥¯¥ê¥ó¥È¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'kurinton_1].
 
 ; Freq: 154
 ;POS
+;LNAME
 ;(TK 05-09-21)
 ;honkon_1 := surname-lex &
 honkon_1 := loc_name-lex &
@@ -38796,7 +38922,7 @@ ryougoku_3 := loc_name-lex &
 ;HYOUKI
 ;(TK 05-09-21)
 ;anpo_1 := surname-lex &
-abo_1 := surname-lex &
+abo_1 := loc-or-surname-lex &
 [ORTH <! "°ÂÊÝ" !>, SYNSEM.LKEYS.KEYREL.CARG 'abo_1].
 
 ; Freq: 133
@@ -38809,6 +38935,7 @@ eritsuin_1 := surname-lex &
 
 ; Freq: 123
 ;POS
+;LNAME
 ;(TK 05-09-21)
 ;okinawa_1 := surname-lex &
 okinawa_1 := loc_name-lex &
@@ -38828,59 +38955,63 @@ ri_4 := surname-lex &
 ;[ORTH <! "¶¦ÏÂ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kyouwa_1].
 
 ; Freq: 111
-sekine_1 := surname-lex &
+sekine_1 := loc-or-surname-lex &
 [ORTH <! "´Øº¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'sekine_1].
 
 ; Freq: 98
-kouno_2 := surname-lex &
+kouno_2 := loc-or-surname-lex &
 [ORTH <! "²ÏÌî" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouno_2].
 
 ; Freq: 85
 ;POS
 ;(TK 05-09-21)
 ;saitama_2 := surname-lex &
-saitama_2 := loc_name-lex &
+saitama_2 := loc-or-surname-lex &
 [ORTH <! "ºë¶Ì" !>, SYNSEM.LKEYS.KEYREL.CARG 'saitama_2].
 
 ; Freq: 81
 ;POS
 ;(TK 05-09-21)
 ;hiroshima_4 := surname-lex &
-hiroshima_4 := loc_name-lex &
+hiroshima_4 := loc-or-surname-lex &
 [ORTH <! "¹­Åç" !>, SYNSEM.LKEYS.KEYREL.CARG 'hiroshima_4].
 
 ; Freq: 76
+;SNAME
 doudaefu_1 := surname-lex &
 [ORTH <! "¥É¥¥¥À¥¨¥Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'doudaefu_1].
 
 ; Freq: 76
+;SNAME
 nomo_2 := surname-lex &
 [ORTH <! "ÌîÌÐ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nomo_2].
 
 ; Freq: 74
-hashimoto_1 := surname-lex &
+hashimoto_1 := loc-or-surname-lex &
 [ORTH <! "¶¶ËÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'hashimoto_1].
 
 ; Freq: 74
 ;HYOUKI
 ;(TK 05-09-21)
 ;kozawa_1 := surname-lex &
-ozawa_1 := surname-lex &
+ozawa_1 := loc-or-surname-lex &
 [ORTH <! "¾®Âô" !>, SYNSEM.LKEYS.KEYREL.CARG 'ozawa_1].
 
 ; Freq: 72
 ;POS
+;LNAME
 ;(TK 05-09-21)
 ;gurozunui_1 := surname-lex &
 gurozunui_1 := loc_name-lex &
 [ORTH <! "¥°¥í¥º¥Ì¥¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'gurozunui_1].
 
 ; Freq: 72
+;SNAME
 takemura_3 := surname-lex &
 [ORTH <! "ÉðÂ¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'takemura_3].
 
 ; Freq: 72
-kubo_2 := surname-lex &
+kubo_2 := loc-or-surname-lex &
 [ORTH <! "µ×ÊÝ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kubo_2].
 
 ; Freq: 70
@@ -38894,6 +39025,7 @@ nagasaki_2 := loc_name-lex &
 
 ; Freq: 66
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;bosunia_1 := surname-lex &
 bosunia_1 := loc_name-lex &
@@ -38918,6 +39050,7 @@ washinton_2 := loc_name-lex &
 [ORTH <! "¥ï¥·¥ó¥È¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'washinton_2].
 
 ; Freq: 60
+;SNAME
 tou_2 := surname-lex &
 [ORTH <! "¥È¥¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'tou_2].
 
@@ -38931,22 +39064,24 @@ chiba_3 := loc_name-lex &
 [ORTH <! "ÀéÍÕ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chiba_3].
 
 ; Freq: 50
+;SNAME
 berurusuko-ni_1 := surname-lex &
 [ORTH <! "¥Ù¥ë¥ë¥¹¥³¡¼¥Ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'berurusuko-ni_1].
 
 ; Freq: 49
-haneda_1 := surname-lex &
+haneda_1 := loc-or-surname-lex &
 [ORTH <! "±©ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'haneda_1].
 
 ; Freq: 49
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;sapporo_1 := surname-lex &
 sapporo_1 := loc_name-lex &
 [ORTH <! "»¥ËÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sapporo_1].
 
 ; Freq: 48
-itou_3 := surname-lex &
+itou_3 := loc-or-surname-lex &
 [ORTH <! "°ËÅì" !>, SYNSEM.LKEYS.KEYREL.CARG 'itou_3].
 
 ; Freq: 47
@@ -38960,6 +39095,7 @@ minamata_2 := loc_name-lex &
 
 ; Freq: 46
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;kanagawa_1 := surname-lex &
 kanagawa_1 := loc_name-lex &
@@ -38970,22 +39106,26 @@ kanagawa_1 := loc_name-lex &
 ;(TK 05-09-22)
 ;kaibu_1 := surname-lex &
 ;[ORTH <! "³¤Éô" !>, SYNSEM.LKEYS.KEYREL.CARG 'kaibu_1].
-kaifu_1 := surname-lex &
+kaifu_1 := loc-or-surname-lex &
 [ORTH <! "³¤Éô" !>, SYNSEM.LKEYS.KEYREL.CARG 'kaifu_1].
 
 ; Freq: 44
-aoshima_2 := surname-lex &
+aoshima_2 := loc-or-surname-lex &
 [ORTH <! "ÀÄÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'aoshima_2].
 
 ; Freq: 44
-mahara_1 := surname-lex &
-[ORTH <! "Ëã¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'mahara_1].
+;HYOUKI
+;SNAME
+;(TK 05-11-25)
+;mahara_1 := surname-lex &
+asahara_1 := surname-lex &
+[ORTH <! "Ëã¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'asahara_1].
 
 ; Freq: 43
 ;POS
 ;(TK 05-09-22)
 ;kyouwa_2 := surname-lex &
-kyouwa_2 := inst_name-lex &
+kyouwa_2 := loc-or-surname-or-instname-lex &
 [ORTH <! "¶¨ÏÂ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kyouwa_2].
 
 ; Freq: 42
@@ -38999,10 +39139,12 @@ ippan-name-lex &
 ORTH <! "¥¢¥á¥ê¥«¥º¥«¥Ã¥×" !>].
 
 ; Freq: 41
-;POS
-;(TK 05-09-22)
-;fuka_2 := surname-lex &
-;[ORTH <! "¿¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'fuka_2].
+fuka_2 := loc-or-surname-lex &
+[ORTH <! "¿¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'fuka_2].
+
+;TSUIKA
+;HYOUKI
+;(TK 05-11-25)
 fuke_n1 := ordinary-nohon-n-lex &
 [ORTH <! "¿¼" !>, SYNSEM.LKEYS.KEYREL.PRED '_fuke_n_1_rel].
 
@@ -39025,7 +39167,7 @@ gunma_2 := loc_name-lex &
 [ORTH <! "·²ÇÏ" !>, SYNSEM.LKEYS.KEYREL.CARG 'gunma_2].
 
 ; Freq: 40
-hosokawa_1 := surname-lex &
+hosokawa_1 := loc-or-surname-lex &
 [ORTH <! "ºÙÀî" !>, SYNSEM.LKEYS.KEYREL.CARG 'hosokawa_1].
 
 ; Freq: 40
@@ -39044,7 +39186,9 @@ narita_2 := loc_name-lex &
 ; Freq: 40
 ;HYOUKI
 ;POS
+;FIXME
 ;(TK 05-09-22)
+;other,loc
 ;echi_1 := surname-lex &
 aichi_1 := loc_name-lex &
 [ORTH <! "°¦ÃÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'aichi_1].
@@ -39056,16 +39200,17 @@ aichi_2 := other_name-lex &
 ORTH <! "°¦ÃÎ" !>].
 
 ; Freq: 39
-;BAD
+;FIXME
 ;(TK 05-09-22)
-;wataru_1 := surname-lex &
-;[ORTH <! "ÏË" !>, SYNSEM.LKEYS.KEYREL.CARG 'wataru_1].
+;other(sur,first),loc
+wataru_1 := loc-or-surname-lex &
+[ORTH <! "ÏË" !>, SYNSEM.LKEYS.KEYREL.CARG 'wataru_1].
 
 ; Freq: 39
 ;POS
 ;(TK 05-09-22)
 ;aomori_1 := surname-lex &
-aomori_1 := loc_name-lex &
+aomori_1 := loc-or-surname-lex &
 [ORTH <! "ÀÄ¿¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'aomori_1].
 
 ; Freq: 37
@@ -39078,16 +39223,20 @@ takanohana_1 := other_name-lex &
 ORTH <! "µ®Çµ²Ö" !>].
 
 ; Freq: 36
-ishiwara_1 := surname-lex &
+ishiwara_1 := loc-or-surname-lex &
 [ORTH <! "ÀÐ¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'ishiwara_1].
 
 ; Freq: 36
-kohira_1 := surname-lex &
-[ORTH <! "¾®Ê¿" !>, SYNSEM.LKEYS.KEYREL.CARG 'kohira_1].
+;HYOUKI
+;(TK 05-11-25)
+;kohira_1 := surname-lex &
+kodaira_1 := loc-or-surname-lex &
+[ORTH <! "¾®Ê¿" !>, SYNSEM.LKEYS.KEYREL.CARG 'kodaira_1].
 
 ; Freq: 36
 ;POS
 ;(TK 05-09-22)
+;LNAME
 ;nansa_1 := surname-lex &
 nansa_1 := loc_name-lex &
 [ORTH <! "Æîº»" !>, SYNSEM.LKEYS.KEYREL.CARG 'nansa_1].
@@ -39102,28 +39251,27 @@ fukui_2 := loc_name-lex &
 [ORTH <! "Ê¡°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'fukui_2].
 
 ; Freq: 35
-haniyuu_1 := surname-lex &
+haniyuu_1 := loc-or-surname-lex &
 [ORTH <! "±©À¸" !>, SYNSEM.LKEYS.KEYREL.CARG 'haniyuu_1].
 
 ; Freq: 35
-igarashi_1 := surname-lex &
+igarashi_1 := loc-or-surname-lex &
 [ORTH <! "¸Þ½½Íò" !>, SYNSEM.LKEYS.KEYREL.CARG 'igarashi_1].
 
 ; Freq: 35
 ;POS
 ;(TK 05-09-22)
+;LNAME
 ;shinjuku_1 := surname-lex &
 shinjuku_1 := loc_name-lex &
 [ORTH <! "¿·½É" !>, SYNSEM.LKEYS.KEYREL.CARG 'shinjuku_1].
 
 ; Freq: 34
-matsushita_1 := surname-lex &
+;POS
+;(TK 05-11-25)
+;matsushita_1 := surname-lex &
+matsushita_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "¾¾²¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'matsushita_1].
-
-;TSUIKA
-;(TK 05-09-22)
-matsushita_2 := inst_name-lex &
-[ORTH <! "¾¾²¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'matsushita_2].
 
 ; Freq: 34
 ginguricchi_1 := surname-lex &
@@ -39141,6 +39289,7 @@ ORTH <! "£Î£Ð£Ô" !>].
 
 ; Freq: 32
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;mosukuwa_1 := surname-lex &
 mosukuwa_1 := loc_name-lex &
@@ -39156,24 +39305,32 @@ kumamoto_5 := loc_name-lex &
 [ORTH <! "·§ËÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kumamoto_5].
 
 ; Freq: 32
-;FIXME
-;(TK 05-09-22)
-; surname¤Î¤È¤­¤ÎÆÉ¤ß¤¬Ê¬¤«¤é¤Ê¤¤
-kouda_7 := surname-lex &
-[ORTH <! "¹ÔÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouda_7].
+;HYOUKI
+;(TK 05-11-25)
+; surname¤È¤·¤Æ¤ÎÆÉ¤ß¤ÏÉÔÌÀ
+;kouda_7 := surname-lex &
+;[ORTH <! "¹ÔÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouda_7].
+gyouda_1 := loc-or-surname-lex &
+[ORTH <! "¹ÔÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'gyouda_1].
 
 ; Freq: 32
 ;POS
+;FNAME
 ;(TK 05-09-22)
 ;okuni_2 := surname-lex &
 okuni_2 := first_name-lex &
 [ORTH <! "°¤¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'okuni_2].
 
 ; Freq: 31
-sanriku_1 := surname-lex &
+;POS
+;LNAME
+;(TK 05-09-22)
+;sanriku_1 := surname-lex &
+sanriku_1 := loc_name-lex &
 [ORTH <! "»°Î¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanriku_1].
 
 ; Freq: 30
+;SNAME
 shiraku_1 := surname-lex &
 [ORTH <! "¥·¥é¥¯" !>, SYNSEM.LKEYS.KEYREL.CARG 'shiraku_1].
 
@@ -39181,50 +39338,52 @@ shiraku_1 := surname-lex &
 ;POS
 ;(TK 05-09-22)
 ;niigata_1 := surname-lex &
-niigata_1 := loc_name-lex &
+niigata_1 := loc-or-surname-lex &
 [ORTH <! "¿·³ã" !>, SYNSEM.LKEYS.KEYREL.CARG 'niigata_1].
 
 ; Freq: 28
 ;POS
 ;(TK 05-09-22)
 ;shizuoka_1 := surname-lex &
-shizuoka_1 := loc_name-lex &
+shizuoka_1 := loc-or-surname-lex &
 [ORTH <! "ÀÅ²¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'shizuoka_1].
 
 ; Freq: 28
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;sagamidai_1 := surname-lex &
 sagamidai_1 := loc_name-lex &
 [ORTH <! "ÁêÌÏÂæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sagamidai_1].
 
 ; Freq: 28
-ooe_2 := surname-lex &
+ooe_2 := loc-or-surname-lex &
 [ORTH <! "Âç¹¾" !>, SYNSEM.LKEYS.KEYREL.CARG 'ooe_2].
 
 ; Freq: 28
-oonaka_2 := surname-lex &
+oonaka_2 := loc-or-surname-lex &
 [ORTH <! "ÂçÃæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'oonaka_2].
 
 ; Freq: 27
-kazama_1 := surname-lex &
+kazama_1 := loc-or-surname-lex &
 [ORTH <! "É÷´Ö" !>, SYNSEM.LKEYS.KEYREL.CARG 'kazama_1].
 
 ; Freq: 27
 ;POS
 ;(TK 05-09-22)
 ;kagoshima_2 := surname-lex &
-kagoshima_2 := loc_name-lex &
+kagoshima_2 := loc-or-surname-lex &
 [ORTH <! "¼¯»ùÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'kagoshima_2].
 
 ; Freq: 26
 ;POS
 ;(TK 05-09-22)
 ;wakayama_2 := surname-lex &
-wakayama_2 := loc_name-lex &
+wakayama_2 := loc-or-surname-lex &
 [ORTH <! "ÏÂ²Î»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'wakayama_2].
 
 ; Freq: 25
+;SNAME
 gari_2 := surname-lex &
 [ORTH <! "¥¬¥ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'gari_2].
 
@@ -39232,7 +39391,7 @@ gari_2 := surname-lex &
 ;POS
 ;(TK 05-09-22)
 ;naha_1 := surname-lex &
-naha_1 := loc_name-lex &
+naha_1 := loc-or-surname-lex &
 [ORTH <! "ÆáÇÆ" !>, SYNSEM.LKEYS.KEYREL.CARG 'naha_1].
 
 ; Freq: 25
@@ -39264,6 +39423,7 @@ hachinohe_2 := loc_name-lex &
 ; Freq: 24
 ;POS
 ;(TK 05-09-22)
+;LNAME
 ;june-bu_1 := surname-lex &
 june-bu_1 := loc_name-lex &
 [ORTH <! "¥¸¥å¥Í¡¼¥Ö" !>, SYNSEM.LKEYS.KEYREL.CARG 'june-bu_1].
@@ -39271,12 +39431,14 @@ june-bu_1 := loc_name-lex &
 ; Freq: 23
 ;POS
 ;(TK 05-09-22)
+;LNAME
 ;mekon_1 := surname-lex &
 mekon_1 := loc_name-lex &
 [ORTH <! "¥á¥³¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'mekon_1].
 
 ; Freq: 23
 ;HYOUKI
+;SNAME
 ;(TK 05-09-22)
 ;kounan_6 := surname-lex &
 ;[ORTH <! "¹¾Æî" !>, SYNSEM.LKEYS.KEYREL.CARG 'kounan_6].
@@ -39284,6 +39446,7 @@ enami_1 := surname-lex &
 [ORTH <! "¹¾Æî" !>, SYNSEM.LKEYS.KEYREL.CARG 'enami_1].
 
 ;TSUIKA
+;LNAME
 ;(TK 05-09-22)
 kounan_1 := loc_name-lex &
 [ORTH <! "¹¾Æî" !>, SYNSEM.LKEYS.KEYREL.CARG 'kounan_1].
@@ -39298,26 +39461,30 @@ mikuni_2 := loc_name-lex &
 [ORTH <! "»°¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'mikuni_2].
 
 ; Freq: 22
-nomura_3 := surname-lex &
+;POS
+;(TK 05-11-25)
+;nomura_3 := surname-lex &
+nomura_3 := loc-or-surname-or-instname-lex &
 [ORTH <! "ÌîÂ¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'nomura_3].
 
 ; Freq: 21
+;SNAME
 no_3 := surname-lex &
 [ORTH <! "âº" !>, SYNSEM.LKEYS.KEYREL.CARG 'no_3].
 
 ; Freq: 21
-hirao_1 := surname-lex &
+hirao_1 := loc-or-surname-lex &
 [ORTH <! "Ê¿Èø" !>, SYNSEM.LKEYS.KEYREL.CARG 'hirao_1].
 
 ; Freq: 21
-so_3 := surname-lex &
+so_3 := loc-or-surname-lex &
 [ORTH <! "¥½" !>, SYNSEM.LKEYS.KEYREL.CARG 'so_3].
 
 ; Freq: 21
 ;POS
 ;(TK 05-09-22)
 ;sendai_4 := surname-lex &
-sendai_4 := loc_name-lex &
+sendai_4 := loc-or-surname-lex &
 [ORTH <! "ÀçÂæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sendai_4].
 
 ; Freq: 21
@@ -39331,14 +39498,14 @@ toyota_4 := loc_name-lex &
 [ORTH <! "Ë­ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'toyota_4].
 
 ; Freq: 20
-funaki_2 := surname-lex &
+funaki_2 := loc-or-surname-lex &
 [ORTH <! "Á¥ÌÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'funaki_2].
 
 ; Freq: 20
 ;POS
 ;(TK 05-09-22)
 ;iwate_1 := surname-lex &
-iwate_1 := loc_name-lex &
+iwate_1 := loc-or-surname-lex &
 [ORTH <! "´ä¼ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'iwate_1].
 
 ; Freq: 20
@@ -39360,27 +39527,31 @@ kanazawa_2 := loc_name-lex &
 [ORTH <! "¶âÂô" !>, SYNSEM.LKEYS.KEYREL.CARG 'kanazawa_2].
 
 ; Freq: 19
-hikone_1 := surname-lex &
+hikone_1 := loc-or-surname-lex &
 [ORTH <! "É§º¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'hikone_1].
 
 ; Freq: 19
-sumitomo_1 := surname-lex &
+;POS
+;(TK 05-11-25)
+;sumitomo_1 := surname-lex &
+;[ORTH <! "½»Í§" !>, SYNSEM.LKEYS.KEYREL.CARG 'sumitomo_1].
+sumitomo_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "½»Í§" !>, SYNSEM.LKEYS.KEYREL.CARG 'sumitomo_1].
 
-;TSUIKA
-;(TK 05-09-22)
-sumitomo_2 := inst_name-lex &
-[ORTH <! "½»Í§" !>, SYNSEM.LKEYS.KEYREL.CARG 'sumitomo_2].
-
 ; Freq: 19
+;SNAME
 saitou_1 := surname-lex &
 [ORTH <! "ºØÆ£" !>, SYNSEM.LKEYS.KEYREL.CARG 'saitou_1].
 
 ; Freq: 19
-kona-_1 := surname-lex &
+;POS
+;(TK 05-11-25)
+;kona-_1 := surname-lex &
+kona-_1 := other_name-lex &
 [ORTH <! "¥³¥Ê¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'kona-_1].
 
 ; Freq: 19
+;SNAME
 gurachofu_1 := surname-lex &
 [ORTH <! "¥°¥é¥Á¥ç¥Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'gurachofu_1].
 
@@ -39398,7 +39569,7 @@ miyagi_2 := loc_name-lex &
 [ORTH <! "µÜ¾ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'miyagi_2].
 
 ; Freq: 19
-hatoyama_1 := surname-lex &
+hatoyama_1 := loc-or-surname-lex &
 [ORTH <! "È·»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'hatoyama_1].
 
 ; Freq: 19
@@ -39408,11 +39579,12 @@ hatoyama_1 := surname-lex &
 ;[ORTH <! "ÅìÂç" !>, SYNSEM.LKEYS.KEYREL.CARG 'toudai_2].
 
 ; Freq: 19
-kamei_2 := surname-lex &
+kamei_2 := loc-or-surname-lex &
 [ORTH <! "µµ°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamei_2].
 
 ; Freq: 18
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;teimo-ru_1 := surname-lex &
 teimo-ru_1 := loc_name-lex &
@@ -39449,10 +39621,11 @@ ippan-name-lex &
 ORTH <! "¤â¤ó¤¸¤å" !>].
 
 ; Freq: 18
-kawabata_4 := surname-lex &
+kawabata_4 := loc-or-surname-lex &
 [ORTH <! "ÀîÃ¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawabata_4].
 
 ; Freq: 18
+;SNAME
 kaieda_1 := surname-lex &
 [ORTH <! "³¤¹¾ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kaieda_1].
 
@@ -39467,6 +39640,7 @@ ORTH <! "¥¯¥ê¥¹¥È¥Õ¥¡¡¼" !>].
 
 ; Freq: 18
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;shanhai_1 := surname-lex &
 shanhai_1 := loc_name-lex &
@@ -39476,7 +39650,7 @@ shanhai_1 := loc_name-lex &
 ;POS
 ;(TK 05-09-22)
 ;kouchi_6 := surname-lex &
-kouchi_6 := loc_name-lex &
+kouchi_6 := loc-or-surname-lex &
 [ORTH <! "¹âÃÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouchi_6].
 
 ; Freq: 17
@@ -39489,6 +39663,7 @@ amagasaki_2 := loc_name-lex &
 [ORTH <! "Æôºê" !>, SYNSEM.LKEYS.KEYREL.CARG 'amagasaki_2].
 
 ; Freq: 17
+;SNAME
 rabin_1 := surname-lex &
 [ORTH <! "¥é¥Ó¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'rabin_1].
 
@@ -39514,6 +39689,7 @@ ORTH <! "½õÏ»" !>].
 
 ; Freq: 17
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;aushubittsu_1 := surname-lex &
 aushubittsu_1 := loc_name-lex &
@@ -39534,11 +39710,11 @@ oota_2 := loc_name-lex &
 [ORTH <! "ÂçÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'oota_2].
 
 ; Freq: 17
-itai_2 := surname-lex &
+itai_2 := loc-or-surname-lex &
 [ORTH <! "ÈÄ°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'itai_2].
 
 ; Freq: 17
-miura_1 := surname-lex &
+miura_1 := loc-or-surname-lex &
 [ORTH <! "»°±º" !>, SYNSEM.LKEYS.KEYREL.CARG 'miura_1].
 
 ; Freq: 17
@@ -39565,15 +39741,18 @@ funabashi_4 := loc_name-lex &
 [ORTH <! "Á¥¶¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'funabashi_4].
 
 ; Freq: 16
+;SNAME
 yokomichi_2 := surname-lex &
 [ORTH <! "²£Ï©" !>, SYNSEM.LKEYS.KEYREL.CARG 'yokomichi_2].
 
 ; Freq: 16
+;SNAME
 sukarufaro_1 := surname-lex &
 [ORTH <! "¥¹¥«¥ë¥Õ¥¡¥í" !>, SYNSEM.LKEYS.KEYREL.CARG 'sukarufaro_1].
 
 ; Freq: 16
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;pyonyan_1 := surname-lex &
 pyonyan_1 := loc_name-lex &
@@ -39589,30 +39768,34 @@ sakamoto_4 := loc_name-lex &
 [ORTH <! "ºäËÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sakamoto_4].
 
 ; Freq: 16
+;SNAME
 no-beru_1 := surname-lex &
 [ORTH <! "¥Î¡¼¥Ù¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'no-beru_1].
 
 ; Freq: 16
-oohashi_1 := surname-lex &
+oohashi_1 := loc-or-surname-lex &
 [ORTH <! "Âç¶¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'oohashi_1].
 
 ; Freq: 16
 ;POS
+;FIXME
 ;(TK 05-09-22)
+;first,loc,inst
 ;meidai_1 := surname-lex &
 meidai_1 := first_name-lex &
 [ORTH <! "ÌÀÂç" !>, SYNSEM.LKEYS.KEYREL.CARG 'meidai_1].
 
 ; Freq: 16
-nagara_3 := surname-lex &
+nagara_3 := loc-or-surname-lex &
 [ORTH <! "Ä¹ÎÉ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nagara_3].
 
 ; Freq: 16
+;SNAME
 chi-_1 := surname-lex &
 [ORTH <! "¥Á¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'chi-_1].
 
 ; Freq: 16
-oozato_1 := surname-lex &
+oozato_1 := loc-or-surname-lex &
 [ORTH <! "ÂçÎ¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'oozato_1].
 
 ; Freq: 16
@@ -39626,6 +39809,7 @@ ichikawa_4 := loc_name-lex &
 
 ; Freq: 16
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;bogo-ru_1 := surname-lex &
 bogo-ru_1 := loc_name-lex &
@@ -39633,6 +39817,7 @@ bogo-ru_1 := loc_name-lex &
 
 ; Freq: 15
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;katashina_1 := surname-lex &
 katashina_1 := loc_name-lex &
@@ -39648,11 +39833,12 @@ kuwana_2 := loc_name-lex &
 [ORTH <! "·¬Ì¾" !>, SYNSEM.LKEYS.KEYREL.CARG 'kuwana_2].
 
 ; Freq: 15
-nagano_4 := surname-lex &
+nagano_4 := loc-or-surname-lex &
 [ORTH <! "±ÊÌî" !>, SYNSEM.LKEYS.KEYREL.CARG 'nagano_4].
 
 ; Freq: 15
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;yu-go_1 := surname-lex &
 yu-go_1 := loc_name-lex &
@@ -39668,18 +39854,19 @@ ashiya_2 := loc_name-lex &
 [ORTH <! "°²²°" !>, SYNSEM.LKEYS.KEYREL.CARG 'ashiya_2].
 
 ; Freq: 15
-miyazawa_2 := surname-lex &
+miyazawa_2 := loc-or-surname-lex &
 [ORTH <! "µÜÂô" !>, SYNSEM.LKEYS.KEYREL.CARG 'miyazawa_2].
 
 ; Freq: 15
 ;POS
 ;(TK 05-09-22)
 ;gifu_2 := surname-lex &
-gifu_2 := loc_name-lex &
+gifu_2 := loc-or-surname-lex &
 [ORTH <! "´ôÉì" !>, SYNSEM.LKEYS.KEYREL.CARG 'gifu_2].
 
 ; Freq: 15
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;kitakyuushuu_1 := surname-lex &
 kitakyuushuu_1 := loc_name-lex &
@@ -39698,11 +39885,12 @@ ORTH <! "¥Ý¥È" !>].
 ;HYOUKI
 ;(TK 05-09-21)
 ;gezan_1 := surname-lex &
-shimoyama_1 := surname-lex &
+shimoyama_1 := loc-or-surname-lex &
 [ORTH <! "²¼»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'shimoyama_1].
 
 ; Freq: 14
 ;POS
+;LNAME
 ;(TK 05-09-22)
 ;chichuukai_1 := surname-lex &
 chichuukai_1 := loc_name-lex &
@@ -39719,12 +39907,14 @@ kagawa_3 := loc_name-lex &
 
 ; Freq: 14
 ;POS
+;LNAME
 ;(TK 05-09-26)
 ;shiatoru_1 := surname-lex &
 shiatoru_1 := loc_name-lex &
 [ORTH <! "¥·¥¢¥È¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'shiatoru_1].
 
 ; Freq: 14
+;SNAME
 dei-ni_1 := surname-lex &
 [ORTH <! "¥Ç¥£¡¼¥Ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'dei-ni_1].
 
@@ -39735,7 +39925,7 @@ dei-ni_1 := surname-lex &
 ;[ORTH <! "¹±µ×" !>, SYNSEM.LKEYS.KEYREL.CARG 'koukyuu_2].
 
 ; Freq: 14
-morisaki_1 := surname-lex &
+morisaki_1 := loc-or-surname-lex &
 [ORTH <! "¿¹ºê" !>, SYNSEM.LKEYS.KEYREL.CARG 'morisaki_1].
 
 ; Freq: 14
@@ -39748,15 +39938,17 @@ sharaku_1 := other_name-lex &
 ORTH <! "¼Ì³Ú" !>].
 
 ; Freq: 14
-nozaka_1 := surname-lex &
+nozaka_1 := loc-or-surname-lex &
 [ORTH <! "Ìîºä" !>, SYNSEM.LKEYS.KEYREL.CARG 'nozaka_1].
 
 ; Freq: 14
+;SNAME
 mitteran_1 := surname-lex &
 [ORTH <! "¥ß¥Ã¥Æ¥é¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'mitteran_1].
 
 ; Freq: 14
 ;POS
+;LNAME
 ;(TK 05-09-26)
 ;nippon_1 := surname-lex &
 nippon_1 := loc_name-lex &
@@ -39764,6 +39956,7 @@ nippon_1 := loc_name-lex &
 
 ; Freq: 13
 ;POS
+;LNAME
 ;(TK 05-09-26)
 ;kasumigaseki_3 := surname-lex &
 kasumigaseki_3 := loc_name-lex &
@@ -39779,31 +39972,36 @@ saga_3 := loc_name-lex &
 [ORTH <! "º´²ì" !>, SYNSEM.LKEYS.KEYREL.CARG 'saga_3].
 
 ; Freq: 13
-nakasone_1 := surname-lex &
+nakasone_1 := loc-or-surname-lex &
 [ORTH <! "ÃæÁ¾º¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakasone_1].
 
 ; Freq: 13
-hosono_1 := surname-lex &
+hosono_1 := loc-or-surname-lex &
 [ORTH <! "ºÙÌî" !>, SYNSEM.LKEYS.KEYREL.CARG 'hosono_1].
 
 ; Freq: 13
-chou_2 := surname-lex &
-[ORTH <! "Ãú" !>, SYNSEM.LKEYS.KEYREL.CARG 'chou_2].
+;HYOUKI
+;(TK 05-09-26)
+;chou_2 := surname-lex &
+;[ORTH <! "Ãú" !>, SYNSEM.LKEYS.KEYREL.CARG 'chou_2].
+tei_5 := loc-or-surname-lex &
+[ORTH <! "Ãú" !>, SYNSEM.LKEYS.KEYREL.CARG 'tei_5].
 
 ; Freq: 13
-nakanishi_3 := surname-lex &
+nakanishi_3 := loc-or-surname-lex &
 [ORTH <! "ÃæÀ¾" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakanishi_3].
 
 ; Freq: 13
-koizumi_4 := surname-lex &
+koizumi_4 := loc-or-surname-lex &
 [ORTH <! "¾®Àô" !>, SYNSEM.LKEYS.KEYREL.CARG 'koizumi_4].
 
 ; Freq: 13
+;SNAME
 saccha-_1 := surname-lex &
 [ORTH <! "¥µ¥Ã¥Á¥ã¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'saccha-_1].
 
 ; Freq: 13
-takada_3 := surname-lex &
+takada_3 := loc-or-surname-lex &
 [ORTH <! "¹âÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'takada_3].
 
 ; Freq: 13
@@ -39817,6 +40015,7 @@ fujisawa_2 := loc_name-lex &
 
 ; Freq: 13
 ;POS
+;LNAME
 ;(TK 05-09-26)
 ;sandeiego_1 := surname-lex &
 sandeiego_1 := loc_name-lex &
@@ -39826,7 +40025,7 @@ sandeiego_1 := loc_name-lex &
 ;POS
 ;(TK 05-09-26)
 ;nakayama_2 := surname-lex &
-nakayama_2 := loc_name-lex &
+nakayama_2 := loc-or-surname-lex &
 [ORTH <! "Ãæ»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakayama_2].
 
 ; Freq: 13
@@ -39840,7 +40039,9 @@ ORTH <! "¶×¶Ó" !>].
 
 ; Freq: 12
 ;POS
+;FIXME
 ;(TK 05-09-26)
+;othername,loc
 ;goran_2 := surname-lex &
 goran_2 := loc_name-lex &
 [ORTH <! "¥´¥é¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'goran_2].
@@ -39852,22 +40053,23 @@ goran_2 := loc_name-lex &
 ;[ORTH <! "ËüÎ¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'mari_3].
 
 ; Freq: 12
-haniya_1 := surname-lex &
+haniya_1 := loc-or-surname-lex &
 [ORTH <! "¾ýÃ«" !>, SYNSEM.LKEYS.KEYREL.CARG 'haniya_1].
 
 ; Freq: 12
-mukouda_1 := surname-lex &
+mukouda_1 := loc-or-surname-lex &
 [ORTH <! "¸þÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'mukouda_1].
 
 ; Freq: 12
 ;POS
+;LNAME
 ;(TK 05-09-26)
 ;kankuu_1 := surname-lex &
 kankuu_1 := loc_name-lex &
 [ORTH <! "´Ø¶õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kankuu_1].
 
 ; Freq: 12
-gotou_1 := surname-lex &
+gotou_1 := loc-or-surname-lex &
 [ORTH <! "¸åÆ£" !>, SYNSEM.LKEYS.KEYREL.CARG 'gotou_1].
 
 ; Freq: 12
@@ -39880,12 +40082,14 @@ tochigi_2 := loc_name-lex &
 [ORTH <! "ÆÊÌÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'tochigi_2].
 
 ; Freq: 12
-hosomi_2 := surname-lex &
+hosomi_2 := loc-or-surname-lex &
 [ORTH <! "ºÙ¸«" !>, SYNSEM.LKEYS.KEYREL.CARG 'hosomi_2].
 
 ; Freq: 12
 ;POS
+;FIXME
 ;(TK 05-09-26)
+;other,loc
 ;sanyou_1 := surname-lex &
 sanyou_1 := loc_name-lex &
 [ORTH <! "»³ÍÛ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanyou_1].
@@ -39906,15 +40110,18 @@ morioka_4 := loc_name-lex &
 [ORTH <! "À¹²¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'morioka_4].
 
 ; Freq: 12
+;SNAME
 peri-_1 := surname-lex &
 [ORTH <! "¥Ú¥ê¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'peri-_1].
 
 ; Freq: 12
+;SNAME
 chierunomuirujin_1 := surname-lex &
 [ORTH <! "¥Á¥§¥ë¥Î¥à¥¤¥ë¥¸¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'chierunomuirujin_1].
 
 ; Freq: 12
 ;POS
+;LNAME
 ;(TK 05-09-26)
 ;jakaruta_1 := surname-lex &
 jakaruta_1 := loc_name-lex &
@@ -39924,7 +40131,7 @@ jakaruta_1 := loc_name-lex &
 ;POS
 ;(TK 05-09-26)
 ;kamaishi_1 := surname-lex &
-kamaishi_1 := loc_name-lex &
+kamaishi_1 := loc-or-surname-lex &
 [ORTH <! "³øÀÐ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamaishi_1].
 
 ; Freq: 12
@@ -39937,29 +40144,39 @@ wakanohana_1 := other_name-lex &
 ORTH <! "¼ãÇµ²Ö" !>].
 
 ; Freq: 12
-sakai_13 := surname-lex &
-[ORTH <! "ºæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sakai_13].
+;BAD
+;(TK 05-11-25)
+;¢ªloc-or-surname-lex¤ËÅý¹ç
+;sakai_13 := surname-lex &
+;[ORTH <! "ºæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sakai_13].
 
 ; Freq: 12
 ;POS
+;LNAME
 ;(TK 05-09-26)
 ;komagatake_1 := surname-lex &
 komagatake_1 := loc_name-lex &
 [ORTH <! "¶ð¥±³Ù" !>, SYNSEM.LKEYS.KEYREL.CARG 'komagatake_1].
 
 ; Freq: 12
-matsui_4 := surname-lex &
+matsui_4 := loc-or-surname-or-instname-lex &
 [ORTH <! "¾¾°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'matsui_4].
 
 ; Freq: 12
 ;POS
 ;(TK 05-09-26)
 ;chiyoda_1 := surname-lex &
-chiyoda_1 := loc_name-lex &
+chiyoda_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "ÀéÂåÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chiyoda_1].
 
 ; Freq: 12
-kunimatsu_1 := surname-lex &
+;POS
+;FIXME
+;(TK 05-09-26)
+;othername,loc
+;¤¹¤Ç¤Ëothername¤Ç¤ÎÅÐÏ¿¤¢¤ê
+;kunimatsu_1 := surname-lex &
+kunimatsu_1 := loc_name-lex &
 [ORTH <! "¹ñ¾¾" !>, SYNSEM.LKEYS.KEYREL.CARG 'kunimatsu_1].
 
 ; Freq: 12
@@ -39970,11 +40187,11 @@ ui-n_1 := loc_name-lex &
 [ORTH <! "¥¦¥£¡¼¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'ui-n_1].
 
 ; Freq: 12
-;POS
+;BAD
 ;(TK 05-09-26)
+;¢ªippanname¤ËÅý¹ç
 ;shidoni-_1 := surname-lex &
-shidoni-_1 := loc_name-lex &
-[ORTH <! "¥·¥É¥Ë¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'shidoni-_1].
+;[ORTH <! "¥·¥É¥Ë¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'shidoni-_1].
 
 ; Freq: 12
 kidu_2 := surname-lex &
@@ -39986,7 +40203,7 @@ kidu_3 := loc_name-lex &
 [ORTH <! "ÌÚÄÅ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kidu_3].
 
 ; Freq: 12
-yasuda_2 := surname-lex &
+yasuda_2 := loc-or-surname-lex &
 [ORTH <! "°ÂÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'yasuda_2].
 
 ; Freq: 12
@@ -39994,11 +40211,11 @@ yasuda_2 := surname-lex &
 ;(TK 05-09-26)
 ;shoukoku_1 := surname-lex &
 ;[ORTH <! "¾®¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shoukoku_1].
-oguni_1 := surname-lex &
+oguni_1 := loc-or-surname-lex &
 [ORTH <! "¾®¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'oguni_1].
 
 ; Freq: 12
-kanemaru_1 := surname-lex &
+kanemaru_1 := loc-or-surname-lex &
 [ORTH <! "¶â´Ý" !>, SYNSEM.LKEYS.KEYREL.CARG 'kanemaru_1].
 
 ; Freq: 11
@@ -40011,11 +40228,10 @@ waka_2 := other_name-lex &
 ORTH <! "¼ã" !>].
 
 ; Freq: 11
-ebisu_2 := surname-lex &
-[ORTH <! "½¿" !>, SYNSEM.LKEYS.KEYREL.CARG 'ebisu_2].
-
-;TSUIKA
+;POS
 ;(TK 05-09-26)
+;ebisu_2 := surname-lex &
+;[ORTH <! "½¿" !>, SYNSEM.LKEYS.KEYREL.CARG 'ebisu_2].
 ebisu-1-ippanname := 
 ippan-name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'ebisu,
@@ -40032,10 +40248,11 @@ ippan-name-lex &
 ORTH <! "ÉðÂ¢Ìî" !>].
 
 ; Freq: 11
-sakada_1 := surname-lex &
+sakada_1 := loc-or-surname-lex &
 [ORTH <! "ºäÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sakada_1].
 
 ; Freq: 11
+;SNAME
 kozuirefu_1 := surname-lex &
 [ORTH <! "¥³¥º¥¤¥ì¥Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kozuirefu_1].
 
@@ -40045,7 +40262,7 @@ kozuirefu_1 := surname-lex &
 ;(TK 05-09-26)
 ;fukita_2 := surname-lex &
 ;[ORTH <! "¿áÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'fukita_2].
-suita_1 := loc_name-lex &
+suita_1 := loc-or-surname-lex &
 [ORTH <! "¿áÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'suita_1].
 
 ; Freq: 11
@@ -40064,19 +40281,16 @@ nago_5 := loc_name-lex &
 [ORTH <! "Ì¾¸î" !>, SYNSEM.LKEYS.KEYREL.CARG 'nago_5].
 
 ; Freq: 11
+;SNAME
 ken_3 := surname-lex &
 [ORTH <! "¸¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'ken_3].
 
 ; Freq: 11
-
-;POS
-;(TK 05-09-26)
-;tokushima_1 := surname-lex &
-tokushima_1 := loc_name-lex &
+tokushima_1 := loc-or-surname-lex &
 [ORTH <! "ÆÁÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'tokushima_1].
 
 ; Freq: 11
-konoe_1 := surname-lex &
+konoe_1 := loc-or-surname-lex &
 [ORTH <! "¶á±Ò" !>, SYNSEM.LKEYS.KEYREL.CARG 'konoe_1].
 
 ; Freq: 11
@@ -40086,6 +40300,7 @@ tone_3 := surname-lex &
 ; Freq: 11
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;rokkou_2 := surname-lex &
 rokkou_2 := loc_name-lex &
 [ORTH <! "Ï»¹Ã" !>, SYNSEM.LKEYS.KEYREL.CARG 'rokkou_2].
@@ -40106,12 +40321,13 @@ furuburaito_1 := surname-lex &
 ; Freq: 11
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;karibu_1 := surname-lex &
 karibu_1 := loc_name-lex &
 [ORTH <! "¥«¥ê¥Ö" !>, SYNSEM.LKEYS.KEYREL.CARG 'karibu_1].
 
 ; Freq: 11
-ooyagi_2 := surname-lex &
+ooyagi_2 := loc-or-surname-lex &
 [ORTH <! "ÂçÈ¬ÌÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ooyagi_2].
 
 ; Freq: 11
@@ -40124,18 +40340,21 @@ tanabe_2 := loc_name-lex &
 [ORTH <! "ÅÄÊÕ" !>, SYNSEM.LKEYS.KEYREL.CARG 'tanabe_2].
 
 ; Freq: 11
-takeshita_1 := surname-lex &
+takeshita_1 := loc-or-surname-lex &
 [ORTH <! "ÃÝ²¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'takeshita_1].
 
 ; Freq: 11
 ;POS
 ;(TK 05-09-26)
 ;maiduru_1 := surname-lex &
-maiduru_1 := loc_name-lex &
+maiduru_1 := loc-or-surname-lex &
 [ORTH <! "ÉñÄá" !>, SYNSEM.LKEYS.KEYREL.CARG 'maiduru_1].
 
 ; Freq: 11
-oobayashi_1 := surname-lex &
+;POS
+;(TK 05-11-28)
+;oobayashi_1 := surname-lex &
+oobayashi_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "ÂçÎÓ" !>, SYNSEM.LKEYS.KEYREL.CARG 'oobayashi_1].
 
 ; Freq: 11
@@ -40150,6 +40369,7 @@ moriyama_3 := loc_name-lex &
 ; Freq: 11
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;koushien_1 := surname-lex &
 koushien_1 := loc_name-lex &
 [ORTH <! "¹Ã»Ò±à" !>, SYNSEM.LKEYS.KEYREL.CARG 'koushien_1].
@@ -40157,6 +40377,7 @@ koushien_1 := loc_name-lex &
 ; Freq: 11
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;kugayama_1 := surname-lex &
 kugayama_1 := loc_name-lex &
 [ORTH <! "µ×²æ»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'kugayama_1].
@@ -40164,19 +40385,27 @@ kugayama_1 := loc_name-lex &
 ; Freq: 11
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;tenQanmon_1 := surname-lex &
 tenQanmon_1 := loc_name-lex &
 [ORTH <! "Å·°ÂÌç" !>, SYNSEM.LKEYS.KEYREL.CARG 'tenQanmon_1].
 
 ; Freq: 11
-mitsui_7 := surname-lex &
+;POS
+;(TK 05-11-28)
+mitsui_7 := loc-or-surname-or-instname-lex &
 [ORTH <! "»°°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'mitsui_7].
 
 ; Freq: 10
-;POS
-;(TK 05-09-26)
+;HYOUKI
+;(TK 05-11-28)
 ;ryounai_1 := surname-lex &
 ;[ORTH <! "ÎÎÆâ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ryounai_1].
+ryouuchi_1 := surname-lex &
+[ORTH <! "ÎÎÆâ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ryouuchi_1].
+
+;TSUIKA
+;(TK 05-11-28)
 ryounai_n1 := ordinary-nohon-n-lex &
 [ORTH <! "ÎÎÆâ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ryounai_n_1_rel].
 
@@ -40198,24 +40427,27 @@ ORTH <! "¾®¶Ó" !>].
 ; Freq: 10
 ;BAD
 ;(TK 05-09-26)
+;¢ªothername¤ËÅý¹ç
 ;hiroshi_1 := surname-lex &
 ;[ORTH <! "¹­" !>, SYNSEM.LKEYS.KEYREL.CARG 'hiroshi_1].
 
 ; Freq: 10
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;sanpauro_1 := surname-lex &
 sanpauro_1 := loc_name-lex &
 [ORTH <! "¥µ¥ó¥Ñ¥¦¥í" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanpauro_1].
 
 ; Freq: 10
 ;POS
-;(TK 05-09-26)
+;(TK 05-11-28)
 ;takaraduka_1 := surname-lex &
-takaraduka_1 := loc_name-lex &
+takaraduka_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "ÊõÄÍ" !>, SYNSEM.LKEYS.KEYREL.CARG 'takaraduka_1].
 
 ; Freq: 10
+;SNAME
 arafato_1 := surname-lex &
 [ORTH <! "¥¢¥é¥Õ¥¡¥È" !>, SYNSEM.LKEYS.KEYREL.CARG 'arafato_1].
 
@@ -40228,22 +40460,29 @@ pi-_n1 := ordinary-nohon-n-lex &
 [ORTH <! "£Ð" !>, SYNSEM.LKEYS.KEYREL.PRED '_pi-_n_1_rel].
 
 ; Freq: 10
-ko-ku_1 := surname-lex &
+;POS
+;(TK 05-11-28)
+;ko-ku_1 := surname-lex &
+ko-ku_1 := loc-or-surname-or-instname-lex &
 [ORTH <! "¥³¡¼¥¯" !>, SYNSEM.LKEYS.KEYREL.CARG 'ko-ku_1].
 
 ; Freq: 10
 ;POS
 ;(TK 05-09-26)
 ;hachiouji_2 := surname-lex &
-hachiouji_2 := loc_name-lex &
+hachiouji_2 := loc-or-surname-lex &
 [ORTH <! "È¬²¦»Ò" !>, SYNSEM.LKEYS.KEYREL.CARG 'hachiouji_2].
 
 ; Freq: 10
+;SNAME
 raishawa-_1 := surname-lex &
 [ORTH <! "¥é¥¤¥·¥ã¥ï¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'raishawa-_1].
 
 ; Freq: 10
-do-ru_1 := surname-lex &
+;POS
+;(TK 05-11-28)
+;do-ru_1 := surname-lex &
+do-ru_1 := surname-or-instname-lex &
 [ORTH <! "¥É¡¼¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'do-ru_1].
 
 ;TSUIKA
@@ -40252,14 +40491,17 @@ do-ru_n2 := ordinary-nohon-n-lex &
 [ORTH <! "¥É¡¼¥ë" !>, SYNSEM.LKEYS.KEYREL.PRED '_do-ru_n_2_rel].
 
 ; Freq: 10
-;BAD
-;(TK 05-09-26)
+;HYOUKI
+;(TK 05-11-28)
 ;nyuu_1 := surname-lex &
 ;[ORTH <! "Æþ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nyuu_1].
+iri_2 := surname-lex &
+[ORTH <! "Æþ" !>, SYNSEM.LKEYS.KEYREL.CARG 'iri_2].
 
 ; Freq: 10
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;komagane_2 := surname-lex &
 komagane_2 := loc_name-lex &
 [ORTH <! "¶ð¥±º¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'komagane_2].
@@ -40274,11 +40516,11 @@ oomori_3 := loc_name-lex &
 [ORTH <! "Âç¿¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'oomori_3].
 
 ; Freq: 10
-;BAD
-;(TK 05-09-26)
-;nyuu_1 := surname-lex &
+;POS
+;(TK 05-11-28)
 ;nobunaga_2 := surname-lex &
-;[ORTH <! "¿®Ä¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'nobunaga_2].
+nobunaga_2 := other_name-lex &
+[ORTH <! "¿®Ä¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'nobunaga_2].
 
 ; Freq: 10
 matsudo_1 := surname-lex &
@@ -40326,6 +40568,7 @@ motegi_3 := loc_name-lex &
 ; Freq: 10
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;rosanzerusu_1 := surname-lex &
 rosanzerusu_1 := loc_name-lex &
 [ORTH <! "¥í¥µ¥ó¥¼¥ë¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'rosanzerusu_1].
@@ -40350,12 +40593,16 @@ ippan-name-lex &
 ORTH <! "ÂçÀµ" !>].
 
 ; Freq: 9
-fukunishi_1 := surname-lex &
+fukunishi_1 := loc-or-surname-lex &
 [ORTH <! "Ê¡À¾" !>, SYNSEM.LKEYS.KEYREL.CARG 'fukunishi_1].
 
 ; Freq: 9
-hatsutori_1 := surname-lex &
-[ORTH <! "ÉþÉô" !>, SYNSEM.LKEYS.KEYREL.CARG 'hatsutori_1].
+;HYOUKI
+;(TK 05-11-28)
+;hatsutori_1 := surname-lex &
+;[ORTH <! "ÉþÉô" !>, SYNSEM.LKEYS.KEYREL.CARG 'hatsutori_1].
+hattori_1 := loc-or-surname-lex &
+[ORTH <! "ÉþÉô" !>, SYNSEM.LKEYS.KEYREL.CARG 'hattori_1].
 
 ; Freq: 9
 ;POS
@@ -40367,12 +40614,14 @@ shouboku_1 := loc_name-lex &
 [ORTH <! "¾¡ËÌ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shouboku_1].
 
 ; Freq: 9
+;SNAME
 boku_1 := surname-lex &
 [ORTH <! "ËÑ" !>, SYNSEM.LKEYS.KEYREL.CARG 'boku_1].
 
 ; Freq: 9
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;kushiro_1 := surname-lex &
 kushiro_1 := loc_name-lex &
 [ORTH <! "¶üÏ©" !>, SYNSEM.LKEYS.KEYREL.CARG 'kushiro_1].
@@ -40387,11 +40636,11 @@ miyazaki_3 := loc_name-lex &
 [ORTH <! "µÜºê" !>, SYNSEM.LKEYS.KEYREL.CARG 'miyazaki_3].
 
 ; Freq: 9
-izawa_1 := surname-lex &
+izawa_1 := loc-or-surname-lex &
 [ORTH <! "°æÂô" !>, SYNSEM.LKEYS.KEYREL.CARG 'izawa_1].
 
 ; Freq: 9
-maeda_2 := surname-lex &
+maeda_2 := loc-or-surname-lex &
 [ORTH <! "Á°ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'maeda_2].
 
 ; Freq: 9
@@ -40404,33 +40653,37 @@ kamo_4 := loc_name-lex &
 [ORTH <! "²ÃÌÐ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamo_4].
 
 ; Freq: 9
-fukude_1 := surname-lex &
+fukude_1 := loc-or-surname-lex &
 [ORTH <! "Ê¡ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'fukude_1].
 
 ; Freq: 9
+;SNAME
 ramosu_1 := surname-lex &
 [ORTH <! "¥é¥â¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'ramosu_1].
 
 ; Freq: 9
-morii_3 := surname-lex &
+morii_3 := loc-or-surname-lex &
 [ORTH <! "¿¹°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'morii_3].
 
 ; Freq: 9
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;tama_6 := surname-lex &
 tama_6 := loc_name-lex &
 [ORTH <! "Â¿Ëà" !>, SYNSEM.LKEYS.KEYREL.CARG 'tama_6].
 
 ; Freq: 9
 ;BAD
-;(TK 05-09-26)
+;(TK 05-11-28)
+;¢ªothername¤ËÅý¹ç
 ;shin_3 := surname-lex &
 ;[ORTH <! "À¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'shin_3].
 
 ; Freq: 9
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;awajishima_1 := surname-lex &
 awajishima_1 := loc_name-lex &
 [ORTH <! "Ã¸Ï©Åç" !>, SYNSEM.LKEYS.KEYREL.CARG 'awajishima_1].
@@ -40447,6 +40700,7 @@ kiba_3 := loc_name-lex &
 ; Freq: 9
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;rirehanmeru_1 := surname-lex &
 rirehanmeru_1 := loc_name-lex &
 [ORTH <! "¥ê¥ì¥Ï¥ó¥á¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'rirehanmeru_1].
@@ -40463,6 +40717,7 @@ ogasawara_2 := loc_name-lex &
 ; Freq: 9
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;shiberia_1 := surname-lex &
 shiberia_1 := loc_name-lex &
 [ORTH <! "¥·¥Ù¥ê¥¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'shiberia_1].
@@ -40471,7 +40726,7 @@ shiberia_1 := loc_name-lex &
 ;POS
 ;(TK 05-09-26)
 ;fuchiyuu_1 := surname-lex &
-fuchiyuu_1 := loc_name-lex &
+fuchiyuu_1 := loc-or-surname-lex &
 [ORTH <! "ÉÜÃæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'fuchiyuu_1].
 
 ;TSUIKA
@@ -40482,21 +40737,28 @@ fuchiyuu_n2 := ordinary-nohon-n-lex &
 ; Freq: 9
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;hawai_2 := surname-lex &
 hawai_2 := loc_name-lex &
 [ORTH <! "¥Ï¥ï¥¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'hawai_2].
 
 ; Freq: 9
+;SNAME
 monde-ru_1 := surname-lex &
 [ORTH <! "¥â¥ó¥Ç¡¼¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'monde-ru_1].
 
 ; Freq: 9
+;SNAME
 re-gan_1 := surname-lex &
 [ORTH <! "¥ì¡¼¥¬¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 're-gan_1].
 
 ; Freq: 9
-nakabaru_1 := surname-lex &
-[ORTH <! "Ãæ¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakabaru_1].
+;HYOUKI
+;(TK 05-11-28)
+;nakabaru_1 := surname-lex &
+;[ORTH <! "Ãæ¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakabaru_1].
+nakahara_1 := loc-or-surname-lex &
+[ORTH <! "Ãæ¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakahara_1].
 
 ; Freq: 9
 ;HYOUKI
@@ -40512,31 +40774,33 @@ tottori_2 := loc_name-lex &
 [ORTH <! "Ä»¼è" !>, SYNSEM.LKEYS.KEYREL.CARG 'tottori_2].
 
 ; Freq: 9
-hoshino_1 := surname-lex &
+hoshino_1 := loc-or-surname-lex &
 [ORTH <! "À±Ìî" !>, SYNSEM.LKEYS.KEYREL.CARG 'hoshino_1].
 
 ; Freq: 9
-;POS
-;(TK 05-09-26)
-;futsu_2 := surname-lex &
-;[ORTH <! "¥Õ¥Ä" !>, SYNSEM.LKEYS.KEYREL.CARG 'futsu_2].
+futsu_2 := loc-or-surname-lex &
+[ORTH <! "¥Õ¥Ä" !>, SYNSEM.LKEYS.KEYREL.CARG 'futsu_2].
+
+;TSUIKA
+;(TK 05-11-28)
 futsu_n1 := ordinary-nohon-n-lex &
 [ORTH <! "¥Õ¥Ä" !>, SYNSEM.LKEYS.KEYREL.PRED '_futsu_n_1_rel].
 
 ; Freq: 9
-yaguchi_1 := surname-lex &
+yaguchi_1 := loc-or-surname-lex &
 [ORTH <! "Ìð¸ý" !>, SYNSEM.LKEYS.KEYREL.CARG 'yaguchi_1].
 
 ; Freq: 9
 ;POS
 ;(TK 05-09-26)
+;LNAME
 ;ingu-shi_1 := surname-lex &
 ;[ORTH <! "¥¤¥ó¥°¡¼¥·" !>, SYNSEM.LKEYS.KEYREL.CARG 'ingu-shi_1].
 ingu-shi_1 := loc_name-lex &
 [ORTH <! "¥¤¥ó¥°¡¼¥·" !>, SYNSEM.LKEYS.KEYREL.CARG 'ingu-shi_1].
 
 ; Freq: 9
-doi_1 := surname-lex &
+doi_1 := loc-or-surname-lex &
 [ORTH <! "ÅÚ°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'doi_1].
 
 ; Freq: 9
@@ -40549,22 +40813,23 @@ arakawa_2 := loc_name-lex &
 [ORTH <! "¹ÓÀî" !>, SYNSEM.LKEYS.KEYREL.CARG 'arakawa_2].
 
 ; Freq: 9
+;SNAME
 suta-rin_1 := surname-lex &
 [ORTH <! "¥¹¥¿¡¼¥ê¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'suta-rin_1].
 
 ; Freq: 8
-akiyama_2 := surname-lex &
+akiyama_2 := loc-or-surname-lex &
 [ORTH <! "½©»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'akiyama_2].
 
 ; Freq: 8
 ;POS
-;(TK 05-09-27)
+;(TK 05-11-28)
 ;hitachi_2 := surname-lex &
-hitachi_2 := loc_name-lex &
+hitachi_2 := loc-or-surname-or-instname-lex &
 [ORTH <! "ÆüÎ©" !>, SYNSEM.LKEYS.KEYREL.CARG 'hitachi_2].
 
 ; Freq: 8
-tokugawa_1 := surname-lex &
+tokugawa_1 := loc-or-surname-lex &
 [ORTH <! "ÆÁÀî" !>, SYNSEM.LKEYS.KEYREL.CARG 'tokugawa_1].
 
 ; Freq: 8
@@ -40597,13 +40862,15 @@ takamatsu_2 := loc_name-lex &
 
 ; Freq: 8
 ;BAD
-;(TK 05-09-27)
+;(TK 05-11-28)
+;¢ªothername¤ËÅý¹ç
 ;gorou_1 := surname-lex &
 ;[ORTH <! "¸ÞÏº" !>, SYNSEM.LKEYS.KEYREL.CARG 'gorou_1].
 
 ; Freq: 8
 ;BAD
-;(TK 05-09-27)
+;(TK 05-11-28)
+;¢ªloc-or-surname-or-instname-lex¤ËÅý¹ç
 ;touhou_3 := surname-lex &
 ;[ORTH <! "ÅìÊõ" !>, SYNSEM.LKEYS.KEYREL.CARG 'touhou_3].
 
@@ -40649,7 +40916,7 @@ nishikawa_4 := loc_name-lex &
 [ORTH <! "À¾Àî" !>, SYNSEM.LKEYS.KEYREL.CARG 'nishikawa_4].
 
 ; Freq: 8
-tei_3 := surname-lex &
+tei_3 := loc-or-surname-lex &
 [ORTH <! "Å¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'tei_3].
 
 ; Freq: 8
@@ -40657,25 +40924,23 @@ tei_3 := surname-lex &
 ;(TK 05-09-27)
 ;chuudou_1 := surname-lex &
 ;[ORTH <! "ÃæÆ»" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuudou_1].
-nakamichi_1 := surname-lex &
+nakamichi_1 := loc-or-surname-lex &
 [ORTH <! "ÃæÆ»" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakamichi_1].
 
 ; Freq: 8
-sasaki_10 := surname-lex &
+sasaki_10 := loc-or-surname-lex &
 [ORTH <! "º´¡¹ÌÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sasaki_10].
 
 ; Freq: 8
-noguchi_2 := surname-lex &
+noguchi_2 := loc-or-surname-lex &
 [ORTH <! "Ìî¸ý" !>, SYNSEM.LKEYS.KEYREL.CARG 'noguchi_2].
 
 ; Freq: 8
-;POS
-;(TK 05-09-27)
-;suginami_1 := surname-lex &
-suginami_1 := loc_name-lex &
+suginami_1 := loc-or-surname-lex &
 [ORTH <! "¿ùÊÂ" !>, SYNSEM.LKEYS.KEYREL.CARG 'suginami_1].
 
 ; Freq: 8
+;SNAME
 makari-_1 := surname-lex &
 [ORTH <! "¥Þ¥«¥ê¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'makari-_1].
 
@@ -40686,7 +40951,7 @@ makari-_1 := surname-lex &
 ;[ORTH <! "»°Ïº" !>, SYNSEM.LKEYS.KEYREL.CARG 'saburoo_1].
 
 ; Freq: 8
-araya_1 := surname-lex &
+araya_1 := loc-or-surname-lex &
 [ORTH <! "¹ÓÃ«" !>, SYNSEM.LKEYS.KEYREL.CARG 'araya_1].
 
 ; Freq: 8
@@ -40699,11 +40964,14 @@ ha-ba-do_2 := inst_name-lex &
 [ORTH <! "¥Ï¡¼¥Ð¡¼¥É" !>, SYNSEM.LKEYS.KEYREL.CARG 'ha-ba-do_2].
 
 ; Freq: 8
-gi_2 := surname-lex &
-[ORTH <! "ò²" !>, SYNSEM.LKEYS.KEYREL.CARG 'gi_2].
+;BAD
+;(TK 05-11-28)
+;¢ªloc-or-surname-lex¤ËÅý¹ç
+;gi_2 := surname-lex &
+;[ORTH <! "ò²" !>, SYNSEM.LKEYS.KEYREL.CARG 'gi_2].
 
 ; Freq: 8
-mouri_1 := surname-lex &
+mouri_1 := loc-or-surname-lex &
 [ORTH <! "ÌÓÍø" !>, SYNSEM.LKEYS.KEYREL.CARG 'mouri_1].
 
 ; Freq: 8
@@ -40718,12 +40986,15 @@ yonenaga_2 := surname-lex &
 [ORTH <! "ÊÆÄ¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'yonenaga_2].
 
 ; Freq: 8
-imazaki_1 := surname-lex &
+imazaki_1 := loc-or-surname-lex &
 [ORTH <! "º£ºê" !>, SYNSEM.LKEYS.KEYREL.CARG 'imazaki_1].
 
 ; Freq: 8
-asuka_3 := surname-lex &
-[ORTH <! "ÈôÄ»" !>, SYNSEM.LKEYS.KEYREL.CARG 'asuka_3].
+;BAD
+;(TK 05-11-28)
+;¢ªippanname¤ËÅý¹ç
+;asuka_3 := surname-lex &
+;[ORTH <! "ÈôÄ»" !>, SYNSEM.LKEYS.KEYREL.CARG 'asuka_3].
 
 ; Freq: 8
 edogawa_1 := surname-lex &
@@ -40744,26 +41015,23 @@ ippan-name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'naniwa,
 ORTH <! "Ï²Â®" !>].
 
-;TSUIKA
-;(TK 05-09-27)
-naniwa_3 := loc_name-lex &
-[ORTH <! "Ï²Â®" !>, SYNSEM.LKEYS.KEYREL.CARG 'naniwa_3].
-
 ; Freq: 8
-masuda_5 := surname-lex &
+masuda_5 := loc-or-surname-lex &
 [ORTH <! "¾£ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'masuda_5].
 
 ; Freq: 8
-motoki_1 := surname-lex &
+motoki_1 := loc-or-surname-lex &
 [ORTH <! "¸µÌÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'motoki_1].
 
 ; Freq: 8
+;SNAME
 sedeijo_1 := surname-lex &
 [ORTH <! "¥»¥Ç¥£¥¸¥ç" !>, SYNSEM.LKEYS.KEYREL.CARG 'sedeijo_1].
 
 ; Freq: 8
 ;POS
 ;(TK 05-09-27)
+;FNAME
 ;raji_1 := surname-lex &
 raji_1 := first_name-lex &
 [ORTH <! "¥é¥¸" !>, SYNSEM.LKEYS.KEYREL.CARG 'raji_1].
@@ -40771,6 +41039,7 @@ raji_1 := first_name-lex &
 ; Freq: 8
 ;POS
 ;(TK 05-09-27)
+;FNAME
 ;hirari-_1 := surname-lex &
 hirari-_1 := first_name-lex &
 [ORTH <! "¥Ò¥é¥ê¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'hirari-_1].
@@ -40783,17 +41052,16 @@ yomitan_1 := loc_name-lex &
 [ORTH <! "ÆÉÃ«" !>, SYNSEM.LKEYS.KEYREL.CARG 'yomitan_1].
 
 ; Freq: 8
-hino_4 := surname-lex &
+;POS
+;(TK 05-11-28)
+;hino_4 := surname-lex &
+hino_4 := loc-or-surname-or-instname-lex &
 [ORTH <! "ÆüÌî" !>, SYNSEM.LKEYS.KEYREL.CARG 'hino_4].
-
-;TSUIKA
-;(TK 05-09-27)
-hino_5 := loc_name-lex &
-[ORTH <! "ÆüÌî" !>, SYNSEM.LKEYS.KEYREL.CARG 'hino_5].
 
 ; Freq: 8
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;buryusseru_1 := surname-lex &
 buryusseru_1 := loc_name-lex &
 [ORTH <! "¥Ö¥ê¥å¥Ã¥»¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'buryusseru_1].
@@ -40801,11 +41069,13 @@ buryusseru_1 := loc_name-lex &
 ; Freq: 8
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;berurin_1 := surname-lex &
 berurin_1 := loc_name-lex &
 [ORTH <! "¥Ù¥ë¥ê¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'berurin_1].
 
 ; Freq: 8
+;SNAME
 peresu_1 := surname-lex &
 [ORTH <! "¥Ú¥ì¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'peresu_1].
 
@@ -40819,18 +41089,20 @@ sumida_4 := loc_name-lex &
 [ORTH <! "ËÏÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sumida_4].
 
 ; Freq: 8
+;SNAME
 fusein_1 := surname-lex &
 [ORTH <! "¥Õ¥»¥¤¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'fusein_1].
 
 ; Freq: 8
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;nihonkoku_1 := surname-lex &
 nihonkoku_1 := loc_name-lex &
 [ORTH <! "ÆüËÜ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nihonkoku_1].
 
 ; Freq: 8
-kitajima_3 := surname-lex &
+kitajima_3 := loc-or-surname-lex &
 [ORTH <! "ËÌÅè" !>, SYNSEM.LKEYS.KEYREL.CARG 'kitajima_3].
 
 ; Freq: 7
@@ -40840,15 +41112,16 @@ kitajima_3 := surname-lex &
 ;[ORTH <! "¹¯" !>, SYNSEM.LKEYS.KEYREL.CARG 'yasushi_2].
 
 ; Freq: 7
+;SNAME
 mandera_1 := surname-lex &
 [ORTH <! "¥Þ¥ó¥Ç¥é" !>, SYNSEM.LKEYS.KEYREL.CARG 'mandera_1].
 
 ; Freq: 7
-inoki_3 := surname-lex &
+inoki_3 := loc-or-surname-lex &
 [ORTH <! "ÃöÌÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'inoki_3].
 
 ; Freq: 7
-morita_1 := surname-lex &
+morita_1 := loc-or-surname-lex &
 [ORTH <! "¿¹ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'morita_1].
 
 ; Freq: 7
@@ -40861,29 +41134,33 @@ nagaoka_2 := loc_name-lex &
 [ORTH <! "Ä¹²¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'nagaoka_2].
 
 ; Freq: 7
-narazaki_3 := surname-lex &
+narazaki_3 := loc-or-surname-lex &
 [ORTH <! "Æêºê" !>, SYNSEM.LKEYS.KEYREL.CARG 'narazaki_3].
 
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;pusan_2 := surname-lex &
 pusan_2 := loc_name-lex &
 [ORTH <! "³ø»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'pusan_2].
 
+;TSUIKA
+;HYOUKI
+;(TK 05-11-28)
+kamayama_1 := loc-or-surname-lex &
+[ORTH <! "³ø»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamayama_1].
+
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;izumiootsu_1 := surname-lex &
 izumiootsu_1 := loc_name-lex &
 [ORTH <! "ÀôÂçÄÅ" !>, SYNSEM.LKEYS.KEYREL.CARG 'izumiootsu_1].
 
 ; Freq: 7
-;POS
-;HYOUKI
-;(TK 05-09-27)
-;jouhou_1 := surname-lex &
-kamigata_2 := loc_name-lex &
+kamigata_2 := loc-or-surname-lex &
 [ORTH <! "¾åÊý" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamigata_2].
 
 ; Freq: 7
@@ -40905,11 +41182,11 @@ shirahama_3 := loc_name-lex &
 [ORTH <! "ÇòÉÍ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shirahama_3].
 
 ; Freq: 7
-uchida_3 := surname-lex &
+uchida_3 := loc-or-surname-lex &
 [ORTH <! "ÆâÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'uchida_3].
 
 ; Freq: 7
-takamura_4 := surname-lex &
+takamura_4 := loc-or-surname-lex &
 [ORTH <! "¹âÂ¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'takamura_4].
 
 ; Freq: 7
@@ -40942,6 +41219,7 @@ kawanishi_2 := loc_name-lex &
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;shinQoosaka_1 := surname-lex &
 shinQoosaka_1 := loc_name-lex &
 [ORTH <! "¿·Âçºå" !>, SYNSEM.LKEYS.KEYREL.CARG 'shinQoosaka_1].
@@ -40951,12 +41229,13 @@ shinQoosaka_1 := loc_name-lex &
 ;(TK 05-09-27)
 ;kobuchi_2 := surname-lex &
 ;[ORTH <! "¾®Þ¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'kobuchi_2].
-obuchi_2 := surname-lex &
+obuchi_2 := loc-or-surname-lex &
 [ORTH <! "¾®Þ¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'obuchi_2].
 
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;don_3 := surname-lex &
 don_3 := loc_name-lex &
 [ORTH <! "¥É¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'don_3].
@@ -40966,7 +41245,7 @@ don_3 := loc_name-lex &
 ;(TK 05-09-27)
 ;wakada_1 := surname-lex &
 ;[ORTH <! "¼ãÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'wakada_1].
-wakata_1 := surname-lex &
+wakata_1 := loc-or-surname-lex &
 [ORTH <! "¼ãÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'wakata_1].
 
 ; Freq: 7
@@ -40978,7 +41257,7 @@ tennouji_1 := surname-lex &
 ;(TK 05-09-27)
 ;honzan_1 := surname-lex &
 ;[ORTH <! "ËÜ»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'honzan_1].
-motoyama_1 := surname-lex &
+motoyama_1 := loc-or-surname-lex &
 [ORTH <! "ËÜ»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'motoyama_1].
 
 ; Freq: 7
@@ -40993,6 +41272,7 @@ oomachi_2 := loc_name-lex &
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;biwako_2 := surname-lex &
 biwako_2 := loc_name-lex &
 [ORTH <! "ÈüÇÊ¸Ð" !>, SYNSEM.LKEYS.KEYREL.CARG 'biwako_2].
@@ -41000,6 +41280,7 @@ biwako_2 := loc_name-lex &
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;sugamo_1 := surname-lex &
 sugamo_1 := loc_name-lex &
 [ORTH <! "Áã³û" !>, SYNSEM.LKEYS.KEYREL.CARG 'sugamo_1].
@@ -41014,13 +41295,11 @@ fukuyama_2 := loc_name-lex &
 [ORTH <! "Ê¡»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'fukuyama_2].
 
 ; Freq: 7
-;POS
-;(TK 05-09-27)
-;hakone_1 := surname-lex &
-hakone_1 := loc_name-lex &
+hakone_1 := loc-or-surname-lex &
 [ORTH <! "È¢º¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'hakone_1].
 
 ; Freq: 7
+;SNAME
 doro-ru_1 := surname-lex &
 [ORTH <! "¥É¥í¡¼¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'doro-ru_1].
 
@@ -41028,22 +41307,21 @@ doro-ru_1 := surname-lex &
 ;POS
 ;(TK 05-09-27)
 ;beishuu_1 := surname-lex &
+;LNAME
 beishuu_1 := loc_name-lex &
 [ORTH <! "ÊÆ½£" !>, SYNSEM.LKEYS.KEYREL.CARG 'beishuu_1].
 
 ; Freq: 7
-cha-ruzu_1 := surname-lex &
+;POS
+;(TK 05-11-28)
+;cha-ruzu_1 := surname-lex &
+cha-ruzu_1 := other_name-lex &
 [ORTH <! "¥Á¥ã¡¼¥ë¥º" !>, SYNSEM.LKEYS.KEYREL.CARG 'cha-ruzu_1].
-
-;TSUIKA
-;(TK05-09-27)
-cha-ruzu_2 := other_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'cha-ruzu_person,
-ORTH <! "¥Á¥ã¡¼¥ë¥º" !>].
 
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;higashinada_1 := surname-lex &
 higashinada_1 := loc_name-lex &
 [ORTH <! "ÅìÆç" !>, SYNSEM.LKEYS.KEYREL.CARG 'higashinada_1].
@@ -41051,6 +41329,7 @@ higashinada_1 := loc_name-lex &
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;kamikuishiki_1 := surname-lex &
 kamikuishiki_1 := loc_name-lex &
 [ORTH <! "¾å¶å°ì¿§" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamikuishiki_1].
@@ -41058,6 +41337,7 @@ kamikuishiki_1 := loc_name-lex &
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;kanton_1 := surname-lex &
 kanton_1 := loc_name-lex &
 [ORTH <! "¹­Åì" !>, SYNSEM.LKEYS.KEYREL.CARG 'kanton_1].
@@ -41067,19 +41347,16 @@ kanton_1 := loc_name-lex &
 ;(TK 05-09-27)
 ;kawajima_1 := surname-lex &
 ;[ORTH <! "ÀîÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawajima_1].
-kawashima_1 := surname-lex &
+kawashima_1 := loc-or-surname-lex &
 [ORTH <! "ÀîÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawashima_1].
 
-;TSUIKA
-;(TK05-09-27)
-kawajima_2 := loc_name-lex &
-[ORTH <! "ÀîÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawajima_2].
-
 ; Freq: 7
+;SNAME
 marado-na_1 := surname-lex &
 [ORTH <! "¥Þ¥é¥É¡¼¥Ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'marado-na_1].
 
 ; Freq: 7
+;SNAME
 ru-bin_1 := surname-lex &
 [ORTH <! "¥ë¡¼¥Ó¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'ru-bin_1].
 
@@ -41092,6 +41369,7 @@ tamiru_n1 := ordinary-nohon-n-lex &
 [ORTH <! "¥¿¥ß¥ë" !>, SYNSEM.LKEYS.KEYREL.PRED '_tamiru_n_1_rel].
 
 ; Freq: 7
+;SNAME
 bu_1 := surname-lex &
 [ORTH <! "Éð" !>, SYNSEM.LKEYS.KEYREL.CARG 'bu_1].
 
@@ -41131,14 +41409,16 @@ kinomoto_5 := loc_name-lex &
 [ORTH <! "ÌÚÇ·ËÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kinomoto_5].
 
 ; Freq: 7
-kawabuchi_3 := surname-lex &
+kawabuchi_3 := loc-or-surname-lex &
 [ORTH <! "ÀîÊ¥" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawabuchi_3].
 
 ; Freq: 7
+;SNAME
 gensha-_1 := surname-lex &
 [ORTH <! "¥²¥ó¥·¥ã¡¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'gensha-_1].
 
 ; Freq: 7
+;SNAME
 gorubachofu_1 := surname-lex &
 [ORTH <! "¥´¥ë¥Ð¥Á¥ç¥Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'gorubachofu_1].
 
@@ -41149,14 +41429,15 @@ gorubachofu_1 := surname-lex &
 ;[ORTH <! "ÁÇ»Ò" !>, SYNSEM.LKEYS.KEYREL.CARG 'soshi_3].
 
 ; Freq: 7
-shianu-ku_1 := surname-lex &
+;POS
+;(TK 05-11-28)
+;FNAME
+;shianu-ku_1 := surname-lex &
+shianu-ku_1 := first_name-lex &
 [ORTH <! "¥·¥¢¥Ì¡¼¥¯" !>, SYNSEM.LKEYS.KEYREL.CARG 'shianu-ku_1].
 
 ; Freq: 7
-;POS
-;(TK 05-09-27)
-;nerima_1 := surname-lex &
-nerima_1 := loc_name-lex &
+nerima_1 := loc-or-surname-lex &
 [ORTH <! "ÎýÇÏ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nerima_1].
 
 ; Freq: 7
@@ -41171,15 +41452,13 @@ kiso_3 := loc_name-lex &
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;tomakomai_1 := surname-lex &
 tomakomai_1 := loc_name-lex &
 [ORTH <! "ÆÑ¾®ËÒ" !>, SYNSEM.LKEYS.KEYREL.CARG 'tomakomai_1].
 
 ; Freq: 7
-;POS
-;(TK 05-09-27)
-;hiroshima_3 := surname-lex &
-hiroshima_3 := loc_name-lex &
+hiroshima_3 := loc-or-surname-lex &
 [ORTH <! "¥Ò¥í¥·¥Þ" !>, SYNSEM.LKEYS.KEYREL.CARG 'hiroshima_3].
 
 ; Freq: 7
@@ -41192,6 +41471,7 @@ kuroi_3 := loc_name-lex &
 [ORTH <! "¹õ°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kuroi_3].
 
 ; Freq: 7
+;SNAME
 shie-kusupia_1 := surname-lex &
 [ORTH <! "¥·¥§¡¼¥¯¥¹¥Ô¥¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'shie-kusupia_1].
 
@@ -41199,19 +41479,18 @@ shie-kusupia_1 := surname-lex &
 ;POS
 ;(TK 05-09-27)
 ;mogadeishio_1 := surname-lex &
+;LNAME
 mogadeishio_1 := loc_name-lex &
 [ORTH <! "¥â¥¬¥Ç¥£¥·¥ª" !>, SYNSEM.LKEYS.KEYREL.CARG 'mogadeishio_1].
 
 ; Freq: 7
-;POS
-;(TK 05-09-27)
-;toyonaka_1 := surname-lex &
-toyonaka_1 := loc_name-lex &
+toyonaka_1 := loc-or-surname-lex &
 [ORTH <! "Ë­Ãæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'toyonaka_1].
 
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;kasumigaura_1 := surname-lex &
 kasumigaura_1 := loc_name-lex &
 [ORTH <! "²â¥±±º" !>, SYNSEM.LKEYS.KEYREL.CARG 'kasumigaura_1].
@@ -41219,12 +41498,13 @@ kasumigaura_1 := loc_name-lex &
 ; Freq: 7
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;nishiyodogawa_1 := surname-lex &
 nishiyodogawa_1 := loc_name-lex &
 [ORTH <! "À¾ÍäÀî" !>, SYNSEM.LKEYS.KEYREL.CARG 'nishiyodogawa_1].
 
 ; Freq: 7
-sugawara_3 := surname-lex &
+sugawara_3 := loc-or-surname-lex &
 [ORTH <! "¿û¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'sugawara_3].
 
 ; Freq: 6
@@ -41239,6 +41519,7 @@ ooba_3 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-27)
+;LNAME
 ;okushiri_1 := surname-lex &
 okushiri_1 := loc_name-lex &
 [ORTH <! "±ü¿¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'okushiri_1].
@@ -41267,7 +41548,7 @@ kawamoto_6 := loc_name-lex &
 [ORTH <! "ÀîËÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawamoto_6].
 
 ; Freq: 6
-horii_2 := surname-lex &
+horii_2 := loc-or-surname-lex &
 [ORTH <! "ËÙ°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'horii_2].
 
 ; Freq: 6
@@ -41290,7 +41571,7 @@ kuze_2 := loc_name-lex &
 [ORTH <! "µ×À¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'kuze_2].
 
 ; Freq: 6
-ashida_1 := surname-lex &
+ashida_1 := loc-or-surname-lex &
 [ORTH <! "°²ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ashida_1].
 
 ; Freq: 6
@@ -41305,21 +41586,27 @@ tsuruga_5 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;riyado_1 := surname-lex &
 riyado_1  := loc_name-lex &
 [ORTH <! "¥ê¥ä¥É" !>, SYNSEM.LKEYS.KEYREL.CARG 'riyado_1].
 
 ; Freq: 6
-chida_2 := surname-lex &
+chida_2 := loc-or-surname-lex &
 [ORTH <! "ÀéÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chida_2].
 
 ; Freq: 6
+;FIXME
+;(TK 05-11-28)
+;µÜ²È
 akishinomiya_1 := surname-lex &
 [ORTH <! "½©¼ÄµÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'akishinomiya_1].
 
 ; Freq: 6
 ;POS
+;FIXME
 ;(TK 05-09-28)
+;other(sur,first),loc
 ;kurayoshi_1 := surname-lex &
 ;[ORTH <! "ÁÒµÈ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kurayoshi_1].
 kurayoshi_1 := other_name-lex &
@@ -41334,6 +41621,7 @@ kurayoshi_2 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;konohana_1 := surname-lex &
 konohana_1 := loc_name-lex &
 [ORTH <! "º¡²Ö" !>, SYNSEM.LKEYS.KEYREL.CARG 'konohana_1].
@@ -41352,17 +41640,14 @@ fo-do_1 := surname-lex &
 [ORTH <! "¥Õ¥©¡¼¥É" !>, SYNSEM.LKEYS.KEYREL.CARG 'fo-do_1].
 
 ; Freq: 6
-;POS
-;(TK 05-09-28)
-;rao_1 := surname-lex &
-;[ORTH <! "¥é¥ª" !>, SYNSEM.LKEYS.KEYREL.CARG 'rao_1].
-rao_n1 := ordinary-nohon-n-lex &
-[ORTH <! "¥é¥ª" !>, SYNSEM.LKEYS.KEYREL.PRED '_rao_n_1_rel].
+rao_1 := loc-or-surname-lex &
+[ORTH <! "¥é¥ª" !>, SYNSEM.LKEYS.KEYREL.CARG 'rao_1].
 
 ; Freq: 6
 ;POS
 ;HYOUKI
 ;(TK 05-09-28)
+;FNAME
 ;meibun_2 := surname-lex &
 ;[ORTH <! "ÌÀÊ¸" !>, SYNSEM.LKEYS.KEYREL.CARG 'meibun_2].
 akifumi_1 := first_name-lex &
@@ -41388,12 +41673,13 @@ imamiya_2 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;yahatahigashi_1 := surname-lex &
 yahatahigashi_1 := loc_name-lex &
 [ORTH <! "È¬È¨Åì" !>, SYNSEM.LKEYS.KEYREL.CARG 'yahatahigashi_1].
 
 ; Freq: 6
-fukuzawa_1 := surname-lex &
+fukuzawa_1 := loc-or-surname-lex &
 [ORTH <! "Ê¡Âô" !>, SYNSEM.LKEYS.KEYREL.CARG 'fukuzawa_1].
 
 ; Freq: 6
@@ -41408,6 +41694,7 @@ iizaka_3 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;harajuku_1 := surname-lex &
 harajuku_1 := loc_name-lex &
 [ORTH <! "¸¶½É" !>, SYNSEM.LKEYS.KEYREL.CARG 'harajuku_1].
@@ -41457,6 +41744,7 @@ kanda_2 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;baruserona_1 := surname-lex &
 baruserona_1 := loc_name-lex &
 [ORTH <! "¥Ð¥ë¥»¥í¥Ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'baruserona_1].
@@ -41480,32 +41768,29 @@ rotsupongi_2 := loc_name-lex &
 [ORTH <! "Ï»ËÜÌÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'rotsupongi_2].
 
 ; Freq: 6
-yasuda_3 := surname-lex &
+yasuda_3 := loc-or-surname-lex &
 [ORTH <! "ÊÝÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'yasuda_3].
 
 ; Freq: 6
-mitsutsuka_1 := surname-lex &
+mitsutsuka_1 := loc-or-surname-lex &
 [ORTH <! "»°ÄÍ" !>, SYNSEM.LKEYS.KEYREL.CARG 'mitsutsuka_1].
 
 ; Freq: 6
-komai_2 := surname-lex &
+komai_2 := loc-or-surname-lex &
 [ORTH <! "¶ð°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'komai_2].
 
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
 ;nozomi_2 := surname-lex &
-nozomi_2 := first_name-lex &
-[ORTH <! "¤Î¤¾¤ß" !>, SYNSEM.LKEYS.KEYREL.CARG 'nozomi_2].
-
-;TSUIKA
-;(TK 05-09-28)
+;[ORTH <! "¤Î¤¾¤ß" !>, SYNSEM.LKEYS.KEYREL.CARG 'nozomi_2].
 nozomi-1-ippanname := 
 ippan-name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'nozomi,
 ORTH <! "¤Î¤¾¤ß" !>].
 
 ; Freq: 6
+;SNAME
 baradeyu-ru_1 := surname-lex &
 [ORTH <! "¥Ð¥é¥Ç¥å¡¼¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'baradeyu-ru_1].
 
@@ -41529,7 +41814,7 @@ ippan-name-lex &
 ORTH <! "¥Ñ¥°¥¦¥©¥Ã¥·¥å" !>].
 
 ; Freq: 6
-kawai_1 := surname-lex &
+kawai_1 := loc-or-surname-lex &
 [ORTH <! "²Ï°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawai_1].
 
 ; Freq: 6
@@ -41544,6 +41829,7 @@ mochida_3 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;higashisumiyoshi_1 := surname-lex &
 higashisumiyoshi_1 := loc_name-lex &
 [ORTH <! "Åì½»µÈ" !>, SYNSEM.LKEYS.KEYREL.CARG 'higashisumiyoshi_1].
@@ -41557,7 +41843,8 @@ banguradeshu_1 := loc_name-lex &
 
 ; Freq: 6
 ;BAD
-;(TK 05-09-28)
+;(TK 05-11-28)
+;¢ªothername¤ËÅý¹ç
 ;yasushi_1 := surname-lex &
 ;[ORTH <! "ÊÝ" !>, SYNSEM.LKEYS.KEYREL.CARG 'yasushi_1].
 
@@ -41589,15 +41876,15 @@ shibata_4 := loc_name-lex &
 [ORTH <! "¼ÆÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shibata_4].
 
 ; Freq: 6
-ozaki_3 := surname-lex &
+ozaki_3 := loc-or-surname-lex &
 [ORTH <! "Èøºê" !>, SYNSEM.LKEYS.KEYREL.CARG 'ozaki_3].
 
 ; Freq: 6
-oginome_1 := surname-lex &
+oginome_1 := loc-or-surname-lex &
 [ORTH <! "²®ÌîÌÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'oginome_1].
 
 ; Freq: 6
-ogiwara_1 := surname-lex &
+ogiwara_1 := loc-or-surname-lex &
 [ORTH <! "²®¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'ogiwara_1].
 
 ; Freq: 6
@@ -41610,33 +41897,30 @@ fushimi_4 := loc_name-lex &
 [ORTH <! "Éú¸«" !>, SYNSEM.LKEYS.KEYREL.CARG 'fushimi_4].
 
 ; Freq: 6
+;SNAME
 garu-chi_1 := surname-lex &
 [ORTH <! "¥¬¥ë¡¼¥Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'garu-chi_1].
 
 ; Freq: 6
-;POS
-;(TK 05-09-28)
-;kawaba_1 := surname-lex &
-kawaba_1 := loc_name-lex &
+kawaba_1 := loc-or-surname-lex &
 [ORTH <! "Àî¾ì" !>, SYNSEM.LKEYS.KEYREL.CARG 'kawaba_1].
 
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;setagaya_1 := surname-lex &
 setagaya_1 := loc_name-lex &
 [ORTH <! "À¤ÅÄÃ«" !>, SYNSEM.LKEYS.KEYREL.CARG 'setagaya_1].
 
 ; Freq: 6
-;POS
-;(TK 05-09-28)
-;tsukuba_1 := surname-lex &
-tsukuba_1 := loc_name-lex &
+tsukuba_1 := loc-or-surname-lex &
 [ORTH <! "¤Ä¤¯¤Ð" !>, SYNSEM.LKEYS.KEYREL.CARG 'tsukuba_1].
 
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;saharin_1 := surname-lex &
 saharin_1 := loc_name-lex &
 [ORTH <! "¥µ¥Ï¥ê¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'saharin_1].
@@ -41644,19 +41928,17 @@ saharin_1 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;bihachi_1 := surname-lex &
 bihachi_1 := loc_name-lex &
 [ORTH <! "¥Ó¥Ï¥Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'bihachi_1].
 
 ; Freq: 6
-;POS
-;(TK 05-09-28)
-;hibiya_1 := surname-lex &
-hibiya_1 := loc_name-lex &
+hibiya_1 := loc-or-surname-lex &
 [ORTH <! "ÆüÈæÃ«" !>, SYNSEM.LKEYS.KEYREL.CARG 'hibiya_1].
 
 ; Freq: 6
-saji_3 := surname-lex &
+saji_3 := loc-or-surname-lex &
 [ORTH <! "º´¼£" !>, SYNSEM.LKEYS.KEYREL.CARG 'saji_3].
 
 ; Freq: 6
@@ -41680,16 +41962,16 @@ asakura_4 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;taipei_1 := surname-lex &
 taipei_1 := loc_name-lex &
 [ORTH <! "ÂæËÌ" !>, SYNSEM.LKEYS.KEYREL.CARG 'taipei_1].
 
 ; Freq: 6
-;POS
 ;HYOUKI
 ;(TK 05-09-28)
 ;koshi_5 := surname-lex &
-etsu_3 := loc_name-lex &
+etsu_3 := loc-or-surname-lex &
 [ORTH <! "±Û" !>, SYNSEM.LKEYS.KEYREL.CARG 'etsu_3].
 
 ; Freq: 6
@@ -41699,7 +41981,7 @@ etsu_3 := loc_name-lex &
 ;[ORTH <! "¥È¥é" !>, SYNSEM.LKEYS.KEYREL.CARG 'tora_2].
 
 ; Freq: 6
-kaibara_1 := surname-lex &
+kaibara_1 := loc-or-surname-lex &
 [ORTH <! "³­¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'kaibara_1].
 
 ; Freq: 6
@@ -41712,15 +41994,17 @@ kodaka_2 := loc_name-lex &
 [ORTH <! "¾®¹â" !>, SYNSEM.LKEYS.KEYREL.CARG 'kodaka_2].
 
 ; Freq: 6
+;SNAME
 chou_4 := surname-lex &
 [ORTH <! "Ä¥" !>, SYNSEM.LKEYS.KEYREL.CARG 'chou_4].
 
 ; Freq: 6
+;SNAME
 rinka-n_1 := surname-lex &
 [ORTH <! "¥ê¥ó¥«¡¼¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'rinka-n_1].
 
 ; Freq: 6
-irie_2 := surname-lex &
+irie_2 := loc-or-surname-lex &
 [ORTH <! "Æþ¹¾" !>, SYNSEM.LKEYS.KEYREL.CARG 'irie_2].
 
 ; Freq: 6
@@ -41742,6 +42026,7 @@ toshima_2 := loc_name-lex &
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;benechia_1 := surname-lex &
 benechia_1 := loc_name-lex &
 [ORTH <! "¥Ù¥Í¥Á¥¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'benechia_1].
@@ -41756,15 +42041,13 @@ arai_4 := loc_name-lex &
 [ORTH <! "¿·°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'arai_4].
 
 ; Freq: 6
-;POS
-;(TK 05-09-28)
-;asahikawa_1 := surname-lex &
-asahikawa_1 := loc_name-lex &
+asahikawa_1 := loc-or-surname-lex &
 [ORTH <! "°°Àî" !>, SYNSEM.LKEYS.KEYREL.CARG 'asahikawa_1].
 
 ; Freq: 6
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;irinoi_1 := surname-lex &
 irinoi_1 := loc_name-lex &
 [ORTH <! "¥¤¥ê¥Î¥¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'irinoi_1].
@@ -41779,7 +42062,7 @@ nakazawa_2 := loc_name-lex &
 [ORTH <! "ÃæÂô" !>, SYNSEM.LKEYS.KEYREL.CARG 'nakazawa_2].
 
 ; Freq: 6
-takagawa_1 := surname-lex &
+takagawa_1 := loc-or-surname-lex &
 [ORTH <! "¹âÀî" !>, SYNSEM.LKEYS.KEYREL.CARG 'takagawa_1].
 
 ; Freq: 6
@@ -41792,7 +42075,7 @@ nagahama_4 := loc_name-lex &
 [ORTH <! "Ä¹ÉÍ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nagahama_4].
 
 ; Freq: 6
-odagiri_2 := surname-lex &
+odagiri_2 := loc-or-surname-lex &
 [ORTH <! "¾®ÅÄÀÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'odagiri_2].
 
 ; Freq: 6
@@ -41802,11 +42085,12 @@ odagiri_2 := surname-lex &
 ;[ORTH <! "Æ»µÁ" !>, SYNSEM.LKEYS.KEYREL.CARG 'dougi_1].
 
 ; Freq: 5
+;SNAME
 morisu_1 := surname-lex &
 [ORTH <! "¥â¥ê¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'morisu_1].
 
 ; Freq: 5
-yasukawa_1 := surname-lex &
+yasukawa_1 := loc-or-surname-lex &
 [ORTH <! "°ÂÀî" !>, SYNSEM.LKEYS.KEYREL.CARG 'yasukawa_1].
 
 ; Freq: 5
@@ -41817,19 +42101,21 @@ manhattan_1 := loc_name-lex &
 [ORTH <! "¥Þ¥ó¥Ï¥Ã¥¿¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'manhattan_1].
 
 ; Freq: 5
-higashiyama_1 := surname-lex &
+higashiyama_1 := loc-or-surname-lex &
 [ORTH <! "Åì»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'higashiyama_1].
 
 ; Freq: 5
+;SNAME
 hau_2 := surname-lex &
 [ORTH <! "¥Ï¥¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'hau_2].
 
 ; Freq: 5
+;SNAME
 tsujiman_1 := surname-lex &
 [ORTH <! "¥Ä¥¸¥Þ¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'tsujiman_1].
 
 ; Freq: 5
-chin_1 := surname-lex &
+chin_1 := loc-or-surname-lex &
 [ORTH <! "ÄÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chin_1].
 
 ; Freq: 5
@@ -41845,11 +42131,13 @@ maihara_1 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;saigon_1 := surname-lex &
 saigon_1 := loc_name-lex &
 [ORTH <! "¥µ¥¤¥´¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'saigon_1].
 
 ; Freq: 5
+;SNAME
 sai_4 := surname-lex &
 [ORTH <! "ÖÃ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sai_4].
 
@@ -41858,7 +42146,7 @@ sai_4 := surname-lex &
 ;(TK 05-09-28)
 ;kuwada_1 := surname-lex &
 ;[ORTH <! "·¬ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kuwada_1].
-kuwata_1 := surname-lex &
+kuwata_1 := loc-or-surname-lex &
 [ORTH <! "·¬ÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kuwata_1].
 
 ; Freq: 5
@@ -41906,7 +42194,7 @@ ootsu_2 := loc_name-lex &
 [ORTH <! "ÂçÄÅ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ootsu_2].
 
 ; Freq: 5
-sekino_1 := surname-lex &
+sekino_1 := loc-or-surname-lex &
 [ORTH <! "´ØÌî" !>, SYNSEM.LKEYS.KEYREL.CARG 'sekino_1].
 
 ; Freq: 5
@@ -41919,20 +42207,19 @@ nikkawa_1 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;senshuu_1 := surname-lex &
 senshuu_1 := loc_name-lex &
 [ORTH <! "Àô½£" !>, SYNSEM.LKEYS.KEYREL.CARG 'senshuu_1].
 
 ; Freq: 5
-;POS
-;(TK 05-09-28)
-;hakodate_1 := surname-lex &
-hakodate_1 := loc_name-lex &
+hakodate_1 := loc-or-surname-lex &
 [ORTH <! "È¡´Û" !>, SYNSEM.LKEYS.KEYREL.CARG 'hakodate_1].
 
 ; Freq: 5
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;tahichi_1 := surname-lex &
 tahichi_1 := loc_name-lex &
 [ORTH <! "¥¿¥Ò¥Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'tahichi_1].
@@ -41940,19 +42227,22 @@ tahichi_1 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-28)
+;LNAME
 ;yaesu_1 := surname-lex &
 yaesu_1 := loc_name-lex &
 [ORTH <! "È¬½Å½§" !>, SYNSEM.LKEYS.KEYREL.CARG 'yaesu_1].
 
 ; Freq: 5
+;SNAME
 kasutoro_1 := surname-lex &
 [ORTH <! "¥«¥¹¥È¥í" !>, SYNSEM.LKEYS.KEYREL.CARG 'kasutoro_1].
 
 ; Freq: 5
-tamazawa_1 := surname-lex &
+tamazawa_1 := loc-or-surname-lex &
 [ORTH <! "¶ÌÂô" !>, SYNSEM.LKEYS.KEYREL.CARG 'tamazawa_1].
 
 ; Freq: 5
+;SNAME
 yosano_1 := surname-lex &
 [ORTH <! "Í¿¼ÕÌî" !>, SYNSEM.LKEYS.KEYREL.CARG 'yosano_1].
 
@@ -42005,6 +42295,7 @@ iwakuni_3 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-28)
+;INAME
 ;tasu_2 := surname-lex &
 tasu_2 := inst_name-lex &
 [ORTH <! "¥¿¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'tasu_2].
@@ -42019,10 +42310,11 @@ nagasaka_2 := loc_name-lex &
 [ORTH <! "Ä¹ºä" !>, SYNSEM.LKEYS.KEYREL.CARG 'nagasaka_2].
 
 ; Freq: 5
-koike_2 := surname-lex &
+koike_2 := loc-or-surname-lex &
 [ORTH <! "¾®ÃÓ" !>, SYNSEM.LKEYS.KEYREL.CARG 'koike_2].
 
 ; Freq: 5
+;SNAME
 toru-man_1 := surname-lex &
 [ORTH <! "¥È¥ë¡¼¥Þ¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'toru-man_1].
 
@@ -42052,6 +42344,7 @@ fujiyoshida_1 := loc_name-lex &
 [ORTH <! "ÉÙ»ÎµÈÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'fujiyoshida_1].
 
 ; Freq: 5
+;SNAME
 dogo-ru_1 := surname-lex &
 [ORTH <! "¥É¥´¡¼¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'dogo-ru_1].
 
@@ -42074,17 +42367,20 @@ azumi_2 := loc_name-lex &
 [ORTH <! "°ÂÆÞ" !>, SYNSEM.LKEYS.KEYREL.CARG 'azumi_2].
 
 ; Freq: 5
+;SNAME
 etou_2 := surname-lex &
 [ORTH <! "±ÒÆ£" !>, SYNSEM.LKEYS.KEYREL.CARG 'etou_2].
 
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;seigadai_1 := surname-lex &
 seigadai_1 := loc_name-lex &
 [ORTH <! "ÀÄ´¤Âæ" !>, SYNSEM.LKEYS.KEYREL.CARG 'seigadai_1].
 
 ; Freq: 5
+;SNAME
 patten_1 := surname-lex &
 [ORTH <! "¥Ñ¥Ã¥Æ¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'patten_1].
 
@@ -42098,24 +42394,20 @@ bankoku_2 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;unzen_1 := surname-lex &
 unzen_1 := loc_name-lex &
 [ORTH <! "±ÀÀç" !>, SYNSEM.LKEYS.KEYREL.CARG 'unzen_1].
 
 ; Freq: 5
-soga_1 := surname-lex &
+soga_1 := loc-or-surname-lex &
 [ORTH <! "Á¾²æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'soga_1].
-
-;TSUIKA
-;(TK 05-09-29)
-soga-1-ippanname := 
-ippan-name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'soga,
-ORTH <! "Á¾²æ" !>].
 
 ; Freq: 5
 ;POS
+;FIXME
 ;(TK 05-09-29)
+;other(sur,first),loc
 ;konan_1 := surname-lex &
 ;[ORTH <! "¸ÐÆî" !>, SYNSEM.LKEYS.KEYREL.CARG 'konan_1].
 konan_1 := other_name-lex &
@@ -42128,18 +42420,22 @@ konan_2 := loc_name-lex &
 [ORTH <! "¸ÐÆî" !>, SYNSEM.LKEYS.KEYREL.CARG 'konan_2].
 
 ; Freq: 5
-nishimura_2 := surname-lex &
+nishimura_2 := loc-or-surname-lex &
 [ORTH <! "À¾Â¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'nishimura_2].
 
 ; Freq: 5
-murai_1 := surname-lex &
+murai_1 := loc-or-surname-lex &
 [ORTH <! "Â¼°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'murai_1].
 
 ; Freq: 5
-;BAD
-;(TK 05-09-29)
+;POS
+;FIXME
+;(TK 05-11-28
+;loc,inst
+;¤¹¤Ç¤Ëinst¤Ç¤ÎÅÐÏ¿¤¢¤ê
 ;keiou_1 := surname-lex &
-;[ORTH <! "µþ²¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'keiou_1].
+keiou_1 := loc_name-lex &
+[ORTH <! "µþ²¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'keiou_1].
 
 ; Freq: 5
 shibayama_2 := surname-lex &
@@ -42153,6 +42449,7 @@ shibayama_3 := loc_name-lex &
 ; Freq: 5
 ;HYOUKI
 ;(TK 05-09-29)
+;SNAME
 ;nichihara_1 := surname-lex &
 ;[ORTH <! "Æü¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'nichihara_1].
 wachihara_1 := surname-lex &
@@ -42161,30 +42458,31 @@ wachihara_1 := surname-lex &
 ;TSUIKA
 ;HYOUKI
 ;(TK 05-09-29)
+;LNAME
 nippara_1 := loc_name-lex &
 [ORTH <! "Æü¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'nippara_1].
 
 ; Freq: 5
-;POS
-;(TK 05-09-29)
-;kyoubashi_1 := surname-lex &
-kyoubashi_1 := loc_name-lex &
+kyoubashi_1 := loc-or-surname-lex &
 [ORTH <! "µþ¶¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'kyoubashi_1].
 
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;hanedakuukou_1 := surname-lex &
 hanedakuukou_1 := loc_name-lex &
 [ORTH <! "±©ÅÄ¶õ¹Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'hanedakuukou_1].
 
 ; Freq: 5
+;SNAME
 ainshutain_1 := surname-lex &
 [ORTH <! "¥¢¥¤¥ó¥·¥å¥¿¥¤¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'ainshutain_1].
 
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;FNAME
 ;mahatei-ru_1 := surname-lex &
 mahatei-ru_1 := first_name-lex &
 [ORTH <! "¥Þ¥Ï¥Æ¥£¡¼¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'mahatei-ru_1].
@@ -42199,13 +42497,17 @@ sekiyama_2 := loc_name-lex &
 [ORTH <! "´Ø»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'sekiyama_2].
 
 ; Freq: 5
-;BAD
-;(TK 05-09-29)
+;POS
+;FIXME
+;(TK 05-11-28)
+;loc,inst
+;¤¹¤Ç¤Ëinst¤Ç¤ÎÅÐÏ¿¤¢¤ê
 ;sanyou_2 := surname-lex &
-;[ORTH <! "»°ÍÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanyou_2].
+sanyou_2 := loc_name-lex &
+[ORTH <! "»°ÍÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanyou_2].
 
 ; Freq: 5
-amaya_4 := surname-lex &
+amaya_4 := loc-or-surname-lex &
 [ORTH <! "Å·Ã«" !>, SYNSEM.LKEYS.KEYREL.CARG 'amaya_4].
 
 ; Freq: 5
@@ -42218,17 +42520,19 @@ takahama_2 := loc_name-lex &
 [ORTH <! "¹âÉÍ" !>, SYNSEM.LKEYS.KEYREL.CARG 'takahama_2].
 
 ; Freq: 5
-matsunami_2 := surname-lex &
+matsunami_2 := loc-or-surname-lex &
 [ORTH <! "¾¾ÇÈ" !>, SYNSEM.LKEYS.KEYREL.CARG 'matsunami_2].
 
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;meishin_2 := surname-lex &
 meishin_2 := loc_name-lex &
 [ORTH <! "Ì¾¿À" !>, SYNSEM.LKEYS.KEYREL.CARG 'meishin_2].
 
 ; Freq: 5
+;SNAME
 gaidaru_1 := surname-lex &
 [ORTH <! "¥¬¥¤¥À¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'gaidaru_1].
 
@@ -42251,6 +42555,7 @@ ORTH <! "¤³¤À¤Þ" !>].
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;manshuu_1 := surname-lex &
 manshuu_1 := loc_name-lex &
 [ORTH <! "Ëþ½£" !>, SYNSEM.LKEYS.KEYREL.CARG 'manshuu_1].
@@ -42258,21 +42563,23 @@ manshuu_1 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;miyakejima_1 := surname-lex &
 miyakejima_1 := loc_name-lex &
 [ORTH <! "»°ÂðÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'miyakejima_1].
 
 ; Freq: 5
-chikamatsu_1 := surname-lex &
+chikamatsu_1 := loc-or-surname-lex &
 [ORTH <! "¶á¾¾" !>, SYNSEM.LKEYS.KEYREL.CARG 'chikamatsu_1].
 
 ; Freq: 5
-tooyama_1 := surname-lex &
+tooyama_1 := loc-or-surname-lex &
 [ORTH <! "±ó»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'tooyama_1].
 
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;kopenha-gen_1 := surname-lex &
 kopenha-gen_1 := loc_name-lex &
 [ORTH <! "¥³¥Ú¥ó¥Ï¡¼¥²¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'kopenha-gen_1].
@@ -42280,6 +42587,7 @@ kopenha-gen_1 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;myoukoukougen_1 := surname-lex &
 myoukoukougen_1 := loc_name-lex &
 [ORTH <! "Ì¯¹â¹â¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'myoukoukougen_1].
@@ -42294,6 +42602,7 @@ shina_4 := loc_name-lex &
 [ORTH <! "¥·¥Ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'shina_4].
 
 ; Freq: 5
+;SNAME
 toyotomi_1 := surname-lex &
 [ORTH <! "Ë­¿Ã" !>, SYNSEM.LKEYS.KEYREL.CARG 'toyotomi_1].
 
@@ -42309,6 +42618,7 @@ hiyama_5 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;mururoa_1 := surname-lex &
 mururoa_1 := loc_name-lex &
 [ORTH <! "¥à¥ë¥í¥¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'mururoa_1].
@@ -42316,6 +42626,7 @@ mururoa_1 := loc_name-lex &
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;FNAME
 ;aratasu_1 := surname-lex &
 aratasu_1 := first_name-lex &
 [ORTH <! "¥¢¥é¥¿¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'aratasu_1].
@@ -42330,7 +42641,7 @@ imai_3 := loc_name-lex &
 [ORTH <! "º£°æ" !>, SYNSEM.LKEYS.KEYREL.CARG 'imai_3].
 
 ; Freq: 5
-morishita_3 := surname-lex &
+morishita_3 := loc-or-surname-lex &
 [ORTH <! "¿¹²¼" !>, SYNSEM.LKEYS.KEYREL.CARG 'morishita_3].
 
 ; Freq: 5
@@ -42338,21 +42649,20 @@ katayama_4 := surname-lex &
 [ORTH <! "ÊÒ»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'katayama_4].
 
 ; Freq: 5
+;SNAME
 sakaiya_1 := surname-lex &
 [ORTH <! "ºæ²°" !>, SYNSEM.LKEYS.KEYREL.CARG 'sakaiya_1].
 
 ; Freq: 5
 ;POS
 ;(TK 05-09-29)
+;LNAME
 ;ryounei_1 := surname-lex &
 ryounei_1 := loc_name-lex &
 [ORTH <! "ÎËÇ«" !>, SYNSEM.LKEYS.KEYREL.CARG 'ryounei_1].
 
 ; Freq: 5
-;POS
-;(TK 05-10-03)
-;hanada_3 := surname-lex &
-hanada_3 := loc-or-surname-or-instname-lex &
+hanada_3 := loc-or-surname-lex &
 [ORTH <! "²ÖÅÄ" !>, SYNSEM.LKEYS.KEYREL.CARG 'hanada_3].
 
 ; Freq: 5
@@ -42368,40 +42678,40 @@ matsutake_3 := loc-or-surname-lex &
 [ORTH <! "¾¾ÃÝ" !>, SYNSEM.LKEYS.KEYREL.CARG 'matsutake_3].
 
 ; Freq: 5
-;POS
-;(TK 05-10-03)
-;kusaba_1 := surname-lex &
-kusaba_1 := loc-or-surname-or-instname-lex &
+kusaba_1 := loc-or-surname-lex &
 [ORTH <! "Áð¾ì" !>, SYNSEM.LKEYS.KEYREL.CARG 'kusaba_1].
 
 ; Freq: 5
-;POS
-;(TK 05-10-03)
-;komori_2 := surname-lex &
-komori_2 := loc-or-surname-or-instname-lex &
+komori_2 := loc-or-surname-lex &
 [ORTH <! "¾®¿¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'komori_2].
 
 ; Freq: 5
-;POS
-;(TK 05-10-03)
-;otaru_1 := surname-lex &
-otaru_1 := loc-or-surname-or-instname-lex &
+otaru_1 := loc-or-surname-lex &
 [ORTH <! "¾®Ã®" !>, SYNSEM.LKEYS.KEYREL.CARG 'otaru_1].
 
 ; Freq: 5
-;POS
-;(TK 05-10-03)
-;urawa_1 := surname-lex &
 urawa_1 := loc-or-surname-lex &
 [ORTH <! "±ºÏÂ" !>, SYNSEM.LKEYS.KEYREL.CARG 'urawa_1].
 
 ; Freq: 5
 ;SNAME
-;FIXME
 ;(TK 05-10-03)
-;¡Öshin¡×¤È¤¤¤¦ÆÉ¤ß¤Î¤È¤­¤Ïloc,sur,first¤¤¤º¤ì¤â¤¢¤ê¤¨¤ë¡£
 hata_6 := surname-lex &
 [ORTH <! "¿Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'hata_6].
+
+;TSUIKA
+;FIXME
+;(TK 05-11-28)
+;other(sur,first),loc
+shin_6 := other_name-lex &
+[ORTH <! "¿Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'shin_6].
+
+;TSUIKA
+;FIXME
+;(TK 05-11-28)
+;other(sur,first),loc
+shin_7 := loc_name-lex &
+[ORTH <! "¿Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'shin_7].
 
 ; Freq: 5
 ;SNAME
@@ -47414,7 +47724,7 @@ shieri-_1 := surname-lex &
 ;TSUIKA
 ;(TK 05-10-18)
 shieri-_n2 := ordinary-nohon-n-lex &
-[ORTH <! "´Ö" !>, SYNSEM.LKEYS.KEYREL.PRED '_shieri-_n_2_rel].
+[ORTH <! "¥·¥§¥ê¡¼" !>, SYNSEM.LKEYS.KEYREL.PRED '_shieri-_n_2_rel].
 
 ; Freq: 2
 ;POS
@@ -53004,8 +53314,11 @@ hachihonmatsuhigashi_1 := loc_name-lex &
 [ORTH <! "È¬ËÜ¾¾Åì" !>, SYNSEM.LKEYS.KEYREL.CARG 'hachihonmatsuhigashi_1].
 
 ; Freq: 1
-sanga_1 := loc-or-surname-lex &
-[ORTH <! "»°²Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanga_1].
+;BAD
+;(TK 05-10-31)
+;¢ªloc-or-surname-or-instname-lex¤ËÅý¹ç
+;sanga_1 := loc-or-surname-lex &
+;[ORTH <! "»°²Õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanga_1].
 
 ; Freq: 1
 sasaoka_1 := loc-or-surname-lex &
@@ -64275,4 +64588,41 @@ ma_n1 := ordinary-nohon-n-lex &
 ;(TK 05-10-05)
 tada_n1 := ordinary-nohon-n-lex &
 [ORTH <! "¤¿¤À" !>, SYNSEM.LKEYS.KEYREL.PRED '_tada_n_1_rel].
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Chasen¤ÎÊ¬¤«¤Á½ñ¤­¤Î»ÅÊý¤Çkyoudai-all.tdl¤ËÆþ¤é¤Ê¤«¤Ã¤¿
+;; ¤â¤Î
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(TK 05-11-29)
+sumishou_1 := inst_name-lex &
+[ORTH <! "½»¾¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'sumishou_1].
+
+korona-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'korona-1,
+ORTH <! "¥³¥í¥Ê" !>].
+
+chuuou_2 := inst_name-lex &
+[ORTH <! "Ãæ±û" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuuou_2].
+
+ha-do_4 := loc-or-surname-lex &
+[ORTH <! "¥Ï¡¼¥É" !>, SYNSEM.LKEYS.KEYREL.CARG 'ha-do_4].
+
+kou_18 := other_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'kou_person,
+ORTH <! "¹¬" !>].
+
+;¡ÖÉ¬Í×¡×¤Î¥¿¥¤¥×¥ß¥¹¡©¡ÖÉ¬Í×¡×¤ä¡Ö´ÎÍ×¡×¤ÈÆ±¤¸¤è¤¦¤Ê°ÕÌ£¤«¡©
+;¸üÀ¸Çò½ñ¤ä³Ø²ñµ¡´Ø»æ¤ä¿·Ê¹¤Ê¤É¤Ç¤â¸«¤é¤ì¤ë
+;¤É¤Î¤è¤¦¤Ê¼­½ñ¤Ë¤âºÜ¤Ã¤Æ¤¤¤Ê¤¤
+;`kyoto31-24/jp051004'[23860] `¤·¤«¤· ËÌÄ«Á¯ ¤Ë ¤À¤± ¡¢ ¤É¤¦¤·¤Æ Í¿ÅÞ ÂåÉ½ ÃÄ ¤¬ ¿´ Í× ¤Ê ¤Î ¤« ¡£'
+shinyou_a1 := na-adj-lex &
+[ORTH <! "¿´Í×" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinyou_a_1_rel].
+
+;¡ÖÌðÈ¦¡×¡ÖµÝÈ¦¡×¡ÖÈ¦²¡¤·¡×
+hazu_n1 := ordinary-nohon-n-lex &
+[ORTH <! "È¦" !>, SYNSEM.LKEYS.KEYREL.PRED '_hazu_n_1_rel].
 

@@ -2253,6 +2253,11 @@ ikou-suffix := noun_mod-lex-r &
  ORTH <! "以降" !>].
 
 
+;(TK 05-11-29)
+;もしかしたらadvのほうが良いかもしれない
+somosomo_2 := interj-lex &
+[ORTH <! "そもそも" !>, SYNSEM.LKEYS.KEYREL.PRED '_somosomo_x_2_rel].
+
 zen-prefix :=
 noun_mod-lex-l &
 [ORTH <! "前" !>,

@@ -8123,7 +8123,9 @@ hikishimaru_1 := intrans-c-stem-lex &
 ; 引き払う 
 ; Used 1 times
 
-hikiharau_1 := intrans-c-stem-lex &
+;(TK 05-11-29 changed to v1-c-stem-lex)
+;hikiharau_1 := intrans-c-stem-lex &
+hikiharau_1 := v1-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_hikiharau_v_1_rel,
  ORTH <! "引き払う" !>].
 
@@ -22383,4 +22385,30 @@ kouzuru-stem := v1-kurusuru-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kouzuru_v_rel,
  ORTH <! "講ずる" !>].
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(TK 05-11-29)
+iku-hiragana-stem := intrans-c2-stem-lex & 
+                [SYNSEM.LKEYS.KEYREL.PRED '_iku_v_rel,
+                 ORTH <! "いく" !>].
+
+;ex.「服にしわがよる」
+yoru-2-hiragana-stem :=  intrans-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_yoru_v_2_rel]],
+                   ORTH <! "よる" !>].
+
+;ex.「成功するかどうかは天気による」
+yoru-3-hiragana-stem :=  v2-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_yoru_v_3_rel]],
+                   ORTH <! "よる" !>].
+
+;ex.「咄嗟に放ったギャグが客に受けた」
+ukeru_v2 := v2-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ukeru_v_2_rel,
+ ORTH <! "受ける" !>].
+
+ukeru_v3 := v2-v-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ukeru_v_3_rel,
+ ORTH <! "うける" !>].
 

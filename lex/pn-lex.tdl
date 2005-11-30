@@ -4274,9 +4274,17 @@ shakaitou-instname := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'shakaitou,
 ORTH <! "社会党" !>].
 
-enoshima-locname := loc_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'enoshima,
-ORTH <! "江ノ島" !>].
+; Freq: 1
+;POS
+;LNAME
+;(TK 05-11-01)
+;enoshima_1 := loc-or-surname-lex &
+enoshima_1 := loc_name-lex &
+[ORTH <! "江の島" !>, SYNSEM.LKEYS.KEYREL.CARG 'enoshima].
+
+; Freq: 1
+enoshima_2 := loc-or-surname-lex &
+[ORTH <! "江ノ島" !>, SYNSEM.LKEYS.KEYREL.CARG 'enoshima].
 
 ; in kyoudai-all:
 odakyuu_1 := inst_name-lex &
@@ -4314,6 +4322,63 @@ kita-locname := loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'kita,
 ORTH <! "北" !>].
 
-enoshima-locname-2 := loc_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'enoshima,
-ORTH <! "江の島" !>].
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Chasenの分かち書きの仕方でkyoudai-all.tdlに入らなかった
+;; ものなど
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(TK 05-11-29)
+rengou_4 := inst_name-lex &
+[ORTH <! "連合" !>, SYNSEM.LKEYS.KEYREL.CARG 'rengou_4].
+
+iraku_1 := loc_name-lex &
+[ORTH <! "イラク" !>, SYNSEM.LKEYS.KEYREL.CARG 'iraku_1].
+
+arabia_1 := loc_name-lex &
+[ORTH <! "アラビア" !>, SYNSEM.LKEYS.KEYREL.CARG 'arabia_1].
+
+taiwan_1 := loc_name-lex &
+[ORTH <! "台湾" !>, SYNSEM.LKEYS.KEYREL.CARG 'taiwan_1].
+
+nichi-nippon := loc_name-lex &
+[ORTH <! "日" !>, SYNSEM.LKEYS.KEYREL.CARG 'nichi_10].
+
+shounan_1 := loc_name-lex &
+[ORTH <! "湘南" !>, SYNSEM.LKEYS.KEYREL.CARG 'shounan_1].
+
+arupusu_1 := loc_name-lex &
+[ORTH <! "アルプス" !>, SYNSEM.LKEYS.KEYREL.CARG 'arupusu_1].
+
+chuuouarupusu_1 := loc_name-lex &
+[ORTH <! "中央アルプス" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuuouarupusu_1].
+
+nihonarupusu_1 := loc_name-lex &
+[ORTH <! "日本アルプス" !>, SYNSEM.LKEYS.KEYREL.CARG 'nihonarupusu_1].
+
+igirisu_1 := loc_name-lex &
+[ORTH <! "イギリス" !>, SYNSEM.LKEYS.KEYREL.CARG 'igirisu_1].
+
+keishichou_1 := inst_name-lex &
+[ORTH <! "警視庁" !>, SYNSEM.LKEYS.KEYREL.CARG 'keishichou_1].
+
+;姓としての読みは「higashikita」かもしれない
+touhoku_2 := loc-or-surname-lex &
+[ORTH <! "東北" !>, SYNSEM.LKEYS.KEYREL.CARG 'touhoku_2].
+
+;「米国」の略
+bei_1 := loc_name-lex &
+[ORTH <! "米" !>, SYNSEM.LKEYS.KEYREL.CARG 'bei_1].
+
+isuraeru_1 := loc_name-lex &
+[ORTH <! "イスラエル" !>, SYNSEM.LKEYS.KEYREL.CARG 'isuraeru_1].
+
+isuraerukyouwakoku_1 := loc_name-lex &
+[ORTH <! "イスラエル共和国" !>, SYNSEM.LKEYS.KEYREL.CARG 'isuraerukyouwakoku_1].
+
+paresuchina_1 := loc_name-lex &
+[ORTH <! "パレスチナ" !>, SYNSEM.LKEYS.KEYREL.CARG 'paresuchina_1].
+
+ou_3 := loc_name-lex &
+[ORTH <! "欧" !>, SYNSEM.LKEYS.KEYREL.CARG 'ou_3].
+
+
