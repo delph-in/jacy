@@ -916,7 +916,7 @@ ORTH <! "使用" !>].
 
 sain-appu-vn := 
 vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sain_s_appu_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sainappu_s_rel,
 ORTH <! "サイン","アップ" !>].
 
 risetto-vn := 
@@ -1543,7 +1543,7 @@ ORTH <! "規定" !>].
 
 asetto-samarii-1-vn := 
 vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL [PRED '_asetto_s_rel],
+[SYNSEM.LKEYS.KEYREL [PRED '_asettosamarii_s_rel],
 ORTH <! "アセット", "・", "サマリー" !>].
 
 
@@ -2716,7 +2716,7 @@ heikin_1 := vn-intrans-lex &
 ; アピール 
 
 api-ru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_api_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_apiiru_s_1_rel,
  ORTH <! "アピール" !>].
 
 ; 呼吸 
@@ -2770,7 +2770,7 @@ kousei_1_4 := vn-intrans-lex &
 ; Used 2 times
 
 shu-to_1_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shu_s_to_1_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shuuto_s_11_rel,
  ORTH <! "シュート" !>].
 
 ; 触発 
@@ -2827,7 +2827,7 @@ hikan_1 := vn-intrans-lex &
 ; Used 2 times
 
 ma-ku_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ma_s_ku_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_maaku_s_1_rel,
  ORTH <! "マーク" !>].
 
 ; 埋蔵 
@@ -2865,7 +2865,7 @@ eshaku_1 := vn-intrans-lex &
 ; オーバーラップ 
 
 o-ba-rappu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_o_s_ba_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_oobaarappu_s_rel,
  ORTH <! "オーバーラップ" !>].
 
 ; 解体 
@@ -2925,7 +2925,7 @@ douka_1_6 := vn-intrans-lex &
 ; フィードバック 
 
 fi-dobakku_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fi_s_dobakku_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fiidobakku_s_1_rel,
  ORTH <! "フィードバック" !>].
 
 ; 封印 
@@ -4744,7 +4744,7 @@ atomodori_1 := vn-intrans-lex &
 ; アプローチ 
 
 apuro-chi_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_apuro_s_chi_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_apuroochi_s_1_rel,
  ORTH <! "アプローチ" !>].
 
 ; 天下り 
@@ -4774,7 +4774,7 @@ arakasegi_1 := vn-intrans-lex &
 ; アンコール 
 
 anko-ru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_anko_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ankooru_s_1_rel,
  ORTH <! "アンコール" !>].
 
 ; 安住 
@@ -5026,7 +5026,7 @@ imin_1 := vn-intrans-lex &
 ; イメージダウン 
 
 ime-jidaun_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ime_s_jidaun_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_imeejidaun_s_1_rel,
  ORTH <! "イメージダウン" !>].
 
 ; 入れ知恵 
@@ -5077,7 +5077,7 @@ uinku_1 := vn-intrans-lex &
 ; Used 1 times
 
 ue-bu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ue_s_bu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ueebu_s_1_rel,
  ORTH <! "ウエーブ" !>].
 
 ; 餓え死に 
@@ -5102,14 +5102,14 @@ uousaou_1 := vn-intrans-lex &
 ; ウオーミングアップ 
 
 uo-minguappu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uo_s_minguappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_uoominguappu_s_1_rel,
  ORTH <! "ウオーミングアップ" !>].
 
 ; ウオームアップ 
 ; Used 1 times
 
 uo-muappu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uo_s_muappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_uoomuappu_s_1_rel,
  ORTH <! "ウオームアップ" !>].
 
 ; 迂回 
@@ -5284,7 +5284,7 @@ eko-_1 := vn-intrans-lex &
 ; エスケープ 
 
 esuke-pu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_esuke_s_pu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_esukeepu_s_1_rel,
  ORTH <! "エスケープ" !>].
 
 ; 枝分かれ 
@@ -5316,7 +5316,7 @@ engi_1_1 := vn-intrans-lex &
 ; エンゲージ 
 
 enge-ji_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_enge_s_ji_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_engeeji_s_1_rel,
  ORTH <! "エンゲージ" !>].
 
 ; 炎上 
@@ -5430,13 +5430,13 @@ oosawagi_1 := vn-intrans-lex &
 ; オーバーヒート 
 
 o-ba-hi-to_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_o_s_ba_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_oobaahiito_s_rel,
  ORTH <! "オーバーヒート" !>].
 
 ; オーバーラン 
 
 o-ba-ran_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_o_s_ba_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_oobaaran_s_rel,
  ORTH <! "オーバーラン" !>].
 
 ; 置き手紙 
@@ -5523,7 +5523,7 @@ ongaeshi_1 := vn-intrans-lex &
 ; Used 2 times
 
 ka-bu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ka_s_bu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kaabu_s_1_rel,
  ORTH <! "カーブ" !>].
 
  kaien_1_1 := vn-intrans-lex &
@@ -7358,14 +7358,14 @@ koegawari_1 := vn-intrans-lex &
 ; Used 10 times
 
 go-ru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_go_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gooru_s_1_rel,
  ORTH <! "ゴール" !>].
 
 ; ゴールイン 
 ; Used 1 times
 
 go-ruin_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_go_s_ruin_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gooruin_s_1_rel,
  ORTH <! "ゴールイン" !>].
 
 ; 告別 
@@ -7501,7 +7501,7 @@ konwaku_1 := vn-intrans-lex &
 ; Used 2 times
 
 sa-bu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sa_s_bu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saabu_s_1_rel,
  ORTH <! "サーブ" !>].
 
 ; 再会 
@@ -7866,7 +7866,7 @@ jiei_1 := vn-intrans-lex &
 ; シェービング 
 
 shie-bingu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shie_s_bingu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shieebingu_s_1_rel,
  ORTH <! "シェービング" !>].
 
 ; 仕返し 
@@ -9116,7 +9116,7 @@ sukippu_1 := vn-intrans-lex &
 ; Used 3 times
 
 suta-to_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suta_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sutaato_s_1_rel,
  ORTH <! "スタート" !>].
 
 ; スタンバイ 
@@ -9129,7 +9129,7 @@ sutanbai_1 := vn-intrans-lex &
 ; Used 2 times
 
 suchi-ru_1_2 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suchi_s_ru_1_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_suchiiru_s_12_rel,
  ORTH <! "スチール" !>].
 
 ; ステップ 
@@ -9153,13 +9153,13 @@ sudomari_1 := vn-intrans-lex &
 ; スパーク 
 
 supa-ku_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_supa_s_ku_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_supaaku_s_1_rel,
  ORTH <! "スパーク" !>].
 
 ; スパート 
 
 supa-to_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_supa_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_supaato_s_1_rel,
  ORTH <! "スパート" !>].
 
 ; スピン 
@@ -9874,7 +9874,7 @@ sonzai_1 := vn-intrans-lex &
 ; ターン 
 
 ta-n_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ta_s_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_taan_s_1_rel,
  ORTH <! "ターン" !>].
 
 ; タイアップ 
@@ -10408,7 +10408,7 @@ chippu_1 := vn-intrans-lex &
 ; チャージ 
 
 cha-ji_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_cha_s_ji_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_chaaji_s_1_rel,
  ORTH <! "チャージ" !>].
 
 ; 着眼 
@@ -10862,7 +10862,7 @@ teimei_1 := vn-intrans-lex &
 ; デート 
 
 de-to_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_de_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_deeto_s_1_rel,
  ORTH <! "デート" !>].
 
 ; 出稼ぎ 
@@ -11498,7 +11498,7 @@ doraibu_1 := vn-intrans-lex &
 ; トリートメント 
 
 tori-tomento_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tori_s_tomento_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_toriitomento_s_1_rel,
  ORTH <! "トリートメント" !>].
 
 ; 取り越し苦労 
@@ -11887,7 +11887,7 @@ neagari_1 := vn-intrans-lex &
 ; ネーミング 
 
 ne-mingu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ne_s_mingu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_neemingu_s_1_rel,
  ORTH <! "ネーミング" !>].
 
 ; 寝起き 
@@ -12021,7 +12021,7 @@ norinige_1 := vn-intrans-lex &
 ; パーク 
 
 pa-ku_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pa_s_ku_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_paaku_s_1_rel,
  ORTH <! "パーク" !>].
 
 ; 配管 
@@ -12370,7 +12370,7 @@ hatsurei_1 := vn-intrans-lex &
 ; パトロール 
 
 patoro-ru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_patoro_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_patorooru_s_1_rel,
  ORTH <! "パトロール" !>].
 
 ; バトンタッチ 
@@ -12817,7 +12817,7 @@ fakku_1 := vn-intrans-lex &
 ; フィーバー 
 
 fi-ba-_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fi_s_ba_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fiibaa_s_rel,
  ORTH <! "フィーバー" !>].
 
 ; フィット 
@@ -12985,7 +12985,7 @@ purotesuto_1 := vn-intrans-lex &
 ; プロポーズ 
 
 puropo-zu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_puropo_s_zu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_puropoozu_s_1_rel,
  ORTH <! "プロポーズ" !>].
 
 ; 噴火 
@@ -13068,7 +13068,7 @@ heimon_1 := vn-intrans-lex &
 ; ベースアップ 
 
 be-suappu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_be_s_suappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_beesuappu_s_1_rel,
  ORTH <! "ベースアップ" !>].
 
 ;(legal) separation, divorce from bed and table
@@ -13325,7 +13325,7 @@ houwa_1 := vn-intrans-lex &
 ; ホームイン 
 
 ho-muin_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ho_s_muin_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hoomuin_s_1_rel,
  ORTH <! "ホームイン" !>].
 
 ; 保温 
@@ -13504,7 +13504,7 @@ miai_1 := vn-intrans-lex &
 ; ミート 
 
 mi-to_1_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mi_s_to_1_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_miito_s_11_rel,
  ORTH <! "ミート" !>].
 
 ; 身売り 
@@ -13682,7 +13682,7 @@ meutsuri_1 := vn-intrans-lex &
 ; メーキャップ 
 
 me-kyappu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_me_s_kyappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_meekyappu_s_1_rel,
  ORTH <! "メーキャップ" !>].
 
 ; 目隠し 
@@ -13840,7 +13840,7 @@ yuushou_1 := vn-intrans-lex &
 ; Ｕターン 
 
 yu-ta-n_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yu_s_ta_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_yutaan_s_rel,
  ORTH <! "Ｕターン" !>].
 
 ; 行き帰り 
@@ -14397,7 +14397,7 @@ ronsou_1 := vn-intrans-lex &
 ; ワープ 
 
 wa-pu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_wa_s_pu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_waapu_s_1_rel,
  ORTH <! "ワープ" !>].
 
 ; 和解 
@@ -14632,7 +14632,7 @@ tsuuwa_1 := vn-intrans-lex &
 ; ショート 
 
 sho-to_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sho_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shooto_s_1_rel,
  ORTH <! "ショート" !>].
 
 ; 工夫 
@@ -14664,7 +14664,7 @@ tentou_1_2 := vn-intrans-lex &
 ; トレース 
 
 tore-su_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tore_s_su_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_toreesu_s_1_rel,
  ORTH <! "トレース" !>].
 
 ; パス 
@@ -14696,7 +14696,7 @@ heikou_1_3 := vn-intrans-lex &
 ; ロール 
 
 ro-ru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ro_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rooru_s_1_rel,
  ORTH <! "ロール" !>].
 
 ; いらいら 
@@ -14852,7 +14852,7 @@ douhan_3 := vn-intrans-lex &
 ; Used 3 times
 
 sa-bisu_3 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sa_s_bisu_3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saabisu_s_3_rel,
  ORTH <! "サービス" !>].
 
 ; 復活 
@@ -14878,7 +14878,7 @@ shimatsu_1 := vn-intrans-lex &
 ; アース 
 
 a-su_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_a_s_su_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_aasu_s_1_rel,
  ORTH <! "アース" !>].
 
 ; 哀願 
@@ -14948,13 +14948,13 @@ idou_inchoative := vn-intrans-lex &
 ; イメージアップ 
 
 ime-jiappu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ime_s_jiappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_imeejiappu_s_1_rel,
  ORTH <! "イメージアップ" !>].
 
 ; イメージチェンジ 
 
 ime-jichienji_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ime_s_jichienji_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_imejichienji_s_1_rel,
  ORTH <! "イメージチェンジ" !>].
 
 ; 飲食 
@@ -14973,7 +14973,7 @@ eigyou_1 := vn-intrans-lex &
 ; エスカレート 
 
 esukare-to_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_esukare_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_esukareeto_s_1_rel,
  ORTH <! "エスカレート" !>].
 
 ; 延長 
@@ -14997,7 +14997,7 @@ osen_1 := vn-intrans-lex &
 ; カール 
 
 ka-ru_1_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ka_s_ru_1_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kaaru_s_11_rel,
  ORTH <! "カール" !>].
 
 ; 開会 
@@ -15246,7 +15246,7 @@ kumen_1 := vn-intrans-lex &
 ; クローズ 
 
 kuro-zu_1_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuro_s_zu_1_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuroozu_s_11_rel,
  ORTH <! "クローズ" !>].
 
 
@@ -15350,7 +15350,7 @@ kouen_1_1 := vn-intrans-lex &
  ORTH <! "公演" !>].
 
  ko-ru_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ko_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kooru_s_1_rel,
  ORTH <! "コール" !>].
 
 ; 誤算 
@@ -15726,13 +15726,13 @@ sutoppu_1 := vn-intrans-lex &
 ; スピードアップ 
 
 supi-doappu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_supi_s_doappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_supidoappu_s_1_rel,
  ORTH <! "スピードアップ" !>].
 
 ; スピードダウン 
 
 supi-dodaun_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_supi_s_dodaun_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_supidodaun_s_1_rel,
  ORTH <! "スピードダウン" !>].
 
 ; スライド 
@@ -16121,7 +16121,7 @@ hatsudou_1 := vn-intrans-lex &
 ; パワーアップ 
 
 pawa-appu_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pawa_s_appu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_pawaappu_s_1_rel,
  ORTH <! "パワーアップ" !>].
 
 
@@ -17205,7 +17205,7 @@ uragaki_2 := vn-intrans-lex &
 ; コミュニケート 
 
 komyunike-to_2 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_komyunike_s_to_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_komyunikeeto_s_2_rel,
  ORTH <! "コミュニケート" !>].
 
 ; 餌付け 
@@ -17553,7 +17553,7 @@ heikin_2 := vn-trans1-lex &
 ; アピール 
 
 api-ru_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_api_s_ru_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_apiiru_s_2_rel,
  ORTH <! "アピール" !>].
 
 ; 呼吸 
@@ -17608,7 +17608,7 @@ kousei_2_4 := vn-trans1-lex &
 ; Used 2 times
 
 shu-to_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shu_s_to_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shuuto_s_2_rel,
  ORTH <! "シュート" !>].
 
 ; 触発 
@@ -17664,7 +17664,7 @@ hikan_2 := vn-trans1-lex &
  ; Used 2 times
 
 ma-ku_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ma_s_ku_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_maaku_s_2_rel,
  ORTH <! "マーク" !>].
 
 ; 埋蔵 
@@ -17702,7 +17702,7 @@ eshaku_2 := vn-trans1-lex &
 ; オーバーラップ 
 
 o-ba-rappu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_o_s_ba_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_oobaarappu_s_rel,
  ORTH <! "オーバーラップ" !>].
 
 ; 解体 
@@ -17760,7 +17760,7 @@ douka_2 := vn-trans1-lex &
 ; フィードバック 
 
 fi-dobakku_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fi_s_dobakku_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_fiidobakku_s_2_rel,
  ORTH <! "フィードバック" !>].
 
 ; 封印 
@@ -17804,7 +17804,7 @@ tentou_3 := vn-trans1-lex &
 ; トレース 
 
 tore-su_3 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tore_s_su_3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_toreesu_s_3_rel,
  ORTH <! "トレース" !>].
 
 ; パス 
@@ -17837,7 +17837,7 @@ heikou_3 := vn-trans1-lex &
 ; ロール 
 
 ro-ru_3 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ro_s_ru_3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rooru_s_3_rel,
  ORTH <! "ロール" !>].
 
 ; 合同 
@@ -17864,7 +17864,7 @@ douhan_2 := vn-trans1-lex &
 ; Used 3 times
 
 sa-bisu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sa_s_bisu_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_saabisu_s_2_rel,
  ORTH <! "サービス" !>].
 
 ; 復活 
@@ -17883,7 +17883,7 @@ shimatsu_2 := vn-trans1-lex &
 ; アース 
 
 a-su_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_a_s_su_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_aasu_s_2_rel,
  ORTH <! "アース" !>].
 
 ; 哀願 
@@ -17947,13 +17947,13 @@ idou_2 := vn-trans1-lex &
 ; イメージアップ 
 
 ime-jiappu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ime_s_jiappu_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_imeejiappu_s_2_rel,
  ORTH <! "イメージアップ" !>].
 
 ; イメージチェンジ 
 
 ime-jichienji_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ime_s_jichienji_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_imeejichienji_s_2_rel,
  ORTH <! "イメージチェンジ" !>].
 
 ; 飲食 
@@ -17972,7 +17972,7 @@ eigyou_2 := vn-trans1-lex &
 ; エスカレート 
 
 esukare-to_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_esukare_s_to_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_esukareeto_s_2_rel,
  ORTH <! "エスカレート" !>].
 
 ; 延長 
@@ -17996,7 +17996,7 @@ osen_2 := vn-trans1-lex &
 ; カール 
 
 ka-ru_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ka_s_ru_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kaaru_s_2_rel,
  ORTH <! "カール" !>].
 
 ; 開会 
@@ -18239,7 +18239,7 @@ kumen_2 := vn-trans1-lex &
 ; クローズ 
 
 kuro-zu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuro_s_zu_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuroozu_s_2_rel,
  ORTH <! "クローズ" !>].
 
 
@@ -18335,7 +18335,7 @@ kouen_2_1 := vn-trans1-lex &
  ORTH <! "公演" !>].
 
  ko-ru_2 := vn-trans1-lex &
- [SYNSEM.LKEYS.KEYREL.PRED '_ko_s_ru_2_rel,
+ [SYNSEM.LKEYS.KEYREL.PRED '_kooru_s_2_rel,
   ORTH <! "コール" !>].
 
 ; 誤算 
@@ -18708,13 +18708,13 @@ sutoppu_2 := vn-trans1-lex &
 ; スピードアップ 
 
 supi-doappu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_supi_s_doappu_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_supiidoappu_s_2_rel,
  ORTH <! "スピードアップ" !>].
 
 ; スピードダウン 
 
 supi-dodaun_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_supi_s_dodaun_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_supiidodaun_s_2_rel,
  ORTH <! "スピードダウン" !>].
 
 ; スライド 
@@ -19098,7 +19098,7 @@ hatsudou_2 := vn-trans1-lex &
 ; パワーアップ 
 
 pawa-appu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pawa_s_appu_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_pawaaappu_s_2_rel,
  ORTH <! "パワーアップ" !>].
 
 ; 半減 
@@ -19869,7 +19869,7 @@ ekohiiki_1 := vn-trans1-lex &
 ; エスコート 
 
 esuko-to_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_esuko_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_esukooto_s_1_rel,
  ORTH <! "エスコート" !>].
 
 ; 延期 
@@ -20369,7 +20369,7 @@ gabunomi_1 := vn-trans1-lex &
 ; カムフラージュ 
 
 kamufura-ju_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kamufura_s_ju_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kamufuraaju_s_1_rel,
  ORTH <! "カムフラージュ" !>].
 
 ; 唐揚げ 
@@ -20531,7 +20531,7 @@ kanran_1 := vn-trans1-lex &
 ; キープ 
 
 ki-pu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ki_s_pu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kiipu_s_1_rel,
  ORTH <! "キープ" !>].
 
 ; Used 6 times
@@ -21020,14 +21020,14 @@ kuyou_1 := vn-trans1-lex &
 ; グレードアップ 
 
 gure-doappu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gure_s_doappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_gureedoappu_s_1_rel,
  ORTH <! "グレードアップ" !>].
 
 ; クローズアップ 
 ; Used 1 times
 
 kuro-zuappu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuro_s_zuappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuroozuappu_s_1_rel,
  ORTH <! "クローズアップ" !>].
 
 ; 区分け 
@@ -21593,19 +21593,19 @@ goei_1 := vn-trans1-lex &
 ; Used 1 times
 
 ko-chi_1_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ko_s_chi_1_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_koochi_s_11_rel,
  ORTH <! "コーチ" !>].
 
 ; コーディネート 
 
 ko-deine-to_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ko_s_deine_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_koodeine_s_rel,
  ORTH <! "コーディネート" !>].
 
 ; コーティング 
 
 ko-teingu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ko_s_teingu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kooteingu_s_1_rel,
  ORTH <! "コーティング" !>].
 
 ; Used 1 times
@@ -21718,7 +21718,7 @@ kowake_1 := vn-trans1-lex &
 ; Used 2 times
 
 kontoro-ru_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kontoro_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kontorooru_s_1_rel,
  ORTH <! "コントロール" !>].
 
 ; 建立 
@@ -21974,7 +21974,7 @@ shiiku_1 := vn-trans1-lex &
 ; シード 
 
 shi-do_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shi_s_do_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_shiido_s_1_rel,
  ORTH <! "シード" !>].
 
 ; 試飲 
@@ -23010,7 +23010,7 @@ suuhai_1 := vn-trans1-lex &
 ; ズームアップ 
 
 zu-muappu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_zu_s_muappu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_zuumuappu_s_1_rel,
  ORTH <! "ズームアップ" !>].
 
 ; 図解 
@@ -23028,7 +23028,7 @@ sukauto_1 := vn-trans1-lex &
 ; スクープ 
 
 suku-pu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suku_s_pu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_sukuupu_s_1_rel,
  ORTH <! "スクープ" !>].
 
 ; スケッチ 
@@ -23200,7 +23200,7 @@ seiri_1_1 := vn-trans1-lex &
 ; セーブ 
 
 se-bu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_se_s_bu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_seebu_s_1_rel,
  ORTH <! "セーブ" !>].
 
 ; 積載 
@@ -24127,7 +24127,7 @@ chikaku_1 := vn-trans1-lex &
 ; チャーター 
 
 cha-ta-_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_cha_s_ta_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_chaata_s_rel,
  ORTH <! "チャーター" !>].
 
 ; 着用 
@@ -24703,13 +24703,13 @@ touyo_1 := vn-trans1-lex &
 ; トースト 
 
 to-suto_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_to_s_suto_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_toosuto_s_1_rel,
  ORTH <! "トースト" !>].
 
 ; Used 1 times
 
 to-taru_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_to_s_taru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_tootaru_s_1_rel,
  ORTH <! "トータル" !>].
 
 ; 独学 
@@ -24851,7 +24851,7 @@ doriburu_1 := vn-trans1-lex &
 ; トレード 
 
 tore-do_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_tore_s_do_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_toreedo_s_1_rel,
  ORTH <! "トレード" !>].
 
 ; 吐露 
@@ -25053,7 +25053,7 @@ nomikui_1 := vn-trans1-lex &
 ; ノミネート 
 
 nomine-to_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nomine_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nomineeto_s_1_rel,
  ORTH <! "ノミネート" !>].
 
 ; 糊付け 
@@ -25305,7 +25305,7 @@ hakkutsu_1 := vn-trans1-lex &
 ; パッケージ 
 
 pakke-ji_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pakke_s_ji_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_pakkeeji_s_1_rel,
  ORTH <! "パッケージ" !>].
 
 ; 発券 
@@ -25585,7 +25585,7 @@ fuusa_1 := vn-trans1-lex &
 ; Used 3 times
 
 pu-ru_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pu_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_puuru_s_1_rel,
  ORTH <! "プール" !>].
 
 ; 付加 
@@ -25705,7 +25705,7 @@ burokku_1_1 := vn-trans1-lex &
 ; プロデュース 
 
 purodeyu-su_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_purodeyu_s_su_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_purodeyuusu_s_1_rel,
  ORTH <! "プロデュース" !>].
 
 ; 分業 
@@ -26155,7 +26155,7 @@ machibuse_1 := vn-trans1-lex &
 ; Used 1 times
 
 massa-ji_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_massa_s_ji_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_massaaji_s_1_rel,
  ORTH <! "マッサージ" !>].
 
 ; 抹殺 
@@ -26440,7 +26440,7 @@ moyougae_1 := vn-trans1-lex &
 ; モンタージュ 
 
 monta-ju_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_monta_s_ju_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_montaaju_s_1_rel,
  ORTH <! "モンタージュ" !>].
 
 ; 焼き増し 
@@ -26761,7 +26761,7 @@ ranyou_1 := vn-trans1-lex &
 ; リース 
 
 ri-su_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ri_s_su_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_riisu_s_1_rel,
  ORTH <! "リース" !>].
 
 ; 離縁 
@@ -26783,13 +26783,13 @@ rikisetsu_1 := vn-trans1-lex &
 ; リコール 
 
 riko-ru_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_riko_s_ru_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rikooru_s_1_rel,
  ORTH <! "リコール" !>].
 
 ; リザーブ 
 
 riza-bu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_riza_s_bu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rizaabu_s_1_rel,
  ORTH <! "リザーブ" !>].
 
 ; リサイクル 
@@ -26827,13 +26827,13 @@ rippou_1 := vn-trans1-lex &
 ; リピート 
 
 ripi-to_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ripi_s_to_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ripiito_s_1_rel,
  ORTH <! "リピート" !>].
 
 ; リフォーム 
 
 rifo-mu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rifo_s_mu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rifoomu_s_1_rel,
  ORTH <! "リフォーム" !>].
 
 ; 略称 
@@ -26942,13 +26942,13 @@ reibou_1 := vn-trans1-lex &
 ; レコーディング 
 
 reko-deingu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_reko_s_deingu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rekoodeingu_s_1_rel,
  ORTH <! "レコーディング" !>].
 
 ; レシーブ 
 
 reshi-bu_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_reshi_s_bu_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_reshiibu_s_1_rel,
  ORTH <! "レシーブ" !>].
 
 ; 連結 
@@ -27094,7 +27094,7 @@ kuria-_1 := vn-trans1-lex &
 ; クリヤー 
 
 kuriya-_1 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kuriya_s__1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kuriyaa_s_1_rel,
  ORTH <! "クリヤー" !>].
 
 ; 邪魔 
@@ -27574,7 +27574,7 @@ seikei_2 := vn-trans1-lex &
 ; Used 1 times
 
 se-rusu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_se_s_rusu_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_seerusu_s_2_rel,
  ORTH <! "セールス" !>].
 
 ; セッティング 
@@ -27678,7 +27678,7 @@ naizou_2 := vn-trans1-lex &
 ;note
 
 no-to_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_no_s_to_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_nooto_s_2_rel,
  ORTH <! "ノート" !>].
 
 ; ノックダウン 
@@ -27725,7 +27725,7 @@ hyouban_2 := vn-trans1-lex &
 ; Used 1 times
 
 foro-_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_foro_s_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_foroo_s_2_rel,
  ORTH <! "フォロー" !>].
 
 ; 負担 
@@ -27803,19 +27803,19 @@ yosen_2 := vn-trans1-lex &
 ; Used 3 times
 
 ri-do_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ri_s_do_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_riido_s_2_rel,
  ORTH <! "リード" !>].
 
 ; リクルート 
 
 rikuru-to_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rikuru_s_to_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_rikuruuto_s_2_rel,
  ORTH <! "リクルート" !>].
 
 ; リリーフ 
 
 riri-fu_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_riri_s_fu_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_ririifu_s_2_rel,
  ORTH <! "リリーフ" !>].
 
 ; リレー 
@@ -27934,7 +27934,7 @@ hougen_2 := vn-trans1-lex &
 ; デディケート 
 
 dedeike-to_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_dedeike_s_to_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_dedeikeeto_s_2_rel,
  ORTH <! "デディケート" !>].
 
 ; 明示 
@@ -28254,7 +28254,7 @@ matagiki_2 := vn-trans1-lex &
 ; コミュニケート 
 
 komyunike-to_3 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_komyunike_s_to_3_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_komyunikeeto_s_3_rel,
  ORTH <! "コミュニケート" !>].
 
 ; 管轄 
@@ -28315,7 +28315,7 @@ uetsuke_2 := vn-trans1-lex &
 ; クリエート 
 
 kurie-to_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kurie_s_to_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_kurieeto_s_2_rel,
  ORTH <! "クリエート" !>].
 
 ; 挽回 

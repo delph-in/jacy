@@ -3310,7 +3310,8 @@ name-lex  := n-lex &
 				      AFFIX <! !>]]].
 
 
-person-name-lex := name-lex.
+person-name-lex := name-lex &
+		   [SYNSEM.LKEYS.KEYREL personname-relation ].
 
 
 surname-lex := person-name-lex & loc-or-surname-lex &
@@ -3330,20 +3331,24 @@ ippan-name-lex := name-lex &
                   [SYNSEM.LOCAL.CAT.HEAD ippan_head-avm].
 
 loc_name-lex := loc-or-surname-lex & 
-                [SYNSEM.LOCAL [CAT.HEAD loc_name_head-avm]].
+                [SYNSEM [LOCAL.CAT.HEAD loc_name_head-avm,
+			 LKEYS.KEYREL loc-relation ]].
                                
 
 inst_name-lex := loc-or-surname-or-instname-lex &
-                  [SYNSEM.LOCAL [CAT.HEAD inst_name_head-avm]].
+                  [SYNSEM [LOCAL.CAT.HEAD inst_name_head-avm,
+			   LKEYS.KEYREL inst-relation]].
                                
                    
 
 agent-name-lex := name-lex & 
-                  [SYNSEM.LOCAL [CAT.HEAD surname_head-avm]].
+                  [SYNSEM [LOCAL.CAT.HEAD surname_head-avm,
+			   LKEYS.KEYREL personname-relation]].
 
 
 product-name-lex := name-lex &
-                  [SYNSEM.LOCAL [CAT.HEAD product_name_head-avm]].
+                  [SYNSEM [LOCAL.CAT.HEAD product_name_head-avm,
+			   LKEYS.KEYREL productname-relation]].
 
 ; (MS 2005-09-30) Added types for names that can be ambiguous.
 

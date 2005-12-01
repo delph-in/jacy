@@ -242,8 +242,14 @@ numbered-minute-relation := numbered-np-relation & [PRED 'minute].
 
 ; ERB (2001-10-03) For days of the week, which are like
 ; the numbered-np_rels, but have a name instead of a number.
+; (MS 2005-11-30) I want the others to have distinguished relations as well,
+; which is used to disambiguate the ni particle attached to them.
 
 dofw-relation := named-relation & nonmodable-relation & niarg-relation.
+loc-relation := named-relation.
+inst-relation := named-relation.
+personname-relation := named-relation.
+productname-relation := named-relation.
 
 ; ERB (2001-10-03) Types for other kinds of date expressions.
 
