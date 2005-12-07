@@ -70,10 +70,11 @@ temp_mod_head-avm := temp_mod_head &
 
 
 ; (MS 2003-01-21) adding the MOD none restriction on the modified noun, because I got spurious ambiguity on 日本の経済
+; (MS 2005-12-07) but this doesn't work, as nouns do modify!
 
 temp_nmod_head := temp_mod_head-avm &
-                     [ MOD < [LOCAL [CAT.HEAD noun_head & [MOD null],
-				     BAR +]] > ].
+                     [ MOD < [LOCAL scopal_mod & [CAT.HEAD noun_head,
+						  BAR +]] > ].
 
 
 ; (MS 2003-09-11) This seems not to be in use any more.
@@ -3979,15 +3980,18 @@ temp_mod-lex := lexical_sign-word &
 
 
 ; (MS 2003-12-19) Matrix 0.6
+; (MS 2005-12-07) Linking LTOP and LBL.
 
 temp_nmod-lex := temp_mod-lex & 
             [SYNSEM [LKEYS.KEYREL #key,
 		     LOCAL [CAT.HEAD temp_nmod_head &
 				   [MOD < [LOCAL [CAT.VAL saturated,
-						  CONT.HOOK.INDEX #arg]]> ],
+						  CONT.HOOK [LTOP #hand,
+							     INDEX #arg]]]> ],
 			   CONT simple-adj-sem-type &
-				    [RELS <! #key & adj-relation & [ARG1 #arg ] !>,
-				     HOOK.INDEX #arg,
+				    [RELS <! #key & adj-relation & [ARG1 #arg, LBL #hand ] !>,
+				     HOOK [INDEX #arg,
+					   LTOP #hand],
 				     HCONS <! !>]]]].
 
 ; (MS 2005-11-09) Subtype in order to get rid of skip files.

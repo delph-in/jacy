@@ -23,12 +23,12 @@
 
 
 aku-stem := intrans-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_aku_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_aku_v_inchoative_rel]],
                    ORTH <! "開く" !>].  
 
 
 hiraku-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_hiraku_v_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_hiraku_v_cause_rel]],
 ORTH <! "開く" !>].
 
 
@@ -3324,10 +3324,11 @@ musubu-stem := v1-c-stem-lex &
 ORTH <! "結ぶ" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
+; (MS 2005-12-07 "私は鳥のように空を飛んでみたい"
 
-tobu-stem := intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tobu_v_rel]],
-ORTH <! "飛ぶ" !>].
+tobu-stem := v1-c-stem-lex &
+ [ ORTH <! "飛ぶ" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "_tobu_v_rel" ].
 
 yorokobu-stem := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_yorokobu_v_rel]],
@@ -22142,7 +22143,7 @@ ORTH <! "奢る" !>].
 ;;  ex.「最近この辺りの土地も開けてきた」
 
 hirakeru_1 := intrans-v-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hirakeru_v_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_hirakeru_v_inchoative_rel,
  ORTH <! "開ける" !>].
 
 ;;(TK 05-06-13)
@@ -22241,9 +22242,10 @@ kudaru_2 :=  intrans-c-stem-lex &
 ;;(TK 05-06-22)
 ;降る
 ;;  ex.「突風が山から降ってきた」
-kudaru_3 :=  intrans-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_kudaru_v_3_rel]],
-                   ORTH <! "降る" !>].
+; (MS 2005-12-07) We don't need kudaru_3 and furu-stem, if they are of the same type.
+;kudaru_3 :=  intrans-c-stem-lex &
+;                 [SYNSEM.LKEYS [KEYREL [PRED '_kudaru_v_3_rel]],
+;                   ORTH <! "降る" !>].
 
 ;;(TK 05-06-23)
 ;辿る

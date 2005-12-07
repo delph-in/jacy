@@ -2310,10 +2310,10 @@ fudan_2 := ordinary-nohon-n-lex &
 ;;(TK 05-06-13)
 ;空（kara）
 ;;  ex.「空の瓶を捨てる」
-
-kara-karappo := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kara_n_rel,
- ORTH <! "空" !>].
+; (MS 2005-12-07) we have the same entry in noun-lex: sora-noun
+;kara-karappo := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kara_n_rel,
+; ORTH <! "空" !>].
 
 ;(TK 05-06-15)
 ;;中（juu）

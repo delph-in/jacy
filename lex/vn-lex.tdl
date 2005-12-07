@@ -15413,8 +15413,8 @@ sakushi_1_1 := vn-intrans-lex &
 
 ; Used 1 times
 
-sakkyoku_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sakkyoku_s_1_rel,
+sakkyoku-inchoative := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sakkyoku_s_inchoative_rel,
  ORTH <! "ºî¶Ê" !>].
 
 ; »¦¶Ý 
@@ -18398,8 +18398,8 @@ sakushi_2_1 := vn-trans1-lex &
 
 ; Used 1 times
 
-sakkyoku_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sakkyoku_s_2_rel,
+sakkyoku-cause := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sakkyoku_s_causative_rel,
  ORTH <! "ºî¶Ê" !>].
 
 ; »¦¶Ý 

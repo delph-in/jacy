@@ -4381,4 +4381,15 @@ paresuchina_1 := loc_name-lex &
 ou_3 := loc_name-lex &
 [ORTH <! "欧" !>, SYNSEM.LKEYS.KEYREL.CARG 'ou_3].
 
+kyoutodaigaku-instname := inst_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'kyoutodaigaku,
+ORTH <! "京都大学" !>].
 
+morita-surname := surname-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'morita,
+ORTH <! "森田" !>].
+
+
+beethoven-surname := surname-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'beethoven,
+ORTH <! "ベートーベン" !>].
