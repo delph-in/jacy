@@ -4872,6 +4872,9 @@ dareka-chasen := indef-word-person-lex &
 dareka-hiragana-chasen := indef-word-person-lex &
 [ ORTH <! "だれ","か" !>].
 
+dareka-kanji := indef-word-person-lex &
+[ ORTH <! "誰か" !>].
+
 nanigoto :=
 wh-word-thing-lex &
 [ORTH <! "何事" !>,
@@ -146698,3 +146701,11 @@ renga-hiragana := ordinary-nohon-n-lex &
 shirayuri-kanji := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_shirayuri_n_1_rel,
  ORTH <! "白百合" !>].
+
+;"復元できるかが問題だ。"
+
+ka-nom :=
+nom-pred-lex &
+[ORTH <! "か" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ka_n_rel]].
+

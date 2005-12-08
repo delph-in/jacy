@@ -163,6 +163,7 @@ utterance_rule-idiom  := turn-type &
 
 ; (MS 2002-01-16) introduces simple-imperative vs. polite-imperative to divide utterance_rule10 and utterance_rule2e.
 ; (MS 2003-12-17) Adapting to Matrix 0.6
+; (MS 2005-12-08) We don't want the NONLOCAL.QUE <! !> condition on the argument, as embedded sentences; could have some QUE left in their storage: "誰が行くか教えて下さい。"
 
 utterance_rule-command := utterance-plusmessage-type &
                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
@@ -173,8 +174,7 @@ utterance_rule-command := utterance-plusmessage-type &
                                                     FIN +,
                                                     MAIN-PRD +],
                                               VAL saturated],
-                                         CONT.HOOK.INDEX.E.MOOD imperative],
-                                  NON-LOCAL.QUE <! !>],
+                                         CONT.HOOK.INDEX.E.MOOD imperative]],
 			  RMORPH-BIND-TYPE imp-morph]>].
 
 

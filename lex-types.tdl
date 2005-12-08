@@ -8066,18 +8066,20 @@ v5-v-minusshon-stem-lex := v5-minusshon-stem-lex & [STEMTYPE v-stem].
 ; run solution is a non-branching rule that binds it off. To
 ; force the rule to apply, these verbs must select for QUE <! !>
 ; empty complements.
+; (MS 2005-12-08) As QUE is rather a storage (which isn't emptied), this does not work out.
+; see: "誰が行っているか教えて下さい。"
+
 
 v5a-stem-lex := v-sbj-comps-stem-lex  &
                [SYNSEM [LOCAL [CAT [HEAD.COP -,
                                    VAL ga-to_transitive1 &
-                                      [COMPS.FIRST [ LOCAL.CONT [HOOK.LTOP #objind],
-						     NON-LOCAL.QUE <! !> ],
+                                      [COMPS.FIRST [ LOCAL.CONT [HOOK.LTOP #objind]],
 				       SUBJ.FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]],
 			       CONT verb-sem-type &
 				   [HOOK.XARG #sbjind]],
 			LKEYS.KEYREL [ARG1 #sbjind,
 				      ARG2 #objind],
-                        NON-LOCAL.QUE <! !>]].
+			NON-LOCAL.QUE <! !> ]].
 
 
 v5a-nohon-stem-lex := v5a-stem-lex &

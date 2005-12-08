@@ -16164,8 +16164,8 @@ bikou_1_1 := vn-intrans-lex &
 
 ; Éü¸µ 
 
-fukugen_1 := vn-intrans-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukugen_s_1_rel,
+fukugen-inchoative := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fukugen_s_inchoative_rel,
  ORTH <! "Éü¸µ" !>].
 
 ; ÉðÁõ 
@@ -19140,8 +19140,8 @@ bikou_2 := vn-trans1-lex &
 
 ; Éü¸µ 
 
-fukugen_2 := vn-trans1-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_fukugen_s_2_rel,
+fukugen-cause := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fukugen_s_causative_rel,
  ORTH <! "Éü¸µ" !>].
 
 ; ÉðÁõ 
