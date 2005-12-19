@@ -335,16 +335,16 @@ scopal-adv-sem-type := possibly-wh-scopal-adv-sem-type.
 
 wh-adv-sem-type := mod-id-wg-handel-mrs &
                    [ RELS <! prep-mod-relation &
-                            [ARG1 #var,
-			     PRED 'prep-mod,
+                            [PRED 'unspec_manner_rel,
                              WLINK #label,
-                             ARG0 [ E.TENSE no_tense ]],
+                             ARG0 [ E.TENSE no_tense ],
+			     ARG2 #var],
                             noun-relation &
                             [LBL #lr,
                              WLINK #label,
                              ARG0 #var],
                             quant-relation &
-                            [ARG0 #var & ref-ind,
+                            [ARG0 #var,
                              RSTR #rest,
                              PRED whq_rel] !>,
                      HCONS <! qeq & [LARG #lr, HARG #rest] !>].

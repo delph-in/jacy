@@ -644,6 +644,10 @@ kadouka-comp-varg := comp-int-lex-varg-nonquest &
             [ORTH <! "か","どう","か" !>,
              SYNSEM.LOCAL.CAT.HEAD [PTYPE to]].
 
+kadoukaga-comp-varg := comp-int-lex-varg-nonquest &
+            [ORTH <! "か","どう","か","が" !>,
+             SYNSEM.LOCAL.CAT.HEAD [PTYPE to]].
+
 
 
 ;あるいは弊社が発行していましても紛失したかもしれません。
@@ -1969,3 +1973,9 @@ dano-nconj := n_conj-p-lex &
 dano-second-conj := postp-lex-coord &
 	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
 		  ORTH <! "だ","の" !>].
+
+; "私は何と答えてよいか途方にくれた。"
+
+ka-sap-np  := s-conj-lex & 
+                  [ORTH <! "か" !>,
+                   SYNSEM.LKEYS.KEYREL.PRED '_ka_p_sconj_rel].

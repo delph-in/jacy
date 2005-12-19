@@ -7,8 +7,11 @@
 ;;; parameters only - grammar specific functions 
 ;;; should go in user-fns.lsp
 
-#+:allegro
-(setf excl:*locale* (excl:find-locale "japan.EUC"))
+;#+:allegro
+;(setf excl:*locale* (excl:find-locale "japan.EUC"))
+
+(when (lkb-version-after-p "2005/10/28 00:00:00")
+  (grammar-encoding 'japan.EUC)) 
 
 (defparameter *active-parsing-p* t)
 

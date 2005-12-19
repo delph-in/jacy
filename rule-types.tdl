@@ -141,7 +141,6 @@ unary-type-super :=   phrasal_sign &
                                             LAST #last],
                                      HCONS [LIST #sclist,
                                              LAST #sclast]]],
-			LEX -,
 			NON-LOCAL #nonloc],
  		ORTH #stem,
                C-CONT mrs & [HOOK #hook,
@@ -163,7 +162,8 @@ unary-type-super :=   phrasal_sign &
 
 
 unary-type := unary-type-super &
-[ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL optional-or-saturated ].
+[ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL optional-or-saturated,
+ SYNSEM.LEX - ].
 
 head-final-type := binary-headed-phrase & speaker-addr-principle &	
             [SYNSEM [NON-LOCAL [ROBUST #rob,

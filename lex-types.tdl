@@ -1771,9 +1771,9 @@ case-p-lex-postp-ni := case-p-lex-postp &
 ; KEY comes from right conjunct, but LTOP comes from conjunction.)
 ; (FCB 2005-06-27) Added ARG0 to message
 
-comp-lex := p-lex-c &
- [SYNSEM.LOCAL [CAT [HEAD case-p_head & [CASE to],
-		     VAL.COMPS.FIRST.LOCAL.CONT.HOOK [LTOP #ohand,
+
+comp-lex-basic := p-lex-c &
+ [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL.CONT.HOOK [LTOP #ohand,
 					INDEX #index]],
 		CONT [RELS  <! message & [LBL #chand,
 					  ARG0 #index,
@@ -1781,6 +1781,9 @@ comp-lex := p-lex-c &
 		      HOOK.LTOP #chand,
 		      HCONS <! qeq & [LARG #ohand,
 				      HARG #soa] !>]]].
+
+comp-lex := comp-lex-basic &
+ [SYNSEM.LOCAL.CAT.HEAD case-p_head & [CASE to]].
 
 comp-prpstn-lex := comp-lex &
                    [SYNSEM.LOCAL.CONT.RELS <! message & [PRED proposition_m_rel] !>].
@@ -1843,8 +1846,7 @@ comp-int-lex := comp-lex &
 ; (MS 2005-11-10) getting rid of skip files.
 
 comp-int-lex-varg := comp-int-lex &
-		     [SYNSEM.LOCAL.CAT [HEAD.CASE to,
-					VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [MAIN-PRD -]]].
+		     [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [MAIN-PRD -]]].
 
 comp-int-lex-naarg := comp-int-lex &
 		     [SYNSEM.LOCAL.CAT [HEAD.CASE to,
@@ -1857,11 +1859,10 @@ comp-int-lex-naarg-nonquest := comp-int-lex-naarg & comp-int-lex-nonquest.
 
 comp-int-lex-varg-nonquest := comp-int-lex-varg & comp-int-lex-nonquest.
 
+
 comp-int-lex-unmarked := comp-int-lex &
 			 [SYNSEM.LOCAL.CAT [HEAD.CASE to,
 					    VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [SMOD unmarked]]].
-
-
 
 
 
@@ -4896,6 +4897,7 @@ adv-wh-lex := adv-lex &
 
 ; (ERB 2001-09-06) For dou, which wants to modify a V (i.e., something that is
 ; HEAD verb & LEX +.
+; (MS 2005-12-19) But this needs a different semantics and cannot inherit from adv-wh-lex.
 
 lex-mod-adv-wh-lex := adv-wh-lex &
                       [ SYNSEM.LOCAL.CAT.HEAD.MOD < [LEX +] > ].
@@ -8573,6 +8575,9 @@ cop-id-ordinary-daiquest-stem-lex := cop-id-ordinary-desustem-lex &
 							       FORMAL.AHON -],
 							 VAL.COMPS.FIRST [NON-LOCAL.QUE <! handle !>]]]].
 
+; (MS 2005-12-13) if we want to parse phrases like Ã¯¤«¤¤, the complement's head must be noun_head and
+; the copula must not add QUE information.
+
 cop-id-quest-stem-lex := cop-id-stem-lex &
 			 [SYNSEM [LOCAL [CAT [HEAD [MODUS indicative,
 						    MOD null,
@@ -8580,9 +8585,7 @@ cop-id-quest-stem-lex := cop-id-stem-lex &
 						   SMOD quest,
 						   MARK null,
 						   FORMAL.AHON -],
-					      VAL.COMPS.FIRST.LOCAL.CAT.HEAD ordinary_noun_head],
-					 CONT.HOOK.LTOP #h],
-				  NON-LOCAL.QUE <! #h !>],
+					      VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head]]],
 			  STEMTYPE desu-stem].
 
 cop-id-quest-stem-noquestincomp-lex := cop-id-quest-stem-lex &

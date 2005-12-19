@@ -5191,7 +5191,7 @@ nanodesu-cop-id-multi-2 := cop-id-ordinary-desustem-lex &
 
 ;"君達は学生かい"
 
-kai-cop-id-lex := cop-id-quest-stem-noquestincomp-lex &
+kai-cop-id-lex := cop-id-quest-stem-lex &
 	               [ORTH <! "かい" !>].
 
 ;"あの人はだれかしら。"
