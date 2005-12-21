@@ -108,6 +108,7 @@ binary-type-mod := binary-modification-type & binary-headed-phrase &
 
 ; (MS 2004-12-22) This shouldn't inherit the LTOP from its second arg.
 ; (see sentence-te-coordination)
+; (ms 2005-12-21) Shouldn't the INDEX come from the second ARG? -> "この香水を少しだけ付けてごらんなさい。"
 
 binary-type-conj := binary-modification-type & 
                     [LMORPH-BIND-TYPE #lmorph,
@@ -115,11 +116,11 @@ binary-type-conj := binary-modification-type &
                      SYNSEM.LOCAL [CAT [HEAD #head,
 					VAL #val],
 				   CONT.HOOK [INDEX #ind]],
-		     ARGS <  [LMORPH-BIND-TYPE #lmorph,
-			      SYNSEM.LOCAL.CONT.HOOK.INDEX #ind] ,
+		     ARGS <  [LMORPH-BIND-TYPE #lmorph] ,
 			     [RMORPH-BIND-TYPE #rmorph,
 			      SYNSEM.LOCAL [CAT [HEAD #head,
-						 VAL #val]]]
+						 VAL #val],
+					    CONT.HOOK.INDEX #ind]]
 			     > ].
 
 ; (MS 2003-07-15) Replaced with binary-headed-phrase from matrix.tdl

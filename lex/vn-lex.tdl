@@ -583,6 +583,11 @@ vn-trans1-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_goran_s_rel]],
 ORTH <! "御覧" !>].
 
+goran-hiragana-vn :=
+vn-trans1-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_goran_s_rel]],
+ORTH <! "ごらん" !>].
+
 houmoN-vn :=
 vn-trans1-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_houmon_s_rel]],

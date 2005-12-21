@@ -146709,3 +146709,6 @@ nom-pred-lex &
 [ORTH <! "か" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_ka_n_rel]].
 
+kadoukawo-pred := nom-pred-lex &
+[ORTH <! "か","どう","か" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kadouka_n_rel]].
