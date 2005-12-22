@@ -78148,7 +78148,7 @@ taikei_1 := ordinary-nohon-n-lex &
 ; Used 3 times
 
 taikei_1_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taikei_n_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_taikei_n_11_rel,
  ORTH <! "体形" !>].
 
 ; 台形 
@@ -146712,3 +146712,20 @@ SYNSEM.LKEYS.KEYREL [PRED '_ka_n_rel]].
 kadoukawo-pred := nom-pred-lex &
 [ORTH <! "か","どう","か" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_kadouka_n_rel]].
+
+sonomama-chasen-noun :=
+ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sonomama_n_rel,
+ORTH <! "そのまま" !>].
+
+;aids virus
+
+eizuuirusu-n := ordinary-nohon-n-lex &
+[ORTH <! "エイズ", "・","ウイルス" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_eizuuirusu_n_rel]].
+
+;preparation
+
+seizai-n := ordinary-nohon-n-lex &
+[ORTH <! "製剤" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_seizai_n_rel]].

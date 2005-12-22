@@ -572,13 +572,15 @@ head-adjunct-rule-final-s := hadj-final-s &
 				     [LOCAL.BAR +]]>].
 
 ; (MS 2003-06-11) Rule for scopal modifiers - head first
+; (MS 2005-12-22) Let's try to take the BAR status from the head:
+; "探しばかりする"
 
 head-adjunct-rule-first-s := hadj-first-s &
-                      [SYNSEM.LOCAL [BAR +],
+                      [SYNSEM.LOCAL [BAR #bar],
                        C-CONT [ RELS <! !>,
                                 HCONS <! !> ],
                        ARGS <[SYNSEM j-synsem &
-				     [LOCAL.BAR +]],
+				     [LOCAL.BAR #bar]],
 			     [SYNSEM.LOCAL [CAT [ HEAD [J-POSTHEAD right,
 							MAIN-PRD -],
 						  VAL saturated ],

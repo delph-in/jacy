@@ -4393,3 +4393,17 @@ ORTH <! "森田" !>].
 beethoven-surname := surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'beethoven,
 ORTH <! "ベートーベン" !>].
+
+
+
+ooda-pn :=
+surname-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'ooda,
+ORTH <! "大田" !>].
+
+;Third World
+
+daisansekai-locname := loc_name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'daisansekai,
+ORTH <! "第","三","世界" !>].
+

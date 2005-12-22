@@ -9100,7 +9100,9 @@ yurumu_1 := intrans-c-stem-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_yurumu_v_1_rel,
  ORTH <! "緩む" !>].
 
-
+yurumu-hiragana := intrans-c-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yurumu_v_1_rel,
+ ORTH <! "ゆるむ" !>].
 
 ; 言い返す 
 

@@ -4836,8 +4836,7 @@ na-adj-wh-lex := na-adj-basic-lex &
 ; head of the phrase in 時間的な継続, such that it can be subcategorized for by な
 
 na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj_head & [MAIN-PRD -],
-						    VAL sbj-narg_transitive & [COMPS.FIRST [OPT -,
-										    LOCAL.CONT.HOOK.INDEX #arg]]],
+						    VAL sbj-narg_transitive & [COMPS.FIRST [OPT -]]],
 					       CONT na-adj-sem-type & [RELS <! #key !>,
 								       HOOK.XARG #arg]],
 					LKEYS.KEYREL #key & [ARG1 #arg],
@@ -8760,6 +8759,7 @@ cop-neg-lex := nonaux-lex &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 ; (MS 2005-06-20) These should take their FORMAL information from their complements: yoroshii deshou.
+; (MS 2005-12-22) No, this is not right for AHON: 食べるでしょう
 
 
 cop-light-lex := nonaux-lex &
@@ -8768,10 +8768,10 @@ cop-light-lex := nonaux-lex &
 			   SMOD unmarked,
 			   COP +,
 			   H-TENSE #tense,
-			   FORMAL #form],
+			   FORMAL.SHON #form],
                     VAL  cop_transitive & [COMPS #comps & [FIRST [LOCAL [CONT [HOOK #hook],
 									 CAT.HEAD [H-TENSE #tense,
-										   FORMAL #form],
+										   FORMAL.SHON #form],
 									 NUCL not_fin_conj]]]]],
 	       
 	       CONT [HOOK #hook,

@@ -22620,8 +22620,12 @@ dodai_2 := scopal-adv-regular-lex &
 ; Used 1 times
 
 toriwake_2 := scopal-adv-regular-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toriwake_a_2_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_toriwake_a_rel,
  ORTH <! "取り分け" !>].
+
+toriwake-hiragana := scopal-adv-regular-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_toriwake_a_rel,
+ ORTH <! "とりわけ" !>].
 
 ; どろどろ 
 ; Used 2 times
@@ -23521,3 +23525,9 @@ imahitotsu-na-lex := na-adj-lex &
 oritatamikanou-adj := na-adj-lex &
  [ ORTH <! "折りたたみ","可能" !>,
    SYNSEM.LKEYS.KEYREL.PRED "_oritatamikanou_a_isect_rel" ].
+
+mirumiru-adv :=
+scopal-adv-regular-lex &
+[ORTH <! "見る","見る" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_mirumiru_a_rel].
+
