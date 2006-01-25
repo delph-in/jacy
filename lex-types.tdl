@@ -9774,9 +9774,12 @@ generic-i-adj-lex := v-lex & lexical_sign-word &
                             CONT simple-verb-sem-type &
                                 [HOOK [INDEX event & #ind & 
 					     [E [TENSE #tense]],
-				       LTOP #handle]],
+				       XARG #inst,
+				       LTOP #handle],
+				 RELS <! #relation !>,
+				 HCONS <! !>],
                             BAR -],
-		      LKEYS.KEYREL adj-relation &
+		      LKEYS.KEYREL arg1-relation & #relation &
                                        [ARG1 #inst,
 					ARG0 #ind,
                                         LBL #handle],
