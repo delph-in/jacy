@@ -173,7 +173,9 @@ orthographemics-duplicate-filter:= false.
 ;;;
 
 ;; produced by Dan Def-05/fd-005 (without 116777)
-sm := "f5-005.mem".
+;sm := "f5-005.mem".
+;;; made on syrah with Taka 2005-11-14 from LXD-DEF-6.jp051120.
+sm := "hinoki.mem".
 
 ;;; Notes:
 ;;; 
@@ -584,7 +586,10 @@ posmapping :=
   形容詞-自立+形容詞・イ段-基本形		 $generic_adj_i_infl
   形容詞-自立+形容詞・イ段-仮定形		 $generic_adj_kere_infl
   形容詞-自立+形容詞・イ段-文語基本形		 $generic_adj_short_infl
-  JapaneseNounCompound                   $generic_noun-lex
+  JapaneseNounCompound                           $generic_noun-lex
+  未知語+n-n                                     $generic_vn-lex
+  記号-アルファベット+n-n                        $generic_vn-lex
+  記号-一般+n-n                                  $generic_noun-lex
 .
 
 
