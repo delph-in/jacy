@@ -2432,32 +2432,38 @@ binary-frag-rule := basic-frag-rule & binary &
 ;;; FIXME - share code with PP/NP frag rules
 ; (MS 2005-10-24) I want one for numbers: "»÷πÊ°ß£±£∞"
 
-frag-pp-something-rule := binary-frag-rule &
-			  [ ARGS <  [ SYNSEM.LOCAL [ CAT [ HEAD vmod-p_head &
-								[ MOD < synsem &
-									[ LOCAL intersective_mod ] >],
-							   VAL saturated],
-						     CONT.HOOK [ LTOP #klbl,
-								 INDEX #ind ]]],
-				    [SYNSEM.LOCAL [ CAT [ HEAD  [EMPTY -,
-								 AUX aux_minus,
-								 ADJ -,
-								 COP -,
-								 C-MOD null,
-								 SMOD unmarked],
-							  VAL saturated],
-						    CONT.HOOK.INDEX #arg]] >,
-			    C-CONT [ RELS.LIST.REST.FIRST [ LBL #klbl,
-							    ARG0 #ind,
-							    ARG  #arg ]]].
+frag-vmod-something-rule := binary-frag-rule &
+ [ ARGS <  [ SYNSEM.LOCAL [ CAT [ HEAD [ MOD < synsem &
+					       [ LOCAL intersective_mod ] >],
+				  VAL saturated],
+			    CONT.HOOK [ LTOP #klbl,
+					INDEX #ind ]]],
+	   [SYNSEM.LOCAL [ CAT [ HEAD  [EMPTY -,
+					AUX aux_minus,
+					ADJ -,
+					COP -,
+					C-MOD null,
+					SMOD unmarked],
+				 VAL saturated],
+			   CONT.HOOK.INDEX #arg]] >,
+   C-CONT [ RELS.LIST.REST.FIRST [ LBL #klbl,
+				   ARG0 #ind,
+				   ARG  #arg ]]].
 
+;;; (FCB 2006-02-01) Changing intersective_mod to j-local allows scopal adverbs but gets the semantics wrong 
+;;; i.e. it won't scope.
 
-frag-pp-np-rule := frag-pp-something-rule &
- [ ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  noun_head].
+frag-pp-np-rule := frag-vmod-something-rule &
+ [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head,
+   ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  noun_head].
 
+frag-advp-np-rule := frag-vmod-something-rule &
+ [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head-avm,
+   ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  noun_head].
 
-frag-pp-int-rule := frag-pp-something-rule  &
- [ ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  int_head ].
+frag-pp-int-rule := frag-vmod-something-rule  &
+ [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head,
+   ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  int_head ].
 
 
 ;;;

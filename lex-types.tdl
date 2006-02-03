@@ -2981,7 +2981,8 @@ idiom-lex := lexical_sign-word &
                             CTXT.BACKGROUND <! !>,
                             BAR +,
 			    ARG-S <>],
-		     LKEYS.KEYREL #key & [LBL #lhand],
+		     LKEYS.KEYREL arg0-relation & #key & 
+			   [LBL #lhand],
                      NON-LOCAL [QUE <! !>,
                              AFFIX <! !>]],
              INFLECTED +].
@@ -3312,8 +3313,7 @@ name-lex  := n-lex &
 				      AFFIX <! !>]]].
 
 
-person-name-lex := name-lex &
-		   [SYNSEM.LKEYS.KEYREL personname-relation ].
+person-name-lex := name-lex.
 
 
 surname-lex := person-name-lex & loc-or-surname-lex &
@@ -3333,24 +3333,20 @@ ippan-name-lex := name-lex &
                   [SYNSEM.LOCAL.CAT.HEAD ippan_head-avm].
 
 loc_name-lex := loc-or-surname-lex & 
-                [SYNSEM [LOCAL.CAT.HEAD loc_name_head-avm,
-			 LKEYS.KEYREL loc-relation ]].
+                [SYNSEM.LOCAL [CAT.HEAD loc_name_head-avm]].
                                
 
 inst_name-lex := loc-or-surname-or-instname-lex &
-                  [SYNSEM [LOCAL.CAT.HEAD inst_name_head-avm,
-			   LKEYS.KEYREL inst-relation]].
+                  [SYNSEM.LOCAL [CAT.HEAD inst_name_head-avm]].
                                
                    
 
 agent-name-lex := name-lex & 
-                  [SYNSEM [LOCAL.CAT.HEAD surname_head-avm,
-			   LKEYS.KEYREL personname-relation]].
+                  [SYNSEM.LOCAL [CAT.HEAD surname_head-avm]].
 
 
 product-name-lex := name-lex &
-                  [SYNSEM [LOCAL.CAT.HEAD product_name_head-avm,
-			   LKEYS.KEYREL productname-relation]].
+                  [SYNSEM.LOCAL [CAT.HEAD product_name_head-avm]].
 
 ; (MS 2005-09-30) Added types for names that can be ambiguous.
 
@@ -9811,31 +9807,41 @@ generic_adj_a_infl-lex := generic-i-adj-lex &
 ; assuming that's reserved for attributive adjectives and that the
 ; generic entry should be predicative.  Changing to arg1-relation.
 
+; (FCB 2006-01-26) added BAR - and INFLECTED + to reduce ambiguity a little
+; also MODUS.indicative
+; FIXME: propogate these changes to the other adjective types, and maybe refactor
+; need to copy from i-adj-stem-lex to link the semantics 
+; - can't inherit because of verb-stem-lex-base being INFLECTED -
+
 generic_adj_i_infl-lex  :=  v-lex & lexical_sign-word &
-[RMORPH-BIND-TYPE u-morph,
- SYNSEM [LOCAL [CAT [HEAD i-adj_head &
-                         [H-TENSE #tense & present,
-                          MOD < [LOCAL [CAT.HEAD noun_head,
-                                      BAR +],
-                               MODIFIED.PERIPH -] >,
-                          MARK null,
-                          J-SPEC.FIRST.LOCAL.CAT.HEAD noun_head,
-                          FIN +,
-                          FORMAL.AHON -],
-                    VAL adj_sc &
-                         [SUBJ.FIRST [LOCAL.CONT.HOOK [INDEX #inst,
-						       LTOP #handle]]]],
+ [RMORPH-BIND-TYPE u-morph,
+ SYNSEM [LOCAL [CAT [HEAD i-adj-stem_head &
+                          [H-TENSE #tense & present,
+			   MODUS indicative,
+                           MOD < [LOCAL [CAT.HEAD noun_head,
+                                         BAR +],
+                                  MODIFIED.PERIPH -] >,
+                           MARK null,
+                           J-SPEC.FIRST.LOCAL.CAT.HEAD noun_head,
+                           FIN +,
+                           FORMAL.AHON -],
+                     VAL adj_sc &
+                          [SUBJ.FIRST [LOCAL.CONT.HOOK [INDEX #inst,
+                                                        LTOP #handle]]]],
                 CONT simple-verb-sem-type &
-                   [HOOK [INDEX event & #ind &
-				[E [TENSE #tense]],
-			  LTOP #handle],
-                    HCONS <! !>]],
-	 LKEYS.KEYREL arg1-relation &
-                          [ARG0 #ind,
-			   ARG1 #inst, 
-                           LBL #handle],
+                    [HOOK [INDEX event & #ind &
+                                 [E [TENSE #tense]],
+                           LTOP #handle],
+                     HCONS <! !>],
+                BAR -],
+         LKEYS.KEYREL arg1-relation &
+               [ARG0 #ind,
+                ARG1 #inst,
+                LBL #handle],
          NON-LOCAL.QUE <! !>],
- J-NEEDS-AFFIX -].
+ J-NEEDS-AFFIX -,
+ INFLECTED +].
+
 
 
 
