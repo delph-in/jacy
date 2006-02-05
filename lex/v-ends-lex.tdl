@@ -663,12 +663,25 @@ nakereba-narimasen-end  :=  v-neg-polite-present-end-amorph-lex &
 	       SYNSEM.LKEYS.KEYREL.PRED '_have_v_to_rel].	
 
 
-
+;;; FIXME: hack for ざる
 ;cannot help doing, have to
 
 zaru-wo-emasen-end := v-neg-polite-present-end-amorph-lex  &
               [ORTH <! "ざる","を", "え", "ませ", "ん" !>,
                SYNSEM.LKEYS.KEYREL.PRED '_cant_v_help_rel].
+
+zaru-wo-emasen-end-kanji := v-neg-polite-present-end-amorph-lex  &
+              [ORTH <! "ざる","を", "得", "ませ", "ん" !>,
+               SYNSEM.LKEYS.KEYREL.PRED '_cant_v_help_rel].
+
+zaru-wo-enai-end := v-neg-polite-present-end-amorph-lex  &
+              [ORTH <! "ざる","を", "え", "ない" !>,
+               SYNSEM.LKEYS.KEYREL.PRED '_cant_v_help_rel].
+
+zaru-wo-enai-end-kanji := v-neg-polite-present-end-amorph-lex  &
+              [ORTH <! "ざる","を", "得", "ない" !>,
+               SYNSEM.LKEYS.KEYREL.PRED '_cant_v_help_rel].
+
 
 
 ; (FCB 2005-06-27) One entry covers all three.

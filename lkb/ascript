@@ -46,7 +46,7 @@
 
 
 ;;; Load the lexicon
-(if   *lexdb-params* ;;; nil
+(if   nil;;; *lexdb-params* ;;; nil
     ;; Use the database
     (progn
       ;; load from database
@@ -84,9 +84,9 @@
                                               (parent-directory) "lex/vn-lex.tdl")))
 (read-cached-sublex-if-available "v-ends" (list (lkb-pathname 
                                                  (parent-directory) "lex/v-ends-lex.tdl")))
-(read-cached-sublex-if-available "adds" (list (lkb-pathname 
-						 (parent-directory) "lex/add-lex.tdl")))))
-
+;;;(read-cached-sublex-if-available "adds" (list (lkb-pathname 
+;;;						 (parent-directory) "lex/add-lex.tdl")))))
+))
     
 (read-tdl-parse-node-file-aux 
           (lkb-pathname (parent-directory) "parse-nodes.tdl"))

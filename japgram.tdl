@@ -1080,10 +1080,12 @@ adj-nominal-suffix-rule := adj-nominal-suffix-type.
 ; 			     BAR -]]]].
 
 ;;; Fragment rules
+;;; unary rules
 frg-np := frag-np-rule.
 frg-pp := frag-pp-rule.
-;frg-s-adv := frag-scp-adv-rule.
-frg-i-adv := frag-int-adv-rule.
+frg-s-adv := frag-s-adv-rule.
+frg-i-adv := frag-i-adv-rule.
+;;; binary fragment rules
 frg-pp-np := frag-pp-np-rule.
-frg-i-adv-np := frag-advp-np-rule.
+frg-i-adv-np := frag-i-adv-np-rule.
 frg-pp-int := frag-pp-int-rule.

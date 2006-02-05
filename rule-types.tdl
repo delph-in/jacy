@@ -2339,11 +2339,9 @@ ga-wo_transitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
 ;;; Rules for fragments
 ;;;
 
-;;;
-;;; The basic type creates a proposition with an unknown_relation 
-;;; 
+;;; The super type creates a proposition with an non-specified relation
 
-basic-frag-rule := phrasal_sign  & 
+super-frag-rule := phrasal_sign  & 
   [ INFLECTED +,
     SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
                            VAL saturated ],
@@ -2356,12 +2354,20 @@ basic-frag-rule := phrasal_sign  &
 	     RELS.LIST < #msg &
 			 [ LBL #lbl,
 			   PRED proposition_m_rel ], 
-			 unknown_relation &
-			 [ ARG0 #ind ], ... >,
+			  ... >,
 	     HCONS.LIST < qeq & [ HARG #marg ], ... > ], 
     ARGS.FIRST [INFLECTED +,
 		SYNSEM [NON-LOCAL [QUE <! !>,
 			   AFFIX  <! !>]]]].
+
+
+;;; The basic type creates a proposition with an unknown_relation 
+
+basic-frag-rule := super-frag-rule &
+ [ C-CONT [ HOOK.INDEX #ind ,
+	    RELS.LIST < relation, 
+			unknown_relation & 
+			[ ARG0 #ind ],  ... > ]].
 
 
 unary-frag-rule := basic-frag-rule & unary-type &
@@ -2384,7 +2390,7 @@ C-CONT.RELS.LIST.REST.FIRST.ARG #ind ].
 
 frag-vmod-rule := unary-frag-rule &
  [  ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < synsem &
-					     [ LOCAL intersective_mod ] >,
+					     [ LOCAL j-local ] >,
 				  VAL saturated],
 			    CONT.HOOK [ LTOP #klbl,
 					INDEX #arg ] ] ] >,
@@ -2392,10 +2398,40 @@ frag-vmod-rule := unary-frag-rule &
 				    ARG0 #arg ]]].
 
 frag-pp-rule := frag-vmod-rule &
-[ARGS < [SYNSEM.LOCAL.CAT.HEAD vmod-p_head] > ].
+ [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head &
+				   [MOD < synsem &
+					 [ LOCAL intersective_mod ]>]].
 
-frag-int-adv-rule := frag-vmod-rule &
-[ARGS < [SYNSEM.LOCAL.CAT.HEAD adv_head-avm] > ].
+frag-i-adv-rule := frag-vmod-rule &
+ [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head-avm &
+				   [MOD < synsem &
+					 [ LOCAL intersective_mod ]>]].
+; frag-s-adv-rule := frag-vmod-rule &
+;  [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head-avm &
+; 				   [MOD < synsem &
+; 					 [ LOCAL scopal_mod ]>]].
+
+; FIXME (FCB not finished yet)
+frag-s-adv-rule := basic-frag-rule & unary-type &
+ [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD adv_head-avm &
+				      [ MOD < synsem &
+					      [ LOCAL scopal_mod &
+						      [ CONT.HOOK.LTOP #klbl]] >]]]]>,
+   C-CONT [ RELS  <! relation, 
+		   relation & 
+		   [LBL #klbl ] !> ,
+	    HCONS <! [ LARG #klbl ] !> ]].
+
+
+frag-s-adv-rule := basic-frag-rule & unary-type &
+ [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD adv_head-avm &
+				      [ MOD < synsem &
+					      [ LOCAL scopal_mod &
+						      [ CONT.HOOK.LTOP #albl]] > ]]]] >,
+   C-CONT [ RELS  <! relation, 
+		   relation !> ,
+	    HCONS <! [ LARG #albl ] !> ]].
+
 
 ; FIXME - do we want 東京　が　as a constituent?
 ; frag_pp_sel_rule := unary_frag_rule &
@@ -2409,15 +2445,6 @@ frag-int-adv-rule := frag-vmod-rule &
 ;              HCONS <! qeq, geq & [ HARG #klbl,
 ;                                    LARG #plbl ] !> ] ].
 
-; FIXME (FCB not finished yet)
-; frag-scp-adv-rule := unary-frag-rule &
-;   [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD adv_head-avm &
-; 				       [ MOD < synsem &
-; 					       [ LOCAL scopal_mod &
-; 						       [ CONT [ HOOK.LTOP #klbl,
-; 								MSG no-msg ] ] ] > ]],
-;                             CONT.MSG no-msg ] ] >,
-;     C-CONT [ RELS.LIST.REST.FIRST.LBL #klbl]].
 
 ;
 ; Fragments with two parts
@@ -2428,6 +2455,28 @@ binary-frag-rule := basic-frag-rule & binary &
 		   relation & 
 		   [LBL #ulbl ] !> ,
 	    HCONS <! [ LARG #ulbl ] !> ]].
+
+
+;;; fragments headed by na-adjective can add their own relation?
+;;; FIXME:  but it can have varying valency I think, 
+;;;         should be the same as the na-adj
+;;; and the na-adj can be modified
+
+; frag-na-rule := super-frag-rule  & binary &
+;  [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD na-adj_head, 
+; 				 VAL saturated],
+; 			   CONT.HOOK [ LTOP #klbl,
+; 				       INDEX #ind ]]],
+; 	   [SYNSEM.LOCAL [ CAT [ HEAD  [EMPTY -,
+; 					AUX aux_minus,
+; 					ADJ -,
+; 					COP -,
+; 					C-MOD null,
+; 					SMOD unmarked],
+; 				 VAL saturated],
+; 			   CONT.HOOK.INDEX #arg]] >
+
+
 
 ;;; FIXME - share code with PP/NP frag rules
 ; (MS 2005-10-24) I want one for numbers: "番号：１０"
@@ -2457,13 +2506,14 @@ frag-pp-np-rule := frag-vmod-something-rule &
  [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head,
    ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  noun_head].
 
-frag-advp-np-rule := frag-vmod-something-rule &
+frag-i-adv-np-rule := frag-vmod-something-rule &
  [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head-avm,
    ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  noun_head].
 
 frag-pp-int-rule := frag-vmod-something-rule  &
  [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head,
    ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  int_head ].
+
 
 
 ;;;

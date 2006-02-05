@@ -25,11 +25,22 @@
 
 
 wa-case-ga := case-p-lex-np-topic-ga & 
-       [ORTH <! "は" !>].
-
+ [SYNSEM.LOCAL.CAT.HEAD.PTYPE wa,
+  ORTH <! "は" !>].
 
 wa-case-wo := case-p-lex-np-topic-wo & 
-       [ORTH <! "は" !>].
+ [SYNSEM.LOCAL.CAT.HEAD.PTYPE wa,
+  ORTH <! "は" !>].
+
+mo-case-ga := case-p-lex-np-topic-ga & 
+ [SYNSEM.LOCAL.CAT.HEAD.PTYPE mo,
+  ORTH <! "も" !>].
+
+mo-case-wo := case-p-lex-np-topic-wo & 
+ [SYNSEM.LOCAL.CAT.HEAD.PTYPE mo,
+  ORTH <! "も" !>].
+
+
 
 ;(CH 2005-03-10)
 ; solution to parse 「ボールを進んで打つ」「ボールを続けて打つ」.

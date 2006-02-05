@@ -1457,8 +1457,8 @@ cop_transitive := obj-arg &
 
 
 ; (MS 2004-11-30) If the VAL of the na-adj is restricted to be saturated, 
-; the relative-clause-gap-rules cannot be applied. Rather, the cop-sem should 
-; take the subject of the nad-adj.
+; the relative-clause-gap-rules cannot be applied. Rather, the cop-stem should 
+; take the subject of the na-adj.
 
 cop-stem_transitive := sbj-obj-arg &
                        [SUBJ #sbjval,
@@ -1688,8 +1688,7 @@ case-p-lex-np-no := case-p-lex-np &
 ; such that we have massive ambiguity whenever case particles occur. 
 
 case-p-lex-np-topic := case-p-lex-np &
-		       [SYNSEM [LOCAL.CAT.HEAD.PTYPE wa,
-				NON-LOCAL.UNDERSPEC_ARG -]].
+		       [SYNSEM [NON-LOCAL.UNDERSPEC_ARG -]].
 
 ; (MS 2005-05-13) It sets empathy to the entity it attaches to.
 
@@ -4946,25 +4945,24 @@ isect-adv-lex := adv-lex &
 
 
 scopal-adv-lex := adv-lex &
-                  [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL scopal_mod & 
-                                                      [ CONT.HOOK [INDEX #ind,
-								   LTOP #h2],
-							NUCL nucl_plus]] > ],
-				  
-                                  CONT scopal-adv-sem-type &
-                                       [HOOK [INDEX #ind,
-					      LTOP #top],
-					RELS <! #key !>,
-                                        HCONS <! qeq & [HARG #h1,
-							LARG #h2] !> ]],
-			   LKEYS.KEYREL #key & scopal-adv-relation & [ARG1 #h1,
-								      ARG0 #ind,
-								      LBL #top],
-                           NON-LOCAL.QUE <! !>]].
+ [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL scopal_mod & 
+					[ CONT.HOOK [INDEX #ind,
+						     LTOP #h2],
+					  NUCL nucl_plus]] > ],
+		 CONT scopal-adv-sem-type &
+			  [HOOK [INDEX #ind,
+				 LTOP #top],
+			   RELS <! #key !>,
+			   HCONS <! qeq & [HARG #h1,
+					   LARG #h2] !> ]],
+	  LKEYS.KEYREL #key & scopal-adv-relation & [ARG1 #h1,
+						     ARG0 #ind,
+						     LBL #top],
+	  NON-LOCAL.QUE <! !>]].
 
 scopal-adv-regular-lex := scopal-adv-lex &
-			  [SYNSEM.LOCAL.CAT.HEAD [J-POSTHEAD left,
-						  COP-ARG +]].
+ [SYNSEM.LOCAL.CAT.HEAD [J-POSTHEAD left,
+			 COP-ARG +]].
 
 ; (MS 2005-11-09) To get rid of skip files.
 

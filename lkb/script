@@ -48,7 +48,7 @@
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 
 ;;; Load the lexicon
-(if nil ;;;  *lexdb-params* ;;; nil
+(if  nil ;  *lexdb-params* ;;; nil
     ;; Use the database
     (progn
       ;; load from database
