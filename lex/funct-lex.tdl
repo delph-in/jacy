@@ -2060,10 +2060,12 @@ soshiranu_1 := noun_mod-lex-l &
 
 ; 大した 
 ; Used 3 times
-
-taishita_1 := noun_mod-lex-l &
-[SYNSEM.LKEYS.KEYREL.PRED '_taishita_n_1_rel,
- ORTH <! "大した" !> ].
+;(TK 06-01-31 changed to det-lex)
+;taishita_1 := noun_mod-lex-l &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taishita_n_1_rel,
+; ORTH <! "大した" !> ].
+taishita_1 := det-lex &
+[ORTH <! "大した" !>, SYNSEM.LKEYS.KEYREL.PRED '_taishita_q_1_rel].
 
 ; 大それた 
 
@@ -2215,7 +2217,8 @@ det-lex &
  SYNSEM.LKEYS.KEYREL.PRED '_anna_q_rel].
 
 ; in kyoudai-all
-
+;(TK 05-12-12)
+;kyoudai-all.tdlにあるほうをdelete済
 honno-det := det-lex &
 [ORTH <! "ほんの" !>, 
  SYNSEM.LKEYS.KEYREL.PRED '_honno_q_rel].

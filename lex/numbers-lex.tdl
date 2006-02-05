@@ -1743,6 +1743,8 @@ eight_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "8",
   ORTH <! "8" !>].
 
+;(TK 05-12-12)
+;IDやCARGとORTHが合っていない
 nine_card_a := card_1_no_valence &
 [ SYNSEM.LKEYS.KEYREL.CARG "9",
   ORTH <! "0" !>].
@@ -2295,6 +2297,8 @@ SYNSEM.LKEYS.KEYREL [PRED '_shoku_n_shokuji_rel]].
 ;(TK 05-06-10)
 ;あたり（「辺り」のエントリに合わせた）
 ;;   ex.「今日あたり来るだろう」 「東大寺あたりを散歩する」
+;(TK 05-12-12)
+;kyoudai-all.tdlにあったほうは削除(commentout)済
 atari_1-hiragana := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_atari_n_1_hiragana_rel,
  ORTH <! "あたり" !>].
@@ -2759,6 +2763,8 @@ ORTH <! "左遷" !>].
 ;;(TK 05-06-27)
 ;舗装
 ;;  ex.「あの山道も今では舗装されている」
+;(TK 05-12-12)
+;kyoudai-all.tdlにあるほうは削除(commentout)済
 hosou-vn :=
 vn-trans1-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_hosou_s_rel]],

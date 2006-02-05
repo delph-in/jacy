@@ -615,7 +615,9 @@ title-id-relation := arg12-relation & [PRED "title-id_rel",
 
 scopal-adv-relation := arg1-relation & [ARG1 handle].
 
-interj-relation := relation.
+;;; FCB 2006-01-26 --- made into arg0-relation so that RMRSs can be built
+
+interj-relation := arg0-relation.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; predsorts

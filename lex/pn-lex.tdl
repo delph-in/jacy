@@ -225,10 +225,16 @@ loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'hankyuu,
 ORTH <! "ºåµÞ" !>].
 
-haNshiN :=
-loc_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'hanshin,
-ORTH <! "ºå¿À" !>].
+;(TK 06-01-31)
+;first,loc,inst
+;¥ª¡¼¥ëºå¿À
+;haNshiN :=
+;loc_name-lex &
+;[SYNSEM.LKEYS.KEYREL.CARG 'hanshin,
+;ORTH <! "ºå¿À" !>].
+haNshiN := loc-or-surname-or-instname-lex &
+[ORTH <! "ºå¿À" !>, SYNSEM.LKEYS.KEYREL.CARG 'hanshin].
+
 
 harada :=
 surname-lex &
@@ -1243,10 +1249,13 @@ first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'yuuji,
 ORTH <! "Íµ»Ê" !>].
 
-oono :=
-loc_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'oono,
-ORTH <! "ÂçÌî" !>].
+
+;(TK 05-12-13)
+;¢ªloc-or-surname-lex¤ËÅý¹ç
+;oono :=
+;loc_name-lex &
+;[SYNSEM.LKEYS.KEYREL.CARG 'oono,
+;ORTH <! "ÂçÌî" !>].
 
 adachi :=
 surname-lex &
@@ -3411,15 +3420,26 @@ inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'ntt-communications,
 ORTH <! "£Î£Ô£Ô", "¥³¥ß¥å¥Ë¥±¡¼¥·¥ç¥ó¥º" !>]. 
 
-foma-instname := 
-inst_name-lex &
-        [SYNSEM.LKEYS.KEYREL.CARG 'foma,
-	  ORTH <! "£Æ£Ï£Í£Á" !>].
+;(TK 06-01-31 changed to product-name-lex)
+;foma-instname := 
+;inst_name-lex &
+;        [SYNSEM.LKEYS.KEYREL.CARG 'foma,
+;	  ORTH <! "£Æ£Ï£Í£Á" !>].
+foma-1-product :=
+product-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'foma,
+ORTH <! "£Æ£Ï£Í£Á" !>].
 
-foma-katakana-instname := 
-inst_name-lex &
-        [SYNSEM.LKEYS.KEYREL.CARG 'foma,
-	  ORTH <! "¥Õ¥©¡¼¥Þ" !>].
+
+;(TK 06-01-31 changed to product-name-lex)
+;foma-katakana-instname := 
+;inst_name-lex &
+;        [SYNSEM.LKEYS.KEYREL.CARG 'foma,
+;	  ORTH <! "¥Õ¥©¡¼¥Þ" !>].
+foma-2-product :=
+product-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'foma,
+ORTH <! "¥Õ¥©¡¼¥Þ" !>].
 
 meguro-locname :=
 loc_name-lex &
@@ -3447,8 +3467,10 @@ first_name-lex &
 	[SYNSEM.LKEYS.KEYREL.CARG 'tomu,
           ORTH <! "¥È¥à" !>].
 
-oono-surname := 
-surname-lex & 
+;(TK 05-12-13)
+;oono-surname := 
+oono-loc-or-surname := 
+loc-or-surname-lex & 
 	[SYNSEM.LKEYS.KEYREL.CARG 'oono,
           ORTH <! "ÂçÌî" !>].
 
@@ -3547,10 +3569,15 @@ yukihiro-firstname :=
         [SYNSEM.LKEYS.KEYREL.CARG 'yukihiro,
          ORTH <! "¹¬¹¨" !>].
 
-fujio-firstname-2 :=  
-        first_name-lex & 
-        [SYNSEM.LKEYS.KEYREL.CARG 'fujio,
-         ORTH <! "Å¯É×" !>].
+
+;(TK 06-01-31)
+;¡Ötatsuo¡×¤Î¤Û¤¦¤¬°ìÈÌÅª
+;fujio-firstname-2 :=  
+;        first_name-lex & 
+;        [SYNSEM.LKEYS.KEYREL.CARG 'fujio,
+;         ORTH <! "Å¯É×" !>].
+tetsuo_1 := first_name-lex &
+[ORTH <! "Å¯É×" !>, SYNSEM.LKEYS.KEYREL.CARG 'tetsuo_1].
 
 fujimoto-surname :=  
         surname-lex & 
@@ -3592,10 +3619,13 @@ shinichi-firstname :=
         [SYNSEM.LKEYS.KEYREL.CARG 'shinichi,
          ORTH <! "¿­°ì" !>].
 
-kotarou-surname :=  
-        surname-lex & 
-        [SYNSEM.LKEYS.KEYREL.CARG 'kotarou,
-         ORTH <! "¾®ÂÀÏº" !>].
+
+;(TK 05-12-14)
+;¤³¤Î¤è¤¦¤ÊÀ«¤Ï¤Ê¤¤¤È»×¤ï¤ì¤ë
+;kotarou-surname :=  
+;        surname-lex & 
+;        [SYNSEM.LKEYS.KEYREL.CARG 'kotarou,
+;         ORTH <! "¾®ÂÀÏº" !>].
 
 ooami-surname :=  
         surname-lex & 
@@ -4157,10 +4187,14 @@ bond-surname :=  surname-lex &
         [SYNSEM.LKEYS.KEYREL.CARG 'bond,
          ORTH <! "¥Ü¥ó¥É" !>].
 
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤â¤Î¤Ïºï½ü(commentout)ºÑ
 youko-firstname := first_name-lex & 
 	[SYNSEM.LKEYS.KEYREL.CARG 'youko,
           ORTH <! "ÍÎ»Ò" !>].
 
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤â¤Î¤Ïºï½ü(commentout)ºÑ
 kyouko-2-firstname := first_name-lex & 
 	[SYNSEM.LKEYS.KEYREL.CARG 'kyouko,
           ORTH <! "µþ»Ò" !>].
@@ -4173,7 +4207,10 @@ riizu-surname := surname-lex &
         [SYNSEM.LKEYS.KEYREL.CARG 'riizu,
          ORTH <! "¥ê¡¼¥º" !>].
 
-nakayama-surname := surname-lex & 
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
+;nakayama-surname := surname-lex & 
+nakayama-loc-or-surname := loc-or-surname-lex & 
         [SYNSEM.LKEYS.KEYREL.CARG 'nakayama,
          ORTH <! "Ãæ»³" !>].
 
@@ -4196,21 +4233,26 @@ washinton-name := loc-or-surname-lex &
  SYNSEM.LKEYS.KEYREL.CARG 'washington].
 
 ;in kyoudai-all:
-
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
 oohashi-name := loc-or-surname-or-instname-lex &
 [ORTH <! "Âç¶¶" !>, 
  SYNSEM.LKEYS.KEYREL.CARG 'oohashi].
 
 
 ;in kyoudai-all:
-
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
 kokuzeikyoku := inst_name-lex &
 [ORTH <! "¹ñÀÇ¶É" !>, 
  SYNSEM.LKEYS.KEYREL.CARG 'kokuzeikyoku].
 
 
-ibaraki-loc :=
-loc_name-lex &
+;(TK 05-12-13)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¡ÊID¤Ï¡Öibaragi¡×¤Ë¤Ê¤Ã¤Æ¤¤¤ë¡Ë¤Ïºï½ü(commentout)ºÑ
+;ibaraki-loc :=
+ibaraki-loc-or-sur :=
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'ibaraki,
 ORTH <! "°ñ¾ë" !>].
 
@@ -4221,18 +4263,22 @@ baker-surname := surname-lex &
 
 
 ;Czechoslovakia
-
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
 czechoslovakia-locname := loc_name-lex &
 		       [SYNSEM.LKEYS.KEYREL.CARG 'czechoslovakia,
 		        ORTH <! "¥Á¥§¥³¥¹¥í¥Ð¥­¥¢" !>].
 
 ;Federation of Economic Organizations
-
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
 keidanren-name := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'keidanren,
 ORTH <! "·ÐÃÄÏ¢" !>].
 
 
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
 shimanaikadaigaku-instname := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'shimanaikadaigaku,
 ORTH <! "Åçº¬°å²ÊÂç³Ø" !>].
@@ -4241,7 +4287,10 @@ yanaaefu-pn := surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'yanaaefu,
 ORTH <! "¥ä¥Ê¡¼¥¨¥Õ" !>].
 
-takeshita-pn := surname-lex &
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
+;takeshita-pn := surname-lex &
+takeshita-pn := loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'takeshita,
 ORTH <! "ÃÝ²¼" !>].
 
@@ -4249,10 +4298,14 @@ anman-locname := loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'anman,
 ORTH <! "¥¢¥ó¥Þ¥ó" !>].
 
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤â¤Î¤Ïºï½ü(commentout)ºÑ
 nihonkoukuu-instname := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'nihonkoukuu,
 ORTH <! "ÆüËÜ¹Ò¶õ" !>].
 
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤â¤Î¤Ïºï½ü(commentout)ºÑ
 gorbatschow-pn := surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'gorbatschow,
 ORTH <! "¥´¥ë¥Ð¥Á¥ç¥Õ" !>].
@@ -4270,6 +4323,8 @@ US-illinoi-daigaku-instname := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'us_illinoi_daigaku,
 ORTH <! "ÊÆ","¥¤¥ê¥Î¥¤","Âç³Ø" !>].
 
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤â¤Î¤Ïºï½ü(commentout)ºÑ
 shakaitou-instname := inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'shakaitou,
 ORTH <! "¼Ò²ñÅÞ" !>].
@@ -4287,34 +4342,53 @@ enoshima_2 := loc-or-surname-lex &
 [ORTH <! "¹¾¥ÎÅç" !>, SYNSEM.LKEYS.KEYREL.CARG 'enoshima].
 
 ; in kyoudai-all:
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤òºï½ü(commentout)ºÑ
 odakyuu_1 := inst_name-lex &
 [ORTH <! "¾®ÅÄµÞ" !>, 
  SYNSEM.LKEYS.KEYREL.CARG 'odakyuu_1].
 
-katase-locname :=  loc_name-lex &
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤òºï½ü(commentout)ºÑ
+;katase-locname :=  loc_name-lex &
+katase-loc-or-surname :=  loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'katase,
 ORTH <! "ÊÒÀ¥" !>].
 
-fujisawa-locname := loc_name-lex &
+;(TK 05-12-13)
+;kyoudai-all.tdl¤Ë¤¢¤ësurname-lex¤ÈÅý¹ç
+;fujisawa-locname := loc_name-lex &
+fujisawa-loc-or-surname := loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'fujisawa,
 ORTH <! "Æ£Âô" !>].
 
 
 ;in kyoudai-all
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
 fujijuukou-instname := inst_name-lex &
 [ORTH <! "ÉÙ»Î½Å¹©" !>, 
  SYNSEM.LKEYS.KEYREL.CARG 'fujijuukou].
 
-juuminshutou-instname := inst_name-lex &
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
+;ID¤ò¡Öjuu¡×¤«¤é¡Öjiyuu¡×¤Ë¤Á¤ç¤Ã¤ÈÊÑ¹¹
+;juuminshutou-instname := inst_name-lex &
+jiyuuminshutou-instname := inst_name-lex &
 [ORTH <! "¼«Í³Ì±¼çÅÞ" !>, 
  SYNSEM.LKEYS.KEYREL.CARG 'minshutou].
 
 ;in kyoudai-all:
-kaifu-surname := surname-lex &
+;(TK 05-12-12)
+;kyoudai-all.tdl¤Ë¤¢¤ë¤Û¤¦¤Ïºï½ü(commentout)ºÑ
+;kaifu-surname := surname-lex &
+kaifu-loc-or-surname := loc-or-surname-lex &
 [ORTH <! "³¤Éô" !>, 
  SYNSEM.LKEYS.KEYREL.CARG 'kaifu].
 
-sakai-locname := loc_name-lex &
+;(TK 05-12-09)
+;sakai-locname := loc_name-lex &
+sakai-loc-or-sur := loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'sakai,
 ORTH <! "ºæ" !>].
 
@@ -4406,4 +4480,302 @@ ORTH <! "ÂçÅÄ" !>].
 daisansekai-locname := loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'daisansekai,
 ORTH <! "Âè","»°","À¤³¦" !>].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+touyou_1 := loc-or-surname-or-instname-lex &
+[ORTH <! "ÅìÍÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'touyou_1].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+touou_1 := loc_name-lex &
+[ORTH <! "Åì²¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'touou_1].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+tsuusanshou_1 := inst_name-lex &
+[ORTH <! "ÄÌ»º¾Ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'tsuusanshou_1].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+edo-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'edo,
+ORTH <! "¹¾¸Í" !>].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+edojidai-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'edojidai,
+ORTH <! "¹¾¸Í»þÂå" !>].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+edobakufu_1 := inst_name-lex &
+[ORTH <! "¹¾¸ÍËëÉÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'edobakufu_1].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+morokoshi_1 := loc-or-surname-lex &
+[ORTH <! "ÅâÅÚ" !>, SYNSEM.LKEYS.KEYREL.CARG 'morokoshi_1].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+indo_1 := loc_name-lex &
+[ORTH <! "¥¤¥ó¥É" !>, SYNSEM.LKEYS.KEYREL.CARG 'indo_1].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+indokyouwakoku_1 := loc_name-lex &
+[ORTH <! "¥¤¥ó¥É¶¦ÏÂ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'indokyouwakoku_1].
+
+;(TK 05-12-28 changed from ordinary-nohon-n-lex)
+indoyou_1 := loc_name-lex &
+[ORTH <! "¥¤¥ó¥ÉÍÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'indoyou_1].
+
+;(TK 05-12-28)
+tai-Thai := loc_name-lex &
+[ORTH <! "¥¿¥¤" !>, SYNSEM.LKEYS.KEYREL.CARG 'tai_1].
+
+;(TK 06-01-27 noun¢ªloc-or-surname-lex)
+rosu_3 := loc-or-surname-lex &
+[ORTH <! "¥í¥¹" !>, SYNSEM.LKEYS.KEYREL.CARG 'rosu_3].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+;¤¿¤À¤·¡¢À«¤È¤·¤Æ¤Ï¤ª¤½¤é¤¯¡Öhotoke¡×
+futsu_1_1 := loc-or-surname-lex &
+[ORTH <! "Ê©" !>, SYNSEM.LKEYS.KEYREL.CARG 'futsu_1_1].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+;¤¿¤À¤·¡¢À«¤È¤·¤Æ¤Ï¤ª¤½¤é¤¯¡Öyamakage¡×
+sanin_1_1 := loc-or-surname-lex &
+[ORTH <! "»³±¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanin_1_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+saninchihou_1 := loc_name-lex &
+[ORTH <! "»³±¢ÃÏÊý" !>, SYNSEM.LKEYS.KEYREL.CARG 'saninchihou_1].
+
+;(TK 06-01-31)
+ru-buru_3 := loc_name-lex &
+[ORTH <! "¥ë¡¼¥Ö¥ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'ru-buru_3].
+
+;(TK 06-01-31 noun(koma)¢ªloc-or-surname-lex)
+kourai_1 := loc-or-surname-lex &
+[ORTH <! "¹âÎï" !>, SYNSEM.LKEYS.KEYREL.CARG 'kourai_1].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+akashi_1 := loc-or-surname-lex &
+[ORTH <! "ÌÀÀÐ" !>, SYNSEM.LKEYS.KEYREL.CARG 'akashi_1].
+
+;(TK 06-01-31 noun¢ªippan-name-lex)
+bi-nasu-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'bi-nasu,
+ORTH <! "¥Ó¡¼¥Ê¥¹" !>].
+
+;(TK 06-01-31 noun¢ªippan-name-lex)
+chousensensou-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'chousensensou,
+ORTH <! "Ä«Á¯ÀïÁè" !>].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+chousenminshushugijinminkyouwakoku_1 := loc_name-lex &
+[ORTH <! "Ä«Á¯Ì±¼ç¼çµÁ¿ÍÌ±¶¦ÏÂ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chousenminshushugijinminkyouwakoku_1].
+
+;(TK 06-01-31 noun¢ªinst_name-lex)
+boueidaigakkou_1 := inst_name-lex &
+[ORTH <! "ËÉ±ÒÂç³Ø¹»" !>, SYNSEM.LKEYS.KEYREL.CARG 'boueidaigakkou_1].
+
+;(TK 06-01-31 noun¢ªinst_name-lex)
+kokumushou_1 := inst_name-lex &
+[ORTH <! "¹ñÌ³¾Ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'kokumushou_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+indoneshia_1 := loc_name-lex &
+[ORTH <! "¥¤¥ó¥É¥Í¥·¥¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'indoneshia_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+indoneshiakyouwakoku_1 := loc_name-lex &
+[ORTH <! "¥¤¥ó¥É¥Í¥·¥¢¶¦ÏÂ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'indoneshiakyouwakoku_1].
+
+;(TK 06-01-31)
+hara_3 := loc-or-surname-lex &
+[ORTH <! "¸¶" !>, SYNSEM.LKEYS.KEYREL.CARG 'hara_3].
+
+;(TK 06-01-31)
+tatsunori_1 := first_name-lex &
+[ORTH <! "Ã¤ÆÁ" !>, SYNSEM.LKEYS.KEYREL.CARG 'tatsunori_1].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+kishuu_1 := loc-or-surname-lex &
+[ORTH <! "µª½£" !>, SYNSEM.LKEYS.KEYREL.CARG 'kishuu_1].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+;À«¤È¤·¤Æ¤ÎÆÉ¤ß¤Ï¡Ökigawa¡×¤«¤â¤·¤ì¤Ê¤¤
+kouga_1 := loc-or-surname-lex &
+[ORTH <! "²«²Ï" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouga_1].
+
+;(TK 06-01-31)
+sayuri_2 := first_name-lex &
+[ORTH <! "¾®É´¹ç" !>, SYNSEM.LKEYS.KEYREL.CARG 'sayuri_2].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+chuunanbei_1 := loc_name-lex &
+[ORTH <! "ÃæÆîÊÆ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuunanbei_1].
+
+;(TK 06-01-31 noun¢ªinst_name-lex)
+keisatsuchou_1 := inst_name-lex &
+[ORTH <! "·Ù»¡Ä£" !>, SYNSEM.LKEYS.KEYREL.CARG 'keisatsuchou_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+kantouchihou_1 := loc_name-lex &
+[ORTH <! "´ØÅìÃÏÊý" !>, SYNSEM.LKEYS.KEYREL.CARG 'kantouchihou_1].
+
+;(TK 06-01-31 noun¢ªinst_name-lex)
+kouseishou_1 := inst_name-lex &
+[ORTH <! "¸üÀ¸¾Ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouseishou_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+mekishiko_1 := loc_name-lex &
+[ORTH <! "¥á¥­¥·¥³" !>, SYNSEM.LKEYS.KEYREL.CARG 'mekishiko_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+amerikagasshuukoku_1 := loc_name-lex &
+[ORTH <! "¥¢¥á¥ê¥«¹ç½°¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'amerikagasshuukoku_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+kitaamerika_1 := loc_name-lex &
+[ORTH <! "ËÌ¥¢¥á¥ê¥«" !>, SYNSEM.LKEYS.KEYREL.CARG 'kitaamerika_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+chuuouajia_1 := loc_name-lex &
+[ORTH <! "Ãæ±û¥¢¥¸¥¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuuouajia_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+chuuouamerika_1 := loc_name-lex &
+[ORTH <! "Ãæ±û¥¢¥á¥ê¥«" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuuouamerika_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+minamiamerika_1 := loc_name-lex &
+[ORTH <! "Æî¥¢¥á¥ê¥«" !>, SYNSEM.LKEYS.KEYREL.CARG 'minamiamerika_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+minamiafurikakyouwakoku_1 := loc_name-lex &
+[ORTH <! "Æî¥¢¥Õ¥ê¥«¶¦ÏÂ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'minamiafurikakyouwakoku_1].
+
+;(TK 06-01-31)
+rikuru-to_3 := inst_name-lex &
+[ORTH <! "¥ê¥¯¥ë¡¼¥È" !>, SYNSEM.LKEYS.KEYREL.CARG 'rikuru-to_3].
+
+;(TK 06-01-31)
+;À«¤È¤·¤Æ¤ÎÆÉ¤ß¤¬Àµ¤·¤¤¤«ÉÔÌÀ
+kamigyou_1 := loc-or-surname-lex &
+[ORTH <! "¾åµþ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamigyou_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+bousou_1 := loc_name-lex &
+[ORTH <! "Ë¼Áí" !>, SYNSEM.LKEYS.KEYREL.CARG 'bousou_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+hokuyou_3 := loc_name-lex &
+[ORTH <! "ËÌÍÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokuyou_3].
+
+;(TK 06-01-31)
+;À«¤È¤·¤Æ¤ÎÆÉ¤ß¤Ï¡Ökitagachi¡×¤Ê¤Î¤«¤â¤·¤ì¤Ê¤¤
+hokuriku_1 := loc-or-surname-lex &
+[ORTH <! "ËÌÎ¦" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokuriku_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+hokurikuchihou_1 := loc_name-lex &
+[ORTH <! "ËÌÎ¦ÃÏÊý" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokurikuchihou_1].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+seiyou_1 := loc-or-surname-lex &
+[ORTH <! "À¾ÍÎ" !>, SYNSEM.LKEYS.KEYREL.CARG 'seiyou_1].
+
+;(TK 06-01-31 noun(kara)¢ªloc-or-surname-lex)
+tou_4 := loc-or-surname-lex &
+[ORTH <! "Åâ" !>, SYNSEM.LKEYS.KEYREL.CARG 'tou_4].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+iga_1 := loc-or-surname-lex &
+[ORTH <! "°Ë²ì" !>, SYNSEM.LKEYS.KEYREL.CARG 'iga_1].
+
+;(TK 06-01-31)
+;À«¤È¤·¤Æ¤ÎÆÉ¤ß¤Ï¡Önankyou¡×¤«¤â¤·¤ì¤Ê¤¤
+nankin_3 := loc-or-surname-lex &
+[ORTH <! "Æîµþ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nankin_3].
+
+;(TK 06-01-31 noun¢ªippan-name-lex)
+yamato-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'yamato,
+ORTH <! "ÂçÏÂ" !>].
+
+;(TK 06-01-31 noun¢ªinst_name-lex)
+i-shi-_2 := inst_name-lex &
+[ORTH <! "£Å£Ã" !>, SYNSEM.LKEYS.KEYREL.CARG 'i-shi-_2].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+kamakura_1_1 := loc-or-surname-lex &
+[ORTH <! "³ùÁÒ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamakura_1].
+
+;(TK 06-01-31 noun¢ªippan-name-lex)
+kamakurajidai-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'kamakurajidai,
+ORTH <! "³ùÁÒ»þÂå" !>].
+
+;(TK 06-01-31 noun¢ªinst_name-lex)
+kamakurabakufu_1 := inst_name-lex &
+[ORTH <! "³ùÁÒËëÉÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamakurabakufu_1].
+
+;(TK 06-01-31 noun¢ªippan-name-lex)
+hare-suisei-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'hare-suisei,
+ORTH <! "¥Ï¥ì¡¼×ÂÀ±" !>].
+
+;(TK 06-01-31 noun¢ªippan-name-lex)
+shouwa-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'shouwa,
+ORTH <! "¾¼ÏÂ" !>].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+higashidoitsu_1 := loc_name-lex &
+[ORTH <! "Åì¥É¥¤¥Ä" !>, SYNSEM.LKEYS.KEYREL.CARG 'higashidoitsu_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+higashiajia_1 := loc_name-lex &
+[ORTH <! "Åì¥¢¥¸¥¢" !>, SYNSEM.LKEYS.KEYREL.CARG 'higashiajia_1].
+
+;(TK 06-01-31 noun¢ªloc-or-surname-lex)
+gion_1 := loc-or-surname-lex &
+[ORTH <! "µÀ±à" !>, SYNSEM.LKEYS.KEYREL.CARG 'gion_1].
+
+;(TK 06-01-31 noun¢ªloc_name-lex)
+nyu-ji-rando_1 := loc_name-lex &
+[ORTH <! "¥Ë¥å¡¼¥¸¡¼¥é¥ó¥É" !>, SYNSEM.LKEYS.KEYREL.CARG 'nyu-ji-rando_1].
+
+;(TK 06-01-31)
+nyu-ton_3 := loc-or-surname-lex &
+[ORTH <! "¥Ë¥å¡¼¥È¥ó" !>, SYNSEM.LKEYS.KEYREL.CARG 'nyu-ton_3].
+
+;(TK 06-01-31 noun¢ªippan-name-lex)
+mokusei-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'mokusei,
+ORTH <! "ÌÚÀ±" !>].
+
+;(TK 06-01-31)
+yamagata_4 := loc-or-surname-lex &
+[ORTH <! "»³·Á" !>, SYNSEM.LKEYS.KEYREL.CARG 'yamagata_4].
+
+;(TK 06-01-31 noun¢ªinst_name-lex)
+monbushou_1 := inst_name-lex &
+[ORTH <! "Ê¸Éô¾Ê" !>, SYNSEM.LKEYS.KEYREL.CARG 'monbushou_1].
+
+;(TK 06-02-02 noun¢ªloc_name-lex)
+beikoku_1 := loc_name-lex &
+[ORTH <! "ÊÆ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'beikoku_1].
+
+;(TK 06-02-02 noun¢ªloc_name-lex)
+chuugoku_1 := loc_name-lex &
+[ORTH <! "Ãæ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuugoku_1].
 
