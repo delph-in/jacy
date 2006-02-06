@@ -2400,12 +2400,12 @@ adv-p-lex-np :=  adv-p-lex &
 
 ;(MS 2005-11-10) getting rid of skip files.
 
-adv-p-lex-np-sub := adv-p-lex-np &
-		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
+; adv-p-lex-np-sub := adv-p-lex-np &
+; 		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
 
-adv-p-lex-np-main := adv-p-lex-np &
-		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
-
+; adv-p-lex-np-main := adv-p-lex-np &
+; 		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
+; 
 adv-p-lex-np-exh := adv-p-lex-np &
 		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.VAL.COMPS null] >].
 
@@ -2423,23 +2423,24 @@ adv-p-lex-iadj := adv-p-lex &
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD i-adj_head].
 
 ;(MS 2005-11-10) getting rid of skip files.
-adv-p-lex-iadj-main := adv-p-lex-iadj &
-		       [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
+;(FCB 2006-02-06) getting rid of main/sub again
+; adv-p-lex-iadj-main := adv-p-lex-iadj &
+; 		       [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
 
-adv-p-lex-iadj-sub := adv-p-lex-iadj &
-		       [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
+; adv-p-lex-iadj-sub := adv-p-lex-iadj &
+; 		       [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
 
 
 adv-p-lex-p := adv-p-lex & 
             [SYNSEM.LOCAL.CAT [VAL.COMPS.FIRST.LOCAL.CAT.HEAD p_head & [PTYPE nontop]]].
 
 ;(MS 2005-11-10) getting rid of skip files.
+;(FCB 2006-02-06) getting rid of main/sub again
+ adv-p-lex-p-main := adv-p-lex-p &
+ 		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
 
-adv-p-lex-p-main := adv-p-lex-p &
-		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD + ] >].
-
-adv-p-lex-p-sub := adv-p-lex-p &
-		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
+; adv-p-lex-p-sub := adv-p-lex-p &
+; 		    [SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT.HEAD.MAIN-PRD - ] >].
 
 
 adv-p-lex-tocomp := adv-p-lex-p &
@@ -2457,12 +2458,10 @@ adv-p-lex-tocomp-main := adv-p-lex-p-main & adv-p-lex-tocomp.
 
 adv-p-lex-postp-main := adv-p-lex-p-main & adv-p-lex-postp.
 
-adv-p-lex-postp-sub  := adv-p-lex-p-sub & adv-p-lex-postp.
+;(FCB 2006-02-06) getting rid of main/sub again
+;adv-p-lex-postp-sub  := adv-p-lex-p-sub & adv-p-lex-postp.
 
 adv-p-lex-postp-main-exh := adv-p-lex-postp-main & adv-p-lex-p-exh.
-
-
-
 
 ; (ERB 2002-01-10) To keep this from attaching to "empty-copula-id-rule"
 ; Vs, say COP -.  Might be too strong, and there might be another

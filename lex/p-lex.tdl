@@ -365,7 +365,7 @@ yo-3 := s-end1-decl-lex &
 ; (ERB 2001-10-31) Moving contrast between imp_rel and polite-imp_rel
 
 
-arrow-main := postp-lex-main &
+arrow-postp := postp-lex &
 	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE kara,
 			  LKEYS.KEYREL.PRED '_kara_p_rel],
                    ORTH <! "→" !>]. 
@@ -376,11 +376,11 @@ arrow-nmod := nounmod-p-ncomp-lex &
 		    LOCAL.CAT.HEAD.PTYPE nattr],
             ORTH <! "→" !>].
 
-
-arrow-sub := postp-lex-sub &
-            [SYNSEM [LOCAL.CAT.HEAD.PTYPE kara,
-		     LKEYS.KEYREL.PRED '_kara_p_rel],
-             ORTH <! "→" !>]. 
+;(FCB 2006-02-06) getting rid of main/sub again
+; arrow-sub := postp-lex-sub &
+;             [SYNSEM [LOCAL.CAT.HEAD.PTYPE kara,
+; 		     LKEYS.KEYREL.PRED '_kara_p_rel],
+;              ORTH <! "→" !>]. 
 
 
 bakari-narg := postp-lex &
@@ -475,40 +475,38 @@ datte := adv-p-lex-np &
 
 ;"hai kochira wa sore de kekkou desu."
 ;"sore de yoroshiku onegai itashimasu"
-de-advp-main-1 := adv-p-lex-np-main &  
+de-advp-np := adv-p-lex-np &  
+                  [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
+			   LKEYS.KEYREL.PRED  '_de_p_rel],
+                   ORTH <! "で" !>].
+
+de-advp-iadj := adv-p-lex-iadj &  
+                  [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
+			   LKEYS.KEYREL.PRED  '_de_p_rel],
+                   ORTH <! "で" !>].
+
+;(FCB 2006-02-06) getting rid of main/sub again
+de-advp-postp := adv-p-lex-postp &  
                   [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
 			   LKEYS.KEYREL.PRED  '_de_p_rel],
                    ORTH <! "で" !>].
 
 
-de-advp-main-3 := adv-p-lex-iadj-main &  
-                  [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
-			   LKEYS.KEYREL.PRED  '_de_p_rel],
-                   ORTH <! "で" !>].
+; de-advp-sub-1 := adv-p-lex-np-sub &  
+;                  [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
+; 			  LKEYS.KEYREL.PRED '_de_p_rel],
+;                   ORTH <! "で" !>].
 
+; de-advp-sub-3 := adv-p-lex-iadj-sub &  
+;                  [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
+; 			  LKEYS.KEYREL.PRED  '_de_p_rel],
+;                   ORTH <! "で" !>].
 
-de-advp-main-4 := adv-p-lex-postp-main &  
-                  [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
-			   LKEYS.KEYREL.PRED  '_de_p_rel],
-                   ORTH <! "で" !>].
-
-
-de-advp-sub-1 := adv-p-lex-np-sub &  
-                 [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
-			  LKEYS.KEYREL.PRED '_de_p_rel],
-                  ORTH <! "で" !>].
-
-
-de-advp-sub-3 := adv-p-lex-iadj-sub &  
-                 [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
-			  LKEYS.KEYREL.PRED  '_de_p_rel],
-                  ORTH <! "で" !>].
-
-
-de-advp-sub-4 := adv-p-lex-postp-sub &  
-		 [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
-			  LKEYS.KEYREL.PRED  '_de_p_rel],
-                  ORTH <! "で" !>].
+;(FCB 2006-02-06) getting rid of main/sub again
+; de-advp-sub-4 := adv-p-lex-postp-sub &  
+; 		 [SYNSEM [LOCAL.CAT.HEAD.PTYPE de,
+; 			  LKEYS.KEYREL.PRED  '_de_p_rel],
+;                   ORTH <! "で" !>].
 
 
 
@@ -536,7 +534,7 @@ dewa-advarg := topic-advarg-lex &
                  ORTH <! "で","は" !>].
 
 
-e-main := postp-lex &
+e-postp := postp-lex &
 	          [SYNSEM [LOCAL.CAT.HEAD.PTYPE he,
 			   LKEYS.KEYREL.PRED '_e_p_rel],
                     ORTH <! "へ" !>].
@@ -549,10 +547,11 @@ equal-topic  := topic-nobj-lex &
                    ORTH <! "＝" !>].
 
 ;"watakushi no keNkyuushitsu  no hou e moushiwake gozaimaseN ga."
-e-sub := postp-lex-sub &
-	          [SYNSEM [LOCAL.CAT.HEAD.PTYPE he,
-			   LKEYS.KEYREL.PRED '_e_p_rel],
-                    ORTH <! "へ" !>].
+;(FCB 2006-02-06) getting rid of main/sub again
+; e-sub := postp-lex-sub &
+; 	          [SYNSEM [LOCAL.CAT.HEAD.PTYPE he,
+; 			   LKEYS.KEYREL.PRED '_e_p_rel],
+;                     ORTH <! "へ" !>].
 
 
 ;"naN nichi ga yoroshii deshou ka."
@@ -721,10 +720,10 @@ kara-case := case-p-lex-np-kara &
 ;              ORTH <! "まで" !>].
 
 
-kara-main := postp-lex-main &
-	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE kara,
-			  LKEYS.KEYREL.PRED '_kara_p_rel],
-                   ORTH <! "から" !>]. 
+kara-postp := postp-lex &
+ [SYNSEM [LOCAL.CAT.HEAD.PTYPE kara,
+	  LKEYS.KEYREL.PRED '_kara_p_rel],
+  ORTH <! "から" !>]. 
 
 
 ; (MS 2002-06-26) I want to allow kara and ni to modify also VNs. That leads to ambiguity, but could be necessary
@@ -754,11 +753,11 @@ kara-sign-case := case-p-lex-np-kara &
              [ORTH <! "〜" !>,
               SYNSEM.LOCAL.CAT.HEAD.PTYPE kara].
 
-
-kara-sub := postp-lex-sub &
-            [SYNSEM [LOCAL.CAT.HEAD.PTYPE kara,
-		     LKEYS.KEYREL.PRED '_kara_p_rel],
-             ORTH <! "から" !>]. 
+;(FCB 2006-02-06) getting rid of main/sub again
+; kara-sub := postp-lex-sub &
+;             [SYNSEM [LOCAL.CAT.HEAD.PTYPE kara,
+; 		     LKEYS.KEYREL.PRED '_kara_p_rel],
+;              ORTH <! "から" !>]. 
 
 
 ;"出してからの方がよいのでしょうか？"
@@ -1121,7 +1120,7 @@ ni-parentarg := adv-p-lex-parent &
               ORTH <! "に" !>].
 
 
-ni-parg := adv-p-lex-postp-main &
+ni-parg := adv-p-lex-postp &
              [SYNSEM [LOCAL.CAT.HEAD.PTYPE ni,
 		      LKEYS.KEYREL.PRED  '_ni_p_rel],
               ORTH <! "に" !>].

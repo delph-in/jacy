@@ -2423,15 +2423,6 @@ frag-s-adv-rule := basic-frag-rule & unary-type &
 	    HCONS <! [ LARG #klbl ] !> ]].
 
 
-frag-s-adv-rule := basic-frag-rule & unary-type &
- [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD adv_head-avm &
-				      [ MOD < synsem &
-					      [ LOCAL scopal_mod &
-						      [ CONT.HOOK.LTOP #albl]] > ]]]] >,
-   C-CONT [ RELS  <! relation, 
-		   relation !> ,
-	    HCONS <! [ LARG #albl ] !> ]].
-
 
 ; FIXME - do we want 東京　が　as a constituent?
 ; frag_pp_sel_rule := unary_frag_rule &
