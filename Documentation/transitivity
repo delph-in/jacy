@@ -23,3 +23,38 @@ Additionally, they may not scramble.
 
 Mental also seems to allow "ni"
 
+From jp051120:
+
+|| VALENCE                      ||ARG1||OBL|| ARG2 ||OBL|| ARG3  ||OBL|| Example                            ||
+				      ||   ||      ||   ||       ||   ||                                    ||
+|| cop-id_transitive            || が/COP || || NOUN || +  ||       ||   ||  だ,  です、で は ない          ||
+|| cop-stem_transitive          || が ||   || NA-ADJ||+ ||       ||   ||  だ,  です、で は ない             ||
+|| cop_transitive               || が ||   || COP  || + ||       ||   ||  だ, な                            ||
+|| intransitive                 || が ||   ||      ||   ||       ||   ||  歯みがき[する], 座る              ||
+|| ga-ni_transitive             || が ||   ||  に  ||   ||       ||   ||  絡まる                            ||
+|| ga-to-ni_transitive1         || が ||   ||と/に ||   ||       ||   ||  似る                              ||
+|| ga-to-ni_transitive2         || が ||   ||と/に || + ||       ||   ||  なる, 成る、 為る                 ||
+|| ga-to_transitive1            || が ||   ||  と  || + ||       ||   ||  考える                            ||
+|| ga-to_transitive2            || が ||   ||  と  ||   ||       ||   ||  思う, 確認[する]                  ||
+|| ga-wo_transitive             || が ||   ||  を  ||   ||       ||   ||  飲食, 食べる                      ||
+|| ga-wo-toni-ditransitive      || が ||   ||  を  ||   || と/に ||   ||  題する, 略する                    ||
+|| ditransitive                 || が ||   ||  を  ||   ||  に   ||   ||  提供[する],    頼む               ||
+|| mental_state_transitive      || に/が || || が/を  || ||      ||   ||  信じる,  分かる                   ||
+|| naru_adv_transitive          || が ||   || ADV  ||   ||       ||   ||  なる, 成る、 為る                 ||
+|| suru_adv_ditransitive        || が ||   || を   ||   || ADV   || + ||  する, なさる                      ||
+|| suru_noun_ditransitive       || が ||   || を   ||   || に/と || + ||  する, なさる                      ||
+|| to_intransitive-opt          || と ||   ||      ||   ||       ||   ||  [と]いう                          ||
+|| sbj-narg_transitive          || が || || NOUN || +  ||       ||   ||  かかる                             ||
+|| aspect_transitive            || が ||   || V    || + ||      ||   ||  [やり]かねる                       || 
+|| syn-vv-vbar-stem_transitive  || が ||   || を   ||   ||  V   || + ||  [やり]まくる                       || 
+
+COP includes post-positions like "：".
+
+NOUN is a bare noun argument.
+
+NA-ADJ is a na-adjective (like きれい).
+
+ADV is an adverbial such as 美しし-く or きれい-に.
+
+V is a predicate argument (VP or S).
+
