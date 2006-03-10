@@ -34157,10 +34157,10 @@ aburamushi_1 := ordinary-nohon-n-lex &
 
 ; ¥¢¥Õ¥ê¥« 
 ; Used 11 times
-
-afurika_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_afurika_n_1_rel,
- ORTH <! "¥¢¥Õ¥ê¥«" !>].
+;(TK 06-02-28 changed to loc_name-lex)
+;afurika_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_afurika_n_1_rel,
+; ORTH <! "¥¢¥Õ¥ê¥«" !>].
 
 ; ¥¢¥Õ¥ê¥«¾Ý 
 
@@ -36094,10 +36094,10 @@ iseebi_1 := ordinary-nohon-n-lex &
 
 ; °ËÀª¿ÀµÜ 
 ; Used 1 times
-
-isejinguu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_isejinguu_n_1_rel,
- ORTH <! "°ËÀª¿ÀµÜ" !>].
+;(TK 06-02-28 changed to loc_name-lex)
+;isejinguu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_isejinguu_n_1_rel,
+; ORTH <! "°ËÀª¿ÀµÜ" !>].
 
 ; °ÒÀª 
 ; Used 3 times
@@ -39933,10 +39933,10 @@ eikou_1 := ordinary-nohon-n-lex &
 
 ; ±Ñ¹ñ 
 ; Used 5 times
-
-eikoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_eikoku_n_1_rel,
- ORTH <! "±Ñ¹ñ" !>].
+;(TK 06-02-28 changed to loc_name-lex)
+;eikoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_eikoku_n_1_rel,
+; ORTH <! "±Ñ¹ñ" !>].
 
 ; ±ÑºÍ 
 
@@ -50986,7 +50986,7 @@ higashi_east := relational-n-lex &
  ORTH <! "Åì" !>].
 
 minami_south := relational-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_minami_n_east_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_minami_n_south_rel,
  ORTH <! "Æî" !>].
 
 ; ¥®¥¿¡¼ 
@@ -59301,10 +59301,10 @@ kouya_1 := ordinary-nohon-n-lex &
  ORTH <! "¹ÓÌî" !>].
 
 ; ¹âÌî»³ 
-
-kouyasan_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kouyasan_n_1_rel,
- ORTH <! "¹âÌî»³" !>].
+;(TK 06-02-28 changed to loc-or-surname-lex)
+;kouyasan_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kouyasan_n_1_rel,
+; ORTH <! "¹âÌî»³" !>].
 
 ; ¹âÌîÆ¦Éå 
 
@@ -59826,10 +59826,10 @@ kokugojiten_1 := ordinary-nohon-n-lex &
 
 ; ¹ñºÝ¥ª¥ê¥ó¥Ô¥Ã¥¯°Ñ°÷²ñ 
 ; Used 1 times
-
-kokusaiorinpikkuiinkai_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kokusaiorinpikkuiinkai_n_1_rel,
- ORTH <! "¹ñºÝ¥ª¥ê¥ó¥Ô¥Ã¥¯°Ñ°÷²ñ" !>].
+;(TK 06-02-28 changed to inst_name-lex)
+;kokusaiorinpikkuiinkai_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kokusaiorinpikkuiinkai_n_1_rel,
+; ORTH <! "¹ñºÝ¥ª¥ê¥ó¥Ô¥Ã¥¯°Ñ°÷²ñ" !>].
 
 ; ¹ñºÝ²ñµÄ 
 
@@ -59874,10 +59874,10 @@ kokusaitsuuka_1 := ordinary-nohon-n-lex &
  ORTH <! "¹ñºÝÄÌ²ß" !>].
 
 ; ¹ñºÝÄÌ²ß´ð¶â 
-
-kokusaitsuukakikin_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kokusaitsuukakikin_n_1_rel,
- ORTH <! "¹ñºÝÄÌ²ß´ð¶â" !>].
+;(TK changed to inst_name-lex)
+;kokusaitsuukakikin_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kokusaitsuukakikin_n_1_rel,
+; ORTH <! "¹ñºÝÄÌ²ß´ð¶â" !>].
 
 ; ¹ñºÝÅÅÏÃ 
 
@@ -59954,10 +59954,10 @@ kokuzei_1 := ordinary-nohon-n-lex &
  ORTH <! "¹ñÀÇ" !>].
 
 ; ¹ñÀÇÄ£ 
-
-kokuzeichou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kokuzeichou_n_1_rel,
- ORTH <! "¹ñÀÇÄ£" !>].
+;(TK 05-02-28 changed to inst_name-lex)
+;kokuzeichou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kokuzeichou_n_1_rel,
+; ORTH <! "¹ñÀÇÄ£" !>].
 
 ; ¹ñÀÒ 
 ; Used 4 times
@@ -59979,10 +59979,10 @@ gokuchuu_1 := ordinary-nohon-n-lex &
  ORTH <! "¹öÃæ" !>].
 
 ; ¹ñÅ´ 
-
-kokutetsu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kokutetsu_n_1_rel,
- ORTH <! "¹ñÅ´" !>].
+;(TK 06-02-28 changed to inst_name-lex)
+;kokutetsu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kokutetsu_n_1_rel,
+; ORTH <! "¹ñÅ´" !>].
 
 ; ¹ñÅÚ 
 ; Used 2 times
@@ -64912,16 +64912,16 @@ jieikan_1 := ordinary-nohon-n-lex &
 
 ; ¼«±ÒÂâ 
 ; Used 1 times
-
-jieitai_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_jieitai_n_1_rel,
- ORTH <! "¼«±ÒÂâ" !>].
+;(TK 06-02-28 changed to inst_name-lex)
+;jieitai_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_jieitai_n_1_rel,
+; ORTH <! "¼«±ÒÂâ" !>].
 
 ; £Ê£Ò 
-
-jie-a-ru_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_jie_n_a_rel,
- ORTH <! "£Ê£Ò" !>].
+;(TK 06-02-28 changed to inst_name-lex)
+;jie-a-ru_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_jie_n_a_rel,
+; ORTH <! "£Ê£Ò" !>].
 
 ; ¥·¥§¡¼¥Ð¡¼ 
 
@@ -107758,10 +107758,10 @@ petenshi_1 := ordinary-nohon-n-lex &
 
 ; ¥Ù¥È¥Ê¥à 
 ; Used 1 times
-
-betonamu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_betonamu_n_1_rel,
- ORTH <! "¥Ù¥È¥Ê¥à" !>].
+;(TK 06-02-28 changed to loc_name-lex)
+;betonamu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_betonamu_n_1_rel,
+; ORTH <! "¥Ù¥È¥Ê¥à" !>].
 
 ; ¥Ø¥É¥í 
 
@@ -109718,10 +109718,10 @@ hokkai_1 := ordinary-nohon-n-lex &
 
 ; ËÌ³¤Æ» 
 ; Used 8 times
-
-hokkaidou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hokkaidou_n_1_rel,
- ORTH <! "ËÌ³¤Æ»" !>].
+;(TK 06-02-28 changed to loc_name-lex)
+;hokkaidou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hokkaidou_n_1_rel,
+; ORTH <! "ËÌ³¤Æ»" !>].
 
 ; ËÌ¶Ë 
 ; Used 2 times

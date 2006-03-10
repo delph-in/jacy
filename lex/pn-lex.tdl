@@ -4702,7 +4702,7 @@ nankin_3 := loc-or-surname-lex &
 [ORTH <! "Æîµþ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nankin_3].
 
 ;(TK 06-01-31 noun¢ªippan-name-lex)
-yamato-1-ippanname := 
+yamato-2-ippanname := 
 ippan-name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'yamato,
 ORTH <! "ÂçÏÂ" !>].
@@ -4778,4 +4778,61 @@ beikoku_1 := loc_name-lex &
 ;(TK 06-02-02 noun¢ªloc_name-lex)
 chuugoku_1 := loc_name-lex &
 [ORTH <! "Ãæ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuugoku_1].
+
+;(TK 06-02-28 noun¢ªloc_name-lex)
+betonamu_1 := loc_name-lex &
+[ORTH <! "¥Ù¥È¥Ê¥à" !>, SYNSEM.LKEYS.KEYREL.CARG 'betonamu_1].
+
+;(TK 06-02-28 noun¢ªloc_name-lex)
+afurika_1 := loc_name-lex &
+[ORTH <! "¥¢¥Õ¥ê¥«" !>, SYNSEM.LKEYS.KEYREL.CARG 'afurika_1].
+
+;(TK 06-02-28 noun¢ªloc_name-lex)
+hokkaidou_1 := loc_name-lex &
+[ORTH <! "ËÌ³¤Æ»" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokkaidou_1].
+
+;(TK 06-02-28 noun¢ªloc_name-lex)
+isejinguu_1 := loc_name-lex &
+[ORTH <! "°ËÀª¿ÀµÜ" !>, SYNSEM.LKEYS.KEYREL.CARG 'isejinguu_1].
+
+;(TK 06-02-28 noun¢ªinst_name-lex)
+kokuzeichou_1 := inst_name-lex &
+[ORTH <! "¹ñÀÇÄ£" !>, SYNSEM.LKEYS.KEYREL.CARG 'kokuzeichou_1].
+
+;(TK 06-02-28)
+seto_2 := loc-or-surname-lex &
+[ORTH <! "À¥¸Í" !>, SYNSEM.LKEYS.KEYREL.CARG 'seto_2].
+
+;(TK 06-02-28 noun¢ªloc_name-lex)
+eikoku_1 := loc_name-lex &
+[ORTH <! "±Ñ¹ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'eikoku_1].
+
+;(TK 06-02-28 noun¢ªloc-or-surname-lex)
+;À«¤È¤·¤Æ¤Ï¡Ötakanoyama¡×¤«¤â¤·¤ì¤Ê¤¤
+kouyasan_1 := loc-or-surname-lex &
+[ORTH <! "¹âÌî»³" !>, SYNSEM.LKEYS.KEYREL.CARG 'kouyasan_1].
+
+;(TK 06-02-28 noun¢ªinst_name-lex)
+kokusaiorinpikkuiinkai_1 := inst_name-lex &
+[ORTH <! "¹ñºÝ¥ª¥ê¥ó¥Ô¥Ã¥¯°Ñ°÷²ñ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kokusaiorinpikkuiinkai_1].
+
+;(TK 06-02-28 noun¢ªinst_name-lex)
+kokusaitsuukakikin_1 := inst_name-lex &
+[ORTH <! "¹ñºÝÄÌ²ß´ð¶â" !>, SYNSEM.LKEYS.KEYREL.CARG 'kokusaitsuukakikin_1].
+
+;(TK 06-02-28 noun¢ªinst_name-lex)
+jieitai_1 := inst_name-lex &
+[ORTH <! "¼«±ÒÂâ" !>, SYNSEM.LKEYS.KEYREL.CARG 'jieitai_1].
+
+;(TK 06-02-28 noun¢ªinst_name-lex)
+jie-a-ru_1 := inst_name-lex &
+[ORTH <! "£Ê£Ò" !>, SYNSEM.LKEYS.KEYREL.CARG 'jie-a-ru_1].
+
+;(TK 06-02-28 noun¢ªinst_name-lex)
+kokutetsu_1 := inst_name-lex &
+[ORTH <! "¹ñÅ´" !>, SYNSEM.LKEYS.KEYREL.CARG 'kokutetsu_1].
+
+;(TK 06-02-28 noun¢ªloc_name-lex)
+hyougo_2 := loc_name-lex &
+[ORTH <! "Ê¼¸Ë" !>, SYNSEM.LKEYS.KEYREL.CARG 'hyougo_2].
 

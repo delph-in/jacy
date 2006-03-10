@@ -32,6 +32,7 @@ wa-case-wo := case-p-lex-np-topic-wo &
  [SYNSEM.LOCAL.CAT.HEAD.PTYPE wa,
   ORTH <! "д╧" !>].
 
+;;; FIXME add something tha says this is "mo" in the semantics
 mo-case-ga := case-p-lex-np-topic-ga & 
  [SYNSEM.LOCAL.CAT.HEAD.PTYPE mo,
   ORTH <! "дт" !>].

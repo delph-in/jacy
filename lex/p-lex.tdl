@@ -977,13 +977,13 @@ niatari-varg := postp-lex-varg &
          ORTH <! "に当たり" !>]. 
 
 
-niataru-narg := postp-lex &
-        [SYNSEM [LOCAL.CAT.HEAD.PTYPE nitsuite,
+niataru-narg := nounmod-p-ncomp-lex &
+        [SYNSEM [LOCAL.CAT.HEAD.PTYPE nattr,
 		 LKEYS.KEYREL.PRED '_niataru_p_rel],
          ORTH <! "に当たる" !>]. 
 
-niataru-hiragana-narg := postp-lex &
-        [SYNSEM [LOCAL.CAT.HEAD.PTYPE nitsuite,
+niataru-hiragana-narg := nounmod-p-ncomp-lex &
+        [SYNSEM [LOCAL.CAT.HEAD.PTYPE nattr,
 		 LKEYS.KEYREL.PRED '_niataru_p_rel],
          ORTH <! "にあたる" !>]. 
 
@@ -1065,9 +1065,9 @@ nikansuru := nounmod-p-ncomp-lex &
                   ORTH <! "に関する" !>]. 
 
 
-nikaNsuru-multi := postp-lex &
-	        [SYNSEM [LOCAL.CAT.HEAD.PTYPE nikaNshite,
-			 LKEYS.KEYREL.PRED '_nikaNshite_p_rel],
+nikaNsuru-multi := nounmod-p-ncomp-lex &
+	        [SYNSEM [LOCAL.CAT.HEAD.PTYPE nattr,
+			 LKEYS.KEYREL.PRED '_nikansuru_p_rel],
                  ORTH <! "に",  "かんする" !>].
 
 
@@ -1556,13 +1556,13 @@ toitashimashite-multi := postp-lex &
          ORTH <! "と",  "いたし","まし","て" !>]. 
 
 
-toitta := postp-lex &
+toitta := nounmod-p-ncomp-lex &
 	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE toiu,
 			  LKEYS.KEYREL.PRED '_toitta_p_rel],
          ORTH <! "といった" !>]. 
 
 
-toiu := postp-lex &
+toiu := nounmod-p-ncomp-lex &
 	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE toiu,
 			  LKEYS.KEYREL.PRED '_toiu_p_rel],
          ORTH <! "という" !>]. 
@@ -1570,8 +1570,8 @@ toiu := postp-lex &
 
 toiu-nmod := nounmod-p-vcomp-prepmod-lex &
            [SYNSEM [LOCAL.CAT.HEAD.PTYPE nattr,
-                    LKEYS.KEYREL.PRED '_no_p_rel],
-            ORTH <! "という" !>].
+                     LKEYS.KEYREL.PRED '_toiu_p_rel],
+             ORTH <! "という" !>].
 
 ;"opera toka wa osuki desu ka."
 toka-p := postp-lex &
@@ -1593,10 +1593,10 @@ tomo := postp-lex &
           ORTH <! "とも" !>].
 
 
-tono := postp-lex &
-	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE toiu,
-			  LKEYS.KEYREL.PRED '_toiu_p_rel],
-         ORTH <! "と","の" !>]. 
+; tono := postp-lex &
+; 	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE toiu,
+; 			  LKEYS.KEYREL.PRED '_toiu_p_rel],
+;          ORTH <! "と","の" !>]. 
 
 
 toshimashite-2 := postp-lex &
@@ -1655,7 +1655,8 @@ tou-p := postp-lex &
 
 ;ヘルプっていうのは、IEのヘルプではなく、おたくの”ブラウザーチェック”のなかの文面で見たんですよ。
 tteiunowa := topic-nobj-lex &
-	         [SYNSEM.LKEYS.KEYREL.PRED '_toiu_p_rel,
+	         [SYNSEM [LOCAL.CAT.HEAD.PTYPE wa,
+			  LKEYS.KEYREL.PRED '_tteiunowa],
 		  ORTH <! "っていう","の","は" !>]. 
 
 ;"外貨預金ってなんですか"
@@ -1915,13 +1916,13 @@ sorekara2 := n_conj-p-lex &
 
 
 ya := n_conj-p-lex &
-      [ORTH <! "や" !>,
-       SYNSEM.LKEYS.KEYREL.PRED '_ya_p_conj_rel].
+ [ORTH <! "や" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_ya_p_conj_rel].
 
 
 yara := n_conj-p-lex &
-	          [ORTH <! "やら" !>,
-                SYNSEM.LKEYS.KEYREL.PRED '_yara_p_conj_rel].
+ [ORTH <! "やら" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_yara_p_conj_rel].
 
 
 

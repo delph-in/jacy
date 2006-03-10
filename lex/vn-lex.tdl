@@ -8114,8 +8114,10 @@ jishoku_1 := vn-trans1-lex &
  ORTH <! "辞職" !>].
 
 ; 自炊 
-
-jisui_1 := vn-intrans-lex &
+;(06-02-06)
+; ex.「夕食を自炊している」
+;jisui_1 := vn-intrans-lex &
+jisui_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jisui_s_1_rel,
  ORTH <! "自炊" !>].
 
@@ -9193,8 +9195,11 @@ shinsui_1 := vn-intrans-lex &
  ORTH <! "浸水" !>].
 
 ; 人選 
-
-jinsen_1 := vn-intrans-lex &
+;(06-02-06)
+;shadow argument?
+; ex.「この中から代表者を人選する」
+;jinsen_1 := vn-intrans-lex &
+jinsen_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_jinsen_s_1_rel,
  ORTH <! "人選" !>].
 
@@ -9377,8 +9382,10 @@ surippu_1 := vn-intrans-lex &
  ORTH <! "スリップ" !>].
 
 ; ずる休み 
-
-zuruyasumi_1 := vn-intrans-lex &
+;(06-02-06)
+; ex.「学校をずる休みしたことがばれて、こっぴどく怒られた」
+;zuruyasumi_1 := vn-intrans-lex &
+zuruyasumi_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zuruyasumi_s_1_rel,
  ORTH <! "ずる休み" !>].
 
@@ -9484,21 +9491,29 @@ seitou_1_3 := vn-intrans-lex &
  ORTH <! "正答" !>].
 
 ; 制覇 
-
-seiha_1 := vn-intrans-lex &
+;(06-02-06)
+; ex.「この製品が市場を制覇する日も遠くはない」
+;seiha_1 := vn-intrans-lex &
+seiha_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_seiha_s_1_rel,
  ORTH <! "制覇" !>].
 
 ; 整髪 
 ; Used 1 times
-
-seihatsu_1 := vn-intrans-lex &
+;(06-02-06)
+;shadow argument
+; ex.「その寂しくなった頭を整髪するのは難しいよ」
+;seihatsu_1 := vn-intrans-lex &
+seihatsu_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_seihatsu_s_1_rel,
  ORTH <! "整髪" !>].
 
 ; 製氷 
-
-seihyou_1 := vn-intrans-lex &
+;(06-02-06)
+;shadow argument
+; ex.「ここでは彫刻に使う氷を製氷している」
+;seihyou_1 := vn-intrans-lex &
+seihyou_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_seihyou_s_1_rel,
  ORTH <! "製氷" !>].
 
@@ -9509,8 +9524,11 @@ seihirei_1 := vn-intrans-lex &
  ORTH <! "正比例" !>].
 
 ; 精米 
-
-seimai_1 := vn-intrans-lex &
+;(06-02-06)
+;shadow argument
+; ex.「自宅で米を精米する」
+;seimai_1 := vn-intrans-lex &
+seimai_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_seimai_s_1_rel,
  ORTH <! "精米" !>].
 
@@ -9610,8 +9628,11 @@ zesshoku_1 := vn-intrans-lex &
  ORTH <! "絶食" !>].
 
 ; 節水 
-
-sessui_1 := vn-intrans-lex &
+;(TK 06-02-06)
+;shadow argument
+; ex.「これを使えば１日で風呂桶１杯ぶんの水を節水できます」
+;sessui_1 := vn-intrans-lex &
+sessui_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sessui_s_1_rel,
  ORTH <! "節水" !>].
 
@@ -9622,8 +9643,11 @@ sessen_1 := vn-intrans-lex &
  ORTH <! "接戦" !>].
 
 ; 節電 
-
-setsuden_1 := vn-intrans-lex &
+;(TK 06-02-06)
+;shadow argument
+; ex.「無駄な電気を節電する」
+;setsuden_1 := vn-intrans-lex &
+setsuden_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_setsuden_s_1_rel,
  ORTH <! "節電" !>].
 
@@ -9659,8 +9683,11 @@ zetsumei_1 := vn-intrans-lex &
  ORTH <! "絶命" !>].
 
 ; 設問 
-
-setsumon_1 := vn-intrans-lex &
+;(TK 06-02-06)
+;shadow argument
+; ex.「最後に記述式の問題を設問した」
+;setsumon_1 := vn-intrans-lex &
+setsumon_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_setsumon_s_1_rel,
  ORTH <! "設問" !>].
 
@@ -9689,14 +9716,20 @@ zenkai_1_1 := vn-intrans-lex &
  ORTH <! "全快" !>].
 
 ; 洗顔 
-
-sengan_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「顔全体を洗顔しなさい」
+;sengan_1 := vn-intrans-lex &
+sengan_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sengan_s_1_rel,
  ORTH <! "洗顔" !>].
 
 ; 選曲 
-
-senkyoku_1_2 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「渋いのを選曲するね」
+;senkyoku_1_2 := vn-intrans-lex &
+senkyoku_1_2 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_senkyoku_s_1_rel,
  ORTH <! "選曲" !>].
 
@@ -9737,8 +9770,11 @@ senshi_1_1 := vn-intrans-lex &
  ORTH <! "戦死" !>].
 
 ; 洗車 
-
-sensha_1_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「愛車を洗車する」
+;sensha_1_1 := vn-intrans-lex &
+sensha_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sensha_s_1_rel,
  ORTH <! "洗車" !>].
 
@@ -9844,8 +9880,11 @@ senpatsu_1 := vn-intrans-lex &
 
 ; 洗髪 
 ; Used 2 times
-
-senpatsu_1_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「子供の髪を洗髪してやった」
+;senpatsu_1_1 := vn-intrans-lex &
+senpatsu_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_senpatsu_s_1_rel,
  ORTH <! "洗髪" !>].
 
@@ -9882,27 +9921,39 @@ soui_1_1 := vn-intrans-lex &
  ORTH <! "相違" !>].
 
 ; 造園 
-
-zouen_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「日本庭園を造園したい」
+;zouen_1 := vn-intrans-lex &
+zouen_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zouen_s_1_rel,
  ORTH <! "造園" !>].
 
 ; 送球 
 ; Used 2 times
-
-soukyuu_1_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「すぐさま二塁にボールを送球し、ランナーをアウトにした」
+;soukyuu_1_1 := vn-intrans-lex &
+soukyuu_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soukyuu_s_1_rel,
  ORTH <! "送球" !>].
 
 ; 創業 
-
-sougyou_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「祖父がこのそば屋を創業したのは６０年前だ」
+;sougyou_1 := vn-intrans-lex &
+sougyou_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sougyou_s_1_rel,
  ORTH <! "創業" !>].
 
 ;remittance, sending money
-
-soukin_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「商品の代金を送金する」
+;soukin_1 := vn-intrans-lex &
+soukin_1 := vn-trans1-lex &
  [SYNSEM.LKEYS.KEYREL.PRED '_soukin_s_1_rel,
   ORTH <! "送金" !>].
 
@@ -9914,8 +9965,10 @@ souguu_1 := vn-intrans-lex &
  ORTH <! "遭遇" !>].
 
 ; 早産 
-
-souzan_1 := vn-intrans-lex &
+;(TK 06-02-13)
+; ex.「子供を早産する」
+;souzan_1 := vn-intrans-lex &
+souzan_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_souzan_s_1_rel,
  ORTH <! "早産" !>].
 
@@ -9945,15 +9998,21 @@ zousui_1_1 := vn-intrans-lex &
  ORTH <! "増水" !>].
 
 ; 増税 
-
-zouzei_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「消費税を増税するのは勘弁してください」
+;zouzei_1 := vn-intrans-lex &
+zouzei_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zouzei_s_1_rel,
  ORTH <! "増税" !>].
 
 ; 造船 
 ; Used 1 times
-
-zousen_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「タンカーを造船する」
+;zousen_1 := vn-intrans-lex &
+zousen_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zousen_s_1_rel,
  ORTH <! "造船" !>].
 
@@ -9965,8 +10024,11 @@ soutai_1_1 := vn-intrans-lex &
 
 ; 送電 
 ; Used 1 times
-
-souden_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「発電所で作られた電気を各家庭まで送電する」
+;souden_1 := vn-intrans-lex &
+souden_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_souden_s_1_rel,
  ORTH <! "送電" !>].
 
@@ -9979,8 +10041,11 @@ sounan_1 := vn-intrans-lex &
 
 ; 送風 
 ; Used 1 times
-
-soufuu_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「室内に冷い空気を送風する」
+;soufuu_1 := vn-intrans-lex &
+soufuu_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soufuu_s_1_rel,
  ORTH <! "送風" !>].
 
@@ -9991,8 +10056,10 @@ sourui_1 := vn-intrans-lex &
  ORTH <! "走塁" !>].
 
 ; 添え書き 
-
-soegaki_1 := vn-intrans-lex &
+;(TK 06-02-13)
+; ex.「取り扱いに注意する旨を添え書きする」
+;soegaki_1 := vn-intrans-lex &
+soegaki_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_soegaki_s_1_rel,
  ORTH <! "添え書き" !>].
 
@@ -10041,6 +10108,7 @@ soshou_1 := vn-intrans-lex &
 ; 卒業 
 ; Used 15 times
 ;(TK 05-09-15 changed to vn-trans1-lex)
+;shadow argument
 ;sotsugyou_1 := vn-intrans-lex &
 sotsugyou_v1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_sotsugyou_s_1_rel,
@@ -10085,8 +10153,11 @@ taiatari_1 := vn-intrans-lex &
  ORTH <! "体当り" !>].
 
 ; 退院 
-
-taiin_1_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「病院を退院して自宅療養に切り換える」
+;taiin_1_1 := vn-intrans-lex &
+taiin_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taiin_s_1_rel,
  ORTH <! "退院" !>].
 
@@ -10105,8 +10176,11 @@ taika_1_2 := vn-intrans-lex &
 
 ; 退学 
 ; Used 1 times
-
-taigaku_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「嫌になって高校を退学してしまった」
+;taigaku_1 := vn-intrans-lex &
+taigaku_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taigaku_s_1_rel,
  ORTH <! "退学" !>].
 
@@ -10157,8 +10231,11 @@ taisan_1 := vn-intrans-lex &
  ORTH <! "退散" !>].
 
 ; 退社 
-
-taisha_1_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「商社を退社して農家に転身した」
+;taisha_1_1 := vn-intrans-lex &
+taisha_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taisha_s_1_rel,
  ORTH <! "退社" !>].
 
@@ -10186,8 +10263,11 @@ taishoku_1 := vn-intrans-lex &
 
 ; 退職 
 ; Used 1 times
-
-taishoku_1_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「前の職場を退職して、次の職を得るまで１年かかった」
+;taishoku_1_1 := vn-intrans-lex &
+taishoku_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taishoku_s_1_rel,
  ORTH <! "退職" !>].
 
@@ -10222,8 +10302,11 @@ taidan_1 := vn-intrans-lex &
  ORTH <! "対談" !>].
 
 ; 退団 
-
-taidan_1_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「契約交渉がもつれてチームを退団することになった」
+;taidan_1_1 := vn-intrans-lex &
+taidan_1_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_taidan_s_1_rel,
  ORTH <! "退団" !>].
 
@@ -10234,8 +10317,11 @@ taitou_1_1 := vn-intrans-lex &
  ORTH <! "台頭" !>].
 
 ; 退任 
-
-tainin_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「取締役を退任して会社を去る」
+;tainin_1 := vn-intrans-lex &
+tainin_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_tainin_s_1_rel,
  ORTH <! "退任" !>].
 
@@ -10303,8 +10389,10 @@ dakyou_1 := vn-intrans-lex &
  ORTH <! "妥協" !>].
 
 ; 宅配 
-
-takuhai_1 := vn-intrans-lex &
+;(TK 06-02-13)
+; ex.「雑誌を宅配する仕事をしています」
+;takuhai_1 := vn-intrans-lex &
+takuhai_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_takuhai_s_1_rel,
  ORTH <! "宅配" !>].
 
@@ -10358,7 +10446,7 @@ datsui_1 := vn-intrans-lex &
 ;[SYNSEM.LKEYS.KEYREL.PRED '_dakkai_s_1_rel,
 ; ORTH <! "脱会" !>].
 dakkai_1 := vn-trans1-lex &
-[ORTH <! "脱会" !>, SYNSEM.LKEYS.KEYREL.PRED '_dakkai_s_１_rel].
+[ORTH <! "脱会" !>, SYNSEM.LKEYS.KEYREL.PRED '_dakkai_s_1_rel].
 
 ; タックル 
 
@@ -10367,8 +10455,11 @@ takkuru_1 := vn-intrans-lex &
  ORTH <! "タックル" !>].
 
 ; 脱獄 
-
-datsugoku_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「囚人が刑務所を脱獄した」
+;datsugoku_1 := vn-intrans-lex &
+datsugoku_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_datsugoku_s_1_rel,
  ORTH <! "脱獄" !>].
 
@@ -10379,8 +10470,11 @@ dasshu_1 := vn-intrans-lex &
  ORTH <! "ダッシュ" !>].
 
 ; 脱臭 
-
-dasshuu_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「充満した生臭い臭いを脱臭する」
+;dasshuu_1 := vn-intrans-lex &
+dasshuu_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dasshuu_s_1_rel,
  ORTH <! "脱臭" !>].
 
@@ -10398,8 +10492,11 @@ dassui_1 := vn-intrans-lex &
  ORTH <! "脱水" !>].
 
 ; 脱税 
-
-datsuzei_1 := vn-intrans-lex &
+;(TK 06-02-13)
+;shadow argument
+; ex.「ある大企業が法人税を脱税していたことが明るみになった」
+;datsuzei_1 := vn-intrans-lex &
+datsuzei_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_datsuzei_s_1_rel,
  ORTH <! "脱税" !>].
 
@@ -10417,8 +10514,10 @@ dassou_1 := vn-intrans-lex &
  ORTH <! "脱走" !>].
 
 ; 脱退 
-
-dattai_1 := vn-intrans-lex &
+;(TK 06-02-13)
+; ex.「喧嘩が元でバンドを脱退した」
+;dattai_1 := vn-intrans-lex &
+dattai_1 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dattai_s_1_rel,
  ORTH <! "脱退" !>].
 
@@ -29142,7 +29241,7 @@ kaien_3 := vn-trans1-lex &
 ;(TK 06-02-02)
 ;開花
 ;誤用かもしれないが使われているケースは多い
-; ex.「彼は４０歳になって才能を開花させた」
+; ex.「彼は４０歳になって才能を開花した」
 kaika_1_2 := vn-trans1-lex &
 [ORTH <! "開花" !>, SYNSEM.LKEYS.KEYREL.PRED '_kaika_s_2_rel].
 
@@ -29303,8 +29402,8 @@ shuuketsu_2 := vn-trans1-lex &
 ;(06-02-03)
 ;終止
 ; ex.「その語で文を終止するのはちょっと変だ」
-shuushi_3 := vn-trans1-lex &
-[ORTH <! "終止" !>, SYNSEM.LKEYS.KEYREL.PRED '_shuushi_s_3_rel].
+shuushi_4 := vn-trans1-lex &
+[ORTH <! "終止" !>, SYNSEM.LKEYS.KEYREL.PRED '_shuushi_s_4_rel].
 
 ;(06-02-03)
 ;熟成
@@ -29335,4 +29434,35 @@ shinkou_2 := vn-trans1-lex &
 ; ex.「山頂のおいしい空気を深呼吸した」
 shinkokyuu_3 := vn-trans1-lex &
 [ORTH <! "深呼吸" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinkokyuu_s_3_rel].
+
+;(06-02-06)
+;スキップ
+; ex.「嫌いなので５曲目をスキップした」
+sukippu_3 := vn-trans1-lex &
+[ORTH <! "スキップ" !>, SYNSEM.LKEYS.KEYREL.PRED '_sukippu_s_3_rel].
+
+;(06-02-06)
+;スタート
+; ex.「今日はもう寝て、明日から受験勉強をスタートすることにしよう」
+suta-to_3 := vn-trans1-lex &
+[ORTH <! "スタート" !>, SYNSEM.LKEYS.KEYREL.PRED '_suta-to_s_3_rel].
+
+;(06-02-06)
+;整列
+; ex.「テキストを整列するコマンドがわからない」
+seiretsu_3 := vn-trans1-lex &
+[ORTH <! "整列" !>, SYNSEM.LKEYS.KEYREL.PRED '_seiretsu_s_3_rel].
+
+;(06-02-06)
+;絶縁
+; ex.「ケーブルを絶縁する」
+zetsuen_3 := vn-trans1-lex &
+[ORTH <! "絶縁" !>, SYNSEM.LKEYS.KEYREL.PRED '_zetsuen_s_3_rel].
+
+;(TK 06-02-13)
+;全焼
+; ex.「マンションを全焼する火事があった」
+zenshou_1_2 := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_zenshou_s_1_rel,
+ ORTH <! "全焼" !>].
 

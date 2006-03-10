@@ -496,9 +496,11 @@ odoru-stem  := v1-c-stem-lex &
 
 
 
-nemuru-stem  := v1-c-stem-lex &
-                           [SYNSEM.LKEYS [KEYREL [PRED '_nemuru_v_rel]],
-                            ORTH <! "眠る" !>].
+;(TK 06-02-28 commentout)
+;「目を眠る」という使い方をするが、古い言葉なので今は使わない
+;nemuru-stem  := v1-c-stem-lex &
+;                           [SYNSEM.LKEYS [KEYREL [PRED '_nemuru_v_rel]],
+;                            ORTH <! "眠る" !>].
 
 naoru-stem  := intrans-c-stem-lex &
                            [SYNSEM.LKEYS [KEYREL [PRED '_naoru_v_rel]],
@@ -784,31 +786,41 @@ moushitsukaru-stem :=  v3-c-stem-lex &
 
 ; (MS 2005-10-20) We need this to be optional (v2 instead of v2a), because
 ; otherwise we cannot parse "食べればならない"
-
-naru-stem :=  v2-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
-                   ORTH <! "なる" !>].
-
-;naru-intrans-stem :=  intrans-c-stem-lex &
+;(TK 06-03-08 commentout)
+;"食べればならない"はまた別の方法で考える
+;naru-stem :=  v2-c-stem-lex &
 ;                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
 ;                   ORTH <! "なる" !>].
+
+;(TK 06-03-08 intrans-c-stem-lex復活)
+; ex.「木にりんごがなる」
+; ex.「ラッパがなって目が覚めた」
+naru-intrans-stem :=  intrans-c-stem-lex &
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_5_rel]],
+                   ORTH <! "なる" !>].
 
 ; Used 235 times
 
 naru-kanji-stem :=  v2a-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_3_rel]],
                    ORTH <! "成る" !>].
+
+;(TK 06-03-08 やはり必要なのでv2a-c-stem-lex復活)
+; ex.「頭が賢くなる」
+naru-hiragana-stem :=  v2a-c-stem-lex &
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_3_rel]],
+                   ORTH <! "なる" !>].
 
 ;naru-2-kanji-stem :=  intrans-c-stem-lex &
 ;                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
 ;                   ORTH <! "成る" !>].
 
 naru-pparg-stem :=  v2b-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_4_rel]],
                    ORTH <! "なる" !>].
 
 naru-pparg-kanji-stem :=  v2b-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_4_rel]],
                    ORTH <! "成る" !>].
 
 dounaru-stem :=  intrans-c-stem-wh-lex &
@@ -1615,22 +1627,28 @@ saku-stem := v1-c-stem-lex &
 ORTH <! "割く" !>].
 
 tsuku-stem := intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_7_rel]],
 ORTH <! "点く" !>].
 
-tsuku-a-stem := intrans-c-stem-lex &
+;(TK 06-03-08 "tsuku-intrans"に統合)
+;tsuku-a-stem := intrans-c-stem-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_1_rel]],
+;ORTH <! "つく" !>].
+tsuku-intrans := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_1_rel]],
 ORTH <! "つく" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 tsuku-reach := intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_7_rel]],
 ORTH <! "着く" !>].
 
-tsuku-reach-a := intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_reach_rel]],
-ORTH <! "つく" !>].
+
+;(TK 06-03-08 "tsuku-intrans"に統合)
+;tsuku-reach-a := intrans-c-stem-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_reach_rel]],
+;ORTH <! "つく" !>].
 
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
@@ -1638,16 +1656,17 @@ tsuku-2-stem := intrans-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_2_rel]],
 ORTH <! "付く" !>].
 
-tsuku-2a-stem := intrans-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_2a_rel]],
-ORTH <! "つく" !>].
+;(TK 06-03-08 "tsuku-intrans"に統合)
+;tsuku-2a-stem := intrans-c-stem-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_2a_rel]],
+;ORTH <! "つく" !>].
 
 tsuku-3-stem := v1-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_3_rel]],
 ORTH <! "突く" !>].
 
 tsuku-3a-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_3a_rel]],
+[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_3_rel]],
 ORTH <! "つく" !>].
 
 
@@ -1655,8 +1674,12 @@ tsuku-4-stem := v2-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_4_rel]],
 ORTH <! "就く" !>].
 
-tsuku-4a-stem := v2-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_4a_rel]],
+;(TK 06-03-08 "tsuku-v2"に統合)
+;tsuku-4a-stem := v2-c-stem-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_4a_rel]],
+;ORTH <! "つく" !>].
+tsuku-v2 := v2-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_8_rel]],
 ORTH <! "つく" !>].
 
 ;last
@@ -7690,7 +7713,7 @@ narihibiku_1 := intrans-c-stem-lex &
 ; SF (2003-08-28) intrans-c-stem-lex -> v2-c-stem-lex 
 
 naru_1_2 := v2-c-stem-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_naru_v_1_rel,
+[SYNSEM.LKEYS.KEYREL.PRED '_naru_v_2_rel,
  ORTH <! "鳴る" !>].
 
 ; 馴れ合う 
@@ -21166,7 +21189,7 @@ toritsuku_2 := intrans-c-stem-lex &
 ;為る
 
 naru-2-kanji-2-stem :=  intrans-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_6_rel]],
                    ORTH <! "為る" !>].
 
 ;持ち合わす
@@ -21436,9 +21459,10 @@ tsuku-5-stem := v2-c-stem-lex &
 [SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_5_rel]],
 ORTH <! "憑く" !>].
 
-tsuku-5a-stem := v2-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_5a_rel]],
-ORTH <! "つく" !>].
+;(TK 06-03-08 "tsuku-v2"に統合)
+;tsuku-5a-stem := v2-c-stem-lex &
+;[SYNSEM.LKEYS [KEYREL [PRED '_tsuku_v_5a_rel]],
+;ORTH <! "つく" !>].
 
 ;産気付く
 
@@ -21603,11 +21627,11 @@ ORTH <! "できる" !>].
 ;為る
 
 naru-kanji-2-stem :=  v2a-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_3_rel]],
                    ORTH <! "為る" !>].
 
 naru-pparg-kanji-2-stem :=  v2b-c-stem-lex &
-                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_rel]],
+                 [SYNSEM.LKEYS [KEYREL [PRED '_naru_v_4_rel]],
                    ORTH <! "為る" !>].
 
 
