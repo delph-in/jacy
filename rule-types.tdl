@@ -109,18 +109,18 @@ binary-type-mod := binary-modification-type & binary-headed-phrase &
 ; (MS 2004-12-22) This shouldn't inherit the LTOP from its second arg.
 ; (see sentence-te-coordination)
 ; (ms 2005-12-21) Shouldn't the INDEX come from the second ARG? -> "この香水を少しだけ付けてごらんなさい。"
+; (FCB 2006-03-12) If the INDEX is the second ARG then NP semantics are incoherent
+; I think it should be the C-ARG from the conjunct, which should be linked to the index of the 1st arg.
 
 binary-type-conj := binary-modification-type & 
                     [LMORPH-BIND-TYPE #lmorph,
                      RMORPH-BIND-TYPE #rmorph,
                      SYNSEM.LOCAL [CAT [HEAD #head,
-					VAL #val],
-				   CONT.HOOK [INDEX #ind]],
+					VAL #val]],
 		     ARGS <  [LMORPH-BIND-TYPE #lmorph] ,
 			     [RMORPH-BIND-TYPE #rmorph,
 			      SYNSEM.LOCAL [CAT [HEAD #head,
-						 VAL #val],
-					    CONT.HOOK.INDEX #ind]]
+						 VAL #val]]]
 			     > ].
 
 ; (MS 2003-07-15) Replaced with binary-headed-phrase from matrix.tdl
@@ -621,37 +621,38 @@ ARGS < [SYNSEM.LOCAL [CONT.HOOK [LTOP #lhand,
 ;  adds massive spurious ambiguity or just corrections.
 
 
+
 conj-rule-type :=  binary-type-conj & 
-                  [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #ctxt1, LAST #ctxt2],
-                                 CONT [ HOOK [INDEX #index,
-					      LTOP #handle] ],
-				 CAT.VAL #val,
-                                 NUCL nucl]],
-                   J-NEEDS-AFFIX -,
-                   C-CONT [RELS <! !>,
-                           HCONS <! !>],
-                   ARGS <  j-sign & 
-                                [SYNSEM.LOCAL [CTXT.BACKGROUND [list #ctxt1,last #ctxt3],
-                                               CONT.HOOK [ INDEX #index,
-							   LTOP #handle],
-                                               CAT [VAL saturated,
-						    HEAD.C-MOD < j-synsem & [LOCAL [CAT #1, 
-										    CONT #3,
-										    BAR #5, 
-										    NUCL #6],
-									     LEX #2, 
-									     NON-LOCAL #4] >],
-                                               NUCL not_fin_conj ],
-                                 J-NEEDS-AFFIX -],
-			   j-sign & 
-                                [SYNSEM [LOCAL [CTXT.BACKGROUND [list #ctxt3,last #ctxt2],
-                                               CAT #1 & [VAL saturated & #val],
-					       CONT #3, 
-					       BAR #5, 
-					       NUCL #6],
-					 LEX #2, 
-					 NON-LOCAL #4],
-				 J-NEEDS-AFFIX -] > ].
+ [SYNSEM [LOCAL [CTXT.BACKGROUND diff-list & [LIST #ctxt1, LAST #ctxt2],
+		 CONT [ HOOK [INDEX #index,
+			      LTOP #handle] ],
+		 CAT.VAL #val,
+		 NUCL nucl]],
+  J-NEEDS-AFFIX -,
+  C-CONT [RELS <! !>,
+	  HCONS <! !>],
+  ARGS <  j-sign & 
+	  [SYNSEM.LOCAL [CTXT.BACKGROUND [list #ctxt1,last #ctxt3],
+			 CONT.HOOK [ INDEX #index,
+				     LTOP #handle],
+			 CAT [VAL saturated,
+			      HEAD.C-MOD < j-synsem & [LOCAL [CAT #1, 
+							      CONT #3,
+							      BAR #5, 
+							      NUCL #6],
+						       LEX #2, 
+						       NON-LOCAL #4] >],
+			 NUCL not_fin_conj ],
+	   J-NEEDS-AFFIX -],
+	  j-sign & 
+	  [SYNSEM [LOCAL [CTXT.BACKGROUND [list #ctxt3,last #ctxt2],
+			  CAT #1 & [VAL saturated & #val],
+			  CONT #3, 
+			  BAR #5, 
+			  NUCL #6],
+		   LEX #2, 
+		   NON-LOCAL #4],
+	   J-NEEDS-AFFIX -] > ].
 
 
 

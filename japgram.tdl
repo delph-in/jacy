@@ -716,19 +716,19 @@ sentence-te-coordination-rule := sentence-coord-type &
 
 
 ; (MS 2004-06-25) We need something for the XARG. Try the XARG of the second conjunct.
+; (FCB 2006-03-12) FIXME: I am pretty sure it shouldn't be that, but I don't know what it should be. 
 
 conj-rule := conj-rule-type &
-                 [SYNSEM [LOCAL [BAR +,
-				 CONT.HOOK.XARG #xarg],
-			  MODIFIED.PERIPH +],
-                  ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
-						  C-MOD < [MODIFIED.PERIPH #periph] > ],
-                                            VAL saturated],
-                                       BAR +]],
-                        [SYNSEM j-synsem & [LOCAL [BAR +,
-						   CONT.HOOK.XARG #xarg],
-					    MODIFIED.PERIPH #periph]]>].
-
+ [SYNSEM [LOCAL [BAR +,
+		 CONT.HOOK.XARG #xarg],
+	  MODIFIED.PERIPH +],
+  ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
+				  C-MOD < [MODIFIED.PERIPH #periph] > ],
+			    VAL saturated],
+		       BAR +]],
+	[SYNSEM j-synsem & [LOCAL [BAR +,
+				   CONT.HOOK.XARG #xarg],
+			    MODIFIED.PERIPH #periph]]>].
 
 
 
