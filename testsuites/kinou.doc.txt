@@ -1,0 +1,40 @@
+
+
+
+The test set version 2 is in the profiles tsdb/skeletons/kinou[123]:
+
+Set 1: 1500 Sentences (Ch 1-5)
+Set 2: 1100 Sentences (Ch 6-10)
+Set 3: 1116 Sentences (Ch 11-14)
+
+id      i-id    Chapter
+01010   1       １．表記の揺らぎ
+04010   66      ２．基本語一般の訳し分け
+15010   610     ３．特殊単語の訳し分け
+22010   884     ４．助詞による取立てと関係表現の訳し方
+26010   1161    ５．様相表現の訳し方
+
+37010   1501    ６．述語表現訳し方
+44010   1726    ７．日時・数量、固有名詞の訳し方
+49010   1963    ８．複合語一般の訳し方
+55010   2198    ９．形容詞的表現の訳し方
+61010   2410    １０．名詞句、名詞節の訳し方
+
+67010   2600    １１．副詞的表現の訳し方
+75010   3028    １２．特殊構造表現の訳し方
+85010   3332    １３．文接続表現の訳し方
+94010   3603    １４．複合的文表現の訳し方
+
+
+
+The test set (v3) is described in:
+http://www.kinet-tv.ne.jp/~sat/data/publications/1994/p04.html
+池原悟, 白井諭, 小倉健太郎 (1994.7).
+言語表現体系の違いに着目した日英機械翻訳機能試験項目の構成.
+人工知能学会誌, Vol.9, No.4, pp.93-103.
+
+Satoru Ikehara, Satoshi Shirai & Kentaro Ogura (1994.7).
+Criteria for evaluating the linguistic quality of Japanese to English
+machine translations. (in Japanese)
+Journal of Japanese Society for Artificial Intelligence, Vol.9, No.4,
+pp.93-103.
