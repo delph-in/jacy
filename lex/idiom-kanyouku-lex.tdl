@@ -1,0 +1,93 @@
+;;; -*- Mode: TDL; Coding: euc-jp -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: %Z% %M%
+;;;      module:
+;;;     version: %I%
+;;;  written by:
+;;; last update: %G% --- %U%
+;;;  updated by: 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author                | date        | modification
+;;; ----------------------|-------------|------------------------------------------
+;;; Chikara Hashimoto (CH)|             |
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Those that are applied to the semantic filtering, i.e., transformable idioms
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;「(骨を)折る」 (060503)
+; lit. break (a bone)
+; "make an effort"
+oru-i-stem :=  v1-c-stem-lex &
+ [SYNSEM [LKEYS.KEYREL.PRED '_oru_v_i_rel,
+	  LOCAL.CAT [HEAD [PASSIVIZABLE -,
+			   NEGATIVIZABLE -],
+		     VAL [COMPS <[ADJACENT +,
+				  TOPICALIZABLE -,
+				  LOCAL.CAT.HEAD.ALLOW-ADNOMINAL-MOD [ADNOMINAL-WORD -,
+								      GENITIVE-PHRASE -,
+								      RELATIVE-CLAUSE -]]>]]],
+  ORTH <! "折る" !>,
+  IDIOM +].
+
+
+;(CH 06-06-02)
+;慣用句『役に立つ』の『立つ』
+tatsu-i-stem := v2-c-stem-lex &
+ [SYNSEM.LKEYS [KEYREL [PRED '_tatsu_v_i_rel]],
+  ORTH <! "立つ" !>,
+  IDIOM +].
+
+;「道草(を食う)」 (060503)
+; lit. (eat) grass on a roadside
+; "waste one's time on the road"
+michikusa-i := ordinary-nohon-n-lex &
+ [SYNSEM.LKEYS.KEYREL.PRED '_michikusa_n_i_rel,
+  ORTH <! "道草" !>,
+  IDIOM +].
+
+;「(頭が)痛い」 (060503)
+; lit. head aches
+; "be in trouble"
+itai-i-stem := i-adj-stem-lex &
+ [SYNSEM [LKEYS.KEYREL.PRED '_itai_a_i_rel,
+	  LOCAL.CAT [HEAD.NEGATIVIZABLE -,
+		     VAL [SUBJ <[ADJACENT +,
+				 TOPICALIZABLE -,
+				  LOCAL.CAT.HEAD.ALLOW-ADNOMINAL-MOD [ADNOMINAL-WORD -,
+								      GENITIVE-PHRASE -,
+								      RELATIVE-CLAUSE -]]>]]],
+  ORTH <! "痛い" !>,
+  IDIOM +].
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Those that are not applied to the semantic filtering, i.e., fixed idioms
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; (CH 060503) The suffix of a PRED name seems to be forced to conventional ones such as
+; ..._n_rel or ..._a_rel. In other words, you can't use ..._i_rel for idioms below.
+; I don't know why.
+
+;「袋のネズミ」 (060503)
+; lit. cornered rat
+; "being trapped like a rat"
+hukurononezumi-i := idiom-A-noun-lex &
+ [ORTH <! "袋", "の", "ネズミ" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_hukurononezumi_n_rel].
+
+;「水も滴る」 (060503)
+; lit. water drips
+; "extremely handsome"
+mizumoshitataru-i := idiom-A-adnominal-lex &
+ [ORTH <! "水", "も", "滴る" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_mizumoshitataru_n_rel].
+
+;「寄ってたかって」 (060503)
+; lit. getting close and scrounging
+; "gang up (to do something)"
+yottetakatte-adv-i := idiom-A-isect-adv-lex &
+ [ORTH <! "寄っ", "て", "たかっ", "て" !>,
+  SYNSEM.LKEYS.KEYREL.PRED '_yottetakatte_a_rel].

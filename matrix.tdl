@@ -30,11 +30,21 @@ sign-min := avm &
 basic-sign := sign-min &
   [ KEY-ARG bool ].
 
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
 sign := basic-sign &
   [ SYNSEM synsem,
     ARGS list,
     INFLECTED bool,
-    ROOT bool ].
+    ROOT bool,
+    IDIOM bool].
+; sign := basic-sign &
+;   [ SYNSEM synsem,
+;     ARGS list,
+;     INFLECTED bool,
+;     ROOT bool ].
+
 
 ; C-CONT encodes the semantic contribution of the rule (phrasal
 ; or lexical).
@@ -682,18 +692,35 @@ onull := olist & null.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Lexical rules
 
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
 lex-rule := phrase-or-lexrule & word-or-lexrule &
-  [ NEEDS-AFFIX bool,
+  [ IDIOM #idiom,
+    NEEDS-AFFIX bool,
     SYNSEM.LOCAL.CONT.RELS [ LIST #first,
 			     LAST #last ],
     DTR #dtr & word-or-lexrule &
 	[ SYNSEM.LOCAL.CONT.RELS [ LIST #first,
 		  		   LAST #middle ],
-	  ALTS #alts ],
+	  ALTS #alts,
+	  IDIOM #idiom],
     C-CONT.RELS [ LIST #middle,
 		  LAST #last ],
     ALTS #alts,
     ARGS < #dtr > ].
+; lex-rule := phrase-or-lexrule & word-or-lexrule &
+;   [ NEEDS-AFFIX bool,
+;     SYNSEM.LOCAL.CONT.RELS [ LIST #first,
+; 			     LAST #last ],
+;     DTR #dtr & word-or-lexrule &
+; 	[ SYNSEM.LOCAL.CONT.RELS [ LIST #first,
+; 		  		   LAST #middle ],
+; 	  ALTS #alts ],
+;     C-CONT.RELS [ LIST #middle,
+; 		  LAST #last ],
+;     ALTS #alts,
+;     ARGS < #dtr > ].
 
 ; Lexical rules vary on two dimensions: whether they are lexeme-to-lexeme
 ; or lexeme-to-word and whether or not they involve spelling changes.
@@ -804,8 +831,12 @@ head-valence-phrase := head-nexus-phrase &
 
 ; All phrases are either unary or binary.
 
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
 basic-unary-phrase := phrase &
   [ STEM #stem,
+    IDIOM #idiom,
     SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
         		       LAST #last ],
 			HCONS [ LIST #scfirst,
@@ -820,14 +851,36 @@ basic-unary-phrase := phrase &
 						 LAST #middle ],
 					  HCONS [ LIST #scfirst,
 						  LAST #scmiddle ] ] ],
-                    ROOT - ] > ].
+                    ROOT -,
+		    IDIOM #idiom] > ].
+; basic-unary-phrase := phrase &
+;   [ STEM #stem,
+;     SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
+;         		       LAST #last ],
+; 			HCONS [ LIST #scfirst,
+; 				LAST #sclast ] ],
+;     C-CONT [ RELS [ LIST #middle,
+; 		    LAST #last ],
+; 	     HCONS [ LIST #scmiddle,
+; 		     LAST #sclast ] ],
+;     ARGS < sign & [ STEM #stem,
+;                     SYNSEM.LOCAL local &
+; 				 [ CONT [ RELS [ LIST #first,
+; 						 LAST #middle ],
+; 					  HCONS [ LIST #scfirst,
+; 						  LAST #scmiddle ] ] ],
+;                     ROOT - ] > ].
 
 unary-phrase := basic-unary-phrase &
   [ INFLECTED +,
     ARGS < [ INFLECTED + ] > ].
 
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
 basic-binary-phrase := phrase &
-  [ SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
+  [ IDIOM #idiom,
+    SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
 			       LAST #last ],
 			HCONS [ LIST #scfirst,
 				LAST #sclast ] ],
@@ -835,18 +888,41 @@ basic-binary-phrase := phrase &
 		    LAST #last ],
 	     HCONS [ LIST #scmiddle2,
 		     LAST #sclast ] ],
-    ARGS < sign & [ SYNSEM.LOCAL local &
+    ARGS < sign & [ IDIOM #idiom,
+		    SYNSEM.LOCAL local &
 				 [ CONT [ RELS [ LIST #first,
 						 LAST #middle1 ],
 					  HCONS [ LIST #scfirst,
 						  LAST #scmiddle1 ] ] ],
                     ROOT - ],
-	   sign & [ SYNSEM.LOCAL local &
+	   sign & [ IDIOM #idiom,
+		    SYNSEM.LOCAL local &
 				 [ CONT [ RELS [ LIST #middle1,
 						 LAST #middle2 ],
 					  HCONS [ LIST #scmiddle1,
 						  LAST #scmiddle2 ] ] ],
                     ROOT - ] > ].
+; basic-binary-phrase := phrase &
+;   [ SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
+; 			       LAST #last ],
+; 			HCONS [ LIST #scfirst,
+; 				LAST #sclast ] ],
+;     C-CONT [ RELS [ LIST #middle2,
+; 		    LAST #last ],
+; 	     HCONS [ LIST #scmiddle2,
+; 		     LAST #sclast ] ],
+;     ARGS < sign & [ SYNSEM.LOCAL local &
+; 				 [ CONT [ RELS [ LIST #first,
+; 						 LAST #middle1 ],
+; 					  HCONS [ LIST #scfirst,
+; 						  LAST #scmiddle1 ] ] ],
+;                     ROOT - ],
+; 	   sign & [ SYNSEM.LOCAL local &
+; 				 [ CONT [ RELS [ LIST #middle1,
+; 						 LAST #middle2 ],
+; 					  HCONS [ LIST #scmiddle1,
+; 						  LAST #scmiddle2 ] ] ],
+;                     ROOT - ] > ].
 
 binary-phrase := basic-binary-phrase &
   [ INFLECTED +,

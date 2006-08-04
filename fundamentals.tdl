@@ -156,7 +156,14 @@ lexical_sign-word := lexical_sign &
                      [ SYNSEM.LKEYS.KEYREL.WLINK ne-list ].
 
 lexical_sign-affix := lexical_sign.
-lexical_sign-rule := lexical_sign & phrase-or-lexrule.
+
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
+lexical_sign-rule := lexical_sign & phrase-or-lexrule &
+ [IDIOM #idiom,
+  ARGS <[IDIOM #idiom]>].
+;lexical_sign-rule := lexical_sign & phrase-or-lexrule.
 
 
 

@@ -131,9 +131,12 @@ binary-type-conj := binary-modification-type &
 
 
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
-
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
 unary-type-super :=   phrasal_sign &
-               [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+               [IDIOM #idiom,
+		SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
                                                 SPEAKER #sp],
                                      EMPATHY [EMPER #sp,
                                               EMPEE #emp]],
@@ -149,7 +152,8 @@ unary-type-super :=   phrasal_sign &
                                                    LAST #middle],
                               HCONS diff-list & [LIST #sclist,
                                                     LAST #scmiddle]],
-                ARGS <  [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+                ARGS <  [IDIOM #idiom,
+			 SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
                                                                    SPEAKER #sp],
                                                            EMPATHY [EMPER #sp,
                                                                     EMPEE #emp]],
@@ -159,6 +163,33 @@ unary-type-super :=   phrasal_sign &
                                                                    LAST #sclast]]],
 					      NON-LOCAL #nonloc],
 				      ORTH #stem] >].
+; unary-type-super :=   phrasal_sign &
+;                [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+;                                                 SPEAKER #sp],
+;                                      EMPATHY [EMPER #sp,
+;                                               EMPEE #emp]],
+;                                CONT [HOOK #hook,
+;                                      RELS [LIST #list,
+;                                             LAST #last],
+;                                      HCONS [LIST #sclist,
+;                                              LAST #sclast]]],
+; 			NON-LOCAL #nonloc],
+;  		ORTH #stem,
+;                C-CONT mrs & [HOOK #hook,
+;                               RELS diff-list & [LIST #list,
+;                                                    LAST #middle],
+;                               HCONS diff-list & [LIST #sclist,
+;                                                     LAST #scmiddle]],
+;                 ARGS <  [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+;                                                                    SPEAKER #sp],
+;                                                            EMPATHY [EMPER #sp,
+;                                                                     EMPEE #emp]],
+;                                                      CONT [RELS [LIST #middle,
+;                                                                   LAST #last],
+;                                                            HCONS [LIST #scmiddle,
+;                                                                    LAST #sclast]]],
+; 					      NON-LOCAL #nonloc],
+; 				      ORTH #stem] >].
 
 
 
@@ -1505,9 +1536,12 @@ adjpolite-rule := i-adj-stem-lex &
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
-
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
 word2word-rule := j-sign & phrase-or-lexrule &
-            [SYNSEM [LOCAL [CAT [HEAD #head],
+            [IDIOM #idiom,
+	     SYNSEM [LOCAL [CAT [HEAD #head],
                             BAR #bar,
                             CONT [HOOK #hook,
                                   RELS diff-list & [LIST #list,
@@ -1526,7 +1560,8 @@ word2word-rule := j-sign & phrase-or-lexrule &
                             LAST #last],
                      HCONS [LIST #hcmiddle,
                               LAST #hclast]],
-             ARGS <[SYNSEM [LOCAL [CAT [HEAD #head],
+             ARGS <[IDIOM #idiom,
+		    SYNSEM [LOCAL [CAT [HEAD #head],
                                    BAR #bar,
                                    CONT [HOOK #hook,
                                          RELS [LIST #list,
@@ -1541,6 +1576,41 @@ word2word-rule := j-sign & phrase-or-lexrule &
                     J-NEEDS-AFFIX #aff,
                     LMORPH-BIND-TYPE #lmorph,
                     RMORPH-BIND-TYPE #rmorph]>].
+; word2word-rule := j-sign & phrase-or-lexrule &
+;             [SYNSEM [LOCAL [CAT [HEAD #head],
+;                             BAR #bar,
+;                             CONT [HOOK #hook,
+;                                   RELS diff-list & [LIST #list,
+; 						    LAST #last],
+;                                   HCONS [LIST #hclist,
+;                                           LAST #hclast]],
+;                             CTXT #ctxt],
+;                      NON-LOCAL #nonloc,
+; 		     MODIFIED.PERIPH #per],
+; 	     ORTH #stem,
+;              INFLECTED +,
+;              J-NEEDS-AFFIX #aff,
+;              LMORPH-BIND-TYPE #lmorph,
+;              RMORPH-BIND-TYPE #rmorph,
+;              C-CONT [RELS [LIST #middle,
+;                             LAST #last],
+;                      HCONS [LIST #hcmiddle,
+;                               LAST #hclast]],
+;              ARGS <[SYNSEM [LOCAL [CAT [HEAD #head],
+;                                    BAR #bar,
+;                                    CONT [HOOK #hook,
+;                                          RELS [LIST #list,
+;                                                 LAST #middle],
+;                                          HCONS [LIST #hclist,
+;                                                  LAST #hcmiddle]],
+;                                    CTXT #ctxt],
+; 			    MODIFIED.PERIPH #per,
+;                             NON-LOCAL #nonloc],
+;                     INFLECTED +,
+; 		    ORTH #stem,
+;                     J-NEEDS-AFFIX #aff,
+;                     LMORPH-BIND-TYPE #lmorph,
+;                     RMORPH-BIND-TYPE #rmorph]>].
 
 ;these are lexical rule types for zero pronoun insertion
 

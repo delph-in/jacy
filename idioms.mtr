@@ -1,0 +1,19 @@
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
+
+hone+o+oru := np_v_idiom_mtr &
+  [ INPUT.RELS <! [ PRED "_oru_v_i_rel" ],
+                  [ PRED "_hone_n_1_rel" ] !> ].
+
+yaku+ni+tatsu := np_v_idiom_mtr &
+  [ INPUT.RELS <! [ PRED "_tatsu_v_i_rel" ],
+                  [ PRED "_yaku_n_rel" ] !> ].
+
+michikusa+o+kuu := np_v_idiom_mtr &
+  [ INPUT.RELS <! [ PRED "_kuu_v_rel" ],
+                  [ PRED "_michikusa_n_i_rel" ] !> ].
+
+atama+ga+itai := np_a_idiom_mtr &
+  [ INPUT.RELS <! [ PRED "_itai_a_i_rel" ],
+                  [ PRED "_atama_n_rel" ] !> ].

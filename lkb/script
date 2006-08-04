@@ -107,6 +107,9 @@
      "kyoudai-all" (list (lkb-pathname (parent-directory) 
 				       "lex/kyoudai-all.tdl")))
     (read-cached-sublex-if-available
+     "idiom-kanyouku-lex" (list  (lkb-pathname 
+			 (parent-directory) "lex/idiom-kanyouku-lex.tdl")))
+    (read-cached-sublex-if-available
      "ersatz" (list (lkb-pathname (parent-directory)
 				  "lex/ersatz.tdl")))))
 
@@ -175,3 +178,12 @@
   (lkb-pathname (parent-directory) "paraphraser.mtr"))
  "JaJa Paraphraser"
  :filter nil :task :paraphrase)
+
+;;;
+;;; idiom Implementation (CH 060804)
+;;;
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "idioms.mtr"))
+ "Idiom Tests"
+ :filter nil :task :idiom)

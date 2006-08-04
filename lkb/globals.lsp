@@ -241,3 +241,10 @@
 (setf *translate-grid* '(:ja . (:ja)))
 
 (setf *gen-ignore-rules* '(head-complement2-rule))
+
+
+;;;
+;;; Idiom Implementation (CH 060804)
+;;;
+(defparameter *non-idiom-root*
+    'root_non_idiom )

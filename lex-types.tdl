@@ -3992,6 +3992,11 @@ noun_mod-lex := lexical_sign-word &
 noun_mod-lex-l := noun_mod-lex &
                   [ SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD left ].
 
+; Idiom Implementation (CH 060804)
+; (CH 2006-08-04) Introduced idiom-A-adnominal-lex, which is an idiom that
+;  is completely fixed and unambiguous and corresponds to an adnominal word.
+idiom-A-adnominal-lex := noun_mod-lex-l.
+
 ; (MS 2005-11-09) Subtype to get rid of skip files.
 
 noun_mod-lex-l-relational := noun_mod-lex-l &
@@ -4357,6 +4362,11 @@ quotation-definition-end-lex :=  lexical_sign &
                        
 
 ordinary-nohon-n-lex := ordinary-n-lex & [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+
+; Idiom Implementation (CH 060804)
+; (CH 2006-08-04) Introduced idiom-A-noun-lex, which is an idiom that
+;  is completely fixed and unambiguous and corresponds to a noun.
+idiom-A-noun-lex := ordinary-nohon-n-lex.
 
 ; (MS 2003-12-19) Matrix 0.6
 
@@ -4913,6 +4923,11 @@ isect-mod-lex := lexical_sign-word &
 
 isect-adv-lex := isect-mod-lex & adv-lex.
 ;;; 美しい
+
+; Idiom Implementation (CH 060804)
+; (CH 2006-08-04) Introduced idiom-A-isect-adv-lex, which is an idiom that
+;  is completely fixed and unambiguous and corresponds to an adverb.
+idiom-A-isect-adv-lex := isect-adv-lex.
 
 deg-adv-lex := isect-mod-lex & adv-deg-lex.
 ;;; とても 

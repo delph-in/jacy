@@ -60,3 +60,11 @@ utterance-root := j-sign &
 
 number-frag-root := number-frag-rule-type.
 
+
+;;;
+;;; Idiom Implementation (060804)
+;;;
+; Used to determine on which candidate root edges to not apply the idiom checks
+; (for efficiency)
+root_non_idiom := sign &
+  [ IDIOM - ].
