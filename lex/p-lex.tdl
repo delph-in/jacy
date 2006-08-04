@@ -1979,3 +1979,20 @@ dano-second-conj := postp-lex-coord &
 ka-sap-np  := s-conj-lex & 
                   [ORTH <! "か" !>,
                    SYNSEM.LKEYS.KEYREL.PRED '_ka_p_sconj_rel].
+
+
+;(TK 06-04-18)
+;につれて
+;記述の仕方は「に従い」にならった
+; ex.「この時期は日が傾くにつれて寒くなる」
+nitsurete-varg := postp-lex-varg &
+        [SYNSEM [LOCAL.CAT.HEAD.PTYPE nitsuite,
+		 LKEYS.KEYREL.PRED '_nitsurete_p_rel],
+         ORTH <! "につれて" !>]. 
+
+;(TK 06-04-24)
+;＆
+ando-ampersand := n_conj-p-lex &
+       [ORTH <! "＆" !>,
+        SYNSEM.LKEYS.KEYREL.PRED '_ando_p_conj_rel].
+

@@ -2106,10 +2106,11 @@ surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'sumisu,
 ORTH <! "Smith" !>].
 
-sumisu-3 :=
-surname-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'sumisu,
-ORTH <! "SMITH" !>].
+; FCB case is wierd
+; sumisu-3 :=
+; surname-lex &
+; [SYNSEM.LKEYS.KEYREL.CARG 'sumisu,
+; ORTH <! "SMITH" !>].
 
 ;Nasdaq
 

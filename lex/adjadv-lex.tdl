@@ -23724,7 +23724,7 @@ gankyou_1 := na-adj-lex &
 marui_a3 := i-adj-stem-lex &
 [ORTH <! "円い" !>, SYNSEM.LKEYS.KEYREL.PRED '_marui_a_3_rel].
 
-;(TK 06-05-01)
+;(TK 06-04-27)
 ;のろま
 ; ex.「前にのろまな車がいてイライラする」
 noroma_1 := na-adj-lex &
@@ -23936,4 +23936,5 @@ ainiku_4 := isect-adv-lex &
 ;何れ
 izure_2-kanji := isect-adv-lex &
 [ORTH <! "何れ" !>, SYNSEM.LKEYS.KEYREL.PRED '_izure_a_2_rel].
+
 

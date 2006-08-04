@@ -44,9 +44,12 @@ From jp051120:
 || suru_adv_ditransitive        || が ||   || を   ||   || ADV   || + ||  する, なさる                      ||
 || suru_noun_ditransitive       || が ||   || を   ||   || に/と || + ||  する, なさる                      ||
 || to_intransitive-opt          || と ||   ||      ||   ||       ||   ||  [と]いう                          ||
-|| sbj-narg_transitive          || が || || NOUN || +  ||       ||   ||  かかる                             ||
-|| aspect_transitive            || が ||   || V    || + ||      ||   ||  [やり]かねる                       || 
-|| syn-vv-vbar-stem_transitive  || が ||   || を   ||   ||  V   || + ||  [やり]まくる                       || 
+|| sbj-narg_transitive          || が ||　 || NOUN || +  ||      ||   ||  かかる                             ||
+|| aspect_transitive            || が ||   || V    || + ||       ||   ||  [やり]かねる                       || 
+|| syn-vv-vbar-stem_transitive  || が ||   || を   ||   ||  V    || + ||  [やり]まくる                       || 
+|| adj_sc			|| が/COP || ||    ||   ||       ||   ||  美しい, 奇麗[な]                 ||
+|| perspective_transitive	|| が ||   || に   ||   ||  V    || + ||  [あげる, 下さる                  ||
+|| saturated			||MOD||    ||      ||   ||       ||   || たまたま                          || 
 
 COP includes post-positions like "：".
 
@@ -58,3 +61,4 @@ ADV is an adverbial such as 美しし-く or きれい-に.
 
 V is a predicate argument (VP or S).
 
+MOD is the predicate modified by an adverb.

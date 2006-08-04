@@ -28,7 +28,6 @@ lexical_sign-word := lexical_sign &
 	   LKEYS.KEYREL [WLINK ne-list,
 			 LBL #label]]].
 
-
 ;;;;;;;;;;;;;;;;;;;HEADS;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -45,8 +44,8 @@ lexical_sign-word := lexical_sign &
 ; init_head.
 
 
-final_head :< j-head.
-init_head :< j-head.
+final_head := j-head.
+init_head := j-head.
 
 
 ; (MS 2005-11-23) trying to put utterance head a bit deeper under utt-valid
@@ -1002,9 +1001,6 @@ adj_head := adj-or-adv_head & [COP-ARG -].
 i-adj-stem_head :=  other-verb-stem_head & adj_head &
                    [ADJ +].
                                                   
-adj_head := adj-or-adv_head & [COP-ARG -].
-
-
 na-adj_head  := adj_head &
               [C-MOD null,
                MARK null].
@@ -1654,6 +1650,7 @@ p-lex := lexical_sign &
 ; (FCB 2006-05-02) move this down to do the wierd numeral-clasifier ¤Î
 ; DPF maybe this linkage could be revised
 
+
 p-lex-norm := p-lex &
  [SYNSEM.LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #ind,
 		 CONT.HOOK.XARG #ind]].
@@ -1685,6 +1682,7 @@ case-p-lex := p-lex-norm &
 			     LTOP #hand],
 		       RELS <! !>,
 		       HCONS <! !>]]]].
+
 
 ; (MS 2005-05-06) renamed ga-wo-ni-p-lex (cleaning up particles).
 

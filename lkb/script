@@ -48,7 +48,7 @@
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 
 ;;; Load the lexicon
-(if  nil ;  *lexdb-params* ;;; nil
+(if  nil;;;*lexdb-params* ;;; nil
     ;; Use the database
     (progn
       ;; load from database
@@ -58,12 +58,19 @@
        "skips" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")))
       ;;; load the generic lexical types
       (read-cached-sublex-if-available 
-       "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl"))))
+       "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))
+      ;;; its so fast now, i can afford to do it every time
+      (index-for-generator)
+      )
   (progn
+    ;; make a dummy file to be the _main_ lexicon
     (read-cached-lex-if-available (list
 				   (lkb-pathname (parent-directory) 
-						 "lex/generics.tdl"))) 
-    ;; pick an arbitrary file and call it the _main_ lexicon
+						 "lex/dummy.tdl"))) 
+    ;; make a dummy file to be the _main_ lexicon
+    (read-cached-sublex-if-available 
+     "generics" (list (lkb-pathname 
+		       (parent-directory) "lex/generics.tdl"))) 
     (read-cached-sublex-if-available 
      "adjadv-lex" (list  (lkb-pathname 
 			  (parent-directory) "lex/adjadv-lex.tdl")))
@@ -113,7 +120,8 @@
      "ersatz" (list (lkb-pathname (parent-directory)
 				  "lex/ersatz.tdl")))))
 
-  
+
+
 ;;;  (progn
 ;;;    ;; Load the main lexicon
 ;;;    (read-cached-lex-if-available 

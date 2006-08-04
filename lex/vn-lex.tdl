@@ -29466,3 +29466,188 @@ zenshou_1_2 := vn-trans1-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_zenshou_s_1_rel,
  ORTH <! "全焼" !>].
 
+;(TK 06-04-18)
+;けんけん
+; ex.「あの店員のけんけんした言い方に腹が立つよ」
+kenken_4 := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kenken_s_4_rel,
+ ORTH <! "けんけん" !>].
+
+;(TK 06-04-18)
+;懸濁
+;自動詞用法も他動詞用法もあるようだが、専門的な部分なのでよくわからない
+; ex.「空気が懸濁する」「物質が液体中に懸濁する」
+kedaku_1 := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kedaku_s_1_rel,
+ ORTH <! "懸濁" !>].
+
+; ex.「たんぱく質を懸濁する」
+kendaku_2 := vn-trans1-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kendaku_s_2_rel,
+ ORTH <! "懸濁" !>].
+
+;(TK 06-04-20)
+;祈祷,祈とう
+; ex.「神社で祈祷してもらった」
+kitou_1 := vn-intrans-lex &
+[ORTH <! "祈祷" !>, SYNSEM.LKEYS.KEYREL.PRED '_kitou_s_1_rel].
+
+kitou_2 := vn-intrans-lex &
+[ORTH <! "祈とう" !>, SYNSEM.LKEYS.KEYREL.PRED '_kitou_s_1_rel].
+
+;(TK 06-04-20)
+;電離
+; ex.「水が電離し酸素と水素になった」（この使い方が正確かどうか不明）
+denri_1 := vn-intrans-lex &
+[ORTH <! "電離" !>, SYNSEM.LKEYS.KEYREL.PRED '_denri_s_1_rel].
+
+; ex.「海水から食塩を電離する」（この使い方が正確かどうか不明）
+denri_2 := vn-intrans-lex &
+[ORTH <! "電離" !>, SYNSEM.LKEYS.KEYREL.PRED '_denri_s_2_rel].
+
+;(TK 06-04-21)
+;密生
+; ex.「なぜかここだけぺんぺん草が密生している」
+missei_1 := vn-intrans-lex &
+[ORTH <! "密生" !>, SYNSEM.LKEYS.KEYREL.PRED '_missei_s_1_rel].
+
+;(TK 06-04-21)
+;輪生
+; ex.「この種は細い葉が輪生する」
+rinsei_1 := vn-intrans-lex &
+[ORTH <! "輪生" !>, SYNSEM.LKEYS.KEYREL.PRED '_rinsei_s_1_rel].
+
+;(TK 06-04-21)
+;穴居
+; ex.「彼らはこの穴に穴居している」
+kekkyo_1 := vn-trans2-lex &
+[ORTH <! "穴居" !>, SYNSEM.LKEYS.KEYREL.PRED '_kekkyo_s_1_rel].
+
+;(TK 06-04-24)
+;水生
+; ex.「ここには蓮根が水生している」
+suisei_2 := vn-intrans-lex &
+[ORTH <! "水生" !>, SYNSEM.LKEYS.KEYREL.PRED '_suisei_s_2_rel].
+
+;(TK 06-04-24)
+;食虫
+;shadow argument
+; ex.「ハエトリソウが食虫しているところを偶然見た」
+shokuchuu_2 := vn-intrans-lex &
+[ORTH <! "食虫" !>, SYNSEM.LKEYS.KEYREL.PRED '_shokuchuu_s_2_rel].
+
+;(TK 06-04-26)
+;匍匐,ほふく
+; ex.「敵に見付からないように匍匐して進んだ」
+hofuku_1 := vn-intrans-lex &
+[ORTH <! "匍匐" !>, SYNSEM.LKEYS.KEYREL.PRED '_hofuku_s_1_rel].
+
+hofuku_1-hiragana := vn-intrans-lex &
+[ORTH <! "ほふく" !>, SYNSEM.LKEYS.KEYREL.PRED '_hofuku_s_1_rel].
+
+;(TK 06-04-26)
+;味つけ
+ajitsuke_1_2 := vn-intrans-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ajitsuke_s_1_rel,
+ ORTH <! "味つけ" !>].
+
+;(TK 06-04-26)
+;片利共生
+; ex.「クマノミはイソギンチャクと片利共生する」
+henrikyousei_1 := vn-intrans-lex &
+[ORTH <! "片利共生" !>, SYNSEM.LKEYS.KEYREL.PRED '_henrikyousei_s_1_rel].
+
+;(TK 06-04-26)
+;陸生
+; ex.「陸生している亀は何種類いますか」
+rikusei_1 := vn-intrans-lex &
+[ORTH <! "陸生" !>, SYNSEM.LKEYS.KEYREL.PRED '_rikusei_s_1_rel].
+
+;(TK 06-04-26)
+;汎存
+; ex.「ユーラシア大陸とアメリカ大陸に汎存する植物」
+hanzon_1 := vn-intrans-lex &
+[ORTH <! "汎存" !>, SYNSEM.LKEYS.KEYREL.PRED '_hanzon_s_1_rel].
+
+;(TK 06-04-27)
+;コントラクト
+; ex.「我が社は大手企業１０社とコントラクトしている」
+kontorakuto_1 := vn-intrans-lex &
+[ORTH <! "コントラクト" !>, SYNSEM.LKEYS.KEYREL.PRED '_kontorakuto_s_1_rel].
+
+;(TK 06-04-27)
+;巡礼
+; ex.「この時期は多くの人が巡礼して歩いている」
+junrei_1 := vn-intrans-lex &
+[ORTH <! "巡礼" !>, SYNSEM.LKEYS.KEYREL.PRED '_junrei_s_1_rel].
+
+;(TK 06-04-27)
+;反芻
+; ex.「頭の中でネタを反芻する」
+hansuu_2 := vn-trans1-lex &
+[ORTH <! "反芻" !>, SYNSEM.LKEYS.KEYREL.PRED '_hansuu_s_2_rel].
+
+;(TK 06-04-27)
+;反証
+; ex.「弁護人は見事に起訴事実を反証してみせた」
+hanshou_1 := vn-trans1-lex &
+[ORTH <! "反証" !>, SYNSEM.LKEYS.KEYREL.PRED '_hanshou_s_1_rel].
+
+;(TK 06-04-27)
+;骨化
+; ex.「全身の筋肉が骨化する病気にかかった」
+kokka_2 := vn-intrans-lex &
+[ORTH <! "骨化" !>, SYNSEM.LKEYS.KEYREL.PRED '_kokka_s_2_rel].
+
+;(TK 06-04-28)
+;律動
+; ex.「心臓の律動する音が聞こえますか？」
+ritsudou_1 := vn-intrans-lex &
+[ORTH <! "律動" !>, SYNSEM.LKEYS.KEYREL.PRED '_ritsudou_s_1_rel].
+
+;(TK 06-04-28)
+;下垂
+; ex.「レントゲンを見ると、胃が下垂していた」
+kasui_2 := vn-intrans-lex &
+[ORTH <! "下垂" !>, SYNSEM.LKEYS.KEYREL.PRED '_kasui_s_2_rel].
+
+;(TK 06-04-28)
+;下垂
+; ex.「その木は小さなたくさんの花を下垂していた」
+kasui_3 := vn-trans1-lex &
+[ORTH <! "下垂" !>, SYNSEM.LKEYS.KEYREL.PRED '_kasui_s_3_rel].
+
+;(TK 06-04-28)
+;有糸分裂
+; おそらく「有糸」は「有糸分裂」という使い方しかしない
+; ex.「細胞が有糸分裂する様を観察する」
+yuushibunretsu_1 := vn-intrans-lex &
+[ORTH <! "有糸分裂" !>, SYNSEM.LKEYS.KEYREL.PRED '_yuushibunretsu_s_1_rel].
+
+;(TK 06-04-28)
+;造影
+; ex.「レントゲンで胃を造影する」
+zouei_2 := vn-trans1-lex &
+[ORTH <! "造影" !>, SYNSEM.LKEYS.KEYREL.PRED '_zouei_s_2_rel].
+
+;(TK 06-05-01)
+;明滅
+; ex.「明滅する星を眺める」
+meimetsu_1 := vn-intrans-lex &
+[ORTH <! "明滅" !>, SYNSEM.LKEYS.KEYREL.PRED '_meimetsu_s_1_rel].
+
+;(TK 06-05-02)
+;並置
+; ex.「道具箱に彫刻刀と鑿を並置する」
+heichi_2 := vn-ditrans-lex &
+[ORTH <! "並置" !>, SYNSEM.LKEYS.KEYREL.PRED '_heichi_s_2_rel].
+
+;(TK 06-05-02)
+;マリネ,マリネー
+; ex.「肉を塩と胡椒と油と生姜でマリネする」
+marine_2 := vn-trans1-lex &
+[ORTH <! "マリネ" !>, SYNSEM.LKEYS.KEYREL.PRED '_marine_s_2_rel].
+
+marine-_1 := vn-trans1-lex &
+[ORTH <! "マリネー" !>, SYNSEM.LKEYS.KEYREL.PRED '_marine-_s_1_rel].
+

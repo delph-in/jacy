@@ -20,11 +20,10 @@
 ;「(骨を)折る」 (060503)
 ; lit. break (a bone)
 ; "make an effort"
+; FCB 2006-08-04 took out HEAD [PASSIVIZABLE -,  NEGATIVIZABLE -],
 oru-i-stem :=  v1-c-stem-lex &
  [SYNSEM [LKEYS.KEYREL.PRED '_oru_v_i_rel,
-	  LOCAL.CAT [HEAD [PASSIVIZABLE -,
-			   NEGATIVIZABLE -],
-		     VAL [COMPS <[ADJACENT +,
+	  LOCAL.CAT [ VAL [COMPS <[ADJACENT +,
 				  TOPICALIZABLE -,
 				  LOCAL.CAT.HEAD.ALLOW-ADNOMINAL-MOD [ADNOMINAL-WORD -,
 								      GENITIVE-PHRASE -,
@@ -51,10 +50,10 @@ michikusa-i := ordinary-nohon-n-lex &
 ;「(頭が)痛い」 (060503)
 ; lit. head aches
 ; "be in trouble"
+; FCB 2006-08-04 took out HEAD.NEGATIVIZABLE -,
 itai-i-stem := i-adj-stem-lex &
  [SYNSEM [LKEYS.KEYREL.PRED '_itai_a_i_rel,
-	  LOCAL.CAT [HEAD.NEGATIVIZABLE -,
-		     VAL [SUBJ <[ADJACENT +,
+	  LOCAL.CAT [VAL [SUBJ <[ADJACENT +,
 				 TOPICALIZABLE -,
 				  LOCAL.CAT.HEAD.ALLOW-ADNOMINAL-MOD [ADNOMINAL-WORD -,
 								      GENITIVE-PHRASE -,
