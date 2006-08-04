@@ -27,10 +27,14 @@ aku-stem := intrans-c-stem-lex &
                    ORTH <! "開く" !>].  
 
 
-hiraku-stem := v1-c-stem-lex &
-[SYNSEM.LKEYS [KEYREL [PRED '_hiraku_v_cause_rel]],
+hiraku-vi-stem := intrans-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hiraku_v_inchoative_rel]],
 ORTH <! "開く" !>].
 
+
+hiraku-vt-stem := v1-c-stem-lex &
+[SYNSEM.LKEYS [KEYREL [PRED '_hiraku_v_cause_rel]],
+ORTH <! "開く" !>].
 
 
 iku-stem := intrans-c2-stem-lex & 

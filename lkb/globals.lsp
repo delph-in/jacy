@@ -210,11 +210,17 @@
     yo-2 yo-3 keredo-send exclamation-mark ze zo zo-2 
     ;; s-end1-decl-minusahon-lex - emphatic sentence enders
     i-emp
+    ;; subjunctive ends (should do with mood)
+    darou-v-cop-lex deshou-v-cop-lex
+    ;; various copulars
+    kanaa-cop-id-lex kai-cop-id-lex kashira-cop-id-lex degozaru-cop-id-multi
+    nano-cop-id-multi nan-cop-id-multi naNdesu-cop-multi
+    nandesu-cop-id-multi nanodesu-cop-id-multi nanodesu-cop-id-multi-2
     ;; variant forms of numbers (hankaku)
     zero_card_a one_card_a two_card_a three_card_a four_card_a 
     five_card_a six_card_a seven_card_a eight_card_a nine_card_a 
     ;; variant forms of numbers (zenkaku)
-    zero_card one_card two_card three_card four_card 
+    zero_card one_card two_card three_card four_card  
     five_card six_card seven_card eight_card nine_card 
     ;;; indefinite pronouns FIXME - improve semantics
     donna douiu dono-det
