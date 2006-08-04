@@ -1,0 +1,21 @@
+Translation Equivalents
+-----------------------
+
+Abrams = 太郎
+Browne = 次郎
+Cigarette = タバコ
+bark = 吠える
+wonder = 考える
+
+
+Todo:
+
+Segment and count words
+Add word order and politeness variants
+Create MT batch file
+
+Questions:
+Should there be a が in 251--281?
+I couldn't get a contrast for 371,381
+671 I don't know the Japanese!
+821 A non MWe would be better than 気になる

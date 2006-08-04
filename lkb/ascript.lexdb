@@ -8,7 +8,7 @@
 
 (lkb-load-lisp (this-directory) "checkpaths.lsp" t)
 
-(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+(lkb-load-lisp (this-directory) "mrsglobals.lsp")
 (read-tdl-type-files-aux
      (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")
               (lkb-pathname (parent-directory) "matrix.tdl")
@@ -20,7 +20,6 @@
               (lkb-pathname (parent-directory) "principles.tdl")
               (lkb-pathname (parent-directory) "lex-types.tdl")
               (lkb-pathname (parent-directory) "v-lex-types.tdl")
-	      (lkb-pathname (this-directory) "mrsmunge.tdl")
 ))
 
 (lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)

@@ -7,7 +7,7 @@
 
 (lkb-load-lisp (this-directory) "checkpaths.lsp" t)
 
-(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+(lkb-load-lisp (this-directory) "mrsglobals.lsp")
 (read-tdl-type-files-aux
      (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")
               (lkb-pathname (parent-directory) "matrix.tdl")

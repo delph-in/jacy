@@ -22,6 +22,8 @@
 (
  ((:path . "vanilla") 
   (:content . "Basic Japanese Constructions"))
+ ((:path . "mrs")
+  (:content . "MRS test suite"))
  ((:path . "kinou1")
   (:content . "Ikehara Kinou Shikenbun Ch 01-05 (v2)"))
  ((:path . "kinou2")

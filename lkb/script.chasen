@@ -19,10 +19,10 @@
 (lkb-load-lisp (this-directory) "checkpaths.lsp" t)
 
 ;;; load some patches (;o;)
-(lkb-load-lisp (this-directory) "patches.lisp" t)
+(lkb-load-lisp (this-directory) "patches.lsp" t)
 
 
-(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+(lkb-load-lisp (this-directory) "mrsglobals.lsp")
 
 (read-tdl-type-files-aux
      (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")

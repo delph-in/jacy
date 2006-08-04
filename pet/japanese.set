@@ -1,6 +1,6 @@
 ;;;; settings for CHEAP 		-*- Mode: TDL; Coding: euc-jp -*-
 
-encoding := EUC-JP.
+encoding := euc-jp.
 
 ;; allow lexical entries to fail
 lex-entries-can-fail.
@@ -62,7 +62,7 @@ trivial-tokenizer.
 ;; (ERB 2001-12-20) We don't want to strip : anymore, since it's
 ;; being used meaningfully.
 
-punctuation-characters := "\"!&'()*+,-−./;<=>?@[\]^_`{|}~。？…．，　○●◎＊".
+punctuation-characters := "\"!&'()*+,-−./;<=>?@[\]^_`{|}~。？…．　○●◎＊".
 
 ;; name of type to get info about grammar into (if at all)
 grammar-info := grammar_info.

@@ -100,8 +100,8 @@ FIRST))))
     #\ideographic_full_stop #\fullwidth_question_mark 
     #\horizontal_ellipsis #\fullwidth_full_stop
     #\fullwidth_exclamation_mark #\black_circle
-    #\fullwidth_comma #\ideographic_space #\minus_sign
-    #\katakana_middle_dot #\white_circle))
+    #\ideographic_space #\minus_sign
+    #\white_circle))
 
 (defun punctuationp (thing)
   (let ((string (string thing)))
@@ -144,6 +144,7 @@ FIRST))))
 ;;;
 ;;; Call chasen and format the input appropriately
 ;;;
+(setf *preprocessor* nil)
 
 (defparameter *chasen-application* "chasen")
 
@@ -253,13 +254,13 @@ FIRST))))
 
 ;;;
 ;;; hook for [incr tsdb()] to call when preprocessing input (going to the PET
-;;; parser or when counting `words' while import test items from a text file).
+;;; parser or when counting `words' while importing test items from a file).
 ;;;
 (defun chasen-preprocess-for-pet (input &optional tagger)
   (declare (ignore tagger))
   (chasen-preprocess-sentence-string input :verbose nil :posp t))
 
-#+(or :pvm :itsdb)
+#+:null
 (setf tsdb::*tsdb-preprocessing-hook* "lkb::preprocess-sentence-string")
 
 ;;;
@@ -297,19 +298,37 @@ FIRST))))
             (remove-if-not #'alphanumericp (symbol-value version))
             "biglex")))
     (setf *psorts-temp-file* 
-      (make-pathname :name prefix 
+      (make-pathname :name (concatenate 'string prefix ".lex")
                      :directory (pathname-directory (lkb-tmp-dir))))
     (setf *psorts-temp-index-file* 
-      (make-pathname :name (concatenate 'string prefix "-index") 
+      (make-pathname :name (concatenate 'string prefix ".idx") 
                      :directory (pathname-directory (lkb-tmp-dir))))
     (setf *leaf-temp-file* 
-      (make-pathname :name (concatenate 'string prefix "-rels")
+      (make-pathname :name (concatenate 'string prefix ".lts")
+                     :directory (pathname-directory (lkb-tmp-dir))))
+    (setf *predicates-temp-file* 
+      (make-pathname :name (concatenate 'string prefix ".ric")
+		     :host (pathname-host (lkb-tmp-dir))
+		     :device (pathname-device (lkb-tmp-dir))
+                     :directory (pathname-directory (lkb-tmp-dir))))
+    (setf *semantics-temp-file* 
+      (make-pathname :name (concatenate 'string prefix ".stc")
+		     :host (pathname-host (lkb-tmp-dir))
+		     :device (pathname-device (lkb-tmp-dir))
                      :directory (pathname-directory (lkb-tmp-dir))))))
 
+
+(defun gen-extract-surface (edge)
+  (format nil "~{~a~^ ~}" (g-edge-leaves edge)))
+
+(eval-when #+:ansi-eval-when (:load-toplevel :compile-toplevel :execute)
+	   #-:ansi-eval-when (load eval compile)
+  (setf *gen-extract-surface-hook* 'gen-extract-surface))
 
 ;;;
 ;;; assign priorities to parser tasks and lexical entries
 ;;;
+;;; FIXME - do we need this now?
 (defun rule-priority (rule)
   (case (rule-id rule)
     (subj 1000)))
@@ -334,3 +353,53 @@ FIRST))))
   (and fs
        (let ((fs-type (type-of-fs fs)))
          (eql fs-type '-))))
+
+
+;;;
+;;; Generate unknown words from the CARG
+;;;
+;;; FIXME need to change the diff-list to a list
+
+(defun make-unknown-word-sense-unifications (word-string &optional stem)
+  ;;; this assumes we always treat unknown words as proper names
+  ;;; uncomment the *unknown-word-types* in globals.lsp
+  ;;; to activate this
+  (when word-string
+    (list 
+       (make-unification :lhs
+          (create-path-from-feature-list '(ORTH LIST FIRST))
+          :rhs (make-u-value :type (or stem word-string)))
+       (make-unification :lhs
+          (create-path-from-feature-list '(ORTH LIST REST))
+          :rhs (make-u-value :type 'lkb::null))
+       (make-unification :lhs
+          (create-path-from-feature-list '(SYNSEM LKEYS KEYREL CARG))
+          :rhs (make-u-value :type (string-downcase word-string))))))
+
+
+(defun instantiate-generic-lexical-entry (gle surface)
+  (let ((tdfs (copy-tdfs-elements (lex-entry-full-fs (if (gle-p gle)
+                                                       (gle-le gle)
+                                                       gle)))))
+    (loop
+        with dag = (tdfs-indef tdfs)
+        for path in '((ORTH LIST FIRST) (SYNSEM LKEYS KEYREL CARG))
+        for foo = (existing-dag-at-end-of dag path)
+        do (setf (dag-type foo) *string-type*))
+    (let* ((unifications (make-unknown-word-sense-unifications
+                          surface
+                          (or
+                           #+:logon
+                           (case (gle-id gle)
+                             (guess_n_gle 
+                              (format nil "/~a/" surface))
+                             (decade_gle
+                              (format nil "~as" surface)))
+                           surface)))
+           (indef (process-unifications unifications))
+           (indef (and indef (create-wffs indef)))
+           (overlay (and indef (make-tdfs :indef indef))))
+      (when indef
+        (with-unification-context (ignore)
+          (let ((foo (yadu tdfs overlay)))
+            (when foo (copy-tdfs-elements foo))))))))

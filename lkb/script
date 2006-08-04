@@ -18,10 +18,10 @@
 (lkb-load-lisp (this-directory) "checkpaths.lsp" t)
 
 ;;; load some patches (;o;)
-(lkb-load-lisp (this-directory) "patches.lisp" t)
+(lkb-load-lisp (this-directory) "patches.lsp" t)
 
 
-(lkb-load-lisp (this-directory) "mrsglobals.lisp")
+(lkb-load-lisp (this-directory) "mrsglobals.lsp")
 
 (read-tdl-type-files-aux
      (list (lkb-pathname (parent-directory) "tdl-built-ins.tdl")
@@ -102,7 +102,7 @@
 			 (parent-directory) "lex/v-ends-lex.tdl")))
     (read-cached-sublex-if-available 
      "ambiguous-lex" (list (lkb-pathname (parent-directory) 
-				       "lex/ambiguous-lex.tdl")))
+                                         "lex/ambiguous-lex.tdl")))
     (read-cached-sublex-if-available 
      "kyoudai-all" (list (lkb-pathname (parent-directory) 
 				       "lex/kyoudai-all.tdl")))
@@ -144,8 +144,15 @@
 ;;; when loaded into an environment including [incr tsdb()] and the Redwoods
 ;;; tools, also load a Maximum Entropy parse selection model
 ;;;
-#+:tsdb
-(tsdb::read-mem (lkb-pathname (parent-directory) "f5-005.mem"))
+;#+:tsdb
+;(tsdb::read-mem (lkb-pathname (parent-directory) "f5-005.mem"))
+
+;;;
+;;; convert to a semi
+;;;
+#+:logon
+(mt:read-vpm (lkb-pathname (parent-directory) "semi.vpm") :semi)
+
 
 
 ;;;

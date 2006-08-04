@@ -4,7 +4,7 @@
                       (pathname-directory
                        (dir-append *grammar-directory* 
                                    '(:relative "lkb"))))
-            (make-pathname :name "mrsglobals.lisp")
+            (make-pathname :name "mrsglobals.lsp")
             (parent-directory)))
 
 ;;; (when (fboundp 'index-for-generator)
