@@ -2164,6 +2164,28 @@ twohundred-card3 :=  card_3_object_only &
   ORTH <! "２" !>].
 
 
+;(TK 06-04-20)
+;画素
+; ex.「今のデジカメなら、６００万画素あって当たり前だ」
+gaso_2 := num-cl-spr-only-ind-lex &
+[ ORTH <! "画素" !>].
+
+;(TK 06-04-24)
+;房
+; ex.「今ならバナナ１房１００円！」
+fusa_2 := num-cl-spr-only-ind-lex &
+[ ORTH <! "房" !>].
+
+;(TK 06-04-20)
+;ピクセル
+; ex.「今のデジカメなら、６００万ピクセルあって当たり前だ」
+pikuseru_2 := num-cl-spr-only-ind-lex &
+[ ORTH <! "ピクセル" !>].
+
+
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; FCB 2005-11-20: these should be moved out into the other files
 ;;; we will do it as time permits

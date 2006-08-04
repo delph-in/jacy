@@ -139,16 +139,24 @@ na-adj-sem-type := na-adj-sem-type-basic &
 ; have to also provide the times_rel and the plus-relation.
 
 ; (ERB 2004-1-16) See notes at card-lex: exposing the ARG1 as the XARG.
-
+; (FCB 2006-06-20) no MOD-IND/MOD-HAND
+; FIXME check the semantics
 card-sem-type := j-mrs &
-                [MOD-IND #ind,
-		 MOD-HAND #hand,
-		 HOOK [INDEX #ind,
-		       LTOP #hand,
+		 [HOOK [INDEX #ind,
 		       XARG #xarg],
                  HCONS <! !>,
                  RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind,
 								ARG1 #xarg]]].
+; card-sem-type := j-mrs &
+;                 [MOD-IND #ind,
+; 		 MOD-HAND #hand,
+; 		 HOOK [INDEX #ind,
+; 		       LTOP #hand,
+; 		       XARG #xarg],
+;                  HCONS <! !>,
+;                  RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind,
+; 								ARG1 #xarg]]].
+
 
 
 ; (ERB 2001-08-28) Date expressions
@@ -249,12 +257,10 @@ excl-sem-type := mod-id-wg-handel-mrs &
 
 ; (ERB 2002-02-14) Try making discourse_rel a real type, not just
 ; REL name on subord_rel.
-
+; (FCB 2006-06-20) Removed MOD-HAND
 
 interj-sem-type := wg-handel-lex-mrs-basic &
-                   [HOOK.LTOP #top,
-                    MOD-HAND #top,
-                    HCONS <!  !>].
+                   [ HCONS <!  !>].
 
 hes-sem-type :=  mod-id-wg-handel-mrs &
                    [RELS <! !>,
@@ -273,12 +279,13 @@ verb-sem-type :< pred-sem-type.
 ; 		 MOD-HAND #hand,
 ; 		 HOOK [INDEX #ind,
 ; 		       LTOP #hand]].
-
-simple-verb-sem-type := verb-sem-type &
-                 [ HOOK [INDEX #ind,
-			 LTOP #top],
-		   MOD-IND #ind,
-		   MOD-HAND #top].
+; (FCB 2006-06-20)  lose the MOD-IND/MOD-HAND; I think we are linking this up elsewhere.
+simple-verb-sem-type := verb-sem-type.
+;  &
+;                  [ HOOK [INDEX #ind,
+; 			 LTOP #top],
+; 		   MOD-IND #ind,
+; 		   MOD-HAND #top].
 
 
 

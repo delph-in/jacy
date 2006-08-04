@@ -16520,8 +16520,13 @@ hichou_n1 := ordinary-nohon-n-lex &
 [ORTH <! "ÈôÄ»" !>, SYNSEM.LKEYS.KEYREL.PRED '_hichou_n_1_rel].
 
 ; Freq: 8
-ando_n1 := ordinary-nohon-n-lex &
-[ORTH <! "¥¢¥ó¥É" !>, SYNSEM.LKEYS.KEYREL.PRED '_ando_n_1_rel].
+;POS
+;(TK 06-04-24)
+;ando_n1 := ordinary-nohon-n-lex &
+;[ORTH <! "¥¢¥ó¥É" !>, SYNSEM.LKEYS.KEYREL.PRED '_ando_n_1_rel].
+ando_3 := n_conj-p-lex &
+       [ORTH <! "¥¢¥ó¥É" !>,
+        SYNSEM.LKEYS.KEYREL.PRED '_ando_p_conj_rel].
 
 ; Freq: 8
 rinchou_n1 := ordinary-nohon-n-lex &
@@ -26006,7 +26011,7 @@ kyou_n2 := ordinary-nohon-n-lex &
 ;(TK 05-09-15)
 kyou_4 := 
 title-pers-honsubj-lex &
-[ORTH <! "¶ª" !>].
+[ORTH <! "¶ª" !>,  SYNSEM.LKEYS.KEYREL.PRED '_kyou_n_title_rel].
 
 ; Freq: 2
 honshou_n2 := ordinary-nohon-n-lex &
@@ -27222,13 +27227,14 @@ daishi_n4 := ordinary-nohon-n-lex &
 ;(TK 05-09-15)
 daishi_4 := other_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'daishi_person,
-ORTH <! "Âç»Õ" !>].
+ ORTH <! "Âç»Õ" !>].
 
 ;TSUIKA
 ;(TK 05-09-15)
 daishi_5 := 
 title-pers-honsubj-lex &
-[ORTH <! "Âç»Õ" !>].
+[ORTH <! "Âç»Õ" !>, 
+ SYNSEM.LKEYS.KEYREL.PRED '_daishi_n_title_rel].
 
 ; Freq: 1
 naikoku_n1 := ordinary-nohon-n-lex &
@@ -48933,7 +48939,9 @@ yamagami_1 := loc-or-surname-lex &
 ;[ORTH <! "Âç½õ" !>, SYNSEM.LKEYS.KEYREL.CARG 'oosuke_1].
 
 ; Freq: 1
-kamioka_3 := surname-lex &
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;kamioka_3 := surname-lex &
+kamioka_3 := loc-or-surname-lex &
 [ORTH <! "¿À²¬" !>, SYNSEM.LKEYS.KEYREL.CARG 'kamioka_3].
 
 ; Freq: 1
@@ -60029,11 +60037,13 @@ sessa_v1 := vn-intrans-lex &
 [ORTH <! "ÀÚâø" !>, SYNSEM.LKEYS.KEYREL.PRED '_sessa_s_1_rel].
 
 ; Freq: 1
-;POS
+;BAD
+;(TK 06-04-26)
+;¤¹¤Ç¤Ëvn-lex.tdl¤Ë¤¢¤ë¤¿¤á
 ;(TK 05-08-19)
 ;seisoku_v1 := vn-intrans-lex &
-seisoku_v1 := vn-trans2-lex &
-[ORTH <! "À³Â©" !>, SYNSEM.LKEYS.KEYREL.PRED '_seisoku_s_1_rel].
+;seisoku_v1 := vn-trans2-lex &
+;[ORTH <! "À³Â©" !>, SYNSEM.LKEYS.KEYREL.PRED '_seisoku_s_1_rel].
 
 ; Freq: 1
 zakkyo_v1 := vn-intrans-lex &

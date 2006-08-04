@@ -273,8 +273,7 @@ basic-head-complement-type := orth-princ &
 			      affix-list &
 			      [SYNSEM [MODIFIED.PERIPH #p,
 				       LEX -,
-				       LOCAL [CONT.HOOK [INDEX #ind,
-							 LTOP #top],
+				       LOCAL [CONT.HOOK #hook,
 					      NUCL #nucl]],
 			       C-CONT [RELS <! !>,
 				       HCONS <! !>],
@@ -283,8 +282,7 @@ basic-head-complement-type := orth-princ &
 			       HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
 						  SYNSEM [MODIFIED.PERIPH #p,
 							  LOCAL [CAT.HEAD.EMPTY #empt,
-								 CONT.HOOK [INDEX #ind,
-									    LTOP #top],
+								 CONT.HOOK #hook,
 								 NUCL #nucl]]]].
 head-complement-type := basic-head-complement-type &
 			scp-obj & 
@@ -393,28 +391,28 @@ head-adjunct-rule-type := adjacent_head_check & orth-princ &
                           head-adjunct-p &
 			  speaker-addr-principle &
                           affix-list &
-                          [J-NEEDS-AFFIX -,
-                           SYNSEM [LOCAL [ CONT [HOOK [INDEX #ind,
-						       XARG #xarg],
-						 MSG #ms],
-                                           CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
-					   CAT [VAL #val]],
+ [J-NEEDS-AFFIX -,
+  SYNSEM [LOCAL [ CONT [HOOK [INDEX #ind,
+			      XARG #xarg],
+			MSG #ms],
+		  CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
+		  CAT [VAL #val]],
+	  NON-LOCAL [REL #rel],
+	  LEX -,
+	  MODIFIED hasmod & [PERIPH #periph]],
+  HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+		     SYNSEM [ LOCAL [ CONT [HOOK [INDEX #ind,
+						  XARG #xarg],
+					    MSG #ms],
+				      CTXT.BACKGROUND [ LIST #1,
+							LAST #3 ],
+				      CAT [VAL #val]],
+			      MODIFIED.PERIPH bool]],
+  NON-HEAD-DTR j-sign & [ J-NEEDS-AFFIX -,
+			  SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
+							     LAST #2 ]],
 				   NON-LOCAL [REL #rel],
-				   LEX -,
-                                   MODIFIED hasmod & [PERIPH #periph]],
-                           HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
-                                            SYNSEM [ LOCAL [ CONT [HOOK [INDEX #ind,
-									 XARG #xarg],
-								  MSG #ms],
-							     CTXT.BACKGROUND [ LIST #1,
-                                                                               LAST #3 ],
-							     CAT [VAL #val]],
-                                                     MODIFIED.PERIPH bool]],
-                           NON-HEAD-DTR j-sign & [ J-NEEDS-AFFIX -,
-                                                SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
-                                                                                   LAST #2 ]],
-							 NON-LOCAL [REL #rel],
-                                                         MODIFIED.PERIPH #periph]]].
+				   MODIFIED.PERIPH #periph]]].
 
 
 ;(CH 2003-08-22) gap有り関係節のための規則
@@ -496,13 +494,16 @@ head-adjunct-rule-first := head-first-type-mod & head-adjunct-rule-type &
                                       HCONS <! !>]].
 
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (FCB 2006-05-02, egged on by DPF) 
+; ensure that modifier and modifiee share the same LTOP [then see what breaks]
 
 head-adjunct-rule-intersective := head-adjunct-rule-type &
 [ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
-			    INDEX #mod-ind]],
-  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
+			    INDEX #ind]],
+  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
+			      CONT.HOOK.LTOP #top],
   HEAD-DTR.SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
-				     INDEX #mod-ind] ]].
+				     INDEX #ind] ]].
                                   
 
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
@@ -521,16 +522,24 @@ hadj-first-s := head-adjunct-rule-first & head-adjunct-rule-scopal.
 hadj-final-i := head-adjunct-rule-final & head-adjunct-rule-intersective.
 hadj-first-i := head-adjunct-rule-first & head-adjunct-rule-intersective.
 
+hadj-final-for-rel-cl-topic :=  head-adjunct-rule-type & head-final-type-mod &
+[ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
+			    INDEX #ind]],
+  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL intersective_mod ] > ],
+  HEAD-DTR.SYNSEM.LOCAL [CONT [ HOOK [LTOP #top,
+				      INDEX #ind]],
+			 CAT.HEAD noun_head ]].
+
 ;(CH 2003-08-22) gap有り関係節のための規則
 ;(CH 2003-08-22) "HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD noun_head" を追加
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-final-type-mod &
 [ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
-			    INDEX #mod-ind]],
+			    INDEX #ind]],
   NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
   HEAD-DTR.SYNSEM.LOCAL [ CONT [ HOOK [LTOP #top,
-				       INDEX #mod-ind]],
+				       INDEX #ind]],
 			  CAT.HEAD noun_head ]].
 
 
@@ -567,35 +576,35 @@ hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-fina
 ; (FCB 2005-06-15) Added ARG0 to messages
 
 sentence-coord-type :=  binary-type-conj & 
-			[SYNSEM [LOCAL [CONT [HOOK [INDEX #rindex,
-						    LTOP #hand]],
-	       CAT.VAL #val,
-               NUCL te_conj],   
-	 LEX -],
- C-CONT [RELS <! subord-or-conj-relation &
-                [LBL #hand,
-                 L-HNDL #prpstnh2,
-                 R-HNDL #prpstnh1],
-                message & 
+ [SYNSEM [LOCAL [CONT [HOOK [INDEX #rindex,
+			     LTOP #hand]],
+		 CAT.VAL #val,
+		 NUCL te_conj],   
+	  LEX -],
+  C-CONT [RELS <! subord-or-conj-relation &
+		[LBL #hand,
+		 L-HNDL #prpstnh2,
+		 R-HNDL #prpstnh1],
+		message & 
 	       [PRED proposition_m_rel,
 		LBL #prpstnh1,
 		ARG0 #rindex,
-                 MARG #prpstnh1soa],
-               message & 
-                [PRED proposition_m_rel,
-		LBL #prpstnh2,
+		MARG #prpstnh1soa],
+		message & 
+		[PRED proposition_m_rel,
+		 LBL #prpstnh2,
 		 ARG0 #lindex,
-                 MARG #prpstnh2soa] !>,
-         HCONS <! qeq &
-                 [HARG #prpstnh1soa,
+		 MARG #prpstnh2soa] !>,
+	  HCONS <! qeq &
+		 [HARG #prpstnh1soa,
                   LARG #rhand],
-                 qeq &
-                 [HARG #prpstnh2soa,
-                  LARG #lhand]!>],
-ARGS < [SYNSEM.LOCAL [CONT.HOOK [LTOP #lhand,
-				 INDEX #lindex]]],
-       [SYNSEM.LOCAL [CONT.HOOK [LTOP #rhand,
-				 INDEX #rindex],
+		 qeq &
+		 [HARG #prpstnh2soa,
+		  LARG #lhand]!>],
+  ARGS < [SYNSEM.LOCAL [CONT.HOOK [LTOP #lhand,
+				   INDEX #lindex]]],
+	 [SYNSEM.LOCAL [CONT.HOOK [LTOP #rhand,
+				   INDEX #rindex],
 			CAT.VAL #val]] > ].
 
 
@@ -661,18 +670,18 @@ head-specifier-rule-type :=  head-final-type &
                              scp-spec & 
 			     que-princ &
                              affix-list &
-                        [C-CONT [RELS <! !>,
-                                 HCONS <! !>],
-			 SYNSEM [LOCAL.CONT.HOOK #hook],
-			 RMORPH-BIND-TYPE #rmorph,
-                         HEAD-DTR [SYNSEM [LOCAL [CAT.HEAD #head,
-						  CONT #cont & [HOOK #hook]],
-					   MODIFIED.PERIPH #per],
-				   RMORPH-BIND-TYPE #rmorph],
-                         NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.J-SPEC < [LOCAL [CAT.HEAD #head,
-									     CONT #cont],
-								      MODIFIED.PERIPH #per] > ].
-   
+ [C-CONT [RELS <! !>,
+	  HCONS <! !>],
+  SYNSEM [LOCAL.CONT.HOOK #hook],
+  RMORPH-BIND-TYPE #rmorph,
+  HEAD-DTR [SYNSEM [LOCAL [CAT.HEAD #head,
+			   CONT #cont & [HOOK #hook]],
+		    MODIFIED.PERIPH #per],
+	    RMORPH-BIND-TYPE #rmorph],
+  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.J-SPEC < [LOCAL [CAT.HEAD #head,
+						      CONT #cont],
+					       MODIFIED.PERIPH #per] > ].
+
 
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
@@ -1809,8 +1818,8 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 	   RELS <! [ PRED 'noun_relation,
 		     ARG0 #arg,
 		     LBL #hand ] !> ],
-  ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #arg,
-							       LTOP #hand ]].
+  ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ XARG #arg,
+				      LTOP #hand ]].
 
 ; For 円、ドル、階、etc.
 
@@ -2230,18 +2239,45 @@ adj-nominal-suffix-type := head-final-type &
 							  VAL.UNSAT +],
 						     BAR -]]]].
 
+;;;
+;;; New N-N compound rule, which now scopes. (FCB 2006-06-06)
+;;; this is actually NP-NP, which seems a little strange.  
+;;; e.g. we don't get (lkb::do-parse-tty "ある 翻訳 システム が 寝る")
+
+;compound-rule := hadj-final-i &
+compound-rule := head-final-type-mod & head-adjunct-rule-type &
+ [SYNSEM.MODIFIED.PERIPH +,
+  C-CONT [RELS <! unspec-compound-relation &
+		[LBL #hhand,
+		 PRED compound_rel,
+		 ARG0.E.TENSE no_tense,
+		 ARG1 #hinst,
+		 ARG2 #nhinst ] !>,
+	  HCONS <! !>],
+  ARGS <[SYNSEM.LOCAL [CAT [HEAD final_head & [J-POSTHEAD compound, 
+					       MAIN-PRD -,
+					       MOD < [MODIFIED.PERIPH #periph] > ],
+			    VAL saturated],
+		       BAR -,
+		       CONT.HOOK.INDEX #nhinst]],
+	[SYNSEM [LOCAL [CAT [HEAD final_head,
+			     VAL saturated],
+			BAR -,
+			CONT.HOOK [INDEX #hinst,
+				   LTOP #hhand]],
+		 MODIFIED.PERIPH #periph]]>].
+
 
 ;;;
 ;;; New approach to V-V compound rules
 ;;; by CH, modified by FCB
+
 
 lexical-compound-rule-type := orth-princ & affix-list & que-princ & 
 [SYNSEM [LOCAL [BAR -,
 		CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
 		CONT [HOOK [LTOP #top,
 			    XARG #xarg],
-		      MOD-IND #mod-ind,
-		      MOD-HAND #mod-hand,
 		      MSG #ms,
 		      RELS [LIST #firstliszt,
 			    LAST #lastliszt],
@@ -2264,8 +2300,6 @@ lexical-compound-rule-type := orth-princ & affix-list & que-princ &
 		       CTXT.BACKGROUND [LIST #1, LAST #3],
 		       CONT [HOOK [LTOP #top,
 				   XARG #xarg],
-			     MOD-IND #mod-ind,
-			     MOD-HAND #mod-hand,
 			     MSG #ms,
 			     RELS [LIST  #firstliszt,
 				   LAST  #middle1liszt],

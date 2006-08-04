@@ -19,51 +19,79 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;hiratsuka :=
+;surname-lex &
 hiratsuka :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'hiratsuka,
 ORTH <! "平塚" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;takemoto :=
+;surname-lex &
 takemoto :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'takemoto,
 ORTH <! "竹本" !>].
 
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;satou :=
+;surname-lex &
 satou :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'satou,
 ORTH <! "佐東" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;tanaka :=
+;surname-lex &
 tanaka :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'tanaka,
 ORTH <! "田中" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;nakao :=
+;surname-lex &
 nakao :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'nakao,
 ORTH <! "中尾" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;suzuki :=
+;surname-lex &
 suzuki :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'suzuki,
 ORTH <! "鈴木" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;shiomi :=
+;surname-lex &
 shiomi :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'shiomi,
 ORTH <! "塩見" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;koNdou :=
+;surname-lex &
 koNdou :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'kondou,
 ORTH <! "金堂" !>].
 
-hitoshi :=
-first_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'hitoshi,
-ORTH <! "一司" !>].
+;(TK 06-04-18 changed to other_name-lex)
+;hitoshi :=
+;first_name-lex &
+;[SYNSEM.LKEYS.KEYREL.CARG 'hitoshi,
+;ORTH <! "一司" !>].
+hitoshi_1 := other_name-lex &
+[ORTH <! "一司" !>, SYNSEM.LKEYS.KEYREL.CARG 'hitoshi_1].
+
 
 keNichirou :=
 first_name-lex &
@@ -75,13 +103,19 @@ first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'kouichi,
 ORTH <! "浩一" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;yamamoto :=
+;surname-lex &
 yamamoto :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'yamamoto,
 ORTH <! "山本" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;kobayashi :=
+;surname-lex &
 kobayashi :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'kobayashi,
 ORTH <! "小林" !>].
 
@@ -90,18 +124,27 @@ first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'akiko,
 ORTH <! "亜希子" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;aoi :=
+;loc_name-lex &
 aoi :=
-loc_name-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'aoi,
 ORTH <! "青井" !>].
 
+;(TK 06-04-18 changed to loc-or-surname-lex)
+;aoyama :=
+;loc_name-lex &
 aoyama :=
-loc_name-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'aoyama,
 ORTH <! "青山" !>].
 
-asahi :=
-surname-lex &
+;(TK 06-03-13 changed to ippan-name-lex)
+;asahi :=
+;surname-lex &
+asahi-1-ippanname := 
+ippan-name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'asahi,
 ORTH <! "朝日" !>].
 
@@ -215,13 +258,19 @@ first_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'fusako,
 ORTH <! "房子" !>].
 
+;(TK 06-04-17 changed to inst_name-lex)
+;haNdai :=
+;loc_name-lex &
 haNdai :=
-loc_name-lex &
+inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'handai,
 ORTH <! "阪大" !>].
 
+;(TK 06-04-17 changed to inst_name-lex)
+;haNkyuu :=
+;loc_name-lex &
 haNkyuu :=
-loc_name-lex &
+inst_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'hankyuu,
 ORTH <! "阪急" !>].
 
@@ -618,8 +667,11 @@ surname-lex &
 ORTH <! "松原" !>].
 
 
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;matsumoto :=
+;surname-lex &
 matsumoto :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'matsumoto,
 ORTH <! "松本" !>].
 
@@ -828,8 +880,11 @@ surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'okamoto,
 ORTH <! "岡本" !>].
 
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;okayama :=
+;surname-lex &
 okayama :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'okayama,
 ORTH <! "岡山" !>].
 
@@ -947,8 +1002,11 @@ loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'shibuya,
 ORTH <! "渋谷" !>].
 
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;shiga :=
+;surname-lex &
 shiga :=
-surname-lex &
+loc-or-surname-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'shiga,
 ORTH <! "滋賀" !>].
 
@@ -1479,8 +1537,11 @@ ORTH <! "アムシュタットパークホテル" !>].
 ;[SYNSEM.LKEYS.KEYREL.CARG 'ana,
 ;ORTH <! "アナ" !>].
 
+;(TK 06-04-17 changed to loc_name-lex)
+;atoraNta :=
+;inst_name-lex &
 atoraNta :=
-inst_name-lex &
+loc_name-lex &
 [SYNSEM.LKEYS.KEYREL.CARG 'atoranta,
 ORTH <! "アトランタ" !>].
 
@@ -3767,7 +3828,10 @@ harue-firstname :=
         [SYNSEM.LKEYS.KEYREL.CARG 'harue,
          ORTH <! "春江" !>].
 
-matsuyama-surname :=  
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;matsuyama-surname :=  
+;        surname-lex & 
+matsuyama_1 :=  
         surname-lex & 
         [SYNSEM.LKEYS.KEYREL.CARG 'matsuyama,
          ORTH <! "松山" !>].
@@ -4835,4 +4899,709 @@ kokutetsu_1 := inst_name-lex &
 ;(TK 06-02-28 noun→loc_name-lex)
 hyougo_2 := loc_name-lex &
 [ORTH <! "兵庫" !>, SYNSEM.LKEYS.KEYREL.CARG 'hyougo_2].
+
+;(TK 06-03-13)
+;other(sur,first),loc
+senri_2 := loc-or-surname-lex &
+[ORTH <! "千里" !>, SYNSEM.LKEYS.KEYREL.CARG 'senri_2].
+
+;(TK 06-03-13)
+a_4 := loc_name-lex &
+[ORTH <! "亜" !>, SYNSEM.LKEYS.KEYREL.CARG 'a_4].
+
+;(TK 06-03-13 noun→loc-or-surname-lex)
+;姓としては「nakahigashi」かもしれない
+chuutou_1 := loc-or-surname-lex &
+[ORTH <! "中東" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuutou_1].
+
+;(TK 06-03-13 noun→inst_name-lex)
+kokuren_1 := inst_name-lex &
+[ORTH <! "国連" !>, SYNSEM.LKEYS.KEYREL.CARG 'kokuren_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+touhokuchihou_1 := loc_name-lex &
+[ORTH <! "東北地方" !>, SYNSEM.LKEYS.KEYREL.CARG 'touhokuchihou_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+ro-ma_1 := loc_name-lex &
+[ORTH <! "ローマ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ro-ma_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+supein_1 := loc_name-lex &
+[ORTH <! "スペイン" !>, SYNSEM.LKEYS.KEYREL.CARG 'supein_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+biruma_1 := loc_name-lex &
+[ORTH <! "ビルマ" !>, SYNSEM.LKEYS.KEYREL.CARG 'biruma_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+panama_1 := loc_name-lex &
+[ORTH <! "パナマ" !>, SYNSEM.LKEYS.KEYREL.CARG 'panama_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+ajia_1 := loc_name-lex &
+[ORTH <! "アジア" !>, SYNSEM.LKEYS.KEYREL.CARG 'ajia_1].
+
+;(TK 06-03-13 noun→inst_name-lex)
+pashifikkuri-gu_1 := inst_name-lex &
+[ORTH <! "パシフィックリーグ" !>, SYNSEM.LKEYS.KEYREL.CARG 'pashifikkuri-gu_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+hakata_1 := loc_name-lex &
+[ORTH <! "博多" !>, SYNSEM.LKEYS.KEYREL.CARG 'hakata_1].
+
+;(TK 06-03-13 noun→ippan-name-lex)
+hakaikatsudouboushihou-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'hakaikatsudouboushihou,
+ORTH <! "破壊活動防止法" !>].
+
+;(TK 06-03-13)
+ha-remu_2 := loc_name-lex &
+[ORTH <! "ハーレム" !>, SYNSEM.LKEYS.KEYREL.CARG 'ha-remu_2].
+
+;(TK 06-03-13 noun→surname-or-instname-lex)
+ba-bari-_1 := surname-or-instname-lex &
+[ORTH <! "バーバリー" !>, SYNSEM.LKEYS.KEYREL.CARG 'ba-bari-_1].
+
+;(TK 06-03-13 noun→inst_name-lex)
+jichishou-gu_1 := inst_name-lex &
+[ORTH <! "自治省" !>, SYNSEM.LKEYS.KEYREL.CARG 'jichishou_1].
+
+;(TK 06-03-13 noun→loc_name-lex)
+nanbei_1 := loc_name-lex &
+[ORTH <! "南米" !>, SYNSEM.LKEYS.KEYREL.CARG 'nanbei_1].
+
+;(TK 06-03-14 noun→loc_name-lex)
+pakisutan_1 := loc_name-lex &
+[ORTH <! "パキスタン" !>, SYNSEM.LKEYS.KEYREL.CARG 'pakisutan_1].
+
+;(TK 06-03-14 noun→loc_name-lex)
+arabu_1 := loc_name-lex &
+[ORTH <! "アラブ" !>, SYNSEM.LKEYS.KEYREL.CARG 'arabu_1].
+
+;(TK 06-03-14 noun→loc_name-lex)
+afuganisutan_1 := loc_name-lex &
+[ORTH <! "アフガニスタン" !>, SYNSEM.LKEYS.KEYREL.CARG 'afuganisutan_1].
+
+;(TK 06-03-14 noun→loc_name-lex)
+nishidoitsu_1 := loc_name-lex &
+[ORTH <! "西ドイツ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nishidoitsu_1].
+
+;(TK 06-03-14)
+souru_2 := loc_name-lex &
+[ORTH <! "ソウル" !>, SYNSEM.LKEYS.KEYREL.CARG 'souru_2].
+
+;(TK 06-03-14 noun→loc_name-lex)
+iran_1 := loc_name-lex &
+[ORTH <! "イラン" !>, SYNSEM.LKEYS.KEYREL.CARG 'iran_1].
+
+;(TK 06-03-14 noun→loc_name-lex)
+kanbojia_1 := loc_name-lex &
+[ORTH <! "カンボジア" !>, SYNSEM.LKEYS.KEYREL.CARG 'kanbojia_1].
+
+;(TK 06-03-14)
+nanQyou_1 := loc_name-lex &
+[ORTH <! "南洋" !>, SYNSEM.LKEYS.KEYREL.CARG 'nanQyou_2].
+
+;(TK 06-03-14 noun→loc_name-lex)
+chousen_1 := loc_name-lex &
+[ORTH <! "朝鮮" !>, SYNSEM.LKEYS.KEYREL.CARG 'chousen_1].
+
+;(TK 06-04-14)
+hakuba_2 := loc-or-surname-lex &
+[ORTH <! "白馬" !>, SYNSEM.LKEYS.KEYREL.CARG 'hakuba_2].
+
+;(TK 06-04-14)
+hanazono_2 := loc-or-surname-lex &
+[ORTH <! "花園" !>, SYNSEM.LKEYS.KEYREL.CARG 'hanazono_2].
+
+;(TK 06-04-14 noun→loc_name-lex)
+firipin_1 := loc_name-lex &
+[ORTH <! "フィリピン" !>, SYNSEM.LKEYS.KEYREL.CARG 'firipin_1].
+
+;(TK 06-04-14 noun→inst_name-lex)
+gaimushou_1 := inst_name-lex &
+[ORTH <! "外務省" !>, SYNSEM.LKEYS.KEYREL.CARG 'gaimushou_1].
+
+;(TK 06-04-14 noun→loc_name-lex)
+min_1 := loc_name-lex &
+[ORTH <! "明" !>, SYNSEM.LKEYS.KEYREL.CARG 'min_1].
+
+;(TK 06-04-14 noun→loc_name-lex)
+hokubei_1 := loc_name-lex &
+[ORTH <! "北米" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokubei_1].
+
+;(TK 06-04-14)
+ri-do_3 := surname-lex &
+[ORTH <! "リード" !>, SYNSEM.LKEYS.KEYREL.CARG 'ri-do_3].
+
+;(TK 06-04-14 noun→loc_name-lex)
+manira_1 := loc_name-lex &
+[ORTH <! "マニラ" !>, SYNSEM.LKEYS.KEYREL.CARG 'manira_1].
+
+;(TK 06-04-14)
+hi-firipin := loc_name-lex &
+[ORTH <! "比" !>, SYNSEM.LKEYS.KEYREL.CARG 'hi_5].
+
+;(TK 06-04-14)
+;other(sur,first),loc
+; ただし、姓としての読みは「hanabusa」かもしれない
+; firstnameとしてはex.「中田（英）の移籍」のような使い方が多いと
+; 思われる
+ei-igirisu := loc-or-surname-lex &
+[ORTH <! "英" !>, SYNSEM.LKEYS.KEYREL.CARG 'ei_5].
+
+;(TK 06-04-14 noun→loc_name-lex)
+aruzenchin_1 := loc_name-lex &
+[ORTH <! "アルゼンチン" !>, SYNSEM.LKEYS.KEYREL.CARG 'aruzenchin_1].
+
+;(TK 06-04-14 noun→loc_name-lex)
+denma-ku_1 := loc_name-lex &
+[ORTH <! "デンマーク" !>, SYNSEM.LKEYS.KEYREL.CARG 'denma-ku_1].
+
+;(TK 06-04-14 noun→loc_name-lex)
+oushuu_1 := loc_name-lex &
+[ORTH <! "欧州" !>, SYNSEM.LKEYS.KEYREL.CARG 'oushuu_1].
+
+;(TK 06-04-14)
+mejiro_3 := loc_name-lex &
+[ORTH <! "目白" !>, SYNSEM.LKEYS.KEYREL.CARG 'mejiro_3].
+
+;(TK 06-04-14)
+ji-jimintou := inst_name-lex &
+[ORTH <! "自" !>, SYNSEM.LKEYS.KEYREL.CARG 'ji_5].
+
+;(TK 06-04-14)
+kou-koumeitou := inst_name-lex &
+[ORTH <! "公" !>, SYNSEM.LKEYS.KEYREL.CARG 'kou_5].
+
+;(TK 06-04-14)
+hyuuga_1 := loc-or-surname-lex &
+[ORTH <! "日向" !>, SYNSEM.LKEYS.KEYREL.CARG 'hyuuga_1].
+
+;(TK 06-04-14 noun→loc_name-lex)
+soren_1 := loc_name-lex &
+[ORTH <! "ソ連" !>, SYNSEM.LKEYS.KEYREL.CARG 'soren_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+morokko_1 := loc_name-lex &
+[ORTH <! "モロッコ" !>, SYNSEM.LKEYS.KEYREL.CARG 'morokko_1].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+daitou_1 := loc-or-surname-lex &
+[ORTH <! "大東" !>, SYNSEM.LKEYS.KEYREL.CARG 'daitou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+noruue-_1 := loc_name-lex &
+[ORTH <! "ノルウェー" !>, SYNSEM.LKEYS.KEYREL.CARG 'noruue-_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+kyu-ba_1 := loc_name-lex &
+[ORTH <! "キューバ" !>, SYNSEM.LKEYS.KEYREL.CARG 'kyu-ba_1].
+
+;(TK 06-04-17)
+mie_2 := loc-or-surname-lex &
+[ORTH <! "三重" !>, SYNSEM.LKEYS.KEYREL.CARG 'mie_2].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+nagoya_1 := loc-or-surname-lex &
+[ORTH <! "名古屋" !>, SYNSEM.LKEYS.KEYREL.CARG 'nagoya_1].
+
+;(TK 06-04-17)
+hirokouji_2 := loc-or-surname-lex &
+[ORTH <! "広小路" !>, SYNSEM.LKEYS.KEYREL.CARG 'hirokouji_2].
+
+;(TK 06-04-17 noun→loc_name-lex)
+kyokutou_1 := loc_name-lex &
+[ORTH <! "極東" !>, SYNSEM.LKEYS.KEYREL.CARG 'kyokutou_1].
+
+;(TK 06-04-17)
+sakai_3 := loc-or-surname-lex &
+[ORTH <! "境" !>, SYNSEM.LKEYS.KEYREL.CARG 'sakai_3].
+
+;(TK 06-04-17)
+daia_1 := loc_name-lex &
+[ORTH <! "大亜" !>, SYNSEM.LKEYS.KEYREL.CARG 'daia_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+chuukintou_1 := loc_name-lex &
+[ORTH <! "中近東" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuukintou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+chuubuchihou_1 := loc_name-lex &
+[ORTH <! "中部地方" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuubuchihou_1].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+;other,loc
+ise_1 := loc-or-surname-lex &
+[ORTH <! "伊勢" !>, SYNSEM.LKEYS.KEYREL.CARG 'ise_1].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+oumi_1 := loc-or-surname-lex &
+[ORTH <! "近江" !>, SYNSEM.LKEYS.KEYREL.CARG 'oumi_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+oubei_1 := loc_name-lex &
+[ORTH <! "欧米" !>, SYNSEM.LKEYS.KEYREL.CARG 'oubei_1].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+echizen_1 := loc-or-surname-lex &
+[ORTH <! "越前" !>, SYNSEM.LKEYS.KEYREL.CARG 'echizen_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+chuukaminkoku_1 := loc_name-lex &
+[ORTH <! "中華民国" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuukaminkoku_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+chuukajinminkyouwakoku_1 := loc_name-lex &
+[ORTH <! "中華人民共和国" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuukajinminkyouwakoku_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+peru-_1 := loc_name-lex &
+[ORTH <! "ペルー" !>, SYNSEM.LKEYS.KEYREL.CARG 'peru-_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+berugi-_1 := loc_name-lex &
+[ORTH <! "ベルギー" !>, SYNSEM.LKEYS.KEYREL.CARG 'berugi-_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+perusha_1 := loc_name-lex &
+[ORTH <! "ペルシャ" !>, SYNSEM.LKEYS.KEYREL.CARG 'perusha_1].
+
+;(TK 06-04-17)
+sofia-2-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'sofia,
+ORTH <! "ソフィア" !>].
+
+;(TK 06-04-17)
+nikkou_2 := loc-or-surname-lex &
+[ORTH <! "日光" !>, SYNSEM.LKEYS.KEYREL.CARG 'nikkou_2].
+
+;(TK 06-04-17 noun→loc_name-lex)
+taiheiyou_1 := loc_name-lex &
+[ORTH <! "太平洋" !>, SYNSEM.LKEYS.KEYREL.CARG 'taiheiyou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+taiseiyou_1 := loc_name-lex &
+[ORTH <! "大西洋" !>, SYNSEM.LKEYS.KEYREL.CARG 'taiseiyou_1].
+
+;(TK 06-04-17 noun→inst_name-lex)
+nihonginkou_1 := inst_name-lex &
+[ORTH <! "日本銀行" !>, SYNSEM.LKEYS.KEYREL.CARG 'nihonginkou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+suriranka_1 := loc_name-lex &
+[ORTH <! "スリランカ" !>, SYNSEM.LKEYS.KEYREL.CARG 'suriranka_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+chuugokuchihou_1 := loc_name-lex &
+[ORTH <! "中国地方" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuugokuchihou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+aisurando_1 := loc_name-lex &
+[ORTH <! "アイスランド" !>, SYNSEM.LKEYS.KEYREL.CARG 'aisurando_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+sue-den_1 := loc_name-lex &
+[ORTH <! "スウェーデン" !>, SYNSEM.LKEYS.KEYREL.CARG 'sue-den_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+finrando_1 := loc_name-lex &
+[ORTH <! "フィンランド" !>, SYNSEM.LKEYS.KEYREL.CARG 'finrando_1].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+hokkai_1 := loc-or-surname-lex &
+[ORTH <! "北海" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokkai_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+hokkyoku_1 := loc_name-lex &
+[ORTH <! "北極" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokkyoku_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+hokkyokukai_1 := loc_name-lex &
+[ORTH <! "北極海" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokkyokukai_1].
+
+;(TK 06-04-17)
+kanaria_2 := loc_name-lex &
+[ORTH <! "カナリア" !>, SYNSEM.LKEYS.KEYREL.CARG 'kanaria_2].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+shimane_1 := loc-or-surname-lex &
+[ORTH <! "島根" !>, SYNSEM.LKEYS.KEYREL.CARG 'shimane_1].
+
+;(TK 06-04-17)
+payao_1 := loc_name-lex &
+[ORTH <! "パヤオ" !>, SYNSEM.LKEYS.KEYREL.CARG 'payao_1].
+
+;(TK 06-04-17)
+shi-tan_1 := loc_name-lex &
+[ORTH <! "西単" !>, SYNSEM.LKEYS.KEYREL.CARG 'shi-tan_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+airurando_1 := loc_name-lex &
+[ORTH <! "アイルランド" !>, SYNSEM.LKEYS.KEYREL.CARG 'airurando_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+airurandokyouwakoku_1 := loc_name-lex &
+[ORTH <! "アイルランド共和国" !>, SYNSEM.LKEYS.KEYREL.CARG 'airurandokyouwakoku_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+angora_1 := loc_name-lex &
+[ORTH <! "アンゴラ" !>, SYNSEM.LKEYS.KEYREL.CARG 'angora_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+echiopia_1 := loc_name-lex &
+[ORTH <! "エチオピア" !>, SYNSEM.LKEYS.KEYREL.CARG 'echiopia_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+ryuukyuu_1 := loc_name-lex &
+[ORTH <! "琉球" !>, SYNSEM.LKEYS.KEYREL.CARG 'ryuukyuu_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+nihonkai_1 := loc_name-lex &
+[ORTH <! "日本海" !>, SYNSEM.LKEYS.KEYREL.CARG 'nihonkai_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+toukaidou_1 := loc_name-lex &
+[ORTH <! "東海道" !>, SYNSEM.LKEYS.KEYREL.CARG 'toukaidou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+toukaichihou_1 := loc_name-lex &
+[ORTH <! "東海地方" !>, SYNSEM.LKEYS.KEYREL.CARG 'toukaichihou_1].
+
+;(TK 06-04-17 noun→ippan-name-lex)
+toukaidougojuusantsugi-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'toukaidougojuusantsugi,
+ORTH <! "東海道五十三次" !>].
+
+;(TK 06-04-17 noun→loc_name-lex)
+uo-rugai_1 := loc_name-lex &
+[ORTH <! "ウォール街" !>, SYNSEM.LKEYS.KEYREL.CARG 'uo-rugai_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+doitsurenpoukyouwakoku_1 := loc_name-lex &
+[ORTH <! "ドイツ連邦共和国" !>, SYNSEM.LKEYS.KEYREL.CARG 'doitsurenpoukyouwakoku_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+doitsuminshukyouwakoku_1 := loc_name-lex &
+[ORTH <! "ドイツ民主共和国" !>, SYNSEM.LKEYS.KEYREL.CARG 'doitsuminshukyouwakoku_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+mongoru_1 := loc_name-lex &
+[ORTH <! "モンゴル" !>, SYNSEM.LKEYS.KEYREL.CARG 'mongoru_1].
+
+;(TK 06-04-17 noun→loc-or-surname-or-instname-lex)
+ginza_1 := loc-or-surname-or-instname-lex &
+[ORTH <! "銀座" !>, SYNSEM.LKEYS.KEYREL.CARG 'ginza_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+burajiru_1 := loc_name-lex &
+[ORTH <! "ブラジル" !>, SYNSEM.LKEYS.KEYREL.CARG 'burajiru_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+roshia_1 := loc_name-lex &
+[ORTH <! "ロシア" !>, SYNSEM.LKEYS.KEYREL.CARG 'roshia_1].
+
+;(TK 06-04-17)
+sobieto_2 := loc_name-lex &
+[ORTH <! "ソビエト" !>, SYNSEM.LKEYS.KEYREL.CARG 'sobieto_2].
+
+;(TK 06-04-17 noun→loc_name-lex)
+sobietoshakaishugikyouwakokurenpou_1 := loc_name-lex &
+[ORTH <! "ソビエト社会主義共和国連邦" !>, SYNSEM.LKEYS.KEYREL.CARG 'sobietoshakaishugikyouwakokurenpou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+sobietorenpou_1 := loc_name-lex &
+[ORTH <! "ソビエト連邦" !>, SYNSEM.LKEYS.KEYREL.CARG 'sobietorenpou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+seiou_1 := loc_name-lex &
+[ORTH <! "西欧" !>, SYNSEM.LKEYS.KEYREL.CARG 'seiou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+po-rando_1 := loc_name-lex &
+[ORTH <! "ポーランド" !>, SYNSEM.LKEYS.KEYREL.CARG 'po-rando_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+hokuou_1 := loc_name-lex &
+[ORTH <! "北欧" !>, SYNSEM.LKEYS.KEYREL.CARG 'hokuou_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+nanou_1 := loc_name-lex &
+[ORTH <! "南欧" !>, SYNSEM.LKEYS.KEYREL.CARG 'nanou_1].
+
+;(TK 06-04-17)
+ooita_1 := loc-or-surname-lex &
+[ORTH <! "大分" !>, SYNSEM.LKEYS.KEYREL.CARG 'ooita_1].
+
+;(TK 06-04-17)
+chuuou_3 := loc-or-surname-lex &
+[ORTH <! "中欧" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuuou_3].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+sekigahara_1 := loc-or-surname-lex &
+[ORTH <! "関ケ原" !>, SYNSEM.LKEYS.KEYREL.CARG 'sekigahara_1].
+
+;(TK 06-04-17)
+momoyama-2-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'momoyama,
+ORTH <! "桃山" !>].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+izumo_1 := loc-or-surname-lex &
+[ORTH <! "出雲" !>, SYNSEM.LKEYS.KEYREL.CARG 'izumo_1].
+
+;(TK 06-04-17)
+jinguuji_2 := loc-or-surname-lex &
+[ORTH <! "神宮寺" !>, SYNSEM.LKEYS.KEYREL.CARG 'jinguuji_2].
+
+;(TK 06-04-17 noun→loc_name-lex)
+nishinihon_1 := loc_name-lex &
+[ORTH <! "西日本" !>, SYNSEM.LKEYS.KEYREL.CARG 'nishinihon_1].
+
+;(TK 06-04-17 noun→loc_name-lex)
+higashinihon_1 := loc_name-lex &
+[ORTH <! "東日本" !>, SYNSEM.LKEYS.KEYREL.CARG 'higashinihon_1].
+
+;(TK 06-04-17)
+minaminihon_1 := loc_name-lex &
+[ORTH <! "南日本" !>, SYNSEM.LKEYS.KEYREL.CARG 'minaminihon_1].
+
+;(TK 06-04-17)
+; ただし、姓としての読みは「nakabe」かもしれない
+chuubu_3 := loc-or-surname-lex &
+[ORTH <! "中部" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuubu_3].
+
+;(TK 06-04-17 noun→loc-or-surname-lex)
+shikoku_1 := loc-or-surname-lex &
+[ORTH <! "四国" !>, SYNSEM.LKEYS.KEYREL.CARG 'shikoku_1].
+
+;(TK 06-04-18 noun→loc_name-lex)
+honshuu_1 := loc_name-lex &
+[ORTH <! "本州" !>, SYNSEM.LKEYS.KEYREL.CARG 'honshuu_1].
+
+;(TK 06-04-18 noun→loc-or-surname-lex)
+; ただし、姓としての読みは「uekoshi」かもしれない
+jouetsu_1 := loc-or-surname-lex &
+[ORTH <! "上越" !>, SYNSEM.LKEYS.KEYREL.CARG 'jouetsu_1].
+
+;(TK 06-04-18)
+chuuetsu_1 := loc-or-surname-lex &
+[ORTH <! "中越" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuuetsu_1].
+
+;(TK 06-04-18 noun→loc_name-lex)
+keihanshin_1 := loc_name-lex &
+[ORTH <! "京阪神" !>, SYNSEM.LKEYS.KEYREL.CARG 'keihanshin_1].
+
+;(TK 06-04-18 noun→loc_name-lex)
+keihin_1 := loc_name-lex &
+[ORTH <! "京浜" !>, SYNSEM.LKEYS.KEYREL.CARG 'keihin_1].
+
+;(TK 06-04-18 noun→loc_name-lex)
+mare-shia_1 := loc_name-lex &
+[ORTH <! "マレーシア" !>, SYNSEM.LKEYS.KEYREL.CARG 'mare-shia_1].
+
+;(TK 06-04-18)
+chou_8 := loc-or-surname-lex &
+[ORTH <! "朝" !>, SYNSEM.LKEYS.KEYREL.CARG 'chou_8].
+
+;(TK 06-04-18)
+nada_2 := loc-or-surname-lex &
+[ORTH <! "灘" !>, SYNSEM.LKEYS.KEYREL.CARG 'nada_2].
+
+;(TK 06-04-18)
+shinobazunoike_1 := loc_name-lex &
+[ORTH <! "不忍池" !>, SYNSEM.LKEYS.KEYREL.CARG 'shinobazunoike_1].
+
+;(TK 06-04-18)
+chuu_3 := loc-or-surname-lex &
+[ORTH <! "中" !>, SYNSEM.LKEYS.KEYREL.CARG 'chuu_3].
+
+;(TK 06-04-18 noun→loc_name-lex)
+chibetto_1 := loc_name-lex &
+[ORTH <! "チベット" !>, SYNSEM.LKEYS.KEYREL.CARG 'chibetto_1].
+
+;(TK 06-04-18 noun→loc_name-lex)
+suisu_1 := loc_name-lex &
+[ORTH <! "スイス" !>, SYNSEM.LKEYS.KEYREL.CARG 'suisu_1].
+
+;(TK 06-04-18)
+kaiyuukan_1 := loc_name-lex &
+[ORTH <! "海遊館" !>, SYNSEM.LKEYS.KEYREL.CARG 'kaiyuukan_1].
+
+;(TK 06-04-20)
+varentain_1 := surname-lex &
+[ORTH <! "ヴァレンタイン" !>, SYNSEM.LKEYS.KEYREL.CARG 'varentain_1].
+
+;(TK 06-04-20)
+bu-su_2 := surname-lex &
+[ORTH <! "ブース" !>, SYNSEM.LKEYS.KEYREL.CARG 'bu-su_2].
+
+;(TK 06-04-20 ordinary-nohon-n-lex→other_name-lex)
+maria_1 := other_name-lex &
+[ORTH <! "マリア" !>, SYNSEM.LKEYS.KEYREL.CARG 'maria_1].
+
+;(TK 06-04-20)
+miruton-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'miruton,
+ORTH <! "ミルトン" !>].
+
+;(TK 06-04-21)
+souseiki-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'souseiki,
+ORTH <! "創世記" !>].
+
+;(TK 06-04-21)
+babiron_1 := loc_name-lex &
+[ORTH <! "バビロン" !>, SYNSEM.LKEYS.KEYREL.CARG 'babiron_1].
+
+;(TK 06-04-21)
+norumandhi-_1 := loc_name-lex &
+[ORTH <! "ノルマンディー" !>, SYNSEM.LKEYS.KEYREL.CARG 'norumandhi-_1].
+
+;(TK 06-04-21)
+arizona_1 := loc_name-lex &
+[ORTH <! "アリゾナ" !>, SYNSEM.LKEYS.KEYREL.CARG 'arizona_1].
+
+;(TK 06-04-21)
+nyu-mekishiko_1 := loc_name-lex &
+[ORTH <! "ニューメキシコ" !>, SYNSEM.LKEYS.KEYREL.CARG 'nyu-mekishiko_1].
+
+;(TK 06-04-21)
+ke-pu_2 := loc_name-lex &
+[ORTH <! "ケープ" !>, SYNSEM.LKEYS.KEYREL.CARG 'ke-pu_2].
+
+;(TK 06-04-24)
+o-sutorarashia_1 := loc_name-lex &
+[ORTH <! "オーストララシア" !>, SYNSEM.LKEYS.KEYREL.CARG 'o-sutorarashia_1].
+
+;(TK 06-04-25)
+vishinu-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'vishinu,
+ORTH <! "ヴィシヌ" !>].
+
+;(TK 06-04-25)
+vishunu-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'vishunu,
+ORTH <! "ヴィシュヌ" !>].
+
+;(TK 06-04-25)
+jaga--2-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'jaga-,
+ORTH <! "ジャガー" !>].
+
+;(TK 06-04-25)
+porineshia_1 := loc_name-lex &
+[ORTH <! "ポリネシア" !>, SYNSEM.LKEYS.KEYREL.CARG 'porineshia_1].
+
+;(TK 06-04-27)
+mokushiroku-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'mokushiroku,
+ORTH <! "黙示録" !>].
+
+;(TK 06-04-27 noun→loc_name-lex)
+yu-rashia_1 := loc_name-lex &
+[ORTH <! "ユーラシア" !>, SYNSEM.LKEYS.KEYREL.CARG 'yu-rashia_1].
+
+;(TK 06-04-28)
+burandhi-_2 := first_name-lex &
+[ORTH <! "ブランディー" !>, SYNSEM.LKEYS.KEYREL.CARG 'burandhi-_2].
+
+;(TK 06-04-28)
+feiattobiru_1 := loc_name-lex &
+[ORTH <! "フェイアットビル" !>, SYNSEM.LKEYS.KEYREL.CARG 'feiattobiru_1].
+
+;(TK 06-04-28)
+va-jinia-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'va-jinia,
+ORTH <! "ヴァージニア" !>].
+
+;(TK 06-04-28)
+nyu-riba-_1 := loc_name-lex &
+[ORTH <! "ニューリバー" !>, SYNSEM.LKEYS.KEYREL.CARG 'nyu-riba-_1].
+
+;(TK 06-05-01)
+burundhi_1 := loc_name-lex &
+[ORTH <! "ブルンディ" !>, SYNSEM.LKEYS.KEYREL.CARG 'burundhi_1].
+
+;(TK 06-05-01)
+kameru-n_1 := loc_name-lex &
+[ORTH <! "カメルーン" !>, SYNSEM.LKEYS.KEYREL.CARG 'kameru-n_1].
+
+;(TK 06-05-01)
+;other,loc
+chado_1 := loc-or-surname-lex &
+[ORTH <! "チャド" !>, SYNSEM.LKEYS.KEYREL.CARG 'chado_1].
+
+;(TK 06-05-01)
+gabon_1 := loc_name-lex &
+[ORTH <! "ガボン" !>, SYNSEM.LKEYS.KEYREL.CARG 'gabon_1].
+
+;(TK 06-05-01)
+haithi_1 := loc_name-lex &
+[ORTH <! "ハイティ" !>, SYNSEM.LKEYS.KEYREL.CARG 'haithi_1].
+
+;(TK 06-05-02)
+ko-todhivoa-ru_1 := loc_name-lex &
+[ORTH <! "コートディヴォアール" !>, SYNSEM.LKEYS.KEYREL.CARG 'ko-todhivoa-ru_1].
+
+;(TK 06-05-02)
+ko-tojiboa-ru_1 := loc_name-lex &
+[ORTH <! "コートジボアール" !>, SYNSEM.LKEYS.KEYREL.CARG 'ko-tojiiboa-ru_1].
+
+;(TK 06-05-02)
+rukusenburugu_1 := loc_name-lex &
+[ORTH <! "ルクセンブルグ" !>, SYNSEM.LKEYS.KEYREL.CARG 'rukusenburugu_1].
+
+;(TK 06-05-02)
+rukusenburuku_1 := loc_name-lex &
+[ORTH <! "ルクセンブルク" !>, SYNSEM.LKEYS.KEYREL.CARG 'rukusenburuku_1].
+
+;(TK 06-05-02)
+;first,loc
+mari_1 := loc-or-surname-lex &
+[ORTH <! "マリ" !>, SYNSEM.LKEYS.KEYREL.CARG 'mari_1].
+
+;(TK 06-05-02)
+nije-ru_1 := loc_name-lex &
+[ORTH <! "ニジェール" !>, SYNSEM.LKEYS.KEYREL.CARG 'nije-ru_1].
+
+;(TK 06-05-02)
+senegaru_1 := loc_name-lex &
+[ORTH <! "セネガル" !>, SYNSEM.LKEYS.KEYREL.CARG 'senegaru_1].
+
+;(TK 06-05-02)
+to-go_1 := loc_name-lex &
+[ORTH <! "トーゴ" !>, SYNSEM.LKEYS.KEYREL.CARG 'to-go_1].
+
+;(TK 06-05-02)
+o-toboruta_1 := loc_name-lex &
+[ORTH <! "オートボルタ" !>, SYNSEM.LKEYS.KEYREL.CARG 'o-toboruta_1].
+
+;(TK 06-05-02)
+nairu_1 := loc_name-lex &
+[ORTH <! "ナイル" !>, SYNSEM.LKEYS.KEYREL.CARG 'nairu_1].
+
+;(TK 06-05-02)
+dhi-n_1 := other_name-lex &
+[ORTH <! "ディーン" !>, SYNSEM.LKEYS.KEYREL.CARG 'dhi-n_1].
+
+;(TK 06-05-02)
+sanantoniusu_1 := loc_name-lex &
+[ORTH <! "サンアントニウス" !>, SYNSEM.LKEYS.KEYREL.CARG 'sanantoniusu_1].
+
+;(TK 06-05-02)
+supuringufi-rudo_1 := loc_name-lex &
+[ORTH <! "スプリングフィールド" !>, SYNSEM.LKEYS.KEYREL.CARG 'supuringufi-rudo_1].
 

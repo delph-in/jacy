@@ -18,8 +18,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-
-
+;;;
+;;; FCB urged on by DPF (2006-05-01)
+;;; 
+;;; currently redefined from fundamentals.tdl
+;;;
+lexical_sign-word := lexical_sign &
+ [ SYNSEM [LOCAL.CONT.HOOK.LTOP #label,
+	   LKEYS.KEYREL [WLINK ne-list,
+			 LBL #label]]].
 
 
 ;;;;;;;;;;;;;;;;;;;HEADS;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -886,13 +893,14 @@ interj_head :< final_head.
 ; would save us having to put in a message for the sentence they 
 ; attach to (can't tell what it will be anyway).  Should also force
 ; high attachment.
+; try making CAT.HEAD sentence-valid to reduce ambiguity
 
 interj_head-avm := interj_head &
                    [POS interj,
                     J-SPEC null,
                     MARK null,
                     MOD < [LOCAL scopal_mod &
-                                        [CAT.HEAD utterance_head]] >,
+                                        [CAT.HEAD sentence-valid]] >,
                     C-MOD null,
                     J-POSTHEAD left,
                     COP-ARG -].
@@ -973,8 +981,8 @@ vn_head-avm := vn_head &
 ; (ERB 2001-09-03) Can't require HEAD light-verb_head of J-SPEC value because
 ; that's MOD none, but the inflected light verb is MOD synsem.
 
-
-i-adj_head := verb_head-avm &
+;;; FCM FIXME - do we need this and the stem head?
+i-adj_head := verb_head-avm & 
               [VN -,
                C-MOD null,
                AUX aux_minus,
@@ -984,12 +992,14 @@ i-adj_head := verb_head-avm &
                J-POSTHEAD rels,
                COP-ARG -].
 
+adj_head := adj-or-adv_head & [COP-ARG -].                                         
 
 ; (MS 2002-1-7) This should have an ADJ +, shouldn't it?
 ; (MS 2002-1-15) changed the J-SPEC from verbend_head-unmarked to verbend_head, otherwise 小さかった wouldn't parse.
 ; (MS 2002-12-04) Took the J-SPEC value out. Otherwise, 小さいこと would not parse.
+; (FCB 2006-05-11) Added adj_head as another parent (to allow deg-adv to modify i-adj)
 
-i-adj-stem_head :=  other-verb-stem_head &
+i-adj-stem_head :=  other-verb-stem_head & adj_head &
                    [ADJ +].
                                                   
 adj_head := adj-or-adv_head & [COP-ARG -].
@@ -999,16 +1009,19 @@ na-adj_head  := adj_head &
               [C-MOD null,
                MARK null].
 
-na-adj-basic_head := na-adj_head & [ADJ +,POS adj].
+na-adj-basic_head := na-adj_head & 
+ [ADJ +,
+  POS adj].
 
 ;na-adj-suffix_head := na-adj-basic_head & [MOD < [LOCAL intersective_mod & 
 ;							[CAT [HEAD ordinary_noun_head,
 ;							      VAL saturated]]] >,
 ;					   J-POSTHEAD left].
 
-na-adj-end_head := na-adj_head & verbend_head-unmarked & [POS adj,
-							  MOD null,
-							  J-SPEC.FIRST.LOCAL.CAT.HEAD na-adj_head].
+na-adj-end_head := na-adj_head & verbend_head-unmarked & 
+ [ POS adj,
+   MOD null,
+   J-SPEC.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
 ; (MS 2005-03-30) This seems not to be used any more.
 ;exceptional-adj_head := adj_head &
@@ -1043,6 +1056,16 @@ adv_head := adj-or-adv_head &
 adv_head-avm := adv_head &
             [KEYS.KEY adv_rel,
 	     MOD < [LOCAL [CAT.HEAD sentence-valid]] >,
+	     H-TENSE present].
+
+adv_deg_head-avm := adv_head &
+            [KEYS.KEY adv_rel,
+	     MOD < [LOCAL [CAT.HEAD adj-or-adv_head]] >,
+	     H-TENSE present].
+
+adv_deg_num_head-avm := adv_head &
+            [KEYS.KEY adv_rel,
+	     MOD < [LOCAL [CAT.HEAD num-cl_head]] >,
 	     H-TENSE present].
 
 case-adv_head := adv_head &
@@ -1380,9 +1403,9 @@ suru_adv_ditransitive :=  sbj-obj-obj2-arg &
 
 
 ga-to_transitive1 := sbj-obj-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
-                          COMPS  obl-1-arg &
-			  < [LOCAL.CAT.HEAD case-p_head & [CASE to]] > ].
+ [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+  COMPS  obl-1-arg &
+       < [LOCAL.CAT.HEAD case-p_head & [CASE to]] > ].
 
 ga-to_transitive2 := sbj-obj-arg &
                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
@@ -1617,23 +1640,31 @@ my_unknown_vn := my_unknown_word & vn-trans1-lex.
 ; don't do key identification more specific.
 
 p-lex := lexical_sign & 
-         [SYNSEM [LOCAL [CAT [HEAD p_head-avm & [FORMAL.SHON #1, QUANTIFIABLE #2],
-                              VAL p_sat & [COMPS #comps & < [LOCAL [CAT.HEAD [FORMAL.SHON #1,
-									      QUANTIFIABLE #2],
-								    CONT.HOOK.INDEX #ind]] >]],
-                         CTXT.BACKGROUND <! !>,
-			 CONT [HOOK.XARG #ind],
-                         BAR +,
-			 ARG-S #comps],
-                  NON-LOCAL [QUE <! !>,
-                          AFFIX <! !>]],
-          INFLECTED +].
+ [SYNSEM [LOCAL [CAT [HEAD p_head-avm & [FORMAL.SHON #1, QUANTIFIABLE #2],
+		      VAL p_sat & [COMPS #comps & 
+					 < [LOCAL [CAT.HEAD [FORMAL.SHON #1,
+							     QUANTIFIABLE #2]]] >]],
+		 CTXT.BACKGROUND <! !>,
+		 BAR +,
+		 ARG-S #comps],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>]],
+  INFLECTED +].
 
+; (FCB 2006-05-02) move this down to do the wierd numeral-clasifier の
+; DPF maybe this linkage could be revised
+
+p-lex-norm := p-lex &
+ [SYNSEM.LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #ind,
+		 CONT.HOOK.XARG #ind]].
+  
 
 ; (ERB 2001-10-17) This is the supertype for p-lex's that don't
 ; identify their KEY with their OBJ's KEY.  Name means p-lex-contentful.
 
-p-lex-c := p-lex & lexical_sign-word.
+
+
+p-lex-c := p-lex-norm & lexical_sign-word.
 
 ; (ERB 2001-11-26) Identification of CONT.KEY.HANDEl and LTOP is
 ; redundant, since both LTOP and KEY are coming from the complement.
@@ -1645,20 +1676,20 @@ p-lex-c := p-lex & lexical_sign-word.
 ; (MS 2005-06-20) FORMAL should come from the complement.
 
 
-case-p-lex := p-lex & 
-            [SYNSEM [LOCAL [CAT [HEAD overt-case-p_head & [FORMAL #formal],
-                                VAL.COMPS < [LOCAL [CAT.HEAD.FORMAL #formal,
-						    CONT [HOOK [INDEX #arg, 
-								LTOP #hand]]]] >],
-                           CONT [HOOK [INDEX #arg, 
-				       LTOP #hand],
-                                 RELS <! !>,
-                                 HCONS <! !>]]]].
+case-p-lex := p-lex-norm & 
+ [SYNSEM [LOCAL [CAT [HEAD overt-case-p_head & [FORMAL #formal],
+		      VAL.COMPS < [LOCAL [CAT.HEAD.FORMAL #formal,
+					  CONT [HOOK [INDEX #arg, 
+						      LTOP #hand]]]] >],
+		 CONT [HOOK [INDEX #arg, 
+			     LTOP #hand],
+		       RELS <! !>,
+		       HCONS <! !>]]]].
 
 ; (MS 2005-05-06) renamed ga-wo-ni-p-lex (cleaning up particles).
 
 case-p-lex-np := case-p-lex & 
-                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
+ [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
 
 ; (MS 2005-11-10) getting rid of skip files.
 
@@ -2024,28 +2055,44 @@ nounmod-p-pcomp-lex := nounmod-p-lex &
 ;				      HCONS <! !>]]]].
 
 ; (ERB 2001-08-09) Type for the "no" that connects NumClP to nouns
+;  e.g.: X CL の NOUN
 ; (ERB 2001-11-28) Replace INDEX and LTOP with MOD-IND and MOD-HAND.
 ; (MS 2002-09-10) This should also hold for "〜".
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (MS 2004-12-27) Work on floated numeral classifiers
 ; (MS 2005-01-07) Using EMPTY to prevent floated quantifiers to go into the nominal-numcl-rule.
+nmod-numcl-p-lex := p-lex &
+ [ SYNSEM [LOCAL [ CAT [ VAL.COMPS.FIRST.LOCAL[ CAT.HEAD num-cl-mod_head &
+						       [EMPTY +],
+					       CONT.HOOK #hook],
+			HEAD overt-nmod-p_head &
+					       [PTYPE overt,
+						MOD < [LOCAL intersective_mod &
+							     [CONT.HOOK.INDEX #NOUN]] >,
+						J-SPEC null ]],
+		   CONT [ HOOK #hook & [XARG #NOUN] ,
+			  RELS <! !>,
+			  HCONS <! !> ]],
+	   MODIFIED.PERIPH -]].
 
-nmod-numcl-p-lex := nmod-p-lex &
-[ SYNSEM.LOCAL [ CAT [ VAL.COMPS.FIRST.LOCAL.CAT.HEAD num-cl-mod_head &
-                                                     [ MOD < [LOCAL [CONT.HOOK [ XARG #xarg,
-										 INDEX #modind,
-										 LTOP #hand ] ]] >,
-						       EMPTY +],
-                       HEAD [ MOD < [ LOCAL.CONT.HOOK [INDEX #modind,
-						       LTOP #hand ] ,
-                                    MODIFIED.PERIPH + ]>,
-                              PTYPE overt,
-                              J-SPEC null ]],
-                 CONT [ HOOK.XARG #xarg,
-			RELS <! !>,
-                        HCONS <! !> ]]].
-                       
+
+;;; COPY -- Lose Me
+; nmod-numcl-p-lex := nmod-p-lex &
+; [ SYNSEM.LOCAL [ CAT [ VAL.COMPS.FIRST.LOCAL.CAT.HEAD num-cl-mod_head &
+;                                                      [ MOD < [LOCAL [CONT.HOOK [ XARG #xarg,
+; 										 INDEX #modind,
+; 										 LTOP #hand ] ]] >,
+; 						       EMPTY +],
+;                        HEAD [ MOD < [ LOCAL.CONT.HOOK [INDEX #modind,
+; 						       LTOP #hand ] ,
+;                                     MODIFIED.PERIPH + ]>,
+;                               PTYPE overt,
+;                               J-SPEC null ]],
+;                  CONT [ HOOK.XARG #xarg,
+; 			RELS <! !>,
+;                         HCONS <! !> ]]].
+                           
 ; (ERB 2001-09-03) Adding constraint that the INDEX of vmod-p-lex be
 ; the same as the MOD...INDEX.
 
@@ -2260,6 +2307,8 @@ topic-vhead-connect-p-lex := topic-p-lex &
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2005-05-11) Linking XARG of the complement to ARG1, instead of INDEX.
+; (FCB 2006-06-20) no MOD-IND/MOD-HAND
+
 
 topic-pobj-lex := topic-p-lex & 
 [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD p_head & 
@@ -2267,9 +2316,8 @@ topic-pobj-lex := topic-p-lex &
 						      MOD #mod,
 						      CASE mod],
 					   CONT.HOOK.XARG #objind],
-                    HEAD.MOD #mod & < [LOCAL.CONT.MOD-HAND #modtop] > ],
-	       CONT [ HOOK.LTOP #modtop,
-		      RELS.LIST.FIRST [ARG1 #objind]]]].
+                    HEAD.MOD #mod],
+	       CONT [ RELS.LIST.FIRST [ARG1 #objind]]]].
 
 ;(MS 2005-11-09) Getting rid of skip lexicon.
 
@@ -2415,9 +2463,9 @@ adv-p-lex-np-nonexh := adv-p-lex-np &
 
 
 adv-p-lex-date :=  adv-p-lex & 
-            [SYNSEM.LOCAL.CAT [HEAD.PTYPE ni,
-			       VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST niarg-relation,
-						      CAT.HEAD noun_head]]].
+ [SYNSEM.LOCAL.CAT [HEAD.PTYPE ni,
+		    VAL.COMPS.FIRST.LOCAL [CONT.RELS.LIST.FIRST niarg-relation,
+					   CAT.HEAD noun_head]]].
 
 adv-p-lex-iadj := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD i-adj_head].
@@ -2494,7 +2542,7 @@ adv-p-lex-parent := adv-p-lex &
 
 n_conj-p-lex := conj-lex & 
             [SYNSEM [LKEYS.KEYREL conjunction-relation & #key &
-                                    [C-ARG #index,
+                                    [ARG0 #index,
 				     LBL #hndl,
                                      L-INDEX #arg,
                                      R-INDEX #mod],
@@ -2535,7 +2583,7 @@ hyphen-conj-p-lex := n_conj-p-lex &
 ;				RELS <! #key !>]]]].
 
 compl-conj-p-lex := conj-lex & 
-            [SYNSEM [LKEYS.KEYREL #key & [C-ARG #index,
+            [SYNSEM [LKEYS.KEYREL #key & [ARG0 #index,
 					  L-HNDL #arg,
 					  R-HNDL #mod],
 		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD case-p_head & [CASE #case,
@@ -2630,12 +2678,14 @@ hes-lex   := lexical_sign-word &
 ; (MS 2005-05-17) Trying to put sentence particles into the type hierarchy of particles.
 
 sap-lex  := p-lex-c & 
-            [SYNSEM [LOCAL [CAT [HEAD sap_head & [FORMAL.SHON #1], 
-                                 VAL sap_sc & [COMPS #comps & [FIRST.LOCAL.CAT.HEAD.FORMAL.SHON #1]]],
-                            CTXT.BACKGROUND <! !>,
-			    ARG-S #comps],
-                     NON-LOCAL [AFFIX <! !>]],
-             INFLECTED +].
+ [SYNSEM [LOCAL [CAT [HEAD sap_head & [FORMAL.SHON #1], 
+		      VAL sap_sc & 
+			   [COMPS #comps & 
+				  [FIRST.LOCAL.CAT.HEAD.FORMAL.SHON #1]]],
+		 CTXT.BACKGROUND <! !>,
+		 ARG-S #comps],
+	  NON-LOCAL [AFFIX <! !>]],
+  INFLECTED +].
 
 ; (ERB 2001-12-28) For kudasai in VN + kudasai.  Brought in all relevant constraints
 ; from s-end-lex and s-end2-lex.
@@ -2660,68 +2710,6 @@ sap-lex  := p-lex-c &
 ; probably isn't strictly correct, but I'll use it cut down ambiguity
 ; until we find a counterexample.)
 
-;(MS 2004-06-25) Took the EMPTY - restriction on the complement out.
-; changed the relation to conjunction-relation. I want a C-ARG to be accessible
-; for modification and so on. This should be the LTOP. The tense information is unified between 
-; the two conjuncts and passed to the top.
-; We need to add a value to XARG, in order not to get spurious ambiguity with the vmod-p が
-; (FCB 2005-01-29) Added J-POSTHEAD rels to VAL.COMPS.FIRST.CAT.HEAD
-; to get rid of spurious ambiguity with comma-vmod2
-; (I don't want it to trigger for coord) 食べて、笑った。
-; (FCB 2005-01-30) Add EMPTY - restriction on main verb.  
-; Otherwise there is a lot of ambiguity with fragments
-; (FCB 2005-04-12) FIXME - can we put the EMPTY - restriction on the complement back?
-; (FCB 2005-06-27) Added ARG0 to messages
-; (MS 2005-06-07) It seems that this one is never applied.
-; (FCB 2005-06-29) but it is used by several lexical entries
-; (MS 2005-07-01) but I had renamed the s-conj-nonprop-lex!
- ;s-conj-lex := sap-lex &
- ; [SYNSEM [LOCAL [CAT [HEAD s-conj_head &
- ;			   [C-MOD < [LOCAL [CONT.HOOK [LTOP #main-v-handel,
- ;						       INDEX #main-index,
- ;						       INDEX.E #tam],
- ;					    CAT.HEAD.EMPTY -]]> ],
- ;		      VAL.COMPS.FIRST [LOCAL [CONT.HOOK [LTOP #subord-v-handel,
- ;							 INDEX.E #tam,
- ;							 INDEX #subord-index,
- ;							 XARG #xarg],
- ;					      CAT.HEAD [EMPTY bool,
- ;							J-POSTHEAD rels,
- ;							FIN +],
- ;					      NUCL not_fin_conj ]]],
- ;		 NUCL nucl_minus,
- ;		 CONT [HOOK [INDEX #ind & event & [E #tam],
- ;			     LTOP #top,
- ;			     XARG #xarg],
- ;		       RELS <! conjunction-relation & #key &
- ;			     [C-ARG #ind,
- ;			      LBL #top,
- ;			      R-HNDL #main,
- ;			      L-HNDL #subord],
- ;			     message &
- ;			     [PRED proposition_m_rel,
- ;			      LBL #main,
- ;			      ARG0 #main-index,
- ;			      MARG #prpstnsoa1],
- ;			     message &
- ;			     [PRED proposition_m_rel,
- ;			      LBL #subord,
- ;			      ARG0 #subord-index,
- ;			      MARG #prpstnsoa2] !>,
- ;		       HCONS <! qeq & [LARG #main-v-handel,
- ;				       HARG #prpstnsoa1],
- ;			      qeq & [LARG #subord-v-handel,
- ;				     HARG #prpstnsoa2] !>]],
- ;	  LKEYS.KEYREL #key,
- ;	  NON-LOCAL.QUE <! !>]].
-
-;s-conj1-lex := s-conj-lex & [SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON #1,
-;                                               VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
-
-;s-conj1-decl-lex := s-conj1-lex &
-;		    [SYNSEM.LOCAL [CAT.HEAD.SMOD decl]].
-
-;s-conj2-lex := s-conj-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 ; (ERB 2002-01-07) For conjunctions that allow non-propositional 
 ; right conjuncts.  This type doesn't supply a message for the
@@ -2741,40 +2729,45 @@ sap-lex  := p-lex-c &
 ; and thus the sentence doesn't parse. I'll take that out and make another try.
 ; (MS 2005-06-07) These are all decl. They all identify AHON.
 ; (FCB 2005-06-27) Added ARG0 to messages
-
-
+; e.g. (lkb::do-parse-tty "座る なら 寝る")
+; very similar to v-cond-end-lex
 s-conj-lex := sap-lex &
  [SYNSEM [LOCAL [CAT [HEAD s-conj-nonprop_head &
-			   [C-MOD < [LOCAL.CONT.HOOK [LTOP #main-v-handel,
-						      INDEX #main-index]] >,
-					FORMAL.AHON #ahon,
-					SMOD decl],
-		      VAL.COMPS.FIRST.LOCAL [CONT.HOOK [LTOP #subord-v-handel,
-							INDEX #subord-index],
+			   [C-MOD < [LOCAL [CAT [HEAD verb_head],
+					    BAR +,
+					    CONT.HOOK [LTOP #main-h,
+						      INDEX #main-i]]] >,
+			    FORMAL.AHON #ahon,
+			    SMOD decl],
+		      VAL.COMPS.FIRST.LOCAL [CONT.HOOK [LTOP #sub-h,
+							INDEX #sub-i],
 					     CAT.HEAD [EMPTY -,
 						       FORMAL.AHON #ahon],
 					     NUCL nucl]],
 		 NUCL nucl_minus,
-		 CONT [HOOK [INDEX #main-index,
-			     LTOP #top],
-		       RELS <! subord-or-conj-relation & #key &
-			     [LBL #subord-hand,
-			      R-HNDL #main-v-handel,
-			      L-HNDL #subord],
+		 CONT [HOOK [LTOP  #toph,
+			     INDEX #topi],
+		       RELS <!  conjunction-relation & #key & 
+			     [LBL     #toph,
+			      ARG0   #topi,
+			      L-HNDL  #l-h,
+			      L-INDEX #sub-i,
+			      R-HNDL  #r-h,
+			      R-INDEX #main-i],
 			     message &
 			     [PRED proposition_m_rel,
-			      LBL #subord,
-			      ARG0 #subord-index,
-			      MARG #prpstnsoa2],
+			      LBL  #l-h,
+			      ARG0 #sub-i,
+			      MARG #sub-m],
 			     message &
 			     [PRED proposition_m_rel,
-			      ARG0 #main-index,
-			      LBL #top,
-			      MARG #subord_rel]!>,
-		       HCONS <! qeq & [LARG #subord-v-handel,
-				       HARG #prpstnsoa2],
-			      qeq & [LARG #subord-hand,
-				     HARG #subord_rel] !>]],
+			      LBL  #r-h,
+			      ARG0 #main-i,
+			      MARG #main-m] !>,
+		       HCONS <! qeq & [HARG #sub-m,
+				       LARG #sub-h],
+			      qeq & [HARG #main-m,
+				     LARG #main-h] !>]],
 	  LKEYS.KEYREL #key,
 	  NON-LOCAL.QUE <! !>]].
 
@@ -2919,28 +2912,43 @@ s-ell-end-lex := sap-lex &
 ; In a sufficiently long sentence, this leads to non-scoping MRSs.)
 
 ; (ERB 2001-12-10) ... that means they must be scopal modifiers!
+; (FCB 2006-06-01) make lexical_sign not lexical_sign_word
+; the key pred's LTOP is not the HOOK.LTOP (it is the discourse rel)
+; FIXME: maybe the #lhand and #rhand should introduce qeq
 
 
-interj-lex := lexical_sign-word & 
-            [SYNSEM [LOCAL [CAT [HEAD interj_head-avm &
-                                      [ MOD < [LOCAL.CONT.HOOK.LTOP #rhand ] >],
-                                 VAL saturated],
-                            CTXT.BACKGROUND <! !>,
-                            CONT interj-sem-type &
-				[RELS <! subord-or-conj-relation &
-				       [ LBL #top,
-					 PRED 'discourse_rel,
-					 R-HNDL #rhand,
-					 L-HNDL #hand ],
-				       #key & interj-relation &
-				       [ LBL #hand ] !>,
-				 HOOK.LTOP #top],
-                            BAR +,
-			    ARG-S <>],
-		     LKEYS.KEYREL #key,
-                     NON-LOCAL [QUE <! !>,
-                             AFFIX <! !>]],
-             INFLECTED +].
+; (FCB 2006-06-20) reifying the similarities for idiom-lex and interj-lex
+discourse-lex := lexical_sign & 
+ [SYNSEM [LOCAL [CAT [HEAD final_head,
+		      VAL saturated],
+		 CONT [HOOK.LTOP #top,
+		       RELS <! subord-or-conj-relation &
+			     [ LBL #top,
+			       PRED 'discourse_rel,
+			       L-HNDL #hand ],
+			     #key & 
+			     [ LBL #hand, 
+			       ARG0 event] !>],
+		 CTXT.BACKGROUND <! !>,
+		 BAR +,
+		 ARG-S <>],
+	  LKEYS.KEYREL #key & [WLINK ne-list],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>],
+	  MODIFIED.PERIPH +],
+  INFLECTED +].
+
+;;; (FCB 2006-06-20) interjections modify the main relation as a scopal modifier
+;;; (lkb::do-parse-tty "それ 行け")
+interj-lex := discourse-lex & 
+ [SYNSEM [LOCAL [CAT [HEAD interj_head-avm &
+			   [ MOD < [LOCAL[ CAT.HEAD sentence-valid,
+					   CONT.HOOK.LTOP #rhand ],
+				    MODIFIED.PERIPH -] >]],
+		 CONT interj-sem-type &
+		     [RELS <! subord-or-conj-relation &
+			    [ R-HNDL #rhand ],
+			    interj-relation  !>]]]].
 
 ; (MS 2005-11-09) Subtypes to get rid of skip files.
 
@@ -2963,27 +2971,16 @@ excl-robust-lex := excl-lex &
 excl-ahon-lex := excl-lex &
 		   [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
 
+;;; (FCB 2006-06-20) idioms are coordinate constructions with the main relation
+;;; (lkb::do-parse-tty "あの 行く")
 
-idiom-lex := lexical_sign-word & 
-            [SYNSEM [LOCAL [CAT [HEAD idiom_head & [C-MOD < [LOCAL.CONT.HOOK [LTOP #rhand,
-									      INDEX #ind]] > ], 
-                                 VAL saturated],
-                            CONT [HOOK [INDEX #ind,
-					LTOP #top],
-                                  RELS <! #key,
-                                         subord-or-conj-relation &
-                                         [PRED 'discourse_rel,
-					  LBL #top,
-                                          L-HNDL #lhand,
-                                          R-HNDL #rhand] !>],
-                            CTXT.BACKGROUND <! !>,
-                            BAR +,
-			    ARG-S <>],
-		     LKEYS.KEYREL arg0-relation & #key & 
-			   [LBL #lhand],
-                     NON-LOCAL [QUE <! !>,
-                             AFFIX <! !>]],
-             INFLECTED +].
+idiom-lex := discourse-lex & 
+ [SYNSEM [LOCAL [CAT [HEAD idiom_head & 
+			   [C-MOD < [LOCAL.CONT.HOOK [LTOP #rhand,
+						      INDEX #ind]] > ]], 
+		 CONT [HOOK.INDEX #ind,
+		       RELS <! [R-HNDL #rhand],
+			     arg0-relation !>]]]].
 
 
 greeting-lex := idiom-lex &
@@ -3456,8 +3453,10 @@ affix-noun-lex := n-lex &
 ; constrain on subtypes.
 
 ; (MS 2002-02-01) added some necessary restrictions.
+; (FCB 2006-05-02) changed supertype to lexical_sign to allow
+; the HOOK.LTOP to be different from the KEYREL.LBL
 
-numeral-classifier := lexical_sign-word &
+numeral-classifier := lexical_sign &
 [ SYNSEM [ LOCAL [ CAT.HEAD num-cl_head &
 			    [KEYS [KEY quantity_rel]],
                    CONT num-cl-sem-type-super & [MSG no-msg],
@@ -3470,52 +3469,16 @@ numeral-classifier := lexical_sign-word &
 ; (ERB 2004-1-16) New semantic analysis has num-cls introducing more
 ; relations, with the total number depending on the semantic type.
 
-;spr-only-num-cl-lex := numeral-classifier &
-;[ SYNSEM [ LOCAL [ CAT [VAL spr-arg &
-;                              [ SPR #spr & [FIRST [OPT - ,
-;					   LOCAL [ CAT [ HEAD int_head &
-;							      [ ST-ALONE + ],
-;							 VAL saturated ],
-;						   CONT.HOOK [LTOP #handle,
-;							      INDEX #ind,
-;							      XARG #arg]]]]],
-;			HEAD.KEYS [KEY quantity_rel, ALTKEY #altpred]],
-;		   ARG-S #spr,
-;		   CONT num-cl-sem-type &
-;			   [HOOK [XARG #arg,
-;				  INDEX #ind],
-;			    RELS <! #key & [ARG0 #ind,
-;					    ARG1 #arg] !>,
-;			    MSG no-msg]],
-;	   LKEYS [KEYREL #key & quantity-relation & [AMOUNT #handle],
-;		  ALTKEYREL.PRED #altpred]]].
-
-; (ERB 2004-1-18) The SPR should have its XARG coindexed with
-; the modified noun's MOD-IND value and the LTOP of the NumCl.
-; (The numerals identify that XARG with the ARG1 of their card-rel.)
-
-; (ERB 2004-1-18) We don't actually wan't the SPR's LTOP to 
-; be the same as the NumCl's LTOP, as in the case of measure-num-cl-lex
-; this shouldn't be the case (or we end up with the noun-rel
-; for the measure unit and the noun-rel of the modified NP sharing
-; a handle.)  Move this constraint onto appropriate subtype.
-; Likewise for the MOD-IND = XARG.  True of individuating numeral
-; classifiers, but not of measure numeral classifiers.  Move
-; to appropriate subtypes.
-
-
 spr-only-num-cl-lex := numeral-classifier &
-[ SYNSEM [ LOCAL [ CAT [ VAL spr-arg &
-                              [ SPR #spr &
-                                   [FIRST [OPT - ,
-					   LOCAL [ CAT [ HEAD int_head &
-							      [ ST-ALONE + ],
-							 VAL saturated ],
-						   CONT.HOOK.INDEX #arg]]]]],
-		   ARG-S #spr,
-		   CONT num-cl-sem-type &
-			    [MSG no-msg,
-			     HOOK.XARG #arg]]]].
+ [ SYNSEM.LOCAL [ CAT [ VAL spr-arg &
+			    [ SPR #spr &
+				  [FIRST [OPT - ,
+					  LOCAL.CAT [ HEAD int_head &
+							   [ ST-ALONE + ],
+						      VAL saturated ]]]]],
+		  ARG-S #spr,
+		  CONT num-cl-sem-type &
+		      [MSG no-msg]]].
 
 ; (ERB 2001-08-21) For "numeral classifiers" that go before the
 ; numbers, i.e., $, ＄, ￥...
@@ -3735,34 +3698,36 @@ event-num-cl-lex := adv-num-cl-lex &
 ; in the degree-rel to tie things together.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (FCB 2005-08-07) fixed 'unspec_adj_rel, specified ARG0 to event
-
+; make the whole thing look like a modifier from outside
 measure-num-cl-lex := numeral-classifier &
 [ SYNSEM [ LKEYS.KEYREL #key,
-	   LOCAL [ CAT.HEAD num-cl-nmod_head & 
+	   LOCAL [ CAT [HEAD num-cl-nmod_head & 
 			    [ MOD < [ LOCAL intersective_mod &
-					    [ CONT.HOOK [ LTOP #ltop,
-							  INDEX #ind ]]]>],
-		   CONT [ RELS.LIST < quant-relation &
-				[ PRED udef_rel,
-				  ARG0 #meas-ind,
-				  RSTR #harg ],
-				#key & noun-relation &
-				[ LBL #larg,
-				  ARG0 #meas-ind ],
-				degree-relation &
-				[ LBL #larg,
-				  PRED degree_rel,
-				  ARG1 #darg ],
-				arg1-relation &
-				[ LBL #ltop,
-				  PRED unspec_adj_rel,
-				  ARG0 event & #darg, 
-				  ARG1 #ind ], ... >,
+					    [ CONT.HOOK.INDEX #ind ]] >]],
+		   CONT [ HOOK [ LTOP #lattr,
+				 INDEX #darg,
+				 XARG #ind ],
+			  RELS.LIST < quant-relation &
+				      [ PRED udef_rel,
+					ARG0 #unit-ind,
+					RSTR #harg ],
+				      #key & noun-relation &
+				      [ LBL #unit-lbl,
+					ARG0 #unit-ind ],
+				      degree-relation & 
+				      [ LBL #lattr,
+					PRED degree_rel,
+					ARG0 event,
+					ARG1 #darg, 
+					ARG2  #unit-ind ],
+				      arg1-relation &
+				      [ LBL #lattr,
+					PRED unspec_adj_rel,
+					ARG0 #darg & event,
+					ARG1 #ind ], ... >,
 			  HCONS <! qeq & 
 				 [ HARG #harg,
-				   LARG #larg ] !>,
-			  HOOK [ INDEX #ind,
-				 LTOP #ltop ]]]]].
+				   LARG #unit-lbl ] !>]]]].
 
 ; Cross-classified subtypes:
 
@@ -3821,16 +3786,12 @@ measure-num-cl-lex := numeral-classifier &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 num-cl-spr-only-ind-lex := spr-only-num-cl-lex & anymod-ind-num-cl-lex &
-  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #xarg,
+  [ SYNSEM.LOCAL [CAT [ HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #xarg,
 							LTOP #ltop ],
 		       VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #xarg,
-						       LTOP #ltop ]]].
-
-
+						       LTOP #ltop ]],
+		  CONT.HOOK [XARG #xarg]]].
 ; 番、号
-
-; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any
-; more, I'll erase that here.
 
 ; (ERB 2003-12-03) We still need some mechanism for separating the mod
 ; numcls from the nomods in the nominal-numcl rules.  Melanie has
@@ -3842,10 +3803,11 @@ num-cl-spr-only-ind-lex := spr-only-num-cl-lex & anymod-ind-num-cl-lex &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 num-cl-spr-only-ind-nmod-lex := spr-only-num-cl-lex & noun-mod-ind-num-cl-lex &
-  [ SYNSEM.LOCAL.CAT [ HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #xarg,
+  [ SYNSEM.LOCAL [CAT [ HEAD.MOD.FIRST.LOCAL.CONT.HOOK [ INDEX #xarg,
 							LTOP #ltop ],
 		       VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #xarg,
-						       LTOP #ltop ]]].
+						       LTOP #ltop ]],
+		  CONT.HOOK [XARG #xarg]]].
 
 
 ; 円、年、階、etc
@@ -4589,7 +4551,7 @@ quant-word-temp-or-place-lex := n-lex &
                              NON-LOCAL [AFFIX <! !>]]].
 
 wh-word-temp-or-place-lex := quant-word-temp-or-place-lex &
-[ SYNSEM [ LOCAL.CONT [ RELS.LIST.REST.FIRST.PRED 'wh_rel,
+[ SYNSEM [ LOCAL.CONT [ RELS.LIST.REST.FIRST.PRED whq_rel,
                         HOOK.LTOP #top ],
            NON-LOCAL.QUE <! #top !> ]].
 
@@ -4749,26 +4711,27 @@ nom-exceptional-common-lex := nom-common-lex &
 ; lexical_sign-word.
 
 ; (MS 2003-01-15) The co-indexing of the SPRs handel with the LTOP handel leads to not scoping MRSs. Took that out.
-; (MS 2003-12-17) Adapting to Matrix Ver. 0.6: unspec_rel is now unspec-compound-relation
-
 ; (FCB 2005-04-11) Added  SYNSEM.LOCAL.CAT.HEAD.MOD null, to stop 
 ; interjections popping up all over the place in (do-parse-tty "これ の こと が 起きる")
 
 nom-dummy-lex := nom-lex & lexical_sign-word &
-       [SYNSEM [LOCAL [CAT [VAL nom_sc & [SPR.FIRST.LOCAL [CAT.HEAD nspec-p_head & [SMOD decl],
-                                                 CONT [HOOK.INDEX #spri]]]],
-                      CONT nom-sem-type &
-                          [HOOK.INDEX #i,
-                           RELS diff-list & 
-                                 <! #key,
-                                  unspec-compound-relation & [PRED unspec_compound_rel,
-							      ARG2 #spri,
-							      ARG1 #i] !>,
-                           HCONS <! !>]],
-		LKEYS.KEYREL #key & [ARG0 #i]]].
+ [SYNSEM [LOCAL [CAT [VAL nom_sc & 
+			  [SPR.FIRST.LOCAL  [CAT.HEAD nspec-p_head & 
+						      [SMOD decl],
+					     CONT [HOOK.INDEX #spri]]]],
+		 CONT nom-sem-type &
+		     [HOOK.INDEX #i,
+		      RELS diff-list & 
+				 <! #key,
+				  unspec-compound-relation & 
+				  [PRED compound_rel,
+				   ARG2 #spri,
+				   ARG1 #i] !>,
+		      HCONS <! !>]],
+	  LKEYS.KEYREL #key & [ARG0 #i]]].
 
 nom-exceptional-dummy-lex := nom-dummy-lex &
-			     [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head].
+ [SYNSEM.LOCAL.CAT.HEAD exceptional_noun_head].
 
 
 ; (MS 2005-01-27) This seems not to be used any more.
@@ -4840,7 +4803,6 @@ na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj_head & [MAIN-PRD
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXIKAL TYPES -- adverbs;;;;;;;;;;;;;;;;;;
 
-
 adv-lex := lexical_sign-word & 
            [SYNSEM [LOCAL [CAT  [HEAD adv_head-avm, 
                                  VAL saturated],
@@ -4850,6 +4812,30 @@ adv-lex := lexical_sign-word &
                     NON-LOCAL [AFFIX <! !>]],
             INFLECTED +,
             J-NEEDS-AFFIX -].
+
+adv-deg-lex := lexical_sign-word & 
+           [SYNSEM [LOCAL [CAT  [HEAD adv_deg_head-avm, 
+                                 VAL saturated],
+			   ARG-S < >,
+                           CTXT.BACKGROUND <! !>,
+                           BAR +],
+                    NON-LOCAL [AFFIX <! !>]],
+            INFLECTED +,
+           J-NEEDS-AFFIX -].
+ 
+adv-deg-num-lex := lexical_sign-word & 
+           [SYNSEM [LOCAL [CAT  [HEAD  adv_deg_num_head-avm, 
+                                 VAL saturated],
+			   ARG-S < >,
+                           CTXT.BACKGROUND <! !>,
+                           BAR +],
+                    NON-LOCAL [AFFIX <! !>]],
+            INFLECTED +,
+            J-NEEDS-AFFIX -].
+
+
+
+
 
 ; (ERB 2001-09-06) HCONS isn't sufficiently constrained on this type.  
 ; Making it be exactly one thing long.
@@ -4906,33 +4892,33 @@ lex-mod-adv-wh-lex := adv-wh-lex &
 
 ; (MS 2004-11-26) Changing MOD-HAND and MOD-IND in MOD to LTOP and INDEX.
 
-isect-adv-lex := adv-lex &
+;;; FCB led gently by the hand by DPF (2006-05-01)
+
+isect-mod-lex := lexical_sign-word &
  [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod & 
 					[CONT.HOOK [LTOP #handel,
-						    INDEX #ind]]] >,
+						    INDEX #modified]]] >,
 			   COP-ARG +,
 			   J-POSTHEAD left],
 		 CONT i-sect-adv-sem-type &
-			  [HOOK.INDEX #ind,
+			  [HOOK [INDEX #ind,
+				 LTOP #handel],
 			   RELS <! #key !>]],
 	  LKEYS.KEYREL #key & adv-relation & 
-		[ARG0 event,
+		[ARG0 #ind & event,
 		 ARG0.E.TENSE no_tense,
-		 ARG1 #ind,
+		 ARG1 #modified,
 		 LBL #handel],
 	  NON-LOCAL.QUE <! !>]].
 
-;a new analysis of degree adverbs is needed here! (MS)
+isect-adv-lex := isect-mod-lex & adv-lex.
+;;; 美しい
 
-;dim-adv-lex := adv-lex &
-;         	[SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL.KEYS [KEY [DIM #dim,
-;                                                               LBL #handle]]] >,
-;                                          J-POSTHEAD left],
-;                                CONT dim-adj-sem-type &
-;                                                        [RELS <! adj-relation & [ARG1 #dim, LBL #handle] !>]],
-;                         NON-LOCAL.QUE <! !>]].
-      
+deg-adv-lex := isect-mod-lex & adv-deg-lex.
+;;; とても 
 
+deg-adv-num-lex := isect-mod-lex & adv-deg-num-lex.
+;;; およそ
 
 ; (ERB 2001-11-28) Constraining scopal adverbs to stay out of the
 ; intersective head-adj rules.
@@ -4966,7 +4952,7 @@ scopal-adv-regular-lex := scopal-adv-lex &
 ; (MS 2005-11-09) To get rid of skip files.
 
 scopal-adv-regular-negmod-lex := scopal-adv-regular-lex &
-				 [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY "_neg_v_rel" ].
+ [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY "_neg_v_rel" ].
 
 ; (MS 2004-12-15) This doesn't have to be COMPS null on the modifiee, otherwise we
 ; don't get relative-clause-obj-gap rules. But it should be COP-ARG -, such that
@@ -5013,8 +4999,9 @@ scopal-adv-right2left-presentmod-lex := scopal-adv-right2left-lex &
 ; semantics should look like.  This entry will share some but not
 ; all of the constraints on card-lex, so I'm going to create a 
 ; supertype card-lex-super:
+; (FCB 2006-06-20) make these lexical_sign (not lexical_sign-word) so they scope again
 
-card-lex-super := lexical_sign-word & 
+card-lex-super := lexical_sign & 
             [SYNSEM [LOCAL [CAT [ HEAD int_head-avm,
 				  VAL [SUBJ null,
 				       COMPS 0-1-list & #comps]],
@@ -6056,7 +6043,8 @@ v-tense-end-lex := v-tense-end-lex-super &
 ; including those that are derived from NP via empty-cop-rule.
 ; (MS 2005-05-24) This adds massive ambiguity in all cases where there is a
 ; verb in te form (such as: 食べてもいい). 
-
+; (FCB 2006-06-20)
+; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD sentence-valid] prevents this from modifying utterances.
 
 te-adjunct-lex := v-tense-end-lex &
  [J-NEEDS-AFFIX -,
@@ -6065,7 +6053,7 @@ te-adjunct-lex := v-tense-end-lex &
 			    COP-ARG -,
 			    C-MOD null,
 			    MOD <[LOCAL intersective_mod &
-					[CAT.HEAD utt-valid & [COP -],
+					[CAT.HEAD sentence-valid & [COP -],
 					 CONT.HOOK [LTOP #handel,
 						    INDEX #ind]]]>,
 			    J-POSTHEAD left]],
@@ -6329,50 +6317,55 @@ tai-notyetend-cstem-lex := tai-notyetend-lex &
 ;(CH 2003-08-22)
 ; "SYNSEM.LOCAL.CAT.HEAD.MOD null"
 ;    --> "SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL [CAT.HEAD verb_head,
+;					  BAR +],
+;				   LEX bool] >,
 ; 
 ; (FCB 2005-06-27) Added ARG0 to message 
+; (FCB 2005-06-27) SYNSEM.LOCAL.CAT.HEAD.MOD null again
+; this caused spurious ambiguity in 座れば寝る
+
 v-cond-end-lex  :=  v-noncaus-op-end-lex &
-                    [SYNSEM [LOCAL [CAT [HEAD v-cond-end_head & [C-MOD < [LOCAL [CAT [HEAD verb_head],
-                                                                           BAR +,
-                                                                           CONT.HOOK [LTOP #main,
-										      INDEX #ind]]] >,
-                                                              MOD < [LOCAL [CAT.HEAD verb_head,
-									    BAR +],
-								     LEX bool] >,
-                                                              MARK null,
-                                                              J-SPEC null,
-								 J-POSTHEAD left,
-                                                              COP-ARG -,
-                                                              MODUS conditional,
-								 MAIN-PRD -,
-                                                              FIN -],
-                                        VAL.SPR.FIRST.LOCAL [CAT.HEAD.MAIN-PRD -,
-							      CONT.HOOK [LTOP #subord,
-									 INDEX #ind]]],
-				    
-                                   CONT [HOOK [INDEX #ind,
-					       LTOP #tophand],					       
-                                          RELS <! subord-relation & #key &
-                                                [PRED "if_then_rel",
-						 LBL #tophand,
-                                                 R-HNDL #main,
-                                                 L-HNDL #subord],
-                                                message &
-						[PRED proposition_m_rel,
-						 LBL #main,
-						 ARG0 #ind,
-						 MARG #prpstnsoa1],
-                                                message &
-						[PRED proposition_m_rel,
-						 LBL #subord,
-						 ARG0 #ind,
-                                                 MARG #prpstnsoa2] !>,
-                                         HCONS <! qeq & [LARG #main,
-                                                          HARG #prpstnsoa1],
-                                                 qeq & [LARG #subord,
-                                                        HARG #prpstnsoa2] !>]],
-			     LKEYS.KEYREL #key],
-		     J-NEEDS-AFFIX -].
+ [SYNSEM [LOCAL [CAT [HEAD v-cond-end_head & 
+			   [C-MOD < [LOCAL [CAT [HEAD verb_head],
+					    BAR +,
+					    CONT.HOOK [LTOP #main,
+						       INDEX #maini]]] >,
+			    MOD null,
+			    MARK null,
+			    J-SPEC null,
+			    J-POSTHEAD left,
+			    COP-ARG -,
+			    MODUS conditional,
+			    MAIN-PRD -,
+			    FIN -],
+		      VAL.SPR.FIRST.LOCAL [CAT.HEAD.MAIN-PRD -,
+					   CONT.HOOK [LTOP #subord,
+						       INDEX #subordi]]],
+		 CONT [HOOK [INDEX #ind,
+			     LTOP #tophand],					       
+		       RELS <! conjunction-relation & #key &
+			     [ARG0 #ind,
+			      LBL #tophand,
+			      L-HNDL #subordp,
+			      L-INDEX #subordi,
+			      R-HNDL #mainp,
+			      R-INDEX #maini ],
+			     message &
+			     [PRED proposition_m_rel,
+			      LBL #mainp,
+			      ARG0 #maini,
+			      MARG #mainm],
+			     message &
+			     [PRED proposition_m_rel,
+			      LBL #subordp,
+			      ARG0 #subordi,
+			      MARG #subordm] !>,
+		       HCONS <! qeq & [HARG #mainm,
+				       LARG #main],
+			      qeq & [HARG #subordm,
+				     LARG #subord] !>]],
+	  LKEYS.KEYREL #key],
+  J-NEEDS-AFFIX -].
 
 v-cond-end-pastspr-lex := v-cond-end-lex &
 			  [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past].
@@ -6492,26 +6485,24 @@ v-noncaus-op-end-lex := v-op-end-lex &
 								 ARG-S #args]],
 				       CONT.HOOK.XARG #xarg,
 				       ARG-S #args]].
-
+; (FCB 2006-06-20) no MOD-IND/MOD-HAND
+; FIXME check the semantics
 naru-noncaus-end-lex := v-noncaus-op-end-lex &
-	    [INFLECTED -,
-	     LMORPH-BIND-TYPE a-morph,
-	     STEMTYPE c-stem,
-	     SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
-				 VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
-								 INDEX #mod-i],
-							     MOD-HAND #mod-h]],
-			    CONT [HOOK [INDEX #event,
-					LTOP #hd],
-				  MOD-HAND #mod-h,
-				  MOD-IND #mod-i,
-				  RELS <! #key !>,
-				  HCONS <! !>]],
-		     LKEYS.KEYREL #key & adv-relation &
-			   [LBL #hd,
-			    ARG1 #arg-h,
-			    ARG0 #event],
-		     MODIFIED.PERIPH +]].
+ [INFLECTED -,
+  LMORPH-BIND-TYPE a-morph,
+  STEMTYPE c-stem,
+  SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
+		      VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
+						      INDEX #event-v]]],
+		 CONT [HOOK [INDEX #event,
+			     LTOP #hd],
+		       RELS <! #key & [ARG0 #event-v]!>,
+		       HCONS <! !>]],
+	  LKEYS.KEYREL #key & adv-relation &
+		[LBL #hd,
+		 ARG1 #arg-h,
+		 ARG0 #event],
+	  MODIFIED.PERIPH +]].
 
 ; (MS 2005-11-29) There were still MOD-IND and MOD-HAND.
 
@@ -8762,17 +8753,18 @@ cop-light-lex := nonaux-lex &
 			   COP +,
 			   H-TENSE #tense,
 			   FORMAL.SHON #form],
-                    VAL  cop_transitive & [COMPS #comps & [FIRST [LOCAL [CONT [HOOK #hook],
-									 CAT.HEAD [H-TENSE #tense,
-										   FORMAL.SHON #form],
-									 NUCL not_fin_conj]]]]],
-	       
-	       CONT [HOOK #hook,
-		     RELS <! !> ,
-		     HCONS <! !>],
-	       CTXT.BACKGROUND <! !>,
-	       ARG-S #comps,
-	       BAR +]],
+                    VAL  cop_transitive & 
+			  [COMPS #comps & 
+				 [FIRST [LOCAL [CONT [HOOK #hook],
+						CAT.HEAD [H-TENSE #tense,
+							  FORMAL.SHON #form],
+						NUCL not_fin_conj]]]]],
+		CONT [HOOK #hook,
+		      RELS <! !> ,
+		      HCONS <! !>],
+		CTXT.BACKGROUND <! !>,
+		ARG-S #comps,
+		BAR +]],
  INFLECTED +,
  J-NEEDS-AFFIX -].
 
@@ -8841,18 +8833,21 @@ reg-cop-lex-indicative-plain := reg-cop-lex-indicative &
 						   VAL.COMPS.FIRST [NON-LOCAL.QUE <! handle !>,
 								    LOCAL.CAT.HEAD adv_head]]].
 
-
+; (MS 2004-04-02): "もしそうなら修理にだした方がいいです"
+; なら
+; (FCB 2006-06-02) restricted the complement to be a noun_head
+; e.g. don't appear in: (lkb::do-parse-tty "座る なら 寝る")
 reg-cop-lex-conditional := reg-cop-lex &
-			   [SYNSEM.LOCAL [CAT.HEAD [MAIN-PRD -,
-						    MODUS conditional,
-						    C-MOD < [LOCAL [CAT.HEAD verb_head & [MAIN-PRD +],
-								    BAR +]] >,
-						    J-SPEC null,
-						    FIN -,
-						    H-TENSE present,
-						    VN -,
-						    MOD null]]].
-
+ [SYNSEM.LOCAL [CAT [HEAD  [MAIN-PRD -,
+			  MODUS conditional,
+			  C-MOD < [LOCAL [CAT.HEAD verb_head & [MAIN-PRD +],
+					  BAR +]] >,
+			  J-SPEC null,
+			  FIN -,
+			  H-TENSE present,
+			  VN -,
+			   MOD null],
+		     VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head]]].
 
 
 ; (MS 2004-11-17) Not all auxiliaries have a key relation. That's why I took this
@@ -9747,8 +9742,8 @@ cop-adj-stem-lex := adj-stem-lex &
 			ARG2 #nom]]]].
 
 n-obl-i-adj-stem-lex := cop-adj-stem-lex &
-   [SYNSEM.LOCAL.CAT.VAL.COMPS obl-1-arg & 
-			       [FIRST.LOCAL.CAT.HEAD noun_head]].
+ [SYNSEM.LOCAL.CAT.VAL.COMPS obl-1-arg & 
+       [FIRST.LOCAL.CAT.HEAD noun_head]].
 
 
 

@@ -101,12 +101,14 @@ lexeme-rule &
 ARGS.FIRST.STEMTYPE cons-stem].
 
 
-
+;; 　引く→引い て; 笑う→笑っ て; 
 t-lexeme-c-stem-infl-rule := 
 %suffix (く い) (る っ) (う っ) (す し) (つ っ)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
- ARGS.FIRST.STEMTYPE c-stem].
+ SYNSEM.LOCAL.CAT.HEAD ordinary-verb-stem_head,
+ ARGS.FIRST [STEMTYPE c-stem,
+	     SYNSEM.LOCAL.CAT.HEAD ordinary-verb-stem_head]].
 
 ;; (FCB 2003-08-07) added u-type (tou and kou - past tense is o-u-ta not o-t-ta)
 ; (MS 2005-09-22) it is better to list all c2-stem ending in う, otherwise we
@@ -577,7 +579,9 @@ a-lexeme-adj-stem-infl-rule :=
 %suffix (い く)
 lexeme-rule &
 [RMORPH-BIND-TYPE a-morph,
- ARGS.FIRST.STEMTYPE adj-stem].
+ SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head, 
+ ARGS.FIRST[ STEMTYPE adj-stem,
+	     SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head]].
 
 adj2adv-lexeme-infl-rule := 
 %suffix (い く)

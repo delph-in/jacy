@@ -499,6 +499,30 @@ comma-vmod1-lex &
 comma-vmod2 :=
 comma-vmod2-lex &
 [ORTH <! "、" !> ].
+;;; FCB western comma!
+comma1-pmod := 
+comma-pmod-lex &
+[ORTH <! "，" !>].
+
+comma1-advmod := 
+comma-advmod-lex &
+[ORTH <! "，" !>].
+
+comma1-infvmod :=
+comma-lex-2 &
+[ORTH <! "，" !>].
+
+comma1-interjmod :=
+comma-interjmod-lex &
+[ORTH <! "，" !>].
+
+comma1-vmod1 :=
+comma-vmod1-lex &
+[ORTH <! "，" !> ].
+
+comma1-vmod2 :=
+comma-vmod2-lex &
+[ORTH <! "，" !> ].
 
 parenthesis-init :=
 parenthesis-init-lex &
@@ -1999,6 +2023,11 @@ aru_det := det-lex  &
 [SYNSEM.LKEYS.KEYREL.PRED '_aru_q_rel,
  ORTH <! "ある" !> ].
 
+kaku_det := det-lex  &
+[SYNSEM.LKEYS.KEYREL.PRED '_kaku_q_rel,
+ ORTH <! "各" !> ].
+
+
 ; いかなる 
 
 ikanaru_1 := noun_mod-lex-l &
@@ -2265,3 +2294,21 @@ zen-prefix :=
 noun_mod-lex-l &
 [ORTH <! "前" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_zen_n_rel]].
+
+;(TK 06-04-19)
+;わが
+waga_2 := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_waga_n_1_rel,
+ ORTH <! "わが" !> ].
+
+;(TK 06-04-19)
+;来たる
+kitaru_4 := det-lex &
+[ORTH <! "来たる" !>, SYNSEM.LKEYS.KEYREL.PRED '_kitaru_q_4_rel].
+
+;(TK 06-04-20))
+;なあに
+; ex.「なあに、大した事ではないよ」
+naani_1 := interj-lex &
+[ORTH <! "なあに" !>, SYNSEM.LKEYS.KEYREL.PRED '_naani_x_1_rel].
+

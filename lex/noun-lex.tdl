@@ -1061,10 +1061,11 @@ SYNSEM.LKEYS.KEYREL [PRED '_kaijou_n_rel]].
 ;ordinary-nohon-n-lex &
 ;[ORTH <! "各" !>,
 ;SYNSEM.LKEYS.KEYREL [PRED '_kaku_n_rel]].
-kaku-prefix :=
-noun_mod-lex-l &
-[ORTH <! "各" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_kaku_n_rel]].
+; move to determiner
+; kaku-prefix :=
+; noun_mod-lex-l &
+; [ORTH <! "各" !>,
+; SYNSEM.LKEYS.KEYREL [PRED '_kaku_n_rel]].
 
 kaNbaN :=
 ordinary-nohon-n-lex &
@@ -4877,12 +4878,12 @@ ORTH <! "どれ" !>].
 dare :=
 wh-word-person-lex &
 [ORTH <! "誰" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_person_n_rel]].
+SYNSEM.LKEYS.KEYREL [PRED person_n_rel]].
 
 dare-hiragana :=
 wh-word-person-lex &
 [ORTH <! "だれ" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_person_n_rel]].
+SYNSEM.LKEYS.KEYREL [PRED person_n_rel]].
 
 dare-mo := affix-noun-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_dare_n_mo_rel,
@@ -9602,10 +9603,12 @@ ordinary-nohon-n-lex &
 ;	[SYNSEM.LKEYS.KEYREL.PRED '_ori_n_rel,
 ;          ORTH <! "おり" !>].
 
-daitou-noun :=  
-ordinary-nohon-n-lex &
-	[SYNSEM.LKEYS.KEYREL.PRED '_daitou_n_rel,
-          ORTH <! "大東" !>].
+
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;daitou-noun :=  
+;ordinary-nohon-n-lex &
+;	[SYNSEM.LKEYS.KEYREL.PRED '_daitou_n_rel,
+;          ORTH <! "大東" !>].
 
 michaku-noun :=  
 ordinary-nohon-n-lex &
@@ -32452,10 +32455,10 @@ aisuba-n_1 := ordinary-nohon-n-lex &
  ORTH <! "アイスバーン" !>].
 
 ; アイスランド 
-
-aisurando_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_aisurando_n_1_rel,
- ORTH <! "アイスランド" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;aisurando_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_aisurando_n_1_rel,
+; ORTH <! "アイスランド" !>].
 
 ; 愛想 
 
@@ -32565,16 +32568,16 @@ aima_1 := ordinary-nohon-n-lex &
 
 ; アイルランド 
 ; Used 1 times
-
-airurando_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_airurando_n_1_rel,
- ORTH <! "アイルランド" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;airurando_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_airurando_n_1_rel,
+; ORTH <! "アイルランド" !>].
 
 ; アイルランド共和国 
-
-airurandokyouwakoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_airurandokyouwakoku_n_1_rel,
- ORTH <! "アイルランド共和国" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;airurandokyouwakoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_airurandokyouwakoku_n_1_rel,
+; ORTH <! "アイルランド共和国" !>].
 
 ; アイロン 
 
@@ -33419,10 +33422,10 @@ aji_1_1 := ordinary-nohon-n-lex &
 
 ; アジア 
 ; Used 18 times
-
-ajia_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ajia_n_1_rel,
- ORTH <! "アジア" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;ajia_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ajia_n_1_rel,
+; ORTH <! "アジア" !>].
 
 ; 足跡 
 
@@ -34065,10 +34068,10 @@ ahiru_1 := ordinary-nohon-n-lex &
  ORTH <! "あひる" !>].
 
 ; アフガニスタン 
-
-afuganisutan_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_afuganisutan_n_1_rel,
- ORTH <! "アフガニスタン" !>].
+;(TK 06-03-14 changed to loc_name-lex)
+;afuganisutan_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_afuganisutan_n_1_rel,
+; ORTH <! "アフガニスタン" !>].
 
 ; あぶく 
 ; Used 1 times
@@ -34718,10 +34721,10 @@ arabiamoji_1 := ordinary-nohon-n-lex &
  ORTH <! "アラビア文字" !>].
 
 ; アラブ 
-
-arabu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_arabu_n_1_rel,
- ORTH <! "アラブ" !>].
+;(TK 06-03-14 changed to loc_name-lex)
+;arabu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_arabu_n_1_rel,
+; ORTH <! "アラブ" !>].
 
 ; あられ 
 ; Used 4 times
@@ -34807,10 +34810,10 @@ aruko-ruranpu_1 := ordinary-nohon-n-lex &
  ORTH <! "アルコールランプ" !>].
 
 ; アルゼンチン 
-
-aruzenchin_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_aruzenchin_n_1_rel,
- ORTH <! "アルゼンチン" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;aruzenchin_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_aruzenchin_n_1_rel,
+; ORTH <! "アルゼンチン" !>].
 
 ; アル中 
 ; Used 1 times
@@ -35035,10 +35038,10 @@ angou_1 := ordinary-nohon-n-lex &
  ORTH <! "暗号" !>].
 
 ; アンゴラ 
-
-angora_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_angora_n_1_rel,
- ORTH <! "アンゴラ" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;angora_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_angora_n_1_rel,
+; ORTH <! "アンゴラ" !>].
 
 ; アンサンブル 
 
@@ -36047,10 +36050,10 @@ izumi_1 := ordinary-nohon-n-lex &
  ORTH <! "泉" !>].
 
 ; 出雲 
-
-izumo_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_izumo_n_1_rel,
- ORTH <! "出雲" !>].
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;izumo_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_izumo_n_1_rel,
+; ORTH <! "出雲" !>].
 
 ; イスラエル 
 
@@ -36081,10 +36084,10 @@ isuramukyou_1 := ordinary-nohon-n-lex &
 
 ; 伊勢 
 ; Used 1 times
-
-ise_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ise_n_1_rel,
- ORTH <! "伊勢" !>].
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;ise_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ise_n_1_rel,
+; ORTH <! "伊勢" !>].
 
 ; 伊勢えび 
 
@@ -37494,10 +37497,10 @@ irasutore-ta-_1 := ordinary-nohon-n-lex &
 
 ; イラン 
 ; Used 2 times
-
-iran_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_iran_n_1_rel,
- ORTH <! "イラン" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;iran_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_iran_n_1_rel,
+; ORTH <! "イラン" !>].
 
 ; 入り合い 
 
@@ -38393,10 +38396,10 @@ uo-ta-_1 := ordinary-nohon-n-lex &
  ORTH <! "ウオーター" !>].
 
 ; ウォール街 
-
-uo-rugai_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_uoorugai_n_1_rel,
- ORTH <! "ウォール街" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;uo-rugai_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_uoorugai_n_1_rel,
+; ORTH <! "ウォール街" !>].
 
 ; ヴォキャブラリー 
 
@@ -40433,10 +40436,10 @@ edamame_1 := ordinary-nohon-n-lex &
  ORTH <! "枝豆" !>].
 
 ; エチオピア 
-
-echiopia_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_echiopia_n_1_rel,
- ORTH <! "エチオピア" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;echiopia_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_echiopia_n_1_rel,
+; ORTH <! "エチオピア" !>].
 
 ; エチケット 
 
@@ -40445,10 +40448,10 @@ echiketto_1 := ordinary-nohon-n-lex &
  ORTH <! "エチケット" !>].
 
 ; 越前 
-
-echizen_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_echizen_n_1_rel,
- ORTH <! "越前" !>].
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;echizen_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_echizen_n_1_rel,
+; ORTH <! "越前" !>].
 
 ; エチルアルコール 
 ; Used 2 times
@@ -41397,10 +41400,10 @@ ouja_1 := ordinary-nohon-n-lex &
 
 ; 欧州 
 ; Used 1 times
-
-oushuu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_oushuu_n_1_rel,
- ORTH <! "欧州" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;oushuu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_oushuu_n_1_rel,
+; ORTH <! "欧州" !>].
 
 ; 王女 
 ; Used 1 times
@@ -41498,16 +41501,16 @@ oufukuhagaki_1 := ordinary-nohon-n-lex &
 
 ; 欧米 
 ; Used 6 times
-
-oubei_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_oubei_n_1_rel,
- ORTH <! "欧米" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;oubei_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_oubei_n_1_rel,
+; ORTH <! "欧米" !>].
 
 ; 近江 
-
-oumi_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_oumi_n_1_rel,
- ORTH <! "近江" !>].
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;oumi_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_oumi_n_1_rel,
+; ORTH <! "近江" !>].
 
 ; オウム 
 ; Used 2 times
@@ -45207,10 +45210,10 @@ gaimu_1 := ordinary-nohon-n-lex &
  ORTH <! "外務" !>].
 
 ; 外務省 
-
-gaimushou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_gaimushou_n_1_rel,
- ORTH <! "外務省" !>].
+;(TK 06-04-14 changed to inst_name-lex)
+;gaimushou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_gaimushou_n_1_rel,
+; ORTH <! "外務省" !>].
 
 ; 外務大臣 
 
@@ -49988,10 +49991,10 @@ kanpouyaku_1 := ordinary-nohon-n-lex &
  ORTH <! "漢方薬" !>].
 
 ; カンボジア 
-
-kanbojia_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kanbojia_n_1_rel,
- ORTH <! "カンボジア" !>].
+;(TK 06-03-14 changed to loc_name-lex)
+;kanbojia_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kanbojia_n_1_rel,
+; ORTH <! "カンボジア" !>].
 
 ; 巻末 
 
@@ -52280,10 +52283,10 @@ gyuunyuu_1 := ordinary-nohon-n-lex &
  ORTH <! "牛乳" !>].
 
 ; キューバ 
-
-kyu-ba_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kyuuba_n_1_rel,
- ORTH <! "キューバ" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;kyu-ba_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kyuuba_n_1_rel,
+; ORTH <! "キューバ" !>].
 
 ; 吸盤 
 ; Used 2 times
@@ -53052,10 +53055,10 @@ kyokuchou_1 := ordinary-nohon-n-lex &
  ORTH <! "局長" !>].
 
 ; 極東 
-
-kyokutou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kyokutou_n_1_rel,
- ORTH <! "極東" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;kyokutou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kyokutou_n_1_rel,
+; ORTH <! "極東" !>].
 
 ; 局番 
 
@@ -53742,10 +53745,10 @@ kinkonshiki_1 := ordinary-nohon-n-lex &
  ORTH <! "金婚式" !>].
 
 ; 銀座 
-
-ginza_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ginza_n_1_rel,
- ORTH <! "銀座" !>].
+;(TK 06-04-17 noun→loc-or-surname-or-instname-lex)
+;ginza_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ginza_n_1_rel,
+; ORTH <! "銀座" !>].
 
 ; 近視 
 
@@ -56253,16 +56256,16 @@ keihanzai_1 := ordinary-nohon-n-lex &
 
 ; 京阪神 
 ; Used 1 times
-
-keihanshin_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_keihanshin_n_1_rel,
- ORTH <! "京阪神" !>].
+;(TK 06-04-18 changed to loc_name-lex)
+;keihanshin_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_keihanshin_n_1_rel,
+; ORTH <! "京阪神" !>].
 
 ; 京浜 
-
-keihin_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_keihin_n_1_rel,
- ORTH <! "京浜" !>].
+;(TK 06-04-18 changed to loc_name-lex)
+;keihin_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_keihin_n_1_rel,
+; ORTH <! "京浜" !>].
 
 ; 景品 
 ; Used 2 times
@@ -60162,10 +60165,10 @@ kokurui_1 := ordinary-nohon-n-lex &
  ORTH <! "穀類" !>].
 
 ; 国連 
-
-kokuren_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_kokuren_n_1_rel,
- ORTH <! "国連" !>].
+;(TK 06-03-13 changed to inst_name-lex)
+;kokuren_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_kokuren_n_1_rel,
+; ORTH <! "国連" !>].
 
 ; 焦げ 
 ; Used 1 times
@@ -65657,10 +65660,10 @@ jigoujitoku_1 := ordinary-nohon-n-lex &
 
 ; 四国 
 ; Used 1 times
-
-shikoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shikoku_n_1_rel,
- ORTH <! "四国" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;shikoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shikoku_n_1_rel,
+; ORTH <! "四国" !>].
 
 ; 自国 
 ; Used 4 times
@@ -66350,10 +66353,10 @@ jichikai_1 := ordinary-nohon-n-lex &
  ORTH <! "自治会" !>].
 
 ; 自治省 
-
-jichishou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_jichishou_n_1_rel,
- ORTH <! "自治省" !>].
+;(TK 06-03-13 changed to inst_name-lex)
+;jichishou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_jichishou_n_1_rel,
+; ORTH <! "自治省" !>].
 
 ; 自治体 
 
@@ -67450,10 +67453,11 @@ shimatsusho_1 := ordinary-nohon-n-lex &
  ORTH <! "始末書" !>].
 
 ; 島根 
-
-shimane_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_shimane_n_1_rel,
- ORTH <! "島根" !>].
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;普通名詞としてはめったに使わない
+;shimane_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_shimane_n_1_rel,
+; ORTH <! "島根" !>].
 
 ; 締まり 
 ; Used 1 times
@@ -73820,10 +73824,10 @@ suishin_1 := ordinary-nohon-n-lex &
  ORTH <! "水深" !>].
 
 ; スイス 
-
-suisu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suisu_n_1_rel,
- ORTH <! "スイス" !>].
+;(TK 06-04-18 changed to loc_name-lex)
+;suisu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_suisu_n_1_rel,
+; ORTH <! "スイス" !>].
 
 ; 彗星 
 
@@ -74033,10 +74037,10 @@ suiro_1 := ordinary-nohon-n-lex &
 
 ; スウェーデン 
 ; Used 1 times
-
-sue-den_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sueeden_n_rel,
- ORTH <! "スウェーデン" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;sue-den_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sueeden_n_rel,
+; ORTH <! "スウェーデン" !>].
 
 ; 数学 
 ; Used 3 times
@@ -75330,10 +75334,10 @@ supearibu_1 := ordinary-nohon-n-lex &
 
 ; スペイン 
 ; Used 2 times
-
-supein_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_supein_n_1_rel,
- ORTH <! "スペイン" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;supein_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_supein_n_1_rel,
+; ORTH <! "スペイン" !>].
 
 ; スペース 
 ; Used 1 times
@@ -75710,10 +75714,10 @@ surira-_1 := ordinary-nohon-n-lex &
 
 ; スリランカ 
 ; Used 2 times
-
-suriranka_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_suriranka_n_1_rel,
- ORTH <! "スリランカ" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;suriranka_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_suriranka_n_1_rel,
+; ORTH <! "スリランカ" !>].
 
 ; スリル 
 
@@ -75877,10 +75881,10 @@ seieki_1 := ordinary-nohon-n-lex &
 
 ; 西欧 
 ; Used 1 times
-
-seiou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_seiou_n_1_rel,
- ORTH <! "西欧" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;seiou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_seiou_n_1_rel,
+; ORTH <! "西欧" !>].
 
 ; 成果 
 ; Used 5 times
@@ -76970,10 +76974,10 @@ sekigaisen_1 := ordinary-nohon-n-lex &
  ORTH <! "赤外線" !>].
 
 ; 関ケ原 
-
-sekigahara_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sekigahara_n_1_rel,
- ORTH <! "関ケ原" !>].
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;sekigahara_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sekigahara_n_1_rel,
+; ORTH <! "関ケ原" !>].
 
 ; 石材 
 ; Used 1 times
@@ -79485,16 +79489,16 @@ sobieto_1 := ordinary-nohon-n-lex &
 
 ; ソビエト社会主義共和国連邦 
 ; Used 1 times
-
-sobietoshakaishugikyouwakokurenpou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sobietoshakaishugikyouwakokurenpou_n_1_rel,
- ORTH <! "ソビエト社会主義共和国連邦" !>].
+;(TK 06-04-17 noun→loc_name-lex)
+;sobietoshakaishugikyouwakokurenpou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sobietoshakaishugikyouwakokurenpou_n_1_rel,
+; ORTH <! "ソビエト社会主義共和国連邦" !>].
 
 ; ソビエト連邦 
-
-sobietorenpou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_sobietorenpou_n_1_rel,
- ORTH <! "ソビエト連邦" !>].
+;(TK 06-04-17 noun→loc_name-lex)
+;sobietorenpou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_sobietorenpou_n_1_rel,
+; ORTH <! "ソビエト連邦" !>].
 
 ; 祖父 
 
@@ -79626,10 +79630,10 @@ sori_1_2 := ordinary-nohon-n-lex &
 
 ; ソ連 
 ; Used 3 times
-
-soren_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_soren_n_1_rel,
- ORTH <! "ソ連" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;soren_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_soren_n_1_rel,
+; ORTH <! "ソ連" !>].
 
 ; そろばん 
 ; Used 2 times
@@ -80416,10 +80420,10 @@ taisei_1_1 := ordinary-nohon-n-lex &
 
 ; 大西洋 
 ; Used 2 times
-
-taiseiyou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taiseiyou_n_1_rel,
- ORTH <! "大西洋" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;taiseiyou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taiseiyou_n_1_rel,
+; ORTH <! "大西洋" !>].
 
 ; 体積 
 ; Used 10 times
@@ -80730,10 +80734,10 @@ daibubun_1 := ordinary-nohon-n-lex &
 
 ; 太平洋 
 ; Used 3 times
-
-taiheiyou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_taiheiyou_n_1_rel,
- ORTH <! "太平洋" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;taiheiyou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_taiheiyou_n_1_rel,
+; ORTH <! "太平洋" !>].
 
 ; 太平洋戦争 
 ; Used 2 times
@@ -83518,10 +83522,10 @@ chiheisen_1 := ordinary-nohon-n-lex &
 
 ; チベット 
 ; Used 1 times
-
-chibetto_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chibetto_n_1_rel,
- ORTH <! "チベット" !>].
+;(TK 06-04-18 changed to loc_name-lex)
+;chibetto_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chibetto_n_1_rel,
+; ORTH <! "チベット" !>].
 
 ; 地方議会 
 
@@ -83989,10 +83993,10 @@ chuuka_1 := ordinary-nohon-n-lex &
 
 ; 中華人民共和国 
 ; Used 1 times
-
-chuukajinminkyouwakoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuukajinminkyouwakoku_n_1_rel,
- ORTH <! "中華人民共和国" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;chuukajinminkyouwakoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuukajinminkyouwakoku_n_1_rel,
+; ORTH <! "中華人民共和国" !>].
 
 ; 中華鍋 
 
@@ -84001,10 +84005,10 @@ chuukanabe_1 := ordinary-nohon-n-lex &
  ORTH <! "中華鍋" !>].
 
 ; 中華民国 
-
-chuukaminkoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuukaminkoku_n_1_rel,
- ORTH <! "中華民国" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;chuukaminkoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuukaminkoku_n_1_rel,
+; ORTH <! "中華民国" !>].
 
 ; 中華料理 
 ; Used 3 times
@@ -84071,10 +84075,10 @@ chuukyori_1 := ordinary-nohon-n-lex &
 
 ; 中近東 
 ; Used 1 times
-
-chuukintou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuukintou_n_1_rel,
- ORTH <! "中近東" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;chuukintou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuukintou_n_1_rel,
+; ORTH <! "中近東" !>].
 
 ; 忠犬 
 
@@ -84123,10 +84127,10 @@ chuukounen_1 := ordinary-nohon-n-lex &
 
 ; 中国地方 
 ; Used 7 times
-
-chuugokuchihou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuugokuchihou_n_1_rel,
- ORTH <! "中国地方" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;chuugokuchihou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuugokuchihou_n_1_rel,
+; ORTH <! "中国地方" !>].
 
 ; 駐在所 
 
@@ -84224,10 +84228,10 @@ chuuto_1 := ordinary-nohon-n-lex &
  ORTH <! "中途" !>].
 
 ; 中東 
-
-chuutou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuutou_n_1_rel,
- ORTH <! "中東" !>].
+;(TK 06-03-13 changed to loc-or-surname-lex)
+;chuutou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuutou_n_1_rel,
+; ORTH <! "中東" !>].
 
 ; 中とろ 
 
@@ -84276,10 +84280,10 @@ chuubu_1 := ordinary-nohon-n-lex &
 
 ; 中部地方 
 ; Used 2 times
-
-chuubuchihou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chuubuchihou_n_1_rel,
- ORTH <! "中部地方" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;chuubuchihou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chuubuchihou_n_1_rel,
+; ORTH <! "中部地方" !>].
 
 ; チューブ 
 ; Used 1 times
@@ -84495,10 +84499,10 @@ choujin_1_1 := ordinary-nohon-n-lex &
 
 ; 朝鮮 
 ; Used 1 times
-
-chousen_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_chousen_n_1_rel,
- ORTH <! "朝鮮" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;chousen_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_chousen_n_1_rel,
+; ORTH <! "朝鮮" !>].
 
 ; 朝鮮戦争 
 ;(TK 06-01-31 changed to ippan-name-lex)
@@ -88213,10 +88217,10 @@ denpou_1 := ordinary-nohon-n-lex &
  ORTH <! "電報" !>].
 
 ; デンマーク 
-
-denma-ku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_denmaaku_n_1_rel,
- ORTH <! "デンマーク" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;denma-ku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_denmaaku_n_1_rel,
+; ORTH <! "デンマーク" !>].
 
 ; 天窓 
 
@@ -88386,10 +88390,10 @@ toiawase_1 := ordinary-nohon-n-lex &
 
 ; ドイツ連邦共和国 
 ; Used 1 times
-
-doitsurenpoukyouwakoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_doitsurenpoukyouwakoku_n_1_rel,
- ORTH <! "ドイツ連邦共和国" !>].
+;(TK 06-04-17 chabged to loc_name-lex)
+;doitsurenpoukyouwakoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_doitsurenpoukyouwakoku_n_1_rel,
+; ORTH <! "ドイツ連邦共和国" !>].
 
 ; トイレ 
 ; Used 1 times
@@ -88495,22 +88499,22 @@ douka_1_4 := ordinary-nohon-n-lex &
 
 ; 東海地方 
 ; Used 3 times
-
-toukaichihou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toukaichihou_n_1_rel,
- ORTH <! "東海地方" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;toukaichihou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toukaichihou_n_1_rel,
+; ORTH <! "東海地方" !>].
 
 ; 東海道 
-
-toukaidou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toukaidou_n_1_rel,
- ORTH <! "東海道" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;toukaidou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toukaidou_n_1_rel,
+; ORTH <! "東海道" !>].
 
 ; 東海道五十三次 
-
-toukaidougojuusantsugi_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_toukaidougojuusantsugi_n_1_rel,
- ORTH <! "東海道五十三次" !>].
+;(TK 06-04-17 changed to ippan-name-lex)
+;toukaidougojuusantsugi_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_toukaidougojuusantsugi_n_1_rel,
+; ORTH <! "東海道五十三次" !>].
 
 ; 東海道新幹線 
 
@@ -89074,10 +89078,10 @@ touhoku_1 := ordinary-nohon-n-lex &
 
 ; 東北地方 
 ; Used 4 times
-
-touhokuchihou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_touhokuchihou_n_1_rel,
- ORTH <! "東北地方" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;touhokuchihou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_touhokuchihou_n_1_rel,
+; ORTH <! "東北地方" !>].
 
 ; 東北新幹線 
 
@@ -91841,12 +91845,13 @@ nagomi_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_nagomi_n_1_rel,
  ORTH <! "和み" !>].
 
+;(TK 06-04-17 changed to loc-or-surname-lex)
 ; 名古屋 
 ; Used 1 times
-
-nagoya_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nagoya_n_1_rel,
- ORTH <! "名古屋" !>].
+;
+;nagoya_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nagoya_n_1_rel,
+; ORTH <! "名古屋" !>].
 
 ; なごり 
 
@@ -92451,10 +92456,10 @@ nanido_1 := ordinary-nohon-n-lex &
  ORTH <! "難易度" !>].
 
 ; 南欧 
-
-nanou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nanou_n_1_rel,
- ORTH <! "南欧" !>].
+;(TK 06-04-17 noun→loc_name-lex)
+;nanou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nanou_n_1_rel,
+; ORTH <! "南欧" !>].
 
 ; 南枝 
 
@@ -92495,10 +92500,10 @@ nankyuu_1 := ordinary-nohon-n-lex &
 
 ; 南極 
 ; Used 2 times
-
-nankyoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nankyoku_n_1_rel,
- ORTH <! "南極" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;nankyoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nankyoku_n_1_rel,
+; ORTH <! "南極" !>].
 
 ; 南極圏 
 
@@ -92508,10 +92513,10 @@ nankyokuken_1 := ordinary-nohon-n-lex &
 
 ; 南極大陸 
 ; Used 1 times
-
-nankyokutairiku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nankyokutairiku_n_1_rel,
- ORTH <! "南極大陸" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;nankyokutairiku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nankyokutairiku_n_1_rel,
+; ORTH <! "南極大陸" !>].
 
 ; 南極点 
 ; Used 1 times
@@ -92680,10 +92685,10 @@ nanbu_1 := ordinary-nohon-n-lex &
 
 ; 南米 
 ; Used 5 times
-
-nanbei_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nanbei_n_1_rel,
- ORTH <! "南米" !>].
+;(TK 06-03-13)
+;nanbei_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nanbei_n_1_rel,
+; ORTH <! "南米" !>].
 
 ; 南北 
 ; Used 1 times
@@ -93062,10 +93067,10 @@ nijisseiki_1 := ordinary-nohon-n-lex &
  ORTH <! "二十世紀" !>].
 
 ; 西ドイツ 
-
-nishidoitsu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nishidoitsu_n_1_rel,
- ORTH <! "西ドイツ" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;nishidoitsu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nishidoitsu_n_1_rel,
+; ORTH <! "西ドイツ" !>].
 
 ; 二者択一 
 
@@ -93509,16 +93514,16 @@ nihonga_1 := ordinary-nohon-n-lex &
 
 ; 日本海 
 ; Used 1 times
-
-nihonkai_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nihonkai_n_1_rel,
- ORTH <! "日本海" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;nihonkai_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nihonkai_n_1_rel,
+; ORTH <! "日本海" !>].
 
 ; 日本銀行 
-
-nihonginkou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nihonginkou_n_1_rel,
- ORTH <! "日本銀行" !>].
+;(TK 06-04-17 changed to inst_name-lex)
+;nihonginkou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nihonginkou_n_1_rel,
+; ORTH <! "日本銀行" !>].
 
 ; 日本銀行券 
 
@@ -95702,10 +95707,10 @@ norimono_1 := ordinary-nohon-n-lex &
  ORTH <! "乗り物" !>].
 
 ; ノルウェー 
-
-noruue-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_noruuee_n_1_rel,
- ORTH <! "ノルウェー" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;noruue-_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_noruuee_n_1_rel,
+; ORTH <! "ノルウェー" !>].
 
 ; ノルディック種目 
 
@@ -95997,10 +96002,10 @@ ba-na-_1 := ordinary-nohon-n-lex &
  ORTH <! "バーナー" !>].
 
 ; バーバリー 
-
-ba-bari-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_baabarii_n_rel,
- ORTH <! "バーバリー" !>].
+;(TK 06-03-13 changed to surname-or-instname-lex)
+;ba-bari-_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_baabarii_n_rel,
+; ORTH <! "バーバリー" !>].
 
 ; ハーフ 
 
@@ -96866,10 +96871,10 @@ hakase_1 := ordinary-nohon-n-lex &
  ORTH <! "博士" !>].
 
 ; 博多 
-
-hakata_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hakata_n_1_rel,
- ORTH <! "博多" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;hakata_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hakata_n_1_rel,
+; ORTH <! "博多" !>].
 
 ; 歯型 
 
@@ -96904,10 +96909,10 @@ hakike_1 := ordinary-nohon-n-lex &
  ORTH <! "吐き気" !>].
 
 ; パキスタン 
-
-pakisutan_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pakisutan_n_1_rel,
- ORTH <! "パキスタン" !>].
+;(TK 06-03-14 changed to loc_name-lex)
+;pakisutan_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pakisutan_n_1_rel,
+; ORTH <! "パキスタン" !>].
 
 ; 掃き掃除 
 
@@ -97392,10 +97397,10 @@ hajikko_1 := ordinary-nohon-n-lex &
  ORTH <! "端っこ" !>].
 
 ; パシフィックリーグ 
-
-pashifikkuri-gu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_pashifikkuriigu_n_1_rel,
- ORTH <! "パシフィックリーグ" !>].
+;(TK 06-03-13 changed to inst_name-lex)
+;pashifikkuri-gu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_pashifikkuriigu_n_1_rel,
+; ORTH <! "パシフィックリーグ" !>].
 
 ; 始まり 
 ; Used 4 times
@@ -98553,10 +98558,10 @@ hanafubuki_1 := ordinary-nohon-n-lex &
  ORTH <! "花吹雪" !>].
 
 ; パナマ 
-
-panama_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_panama_n_1_rel,
- ORTH <! "パナマ" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;panama_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_panama_n_1_rel,
+; ORTH <! "パナマ" !>].
 
 ; 花見 
 
@@ -102952,10 +102957,10 @@ hirudoki_1 := ordinary-nohon-n-lex &
  ORTH <! "昼時" !>].
 
 ; ビルマ 
-
-biruma_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_biruma_n_1_rel,
- ORTH <! "ビルマ" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;biruma_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_biruma_n_1_rel,
+; ORTH <! "ビルマ" !>].
 
 ; 昼飯 
 ; Used 3 times
@@ -103658,10 +103663,10 @@ buiyon_1 := ordinary-nohon-n-lex &
 
 ; フィリピン 
 ; Used 1 times
-
-firipin_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_firipin_n_1_rel,
- ORTH <! "フィリピン" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;firipin_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_firipin_n_1_rel,
+; ORTH <! "フィリピン" !>].
 
 ; フィルター 
 ; Used 1 times
@@ -103698,10 +103703,10 @@ finga-_1 := ordinary-nohon-n-lex &
 
 ; フィンランド 
 ; Used 1 times
-
-finrando_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_finrando_n_1_rel,
- ORTH <! "フィンランド" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;finrando_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_finrando_n_1_rel,
+; ORTH <! "フィンランド" !>].
 
 ; 風圧 
 
@@ -105617,10 +105622,10 @@ buraja-_1 := ordinary-nohon-n-lex &
  ORTH <! "ブラジャー" !>].
 
 ; ブラジル 
-
-burajiru_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_burajiru_n_1_rel,
- ORTH <! "ブラジル" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;burajiru_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_burajiru_n_1_rel,
+; ORTH <! "ブラジル" !>].
 
 ; ブラスバンド 
 
@@ -107967,23 +107972,23 @@ beru_1 := ordinary-nohon-n-lex &
  ORTH <! "ベル" !>].
 
 ; ペルー 
-
-peru-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_peru_n_1_rel,
- ORTH <! "ペルー" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;peru-_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_peru_n_1_rel,
+; ORTH <! "ペルー" !>].
 
 ; ベルギー 
-
-berugi-_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_berugi_n_1_rel,
- ORTH <! "ベルギー" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;berugi-_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_berugi_n_1_rel,
+; ORTH <! "ベルギー" !>].
 
 ; ペルシャ 
 ; Used 2 times
-
-perusha_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_perusha_n_1_rel,
- ORTH <! "ペルシャ" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;perusha_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_perusha_n_1_rel,
+; ORTH <! "ペルシャ" !>].
 
 ; ヘルスセンター 
 
@@ -109134,10 +109139,10 @@ ho-mu_1 := ordinary-nohon-n-lex &
 
 ; ポーランド 
 ; Used 2 times
-
-po-rando_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_po_n_rel,
- ORTH <! "ポーランド" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;po-rando_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_po_n_rel,
+; ORTH <! "ポーランド" !>].
 
 ; ボーリング 
 ; Used 1 times
@@ -109219,10 +109224,10 @@ bokyaburari-_1 := ordinary-nohon-n-lex &
  ORTH <! "ボキャブラリー" !>].
 
 ; 北欧 
-
-hokuou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hokuou_n_1_rel,
- ORTH <! "北欧" !>].
+;(TK 06-04-17 noun→loc_name-lex)
+;hokuou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hokuou_n_1_rel,
+; ORTH <! "北欧" !>].
 
 ; ボクサー 
 
@@ -109305,10 +109310,10 @@ hokubu_1 := ordinary-nohon-n-lex &
 
 ; 北米 
 ; Used 1 times
-
-hokubei_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hokubei_n_1_rel,
- ORTH <! "北米" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;hokubei_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hokubei_n_1_rel,
+; ORTH <! "北米" !>].
 
 ; 北洋 
 ;(TK 06-01-31 changed to loc_name-lex)
@@ -109711,10 +109716,10 @@ hochouki_1 := ordinary-nohon-n-lex &
 
 ; 北海 
 ; Used 2 times
-
-hokkai_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hokkai_n_1_rel,
- ORTH <! "北海" !>].
+;(TK 06-02-28 changed to loc-or-surname-lex)
+;hokkai_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hokkai_n_1_rel,
+; ORTH <! "北海" !>].
 
 ; 北海道 
 ; Used 8 times
@@ -109725,16 +109730,16 @@ hokkai_1 := ordinary-nohon-n-lex &
 
 ; 北極 
 ; Used 2 times
-
-hokkyoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hokkyoku_n_1_rel,
- ORTH <! "北極" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;hokkyoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hokkyoku_n_1_rel,
+; ORTH <! "北極" !>].
 
 ; 北極海 
-
-hokkyokukai_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hokkyokukai_n_1_rel,
- ORTH <! "北極海" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;hokkyokukai_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hokkyokukai_n_1_rel,
+; ORTH <! "北極海" !>].
 
 ; 北極熊 
 
@@ -110473,10 +110478,10 @@ honsha_1 := ordinary-nohon-n-lex &
 
 ; 本州 
 ; Used 4 times
-
-honshuu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_honshuu_n_1_rel,
- ORTH <! "本州" !>].
+;(TK 06-04-18 changed to loc_name-lex)
+;honshuu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_honshuu_n_1_rel,
+; ORTH <! "本州" !>].
 
 ; 本性 
 
@@ -111892,10 +111897,10 @@ manyuaru_1 := ordinary-nohon-n-lex &
  ORTH <! "マニュアル" !>].
 
 ; マニラ 
-
-manira_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_manira_n_1_rel,
- ORTH <! "マニラ" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;manira_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_manira_n_1_rel,
+; ORTH <! "マニラ" !>].
 
 ; マネージメント 
 
@@ -112150,10 +112155,10 @@ mararia_1 := ordinary-nohon-n-lex &
 
 ; マリア 
 ; Used 1 times
-
-maria_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_maria_n_1_rel,
- ORTH <! "マリア" !>].
+;(TK 06-04-20 changed to other_name-lex)
+;maria_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_maria_n_1_rel,
+; ORTH <! "マリア" !>].
 
 ; マリーンブルー 
 
@@ -112168,10 +112173,10 @@ marionetto_1 := ordinary-nohon-n-lex &
  ORTH <! "マリオネット" !>].
 
 ; マリネ 
-
-marine_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_marine_n_1_rel,
- ORTH <! "マリネ" !>].
+;(TK 06-05-02 changed to vn-trans1-lex)
+;marine_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_marine_n_1_rel,
+; ORTH <! "マリネ" !>].
 
 ; マリファナ 
 
@@ -112259,10 +112264,10 @@ maruyake_1 := ordinary-nohon-n-lex &
  ORTH <! "丸焼け" !>].
 
 ; マレーシア 
-
-mare-shia_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mare_n_shia_1_rel,
- ORTH <! "マレーシア" !>].
+;(TK 06-04-18 changed to loc_name-lex)
+;mare-shia_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_mare_n_shia_1_rel,
+; ORTH <! "マレーシア" !>].
 
 ; マロン 
 
@@ -114032,10 +114037,10 @@ miwake_1 := ordinary-nohon-n-lex &
 
 ; 明 
 ; Used 1 times
-
-min_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_min_n_1_rel,
- ORTH <! "明" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;min_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_min_n_1_rel,
+; ORTH <! "明" !>].
 
 ; 民営 
 
@@ -116796,10 +116801,10 @@ morokoshi_1_1 := ordinary-nohon-n-lex &
  ORTH <! "もろこし" !>].
 
 ; モロッコ 
-
-morokko_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_morokko_n_1_rel,
- ORTH <! "モロッコ" !>].
+;(TK 06-06-17 changed to loc_name-lex)
+;morokko_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_morokko_n_1_rel,
+; ORTH <! "モロッコ" !>].
 
 ; 諸手 
 
@@ -116835,10 +116840,10 @@ mongen_1 := ordinary-nohon-n-lex &
  ORTH <! "門限" !>].
 
 ; モンゴル 
-
-mongoru_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_mongoru_n_1_rel,
- ORTH <! "モンゴル" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;mongoru_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_mongoru_n_1_rel,
+; ORTH <! "モンゴル" !>].
 
 ; 紋章 
 ; Used 1 times
@@ -118093,10 +118098,10 @@ yuuyami_1 := ordinary-nohon-n-lex &
 
 ; ユーラシア 
 ; Used 3 times
-
-yu-rashia_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_yu_n_rashia_1_rel,
- ORTH <! "ユーラシア" !>].
+;(TK 06-04-27 changed to loc_name-lex)
+;yu-rashia_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_yu_n_rashia_1_rel,
+; ORTH <! "ユーラシア" !>].
 
 ; 有料道路 
 
@@ -120950,10 +120955,10 @@ ryuugi_1 := ordinary-nohon-n-lex &
 
 ; 琉球 
 ; Used 1 times
-
-ryuukyuu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ryuukyuu_n_1_rel,
- ORTH <! "琉球" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;ryuukyuu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ryuukyuu_n_1_rel,
+; ORTH <! "琉球" !>].
 
 ; 流行歌 
 ; Used 3 times
@@ -122685,10 +122690,10 @@ ro-puue-_1 := ordinary-nohon-n-lex &
 
 ; ローマ 
 ; Used 3 times
-
-ro-ma_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_ro_n_ma_1_rel,
- ORTH <! "ローマ" !>].
+;(TK 06-03-13 changed to loc_name-lex)
+;ro-ma_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_ro_n_ma_1_rel,
+; ORTH <! "ローマ" !>].
 
 ; ローマ教皇 
 
@@ -122816,10 +122821,10 @@ rojiura_1 := ordinary-nohon-n-lex &
 
 ; ロシア 
 ; Used 4 times
-
-roshia_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_roshia_n_1_rel,
- ORTH <! "ロシア" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;roshia_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_roshia_n_1_rel,
+; ORTH <! "ロシア" !>].
 
 ; ロシア語 
 
@@ -124264,10 +124269,15 @@ koujouken_1 := ordinary-nohon-n-lex &
  ORTH <! "好条件" !>].
 
 ; この辺 
+;(TK 06-04-19 changed to pron-loc-ref-lex)
+;konohen_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_konohen_n_1_rel,
+; ORTH <! "この辺" !>].
+konohen_1 :=
+pron-loc-ref-lex &
+[ORTH <! "この辺" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_konohen_n_rel].
 
-konohen_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_konohen_n_1_rel,
- ORTH <! "この辺" !>].
 
 ; 小料理屋 
 
@@ -124458,10 +124468,10 @@ jukudo_1 := ordinary-nohon-n-lex &
  ORTH <! "熟度" !>].
 
 ; 上越 
-
-jouetsu_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_jouetsu_n_1_rel,
- ORTH <! "上越" !>].
+;(TK 06-04-17 changed to loc-or-surname-lex)
+;jouetsu_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_jouetsu_n_1_rel,
+; ORTH <! "上越" !>].
 
 ; 上向 
 
@@ -124764,10 +124774,10 @@ nanmondai_1 := ordinary-nohon-n-lex &
 
 ; 西日本 
 ; Used 1 times
-
-nishinihon_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nishinihon_n_1_rel,
- ORTH <! "西日本" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;nishinihon_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_nishinihon_n_1_rel,
+; ORTH <! "西日本" !>].
 
 ; 二十四時間 
 
@@ -126113,10 +126123,10 @@ hanguri-seishin_1 := ordinary-nohon-n-lex &
  ORTH <! "ハングリー精神" !>].
 
 ; 東日本 
-
-higashinihon_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_higashinihon_n_1_rel,
- ORTH <! "東日本" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;higashinihon_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_higashinihon_n_1_rel,
+; ORTH <! "東日本" !>].
 
 ; ビジネスホテル 
 
@@ -135393,10 +135403,10 @@ dennetsuki_1 := ordinary-nohon-n-lex &
 
 ; ドイツ民主共和国 
 ; Used 1 times
-
-doitsuminshukyouwakoku_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_doitsuminshukyouwakoku_n_1_rel,
- ORTH <! "ドイツ民主共和国" !>].
+;(TK 06-04-17 changed to loc_name-lex)
+;doitsuminshukyouwakoku_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_doitsuminshukyouwakoku_n_1_rel,
+; ORTH <! "ドイツ民主共和国" !>].
 
 ; 導火線 
 
@@ -135640,10 +135650,10 @@ haisui_1 := ordinary-nohon-n-lex &
  ORTH <! "廃水" !>].
 
 ; 破壊活動防止法 
-
-hakaikatsudouboushihou_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hakaikatsudouboushihou_n_1_rel,
- ORTH <! "破壊活動防止法" !>].
+;(TK 06-03-13 changed to ippan-name-lex)
+;hakaikatsudouboushihou_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hakaikatsudouboushihou_n_1_rel,
+; ORTH <! "破壊活動防止法" !>].
 
 ; 白銀 
 ; Used 1 times
@@ -135746,10 +135756,10 @@ hiyu_1 := ordinary-nohon-n-lex &
  ORTH <! "比喩" !>].
 
 ; 日向 
-
-hyuuga_1 := ordinary-nohon-n-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_hyuuga_n_1_rel,
- ORTH <! "日向" !>].
+;(TK 06-04-14 changed to loc_name-lex)
+;hyuuga_1 := ordinary-nohon-n-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_hyuuga_n_1_rel,
+; ORTH <! "日向" !>].
 
 ; 表題 
 ; Used 1 times
@@ -148956,4 +148966,1736 @@ SYNSEM.LKEYS.KEYREL [PRED '_eizuuirusu_n_rel]].
 seizai-n := ordinary-nohon-n-lex &
 [ORTH <! "製剤" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_seizai_n_rel]].
+
+;(TK 06-03-13)
+; ex.「朝日が目に沁る」
+asahi_5 := ordinary-nohon-n-lex &
+[ORTH <! "朝日" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_asahi_n_5_rel]].
+
+;(TK 06-03-14)
+;なぜか今までなかったので追加
+; ex.「いつの間にか森だった所がマンションに変わっていた」
+mori_3 := ordinary-nohon-n-lex &
+[ORTH <! "森" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_mori_n_3_rel]].
+
+;(TK 06-04-14)
+; ex.「その子は親戚方に預けられた」
+kata-suffix := noun_mod-lex-r &
+[SYNSEM.LKEYS.KEYREL.PRED '_kata_n_suffix_rel,
+ ORTH <! "方" !>].
+
+;(TK 06-04-18)
+;ミツ
+; ex.「この花のミツは甘い」
+mitsu_4 := ordinary-nohon-n-lex &
+[ORTH <! "ミツ" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_mitsu_n_4_rel]].
+
+;(TK 06-04-18)
+;金堂
+; ex.「御本尊を金堂に安置した」
+kondou_4 := ordinary-nohon-n-lex &
+[ORTH <! "金堂" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_kondou_n_4_rel]].
+
+;(TK 06-04-18)
+;外国語
+; ex.「外国語を身に付けたいと常々思っているんですが」
+gaikokugo_1 := ordinary-nohon-n-lex &
+[ORTH <! "外国語" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_gaikokugo_n_1_rel]].
+
+;(TK 06-04-18)
+;我我
+wareware-kanji-firstpl_2 :=
+pron-firstplahon-ref-lex &
+[ORTH <! "我我" !>].
+
+;(TK 06-04-18)
+;似非,えせ
+; ex.「似非コシヒカリを捕まされる」 ex.「奴は似非だ」
+ese-kanji := ordinary-nohon-n-lex &
+[ORTH <! "似非" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ese_n_1_rel]].
+
+ese-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "えせ" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_ese_n_1_rel]].
+
+;(TK 06-04-18)
+;ふり
+furi_3 := ordinary-nohon-n-lex &
+[ORTH <! "ふり" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_furi_n_3_rel]].
+
+;(TK 06-04-18)
+;どなた
+; ex.「どなたが来られたのですか？」
+donata_1 := wh-word-honsubj-lex &
+               [ORTH <! "どなた" !>,
+                SYNSEM.LKEYS.KEYREL.PRED '_human_n_rel].
+
+;(TK 06-04-18)
+;我ら
+warera_5_1 := pron-firstpl-ref-lex &
+[ORTH <! "我ら" !>].
+
+;(TK 06-04-18)
+;幼な
+osana-prefix := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_osana_n_rel,
+ ORTH <! "幼な" !>].
+
+;(TK 06-04-18)
+;嬢
+; ex.「由紀恵嬢のお通りです」
+jou-title :=
+title-pers-honsubj-lex &
+[ORTH <! "嬢" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_jou_n_rel].
+
+;(TK 06-04-19)
+;あんた
+; ex.「あんたは何を考えてるんだ」
+anta-pron :=
+pron-secondminusahon-ref-lex &
+[ORTH <! "あんた" !>].
+
+;(TK 06-04-19)
+;我われ
+wareware-firstpl_2 :=
+pron-firstpl-ref-lex &
+[ORTH <! "我われ" !>].
+
+;(TK 06-04-19)
+;鮮
+; ex.「鮮赤色」
+sen-prefix := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_sen_n_4_rel,
+ ORTH <! "鮮" !>].
+
+;(TK 06-04-19)
+;くん
+kuN-title-hiragana :=
+title-pers-minus-honsubj-lex &
+[ORTH <! "くん" !>,
+ SYNSEM.LKEYS.KEYREL.PRED '_kun_n_rel].
+
+;(TK 06-04-19)
+;真っ
+; ex.「真っ正面に相手の顔がきた」
+matt_1 := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_matt_n_1_rel,
+ ORTH <! "真っ" !>].
+
+;(TK 06-04-19)
+;汎
+; ex.「汎アジア主義」
+han_4 := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_han_n_4_rel,
+ ORTH <! "汎" !>].
+
+;(TK 06-04-19)
+;セミ
+; ex.「セミプロ」（本当はprefix） 「セミが鳴く」
+semi_2 := ordinary-nohon-n-lex &
+[ORTH <! "セミ" !>, SYNSEM.LKEYS.KEYREL.PRED '_semi_n_2_rel].
+
+;(TK 06-04-19)
+;そいつ
+; ex.「そいつが犯人だ」
+;「彼」も「彼女」も「あいつ」も「奴」も同じlexicaltypeになっているが
+;それでよいのか？
+soitsu_1 := pron-thirdsgmasc-ref-lex &
+[ORTH <! "そいつ" !>].
+
+;(TK 06-04-19)
+;そいつ
+; ex.「そいつを刻んで乗せれば出来上がりだ」
+soitsu_2 :=
+pron-demon-lex &
+[ORTH <! "そいつ" !>].
+
+;(TK 06-04-19)
+;ほうぼう
+; ex.「ビー玉をほうぼうにぶちまけてしまった」 「ほうぼうの干物」
+houbou_2 := ordinary-nohon-n-lex &
+[ORTH <! "ほうぼう" !>, SYNSEM.LKEYS.KEYREL.PRED '_houbou_n_2_rel].
+
+;(TK 06-04-19)
+;被
+; ex.「被選挙権」
+hi_5 := noun_mod-lex-l &
+[SYNSEM.LKEYS.KEYREL.PRED '_hi_n_5_rel,
+ ORTH <! "被" !>].
+
+;(TK 06-04-19)
+;被膜
+; ex.「表面に被膜を作る」
+himaku_1 := ordinary-nohon-n-lex &
+[ORTH <! "被膜" !>, SYNSEM.LKEYS.KEYREL.PRED '_himaku_n_1_rel].
+
+;(TK 06-04-19)
+;被毛
+; ex.「犬の被毛でかぶれた」
+himou_1 := ordinary-nohon-n-lex &
+[ORTH <! "被毛" !>, SYNSEM.LKEYS.KEYREL.PRED '_himou_n_1_rel].
+
+;(TK 06-04-19)
+;ここら
+; ex.「ここらに交番はありませんか」
+kokora_1 :=
+pron-loc-ref-lex &
+[ORTH <! "ここら" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_kokora_n_rel].
+
+;(TK 06-04-19)
+;かぎり（noun_mod-lex-rも含めてしまってよい？）
+kagiri_3-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kagiri_n_1_rel,
+ ORTH <! "かぎり" !>].
+
+;(TK 06-04-19)
+;かぎり
+kagiri_1-hiragana := nom-pred-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kagiri_n_1_rel,
+ ORTH <! "かぎり" !>].
+
+kagiri_2-hiragana := nom-common-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kagiri_n_1_rel,
+ ORTH <! "かぎり" !>].
+
+;(TK 06-04-19)
+;くせ
+kuse_1-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kuse_n_1_rel,
+ ORTH <! "くせ" !>].
+
+;(TK 06-04-19)
+;きみ
+kimi-pron-hiragana :=
+pron-secondminusahon-ref-lex &
+[ORTH <! "きみ" !>].
+
+;(TK 06-04-19)
+;組合せ
+kumiawase_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kumiawase_n_2_rel,
+ ORTH <! "組合わせ" !>].
+
+;(TK 06-04-20)
+;詩篇
+; ex.「その遺跡から古代の詩篇が出土した」
+shihen_1 := ordinary-nohon-n-lex &
+[ORTH <! "詩篇" !>, SYNSEM.LKEYS.KEYREL.PRED '_shihen_n_1_rel].
+
+;(TK 06-04-20)
+;ロゼット
+; ex.「タンポポもロゼットの１つだ」
+rozetto_1 := ordinary-nohon-n-lex &
+[ORTH <! "ロゼット" !>, SYNSEM.LKEYS.KEYREL.PRED '_rozetto_n_1_rel].
+
+;(TK 06-04-20)
+;多年生
+; ex.「竹も多年生の植物に含まれるのだろうか」
+tanensei_1 := ordinary-nohon-n-lex &
+[ORTH <! "多年生" !>, SYNSEM.LKEYS.KEYREL.PRED '_tanensei_n_1_rel].
+
+;(TK 06-04-20)
+;ブロード
+; ex.「ブロードでシャツを作った」
+buro-do_1 := ordinary-nohon-n-lex &
+[ORTH <! "ブロード" !>, SYNSEM.LKEYS.KEYREL.PRED '_buro-do_n_1_rel].
+
+;(TK 06-04-20)
+;アウストラロピテクス
+; ex.「アウストラロピテクスの化石はアフリカで見付かった」
+ausutoraropitekusu_1 := ordinary-nohon-n-lex &
+[ORTH <! "アウストラロピテクス" !>, SYNSEM.LKEYS.KEYREL.PRED '_ausutoraropitekusu_n_1_rel].
+
+;(TK 06-04-20)
+;マダニ
+; ex.「足をマダニに食われた」
+madani_1 := ordinary-nohon-n-lex &
+[ORTH <! "マダニ" !>, SYNSEM.LKEYS.KEYREL.PRED '_madani_n_1_rel].
+
+;(TK 06-04-20)
+;ペチュニア
+; ex.「花屋でペチュニアを買って帰った」
+pechunia_1 := ordinary-nohon-n-lex &
+[ORTH <! "ペチュニア" !>, SYNSEM.LKEYS.KEYREL.PRED '_pechunia_n_1_rel].
+
+;(TK 06-04-20)
+;画素
+; ex.「同じ値段でも、１年前の機種に比べて画素数が全然違う」
+gaso_1 := ordinary-nohon-n-lex &
+[ORTH <! "画素" !>, SYNSEM.LKEYS.KEYREL.PRED '_gaso_n_1_rel].
+
+;(TK 06-04-20)
+;深紅
+; ex.「辺りは血で深紅に染まった」
+shinku_2 := ordinary-nohon-n-lex &
+[ORTH <! "深紅" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinku_n_2_rel].
+
+;(TK 06-04-20)
+;シダ
+; ex.「シダの生い茂る森」
+shida_2 := ordinary-nohon-n-lex &
+[ORTH <! "シダ" !>, SYNSEM.LKEYS.KEYREL.PRED '_shida_n_2_rel].
+
+;(TK 06-04-20)
+;きめ
+; ex.「きめの細かい布」
+kime_3 := ordinary-nohon-n-lex &
+[ORTH <! "きめ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kime_n_3_rel].
+
+;(TK 06-04-20)
+;根茎
+; ex.「竹は根茎から取り去らなければいけない」
+konkei_1 := ordinary-nohon-n-lex &
+[ORTH <! "根茎" !>, SYNSEM.LKEYS.KEYREL.PRED '_konkei_n_1_rel].
+
+;(TK 06-04-20)
+;ベゴニヤ
+; ex.「ベゴニヤの球根を育てよう」
+begoniya_1 := ordinary-nohon-n-lex &
+[ORTH <! "ベゴニヤ" !>, SYNSEM.LKEYS.KEYREL.PRED '_begoniya_n_1_rel].
+
+;(TK 06-04-20)
+;食べすぎ
+tabesugi_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tabesugi_n_1_rel,
+ ORTH <! "食べすぎ" !>].
+
+;(TK 06-04-20)
+;づけ
+; ex.「づけにしたまぐろをちらし寿司に乗せた」
+duke_1 := ordinary-nohon-n-lex &
+[ORTH <! "づけ" !>, SYNSEM.LKEYS.KEYREL.PRED '_duke_n_1_rel].
+
+;(TK 06-04-21)
+;マツバラン
+; ex.「マツバランを育ててみよう」
+matsubaran_1 := ordinary-nohon-n-lex &
+[ORTH <! "マツバラン" !>, SYNSEM.LKEYS.KEYREL.PRED '_matsubaran_n_1_rel].
+
+;(TK 06-04-21)
+;萼,がく
+; ex.「この花の萼はどれだろう」
+gaku_3 := ordinary-nohon-n-lex &
+[ORTH <! "萼" !>, SYNSEM.LKEYS.KEYREL.PRED '_gaku_n_3_rel].
+
+gaku_3-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "がく" !>, SYNSEM.LKEYS.KEYREL.PRED '_gaku_n_3_rel].
+
+;(TK 06-04-21)
+;ケープ
+; ex.「寒いのでケープを羽織った」
+ke-pu_1 := ordinary-nohon-n-lex &
+[ORTH <! "ケープ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ke-pu_n_1_rel].
+
+;(TK 06-04-21)
+;スズ,すず
+; ex.「スズの鉱山が閉山になった」
+suzu_3 := ordinary-nohon-n-lex &
+[ORTH <! "スズ" !>, SYNSEM.LKEYS.KEYREL.PRED '_suzu_n_3_rel].
+
+suzu_3-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "すず" !>, SYNSEM.LKEYS.KEYREL.PRED '_suzu_n_3_rel].
+
+;(TK 06-04-21)
+;真鍮
+; ex.「これは真鍮でできています」
+shinchuu_2 := ordinary-nohon-n-lex &
+[ORTH <! "真鍮" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinchuu_n_2_rel].
+
+;(TK 06-04-21)
+;ベータ
+; ex.「この数字をベータとする」
+be-ta_1 := ordinary-nohon-n-lex &
+[ORTH <! "ベータ" !>, SYNSEM.LKEYS.KEYREL.PRED '_be-ta_n_1_rel].
+
+;(TK 06-04-21)
+;カエデ
+kaede_1-katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kaede_n_1_rel,
+ ORTH <! "カエデ" !>].
+
+;(TK 06-04-21)
+;かえで
+; ex.「かえでを演奏する」
+kaede_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kaede_n_2_rel,
+ ORTH <! "かえで" !>].
+
+;(TK 06-04-21)
+;サワー
+; ex.「１杯目はサワーを注文した」
+sawa-_1 := ordinary-nohon-n-lex &
+[ORTH <! "サワー" !>, SYNSEM.LKEYS.KEYREL.PRED '_sawa-_n_1_rel].
+
+
+;(TK 06-04-21)
+;星雲
+; ex.「星雲を観測する」
+seiun_1 := ordinary-nohon-n-lex &
+[ORTH <! "星雲" !>, SYNSEM.LKEYS.KEYREL.PRED '_seiun_n_1_rel].
+
+;(TK 06-04-24)
+;子葉
+; ex.「一週間前に植えた朝顔の子葉が、ようやく出てきた」
+shiyou_3 := ordinary-nohon-n-lex &
+[ORTH <! "子葉" !>, SYNSEM.LKEYS.KEYREL.PRED '_shiyou_n_3_rel].
+
+;(TK 06-04-24)
+;爬虫類
+; ex.「この島は爬虫類の宝庫だ」
+hachuurui_2 := ordinary-nohon-n-lex &
+[ORTH <! "爬虫類" !>, SYNSEM.LKEYS.KEYREL.PRED '_hachuurui_2_rel].
+
+;(TK 06-04-24)
+;弟切草,オトギリソウ
+; ex.「弟切草の黄色い花が咲いている」
+otogirisou_1 := ordinary-nohon-n-lex &
+[ORTH <! "弟切草" !>, SYNSEM.LKEYS.KEYREL.PRED '_otogirisou_n_1_rel].
+
+otogirisou_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "オトギリソウ" !>, SYNSEM.LKEYS.KEYREL.PRED '_otogirisou_n_1_rel].
+
+;(TK 06-04-24)
+;プラスティック
+; ex.「実は自動車のあちこちにプラスティックが使われている」
+purasutikku_1 := ordinary-nohon-n-lex &
+[ORTH <! "プラスティック" !>, SYNSEM.LKEYS.KEYREL.PRED '_purasutikku_n_1_rel].
+
+;(TK 06-04-24)
+uzura_1-katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_uzura_n_1_rel,
+ ORTH <! "ウズラ" !>].
+
+;(TK 06-04-24)
+;ハエトリソウ
+; ex.「友人の家にハエトリソウがあった」
+haetorisou_1 := ordinary-nohon-n-lex &
+[ORTH <! "ハエトリソウ" !>, SYNSEM.LKEYS.KEYREL.PRED '_haetorisou_n_1_rel].
+
+;(TK 06-04-24)
+;棘
+; ex.「美しい薔薇には棘がある」
+toge_2 := ordinary-nohon-n-lex &
+[ORTH <! "棘" !>, SYNSEM.LKEYS.KEYREL.PRED '_toge_n_2_rel].
+
+;(TK 06-04-24)
+;カサゴ
+; ex.「なぜか今日はカサゴばかりかかる」
+kasago_1 := ordinary-nohon-n-lex &
+[ORTH <! "カサゴ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kasago_n_1_rel].
+
+;(TK 06-04-24)
+;薄
+; ex.「セーターが色落ちして薄茶色になってしまった」
+usu_2 := noun_mod-lex-l &
+[ORTH <! "薄" !>, SYNSEM.LKEYS.KEYREL.PRED '_usu_n_2_rel].
+
+;(TK 06-04-24)
+;房
+; ex.「今のブドウは房が大きい」
+fusa_1 := noun_mod-lex-l &
+[ORTH <! "房" !>, SYNSEM.LKEYS.KEYREL.PRED '_fusa_n_1_rel].
+
+;(TK 06-04-24)
+;齧歯類,げっ歯類,齧歯目,げっ歯目,齧歯動物,げっ歯動物
+;齧歯,げっ歯だけで普通名詞として使うことはなさそう
+; ex.「鼠もハムスターも同じげっ歯類とは」
+gesshirui_1 := ordinary-nohon-n-lex &
+[ORTH <! "齧歯類" !>, SYNSEM.LKEYS.KEYREL.PRED '_gesshirui_n_1_rel].
+
+gesshirui_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "げっ歯類" !>, SYNSEM.LKEYS.KEYREL.PRED '_gesshirui_n_1_rel].
+
+gesshimoku_1 := ordinary-nohon-n-lex &
+[ORTH <! "齧歯目" !>, SYNSEM.LKEYS.KEYREL.PRED '_gesshimoku_n_1_rel].
+
+gesshimoku_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "げっ歯目" !>, SYNSEM.LKEYS.KEYREL.PRED '_gesshimoku_n_1_rel].
+
+gesshidoubutsu_1 := ordinary-nohon-n-lex &
+[ORTH <! "齧歯動物" !>, SYNSEM.LKEYS.KEYREL.PRED '_gesshidoubutsu_n_1_rel].
+
+gesshidoubutsu_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "げっ歯動物" !>, SYNSEM.LKEYS.KEYREL.PRED '_gesshidoubutsu_n_1_rel].
+
+;(TK 06-04-24)
+;門歯
+; ex.「転んだ拍子に門歯が傷ついたようだ」
+monshi_1 := ordinary-nohon-n-lex &
+[ORTH <! "門歯" !>, SYNSEM.LKEYS.KEYREL.PRED '_monshi_n_1_rel].
+
+;(TK 06-04-24)
+;西洋梨
+; ex.「西洋梨が好物だ」
+seiyounashi_1 := ordinary-nohon-n-lex &
+[ORTH <! "西洋梨" !>, SYNSEM.LKEYS.KEYREL.PRED '_seiyounashi_n_1_rel].
+
+;(TK 06-04-24)
+;多肉
+;複合名詞を作ることが多い
+; ex.「多肉植物」ex.「多肉質」
+taniku_1 := ordinary-nohon-n-lex &
+[ORTH <! "多肉" !>, SYNSEM.LKEYS.KEYREL.PRED '_taniku_n_1_rel].
+
+;(TK 06-04-24)
+;綿毛
+; ex.「タンポポの綿毛」
+watage_1 := ordinary-nohon-n-lex &
+[ORTH <! "綿毛" !>, SYNSEM.LKEYS.KEYREL.PRED '_watage_n_1_rel].
+
+;(TK 06-04-24)
+;ＡＩ
+; ex.「ＡＩという言葉を初めて聞いたのは、とあるゲームにそれが採用された時だった」
+e-ai_1 := ordinary-nohon-n-lex &
+[ORTH <! "ＡＩ" !>, SYNSEM.LKEYS.KEYREL.PRED '_e-ai_n_1_rel].
+
+;(TK 06-04-24)
+;パフィオペディラム,パフィオペディルム
+; ex.「パフィオペディラムの輸出入には、ワシントン条約の規制がかかっている」
+pafiopedhiramu_1 := ordinary-nohon-n-lex &
+[ORTH <! "パフィオペディラム" !>, SYNSEM.LKEYS.KEYREL.PRED '_pafiopedhiramu_n_1_rel].
+
+pafiopedhirumu_1 := ordinary-nohon-n-lex &
+[ORTH <! "パフィオペディルム" !>, SYNSEM.LKEYS.KEYREL.PRED '_pafiopedhirumu_n_1_rel].
+
+;(TK 06-04-24)
+;花茎
+; ex.「タンポポの花茎を折ると、白い乳液が出る」
+kakei_3 := ordinary-nohon-n-lex &
+[ORTH <! "花茎" !>, SYNSEM.LKEYS.KEYREL.PRED '_kakei_n_3_rel].
+
+;(TK 06-04-24)
+;トクサ
+; ex.「トクサは土筆に似た花を付ける」
+tokusa_1 := ordinary-nohon-n-lex &
+[ORTH <! "トクサ" !>, SYNSEM.LKEYS.KEYREL.PRED '_tokusa_n_1_rel].
+
+;(TK 06-04-24)
+;シクノチェス
+; ex.「シクノチェスは休眠状態に入った」
+shikunochesu_1 := ordinary-nohon-n-lex &
+[ORTH <! "シクノチェス" !>, SYNSEM.LKEYS.KEYREL.PRED '_shikunochesu_n_1_rel].
+
+;(TK 06-04-24)
+;マゼンタ
+; ex.「マゼンタが少し足りない」
+mazenta_1 := ordinary-nohon-n-lex &
+[ORTH <! "マゼンタ" !>, SYNSEM.LKEYS.KEYREL.PRED '_mazenta_n_1_rel].
+
+;(TK 06-04-24)
+;来生
+; ex.「来生もちゃんと人として生まれてこれるだろうか」
+raishou_1 := ordinary-nohon-n-lex &
+[ORTH <! "来生" !>, SYNSEM.LKEYS.KEYREL.PRED '_raishou_n_1_rel].
+
+;(TK 06-04-24)
+;かんな
+kanna_1-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kanna_n_1_rel,
+ ORTH <! "かんな" !>].
+
+;(TK 06-04-24)
+;つる
+tsuru_8 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tsuru_n_8_rel,
+ ORTH <! "つる" !>].
+
+;(TK 06-04-24)
+;蔓
+tsuru_9 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tsuru_n_9_rel,
+ ORTH <! "蔓" !>].
+
+;(TK 06-04-25)
+;陽極
+; ex.「電池の陽極と陰極を間違えた」
+youkyoku_1 := ordinary-nohon-n-lex &
+[ORTH <! "陽極" !>, SYNSEM.LKEYS.KEYREL.PRED '_youkyoku_n_1_rel].
+
+;(TK 06-04-25)
+;陰極
+; ex.「実は電子は陰極から出て陽極に向かっているのだ」
+inkyoku_1 := ordinary-nohon-n-lex &
+[ORTH <! "陰極" !>, SYNSEM.LKEYS.KEYREL.PRED '_inkyoku_n_1_rel].
+
+;(TK 06-04-25)
+;グリッド
+; ex.「膨大な計算は、グリッド上のコンピュータにも助けてもらおう」
+guriddo_1 := ordinary-nohon-n-lex &
+[ORTH <! "グリッド" !>, SYNSEM.LKEYS.KEYREL.PRED '_guriddo_n_1_rel].
+
+;(TK 06-04-25)
+;花序
+; ex.「チューリップとアジサイでは花序の形が全く違う」
+kajo_1 := ordinary-nohon-n-lex &
+[ORTH <! "花序" !>, SYNSEM.LKEYS.KEYREL.PRED '_kajo_n_1_rel].
+
+;(TK 06-04-25)
+;総状
+;「総状花序」の形で使うことが多い？
+; ex.「フジのようなものを総状花序と呼ぶ」
+soujou_1 := ordinary-nohon-n-lex &
+[ORTH <! "総状" !>, SYNSEM.LKEYS.KEYREL.PRED '_soujou_n_1_rel].
+
+;(TK 06-04-25)
+;さや
+; ex.「刀をさやに戻す」ex.「さやの中に種子が入っている」
+saya_1 := ordinary-nohon-n-lex &
+[ORTH <! "さや" !>, SYNSEM.LKEYS.KEYREL.PRED '_saya_n_1_rel].
+
+;(TK 06-04-25)
+;莢
+; ex.「莢は普通は食べない」
+saya_2 := ordinary-nohon-n-lex &
+[ORTH <! "莢" !>, SYNSEM.LKEYS.KEYREL.PRED '_saya_n_2_rel].
+
+;(TK 06-04-25)
+;とげ
+; ex.「いやにとげのある言い方ですね」
+toge_3 := ordinary-nohon-n-lex &
+[ORTH <! "とげ" !>, SYNSEM.LKEYS.KEYREL.PRED '_toge_n_3_rel].
+
+;(TK 06-04-25)
+;後翅
+; ex.「蝿の後翅は、退化してしまって見えない」
+koushi_3 := ordinary-nohon-n-lex &
+[ORTH <! "後翅" !>, SYNSEM.LKEYS.KEYREL.PRED '_koushi_n_3_rel].
+
+;(TK 06-04-25)
+;斑紋
+; ex.「同じテントウムシでも斑紋は様々だ」
+hanmon_1 := ordinary-nohon-n-lex &
+[ORTH <! "斑紋" !>, SYNSEM.LKEYS.KEYREL.PRED '_hanmon_n_1_rel].
+
+;(TK 06-04-25)
+;前翅
+; ex.「カブトムシは前翅も硬い」
+zenshi_1 := ordinary-nohon-n-lex &
+[ORTH <! "前翅" !>, SYNSEM.LKEYS.KEYREL.PRED '_zenshi_n_1_rel].
+
+;(TK 06-04-25)
+;鋸歯
+; ex.「オナモミの鋸歯で手を切ってしまった」
+kyoshi_1 := ordinary-nohon-n-lex &
+[ORTH <! "鋸歯" !>, SYNSEM.LKEYS.KEYREL.PRED '_kyoshi_n_1_rel].
+
+;(TK 06-04-25)
+;銀白
+; ex.「ある冬の朝、世界は銀白に染まっていた」
+ginpaku_2 := ordinary-nohon-n-lex &
+[ORTH <! "銀白" !>, SYNSEM.LKEYS.KEYREL.PRED '_ginpaku_n_2_rel].
+
+;(TK 06-04-25)
+;銀白色
+; ex.「ある冬の朝、世界は銀白に染まっていた」
+ginhakushoku_1 := ordinary-nohon-n-lex &
+[ORTH <! "銀白色" !>, SYNSEM.LKEYS.KEYREL.PRED '_ginhakushoku_n_1_rel].
+
+;(TK 06-04-25)
+;包葉
+; ex.「ドクダミの花の白い部分は、じつは包葉である」
+houyou_3 := ordinary-nohon-n-lex &
+[ORTH <! "包葉" !>, SYNSEM.LKEYS.KEYREL.PRED '_houyou_n_3_rel].
+
+;(TK 06-04-25)
+;苞
+; ex.「ドクダミの花の白い部分は、じつは苞である」
+hou_3 := ordinary-nohon-n-lex &
+[ORTH <! "苞" !>, SYNSEM.LKEYS.KEYREL.PRED '_hou_n_3_rel].
+
+;(TK 06-04-25)
+;トウワタ
+; ex.「トウワタの種には、白くて長い毛がある」
+touwata_1 := ordinary-nohon-n-lex &
+[ORTH <! "トウワタ" !>, SYNSEM.LKEYS.KEYREL.PRED '_touwata_n_1_rel].
+
+;(TK 06-04-25)
+;ステッチ
+; ex.「不器用で、いつもステッチがうまくできない」
+sutecchi_1 := ordinary-nohon-n-lex &
+[ORTH <! "ステッチ" !>, SYNSEM.LKEYS.KEYREL.PRED '_sutecchi_n_1_rel].
+
+;(TK 06-04-25)
+;配偶子
+; ex.「一般に、生殖に配偶子は不可欠である」
+haiguushi_1 := ordinary-nohon-n-lex &
+[ORTH <! "配偶子" !>, SYNSEM.LKEYS.KEYREL.PRED '_haiguushi_n_1_rel].
+
+;(TK 06-04-25)
+;胚種
+haishu_1 := ordinary-nohon-n-lex &
+[ORTH <! "胚種" !>, SYNSEM.LKEYS.KEYREL.PRED '_haishu_n_1_rel].
+
+;(TK 06-04-25)
+;胚珠
+haishu_2 := ordinary-nohon-n-lex &
+[ORTH <! "胚珠" !>, SYNSEM.LKEYS.KEYREL.PRED '_haishu_n_2_rel].
+
+;(TK 06-04-25)
+;フランスギク
+furansugiku_1 := ordinary-nohon-n-lex &
+[ORTH <! "フランスギク" !>, SYNSEM.LKEYS.KEYREL.PRED '_furansugiku_n_1_rel].
+
+;(TK 06-04-25)
+;ピレネーデイジー
+pirene-deiji-_1 := ordinary-nohon-n-lex &
+[ORTH <! "ピレネーデイジー" !>, SYNSEM.LKEYS.KEYREL.PRED '_pirene-deiji_n_1_rel].
+
+;(TK 06-04-25)
+;相称
+; ex.「この模様は、左右が相称になっている」
+soushou_3 := ordinary-nohon-n-lex &
+[ORTH <! "相称" !>, SYNSEM.LKEYS.KEYREL.PRED '_soushou_n_3_rel].
+
+;(TK 06-04-25)
+;花弁
+; ex.「お茶に桜の花弁を浮かべた」
+kaben_1 := ordinary-nohon-n-lex &
+[ORTH <! "花弁" !>, SYNSEM.LKEYS.KEYREL.PRED '_kaben_n_1_rel].
+
+;(TK 06-04-25)
+;単子葉
+;ほとんどが「単子葉植物」の形
+tanshiyou_1 := ordinary-nohon-n-lex &
+[ORTH <! "単子葉" !>, SYNSEM.LKEYS.KEYREL.PRED '_tanshiyou_n_1_rel].
+
+;(TK 06-04-25)
+;双子葉
+;ほとんどが「双子葉植物」の形
+soushiyou_1 := ordinary-nohon-n-lex &
+[ORTH <! "双子葉" !>, SYNSEM.LKEYS.KEYREL.PRED '_soushiyou_n_1_rel].
+
+;(TK 06-04-25)
+;ハナイカリ
+hanaikari_1 := ordinary-nohon-n-lex &
+[ORTH <! "ハナイカリ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hanaikari_n_1_rel].
+
+;(TK 06-04-25)
+;カロコルタス
+karokorutasu_1 := ordinary-nohon-n-lex &
+[ORTH <! "カロコルタス" !>, SYNSEM.LKEYS.KEYREL.PRED '_karokorutasu_n_1_rel].
+
+;(TK 06-04-25)
+;葉柄
+; ex.「抹茶にするときは葉柄だけでなく葉脈も取り除く」
+youhei_4 := ordinary-nohon-n-lex &
+[ORTH <! "葉柄" !>, SYNSEM.LKEYS.KEYREL.PRED '_youhei_n_4_rel].
+
+;(TK 06-04-25)
+;葉脈
+; ex.「子供の頃、学校で葉脈の標本を作ったことがある」
+youmyaku_1 := ordinary-nohon-n-lex &
+[ORTH <! "葉脈" !>, SYNSEM.LKEYS.KEYREL.PRED '_youmyaku_n_1_rel].
+
+;(TK 06-04-25)
+;胞子
+; ex.「湿気が多いとカビの胞子も増えやすい」
+houshi_3 := ordinary-nohon-n-lex &
+[ORTH <! "胞子" !>, SYNSEM.LKEYS.KEYREL.PRED '_houshi_n_3_rel].
+
+;(TK 06-04-25)
+;嚢
+; 「胞子嚢」「嚢腫」のように、接辞で使われることが多い
+nou_5 := ordinary-nohon-n-lex &
+[ORTH <! "嚢" !>, SYNSEM.LKEYS.KEYREL.PRED '_nou_n_5_rel].
+
+;(TK 06-04-25)
+;馬酔木,アセビ,アシビ
+asebi_1 := ordinary-nohon-n-lex &
+[ORTH <! "馬酔木" !>, SYNSEM.LKEYS.KEYREL.PRED '_asebi_n_1_rel].
+
+asebi_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "アセビ" !>, SYNSEM.LKEYS.KEYREL.PRED '_asebi_n_1_rel].
+
+ashibi_1 := ordinary-nohon-n-lex &
+[ORTH <! "アシビ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ashibi_n_1_rel].
+
+;(TK 06-04-25)
+;ヤシ,椰子
+yashi_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ヤシ" !>, SYNSEM.LKEYS.KEYREL.PRED '_yashi_n_1_rel].
+
+yashi_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "椰子" !>, SYNSEM.LKEYS.KEYREL.PRED '_yashi_n_1_rel].
+
+;(TK 06-04-25)
+;裸子植物
+; おそらく「裸子」を単独で使うことはない
+rashishokubutsu_1 := ordinary-nohon-n-lex &
+[ORTH <! "裸子植物" !>, SYNSEM.LKEYS.KEYREL.PRED '_rashishokubutsu_n_1_rel].
+
+;(TK 06-04-25)
+;被子植物
+; おそらく「被子」を単独で使うことはない
+hishishokubutsu_1 := ordinary-nohon-n-lex &
+[ORTH <! "被子植物" !>, SYNSEM.LKEYS.KEYREL.PRED '_hishishokubutsu_n_1_rel].
+
+;(TK 06-04-25)
+;ソテツ,蘇鉄
+sotetsu_1 := ordinary-nohon-n-lex &
+[ORTH <! "ソテツ" !>, SYNSEM.LKEYS.KEYREL.PRED '_sotetsu_n_1_rel].
+
+sotetsu_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "蘇鉄" !>, SYNSEM.LKEYS.KEYREL.PRED '_sotetsu_n_1_rel].
+
+;(TK 06-04-25)
+;イベリス
+iberisu_1 := ordinary-nohon-n-lex &
+[ORTH <! "イベリス" !>, SYNSEM.LKEYS.KEYREL.PRED '_iberisu_n_1_rel].
+
+;(TK 06-04-25)
+;ユリ,ゆり
+yuri_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ユリ" !>, SYNSEM.LKEYS.KEYREL.PRED '_yuri_n_1_rel].
+
+yuri_1-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "ゆり" !>, SYNSEM.LKEYS.KEYREL.PRED '_yuri_n_1_rel].
+
+;(TK 06-04-25)
+;ソクシンラン
+sokushinran_1 := ordinary-nohon-n-lex &
+[ORTH <! "ソクシンラン" !>, SYNSEM.LKEYS.KEYREL.PRED '_sokushinran_n_1_rel].
+
+;(TK 06-04-25)
+;ラスカス
+rasukasu_1 := ordinary-nohon-n-lex &
+[ORTH <! "ラスカス" !>, SYNSEM.LKEYS.KEYREL.PRED '_rasukasu_n_1_rel].
+
+;(TK 06-04-25)
+;フウ
+fuu_2 := ordinary-nohon-n-lex &
+[ORTH <! "フウ" !>, SYNSEM.LKEYS.KEYREL.PRED '_fuu_n_2_rel].
+
+;(TK 06-04-25)
+;常緑
+; ex.「常緑の針葉樹林だ」
+jouryoku_1 := ordinary-nohon-n-lex &
+[ORTH <! "常緑" !>, SYNSEM.LKEYS.KEYREL.PRED '_jouryoku_n_1_rel].
+
+;(TK 06-04-25)
+;シャクナゲ
+shakunage_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "シャクナゲ" !>, SYNSEM.LKEYS.KEYREL.PRED '_shakunage_n_1_rel].
+
+;(TK 06-04-25)
+;釣鐘
+; ex.「寺の釣鐘で時刻を知る」
+tsurigane_1 := ordinary-nohon-n-lex &
+[ORTH <! "釣鐘" !>, SYNSEM.LKEYS.KEYREL.PRED '_tsurigane_n_1_rel].
+
+;(TK 06-04-26)
+;三葉
+mitsuba_2 := ordinary-nohon-n-lex &
+[ORTH <! "三葉" !>, SYNSEM.LKEYS.KEYREL.PRED '_mitsuba_n_2_rel].
+
+;(TK 06-04-26)
+;サヤインゲン
+sayaingen_1-katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_sayaingen_n_1_rel,
+ ORTH <! "サヤインゲン" !>].
+
+;(TK 06-04-26)
+;木質
+; ex.「硬い木質の部分だけ使う」
+mokushitsu_1 := ordinary-nohon-n-lex &
+[ORTH <! "木質" !>, SYNSEM.LKEYS.KEYREL.PRED '_mokushitsu_n_1_rel].
+
+;(TK 06-04-26)
+;アサダ
+asada_1 := ordinary-nohon-n-lex &
+[ORTH <! "アサダ" !>, SYNSEM.LKEYS.KEYREL.PRED '_asada_n_1_rel].
+
+;(TK 06-04-26)
+;イキシア
+ikishia_1 := ordinary-nohon-n-lex &
+[ORTH <! "イキシア" !>, SYNSEM.LKEYS.KEYREL.PRED '_ikishia_n_1_rel].
+
+;(TK 06-04-26)
+;ウツギ
+utsugi_1 := ordinary-nohon-n-lex &
+[ORTH <! "ウツギ" !>, SYNSEM.LKEYS.KEYREL.PRED '_utsugi_n_1_rel].
+
+;(TK 06-04-26)
+;下等
+; ex.「重要でな部分には下等の材料を使ってコストダウンを図る」
+katou_2 := ordinary-nohon-n-lex &
+[ORTH <! "下等" !>, SYNSEM.LKEYS.KEYREL.PRED '_katou_n_2_rel].
+
+;(TK 06-04-26)
+;やぶ
+yabu_1-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yabu_n_1_rel,
+ ORTH <! "やぶ" !>].
+
+;(TK 06-04-26)
+;エランド
+erando_1 := ordinary-nohon-n-lex &
+[ORTH <! "エランド" !>, SYNSEM.LKEYS.KEYREL.PRED '_erando_n_1_rel].
+
+;(TK 06-04-26)
+;羚羊
+reiyou_1 := ordinary-nohon-n-lex &
+[ORTH <! "羚羊" !>, SYNSEM.LKEYS.KEYREL.PRED '_reiyou_n_1_rel].
+
+;(TK 06-04-26)
+;梅鉢草,ウメバチソウ
+umebachisou_1 := ordinary-nohon-n-lex &
+[ORTH <! "梅鉢草" !>, SYNSEM.LKEYS.KEYREL.PRED '_umebachisou_n_1_rel].
+
+umebachisou_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ウメバチソウ" !>, SYNSEM.LKEYS.KEYREL.PRED '_umebachisou_n_1_rel].
+
+;(TK 06-04-26)
+;ウマノアシガタ
+umanoashigata_1 := ordinary-nohon-n-lex &
+[ORTH <! "ウマノアシガタ" !>, SYNSEM.LKEYS.KEYREL.PRED '_umanoashigata_n_1_rel].
+
+;(TK 06-04-26)
+;アンチョビー
+anchobi-_1 := ordinary-nohon-n-lex &
+[ORTH <! "アンチョビー" !>, SYNSEM.LKEYS.KEYREL.PRED '_anchobi-_n_1_rel].
+
+;(TK 06-04-26)
+;パルメザン
+parumezan_1 := ordinary-nohon-n-lex &
+[ORTH <! "パルメザン" !>, SYNSEM.LKEYS.KEYREL.PRED '_parumezan-_n_1_rel].
+
+;(TK 06-04-26)
+;ツナソ
+tsunaso_1 := ordinary-nohon-n-lex &
+[ORTH <! "ツナソ" !>, SYNSEM.LKEYS.KEYREL.PRED '_tsunaso_n_1_rel].
+
+;(TK 06-04-26)
+;香粉
+; ex.「顔に香粉を塗りたくった」
+koufun_3 := ordinary-nohon-n-lex &
+[ORTH <! "香粉" !>, SYNSEM.LKEYS.KEYREL.PRED '_koufun_n_3_rel].
+
+;(TK 06-04-26)
+;シリンダ
+; ex.「シリンダの調子が悪い」
+shirinda_1 := ordinary-nohon-n-lex &
+[ORTH <! "シリンダ" !>, SYNSEM.LKEYS.KEYREL.PRED '_shirinda_n_1_rel].
+
+;(TK 06-04-26)
+;二枚貝
+nimaigai_1 := ordinary-nohon-n-lex &
+[ORTH <! "二枚貝" !>, SYNSEM.LKEYS.KEYREL.PRED '_nimaigai_n_1_rel].
+
+;(TK 06-04-26)
+;外套
+; ex.「そこには外套を着た男が立っていた」
+gaitou_3 := ordinary-nohon-n-lex &
+[ORTH <! "外套" !>, SYNSEM.LKEYS.KEYREL.PRED '_gaitou_n_3_rel].
+
+;(TK 06-04-26)
+;軟体
+; 「軟体動物」「軟体生物」のように複合名詞になることが多い
+nantai_1 := ordinary-nohon-n-lex &
+[ORTH <! "軟体" !>, SYNSEM.LKEYS.KEYREL.PRED '_nantai_n_1_rel].
+
+;(TK 06-04-26)
+;ガニ
+; 「焼きガニ」「ガニ股」のように複合名詞になるときのみ「ガニ」と濁る
+gani_1 := ordinary-nohon-n-lex &
+[ORTH <! "ガニ" !>, SYNSEM.LKEYS.KEYREL.PRED '_gani_n_1_rel].
+
+;(TK 06-04-26)
+;スタンホピア
+sutanhopia_1 := ordinary-nohon-n-lex &
+[ORTH <! "スタンホピア" !>, SYNSEM.LKEYS.KEYREL.PRED '_sutanhopia_n_1_rel].
+
+;(TK 06-04-26)
+;シデ
+shide_1 := ordinary-nohon-n-lex &
+[ORTH <! "シデ" !>, SYNSEM.LKEYS.KEYREL.PRED '_shide_n_1_rel].
+
+;(TK 06-04-26)
+;脇の下
+wakinoshita_1_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_wakinoshita_n_1_rel,
+ ORTH <! "脇の下" !>].
+
+;(TK 06-04-26)
+;アリゲーター
+arige-ta-_1 := ordinary-nohon-n-lex &
+[ORTH <! "アリゲーター" !>, SYNSEM.LKEYS.KEYREL.PRED '_arige-ta-_n_1_rel].
+
+;(TK 06-04-26)
+;かさ
+; ex.「思ったよりかさがあって袋に入らない」 ex.「太陽がかさをかぶっている」
+kasa_2 := ordinary-nohon-n-lex &
+[ORTH <! "かさ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kasa_n_1_rel].
+
+;(TK 06-04-26)
+;襞,ひだ
+; ex.「服の襞が針金にひっかかってしまった」
+hida_1 := ordinary-nohon-n-lex &
+[ORTH <! "襞" !>, SYNSEM.LKEYS.KEYREL.PRED '_hida_n_1_rel].
+
+hida_1-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "ひだ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hida_n_1_rel].
+
+;(TK 06-04-26)
+;樹皮
+; ex.「森の木の樹皮が動物によって食われてしまった」
+juhi_1 := ordinary-nohon-n-lex &
+[ORTH <! "樹皮" !>, SYNSEM.LKEYS.KEYREL.PRED '_juhi_n_1_rel].
+
+;(TK 06-04-26)
+;ほおずき
+hoozuki_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ホオズキ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hoozuki_n_1_rel].
+
+;(TK 06-04-26)
+;膀胱
+; ex.「このままでは膀胱が破裂しそうだ」
+boukou_3 := ordinary-nohon-n-lex &
+[ORTH <! "膀胱" !>, SYNSEM.LKEYS.KEYREL.PRED '_boukou_n_3_rel].
+
+;(TK 06-04-26)
+;タカトウダイ
+takatoudai_1 := ordinary-nohon-n-lex &
+[ORTH <! "タカトウダイ" !>, SYNSEM.LKEYS.KEYREL.PRED '_takatoudai_n_1_rel].
+
+;(TK 06-04-26)
+;高灯台
+; ex.「高灯台には毒がある」 ex.「遠くに高灯台の光が見える」
+takatoudai_2 := ordinary-nohon-n-lex &
+[ORTH <! "高灯台" !>, SYNSEM.LKEYS.KEYREL.PRED '_takatoudai_n_2_rel].
+
+;(TK 06-04-27)
+;乳汁
+; ex.「牛の乳汁を絞る体験をした」
+nyuujuu_1 := ordinary-nohon-n-lex &
+[ORTH <! "乳汁" !>, SYNSEM.LKEYS.KEYREL.PRED '_nyuujuu_n_1_rel].
+
+;(TK 06-04-27)
+;カボチャ
+kabocha_1-katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kabocha_n_1_rel,
+ ORTH <! "カボチャ" !>].
+
+;(TK 06-04-27)
+;子実体
+; ex.「キノコというものは子実体である」
+shijitsutai_1 := ordinary-nohon-n-lex &
+[ORTH <! "子実体" !>, SYNSEM.LKEYS.KEYREL.PRED '_shijitsutai_n_1_rel].
+
+;(TK 06-04-27)
+;ホコリタケ
+hokoritake_1 := ordinary-nohon-n-lex &
+[ORTH <! "ホコリタケ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hokoritake_n_1_rel].
+
+;(TK 06-04-27)
+;先細
+; ex.「先細のボールペンで書く」
+sakiboso_1 := ordinary-nohon-n-lex &
+[ORTH <! "先細" !>, SYNSEM.LKEYS.KEYREL.PRED '_sakiboso_n_1_rel].
+
+;(TK 06-04-27)
+;譜表
+; ex.「譜表を見ながら演奏した」
+fuhyou_3 := ordinary-nohon-n-lex &
+[ORTH <! "譜表" !>, SYNSEM.LKEYS.KEYREL.PRED '_fuhyou_n_3_rel].
+
+;(TK 06-04-27)
+;記譜法
+; ex.「今は五線で表す記譜法が一般的だ」
+kifuhou_1 := ordinary-nohon-n-lex &
+[ORTH <! "記譜法" !>, SYNSEM.LKEYS.KEYREL.PRED '_kifuhou_n_1_rel].
+
+;(TK 06-04-27)
+;小花
+; ex.「小花の咲く道を歩く」
+shouka_4 := ordinary-nohon-n-lex &
+[ORTH <! "小花" !>, SYNSEM.LKEYS.KEYREL.PRED '_shouka_n_4_rel].
+
+;(TK 06-04-27)
+;刺毛
+; ex.「イラクサの刺毛に触れてしまった」
+shimou_1 := ordinary-nohon-n-lex &
+[ORTH <! "刺毛" !>, SYNSEM.LKEYS.KEYREL.PRED '_shimou_n_1_rel].
+
+;(TK 06-04-27)
+;櫛
+; ex.「櫛で髪をとかす」
+kushi_4 := ordinary-nohon-n-lex &
+[ORTH <! "櫛" !>, SYNSEM.LKEYS.KEYREL.PRED '_kushi_n_4_rel].
+
+;(TK 06-04-27)
+;繊毛
+; ex.「顕微鏡を使えばゾウリムシの繊毛まではっきり見える」
+senmou_1 := ordinary-nohon-n-lex &
+[ORTH <! "繊毛" !>, SYNSEM.LKEYS.KEYREL.PRED '_senmou_n_1_rel].
+
+;(TK 06-04-27)
+;クラゲ,水母
+kurage_1-katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kurage_n_1_rel,
+ ORTH <! "クラゲ" !>].
+
+kurage_1-kanji := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kurage_n_1_rel,
+ ORTH <! "水母" !>].
+
+;(TK 06-04-27)
+;林地
+; ex.「今は林地になっているが、いずれあそこに家を建てよう」
+rinchi_3 := ordinary-nohon-n-lex &
+[ORTH <! "林地" !>, SYNSEM.LKEYS.KEYREL.PRED '_rinchi_n_3_rel].
+
+;(TK 06-04-27)
+;カヤツリグサ
+kayatsurigusa_1 := ordinary-nohon-n-lex &
+[ORTH <! "カヤツリグサ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kayatsurigusa_n_1_rel].
+
+;(TK 06-04-27)
+;薄荷,ハッカ,はっか
+hakka_3 := ordinary-nohon-n-lex &
+[ORTH <! "薄荷" !>, SYNSEM.LKEYS.KEYREL.PRED '_hakka_n_3_rel].
+
+hakka_3-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ハッカ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hakka_n_3_rel].
+
+hakka_3-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "はっか" !>, SYNSEM.LKEYS.KEYREL.PRED '_hakka_n_3_rel].
+
+;(TK 06-04-27)
+;緋色
+; ex.「緋色の衣がよく目立つ」
+hiiro_1 := ordinary-nohon-n-lex &
+[ORTH <! "緋色" !>, SYNSEM.LKEYS.KEYREL.PRED '_hiiro_n_1_rel].
+
+;(TK 06-04-27)
+;ピクセル
+; ex.「ディスプレイを選ぶ際は、大きさだけでなくピクセルの数も考えよう」
+pikuseru_1 := ordinary-nohon-n-lex &
+[ORTH <! "ピクセル" !>, SYNSEM.LKEYS.KEYREL.PRED '_pikuseru_n_1_rel].
+
+;(TK 06-04-27)
+;糖蜜,糖みつ
+; ex.「ラムは糖蜜から作る」
+toumitsu_1_1 := ordinary-nohon-n-lex &
+[ORTH <! "糖蜜" !>, SYNSEM.LKEYS.KEYREL.PRED '_toumitsu_n_1_rel].
+
+toumitsu_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "糖みつ" !>, SYNSEM.LKEYS.KEYREL.PRED '_toumitsu_n_1_rel].
+
+;(TK 06-04-27)
+;トウヒ
+touhi_4 := ordinary-nohon-n-lex &
+[ORTH <! "トウヒ" !>, SYNSEM.LKEYS.KEYREL.PRED '_touhi_n_4_rel].
+
+;(TK 06-04-27)
+;マンゴ
+mango_1 := ordinary-nohon-n-lex &
+[ORTH <! "マンゴ" !>, SYNSEM.LKEYS.KEYREL.PRED '_mango_n_1_rel].
+
+;(TK 06-04-27)
+;ビワモドキ
+biwamodoki_1 := ordinary-nohon-n-lex &
+[ORTH <! "ビワモドキ" !>, SYNSEM.LKEYS.KEYREL.PRED '_biwamodoki_n_1_rel].
+
+;(TK 06-04-27)
+;クニフォフィア
+kunifoia_1 := ordinary-nohon-n-lex &
+[ORTH <! "クニフォフィア" !>, SYNSEM.LKEYS.KEYREL.PRED '_kunifoia_n_1_rel].
+
+;(TK 06-04-27)
+;しっくい,漆喰
+; ex.「壁にしっくいを塗る」
+shikkui_1 := ordinary-nohon-n-lex &
+[ORTH <! "しっくい" !>, SYNSEM.LKEYS.KEYREL.PRED '_shikkui_n_1_rel].
+
+shikkui_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "漆喰" !>, SYNSEM.LKEYS.KEYREL.PRED '_shikkui_n_1_rel].
+
+;(TK 06-04-27)
+;エンドウ,えんどう
+endou_4-katakana := ordinary-nohon-n-lex &
+[ORTH <! "エンドウ" !>, SYNSEM.LKEYS.KEYREL.PRED '_endou_n_4_rel].
+
+endou_4-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "えんどう" !>, SYNSEM.LKEYS.KEYREL.PRED '_endou_n_4_rel].
+
+;(TK 06-04-27)
+;鞭毛,べん毛
+; ex.「ミドリムシは鞭毛で移動する」
+benmou_1_1 := ordinary-nohon-n-lex &
+[ORTH <! "鞭毛" !>, SYNSEM.LKEYS.KEYREL.PRED '_benmou_n_1_rel].
+
+benmou_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "べん毛" !>, SYNSEM.LKEYS.KEYREL.PRED '_benmou_n_1_rel].
+
+;(TK 06-04-27)
+;ふさ
+; ex.「ふさの付いた上着」
+fusa_3 := ordinary-nohon-n-lex &
+[ORTH <! "ふさ" !>, SYNSEM.LKEYS.KEYREL.PRED '_fusa_n_3_rel].
+
+;(TK 06-04-27)
+;有蹄
+; 「有蹄類」「有蹄動物」のように複合名詞を作る
+yuutei_1 := ordinary-nohon-n-lex &
+[ORTH <! "有蹄" !>, SYNSEM.LKEYS.KEYREL.PRED '_yuutei_n_1_rel].
+
+;(TK 06-04-27)
+;タマネギ,玉葱,玉ねぎ,玉ネギ
+tamanegi_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "タマネギ" !>, SYNSEM.LKEYS.KEYREL.PRED '_tamanegi_n_1_rel].
+
+tamanegi_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "玉葱" !>, SYNSEM.LKEYS.KEYREL.PRED '_tamanegi_n_1_rel].
+
+tamanegi_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "玉ねぎ" !>, SYNSEM.LKEYS.KEYREL.PRED '_tamanegi_n_1_rel].
+
+tamanegi_1_3 := ordinary-nohon-n-lex &
+[ORTH <! "玉ネギ" !>, SYNSEM.LKEYS.KEYREL.PRED '_tamanegi_n_1_rel].
+
+;(TK 06-04-27)
+;角板
+; ex.「雪の結晶を顕微鏡で見たら、角板になっていた」
+kakuban_1 := ordinary-nohon-n-lex &
+[ORTH <! "角板" !>, SYNSEM.LKEYS.KEYREL.PRED '_kakuban_n_1_rel].
+
+;(TK 06-04-27)
+;セイバー
+; ex.「騎士はセイバーを構えて向き直った」
+seiba-_1 := ordinary-nohon-n-lex &
+[ORTH <! "セイバー" !>, SYNSEM.LKEYS.KEYREL.PRED '_seiba-_n_1_rel].
+
+;(TK 06-04-27)
+;キイチゴ
+kiichigo_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "キイチゴ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kiichigo_n_1_rel].
+
+;(TK 06-04-27)
+;肢
+; ex.「その犬は肢も立派だった」
+ashi_5 := ordinary-nohon-n-lex &
+[ORTH <! "肢" !>, SYNSEM.LKEYS.KEYREL.PRED '_ashi_n_5_rel].
+
+;(TK 06-04-27)
+;カーペットバッガー
+ka-pettobagga-_1 := ordinary-nohon-n-lex &
+[ORTH <! "カーペットバッガー" !>, SYNSEM.LKEYS.KEYREL.PRED '_ka-pettobagga-_n_1_rel].
+
+;(TK 06-04-27)
+;ハラタケ
+haratake_1 := ordinary-nohon-n-lex &
+[ORTH <! "ハラタケ" !>, SYNSEM.LKEYS.KEYREL.PRED '_haratake_n_1_rel].
+
+;(TK 06-04-27)
+;ヤナギ
+yanagi_2 := ordinary-nohon-n-lex &
+[ORTH <! "ヤナギ" !>, SYNSEM.LKEYS.KEYREL.PRED '_yanagi_n_2_rel].
+
+;(TK 06-04-27)
+;ブラックベリー
+burakkuberi-_1 := ordinary-nohon-n-lex &
+[ORTH <! "ブラックベリー" !>, SYNSEM.LKEYS.KEYREL.PRED '_burakkuberi-_n_1_rel].
+
+;(TK 06-04-27)
+;クワ
+kuwa_2 := ordinary-nohon-n-lex &
+[ORTH <! "クワ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kuwa_n_2_rel].
+
+;(TK 06-04-27)
+;鍬
+; ex.「思わず鍬を持つ手に力が入った」
+kuwa_3 := ordinary-nohon-n-lex &
+[ORTH <! "鍬" !>, SYNSEM.LKEYS.KEYREL.PRED '_kuwa_n_3_rel].
+
+;(TK 06-04-28)
+;ストラップ
+; ex.「携帯のストラップを替えました」
+sutorappu_1 := ordinary-nohon-n-lex &
+[ORTH <! "ストラップ" !>, SYNSEM.LKEYS.KEYREL.PRED '_sutorappu_n_1_rel].
+
+;(TK 06-04-28)
+;硬骨
+; ex.「体内のカルシウムが不足すると、体は硬骨のそれを利用してしまう」
+koukotsu_2 := ordinary-nohon-n-lex &
+[ORTH <! "硬骨" !>, SYNSEM.LKEYS.KEYREL.PRED '_koukotsu_n_2_rel].
+
+;(TK 06-04-28)
+;円錐,円すい
+; ex.「円錐の体積の求め方を答えよ」
+ensui_2_1 := ordinary-nohon-n-lex &
+[ORTH <! "円錐" !>, SYNSEM.LKEYS.KEYREL.PRED '_ensui_n_2_rel].
+
+ensui_2_2 := ordinary-nohon-n-lex &
+[ORTH <! "円すい" !>, SYNSEM.LKEYS.KEYREL.PRED '_ensui_n_2_rel].
+
+;(TK 06-04-28)
+;ウルシニア
+urushinia_1 := ordinary-nohon-n-lex &
+[ORTH <! "ウルシニア" !>, SYNSEM.LKEYS.KEYREL.PRED '_urushinia_n_1_rel].
+
+;(TK 06-04-28)
+;ウマゴヤシ
+umagoyashi_1 := ordinary-nohon-n-lex &
+[ORTH <! "ウマゴヤシ" !>, SYNSEM.LKEYS.KEYREL.PRED '_umagoyashi_n_1_rel].
+
+;(TK 06-04-28)
+;ブランディー
+; ex.「寒いので紅茶にブランディーを少し垂らした」
+burandhi-_1 := ordinary-nohon-n-lex &
+[ORTH <! "ブランディー" !>, SYNSEM.LKEYS.KEYREL.PRED '_burandhi-_n_1_rel].
+
+;(TK 06-04-28)
+;ヒメハギ
+himehagi_1 := ordinary-nohon-n-lex &
+[ORTH <! "ヒメハギ" !>, SYNSEM.LKEYS.KEYREL.PRED '_himehagi_n_1_rel].
+
+;(TK 06-04-28)
+;ヒメコウジ
+himekouji_1 := ordinary-nohon-n-lex &
+[ORTH <! "ヒメコウジ" !>, SYNSEM.LKEYS.KEYREL.PRED '_himekouji_n_1_rel].
+
+;(TK 06-04-28)
+;ローズパープル
+; ex.「彼はローズパープルのスーツでステージに立った」
+ro-zupa-puru_1 := ordinary-nohon-n-lex &
+[ORTH <! "ローズパープル" !>, SYNSEM.LKEYS.KEYREL.PRED '_ro-zupa-puru_n_1_rel].
+
+;(TK 06-04-28)
+;アヤメ
+ayame_1_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ayame_n_1_rel,
+ ORTH <! "アヤメ" !>].
+
+;(TK 06-04-28)
+;ゴブレット
+; ex.「ゴブレットに酒を注いだ」
+goburetto_1 := ordinary-nohon-n-lex &
+[ORTH <! "ゴブレット" !>, SYNSEM.LKEYS.KEYREL.PRED '_goburetto_n_1_rel].
+
+;(TK 06-04-28)
+;アーチチョーク
+a-chicho-ku_1 := ordinary-nohon-n-lex &
+[ORTH <! "アーチチョーク" !>, SYNSEM.LKEYS.KEYREL.PRED '_a-chicho-ku_n_1_rel].
+
+;(TK 06-04-28)
+;アーティチョーク
+a-ticho-ku_1 := ordinary-nohon-n-lex &
+[ORTH <! "アーティチョーク" !>, SYNSEM.LKEYS.KEYREL.PRED '_a-ticho-ku_n_1_rel].
+
+;(TK 06-04-28)
+;麝香
+; ex.「麝香は動物の分泌物から得られる」
+jakou_1 := ordinary-nohon-n-lex &
+[ORTH <! "麝香" !>, SYNSEM.LKEYS.KEYREL.PRED '_jakou_n_1_rel].
+
+;(TK 06-04-28)
+;キンギョソウ
+kingyosou_1 := ordinary-nohon-n-lex &
+[ORTH <! "キンギョソウ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kingyosou_n_1_rel].
+
+;(TK 06-04-28)
+;キンポウゲ
+kinpouge_1 := ordinary-nohon-n-lex &
+[ORTH <! "キンポウゲ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kinpouge_n_1_rel].
+
+;(TK 06-04-28)
+;アヒル,家鴨
+ahiru_1-katakana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ahiru_n_1_rel,
+ ORTH <! "アヒル" !>].
+
+ahiru_1-kanji := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ahiru_n_1_rel,
+ ORTH <! "家鴨" !>].
+
+;(TK 06-04-28)
+;蛾,ガ
+ga_4 := ordinary-nohon-n-lex &
+[ORTH <! "蛾" !>, SYNSEM.LKEYS.KEYREL.PRED '_ga_n_4_rel].
+
+ga_4-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ガ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ga_n_4_rel].
+
+;(TK 06-04-28)
+;脳弓
+; ex.「脳弓も脳の重要な一部だ」
+noukyuu_1 := ordinary-nohon-n-lex &
+[ORTH <! "脳弓" !>, SYNSEM.LKEYS.KEYREL.PRED '_noukyuu_n_1_rel].
+
+;(TK 06-04-28)
+;葦,芦
+ashi_6 := ordinary-nohon-n-lex &
+[ORTH <! "葦" !>, SYNSEM.LKEYS.KEYREL.PRED '_ashi_n_6_rel].
+
+ashi_7 := ordinary-nohon-n-lex &
+[ORTH <! "芦" !>, SYNSEM.LKEYS.KEYREL.PRED '_ashi_n_7_rel].
+
+;(TK 06-04-28)
+;ハツカネズミ
+hatsukanezumi_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ハツカネズミ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hatsukanezumi_n_1_rel].
+
+;(TK 06-04-28)
+;均整,均斉
+; ex.「均整の取れた顔立ち」
+kinsei_2 := ordinary-nohon-n-lex &
+[ORTH <! "均整" !>, SYNSEM.LKEYS.KEYREL.PRED '_kinsei_n_2_rel].
+
+kinsei_3 := ordinary-nohon-n-lex &
+[ORTH <! "均斉" !>, SYNSEM.LKEYS.KEYREL.PRED '_kinsei_n_3_rel].
+
+;(TK 06-04-28)
+;結腸
+; ex.「結腸にポリープが見付かった」
+kecchou_1 := ordinary-nohon-n-lex &
+[ORTH <! "結腸" !>, SYNSEM.LKEYS.KEYREL.PRED '_kecchou_n_1_rel].
+
+;(TK 06-04-28)
+;樹高
+; ex.「樹高３メートルの木のてっぺんから落ちた」
+jukou_4 := ordinary-nohon-n-lex &
+[ORTH <! "樹高" !>, SYNSEM.LKEYS.KEYREL.PRED '_jukou_n_4_rel].
+
+;(TK 06-04-28)
+;マツ
+matsu_4 := ordinary-nohon-n-lex &
+[ORTH <! "マツ" !>, SYNSEM.LKEYS.KEYREL.PRED '_matsu_n_4_rel].
+
+;(TK 06-04-28)
+;海馬
+; ex.「海馬も人間の記憶に関係する」
+kaiba_1 := ordinary-nohon-n-lex &
+[ORTH <! "海馬" !>, SYNSEM.LKEYS.KEYREL.PRED '_kaiba_n_1_rel].
+
+
+;(TK 06-04-28)
+;視床
+shishou_4 := ordinary-nohon-n-lex &
+[ORTH <! "視床" !>, SYNSEM.LKEYS.KEYREL.PRED '_shishou_n_4_rel].
+
+;(TK 06-04-28)
+;乳頭
+; ex.「よく見ると舌には乳頭状の突起が無数にある」
+nyuutou_1 := ordinary-nohon-n-lex &
+[ORTH <! "乳頭" !>, SYNSEM.LKEYS.KEYREL.PRED '_nyuutou_n_1_rel].
+
+;(TK 06-04-28)
+;キーウィ
+ki-wi_1 := ordinary-nohon-n-lex &
+[ORTH <! "キーウィ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ki-wi_n_1_rel].
+
+;(TK 06-04-28)
+;灰茶
+; ex.「色はあえて言えば灰茶に近いかな」
+haicha_1 := ordinary-nohon-n-lex &
+[ORTH <! "灰茶" !>, SYNSEM.LKEYS.KEYREL.PRED '_haicha_n_1_rel].
+
+;(TK 06-04-28)
+;ライムギ
+raimugi_1_2 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_raimugi_n_1_rel,
+ ORTH <! "ライムギ" !>].
+
+;(TK 06-04-28)
+;染色分体
+senshokubuntai_1 := ordinary-nohon-n-lex &
+[ORTH <! "染色分体" !>, SYNSEM.LKEYS.KEYREL.PRED '_senshokubuntai_n_1_rel].
+
+;(TK 06-04-28)
+;シギ,鴫
+shigi_1 := ordinary-nohon-n-lex &
+[ORTH <! "シギ" !>, SYNSEM.LKEYS.KEYREL.PRED '_shigi_n_1_rel].
+
+shigi_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "鴫" !>, SYNSEM.LKEYS.KEYREL.PRED '_shigi_n_1_rel].
+
+;(TK 06-04-28)
+;チドリ,千鳥
+chidori_1 := ordinary-nohon-n-lex &
+[ORTH <! "チドリ" !>, SYNSEM.LKEYS.KEYREL.PRED '_chidori_n_1_rel].
+
+chidori_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "千鳥" !>, SYNSEM.LKEYS.KEYREL.PRED '_chidori_n_1_rel].
+
+;(TK 06-05-01)
+;霊長類
+reichourui_1 := ordinary-nohon-n-lex &
+[ORTH <! "霊長類" !>, SYNSEM.LKEYS.KEYREL.PRED '_reichourui_n_1_rel].
+
+;(TK 06-05-01)
+;肉趾
+; ex.「うちの猫は肉趾を撫でられるのを嫌がる」
+nikushi_1 := ordinary-nohon-n-lex &
+[ORTH <! "肉趾" !>, SYNSEM.LKEYS.KEYREL.PRED '_nikushi_n_1_rel].
+
+;(TK 06-05-01)
+;広葉樹
+kouyouju_1 := ordinary-nohon-n-lex &
+[ORTH <! "広葉樹" !>, SYNSEM.LKEYS.KEYREL.PRED '_kouyouju_n_1_rel].
+
+;(TK 06-05-01)
+;猛禽
+; ex.「山で猛禽に襲われた」
+moukin_1 := ordinary-nohon-n-lex &
+[ORTH <! "猛禽" !>, SYNSEM.LKEYS.KEYREL.PRED '_moukin_n_1_rel].
+
+;(TK 06-05-01)
+;猛禽類
+moukinrui_1 := ordinary-nohon-n-lex &
+[ORTH <! "猛禽類" !>, SYNSEM.LKEYS.KEYREL.PRED '_moukinrui_n_1_rel].
+
+;(TK 06-05-01)
+;被皮
+; ex.「樹木の被皮に傷をつけないように進んだ」
+hihi_2 := ordinary-nohon-n-lex &
+[ORTH <! "被皮" !>, SYNSEM.LKEYS.KEYREL.PRED '_hihi_n_2_rel].
+
+;(TK 06-05-01)
+;のろま
+; ex.「そんなのろまを相手にしている暇はない」
+noroma_2 := ordinary-nohon-n-lex &
+[ORTH <! "のろま" !>, SYNSEM.LKEYS.KEYREL.PRED '_noroma_n_2_rel].
+
+;(TK 06-05-01)
+;有袋
+; ex.「有袋のりんごのほうが色が薄い」
+yuutai_3 := ordinary-nohon-n-lex &
+[ORTH <! "有袋" !>, SYNSEM.LKEYS.KEYREL.PRED '_yuutai_n_3_rel].
+
+;(TK 06-05-01)
+;有袋類
+yuutairui_1 := ordinary-nohon-n-lex &
+[ORTH <! "有袋類" !>, SYNSEM.LKEYS.KEYREL.PRED '_yuutairui_n_1_rel].
+
+;(TK 06-05-01)
+;金管
+kinkan_2 := ordinary-nohon-n-lex &
+[ORTH <! "金管" !>, SYNSEM.LKEYS.KEYREL.PRED '_kinkan_n_2_rel].
+
+;(TK 06-05-01)
+;真菌
+shinkin_1 := ordinary-nohon-n-lex &
+[ORTH <! "真菌" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinkin_n_1_rel].
+
+;(TK 06-05-01)
+;八重咲き
+; ex.「八重咲きのラン」
+yaezaki_1 := ordinary-nohon-n-lex &
+[ORTH <! "八重咲き" !>, SYNSEM.LKEYS.KEYREL.PRED '_yaezaki_n_1_rel].
+
+;(TK 06-05-01)
+;ひも
+himo_1-hiragana := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_himo_n_1_rel,
+ ORTH <! "ひも" !>].
+
+;(TK 06-05-02)
+;マリ
+; ex.「山寺の和尚さんがマリをつきたかったがマリがなかった」
+mari_1-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "マリ" !>, SYNSEM.LKEYS.KEYREL.PRED '_mari_n_1_rel].
+
+;(TK 06-05-02)
+;ダダイズム
+dadaizumu_1 := ordinary-nohon-n-lex &
+[ORTH <! "ダダイズム" !>, SYNSEM.LKEYS.KEYREL.PRED '_dadaizumu_n_1_rel].
+
+;(TK 06-05-02)
+;橙,だいだい,ダイダイ
+daidai_2 := ordinary-nohon-n-lex &
+[ORTH <! "橙" !>, SYNSEM.LKEYS.KEYREL.PRED '_daidai_n_2_rel].
+
+daidai_2-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "だいだい" !>, SYNSEM.LKEYS.KEYREL.PRED '_daidai_n_2_rel].
+
+daidai_2-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ダイダイ" !>, SYNSEM.LKEYS.KEYREL.PRED '_daidai_n_2_rel].
+
+;(TK 06-05-02)
+;蹄鉄
+; ex.「レース前にもう一度蹄鉄をチェックした」
+teitetsu_1 := ordinary-nohon-n-lex &
+[ORTH <! "蹄鉄" !>, SYNSEM.LKEYS.KEYREL.PRED '_teitetsu_n_1_rel].
+
+;(TK 06-05-02)
+;アルカロイド
+; ex.「この植物のアルカロイドは有毒だ」
+arukaroido_1 := ordinary-nohon-n-lex &
+[ORTH <! "アルカロイド" !>, SYNSEM.LKEYS.KEYREL.PRED '_arukaroido_n_1_rel].
+
+;(TK 06-05-02)
+;仕種,しぐさ
+; ex.「子猫の愛らしい仕種にすっかり参ってしまった」
+shigusa_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "仕種" !>, SYNSEM.LKEYS.KEYREL.PRED '_shigusa_n_1_rel].
+
+shigusa_1-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "しぐさ" !>, SYNSEM.LKEYS.KEYREL.PRED '_shigusa_n_1_rel].
+
+;(TK 06-05-02)
+;捩子
+neji_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "捩子" !>, SYNSEM.LKEYS.KEYREL.PRED '_neji_n_1_rel].
+
+;(TK 06-05-02)
+;楔
+; ex.「大勢で地面に楔を打った」
+kusabi_1 := ordinary-nohon-n-lex &
+[ORTH <! "楔" !>, SYNSEM.LKEYS.KEYREL.PRED '_kusabi_n_1_rel].
+
+;(TK 06-05-02)
+;ルネッサンス
+runessansu_1 := ordinary-nohon-n-lex &
+[ORTH <! "ルネッサンス" !>, SYNSEM.LKEYS.KEYREL.PRED '_runessansu_n_1_rel].
+
+;(TK 06-05-02)
+;心像
+; ex.「心像の故郷をもとにその絵を描いた」
+shinzou_3 := ordinary-nohon-n-lex &
+[ORTH <! "心像" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinzou_n_3_rel].
+
+;(TK 06-05-02)
+;コショウ,コショー
+koshou_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "コショウ" !>, SYNSEM.LKEYS.KEYREL.PRED '_koshou_n_1_rel].
+
+koshou_1_3 := ordinary-nohon-n-lex &
+[ORTH <! "コショー" !>, SYNSEM.LKEYS.KEYREL.PRED '_koshou_n_1_rel].
+
+;(TK 06-05-02)
+;アルパカ
+arupaka_1 := ordinary-nohon-n-lex &
+[ORTH <! "アルパカ" !>, SYNSEM.LKEYS.KEYREL.PRED '_arupaka_n_1_rel].
+
+;(TK 06-05-02)
+;新来
+; ex.「新来の店長はやり手らしい」
+shinrai_3 := ordinary-nohon-n-lex &
+[ORTH <! "新来" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinrai_n_3_rel].
+
+;(TK 06-05-02)
+;巨鳥
+; ex.「伝説の巨鳥を探しに山に入り込んだ奴がいる」
+kyochou_1 := ordinary-nohon-n-lex &
+[ORTH <! "巨鳥" !>, SYNSEM.LKEYS.KEYREL.PRED '_kyochou_n_1_rel].
+
+;(TK 06-05-02)
+;雷光
+; ex.「強い雷光が見えた数秒後、とてつもない雷音が響いた」
+raikou_1 := ordinary-nohon-n-lex &
+[ORTH <! "雷光" !>, SYNSEM.LKEYS.KEYREL.PRED '_raikou_n_1_rel].
+
+;雷音
+raion_2 := ordinary-nohon-n-lex &
+[ORTH <! "雷音" !>, SYNSEM.LKEYS.KEYREL.PRED '_raion_n_2_rel].
+
+;(TK 06-05-02)
+;ロウヤシ
+rouyashi_1 := ordinary-nohon-n-lex &
+[ORTH <! "ロウヤシ" !>, SYNSEM.LKEYS.KEYREL.PRED '_rouyashi_n_1_rel].
+
+;(TK 06-05-02)
+;蝋燭,ロウソク,ローソク
+rousoku_1-kanji := ordinary-nohon-n-lex &
+[ORTH <! "蝋燭" !>, SYNSEM.LKEYS.KEYREL.PRED '_rousoku_n_1_rel].
+
+rousoku_1-katakana := ordinary-nohon-n-lex &
+[ORTH <! "ロウソク" !>, SYNSEM.LKEYS.KEYREL.PRED '_rousoku_n_1_rel].
+
+ro-soku_1 := ordinary-nohon-n-lex &
+[ORTH <! "ローソク" !>, SYNSEM.LKEYS.KEYREL.PRED '_ro-soku_n_1_rel].
+
+;(TK 06-05-02)
+;アカガシワ
+akagashiwa_1 := ordinary-nohon-n-lex &
+[ORTH <! "アカガシワ" !>, SYNSEM.LKEYS.KEYREL.PRED '_akagashiwa_n_1_rel].
+
+;(TK 06-05-02)
+;ねこ
+neko_1-hiragana := ordinary-nohon-n-lex &
+[ORTH <! "ねこ" !>, SYNSEM.LKEYS.KEYREL.PRED '_neko_n_1_rel].
+
+;(TK 06-05-02)
+;胆
+; ex.「あいつは胆が座った奴だ」
+tan_5 := ordinary-nohon-n-lex &
+[ORTH <! "胆" !>, SYNSEM.LKEYS.KEYREL.PRED '_tan_n_5_rel].
+
+;(TK 06-05-02)
+;新語
+; ex.「今版は収録された新語の数が増えた」
+shingo_2 := ordinary-nohon-n-lex &
+[ORTH <! "新語" !>, SYNSEM.LKEYS.KEYREL.PRED '_shingo_n_2_rel].
+
+;(TK 06-05-02)
+;だらし
+; 「だらしない」「だらしが（の）ない」の形のみ
+darashi_1 := ordinary-nohon-n-lex &
+[ORTH <! "だらし" !>, SYNSEM.LKEYS.KEYREL.PRED '_darashi_n_1_rel].
+
+;(TK 06-05-02)
+;陽光
+; ex.「陽光が降りそそぐ中、川辺で昼寝をした」
+youkou_2 := ordinary-nohon-n-lex &
+[ORTH <! "陽光" !>, SYNSEM.LKEYS.KEYREL.PRED '_youkou_n_2_rel].
+
+;(TK 06-05-02)
+;香草
+kousou_3 := ordinary-nohon-n-lex &
+[ORTH <! "香草" !>, SYNSEM.LKEYS.KEYREL.PRED '_kousou_n_3_rel].
+
+;(TK 06-05-02)
+;ブルーテソース
+buru-teso-su_1 := ordinary-nohon-n-lex &
+[ORTH <! "ブルーテソース" !>, SYNSEM.LKEYS.KEYREL.PRED '_buru-teso-su_n_1_rel].
+
+;(TK 06-05-02)
+;直毛
+chokumou_1 := ordinary-nohon-n-lex &
+[ORTH <! "直毛" !>, SYNSEM.LKEYS.KEYREL.PRED '_chokumou_n_1_rel].
+
+;(TK 06-05-02)
+;スパニエル
+supanieru_1 := ordinary-nohon-n-lex &
+[ORTH <! "スパニエル" !>, SYNSEM.LKEYS.KEYREL.PRED '_supanieru_n_1_rel].
+
+;(TK 06-05-02)
+;黄体
+outai_2 := ordinary-nohon-n-lex &
+[ORTH <! "黄体" !>, SYNSEM.LKEYS.KEYREL.PRED '_outai_n_2_rel].
+
+;(TK 06-05-02)
+;びれ
+; ex.「胸びれ」「尾びれ」のような複合名詞のみ
+bire_1 := ordinary-nohon-n-lex &
+[ORTH <! "びれ" !>, SYNSEM.LKEYS.KEYREL.PRED '_bire_n_1_rel].
+
+;(TK 06-05-02)
+;海産
+; ex.「海産の魚は水で洗う」
+kaisan_2 := ordinary-nohon-n-lex &
+[ORTH <! "海産" !>, SYNSEM.LKEYS.KEYREL.PRED '_kaisan_n_2_rel].
+
+;(TK 06-05-02)
+;ドメイン
+domein_1 := ordinary-nohon-n-lex &
+[ORTH <! "ドメイン" !>, SYNSEM.LKEYS.KEYREL.PRED '_domein_n_1_rel].
+
+;(TK 06-05-02)
+;イモ虫,イモムシ
+imomushi_1_2 := ordinary-nohon-n-lex &
+[ORTH <! "イモ虫" !>, SYNSEM.LKEYS.KEYREL.PRED '_imomushi_n_1_rel].
+
+imomushi_1_3 := ordinary-nohon-n-lex &
+[ORTH <! "イモムシ" !>, SYNSEM.LKEYS.KEYREL.PRED '_imomushi_n_1_rel].
 

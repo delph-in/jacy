@@ -1,4 +1,4 @@
-
+;; -*- Mode: TDL; Coding: euc-jp -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; CONT type
 
@@ -25,9 +25,11 @@ nothing :< individual.
 ;
 ; (MS 2003-07-09) Changed that due to the matrix definitions.
 
-j-mrs := mrs &
-  [MOD-IND individual,
-   MOD-HAND handle].
+j-mrs := mrs.
+; j-mrs := mrs &
+;   [MOD-IND individual,
+;    MOD-HAND handle].
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;  CONT values (MRS semantics)
@@ -594,15 +596,6 @@ adversative-relation := arg12-relation & [PRED 'adversative].
 ; features as the English grammar.
 ; (MS 2003-09-25) there is a new definition in matrix version 0.5
 
-;unspec_compound_rel := relation &
-;  [ HINST index,
-;    NINST index ].
-
-;unspec_nn_rel :< unspec_compound_rel.
-
-
-;unspec_nvn_rel := unspec_compound_rel &
-;  [ HINST event ].
 
 
 appos-id-relation := arg12-relation & [PRED "appos-id_rel"].
@@ -636,6 +629,7 @@ quantity_rel := predsort.
 date_rel := predsort.
 yofc_rel := date_rel.
 mofy_rel := date_rel.
+person_n_rel := predsort.
 
 adv_rel := predsort.
 noun_rel := predsort.
@@ -651,7 +645,7 @@ pass_rel := predsort.
 
 degree_rel := predsort.
 unspec_adj_rel := predsort.
-unspec_compound_rel := predsort.
+compound_rel := predsort.
 unspec_rel := predsort.
 number_rel := predsort.
 
@@ -659,7 +653,9 @@ number_rel := predsort.
 ; classifier phrases.
 ; (FCB 2005-08-09) changed DARG to ARG1 
 ; (trying to reduce the types of arguments)
-degree-relation := arg1-relation.
+; ARG1 is the attribute being measured
+; ARG2 is the unit of measure
+degree-relation := arg12-relation.
 
 
 ; (CH 2004-09-09)

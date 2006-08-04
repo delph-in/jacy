@@ -519,13 +519,13 @@ subord-or-conj-relation := relation &
   [ L-HNDL semarg,
     R-HNDL semarg ].
 
-
-conjunction-relation := subord-or-conj-relation & 
-  [ C-ARG conj-index,
-    L-INDEX index,
-    R-INDEX index ].
+;;; (FCB 2006-06-02) changed to allow for event conjunction
+conjunction-relation := subord-or-conj-relation & arg0-relation &
+  [ L-INDEX event-or-ref-index,
+    R-INDEX event-or-ref-index ].
 
 ; NB: "if_then_rel" is now a PRED value of subord-relation.
+; currently it is sconjunction relation FCB
 subord-relation := subord-or-conj-relation.
 
 ; noun noun compounds

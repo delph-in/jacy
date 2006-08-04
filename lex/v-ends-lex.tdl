@@ -231,61 +231,69 @@ zuni-end := v-neg-te-plain-amorph-end-lex &
 ;nonfinite-past-polite-conditional
 
 mashitara-end  :=  v-cond-end-pastspr-polite-ind-imorph-lex &
-                   [ORTH <! "まし", "たら" !>].
+ [ ORTH <! "まし", "たら" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "_mashitara_c_rel"].
 
 
 
 ;nonfinite-past-polite-conditional
 
 mashitaraba-end  :=  v-cond-end-pastspr-polite-imorph-lex &
-                   [ORTH <! "まし", "たら" , "ば" !>].
+[ ORTH <! "まし", "たら" , "ば" !>,
+  SYNSEM.LKEYS.KEYREL.PRED "_mashitaraba_c_rel"].
+
 
 
 ;nonfinite-past-plain-conditional
 
 tara-end := v-cond-end-pastspr-plain-tmorph-lex &
-           [ORTH <! "たら" !>].
+ [ORTH <! "たら" !>,
+  SYNSEM.LKEYS.KEYREL.PRED "_tara_c_rel"].
 
 tara-chasen-end := v-cond-end-pastspr-plain-tmorph-lex &
-           [ORTH <! "た","ら" !>].
+ [ORTH <! "た","ら" !>,
+  SYNSEM.LKEYS.KEYREL.PRED "_tara_c_rel"].
 
 dara-end := v-cond-end-pastspr-plain-ndmorph-lex &
-           [ORTH <! "だら" !>].
+ [ORTH <! "だら" !>,
+  SYNSEM.LKEYS.KEYREL.PRED "_dara_c_rel"].
 
 ;nonfinite-past-polite-conditional
 
 taraba-end := v-cond-end-pastspr-polite-tmorph-lex &
-           [ORTH <! "たら", "ば" !>].
+ [ORTH <! "たら", "ば" !>,
+  SYNSEM.LKEYS.KEYREL.PRED "_taraba_c_rel"].
 
 daraba-end := v-cond-end-lex &
-           [ORTH <! "だら", "ば" !>].
+ [ORTH <! "だら", "ば" !>,
+  SYNSEM.LKEYS.KEYREL.PRED "_daraba_c_rel"].
 
 ;nonfinite-present-plain-conditional
 
 ba-end := v-cond-end-condmorph-lex &
-           [ORTH <! "ば" !>].
-
-
+ [ ORTH <! "ば" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "_eba_c_rel"].
 
 ;nonfinite-present-plain-conditional
 
 nagara-end := v-cond-end-presentspr-imorph-lex &
-           [ORTH <! "ながら" !>].
+ [ ORTH <! "ながら" !>,
+   SYNSEM.LKEYS.KEYREL.PRED "_nagara_c_rel"].
 
 ;finite-future-polite-consultative
 
 mashou-end  :=  v-consultative-tense-polite-imorph-end-lex &
-                 [ORTH <! "ましょ", "う" !>].
+ [ORTH <! "ましょ", "う" !>].
 
 ;finite-future-plain-consultative: 食べ させ よう
 
 you-end  :=  v-consultative-tense-plain-imorph-end-lex &
-                 [ORTH <! "よう" !>].
+ [ORTH <! "よう" !>].
 
 ;finite-future-plain-consultative
 
 u-end  := v-consultative-tense-plain-omorph-end-lex &
-           [ORTH <! "う" !>].
+ [ORTH <! "う" !>].
 
 ;nonfinite-present-plain-negative-conditional
 

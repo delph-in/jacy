@@ -78,7 +78,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_fukanou_a_rel].
 
 furii-adj :=
 na-adj-lex &
-[ORTH <! "フりー" !>,
+[ORTH <! "フリー" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_furii_a_rel].
 
 futsugou-adj :=
@@ -1027,10 +1027,14 @@ isect-adv-lex &
 [ORTH <! "丸" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_maru_a_rel].
 
-yaku-adv :=
-isect-adv-lex &
-[ORTH <! "約" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_yaku_a_rel].
+;(TK 06-05-11 changed to deg-adv-num-lex)
+;yaku-adv :=
+;isect-adv-lex &
+;[ORTH <! "約" !>,
+;SYNSEM.LKEYS.KEYREL.PRED '_yaku_a_rel].
+yaku-adv := deg-adv-num-lex &
+[ORTH <! "約" !>, SYNSEM.LKEYS.KEYREL.PRED '_yaku_a_1_rel].
+
 
 yappari-adv :=
 isect-adv-lex &
@@ -1130,8 +1134,7 @@ isect-adv-lex &
 [ORTH <! "所々" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_tokorodokoro_a_rel].
 
-totemo-adv :=
-isect-adv-lex &
+totemo-adv := deg-adv-lex &
 [ORTH <! "とても" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_totemo_a_rel].
 
@@ -9212,10 +9215,12 @@ rakutenteki_1 := na-adj-lex &
  ORTH <! "楽天的" !>].
 
 ; 楽に 
-
-rakuni_1 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_rakuni_a_1_rel,
- ORTH <! "楽に" !>].
+;(TK 06-06-07 commentout)
+;na-adj-lex「楽」の連用形で、adverbとして働くが、
+;「楽(na-adj)＋に(vmod)」の形で解析可能。
+;rakuni_1 := na-adj-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_rakuni_a_1_rel,
+; ORTH <! "楽に" !>].
 
 ; 楽観的 
 
@@ -9599,10 +9604,11 @@ yoboyobo_3 := na-adj-lex &
 ;<IJ> ; 安心 
 ;<IJ> ; JACY 安心: anshin-kanji-vn (vn-intrans-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> anshin_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_anshin_a_3_rel,
-;<IJ>  ORTH <! "安心" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「これだけ備えがあれば安心だ」
+anshin_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_anshin_a_3_rel,
+ ORTH <! "安心" !>].
 
 ; いたずら 
 ; Used 3 times
@@ -9638,10 +9644,11 @@ oyafukou_3 := na-adj-lex &
 ;<IJ> ; 感心 
 ;<IJ> ; JACY 感心: kaNshiN-admiration (ordinary-nohon-n-lex)
 ;<IJ> ; Used 5 times
-
-;<IJ> kanshin_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_kanshin_a_3_rel,
-;<IJ>  ORTH <! "感心" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「君はなかなか感心なやつだな」
+kanshin_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_kanshin_a_3_rel,
+ ORTH <! "感心" !>].
 
 ; ぎざぎざ 
 ; Used 1 times
@@ -9841,10 +9848,11 @@ shimatsu_4 := na-adj-lex &
 
 ;<IJ> ; オーバー 
 ;<IJ> ; JACY オーバー: oobaa-vn (vn-trans1-lex)
-
-;<IJ> o-ba-_4 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_o_a_rel,
-;<IJ>  ORTH <! "オーバー" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「そんなオーバーなリアクションは要りません」
+o-ba-_4 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_o_a_rel,
+ ORTH <! "オーバー" !>].
 
 ;<IJ> ; 心配 
 ;<IJ> ; JACY 心配: shiNpai-vn (vn-intrans-lex)
@@ -9857,10 +9865,11 @@ shimatsu_4 := na-adj-lex &
 ;<IJ> ; オープン 
 ;<IJ> ; JACY オープン: oopuN-vn (vn-intrans-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> o-pun_5 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_o_a_pun_5_rel,
-;<IJ>  ORTH <! "オープン" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「この会はオープンなコミュニティです」
+o-pun_5 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_o_a_pun_5_rel,
+ ORTH <! "オープン" !>].
 
 ; 平ら 
 ; Used 8 times
@@ -9947,10 +9956,11 @@ hatsumei_3 := na-adj-lex &
 
 ;<IJ> ; あいにく 
 ;<IJ> ; JACY あいにく: ainiku-adv (isect-adv-lex)
-
-;<IJ> ainiku_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ainiku_a_2_rel,
-;<IJ>  ORTH <! "あいにく" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「あいにく今日はそんな気分じゃない」
+ainiku_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ainiku_a_2_rel,
+ ORTH <! "あいにく" !>].
 
 ; 案外 
 ; Used 1 times
@@ -9961,10 +9971,11 @@ angai_2 := na-adj-lex &
 
 ;<IJ> ; あんまり 
 ;<IJ> ; JACY あんまり: aNmari-adv (isect-adv-lex)
-
-;<IJ> anmari_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_anmari_a_2_rel,
-;<IJ>  ORTH <! "あんまり" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「ここまで準備したのに中止だなんてあんまりだ」
+anmari_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_anmari_a_2_rel,
+ ORTH <! "あんまり" !>].
 
 ;<IJ> ; いかが 
 ;<IJ> ; JACY いかが: ikaga-adv (adv-wh-lex)
@@ -10397,10 +10408,10 @@ ansei_2 := na-adj-lex &
 ;<IJ> ; 安全 
 ;<IJ> ; JACY 安全: anzen-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 5 times
-
-;<IJ> anzen_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_anzen_a_2_rel,
-;<IJ>  ORTH <! "安全" !>].
+;(TK 06-05-11 na-adj-lex復活)
+anzen_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_anzen_a_2_rel,
+ ORTH <! "安全" !>].
 
 ; アンバランス 
 
@@ -11259,10 +11270,11 @@ gehin_2 := na-adj-lex &
 ;<IJ> ; 現金 
 ;<IJ> ; JACY 現金: geNkiN-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 4 times
-
-;<IJ> genkin_2_1 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_genkin_a_2_rel,
-;<IJ>  ORTH <! "現金" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「お前はなんて現金なやつなんだ！」
+genkin_2_1 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_genkin_a_2_rel,
+ ORTH <! "現金" !>].
 
 ; 健康 
 ; Used 26 times
@@ -11320,10 +11332,11 @@ kouka_2_2 := na-adj-lex &
 ;<IJ> ; 高級 
 ;<IJ> ; JACY 高級: koukyuu (ordinary-nohon-n-lex)
 ;<IJ> ; Used 8 times
-
-;<IJ> koukyuu_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_koukyuu_a_2_rel,
-;<IJ>  ORTH <! "高級" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「高級な外車を乗り回す」
+koukyuu_4 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_koukyuu_a_4_rel,
+ ORTH <! "高級" !>].
 
 ; 強情 
 ; Used 2 times
@@ -11594,10 +11607,11 @@ zankoku_2 := na-adj-lex &
 ;<IJ> ; 幸せ 
 ;<IJ> ; JACY 幸せ: shiawase-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 3 times
-
-;<IJ> shiawase_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_shiawase_a_2_rel,
-;<IJ>  ORTH <! "幸せ" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「昨日は寿司を腹いっぱい食べて幸せだった」
+shiawase_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shiawase_a_2_rel,
+ ORTH <! "幸せ" !>].
 
 ; 四角 
 ; Used 8 times
@@ -13576,10 +13590,11 @@ fushinsetsu_2 := na-adj-lex &
 ;<IJ> ; 不正 
 ;<IJ> ; JACY 不正: fusei-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 6 times
-
-;<IJ> fusei_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_fusei_a_2_rel,
-;<IJ>  ORTH <! "不正" !>].
+;(TK 06-05-30 na-adj-lex復活)
+; ex.「不正な行為をするな」
+fusei_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fusei_a_2_rel,
+ ORTH <! "不正" !>].
 
 ; 不正確 
 
@@ -13597,10 +13612,11 @@ fuzoroi_2 := na-adj-lex &
 ;<IJ> ; 不注意 
 ;<IJ> ; JACY 不注意: fuchuui-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 2 times
-
-;<IJ> fuchuui_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_fuchuui_a_2_rel,
-;<IJ>  ORTH <! "不注意" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「君は不注意な言動が多すぎる」
+fuchuui_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fuchuui_a_2_rel,
+ ORTH <! "不注意" !>].
 
 ; 不調 
 
@@ -13646,10 +13662,11 @@ futekinin_2 := na-adj-lex &
 
 ;<IJ> ; 不手際 
 ;<IJ> ; JACY 不手際: futegiwa-noun (ordinary-nohon-n-lex)
-
-;<IJ> futegiwa_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_futegiwa_a_2_rel,
-;<IJ>  ORTH <! "不手際" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「不手際な対応をお詫びいたします」
+futegiwa_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_futegiwa_a_2_rel,
+ ORTH <! "不手際" !>].
 
 ; 筆不精 
 
@@ -13750,10 +13767,11 @@ funou_2 := na-adj-lex &
 ;<IJ> ; 不備 
 ;<IJ> ; JACY 不備: fubi-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 2 times
-
-;<IJ> fubi_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_fubi_a_2_rel,
-;<IJ>  ORTH <! "不備" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「不備な書類だとこちらも困ります
+fubi_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_fubi_a_2_rel,
+ ORTH <! "不備" !>].
 
 ; 不必要 
 ; Used 4 times
@@ -13896,9 +13914,9 @@ furi_2_1 := na-adj-lex &
 ;<IJ> ; JACY フリー: furii-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 1 times
 
-;<IJ> furi-_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_furi_a_2_rel,
-;<IJ>  ORTH <! "フリー" !>].
+;<IJ>furii_2 := na-adj-lex &
+;<IJ>[SYNSEM.LKEYS.KEYREL.PRED '_furii_a_2_rel,
+;<IJ> ORTH <! "フリー" !>].
 
 ; 不利益 
 
@@ -14414,10 +14432,11 @@ mugendai_2 := na-adj-lex &
 ;<IJ> ; 無効 
 ;<IJ> ; JACY 無効: mukou-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 2 times
-
-;<IJ> mukou_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_mukou_a_2_rel,
-;<IJ>  ORTH <! "無効" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「コンピュータに無効なアプリケーションが見付かった」
+mukou_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_mukou_a_2_rel,
+ ORTH <! "無効" !>].
 
 ; 向こう見ず 
 
@@ -14620,10 +14639,11 @@ meikaku_2 := na-adj-lex &
 ;<IJ> ; 明細 
 ;<IJ> ; JACY 明細: meisai-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 1 times
-
-;<IJ> meisai_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_meisai_a_2_rel,
-;<IJ>  ORTH <! "明細" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「明細な内容は後日ご説明いたします」
+meisai_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_meisai_a_2_rel,
+ ORTH <! "明細" !>].
 
 ; 明白 
 
@@ -15133,10 +15153,11 @@ arinomama_3 := na-adj-lex &
 ;<IJ> ; ぎりぎり 
 ;<IJ> ; JACY ぎりぎり: girigiri-adv (isect-adv-lex)
 ;<IJ> ; Used 3 times
-
-;<IJ> girigiri_3 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_girigiri_a_3_rel,
-;<IJ>  ORTH <! "ぎりぎり" !>].
+;(TK 06-06-02 na-adj-lex復活)
+; ex.「金額はこれがぎりぎりだ」
+girigiri_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_girigiri_a_3_rel,
+ ORTH <! "ぎりぎり" !>].
 
 ; 偶然 
 ; Used 4 times
@@ -17290,10 +17311,10 @@ noronoro_2 := isect-adv-lex &
 ;<IJ> ; のんびり 
 ;<IJ> ; JACY のんびり: noNbiri-vn (vn-intrans-lex)
 ;<IJ> ; Used 3 times
-
-;<IJ> nonbiri_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_nonbiri_a_2_rel,
-;<IJ>  ORTH <! "のんびり" !>].
+;(TK 06-05-11 isect-adv-lex復活)
+nonbiri_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_nonbiri_a_2_rel,
+ ORTH <! "のんびり" !>].
 
 ; はきはき 
 
@@ -17316,10 +17337,11 @@ hatahata_2 := isect-adv-lex &
 
 ;<IJ> ; ばたばた 
 ;<IJ> ; JACY ばたばた: batabata-vn (vn-intrans-lex)
-
-;<IJ> batabata_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_batabata_a_2_rel,
-;<IJ>  ORTH <! "ばたばた" !>].
+;(TK 06-06-02 isect-adv-lex復活)
+; ex.「暑さで人がばたばた倒れていった」
+batabata_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_batabata_a_2_rel,
+ ORTH <! "ばたばた" !>].
 
 ; ぱちくり 
 
@@ -17336,10 +17358,10 @@ pachipachi_2 := isect-adv-lex &
 ;<IJ> ; はっきり 
 ;<IJ> ; JACY はっきり: hakkiri-vn (vn-intrans-lex)
 ;<IJ> ; Used 44 times
-
-;<IJ> hakkiri_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_hakkiri_a_2_rel,
-;<IJ>  ORTH <! "はっきり" !>].
+;(TK 06-05-11 isect-adv-lex復活)
+hakkiri_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_hakkiri_a_2_rel,
+ ORTH <! "はっきり" !>].
 
 ; ぱっちり 
 
@@ -17509,10 +17531,11 @@ furafura_2 := isect-adv-lex &
 ;<IJ> ; ぶらぶら 
 ;<IJ> ; JACY ぶらぶら: burabura-vn (vn-intrans-lex)
 ;<IJ> ; Used 4 times
-
-;<IJ> burabura_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_burabura_a_2_rel,
-;<IJ>  ORTH <! "ぶらぶら" !>].
+;(TK 06-06-02 isect-adv-lex復活)
+; ex.「することもないのでぶらぶら散歩してきた」
+burabura_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_burabura_a_2_rel,
+ ORTH <! "ぶらぶら" !>].
 
 ; ぷりぷり 
 
@@ -17804,10 +17827,11 @@ yusayusa_2 := isect-adv-lex &
 ;<IJ> ; ゆったり 
 ;<IJ> ; JACY ゆったり: yuttari-adj (na-adj-lex)
 ;<IJ> ; Used 15 times
-
-;<IJ> yuttari_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_yuttari_a_2_rel,
-;<IJ>  ORTH <! "ゆったり" !>].
+;(TK 06-06-02 isect-adv-lex復活)
+; ex.「グリーン車でゆったり帰ってきた」
+yuttari_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_yuttari_a_2_rel,
+ ORTH <! "ゆったり" !>].
 
 ; ゆらゆら 
 
@@ -18292,10 +18316,11 @@ arekore_2 := isect-adv-lex &
 ;<IJ> ; いずれ 
 ;<IJ> ; JACY いずれ: izure (ordinary-nohon-n-lex)
 ;<IJ> ; Used 6 times
-
-;<IJ> izure_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_izure_a_2_rel,
-;<IJ>  ORTH <! "いずれ" !>].
+;(TK 06-06-02 isect-adv-lex復活)
+; ex.「いずれ花が咲くだろう」
+izure_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_izure_a_2_rel,
+ ORTH <! "いずれ" !>].
 
 ;<IJ> ; ああ 
 ;<IJ> ; JACY ああ: aa-interj (interj-lex)
@@ -20271,10 +20296,10 @@ doppuri_1 := isect-adv-lex &
 ;<IJ> ; とても 
 ;<IJ> ; JACY とても: totemo-adv (isect-adv-lex)
 ;<IJ> ; Used 7 times
-
-;<IJ> totemo_1 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_totemo_a_1_rel,
-;<IJ>  ORTH <! "とても" !>].
+;(TK 06-05-11 isect-adv-lex復活)
+;totemo_1 := isect-adv-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_totemo_a_1_rel,
+; ORTH <! "とても" !>].
 
 ;<IJ> ; とにかく 
 ;<IJ> ; JACY とにかく: tonikaku-adv (isect-adv-lex)
@@ -21632,6 +21657,15 @@ ikioi_yoku_1 := isect-adv-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_ikioiyoku_a_1_rel,
  ORTH <! "勢い", "良く" !>].
 
+;FIXME
+;(TK 06-05-11)
+;勢い よく 
+ikioi_yoku_1_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ikioiyoku_a_1_rel,
+ ORTH <! "勢い", "よく" !>].
+
+
+
 ; よくよく 
 
 yokuyoku_1 := isect-adv-lex &
@@ -22031,10 +22065,11 @@ danko_1 := isect-adv-lex &
 ;<IJ> ; 特別 
 ;<IJ> ; JACY 特別: tokubetsu-adj (na-adj-lex) tokubetsu (ordinary-nohon-n-lex)
 ;<IJ> ; Used 18 times
-
-;<IJ> tokubetsu_1 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tokubetsu_a_1_rel,
-;<IJ>  ORTH <! "特別" !>].
+;(TK 06-06-02 isect-adv-lex復活)
+; ex.「特別変わったことはありません」
+tokubetsu_1 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tokubetsu_a_1_rel,
+ ORTH <! "特別" !>].
 
 ; とんとん 
 
@@ -22328,10 +22363,12 @@ ooku_2 := isect-adv-lex &
 ;<IJ> ; おおよそ 
 ;<IJ> ; JACY おおよそ: ooyoso-noun (ordinary-nohon-n-lex)
 ;<IJ> ; Used 4 times
-
-;<IJ> ooyoso_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_ooyoso_a_2_rel,
-;<IJ>  ORTH <! "おおよそ" !>].
+;(TK 06-03-14 isect-adv-lex復活)
+; adjectiveも必要
+; ex.「被害額はおおよそ見当も付かない」
+ooyoso_2 := isect-adv-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_ooyoso_a_2_rel,
+ ORTH <! "おおよそ" !>].
 
 ; 思い切り 
 
@@ -22342,7 +22379,7 @@ omoikiri_2 := isect-adv-lex &
 ; およそ 
 ; Used 1 times
 
-oyoso_2 := isect-adv-lex &
+oyoso_2 := deg-adv-num-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_oyoso_a_2_rel,
  ORTH <! "およそ" !>].
 
@@ -22892,10 +22929,10 @@ hisabisa_2 := isect-adv-lex &
 ;<IJ> ; 普通 
 ;<IJ> ; JACY 普通: futsuu (ordinary-nohon-n-lex)
 ;<IJ> ; Used 105 times
-
-;<IJ> futsuu_2 := isect-adv-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_futsuu_a_2_rel,
-;<IJ>  ORTH <! "普通" !>].
+;(TK 06-05-11 isect-adv-lex復活)
+ futsuu_2 := isect-adv-lex &
+ [SYNSEM.LKEYS.KEYREL.PRED '_futsuu_a_2_rel,
+  ORTH <! "普通" !>].
 
 ;<IJ> ; 今 
 ;<IJ> ; JACY 今: ima (date-noun-lex)
@@ -23290,10 +23327,13 @@ douride_1 := isect-adv-lex &
 
 ; 僅か 
 ; Used 1 times
+;(TK 06-05-11 changed to deg-adv-num-lex) 
+;wazuka_1 := isect-adv-lex &
+;[SYNSEM.LKEYS.KEYREL.PRED '_wazuka_a_1_rel,
+; ORTH <! "僅か" !>].
+wazuka_2 := deg-adv-num-lex &
+[ORTH <! "僅か" !>, SYNSEM.LKEYS.KEYREL.PRED '_wazuka_a_2_rel].
 
-wazuka_1 := isect-adv-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_wazuka_a_1_rel,
- ORTH <! "僅か" !>].
 
 ; 辛くも 
 
@@ -23563,4 +23603,337 @@ isect-adv-lex &
 [ORTH <! "見る","見る" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mirumiru_a_rel].
 
+;(TK 06-03-13)
+; ex.「事態はより悪い方向に向かっている」
+yori_adv := isect-adv-lex &
+[ORTH <! "より" !>, SYNSEM.LKEYS.KEYREL.PRED '_yori_a_1_rel].
+
+;(TK 06-03-13)
+;本来na-adjだが、「余りに」で副詞的に使っている場合が多いため
+; ex.「余りに風が強いので、洗濯物を干すのを諦めた」
+amarini_adv-multi := isect-adv-lex &
+[ORTH <! "余り","に" !>, SYNSEM.LKEYS.KEYREL.PRED '_amarini_a_1_rel].
+
+;(TK 06-03-13)
+; ex.「寒波はこのまま居座り続けるでしょう」
+konomama_2 := isect-adv-lex &
+[ORTH <! "このまま" !>, SYNSEM.LKEYS.KEYREL.PRED '_konomama_a_2_rel].
+
+;(TK 06-04-18)
+;まんまるい
+manmarui_1 := i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_manmarui_a_1_rel,
+ ORTH <! "まんまるい" !>].
+
+;(TK 06-04-18)
+;多かれ少なかれ
+; ex.「そんな失敗は多かれ少なかれ誰にでもある」
+ookaresukunakare_1 := isect-adv-lex &
+[ORTH <! "多かれ少なかれ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ookaresukunakare_a_1_rel].
+
+ookaresukunakare-multi_1 := isect-adv-lex &
+[ORTH <! "多かれ","少なかれ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ookaresukunakare_a_1_rel].
+
+;(TK 06-04-19)
+;ばかばかしい
+bakabakashii_1-hiragana := i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_bakabakashii_a_1_rel,
+ ORTH <! "ばかばかしい" !>].
+
+;(TK 06-04-19)
+;ずるがしこい
+zurugashikoi_1-hiragana := i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_zurugashikoi_a_1_rel,
+ ORTH <! "ずるがしこい" !>].
+
+;(TK 06-04-19)
+;適宜
+; ex.「適宜な指導を求める」
+tekigi_1 := na-adj-lex &
+[ORTH <! "適宜" !>, SYNSEM.LKEYS.KEYREL.PRED '_tekigi_a_1_rel].
+
+;(TK 06-04-19)
+;適宜
+; ex.「牛乳を適宜加えていく」
+tekigi_2 := isect-adv-lex &
+[ORTH <! "適宜" !>, SYNSEM.LKEYS.KEYREL.PRED '_tekigi_adv_2_rel].
+
+;(TK 06-04-20)
+;まっさかさま
+massakasama_1-hiragana := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_massakasama_a_1_rel,
+ ORTH <! "まっさかさま" !>].
+
+;(TK 06-04-21)
+;なってない
+; ex.「まったくお前はなってない！」
+nattenai_1 := i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_nattenai_a_1_rel,
+ ORTH <! "なってない" !>].
+
+;(TK 06-04-21)
+;しょうがない
+; ex.「まったくお前はしょうがない奴だ」
+shouganai_1 := i-adj-stem-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_shouganai_a_1_rel,
+ ORTH <! "しょうがない" !>].
+
+;(TK 06-04-24)
+;微小
+; ex.「地震計に微小な動きがあった」
+bishou_3 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_bishou_a_3_rel,
+ ORTH <! "微小" !>].
+
+;(TK 06-04-24)
+;色取り取り,色とりどり
+; ex.「色取り取りな花が咲いている」
+irotoridori_1_1 := na-adj-lex &
+[ORTH <! "色取り取り" !>, SYNSEM.LKEYS.KEYREL.PRED '_irotoridori_a_1_rel].
+
+irotoridori_1_2 := na-adj-lex &
+[ORTH <! "色とりどり" !>, SYNSEM.LKEYS.KEYREL.PRED '_irotoridori_a_1_rel].
+
+;(TK 06-04-26)
+;下等
+; ex.「そんなことを言う奴は人として下等だ」
+katou_3 := na-adj-lex &
+[ORTH <! "下等" !>, SYNSEM.LKEYS.KEYREL.PRED '_katou_a_3_rel].
+
+;(TK 06-04-26)
+;なめらか
+nameraka_1-hiragana := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_nameraka_a_1_rel,
+ ORTH <! "なめらか" !>].
+
+;(TK 06-04-27)
+;まとも
+; ex.「このクラスに自分以外にまともな人間なんていないと誰もが思っていた」
+matomo_1 := na-adj-lex &
+[ORTH <! "まとも" !>, SYNSEM.LKEYS.KEYREL.PRED '_matomo_a_1_rel].
+
+;(TK 06-04-27)
+;頑強
+; ex.「彼は頑強な反対派だ」」
+gankyou_1 := na-adj-lex &
+[ORTH <! "頑強" !>, SYNSEM.LKEYS.KEYREL.PRED '_gankyou_a_1_rel].
+
+;(TK 06-04-28)
+;円い
+; ex.「アスファルトに円い輪を描いた」
+marui_a3 := i-adj-stem-lex &
+[ORTH <! "円い" !>, SYNSEM.LKEYS.KEYREL.PRED '_marui_a_3_rel].
+
+;(TK 06-05-01)
+;のろま
+; ex.「前にのろまな車がいてイライラする」
+noroma_1 := na-adj-lex &
+[ORTH <! "のろま" !>, SYNSEM.LKEYS.KEYREL.PRED '_noroma_a_1_rel].
+
+;(TK 06-05-02)
+;ちょぼちょぼ
+;「同じ」に近い使い方をする
+; ex.「おつむの出来では、俺とお前はちょぼちょぼだ」
+chobochobo_2 := na-adj-lex &
+[ORTH <! "ちょぼちょぼ" !>, SYNSEM.LKEYS.KEYREL.PRED '_chobochobo_a_2_rel].
+
+;(TK 06-05-02)
+;微細
+; ex.「微細な点は気にするな」
+bisai_1 := na-adj-lex &
+[ORTH <! "微細" !>, SYNSEM.LKEYS.KEYREL.PRED '_bisai_a_1_rel].
+
+;(TK 06-05-02)
+;順風満帆
+; ex.「我が社の船出は順風満帆である」
+junpuumanpan_1 := na-adj-lex &
+[ORTH <! "順風満帆" !>, SYNSEM.LKEYS.KEYREL.PRED '_junpuumanpan_a_1_rel].
+
+;(TK 06-05-10)
+;今のところ,今の所,いまのところ
+; ex.「今のところ計画は順調に進んでいる」
+imanotokoro_1_1 := isect-adv-lex &
+[ORTH <! "今のところ" !>, SYNSEM.LKEYS.KEYREL.PRED '_imanotokoro_adv_1_rel].
+
+imanotokoro_1_2 := isect-adv-lex &
+[ORTH <! "今の所" !>, SYNSEM.LKEYS.KEYREL.PRED '_imanotokoro_adv_1_rel].
+
+imanotokoro_1_3 := isect-adv-lex &
+[ORTH <! "いまのところ" !>, SYNSEM.LKEYS.KEYREL.PRED '_imanotokoro_adv_1_rel].
+
+;(TK 06-05-11)
+;十分
+juubun_4 := isect-adv-lex &
+[ORTH <! "十分" !>, SYNSEM.LKEYS.KEYREL.PRED '_juubun_adv_4_rel].
+
+juubun_5 := na-adj-lex &
+[ORTH <! "十分" !>, SYNSEM.LKEYS.KEYREL.PRED '_juubun_a_5_rel].
+
+;(TK 06-05-11))
+;キナ臭い
+kinakusai_1_2 := i-adj-stem-lex &
+[ORTH <! "キナ臭い" !>, SYNSEM.LKEYS.KEYREL.PRED '_kinakusai_a_1_rel].
+
+;(TK 06-05-11)
+;これぞ
+; ex.「これぞ武藤の本領だ」
+korezo_2 := isect-adv-lex &
+[ORTH <! "これぞ" !>, SYNSEM.LKEYS.KEYREL.PRED '_korezo_adv_2_rel].
+
+;(TK 06-05-11)
+;およそ
+; ex.「およそ人とは思えない怪力」」
+oyoso_3 := isect-adv-lex &
+[ORTH <! "およそ" !>, SYNSEM.LKEYS.KEYREL.PRED '_oyoso_adv_3_rel].
+
+;(TK 06-05-11)
+;丁度,ちょうど
+; ex.「丁度３００円で買える」
+choudo_2 := deg-adv-num-lex &
+[ORTH <! "丁度" !>, SYNSEM.LKEYS.KEYREL.PRED '_choudo_a_2_rel].
+
+choudo_2-hiragana := deg-adv-num-lex &
+[ORTH <! "ちょうど" !>, SYNSEM.LKEYS.KEYREL.PRED '_choudo_a_2_rel].
+
+;(TK 06-05-11)
+;平均
+; ex.「平均２０万円の月収で暮らす」
+heikin_3 := deg-adv-num-lex &
+[ORTH <! "平均" !>, SYNSEM.LKEYS.KEYREL.PRED '_heikin_a_3_rel].
+
+;(TK 06-05-11)
+;ざっと
+zatto_2 := deg-adv-num-lex &
+[ORTH <! "ざっと" !>, SYNSEM.LKEYS.KEYREL.PRED '_zatto_a_2_rel].
+
+;(TK 06-05-11)
+;少なくとも
+sukunakutomo_2 := deg-adv-num-lex &
+[ORTH <! "少なくとも" !>, SYNSEM.LKEYS.KEYREL.PRED '_sukunakutomo_a_2_rel].
+
+;(TK 06-05-11)
+;たった
+tatta_2 := deg-adv-num-lex &
+[ORTH <! "たった" !>, SYNSEM.LKEYS.KEYREL.PRED '_tatta_a_2_rel].
+
+;(TK 06-05-11)
+;延べ
+nobe_2 := deg-adv-num-lex &
+[ORTH <! "延べ" !>, SYNSEM.LKEYS.KEYREL.PRED '_nobe_a_2_rel].
+
+;(TK 06-05-11)
+;計
+kei_6 := deg-adv-num-lex &
+[ORTH <! "計" !>, SYNSEM.LKEYS.KEYREL.PRED '_kei_a_6_rel].
+
+;(TK 06-05-11)
+;おおよそ
+ooyoso_3 := deg-adv-num-lex &
+[ORTH <! "おおよそ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ooyoso_a_3_rel].
+
+;(TK 06-05-11)
+;大体
+daitai_5 := deg-adv-num-lex &
+[ORTH <! "大体" !>, SYNSEM.LKEYS.KEYREL.PRED '_daitai_a_5_rel].
+
+;(TK 06-05-11)
+;ほぼ
+hobo_3 := deg-adv-num-lex &
+[ORTH <! "ほぼ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hobo_a_3_rel].
+
+;(TK 06-05-11)
+;少し
+sukoshi_3 := deg-adv-lex &
+[ORTH <! "少し" !>, SYNSEM.LKEYS.KEYREL.PRED '_sukoshi_a_3_rel].
+
+;(TK 06-05-11)
+;もっと
+motto_3 := deg-adv-lex &
+[ORTH <! "もっと" !>, SYNSEM.LKEYS.KEYREL.PRED '_motto_a_3_rel].
+
+;(TK 06-05-11)
+;より
+yori_3 := deg-adv-lex &
+[ORTH <! "より" !>, SYNSEM.LKEYS.KEYREL.PRED '_yori_a_3_rel].
+
+;(TK 06-05-11)
+;できるだけ
+dekirudake_2 := deg-adv-lex &
+[ORTH <! "できるだけ" !>, SYNSEM.LKEYS.KEYREL.PRED '_dekirudake_a_2_rel].
+
+;(TK 06-05-12)
+;しめて
+shimete_1_1 := deg-adv-num-lex &
+[ORTH <! "しめて" !>, SYNSEM.LKEYS.KEYREL.PRED '_shimete_a_1_rel].
+
+;(TK 06-05-12)
+;締めて
+shimete_1_2 := deg-adv-num-lex &
+[ORTH <! "締めて" !>, SYNSEM.LKEYS.KEYREL.PRED '_shimete_a_1_rel].
+
+;(TK 06-05-25)
+;興醒め
+; ex.「そんな演出は興醒めだ」
+kyouzame_3_2 := na-adj-lex &
+[ORTH <! "興醒め" !>, SYNSEM.LKEYS.KEYREL.PRED '_kyouzame_a_3_rel].
+
+;(TK 06-05-30)
+;専ら,もっぱら
+; ex.「最近は物書きの仕事が専らである」
+moppara_3_1 := na-adj-lex &
+[ORTH <! "専ら" !>, SYNSEM.LKEYS.KEYREL.PRED '_kyouzame_a_3_rel].
+
+moppara_3_2 := na-adj-lex &
+[ORTH <! "もっぱら" !>, SYNSEM.LKEYS.KEYREL.PRED '_kyouzame_a_3_rel].
+
+;(TK 06-05-30)
+;かたくな
+katakuna_1-hiragana := na-adj-lex &
+[ORTH <! "かたくな" !>, SYNSEM.LKEYS.KEYREL.PRED '_katakuna_a_1_rel].
+
+;(TK 06-05-31)
+chigainai_a1-multi := i-adj-stem-lex &
+[ORTH <! "違い","無い" !>, SYNSEM.LKEYS.KEYREL.PRED '_chigainai_a_1_rel].
+
+;(TK 06-05-31)
+chigainai_a2-multi := i-adj-stem-lex &
+[ORTH <! "違い","ない" !>, SYNSEM.LKEYS.KEYREL.PRED '_chigainai_a_2_rel].
+
+;(TK 06-05-31)
+chigainai_a3-multi := i-adj-stem-lex &
+[ORTH <! "ちがい","ない" !>, SYNSEM.LKEYS.KEYREL.PRED '_chigainai_a_3_rel].
+
+;(TK 06-05-31)
+;間違い無い,間違いない,まちがいない
+;間違い 無い,間違い ない,まちがい ない
+machigainai_1_1 := i-adj-stem-lex &
+[ORTH <! "間違い無い" !>, SYNSEM.LKEYS.KEYREL.PRED '_machigainai_a_1_rel].
+
+machigainai_1_2 := i-adj-stem-lex &
+[ORTH <! "間違いない" !>, SYNSEM.LKEYS.KEYREL.PRED '_machigainai_a_1_rel].
+
+machigainai_1_3 := i-adj-stem-lex &
+[ORTH <! "まちがいない" !>, SYNSEM.LKEYS.KEYREL.PRED '_machigainai_a_1_rel].
+
+machigainai_1_1-multi := i-adj-stem-lex &
+[ORTH <! "間違い","無い" !>, SYNSEM.LKEYS.KEYREL.PRED '_machigainai_a_1_rel].
+
+machigainai_1_2-multi := i-adj-stem-lex &
+[ORTH <! "間違い","ない" !>, SYNSEM.LKEYS.KEYREL.PRED '_machigainai_a_1_rel].
+
+machigainai_1_3-multi := i-adj-stem-lex &
+[ORTH <! "まちがい","ない" !>, SYNSEM.LKEYS.KEYREL.PRED '_machigainai_a_1_rel].
+
+;(TK 06-06-02)
+;生憎
+ainiku_2-hiragana := na-adj-lex &
+[ORTH <! "生憎" !>, SYNSEM.LKEYS.KEYREL.PRED '_ainiku_a_2_rel].
+
+ainiku_4 := isect-adv-lex &
+[ORTH <! "生憎" !>, SYNSEM.LKEYS.KEYREL.PRED '_ainiku_a_4_rel].
+
+;(TK 06-06-02)
+;何れ
+izure_2-kanji := isect-adv-lex &
+[ORTH <! "何れ" !>, SYNSEM.LKEYS.KEYREL.PRED '_izure_a_2_rel].
 

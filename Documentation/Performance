@@ -62,6 +62,12 @@ from within the *common-lisp* buffer:
       "~/delphin/grammars/japanese/testsuites/hinoki-test-a.100" 
       "~/delphin/grammars/japanese/testsuites/hinoki-test-a.100.results"))
 
+(lkb::with-check-path-list-collection 
+   "~/logon/dfki/jacy/lkb/checkpaths.lsp" 
+   (parse-sentences 
+      "~/logon/dfki/jacy/testsuites/mrs.ja" 
+      "~/logon/dfki/jacy/testsuites/mrs.ja.results"))
+
 ========================================================================
 
 (2) Optimize selection of keyargs [only do this occasionally)
