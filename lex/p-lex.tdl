@@ -1979,6 +1979,8 @@ dano-second-conj := postp-lex-coord &
 ka-sap-np  := s-conj-lex & 
                   [ORTH <! "か" !>,
                    SYNSEM.LKEYS.KEYREL.PRED '_ka_p_sconj_rel].
+;<<<<<<< p-lex.tdl
+;                   SYNSEM.LKEYS.KEYREL.PRED '_ka_p_sconj_rel].
 
 
 ;(TK 06-04-18)
@@ -1996,3 +1998,36 @@ ando-ampersand := n_conj-p-lex &
        [ORTH <! "＆" !>,
         SYNSEM.LKEYS.KEYREL.PRED '_ando_p_conj_rel].
 
+;(TK 06-05-10)
+;、 なかでも,、 中でも
+; ex.「魚、なかでも鮪が大好きだ」
+comma-nakademo-conj_1 := n_conj-p-lex &
+	         [ORTH <! "、", "なかでも" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_nakademo_conj_rel].
+
+comma-nakademo-conj_2 := n_conj-p-lex &
+	         [ORTH <! "、", "中でも" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_nakademo_conj_rel].
+
+;(TK 06-05-15)
+;とか
+; ex.「肉とか野菜とかを買ってきてください」
+toka-conj-nobj  := n_conj-p-lex &
+            [SYNSEM [LOCAL.CAT.HEAD.PTYPE to,
+		     LKEYS.KEYREL.PRED '_toka_p_and_rel],
+             ORTH <! "とか" !>].
+
+toka-second-conj := postp-lex-coord &
+	         [SYNSEM.LOCAL.CAT.HEAD.PTYPE to,
+		  ORTH <! "とか" !>].
+
+;(TK 06-06-16)
+toutou-nobj := topic-nobj-lex &
+             [ SYNSEM [LOCAL.CAT.HEAD.PTYPE wa,
+		       LKEYS.KEYREL.PRED '_toutou_p_rel],
+               ORTH <! "等々" !> ].
+
+;;;=======
+;                   SYNSEM.LKEYS.KEYREL.PRED '_ka_p_sconj_rel].
+;
+;;;>>>>>>> 1.44

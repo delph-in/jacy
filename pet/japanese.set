@@ -62,7 +62,9 @@ trivial-tokenizer.
 ;; (ERB 2001-12-20) We don't want to strip : anymore, since it's
 ;; being used meaningfully.
 
-punctuation-characters := "\"!&'()*+,-¡Ý./;<=>?@[\]^_`{|}~¡£¡©¡Ä¡¥¡¡¡û¡ü¡ý¡ö".
+
+punctuation-characters := "\"!&'()*+,-¡Ý./;<=>?@[\]^_`{|}~¡£¡©¡Ä¡¥¡¡¡û¡ü¡ý¡ö¡ù¡ú¡þ¢¡".
+
 
 ;; name of type to get info about grammar into (if at all)
 grammar-info := grammar_info.
@@ -186,14 +188,10 @@ sm := "hinoki.mem".
 ;;; reason to do otherwise.
 ;;;
 
-;spanning-only-rules := $runon_s.
-spanning-only-rules := $np-frag $pp-frag $int-adv-frag $pp-np-frag 
+spanning-only-rules := $frg-np $frg-pp $frg-s-adv $frg-i-adv
+		       $frg-pp-np $frg-i-adv-np $frg-pp-int 
 		       $runon_s.
 
-
-
-
-;;;
 ;;; generic lexical entries for unknown words: for each unknown word in the
 ;;; input all generic entries are postulated.  those that require a certain
 ;;; suffix (`generic-le-suffixes') only fire if the input form has the suffix.

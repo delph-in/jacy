@@ -99,9 +99,13 @@ FIRST))))
     #\_ #\` #\{ #\| #\} #\~
     #\ideographic_full_stop #\fullwidth_question_mark 
     #\horizontal_ellipsis #\fullwidth_full_stop
-    #\fullwidth_exclamation_mark #\black_circle
+    #\fullwidth_exclamation_mark 
     #\ideographic_space #\minus_sign
-    #\white_circle))
+    #\white_circle #\black_circle
+    #\white_star #\black_star
+    #\white_diamond #\black_diamond))
+;    #\katakana_middle_dot 
+
 
 (defun punctuationp (thing)
   (let ((string (string thing)))

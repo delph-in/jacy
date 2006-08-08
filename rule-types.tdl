@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;; -*- Mode: TDL; Coding: euc-jp -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -1880,6 +1880,9 @@ nominal-numcl-rule-card := nominal-numcl-rule-type &
 ; between that relation and the MOD value the numeral classifier was
 ; expecting.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; FCB FIXME
+; should this be  ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ INDEX #arg,
+; or              ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ XARG  #arg,
 
 nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 [ C-CONT common-noun-sem-type &

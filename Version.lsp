@@ -1,4 +1,3 @@
 (in-package :lkb)
 
-(defparameter *grammar-version* "Jacy (2006-08-04)")
-
+(defparameter *grammar-version* "Jacy (2006-08-07)")

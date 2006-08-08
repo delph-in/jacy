@@ -20,12 +20,10 @@
 ;「(骨を)折る」 (060503)
 ; lit. break (a bone)
 ; "make an effort"
-; FCB 2006-08-04 took out HEAD [PASSIVIZABLE -,  NEGATIVIZABLE -],
 oru-i-stem :=  v1-c-stem-lex &
  [SYNSEM.LKEYS.KEYREL.PRED '_oru_v_i_rel,
   ORTH <! "折る" !>,
   IDIOM +].
-
 
 ;(CH 06-06-02)
 ;慣用句『役に立つ』の『立つ』
@@ -45,11 +43,11 @@ michikusa-i := ordinary-nohon-n-lex &
 ;「(頭が)痛い」 (060503)
 ; lit. head aches
 ; "be in trouble"
-; FCB 2006-08-04 took out HEAD.NEGATIVIZABLE -,
 itai-i-stem := i-adj-stem-lex &
  [SYNSEM.LKEYS.KEYREL.PRED '_itai_a_i_rel,
   ORTH <! "痛い" !>,
   IDIOM +].
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -77,6 +75,6 @@ mizumoshitataru-i := idiom-A-adnominal-lex &
 ;「寄ってたかって」 (060503)
 ; lit. getting close and scrounging
 ; "gang up (to do something)"
-yottetakatte-adv-i := idiom-A-isect-adv-lex &
- [ORTH <! "寄っ", "て", "たかっ", "て" !>,
-  SYNSEM.LKEYS.KEYREL.PRED '_yottetakatte_a_rel].
+;yottetakatte-adv-i := idiom-A-isect-adv-lex &
+; [ORTH <! "寄っ", "て", "たかっ", "て" !>,
+;  SYNSEM.LKEYS.KEYREL.PRED '_yottetakatte_a_rel].

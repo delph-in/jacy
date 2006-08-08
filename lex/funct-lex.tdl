@@ -2306,9 +2306,69 @@ waga_2 := noun_mod-lex-l &
 kitaru_4 := det-lex &
 [ORTH <! "来たる" !>, SYNSEM.LKEYS.KEYREL.PRED '_kitaru_q_4_rel].
 
-;(TK 06-04-20))
+;(TK 06-04-20)
 ;なあに
 ; ex.「なあに、大した事ではないよ」
 naani_1 := interj-lex &
 [ORTH <! "なあに" !>, SYNSEM.LKEYS.KEYREL.PRED '_naani_x_1_rel].
+
+;(TK 06-05-09)
+;わんわん,ワンワン
+wanwan_2 := interj-lex &
+[ORTH <! "わんわん" !>, SYNSEM.LKEYS.KEYREL.PRED '_wanwan_x_2_rel].
+
+wanwan_2-katakana := interj-lex &
+[ORTH <! "ワンワン" !>, SYNSEM.LKEYS.KEYREL.PRED '_wanwan_x_2_rel].
+
+;(TK 06-05-10)
+;南無阿弥陀仏
+namuamidabutsu_2 := interj-lex &
+[ORTH <! "南無阿弥陀仏" !>, SYNSEM.LKEYS.KEYREL.PRED '_namuamidabutsu_x_2_rel].
+
+;(TK 06-05-15)
+;とはいえ
+tohaie_1-hiragana := interj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tohaie_a_1_rel,
+ ORTH <! "とはいえ" !> ].
+
+;(TK 06-05-31)
+;いえ
+; ex.「いえ、そんな事は知りません」
+ie_3 := excl-lex &
+       [ORTH <! "いえ" !>,SYNSEM.LKEYS.KEYREL [PRED '_ie_x_3_rel]].
+
+;(TK 06-06-26)
+;お休み,おやすみ
+oyasumi_3_1 := greeting-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_oyasumi_x_3_rel,
+ ORTH <! "お休み" !> ].
+
+oyasumi_3_2 := greeting-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_oyasumi_x_3_rel,
+ ORTH <! "おやすみ" !> ].
+
+;(TK 06-06-26)
+;お休みなさい,おやすみなさい
+oyasuminasai_1_1 := greeting-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_oyasuminasai_x_1_rel,
+ ORTH <! "お休みなさい" !> ].
+
+oyasuminasai_1_2 := greeting-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_oyasuminasai_x_1_rel,
+ ORTH <! "おやすみなさい" !> ].
+
+;(TK 06-06-26)
+;お休み なさい,おやすみ なさい
+oyasuminasai_1_1-multi := greeting-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_oyasuminasai_x_1_rel,
+ ORTH <! "お休み","なさい" !> ].
+
+oyasuminasai_1_2-multi := greeting-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_oyasuminasai_x_1_rel,
+ ORTH <! "おやすみ","なさい" !> ].
+
+;(TK 06-07-31)
+;えんやこら
+enyakora_2 := interj-lex &
+[ORTH <! "えんやこら" !>, SYNSEM.LKEYS.KEYREL.PRED '_enyakora_x_2_rel].
 

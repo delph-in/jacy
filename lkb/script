@@ -165,7 +165,6 @@
 (mt:read-vpm (lkb-pathname (parent-directory) "semi.vpm") :semi)
 
 
-
 ;;;
 ;;; finally, use the new transfer component: load any number of rule sets, each
 ;;; in a separate file, associated with its identifier.  

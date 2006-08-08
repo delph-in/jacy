@@ -28,6 +28,7 @@ lexical_sign-word := lexical_sign &
 	   LKEYS.KEYREL [WLINK ne-list,
 			 LBL #label]]].
 
+
 ;;;;;;;;;;;;;;;;;;;HEADS;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -1655,7 +1656,6 @@ p-lex-norm := p-lex &
  [SYNSEM.LOCAL [ CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #ind,
 		 CONT.HOOK.XARG #ind]].
   
-
 ; (ERB 2001-10-17) This is the supertype for p-lex's that don't
 ; identify their KEY with their OBJ's KEY.  Name means p-lex-contentful.
 
@@ -2075,22 +2075,7 @@ nmod-numcl-p-lex := p-lex &
 	   MODIFIED.PERIPH -]].
 
 
-;;; COPY -- Lose Me
-; nmod-numcl-p-lex := nmod-p-lex &
-; [ SYNSEM.LOCAL [ CAT [ VAL.COMPS.FIRST.LOCAL.CAT.HEAD num-cl-mod_head &
-;                                                      [ MOD < [LOCAL [CONT.HOOK [ XARG #xarg,
-; 										 INDEX #modind,
-; 										 LTOP #hand ] ]] >,
-; 						       EMPTY +],
-;                        HEAD [ MOD < [ LOCAL.CONT.HOOK [INDEX #modind,
-; 						       LTOP #hand ] ,
-;                                     MODIFIED.PERIPH + ]>,
-;                               PTYPE overt,
-;                               J-SPEC null ]],
-;                  CONT [ HOOK.XARG #xarg,
-; 			RELS <! !>,
-;                         HCONS <! !> ]]].
-                           
+
 ; (ERB 2001-09-03) Adding constraint that the INDEX of vmod-p-lex be
 ; the same as the MOD...INDEX.
 
@@ -4925,7 +4910,6 @@ isect-adv-lex := isect-mod-lex & adv-lex.
 ; Idiom Implementation (CH 060804)
 ; (CH 2006-08-04) Introduced idiom-A-isect-adv-lex, which is an idiom that
 ;  is completely fixed and unambiguous and corresponds to an adverb.
-idiom-A-isect-adv-lex := isect-adv-lex.
 
 deg-adv-lex := isect-mod-lex & adv-deg-lex.
 ;;; ¤È¤Æ¤â 

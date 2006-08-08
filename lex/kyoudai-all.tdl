@@ -6101,7 +6101,10 @@ yu-ri_1 := other_name-lex &
 [ORTH <! "ユーリ" !>, SYNSEM.LKEYS.KEYREL.CARG 'yu-ri_1].
 
 ; Freq: 1
-kenkou_4 := first_name-lex &
+;POS
+;(TK 06-05-08)
+;kenkou_4 := first_name-lex &
+kenkou_4 := other_name-lex &
 [ORTH <! "剣晃" !>, SYNSEM.LKEYS.KEYREL.CARG 'kenkou_4].
 
 ; Freq: 1
@@ -15229,10 +15232,10 @@ gareki_n1 := ordinary-nohon-n-lex &
 
 ; Freq: 15
 ;POS
-;(TK 05-08-29)
+;(TK 06-05-09)
 ;uQiton_n1 := ordinary-nohon-n-lex &
 ;[ORTH <! "ヴィトン" !>, SYNSEM.LKEYS.KEYREL.PRED '_uQiton_n_1_rel].
-uQiton_1 := inst_name-lex &
+uQiton_1 := surname-or-instname-lex &
 [ORTH <! "ヴィトン" !>, SYNSEM.LKEYS.KEYREL.CARG 'uQiton_1].
 
 ; Freq: 15
@@ -16063,8 +16066,14 @@ medo_n2 := ordinary-nohon-n-lex &
 ;(TK 05-08-30)
 ;shante_n1 := ordinary-nohon-n-lex &
 ;[ORTH <! "シャンテ" !>, SYNSEM.LKEYS.KEYREL.PRED '_shante_n_1_rel].
-shante_1 := inst_name-lex &
-[ORTH <! "シャンテ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shante_1].
+;(TK 06-05-09 changed to ippan-name-lex)
+;shante_1 := inst_name-lex &
+;[ORTH <! "シャンテ" !>, SYNSEM.LKEYS.KEYREL.CARG 'shante_1].
+shante-1-ippanname := 
+ippan-name-lex &
+[SYNSEM.LKEYS.KEYREL.CARG 'shante,
+ORTH <! "シャンテ" !>].
+
 
 ; Freq: 10
 soutai_n1 := ordinary-nohon-n-lex &
@@ -17797,8 +17806,12 @@ ikimono_n1 := ordinary-nohon-n-lex &
 [ORTH <! "生きもの" !>, SYNSEM.LKEYS.KEYREL.PRED '_ikimono_n_1_rel].
 
 ; Freq: 5
-kega_n1 := ordinary-nohon-n-lex &
-[ORTH <! "ケガ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kega_n_1_rel].
+;POS
+;(TK 06-06-29 ひとまずvn-intrans-lexに変更)
+;kega_n1 := ordinary-nohon-n-lex &
+;[ORTH <! "ケガ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kega_n_1_rel].
+kega_4_3 := vn-intrans-lex &
+[ORTH <! "ケガ" !>, SYNSEM.LKEYS.KEYREL.PRED '_kega_s_4_rel].
 
 ; Freq: 5
 shobou_n1 := ordinary-nohon-n-lex &
@@ -18418,7 +18431,7 @@ tagen_n1 := ordinary-nohon-n-lex &
 ien_relational :=
 relational-n-lex &
 [ORTH <! "以遠" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_jien_n_rel]].
+SYNSEM.LKEYS.KEYREL [PRED '_ien_n_rel]].
 
 ; Freq: 5
 kiseru_n1 := ordinary-nohon-n-lex &
@@ -19998,7 +20011,7 @@ ikku_n1 := ordinary-nohon-n-lex &
 ;sui_n1 := ordinary-nohon-n-lex &
 ;[ORTH <! "吸い" !>, SYNSEM.LKEYS.KEYREL.PRED '_sui_n_1_rel].
 sui_3 := noun_mod-lex-r &
-[ORTH <! "吸い" !>, SYNSEM.LKEYS.KEYREL.PRED '_sui_3_rel].
+[ORTH <! "吸い" !>, SYNSEM.LKEYS.KEYREL.PRED '_sui_n_3_rel].
 
 ; Freq: 3
 anadori_n1 := ordinary-nohon-n-lex &
@@ -25248,8 +25261,14 @@ ana_n1 := ordinary-nohon-n-lex &
 [ORTH <! "孔" !>, SYNSEM.LKEYS.KEYREL.PRED '_ana_n_1_rel].
 
 ; Freq: 2
-jaiantsu_n1 := ordinary-nohon-n-lex &
-[ORTH <! "ジャイアンツ" !>, SYNSEM.LKEYS.KEYREL.PRED '_jaiantsu_n_1_rel].
+;POS
+;(TK 06-05-10)
+;おそらく球団名で使うことがほとんど
+;jaiantsu_n1 := ordinary-nohon-n-lex &
+;[ORTH <! "ジャイアンツ" !>, SYNSEM.LKEYS.KEYREL.PRED '_jaiantsu_n_1_rel].
+jaiantsu_2 := inst_name-lex &
+[ORTH <! "ジャイアンツ" !>, SYNSEM.LKEYS.KEYREL.CARG 'jaiantsu_2].
+
 
 ; Freq: 2
 ;POS
@@ -25314,7 +25333,10 @@ hinaningyou_n1 := ordinary-nohon-n-lex &
 ;(TK 05-09-14)
 ;oharai_n3 := ordinary-nohon-n-lex &
 ;[ORTH <! "おはらい" !>, SYNSEM.LKEYS.KEYREL.PRED '_oharai_n_3_rel].
-oharai_v3 := vn-intrans-lex &
+;(TK 06-06-26 changed to vn-trans1-lex)
+;oharai_v3 := vn-intrans-lex &
+;[ORTH <! "おはらい" !>, SYNSEM.LKEYS.KEYREL.PRED '_oharai_s_3_rel].
+oharai_3 := vn-trans1-lex &
 [ORTH <! "おはらい" !>, SYNSEM.LKEYS.KEYREL.PRED '_oharai_s_3_rel].
 
 ; Freq: 2
@@ -29205,8 +29227,12 @@ nigenron_n1 := ordinary-nohon-n-lex &
 [ORTH <! "二元論" !>, SYNSEM.LKEYS.KEYREL.PRED '_nigenron_n_1_rel].
 
 ; Freq: 1
-uridashi_n2 := ordinary-nohon-n-lex &
-[ORTH <! "売出" !>, SYNSEM.LKEYS.KEYREL.PRED '_uridashi_n_2_rel].
+;POS
+;(TK 06-06-22)
+;uridashi_n2 := ordinary-nohon-n-lex &
+;[ORTH <! "売出" !>, SYNSEM.LKEYS.KEYREL.PRED '_uridashi_n_2_rel].
+uridashi_3_2 := vn-trans1-lex &
+[ORTH <! "売出" !>, SYNSEM.LKEYS.KEYREL.PRED '_uridashi_s_3_rel].
 
 ; Freq: 1
 heta_n1 := ordinary-nohon-n-lex &
@@ -30242,8 +30268,11 @@ hitotsuhitotsu_adv1 := isect-adv-lex &
 [ORTH <! "一つひとつ" !>, SYNSEM.LKEYS.KEYREL.PRED '_hitotsuhitotsu_adv_1_rel].
 
 ; Freq: 1
-otaku_n2 := ordinary-nohon-n-lex &
-[ORTH <! "オタク" !>, SYNSEM.LKEYS.KEYREL.PRED '_otaku_n_2_rel].
+;(TK 06-06-20 noun-lex.tdlの「お宅」とpredicateが重複しているので変更)
+;otaku_n2 := ordinary-nohon-n-lex &
+;[ORTH <! "オタク" !>, SYNSEM.LKEYS.KEYREL.PRED '_otaku_n_2_rel].
+otaku_1 := ordinary-nohon-n-lex &
+[ORTH <! "オタク" !>, SYNSEM.LKEYS.KEYREL.PRED '_otaku_n_1_rel].
 
 ; Freq: 1
 haja_n1 := ordinary-nohon-n-lex &
@@ -31506,8 +31535,12 @@ yu-_n1 := ordinary-nohon-n-lex &
 [ORTH <! "ユー" !>, SYNSEM.LKEYS.KEYREL.PRED '_yu-_n_1_rel].
 
 ; Freq: 1
-tokkou_n3 := ordinary-nohon-n-lex &
-[ORTH <! "特攻" !>, SYNSEM.LKEYS.KEYREL.PRED '_tokkou_n_3_rel].
+;POS
+;(TK 06-06-27)
+;tokkou_n3 := ordinary-nohon-n-lex &
+;[ORTH <! "特攻" !>, SYNSEM.LKEYS.KEYREL.PRED '_tokkou_n_3_rel].
+tokkou_3 := vn-intrans-lex &
+[ORTH <! "特攻" !>, SYNSEM.LKEYS.KEYREL.PRED '_tokkou_s_3_rel].
 
 ; Freq: 1
 ;POS
@@ -31518,8 +31551,12 @@ bo-tto-multi_adv1 := isect-adv-lex &
 [ORTH <! "ボーッ","と" !>, SYNSEM.LKEYS.KEYREL.PRED '_bo-tto_adv_1_rel].
 
 ; Freq: 1
-kakizome_n3 := ordinary-nohon-n-lex &
-[ORTH <! "書初め" !>, SYNSEM.LKEYS.KEYREL.PRED '_kakizome_n_3_rel].
+;POS
+;(TK 06-06-27)
+;kakizome_n3 := ordinary-nohon-n-lex &
+;[ORTH <! "書初め" !>, SYNSEM.LKEYS.KEYREL.PRED '_kakizome_n_3_rel].
+kakizome_3 := vn-intrans-lex &
+[ORTH <! "書初め" !>, SYNSEM.LKEYS.KEYREL.PRED '_kakizome_s_3_rel].
 
 ; Freq: 1
 ishou_n1 := ordinary-nohon-n-lex &
@@ -34689,8 +34726,12 @@ mongoroido_n1 := ordinary-nohon-n-lex &
 [ORTH <! "モンゴロイド" !>, SYNSEM.LKEYS.KEYREL.PRED '_mongoroido_n_1_rel].
 
 ; Freq: 1
-iyagarase_n1 := ordinary-nohon-n-lex &
-[ORTH <! "いやがらせ" !>, SYNSEM.LKEYS.KEYREL.PRED '_iyagarase_n_1_rel].
+;POS
+;(TK 06-06-21)
+;iyagarase_n1 := ordinary-nohon-n-lex &
+;[ORTH <! "いやがらせ" !>, SYNSEM.LKEYS.KEYREL.PRED '_iyagarase_n_1_rel].
+iyagarase_3_2 := vn-intrans-lex &
+[ORTH <! "いやがらせ" !>, SYNSEM.LKEYS.KEYREL.PRED '_iyagarase_s_3_rel].
 
 ; Freq: 1
 houshi_n7 := ordinary-nohon-n-lex &
@@ -37689,8 +37730,12 @@ saibun_n1 := ordinary-nohon-n-lex &
 ;[ORTH <! "逆に" !>, SYNSEM.LKEYS.KEYREL.PRED '_gyakuni_adv_2_rel].
 
 ; Freq: 80
-wazuka_adv1 := isect-adv-lex &
-[ORTH <! "わずか" !>, SYNSEM.LKEYS.KEYREL.PRED '_wazuka_adv_1_rel].
+;POS
+;(TK 06-05-11)
+;wazuka_adv1 := isect-adv-lex &
+;[ORTH <! "わずか" !>, SYNSEM.LKEYS.KEYREL.PRED '_wazuka_adv_1_rel].
+wazuka_2-hiragana := deg-adv-num-lex &
+[ORTH <! "わずか" !>, SYNSEM.LKEYS.KEYREL.PRED '_wazuka_a_2_rel].
 
 ; Freq: 76
 ;BAD
@@ -39280,7 +39325,10 @@ saitama_2 := loc-or-surname-lex &
 ;POS
 ;(TK 05-09-21)
 ;hiroshima_4 := surname-lex &
-hiroshima_4 := loc-or-surname-lex &
+;hiroshima_4 := loc-or-surname-lex &
+;[ORTH <! "広島" !>, SYNSEM.LKEYS.KEYREL.CARG 'hiroshima_4].
+;(TK 06-05-31 changed to loc-or-surname-or-instname-lex)
+hiroshima_4 := loc-or-surname-or-instname-lex &
 [ORTH <! "広島" !>, SYNSEM.LKEYS.KEYREL.CARG 'hiroshima_4].
 
 ; Freq: 76
@@ -50573,7 +50621,7 @@ chita_1 := loc-or-surname-lex &
 ;buraian_1 := surname-lex &
 ;[ORTH <! "ブライアン" !>, SYNSEM.LKEYS.KEYREL.CARG 'buraian_1].
 buraian_1 := other_name-lex &
-[SYNSEM.LKEYS.KEYREL.CARG 'tamori_person,
+[SYNSEM.LKEYS.KEYREL.CARG 'buraian_person,
 ORTH <! "ブライアン" !>].
 
 ; Freq: 1
@@ -51390,11 +51438,9 @@ tonpuson_1 := surname-lex &
 ;[ORTH <! "創価" !>, SYNSEM.LKEYS.KEYREL.CARG 'souka_3].
 
 ; Freq: 1
-;POS
-;LNAME
-;(TK 05-10-27)
-;azegami_2 := loc-or-surname-lex &
-azegami_2 := loc_name-lex &
+;(TK 05-10-27 loc_nameに変更)
+;(TK 06-05-12 loc-or-surname-lexに戻す)
+azegami_2 := loc-or-surname-lex &
 [ORTH <! "畔上" !>, SYNSEM.LKEYS.KEYREL.CARG 'azegami_2].
 
 ; Freq: 1
@@ -55974,7 +56020,7 @@ ide_3 := loc-or-surname-lex &
 ;chaini-zu_1 := surname-lex &
 ;[ORTH <! "チャイニーズ" !>, SYNSEM.LKEYS.KEYREL.CARG 'chaini-zu_1].
 chaini-zu_n1 := ordinary-nohon-n-lex &
-[ORTH <! "チャイニーズ" !>, SYNSEM.LKEYS.KEYREL.PRED '_ma_n_1_rel].
+[ORTH <! "チャイニーズ" !>, SYNSEM.LKEYS.KEYREL.PRED '_chaini-zu_n_1_rel].
 
 ; Freq: 1
 ;POS
@@ -60891,7 +60937,10 @@ hijun_v1 := vn-trans1-lex &
 [ORTH <! "批准" !>, SYNSEM.LKEYS.KEYREL.PRED '_hijun_s_1_rel].
 
 ; Freq: 19
-assen_v2 := vn-trans1-lex &
+;POS
+;(TK 06-05-25)
+;assen_v2 := vn-trans1-lex &
+assen_v2 := vn-ditrans-lex &
 [ORTH <! "あっせん" !>, SYNSEM.LKEYS.KEYREL.PRED '_assen_s_2_rel].
 
 ; Freq: 18

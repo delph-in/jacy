@@ -89,7 +89,7 @@ SYNSEM.LKEYS.KEYREL.PRED '_futsugou_a_rel].
 muri-adj :=
 na-adj-lex &
 [ORTH <! "無理" !>,
-SYNSEM.LKEYS.KEYREL.PRED '_muri_a_isect_rel].
+SYNSEM.LKEYS.KEYREL.PRED '_muri_a_4_rel].
 
 teinei-adj :=
 na-adj-lex &
@@ -1855,11 +1855,12 @@ isect-adv-lex &
 SYNSEM.LKEYS.KEYREL [PRED '_hibi_a_rel]].
 
 ;finally, and so on
-
-toutou-adv :=
-isect-adv-lex &
-[ORTH <! "等々" !>,
-SYNSEM.LKEYS.KEYREL [PRED '_toutou_a_rel]].
+;(TK 06-06-16 changed to )
+;「finally」の意味でこの表記は使わない
+;toutou-adv :=
+;isect-adv-lex &
+;[ORTH <! "等々" !>,
+;SYNSEM.LKEYS.KEYREL [PRED '_toutou_a_rel]].
 
 ;(Atsuko Shimada, Oct.4.2001)
 ; 即日->noun-lex.tdl
@@ -12509,10 +12510,10 @@ tekikaku_2 := na-adj-lex &
 
 ;<IJ> ; 適正 
 ;<IJ> ; JACY 適正: tekisei-noun (ordinary-nohon-n-lex)
-
-;<IJ> tekisei_2 := na-adj-lex &
-;<IJ> [SYNSEM.LKEYS.KEYREL.PRED '_tekisei_a_2_rel,
-;<IJ>  ORTH <! "適正" !>].
+;(TK 06-06-19 na-adj-lex復活)
+tekisei_2 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_tekisei_a_2_rel,
+ ORTH <! "適正" !>].
 
 ; 適度 
 ; Used 3 times
@@ -12540,7 +12541,7 @@ tekkaku_2 := na-adj-lex &
  ORTH <! "的確" !>].
 
 ; 出無精 
-
+;「出不精」のほうがよく使われる
 debushou_2 := na-adj-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_debushou_a_2_rel,
  ORTH <! "出無精" !>].
@@ -12765,9 +12766,11 @@ nihiru_2 := na-adj-lex &
  ORTH <! "ニヒル" !>].
 
 ; 入魂 
-
-nyuukon_2 := na-adj-lex &
-[SYNSEM.LKEYS.KEYREL.PRED '_nyuukon_a_2_rel,
+;(TK 06-08-01)
+;「nyuukon」ではなく「jikkon」
+;nyuukon_2 := na-adj-lex &
+jikkon_1 := na-adj-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_jikkon_a_1_rel,
  ORTH <! "入魂" !>].
 
 ; ニュートラル 
@@ -23603,6 +23606,7 @@ isect-adv-lex &
 [ORTH <! "見る","見る" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mirumiru_a_rel].
 
+;;;<<<<<<< adjadv-lex.tdl
 ;(TK 06-03-13)
 ; ex.「事態はより悪い方向に向かっている」
 yori_adv := isect-adv-lex &
@@ -23724,7 +23728,7 @@ gankyou_1 := na-adj-lex &
 marui_a3 := i-adj-stem-lex &
 [ORTH <! "円い" !>, SYNSEM.LKEYS.KEYREL.PRED '_marui_a_3_rel].
 
-;(TK 06-04-27)
+;(TK 06-05-01)
 ;のろま
 ; ex.「前にのろまな車がいてイライラする」
 noroma_1 := na-adj-lex &
@@ -23937,4 +23941,218 @@ ainiku_4 := isect-adv-lex &
 izure_2-kanji := isect-adv-lex &
 [ORTH <! "何れ" !>, SYNSEM.LKEYS.KEYREL.PRED '_izure_a_2_rel].
 
+;(TK 06-06-12)
+;もう
+mou_5 := deg-adv-num-lex &
+[ORTH <! "もう" !>, SYNSEM.LKEYS.KEYREL.PRED '_mou_a_5_rel].
+
+mou_6 := deg-adv-lex &
+[ORTH <! "もう" !>, SYNSEM.LKEYS.KEYREL.PRED '_mou_a_6_rel].
+
+;(TK 06-06-12)
+;人畜 無害
+jinchikumugai_1 := na-adj-lex &
+[ORTH <! "人畜","無害" !>, SYNSEM.LKEYS.KEYREL.PRED '_jinchikumugai_a_1_rel].
+
+;(TK 06-06-13)
+;早目
+;本当は「早め」が正しい？
+hayame_2-kanji := na-adj-lex &
+[ORTH <! "早目" !>, SYNSEM.LKEYS.KEYREL.PRED '_hayame_a_2_rel].
+
+;(TK 06-06-13)
+;ひさしぶり
+hisashiburi_2-hiragana := na-adj-lex &
+[ORTH <! "ひさしぶり" !>, SYNSEM.LKEYS.KEYREL.PRED '_hisashiburi_a_2_rel].
+
+;(TK 06-06-13)
+;必用
+; ex.「必用なものは全て持ったはずだ」
+hitsuyou_4 := na-adj-lex &
+[ORTH <! "必用" !>, SYNSEM.LKEYS.KEYREL.PRED '_hitsuyou_a_4_rel].
+
+;(TK 06-06-14)
+;自棄,ヤケ,やけ
+; ex.「仕事が溜まりすぎて自棄になる」
+yake_3-kanji := na-adj-lex &
+[ORTH <! "自棄" !>, SYNSEM.LKEYS.KEYREL.PRED '_yake_a_3_rel].
+
+yake_3-katakana := na-adj-lex &
+[ORTH <! "ヤケ" !>, SYNSEM.LKEYS.KEYREL.PRED '_yake_a_3_rel].
+
+yake_3-hiragana := na-adj-lex &
+[ORTH <! "やけ" !>, SYNSEM.LKEYS.KEYREL.PRED '_yake_a_3_rel].
+
+;(TK 06-06-14)
+;ムリ,むり
+muri_4-katakana := na-adj-lex &
+[ORTH <! "ムリ" !>, SYNSEM.LKEYS.KEYREL.PRED '_muri_a_4_rel].
+
+muri_4-hiragana := na-adj-lex &
+[ORTH <! "むり" !>, SYNSEM.LKEYS.KEYREL.PRED '_muri_a_4_rel].
+
+;(TK 06-06-15)
+;小振り
+; ex.「ちょっと小振りなクッキーを頬張る」
+koburi_3 := na-adj-lex &
+[ORTH <! "小振り" !>, SYNSEM.LKEYS.KEYREL.PRED '_koburi_a_3_rel].
+
+;(TK 06-06-15)
+;こじんまり
+; ex.「荷物はこじんまりまとめてきた」
+kojinmari_4 := isect-adv-lex &
+[ORTH <! "こじんまり" !>, SYNSEM.LKEYS.KEYREL.PRED '_kojinmari_a_4_rel].
+
+;(TK 06-06-15)
+;大き目
+; ex.「大き目なバッグを持ってバーゲンに向かう」
+ookime_2 := na-adj-lex &
+[ORTH <! "大き目" !>, SYNSEM.LKEYS.KEYREL.PRED '_ookime_a_2_rel].
+
+;(TK 06-06-15)
+;遅目
+; ex.「遅目な帰りだったのですぐ風呂に入って寢た」
+osome_2 := na-adj-lex &
+[ORTH <! "遅目" !>, SYNSEM.LKEYS.KEYREL.PRED '_osome_a_2_rel].
+
+;(TK 06-06-15)
+;小さめ
+chiisame_2 := na-adj-lex &
+[ORTH <! "小さめ" !>, SYNSEM.LKEYS.KEYREL.PRED '_chiisame_a_2_rel].
+
+;(TK 06-06-15)
+;ゆっくり目
+yukkurime_2 := na-adj-lex &
+[ORTH <! "ゆっくり目" !>, SYNSEM.LKEYS.KEYREL.PRED '_yukkurime_a_2_rel].
+
+;(TK 06-06-19)
+;即
+; ex.「今日は帰ったら即寝よう」
+soku_4 := isect-adv-lex &
+[ORTH <! "即" !>, SYNSEM.LKEYS.KEYREL.PRED '_soku_a_4_rel].
+
+;(TK 06-06-19)
+;ゆっくり目
+; ex.「ハイテクな機械ばかりでついていけない」
+haiteku_2 := na-adj-lex &
+[ORTH <! "ハイテク" !>, SYNSEM.LKEYS.KEYREL.PRED '_haiteku_a_2_rel].
+
+;(TK 06-06-19)
+;小幅
+; ex.「今日の株価は小幅な値動きに留まっている」
+kohaba_2 := na-adj-lex &
+[ORTH <! "小幅" !>, SYNSEM.LKEYS.KEYREL.PRED '_kohaba_a_2_rel].
+
+;(TK 06-06-19)
+;パーマネント
+; ex.「これからもパーマネントな活動を続けていきます」
+pa-manento_3 := na-adj-lex &
+[ORTH <! "パーマネント" !>, SYNSEM.LKEYS.KEYREL.PRED '_pa-manento_a_3_rel].
+
+;(TK 06-06-21)
+;違法
+; ex.「違法な貸し付けをしていた業者が逮捕された」
+ihou_2 := na-adj-lex &
+[ORTH <! "違法" !>, SYNSEM.LKEYS.KEYREL.PRED '_ihou_a_2_rel].
+
+;(TK 06-06-22)
+;運任せ,運まかせ
+; ex.「何と運任せな采配だ！」
+unmakase_2_1 := na-adj-lex &
+[ORTH <! "運任せ" !>, SYNSEM.LKEYS.KEYREL.PRED '_unmakase_a_2_rel].
+
+unmakase_2_2 := na-adj-lex &
+[ORTH <! "運まかせ" !>, SYNSEM.LKEYS.KEYREL.PRED '_unmakase_a_2_rel].
+
+;(TK 06-06-22)
+;栄誉
+; ex.「この度の受賞は非常に栄誉なことです」
+eiyo_2 := na-adj-lex &
+[ORTH <! "栄誉" !>, SYNSEM.LKEYS.KEYREL.PRED '_eiyo_a_2_rel].
+
+;(TK 06-06-22)
+;エコロジー
+;名詞から派生した形容動詞
+; ex.「エコロジーな生活を心掛けましょう」
+ekoroji-_2 := na-adj-lex &
+[ORTH <! "エコロジー" !>, SYNSEM.LKEYS.KEYREL.PRED '_ekoroji-_a_2_rel].
+
+;(TK 06-06-23)
+;オールラウンド
+;多分形容動詞
+; ex.「オールラウンドな活躍が世間に評価された」
+o-ruraundo_2 := na-adj-lex &
+[ORTH <! "オールラウンド" !>, SYNSEM.LKEYS.KEYREL.PRED '_o-ruraundo_a_2_rel].
+
+;(TK 06-06-23)
+;オールマイティー
+; ex.「彼は職場ではオールマイティーな人だ」
+o-rumaitei-_2 := na-adj-lex &
+[ORTH <! "オールマイティー" !>, SYNSEM.LKEYS.KEYREL.PRED '_o-rumaitei-_a_2_rel].
+
+;(TK 06-06-23)
+;晩生
+; ex.「晩生な男だ」
+okute_2 := na-adj-lex &
+[ORTH <! "晩生" !>, SYNSEM.LKEYS.KEYREL.PRED '_okute_a_2_rel].
+
+;(TK 06-06-26)
+;親思い
+; ex.「親思いな息子さんですこと」
+oyaomoi_2 := na-adj-lex &
+[ORTH <! "親思い" !>, SYNSEM.LKEYS.KEYREL.PRED '_oyaomoi_a_2_rel].
+
+;(TK 06-06-28)
+;気苦労
+; ex.「あの偏屈社長を接待しなきゃいけないなんて、何とも気苦労なことですね」
+kigurou_3 := na-adj-lex &
+[ORTH <! "気苦労" !>, SYNSEM.LKEYS.KEYREL.PRED '_kigurou_a_3_rel].
+
+;(TK 06-06-29)
+;くれぐれも,くれぐれ も
+; ex.「くれぐれも事故にだけは気をつけてください」
+kureguremo_1 := isect-adv-lex &
+[ORTH <! "くれぐれも" !>, SYNSEM.LKEYS.KEYREL.PRED '_kureguremo_a_1_rel].
+
+kureguremo_1-multi := isect-adv-lex &
+[ORTH <! "くれぐれ","も" !>, SYNSEM.LKEYS.KEYREL.PRED '_kureguremo_a_1_rel].
+
+;(TK 06-06-28)
+;災難
+; ex.「対向車線で起きた衝突のとばっちりを受けるという災難な事故だった」
+sainan_2 := na-adj-lex &
+[ORTH <! "災難" !>, SYNSEM.LKEYS.KEYREL.PRED '_sainan_a_2_rel].
+
+;(TK 06-07-31)
+;不鮮明
+; ex.「不鮮明な印刷でよく分からない」
+fusenmei_2 := na-adj-lex &
+[ORTH <! "不鮮明" !>, SYNSEM.LKEYS.KEYREL.PRED '_fusenmei_a_2_rel].
+
+;(TK 06-07-31)
+;いずれにせよ
+; ex.「いずれにせよ今日はもう帰ろう」
+izureniseyo_2 := isect-adv-lex &
+[ORTH <! "いずれにせよ" !>, SYNSEM.LKEYS.KEYREL.PRED '_izureniseyo_a_2_rel].
+
+;(TK 06-08-01)
+; 臆病
+;「憶病」の正式な表記（常用漢字でない）
+okubyou_4 := na-adj-lex &
+[ORTH <! "臆病" !>, SYNSEM.LKEYS.KEYREL.PRED '_okubyou_a_4_rel].
+
+;(TK 06-08-01)
+; 出不精
+;「出無精」よりこちらの表記のほうがよく使われる
+debushou_4 := na-adj-lex &
+[ORTH <! "出不精" !>, SYNSEM.LKEYS.KEYREL.PRED '_debushou_a_4_rel].
+
+;(TK 06-08-01)
+; 深遠
+; ex.「鉄道の深遠な世界を垣間見る」
+shinen_1 := na-adj-lex &
+[ORTH <! "深遠" !>, SYNSEM.LKEYS.KEYREL.PRED '_shinen_a_1_rel].
+;;;=======
+
+;;;>>>>>>> 1.34
 

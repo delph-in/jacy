@@ -148,3 +148,10 @@ orthographemics-minimum-stem-length := 3.
 orthographemics-duplicate-filter:= true.
 ;; only allow cohesive chains (whatever they may be)
 ;orthographemics-cohesive-chains:= true.
+
+
+(4) If you have rules that are spanning only, mark them in pet/japanese.set
+
+spanning-only-rules := $frg-np $frg-pp $frg-s-adv $frg-i-adv
+		       $frg-pp-np $frg-i-adv-np $frg-pp-int 
+		       $runon_s.

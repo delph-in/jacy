@@ -2892,3 +2892,9 @@ gousen-numcl := num-cl-spr-only-ind-lex &
 [ ORTH <! "号線" !>].
 
 
+;(TK 06-06-01)
+;階 建て
+;typeが正しいかどうか不明
+kaidate-numcl-multi := num-cl-spr-only-ind-lex &
+[ ORTH <! "階","建て" !>].
+

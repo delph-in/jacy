@@ -723,3 +723,9 @@ saseru-trans-obj-scope-end := caus-trans-obj-scope-passvmorph-end-lex &
            [ORTH <! "させる" !>].
 
 
+;tend to
+;(TK 06-05-11)
+gachi-kanji-end := v2na-end-lex &
+                 [ORTH <! "勝ち" !>,
+                  SYNSEM.LKEYS.KEYREL.PRED '_gachi_v_rel].
+
