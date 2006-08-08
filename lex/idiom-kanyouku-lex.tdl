@@ -22,12 +22,7 @@
 ; "make an effort"
 ; FCB 2006-08-04 took out HEAD [PASSIVIZABLE -,  NEGATIVIZABLE -],
 oru-i-stem :=  v1-c-stem-lex &
- [SYNSEM [LKEYS.KEYREL.PRED '_oru_v_i_rel,
-	  LOCAL.CAT [ VAL [COMPS <[ADJACENT +,
-				  TOPICALIZABLE -,
-				  LOCAL.CAT.HEAD.ALLOW-ADNOMINAL-MOD [ADNOMINAL-WORD -,
-								      GENITIVE-PHRASE -,
-								      RELATIVE-CLAUSE -]]>]]],
+ [SYNSEM.LKEYS.KEYREL.PRED '_oru_v_i_rel,
   ORTH <! "ÀÞ¤ë" !>,
   IDIOM +].
 
@@ -52,12 +47,8 @@ michikusa-i := ordinary-nohon-n-lex &
 ; "be in trouble"
 ; FCB 2006-08-04 took out HEAD.NEGATIVIZABLE -,
 itai-i-stem := i-adj-stem-lex &
- [SYNSEM [LKEYS.KEYREL.PRED '_itai_a_i_rel,
-	  LOCAL.CAT [VAL [SUBJ <[ADJACENT +,
-				 TOPICALIZABLE -,
-				  LOCAL.CAT.HEAD.ALLOW-ADNOMINAL-MOD [ADNOMINAL-WORD -,
-								      GENITIVE-PHRASE -,
-								      RELATIVE-CLAUSE -]]>]]],
+<<<<<<< idiom-kanyouku-lex.tdl
+ [SYNSEM.LKEYS.KEYREL.PRED '_itai_a_i_rel,
   ORTH <! "ÄË¤¤" !>,
   IDIOM +].
 
