@@ -47,7 +47,6 @@ michikusa-i := ordinary-nohon-n-lex &
 ; "be in trouble"
 ; FCB 2006-08-04 took out HEAD.NEGATIVIZABLE -,
 itai-i-stem := i-adj-stem-lex &
-<<<<<<< idiom-kanyouku-lex.tdl
  [SYNSEM.LKEYS.KEYREL.PRED '_itai_a_i_rel,
   ORTH <! "ÄË¤¤" !>,
   IDIOM +].
