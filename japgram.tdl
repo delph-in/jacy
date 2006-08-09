@@ -881,58 +881,64 @@ prefix-attach-rule := prefix-rule &
 
 
 ; (MS 2003-12-19) Matrix 0.6
+; (do-parse-tty "ビール が 飲み たい")
 
 tai-obj-change-rule :=  obj-casechange-rule &
-                       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
-							  LOCAL.CAT.HEAD overt-case-p_head &
-                                                                        [CASE ga]],
-                        ARGS < [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [KEYS.KEY tai_rel],
-						   VAL [SPR null,
-							SUBJ null]]]]] >].
-
-
-
+ [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+				    LOCAL.CAT.HEAD overt-case-p_head &
+					[CASE ga]],
+  ARGS < [SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [KEYS.KEY tai_v_want_rel],
+			      VAL [SPR null,
+				   SUBJ null]]]]] >].
 
 
 ;; 機関の変更したい
 
 vn-light-obj-change-rule-case-p  :=  obj-casechange-rule &
-                       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
-							  LOCAL.CAT.HEAD overt-case-p_head &
-                                                                        [CASE no-case]],
-			RMORPH-BIND-TYPE #rmorph,
-                        ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
-						  VAL.SPR null],
-				RMORPH-BIND-TYPE #rmorph] >].
+ [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+				    LOCAL.CAT.HEAD overt-case-p_head &
+					[CASE no-case]],
+  RMORPH-BIND-TYPE #rmorph,
+  ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
+			    VAL.SPR null],
+	  RMORPH-BIND-TYPE #rmorph] >].
 
 vn-light-obj-change-rule-noun  :=  obj-casechange-rule &
-                       [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
-							  LOCAL.CAT [HEAD noun_head,
-								     VAL saturated]],
-			RMORPH-BIND-TYPE #rmorph,
-                        ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
-						  VAL.SPR null],
-				RMORPH-BIND-TYPE #rmorph] >].
+ [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+				    LOCAL.CAT [HEAD noun_head,
+					       VAL saturated]],
+  RMORPH-BIND-TYPE #rmorph,
+  ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
+			    VAL.SPR null],
+	  RMORPH-BIND-TYPE #rmorph] >].
 
 
 ; (ERB 2001-09-26) Constraining head-dtr to be [HEAD verb_head-avm]
 ; so that this rule can't apply after the vstem-vend-rule.
+; (FCB 2006-08-09)   Constraining things to be BAR - for the same reason 
+; FIXME why do this  and tai-obj-change-rule come on opposite sides of the vend-rule
+; (do-parse-tty "ビール が 飲める")
+; (do-parse-tty "犬 が 食べ られる")
 
 rareru-obj-change-rule :=  obj-casechange-rule &
-                       [SYNSEM.LOCAL.CAT.VAL [COMPS.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
-							       [CASE ga]]],
-                        ARGS < [SYNSEM [LOCAL [ CAT [HEAD verb_head & [KEYS.KEY rareru_rel,
-								       MODUS potential],
-						    VAL.SUBJ null]]]] >].
+ [SYNSEM.LOCAL [CAT.VAL [COMPS.FIRST.LOCAL [ CAT.HEAD overt-case-p_head &
+						      [CASE ga]]],
+		BAR +],
+  ARGS < [SYNSEM [LOCAL [ CAT [HEAD verb_head & [KEYS.KEY rareru_v_can_rel,
+						     MODUS potential],
+			       VAL.SUBJ null],
+			  BAR +]]] >].
 
 ; (MS 2004-12-10) I don't want this to apply to copula verbs (generation).
+; FIXME doesn't apply now
+;(do-parse-tty "犬 を 欲し がる")
 
 garu-sbj-change-rule := subj-casechange-rule &
-			[SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
-									  [CASE wo]]],
-                        ARGS < [SYNSEM [LOCAL.CAT [HEAD [KEYS.KEY seem_rel,
-							 COP -],
-						   VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE ga]]] >].
+ [SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
+						   [CASE wo]]],
+  ARGS < [SYNSEM [LOCAL.CAT [HEAD [KEYS.KEY seem_v_rel,
+				   COP -],
+			     VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE ga]]] >].
 
 
 ; (ERB 2001-09-20) We want currency NumClPs at least to be possible

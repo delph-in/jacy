@@ -5741,42 +5741,43 @@ naadj2adv-end-lex := lexical_sign-word &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (FCB 2005-06-27) Added ARG0 to message 
 ; FIXME should be able to combine with v-op-end-lex in some way
+; がる : (do-parse-tty "犬 が 欲し がる")
 naadj2v-end-lex := lexical_sign-word &
-              [SYNSEM j-synsem &
-                      [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
-                                   VAL [SUBJ #sbj,
-					COMPS #comps,
-					 SPR obl-1-arg & 
-					     [FIRST [LOCAL [CAT.VAL [SUBJ #sbj,
-								     COMPS #comps],
-							    CONT [HOOK [XARG #xarg, 
-									INDEX #adj-index,
-									LTOP #adj-hand]]],
-						     LEX +]]]],
-			      ARG-S < #sbj . #comps >,
+ [SYNSEM j-synsem &
+	 [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
+		      VAL [SUBJ #sbj,
+			   COMPS #comps,
+			   SPR obl-1-arg & 
+				[FIRST [LOCAL [CAT.VAL [SUBJ #sbj,
+							COMPS #comps],
+					       CONT [HOOK [XARG #xarg, 
+							   INDEX #adj-index,
+							   LTOP #adj-hand]]],
+					LEX +]]]],
+		 ARG-S < #sbj . #comps >,
 			      BAR -,
-			      CONT [HOOK [LTOP #top,
-					  INDEX #event & [E.MOOD indicative],
-					  XARG #xarg],
-				    RELS <! #key,
-					   message &
-                                          [PRED proposition_m_rel,
-					   LBL #h6,
-					   ARG0 #adj-index,
-					   MARG #h7] !>,
-                                    HCONS <! qeq & [HARG #h7, LARG #adj-hand] !>]],
-		       LKEYS.KEYREL #key & [PRED 'seem,
-						ARG1 #xarg,
-						ARG2 #h6,
-						LBL #top,
-						ARG0 #event],
-                       NON-LOCAL [QUE <! !>,
-                               AFFIX <! !>],
-		       MODIFIED.PERIPH +],
-	       INFLECTED -,
-	       J-NEEDS-AFFIX +,
-	       LMORPH-BIND-TYPE shortadj-morph,
- 	       STEMTYPE c-stem].
+		 CONT [HOOK [LTOP #top,
+			     INDEX #event & [E.MOOD indicative],
+			     XARG #xarg],
+		       RELS <! #key,
+			     message &
+			     [PRED proposition_m_rel,
+			      LBL #h6,
+			      ARG0 #adj-index,
+			      MARG #h7] !>,
+		       HCONS <! qeq & [HARG #h7, LARG #adj-hand] !>]],
+	  LKEYS.KEYREL #key & [PRED seem_v_rel,
+			       ARG1 #xarg,
+			       ARG2 #h6,
+			       LBL #top,
+			       ARG0 #event],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>],
+	  MODIFIED.PERIPH +],
+  INFLECTED -,
+  J-NEEDS-AFFIX +,
+  LMORPH-BIND-TYPE shortadj-morph,
+  STEMTYPE c-stem].
 
 
 ; (ERB 2001-10-24) For K2Y machinery, I'd like this to have special
@@ -5844,77 +5845,77 @@ v-neg-polite-past-end-imorph-lex := v-neg-polite-past-end-lex &
 				       [LMORPH-BIND-TYPE i-morph].
 
 v-neg-polite-past-end-taispec-lex := v-neg-polite-past-end-lex &
-				     [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY tai_rel,
-				      LMORPH-BIND-TYPE a-morph].
+ [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY tai_v_want_rel,
+  LMORPH-BIND-TYPE a-morph].
 
 v-neg-polite-past-end-adjspec-lex := v-neg-polite-past-end-lex &
-				     [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head,
-				      LMORPH-BIND-TYPE a-morph].
+ [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head,
+  LMORPH-BIND-TYPE a-morph].
 
 v-neg-polite-present-spr-end-lex := v-neg-polite-present-end-lex &
-				    [J-NEEDS-AFFIX -,
-				     SYNSEM.LOCAL.CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
-									  BAR +]] >,
-							    MARK null,
-							     FIN +,
-							    J-POSTHEAD rels,
-							    J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
-				     LMORPH-BIND-TYPE a-morph].
+ [J-NEEDS-AFFIX -,
+  SYNSEM.LOCAL.CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+					BAR +]] >,
+			  MARK null,
+			  FIN +,
+			  J-POSTHEAD rels,
+			  J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
+  LMORPH-BIND-TYPE a-morph].
 
 v-neg-plain-present-spr-end-lex := v-neg-plain-present-end-lex &
-				   [J-NEEDS-AFFIX -,
-				     SYNSEM.LOCAL.CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
-									  BAR +]] >,
-							    MARK null,
-							     FIN +,
-							    J-POSTHEAD rels,
-							    J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
-				     LMORPH-BIND-TYPE a-morph].
+ [J-NEEDS-AFFIX -,
+  SYNSEM.LOCAL.CAT [HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+					BAR +]] >,
+			  MARK null,
+			  FIN +,
+			  J-POSTHEAD rels,
+			  J-SPEC < [LOCAL.CAT.HEAD noun_head] >]],
+  LMORPH-BIND-TYPE a-morph].
 
 v-neg-polite-present-tai-end-lex := v-neg-polite-present-spr-end-lex &
-				    [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL tai-relation].
+ [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL tai-relation].
 
 
 v-neg-polite-present-adjspr-end-lex := v-neg-polite-present-spr-end-lex &
-				    [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head].
+ [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD i-adj-stem_head].
 
 
 v-neg-polite-present-namark-end-lex := v-neg-polite-present-end-lex &
-				       [SYNSEM.LOCAL.CAT.HEAD [MOD null,
-							       MARK.FIRST.LOCAL.CAT.HEAD na-adj_head,
-							       J-SPEC null,
-							       FIN -],
-					LMORPH-BIND-TYPE a-morph,
-					RMORPH-BIND-TYPE shortadj-morph].
+ [SYNSEM.LOCAL.CAT.HEAD [MOD null,
+			 MARK.FIRST.LOCAL.CAT.HEAD na-adj_head,
+			 J-SPEC null,
+			 FIN -],
+  LMORPH-BIND-TYPE a-morph,
+  RMORPH-BIND-TYPE shortadj-morph].
 
 
 v-finite-present-plain-negative-end-lex := v-neg-end-lex &
-					   [J-NEEDS-AFFIX -,
-					    SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
-								     MOD < [LOCAL [CAT.HEAD noun_head,
-										   BAR +]] >,
-								     MARK null,
-								     C-MOD null,
-								     J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
-								     FIN +,
-								     J-POSTHEAD rels,
-								     FORMAL.AHON -]]],
-					    LMORPH-BIND-TYPE a-morph,
-					    STEMTYPE adj-stem,
-					    INFLECTED +].
+ [J-NEEDS-AFFIX -,
+  SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
+			   MOD < [LOCAL [CAT.HEAD noun_head,
+					 BAR +]] >,
+			   MARK null,
+			   C-MOD null,
+			   J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
+			   FIN +,
+			   J-POSTHEAD rels,
+			   FORMAL.AHON -]]],
+  LMORPH-BIND-TYPE a-morph,
+  STEMTYPE adj-stem,
+  INFLECTED +].
 
 v-neg-te-plain-end-lex := v-neg-end-lex &
-			  [J-NEEDS-AFFIX -,
-			   SYNSEM [LOCAL [CAT [HEAD [FIN -,
-						     H-TENSE te,
-						     MOD null,
-						     MARK null,
-						     COP-ARG -,
-						     C-MOD.FIRST.LOCAL [CAT [HEAD verb_head & [MAIN-PRD +]],
-									BAR +],
-						     J-POSTHEAD coord,
-						     FORMAL.AHON -]]]],
-			   LMORPH-BIND-TYPE a-or-aa-morph].
+ [J-NEEDS-AFFIX -,
+  SYNSEM [LOCAL [CAT [HEAD [FIN -,
+			    H-TENSE te,
+			    MOD null,
+			    MARK null,
+			    COP-ARG -,
+			    C-MOD.FIRST.LOCAL [CAT [HEAD verb_head & [MAIN-PRD +]],
+					       BAR +],
+			    J-POSTHEAD coord,
+			    FORMAL.AHON -]]]],
+  LMORPH-BIND-TYPE a-or-aa-morph].
 
 v-neg-te-plain-aamorph-end-lex := v-neg-te-plain-end-lex &
 				  [LMORPH-BIND-TYPE aa-morph].
@@ -6321,6 +6322,7 @@ tai-notyetend-cstem-lex := tai-notyetend-lex &
 ; (FCB 2005-06-27) SYNSEM.LOCAL.CAT.HEAD.MOD null again
 ; this caused spurious ambiguity in 座れば寝る
 
+; だら ば
 v-cond-end-lex  :=  v-noncaus-op-end-lex &
  [SYNSEM [LOCAL [CAT [HEAD v-cond-end_head & 
 			   [C-MOD < [LOCAL [CAT [HEAD verb_head],
@@ -6365,43 +6367,45 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
   J-NEEDS-AFFIX -].
 
 v-cond-end-pastspr-lex := v-cond-end-lex &
-			  [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past].
+ [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE past].
 
 v-cond-end-presentspr-lex := v-cond-end-lex &
-			  [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE present].
+ [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CONT.HOOK.INDEX.E.TENSE present].
 
 v-cond-end-polite-lex := v-cond-end-lex &
-			 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+ [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 v-cond-end-plain-lex := v-cond-end-lex &
-			 [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
+ [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 
 v-cond-end-ind-lex := v-cond-end-lex &
-			 [SYNSEM.LOCAL.CONT.HOOK.INDEX.E.MOOD indicative].
+ [SYNSEM.LOCAL.CONT.HOOK.INDEX.E.MOOD indicative].
 
 v-cond-end-imorph-lex := v-cond-end-lex &
-			 [LMORPH-BIND-TYPE i-morph].
+ [LMORPH-BIND-TYPE i-morph].
 
 v-cond-end-tmorph-lex := v-cond-end-lex &
-			 [LMORPH-BIND-TYPE t-morph].
+ [LMORPH-BIND-TYPE t-morph].
 
 v-cond-end-ndmorph-lex := v-cond-end-lex &
-			 [LMORPH-BIND-TYPE nd-morph].
+ [LMORPH-BIND-TYPE nd-morph].
 
 v-cond-end-condmorph-lex := v-cond-end-lex &
-			 [LMORPH-BIND-TYPE cond-morph].
+ [LMORPH-BIND-TYPE cond-morph].
 
 
 v-cond-end-pastspr-polite-lex := v-cond-end-pastspr-lex & v-cond-end-polite-lex.
+ 
+v-cond-end-pastspr-polite-imorph-lex := v-cond-end-pastspr-polite-lex & v-cond-end-imorph-lex. 
 
-v-cond-end-pastspr-polite-imorph-lex := v-cond-end-pastspr-polite-lex & v-cond-end-imorph-lex.
-
+; まし たら, まし たら ば
 v-cond-end-pastspr-polite-ind-imorph-lex :=  v-cond-end-pastspr-polite-imorph-lex & v-cond-end-ind-lex.
 
 v-cond-end-pastspr-plain-lex := v-cond-end-pastspr-lex & v-cond-end-plain-lex.
 
+;たら, た ら
 v-cond-end-pastspr-plain-tmorph-lex := v-cond-end-pastspr-plain-lex & v-cond-end-tmorph-lex.
-
+; だら
 v-cond-end-pastspr-plain-ndmorph-lex := v-cond-end-pastspr-plain-lex & v-cond-end-ndmorph-lex.
 
 v-cond-end-pastspr-polite-tmorph-lex := v-cond-end-pastspr-polite-lex & v-cond-end-tmorph-lex.
@@ -6438,15 +6442,16 @@ rareru-end-lex :=  v-noncaus-op-end-lex &
 			MODIFIED.PERIPH +],
   INFLECTED -]. 
 
- rareru-end-imorph-lex := rareru-end-lex &
-			  [LMORPH-BIND-TYPE i-morph,
-			   STEMTYPE v-stem].
-
+; られる
+rareru-end-imorph-lex := rareru-end-lex &
+ [LMORPH-BIND-TYPE i-morph,
+  STEMTYPE v-stem].
+; る
 rareru-end-condmorph-lex := rareru-end-lex &
-			  [LMORPH-BIND-TYPE cond-morph].
-
+ [LMORPH-BIND-TYPE cond-morph].
+; れる
 rareru-end-condexcmorph-lex := rareru-end-lex &
-			  [LMORPH-BIND-TYPE cond-exceptional-morph].
+ [LMORPH-BIND-TYPE cond-exceptional-morph].
 
 
 
@@ -6455,33 +6460,33 @@ rareru-end-condexcmorph-lex := rareru-end-lex &
 ; VN + vend combinations, most vends will require [VN -] SPRs.
 
 v-op-end-lex := lexical_sign-word &
-             [SYNSEM j-synsem &
-                     [LOCAL [CAT [HEAD verbend_head-unmarked &
-                                       [H-TENSE #tense,
-                                        VN #vn,
-                                        AUX #aux],
-                                  VAL [SPR obl-1-arg &
-					   [FIRST.LOCAL [CAT [HEAD verb_head & [AUX #aux,
-									       VN #vn & - ]],
-							 BAR -]]]],
-                             CONT verb-sem-type &
-                                 [HOOK [INDEX event &
-					      [E [TENSE #tense]]]],
-                             BAR -,
-                             NUCL nucl_plus],
-		      LEX +,
-                      NON-LOCAL [QUE <! !>,
-                              AFFIX <! !>]]].
+ [SYNSEM j-synsem &
+	 [LOCAL [CAT [HEAD verbend_head-unmarked &
+			   [H-TENSE #tense,
+			    VN #vn,
+			    AUX #aux],
+		      VAL [SPR obl-1-arg &
+			       [FIRST.LOCAL [CAT [HEAD verb_head & [AUX #aux,
+								    VN #vn & - ]],
+					     BAR -]]]],
+		 CONT verb-sem-type &
+		     [HOOK [INDEX event &
+				  [E [TENSE #tense]]]],
+		 BAR -,
+		 NUCL nucl_plus],
+	  LEX +,
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>]]].
 
 v-noncaus-op-end-lex := v-op-end-lex &
-                        [SYNSEM.LOCAL [CAT.VAL [SUBJ #sbjval,
-						COMPS #compsval,
-						SPR.FIRST.LOCAL [CAT.VAL [SUBJ #sbjval,
-									 COMPS #compsval],
-								 CONT.HOOK.XARG #xarg,
-								 ARG-S #args]],
-				       CONT.HOOK.XARG #xarg,
-				       ARG-S #args]].
+ [SYNSEM.LOCAL [CAT.VAL [SUBJ #sbjval,
+			 COMPS #compsval,
+			 SPR.FIRST.LOCAL [CAT.VAL [SUBJ #sbjval,
+						   COMPS #compsval],
+					  CONT.HOOK.XARG #xarg,
+					  ARG-S #args]],
+		CONT.HOOK.XARG #xarg,
+		ARG-S #args]].
 ; (FCB 2006-06-20) no MOD-IND/MOD-HAND
 ; FIXME check the semantics
 naru-noncaus-end-lex := v-noncaus-op-end-lex &
@@ -6801,36 +6806,34 @@ pass-end-lex :=  v-op-end-lex &
 ; (MS 2004-11-30) It is too strict to say that the valence of the SPR should be sbj-obj-arg. 
 ; There could be a SPR (in case of causative-passive).
 ; (MS 2004-12-14) The SPR must be [LIGHT -], because we have a new rule for light passives.
-; (FCB 2005-07-22) Added 
 
 simple-pass-end-lex :=   pass-end-lex &
-               [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
-				    VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
-							    CONT.HOOK.INDEX #surfsbjind]],
-					 COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
-								  CONT.HOOK.INDEX #surfobjind]] >,
-					 SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
-								       LTOP #hand,
-								       XARG #surfobjind]],
-							   ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
-								   [LOCAL.CONT.HOOK.INDEX #surfsbjind] >,
-							   CAT [VAL [UNSAT +,
-								    SUBJ opt-1-arg,
-								    COMPS 1-list &
-									   < [LOCAL [CAT.HEAD case-p_head & 
-											      [CASE wo]]] > 
-									   ],
-								HEAD.LIGHT -]]]],
-				    HEAD.KEYS.KEY pass_rel],
-			      
-			       CONT [RELS <! !>,
-				     HOOK.INDEX #event & [E.PASS +],
-				     HCONS <! !>],
-			       CTXT.EMPATHY.EMPEE #surfsbjind],
-			LKEYS.KEYREL pass-relation &  [LBL #hand]],
-		LMORPH-BIND-TYPE pass-morph,
-		INFLECTED -,
-		STEMTYPE v-stem].
+ [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
+		      VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+					      CONT.HOOK.INDEX #surfsbjind]],
+			   COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+						    CONT.HOOK.INDEX #surfobjind]] >,
+			   SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
+							 LTOP #hand,
+							 XARG #surfobjind]],
+					     ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
+						     [LOCAL.CONT.HOOK.INDEX #surfsbjind] >,
+					     CAT [VAL [UNSAT +,
+						       SUBJ opt-1-arg,
+						       COMPS 1-list &
+							     < [LOCAL [CAT.HEAD case-p_head & 
+										[CASE wo]]] > 
+							     ],
+						  HEAD.LIGHT -]]]],
+		      HEAD.KEYS.KEY pass_v_rel],
+		 CONT [RELS <! !>,
+		       HOOK.INDEX #event & [E.PASS +],
+		       HCONS <! !>],
+		 CTXT.EMPATHY.EMPEE #surfsbjind],
+	  LKEYS.KEYREL pass-relation &  [LBL #hand]],
+  LMORPH-BIND-TYPE pass-morph,
+  INFLECTED -,
+  STEMTYPE v-stem].
 
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
@@ -6843,38 +6846,38 @@ simple-pass-end-lex :=   pass-end-lex &
 
 
 ditrans-pass-end-ganini-lex :=   pass-end-lex &
-               [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
-					 SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
-                                                             CONT.HOOK.INDEX #surfsbjind]],
-                                         COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
-						 [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
-                                                             CONT.HOOK.INDEX #surfobj2ind]] >,
-					 SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
-									XARG #surfobj2ind,
-									LTOP #hand]],
-							    CAT.VAL sbj-obj-obj2-arg & [UNSAT +],
-							    ARG-S < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
-									    CONT.HOOK.INDEX #surfobj2ind]],
-								    [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE wo],
-									    CONT.HOOK.INDEX #surfsbjind]],
-								    #objval & [LOCAL [CAT.HEAD case-p_head & [CASE ni],
-										      CONT.HOOK.INDEX #surfobjind]] >]]],
-				    HEAD.KEYS.KEY pass_rel],
-				    
-				   CONT [RELS <! !>,
-					 HOOK.INDEX #event & [E.PASS +],
-					 HCONS <! !>],
-			       CTXT.EMPATHY.EMPEE #surfsbjind],
-			LKEYS.KEYREL pass-relation & [LBL #hand]],
-		LMORPH-BIND-TYPE pass-morph,
-		INFLECTED -,
-		STEMTYPE v-stem].
+ [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
+			   SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+					      CONT.HOOK.INDEX #surfsbjind]],
+			   COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
+				   [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+					   CONT.HOOK.INDEX #surfobj2ind]] >,
+			   SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
+							  XARG #surfobj2ind,
+							  LTOP #hand]],
+					      CAT.VAL sbj-obj-obj2-arg & [UNSAT +],
+					      ARG-S < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+							      CONT.HOOK.INDEX #surfobj2ind]],
+						      [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE wo],
+							      CONT.HOOK.INDEX #surfsbjind]],
+						      #objval & [LOCAL [CAT.HEAD case-p_head & [CASE ni],
+									CONT.HOOK.INDEX #surfobjind]] >]]],
+		      HEAD.KEYS.KEY pass_v_rel],
+		 
+		   CONT [RELS <! !>,
+			 HOOK.INDEX #event & [E.PASS +],
+			 HCONS <! !>],
+		 CTXT.EMPATHY.EMPEE #surfsbjind],
+	  LKEYS.KEYREL pass-relation & [LBL #hand]],
+  LMORPH-BIND-TYPE pass-morph,
+  INFLECTED -,
+  STEMTYPE v-stem].
 
 ditrans-pass-end-ganini-passcmorph-lex := ditrans-pass-end-ganini-lex &
-					  [LMORPH-BIND-TYPE pass-c-stem-morph].
+ [LMORPH-BIND-TYPE pass-c-stem-morph].
 
 ditrans-pass-end-ganini-passvmorph-lex := ditrans-pass-end-ganini-lex &
-					  [LMORPH-BIND-TYPE pass-v-stem-morph].
+ [LMORPH-BIND-TYPE pass-v-stem-morph].
 
 
 
@@ -6884,37 +6887,36 @@ ditrans-pass-end-ganini-passvmorph-lex := ditrans-pass-end-ganini-lex &
 
 
 ditrans-pass-end-ganiwo-lex :=   pass-end-lex &
-               [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
-					 SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
-                                                             CONT.HOOK.INDEX #surfsbjind]],
-                                         COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
-						 [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
-                                                             CONT.HOOK.INDEX #surfobj2ind]] >,
-					 SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
-									XARG #surfobj2ind,
-									LTOP #hand]],
-							    CAT.VAL sbj-obj-obj2-arg & [UNSAT +],
-							    ARG-S < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
-									    CONT.HOOK.INDEX #surfobj2ind]],
-								    #objval & [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE wo],
-										      CONT.HOOK.INDEX #surfobjind]],
-								    [LOCAL [CAT.HEAD case-p_head & [CASE ni],
-										      CONT.HOOK.INDEX #surfsbjind]] >]]],
-				    HEAD.KEYS.KEY pass_rel],
-				    
-				   CONT [RELS <! !>,
-					 HOOK.INDEX #event & [E.PASS +],
-					 HCONS <! !>],
-			       CTXT.EMPATHY.EMPEE #surfsbjind],
-			LKEYS.KEYREL pass-relation & [LBL #hand]],
-		LMORPH-BIND-TYPE pass-morph,
-		INFLECTED -].
+ [SYNSEM [LOCAL [CAT [VAL [UNSAT +,
+			   SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+					      CONT.HOOK.INDEX #surfsbjind]],
+			   COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
+				   [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+					   CONT.HOOK.INDEX #surfobj2ind]] >,
+			   SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
+							  XARG #surfobj2ind,
+							  LTOP #hand]],
+					      CAT.VAL sbj-obj-obj2-arg & [UNSAT +],
+					      ARG-S < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+							      CONT.HOOK.INDEX #surfobj2ind]],
+						      #objval & [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE wo],
+									CONT.HOOK.INDEX #surfobjind]],
+						      [LOCAL [CAT.HEAD case-p_head & [CASE ni],
+							      CONT.HOOK.INDEX #surfsbjind]] >]]],
+		      HEAD.KEYS.KEY pass_v_rel],
+		 CONT [RELS <! !>,
+		       HOOK.INDEX #event & [E.PASS +],
+		       HCONS <! !>],
+		 CTXT.EMPATHY.EMPEE #surfsbjind],
+	  LKEYS.KEYREL pass-relation & [LBL #hand]],
+  LMORPH-BIND-TYPE pass-morph,
+  INFLECTED -].
 
 ditrans-pass-end-ganiwo-passcmorph-lex := ditrans-pass-end-ganiwo-lex &
-					  [LMORPH-BIND-TYPE pass-c-stem-morph].
+ [LMORPH-BIND-TYPE pass-c-stem-morph].
 
 ditrans-pass-end-ganiwo-passvmorph-lex := ditrans-pass-end-ganiwo-lex &
-					  [LMORPH-BIND-TYPE pass-v-stem-morph].
+ [LMORPH-BIND-TYPE pass-v-stem-morph].
 
 
 
@@ -6926,20 +6928,20 @@ ditrans-pass-end-ganiwo-passvmorph-lex := ditrans-pass-end-ganiwo-lex &
 ; the ARG1 of the verb. Then, we have only one adversative relation, with ARG1 (the surface subject) and ARG2 (the event).
 
 adversative-pass-end-lex := pass-end-lex &
-			    [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
-						 VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
-									      CONT.HOOK.INDEX #surfsbjind]] >,
-						      SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
-									      CONT.HOOK.LTOP #sprhd]] >],
-						 HEAD.KEYS.KEY pass_rel],
-					    CONT [RELS <! #key !>,
-						  HOOK [XARG #surfsbjind,
-							INDEX #event],
-						 HCONS <!  !>]],
-				     LKEYS.KEYREL #key & adversative-relation & [ARG1 #surfsbjind,
-										 ARG2 #sprhd,
-										 ARG0 #event]],
-			     LMORPH-BIND-TYPE pass-morph].
+ [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
+		      VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+						   CONT.HOOK.INDEX #surfsbjind]] >,
+			   SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
+						   CONT.HOOK.LTOP #sprhd]] >],
+		      HEAD.KEYS.KEY pass_v_rel],
+		 CONT [RELS <! #key !>,
+		       HOOK [XARG #surfsbjind,
+			     INDEX #event],
+		       HCONS <!  !>]],
+	  LKEYS.KEYREL #key & adversative-relation & [ARG1 #surfsbjind,
+						      ARG2 #sprhd,
+						      ARG0 #event]],
+  LMORPH-BIND-TYPE pass-morph].
 						     
 
 
@@ -6995,29 +6997,28 @@ adversative-trans-pass-passcmorph-end-lex := adversative-trans-pass-end-lex &
 
 
 lightverb-pass-end-lex :=   pass-end-lex &
-               [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
-							    CONT.HOOK.INDEX #surfsbjind]],
-					 COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
-								  CONT.HOOK.INDEX #surfobjind]] >,
-					 SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
-								       LTOP #hand,
-								       XARG #surfobjind]],
-							   CAT.VAL light_transitive & [UNSAT +,
-										       SPR.FIRST.LOCAL.CAT.VAL sbj-obj-arg],
-							   ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
-								   [LOCAL.CONT.HOOK.INDEX #surfsbjind] >]]],
-				    HEAD.KEYS.KEY pass_rel],
-			      
-			       CONT [RELS <! !>,
-				     HOOK [INDEX #event & [E.PASS +],
-					   LTOP #hand,
-					   XARG #surfsbjind],
-				     HCONS <! !>],
-			       CTXT.EMPATHY.EMPEE #surfobjind],
-			LKEYS.KEYREL pass-relation &  [LBL #hand]],
-		LMORPH-BIND-TYPE pass-c-stem-morph,
-		INFLECTED -,
-		STEMTYPE v-stem].
+ [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
+					      CONT.HOOK.INDEX #surfsbjind]],
+			   COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+						    CONT.HOOK.INDEX #surfobjind]] >,
+			   SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
+							 LTOP #hand,
+							 XARG #surfobjind]],
+					     CAT.VAL light_transitive & [UNSAT +,
+									 SPR.FIRST.LOCAL.CAT.VAL sbj-obj-arg],
+					     ARG-S < [LOCAL.CONT.HOOK.INDEX #surfobjind],
+						     [LOCAL.CONT.HOOK.INDEX #surfsbjind] >]]],
+		      HEAD.KEYS.KEY pass_v_rel],
+		 CONT [RELS <! !>,
+		       HOOK [INDEX #event & [E.PASS +],
+			     LTOP #hand,
+			     XARG #surfsbjind],
+		       HCONS <! !>],
+		 CTXT.EMPATHY.EMPEE #surfobjind],
+	  LKEYS.KEYREL pass-relation &  [LBL #hand]],
+  LMORPH-BIND-TYPE pass-c-stem-morph,
+  INFLECTED -,
+  STEMTYPE v-stem].
 
 ; (ERB 2002-01-02) Adding a vn-vend-rule (parallel to vstem-vend-rule)
 ; for VN + ください.  To keep that rule from massively overgenerating
@@ -7337,76 +7338,43 @@ v2n-end-lex :=  nom-lex &
 						   HOOK.INDEX #i,
 						   HCONS <! qeq & [HARG #prpstn-soa,LARG #v-hd],
 							     qeq & [HARG #def-restr, LARG #kata-hd] !>]]]].
+						    
 
-							    
-
-
-
-
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-; (FCB 2005-06-27)  this seems to be covered by adj2v-end-lex.
-; adj2v-end-lex := prpstn-introducing-end-lex &
-; 		 [SYNSEM [LKEYS.KEYREL [PRED 'seem,
-; 					    LBL #top],
-; 			  LOCAL [CAT [HEAD v-op-end_head & [KEYS.KEY seem_rel],
-; 				      VAL.SPR.FIRST.LOCAL.CAT.HEAD.ADJ +],
-; 				 CONT [HOOK [LTOP #top,
-; 					     INDEX.E.MOOD indicative]]],
-; 			  MODIFIED.PERIPH +],
-; 		  J-NEEDS-AFFIX +,
-; 		  LMORPH-BIND-TYPE shortadj-morph,
-; 		  STEMTYPE c-stem].
-				       
-
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-; (FCB 2005-06-27)  this seems to be covered by adj2v-end-lex.
-; garu-end-lex := prpstn-introducing-end-lex &
-;                [SYNSEM [LKEYS.KEYREL [LBL #top,
-; 				      PRED 'seem],
-; 			LOCAL [CAT [HEAD.KEYS.KEY seem_rel],
-;                               CONT [HOOK [LTOP #top,
-; 					  INDEX.E.MOOD indicative]]],
-; 			MODIFIED.PERIPH +],
-; 		J-NEEDS-AFFIX +,
-;                 LMORPH-BIND-TYPE i-morph,
-; 		STEMTYPE c-stem].
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-
 
 mai-end-lex := v-noncaus-op-end-lex &
-               [SYNSEM [LKEYS.KEYREL #key & neg-relation & [LBL #top, 
-							    PRED 'neg_rel,
-							    ARG1 #h3],
-			LOCAL [CAT [HEAD v-op-end_head &
-					 [MODUS indicative,
-                                          MOD null,
-                                          C-MOD null,
-                                          H-TENSE present,
-                                          MARK null,
-                                          J-SPEC null,
-                                          FIN +],
-                                   VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
-								    INDEX #i1,
-								    XARG #x1]]]],
-                              CONT [HOOK [INDEX #event,
-					  LTOP #top],
-                                    RELS <! #key,
-                                             want2-relation & [LBL #h3,
-                                                          ARG0 #event,
-                                                          ARG1 #x1,
-                                                          ARG2 #h6],
-					  message &
-					  [PRED proposition_m_rel,
-					   LBL #h6,
-					   ARG0 #i1,
-					   MARG #h7] !>,
-                                    HCONS <! qeq & [HARG #h7,
-                                                     LARG #h1] !>]]],
-		J-NEEDS-AFFIX -,
-		LMORPH-BIND-TYPE mai-morph].
+ [SYNSEM [LKEYS.KEYREL #key & neg-relation & [LBL #top, 
+					      PRED 'neg_rel,
+					      ARG1 #h3],
+	  LOCAL [CAT [HEAD v-op-end_head &
+			   [MODUS indicative,
+			    MOD null,
+			    C-MOD null,
+			    H-TENSE present,
+			    MARK null,
+			    J-SPEC null,
+			    FIN +],
+		      VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
+						       INDEX #i1,
+						       XARG #x1]]]],
+		 CONT [HOOK [INDEX #event,
+			     LTOP #top],
+		       RELS <! #key,
+			     want2-relation & [LBL #h3,
+					       ARG0 #event,
+					       ARG1 #x1,
+					       ARG2 #h6],
+			     message &
+			     [PRED proposition_m_rel,
+			      LBL #h6,
+			      ARG0 #i1,
+			      MARG #h7] !>,
+		       HCONS <! qeq & [HARG #h7,
+				       LARG #h1] !>]]],
+  J-NEEDS-AFFIX -,
+  LMORPH-BIND-TYPE mai-morph].
 
 beki-end-lex:= v-noncaus-op-end-lex &
                [SYNSEM [LKEYS.KEYREL #key & scopal-adv-relation & [PRED '_beki_a_rel,

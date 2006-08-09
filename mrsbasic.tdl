@@ -471,7 +471,7 @@ equal-relation := arg12-ev-relation &
                 LBL handle].
 
 
-
+;; used in mai
 want2-relation := arg12-relation & [PRED "want2_rel"].
 
 
@@ -553,11 +553,11 @@ neg-relation := adv-relation & arg1-relation.
 
 objchange-relation := arg12-relation.
 
-tai-relation := objchange-relation & [PRED tai_rel].
+tai-relation := objchange-relation & [PRED tai_v_want_rel].
 
 ; (MS 2001-11-22) RARERU needs an ARG1, if it shall be able to combine with TAI.
 
-rareru-relation := arg12-relation & [PRED rareru_rel].
+rareru-relation := arg12-relation & [PRED rareru_v_can_rel].
 
 pass-relation := arg12-relation & [PRED 'passive].
 
@@ -635,10 +635,10 @@ adv_rel := predsort.
 noun_rel := predsort.
 
 no_rel := predsort.
-tai_rel  := predsort.
-rareru_rel := predsort.
-seem_rel := predsort.
-pass_rel := predsort.
+tai_v_want_rel  := predsort.
+rareru_v_can_rel := predsort.
+seem_v_rel := predsort.
+pass_v_rel := predsort.
 
 ;(MS 2005-11-29) these were still not defined. 
 ; Recognized when trying to generate.

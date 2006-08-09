@@ -478,8 +478,8 @@ rareru-pot-end := rareru-end-imorph-lex &
                   [ORTH <! "られる" !>].
 
 
-ru-pot-end := rareru-end-condmorph-lex &
-                  [ORTH <! "る" !>].
+;ru-pot-end := rareru-end-condmorph-lex &
+;                  [ORTH <! "る" !>].
 
 
 reru-pot-end := rareru-end-condexcmorph-lex &

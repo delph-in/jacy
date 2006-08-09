@@ -1032,28 +1032,28 @@ opend-obj2-zpro-ins-lrule := zpro-insertion-rule &
 ; such that spurious ambiguity in connection with VN2N rule vanishes.
 
 ga-no-conversion-rule := subj-casechange-rule &
-                       [SYNSEM.LOCAL.CAT.VAL.SUBJ obl-1-arg & [FIRST [LOCAL.CAT.HEAD.CASE no-case]],
-                        ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
-                                                       [MAIN-PRD -,
-							COP -,
-							H-TENSE present-or-past]],
-					      BAR -],
-                                INFLECTED +,
-                                J-NEEDS-AFFIX bool] >].
+ [SYNSEM.LOCAL.CAT.VAL.SUBJ obl-1-arg & [FIRST [LOCAL.CAT.HEAD.CASE no-case]],
+  ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
+				  [MAIN-PRD -,
+				   COP -,
+				   H-TENSE present-or-past]],
+			BAR -],
+	  INFLECTED +,
+	  J-NEEDS-AFFIX bool] >].
 
 wo-no-conversion-rule := obj-casechange-rule &
-                       [SYNSEM.LOCAL [CAT.VAL.COMPS obl-arg & [FIRST [LOCAL.CAT.HEAD [PTYPE ga,
-										      CASE no-case],
-                                                               OPT - ]],
-				      BAR +],
-                        ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
-                                                       [MAIN-PRD -,
-							COP -,
-							VN -,
-							MODUS infinitive]],
-					      BAR -],
-                                INFLECTED +,
-                                J-NEEDS-AFFIX -] >].
+ [SYNSEM.LOCAL [CAT.VAL.COMPS obl-arg & [FIRST [LOCAL.CAT.HEAD [PTYPE ga,
+								CASE no-case],
+						OPT - ]],
+		BAR +],
+  ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
+				  [MAIN-PRD -,
+				   COP -,
+				   VN -,
+				   MODUS infinitive]],
+			BAR -],
+	  INFLECTED +,
+	  J-NEEDS-AFFIX -] >].
 
 ;;;;;;;;;;;;;;;;;;;;;V Compounds;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
