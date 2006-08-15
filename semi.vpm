@@ -1,0 +1,86 @@
+;;; -*- Mode: TDL; -*-
+;;;
+;;; SEM-I mapping
+;;;
+;;; (FCB 2006-06-23) for Japanese
+;;;  using logon/lingo/erg/erg.smi as inspiration for the target mappings
+;;;  order most specific mappings first
+
+PNG.PN : PERS NUM
+  onesg    <> 1 sg 
+  onepl    <> 1 pl
+  one      >> 1 !
+  one      << 1 *
+  twosg    <> 2 sg
+  twopl    <> 2 pl
+  two      >> 2 !
+  two      << 2 *
+  threesg  <> 3 sg
+  threepl  <> 3 pl
+  three    >> 3 !
+  three    << 3 *
+  *        >> ! !
+  !        << * *
+
+;; one-or-two := person.
+;; two-or-three := person.
+
+
+
+PNG.GEN : GEND 
+  masc <> m 
+  fem  <> f 
+  neut <> n 
+  *    << ! 
+  !    >> * 
+
+;;; Things not listed disappear
+;DIV : DIV
+;  + <> +
+;  - <> -
+;  ! << *
+
+;;; confused ?
+E.TENSE : TENSE
+  present   <> pres
+  fut       <> fut
+  past      <> past
+  no_tense  <> untensed
+  tensed    <> tense
+  te        >> tense	
+  *         <> *
+; non-past
+; not sure about te
+
+;;;
+;;; Mood
+;;;
+E.MOOD : MOOD
+  indicative <> indicative
+  * >> indicative
+  ! << *
+
+;;;
+;;; Aspect
+;;;
+
+
+E.ASPECT : PROG PERF
+  perfect_progressive <> + +
+  progressive         >> + !
+  progressive         << + *
+  perfective          >> ! +
+  perfective          << * +
+  *                   >> - -
+
+; terminative :< aspect.
+; prospective :< aspect.
+; perfective :< aspect.
+; progressive :< aspect.
+; inceptive :< aspect.
+; perfect_progressive :< aspect.
+; modal :< aspect.
+; ;;; the value for sentences with no special marking
+; default_aspect :< aspect.  
+
+;;; make a semi (mt::construct-semi)
