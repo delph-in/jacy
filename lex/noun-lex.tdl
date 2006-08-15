@@ -4598,6 +4598,9 @@ uchi-kanji-pron :=
 pron-firstpl-ref-lex &
 [ORTH <! "内" !>].
 
+
+;; two
+
 sochira :=
 pron-secondahon-ref-lex &
 [ORTH <! "そちら" !>].
@@ -4606,31 +4609,6 @@ socchi :=
 pron-secondperson-ref-lex &
 [ORTH <! "そっち" !>].
 
-anata :=
-pron-secondahon-ref-lex &
-[ORTH <! "あなた" !>].
-
-kimitachi :=
-pron-secondpl-ref-lex &
-[ORTH <! "君達" !>].
-
-kimitachi-b :=
-pron-secondpl-ref-lex &
-[ORTH <! "君たち" !>].
-
-;you; dear (what a wife calls a husband)
-
-anata-kanji :=
-pron-secondahon-ref-lex &
-[ORTH <! "貴方" !>].
-
-kimi-pron :=
-pron-secondminusahon-ref-lex &
-[ORTH <! "君" !>].
-
-temee_1_2 := pron-secondminusahon-ref-lex &
-[ORTH <! "てめえ" !>].
-
 onoono_1_1 := pron-secondperson-ref-lex &
 [ORTH <! "各々" !>].
 
@@ -4638,15 +4616,6 @@ onoono_1_1 := pron-secondperson-ref-lex &
 
 onmi_1 := pron-secondahon-ref-lex &
 [ORTH <! "御","身" !>].
-
-ware_1_3 := pron-firstsgahon-ref-lex &
-[ORTH <! "我" !>].
-
-sei_1_10 := pron-firstsgahon-ref-lex &
-[ORTH <! "生" !>].
-
-onore_1_2 := pron-firstsgahon-ref-lex &
-[ORTH <! "己" !>].
 
 ; (AO 2003-08-08) 対称の代名詞 相手を見下した言い方
 ;		辞書的には漢字で書くのだろうが、
@@ -4661,6 +4630,67 @@ onore_2 := pron-secondminusahon-ref-lex &
 
 ware_2_1 := pron-secondminusahon-ref-lex &
 [ORTH <! "われ" !>].
+
+;; twosg
+
+anata :=
+pron-secondahon-ref-lex &
+[ORTH <! "あなた" !>].
+
+;you; dear (what a wife calls a husband)
+
+anata-kanji :=
+pron-second-sg-ahon-ref-lex &
+[ORTH <! "貴方" !>].
+
+kimi-pron :=
+pron-second-sg-xahon-ref-lex &
+[ORTH <! "君" !>].
+
+kimi-pron-hiragana :=
+pron-second-sg-xahon-ref-lex &
+[ORTH <! "きみ" !>].
+
+temee_1_2 := pron-second-sg-xahon-ref-lex &
+[ORTH <! "てめえ" !>].
+
+
+;; twopl
+
+anatatachi :=
+pron-second-pl-ahon-ref-lex &
+[ORTH <! "貴方達" !>].
+
+anatatachi-b :=
+pron-second-pl-ahon-ref-lex &
+[ORTH <! "貴方たち" !>].
+
+anatatachi-c :=
+pron-second-pl-ahon-ref-lex &
+[ORTH <! "あなたたち" !>].
+
+kimitachi :=
+pron-second-pl-xahon-ref-lex &
+[ORTH <! "君達" !>].
+
+kimitachi-b :=
+pron-second-pl-xahon-ref-lex &
+[ORTH <! "君たち" !>].
+
+kimitachi-c :=
+pron-second-pl-xahon-ref-lex &
+[ORTH <! "きみたち" !>].
+
+;;;
+
+ware_1_3 := pron-firstsgahon-ref-lex &
+[ORTH <! "我" !>].
+
+sei_1_10 := pron-firstsgahon-ref-lex &
+[ORTH <! "生" !>].
+
+onore_1_2 := pron-firstsgahon-ref-lex &
+[ORTH <! "己" !>].
 
 watakushidomo-firstpl :=
 pron-firstplahon-ref-lex &
@@ -4693,6 +4723,7 @@ pron-demon-lex &
 [ORTH <! "ソレ" !>].
 
 ; (MS 2005-03-01) person, number and gender go into the types.
+
 kare :=
 pron-thirdsgmasc-ref-lex &
 [ORTH <! "彼" !>].
@@ -149416,11 +149447,6 @@ kuse_1-hiragana := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_kuse_n_1_rel,
  ORTH <! "くせ" !>].
 
-;(TK 06-04-19)
-;きみ
-kimi-pron-hiragana :=
-pron-secondminusahon-ref-lex &
-[ORTH <! "きみ" !>].
 
 ;(TK 06-04-19)
 ;組合せ

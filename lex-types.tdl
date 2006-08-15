@@ -3131,15 +3131,34 @@ pron-secondahon-ref-lex := pron-secondperson-ref-lex &
 pron-secondminusahon-ref-lex := pron-secondperson-ref-lex &
 			   [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 
-; (MS 2005-02-28) added the clear plural cases, such as 君達
-
-pron-secondpl-ref-lex := pron-secondperson-ref-lex &
-			 [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twopl].
 
 ; (MS 2005-02-28) added the clear singular cases, such as 君
 
 pron-secondsg-ref-lex := pron-secondperson-ref-lex &
 			 [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twosg].
+
+pron-second-sg-ahon-ref-lex := pron-secondperson-ref-lex &
+ [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twosg,
+  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
+
+pron-second-sg-xahon-ref-lex := pron-secondperson-ref-lex &
+ [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twosg,
+  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
+
+; (MS 2005-02-28) added the clear plural cases, such as 君達
+
+pron-secondpl-ref-lex := pron-secondperson-ref-lex &
+			 [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twopl].
+
+pron-second-pl-ahon-ref-lex := pron-secondperson-ref-lex &
+ [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twopl,
+  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON + ].
+
+pron-second-pl-xahon-ref-lex := pron-secondperson-ref-lex &
+ [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN twopl,
+  SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON - ].
+
+
 
 
 ; (MS 2005-02-28) renamed pron-sp-add-ref-lex. We do not need the distinction
