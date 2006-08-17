@@ -2004,6 +2004,11 @@ ordinary-nohon-n-lex &
 [ORTH <! "店" !>,
 SYNSEM.LKEYS.KEYREL [PRED '_ten_n_shop_rel]].
 
+omise-shop :=
+ordinary-nohon-n-lex &
+[ORTH <! "御店" !>,
+SYNSEM.LKEYS.KEYREL [PRED '_omise_n_shop_rel]].
+
 teN-sky :=
 ordinary-nohon-n-lex &
 [ORTH <! "天" !>,
@@ -7164,6 +7169,18 @@ A-noun :=
 ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_A_n_rel,
 ORTH <! "Ａ" !>].
+
+
+A-noun-kk :=
+ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_A_n_rel,
+ORTH <! "エー" !>].
+
+B-noun-kk :=
+ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_A_n_rel,
+ORTH <! "ビー" !>].
+
 
 ;<OLD> ; Used 2 times
 
@@ -38880,6 +38897,11 @@ uso_1 := ordinary-nohon-n-lex &
 ; ORTH <! "右側" !>].
 migigawa_1 := relational-n-lex &
 [ORTH <! "右側" !>, SYNSEM.LKEYS.KEYREL.PRED '_migigawa_n_1_rel].
+
+
+madogawa_1 := relational-n-lex &
+[ORTH <! "窓側" !>, SYNSEM.LKEYS.KEYREL.PRED '_madogawa_n_1_rel].
+
 
 ; 右足 
 
@@ -86714,6 +86736,10 @@ te-pingu_1 := ordinary-nohon-n-lex &
 te-pu_1 := ordinary-nohon-n-lex &
 [SYNSEM.LKEYS.KEYREL.PRED '_teepu_n_1_rel,
  ORTH <! "テープ" !>].
+
+mu-bi-fuirumu_1 := ordinary-nohon-n-lex &
+[SYNSEM.LKEYS.KEYREL.PRED '_mu-bi-fuirumu_n_1_rel,
+ ORTH <! "ムービーフイルム" !>].
 
 ; テープレコーダー 
 ; Used 1 times

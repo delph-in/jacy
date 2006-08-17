@@ -1,8 +1,9 @@
 type TEXT
 orthography TEXT
 keyrel TEXT
-altkey TEXT
 keytag TEXT
+altkey TEXT
+altkeytag TEXT
 ptype TEXT
 pronunciation TEXT
 comments TEXT

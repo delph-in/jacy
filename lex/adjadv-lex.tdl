@@ -710,6 +710,10 @@ isect-adv-lex &
 [ORTH <! "まず" !>,
 SYNSEM.LKEYS.KEYREL.PRED '_mazu_a_rel].
 
+mazu-kj-adv := isect-adv-lex &
+[ORTH <! "先ず" !>,
+SYNSEM.LKEYS.KEYREL.PRED '_mazu_a_rel].
+
 mazuwa-adv :=
 isect-adv-lex &
 [ORTH <! "まずは" !>,

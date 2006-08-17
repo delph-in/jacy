@@ -1,8 +1,9 @@
 id	name		sym
 orth	orth		str-rawlst
-unifs	altkey	(synsem lkeys altkeyrel pred)	mixed
 unifs	keyrel	(synsem lkeys keyrel pred)	mixed
 unifs	keytag	(synsem lkeys keyrel carg)	mixed
+unifs	altkey	(synsem lkeys altkeyrel pred)	mixed
+unifs	altkeytag	(synsem lkeys altkeyrel carg)	mixed
 unifs	compkey	(synsem local cat head ptype)	mixed
 unifs	orth	(orth)	str-dlst
 unifs	type	nil	sym

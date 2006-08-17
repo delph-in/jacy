@@ -440,6 +440,10 @@ eeto-hes :=
 hes-lex &
 [ORTH <! "ええと" !>].
 
+eetto-hes :=
+hes-lex &
+[ORTH <! "えーっと" !>].
+
 
 o-hon-npref :=
 hon-prefix2n-lex &

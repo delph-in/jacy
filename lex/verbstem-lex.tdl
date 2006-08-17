@@ -22979,5 +22979,10 @@ utsu-stem-hiragana := v1-c-stem-lex &
 
 ;;;=======
 
+;;; From IWSLT corpus
+
+suru-pick-stem := v1-c-stem-lex &
+[ORTH <! "ыш╓К" !>,  SYNSEM.LKEYS.KEYREL.PRED '_suru_v_pick_rel].
+
 
 ;;;>>>>>>> 1.55
