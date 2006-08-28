@@ -289,17 +289,14 @@ integer-relation := arg1-relation &
 ;const-relation := named-relation.
 
 const-relation := integer-relation & const-value-relation &
-		  [ PRED 'card_rel ].
+		  [ PRED card_rel ].
 
-times-relation := integer-relation & 
-             [ PRED 'times,
-	       FACTOR1 handle,
-               FACTOR2 handle ].
+;;; FCB 2006-08-18 harmonize with ERG
+times-relation := integer-relation & arg123-ev-relation &
+             [ PRED times_rel ].
 
-plus-relation := integer-relation &
-            [ PRED 'plus,
-	      TERM1 handle,
-	      TERM2 handle ].
+plus-relation := integer-relation & arg123-ev-relation &
+            [ PRED plus_rel ].
 
 ; (ERB 2001-11-14) To keep the numbers-qua-numcls out of the
 ; first two nominal numcl rules.
@@ -639,6 +636,13 @@ tai_v_want_rel  := predsort.
 rareru_v_can_rel := predsort.
 seem_v_rel := predsort.
 pass_v_rel := predsort.
+
+
+; FCB relations for numbers 
+card_rel := predsort.
+plus_rel := card_rel.
+times_rel := card_rel.
+
 
 ;(MS 2005-11-29) these were still not defined. 
 ; Recognized when trying to generate.
