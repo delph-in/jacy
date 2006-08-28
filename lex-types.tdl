@@ -1056,9 +1056,13 @@ adv_head-avm := adv_head &
 	     H-TENSE present].
 
 adv_deg_head-avm := adv_head &
-            [KEYS.KEY adv_rel,
-	     MOD < [LOCAL [CAT.HEAD adj-or-adv_head]] >,
-	     H-TENSE present].
+ [KEYS.KEY adv_rel,
+  MOD < [LOCAL [CAT.HEAD adj-or-adv_head]] >,
+  H-TENSE present].
+;   [KEYS.KEY adv_rel,
+;    MOD < [LOCAL.CAT.HEAD.ADJ +] >,
+;    H-TENSE present].
+
 
 adv_deg_num_head-avm := adv_head &
             [KEYS.KEY adv_rel,
@@ -2257,15 +2261,16 @@ topic-p-lex := vmod-p-lex-super &
 ;(MS 2005-11-10) getting rid of skip files.
 
 topic-vhead-connect-p-lex := topic-p-lex &
-		[SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD verb_head & [FIN +,
-										 VN -,
-										 COP -,
-										 ADJ -,
-										 FORMAL.AHON -,
-										 MAIN-PRD -],
-							   CONT.HOOK.INDEX #objind]],
-			       CONT [RELS <! [PRED '_toshite_p_rel,
-					      ARG1 #objind] !>]]].
+ [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT.HEAD verb_head & 
+						     [FIN +,
+						      VN -,
+						      COP -,
+						      ADJ -,
+						      FORMAL.AHON -,
+						      MAIN-PRD -],
+					    CONT.HOOK.INDEX #objind]],
+		CONT [RELS <! [PRED '_toshite_p_rel,
+			       ARG1 #objind] !>]]].
 
 ; (ERB 2002-01-10) Experimenting with treating particle uses of ¤Ê¤É
 ; as contributing topic semantics in addition to nado relation.
@@ -2424,10 +2429,12 @@ adv-p-lex := vmod-p-lex &
 ; for date nouns.
 ; (MS 2005-10-18) This is too strict. We cannot get results for relative sentences plus ni,
 ; for example. So, we do a trick and use FIN to distinguish them.
+; i.e.,  date-noun-adv-lex is FIN -, so it won't unite
+; FIXME: this is feature abuse
 
 adv-p-lex-np :=  adv-p-lex & 
-            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head &
-							      [FIN +]]].
+ [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head &
+						   [FIN +]]].
 
 ;(MS 2005-11-10) getting rid of skip files.
 
@@ -3251,45 +3258,51 @@ pron-loc-ref-lex  := pron-lex &
 ; so that we could actually parse these things!
 ; otherwise unification fails with quantify-n-infl-rule
 ; (MS 2003-12-19) Fixed that.
+; (FCB 2006-08-28) added SYNSEM.LOCAL.CAT.HEAD.FIN -
+; to stop spurious unification with adv-p-lex-np
 
 day-lex := n-lex & 
-               [SYNSEM [LOCAL [CAT [HEAD temporal-noun_head,
-                                    VAL noun_sc & [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
-                               CONT [HOOK [LTOP #hand],
-				     RELS <! #key !>,
-				     HCONS <! !>],
-			       CTXT.BACKGROUND <! !>,
-			       ARG-S < #spr >],
-			LKEYS.KEYREL contentful-nom-relation & #key & [LBL #hand],
-                        NON-LOCAL [QUE <! !>,
-				   AFFIX <! !>]]].
+ [SYNSEM [LOCAL [CAT [HEAD temporal-noun_head & 
+			   [FIN -],
+		      VAL noun_sc & 
+			   [SPR.FIRST #spr & 
+				      [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
+		 CONT [HOOK [LTOP #hand],
+		       RELS <! #key !>,
+		       HCONS <! !>],
+		 CTXT.BACKGROUND <! !>,
+		 ARG-S < #spr >],
+	  LKEYS.KEYREL contentful-nom-relation & #key & [LBL #hand],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>]]].
 
 dofw-n-lex  := day-lex & 
-	       [SYNSEM [LOCAL.CAT.HEAD dofw_noun_head-avm,
-			LKEYS.KEYREL dofw-relation    ]].
-
+ [SYNSEM [LOCAL.CAT.HEAD dofw_noun_head-avm,
+	  LKEYS.KEYREL dofw-relation    ]].
 
 
 dofm-n-lex := day-lex & 
-               [SYNSEM [LOCAL.CAT.HEAD dofm_noun_head-avm,
-			LKEYS.KEYREL dofm-relation ]].
+ [SYNSEM [LOCAL.CAT.HEAD dofm_noun_head-avm,
+	  LKEYS.KEYREL dofm-relation ]].
 
 
 mofy-n-lex := day-lex & 
-               [SYNSEM [LOCAL.CAT.HEAD temp_numeral_head-avm & [J-POSTHEAD compound],
-			LKEYS.KEYREL mofy-relation    ]].
+ [SYNSEM [LOCAL.CAT.HEAD temp_numeral_head-avm & [J-POSTHEAD compound],
+	  LKEYS.KEYREL mofy-relation    ]].
 
 relational-n-lex := n-lex &
-		    [SYNSEM [LOCAL [CAT [HEAD relational_noun_head,
-                                    VAL noun_sc & [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
-                               CONT [HOOK [LTOP #hand],
-				     RELS <! #key !>,
-				     HCONS <! !>],
-			       CTXT.BACKGROUND <! !>,
-			       ARG-S < #spr >],
-			LKEYS.KEYREL contentful-nom-relation & #key & [LBL #hand],
-                        NON-LOCAL [QUE <! !>,
-				   AFFIX <! !>]]].
+ [SYNSEM [LOCAL [CAT [HEAD relational_noun_head,
+		      VAL noun_sc & 
+			   [SPR.FIRST #spr & 
+				      [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
+		 CONT [HOOK [LTOP #hand],
+		       RELS <! #key !>,
+		       HCONS <! !>],
+		 CTXT.BACKGROUND <! !>,
+		 ARG-S < #spr >],
+	  LKEYS.KEYREL contentful-nom-relation & #key & [LBL #hand],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>]]].
 
 ; (MS 2003-07-14) With PRED string (matrix.tdl), it is not possible to use types here and therefore I cannot state PRED def (which overrides PRED udef in the quantify-n-infl-rule). Default-Unification might help here.
 ; (MS 2003-10-08) I'll use the KEY value instead.
@@ -3537,8 +3550,8 @@ spr-obj-num-cl-lex := numeral-classifier &
 		   ARG-S < #spr , #comps >],
 	   LKEYS.ALTKEYREL plus-relation &
 		           [ ARG1 #xarg,
-			     TERM1 #spr_h,
-			     TERM2 #obj_h ]]].
+			     ARG2 #spr_h,
+			     ARG3 #obj_h ]]].
 
                          
 
@@ -4042,37 +4055,39 @@ pp_mod-lex-r := pp_mod-lex &
 ; (FCB 2005-04-09) linked LBL so that it scopes
 ; should really reify some of this out with i-adj and na-adj I suppose
 pred-adj-lex := lexical_sign-word &
-            [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
-                                      [MOD < [LOCAL intersective_mod & [CAT [HEAD ordinary_noun_head,
-									     VAL saturated]]] >,
-                                       MARK null,
-                                       C-MOD null,
-                                       J-SPEC null,
-                                       J-POSTHEAD rels,
-                                       H-TENSE no_tense,
-                                       FIN +,
-                                       AUX aux_minus,
-                                       COP -,
-                                       VN -,
-                                       ADJ -,
-                                       LIGHT -,
-                                       MAIN-PRD -,
-                                       COP-ARG -], 
-                                 VAL sbj-arg &
-                                      [SUBJ #sbj & [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind]]],
-			    ARG-S #sbj,
-                            CONT [RELS <! #key !>,
-				  HOOK [XARG #sbjind,
-					INDEX #ind,
-					LTOP #top],
-                                  HCONS <! !>]],
-		     LKEYS.KEYREL #key & 
-			   [LBL #top,
-			    ARG0 #ind,
-			    ARG1 #sbjind],
-                     NON-LOCAL [QUE <! !>,
-                             AFFIX <! !>]], 
-             INFLECTED +].
+ [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
+			   [MOD < [LOCAL intersective_mod & 
+					 [CAT [HEAD ordinary_noun_head,
+					       VAL saturated]]] >,
+			    MARK null,
+			    C-MOD null,
+			    J-SPEC null,
+			    J-POSTHEAD rels,
+			    H-TENSE no_tense,
+			    FIN +,
+			    AUX aux_minus,
+			    COP -,
+			    VN -,
+			    ADJ -,
+			    LIGHT -,
+			    MAIN-PRD -,
+			    COP-ARG -], 
+		      VAL sbj-arg &
+			   [SUBJ #sbj & 
+				 [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind]]],
+		 ARG-S #sbj,
+		 CONT [RELS <! #key !>,
+		       HOOK [XARG #sbjind,
+			     INDEX #ind,
+			     LTOP #top],
+		       HCONS <! !>]],
+	  LKEYS.KEYREL #key & 
+		[LBL #top,
+		 ARG0 #ind,
+		 ARG1 #sbjind],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>]], 
+  INFLECTED +].
 
 
 ; (MS 2005-11-09) Subtypes in order to get rid of skip files.
@@ -4815,38 +4830,27 @@ na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj_head & [MAIN-PRD
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXIKAL TYPES -- adverbs;;;;;;;;;;;;;;;;;;
 
-adv-lex := lexical_sign-word & 
-           [SYNSEM [LOCAL [CAT  [HEAD adv_head-avm, 
-                                 VAL saturated],
-			   ARG-S < >,
-                           CTXT.BACKGROUND <! !>,
-                           BAR +],
-                    NON-LOCAL [AFFIX <! !>]],
-            INFLECTED +,
-            J-NEEDS-AFFIX -].
 
+adv-super-lex := lexical_sign-word & 
+ [SYNSEM [LOCAL [CAT.VAL saturated,
+		 ARG-S < >,
+		 CTXT.BACKGROUND <! !>,
+		 BAR +],
+	  NON-LOCAL [AFFIX <! !>]],
+  INFLECTED +,
+  J-NEEDS-AFFIX -].
+
+; normal adverbs
+adv-lex := adv-super-lex &
+ [SYNSEM.LOCAL.CAT.HEAD adv_head-avm].
+
+; degree adverbs (modify adjectives/other adverbs)
 adv-deg-lex := lexical_sign-word & 
-           [SYNSEM [LOCAL [CAT  [HEAD adv_deg_head-avm, 
-                                 VAL saturated],
-			   ARG-S < >,
-                           CTXT.BACKGROUND <! !>,
-                           BAR +],
-                    NON-LOCAL [AFFIX <! !>]],
-            INFLECTED +,
-           J-NEEDS-AFFIX -].
- 
+ [SYNSEM.LOCAL.CAT.HEAD  adv_deg_head-avm].
+
+; numerical degree adverbs (modify other adverbs and numbers) 
 adv-deg-num-lex := lexical_sign-word & 
-           [SYNSEM [LOCAL [CAT  [HEAD  adv_deg_num_head-avm, 
-                                 VAL saturated],
-			   ARG-S < >,
-                           CTXT.BACKGROUND <! !>,
-                           BAR +],
-                    NON-LOCAL [AFFIX <! !>]],
-            INFLECTED +,
-            J-NEEDS-AFFIX -].
-
-
-
+ [SYNSEM.LOCAL.CAT.HEAD  adv_deg_num_head-avm].
 
 
 ; (ERB 2001-09-06) HCONS isn't sufficiently constrained on this type.  
@@ -5088,7 +5092,7 @@ card-with-object := card-complementation &
 			    CONT [ HOOK.XARG #xarg,
 				   RELS.LIST.REST.FIRST plus-relation & 
 					     [ ARG1 #xarg,
-					       TERM2 #term2 ]]]]].
+					       ARG3 #term2 ]]]]].
 
 
 card-no-specifier := card-specification &
@@ -5106,8 +5110,8 @@ card-with-specifier := card-specification &
 		     LKEYS [KEYREL.LBL #factor1,
 			    ALTKEYREL times-relation & 
 				       [ ARG1 #xarg,
-					 FACTOR1 #factor1,
-					 FACTOR2 #factor2 ]]]].
+					 ARG2 #factor1,
+					 ARG3 #factor2 ]]]].
 
 ; (ERB 2001-08-06) Cross-classified subtypes of card-j-valence:
 
@@ -5116,13 +5120,13 @@ card-with-object-with-specifier := card-with-object & card-with-specifier &
 				 [ LBL #term1 ],
 		     LOCAL.CONT [HOOK.LTOP #top,
 				 RELS <! relation, [ LBL #top,
-					       TERM1 #term1 ], #altkey !> ]]].
+					       ARG2 #term1 ], #altkey !> ]]].
 
 card-with-object-no-specifier := card-with-object & card-no-specifier &
      [ SYNSEM [LKEYS.KEYREL.LBL #term1,
 		     LOCAL.CONT [HOOK.LTOP #top,
 			   RELS <! relation, [ LBL #top,
-                                                TERM1 #term1 ] !> ]]].
+                                                ARG2 #term1 ] !> ]]].
 
 card-no-object-with-specifier := card-no-object & card-with-specifier &
      [ SYNSEM [LKEYS.ALTKEYREL #altkey & [LBL #top],
@@ -5339,68 +5343,68 @@ date-lex := n-lex &
 ; (MS 2003-12-19) Matrix 0.6
 
 date-with-int-lex := date-lex &
-                 [ SYNSEM [ LOCAL.CAT.VAL [ COMPS < [OPT - ,
-						     LOCAL [ CAT [ HEAD int_head,
-								   VAL saturated ],
-							     CONT.HOOK.LTOP #h]] >],
-			    LKEYS.KEYREL.NUMBER #h ]].
+ [ SYNSEM [ LOCAL.CAT.VAL [ COMPS < [OPT - ,
+				     LOCAL [ CAT [ HEAD int_head,
+						   VAL saturated ],
+					     CONT.HOOK.LTOP #h]] >],
+	    LKEYS.KEYREL.NUMBER #h ]].
 
 ; ERB (2001-08-28) To accomodate Chasen's parsing of È¬·î etc as one word
 
 
 date-no-int-lex := date-lex &
-               [ SYNSEM [ LOCAL.CAT.VAL [COMPS 0-1-list ],
-			  LKEYS [ ALTKEYREL const-relation &
-					    [ LBL #hand ],
-				  KEYREL.NUMBER #hand ]]].
+ [ SYNSEM [ LOCAL.CAT.VAL [COMPS 0-1-list ],
+	    LKEYS [ ALTKEYREL const-relation &
+			      [ LBL #hand ],
+		    KEYREL.NUMBER #hand ]]].
 
 ; (MS 2004-12-02) For generation, these need PRED values for the prep-mod-relation.
 
 date-with-object2-lex := date-lex &
-                         [ SYNSEM.LOCAL [ CAT.VAL [ COMPS < [OPT - ,
-							     LOCAL [ CAT.VAL saturated,
-                                                                        CONT.HOOK.INDEX #objind ]] >],
-					  CONT [ RELS.LIST.REST.FIRST prep-mod-relation &
-                                                                       [ PRED 'prep,
-									 ARG2 #selfind,
-                                                                         ARG1 #objind,
-                                                                         LBL #h2 ],
-                                                HOOK [LTOP #h2,
+ [ SYNSEM.LOCAL [ CAT.VAL [ COMPS < [OPT - ,
+				     LOCAL [ CAT.VAL saturated,
+					     CONT.HOOK.INDEX #objind ]] >],
+		  CONT [ RELS.LIST.REST.FIRST prep-mod-relation &
+					      [ PRED 'prep,
+						ARG2 #selfind,
+						ARG1 #objind,
+						LBL #h2 ],
+			 HOOK [LTOP #h2,
 						      INDEX #selfind ]]]].
 
 date-no-object2-lex := date-lex &
                       [ SYNSEM.LOCAL.CAT.VAL.COMPS 0-1-list].
 
 date-with-object2-with-int-lex := date-with-object2-lex & date-with-int-lex &
-                                  [ SYNSEM.LOCAL.CONT [ RELS <! relation, relation !> ]].
+ [ SYNSEM.LOCAL.CONT [ RELS <! relation, relation !> ]].
 
 date-no-object2-with-int-lex := date-no-object2-lex & date-with-int-lex &
-                                [ SYNSEM.LOCAL.CONT [ RELS <! relation !> ]].
+ [ SYNSEM.LOCAL.CONT [ RELS <! relation !> ]].
 
 ; ERB (2001-08-28) For È¬·î etc as single words.
 
 date-with-object2-no-int-lex := date-with-object2-lex & date-no-int-lex &
-                                 [ SYNSEM [LOCAL.CONT.RELS <! relation, relation, #altkey !>,
-						 LKEYS.ALTKEYREL #altkey ]].
+ [ SYNSEM [LOCAL.CONT.RELS <! relation, relation, #altkey !>,
+	   LKEYS.ALTKEYREL #altkey ]].
 
 date-no-object2-no-int-lex := date-no-object2-lex & date-no-int-lex &
-                              [ SYNSEM [LOCAL.CONT.RELS <! relation, #altkey !>,
-					LKEYS.ALTKEYREL #altkey ]].
+ [ SYNSEM [LOCAL.CONT.RELS <! relation, #altkey !>,
+	   LKEYS.ALTKEYREL #altkey ]].
 
 
 
 nichi-lex := date-lex &
-             [ SYNSEM.LKEYS.KEYREL dofm-relation ].
+ [ SYNSEM.LKEYS.KEYREL dofm-relation ].
 
 gatsu-lex := date-lex &
-             [ SYNSEM.LKEYS.KEYREL mofy-relation ].
+ [ SYNSEM.LKEYS.KEYREL mofy-relation ].
 
 toshi-lex := date-lex &
-             [ SYNSEM.LKEYS.KEYREL yofc-relation     ].
+ [ SYNSEM.LKEYS.KEYREL yofc-relation     ].
 
 date-ersatz-lex := date-no-object2-no-int-lex &
-                   [ SYNSEM.LKEYS [KEYREL.PRED 'dateersatz,
-				   ALTKEYREL.CARG 'ersatz ]].
+ [ SYNSEM.LKEYS [KEYREL.PRED 'dateersatz,
+		 ALTKEYREL.CARG 'ersatz ]].
 
 nichi-no-object2-lex := nichi-lex & date-no-object2-with-int-lex.
 gatsu-no-object2-lex := gatsu-lex & date-no-object2-with-int-lex.
@@ -5506,15 +5510,15 @@ gatsu-with-object2-lex := gatsu-lex & date-with-object2-with-int-lex &
 ; (MS 2001-11-29) Giving those another head type, in order to prevent overgeneration of the adv_np rule.
 
 date-n-lex := n-lex &
-              [ SYNSEM [ LOCAL [ CAT [ HEAD date_noun_head-avm,
-                                       VAL noun_sc & [SPR.FIRST #spr]],
-				 ARG-S < #spr >,
-                                 CONT date-noun-sem-type & [HOOK.INDEX #i,
-							    RELS <! #key !>],
-                                 CTXT.BACKGROUND <! !> ],
-			 LKEYS.KEYREL #key &  [ARG0 #i],
-                         NON-LOCAL [QUE <! !>,
-                                 AFFIX <! !>]]].
+ [ SYNSEM [ LOCAL [ CAT [ HEAD date_noun_head-avm,
+			  VAL noun_sc & [SPR.FIRST #spr]],
+		    ARG-S < #spr >,
+		    CONT date-noun-sem-type & [HOOK.INDEX #i,
+					       RELS <! #key !>],
+		    CTXT.BACKGROUND <! !> ],
+	    LKEYS.KEYREL #key &  [ARG0 #i],
+	    NON-LOCAL [QUE <! !>,
+		       AFFIX <! !>]]].
 
 ; (ERB 2001-10-04) Both of these kinds of nouns can be used
 ; as adverbs on their own, but only the former can be marked with ni.
@@ -5543,7 +5547,7 @@ date-noun-adv-lex := date-n-lex &
 
 
 date-noun-adv-minusbar-lex := date-noun-adv-lex &
-			      [SYNSEM.LOCAL.BAR -].
+ [SYNSEM.LOCAL.BAR -].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;Disjunctions for LKB;;;;;;;;;;;;;;;;;;
 
