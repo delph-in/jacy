@@ -1755,7 +1755,7 @@ subj-casechange-rule := casechange-rule & lex-rule &
 						       NON-LOCAL #nonloc]],
 				 COMPS #objval,
 				 SPR null],
-			 BAR #bar_h].
+			 BAR #bar_h]].
 
 
              
@@ -2236,24 +2236,26 @@ stem-end-rule-type := head-specifier-rule-type &
 
 
 cards-times-rule := lexeme & inflecting-lex-rule & card-lex &
-               [SYNSEM.LOCAL [CAT.VAL.COMPS null,
-			      CONT.HOOK.LTOP #top],
-		C-CONT.RELS <! const-relation & [LBL #fac2],
-			     times-relation & [LBL #top,
-					  FACTOR1 #fac1,
-					  FACTOR2 #fac2] !>,
-		ARGS < card-lex & [SYNSEM.LKEYS.KEYREL.LBL #fac1] >,
-		INFLECTED +].
+ [SYNSEM.LOCAL [CAT.VAL.COMPS null,
+		CONT.HOOK.LTOP #top],
+  C-CONT.RELS <! const-relation & [LBL #fac2],
+	       times-relation & [LBL #top,
+				 ARG2 #fac1,
+				 ARG3 #fac2] !>,
+  ARGS < card-lex & [SYNSEM.LKEYS.KEYREL.LBL #fac1] >,
+  INFLECTED +].
 
 cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
-               [SYNSEM.LOCAL [CAT.VAL.COMPS null,
-			      CONT.HOOK.LTOP #top],
-		C-CONT.RELS <! const-relation & [LBL #term2],
-			     plus-relation & [LBL #top,
-					  TERM1 #term1,
-					  TERM2 #term2] !>,
-		ARGS < card-lex & [SYNSEM.LOCAL.CONT.RELS.LIST.REST.FIRST times-relation & [LBL #term1]] >,
-		INFLECTED +].
+ [SYNSEM.LOCAL [CAT.VAL.COMPS null,
+		CONT.HOOK.LTOP #top],
+  C-CONT.RELS <! const-relation & [LBL #term2],
+	       plus-relation & [LBL #top,
+				ARG2 #term1,
+				ARG3 #term2] !>,
+  ARGS < card-lex & 
+	 [SYNSEM.LOCAL.CONT.RELS.LIST.REST.FIRST times-relation & 
+						 [LBL #term1]] >,
+  INFLECTED +].
 
 ; ; (MS 2005-03-30) This shouldn't allow copula in the second arg.
 ; (FCB 2005-05-24) replaced by richer rules *-lex-vv-rule
