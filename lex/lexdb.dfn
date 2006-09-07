@@ -1,9 +1,11 @@
 id	name		sym
-orth	orth		str-rawlst
+orth	orthography		str-rawlst
+unifs	orthography	(orth)	str-dlst
+unifs	type	nil	sym
 unifs	keyrel	(synsem lkeys keyrel pred)	mixed
 unifs	keytag	(synsem lkeys keyrel carg)	mixed
 unifs	altkey	(synsem lkeys altkeyrel pred)	mixed
+unifs	alt2key	(synsem lkeys alt2keyrel pred)	mixed
 unifs	altkeytag	(synsem lkeys altkeyrel carg)	mixed
 unifs	compkey	(synsem local cat head ptype)	mixed
-unifs	orth	(orth)	str-dlst
-unifs	type	nil	sym
+unifs	idiom	(idiom)	mixed
