@@ -1,133 +1,135 @@
-11@unknown@formal@none@1@S@±« ¤¬ ¹ß¤Ã ¤¿ ¡¥@1@5@It rained.@bond@2006-05-28
-21@unknown@formal@none@1@S@ÂÀÏº ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@5@Abrams barked.@bond@2006-05-28
-31@unknown@formal@none@1@S@Áë ¤¬ ³«¤¤ ¤¿ ¡¥@1@5@The window opened.@bond@2006-05-28
-41@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@7@Abrams chased Browne.@bond@2006-05-28
-42@unknown@formal@none@1@S@¼¡Ïº ¤ò ÂÀÏº ¤¬ ÄÉ¤Ã ¤¿ ¡¥@1@7@Abrams chased Browne.@bond@2006-05-28
-51@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤Ë ¥¿¥Ğ¥³ ¤ò ¼êÅÏ¤· ¤¿ ¡¥@1@9@Abrams handed Browne the cigarette.@bond@2006-05-28
-61@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¥¿¥Ğ¥³ ¤ò ¼¡Ïº ¤Ë ¼êÅÏ¤· ¤¿ ¡¥@1@9@Abrams handed the cigarette to Browne.@bond@2006-05-28
-71@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¥¿¥Ğ¥³ ¤ò ¼¡Ïº ¤Ë ±« ¤¬ ¹ß¤ë ¤È ÅÒ¤± ¤¿ ¡¥@1@13@Abrams bet Browne a cigarette that it rained.@bond@2006-05-28
-81@unknown@formal@none@1@S@ÂÀÏº ¤¬ ±« ¤¬ ¹ß¤Ã ¤¿ ¤³¤È ¤ò ÃÎ¤Ã ¤Æ ¤¤ ¤¿ ¡¥@1@13@Abrams knew that it rained.@bond@2006-05-28
-91@unknown@formal@none@1@S@ÂÀÏº ¤¬ ËÊ¤¨¤ë ¤Ä¤â¤ê ¤À¤Ã ¤¿ ¡¥@1@7@Abrams intended to bark.@bond@2006-05-28
-101@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤Ë ËÊ¤¨ ¤µ¤»¤ë ¤Ä¤â¤ê ¤À¤Ã ¤¿ ¡¥@1@10@Abrams intended Browne to bark.@bond@2006-05-28
-111@unknown@formal@none@1@S@³Æ Ç­ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@6@Every cat barked.@bond@2006-05-28
-121@unknown@formal@none@1@S@³Æ Ç­ ¤¬ ¤¢¤ë ¸¤ ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@9@Every cat chased some dog.@bond@2006-05-28
-131@unknown@formal@none@1@S@»ä ¤Î Ç­ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@7@My cat barked.@bond@2006-05-28
-141@unknown@formal@none@1@S@¤¢¤ì ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@5@It barked.@bond@2006-05-28
-142@unknown@formal@none@1@S@ËÊ¤¨ ¤¿ ¡¥@1@3@It barked.@bond@2006-05-28
-151@unknown@formal@none@1@S@Ç­ ¤¬ ÄÉ¤Ã ¤¿ ¡¥@1@5@The cat chased it.@bond@2006-05-28
-152@unknown@formal@none@1@S@Ç­ ¤¬ ¤¢¤ì ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@7@The cat chased it.@bond@2006-05-28
-161@unknown@formal@none@1@S@Ç­ ¤¬ ¼«Ê¬ ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@7@The cat chased itself.@bond@2006-05-28
-171@unknown@formal@none@1@S@Ç­ ¤¬ °ì É¤ ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@8@The cat chased one.@bond@2006-05-28
-181@unknown@formal@none@1@S@»ä ¤Î ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@6@Mine barked.@bond@2006-05-28
-191@unknown@formal@none@1@S@¤½¤ì ¤¬ ³«¤¤ ¤¿@1@4@That opened.@bond@2006-05-28
-201@unknown@formal@none@1@S@Ç­ ¤Ï ËÊ¤¨¤ë ¡¥@1@4@Cats bark.@bond@2006-05-28
-202@unknown@formal@none@1@S@Ç­ ¤¬ ËÊ¤¨¤ë ¡¥@1@4@Cats bark.@bond@2006-05-28
-203@unknown@formal@none@1@S@Ç­ ¤È ¤Ï ËÊ¤¨¤ë ¡¥@1@5@Cats bark.@bond@2006-05-28
-211@unknown@formal@none@1@S@¥¿¥Ğ¥³ ¤¬ Ãå¤¤ ¤¿ ¡¥@1@5@Tobacco arrived.@bond@2006-05-28
-221@unknown@formal@none@1@S@²¿ É¤ ¤« ¤¬ ËÊ¤¨¤ë ¡¥@1@6@Some bark.@bond@2006-05-28
-222@unknown@formal@none@1@S@´ö¤Ä¤« ¤¬ ËÊ¤¨¤ë ¡¥@1@4@Some bark.@bond@2006-05-28
-223@unknown@formal@none@1@S@ËÊ¤¨¤ë ¤â¤Î ¤â ¤¤¤ë ¡¥@1@5@No cat barked.@bond@2006-05-28
-231@unknown@formal@none@1@S@Ç­ ¤Î ²¿ É¤ ¤« ¤¬ ËÊ¤¨¤ë ¡¥@1@8@Some of the cats bark.@bond@2006-05-28
-241@unknown@formal@none@1@S@Ç­ ¤¬ °ì É¤ ¤â ËÊ¤¨ ¤Ê¤«¤Ã ¤¿ ¡¥@1@9@No cat barked.@bond@2006-05-28
-242@unknown@formal@none@1@S@ËÊ¤¨¤ë Ç­ ¤¬ °ì É¤ ¤â ¤¤ ¤Ê¤«¤Ã ¤¿ ¡¥@1@9@No cat barked.@bond@2006-05-28
-251@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤« ¡¥@1@6@Did the dog bark?@bond@2006-05-28
-252@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤« ¡©@1@6@Did the dog bark?@bond@2006-05-28
-261@unknown@formal@none@1@S@¤É¤Î ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤« ¡¥@1@7@Which dog barked?@bond@2006-05-28
-271@unknown@formal@none@1@S@Ã¯ ¤Î ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤« ¡¥@1@8@Whose dog barked?@bond@2006-05-28
-281@unknown@formal@none@1@S@¼¡Ïº ¤ò ÄÉ¤¨ ¡¥@1@4@Chase Browne!@bond@2006-05-28
-282@unknown@formal@none@1@S@¼¡Ïº ¤ò ÄÉ¤¨ ¡ª@1@4@Chase Browne!@bond@2006-05-28
-283@unknown@formal@none@1@S@¼¡Ïº ¤ò ÄÉ¤¨ ¤Ê¤µ¤¤ ¡¥@1@5@Chase Browne!@bond@2006-05-28
-291@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¤É¤Î ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤« ¤È ¹Í¤¨ ¤¿ ¡¥@1@12@Abrams wondered which dog barked.@bond@2006-05-28
-301@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤¬ ËÊ¤¨ ¤¿ ¤« ¤É¤¦ ¤« ¹Í¤¨ ¤¿ ¡¥@1@12@Abrams wondered whether Browne barked.@bond@2006-05-28
-311@unknown@formal@none@1@S@¼¡Ïº ¤¬ ÄÉ¤Ã ¤¿ ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@9@The dog that Browne chased barked.@bond@2006-05-28
-321@unknown@formal@none@1@S@ÄÉ¤¦ ¤Ù¤­ ¸¤ ¤¬ ËÊ¤¨ ¤Æ ¤¤¤ë ¡¥@1@8@The dog to chase is barking.@bond@2006-05-28
-331@unknown@formal@none@1@S@¸¤ ¤¬ ¼¡Ïº ¤Ë ÄÉ¤ï ¤ì ¤¿ ¡¥@1@8@The dog was chased by Browne.@bond@2006-05-28
-341@unknown@formal@none@1@S@¼¡Ïº ¤Ë ÄÉ¤ï ¤ì ¤¿ ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@10@The dog chased by Browne barked.@bond@2006-05-28
-351@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤Æ ¤¤¤ë ¡¥@1@6@The dog is barking.@bond@2006-05-28
-361@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤³¤È ¤¬ ¤¢¤ë ¡¥@1@8@The dog has barked.@bond@2006-05-28
-371@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤Æ ¤¤ ¤¿ ¡¥@1@7@The dog has been barking.@bond@2006-05-28
-381@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤Æ ¤¤ ¤¿ ¡¥@1@7@The dog had been barking.@bond@2006-05-28
-391@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨¤ë ¤À¤í ¤¦ ¡¥@1@6@The dog will bark.@bond@2006-05-28
-401@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨¤ë ¤È¤³¤í ¤À ¡¥@1@6@The dog is about to bark. The dog is going to bark.@bond@2006-05-28
-411@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤é¤ì¤ë ¡¥@1@5@The dog could bark.@bond@2006-05-28
-421@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤é¤ì ¤Ê¤¤ ¡¥@1@6@The dog couldn't bark.@bond@2006-05-28
-431@unknown@formal@none@1@S@Ç¯´ó¤ê ¤Î ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@7@The old dog barked.@bond@2006-05-28
-432@unknown@formal@none@1@S@¸Å¤¤ ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@6@The old dog barked.@bond@2006-05-28
-441@unknown@formal@none@1@S@¸¤ ¤¬ ÀÅ¤« ¤Ë ËÊ¤¨ ¤¿ ¡¥@1@7@The dog barked softly.@bond@2006-05-28
-442@unknown@formal@none@1@S@¸¤ ¤¬ Í¥¤·¤¯ ËÊ¤¨ ¤¿ ¡¥@1@6@The dog barked softly.@bond@2006-05-28
-451@unknown@formal@none@1@S@¸¤ ¤¬ ¤¿¤Ö¤ó ËÊ¤¨ ¤¿ ¡¥@1@6@The dog probably barked.@bond@2006-05-28
-452@unknown@formal@none@1@S@¸¤ ¤¬ ¤¿¤Ö¤ó ËÊ¤¨ ¤¿ ¡¥@1@6@The dog probably barked.@bond@2006-05-28
-453@unknown@formal@none@1@S@¸¤ ¤¬ ¤¿¤Ö¤ó ËÊ¤¨ ¤¿ ¤À¤í ¤¦ ¡¥@1@8@The dog probably barked.@bond@2006-05-28
-461@unknown@formal@none@1@S@¸¤ ¤¬ Äí ¤Ç ËÊ¤¨ ¤¿ ¡¥@1@7@The dog barked in the garden.@bond@2006-05-28
-471@unknown@formal@none@1@S@¸¤ ¤¬ ¤¤¤Ş ËÊ¤¨¤ë ¡¥@1@5@The dog barks now.@bond@2006-05-28
-481@unknown@formal@none@1@S@Äí ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@6@The garden dog barked.@bond@2006-05-28
-491@unknown@formal@none@1@S@¥¿¥Ğ¥³ Äí ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@7@The tobacco garden dog barked.@bond@2006-05-28
-501@unknown@formal@none@1@S@Ç­ ¤¬ Ç¯´ó¤ê ¤À ¡¥@1@5@The cat is old.@bond@2006-05-28
-502@unknown@formal@none@1@S@Ç­ ¤¬ ¸Å¤¤ ¡¥@1@4@The cat is old.@bond@2006-05-28
-511@unknown@formal@none@1@S@Ç­ ¤¬ Äí ¤Ë ¤¤¤ë ¡¥@1@6@The cat is in the garden.@bond@2006-05-28
-521@unknown@formal@none@1@S@ËÊ¤¨ ¤Æ ¤¤¤ë ¸¤ ¤¬ ¼¡Ïº ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@10@The barking dog chased Browne.@bond@2006-05-28
-531@unknown@formal@none@1@S@ÄÉ¤ï ¤ì ¤Æ ¤¤¤ë ¸¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@8@Chased dogs bark.@bond@2006-05-28
-541@unknown@formal@none@1@S@Ç­ ¤ò ÄÉ¤¦ ¤Î ¤¬ ¸Å¤¤ ¡¥@1@7@Chasing the cat is old.@bond@2006-05-28
-551@unknown@formal@none@1@S@Ç­ ¤¬ ¼¡Ïº ¤ò ÄÉ¤¦ ¤³¤È ¤¬ ¸Å¤¤ ¡¥@1@9@That the cat chases Browne is old.@bond@2006-05-28
-561@unknown@formal@none@1@S@¸¤ ¤Ï ËÊ¤¨¤ë ¤â¤Î ¤ò ²¿¤Ç¤â ÄÉ¤¦ ¡¥@1@8@Dogs chase whatever barks.@bond@2006-05-28
-571@unknown@formal@none@1@S@¸¤ ¤¬ ËèÆü ËÊ¤¨ ¤¿ ¡¥@1@6@The dog barked every day.@bond@2006-05-28
-581@unknown@formal@none@1@S@¸¤ ¤¬ ²¿»ş ËÊ¤¨ ¤¿ ¤« ¡¥@1@7@When did the dog bark?@bond@2006-05-28
-591@unknown@formal@none@1@S@¸¤ ¤Î £³ É¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@7@Three of the dogs bark.@bond@2006-05-28
-601@unknown@formal@none@1@S@£³ É¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@5@Three bark.@bond@2006-05-28
-611@unknown@formal@none@1@S@¼¡Ïº ¤Î ¸¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@6@Browne's dog barks.@bond@2006-05-28
-621@unknown@formal@none@1@S@¼¡Ïº ¤Î ¤¬ ËÊ¤¨¤ë ¡¥@1@5@Browne's barks.@bond@2006-05-28
-631@unknown@formal@none@1@S@Æó ½½ »° É¤ ¤Î ¸¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@7@Twenty three dogs bark.@bond@2006-05-28
-632@unknown@formal@none@1@S@¸¤ ¤¬ Æó ½½ »° É¤ ËÊ¤¨¤ë ¡¥@1@6@Twenty three dogs bark.@bond@2006-05-28
-633@unknown@formal@none@1@S@¸¤ Æó ½½ »° É¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@6@Twenty three dogs bark.@bond@2006-05-28
-634@unknown@formal@none@1@S@£²£³ É¤ ¤Î ¸¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@7@Twenty three dogs bark.@bond@2006-05-28
-635@unknown@formal@none@1@S@¸¤ ¤¬ £²£³ É¤ ËÊ¤¨¤ë ¡¥@1@6@Twenty three dogs bark.@bond@2006-05-28
-636@unknown@formal@none@1@S@¸¤ £²£³ É¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@6@Twenty three dogs bark.@bond@2006-05-28
-641@unknown@formal@none@1@S@Æó É´ Æó ½½ É¤ ¤Î ¸¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@7@Two hundred twenty dogs bark.@bond@2006-05-28
-651@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼Ö ¤Ç ÅşÃå ¤· ¤¿ ¡¥@1@8@Abrams arrived by car.@bond@2006-05-28
-661@unknown@formal@none@1@S@ÂÀÏº ¤¬ ËÊ¤¨ Â³¤¤ ¤¿ ¡¥@1@6@Abrams kept barking.@bond@2006-05-28
-671@unknown@formal@none@1@S@¼¡Ïº ¤¬ Ç­ ¤ò ²¿¤È¤« ¤· ¤¿ ¡¥@1@8@Browne squeezed the cat in.@bond@2006-05-28
-681@unknown@formal@none@1@S@¼¡Ïº ¤¬ Ç­ ¤ò ²¿¤È¤« ¤· ¤¿ ¡¥@1@8@Browne squeezed in the cat.@bond@2006-05-28
-691@unknown@formal@none@1@S@ÂÀÏº ¤Î ³¨ ¤¬ ÆÏ¤¤ ¤¿ ¡¥@1@7@The picture of Abrams arrived.@bond@2006-05-28
-701@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¥Æ¡¼¥Ö¥ë ¤ò åºÎï ¤Ë ¿¡¤¤ ¤¿ ¡¥@1@9@Abrams wiped the table clean.@bond@2006-05-28
-711@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤ò Äí ¤Ë Æş¤ì ¤¿ ¡¥@1@9@Abrams put Browne in the garden.@bond@2006-05-28
-721@unknown@formal@none@1@S@¼¡Ïº ¤¬ Ãå¤± ¤Ğ ¸¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@8@The dog will bark if Browne arrives.@bond@2006-05-28
-722@unknown@formal@none@1@S@¼¡Ïº ¤¬ Ãå¤¯ ¤Ê¤é ¸¤ ¤¬ ËÊ¤¨¤ë ¡¥@1@8@The dog will bark if Browne arrives.@bond@2006-05-28
-731@unknown@formal@none@1@S@ÂÀÏº ¤È ¼¡Ïº ¤¬ Ãå¤¤ ¤¿ ¡¥@1@7@Abrams and Browne arrived.@bond@2006-05-28
-731@unknown@formal@none@1@S@ÂÀÏº ¤È ¼¡Ïº ¤È ¤¬ Ãå¤¤ ¤¿ ¡¥@1@8@Abrams and Browne arrived.@bond@2006-05-28
-741@unknown@formal@none@1@S@ÂÀÏº ¤È ¼¡Ïº ¤È ¸¤ ¤¬ Ãå¤¤ ¤¿ ¡¥@1@9@Abrams, Browne and the dog arrived.@bond@2006-05-28
-751@unknown@formal@none@1@S@¸¤ ¤¬ Ãå¤¤ ¤Æ ¡¤ ËÊ¤¨ ¤¿ ¡¥@1@8@The dog arrived and barked.@bond@2006-05-28
-761@unknown@formal@none@1@S@¸¤ ¤¬ Ãå¤¤ ¤Æ ¡¢ ¼¡Ïº ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@10@The dog arrived and Browne barked.@bond@2006-05-28
-771@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤Í ¡¥@1@6@The dog barked, didn't it?@bond@2006-05-28
-781@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤¿ ¤³¤È ¤¬ ÌÀ¤é¤« ¤À ¡¥@1@9@It is obvious that the dog barked.@bond@2006-05-28
-791@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤Ë ËÊ¤¨¤ë ¤È ÌóÂ« ¤· ¤¿ ¡¥@1@10@Abrams promised Browne to bark.@bond@2006-05-28
-792@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤Ë ËÊ¤¨¤ë ¤³¤È ¤ò ÌóÂ« ¤· ¤¿ ¡¥@1@11@Abrams promised Browne to bark.@bond@2006-05-28
-801@unknown@formal@none@1@S@ÂÀÏº ¤¬ ËÊ¤¨¤ë ¤è¤¦ ¤À ¡¥@1@6@Abrams seems to bark.@bond@2006-05-28
-802@unknown@formal@none@1@S@ÂÀÏº ¤¬ ËÊ¤¨¤ë ¤é¤·¤¤ ¡¥@1@5@Abrams seems to bark.@bond@2006-05-28
-811@unknown@formal@none@1@S@ÂÀÏº ¤Ï ¼¡Ïº ¤¬ ËÊ¤¨ ¤Æ ¤¤¤ë ¤È ¿®¤¸ ¤Æ ¤¤¤ë ¡¥@1@12@Abrams believes Browne to be barking.@bond@2006-05-28
-821@unknown@formal@none@1@S@ÂÀÏº ¤Ï ¼¡Ïº ¤¬ ËÊ¤¨ ¤¿ ¤³¤È ¤¬ µ¤ ¤Ë ¤Ê¤Ã ¤¿ ¡¥@1@13@It bothered Abrams that Browne barked.@bond@2006-05-28
-831@unknown@formal@none@1@S@ÂÀÏº ¤¬ Ãå¤¯ ¤Î ¤¬ ½½ Ê¬ ¤«¤«¤Ã ¤¿ ¡¥@1@10@It took Abrams ten minutes to arrive.@bond@2006-05-28
-841@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤Ë ËÊ¤¨¤ë ¤³¤È ¤ò Ç¤¤» ¤¿ ¡¥@1@10@Abrams left it to Browne to bark.@bond@2006-05-28
-851@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤Ë Ç¯´ó¤ê ¤Ë ¸«¤¨¤ë ¡¥@1@8@Abrams strikes Browne as old.@bond@2006-05-28
-861@unknown@formal@none@1@S@¼¡Ïº ¤Ï ÂÀÏº ¤¬ Ç¯´ó¤ê ¤À ¤È »×¤¦ ¡¥@1@9@Browne considers Abrams old.@bond@2006-05-28
-871@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¼¡Ïº ¤¬ ËÊ¤¨¤ë ¹Í¤¨ ¤ò ¹¥¤ó ¤À ¡¥@1@10@Abrams liked the idea that Browne could bark.@bond@2006-05-28
-881@unknown@formal@none@1@S@ÂÀÏº ¤¬ ½½ »ş ¤«¤é »° »ş ¤Ş¤Ç ËÊ¤¨ ¤¿ ¡¥@1@11@Abrams barked from ten to three.@bond@2006-05-28
-891@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¤È¤Æ¤â Ç¯´ó¤ê ¤À¤Ã ¤¿ ¡¥@1@7@Abrams was very old.@bond@2006-05-28
-892@unknown@formal@none@1@S@¥¿¥Ğ¥³ ¤¬ ¤È¤Æ¤â ¸Å¤«¤Ã ¤¿ ¡¥@1@7@The cigarette was very old.@bond@2006-05-28
-901@unknown@formal@none@1@S@¤Û¤È¤ó¤É Á´¤Æ ¤Î ¸¤ ¤¬ ËÊ¤¨ ¤¿ ¡¥@1@8@Nearly every dog barked.@bond@2006-05-28
-911@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¤È¤Æ¤â ÀÅ¤« ¤Ë ËÊ¤¨ ¤¿ ¡¥@1@8@Abrams barked very softly.@bond@2006-05-28
-921@unknown@formal@none@1@S@ÂÀÏº ¤Ï ¼¡Ïº ¤¬ Ç­ ¤Î ÄÉ¤¦ ¤³¤È ¤¬ µ¤ ¤Ë ¤Ê¤Ã ¤¿ ¡¥@1@14@Browne's chasing of cats bothered Abrams.@bond@2006-05-28
-931@unknown@formal@none@1@S@¼¡Ïº ¤Ï ÂÀÏº ¤Ï ¤¬ Ç­ ¤ò ÄÉ¤¦ ¤³¤È ¤¬ µ¤ ¤Ë ¤Ê¤Ã ¤¿ ¡¥@1@15@It bothered Browne that Abrams chased cats.@bond@2006-05-28
-941@unknown@formal@none@1@S@£¶·î £³ Æü ¤¬ Íè ¤¿ ¡¥@1@7@June third arrived.@bond@2006-05-28
-951@unknown@formal@none@1@S@ÂÀÏº ¤¬ £³ »ş £²£° Ê¬ ¤Ë Ãå¤¤ ¤¿ ¡¥@1@10@Abrams arrived at three twenty.@bond@2006-05-28
-961@unknown@formal@none@1@S@¼¡Ïº ¤¬ ²ĞÍËÆü ¤Î Ä« ¤Ë Ãå¤¤ ¤¿ ¡¥@1@9@Browne arrived on Tuesday morning.@bond@2006-05-28
-971@unknown@formal@none@1@S@Ç­ ¤¬ ËÊ¤¨ Êı ¤¬ ¸«ÉÕ¤«¤Ã ¤¿ ¡¥@1@8@The cats found a way to bark.@bond@2006-05-28
-981@unknown@formal@none@1@S@¤è¤ê ¹¬¤» ¤Ê ¸¤ ¤¬ ¼¡Ïº ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@10@The happier dog chased Browne.@bond@2006-05-28
-991@unknown@formal@none@1@S@Äí ¤Ë ¤Ï Ç­ ¤¬ µï ¤¿ ¡¥@1@8@There were cats in the garden.@bond@2006-05-28
-1001@unknown@formal@none@1@S@¤¢¤Î ¸¤ ¤¬ ¼¡Ïº ¤ò ÄÉ¤Ã ¤¿ ¡¥@1@8@That dog chased Browne.@bond@2006-05-28
-1011@unknown@formal@none@1@S@Ã¯ ¤« ¤¬ ÂÀÏº ¤ò ÄÉ¤Ã ¤¿ ¡£@1@8@Somebody chased Abrams.@bond@2006-05-28
-1021@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¤É¤Î ¤°¤é¤¤ ¹¬¤» ¤À¤Ã ¤¿ ¤« ¡¥@1@9@How happy was Abrams?@bond@2006-05-28
-1031@unknown@formal@none@1@S@¼¡Ïº ¤¬ Âè ¸Ş ÈÖ ¤ò µ¤ ¤Ë ¤Ê¤ë ¡¥@1@10@The number five bothers Browne.@bond@2006-05-28
-1041@unknown@formal@none@1@S@ÂÀÏº ¤¬ ¤Ç¤­¤ë ¡¥@1@4@Abrams could.@bond@2006-05-28
-1051@unknown@formal@none@1@S@¼¡Ïº ¤¬ ¤ä¤Ã ¤Æ ¤ß ¤¿ ¡¥@1@7@Browne tried to.@bond@2006-05-28
-1061@unknown@formal@none@1@S@ËÊ¤¨¤ë ¤Ê ¡¥@1@3@Don't bark!@bond@2006-05-28
-1071@unknown@formal@none@1@S@¸¤ ¤¬ ËÊ¤¨ ¤Ê¤¬¤é Ãå¤¤ ¤¿ ¡¥@1@7@The dog arrived barking.@bond@2006-05-28
+11@unknown@formal@none@1@S@é›¨ ãŒ é™ã£ ãŸ ï¼@1@5@It rained.@bond@2006-05-28
+21@unknown@formal@none@1@S@å¤ªéƒ ãŒ å ãˆ ãŸ ï¼@1@5@Abrams barked.@bond@2006-05-28
+31@unknown@formal@none@1@S@çª“ ãŒ é–‹ã„ ãŸ ï¼@1@5@The window opened.@bond@2006-05-28
+41@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã‚’ è¿½ã£ ãŸ ï¼@1@7@Abrams chased Browne.@bond@2006-05-28
+42@unknown@formal@none@1@S@æ¬¡éƒ ã‚’ å¤ªéƒ ãŒ è¿½ã£ ãŸ ï¼@1@7@Abrams chased Browne.@bond@2006-05-28
+51@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã« ã‚¿ãƒã‚³ ã‚’ æ¸¡ã— ãŸ ï¼@1@9@Abrams handed Browne the cigarette.@bond@2006-05-28
+61@unknown@formal@none@1@S@å¤ªéƒ ãŒ ã‚¿ãƒã‚³ ã‚’ æ¬¡éƒ ã« æ¸¡ã— ãŸ ï¼@1@9@Abrams handed the cigarette to Browne.@bond@2006-05-28
+71@unknown@formal@none@1@S@å¤ªéƒ ãŒ ã‚¿ãƒã‚³ ã‚’ æ¬¡éƒ ã« é›¨ ãŒ é™ã‚‹ ã¨ è³­ã‘ ãŸ ï¼@1@13@Abrams bet Browne a cigarette that it rained.@bond@2006-05-28
+81@unknown@formal@none@1@S@å¤ªéƒ ãŒ é›¨ ãŒ é™ã£ ãŸ ã“ã¨ ã‚’ çŸ¥ã£ ã¦ ã„ ãŸ ï¼@1@13@Abrams knew that it rained.@bond@2006-05-28
+91@unknown@formal@none@1@S@å¤ªéƒ ãŒ å ãˆã‚‹ ã¤ã‚‚ã‚Š ã ã£ ãŸ ï¼@1@7@Abrams intended to bark.@bond@2006-05-28
+101@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã« å ãˆ ã•ã›ã‚‹ ã¤ã‚‚ã‚Š ã ã£ ãŸ ï¼@1@10@Abrams intended Browne to bark.@bond@2006-05-28
+111@unknown@formal@none@1@S@å„ çŒ« ãŒ å ãˆ ãŸ ï¼@1@6@Every cat barked.@bond@2006-05-28
+121@unknown@formal@none@1@S@å„ çŒ« ãŒ ã‚ã‚‹ çŠ¬ ã‚’ è¿½ã£ ãŸ ï¼@1@9@Every cat chased some dog.@bond@2006-05-28
+131@unknown@formal@none@1@S@ç§ ã® çŒ« ãŒ å ãˆ ãŸ ï¼@1@7@My cat barked.@bond@2006-05-28
+141@unknown@formal@none@1@S@ã‚ã‚Œ ãŒ å ãˆ ãŸ ï¼@1@5@It barked.@bond@2006-05-28
+142@unknown@formal@none@1@S@å ãˆ ãŸ ï¼@1@3@It barked.@bond@2006-05-28
+151@unknown@formal@none@1@S@çŒ« ãŒ è¿½ã£ ãŸ ï¼@1@5@The cat chased it.@bond@2006-05-28
+152@unknown@formal@none@1@S@çŒ« ãŒ ã‚ã‚Œ ã‚’ è¿½ã£ ãŸ ï¼@1@7@The cat chased it.@bond@2006-05-28
+161@unknown@formal@none@1@S@çŒ« ãŒ è‡ªåˆ† ã‚’ è¿½ã£ ãŸ ï¼@1@7@The cat chased itself.@bond@2006-05-28
+171@unknown@formal@none@1@S@çŒ« ãŒ ä¸€ åŒ¹ ã‚’ è¿½ã£ ãŸ ï¼@1@8@The cat chased one.@bond@2006-05-28
+181@unknown@formal@none@1@S@ç§ ã® ãŒ å ãˆ ãŸ ï¼@1@6@Mine barked.@bond@2006-05-28
+191@unknown@formal@none@1@S@ãã‚Œ ãŒ é–‹ã„ ãŸ@1@4@That opened.@bond@2006-05-28
+201@unknown@formal@none@1@S@çŒ« ã¯ å ãˆã‚‹ ï¼@1@4@Cats bark.@bond@2006-05-28
+202@unknown@formal@none@1@S@çŒ« ãŒ å ãˆã‚‹ ï¼@1@4@Cats bark.@bond@2006-05-28
+211@unknown@formal@none@1@S@ã‚¿ãƒã‚³ ãŒ ç€ã„ ãŸ ï¼@1@5@Tobacco arrived.@bond@2006-05-28
+221@unknown@formal@none@1@S@ä½• åŒ¹ ã‹ ãŒ å ãˆã‚‹ ï¼@1@6@Some bark.@bond@2006-05-28
+222@unknown@formal@none@1@S@å¹¾ã¤ã‹ ãŒ å ãˆã‚‹ ï¼@1@4@Some bark.@bond@2006-05-28
+223@unknown@formal@none@1@S@å ãˆã‚‹ ã‚‚ã® ã‚‚ ã„ã‚‹ ï¼@1@5@No cat barked.@bond@2006-05-28
+231@unknown@formal@none@1@S@çŒ« ã® ä½• åŒ¹ ã‹ ãŒ å ãˆã‚‹ ï¼@1@8@Some of the cats bark.@bond@2006-05-28
+241@unknown@formal@none@1@S@çŒ« ãŒ ä¸€ åŒ¹ ã‚‚ å ãˆ ãªã‹ã£ ãŸ ï¼@1@9@No cat barked.@bond@2006-05-28
+242@unknown@formal@none@1@S@å ãˆã‚‹ çŒ« ãŒ ä¸€ åŒ¹ ã‚‚ ã„ ãªã‹ã£ ãŸ ï¼@1@9@No cat barked.@bond@2006-05-28
+251@unknown@formal@none@1@S@çŠ¬ ã¯ å ãˆ ãŸ ã‹ ï¼@1@6@Did the dog bark?@bond@2006-05-28
+252@unknown@formal@none@1@S@çŠ¬ ã¯ å ãˆ ãŸ ã‹ ï¼Ÿ@1@6@Did the dog bark?@bond@2006-05-28
+261@unknown@formal@none@1@S@ã©ã® çŠ¬ ãŒ å ãˆ ãŸ ã‹ ï¼@1@7@Which dog barked?@bond@2006-05-28
+271@unknown@formal@none@1@S@èª° ã® çŠ¬ ãŒ å ãˆ ãŸ ã‹ ï¼@1@8@Whose dog barked?@bond@2006-05-28
+281@unknown@formal@none@1@S@æ¬¡éƒ ã‚’ è¿½ãˆ ï¼@1@4@Chase Browne!@bond@2006-05-28
+282@unknown@formal@none@1@S@æ¬¡éƒ ã‚’ è¿½ãˆ ï¼@1@4@Chase Browne!@bond@2006-05-28
+283@unknown@formal@none@1@S@æ¬¡éƒ ã‚’ è¿½ã„ ãªã•ã„ ï¼@1@5@Chase Browne!@bond@2006-05-28
+291@unknown@formal@none@1@S@å¤ªéƒ ãŒ ã©ã® çŠ¬ ãŒ å ãˆ ãŸ ã‹ ã¨ è€ƒãˆ ãŸ ï¼@1@12@Abrams wondered which dog barked.@bond@2006-05-28
+301@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ãŒ å ãˆ ãŸ ã‹ ã©ã† ã‹ è€ƒãˆ ãŸ ï¼@1@12@Abrams wondered whether Browne barked.@bond@2006-05-28
+311@unknown@formal@none@1@S@æ¬¡éƒ ãŒ è¿½ã£ ãŸ çŠ¬ ãŒ å ãˆ ãŸ ï¼@1@9@The dog that Browne chased barked.@bond@2006-05-28
+321@unknown@formal@none@1@S@è¿½ã† ã¹ã çŠ¬ ãŒ å ãˆ ã¦ ã„ã‚‹ ï¼@1@8@The dog to chase is barking.@bond@2006-05-28
+331@unknown@formal@none@1@S@çŠ¬ ãŒ æ¬¡éƒ ã« è¿½ã‚ ã‚Œ ãŸ ï¼@1@8@The dog was chased by Browne.@bond@2006-05-28
+341@unknown@formal@none@1@S@æ¬¡éƒ ã« è¿½ã‚ ã‚Œ ãŸ çŠ¬ ãŒ å ãˆ ãŸ ï¼@1@10@The dog chased by Browne barked.@bond@2006-05-28
+351@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ã¦ ã„ã‚‹ ï¼@1@6@The dog is barking.@bond@2006-05-28
+361@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ãŸ ã“ã¨ ãŒ ã‚ã‚‹ ï¼@1@8@The dog has barked.@bond@2006-05-28
+371@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ã¦ ã„ ãŸ ï¼@1@7@The dog has been barking.@bond@2006-05-28
+381@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ã¦ ã„ ãŸ ï¼@1@7@The dog had been barking.@bond@2006-05-28
+391@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆã‚‹ ã ã‚ ã† ï¼@1@6@The dog will bark.@bond@2006-05-28
+401@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆã‚‹ ã¨ã“ã‚ ã  ï¼@1@6@The dog is about to bark. The dog is going to bark.@bond@2006-05-28
+411@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ã“ã¨ ãŒ ã§ãã‚‹ ï¼@1@5@The dog could bark.@bond@2006-05-28
+412@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ã‚‰ã‚Œã‚‹ ï¼@1@5@The dog could bark.@bond@2006-05-28
+421@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆã‚‹ ã“ã¨ ãŒ ã§ã ãªã„ ï¼@1@6@The dog couldn't bark.@bond@2006-05-28
+422@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ã‚‰ã‚Œ ãªã„ ï¼@1@6@The dog couldn't bark.@bond@2006-05-28
+431@unknown@formal@none@1@S@å¹´å¯„ã‚Š ã® çŠ¬ ãŒ å ãˆ ãŸ ï¼@1@7@The old dog barked.@bond@2006-05-28
+432@unknown@formal@none@1@S@å¤ã„ çŠ¬ ãŒ å ãˆ ãŸ ï¼@1@6@The old dog barked.@bond@2006-05-28
+441@unknown@formal@none@1@S@çŠ¬ ãŒ é™ã‹ ã« å ãˆ ãŸ ï¼@1@7@The dog barked softly.@bond@2006-05-28
+442@unknown@formal@none@1@S@çŠ¬ ãŒ å„ªã—ã å ãˆ ãŸ ï¼@1@6@The dog barked softly.@bond@2006-05-28
+451@unknown@formal@none@1@S@çŠ¬ ãŒ ãŸã¶ã‚“ å ãˆ ãŸ ï¼@1@6@The dog probably barked.@bond@2006-05-28
+452@unknown@formal@none@1@S@çŠ¬ ãŒ ãŸã¶ã‚“ å ãˆ ãŸ ï¼@1@6@The dog probably barked.@bond@2006-05-28
+453@unknown@formal@none@1@S@çŠ¬ ãŒ ãŸã¶ã‚“ å ãˆ ãŸ ã ã‚ ã† ï¼@1@8@The dog probably barked.@bond@2006-05-28
+461@unknown@formal@none@1@S@çŠ¬ ãŒ åº­ ã§ å ãˆ ãŸ ï¼@1@7@The dog barked in the garden.@bond@2006-05-28
+471@unknown@formal@none@1@S@çŠ¬ ãŒ ã„ã¾ å ãˆã‚‹ ï¼@1@5@The dog barks now.@bond@2006-05-28
+481@unknown@formal@none@1@S@åº­ çŠ¬ ãŒ å ãˆ ãŸ ï¼@1@6@The garden dog barked.@bond@2006-05-28
+491@unknown@formal@none@1@S@ã‚¿ãƒã‚³ åº­ çŠ¬ ãŒ å ãˆ ãŸ ï¼@1@7@The tobacco garden dog barked.@bond@2006-05-28
+501@unknown@formal@none@1@S@çŒ« ãŒ å¹´å¯„ã‚Š ã  ï¼@1@5@The cat is old.@bond@2006-05-28
+502@unknown@formal@none@1@S@çŒ« ãŒ å¤ã„ ï¼@1@4@The cat is old.@bond@2006-05-28
+511@unknown@formal@none@1@S@çŒ« ãŒ åº­ ã« ã„ã‚‹ ï¼@1@6@The cat is in the garden.@bond@2006-05-28
+521@unknown@formal@none@1@S@å ãˆ ã¦ ã„ã‚‹ çŠ¬ ãŒ æ¬¡éƒ ã‚’ è¿½ã£ ãŸ ï¼@1@10@The barking dog chased Browne.@bond@2006-05-28
+531@unknown@formal@none@1@S@è¿½ã‚ ã‚Œ ã¦ ã„ã‚‹ çŠ¬ ãŒ å ãˆã‚‹ ï¼@1@8@Chased dogs bark.@bond@2006-05-28
+541@unknown@formal@none@1@S@çŒ« ã‚’ è¿½ã† ã® ãŒ å¤ã„ ï¼@1@7@Chasing the cat is old.@bond@2006-05-28
+551@unknown@formal@none@1@S@çŒ« ãŒ æ¬¡éƒ ã‚’ è¿½ã† ã“ã¨ ãŒ å¤ã„ ï¼@1@9@That the cat chases Browne is old.@bond@2006-05-28
+561@unknown@formal@none@1@S@çŠ¬ ã¯ å ãˆã‚‹ ã‚‚ã® ã‚’ ä½•ã§ã‚‚ è¿½ã† ï¼@1@8@Dogs chase whatever barks.@bond@2006-05-28
+571@unknown@formal@none@1@S@çŠ¬ ãŒ æ¯æ—¥ å ãˆ ãŸ ï¼@1@6@The dog barked every day.@bond@2006-05-28
+581@unknown@formal@none@1@S@çŠ¬ ãŒ ã„ã¤ å ãˆ ãŸ ã‹ ï¼@1@7@When did the dog bark?@bond@2006-05-28
+591@unknown@formal@none@1@S@çŠ¬ ã® ï¼“ åŒ¹ ãŒ å ãˆã‚‹ ï¼@1@7@Three of the dogs bark.@bond@2006-05-28
+601@unknown@formal@none@1@S@ï¼“ åŒ¹ ãŒ å ãˆã‚‹ ï¼@1@5@Three bark.@bond@2006-05-28
+611@unknown@formal@none@1@S@æ¬¡éƒ ã® çŠ¬ ãŒ å ãˆã‚‹ ï¼@1@6@Browne's dog barks.@bond@2006-05-28
+621@unknown@formal@none@1@S@æ¬¡éƒ ã® ãŒ å ãˆã‚‹ ï¼@1@5@Browne's barks.@bond@2006-05-28
+631@unknown@formal@none@1@S@äºŒ å ä¸‰ åŒ¹ ã® çŠ¬ ãŒ å ãˆã‚‹ ï¼@1@7@Twenty three dogs bark.@bond@2006-05-28
+632@unknown@formal@none@1@S@çŠ¬ ãŒ äºŒ å ä¸‰ åŒ¹ å ãˆã‚‹ ï¼@1@6@Twenty three dogs bark.@bond@2006-05-28
+633@unknown@formal@none@1@S@çŠ¬ äºŒ å ä¸‰ åŒ¹ ãŒ å ãˆã‚‹ ï¼@1@6@Twenty three dogs bark.@bond@2006-05-28
+634@unknown@formal@none@1@S@ï¼’ï¼“ åŒ¹ ã® çŠ¬ ãŒ å ãˆã‚‹ ï¼@1@7@Twenty three dogs bark.@bond@2006-05-28
+635@unknown@formal@none@1@S@çŠ¬ ãŒ ï¼’ï¼“ åŒ¹ å ãˆã‚‹ ï¼@1@6@Twenty three dogs bark.@bond@2006-05-28
+636@unknown@formal@none@1@S@çŠ¬ ï¼’ï¼“ åŒ¹ ãŒ å ãˆã‚‹ ï¼@1@6@Twenty three dogs bark.@bond@2006-05-28
+641@unknown@formal@none@1@S@äºŒ ç™¾ äºŒ å åŒ¹ ã® çŠ¬ ãŒ å ãˆã‚‹ ï¼@1@7@Two hundred twenty dogs bark.@bond@2006-05-28
+651@unknown@formal@none@1@S@å¤ªéƒ ãŒ è»Š ã§ åˆ°ç€ ã— ãŸ ï¼@1@8@Abrams arrived by car.@bond@2006-05-28
+661@unknown@formal@none@1@S@å¤ªéƒ ãŒ å ãˆ ç¶šã‘ ãŸ ï¼@1@6@Abrams kept barking.@bond@2006-05-28
+671@unknown@formal@none@1@S@æ¬¡éƒ ãŒ çŒ« ã‚’ ä½•ã¨ã‹ ã— ãŸ ï¼@1@8@Browne squeezed the cat in.@bond@2006-05-28
+681@unknown@formal@none@1@S@æ¬¡éƒ ãŒ çŒ« ã‚’ ä½•ã¨ã‹ ã— ãŸ ï¼@1@8@Browne squeezed in the cat.@bond@2006-05-28
+691@unknown@formal@none@1@S@å¤ªéƒ ã® çµµ ãŒ å±Šã„ ãŸ ï¼@1@7@The picture of Abrams arrived.@bond@2006-05-28
+701@unknown@formal@none@1@S@å¤ªéƒ ãŒ ãƒ†ãƒ¼ãƒ–ãƒ« ã‚’ ç¶ºéº— ã« æ‹­ã„ ãŸ ï¼@1@9@Abrams wiped the table clean.@bond@2006-05-28
+711@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã‚’ åº­ ã« å…¥ã‚Œ ãŸ ï¼@1@9@Abrams put Browne in the garden.@bond@2006-05-28
+721@unknown@formal@none@1@S@æ¬¡éƒ ãŒ ç€ã‘ ã° çŠ¬ ãŒ å ãˆã‚‹ ï¼@1@8@The dog will bark if Browne arrives.@bond@2006-05-28
+722@unknown@formal@none@1@S@æ¬¡éƒ ãŒ ç€ã ãªã‚‰ çŠ¬ ãŒ å ãˆã‚‹ ï¼@1@8@The dog will bark if Browne arrives.@bond@2006-05-28
+731@unknown@formal@none@1@S@å¤ªéƒ ã¨ æ¬¡éƒ ãŒ ç€ã„ ãŸ ï¼@1@7@Abrams and Browne arrived.@bond@2006-05-28
+731@unknown@formal@none@1@S@å¤ªéƒ ã¨ æ¬¡éƒ ã¨ ãŒ ç€ã„ ãŸ ï¼@1@8@Abrams and Browne arrived.@bond@2006-05-28
+741@unknown@formal@none@1@S@å¤ªéƒ ã¨ æ¬¡éƒ ã¨ çŠ¬ ãŒ ç€ã„ ãŸ ï¼@1@9@Abrams, Browne and the dog arrived.@bond@2006-05-28
+751@unknown@formal@none@1@S@çŠ¬ ãŒ ç€ã„ ã¦ ï¼Œ å ãˆ ãŸ ï¼@1@8@The dog arrived and barked.@bond@2006-05-28
+761@unknown@formal@none@1@S@çŠ¬ ãŒ ç€ã„ ã¦ ã€ æ¬¡éƒ ãŒ å ãˆ ãŸ ï¼@1@10@The dog arrived and Browne barked.@bond@2006-05-28
+771@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ãŸ ã­ ï¼@1@6@The dog barked, didn't it?@bond@2006-05-28
+781@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ãŸ ã“ã¨ ãŒ æ˜ã‚‰ã‹ ã  ï¼@1@9@It is obvious that the dog barked.@bond@2006-05-28
+791@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã« å ãˆã‚‹ ã¨ ç´„æŸ ã— ãŸ ï¼@1@10@Abrams promised Browne to bark.@bond@2006-05-28
+792@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã« å ãˆã‚‹ ã“ã¨ ã‚’ ç´„æŸ ã— ãŸ ï¼@1@11@Abrams promised Browne to bark.@bond@2006-05-28
+801@unknown@formal@none@1@S@å¤ªéƒ ãŒ å ãˆã‚‹ ã‚ˆã† ã  ï¼@1@6@Abrams seems to bark.@bond@2006-05-28
+802@unknown@formal@none@1@S@å¤ªéƒ ãŒ å ãˆã‚‹ ã‚‰ã—ã„ ï¼@1@5@Abrams seems to bark.@bond@2006-05-28
+811@unknown@formal@none@1@S@å¤ªéƒ ã¯ æ¬¡éƒ ãŒ å ãˆ ã¦ ã„ã‚‹ ã¨ ä¿¡ã˜ ã¦ ã„ã‚‹ ï¼@1@12@Abrams believes Browne to be barking.@bond@2006-05-28
+821@unknown@formal@none@1@S@å¤ªéƒ ã¯ æ¬¡éƒ ãŒ å ãˆ ãŸ ã“ã¨ ãŒ å«Œ ã ã£ ãŸ ï¼@1@13@It bothered Abrams that Browne barked.@bond@2006-05-28
+831@unknown@formal@none@1@S@å¤ªéƒ ãŒ ç€ã ã® ãŒ å åˆ† ã‹ã‹ã£ ãŸ ï¼@1@10@It took Abrams ten minutes to arrive.@bond@2006-05-28
+841@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã« å ãˆã‚‹ ã“ã¨ ã‚’ ä»»ã› ãŸ ï¼@1@10@Abrams left it to Browne to bark.@bond@2006-05-28
+851@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ã« ã¯ å¹´å¯„ã‚Š ã« è¦‹ãˆã‚‹ ï¼@1@8@Abrams strikes Browne as old.@bond@2006-05-28
+852@unknown@formal@none@1@S@æ¬¡éƒ ã« ã¯ å¤ªéƒ ãŒ å¹´å¯„ã‚Š ã« è¦‹ãˆã‚‹ ï¼@1@8@Abrams strikes Browne as old.@bond@2006-05-28
+861@unknown@formal@none@1@S@æ¬¡éƒ ã¯ å¤ªéƒ ãŒ å¹´å¯„ã‚Š ã  ã¨ æ€ã† ï¼@1@9@Browne considers Abrams old.@bond@2006-05-28
+871@unknown@formal@none@1@S@å¤ªéƒ ãŒ æ¬¡éƒ ãŒ å ãˆã‚‹ è€ƒãˆ ã‚’ å¥½ã‚“ ã  ï¼@1@10@Abrams liked the idea that Browne could bark.@bond@2006-05-28
+881@unknown@formal@none@1@S@å¤ªéƒ ãŒ å æ™‚ ã‹ã‚‰ ä¸‰ æ™‚ ã¾ã§ å ãˆ ãŸ ï¼@1@11@Abrams barked from ten to three.@bond@2006-05-28
+891@unknown@formal@none@1@S@å¤ªéƒ ãŒ ã¨ã¦ã‚‚ å¹´å¯„ã‚Š ã ã£ ãŸ ï¼@1@7@Abrams was very old.@bond@2006-05-28
+892@unknown@formal@none@1@S@ã‚¿ãƒã‚³ ãŒ ã¨ã¦ã‚‚ å¤ã‹ã£ ãŸ ï¼@1@7@The cigarette was very old.@bond@2006-05-28
+901@unknown@formal@none@1@S@ã»ã¨ã‚“ã© å…¨ã¦ ã® çŠ¬ ãŒ å ãˆ ãŸ ï¼@1@8@Nearly every dog barked.@bond@2006-05-28
+911@unknown@formal@none@1@S@å¤ªéƒ ãŒ ã¨ã¦ã‚‚ é™ã‹ ã« å ãˆ ãŸ ï¼@1@8@Abrams barked very softly.@bond@2006-05-28
+921@unknown@formal@none@1@S@å¤ªéƒ ã¯ æ¬¡éƒ ãŒ çŒ« ã‚’ è¿½ã† ã“ã¨ ãŒ å«Œ ã ã£ ãŸ ï¼@1@14@Browne's chasing of cats bothered Abrams.@bond@2006-05-28
+931@unknown@formal@none@1@S@æ¬¡éƒ ã¯ å¤ªéƒ  ãŒ çŒ« ã‚’ è¿½ã† ã“ã¨ ãŒ å«Œ ã ã£ ãŸ ï¼@1@15@It bothered Browne that Abrams chased cats.@bond@2006-05-28
+941@unknown@formal@none@1@S@ï¼–æœˆ ï¼“ æ—¥ ãŒ æ¥ ãŸ ï¼@1@7@June third arrived.@bond@2006-05-28
+951@unknown@formal@none@1@S@å¤ªéƒ ãŒ ï¼“ æ™‚ ï¼’ï¼ åˆ† ã« ç€ã„ ãŸ ï¼@1@10@Abrams arrived at three twenty.@bond@2006-05-28
+961@unknown@formal@none@1@S@æ¬¡éƒ ãŒ ç«æ›œæ—¥ ã® æœ ã« ç€ã„ ãŸ ï¼@1@9@Browne arrived on Tuesday morning.@bond@2006-05-28
+971@unknown@formal@none@1@S@çŒ« ãŒ å ãˆ æ–¹ ãŒ åˆ†ã‹ã£ ãŸ ï¼@1@8@The cats found a way to bark.@bond@2006-05-28
+981@unknown@formal@none@1@S@ã‚ˆã‚Š å¹¸ã› ãª çŠ¬ ãŒ æ¬¡éƒ ã‚’ è¿½ã£ ãŸ ï¼@1@10@The happier dog chased Browne.@bond@2006-05-28
+991@unknown@formal@none@1@S@åº­ ã« ã¯ çŒ« ãŒ å±… ãŸ ï¼@1@8@There were cats in the garden.@bond@2006-05-28
+1001@unknown@formal@none@1@S@ã‚ã® çŠ¬ ãŒ æ¬¡éƒ ã‚’ è¿½ã£ ãŸ ï¼@1@8@That dog chased Browne.@bond@2006-05-28
+1011@unknown@formal@none@1@S@èª° ã‹ ãŒ å¤ªéƒ ã‚’ è¿½ã£ ãŸ ã€‚@1@8@Somebody chased Abrams.@bond@2006-05-28
+1021@unknown@formal@none@1@S@å¤ªéƒ ãŒ ã©ã® ãã‚‰ã„ å¹¸ã› ã ã£ ãŸ ã‹ ï¼@1@9@How happy was Abrams?@bond@2006-05-28
+1031@unknown@formal@none@1@S@æ¬¡éƒ ãŒ ç¬¬ äº” ç•ª ãŒ å«Œ ã  ï¼@1@10@The number five bothers Browne.@bond@2006-05-28
+1041@unknown@formal@none@1@S@å¤ªéƒ ãŒ ã§ãã‚‹ ï¼@1@4@Abrams could.@bond@2006-05-28
+1051@unknown@formal@none@1@S@æ¬¡éƒ ãŒ ã‚„ã£ ã¦ ã¿ ãŸ ï¼@1@7@Browne tried to.@bond@2006-05-28
+1061@unknown@formal@none@1@S@å ãˆã‚‹ ãª ï¼@1@3@Don't bark!@bond@2006-05-28
+1071@unknown@formal@none@1@S@çŠ¬ ãŒ å ãˆ ãªãŒã‚‰ ç€ã„ ãŸ ï¼@1@7@The dog arrived barking.@bond@2006-05-28

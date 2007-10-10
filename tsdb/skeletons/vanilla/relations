@@ -62,7 +62,7 @@ item-set:
 
 run:
   run-id :integer :key                  # unique test run identifier
-  r-comment :string                     # descriptive narrative
+  run-comment :string                   # descriptive narrative
   platform :string                      # implementation platform (version)
   tsdb :string                          # tsdb(1) (version) used
   application :string                   # application (version) used
@@ -126,8 +126,10 @@ result:
   r-aedges :integer                     # active items for this result
   r-pedges :integer                     # passive items in this result
   derivation :string                    # derivation tree for this reading
+  surface :string                       # surface string (e.g. realization)
   tree :string                          # phrase structure tree (CSLI labels)
   mrs :string                           # mrs for this reading
+  flags :string                         # arbitrary annotation (e.g. BLEU)
 
 rule:
   parse-id :integer :key                # parse for this rule summary
@@ -146,6 +148,7 @@ output:
   o-wf :integer                         # application-specific grammaticality
   o-gc :integer                         # maximal number of garbage collections
   o-derivation :string                  # expected derivation
+  o-surface :string                     # expected surface string
   o-tree :string                        # expected phrase structure tree
   o-mrs :string                         # expected mrs
   o-edges :integer                      # maximal number of edges to build
@@ -155,19 +158,76 @@ output:
 edge:
   e-id :integer :key                    # unique edge identifier
   parse-id :integer :key                # parse for this edge
-  e-parser :string                      # `lexicon' or `syntax'
   e-name :string                        # edge label (as in `derivation')
-  e-type :string                        # item-itype() of this edge
   e-status :integer                     # 0 : passive; 1 : active
   e-result :integer                     # 0 : nope; 1 : yup, result
   e-start :integer                      # start vertex for this edge
   e-end :integer                        # end vertex for this edge
-  e-daughters :integer                  # number of daughters
-  e-epsilons :integer                   # number of epsilon daughter
+  e-daughters :string                   # (Common-Lisp) list of daughters
+  e-parents :string                     # (Common-Lisp) list of parents
+  e-alternates :string                  # alternates packed into this edge
 
-daughter:
-  e-id :integer :key                    # edge for this daughter
-  d-position :integer                   # position of this daughter
-  d-id :integer                         # identifier of this daughter
+tree:
+  parse-id :integer :key
+  t-version :integer
+  t-active :integer :key
+  t-confidence :integer
+  t-author :string
+  t-start :date
+  t-end :date
+  t-comment :string
 
+decision:
+  parse-id :integer :key
+  t-version :integer
+  d-state :integer
+  d-type :integer
+  d-key :string
+  d-value :string
+  d-start :integer
+  d-end :integer
+  d-date :date
 
+preference:
+  parse-id :integer :key
+  t-version :integer
+  result-id :integer
+
+update:
+  parse-id :integer :key
+  t-version :integer
+  u-matches :integer
+  u-mismatches :integer
+  u-new :integer
+  u-gin :integer
+  u-gout :integer
+  u-pin :integer
+  u-pout :integer
+  u-in :integer
+  u-out :integer
+
+fold:
+  f-id :integer :key
+  f-train :integer
+  f-trains :string
+  f-test :integer
+  f-tests :string
+  f-events :integer
+  f-features :integer
+  f-environment :string
+  f-iterations :integer
+  f-etime :integer
+  f-estimation :string
+  f-accuracy :string
+  f-extras :string
+  f-user :string
+  f-host :string
+  f-start :date
+  f-end :date
+  f-comment :string
+
+score:
+  parse-id :integer :key
+  result-id :integer
+  rank :integer
+  score :string
