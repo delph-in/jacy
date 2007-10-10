@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;; -*- Mode: TDL; Coding: utf-8 -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: newlexsem-types.tdl
@@ -342,13 +342,11 @@ scopal-adv-sem-type := possibly-wh-scopal-adv-sem-type.
 
 wh-adv-sem-type := mod-id-wg-handel-mrs &
                    [ RELS <! prep-mod-relation &
-                            [PRED 'unspec_manner_rel,
-                             WLINK #label,
+                            [PRED "unspec_p_manner_rel",
                              ARG0 [ E.TENSE no_tense ],
 			     ARG2 #var],
                             noun-relation &
                             [LBL #lr,
-                             WLINK #label,
                              ARG0 #var],
                             quant-relation &
                             [ARG0 #var,
@@ -409,7 +407,7 @@ wh-adv-sem-type := mod-id-wg-handel-mrs &
 
 ; (ERB 2001-08-09)
 
-; (ERB 2001-12-05) Need to enrich this to deal with Ⱦ where the numeral
+; (ERB 2001-12-05) Need to enrich this to deal with 半 where the numeral
 ; classifier is going to add another plus-relation.
 
 ; (ERB 2004-1-16) I'm going to be introducing some H-CONS constraints now, because

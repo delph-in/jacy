@@ -2,7 +2,7 @@
 ; I'm sure this will add loads of ambiguity. Only for parsing spoken Japanese!
 ; (MS 2004-12-14) RELS and HCONS and HOOK should come from the argument.
 ; (MS 2004-12-16) Maybe this adds too much ambiguity. Taking it out again.
-
+; (FCB 2006-19-31) can we restrict it to adjacent arguments ?
 ;pp_np_rule-case := empty-preposition-type &
 ;              [SYNSEM [LOCAL [CAT [HEAD empty-case-p_head & [CASE ga-or-wo],
 ;				   VAL.COMPS < >],
@@ -76,7 +76,7 @@ rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 ; (MS 2002-1-7) I'll restrict the rule a little bit further to non-adjectives. 
 ; Also, both verbs are MAIN-PRD +. This prevents NA to be the first verb.
 ; MODUS nonoperative prevents NAI to be the first verb. It has to be seen if that is too restrictive...
-; (MS 2002-1-7) It is: "É½¼¨¤Ç¤­¤Ş¤»¤ó¤Ç¤·¤¿¿½¤·Ìõ¤´¤¶¤¤¤Ş¤»¤ó.
+; (MS 2002-1-7) It is: "è¡¨ç¤ºã§ãã¾ã›ã‚“ã§ã—ãŸç”³ã—è¨³ã”ã–ã„ã¾ã›ã‚“.
 ; (MS 2002-1-10) Another restriction is EMPTY - in the head of the first argument. 
 ;  This prevents an empty-cop-id-rule or an empty-cop-rule to be applied to this.
 
@@ -86,8 +86,8 @@ rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 ; in cheap at least this rule is restricted to spanning-only-edges.)
 ; (MS 2002-05-28) If we want the first sentence to have an SAP, we need utt-valid there, too.
 ; (MS 2002-06-05) Maybe that's not a good idea, leads to spurious ambiguity in, e.g.,
-;  ¤´ÈÓ¤ò¿©¤Ù¤ë¤«¤è¤¤
-; (MS 2002-06-19) But we seem to need this anyway: "¸ıºÂ¿¶ÂØ°ÍÍê½ñÁ÷¤Ã¤Æ¤¯¤À¤µ¤¤,¤ª´ê¤¤¤·¤Ş¤¹"
+;  ã”é£¯ã‚’é£Ÿã¹ã‚‹ã‹ã‚ˆã„
+; (MS 2002-06-19) But we seem to need this anyway: "å£åº§æŒ¯æ›¿ä¾é ¼æ›¸é€ã£ã¦ãã ã•ã„,ãŠé¡˜ã„ã—ã¾ã™"
 ; (MS 2002-06-20) Trying to restrict this with  NUCL nucl_plus.
 
 ; (FCB 2005-06-28) take this one out for the time being

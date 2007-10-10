@@ -1,3 +1,17 @@
+; -*- Mode: TDL; Coding: utf-8 -*-
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;        file: fundamentals.tdl
+;;;  written by: Melanie Siegel
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; author            | date        | modification
+;;; -----------------|--------- ---|------------------------------------------
+;;;Melanie Siegel(MS)|             | Emily Bender (ERB), Francis Bond (FCB), 
+;;;                  |             | Sanae Fujita (SF), Takaaki Tanaka (TT),
+;;;                  |             | Akira Ohtani (AO), Chikara Hashimoto (CH)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 j-valence := valence &
 	[UNSAT bool,
@@ -134,8 +148,7 @@ obl_synsem := j-synsem & [OPT - ].
 ; BUT I added ORTH diff-list 
 
 j-sign := sign &
-	[ORTH diff-list,
-	 SYNSEM j-synsem,	
+	[SYNSEM j-synsem,	
 	 LMORPH-BIND-TYPE morphbind,
 	 RMORPH-BIND-TYPE morphbind,
 	 J-NEEDS-AFFIX bool].
@@ -146,14 +159,16 @@ j-sign := sign &
 ; and lexical_sign-rule) and make the constraint live on the first 
 ; of these.
 
+;;; Most words should share pass up their lable
+lexical_sign-word := lexical_sign &
+ [ SYNSEM [LOCAL.CONT.HOOK.LTOP #label,
+	   LKEYS.KEYREL [ LBL #label]]].
 
-lexical_sign := word & j-sign &
+;;; abnormal  words don't
+lexical_sign-aword := lexical_sign.lexical_sign := word & j-sign &
                [SYNSEM j-lex-synsem & [LOCAL [CAT.VAL.UNSAT +],
 				       LEX +],
                 STEMTYPE stemtype].
-
-lexical_sign-word := lexical_sign &
-                     [ SYNSEM.LKEYS.KEYREL.WLINK ne-list ].
 
 lexical_sign-affix := lexical_sign.
 
@@ -163,6 +178,7 @@ lexical_sign-affix := lexical_sign.
 lexical_sign-rule := lexical_sign & phrase-or-lexrule &
  [IDIOM #idiom,
   ARGS <[IDIOM #idiom]>].
+
 ;lexical_sign-rule := lexical_sign & phrase-or-lexrule.
 
 
@@ -191,11 +207,8 @@ wg-handel-id := relation &
 
 ; (MS 2004-11-18) We want some hint about passivization in the MRS (and RMRS)!
 
-tam := avm &
-  [ TENSE tense,
-    ASPECT aspect,
-    MOOD mood,
-    PASS bool ]. 
+tam :+ 
+  [ PASS bool ]. 
 
 
 never_unify_rel := relation.
@@ -205,33 +218,7 @@ never_unify_rel := relation.
 ; The ARG0 is the highest scoping event in the relation that 
 ; the MARG qeqs.
 
-message := basic_message & arg0-relation & 
-  [ PRED message_m_rel,
-    MARG handle ].
-
-;;; In the brave new world
-; message :+ arg0-relation.
-
-;;; (FCB DPF 2005-06-30) let's pass up HCONS too
-lex-rule := phrase-or-lexrule & word-or-lexrule &
-  [ NEEDS-AFFIX bool,
-    SYNSEM.LOCAL.CONT [RELS [ LIST #first,
-			      LAST #last ],
-		       HCONS [ LIST #hfirst,
-			       LAST #hlast ]],
-    DTR #dtr & word-or-lexrule &
-		[ SYNSEM.LOCAL.CONT [RELS [ LIST #first,
-					    LAST #middle ],
-				     HCONS [ LIST #hfirst,
-					     LAST #hmiddle ]],
-		  ALTS #alts ],
-    C-CONT [RELS [ LIST #middle,
-		   LAST #last ],
-	    HCONS [ LIST #hmiddle,
-		    LAST #hlast ]],
-    ALTS #alts,
-    ARGS < #dtr > ].
-
+message :+ arg0-relation.
 
 ; For fragments (DPF FCB 2005-08-22) expect to appear in the Matrix any moment now
 unknown_relation := arg0-relation &

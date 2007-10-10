@@ -104,8 +104,7 @@ phrase := phrase-or-lexrule &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 non-affix-bearing := word-or-lexrule &
-  [ INFLECTED +,
-    SYNSEM.LKEYS.KEYREL.WLINK cons ].
+  [ INFLECTED + ].
 
 ; Rule
 
@@ -446,9 +445,18 @@ conj-ref-ind := conj-index & ref-ind.
 ; (MS 2004-06-14) Added CFROM and CTO to get the character positions in the RMRS.
 
 
+; relation := avm &
+;   [ LBL handle,
+;     WLINK list,
+;     PRED predsort,
+;     CFROM *top*,
+;     CTO *top*  ].
+
+; changed WLINK to LNK to humour oe
+
 relation := avm &
   [ LBL handle,
-    WLINK list,
+    LNK list,
     PRED predsort,
     CFROM *top*,
     CTO *top*  ].
@@ -692,35 +700,29 @@ onull := olist & null.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Lexical rules
 
-;;;
-;;; Idiom Implementation (CH 060804)
-;;;
+
+;;; Added Idiom (CH 060804)
+
 lex-rule := phrase-or-lexrule & word-or-lexrule &
   [ IDIOM #idiom,
     NEEDS-AFFIX bool,
-    SYNSEM.LOCAL.CONT.RELS [ LIST #first,
+    SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
 			     LAST #last ],
+			HCONS [ LIST #hfirst,
+				LAST #hlast ] ],
     DTR #dtr & word-or-lexrule &
-	[ SYNSEM.LOCAL.CONT.RELS [ LIST #first,
-		  		   LAST #middle ],
+	[ SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
+		  	             LAST #middle ],
+			      HCONS [ LIST #hfirst,
+				      LAST #hmiddle ] ],
 	  ALTS #alts,
 	  IDIOM #idiom],
-    C-CONT.RELS [ LIST #middle,
-		  LAST #last ],
+    C-CONT [ RELS [ LIST #middle,
+		    LAST #last ],
+	     HCONS [ LIST #hmiddle,
+		     LAST #hlast ]],
     ALTS #alts,
     ARGS < #dtr > ].
-; lex-rule := phrase-or-lexrule & word-or-lexrule &
-;   [ NEEDS-AFFIX bool,
-;     SYNSEM.LOCAL.CONT.RELS [ LIST #first,
-; 			     LAST #last ],
-;     DTR #dtr & word-or-lexrule &
-; 	[ SYNSEM.LOCAL.CONT.RELS [ LIST #first,
-; 		  		   LAST #middle ],
-; 	  ALTS #alts ],
-;     C-CONT.RELS [ LIST #middle,
-; 		  LAST #last ],
-;     ALTS #alts,
-;     ARGS < #dtr > ].
 
 ; Lexical rules vary on two dimensions: whether they are lexeme-to-lexeme
 ; or lexeme-to-word and whether or not they involve spelling changes.
@@ -765,8 +767,8 @@ inflecting-lex-rule := lex-rule &
 ; the daughter.
 
 constant-lex-rule := lex-rule &
-  [ STEM #stem,
-    DTR [ STEM #stem ]].
+   [ STEM #stem,
+     DTR [ STEM #stem ]].
 
 ; Cross-classified glb types
 

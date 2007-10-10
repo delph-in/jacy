@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; author            | date        | modification
 ;;; ------------------|-------------|------------------------------------------
@@ -8,8 +8,8 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-%(letter-set(!v §Ÿ§±§·§ª§«§Ï§Õ§®§≤§∆§”§≠§ﬂ§∑§§§Æ§Í§∏§À§º§¡))
-%(letter-set(!h §¢§¶§®§™§´§≠§Ø§±§≥§µ§∑§π§ª§Ω§ø§¡§ƒ§∆§»§ §À§Ã§Õ§Œ§œ§“§’§ÿ§€§ﬁ§ﬂ§‡§·§‚§‰§Ê§Ë§È§Í§Î§Ï§Ì§Ô§¨§Æ§∞§≤§¥§∂§∏§∫§º§æ§¿§¬§≈§«§…§–§”§÷§Ÿ§‹§—§‘§◊§⁄§›))
+%(letter-set(!v „Åπ„Åë„ÇÅ„Åõ„Åß„Çå„Å≠„Åà„Åí„Å¶„Å≥„Åç„Åø„Åó„ÅÑ„Åé„Çä„Åò„Å´„Åú„Å°))
+%(letter-set(!h „ÅÇ„ÅÜ„Åà„Åä„Åã„Åç„Åè„Åë„Åì„Åï„Åó„Åô„Åõ„Åù„Åü„Å°„Å§„Å¶„Å®„Å™„Å´„Å¨„Å≠„ÅÆ„ÅØ„Å≤„Åµ„Å∏„Åª„Åæ„Åø„ÇÄ„ÇÅ„ÇÇ„ÇÑ„ÇÜ„Çà„Çâ„Çä„Çã„Çå„Çç„Çè„Åå„Åé„Åê„Åí„Åî„Åñ„Åò„Åö„Åú„Åû„Å†„Å¢„Å•„Åß„Å©„Å∞„Å≥„Å∂„Åπ„Åº„Å±„Å¥„Å∑„Å∫„ÅΩ))
 
 
 ; (ERB 2002-01-28) Extra application of utterance_rule10 because
@@ -19,7 +19,7 @@
 ; (ERB 2002-01-29) Output of this rule should also be SMOD unmarked
 ; to block ambiguity with nonprop conjunctions.  
 ; (MS 2004-02-09) BAR -, to block spurious ambiguity in 
-; ª‰§¨æ–§¶
+; ÁßÅ„ÅåÁ¨ë„ÅÜ
 
 ru-lexeme-infl-rule := 
 word-rule & 
@@ -57,53 +57,53 @@ word-rule &
                            SYNSEM.LOCAL.CAT.HEAD #head & verbend_head]].
 
 i-lexeme-c-stem-infl-rule := 
-%suffix (§Ø §≠) (§Î §Í) (§¶ §§) (§π §∑) (§‡ §ﬂ) (§∞ §Æ) (§÷ §”) (§ƒ §¡) (§Ã §À)
+%suffix („Åè „Åç) („Çã „Çä) („ÅÜ „ÅÑ) („Åô „Åó) („ÇÄ „Åø) („Åê „Åé) („Å∂ „Å≥) („Å§ „Å°) („Å¨ „Å´)
 lexeme-rule &
 [RMORPH-BIND-TYPE i-morph,
  SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
  ARGS.FIRST.STEMTYPE c-stem].
 
 ;; (FCB 2003-08-07) added u-type 
-;; ∏ﬁ√ °¶•Ôπ‘•¶≤ª ÿ  --- ∏§¶ Ã‰§¶
+;; ‰∫îÊÆµ„Éª„ÉØË°å„Ç¶Èü≥‰æø  --- ‰πû„ÅÜ Âïè„ÅÜ
 ;; (tou and kou - past tense is o-u-ta not o-t-ta)
-;; ∏ﬁ√ °¶•Èπ‘∆√ºÏ œ¢Õ—∑¡ --- §§§È§√§∑§„§Î
-;; ∏ﬁ√ °¶•´π‘¬•≤ª ÿ --- π‘§Ø
-;; only •Èπ‘∆√ºÏ œ¢Õ—∑¡ is irregular here:  §§§È§√§∑§„§Î ¢™ §§§È§√§∑§„§§§ﬁ§π
+;; ‰∫îÊÆµ„Éª„É©Ë°åÁâπÊÆä ÈÄ£Áî®ÂΩ¢ --- „ÅÑ„Çâ„Å£„Åó„ÇÉ„Çã
+;; ‰∫îÊÆµ„Éª„Ç´Ë°å‰øÉÈü≥‰æø --- Ë°å„Åè
+;; only „É©Ë°åÁâπÊÆä ÈÄ£Áî®ÂΩ¢ is irregular here:  „ÅÑ„Çâ„Å£„Åó„ÇÉ„Çã ‚Üí „ÅÑ„Çâ„Å£„Åó„ÇÉ„ÅÑ„Åæ„Åô
 
 i-lexeme-c2-stem-infl-rule := 
-%suffix (§Ø §≠) (§Î §§) (§¶ §§)
+%suffix („Åè „Åç) („Çã „ÅÑ) („ÅÜ „ÅÑ)
 lexeme-rule &
 [RMORPH-BIND-TYPE i-morph,
  SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
  ARGS.FIRST.STEMTYPE c2-stem].
 
 ;; (SF 2003-08-14) added more forms
-;; º¬∫›§Àlexicon §À≈–œø§µ§Ï§∆§§§Î ™§´§…§¶§´§œ•¡•ß•√•Ø§ª§∫
+;; ÂÆüÈöõ„Å´lexicon „Å´ÁôªÈå≤„Åï„Çå„Å¶„ÅÑ„ÇãÁâ©„Åã„Å©„ÅÜ„Åã„ÅØ„ÉÅ„Çß„ÉÉ„ÇØ„Åõ„Åö
 
 ;; (MS 2003-12-11) These can be restricted a bit.
 
 i-lexeme-v-stem-infl-rule := 
-%suffix (!v§Î !v) (•±§Î •±) (•Ï§Î •Ï) (∞ §Î ∞ ) (∞‘§Î ∞‘) (∞◊§Î ∞◊) (∞„§Î ∞„) (±€§Î ±€) (±ﬁ§Î ±ﬁ) (≤º§Î ≤º) (≤Ω§Î ≤Ω) (≤Õ§Î ≤Õ) (≥Õ§Î ≥Õ) (≥›§Î ≥›) (¥≥§Î ¥≥) (¥π§Î ¥π) (¥«§Î ¥«) (¥—§Î ¥—) (µ§§Î µ§) (µ∫§Î µ∫) (µÕ§Î µÕ) (µÔ§Î µÔ) (∂Ô§Î ∂Ô) (∑–§Î ∑–) (∑ﬁ§Î ∑ﬁ) (∑Û§Î ∑Û) (∑¸§Î ∑¸) (∏´§Î ∏´) (∏œ§Î ∏œ) (∏‹§Î ∏‹) (πµ§Î πµ) (πΩ§Î πΩ) (π §Î π ) (ª˜§Î ª˜) (ºÕ§Î ºÕ) (ºŒ§Î ºŒ) (º—§Î º—) (ºı§Î ºı) (Ω∏§Î Ω∏) (Ω–§Î Ω–) (Ω·§Î Ω·) (ΩÈ§Î ΩÈ) (æ√§Î æ√) (æ«§Î æ«) (æ §Î æ ) (æÂ§Î æÂ) (ø≤§Î ø≤) (ø«§Î ø«) (¿∞§Î ¿∞) (¿∏§Î ¿∏) (¿˜§Î ¿˜) (¡Í§Î ¡Í) (¬ÿ§Î ¬ÿ) (√Â§Î √Â) (√Ú§Î √Ú) (√¯§Î √¯) (≈¡§Î ≈¡) (≈Í§Î ≈Í) (≈ˆ§Î ≈ˆ) (∆¿§Î ∆¿) (∆˛§Î ∆˛) (»¥§Î »¥) (»‹§Î »‹) (»ˆ§Î »ˆ) (…’§Î …’) ( ¨§Î  ¨) ( ƒ§Î  ƒ) ( —§Î  —) ( Î§Î  Î) ( ¯§Î  ¯) (À∫§Î À∫) (Õ»§Î Õ») (Õœ§Î Õœ) (ÕË§Î ÕË) (ÕÓ§Î ÕÓ) (Õ˜§Î Õ˜) (Œ©§Î Œ©) (Œ±§Î Œ±) (⁄Œ§Î ⁄Œ) (ﬂı§Î ﬂı) (‚À§Î ‚À) (Â˛§Î Â˛) (ÈÃ§Î ÈÃ) (Îµ§Î Îµ) (Î∑§Î Î∑) (Ìø§Î Ìø) (Ó≈§Î Ó≈) (Ô…§Î Ô…) (Ò‹§Î Ò‹) (ø≤§Î ø≤) (’Í§Î ’Í)
+%suffix (!v„Çã !v) („Ç±„Çã „Ç±) („É¨„Çã „É¨) (‰ª•„Çã ‰ª•) (ÊÉü„Çã ÊÉü) (Êòì„Çã Êòì) (ÈÅï„Çã ÈÅï) (Ë∂ä„Çã Ë∂ä) (Âé≠„Çã Âé≠) (‰∏ã„Çã ‰∏ã) (Âåñ„Çã Âåñ) (Êû∂„Çã Êû∂) (Áç≤„Çã Áç≤) (Êéõ„Çã Êéõ) (Âπ≤„Çã Âπ≤) (Êèõ„Çã Êèõ) (Áúã„Çã Áúã) (Ë¶≥„Çã Ë¶≥) (Ê∞ó„Çã Ê∞ó) (ÊàØ„Çã ÊàØ) (Ë©∞„Çã Ë©∞) (Â±Ö„Çã Â±Ö) (Èßà„Çã Èßà) (Áµå„Çã Áµå) (Ëøé„Çã Ëøé) (ÂÖº„Çã ÂÖº) (Êá∏„Çã Êá∏) (Ë¶ã„Çã Ë¶ã) (ÊûØ„Çã ÊûØ) (È°ß„Çã È°ß) (Êéß„Çã Êéß) (Êßã„Çã Êßã) (Áµû„Çã Áµû) (‰ºº„Çã ‰ºº) (Â∞Ñ„Çã Â∞Ñ) (Êç®„Çã Êç®) (ÁÖÆ„Çã ÁÖÆ) (Âèó„Çã Âèó) (ÈõÜ„Çã ÈõÜ) (Âá∫„Çã Âá∫) (ÊΩ§„Çã ÊΩ§) (Âàù„Çã Âàù) (Ê∂à„Çã Ê∂à) (ÁÑ¶„Çã ÁÑ¶) (ÁúÅ„Çã ÁúÅ) (‰∏ä„Çã ‰∏ä) (ÂØù„Çã ÂØù) (Ë®∫„Çã Ë®∫) (Êï¥„Çã Êï¥) (Áîü„Çã Áîü) (Êüì„Çã Êüì) (Áõ∏„Çã Áõ∏) (Êõø„Çã Êõø) (ÁùÄ„Çã ÁùÄ) (Èã≥„Çã Èã≥) (Ëëó„Çã Ëëó) (‰ºù„Çã ‰ºù) (Êäï„Çã Êäï) (ÂΩì„Çã ÂΩì) (Âæó„Çã Âæó) (ÂÖ•„Çã ÂÖ•) (Êäú„Çã Êäú) (Âçë„Çã Âçë) (Á∞∏„Çã Á∞∏) (‰ªò„Çã ‰ªò) (ÂàÜ„Çã ÂàÜ) (Èñâ„Çã Èñâ) (Â§â„Çã Â§â) (ÊöÆ„Çã ÊöÆ) (Â¥©„Çã Â¥©) (Âøò„Çã Âøò) (Êèö„Çã Êèö) (Ê∫∂„Çã Ê∫∂) (Êù•„Çã Êù•) (ËêΩ„Çã ËêΩ) (Ë¶ß„Çã Ë¶ß) (Á´ã„Çã Á´ã) (Áïô„Çã Áïô) (ËÆä„Çã ËÆä) (ÁÜæ„Çã ÁÜæ) (Áù®„Çã Áù®) (Áº∫„Çã Áº∫) (Ëôß„Çã Ëôß) (Ë¶Ω„Çã Ë¶Ω) (ËßÄ„Çã ËßÄ) (Ë∫æ„Çã Ë∫æ) (ÈÖñ„Çã ÈÖñ) (ÈëÑ„Çã ÈëÑ) (È©Ö„Çã È©Ö) (ÂØù„Çã ÂØù) (ÂØ¢„Çã ÂØ¢)
 lexeme-rule &
 [RMORPH-BIND-TYPE vstem-morph,
  ARGS.FIRST.STEMTYPE v-stem].
 
 a-lexeme-negative-cons-stem-infl-rule := 
-%suffix (§Ø §´) (§Î §È) (§¶ §Ô) (§π §µ) (§‡ §ﬁ) (§∞ §¨) (§÷ §–) (§ƒ §ø)  (ª‡§Ã ª‡)
+%suffix („Åè „Åã) („Çã „Çâ) („ÅÜ „Çè) („Åô „Åï) („ÇÄ „Åæ) („Åê „Åå) („Å∂ „Å∞) („Å§ „Åü)  (Ê≠ª„Å¨ Ê≠ª)
 lexeme-rule &
 [RMORPH-BIND-TYPE a-or-aa-morph,
 ARGS.FIRST.STEMTYPE cons-stem].
 
 pass-lexeme-stem-infl-rule := 
-%suffix (§Ø §´) (§Î §È) (§¶ §Ô) (§π §µ) (§‡ §ﬁ) (§∞ §¨) (§÷ §–) (§ƒ §ø) (§Ã § )
+%suffix („Åè „Åã) („Çã „Çâ) („ÅÜ „Çè) („Åô „Åï) („ÇÄ „Åæ) („Åê „Åå) („Å∂ „Å∞) („Å§ „Åü) („Å¨ „Å™)
 lexeme-rule &
 [RMORPH-BIND-TYPE pass-c-stem-morph,
 ARGS.FIRST.STEMTYPE cons-stem].
 
 
-;; °°∞˙§Ø¢™∞˙§§ §∆; æ–§¶¢™æ–§√ §∆; 
+;; „ÄÄÂºï„Åè‚ÜíÂºï„ÅÑ „Å¶; Á¨ë„ÅÜ‚ÜíÁ¨ë„Å£ „Å¶; 
 t-lexeme-c-stem-infl-rule := 
-%suffix (§Ø §§) (§Î §√) (§¶ §√) (§π §∑) (§ƒ §√)
+%suffix („Åè „ÅÑ) („Çã „Å£) („ÅÜ „Å£) („Åô „Åó) („Å§ „Å£)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  SYNSEM.LOCAL.CAT.HEAD ordinary-verb-stem_head,
@@ -111,20 +111,20 @@ lexeme-rule &
 	     SYNSEM.LOCAL.CAT.HEAD ordinary-verb-stem_head]].
 
 ;; (FCB 2003-08-07) added u-type (tou and kou - past tense is o-u-ta not o-t-ta)
-; (MS 2005-09-22) it is better to list all c2-stem ending in §¶, otherwise we
+; (MS 2005-09-22) it is better to list all c2-stem ending in „ÅÜ, otherwise we
 ; get a runaway rule!
 
 tt-lexeme-c2-stem-infl-rule := 
-%suffix (§Ø §√) (§Î §√) (Ã‰§¶ Ã‰§¶) (∏§¶ ∏§¶)
+%suffix („Åè „Å£) („Çã „Å£) (Âïè„ÅÜ Âïè„ÅÜ) (‰πû„ÅÜ ‰πû„ÅÜ)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE c2-stem].
 
 
-; (MS 2004-12-21) We need this! ∞˚§·§ﬁ§π
+; (MS 2004-12-21) We need this! È£≤„ÇÅ„Åæ„Åô
 
 pot-lexeme-cons-infl-rule := 
-%suffix (§Ø §±) (§Î §Ï) (§¶ §®) (§π §ª) (§‡ §·) (§∞ §≤) (§÷ §Ÿ) (§ƒ §∆) (§Ã §Õ)
+%suffix („Åè „Åë) („Çã „Çå) („ÅÜ „Åà) („Åô „Åõ) („ÇÄ „ÇÅ) („Åê „Åí) („Å∂ „Åπ) („Å§ „Å¶) („Å¨ „Å≠)
 potential-rule &
 [RMORPH-BIND-TYPE i-or-t-or-a-morph,
 ARGS.FIRST.STEMTYPE cons-stem].
@@ -132,22 +132,22 @@ ARGS.FIRST.STEMTYPE cons-stem].
 
 ;  (MS 2004-12-21) Maybe we don't need this one any more?
 ;pot-lexeme-v-infl-rule := 
-;%suffix (!v§Î !v§È§Ï)
+;%suffix (!v„Çã !v„Çâ„Çå)
 ;potential-rule &
 ;[RMORPH-BIND-TYPE e-morph,
 ;ARGS.FIRST.STEMTYPE v-stem].
 
 cond-lexeme-infl-rule := 
-%suffix (§Ø §±) (§Î §Ï) (§¶ §®) (§π §ª) (§‡ §·) (§∞ §≤) (§÷ §Ÿ) (§ƒ §∆) (§Ã §Õ) (§Ï§Î §Ï) (§ª§Î §ª)
+%suffix („Åè „Åë) („Çã „Çå) („ÅÜ „Åà) („Åô „Åõ) („ÇÄ „ÇÅ) („Åê „Åí) („Å∂ „Åπ) („Å§ „Å¶) („Å¨ „Å≠) („Çå„Çã „Çå) („Åõ„Çã „Åõ)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-morph,
 ARGS.FIRST.STEMTYPE regular-stem].
 
-;(MS 2002-12-02) In spoken language, one can find ø©§Ÿ§Ï§–
+;(MS 2002-12-02) In spoken language, one can find È£ü„Åπ„Çå„Å∞
 ; (MS 2004-11-24) Extended these to all v-stem verbs
 
 cond-spoken-lexeme-infl-rule := 
-%suffix (!v§Î !v)
+%suffix (!v„Çã !v)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-exceptional-morph,
  ARGS.FIRST.STEMTYPE v-stem,
@@ -155,13 +155,13 @@ lexeme-rule &
 
 
 o-lexeme-c-stem-infl-rule := 
-%suffix (§Ø §≥) (§Î §Ì) (§¶ §™) (§π §Ω) (§‡ §‚) (§∞ §¥) (§÷ §‹) (§ƒ §») (§Ã §Œ)
+%suffix („Åè „Åì) („Çã „Çç) („ÅÜ „Åä) („Åô „Åù) („ÇÄ „ÇÇ) („Åê „Åî) („Å∂ „Åº) („Å§ „Å®) („Å¨ „ÅÆ)
 lexeme-rule &
 [RMORPH-BIND-TYPE o-morph,
 ARGS.FIRST.STEMTYPE cons-stem].
 
 o-lexeme-v-stem-infl-rule := 
-%suffix (§Î §Ë)
+%suffix („Çã „Çà)
 lexeme-rule &
 [RMORPH-BIND-TYPE o-morph,
 ARGS.FIRST.STEMTYPE v-stem].
@@ -169,7 +169,7 @@ ARGS.FIRST.STEMTYPE v-stem].
 ; (MS 2004-11-24) It seems that this is not used any more.
 
 ;ere-lexeme-c-stem-infl-rule := 
-;%suffix (§Ø §±§Ï) (§Î §®§Ï) (§¶ §®§Ï) (§π §ª§Ï) (§‡ §·§Ï) (§∞ §≤§Ï) (§÷ §Ÿ§Ï) (§ƒ §∆§Ï)  (§Ã §Õ§Ï)
+;%suffix („Åè „Åë„Çå) („Çã „Åà„Çå) („ÅÜ „Åà„Çå) („Åô „Åõ„Çå) („ÇÄ „ÇÅ„Çå) („Åê „Åí„Çå) („Å∂ „Åπ„Çå) („Å§ „Å¶„Çå)  („Å¨ „Å≠„Çå)
 ;lexeme-rule &
 ;[RMORPH-BIND-TYPE ere-morph,
 ; ARGS.FIRST.STEMTYPE cons-stem].
@@ -177,21 +177,21 @@ ARGS.FIRST.STEMTYPE v-stem].
 ; (MS 2004-11-24) It seems that this is not used any more.
 
 ;ere-lexeme-v-stem-infl-rule := 
-;%suffix (§Î §Ï§Ï)
+;%suffix („Çã „Çå„Çå)
 ;lexeme-rule &
 ;[RMORPH-BIND-TYPE ere-morph,
 ; ARGS.FIRST.STEMTYPE v-stem].
 
 
 nd-lexeme-infl-rule := 
-%suffix (§‡ §Û) (§∞ §§) (§÷ §Û) (§Ã §Û)
+%suffix („ÇÄ „Çì) („Åê „ÅÑ) („Å∂ „Çì) („Å¨ „Çì)
 lexeme-rule &
 [RMORPH-BIND-TYPE nd-morph,
  ARGS.FIRST.STEMTYPE c-stem].
 
 
 eru-lexeme-infl-rule := 
-%suffix (§Ø §±§Î) (§Î §Ï§Î) (§¶ §®§Î) (§π §ª§Î) (§‡ §·§Î) (§∞ §≤§Î) (§÷ §Ÿ§Î) (!v !v§È§Ï§Î)  (§ƒ §∆§Î) (§Ã §Õ§Î)
+%suffix („Åè „Åë„Çã) („Çã „Çå„Çã) („ÅÜ „Åà„Çã) („Åô „Åõ„Çã) („ÇÄ „ÇÅ„Çã) („Åê „Åí„Çã) („Å∂ „Åπ„Çã) (!v !v„Çâ„Çå„Çã)  („Å§ „Å¶„Çã) („Å¨ „Å≠„Çã)
 potential-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE u-morph,
  SYNSEM.LOCAL.CAT.HEAD [H-TENSE present,
@@ -206,7 +206,7 @@ potential-lexeme-to-word-rule &
                          FORMAL.AHON -],
  ARGS.FIRST.STEMTYPE regular-stem].
 
-; (ERB 2001-09-06) Adding COP-ARG - to block ∏¿§§§«§π.
+; (ERB 2001-09-06) Adding COP-ARG - to block Ë®Ä„ÅÑ„Åß„Åô.
 ; (MS 2001-12-14) Took the MAIN-PRD - restriction out to allow the comma to modify this.
 ; (ERB 2002-01-14) Try requiring quasi-te forms to be followed
 ; a comma in order reduce ambiguity introduced by this rule.  General
@@ -221,7 +221,7 @@ potential-lexeme-to-word-rule &
 ; removed [J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,] to use this for 
 ; syntactic V-Vs, too.  Tried making it no_tense.
 infinitive-lexeme-1-infl-rule :=
-%suffix (!v§Î !v) (§Ø §≠) (§Î §Í) (§¶ §§) (§π §∑) (§‡ §ﬂ) (§∞ §Æ) (§÷ §”)  (§ƒ §¡) (§Ã §À) (∏´§Î ∏´)
+%suffix (!v„Çã !v) („Åè „Åç) („Çã „Çä) („ÅÜ „ÅÑ) („Åô „Åó) („ÇÄ „Åø) („Åê „Åé) („Å∂ „Å≥)  („Å§ „Å°) („Å¨ „Å´) (Ë¶ã„Çã Ë¶ã)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
  SYNSEM.LOCAL [CAT.HEAD #head &
@@ -256,8 +256,11 @@ j-lexeme-to-word-rule &
 ;disallowing aux kudasaru to be imperative (since kudasai is now an sap).
 ;Maybe the feature AUX can be leveraged?
 
+;(TK 07-05-23)imperative-infl-rule„Ååc-stem„Å®c2-stem„Å´„Åó„Åã„Å™„ÅÑ„ÄÇv-stem„ÇÑkurusuru-stem„ÄÅ
+;‰∏ÅÂØß„ÅÆ„Äå„Åæ„Åô„Äç„Å´„ÇÇÂøÖË¶Å„ÄÇ
+
 imperative-c2-stem-infl-rule :=
-%suffix (§Ø §±) (§Î §§) (§¶ §®)
+%suffix („Åè „Åë) („Çã „ÅÑ) („ÅÜ „Åà)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE imp-morph,
  SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
@@ -270,10 +273,10 @@ j-lexeme-to-word-rule &
  ARGS.FIRST.STEMTYPE c2-stem].
 
 
-; (MS 2004-12-15) For example, ªﬂ§Ï, stop
+; (MS 2004-12-15) For example, Ê≠¢„Çå, stop
 
 imperative-c-stem-infl-rule :=
-%suffix (§Ø §±) (§Î §Ï) (§¶ §®) (§π §ª) (§‡ §·) (§∞ §≤) (§÷ §Ÿ) (§ƒ §∆) (§Ã §Õ)
+%suffix („Åè „Åë) („Çã „Çå) („ÅÜ „Åà) („Åô „Åõ) („ÇÄ „ÇÅ) („Åê „Åí) („Å∂ „Åπ) („Å§ „Å¶) („Å¨ „Å≠)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE imp-morph,
  SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
@@ -289,7 +292,7 @@ j-lexeme-to-word-rule &
 ;;;;;;;;;;;;;;;;;;;COPULA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; (FCB 2004-02-08) BAR -, to block spurious ambiguity in 
-; §≠§Ï§§ §  ∏§ 
+; „Åç„Çå„ÅÑ „Å™ Áä¨ 
 ; (CHECKME: + also works (no difference in cover, with one less rule)
 
 desu-lexeme-infl-rule :=
@@ -310,14 +313,14 @@ word-rule &
 ; (ERB 2001-11-12) Experimenting with making te form TENSE tensed
 ; instead of TENSE te.
 
-; (ERB 2002-02-12) To reduce ambiguity, treat §« form of §«§π like
+; (ERB 2002-02-12) To reduce ambiguity, treat „Åß form of „Åß„Åô like
 ; output of infinitive-lexeme-1-infl-rule.  That is, it must have
 ; comma to be able to be conjoined with another clause.  Trick is
 ; to make it C-MOD null.  To make this work, also needs to be
 ; MODUS infinitive.
 
 ;de-lexeme-infl-rule :=
-;%suffix (§«§π §«)
+;%suffix („Åß„Åô „Åß)
 ; j-lexeme-to-word-rule &
 ;[RMORPH-BIND-TYPE u-morph,
 ; SYNSEM.LOCAL.CAT.HEAD [H-TENSE tensed,
@@ -333,7 +336,7 @@ word-rule &
 ; ARGS.FIRST.STEMTYPE desu-stem].
 
 de-lexeme-infl-rule :=
-%suffix (§«§π §«)
+%suffix („Åß„Åô „Åß)
  j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE u-morph,
  SYNSEM [LOCAL.CAT.HEAD [H-TENSE tensed,
@@ -349,7 +352,7 @@ de-lexeme-infl-rule :=
  ARGS.FIRST.STEMTYPE desu-stem].
 
 ra-lexeme-infl-rule :=
-%suffix (§  § §È) (§ §¨ § §¨§È)
+%suffix („Å™ „Å™„Çâ) („Å™„Åå „Å™„Åå„Çâ)
 conditional-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE u-morph,
  SYNSEM.LOCAL.CAT [HEAD [H-TENSE present,
@@ -380,13 +383,13 @@ conditional-lexeme-to-word-rule &
 ; ARGS.FIRST v-lex & [STEMTYPE da-stem]].
 
 tt-cop-lexeme-infl-rule := 
-%suffix (§¿ §¿§√) (§π §∑)
+%suffix („Å† „Å†„Å£) („Åô „Åó)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE cop-stem].
 
 o-cop-lexeme-infl-rule := 
-%suffix (§π §∑§Á) (§¿ §¿§Ì)
+%suffix („Åô „Åó„Çá) („Å† „Å†„Çç)
 lexeme-rule &
 [RMORPH-BIND-TYPE o-morph,
 ARGS.FIRST.STEMTYPE cop-stem].
@@ -396,7 +399,7 @@ ARGS.FIRST.STEMTYPE cop-stem].
 
 ;;;;;;;;;;;;;;;;;;;KURU-SURU;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; (MS 2004-10-05) BAR -, to block spurious ambiguity in ÕË§Î 
+; (MS 2004-10-05) BAR -, to block spurious ambiguity in Êù•„Çã 
 
 kuru-lexeme-infl-rule := 
 word-rule & 
@@ -414,14 +417,14 @@ word-rule &
  ARGS.FIRST v-lex & [STEMTYPE kurusuru-stem]].
 
 ki-lexeme-infl-rule := 
-%suffix (ÕË§Î ÕË) (§π§Î §∑) (§Ø§Î §≠)
+%suffix (Êù•„Çã Êù•) („Åô„Çã „Åó) („Åè„Çã „Åç)
 lexeme-rule &
 [RMORPH-BIND-TYPE i-morph,
  SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
  ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 ka-lexeme-infl-rule := 
-%suffix (ÕË§Î ÕË) (§π§Î §∑) (§Ø§Î §≥)
+%suffix (Êù•„Çã Êù•) („Åô„Çã „Åó) („Åè„Çã „Åì)
 lexeme-rule &
 [RMORPH-BIND-TYPE a-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
@@ -429,42 +432,44 @@ ARGS.FIRST.STEMTYPE kurusuru-stem].
 ;;; (FCB 2003-08-12) rule for "se zu" very irregular suru ending before zu
 
 kaa-lexeme-infl-rule := 
-%suffix (ÕË§Î ÕË) (§π§Î §ª) (§Ø§Î §≥)
+%suffix (Êù•„Çã Êù•) („Åô„Çã „Åõ) („Åè„Çã „Åì)
 lexeme-rule &
 [RMORPH-BIND-TYPE aa-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 kit-lexeme-c-stem-infl-rule := 
-%suffix (ÕË§Î ÕË) (§π§Î §∑) (§Ø§Î §≠)
+%suffix (Êù•„Çã Êù•) („Åô„Çã „Åó) („Åè„Çã „Åç)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 ke-lexeme-infl-rule := 
-%suffix (§Î §Ï)
+%suffix („Çã „Çå)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
+; (TK 07-05-25)"(„Åô„Çã „Åó„Çà)"„ÅÆÂΩ¢„Å´Âêà„Çè„Åõ„Çã„Å™„Çâ"(Êù•„Çã Êù•„Çà)""(„Åè„Çã „Åì„Çà)"
+; „Å´„Åô„Åπ„Åç„ÄÇÔºàÁèæÁä∂„Å†„Å®„ÄåÊù• „ÅÜ„Äç„Äå„Åì „ÅÜ„Äç„ÅåËß£Êûê„Åß„Åç„Å¶„Åó„Åæ„ÅÜ„ÄÇÔºâ
 ko-lexeme-infl-rule := 
-%suffix (ÕË§Î ÕË) (§Ø§Î §≥) (§π§Î §∑§Ë)
+%suffix (Êù•„Çã Êù•) („Åè„Çã „Åì) („Åô„Çã „Åó„Çà)
 lexeme-rule &
 [RMORPH-BIND-TYPE o-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 sa-lexeme-infl-rule := 
-%suffix (§π§Î §µ) (ÕË§Î ÕË§µ) (§Ø§Î §≥§µ)
+%suffix („Åô„Çã „Åï) (Êù•„Çã Êù•„Åï) („Åè„Çã „Åì„Åï)
 lexeme-rule &
 [RMORPH-BIND-TYPE pass-c-stem-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
-; (ERB 2001-09-06) Adding COP-ARG - to block ÕË§«§π.
+; (ERB 2001-09-06) Adding COP-ARG - to block Êù•„Åß„Åô.
 
 ; (ERB 2001-11-12) Experimenting with making te form TENSE tensed
 ; instead of TENSE te.
 
 infinitive-lexeme-2-infl-rule :=
-%suffix (ÕË§Î ÕË) (§π§Î §∑) (§Ø§Î §≥)
+%suffix (Êù•„Çã Êù•) („Åô„Çã „Åó) („Åè„Çã „Åì)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
  SYNSEM.LOCAL [CAT.HEAD verb_head-avm & [H-TENSE tensed,
@@ -479,17 +484,20 @@ j-lexeme-to-word-rule &
                                         FIN -]],
  ARGS.FIRST.STEMTYPE kurusuru-stem].
 
+; (TK 07-05-24)kurusuru-stem‰ª•Â§ñ„ÅÆverb„Å´ÂØæÂøú„Åô„Çã„ÇÇ„ÅÆ„ÇÇÂøÖË¶Å„ÄÇ
+; „Åæ„Åü„ÄÅÂêå„Åòkurusuru-stem„Åß„ÇÇ„ÄÅ„ÄåË´ñ„Åö„Çã„Äç„Å™„Å©Ë™ûÂ∞æ„Åå„Äå„Åö„Çã„Äç„ÅÆ„ÇÇ„ÅÆ„Å´ÂØæÂøú„Åß„Åç„Å¶„ÅÑ„Å™„ÅÑ„ÄÇ
+
 mai-lexeme-infl-rule := 
-%suffix (ÕË§Î ÕË) (§π§Î §π) (§Ø§Î §≥)
+%suffix (Êù•„Çã Êù•) („Åô„Çã „Åô) („Åè„Çã „Åì)
 lexeme-rule &
 [RMORPH-BIND-TYPE mai-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 
-; (MS 2004-12-17) beki takes §π in the case of §π§Î+§Ÿ§≠: §π§Ÿ§≠
+; (MS 2004-12-17) beki takes „Åô in the case of „Åô„Çã+„Åπ„Åç: „Åô„Åπ„Åç
 
 beki-lexeme-infl-rule := 
-%suffix (§π§Î §π)
+%suffix („Åô„Çã „Åô)
 lexeme-rule &
 [RMORPH-BIND-TYPE beki-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
@@ -501,12 +509,12 @@ ARGS.FIRST.STEMTYPE kurusuru-stem].
 ; so that what shows up in the language server is the
 ; dictionary form of adjectives.  
 ;
-; Have te and past rules replace ending with §§,
+; Have te and past rules replace ending with „ÅÑ,
 ; adj-i-lexeme has no phonological effect.
 
 
 adj-te-t-lexeme-c-stem-infl-rule := 
-%suffix (§§ §Ø)
+%suffix („ÅÑ „Åè)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
@@ -514,7 +522,7 @@ lexeme-rule &
 
 
 adj-past-t-lexeme-c-stem-infl-rule := 
-%suffix (§§ §´§√)
+%suffix („ÅÑ „Åã„Å£)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
@@ -534,11 +542,11 @@ lexeme-rule &
 ; in adj-stem-lex.  Try taking that out of rule for now.
 
 ; (MS 2002-01-31) Changed that rule a little bit to account for: 
-; Œ…§§§≥§»§¿     ∏µµ§§«§œ§ §§
+; ËâØ„ÅÑ„Åì„Å®„Å†     ÂÖÉÊ∞ó„Åß„ÅØ„Å™„ÅÑ
 ; (MS 2002-02-01) But this leads to ambiguity in cases of ADJ NO DESU KA. 
 ; What shall we do?
 ; (MS 2004-11-09) J-NEEDS-AFFIX + on the argument, such that it doesn't apply
-; to ø©§Ÿ§∆§§§ §§ . I further restrict it to adj-stems.
+; to È£ü„Åπ„Å¶„ÅÑ„Å™„ÅÑ . I further restrict it to adj-stems.
 ; (MS 2005-06-20) I don't think that this should be AHON -. How about "yoroshii"?
 
 adj-i-lexeme-infl-rule := 
@@ -564,11 +572,11 @@ word-rule &
                          FORMAL #form],
 	       BAR -]].
 
-; (MS 2005-10-20) § §§ can be §Õ as well as § §±§Ï:
-; ∑≥ªˆæÂ§Œµ°Ã©§œºÈ§È§Ï§Õ§–§ §È§ §§°£
+; (MS 2005-10-20) „Å™„ÅÑ can be „Å≠ as well as „Å™„Åë„Çå:
+; Ëªç‰∫ã‰∏ä„ÅÆÊ©üÂØÜ„ÅØÂÆà„Çâ„Çå„Å≠„Å∞„Å™„Çâ„Å™„ÅÑ„ÄÇ
 
 adj-kere-lexeme-infl-rule := 
-%suffix (§§ §±§Ï) (§ §§ §Õ)
+%suffix („ÅÑ „Åë„Çå) („Å™„ÅÑ „Å≠)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
@@ -576,7 +584,7 @@ lexeme-rule &
 
 
 a-lexeme-adj-stem-infl-rule := 
-%suffix (§§ §Ø)
+%suffix („ÅÑ „Åè)
 lexeme-rule &
 [RMORPH-BIND-TYPE a-morph,
  SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head, 
@@ -584,7 +592,7 @@ lexeme-rule &
 	     SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head]].
 
 adj2adv-lexeme-infl-rule := 
-%suffix (§§ §Ø)
+%suffix („ÅÑ „Åè)
 adj2adv-rule &
 [ARGS.FIRST.STEMTYPE adj-stem].
 
@@ -593,26 +601,26 @@ adj2adv-rule &
 ; seems to have broken this rule.  Commenting out for now...
 ; Also commenting out its ranking in japanese.set.  Uncomment that
 ; if this gets put back in!!
-; (MS 2002-02-01) This is needed for, e.g., "µπ§∑§Ω§¶§«§π", but had to be modified.
+; (MS 2002-02-01) This is needed for, e.g., "ÂÆú„Åó„Åù„ÅÜ„Åß„Åô", but had to be modified.
 ; The problem is here (again) that there is no straightforward way to state 
-; 'eliminate the end §§ for all kanji characters' in these rules. This is what I wanted to state:
+; 'eliminate the end „ÅÑ for all kanji characters' in these rules. This is what I wanted to state:
 
-;; (!h§§ !h) (æØ§§ æØ§µ) (§ §§ § §µ) (¬Æ§§ ¬Æ) ...
+;; (!h„ÅÑ !h) (Â∞ë„ÅÑ Â∞ë„Åï) („Å™„ÅÑ „Å™„Åï) (ÈÄü„ÅÑ ÈÄü) ...
 
 ; But it lead to never ending parses. These guys don't seem to work:
-;;  (§Ø§§ §Ø)
-;;  (§ƒ§§ §§) 
-;;  (§Î§§ §Î)
-;;  (§¶§§ §¶)
+;;  („Åè„ÅÑ „Åè)
+;;  („Å§„ÅÑ „ÅÑ) 
+;;  („Çã„ÅÑ „Çã)
+;;  („ÅÜ„ÅÑ „ÅÜ)
 
 ;; (SF 2003-08-14) added more forms
-;; º¬∫›§Àlexicon §À≈–œø§µ§Ï§∆§§§Î ™§´§…§¶§´§œ•¡•ß•√•Ø§ª§∫
+;; ÂÆüÈöõ„Å´lexicon „Å´ÁôªÈå≤„Åï„Çå„Å¶„ÅÑ„ÇãÁâ©„Åã„Å©„ÅÜ„Åã„ÅØ„ÉÅ„Çß„ÉÉ„ÇØ„Åõ„Åö
 
-;; (MS 2003-12-10) entries like (§¶§Ï§∑§§ §¶§Ï§∑)  are not necessary.
-;; Those are cared for by (§∑§§ §∑).
+;; (MS 2003-12-10) entries like („ÅÜ„Çå„Åó„ÅÑ „ÅÜ„Çå„Åó)  are not necessary.
+;; Those are cared for by („Åó„ÅÑ „Åó).
 
 adj-short-infl-rule :=
-%suffix (§∑§§ §∑) (§µ§§ §µ) (§ø§§ §ø) (§ﬁ§§ §ﬁ) (§∫§§ §∫) (§ §§ § ) (§…§§ §…) (§»§§ §») (§≥§§ §≥) (§¡§§ §¡) (§È§§ §È) (§Ë§§ §Ë) (§Ê§§ §Ê) (§ƒ§§ §ƒ)(§¥§§ §¥) (§Ì§§ §Ì) (§π§§ §π) (§Ω§§ §Ω) (§´§§ §´) (§Ô§§ §Ô) (æØ§§ æØ§µ) (§—§§ §—) (§›§§ §›) (§Ô§§ §Ô) (§∏§§ §∏) (§≠§§ §≠) (§≤§§ §≤) (∞¶§§ ∞¶) (∞≠§§ ∞≠) (∞Ø§§ ∞Ø) (∞¬§§ ∞¬) (∞≈§§ ∞≈) (∞Œ§§ ∞Œ) (∞◊§§ ∞◊) (±«§§ ±«) (± §§ ± ) (±‘§§ ±‘) (±ﬂ§§ ±ﬂ) (±Ï§§ ±Ï) (±Û§§ ±Û) (±¯§§ ±¯) (≤π§§ ≤π) (≤¬§§ ≤¬) (≤˜§§ ≤˜) (≤˙§§ ≤˙) (≥¢§§ ≥¢) (≥—§§ ≥—) (≥“§§ ≥“) (¥®§§ ¥®) (¥À§§ ¥À) (¥›§§ ¥›) (¥Ì§§ ¥Ì§µ) (µÆ§§ µÆ) (µÏ§§ µÏ) (∂¨§§ ∂¨) (∂Ø§§ ∂Ø) (∂≤§§ ∂≤) (∂π§§ ∂π) (∂·§§ ∂·) (∂Ï§§ ∂Ï) (∂˝§§ ∂˝) (∑⁄§§ ∑⁄) (∑È§§ ∑È) (∑¯§§ ∑¯) (∏≠§§ ∏≠) (∏≈§§ ∏≈) (∏«§§ ∏«) (∏¸§§ ∏¸) (π•§§ π•) (π®§§ π®) (π™§§ π™) (π≠§§ π≠) (π∞§§ π∞) (π≈§§ π≈) (π»§§ π») (π”§§ π”) (π‚§§ π‚) (πÎ§§ πÎ) (πÛ§§ πÛ) (πı§§ πı) (∫Ÿ§§ ∫Ÿ) (ª¥§§ ª¥) (ª¿§§ ª¿) (ª›§§ ª›) (º¿§§ º¿) (º„§§ º„) (ºÂ§§ ºÂ) (ºÍ§§ ºÍ) (Ω≠§§ Ω≠) (Ω≠§§ Ω≠)  (Ωπ§§ Ωπ) (Ω¬§§ Ω¬) (Ω≈§§ Ω≈) (ΩÎ§§ ΩÎ) (æØ§§ æØ) (æØ§§ æØ§µ) (æÙ§§ æÙ) (øß§§ øß) (øº§§ øº) (øº§§ øº)  (ø…§§ ø…) (¿®§§ ¿®) (¿±§§ ¿±) (¿∂§§ ¿∂) (¿ƒ§§ ¿ƒ) (¿»§§ ¿») (¿÷§§ ¿÷) (¿€§§ ¿€) (¿ı§§ ¿ı) (¡±§§ ¡±) (¡¬§§ ¡¬) (¡∆§§ ¡∆) (¡·§§ ¡·) (¡Ô§§ ¡Ô) (¡§§ ¡) (¡Û§§ ¡Û) (¡˛§§ ¡˛) (¬Æ§§ ¬Æ) (¬∫§§ ¬∫) (¬ø§§ ¬ø) (¬¿§§ ¬¿) (¬œ§§ ¬œ) (¬’§§ ¬’) (√∏§§ √∏) (√ª§§ √ª) (√»§§ √») (√’§§ √’) (√Ÿ§§ √Ÿ) (ƒπ§§ ƒπ) (ƒÀ§§ ƒÀ) (≈Ÿ§§ ≈Ÿ) (∆∆§§ ∆∆) (∆ﬂ§§ ∆ﬂ) (∆Ò§§ ∆Ò) («ª§§ «ª) («Ë§§ «Ë) («Ó§§ «Ó) («Ú§§ «Ú) («ˆ§§ «ˆ) (»À§§ »À) (»—§§ »—) (»—§§ »—)  (»’§§ »’) (…“§§ …“) (…›§§ …›) (Àÿ§§ Àÿ) (Ã£§§ Ã£) (Ã≤§§ Ã≤) (Ãµ§§ Ãµ) (Õ´§§ Õ´) (Õƒ§§ Õƒ) (Œ…§§ Œ…) (Œ…§∑ Œ…) (Œ˜§§ Œ˜) (–ﬁ§§ –ﬁ) (—≥§§ —≥) (‘§§§ ‘§) (‘Ï§§ ‘Ï) (‘Ì§§ ‘Ì) (’≈§§ ’≈) (’œ§§ ’œ) (’—§§ ’—) (’ˆ§§ ’ˆ) (÷£§§ ÷£) (÷©§§ ÷©) (÷ÿ§§ ÷ÿ) (◊¢§§ ◊¢) (ÿ®§§ ÿ®) (ÿ◊§§ ÿ◊) (ÿŸ§§ ÿŸ) (ÿÒ§§ ÿÒ) (⁄∂§§ ⁄∂) (⁄»§§ ⁄») (⁄˜§§ ⁄˜) (⁄˘§§ ⁄˘) (€§§§ €§) (›Ÿ§§ ›Ÿ) (›˜§§ ›˜) (ﬁ∞§§ ﬁ∞) (ﬁ∆§§ ﬁ∆) (ﬁ…§§ ﬁ…) (ﬁÈ§§ ﬁÈ) (ﬂß§§ ﬂß) (ﬂ®§§ ﬂ®) (ﬂÁ§§ ﬂÁ) (‡ƒ§§ ‡ƒ) (‡≈§§ ‡≈) (·⁄§§ ·⁄) (·¯§§ ·¯) (‚©§§ ‚©) (‚¡§§ ‚¡) (‚‡§§ ‚‡) („–§§ „–) („“§§ „“) (‰˙§§ ‰˙) (Â˙§§ Â˙) (Ê¡§§ Ê¡) (Ê‚§§ Ê‚) (Á¢§§ Á¢) (Á©§§ Á©) (Á…§§ Á…) (Á—§§ Á—) (ÍÔ§§ ÍÔ) (ÌÀ§§ ÌÀ) (ÌÓ§§ ÌÓ) (Ì¯§§ Ì¯) (Ó¢§§ Ó¢) (ÓØ§§ ÓØ) (Ô˝§§ Ô˝) (ÒÀ§§ ÒÀ) (Ûƒ§§ Ûƒ) (Ûÿ§§ Ûÿ) (Û‹§§ Û‹) (¥Ì§¶§§ ¥Ì§¶) (Àÿ§¶§§ Àÿ§¶)  (§À§Ø§§ §À§Ø)(§Ã§Ø§§ §Ã§Ø)(§¢§ƒ§§ §¢§ƒ)(§´§ƒ§§ §´§ƒ) (§·§ƒ§§ §·§ƒ)  (§≠§ƒ§§ §≠§ƒ) (§Æ§ƒ§§ §Æ§ƒ)(§ø§Î§§ §ø§Î)  (§¿§Î§§ §¿§Î) (§Ã§Î§§ §Ã§Î) (§´§Î§§ §´§Î)  (§∫§Î§§ §∫§Î) (§Ã§Î§§ §Ã§Î)  (§ﬁ§Î§§ §ﬁ§Î)  (§Ô§Î§§ §Ô§Î) (§‰§¶§§ §‰§¶)
+%suffix („Åó„ÅÑ „Åó) („Åï„ÅÑ „Åï) („Åü„ÅÑ „Åü) („Åæ„ÅÑ „Åæ) („Åö„ÅÑ „Åö) („Å™„ÅÑ „Å™) („Å©„ÅÑ „Å©) („Å®„ÅÑ „Å®) („Åì„ÅÑ „Åì) („Å°„ÅÑ „Å°) („Çâ„ÅÑ „Çâ) („Çà„ÅÑ „Çà) („ÇÜ„ÅÑ „ÇÜ) („Å§„ÅÑ „Å§)(„Åî„ÅÑ „Åî) („Çç„ÅÑ „Çç) („Åô„ÅÑ „Åô) („Åù„ÅÑ „Åù) („Åã„ÅÑ „Åã) („Çè„ÅÑ „Çè) (Â∞ë„ÅÑ Â∞ë„Åï) („Å±„ÅÑ „Å±) („ÅΩ„ÅÑ „ÅΩ) („Çè„ÅÑ „Çè) („Åò„ÅÑ „Åò) („Åç„ÅÑ „Åç) („Åí„ÅÑ „Åí) (ÊÑõ„ÅÑ ÊÑõ) (ÊÇ™„ÅÑ ÊÇ™) (Ê∏•„ÅÑ Ê∏•) (ÂÆâ„ÅÑ ÂÆâ) (Êöó„ÅÑ Êöó) (ÂÅâ„ÅÑ ÂÅâ) (Êòì„ÅÑ Êòì) (Êò†„ÅÑ Êò†) (Ê∞∏„ÅÑ Ê∞∏) (Èã≠„ÅÑ Èã≠) (ÂÜÜ„ÅÑ ÂÜÜ) (ÁÖô„ÅÑ ÁÖô) (ÈÅ†„ÅÑ ÈÅ†) (Ê±ö„ÅÑ Ê±ö) (Ê∏©„ÅÑ Ê∏©) (‰Ω≥„ÅÑ ‰Ω≥) (Âø´„ÅÑ Âø´) (ÊÅ¢„ÅÑ ÊÅ¢) (Êô¶„ÅÑ Êô¶) (Ëßí„ÅÑ Ëßí) (Ëµ´„ÅÑ Ëµ´) (ÂØí„ÅÑ ÂØí) (Á∑©„ÅÑ Á∑©) (‰∏∏„ÅÑ ‰∏∏) (Âç±„ÅÑ Âç±„Åï) (Ë≤¥„ÅÑ Ë≤¥) (Êóß„ÅÑ Êóß) (Âñ¨„ÅÑ Âñ¨) (Âº∑„ÅÑ Âº∑) (ÊÅê„ÅÑ ÊÅê) (Áã≠„ÅÑ Áã≠) (Ëøë„ÅÑ Ëøë) (Ëã¶„ÅÑ Ëã¶) (Â±ë„ÅÑ Â±ë) (ËªΩ„ÅÑ ËªΩ) (ÊΩî„ÅÑ ÊΩî) (Â†Ö„ÅÑ Â†Ö) (Ë≥¢„ÅÑ Ë≥¢) (Âè§„ÅÑ Âè§) (Âõ∫„ÅÑ Âõ∫) (Âéö„ÅÑ Âéö) (Â•Ω„ÅÑ Â•Ω) (ÂÆè„ÅÑ ÂÆè) (Â∑ß„ÅÑ Â∑ß) (Â∫É„ÅÑ Â∫É) (Âºò„ÅÑ Âºò) (Á°¨„ÅÑ Á°¨) (Á¥Ö„ÅÑ Á¥Ö) (Ëçí„ÅÑ Ëçí) (È´ò„ÅÑ È´ò) (Ë±™„ÅÑ Ë±™) (ÈÖ∑„ÅÑ ÈÖ∑) (Èªí„ÅÑ Èªí) (Á¥∞„ÅÑ Á¥∞) (ÊÉ®„ÅÑ ÊÉ®) (ÈÖ∏„ÅÑ ÈÖ∏) (Êó®„ÅÑ Êó®) (Áñæ„ÅÑ Áñæ) (Ëã•„ÅÑ Ëã•) (Âº±„ÅÑ Âº±) (Êâã„ÅÑ Êâã) (Ëá≠„ÅÑ Ëá≠) (Ëá≠„ÅÑ Ëá≠)  (ÈÜú„ÅÑ ÈÜú) (Ê∏ã„ÅÑ Ê∏ã) (Èáç„ÅÑ Èáç) (Êöë„ÅÑ Êöë) (Â∞ë„ÅÑ Â∞ë) (Â∞ë„ÅÑ Â∞ë„Åï) (ÊµÑ„ÅÑ ÊµÑ) (Ëâ≤„ÅÑ Ëâ≤) (Ê∑±„ÅÑ Ê∑±) (Ê∑±„ÅÑ Ê∑±)  (Ëæõ„ÅÑ Ëæõ) (ÂáÑ„ÅÑ ÂáÑ) (Êòü„ÅÑ Êòü) (Ê∏Ö„ÅÑ Ê∏Ö) (Èùí„ÅÑ Èùí) (ËÑÜ„ÅÑ ËÑÜ) (Ëµ§„ÅÑ Ëµ§) (Êãô„ÅÑ Êãô) (ÊµÖ„ÅÑ ÊµÖ) (ÂñÑ„ÅÑ ÂñÑ) (Áñé„ÅÑ Áñé) (Á≤ó„ÅÑ Á≤ó) (Êó©„ÅÑ Êó©) (ËÅ°„ÅÑ ËÅ°) (Ëçâ„ÅÑ Ëçâ) (Ëíº„ÅÑ Ëíº) (ÊÜé„ÅÑ ÊÜé) (ÈÄü„ÅÑ ÈÄü) (Â∞ä„ÅÑ Â∞ä) (Â§ö„ÅÑ Â§ö) (Â§™„ÅÑ Â§™) (Â†Ü„ÅÑ Â†Ü) (ÊÄ†„ÅÑ ÊÄ†) (Ê∑°„ÅÑ Ê∑°) (Áü≠„ÅÑ Áü≠) (Êöñ„ÅÑ Êöñ) (Á®ö„ÅÑ Á®ö) (ÈÅÖ„ÅÑ ÈÅÖ) (Èï∑„ÅÑ Èï∑) (Áóõ„ÅÑ Áóõ) (Â∫¶„ÅÑ Â∫¶) (ÁØ§„ÅÑ ÁØ§) (Èàç„ÅÑ Èàç) (Èõ£„ÅÑ Èõ£) (ÊøÉ„ÅÑ ÊøÉ) (Ëùø„ÅÑ Ëùø) (Âçö„ÅÑ Âçö) (ÁôΩ„ÅÑ ÁôΩ) (ËñÑ„ÅÑ ËñÑ) (ÁπÅ„ÅÑ ÁπÅ) (ÁÖ©„ÅÑ ÁÖ©) (ÁÖ©„ÅÑ ÁÖ©)  (Êô©„ÅÑ Êô©) (Êïè„ÅÑ Êïè) (ÊÄñ„ÅÑ ÊÄñ) (ÊÆÜ„ÅÑ ÊÆÜ) (Âë≥„ÅÑ Âë≥) (Áú†„ÅÑ Áú†) (ÁÑ°„ÅÑ ÁÑ°) (ÊÜÇ„ÅÑ ÊÜÇ) (Âπº„ÅÑ Âπº) (ËâØ„ÅÑ ËâØ) (ËâØ„Åó ËâØ) (Âªâ„ÅÑ Âªâ) (‰øê„ÅÑ ‰øê) (ÂÑö„ÅÑ ÂÑö) (Âúì„ÅÑ Âúì) (Â§õ„ÅÑ Â§õ) (Ê¢¶„ÅÑ Ê¢¶) (Â´ñ„ÅÑ Â´ñ) (Â¨æ„ÅÑ Â¨æ) (Â≠Ö„ÅÑ Â≠Ö) (Â∞†„ÅÑ Â∞†) (Â≠±„ÅÑ Â≠±) (Â≤å„ÅÑ Â≤å) (Â∂∑„ÅÑ Â∂∑) (Âª£„ÅÑ Âª£) (ÊÉ°„ÅÑ ÊÉ°) (ÊÖù„ÅÑ ÊÖù) (ÊÖµ„ÅÑ ÊÖµ) (Êá∂„ÅÑ Êá∂) (ÊìΩ„ÅÑ ÊìΩ) (Êïû„ÅÑ Êïû) (ÊöÑ„ÅÑ ÊöÑ) (Êöù„ÅÑ Êöù) (Êõö„ÅÑ Êõö) (ÊØã„ÅÑ ÊØã) (Ê≥ì„ÅÑ Ê≥ì) (Ê¥å„ÅÑ Ê¥å) (Ê∑®„ÅÑ Ê∑®) (Ê∑∫„ÅÑ Ê∑∫) (Ê∫Ω„ÅÑ Ê∫Ω) (ÊæÅ„ÅÑ ÊæÅ) (ÊæÄ„ÅÑ ÊæÄ) (ÁÜà„ÅÑ ÁÜà) (Áã°„ÅÑ Áã°) (Áãπ„ÅÑ Áãπ) (Áóí„ÅÑ Áóí) (Áô¢„ÅÑ Áô¢) (Áöé„ÅÑ Áöé) (Áú©„ÅÑ Áú©) (Áüó„ÅÑ Áüó) (Á©â„ÅÑ Á©â) (Á©¢„ÅÑ Á©¢) (Á≥≤„ÅÑ Á≥≤) (Á∫é„ÅÑ Á∫é) (Ë≠±„ÅÑ Ë≠±) (ËÅ∞„ÅÑ ËÅ∞) (ËÖÜ„ÅÑ ËÖÜ) (ËÖ•„ÅÑ ËÖ•) (Ëáß„ÅÑ Ëáß) (Ëàä„ÅÑ Ëàä) (Ë§ä„ÅÑ Ë§ä) (Ëºï„ÅÑ Ëºï) (ÈÇá„ÅÑ ÈÇá) (ÈÄñ„ÅÑ ÈÄñ) (ÈÅê„ÅÑ ÈÅê) (ÈÅ≤„ÅÑ ÈÅ≤) (Èôú„ÅÑ Èôú) (Èßõ„ÅÑ Èßõ) (Èππ„ÅÑ Èππ) (Èªî„ÅÑ Èªî) (Èª†„ÅÑ Èª†) (Âç±„ÅÜ„ÅÑ Âç±„ÅÜ) (ÊÆÜ„ÅÜ„ÅÑ ÊÆÜ„ÅÜ)  („Å´„Åè„ÅÑ „Å´„Åè)(„Å¨„Åè„ÅÑ „Å¨„Åè)(„ÅÇ„Å§„ÅÑ „ÅÇ„Å§)(„Åã„Å§„ÅÑ „Åã„Å§) („ÇÅ„Å§„ÅÑ „ÇÅ„Å§)  („Åç„Å§„ÅÑ „Åç„Å§) („Åé„Å§„ÅÑ „Åé„Å§)(„Åü„Çã„ÅÑ „Åü„Çã)  („Å†„Çã„ÅÑ „Å†„Çã) („Å¨„Çã„ÅÑ „Å¨„Çã) („Åã„Çã„ÅÑ „Åã„Çã)  („Åö„Çã„ÅÑ „Åö„Çã) („Å¨„Çã„ÅÑ „Å¨„Çã)  („Åæ„Çã„ÅÑ „Åæ„Çã)  („Çè„Çã„ÅÑ „Çè„Çã) („ÇÑ„ÅÜ„ÅÑ „ÇÑ„ÅÜ)
 lexeme-rule &
 [RMORPH-BIND-TYPE shortadj-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
@@ -624,7 +632,7 @@ lexeme-rule &
 
 
 adj-ku-lexeme-infl-rule := 
-%suffix (§§ §Ø)
+%suffix („ÅÑ „Åè)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE u-morph,
  ARGS.FIRST [STEMTYPE adj-stem,
@@ -645,80 +653,30 @@ j-lexeme-to-word-rule &
 			 COP-ARG -],
 	       BAR -]].
 
-;;;;;;;;;;;;;;;;;;;;;;;;N-> QUANTIFIED N;;;;;;;;;;;;;;;;;;;;
-
-; (ERB 2001-08-16) Changed the following:
-;
-; ARGS.FIRST.SYNSEM.LOCAL.CONT.KEY.LBL #h 
-;
-; to
-;
-; ARGS.FIRST.SYNSEM.LOCAL.CONT.LBL #h 
-;
-; So that it works properly with NumCl phrases.
-
-; (ERB 2001-09-19) Somewhat surprisingly, this isn't restricted
-; to things that are LEX +.  For the moment, I'll just have it
-; copy up the LEX value.  Perhaps it should be restricted to
-; LEX + daughters.
-
-; (ERB 2001-09-20) Of course it can't be restricted to things
-; that are LEX +, because it has to apply to NumCl phrases that
-; are built up of an integer and a NumCl.  But copying up the
-; LEX value is still a good idea.
-
-; (ERB 2001-09-24) Experimenting with forcing this to apply
-; after all other valence requirements are satisfied.  (I'm
-; getting spurious ambiguity in the date expressions otherwise.)
-
-; (MS 2002-09-05) Inserted UNSAT + on the daughter to prevent the rule to be cyclic (actually a hint from Dan F.)
-
-
-quantify-n-infl-rule :=
-word2word-rule &
-[SYNSEM [LOCAL [CAT [VAL saturated & [UNSAT -]]],
-	 LEX #lex],
- C-CONT [RELS <! [PRED #rel & udef_rel,
-		  ARG0 #i,
-		  RSTR #restr] !>,
-         HCONS <! qeq &
-                 [HARG #restr,
-                  LARG #h] !>],
- ARGS.FIRST.SYNSEM [LOCAL [CAT [HEAD noun_head,
-			       VAL [UNSAT +,
-				    SPR opt-1-arg & [FIRST [OPT + ,
-							    LOCAL.CAT.HEAD.KEYS.KEY #rel]],
-				    SUBJ olist,
-				    COMPS olist]],
-                          CONT.HOOK [LTOP #h,
-				     INDEX #i],
-                          NUCL nucl_plus],
-		    LEX #lex]].
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ->V;;;;;;;;;;;;;;;;;;;;
 
 
 adj2v-infl-rule :=
-%suffix (§§ ≤·§Æ§Î)
+%suffix („ÅÑ ÈÅé„Åé„Çã)
 adj2v-rule &
 [RMORPH-BIND-TYPE u-morph].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ->N;;;;;;;;;;;;;;;;;;;;
 
-; (ERB 2002-01-22) Chasen segments off §µ anyway,
+; (ERB 2002-01-22) Chasen segments off „Åï anyway,
 ; so commenting this out for now.
 
 ;adj2n-infl-rule :=
-;%suffix (§§ §µ)
+;%suffix („ÅÑ „Åï)
 ;adj2n-rule &
 ;[ARGS.FIRST.STEMTYPE adj-stem].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;V->VN;;;;;;;;;;;;;;;;;;;;
 
 v2vn-infl-rule :=
-%suffix (!v§Î !v) (§Ø §≠) (§Î §Í) (§¶ §§) (§π §∑) (§‡ §ﬂ) (§∞ §Æ) (§÷ §”)  (§ƒ §¡)
+%suffix (!v„Çã !v) („Åè „Åç) („Çã „Çä) („ÅÜ „ÅÑ) („Åô „Åó) („ÇÄ „Åø) („Åê „Åé) („Å∂ „Å≥)  („Å§ „Å°)
 v2vn-rule &
 [ARGS.FIRST [STEMTYPE regular-stem,
              RMORPH-BIND-TYPE morphbindtype,
@@ -726,18 +684,18 @@ v2vn-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;V->N;;;;;;;;;;;;;;;;;;;;
 
-; (MS 2005-09-26) In generation, we allowed ø©§Ÿ•Í ˝
+; (MS 2005-09-26) In generation, we allowed È£ü„Åπ„É™Êñπ
 ; so we now have two rules here.
 
 v2n-vstem-kata-infl-rule :=
-%suffix (!v§Î !v ˝)
+%suffix (!v„Çã !vÊñπ)
 v2n-kata-rule &
 [ARGS.FIRST [STEMTYPE v-stem,
              RMORPH-BIND-TYPE morphbindtype,
              INFLECTED -]].
 
 v2n-cstem-kata-infl-rule :=
-%suffix (§Ø §≠ ˝) (§Î §Í ˝) (§¶ §§ ˝) (§π §∑ ˝) (§‡ §ﬂ ˝) (§∞ §Æ ˝) (§÷ §” ˝)  (§ƒ §¡ ˝) (§Ã §À ˝)
+%suffix („Åè „ÅçÊñπ) („Çã „ÇäÊñπ) („ÅÜ „ÅÑÊñπ) („Åô „ÅóÊñπ) („ÇÄ „ÅøÊñπ) („Åê „ÅéÊñπ) („Å∂ „Å≥Êñπ)  („Å§ „Å°Êñπ) („Å¨ „Å´Êñπ)
 v2n-kata-rule &
 [ARGS.FIRST [STEMTYPE cons-stem,
              RMORPH-BIND-TYPE morphbindtype,
@@ -759,23 +717,23 @@ v2n-kata-rule &
 ; (MS 2003-11-18) This solution made problems with the generation. Used the 
 ; BACKGROUND <! !> restriction because of that.
 
-; (FCB 2003-12-05) Taking away the lexical restriction makes "§™§Ø"
+; (FCB 2003-12-05) Taking away the lexical restriction makes "„Åä„Åè"
 ; explode.  So I'm restricting these again.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VN POLITE;;;;;;;;;;;;;;;;;;;;
 vn-polite-infl-rule :=
-%prefix (√Œ§È§ª §™√Œ§È§ª) (¥Í§§ §™¥Í§§) (¡˜§Í §™¡˜§Í) ( ÷§∑ §™ ÷§∑) (≈≈œ√ §™≈≈œ√)
+%prefix (Áü•„Çâ„Åõ „ÅäÁü•„Çâ„Åõ) (È°ò„ÅÑ „ÅäÈ°ò„ÅÑ) (ÈÄÅ„Çä „ÅäÈÄÅ„Çä) (Ëøî„Åó „ÅäËøî„Åó) (ÈõªË©± „ÅäÈõªË©±)
 vnpolite-rule &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vn_head].
 
 ; vn-polite-infl-rule :=
-; %prefix (* §™)
+; %prefix (* „Åä)
 ; vnpolite-rule &
 ; [ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD vn_head,
 ; 			  CTXT.BACKGROUND <! !>]].
 
 ;vn-polite-infl-rule :=
-;%prefix (* §™)
+;%prefix (* „Åä)
 ;vnpolite-rule &
 ;[ARGS.FIRST.SYNSEM.LOCAL.CAT [HEAD vn_head,
 ;			      VAL.UNSAT +]].
@@ -783,12 +741,12 @@ vnpolite-rule &
 ;;;;;;;;;;;;;;;;;;;;;;;;N POLITE;;;;;;;;;;;;;;;;;;;;
 
 n-polite-infl-rule :=
-%prefix (¿§œ√ §™¿§œ√) (√Î §™√Î) (∂‚ §™∂‚) (ºÍøÙ §™ºÍøÙ)
+%prefix (‰∏ñË©± „Åä‰∏ñË©±) (Êòº „ÅäÊòº) (Èáë „ÅäÈáë) (ÊâãÊï∞ „ÅäÊâãÊï∞)
 npolite-rule &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
 
 ; n-polite-infl-rule :=
-; %prefix (* §™)
+; %prefix (* „Åä)
 ; npolite-rule &
 ; [ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD ordinary_noun_head,
 ; 			  CTXT.BACKGROUND <! !>]].
@@ -796,12 +754,12 @@ npolite-rule &
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ POLITE;;;;;;;;;;;;;;;;;;;;
 
 adj-polite-infl-rule :=
-%prefix (Àª§∑§§ §™Àª§∑§§)
+%prefix (Âøô„Åó„ÅÑ „ÅäÂøô„Åó„ÅÑ)
 adjpolite-rule &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head].
 
 ; adj-polite-infl-rule :=
-; %prefix (* §™)
+; %prefix (* „Åä)
 ; adjpolite-rule &
 ; [ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD i-adj-stem_head,
 ; 			  CTXT.BACKGROUND <! !>]].
@@ -818,249 +776,37 @@ adjpolite-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;N -> ADJ;;;;;;;;;;;;;;;;;;;;
 
-n2adj-lrule :=
-%suffix (* ≈™)
-n2adj-rule &
-[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
-
+;n2adj-lrule :=
+;%suffix (* ÁöÑ)
+;n2adj-rule &
+;[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
+; fix me - this doesn't appear to work
 n2i-adj-lrule :=
-%suffix (* §È§∑§§)
+%suffix (* „Çâ„Åó„ÅÑ)
 n2i-adj-rule &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
 
 ;(CH 2003-08-25)
-;°÷∆∞ ™≈™øÕ¥÷°◊§ §…°÷≈™°◊§¨ƒæ¿‹ÃæªÏ§À§´§´§Ï§Î§Ë§¶§À§π§Î§ø§·§Àƒ…≤√°£
-; °÷°¡≈™°◊§Ú na-adj-lex §«§œ§ §Ø pred-adj-lex §»§π§Î°£
+;„ÄåÂãïÁâ©ÁöÑ‰∫∫Èñì„Äç„Å™„Å©„ÄåÁöÑ„Äç„ÅåÁõ¥Êé•ÂêçË©û„Å´„Åã„Åã„Çå„Çã„Çà„ÅÜ„Å´„Åô„Çã„Åü„ÇÅ„Å´ËøΩÂä†„ÄÇ
+; „Äå„ÄúÁöÑ„Äç„Çí na-adj-lex „Åß„ÅØ„Å™„Åè pred-adj-lex „Å®„Åô„Çã„ÄÇ
 ; (cf. n2predadj-rule in rule-types.tdl)
-; §∑§´§∑°¢°÷∆∞ ™≈™øÕ¥÷°◊§ §…§«§œ°¢°÷∆∞ ™≈™§ øÕ¥÷°◊§»∞„§§°¢
-; °÷∆∞ ™≈™°◊§»°÷øÕ¥÷°◊§Œ topic-rel §Ú§¶§ﬁ§Ø∫Ó§Ï§ §§°£
-; §¡§ §ﬂ§À°¢§‚§»§´§È§«§≠§∆§Î°÷¬Á§≠§ øÕ¥÷°◊§«§‚ topic-rel §œ
-; §¶§ﬁ§Ø∫Ó§Ï§ §§°£
+; „Åó„Åã„Åó„ÄÅ„ÄåÂãïÁâ©ÁöÑ‰∫∫Èñì„Äç„Å™„Å©„Åß„ÅØ„ÄÅ„ÄåÂãïÁâ©ÁöÑ„Å™‰∫∫Èñì„Äç„Å®ÈÅï„ÅÑ„ÄÅ
+; „ÄåÂãïÁâ©ÁöÑ„Äç„Å®„Äå‰∫∫Èñì„Äç„ÅÆ topic-rel „Çí„ÅÜ„Åæ„Åè‰Ωú„Çå„Å™„ÅÑ„ÄÇ
+; „Å°„Å™„Åø„Å´„ÄÅ„ÇÇ„Å®„Åã„Çâ„Åß„Åç„Å¶„Çã„ÄåÂ§ß„Åç„Å™‰∫∫Èñì„Äç„Åß„ÇÇ topic-rel „ÅØ
+; „ÅÜ„Åæ„Åè‰Ωú„Çå„Å™„ÅÑ„ÄÇ
+; fixme
 n2predadj-lrule :=
-%suffix (* ≈™)
+%suffix (* ÁöÑ)
 n2predadj-rule &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
 
-;;;;;;;;;;;;;;;;;;LEXICAL RULES FOR ZPRO INSERTION;;;;;
-
-; (ERB 2001-09-03) Now that light verbs take over the
-; valence of their SPRs, I need to restrict light verbs
-; from undergoing these rules.
-
-; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
-; Moving to XARG instead.
-; (MS 2005-01-06) Copy up ARG-S.
-
-
-subj-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
-			COMPS #comps,
-			SPR #spr],
-		CONT.HOOK.XARG zpro_ref-ind,
-		ARG-S #args]],
- ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
-						       EMPTY -],
-                                VAL [SUBJ opt-1-arg,
-				     COMPS #comps,
-				     SPR #spr]],
-			   ARG-S #args]]].
-
-; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
-; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
-; (MS 2004-02-25) No. LKEYS.KEYREL IS accessible (we are in lexrules!)
-; (MS 2004-06-25) Auxiliaries should not undergo this. 
-; (MS 2004-11-05) why not? ø©§Ÿ§∆§‚§È§¶
-; (MS 2004-11-09) Ok, tried to give AUX a more complex value. Aspect
-; auxiliaries should not undergo the rule, while complex auxiliaries should be
-; allowed.
-; (MS 2004-11-30) We need to be able to bind the second complement first:
-; •∆°º•÷•Î§À√÷§Ø . I have therefore changed the rule such that it can apply to a 
-; COMPS list that contains one or more arguments and puts the rest on the mother's list.
-
-
-
-
-obj-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
-			COMPS null,
-			SPR #spr],
-	       ARG-S [FIRST #subj]],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
-ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
-						      AUX aux_minus_or_complex, 
-						       EMPTY -],
-                               VAL [SUBJ #subj,
-				    COMPS opt-1-arg,
-				    SPR #spr]]]]].
-
-; (ERB 2001-10-08) while OBJ and SUBJ zpro rules were strictly
-; ordered with respect to each other, OBJ2 wasn't.  I'm going
-; to require it to apply first.
-; (MS 2001-10-09) Now we cannot get perspective auxiliaries. We should find another solution.
-; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
-; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
-; (MS 2004-11-30) To restrict the application of this rule, it applies only if there is
-; a first complement left. 
-
-obj2a-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
-			COMPS 1-list & < [LOCAL #obj] >,
-			SPR #spr],
-	       ARG-S < #subj , [LOCAL #obj]  >],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
-ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
-						       EMPTY -],
-                               VAL [SUBJ < #subj >,
-				    COMPS opt-2-args & 
-					  < [OPT + ], [LOCAL #obj]  >,
-				    SPR #spr]]]]].
-
-obj2b-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
-			COMPS obl-1-arg & < [LOCAL #obj] >,
-			SPR #spr],
-	       ARG-S < #subj , [LOCAL #obj]  >],
-	 LKEYS.KEYREL.ARG3 zpro_ref-ind],
-ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
-						       EMPTY -],
-                               VAL [SUBJ < #subj >,
-				    COMPS opt-2-args & 
-					  < [LOCAL #obj] , [OPT + ] >,
-				    SPR #spr]]]]].
-
-
-
-; (CH 2005-03-18) added to allow "»‡ §¨ [zero ∂‰§Ú] ∂‚ §À §∑ §ø" to
-; be interpreted as a v-soc-stem-lex type.
-obj2-soc-suru-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
-			COMPS obl-1-arg & < [LOCAL #obj] >,
-			SPR #spr],
-	       ARG-S < #subj , [LOCAL #obj]  >],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
-ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-stem_head & [ LIGHT -, 
-						    EMPTY -,
-						    COP -],
-                               VAL [SUBJ < #subj >,
-				    COMPS < [OPT + ], [LOCAL #obj,
-						       OPT -]  >,
-				    SPR #spr]]]]].
-
-
-; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
-; Moving to XARG instead.
-
-naadj-subj-zpro-ins-lrule := naadj-zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
-			COMPS #comps,
-			SPR #spr],
-	       ARG-S < >,
-	       CONT.HOOK.XARG zpro_ref-ind] ],
- ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD na-adj_head & [ADJ +, MOD null],
-                               VAL [SUBJ opt-1-arg,
-				    COMPS #comps & null,
-				    SPR #spr & null]]]].
-
-; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
-; Moving to XARG instead.
-
-opend-subj-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
-			 COMPS #comps,
-			 SPR #spr],
-		ARG-S #rest,
-		CONT.HOOK.XARG zpro_ref-ind]],
- ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
-							       EMPTY -,
-							      MODUS operative],
-                                VAL [SUBJ opt-1-arg & < #sbj >,
-				    COMPS #comps,
-				    SPR #spr]],
-			   ARG-S [FIRST #sbj,
-				  REST #rest]]]].
-
-; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
-; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
-
-opend-obj-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [COMPS null,
-			SUBJ #subj & [FIRST.OPT bool],
-			SPR #spr],
-	       ARG-S #subj],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
- ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
-							       EMPTY -,
-							      MODUS operative],
-                                VAL [SUBJ #subj,
-				    COMPS opt-1-arg,
-				    SPR #spr]]]]].
-
-; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
-; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
-
-opend-obj2-zpro-ins-lrule := zpro-insertion-rule &
-[SYNSEM [LOCAL [CAT.VAL [COMPS 1-list & < #obj >,
-			SUBJ #subj & [FIRST #sbj & [OPT bool]],
-			SPR #spr],
-	       ARG-S < #sbj , #obj >],
-	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
- ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
-							       EMPTY -,
-							      MODUS operative],
-                                VAL [SUBJ #subj,
-				    COMPS opt-2-args & 
-					  < #obj , [OPT + ] >,
-				    SPR #spr]]]]].
-
-
-
-
-;;;;;;;;;;;;;;;;;;COPULA -> ELLIPTICAL VERB;;;;;
-
-
-;cop2ell-infl-rule :=
-;cop2ell-rule.
-
-
-;;;;;;;;;;;;;;;;;;GA-NO CONVERSION IN RELATIVE CLAUSES AND INFINITIVE+KATA;;;;;
-
-
-; (MS 2003-02-14) took the restriction MOD synsem out to allow also the infinite+kata rule:
-; §¢§ŒøÕ§Œ ‚§≠ ˝
-
-; (MS 2003-08-22) added restriction obl-1-arg to ga-no-conversion and obl-arg to wo-no-conversion, 
-; such that spurious ambiguity in connection with VN2N rule vanishes.
-
-ga-no-conversion-rule := subj-casechange-rule &
- [SYNSEM.LOCAL.CAT.VAL.SUBJ obl-1-arg & [FIRST [LOCAL.CAT.HEAD.CASE no-case]],
-  ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
-				  [MAIN-PRD -,
-				   COP -,
-				   H-TENSE present-or-past]],
-			BAR -],
-	  INFLECTED +,
-	  J-NEEDS-AFFIX bool] >].
-
-wo-no-conversion-rule := obj-casechange-rule &
- [SYNSEM.LOCAL [CAT.VAL.COMPS obl-arg & [FIRST [LOCAL.CAT.HEAD [PTYPE ga,
-								CASE no-case],
-						OPT - ]],
-		BAR +],
-  ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
-				  [MAIN-PRD -,
-				   COP -,
-				   VN -,
-				   MODUS infinitive]],
-			BAR -],
-	  INFLECTED +,
-	  J-NEEDS-AFFIX -] >].
 
 ;;;;;;;;;;;;;;;;;;;;;V Compounds;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;(CH 2003-08-27)
-; ≈˝∏Ï≈™ £πÁ∆∞ªÏ§Œ V1 §Œ§ø§·§Œ infl-rule 
-; infinitive-lexeme-1-infl-rule §Œ [J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head]§Œ
-; nom_head §Ú final_head §À§∑§ø§¿§±°£
+; Áµ±Ë™ûÁöÑË§áÂêàÂãïË©û„ÅÆ V1 „ÅÆ„Åü„ÇÅ„ÅÆ infl-rule 
+; infinitive-lexeme-1-infl-rule „ÅÆ [J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head]„ÅÆ
+; nom_head „Çí final_head „Å´„Åó„Åü„Å†„Åë„ÄÇ
 ; (cf. syntactic-vv-stem_head, syntactic-vv-stem-lex in lex-types.tdl
 ;      tsudukeru-syntactic-vv-stem in verbstem-lex.tdl)
 ;(CH 2005-03-30)
@@ -1071,7 +817,7 @@ wo-no-conversion-rule := obj-casechange-rule &
 ; removed because revised infinitive-lexeme-1-infl-rule should take care of
 ; syntactic V-Vs, too.
 ; infinitive-infl-rule-for-syntactic-VV :=
-; %suffix (!v§Î !v) (§Ø §≠) (§Î §Í) (§¶ §§) (§π §∑) (§‡ §ﬂ) (§∞ §Æ) (§÷ §”)  (§ƒ §¡) (§Ã §À)
+; %suffix (!v„Çã !v) („Åè „Åç) („Çã „Çä) („ÅÜ „ÅÑ) („Åô „Åó) („ÇÄ „Åø) („Åê „Åé) („Å∂ „Å≥)  („Å§ „Å°) („Å¨ „Å´)
 ; j-lexeme-to-word-rule &
 ; [RMORPH-BIND-TYPE inf-morph,
 ;  SYNSEM.LOCAL [CAT.HEAD #head &
@@ -1090,98 +836,4 @@ wo-no-conversion-rule := obj-casechange-rule &
 ;              SYNSEM.LOCAL.CAT.HEAD #head & verb-stem_head,
 ; 	     RMORPH-BIND-TYPE morphbindtype]].
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;(CH 2005-04-09)
-;;
-;;  V embedding `Alternation' Lexical Rules
-;;
-;;    intransitive  --> monotransitive
-;;                  --> ditransitive
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 
-
-vbar-monotransitivization-v-lrule := syn-vv-monotrans-vbar-v-stem-lex &
- [ORTH #orth,
-  SYNSEM.LKEYS [KEYREL [PRED #pred]],
-  ARGS < syn-vv-intrans-vbar-v-stem-lex &
-	 [ ORTH #orth,
-	   SYNSEM.LKEYS [KEYREL [PRED #pred]]] >].
-
-vbar-ditransitivization-v-lrule := syn-vv-ditrans-vbar-v-stem-lex &
-[ ORTH #orth,
-  SYNSEM.LKEYS [KEYREL [PRED #pred]],
-  ARGS < syn-vv-intrans-vbar-v-stem-lex & [ ORTH #orth,
-					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
-
-vbar-monotransitivization-c-lrule := syn-vv-monotrans-vbar-c-stem-lex &
-[ ORTH #orth,
-  SYNSEM.LKEYS [KEYREL [PRED #pred]],
-  ARGS < syn-vv-intrans-vbar-c-stem-lex & [ ORTH #orth,
-					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
-
-vbar-ditransitivization-c-lrule := syn-vv-ditrans-vbar-c-stem-lex &
-[ ORTH #orth,
-  SYNSEM.LKEYS [KEYREL [PRED #pred]],
-  ARGS < syn-vv-intrans-vbar-c-stem-lex & [ ORTH #orth,
-					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
-
-; vbar-monotransitivization-c2-lrule := syn-vv-monotrans-vbar-c2-stem-lex &
-; [ ORTH #orth,
-;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
-;   ARGS < syn-vv-intrans-vbar-c2-stem-lex & [ ORTH #orth,
-; 					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
-; vbar-ditransitivization-c2-lrule := syn-vv-ditrans-vbar-c2-stem-lex &
-; [ ORTH #orth,
-;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
-;   ARGS < syn-vv-intrans-vbar-c2-stem-lex & [ ORTH #orth,
-; 					    SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
-; vbar-monotransitivization-kurusuru-lrule := syn-vv-monotrans-vbar-kurusuru-stem-lex &
-; [ ORTH #orth,
-;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
-;   ARGS < syn-vv-intrans-vbar-kurusuru-stem-lex & [ ORTH #orth,
-; 						   SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
-; vbar-ditransitivization-kurusuru-lrule := syn-vv-ditrans-vbar-kurusuru-stem-lex &
-; [ ORTH #orth,
-;   SYNSEM.LKEYS [KEYREL [PRED #pred]],
-;   ARGS < syn-vv-intrans-vbar-kurusuru-stem-lex & [ ORTH #orth,
-; 						   SYNSEM.LKEYS [KEYREL [PRED #pred]] ]  >].
-
-
-
-
-; (MS 2005-01-06) Floated numeral classifiers, counting subjects.
-; (MS 2005-01-10) These should copy the RELS from their ARGS, because
-; measuring classifiers might have quite complicated ARGS: §Í§Û§¥§ÚªÕ•≠•Ì«„§√§ø
-
-numeral-classifier-sbj-float :=
-floated-ind-sbj-num-cl-lex &
-[SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
-	       CONT.RELS #rels],
- ORTH #stem,
- ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
-			   CONT.RELS #rels],
-	     ORTH #stem]].
-
-numeral-classifier-obj-float :=
-floated-ind-obj-num-cl-lex &
-[SYNSEM.LOCAL [CAT [HEAD num-cl-float_head],
-	       CONT.RELS #rels],
- ORTH #stem,
- ARGS.FIRST [SYNSEM.LOCAL [CAT.HEAD num-cl-nmod_head,
-			   CONT.RELS #rels],
-	     ORTH #stem]].
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;VN->N;;;;;;;;;;;;;;;;;;;;
-;; (MS 2005-05-24) These cause ambiguity in all cases of 
-;; N no VN wo suru
-;; Try: √ÊπÒ∏Ï§Œ Ÿ∂Ø§Ú§π§Î
-
-vn2n-infl-rule-det :=
-vn2n-rule-detarg.
-
-vn2n-infl-rule-nspec_arg1 :=
-vn2n-rule-nspecarg1.
-
-vn2n-infl-rule-nspec_arg2 :=
-vn2n-rule-nspecarg2.

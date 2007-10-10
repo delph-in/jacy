@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;; -*- Mode: TDL; Coding: utf-8 -*-
 ; (ERB 2001-10-03) Root type for NP fragments.
 
 ; AO (2003-09-04)
@@ -48,10 +48,10 @@
 ; situations, where the binding is not clear, gives multiple analyses and
 ; lets further processing decide.
 
-; (FCB 2005-09-25) changed utterance_head to utterance_super to allow fragments
+; (FCB 2005-09-25) changed utterance_head to utterance-super to allow fragments
 
 utterance-root := j-sign &
-[ SYNSEM [LOCAL.CAT.HEAD utterance_super,
+[ SYNSEM [LOCAL.CAT.HEAD utterance-super,
 	 NON-LOCAL [ROBUST +,
 		    UNDERSPEC_ARG -] ]].
 

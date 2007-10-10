@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;; -*- Mode: TDL; Coding: utf-8 -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -187,7 +187,7 @@ kara-case :< ni-or-kara.
 ; value.  (Probably need more fundamental change to analysis -- 
 ; perhaps when we overhaul the clause analysis.)
 ; (MS 2004-12-13) Why was made in topic? This lead to unwanted unifications!
-; took that out (¸¤¤Ê¤É¤ÎÆ°Êª got a reading, where the nado got PTYPE made).
+; took that out (çŠ¬ãªã©ã®å‹•ç‰© got a reading, where the nado got PTYPE made).
 
 
 to-comp := case.
@@ -381,7 +381,7 @@ twopl := two & pl.
 threepl := three & pl.
 
 
-; (MS 2005-03-01) andro should be fem or masc, but not neut (Èà¤é)
+; (MS 2005-03-01) andro should be fem or masc, but not neut (å½¼ã‚‰)
 gender :< sort.
 andro :< gender.
 fem :< andro.

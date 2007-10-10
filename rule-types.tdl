@@ -1,4 +1,4 @@
-;; -*- Mode: TDL; Coding: euc-jp -*-
+;; -*- Mode: TDL; Coding: utf-8 -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -19,7 +19,7 @@
 
 
 
-rule-type := *rule* & phrase-or-lexrule.
+rule-type := phrase-or-lexrule.
 
 
 phrasal_sign := phrase-or-lexrule & j-sign.
@@ -28,7 +28,7 @@ phrasal_sign := phrase-or-lexrule & j-sign.
 ; to account for quasi-morphological rules (suffixes that are separated by CHASEN
 ; from the words they belong to).
 
-binary-basic :=  binary-phrase & orth-princ & que-princ &
+binary-basic :=  binary-phrase & que-princ &
           [SYNSEM [NON-LOCAL [REL #refl,
 			      ROBUST #robust,
 			      UNDERSPEC_ARG #uarg],
@@ -59,38 +59,14 @@ binary-basic :=  binary-phrase & orth-princ & que-princ &
 ; constraints on binary except the QUE passing.  
 
 
-binary-super := orth-princ & binary-phrase.
-
-
+binary-super := binary-phrase.
 
 binary := binary-super & que-princ.
-
-;(MS 2003-12-17) Adapt that to Matrix 0.6
-
-;binary-cont-final-type := binary & 
-;               [SYNSEM [LOCAL.CONT.HOOK #hook,
-;			LKEYS [KEYREL #key,
-;			       ALTKEYREL #altkey]],
-;                ARGS < j-sign, 
-;		       j-sign & [ SYNSEM [LOCAL.CONT.HOOK #hook,
-;					  LKEYS [KEYREL #key,
-;						 ALTKEYREL #altkey]]] >].
 
 binary-cont-final-type := binary & 
                [SYNSEM.LOCAL.CONT.HOOK #hook,
                 ARGS < j-sign, 
 		       j-sign & [ SYNSEM [LOCAL.CONT.HOOK #hook]] >].
-
-;(MS 2003-12-17) Adapt that to Matrix 0.6
-
-;binary-cont-first-type := binary & 
-;               [SYNSEM [LOCAL.CONT.HOOK #hook,
-;			LKEYS [KEYREL #key,
-;			       ALTKEYREL #altkey]],
-;                ARGS < j-sign & [ SYNSEM [LOCAL.CONT.HOOK #hook,
-;					  LKEYS [KEYREL #key,
-;						       ALTKEYREL #altkey]]],
-;		       j-sign >].
 
 binary-cont-first-type := binary & 
                [SYNSEM [LOCAL.CONT.HOOK #hook],
@@ -98,7 +74,7 @@ binary-cont-first-type := binary &
 		       j-sign >].
 
 
-binary-modification-type := affix-list & orth-princ & basic-binary-phrase & que-princ & speaker-addr-principle.
+binary-modification-type := affix-list & basic-binary-phrase & que-princ & speaker-addr-principle.
 
 
 binary-type-mod := binary-modification-type & binary-headed-phrase &
@@ -108,7 +84,7 @@ binary-type-mod := binary-modification-type & binary-headed-phrase &
 
 ; (MS 2004-12-22) This shouldn't inherit the LTOP from its second arg.
 ; (see sentence-te-coordination)
-; (ms 2005-12-21) Shouldn't the INDEX come from the second ARG? -> "§≥§Œπ·øÂ§ÚæØ§∑§¿§±…’§±§∆§¥§È§Û§ §µ§§°£"
+; (ms 2005-12-21) Shouldn't the INDEX come from the second ARG? -> "„Åì„ÅÆÈ¶ôÊ∞¥„ÇíÂ∞ë„Åó„Å†„Åë‰ªò„Åë„Å¶„Åî„Çâ„Çì„Å™„Åï„ÅÑ„ÄÇ"
 ; (FCB 2006-03-12) If the INDEX is the second ARG then NP semantics are incoherent
 ; I think it should be the C-ARG from the conjunct, which should be linked to the index of the 1st arg.
 
@@ -123,17 +99,8 @@ binary-type-conj := binary-modification-type &
 						 VAL #val]]]
 			     > ].
 
-; (MS 2003-07-15) Replaced with binary-headed-phrase from matrix.tdl
-                 
-;headed-binary-type := binary-type &
-;                      [SYNSEM.LOCAL [CAT [HEAD #head]],
-;                       HEAD-DTR.SYNSEM.LOCAL.CAT [HEAD #head]].
+;;; Added Idiom (CH 060804)
 
-
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-;;;
-;;; Idiom Implementation (CH 060804)
-;;;
 unary-type-super :=   phrasal_sign &
                [IDIOM #idiom,
 		SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
@@ -146,7 +113,6 @@ unary-type-super :=   phrasal_sign &
                                      HCONS [LIST #sclist,
                                              LAST #sclast]]],
 			NON-LOCAL #nonloc],
- 		ORTH #stem,
                C-CONT mrs & [HOOK #hook,
                               RELS diff-list & [LIST #list,
                                                    LAST #middle],
@@ -161,37 +127,7 @@ unary-type-super :=   phrasal_sign &
                                                                   LAST #last],
                                                            HCONS [LIST #scmiddle,
                                                                    LAST #sclast]]],
-					      NON-LOCAL #nonloc],
-				      ORTH #stem] >].
-; unary-type-super :=   phrasal_sign &
-;                [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
-;                                                 SPEAKER #sp],
-;                                      EMPATHY [EMPER #sp,
-;                                               EMPEE #emp]],
-;                                CONT [HOOK #hook,
-;                                      RELS [LIST #list,
-;                                             LAST #last],
-;                                      HCONS [LIST #sclist,
-;                                              LAST #sclast]]],
-; 			NON-LOCAL #nonloc],
-;  		ORTH #stem,
-;                C-CONT mrs & [HOOK #hook,
-;                               RELS diff-list & [LIST #list,
-;                                                    LAST #middle],
-;                               HCONS diff-list & [LIST #sclist,
-;                                                     LAST #scmiddle]],
-;                 ARGS <  [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
-;                                                                    SPEAKER #sp],
-;                                                            EMPATHY [EMPER #sp,
-;                                                                     EMPEE #emp]],
-;                                                      CONT [RELS [LIST #middle,
-;                                                                   LAST #last],
-;                                                            HCONS [LIST #scmiddle,
-;                                                                    LAST #sclast]]],
-; 					      NON-LOCAL #nonloc],
-; 				      ORTH #stem] >].
-
-
+					      NON-LOCAL #nonloc]] >].
 
 unary-type := unary-type-super &
 [ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL optional-or-saturated,
@@ -268,7 +204,6 @@ head-first-type := binary-headed-phrase &
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 head-subject-rule := head-final-type & 
-		     orth-princ &
 		     scp-sbj & 
 		     que-princ &
                       adjacent_subjbind_check &
@@ -297,8 +232,7 @@ head-subject-rule := head-final-type &
 ; (MS 2003-07-23) Cleaning this up.
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
 
-basic-head-complement-type := orth-princ &
-			      que-princ &
+basic-head-complement-type := que-princ &
 			      adjacent_nonhead_check &
 			      speaker-addr-principle &
 			      affix-list &
@@ -325,7 +259,7 @@ head-complement-hf-type := head-complement-type & head-final-type.
 head-complement-hi-type := head-complement-type & head-initial-type.
 
 ;(CH 2003-08-26)
-; ditransitive§ŒºÁº≠§¨…¨§∫[BAR +]§À§ §Î§Ë§¶§À§∑§∆€£ÀÊ¿≠§Ú∏∫§È§π°£
+; ditransitive„ÅÆ‰∏ªËæû„ÅåÂøÖ„Åö[BAR +]„Å´„Å™„Çã„Çà„ÅÜ„Å´„Åó„Å¶ÊõñÊòßÊÄß„ÇíÊ∏õ„Çâ„Åô„ÄÇ
 
 head-complement2-type := basic-head-complement-type &
 			 scp-obj2 & 
@@ -352,9 +286,9 @@ head-complement2-type := basic-head-complement-type &
 ; currently concern us.  I've asked Atusko to translate the Casper NP, and she came up
 ; with these:
 ;
-; ≤Ú∑Ë…‘≤ƒ«Ω§Ω§¶§ Ã‰¬Í
-; ≤Ú∑Ë…‘≤ƒ«Ω§√§›§§Ã‰¬Í (younger generation)
-; ≤Ú∑Ë…‘≤ƒ«Ω§≤§ Ã‰¬Í 
+; Ëß£Ê±∫‰∏çÂèØËÉΩ„Åù„ÅÜ„Å™ÂïèÈ°å
+; Ëß£Ê±∫‰∏çÂèØËÉΩ„Å£„ÅΩ„ÅÑÂïèÈ°å (younger generation)
+; Ëß£Ê±∫‰∏çÂèØËÉΩ„Åí„Å™ÂïèÈ°å 
 ;
 ; In this case, it doesn't look like "apparently" is a modifier of "unsolvable",
 ; although there may be other analogous cases.
@@ -408,7 +342,7 @@ head-complement2-type := basic-head-complement-type &
 ; mother.  I wonder what this will break...
 
 ; (MS 2002-09-16) This breaks sentences like:
-; "•œ•Û•–°º•¨°º§Œ•ª•√•»§ÚÃµŒ¡§À§π§Î•µ°º•”•π§¿"
+; "„Éè„É≥„Éê„Éº„Ç¨„Éº„ÅÆ„Çª„ÉÉ„Éà„ÇíÁÑ°Êñô„Å´„Åô„Çã„Çµ„Éº„Éì„Çπ„Å†"
 
 ; (ERB 2002-01-02) Can't state this categorically here, because
 ; compounds are head-adjunct rules, and I crucially want them to
@@ -417,7 +351,7 @@ head-complement2-type := basic-head-complement-type &
 ; (MS 2004-06-25) XARG should come from Head-Dtr
 
 
-head-adjunct-rule-type := adjacent_head_check & orth-princ &
+head-adjunct-rule-type := adjacent_head_check & 
                           adjacent_nonhead_check &
                           head-adjunct-p &
 			  speaker-addr-principle &
@@ -446,12 +380,12 @@ head-adjunct-rule-type := adjacent_head_check & orth-princ &
 				   MODIFIED.PERIPH #periph]]].
 
 
-;(CH 2003-08-22) gapÕ≠§Í¥ÿ∑∏¿·§Œ§ø§·§Œµ¨¬ß
+;(CH 2003-08-22) gapÊúâ„ÇäÈñ¢‰øÇÁØÄ„ÅÆ„Åü„ÇÅ„ÅÆË¶èÂâá
 ; without "adjacent_nonhead_check &"
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
 
 
-head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check & orth-princ &
+head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check & 
 					 head-adjunct-p &
 					 speaker-addr-principle &
 					 affix-list &
@@ -561,8 +495,8 @@ hadj-final-for-rel-cl-topic :=  head-adjunct-rule-type & head-final-type-mod &
 				      INDEX #ind]],
 			 CAT.HEAD noun_head ]].
 
-;(CH 2003-08-22) gapÕ≠§Í¥ÿ∑∏¿·§Œ§ø§·§Œµ¨¬ß
-;(CH 2003-08-22) "HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD noun_head" §Úƒ…≤√
+;(CH 2003-08-22) gapÊúâ„ÇäÈñ¢‰øÇÁØÄ„ÅÆ„Åü„ÇÅ„ÅÆË¶èÂâá
+;(CH 2003-08-22) "HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD noun_head" „ÇíËøΩÂä†
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-final-type-mod &
@@ -697,7 +631,6 @@ conj-rule-type :=  binary-type-conj &
 
 
 head-specifier-rule-type :=  head-final-type & 
-			     orth-princ &
                              scp-spec & 
 			     que-princ &
                              affix-list &
@@ -777,8 +710,8 @@ empty-head-type :=  headed-phrase & j-sign &
                                                           CAT.VAL optional-or-saturated],
                                                    NON-LOCAL #nloc],
                                            J-NEEDS-AFFIX -],
-		    ORTH #stem,
-                    ARGS <#nh-dtr & [ORTH #stem]>].
+		    STEM #stem,
+                    ARGS <#nh-dtr & [STEM #stem]>].
 
 
 ;empty particles:
@@ -851,7 +784,7 @@ empty-head-type :=  headed-phrase & j-sign &
 ; C-CONT.KEY.LBL.
 
 ; (MS 2004-12-20) I want this to inherit its daughter's EMPTY value to be able
-; to restrict utterances in the case of quotations: °÷¡∞¡’∂ °◊§ŒŒ¨æŒ
+; to restrict utterances in the case of quotations: „ÄåÂâçÂ•èÊõ≤„Äç„ÅÆÁï•Áß∞
 
 
 utterance-type := unary-type  &  
@@ -972,13 +905,49 @@ word-rule-basic := lexical_sign-rule &
 		INFLECTED +].
 
 word-rule := word-rule-basic & constant-lex-rule &
-             [ORTH #stem,
-	      NEEDS-AFFIX -,
+             [NEEDS-AFFIX -,
 	      SYNSEM.LOCAL.CAT.HEAD [VN #vn,
                                      MODUS #mood],
               ARGS  <[SYNSEM.LOCAL.CAT.HEAD [VN #vn,
-                                             MODUS #mood],
-                      ORTH #stem]>].
+                                             MODUS #mood]]>].
+
+category-change-rels-irule := constant-lex-rule & j-sign.
+;;;
+;;; Rules to allow classifiers to float
+;;;
+num-cl-sbj-float-rule :=  category-change-rels-irule &
+floated-sbj-num-cl-lex &
+ [SYNSEM.LOCAL.CAT.HEAD num-cl-float_head,
+  ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD num-cl-nmod_head].
+
+num-cl-obj-float-rule :=  category-change-rels-irule &
+floated-obj-num-cl-lex &
+ [SYNSEM.LOCAL.CAT.HEAD num-cl-float_head,
+  ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD num-cl-nmod_head].
+
+;;;
+;;; V-V rules
+;;;
+category-change-preds-irule := j-sign &
+ [SYNSEM.LKEYS.KEYREL.PRED #pred,
+  ARGS.FIRST.SYNSEM.LKEYS.KEYREL.PRED #pred].
+
+vbar-monotransitivization-v-rule := category-change-preds-irule &
+syn-vv-monotrans-vbar-v-stem-lex &
+ [ ARGS.FIRST syn-vv-intrans-vbar-v-stem-lex ].
+
+vbar-ditransitivization-v-rule := category-change-preds-irule &
+syn-vv-ditrans-vbar-v-stem-lex &
+[ ARGS.FIRST syn-vv-intrans-vbar-v-stem-lex ].
+
+vbar-monotransitivization-c-rule := category-change-preds-irule &
+syn-vv-monotrans-vbar-c-stem-lex &
+[ ARGS.FIRST syn-vv-intrans-vbar-c-stem-lex].
+
+vbar-ditransitivization-c-rule := category-change-preds-irule &
+syn-vv-ditrans-vbar-c-stem-lex &
+[ ARGS.FIRST syn-vv-intrans-vbar-c-stem-lex].
+
 
 
 j-lexeme-to-word-rule := word-rule-basic & v-lex &
@@ -986,44 +955,6 @@ j-lexeme-to-word-rule := word-rule-basic & v-lex &
 
 ; (MS 2003-07-11) We have to find another solution for that.
 
-;j-lexeme-to-lexeme-rule := lexeme-rule & v-lex &
-;                         [ORTH #stem,
-;                          ARGS < verb-stem-lex & [ORTH #stem]>].
-
-
-; (ERB 2001-09-29) This rule said that it's daughter must have exactly
-; one relation on the RELS, which doesn't work for things like itadaku-aux-stem
-; which has two relations.  At any rate, the point was to grab the KEY,
-; so I've changed it to that.
-
-; (ERB 2001-10-15) The potential rule needs to extend the HCONS
-; list when it applies to itadaku, too, so I'm adding HCONS to
-; this type.
-
-;liszt-extending-lrule := lexical_sign &
-;                         [SYNSEM.LOCAL.CONT.RELS [LIST #list,
-;                                                   LAST #last],
-;                          C-CONT.RELS [LIST #list,
-;                                        LAST #middle],
-;                          ARGS < [SYNSEM.LOCAL.CONT.RELS [LIST #middle,
-;                                                           LAST #last]]>].
-
-; (ERB 2001-10-17) Added subtypes of lexical_sign.  See notes in
-; fundamentals.tdl.
-
-liszt-extending-lrule := lexical_sign-rule & lex-rule &
-                         [SYNSEM.LOCAL.CONT [ RELS [LIST #list,
-                                                     LAST #last],
-                                              HCONS [LIST #hlist,
-                                                      LAST #hlast]],
-                          C-CONT [ RELS [LIST #list,
-                                          LAST #middle],
-                                   HCONS [LIST #hlist,
-                                           LAST #hmiddle]],
-                          ARGS < [SYNSEM.LOCAL.CONT [ RELS [LIST #middle,
-                                                             LAST #last],
-                                                      HCONS [LIST #hmiddle,
-                                                              LAST #hlast]]]>].
 
 ; (ERB 2001-10-15) The potential rule also needs to extend the
 ; h-cons list when it is applying to itadaku and the like.
@@ -1075,7 +1006,7 @@ potential-rule := lex-rule & lexeme &
 ; (ERB 2001-10-15) This rule is also leaving LTOP undefined.  Fixing
 ; that now.
 
-; (MS 2004-11-09) The INDEX should come from the argument: ø©§Ÿ§∆π‘§±§Î
+; (MS 2004-11-09) The INDEX should come from the argument: È£ü„Åπ„Å¶Ë°å„Åë„Çã
 
 ; (FCB 2005-06-15) Added ARG0 to messages
 potential-lexeme-to-word-rule  := lex-rule & v-lex &
@@ -1121,7 +1052,7 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
 			  INFLECTED -]>,
   INFLECTED +].
 
-; (MS 2002-02-04) this is for § §È
+; (MS 2002-02-04) this is for „Å™„Çâ
 ;(CH 2003-08-14)
 ; "SYNSEM.LOCAL.CAT.HEAD.C-MOD.FIRST.LOCAL.CAT.HEAD verb_head & [MAIN-PRD +]..."
 ;  ---> "SYNSEM.LOCAL.CAT.HEAD.C-MOD.FIRST.LOCAL.CAT.HEAD verb_head..."
@@ -1188,62 +1119,43 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
 ; should be the hook (from isect-adv-lex)
 
 adj2adv-rule  := isect-adv-lex & lex-rule &
- [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-			 WLINK #label ],
+ [SYNSEM [LKEYS.KEYREL [ PRED #rel ],
 	  LOCAL [CAT.HEAD adv_head,
 		 CTXT #ctxt],
 	  NON-LOCAL #nonloc],
   J-NEEDS-AFFIX -,
   NEEDS-AFFIX -,
   ARGS < base-adj-stem-lex & 
-	 [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-				 WLINK #label ],
+	 [SYNSEM [LKEYS.KEYREL [ PRED #rel ],
 		  LOCAL [CTXT #ctxt],
 		  NON-LOCAL #nonloc],
 	  INFLECTED -]>,
   INFLECTED +].
 
-
-;n2adj-rule := na-adj-lex & inflecting-lex-rule &
-;	[SYNSEM [LKEYS.KEYREL [PRED #rel,
-;				  WLINK #label ],
-;		 LOCAL.CTXT #ctxt,
-;		 NON-LOCAL #nonloc],
-;	 J-NEEDS-AFFIX -,
-;	 ARGS < ordinary-nohon-n-lex & [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-;								 WLINK #label ],
-;						LOCAL.CTXT #ctxt,
-;						NON-LOCAL #nonloc]]>,
-;	 INFLECTED +].
-
 n2adj-rule := na-adj-lex & inflecting-lex-rule &
-	[SYNSEM [LKEYS.KEYREL [PRED #rel,
-				  WLINK #label ],
+	[SYNSEM [LKEYS.KEYREL [PRED #rel ],
 		 LOCAL.CTXT #ctxt,
 		 NON-LOCAL #nonloc],
 	 J-NEEDS-AFFIX -,
-	 ARGS < [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-					WLINK #label ],
+	 ARGS < [SYNSEM [LKEYS.KEYREL [ PRED #rel ],
 			 LOCAL [CTXT #ctxt & [BACKGROUND <! !>],
 				CAT.HEAD ordinary_noun_head],
 			 NON-LOCAL #nonloc]]>,
 	 INFLECTED +].
 
 ;(CH 2003-08-25)
-;°÷ÃæªÏ°‹≈™°◊§¨ÃæªÏ§Úƒæ¿‹Ω§æ˛§«§≠§Î§Ë§¶§À§π§Î§ø§·§Œµ¨¬ß°£
-;°÷ÃæªÏ°‹≈™°◊§Ú pred-adj-lex §À§π§Î°£
+;„ÄåÂêçË©ûÔºãÁöÑ„Äç„ÅåÂêçË©û„ÇíÁõ¥Êé•‰øÆÈ£æ„Åß„Åç„Çã„Çà„ÅÜ„Å´„Åô„Çã„Åü„ÇÅ„ÅÆË¶èÂâá„ÄÇ
+;„ÄåÂêçË©ûÔºãÁöÑ„Äç„Çí pred-adj-lex „Å´„Åô„Çã„ÄÇ
 ; (cf. n2predadj-lrule in infl.tdl)
 
 n2predadj-rule := pred-adj-lex & inflecting-lex-rule &
 	[SYNSEM [LOCAL [CTXT #ctxt,
 			BAR -,
 			CONT.HOOK.INDEX event],
-		 LKEYS.KEYREL [PRED #rel,
-			       WLINK #label ],
+		 LKEYS.KEYREL [PRED #rel ],
 		 NON-LOCAL #nonloc],
 	 J-NEEDS-AFFIX -,
-	 ARGS < [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-					WLINK #label ],
+	 ARGS < [SYNSEM [LKEYS.KEYREL [ PRED #rel],
 			 LOCAL [CTXT #ctxt & [BACKGROUND <! !>],
 				CAT.HEAD ordinary_noun_head],
 			 NON-LOCAL #nonloc]]>,
@@ -1254,12 +1166,10 @@ n2predadj-rule := pred-adj-lex & inflecting-lex-rule &
 
 
 n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
-	[SYNSEM [LKEYS.KEYREL [PRED #rel,
-			       WLINK #label ],
+	[SYNSEM [LKEYS.KEYREL [PRED #rel ],
 		 LOCAL.CTXT #ctxt,
 		 NON-LOCAL #nonloc],
-	 ARGS < [SYNSEM [LKEYS.KEYREL [ PRED #rel,
-					WLINK #label ],
+	 ARGS < [SYNSEM [LKEYS.KEYREL [ PRED #rel ],
 			 LOCAL [CTXT #ctxt & [BACKGROUND <! !>],
 				CAT.HEAD ordinary_noun_head],
 			 NON-LOCAL #nonloc]]>].
@@ -1283,30 +1193,25 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 ; (ERB 2001-10-23) It did lead to more ambiguity, but I believe it
 ; is genuine ambiguity.  An example is the following:
 ;
-; ∏˝∫¬≥´¿ﬂøΩ§∑π˛§ﬂ
+; Âè£Â∫ßÈñãË®≠Áî≥„ÅóËæº„Åø
 ;
 ; In this particular case, the correct structure is (a), but the
 ; grammar also licenses (b):
 ;
-; (a)[∏˝∫¬≥´¿ﬂ]øΩ§∑π˛§ﬂ
-; (b)∏˝∫¬[≥´¿ﬂøΩ§∑π˛§ﬂ]
+; (a)[Âè£Â∫ßÈñãË®≠]Áî≥„ÅóËæº„Åø
+; (b)Âè£Â∫ß[ÈñãË®≠Áî≥„ÅóËæº„Åø]
 ;
 ; That this is legitmate ambiguity is shown by the fact that the
 ; following is also grammatical (Atsuko's intuitions):
 ;
-; ∏˝∫¬§Œ≥´¿ﬂøΩ§∑π˛§ﬂ
+; Âè£Â∫ß„ÅÆÈñãË®≠Áî≥„ÅóËæº„Åø
 ;
 ; So we do need to allow moto-vns as first members of compounds.
 
-; (ERB 2001-10-31) I want to disallow §Œ from modifying §Œ
+; (ERB 2001-10-31) I want to disallow „ÅÆ from modifying „ÅÆ
 ; nominalizations while still allowing it to modify vns used as ns.
 ; I'm doing this based on the KEY, so I've changed the sem type
 ; that this rule calls.  (Was CONT nom-pred-sem-type.)
-
-; (ERB 2001-10-31) Copying the WLINK of the daughter's KEY to
-; the mother's KEY so that we can find the raw atom in k2ys.
-
-; (ERB 2001-11-05) Maybe we didn't need to do that.
 
 ; (ERB 2001-11-26) We want to expose the event of the embedded
 ; verb as a target for modification.  The theory is that any ambiguity
@@ -1325,7 +1230,7 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 ; (MS 2003-08-22) added the restriction COMPS.FIRST.SAT opt on the VN argument.
 ; (FCB, as suggested by MS 2003-08-25)
 ; Restrict ARG's COMPS to sat-or-opt-arg to block spurious wo-no conversion
-; for nominalized verbal nouns like (do-parse-tty " Ÿ∂Ø")
+; for nominalized verbal nouns like (do-parse-tty "ÂãâÂº∑")
 
 ; (MS 2003-12-09) coindexed ARG0 of the vn with ARG0 of the resulting noun.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
@@ -1333,53 +1238,51 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 ; (FCB 2005-06-30) uncoindexed  ARG0 of the vn with ARG0 of the resulting noun.
 ;                  Dan suggested that this may be incoherent - individual OR event?
 ; (MS 2005-07-01) Experimenting with making the result VN - . This is needed
-; when coordinating vns and ns, as in: æ¶«‰ §‰ ±«≤Ë
+; when coordinating vns and ns, as in: ÂïÜÂ£≤ „ÇÑ Êò†Áîª
 
-vn2n-rule-super :=  n-lex-super & lex-rule &
-            [SYNSEM [LOCAL [CAT [HEAD noun_head &
-                                      [ MOD < [LOCAL [CAT [HEAD ordinary-or-date-noun_head]],
-					       MODIFIED.PERIPH -]>,
-					J-POSTHEAD compound,
-					VN -,
-                                        J-SPEC.FIRST.LOCAL.CAT.HEAD title_head ],
-                                 VAL spr-arg],
-			    CONT  nom-vn-sem-type &
-				[HOOK [LTOP #nom-hand,
-					INDEX #modind]],
-			    BAR bool],
-		     NON-LOCAL [QUE <! !>,
-				AFFIX <! !>],
-		     LKEYS.KEYREL #key],
-	     INFLECTED +,
-	     ORTH #stem,
-	     C-CONT [RELS <! #key & reg-nom-arg1-relation &
-			   [PRED 'noun-relation,
-			    LBL #nom-hand,
-			    ARG0 #arg0,
-			    ARG1 #prpstn-hand],
-			   message & 
-			   [PRED proposition_m_rel, 
-			    LBL #prpstn-hand,
-			    ARG0 #arg0,
-			    MARG #soa] !>,
-		     HCONS  <! qeq &
-			     [HARG #soa, LARG #vn-hand] !>],
-	     ARGS < [ORTH #stem,
-		     SYNSEM [LOCAL [ CAT  [HEAD vn_head-avm,
-					   VAL [UNSAT +,
-						SUBJ.FIRST.OPT +,
-						COMPS olist]],
-				     CONT [ HOOK.INDEX #modind]],
-			     LKEYS.KEYREL  [LBL #vn-hand,
-					    ARG0 #arg0],
-			     LEX + ]]>].
+vn2n-rule-super :=  n-lex-super & constant-lex-rule &
+ [SYNSEM [LOCAL [CAT [HEAD noun_head &
+			   [ MOD < [LOCAL [CAT [HEAD ordinary-or-date-noun_head]],
+				    MODIFIED.PERIPH -]>,
+			     J-POSTHEAD compound,
+			     VN -,
+			     J-SPEC.FIRST.LOCAL.CAT.HEAD title_head ],
+		      VAL spr-arg],
+		 CONT  nom-vn-sem-type &
+		     [HOOK [LTOP #nom-hand,
+			    INDEX #argN]],
+		 BAR bool],
+	  NON-LOCAL [QUE <! !>,
+		     AFFIX <! !>],
+	  LKEYS.KEYREL #key],
+  INFLECTED +,
+  C-CONT [RELS <! #key & reg-nom-arg1-relation &
+		[PRED 'noun-relation,
+		 LBL  #nom-hand,
+		 ARG0 #argN,
+		 ARG1 #prpstn-hand],
+		message & 
+		[PRED proposition_m_rel, 
+		 LBL #prpstn-hand,
+		 ARG0 #argV,
+		 MARG #soa] !>,
+	  HCONS  <! qeq &
+		  [HARG #soa, LARG #vn-hand] !>],
+  ARGS < [SYNSEM [LOCAL [ CAT  [HEAD vn_head-avm,
+				VAL [UNSAT +,
+				     SUBJ.FIRST.OPT +,
+				     COMPS olist]],
+			  CONT [ HOOK.INDEX #argV]],
+		  LKEYS.KEYREL  [LBL #vn-hand,
+				 ARG0 event & #argV],
+		  LEX + ]]>].
 
 vn2n-rule-detarg :=  vn2n-rule-super &
             [SYNSEM.LOCAL.CAT [HEAD ordinary_noun_head,
 	    VAL.SPR.FIRST.LOCAL.CAT.HEAD det_head & [SMOD decl]]].
 
 ; (MS 2004-03-26) These are used for argument binding in case of something
-;  like ≤÷ª“§Œ Ÿ∂Ø. They must be restricted a bit.
+;  like Ëä±Â≠ê„ÅÆÂãâÂº∑. They must be restricted a bit.
 	
 
 vn2n-rule-nspecarg1 :=  vn2n-rule-super &
@@ -1403,7 +1306,7 @@ vn2n-rule-nspecarg2 :=  vn2n-rule-super &
 ; (FCB 2005-04-09) fixed scope problem, harmonized predname with spaced kata
 ; moved new predicates to C-CONT
 ;n-lex-super-rule :=  n-lex-super & lex-rule.
-; (do-parse-tty "ø©§Ÿ ˝") 
+; (do-parse-tty "È£ü„ÅπÊñπ") 
 ; FIXME only gets ARG2 as spec
 ; FIXME doesn't share with vn2n-rule-nspecarg2 or the v2n-end-lex
 v2n-kata-rule :=   n-lex-super & lex-rule &
@@ -1452,13 +1355,11 @@ adj2n-rule := ordinary-nohon-n-lex &
             [SYNSEM [LKEYS.KEYREL.PRED #rel,
 		     LOCAL.BAR +],
             INFLECTED +,
-            ORTH #stem,
-            ARGS < i-adj-stem-lex & [ORTH #stem,
-				     SYNSEM.LKEYS.KEYREL.PRED #rel,
+            ARGS < i-adj-stem-lex & [SYNSEM.LKEYS.KEYREL.PRED #rel,
 				     INFLECTED -]>].   
 
 ; (MS 2005-06-21) BAR + keeps it from going into zpro rules. Taking that out.
-; §™ΩÒ§≠§À§ §Î°£
+; „ÅäÊõ∏„Åç„Å´„Å™„Çã„ÄÇ
 
 v2vn-rule := j-lexeme-to-word-rule &
              [LMORPH-BIND-TYPE #morph,
@@ -1474,7 +1375,7 @@ v2vn-rule := j-lexeme-to-word-rule &
 
 ; (ERB 2002-01-02) [BAR -] on the mother of this rule is
 ; keeping it from combining with the head-complement rule, but
-; it needs to for sentences like "ΩÒŒ‡§Ú§™¡˜§Í§§§ø§¿§Ø"  So,
+; it needs to for sentences like "Êõ∏È°û„Çí„ÅäÈÄÅ„Çä„ÅÑ„Åü„Å†„Åè"  So,
 ; taking that out.  Don't know what it might cause to overgenerate...
                   
 vnpolite-rule := vn-lex &
@@ -1532,15 +1433,10 @@ adjpolite-rule := i-adj-stem-lex &
                                       NON-LOCAL #nonloc],
                               INFLECTED -]].
 
-; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
+;;; lexical rules 
 
-;;;
-;;; Idiom Implementation (CH 060804)
-;;;
 word2word-rule := j-sign & phrase-or-lexrule &
-            [IDIOM #idiom,
-	     SYNSEM [LOCAL [CAT [HEAD #head],
+            [SYNSEM [LOCAL [CAT [HEAD #head],
                             BAR #bar,
                             CONT [HOOK #hook,
                                   RELS diff-list & [LIST #list,
@@ -1550,7 +1446,7 @@ word2word-rule := j-sign & phrase-or-lexrule &
                             CTXT #ctxt],
                      NON-LOCAL #nonloc,
 		     MODIFIED.PERIPH #per],
-	     ORTH #stem,
+	     STEM #stem,
              INFLECTED +,
              J-NEEDS-AFFIX #aff,
              LMORPH-BIND-TYPE #lmorph,
@@ -1559,8 +1455,7 @@ word2word-rule := j-sign & phrase-or-lexrule &
                             LAST #last],
                      HCONS [LIST #hcmiddle,
                               LAST #hclast]],
-             ARGS <[IDIOM #idiom,
-		    SYNSEM [LOCAL [CAT [HEAD #head],
+             ARGS <[SYNSEM [LOCAL [CAT [HEAD #head],
                                    BAR #bar,
                                    CONT [HOOK #hook,
                                          RELS [LIST #list,
@@ -1571,45 +1466,11 @@ word2word-rule := j-sign & phrase-or-lexrule &
 			    MODIFIED.PERIPH #per,
                             NON-LOCAL #nonloc],
                     INFLECTED +,
-		    ORTH #stem,
+		    STEM #stem,
                     J-NEEDS-AFFIX #aff,
                     LMORPH-BIND-TYPE #lmorph,
                     RMORPH-BIND-TYPE #rmorph]>].
-; word2word-rule := j-sign & phrase-or-lexrule &
-;             [SYNSEM [LOCAL [CAT [HEAD #head],
-;                             BAR #bar,
-;                             CONT [HOOK #hook,
-;                                   RELS diff-list & [LIST #list,
-; 						    LAST #last],
-;                                   HCONS [LIST #hclist,
-;                                           LAST #hclast]],
-;                             CTXT #ctxt],
-;                      NON-LOCAL #nonloc,
-; 		     MODIFIED.PERIPH #per],
-; 	     ORTH #stem,
-;              INFLECTED +,
-;              J-NEEDS-AFFIX #aff,
-;              LMORPH-BIND-TYPE #lmorph,
-;              RMORPH-BIND-TYPE #rmorph,
-;              C-CONT [RELS [LIST #middle,
-;                             LAST #last],
-;                      HCONS [LIST #hcmiddle,
-;                               LAST #hclast]],
-;              ARGS <[SYNSEM [LOCAL [CAT [HEAD #head],
-;                                    BAR #bar,
-;                                    CONT [HOOK #hook,
-;                                          RELS [LIST #list,
-;                                                 LAST #middle],
-;                                          HCONS [LIST #hclist,
-;                                                  LAST #hcmiddle]],
-;                                    CTXT #ctxt],
-; 			    MODIFIED.PERIPH #per,
-;                             NON-LOCAL #nonloc],
-;                     INFLECTED +,
-; 		    ORTH #stem,
-;                     J-NEEDS-AFFIX #aff,
-;                     LMORPH-BIND-TYPE #lmorph,
-;                     RMORPH-BIND-TYPE #rmorph]>].
+
 
 ;these are lexical rule types for zero pronoun insertion
 
@@ -1671,13 +1532,14 @@ suffix-rule :=  head-first-type-mod &  head-adjunct-p &
 
 ;;; (FCB 2006-08-09) factored out casechange-rule
 ;;; FIXME: can this be mapped to one of the matric types?
+;;; FIXME is this lexical rule or syntactic
 casechange-rule := phrasal_sign & headed-phrase &
  [SYNSEM [LOCAL [CAT.HEAD #head_h,
 		 CONT #cont_h,
 		 CTXT #ctxt_h],
 	  LEX #lex_h,
 	  NON-LOCAL #nonloc_h],
-  ORTH #stem,
+  STEM #stem,
   J-NEEDS-AFFIX #aff,
   HEAD-DTR #hdtr &
 	 [SYNSEM [LOCAL [CAT.HEAD #head_h & verb_head,
@@ -1685,13 +1547,13 @@ casechange-rule := phrasal_sign & headed-phrase &
 			 CTXT #ctxt_h],
 		  LEX #lex_h,
 		  NON-LOCAL #nonloc_h],
-	  ORTH #stem,
+	  STEM #stem,
 	  J-NEEDS-AFFIX #aff],
   ARGS < #hdtr >].
 
 ; (FCB, as suggested by MS 2003-08-25)
 ; Restrict COMPS to obl-arg to block spurious wo-no conversion
-; for nominalized verbal nouns like (do-parse-tty " Ÿ∂Ø")
+; for nominalized verbal nouns like (do-parse-tty "ÂãâÂº∑")
 
 obj-casechange-rule := casechange-rule &
  [SYNSEM.LOCAL.CAT.VAL [COMPS obl-arg & [FIRST [LOCAL [CAT [HEAD [FORMAL #form,
@@ -1723,7 +1585,7 @@ obj-casechange-rule := casechange-rule &
 				 SUBJ #subjval,
 				 SPR null]].
                         
-; (MS 2003-01-15) if the subject is obl, it is not possible to parse, e.g. §€§∑§¨§√§∆§§§Î
+; (MS 2003-01-15) if the subject is obl, it is not possible to parse, e.g. „Åª„Åó„Åå„Å£„Å¶„ÅÑ„Çã
                                                      
 subj-casechange-rule := casechange-rule & lex-rule &
  [SYNSEM.LOCAL[ CAT.VAL [SUBJ 1-list & [FIRST [OPT -,
@@ -1741,20 +1603,21 @@ subj-casechange-rule := casechange-rule & lex-rule &
 		BAR #bar_h],
   NEEDS-AFFIX #aff,
   J-NEEDS-AFFIX #aff,
-  HEAD-DTR.SYNSEM.LOCAL [CAT.VAL [SUBJ 1-list & [FIRST [OPT bool,
-						       LOCAL [CAT [HEAD overt-case-p_head &
-									[CASE ga,
-									 PTYPE ga,
-									 FORMAL #form,
-									 QUANTIFIABLE #quant],
-								   VAL #sc],
-							      CONT #cont,
-							      CTXT #ctxt,
-							      BAR #bar],
-						       LEX #lex,     
-						       NON-LOCAL #nonloc]],
-				 COMPS #objval,
-				 SPR null],
+  HEAD-DTR.SYNSEM.LOCAL [CAT.VAL [SUBJ 1-list & 
+				       [FIRST [OPT bool,
+					       LOCAL [CAT [HEAD overt-case-p_head &
+								[CASE ga,
+								 PTYPE ga,
+								 FORMAL #form,
+								 QUANTIFIABLE #quant],
+							   VAL #sc],
+						      CONT #cont,
+						      CTXT #ctxt,
+						      BAR #bar],
+					       LEX #lex,     
+					       NON-LOCAL #nonloc]],
+				  COMPS #objval,
+				  SPR null],
 			 BAR #bar_h]].
 
 
@@ -1769,23 +1632,18 @@ subj-casechange-rule := casechange-rule & lex-rule &
 ; (ERB 2001-10-29) But I actually need the empty-cardinal-numcl-rule
 ; to feed this one, because of sentences like this:
 ;
-; ∏˝∫¬»÷πÊ§œEightDigitErsatz§«§π
+; Âè£Â∫ßÁï™Âè∑„ÅØEightDigitErsatz„Åß„Åô
 ;
 ; There should be two readings here:  the dispreferred one in which
 ; EightDigitErsatz is treated predicatively (as a NumClP), and the
 ; preferred one where it is an NP and the identity copula is involved.
 
-; (ERB 2001-11-01) For k2y to purposes, we need to copy the WLINK
-; of the quantity_rel into the WLINK of the reg-nom_rel.  Possible
-; problem: will it matter if this happens with …§?  (We know we want
-; it for •…•Î.)
-
 ; (ERB 2001-11-01) For k2y purposes (and for really getting the semantics
-; right) we need to treat the NPs ª∞•…•Î°¢ª∞…§°¢and ª∞ quiet differently.
-; ª∞•…•Î and ª∞…§ should differ in that a) ª∞…§ has just a bland 
-; reg-nom_rel, while ª∞•…•Î has PRED 'doru and b) the label of the quantity
+; right) we need to treat the NPs ‰∏â„Éâ„É´„ÄÅ‰∏âÂåπ„ÄÅand ‰∏â quiet differently.
+; ‰∏â„Éâ„É´ and ‰∏âÂåπ should differ in that a) ‰∏âÂåπ has just a bland 
+; reg-nom_rel, while ‰∏â„Éâ„É´ has PRED 'doru and b) the label of the quantity
 ; rel gets copied over into the reg-nom_rel only in the case of
-; ª∞•…•Î.  Just plain ª∞ needs to involve a named relation.  So, making
+; ‰∏â„Éâ„É´.  Just plain ‰∏â needs to involve a named relation.  So, making
 ; three separate rules in place of this one.
 
 ; (ERB 2003-11-12) Added KEYS.KEY reg-nom-rel here.  This is the underspecified
@@ -1884,7 +1742,7 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
   ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ XARG #arg,
 				      LTOP #hand ]].
 
-; For ±ﬂ°¢•…•Î°¢≥¨°¢etc.
+; For ÂÜÜ„ÄÅ„Éâ„É´„ÄÅÈöé„ÄÅetc.
 
 
 ; (ERB 2003-11-12) Change relation to norm-relation on ALTKEY
@@ -1914,7 +1772,7 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 ;			      ARGS.FIRST.SYNSEM.LOCAL [CAT.HEAD.KEYS.ALTKEY #rel]].
 								
 
-; For …§°¢À‹°¢ÀÁ°¢etc.
+; For Âåπ„ÄÅÊú¨„ÄÅÊûö„ÄÅetc.
 ; (MS 2003-09-26) As Matrix Ver.0.5 does not include no-relation any more, I'll erase that here.
 
 ; (ERB 2003-11-12) For printing of MRSs, put in a PRED value
@@ -1943,12 +1801,12 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 numcl2noun-rule-type :=  ordinary-nohon-n-lex &
                          [SYNSEM.LKEYS.KEYREL.PRED 'numcl,
                           INFLECTED +,
-                          ORTH #stem,
-                          ARGS < spr-only-num-cl-lex & [ORTH #stem]>].   
+                          STEM #stem,
+                          ARGS < spr-only-num-cl-lex & [STEM #stem]>].   
 
 ; (ERB 2001-10-03) I need this to be a syntax rule so that
 ; the quantify n rule can feed it, as well as the head-specifier
-; rule for dates like "2001«Ø".  I'm also going to break it
+; rule for dates like "2001Âπ¥".  I'm also going to break it
 ; down into two rules: one that adds a spec-loc_rel and makes
 ; something that is COP-ARG + and one that adds a MOD value.
 
@@ -1986,23 +1844,25 @@ numcl2noun-rule-type :=  ordinary-nohon-n-lex &
 
 ; (MS 2003-09-26) Changed unspec-loc_rel to unspec_compound_rel from Matrix.
 
-; (TT 2003-08-14) Dangerous modification to allow pred-nom-lex °÷∞Ÿ°◊ to modify VP.
+; (TT 2003-08-14) Dangerous modification to allow pred-nom-lex „ÄåÁÇ∫„Äç to modify VP.
 ;                 ARGS.FIRST.SYNSEM.LOCAL [... CAT [HEAD temporal-noun_head, ...
 ;             ->  ARGS.FIRST.SYNSEM.LOCAL [... CAT [HEAD temporal-or-nadv_head  ...
 
 ; (MS 2004-12-13) This needs to link the HOOK.INDEX of its modifying thing.
-; (MS 2004-12-20) This shouldn't be unspec_compound_rel, but prep-mod-relation! ∫£∆¸ÕË§Î
+; (MS 2004-12-20) This shouldn't be unspec_compound_rel, but prep-mod-relation! ‰ªäÊó•Êù•„Çã
 ; added restriction on MOD.LOCAL.HEAD - only modify main verbs
+; added EMPTY + to the HEAD
 adv_np_rule-type := unary-type &
 [ SYNSEM [LOCAL [ CAT [ VAL saturated,
-                       HEAD adv_head &
+			HEAD adv_head &
 			    [ MOD < [LOCAL intersective_mod & 
 					   [ CAT.HEAD verb_head &
 						      [MAIN-PRD +],
 					     CONT [ HOOK [INDEX #arg,
 							  LTOP #hand ]] ]] >,
-				COP-ARG -,
-				J-POSTHEAD left]],
+			      COP-ARG -,
+			      J-POSTHEAD left,
+			      EMPTY +]],
                  CONT [ HOOK [INDEX #ind,
 			      LTOP #hand]],
                  BAR + ]],
@@ -2012,10 +1872,10 @@ adv_np_rule-type := unary-type &
 		     LKEYS.KEYREL modable-relation ],
   C-CONT [ RELS <! prep-mod-relation &
                   [ LBL #hand,
-		    PRED 'unspec,
+		    PRED "unspec_p_rel",
                     ARG0 #ind & [ E.TENSE no_tense ],
-                    ARG1 #time,
-                    ARG2 #arg ] !>,
+                    ARG1 #arg,
+                    ARG2 #time ] !>,
            HCONS <! !> ]].
 
 
@@ -2039,7 +1899,7 @@ number-frag-rule-type := unary-type &
                                  HOOK.INDEX #index ]]].
 
 
-;;; FCB+all (2003-08-15) allow ≈Ïµ˛ §ﬁ§« °£
+;;; FCB+all (2003-08-15) allow Êù±‰∫¨ „Åæ„Åß „ÄÇ
 ;  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD topic-vmod-p_head, into vmod-p_head
 
 
@@ -2079,7 +1939,7 @@ pp-frag-rule-type := unary-type &
 ;          [SYNSEM [ LOCAL.CONT.HCONS.LIST.FIRST.LARG #h,
 ;                                  LEX + ]] >].
 
-; (TT 2003-09-05) allow °÷¡¥¡≥°£°◊
+; (TT 2003-09-05) allow „ÄåÂÖ®ÁÑ∂„ÄÇ„Äç
 ;  this rule type is based on np-frag-rule-type
 ;adv-frag-rule-type := unary-type &
 ;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
@@ -2098,7 +1958,7 @@ pp-frag-rule-type := unary-type &
 ;                                 HCONS #h-cons,
 ;                                 HOOK.INDEX #index ]]].
 ;
-; (TT 2003-09-05) allow °÷ ÿÕ¯°£°◊
+; (TT 2003-09-05) allow „Äå‰æøÂà©„ÄÇ„Äç
 ;  this rule type is based on np-frag-rule-type
 ;na-adj-frag-rule-type := unary-type &
 ;[ SYNSEM [LOCAL [ CAT [ HEAD utterance_head &
@@ -2139,9 +1999,9 @@ na2adv-rule :=  lexical_sign-word & lex-rule &
              INFLECTED +,
              NEEDS-AFFIX -,
              J-NEEDS-AFFIX -,
-              ORTH #stem,
+              STEM #stem,
            ARGS < [SYNSEM.LOCAL.CAT.HEAD na-adj-basic_head,
-		    ORTH #stem] > ].    
+		    STEM #stem] > ].    
 
 ; (ERB 2001-11-14) Unary rule to bind off QUE values in embedded
 ; questions.
@@ -2289,7 +2149,6 @@ cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
 
 
 adj-nominal-suffix-type := head-final-type & 
-			     orth-princ &
 			   [SYNSEM.LOCAL [CAT [HEAD noun_head &
 						    [SMOD unmarked],
 					       VAL spr-arg & [ UNSAT -]]
@@ -2307,7 +2166,7 @@ adj-nominal-suffix-type := head-final-type &
 ;;;
 ;;; New N-N compound rule, which now scopes. (FCB 2006-06-06)
 ;;; this is actually NP-NP, which seems a little strange.  
-;;; e.g. we don't get (lkb::do-parse-tty "§¢§Î À›Ãı •∑•π•∆•‡ §¨ ø≤§Î")
+;;; e.g. we don't get (lkb::do-parse-tty "„ÅÇ„Çã ÁøªË®≥ „Ç∑„Çπ„ÉÜ„É† „Åå ÂØù„Çã")
 
 ;compound-rule := hadj-final-i &
 compound-rule := head-final-type-mod & head-adjunct-rule-type &
@@ -2338,7 +2197,7 @@ compound-rule := head-final-type-mod & head-adjunct-rule-type &
 ;;; by CH, modified by FCB
 
 
-lexical-compound-rule-type := orth-princ & affix-list & que-princ & 
+lexical-compound-rule-type :=  affix-list & que-princ & 
 [SYNSEM [LOCAL [BAR -,
 		CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
 		CONT [HOOK [LTOP #top,
@@ -2524,7 +2383,7 @@ frag-s-adv-rule := basic-frag-rule & unary-type &
 
 
 
-; FIXME - do we want ≈Ïµ˛°°§¨°°as a constituent?
+; FIXME - do we want Êù±‰∫¨„ÄÄ„Åå„ÄÄas a constituent?
 ; frag_pp_sel_rule := unary_frag_rule &
 ;   [ INFLECTD +,
 ;     ARGS < [ SYNSEM.LOCAL [ CAT.HEAD prep &
@@ -2570,7 +2429,7 @@ binary-frag-rule := basic-frag-rule & binary &
 
 
 ;;; FIXME - share code with PP/NP frag rules
-; (MS 2005-10-24) I want one for numbers: "»÷πÊ°ß£±£∞"
+; (MS 2005-10-24) I want one for numbers: "Áï™Âè∑ÔºöÔºëÔºê"
 
 frag-vmod-something-rule := binary-frag-rule &
  [ ARGS <  [ SYNSEM.LOCAL [ CAT [ HEAD [ MOD < synsem &
@@ -2604,8 +2463,6 @@ frag-i-adv-np-rule := frag-vmod-something-rule &
 frag-pp-int-rule := frag-vmod-something-rule  &
  [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head,
    ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  int_head ].
-
-
 
 ;;;
 ;;; End of fragment rules

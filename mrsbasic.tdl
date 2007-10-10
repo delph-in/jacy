@@ -1,4 +1,4 @@
-;; -*- Mode: TDL; Coding: euc-jp -*-
+;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; CONT type
 
@@ -167,16 +167,16 @@ abstr-excl_rel := relation.
 ;greeting_rel := abstr-excl_rel.
 
 
-; (ERB 2001-10-31) Trying to keep nmod-p §Œ from modifying
+; (ERB 2001-10-31) Trying to keep nmod-p „ÅÆ from modifying
 ; nominalizations, so I need a top level distinction between 
 ; contentful and other nom_rels that will allow me to say 
-; that §Œ only modifies things whose KEY is contentful-nom_rel.
-; (Can't use reg-nom_rel for this, because §Œ can modify things
+; that „ÅÆ only modifies things whose KEY is contentful-nom_rel.
+; (Can't use reg-nom_rel for this, because „ÅÆ can modify things
 ; that are locable_rel, and I can't make locable_rel a subtype of
 ; reg-nom_rel; see below.)
 
 ; (ERB 2001-10-31) This almost works, but I need a way to distinguish
-; between §Œ nominalizations and vns used as ns.  For now, I'm
+; between „ÅÆ nominalizations and vns used as ns.  For now, I'm
 ; going to try making a separate type for the vn nominalizations.
 
 contentful-nom-relation := noun-relation & [ARG0 full_ref-ind].
@@ -202,13 +202,13 @@ reg-nom-relation :< contentful-nom-relation.
 ; Likewise for most subtypes of name_rel.
 
 ; (ERB 2001-10-03) Reorganizing the type hierarchy for times to
-; create types that the PP -> NP rule and §À can select for.
+; create types that the PP -> NP rule and „Å´ can select for.
 
 ; (ERB 2001-10-03) locable_rel is the requirement of the rule 
-; that makes expressions like ÕË∑Ó and 2001«Ø into COP-ARG +
+; that makes expressions like Êù•Êúà and 2001Âπ¥ into COP-ARG +
 ; elements, with an added unspec_loc_rel.
 ; modable is the requirement of the further rule that
-; gives these guys a MOD value, so they can modify without §À.
+; gives these guys a MOD value, so they can modify without „Å´.
 
 ; (ERB 2001-10-03) Experimenting with making locable_rel a subtype
 ; of reg-nom_rel because dofw will also inherit from name_rel.
@@ -272,7 +272,7 @@ non-future-date-relation := not-niarg-relation & modable-relation.
 
 ;integer-relation :< relation.
 
-integer-relation := arg1-relation &
+integer-relation := arg1-ev-relation &
  [ ARG1 individual ].
 
 ; (ERB 2002-02-14) For current version of k2y code, need const_rel
@@ -289,14 +289,14 @@ integer-relation := arg1-relation &
 ;const-relation := named-relation.
 
 const-relation := integer-relation & const-value-relation &
-		  [ PRED card_rel ].
+		  [ PRED "card_rel" ].
 
 ;;; FCB 2006-08-18 harmonize with ERG
 times-relation := integer-relation & arg123-ev-relation &
-             [ PRED times_rel ].
+             [ PRED "times_rel" ].
 
 plus-relation := integer-relation & arg123-ev-relation &
-            [ PRED plus_rel ].
+            [ PRED "plus_rel" ].
 
 ; (ERB 2001-11-14) To keep the numbers-qua-numcls out of the
 ; first two nominal numcl rules.
@@ -311,7 +311,7 @@ card-relation := quantity-relation.
 ; (ERB 2001-11-14) Type for the relation in numbers acting as
 ; labels for things, as in:
 ;
-; ∏˝∫¬»÷πÊ§œ12345§«§π
+; Âè£Â∫ßÁï™Âè∑„ÅØ12345„Åß„Åô
 
 named-card-relation := card-relation & contentful-nom-relation & [PRED 'named_card].
 
@@ -639,9 +639,9 @@ pass_v_rel := predsort.
 
 
 ; FCB relations for numbers 
-card_rel := predsort.
-plus_rel := card_rel.
-times_rel := card_rel.
+;card_rel :=  named_rel.
+;plus_rel := card_rel.
+;times_rel := card_rel.
 
 
 ;(MS 2005-11-29) these were still not defined. 

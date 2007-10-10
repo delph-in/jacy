@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;; -*- Mode: TDL; Coding: utf-8 -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: %Z% %M%
@@ -209,15 +209,6 @@ affix-list := phrasal_sign &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
-orth-princ := phrasal_sign &
-	      [ORTH [LIST #firststem,
-		     LAST #laststem],
-	       ARGS < [ORTH [LIST #firststem,
-			     LAST #middlestem]],
-		      [ORTH [LIST #middlestem,
-			     LAST #laststem]] >].
 
 liszt-princ := phrasal_sign & 
 	       [SYNSEM [LOCAL [CONT [RELS [LIST #firstliszt,

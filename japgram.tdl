@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp -*-
+;;; -*- Mode: TDL; Coding: utf-8 -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: japgram
@@ -163,7 +163,7 @@ utterance_rule-idiom  := turn-type &
 
 ; (MS 2002-01-16) introduces simple-imperative vs. polite-imperative to divide utterance_rule10 and utterance_rule2e.
 ; (MS 2003-12-17) Adapting to Matrix 0.6
-; (MS 2005-12-08) We don't want the NONLOCAL.QUE <! !> condition on the argument, as embedded sentences; could have some QUE left in their storage: "√Ø§¨π‘§Ø§´∂µ§®§∆≤º§µ§§°£"
+; (MS 2005-12-08) We don't want the NONLOCAL.QUE <! !> condition on the argument, as embedded sentences; could have some QUE left in their storage: "Ë™∞„ÅåË°å„Åè„ÅãÊïô„Åà„Å¶‰∏ã„Åï„ÅÑ„ÄÇ"
 
 utterance_rule-command := utterance-plusmessage-type &
                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
@@ -179,7 +179,7 @@ utterance_rule-command := utterance-plusmessage-type &
 
 
 
-; (MS 2004-12-14) an utterance rule for sentences with an infinite ending, like "µ∂§Í§ §Ø",
+; (MS 2004-12-14) an utterance rule for sentences with an infinite ending, like "ÂÅΩ„Çä„Å™„Åè",
 ; at the moment restricted to adjectives.
 
 utterance_rule-decl-infinite := utterance-plusmessage-type &
@@ -244,7 +244,7 @@ adv_np_rule := adv_np_rule-type.
 ; (ERB 2002-01-28) MOD...HEAD is ordinary-or-date-noun_head to allow
 ; nouns like TOKI as head of compounds. (Was just ordinary_noun_head)
 ; (MS 2002-06-11) The POSTHEAD is unified with the POSTHEAD of the argument. Thus, I can prevent
-; words like ¥÷ from being the first argument in a compound.
+; words like Èñì from being the first argument in a compound.
 
 ; (MS 2003-09-26) Changed no_nmod to unspec-compound-relation, as defined in Matrix.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
@@ -420,7 +420,7 @@ head_subj_rule := head-subject-rule & [SYNSEM.LOCAL.BAR +].
 
 ; (ERB 2001-08-06) Splitting this in two for Smith-style number names.
 
-; (MS 2001-11-14) Took the BAR + restriction out in order to make compounds with subcategorizing nouns possible (ø∂π˛¿ËªÿƒÍ). Let's see if that overgenerates.
+; (MS 2001-11-14) Took the BAR + restriction out in order to make compounds with subcategorizing nouns possible (ÊåØËæºÂÖàÊåáÂÆö). Let's see if that overgenerates.
 ; (MS 2001-11-19) It does. Let's take the BAR from the head-dtr.
 ; (MS 2001-11-20) Still too much ambiguity. Everything is BAR + again.
 
@@ -520,12 +520,12 @@ hf-adj-i-rule := hadj-final-i &
 ; (ERB 2001-11-28) See notes at head-adjunct-rule-type.
 
 ; (MS 2005-09-30) The BAR + status on this gave us problems when having nominal suffixes
-; in compounds, such as: "»∆Õ—µ°Õ—"
+; in compounds, such as: "Ê±éÁî®Ê©üÁî®"
 
 ; (MS 2005-10-18) So, we need prefix and suffix rules.
 
 ; (MS 2005-10-06) Playing around with VAL saturated on the second argument, to avoid
-; spurious ambiguity in ¡∞«Øª∞∑Ó
+; spurious ambiguity in ÂâçÂπ¥‰∏âÊúà
 
 hi-adj-i-rule := hadj-first-i & 
                       [SYNSEM.LOCAL.BAR +,
@@ -536,7 +536,7 @@ hi-adj-i-rule := hadj-first-i &
                                              BAR +]]>].
 
 ; (ERB 2001-11-28) Rule for scopal modifiers.
-; For some reason, ø∑§∑§§ could be the modifier here until I put
+; For some reason, Êñ∞„Åó„ÅÑ could be the modifier here until I put
 ; in the constraint [VAL saturated].  I don't see why that should
 ; change things.  (If I type the MOD.LOCAL of everything, it will
 ; be doubly ruled out, but that's a separate issue.)
@@ -554,7 +554,7 @@ hf-adj-s-rule := hadj-final-s &
 
 ; (MS 2003-06-11) Rule for scopal modifiers - head first
 ; (MS 2005-12-22) Let's try to take the BAR status from the head:
-; "√µ§∑§–§´§Í§π§Î"
+; "Êé¢„Åó„Å∞„Åã„Çä„Åô„Çã"
 
 hi-adj-s-rule := hadj-first-s &
                       [SYNSEM.LOCAL [BAR #bar],
@@ -568,7 +568,7 @@ hi-adj-s-rule := hadj-first-s &
                                             BAR +]]>].
 
 ; (MS 2005-10-18) Prefixes and suffixes have a different BAR status. When we want a prefixed noun
-; to  be in a compound, it should not be BAR +: "¿Ø≥¶∫∆ ‘¿Æ"
+; to  be in a compound, it should not be BAR +: "ÊîøÁïåÂÜçÁ∑®Êàê"
 
 prefix-rule := hadj-final-i & 
                       [C-CONT [RELS <! !>,
@@ -607,18 +607,18 @@ suffix-rule := hadj-first-i &
 ; to prefer low attachment of relative clauses: rel-cl-rule-1 requires a [NUCL
 ; +] head daughter, while rel-cl-rule-2 requires a [NUCL -] head
 ; daughter.
-;(CH 2003-08-15)  ºÁÃæªÏ§Ú¥ÿ∑∏¿·§Œ§…§≥§À§‚¥ÿœ¢§≈§±§ §§ (non gapped)
-; *** 2003-08-14 §Œ Melanie Siegel §µ§Û§Œæ Û§À¥§≈§ØΩ§¿µ ***
+;(CH 2003-08-15)  ‰∏ªÂêçË©û„ÇíÈñ¢‰øÇÁØÄ„ÅÆ„Å©„Åì„Å´„ÇÇÈñ¢ÈÄ£„Å•„Åë„Å™„ÅÑ (non gapped)
+; *** 2003-08-14 „ÅÆ Melanie Siegel „Åï„Çì„ÅÆÊÉÖÂ†±„Å´Âü∫„Å•„Åè‰øÆÊ≠£ ***
 ; there are three thing to change on the first daughter:
 ; 1) MAIN-PRD bool
 ; 2) NUCL not_fin_conj
 ; 3) The co-indexing of #adjevent to CONT.HOOK.INDEX instead of ARG0.
 ;
 ;(CH 2003-08-22)
-; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" §Úƒ…≤√
+; "ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD noun_head" „ÇíËøΩÂä†
 
 ; (MS 2004-12-13) This had [ADJ -] on its argument, preventing the correct
-; reading for Ã‹§¨»˛§∑§§«≠.
+; reading for ÁõÆ„ÅåÁæé„Åó„ÅÑÁå´.
 ; (FCB 2005-06-15) Added ARG0 to messages
 
 relative-clause-rule := hadj-final-for-rel-cl-topic &
@@ -628,7 +628,7 @@ relative-clause-rule := hadj-final-for-rel-cl-topic &
 						    LBL #top,
 						    ARG0 #adjevent,
 						    MARG #soa],
-                                          prep-mod-relation & [PRED 'topic_rel,
+                                          prep-mod-relation & [PRED 'topic_p_rel,
                                                        ARG0.E.TENSE no_tense,
                                                        LBL #adjhand,
                                                        ARG1 #adjevent,
@@ -664,7 +664,7 @@ relative-clause-rule := hadj-final-for-rel-cl-topic &
 
 ; (ERB 2002-01-22) NUCL conj now on supertype.
 ; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-06-25) [HEAD.EMPTY -] to prevent spuriou ambiguity on ø©§Ÿ§∆§§§Î§¥»” 
+; (MS 2004-06-25) [HEAD.EMPTY -] to prevent spuriou ambiguity on È£ü„Åπ„Å¶„ÅÑ„Çã„ÅîÈ£Ø 
 
 sentence-te-coordination-rule := sentence-coord-type &
 [SYNSEM [LOCAL [BAR +,
@@ -777,8 +777,8 @@ na-vend-rule := stem-end-rule-type &
 	  SYNSEM.LOCAL.CAT.HEAD verbend_head] >].
 
 
-; (MS 2004-11-08) This one should keep the LMORPH-BIND-TPYE: ÕË§‰§π§§
-; (MS 2004-12-21) This doesn't necessarily have to be FIN +: µ∂§Í§ §Ø
+; (MS 2004-11-08) This one should keep the LMORPH-BIND-TPYE: Êù•„ÇÑ„Åô„ÅÑ
+; (MS 2004-12-21) This doesn't necessarily have to be FIN +: ÂÅΩ„Çä„Å™„Åè
 ; (S 2005-01-06) Copy up ARG-S.
 
 unary-vstem-vend-rule := unary-type-super &
@@ -802,10 +802,10 @@ unary-vstem-vend-rule := unary-type-super &
 	  J-NEEDS-AFFIX -] >].
 
 
-; (ERB 2002-01-02) Getting double parses for "§™¡˜§Í§§§ø§¿§≠§ø§§"
-; because §§§ø§¿§≠§ø§§ is compatible with the head of hsr and the
+; (ERB 2002-01-02) Getting double parses for "„ÅäÈÄÅ„Çä„ÅÑ„Åü„Å†„Åç„Åü„ÅÑ"
+; because „ÅÑ„Åü„Å†„Åç„Åü„ÅÑ is compatible with the head of hsr and the
 ; vend of vn-vend-rule.  (Similar problems don't arise with 
-; ø©§Ÿ§∆§§§ø§¿§≠§ø§§ because ø©§Ÿ§∆ is also [HEAD v-end_head] and
+; È£ü„Åπ„Å¶„ÅÑ„Åü„Å†„Åç„Åü„ÅÑ because È£ü„Åπ„Å¶ is also [HEAD v-end_head] and
 ; therefore incompatible with the vstem-vend rule.)  This is a
 ; bit of a hack, but keep the vn-vend-rule from appying in these
 ; cases by requiring vend to be [AUX -].
@@ -881,7 +881,7 @@ prefix-attach-rule := prefix-rule &
 
 
 ; (MS 2003-12-19) Matrix 0.6
-; (do-parse-tty "•”°º•Î §¨ ∞˚§ﬂ §ø§§")
+; (do-parse-tty "„Éì„Éº„É´ „Åå È£≤„Åø „Åü„ÅÑ")
 
 tai-obj-change-rule :=  obj-casechange-rule &
  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
@@ -892,7 +892,7 @@ tai-obj-change-rule :=  obj-casechange-rule &
 				   SUBJ null]]]]] >].
 
 
-;; µ°¥ÿ§Œ —ππ§∑§ø§§
+;; Ê©üÈñ¢„ÅÆÂ§âÊõ¥„Åó„Åü„ÅÑ
 
 vn-light-obj-change-rule-case-p  :=  obj-casechange-rule &
  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
@@ -917,8 +917,8 @@ vn-light-obj-change-rule-noun  :=  obj-casechange-rule &
 ; so that this rule can't apply after the vstem-vend-rule.
 ; (FCB 2006-08-09)   Constraining things to be BAR - for the same reason 
 ; FIXME why do this  and tai-obj-change-rule come on opposite sides of the vend-rule
-; (do-parse-tty "•”°º•Î §¨ ∞˚§·§Î")
-; (do-parse-tty "∏§ §¨ ø©§Ÿ §È§Ï§Î")
+; (do-parse-tty "„Éì„Éº„É´ „Åå È£≤„ÇÅ„Çã")
+; (do-parse-tty "Áä¨ „Åå È£ü„Åπ „Çâ„Çå„Çã")
 
 rareru-obj-change-rule :=  obj-casechange-rule &
  [SYNSEM.LOCAL [CAT.VAL [COMPS.FIRST.LOCAL [ CAT.HEAD overt-case-p_head &
@@ -931,7 +931,7 @@ rareru-obj-change-rule :=  obj-casechange-rule &
 
 ; (MS 2004-12-10) I don't want this to apply to copula verbs (generation).
 ; FIXME doesn't apply now
-;(do-parse-tty "∏§ §Ú Õﬂ§∑ §¨§Î")
+;(do-parse-tty "Áä¨ „Çí Ê¨≤„Åó „Åå„Çã")
 
 garu-sbj-change-rule := subj-casechange-rule &
  [SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
@@ -942,8 +942,8 @@ garu-sbj-change-rule := subj-casechange-rule &
 
 
 ; (ERB 2001-09-20) We want currency NumClPs at least to be possible
-; left daughters of compounds for things like …¥±ﬂ•Œ°º•» or
-; ∆ÛÀ¸•…•Îº÷.  That these are actually compounds is shown by the
+; left daughters of compounds for things like ÁôæÂÜÜ„Éé„Éº„Éà or
+; ‰∫å‰∏á„Éâ„É´Ëªä.  That these are actually compounds is shown by the
 ; pronunciation of the latter (niman doru guruma), which involves rendaku.
 ; (MS 2001-10-10) But if you restrict them to be BAR -, they can (e.g.) not be modified. Let them be BAR bool and everything is possible?
 
@@ -1017,9 +1017,9 @@ quasi-morph-rule := binary-basic &
 
 
 
-;(CH 2003-08-15) ∆∞ªÏ∏Ï¥¥°‹∆∞ªÏ∏Ï¥¥
-;(FIXME) semantics §¨§™§´§∑§§æÏπÁ§¨§¢§Î°£
-; ex) V2§¨V1§Œ•§•Ÿ•Û•»§ÚºË§ÎæÏπÁ§Œ≤Úº·§¨§«§≠§ §§°£
+;(CH 2003-08-15) ÂãïË©ûË™ûÂππÔºãÂãïË©ûË™ûÂππ
+;(FIXME) semantics „Åå„Åä„Åã„Åó„ÅÑÂ†¥Âêà„Åå„ÅÇ„Çã„ÄÇ
+; ex) V2„ÅåV1„ÅÆ„Ç§„Éô„É≥„Éà„ÇíÂèñ„ÇãÂ†¥Âêà„ÅÆËß£Èáà„Åå„Åß„Åç„Å™„ÅÑ„ÄÇ
 ; almost lost the ambiguity with VAL.UNSAT +
 ; but for some reason subj-zpro-ins-lrule won't run after the vstem-vstem rule
 ; because of a conflict of SUBJ NUL and sat-arg-list
@@ -1043,18 +1043,17 @@ intransitive-lex-vv-rule := intransitive-lex-vv-rule-type.
  
 
 ;(CH 2003-08-27)
-; ∑¡Õ∆ªÏ§ÚÃæªÏ§À —§®§Î°£
-;°÷∏≈ §µ°◊§ §…§Ú≤Ú¿œ§π§Î§ø§·°£
+; ÂΩ¢ÂÆπË©û„ÇíÂêçË©û„Å´Â§â„Åà„Çã„ÄÇ
+;„ÄåÂè§ „Åï„Äç„Å™„Å©„ÇíËß£Êûê„Åô„Çã„Åü„ÇÅ„ÄÇ
 ; (MS 2005-02-14) Moved the definitions to rule-types.tdl.
 
 adj-nominal-suffix-rule := adj-nominal-suffix-type.
 
 
 ; ADV -> NOUN
-; °÷Ω≈Õ◊ §µ°◊
+; „ÄåÈáçË¶Å „Åï„Äç
 
 ; adv-nominal-suffix-rule := head-final-type & 
-; 			   orth-princ &
 ;    [SYNSEM.LOCAL.CAT.VAL.UNSAT -,
 ;     NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD na-adj_head,
 ; 				       VAL.UNSAT -],

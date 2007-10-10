@@ -1,0 +1,320 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; author            | date        | modification
+;;; ------------------|-------------|------------------------------------------
+;;; Francis Bond (FCB)|             | Emily Bender (ERB), Melanie Siegel (MS)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; File for spelling preserving lexical rules, i.e., instances
+; of (subtypes of) const-ltol-rule or const-ltow-rule.
+
+; %suffix should not appear in this file (see irules.tdl).
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;N-> QUANTIFIED N;;;;;;;;;;;;;;;;;;;;
+
+; (ERB 2001-08-16) Changed the following:
+;
+; ARGS.FIRST.SYNSEM.LOCAL.CONT.KEY.LBL #h 
+;
+; to
+;
+; ARGS.FIRST.SYNSEM.LOCAL.CONT.LBL #h 
+;
+; So that it works properly with NumCl phrases.
+
+; (ERB 2001-09-19) Somewhat surprisingly, this isn't restricted
+; to things that are LEX +.  For the moment, I'll just have it
+; copy up the LEX value.  Perhaps it should be restricted to
+; LEX + daughters.
+
+; (ERB 2001-09-20) Of course it can't be restricted to things
+; that are LEX +, because it has to apply to NumCl phrases that
+; are built up of an integer and a NumCl.  But copying up the
+; LEX value is still a good idea.
+
+; (ERB 2001-09-24) Experimenting with forcing this to apply
+; after all other valence requirements are satisfied.  (I'm
+; getting spurious ambiguity in the date expressions otherwise.)
+
+; (MS 2002-09-05) Inserted UNSAT + on the daughter to prevent the rule to be cyclic (actually a hint from Dan F.)
+;;; FCB this shouldn't be a lexical-rule (it applies after syntactic rules)
+
+quantify-n-lrule := word2word-rule &
+[SYNSEM [LOCAL [CAT [VAL saturated & [UNSAT -]]],
+	 LEX #lex],
+ C-CONT [RELS <! [PRED #rel & udef_rel,
+		  ARG0 #i,
+		  RSTR #restr] !>,
+         HCONS <! qeq &
+                 [HARG #restr,
+                  LARG #h] !>],
+ ARGS.FIRST.SYNSEM [LOCAL [CAT [HEAD noun_head,
+			       VAL [UNSAT +,
+				    SPR opt-1-arg & [FIRST [OPT + ,
+							    LOCAL.CAT.HEAD.KEYS.KEY #rel]],
+				    SUBJ olist,
+				    COMPS olist]],
+                          CONT.HOOK [LTOP #h,
+				     INDEX #i],
+                          NUCL nucl_plus],
+		    LEX #lex]].
+
+
+
+
+; (MS 2005-01-06) Floated numeral classifiers, counting subjects.
+; (MS 2005-01-10) These should copy the RELS from their ARGS, because
+; measuring classifiers might have quite complicated ARGS: りんごを四キロ買った
+num-cl-sbj-float-lrule := num-cl-sbj-float-rule.
+num-cl-obj-float-lrule := num-cl-obj-float-rule.
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;VN->N;;;;;;;;;;;;;;;;;;;;
+;; (MS 2005-05-24) These cause ambiguity in all cases of 
+;; N no VN wo suru
+;; Try: 中国語の勉強をする
+
+vn2n-det-lrule := vn2n-rule-detarg.
+
+vn2n-nspec_arg1-lrule := vn2n-rule-nspecarg1.
+
+vn2n-nspec_arg2-lrule := vn2n-rule-nspecarg2.
+
+
+
+;;;;;;;;;;;;;;;;;;LEXICAL RULES FOR ZPRO INSERTION;;;;;
+
+; (ERB 2001-09-03) Now that light verbs take over the
+; valence of their SPRs, I need to restrict light verbs
+; from undergoing these rules.
+
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to XARG instead.
+; (MS 2005-01-06) Copy up ARG-S.
+
+
+subj-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
+			COMPS #comps,
+			SPR #spr],
+		CONT.HOOK.XARG zpro_ref-ind,
+		ARG-S #args]],
+ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
+						       EMPTY -],
+                                VAL [SUBJ opt-1-arg,
+				     COMPS #comps,
+				     SPR #spr]],
+			   ARG-S #args]]].
+
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
+; (MS 2004-02-25) No. LKEYS.KEYREL IS accessible (we are in lexrules!)
+; (MS 2004-06-25) Auxiliaries should not undergo this. 
+; (MS 2004-11-05) why not? 食べてもらう
+; (MS 2004-11-09) Ok, tried to give AUX a more complex value. Aspect
+; auxiliaries should not undergo the rule, while complex auxiliaries should be
+; allowed.
+; (MS 2004-11-30) We need to be able to bind the second complement first:
+; テーブルに置く . I have therefore changed the rule such that it can apply to a 
+; COMPS list that contains one or more arguments and puts the rest on the mother's list.
+
+
+
+
+obj-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ #subj & [FIRST.OPT bool],
+			COMPS null,
+			SPR #spr],
+	       ARG-S [FIRST #subj]],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -,
+						      AUX aux_minus_or_complex, 
+						       EMPTY -],
+                               VAL [SUBJ #subj,
+				    COMPS opt-1-arg,
+				    SPR #spr]]]]].
+
+; (ERB 2001-10-08) while OBJ and SUBJ zpro rules were strictly
+; ordered with respect to each other, OBJ2 wasn't.  I'm going
+; to require it to apply first.
+; (MS 2001-10-09) Now we cannot get perspective auxiliaries. We should find another solution.
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
+; (MS 2004-11-30) To restrict the application of this rule, it applies only if there is
+; a first complement left. 
+
+obj2a-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
+			COMPS 1-list & < [LOCAL #obj] >,
+			SPR #spr],
+	       ARG-S < #subj , [LOCAL #obj]  >],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
+						       EMPTY -],
+                               VAL [SUBJ < #subj >,
+				    COMPS opt-2-args & 
+					  < [OPT + ], [LOCAL #obj]  >,
+				    SPR #spr]]]]].
+
+obj2b-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
+			COMPS obl-1-arg & < [LOCAL #obj] >,
+			SPR #spr],
+	       ARG-S < #subj , [LOCAL #obj]  >],
+	 LKEYS.KEYREL.ARG3 zpro_ref-ind],
+ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD verb_head-avm & [ LIGHT -, 
+						       EMPTY -],
+                               VAL [SUBJ < #subj >,
+				    COMPS opt-2-args & 
+					  < [LOCAL #obj] , [OPT + ] >,
+				    SPR #spr]]]]].
+
+
+
+; (CH 2005-03-18) added to allow "彼 が [zero 銀を] 金 に し た" to
+; be interpreted as a v-soc-stem-lex type.
+obj2-soc-suru-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ < #subj >,
+			COMPS obl-1-arg & < [LOCAL #obj] >,
+			SPR #spr],
+	       ARG-S < #subj , [LOCAL #obj]  >],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-stem_head & [ LIGHT -, 
+						    EMPTY -,
+						    COP -],
+                               VAL [SUBJ < #subj >,
+				    COMPS < [OPT + ], [LOCAL #obj,
+						       OPT -]  >,
+				    SPR #spr]]]]].
+
+
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to XARG instead.
+
+naadj-subj-zpro-ins-lrule := naadj-zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
+			COMPS #comps,
+			SPR #spr],
+	       ARG-S < >,
+	       CONT.HOOK.XARG zpro_ref-ind] ],
+ ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD na-adj_head & [ADJ +, MOD null],
+                               VAL [SUBJ opt-1-arg,
+				    COMPS #comps & null,
+				    SPR #spr & null]]]].
+
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to XARG instead.
+
+opend-subj-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [SUBJ null,
+			 COMPS #comps,
+			 SPR #spr],
+		ARG-S #rest,
+		CONT.HOOK.XARG zpro_ref-ind]],
+ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
+							       EMPTY -,
+							      MODUS operative],
+                                VAL [SUBJ opt-1-arg & < #sbj >,
+				    COMPS #comps,
+				    SPR #spr]],
+			   ARG-S [FIRST #sbj,
+				  REST #rest]]]].
+
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
+
+opend-obj-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [COMPS null,
+			SUBJ #subj & [FIRST.OPT bool],
+			SPR #spr],
+	       ARG-S #subj],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
+							       EMPTY -,
+							      MODUS operative],
+                                VAL [SUBJ #subj,
+				    COMPS opt-1-arg,
+				    SPR #spr]]]]].
+
+; (MS 2003-12-22) Matrix 0.6: LKEYS.KEYREL is not accessible.
+; Moving to CONT.RELS.LIST.FIRST.ARG2. But is that right???
+
+opend-obj2-zpro-ins-lrule := zpro-insertion-rule &
+[SYNSEM [LOCAL [CAT.VAL [COMPS 1-list & < #obj >,
+			SUBJ #subj & [FIRST #sbj & [OPT bool]],
+			SPR #spr],
+	       ARG-S < #sbj , #obj >],
+	 LKEYS.KEYREL.ARG2 zpro_ref-ind],
+ ARGS.FIRST [SYNSEM.LOCAL [CAT [HEAD v-pass-caus-end_head & [ LIGHT -, 
+							       EMPTY -,
+							      MODUS operative],
+                                VAL [SUBJ #subj,
+				    COMPS opt-2-args & 
+					  < #obj , [OPT + ] >,
+				    SPR #spr]]]]].
+
+
+
+
+;;;;;;;;;;;;;;;;;;COPULA -> ELLIPTICAL VERB;;;;;
+
+
+;cop2ell-infl-rule :=
+;cop2ell-rule.
+
+
+;;;;;;;;;;;;;;;;;;GA-NO CONVERSION IN RELATIVE CLAUSES AND INFINITIVE+KATA;;;;;
+
+
+; (MS 2003-02-14) took the restriction MOD synsem out to allow also the infinite+kata rule:
+; あの人の歩き方
+
+; (MS 2003-08-22) added restriction obl-1-arg to ga-no-conversion and obl-arg to wo-no-conversion, 
+; such that spurious ambiguity in connection with VN2N rule vanishes.
+
+ga-no-conversion-rule := subj-casechange-rule &
+ [SYNSEM.LOCAL.CAT.VAL.SUBJ obl-1-arg & [FIRST [LOCAL.CAT.HEAD.CASE no-case]],
+  ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
+				  [MAIN-PRD -,
+				   COP -,
+				   H-TENSE present-or-past]],
+			BAR -],
+	  INFLECTED +,
+	  J-NEEDS-AFFIX bool] >].
+
+wo-no-conversion-rule := obj-casechange-rule &
+ [SYNSEM.LOCAL [CAT.VAL.COMPS obl-arg & [FIRST [LOCAL.CAT.HEAD [PTYPE ga,
+								CASE no-case],
+						OPT - ]],
+		BAR +],
+  ARGS < [SYNSEM.LOCAL [CAT [HEAD verb_head &
+				  [MAIN-PRD -,
+				   COP -,
+				   VN -,
+				   MODUS infinitive]],
+			BAR -],
+	  INFLECTED +,
+	  J-NEEDS-AFFIX -] >].
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;(CH 2005-04-09)
+;;
+;;  V embedding `Alternation' Lexical Rules
+;;
+;;    intransitive  --> monotransitive
+;;                  --> ditransitive
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+
+
+vbar-monotransitivization-v-lrule := vbar-monotransitivization-v-rule.
+vbar-ditransitivization-v-lrule := vbar-ditransitivization-v-rule.
+vbar-monotransitivization-c-lrule := vbar-monotransitivization-c-rule.
+vbar-ditransitivization-c-lrule := vbar-ditransitivization-c-rule.
+; vbar-monotransitivization-c2-lrule := vbar-monotransitivization-c2-rule.
+; vbar-ditransitivization-c2-lrule := vbar-ditransitivization-c2-rule.
+; vbar-monotransitivization-kurusuru-lrule := vbar-monotransitivization-kurusuru-rule.
+; vbar-ditransitivization-kurusuru-lrule := vbar-ditransitivization-kurusuru-rule.

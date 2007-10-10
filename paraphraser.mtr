@@ -1,4 +1,4 @@
-;;; -*- Mode: tdl; Coding: euc-jp; -*-
+;;; -*- Mode: tdl; Coding: utf-8; -*-
 
 itadaku_taberu := monotonic_mtr &
 [ INPUT.RELS <! [ PRED "_itadaku_v_rel" ] !>,

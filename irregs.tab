@@ -1,16 +1,2 @@
-;;; -*- Mode: LISP; Syntax: Common-Lisp; Coding: euc-jp -*-
-;;;
-;;; This file contains irregular morphology
-;;; The format is out-string rule in-string
-;;;
-;;; Currently we aren't using this, but could
 "
-;;; 五段・ワ行ウ音便
-;;  c2stem past form (regular would be 乞い)
-;乞う t-lexeme-c-stem-infl-rule 乞う
-;こう t-lexeme-c-stem-infl-rule こう
-;問う t-lexeme-c-stem-infl-rule 問う
-;とう t-lexeme-c-stem-infl-rule とう
-;五段・カ行促音便 --- 行く
-;行っ t-lexeme-c-stem-infl-rule 行く 
 "

@@ -1,0 +1,50 @@
+2007-09-05  Francis Bond  <bond@nooka>
+
+	* used :+ to redefine TAM and Messages
+	* fixed some redefinitions by merging the changes (lexical_sign-word, lex-rule)
+
+2007-07-12  Francis Bond  <bond@nooka>
+
+	* added the semi.vpm to the pet settings
+	* replaced WLINK with LNK for new characterization support
+
+2007-05-02  Francis Bond  <bond@nooka>
+
+	* added a patch to fix MWE lexicon indexing
+
+2007-05-01  Francis Bond  <bond@knut>
+
+	* finished changing ORTH to STEM with oe's help
+
+
+2007-04-20  Francis Bond  <bond@nooka>
+
+	* changed preposition argument order to match standard practice
+	ARG1 is external (modifiee)
+	ARG2 is internal (complement)
+	ARG1 on ARG2 
+	NP on NP: the book_1 on the table_2
+	V on NP:  I ate_1 on Monday_2
+
+	
+2007-04-17  Francis Bond  <bond@nooka>
+
+	* converted to utf-8
+
+	* added dumped lexicon
+
+	* changed ORTH to STEM for pet <not fully working>
+
+2006-11-05  Francis Bond  <bond@localhost.localdomain>
+
+	* added は and も entries for case-p-lex-postp-ga to allow the
+	case reading after postps.
+
+	* changed  v-end_head to inherit from adj-or-adv_head.
+	This allows degree adverbs to modify past-tense adjectives.
+	FIXME: now we over generate by modifying past tense normal verbs
+	
+2006-11-02  Francis Bond  <bond@localhost.localdomain>
+
+	* changelog: pred-adj-lex, made a sub-class of adjectives, so that
+	it can be modified by とても, made it BAR - to reduce ambiguity.
