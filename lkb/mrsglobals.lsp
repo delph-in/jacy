@@ -103,6 +103,7 @@ of variables in the indexed representation")
 (defparameter *ignored-sem-features* `( ,(vsym "IDIOMP")
 					,(vsym "CFROM")
 					,(vsym "CTO")
+					,(vsym "LNK")
 					,(vsym "WLINK"))
   "A list of features which are ignored completely when constructing
 an MRS from a FS representation of an MRS")

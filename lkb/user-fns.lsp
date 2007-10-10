@@ -2,27 +2,34 @@
 
 (in-package :lkb)
 
-(defun establish-linear-precedence (rule-fs)
-   ;;;    A function which will order the features of a rule
-   ;;;    to give (mother daughter1 ... daughtern)
-   ;;;
-   ;;;  Modification - this must always give a feature
-   ;;;  position for the mother - it can be NIL if
-   ;;; necessary
-  (let* ((mother NIL)
-         (daughter1 (get-value-at-end-of rule-fs '(ARGS FIRST)))
-         (daughter2 (get-value-at-end-of rule-fs '(ARGS REST FIRST)))
-         (daughter3 (get-value-at-end-of rule-fs '(ARGS REST REST
-FIRST))))
-    (declare (ignore mother))
-    (unless (and daughter1 (not (eql daughter1 'no-way-through)))
-      (cerror "Ignore it" "Rule without daughter"))
-    (append (list nil '(ARGS FIRST))
-            (if (and daughter2 (not (eql daughter2 'no-way-through)))
-                (list '(ARGS REST FIRST)))
-            (if (and daughter3 (not (eql daughter3 'no-way-through)))
-                (if (and daughter2 (not (eql daughter2 'no-way-through)))
-                    (list '(ARGS REST REST FIRST)))))))
+;;;
+;;; determine surface order of constituents in rule: returns list of paths into
+;;; feature structure of rule, i.e. (nil (args first) (args rest first)) for a
+;;; binary rule, where the first list element is the path to the mother node of
+;;; the rule.
+;;;
+(defun establish-linear-precedence (rule)
+  (let ((daughters
+         (loop
+             for args = (existing-dag-at-end-of rule '(args))
+             then (existing-dag-at-end-of args *list-tail*)
+             for daughter = (when args 
+                              (get-value-at-end-of args *list-head*))
+             for path = (list 'args) then (append path *list-tail*)
+             while (and daughter (not (eq daughter 'no-way-through)))
+             collect (append path *list-head*))))
+    (if (null daughters)
+      (cerror "Ignore it" "Rule without daughters")
+      (cons nil daughters))))
+
+;;;
+;;; detect rules that have orthographemic variation associated to them; those
+;;; who do should only be applied within the morphology system; this version is
+;;; a little complicated because we change from a full-form set-up to one with
+;;; on-line morphology during the course.
+;;;
+(defun spelling-change-rule-p (rule)
+  (rule-orthographemicp rule))
 
 (defun redundancy-rule-p (rule)
 ;;; a function which is used to prevent the parser 
@@ -44,44 +51,18 @@ FIRST))))
 ;;; into the output structure of inflectional rules; somewhat more complicated
 ;;; than one might expect because of treatment for multi-word elements.
 ;;;
-
-(defun make-orth-tdfs (orth)
-  (let ((unifs nil)
-        (tmp-orth-path *orth-path*))
-   (loop for orth-value in (split-into-words orth)
-        do
-          (let ((opath (create-path-from-feature-list 
-                        (append tmp-orth-path *list-head*))))
-            (push (make-unification :lhs opath                    
-                                    :rhs
-                                    (make-u-value 
-                                     :type orth-value))
-                  unifs)
-            (setq tmp-orth-path (append tmp-orth-path *list-tail*))))
-    (push (make-unification :lhs  
-                            (create-path-from-feature-list 
-                             (append (butlast *orth-path*) '(last)))
-                            :rhs
-                            (create-path-from-feature-list 
-                             tmp-orth-path))
-          unifs)
-    (let ((indef (process-unifications unifs)))
-      (when indef
-        (setf indef (create-wffs indef))
-        (make-tdfs :indef indef)))))
-
-;;(defun make-orth-tdfs (orthography)
-;;  (let* ((unifications
-;;          (loop 
-;;              for token in (split-into-words orthography)
-;;              for path = *orth-path* then (append path *list-tail*)
-;;              for opath = (create-path-from-feature-list 
-;;                           (append path *list-head*))
-;;              collect (make-unification :lhs opath                    
-;;                                        :rhs (make-u-value :type token))))
-;;         (indef (process-unifications unifications)))
-;;    (when indef
-;;      (make-tdfs :indef (create-wffs indef)))))
+(defun make-orth-tdfs (orthography)
+  (let* ((unifications
+          (loop 
+              for token in (split-into-words orthography)
+              for path = *orth-path* then (append path *list-tail*)
+              for opath = (create-path-from-feature-list 
+                           (append path *list-head*))
+              collect (make-unification :lhs opath                    
+                                        :rhs (make-u-value :type token))))
+         (indef (process-unifications unifications)))
+    (when indef
+      (make-tdfs :indef (create-wffs indef)))))
 
 
 ;;;
@@ -199,6 +180,7 @@ FIRST))))
 	    for yy = (when *preprocessor*
 		       (lkb::preprocess
 			form :globalp nil :format :list :verbose nil))
+	    ;; FCB change with preprocessor ---  (lkb::preprocess form))
             for pos = (third analysis)
             when verbose do
               (format 
@@ -253,6 +235,7 @@ FIRST))))
     (chasen-preprocess-sentence-string string :verbose verbose :posp posp)
     (if *preprocessor*
       (preprocess string :format :lkb :verbose nil)
+      ;; FCB change with new preprocessor (preprocess string)
       (normalize-sentence-string (string-trim '(#\space #\tab) string)))))
 
 
@@ -266,17 +249,6 @@ FIRST))))
 
 #+:null
 (setf tsdb::*tsdb-preprocessing-hook* "lkb::preprocess-sentence-string")
-
-;;;
-;;; pick out rules that change the orthography
-;;;
-(defun spelling-change-rule-p (rule)
-  (let* ((mother (tdfs-indef (rule-full-fs rule)))
-         (morth (existing-dag-at-end-of mother *orth-path*))
-         (path (second (rule-order rule)))
-         (daughter (existing-dag-at-end-of mother path))
-         (dorth (existing-dag-at-end-of daughter *orth-path*)))
-    (not (eq morth dorth))))
 
 
 ;;;
@@ -292,7 +264,9 @@ FIRST))))
       (or (eq type 'plus) (and (consp type) (eq (first type) 'plus))))))
 
 
-
+;;
+;; called in /lkb/src/io-paths/lexinput.lsp;lkb/src/io-paths/typeinput.lsp
+;;
 (defun set-temporary-lexicon-filenames nil
   (let* ((version (or (find-symbol "*GRAMMAR-VERSION*" :common-lisp-user)
                       (and (find-package :lkb)
@@ -329,24 +303,6 @@ FIRST))))
 	   #-:ansi-eval-when (load eval compile)
   (setf *gen-extract-surface-hook* 'gen-extract-surface))
 
-;;;
-;;; assign priorities to parser tasks and lexical entries
-;;;
-;;; FIXME - do we need this now?
-(defun rule-priority (rule)
-  (case (rule-id rule)
-    (subj 1000)))
-
-(defun gen-rule-priority (rule)
-  (rule-priority rule))
-
-(defun lex-priority (mrec)
-  (declare (ignore mrec))
-  800)
-
-(defun gen-lex-priority (fs)
-  (declare (ignore fs))
-  800)
 
 (defun bool-value-true (fs)
   (and fs
@@ -362,51 +318,44 @@ FIRST))))
 ;;;
 ;;; Generate unknown words from the CARG
 ;;;
-;;; FIXME need to change the diff-list to a list
-
-(defun make-unknown-word-sense-unifications (word-string &optional stem)
-  ;;; this assumes we always treat unknown words as proper names
-  ;;; uncomment the *unknown-word-types* in globals.lsp
-  ;;; to activate this
-  (when word-string
-    (list 
-       (make-unification :lhs
-          (create-path-from-feature-list '(ORTH LIST FIRST))
-          :rhs (make-u-value :type (or stem word-string)))
-       (make-unification :lhs
-          (create-path-from-feature-list '(ORTH LIST REST))
-          :rhs (make-u-value :type 'lkb::null))
-       (make-unification :lhs
-          (create-path-from-feature-list '(SYNSEM LKEYS KEYREL CARG))
-          :rhs (make-u-value :type (string-downcase word-string))))))
-
-
-(defun instantiate-generic-lexical-entry (gle surface)
-  (let ((tdfs (copy-tdfs-elements (lex-entry-full-fs (if (gle-p gle)
-                                                       (gle-le gle)
-                                                       gle)))))
+(defun instantiate-generic-lexical-entry (gle surface &optional (carg surface))
+  (let ((tdfs (copy-tdfs-elements
+               (lex-entry-full-fs (if (gle-p gle) (gle-le gle) gle)))))
     (loop
         with dag = (tdfs-indef tdfs)
-        for path in '((ORTH LIST FIRST) (SYNSEM LKEYS KEYREL CARG))
+        for path in '((STEM FIRST) (SYNSEM LKEYS KEYREL CARG))
         for foo = (existing-dag-at-end-of dag path)
         do (setf (dag-type foo) *string-type*))
-    (let* ((unifications (make-unknown-word-sense-unifications
-                          surface
-                          (or
-                           #+:logon
-                           (case (gle-id gle)
-                             (guess_n_gle 
-                              (format nil "/~a/" surface))
-                             (decade_gle
-                              (format nil "~as" surface)))
-                           surface)))
+    (let* ((surface(or
+                    #+:logon
+                    (case (gle-id gle)
+                      (guess_n_gle 
+                       (format nil "/~a/" surface))
+                      (decade_gle
+                       (format nil "~as" surface)))
+                    surface))
+           (unifications
+            (list 
+             (make-unification
+              :lhs (create-path-from-feature-list
+                    (append *orth-path* *list-head*))
+              :rhs (make-u-value :type surface))
+             (make-unification
+              :lhs (create-path-from-feature-list
+                    (append *orth-path* *list-tail*))
+              :rhs (make-u-value :type *empty-list-type*))
+             (make-unification
+              :lhs (create-path-from-feature-list '(SYNSEM LKEYS KEYREL CARG))
+              :rhs (make-u-value :type carg))))
            (indef (process-unifications unifications))
            (indef (and indef (create-wffs indef)))
            (overlay (and indef (make-tdfs :indef indef))))
-      (when indef
+      (values
+       (when overlay
         (with-unification-context (ignore)
           (let ((foo (yadu tdfs overlay)))
-            (when foo (copy-tdfs-elements foo))))))))
+            (when foo (copy-tdfs-elements foo)))))
+       surface))))
 
 
 ;;;

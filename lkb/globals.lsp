@@ -7,11 +7,11 @@
 ;;; parameters only - grammar specific functions 
 ;;; should go in user-fns.lsp
 
-#+:allegro
-(setf excl:*locale* (excl:find-locale "japan.EUC"))
+;#+:allegro
+;(setf excl:*locale* (excl:find-locale "ja_JP.UTF-8"))
 
-;(when (lkb-version-after-p "2005/10/28 00:00:00")
-;  (grammar-encoding 'japan.EUC)) 
+(when (lkb-version-after-p "2005/10/28 00:00:00")
+  (grammar-encoding 'utf-8)) 
 
 (defparameter *active-parsing-p* t)
 
@@ -32,10 +32,9 @@
 
 ;;; Lexical files
 
-
-(defparameter *orth-path* '(orth list))
-
+;(defparameter *orth-path* '(orth list))
 ;(defparameter *orth-path* '(phon first stem))
+(defparameter *orth-path* '(stem))
 
 (defparameter *list-tail* '(rest))
 
@@ -137,7 +136,7 @@
 ;;; enable (mostly) YY-specific recording of surface position in MRS relations
 ;;;
 ;;;(defparameter *relation-label-path* '(SYNSEM LOCAL CONT KEY WLINK))
-(defparameter *relation-label-path* nil)
+;;;(defparameter *relation-label-path* nil)
 
 ;;;
 ;;; put CDB into multi-byte mode
@@ -184,7 +183,7 @@
 ;;;
 (setf *gen-packing-p* t)
 (setf *gen-filtering-p* t)
-(setf *packing-restrictor*  '(RELS HCONS ORTH STEM RULE-NAME))
+(setf *packing-restrictor*  '(RELS HCONS STEM RULE-NAME))
 
 ;;;
 ;;; list of things not to generate even though they maybe contentful

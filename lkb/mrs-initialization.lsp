@@ -1,11 +1,7 @@
 #+:mrs
 (load (merge-pathnames
-       (make-pathname :directory 
-                      (pathname-directory
-                       (dir-append *grammar-directory* 
-                                   '(:relative "lkb"))))
-            (make-pathname :name "mrsglobals.lsp")
-            (parent-directory)))
+       (make-pathname :name "mrsglobals.lsp")
+       (this-directory)))
 
 ;;; (when (fboundp 'index-for-generator)
 ;;;   (index-for-generator))

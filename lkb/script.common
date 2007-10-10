@@ -1,0 +1,143 @@
+;;; -*- Mode: LISP; Syntax: Common-Lisp; Package: LKB -*-
+
+;;;
+;;; This script file uses the defaults we prefer to use for 
+;;; treebanking in the Hinoki project:
+;;;   ChaSen off (assuming presegmented input), 
+;;;   precise analysis on (load the ambiguous files). 
+;;;
+
+(lkb-load-lisp (parent-directory) "Version.lsp")
+(setf *grammar-directory* (parent-directory)) ; needed for MRS
+(load-lkb-preferences (this-directory) "user-prefs.lsp")
+(lkb-load-lisp (this-directory) "globals.lsp")
+(lkb-load-lisp (this-directory) "user-fns.lsp")
+
+(lkb-load-lisp (this-directory) "checkpaths.lsp" t)
+
+;;; load some patches (;o;)
+(lkb-load-lisp (this-directory) "patches.lsp" t)
+
+
+(lkb-load-lisp (this-directory) "mrsglobals.lsp")
+
+(read-tdl-type-files-aux
+ (list
+  (lkb-pathname (parent-directory) "matrix.tdl")
+  (lkb-pathname (parent-directory) "mrsbasic.tdl")
+  (lkb-pathname (parent-directory) "newlexsem-types.tdl")
+  (lkb-pathname (parent-directory) "values.tdl")
+  (lkb-pathname (parent-directory) "fundamentals.tdl")
+  (lkb-pathname (parent-directory) "rule-types.tdl")
+  (lkb-pathname (parent-directory) "principles.tdl")
+  (lkb-pathname (parent-directory) "lex-types.tdl")
+  (lkb-pathname (parent-directory) "v-lex-types.tdl")
+  (lkb-pathname (parent-directory) "mtr.tdl") 
+))
+
+(lkb-load-lisp (this-directory) "mrs-initialization.lsp" t)
+
+;;; lexical rules can apply prior to inflectional rules
+(read-tdl-lex-rule-file-aux (lkb-pathname (parent-directory) "lrules.tdl"))
+;;; spell-changing rules
+(read-morph-file-aux (lkb-pathname (parent-directory) "infl.tdl"))
+
+
+(load-irregular-spellings 
+ (list
+  (lkb-pathname (parent-directory) "irregs.tab")))
+
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
+
+;;; Load the lexicon
+(if  (and (find :psql *features*) *lexdb-params*)
+    ;; Use the psql database 
+    (progn
+      ;; load from database
+      (load-lexdb-from-script)
+      ;; load the things that aren't in the database
+      (read-cached-sublex-if-available 
+       "skips" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")))
+      ;;; load the generic lexical types
+      (read-cached-sublex-if-available 
+       "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))
+      ;;; its so fast now, we can afford to do it every time
+      (index-for-generator)
+      )
+  (progn
+    ;; read the lexicon from tdl files
+    ;; make a dummy file to be the _main_ lexicon
+    (read-cached-lex-if-available (list
+				   (lkb-pathname (parent-directory) 
+						 "lex/dummy.tdl"))) 
+    ;;; keep generics separate 
+    (read-cached-sublex-if-available 
+     "generics" (list (lkb-pathname 
+		       (parent-directory) "lex/generics.tdl"))) 
+    ;;; read the dumped lexicon
+    (read-cached-sublex-if-available 
+     "lexicon" (list (lkb-pathname 
+		       (parent-directory) "lexicon.tdl")))))
+
+(read-tdl-parse-node-file-aux 
+          (lkb-pathname (parent-directory) "parse-nodes.tdl"))
+
+(read-tdl-start-file-aux 
+          (lkb-pathname (parent-directory) "roots.tdl"))
+
+;;;
+;;; if the preprocessor code is loaded (which it is by default), load the 
+;;; finite-state rules; these get applied in our preprocess-sentence-string().
+;;;
+;; (FCB 2007-07-13) this turns on characterization, but breaks profiling
+;(x-read-preprocessor (lkb-pathname (parent-directory) "preprocessor.fsr"))
+
+;;;
+;;; when loaded into an environment including [incr tsdb()] and the Redwoods
+;;; tools, also load a Maximum Entropy parse selection model
+;;;
+;#+:tsdb
+;(tsdb::read-model (lkb-pathname (parent-directory) "lxddef6s1.mem"))
+;;(tsdb::read-model (lkb-pathname (parent-directory) "train-df6s1-syn1.mem"))
+;#+:tsdb
+;(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
+;#+:tsdb
+;(set (intern "*CHART-PACKING-P*" :lkb) t)
+
+;;;
+;;; convert to a semi
+;;;
+#+:logon
+(mt:read-vpm (lkb-pathname (parent-directory) "semi.vpm") :semi)
+
+
+;;;
+;;; finally, use the new transfer component: load any number of rule sets, each
+;;; in a separate file, associated with its identifier.  
+;;;
+#+:mt
+(lkb-load-lisp (this-directory) "mt.lsp" t)
+;;; trigger rules for generation
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "trigger.mtr"))
+ "Generator Triggger Rules"
+ :filter nil :task :trigger :recurse nil :subsume nil)
+;;; transfer rules for paraphrasing
+#+:mt
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "paraphraser.mtr"))
+ "JaJa Paraphraser"
+ :filter nil :task :paraphrase)
+
+;;;
+;;; idiom Implementation (CH 060804)
+;;;
+(mt:read-transfer-rules 
+ (list
+  (lkb-pathname (parent-directory) "idioms.mtr"))
+ "Idiom Tests"
+ :filter nil :task :idiom)

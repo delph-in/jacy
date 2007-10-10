@@ -8,6 +8,6 @@
 ;;;
 
 (setf *features* (remove :chasen *features*))
-(pushnew :psql *features*)
+(setf *features* (remove :psql *features*))
 
 (lkb-load-lisp (this-directory) "script.common")
