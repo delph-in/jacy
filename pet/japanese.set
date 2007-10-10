@@ -1,20 +1,15 @@
-;;;; settings for CHEAP 		-*- Mode: TDL; Coding: euc-jp -*-
+;;;; settings for CHEAP -*- Mode: TDL; Coding: utf-8 -*-
 
-encoding := euc-jp.
+encoding := utf-8.
 
 ;; allow lexical entries to fail
 lex-entries-can-fail.
 
-
-;;;
-;;; _fix_me_
-;;;
+;;; FIXME
 ;;; some of the English `l2global' settings turn out to be grammar-specific;
 ;;; until we can fix that in the English grammar, duplicate some parameters
 ;;; here.                                                  (14-sep-01; oe)
 ;;;
-
-;;include "l2global".
 
 ;; command line settings
 verbose := 10.
@@ -27,21 +22,7 @@ default-les := true.
 yy := true.
 k2y := 1.
 
-;; definition of names of types with a special meaning to PET
-special-name-top := "*top*".
-special-name-symbol := "string".
-special-name-string := "string".
-special-name-cons := "cons".
-special-name-list := "list".
-special-name-nil := "null".
-special-name-difflist := "diff-list".
-
-;; same for attributes
-special-name-attr-first := "FIRST".
-special-name-attr-rest := "REST".
-special-name-attr-list := "LIST".
-special-name-attr-last := "LAST".
-special-name-attr-args := "ARGS".
+include "shared".
 
 ;; status values that marks rules
 rule-status-values := rule.
@@ -50,8 +31,6 @@ lexrule-status-values := lex-rule.
 ;; status values that marks lexicon entries
 ;; lexentry-status-values := lex-entry generic-lex-entry. 
 lexentry-status-values := lex-entry. 
-
-;;;; ---- end of faked `:include l2global'
 
 ;;
 ;; input preprocessing: disable downcasing and (English-specific) explosion of
@@ -63,8 +42,8 @@ trivial-tokenizer.
 ;; being used meaningfully.
 
 
-punctuation-characters := "\"!&'()*+,-¡İ./;<=>?@[\]^_`{|}~¡£¡©¡Ä¡¥¡¡¡û¡ü¡ı¡ö¡ù¡ú¡ş¢¡".
-
+punctuation-characters := "\"!&'()*+,-âˆ’./;<=>?@[\]^_`{|}~ã€‚ï¼Ÿâ€¦ï¼ã€€â—‹â—â—ï¼Šâ˜†â˜…â—‡â—†".
+;"
 
 ;; name of type to get info about grammar into (if at all)
 grammar-info := grammar_info.
@@ -126,7 +105,7 @@ $PREFIX-ATTACH-RULE 1
 $NP-QUEST-FRAG-RULE 2.
 
 ;; path to orthography
-orth-path := "ORTH.LIST".
+orth-path := "STEM".
 
 ;; type to mark boolean value `true'
 true-type := plus.
@@ -161,15 +140,6 @@ orthographemics-duplicate-filter:= false.
 ;orthographemics-cohesive-chains:= true.
 
 
-
-;;;
-;;; YY-specific settings mapping abstract MRS concepts (roles, relation types
-;;; et al.) to actual names in the grammar.
-;;;
-
-
-
-
 ;;;
 ;;; scoring mechanism (fairly embryonic, for now)
 ;;;
@@ -177,7 +147,9 @@ orthographemics-duplicate-filter:= false.
 ;; produced by Dan Def-05/fd-005 (without 116777)
 ;sm := "f5-005.mem".
 ;;; made on syrah with Taka 2005-11-14 from LXD-DEF-6.jp051120.
-sm := "hinoki.mem".
+;;sm := "hinoki.mem".
+;;; made on nooka 2007-07-07 Tanaka corpus 6-15
+sm := "tanaka-006-015.mem".
 
 ;;; Notes:
 ;;; 
@@ -207,387 +179,381 @@ spanning-only-rules := $frg-np $frg-pp $frg-s-adv $frg-i-adv
 
 generic-lexentry-status-values := generic-lex-entry.
 
-
-#|
-generic-le-suffixes := 
-  $generic_trans_verb_pres3sg "S".
-|#
-
 posmapping := 
-  Ì¾»ì-°ìÈÌ+n-n                                  $generic_noun-lex
-  Ì¾»ì-ÀÜÈø-°ìÈÌ+n-n                             $generic_noun-suffix-lex
-  Ì¾»ì-¸ÇÍ­Ì¾»ì-°ìÈÌ+n-n                         $generic_name-lex
-  Ì¾»ì-¸ÇÍ­Ì¾»ì-¿ÍÌ¾-°ìÈÌ+n-n                    $generic_person_name-lex
-  Ì¾»ì-¸ÇÍ­Ì¾»ì-¿ÍÌ¾-À«+n-n                      $generic_surname-lex
-  Ì¾»ì-¸ÇÍ­Ì¾»ì-¿ÍÌ¾-Ì¾+n-n                      $generic_first_name-lex
-  Ì¾»ì-¸ÇÍ­Ì¾»ì-ÁÈ¿¥+n-n                         $generic_inst_name-lex
-  Ì¾»ì-¸ÇÍ­Ì¾»ì-ÃÏ°è-°ìÈÌ+n-n                    $generic_loc_name-lex
-  Ì¾»ì-¸ÇÍ­Ì¾»ì-ÃÏ°è-¹ñ+n-n                      $generic_loc_name-lex
-  Ì¾»ì-¿ô+n-n					 $generic_number-lex
-  Ì¾»ì-ÀÜÈø-½õ¿ô»ì+n-n                           $generic_num-cl-lex	
-  Ì¾»ì-·ÁÍÆÆ°»ì¸ì´´+n-n                          $generic_na-adj-lex
-  Éû»ì-°ìÈÌ+n-n                                  $generic_scopal_adv-lex
-  Éû»ì-½õ»ìÎàÀÜÂ³+n-n                            $generic_dim_adv-lex
-  ´¶Æ°»ì+n-n                                     $generic_excl-lex
-  ¤½¤ÎÂ¾-´ÖÅê+n-n                                $generic_interj-lex
-  ¥Õ¥£¥é¡¼+n-n                                   $generic_hes-lex
-  Ì¾»ì-¥µÊÑÀÜÂ³+n-n                              $generic_vn-lex
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦¥¯¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦¥¯¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦¥¯¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦¥¯¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦¥¯¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦Íè¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦Íè¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦Íè¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦Íè¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¥«ÊÑ¡¦Íè¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¥¹¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¥¹¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¥¹¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¥¹¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¥¹¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥¹¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥¹¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥¹¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥¹¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥¹¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥º¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥º¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥º¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥º¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¥µÊÑ¡¦¡İ¥º¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦ÉÂ¥á¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦ÉÂ¥á¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦ÉÂ¥á¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦ÉÂ¥á¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦ÉÂ¥á¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹Ô¥¤²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹Ô¥¤²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹Ô¥¤²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹Ô¥¤²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹Ô¥¤²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-´ğËÜ·Á	         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-Ì¤Á³·Á	         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-Ï¢ÍÑ¥¿ÀÜÂ³	 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-²¾Äê·Á	         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-Ì¤Á³¥¦ÀÜÂ³	 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¬¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¬¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¬¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¬¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¬¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥µ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥µ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥µ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥µ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥µ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¿¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¿¹Ô-Ì¤Á³·Á	        	 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¿¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¿¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¿¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ê¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ê¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ê¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ê¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ê¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ğ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ğ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ğ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ğ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ğ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ş¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ş¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ş¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ş¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥Ş¹Ô-Ì¤Á³¥¦ÀÜÂ³	       	 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô¥¢¥ë-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô¥¢¥ë-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô¥¢¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô¥¢¥ë-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹Ô¥¢¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹ÔÆÃ¼ì-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹ÔÆÃ¼ì-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹ÔÆÃ¼ì-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹ÔÆÃ¼ì-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥é¹ÔÆÃ¼ì-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹Ô¥¤²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹Ô¥¤²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹Ô¥¤²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹Ô¥¤²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹Ô¥¤²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-´ğËÜ·Á	         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-Ì¤Á³·Á	         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-Ï¢ÍÑ¥¿ÀÜÂ³	 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-²¾Äê·Á	         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-Ì¤Á³¥¦ÀÜÂ³	 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¬¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¬¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¬¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¬¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¬¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥µ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥µ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥µ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥µ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥µ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥µ¹Ô-Ï¢ÍÑ·Á                    $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¿¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¿¹Ô-Ì¤Á³·Á	        	 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¿¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¿¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¿¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ê¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ê¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ê¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ê¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ê¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ğ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ğ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ğ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ğ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ğ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ş¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ş¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ş¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ş¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ş¹Ô-Ì¤Á³¥¦ÀÜÂ³	       	 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô¥¢¥ë-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô¥¢¥ë-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô¥¢¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô¥¢¥ë-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô¥¢¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹ÔÆÃ¼ì-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹ÔÆÃ¼ì-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹ÔÆÃ¼ì-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹ÔÆÃ¼ì-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹ÔÆÃ¼ì-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-´ğËÜ·Á		 $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-Ì¤Á³·Á		 $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-²¾Äê·Á		 $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥«¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥«¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥«¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥«¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥«¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¬¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¬¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¬¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¬¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¬¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥µ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥µ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥µ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥µ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥µ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¿¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¿¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¿¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¿¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥¿¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ğ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ğ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ğ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ğ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ğ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ş¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ş¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ş¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³	         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ş¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ş¹Ô-Ì¤Á³¥¦ÀÜÂ³	         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥é¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥é¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥é¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥é¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥é¹Ô-Ì¤Á³¥¦ÀÜÂ³	       	 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ï¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ï¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ï¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ï¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+»ÍÃÊ¡¦¥Ï¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥À¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥À¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥À¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥À¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥À¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥Ï¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥Ï¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥Ï¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥Ï¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+¾åÆó¡¦¥Ï¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¢¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¢¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¢¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¢¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¢¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥«¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥«¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥«¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥«¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥«¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¬¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¬¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¬¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¬¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¬¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥µ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥µ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥µ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³	       	 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥µ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥µ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¶¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¶¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¶¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¶¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¶¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¿¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¿¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¿¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¿¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥¿¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥À¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥À¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥À¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥À¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥À¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ê¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ê¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ê¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³	       	 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ê¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ê¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ï¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ï¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ï¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ï¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ï¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ğ¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ğ¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ğ¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ğ¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ğ¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ş¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ş¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ş¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ş¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥Ş¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ä¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ä¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ä¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³	       	 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ä¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ä¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥é¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥é¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥é¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥é¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥é¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ï¹Ô-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ï¹Ô-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ï¹Ô-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ï¹Ô-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦¥ï¹Ô-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦ÆÀ-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦ÆÀ-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦ÆÀ-Ï¢ÍÑ¥¿ÀÜÂ³		         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦ÆÀ-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+²¼Æó¡¦ÆÀ-Ì¤Á³¥¦ÀÜÂ³		         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¯¥ì¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¯¥ì¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¯¥ì¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¯¥ì¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¯¥ì¥ë-Ì¤Á³¥¦ÀÜÂ³		 $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ë-´ğËÜ·Á		         $generic_verb_ru_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ë-Ì¤Á³·Á		         $generic_verb_a_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ë-Ï¢ÍÑ¥¿ÀÜÂ³		         $generic_verb_t_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ë-²¾Äê·Á		         $generic_verb_cond_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ë-Ì¤Á³¥¦ÀÜÂ³		         $generic_verb_o_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦ÉÂ¥á¥ë-Ï¢ÍÑ·Á		         $generic_verb_morphbind_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹Ô¥¤²»ÊØ-Ï¢ÍÑ·Á		 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ-Ï¢ÍÑ·Á		 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ¥æ¥¯-Ï¢ÍÑ·Á	         $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¬¹Ô-Ï¢ÍÑ·Á	        	 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥µ¹Ô-Ï¢ÍÑ·Á	        	 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥¿¹Ô-Ï¢ÍÑ·Á	        	 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ê¹Ô-Ï¢ÍÑ·Á	        	 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ğ¹Ô-Ï¢ÍÑ·Á	        	 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥Ş¹Ô-Ï¢ÍÑ·Á	        	 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô-Ï¢ÍÑ·Á	        	 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹Ô¥¢¥ë-Ï¢ÍÑ·Á		 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥é¹ÔÆÃ¼ì-Ï¢ÍÑ·Á		 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹Ô¥¦²»ÊØ-Ï¢ÍÑ·Á		 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+¸ŞÃÊ¡¦¥ï¹ÔÂ¥²»ÊØ-Ï¢ÍÑ·Á		 $generic_verb_i_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥¯¥ì¥ë-Ï¢ÍÑ·Á		         $generic_verb_morphbind_infl
-  Æ°»ì-¼«Î©+°ìÃÊ¡¦¥ë-Ï¢ÍÑ·Á		         $generic_verb_morphbind_infl
-  Æ°»ì-¼«Î©+°ìÃÊ-Ï¢ÍÑ·Á				 $generic_verb_vstem_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³	 $generic_adj_te_infl 
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³        $generic_adj_a_infl 
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³        $generic_adj2adv_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥¿ÀÜÂ³	 $generic_adj_past_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-´ğËÜ·Á		 $generic_adj_i_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-²¾Äê·Á		 $generic_adj_kere_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ê¸¸ì´ğËÜ·Á	 $generic_adj_short_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³		 $generic_adj_te_infl 
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³            $generic_adj_a_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³            $generic_adj2adv_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_adj_past_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-´ğËÜ·Á		 $generic_adj_i_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-²¾Äê·Á		 $generic_adj_kere_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ê¸¸ì´ğËÜ·Á		 $generic_adj_short_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³	 $generic_adj_te_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³        $generic_adj_a_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³        $generic_adj2adv_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ï¢ÍÑ¥¿ÀÜÂ³	 $generic_adj_past_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-´ğËÜ·Á		 $generic_adj_i_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-²¾Äê·Á		 $generic_adj_kere_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¢¥¦¥ªÃÊ-Ê¸¸ì´ğËÜ·Á	 $generic_adj_short_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³		 $generic_adj_te_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³		 $generic_adj_a_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥ÆÀÜÂ³		 $generic_adj2adv_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ï¢ÍÑ¥¿ÀÜÂ³		 $generic_adj_past_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-´ğËÜ·Á		 $generic_adj_i_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-²¾Äê·Á		 $generic_adj_kere_infl
-  ·ÁÍÆ»ì-¼«Î©+·ÁÍÆ»ì¡¦¥¤ÃÊ-Ê¸¸ì´ğËÜ·Á		 $generic_adj_short_infl
+  åè©-ä¸€èˆ¬+n-n                                  $generic_noun-lex
+  åè©-æ¥å°¾-ä¸€èˆ¬+n-n                             $generic_noun-suffix-lex
+  åè©-å›ºæœ‰åè©-ä¸€èˆ¬+n-n                         $generic_name-lex
+  åè©-å›ºæœ‰åè©-äººå-ä¸€èˆ¬+n-n                    $generic_person_name-lex
+  åè©-å›ºæœ‰åè©-äººå-å§“+n-n                      $generic_surname-lex
+  åè©-å›ºæœ‰åè©-äººå-å+n-n                      $generic_first_name-lex
+  åè©-å›ºæœ‰åè©-çµ„ç¹”+n-n                         $generic_inst_name-lex
+  åè©-å›ºæœ‰åè©-åœ°åŸŸ-ä¸€èˆ¬+n-n                    $generic_loc_name-lex
+  åè©-å›ºæœ‰åè©-åœ°åŸŸ-å›½+n-n                      $generic_loc_name-lex
+  åè©-æ•°+n-n					 $generic_number-lex
+  åè©-æ¥å°¾-åŠ©æ•°è©+n-n                           $generic_num-cl-lex	
+  åè©-å½¢å®¹å‹•è©èªå¹¹+n-n                          $generic_na-adj-lex
+  å‰¯è©-ä¸€èˆ¬+n-n                                  $generic_scopal_adv-lex
+  å‰¯è©-åŠ©è©é¡æ¥ç¶š+n-n                            $generic_dim_adv-lex
+  æ„Ÿå‹•è©+n-n                                     $generic_excl-lex
+  ãã®ä»–-é–“æŠ•+n-n                                $generic_interj-lex
+  ãƒ•ã‚£ãƒ©ãƒ¼+n-n                                   $generic_hes-lex
+  åè©-ã‚µå¤‰æ¥ç¶š+n-n                              $generic_vn-lex
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»ã‚¯ãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»ã‚¯ãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»ã‚¯ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»ã‚¯ãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»ã‚¯ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»æ¥ãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»æ¥ãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»æ¥ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»æ¥ãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ã‚«å¤‰ãƒ»æ¥ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»ã‚¹ãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»ã‚¹ãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»ã‚¹ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»ã‚¹ãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»ã‚¹ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚¹ãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚¹ãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚¹ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚¹ãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚¹ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚ºãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚ºãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚ºãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚ºãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ã‚µå¤‰ãƒ»âˆ’ã‚ºãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ç—…ãƒ¡ãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ç—…ãƒ¡ãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ç—…ãƒ¡ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ç—…ãƒ¡ãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ç—…ãƒ¡ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-åŸºæœ¬å½¢	         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-æœªç„¶å½¢	         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-é€£ç”¨ã‚¿æ¥ç¶š	 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-ä»®å®šå½¢	         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-æœªç„¶ã‚¦æ¥ç¶š	 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¬è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¬è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¬è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¬è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¬è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚µè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚µè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚µè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚µè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚µè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¿è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¿è¡Œ-æœªç„¶å½¢	        	 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¿è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¿è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¿è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒŠè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒŠè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒŠè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒŠè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒŠè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š	       	 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-åŸºæœ¬å½¢	         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-æœªç„¶å½¢	         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-é€£ç”¨ã‚¿æ¥ç¶š	 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-ä»®å®šå½¢	         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-æœªç„¶ã‚¦æ¥ç¶š	 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¬è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¬è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¬è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¬è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¬è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚µè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚µè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚µè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚µè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚µè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚µè¡Œ-é€£ç”¨å½¢                    $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¿è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¿è¡Œ-æœªç„¶å½¢	        	 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¿è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¿è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¿è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒŠè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒŠè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒŠè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒŠè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒŠè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š	       	 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-åŸºæœ¬å½¢		 $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶å½¢		 $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-ä»®å®šå½¢		 $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚«è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚«è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚«è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚«è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚«è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¬è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¬è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¬è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¬è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¬è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚µè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚µè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚µè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚µè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚µè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¿è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¿è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¿è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¿è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ã‚¿è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š	         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š	         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒ©è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒ©è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒ©è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒ©è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒ©è¡Œ-æœªç„¶ã‚¦æ¥ç¶š	       	 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+å››æ®µãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒ€è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒ€è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒ€è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒ€è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒ€è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸ŠäºŒãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¢è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¢è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¢è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¢è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¢è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚«è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚«è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚«è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚«è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚«è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¬è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¬è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¬è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¬è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¬è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚µè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚µè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚µè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š	       	 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚µè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚µè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¶è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¶è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¶è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¶è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¶è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¿è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¿è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¿è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¿è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ã‚¿è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ€è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ€è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ€è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ€è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ€è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒŠè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒŠè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒŠè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š	       	 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒŠè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒŠè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒè¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¤è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¤è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¤è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š	       	 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¤è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¤è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ©è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ©è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ©è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ©è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ©è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¯è¡Œ-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¯è¡Œ-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¯è¡Œ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¯è¡Œ-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»ãƒ¯è¡Œ-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»å¾—-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»å¾—-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»å¾—-é€£ç”¨ã‚¿æ¥ç¶š		         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»å¾—-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸‹äºŒãƒ»å¾—-æœªç„¶ã‚¦æ¥ç¶š		         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¯ãƒ¬ãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¯ãƒ¬ãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¯ãƒ¬ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¯ãƒ¬ãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¯ãƒ¬ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		 $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ«-åŸºæœ¬å½¢		         $generic_verb_ru_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ«-æœªç„¶å½¢		         $generic_verb_a_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ«-é€£ç”¨ã‚¿æ¥ç¶š		         $generic_verb_t_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ«-ä»®å®šå½¢		         $generic_verb_cond_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ«-æœªç„¶ã‚¦æ¥ç¶š		         $generic_verb_o_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ç—…ãƒ¡ãƒ«-é€£ç”¨å½¢		         $generic_verb_morphbind_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œã‚¤éŸ³ä¾¿-é€£ç”¨å½¢		 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿-é€£ç”¨å½¢		 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ãƒ¦ã‚¯-é€£ç”¨å½¢	         $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¬è¡Œ-é€£ç”¨å½¢	        	 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚µè¡Œ-é€£ç”¨å½¢	        	 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ã‚¿è¡Œ-é€£ç”¨å½¢	        	 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒŠè¡Œ-é€£ç”¨å½¢	        	 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-é€£ç”¨å½¢	        	 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒè¡Œ-é€£ç”¨å½¢	        	 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œ-é€£ç”¨å½¢	        	 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œã‚¢ãƒ«-é€£ç”¨å½¢		 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ©è¡Œç‰¹æ®Š-é€£ç”¨å½¢		 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿-é€£ç”¨å½¢		 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+äº”æ®µãƒ»ãƒ¯è¡Œä¿ƒéŸ³ä¾¿-é€£ç”¨å½¢		 $generic_verb_i_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ã‚¯ãƒ¬ãƒ«-é€£ç”¨å½¢		         $generic_verb_morphbind_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µãƒ»ãƒ«-é€£ç”¨å½¢		         $generic_verb_morphbind_infl
+  å‹•è©-è‡ªç«‹+ä¸€æ®µ-é€£ç”¨å½¢				 $generic_verb_vstem_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ãƒ†æ¥ç¶š	 $generic_adj_te_infl 
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ãƒ†æ¥ç¶š        $generic_adj_a_infl 
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ãƒ†æ¥ç¶š        $generic_adj2adv_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ã‚¿æ¥ç¶š	 $generic_adj_past_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-åŸºæœ¬å½¢		 $generic_adj_i_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-ä»®å®šå½¢		 $generic_adj_kere_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-æ–‡èªåŸºæœ¬å½¢	 $generic_adj_short_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ãƒ†æ¥ç¶š		 $generic_adj_te_infl 
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ãƒ†æ¥ç¶š            $generic_adj_a_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ãƒ†æ¥ç¶š            $generic_adj2adv_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_adj_past_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-åŸºæœ¬å½¢		 $generic_adj_i_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-ä»®å®šå½¢		 $generic_adj_kere_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-æ–‡èªåŸºæœ¬å½¢		 $generic_adj_short_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ãƒ†æ¥ç¶š	 $generic_adj_te_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ãƒ†æ¥ç¶š        $generic_adj_a_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ãƒ†æ¥ç¶š        $generic_adj2adv_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-é€£ç”¨ã‚¿æ¥ç¶š	 $generic_adj_past_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-åŸºæœ¬å½¢		 $generic_adj_i_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-ä»®å®šå½¢		 $generic_adj_kere_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¢ã‚¦ã‚ªæ®µ-æ–‡èªåŸºæœ¬å½¢	 $generic_adj_short_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ãƒ†æ¥ç¶š		 $generic_adj_te_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ãƒ†æ¥ç¶š		 $generic_adj_a_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ãƒ†æ¥ç¶š		 $generic_adj2adv_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-é€£ç”¨ã‚¿æ¥ç¶š		 $generic_adj_past_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-åŸºæœ¬å½¢		 $generic_adj_i_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-ä»®å®šå½¢		 $generic_adj_kere_infl
+  å½¢å®¹è©-è‡ªç«‹+å½¢å®¹è©ãƒ»ã‚¤æ®µ-æ–‡èªåŸºæœ¬å½¢		 $generic_adj_short_infl
   JapaneseNounCompound                           $generic_noun-lex
-  Ì¤ÃÎ¸ì+n-n                                     $generic_vn-lex
-  µ­¹æ-¥¢¥ë¥Õ¥¡¥Ù¥Ã¥È+n-n                        $generic_vn-lex
-  µ­¹æ-°ìÈÌ+n-n                                  $generic_noun-lex
+  æœªçŸ¥èª+n-n                                     $generic_noun-lex
+  è¨˜å·-ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ+n-n                        $generic_noun-lex
+  è¨˜å·-ä¸€èˆ¬+n-n                                  $generic_noun-lex
 .
 
 
@@ -596,3 +562,7 @@ posmapping :=
 ;;; need to include the MRS settings from the grammar.
 ;;;
 postload-lisp-files := "lkb/mrsglobals.lisp".
+
+
+;;; load the vpm file
+vpm := "semi".

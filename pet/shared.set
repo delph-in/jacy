@@ -1,0 +1,20 @@
+;; Shared type definitions for flop and cheap -*- Mode: TDL; -*-
+
+;; Types with a special meaning to PET
+;; FIXME: harmonize with the Matrix
+special-name-top := "*top*".
+special-name-symbol := "string".
+special-name-string := "string".
+special-name-cons := "cons".
+special-name-list := "list".
+special-name-nil := "null".
+special-name-difflist := "diff-list".
+
+;; Attributes with a special meaning to PET
+special-name-attr-first := "FIRST".
+special-name-attr-rest := "REST".
+special-name-attr-list  := "LIST".
+special-name-attr-last  := "LAST".
+special-name-attr-args  := "ARGS".
+
+
