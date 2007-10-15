@@ -50,7 +50,7 @@
 
 ; (FCB 2005-09-25) changed utterance_head to utterance-super to allow fragments
 
-utterance-root := j-sign &
+utterance-root := sign &
 [ SYNSEM [LOCAL.CAT.HEAD utterance-super,
 	 NON-LOCAL [ROBUST +,
 		    UNDERSPEC_ARG -] ]].

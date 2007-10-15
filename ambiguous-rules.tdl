@@ -1,3 +1,9 @@
+;;; -*- Mode: TDL; Package: LKB -*-
+;;;
+;;;  Based on:
+;;;  JACY Grammar: 
+;;;  Developed by Melanie Siegel, Francis Bond
+
 ; (MS 2004-04-02) Empty case particles. Try to restrict: to case particle function and lexical nouns.
 ; I'm sure this will add loads of ambiguity. Only for parsing spoken Japanese!
 ; (MS 2004-12-14) RELS and HCONS and HOOK should come from the argument.
@@ -105,7 +111,7 @@ rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 ; 		      BAR +,
 ; 		      NUCL nucl_plus],
 ; 		J-NEEDS-AFFIX -],
-;        [SYNSEM j-synsem & [LOCAL [BAR +,
+;        [SYNSEM synsem & [LOCAL [BAR +,
 ; 				CAT [ HEAD utt-valid &
 ; 					   [ H-TENSE present-past-or-future,
 ; 					     MAIN-PRD +,

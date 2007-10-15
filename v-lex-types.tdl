@@ -27,7 +27,7 @@
 
 v-lex := lexical_sign & 
          [SYNSEM [LOCAL [CAT [HEAD verb_head,
-                              VAL j-valence],
+                              VAL valence],
                          NUCL nucl_plus],
                   NON-LOCAL [AFFIX <! !>]]].
 

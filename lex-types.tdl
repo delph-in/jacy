@@ -32,8 +32,8 @@
 ; I'm renaming the two subtypes of head to be final_head and
 ; init_head.
 
-final_head := j-head.
-init_head := j-head.
+final_head := head.
+init_head := head.
 
 
 ; (MS 2005-11-23) trying to put utterance head a bit deeper under utt-valid
@@ -112,7 +112,7 @@ pp_mod_head-avm :=  pp_mod_head &
 
 ; (MS 2005-11-09) These are all AHON + and modifying BAR +.
 
-hon-prefix_head :=  j-head &
+hon-prefix_head :=  head &
                    [POS prefix,
 		    FORMAL.AHON +,
                     MARK null,
@@ -1177,29 +1177,29 @@ grad_head-avm := grad_head &
 ;;;;;;;;;;;;;;;;;;SUBCATEGORIZATION - others;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-spr-arg := j-valence &
+spr-arg := valence &
               [SPR 1-list,
 	       SUBJ null,
 	       COMPS null].
 
 
 
-spr-obj-arg := j-valence &
+spr-obj-arg := valence &
                [SPR 1-list,
 		SUBJ null,
 		COMPS 1-list].
 
-obj-arg := j-valence &
+obj-arg := valence &
                [SPR null,
 		SUBJ null,
 		COMPS 1-list].
 
-obj-obj2-arg := j-valence &
+obj-obj2-arg := valence &
                [SPR null,
                 SUBJ null,
 		COMPS 2-comps-list].
 
-sbj-arg := j-valence &
+sbj-arg := valence &
                [SPR null,
 		SUBJ opt-1-arg,
 		COMPS null].
@@ -1207,40 +1207,40 @@ sbj-arg := j-valence &
 
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
 
-sbj-obj-arg := j-valence &
+sbj-obj-arg := valence &
                [SPR null,
 		SUBJ opt-1-arg,
 		COMPS 1-list].
 
 
-sbj-obj-obj2-arg := j-valence &
+sbj-obj-obj2-arg := valence &
                [SPR null,
 		SUBJ opt-1-arg,
 		COMPS 2-comps-list].
 
-sbj-spr-arg  := j-valence &
+sbj-spr-arg  := valence &
 		[SPR 1-list,
 		 SUBJ opt-1-arg,
 		 COMPS null].
 
 ;(MS 2002-11-18) This one is needed for subject raising, if the subject could also have been deleted.
 
-sbj-or-not-spr-arg  := j-valence &
+sbj-or-not-spr-arg  := valence &
 		[SPR 1-list,
 		 SUBJ 0-1-list,
 		 COMPS null].
 
-sbj-obj-spr-arg  := j-valence &
+sbj-obj-spr-arg  := valence &
 		[SPR 1-list,
 		 SUBJ opt-1-arg,
 		 COMPS 1-list].
 
-sbj-obj-or-not-spr-arg := j-valence &
+sbj-obj-or-not-spr-arg := valence &
 		[SPR 1-list,
 		 SUBJ opt-1-arg,
 		 COMPS 0-1-list].
 
-sbj-obj-obj2-spr-arg := j-valence &
+sbj-obj-obj2-spr-arg := valence &
 		[SPR 1-list,
 		 SUBJ opt-1-arg,
 		 COMPS 2-comps-list].
@@ -1280,9 +1280,9 @@ p_sat :=  obj-arg &
 
 kara-made_sc :=  obj-obj2-arg &
                  [COMPS obl-2-args &
-			< j-synsem & [LOCAL.CAT [HEAD noun_head,
+			< synsem & [LOCAL.CAT [HEAD noun_head,
 					       VAL saturated]],
-			  j-synsem & [LOCAL.CAT.HEAD case-p_head & [PTYPE kara]] >].
+			  synsem & [LOCAL.CAT.HEAD case-p_head & [PTYPE kara]] >].
 
 
 nom_sc :=  spr-arg &
@@ -1505,11 +1505,11 @@ cop-id_transitive := sbj-obj-arg &
 
 
 ; (ERB 2001-09-03) Changing light verbs to make them in charge of the
-; j-valence of the vn+light verb combination.
+; valence of the vn+light verb combination.
 ; (MS 2001-09-14) Changing that back.
 ; (MS 2002-11-11) This one is going to be interesting!
 
-light_transitive := j-valence &
+light_transitive := valence &
             [SPR  obl-1-arg &
 		 < [LOCAL [CAT [HEAD vn_head & [MAIN-PRD -],
 				 VAL [SUBJ #sbj,
@@ -1540,7 +1540,7 @@ aux_transitive  :=  sbj-obj-spr-arg &
 
 ; (ERB 2001-12-28) For VN + itadaku, etc.
 
-light-aux_transitive  :=  j-valence & 
+light-aux_transitive  :=  valence & 
           [SPR obl-1-arg &
 	       < [LOCAL [CAT [HEAD  vn_head & [MAIN-PRD -],
 			     VAL [COMPS < #obj >,
@@ -1563,7 +1563,7 @@ light-aux_transitive  :=  j-valence &
 ; added [SPR.FIRST.LOCAL.CAT.HEAD.MOD null] to disallow te-adjunct
 ; in the SPR.
 ; 「で」 in 「読んでいる」 should be te-end-lex rather than te-adjunct.
-pure-aspect_transitive :=  j-valence & 
+pure-aspect_transitive :=  valence & 
  [SPR obl-1-arg &
       < [LOCAL [CAT [HEAD  verb_head & [MAIN-PRD -,
 					COP -,
@@ -6412,19 +6412,19 @@ nan-card-lex := card-lex-super &
 				   
 
 ; (ERB 2001-08-06) Subtypes of card-lex are cross-classified on
-; two dimensions: their value and their j-valence.
+; two dimensions: their value and their valence.
 
 card-value :< card-lex.
-card-j-valence :< card-lex.
+card-valence :< card-lex.
 
-; (ERB 2001-08-06) Subtypes of card-j-valence are cross-classified
+; (ERB 2001-08-06) Subtypes of card-valence are cross-classified
 ; on two dimensions:  Whether or not there's a SPR and whether or
 ; not there's an OBJ.  This can't be done with optionality, since
 ; there is a semantic difference between hyaku with a complement
 ; and hyaku without a complement.
 
-card-specification :< card-j-valence.
-card-complementation :< card-j-valence.
+card-specification :< card-valence.
+card-complementation :< card-valence.
 
 card-no-object := card-complementation &
 		  [ SYNSEM.LOCAL.CAT.VAL [ COMPS null]].
@@ -6459,7 +6459,7 @@ card-with-specifier := card-specification &
 					 ARG2 #factor1,
 					 ARG3 #factor2 ]]]].
 
-; (ERB 2001-08-06) Cross-classified subtypes of card-j-valence:
+; (ERB 2001-08-06) Cross-classified subtypes of card-valence:
 
 card-with-object-with-specifier := card-with-object & card-with-specifier &
      [ SYNSEM [LKEYS.ALTKEYREL #altkey &
@@ -6575,7 +6575,7 @@ card21 := card-value &
           [ SYNSEM.LOCAL.CAT.HEAD int21 ].
 
 ; (ERB 2001-08-06) Cross-classified subtypes inheriting from both
-; card-value and card-j-valence hierarchies.
+; card-value and card-valence hierarchies.
 
 card_ichi_no_valence := card_ichi & card-no-object-no-specifier.
 card_1_no_valence := card1 & card-no-object-no-specifier.
@@ -6935,11 +6935,11 @@ numbers_head :< final_head.
 ;;;;;;;;;;;;;;LEXICAL PRINCIPLES;;;;;;;;;;;;;;;
 
 
-subj-honor-ctxt := j-ctxt &
-                   [C-INDICES.SPEAKER #sp,
-                    BACKGROUND <! subj-honor_rel &
-                                   [HONORER #sp,
-                                    POLARITY bool] !>].
+subj-honor-ctxt := ctxt &
+ [C-INDICES.SPEAKER #sp,
+  BACKGROUND <! subj-honor_rel &
+	      [HONORER #sp,
+	       POLARITY bool] !>].
 
 
 
@@ -6968,7 +6968,7 @@ subj-honor-ctxt := j-ctxt &
 
 
 v-end-lex := lexical_sign-affix &
-             [SYNSEM j-synsem &
+             [SYNSEM synsem &
                      [LOCAL [CAT [HEAD v-end_head &
                                        [H-TENSE #tense,
                                         AUX #aux,
@@ -7006,7 +7006,7 @@ v-end-lex := lexical_sign-affix &
 
 na-end-lex := lexical_sign-word &
               [J-NEEDS-AFFIX -,
-	       SYNSEM j-synsem &
+	       SYNSEM synsem &
                       [LOCAL [CAT [HEAD na-adj_head & [MODUS indicative,
 						       MOD null],
                                    VAL [SUBJ #sbj,
@@ -7095,7 +7095,7 @@ na-naarg-end-lex :=  na-end-lex &
 ; </type>
 naadj2adv-end-lex := lexical_sign-word &
                      [J-NEEDS-AFFIX -,
-		      SYNSEM j-synsem &
+		      SYNSEM synsem &
                              [LOCAL [CAT [HEAD case-adv_head & [J-POSTHEAD left],
 					  VAL obj-arg &
 					       [COMPS #comps & [FIRST [OPT - ,
@@ -7140,7 +7140,7 @@ naadj2adv-end-lex := lexical_sign-word &
 ; (TK 07-03-26)また、v1-stemのような働きをする場合がある。(lkb::do-parse-tty "娘 が 犬 を 欲し がる")
 ; </type>
 naadj2v-end-lex := lexical_sign-word &
- [SYNSEM j-synsem &
+ [SYNSEM synsem &
 	 [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
 		      VAL [SUBJ #sbj,
 			   COMPS #comps,
@@ -8192,7 +8192,7 @@ rareru-end-condexcmorph-lex := rareru-end-lex &
 ; VN + vend combinations, most vends will require [VN -] SPRs.
 
 v-op-end-lex := lexical_sign-word &
- [SYNSEM j-synsem &
+ [SYNSEM synsem &
 	 [LOCAL [CAT [HEAD verbend_head-unmarked &
 			   [H-TENSE #tense,
 			    VN #vn,
@@ -9154,7 +9154,7 @@ v2na-end-lex := v-op-end-lex &
 
                                                  
 v2adv-end-lex := lexical_sign-word &
-               [SYNSEM  j-synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal_mod & 
+               [SYNSEM  synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal_mod & 
 									     [CONT.HOOK [LTOP #handel,
 											 INDEX #ind],
 									      CAT.HEAD.MODUS voluntative]] >,
@@ -13052,7 +13052,7 @@ syn-vv-vbar-stem_head := syntactic-vv-stem_head.
 ; based on light_transitive
 ;(CH 2005-04-09)
 ; verb-stem_head --> ordinary-verb-stem_head
-syn-vv-vbar-stem_transitive := j-valence &
+syn-vv-vbar-stem_transitive := valence &
  [SPR  obl-1-arg &
        < [LOCAL [CAT [HEAD ordinary-verb-stem_head & [MAIN-PRD -],
 		      VAL [SUBJ #sbj,

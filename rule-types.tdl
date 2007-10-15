@@ -22,7 +22,7 @@
 rule-type := phrase-or-lexrule.
 
 
-phrasal_sign := phrase-or-lexrule & j-sign.
+phrasal_sign := phrase-or-lexrule.
 
 ; (MS 2002-05-02) We need a phrasal sign that does not compose the RELS's 
 ; to account for quasi-morphological rules (suffixes that are separated by CHASEN
@@ -37,14 +37,14 @@ binary-basic :=  binary-phrase & que-princ &
                                 EMPATHY [EMPER #sp,
                                          EMPEE #emp]],
 			  ARG-S <>]],
-	   ARGS < j-sign & [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
+	   ARGS < sign & [SYNSEM [LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
                                                                SPEAKER #sp],
                                                     EMPATHY [EMPER #sp,
                                                              EMPEE #emp]]],
                                        NON-LOCAL [REL #refl,
 						  ROBUST #robust,
 						  UNDERSPEC_ARG #uarg]]],
-		  j-sign & [SYNSEM [NON-LOCAL [REL #refl,
+		  sign & [SYNSEM [NON-LOCAL [REL #refl,
 					       ROBUST #robust,
 					       UNDERSPEC_ARG #uarg],
                                     LOCAL [CTXT [C-INDICES [ADDRESSEE #add,
@@ -65,13 +65,13 @@ binary := binary-super & que-princ.
 
 binary-cont-final-type := binary & 
                [SYNSEM.LOCAL.CONT.HOOK #hook,
-                ARGS < j-sign, 
-		       j-sign & [ SYNSEM [LOCAL.CONT.HOOK #hook]] >].
+                ARGS < sign, 
+		       sign & [ SYNSEM [LOCAL.CONT.HOOK #hook]] >].
 
 binary-cont-first-type := binary & 
                [SYNSEM [LOCAL.CONT.HOOK #hook],
-                ARGS < j-sign & [ SYNSEM [LOCAL.CONT.HOOK #hook]],
-		       j-sign >].
+                ARGS < sign & [ SYNSEM [LOCAL.CONT.HOOK #hook]],
+		       sign >].
 
 
 binary-modification-type := affix-list & basic-binary-phrase & que-princ & speaker-addr-principle.
@@ -242,9 +242,9 @@ basic-head-complement-type := que-princ &
 					      NUCL #nucl]],
 			       C-CONT [RELS <! !>,
 				       HCONS <! !>],
-			       NON-HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+			       NON-HEAD-DTR sign & [J-NEEDS-AFFIX -,
 						      SYNSEM.LOCAL.CAT.HEAD.EMPTY #empt],
-			       HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+			       HEAD-DTR sign & [J-NEEDS-AFFIX -,
 						  SYNSEM [MODIFIED.PERIPH #p,
 							  LOCAL [CAT.HEAD.EMPTY #empt,
 								 CONT.HOOK #hook,
@@ -365,7 +365,7 @@ head-adjunct-rule-type := adjacent_head_check &
 	  NON-LOCAL [REL #rel],
 	  LEX -,
 	  MODIFIED hasmod & [PERIPH #periph]],
-  HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+  HEAD-DTR sign & [J-NEEDS-AFFIX -,
 		     SYNSEM [ LOCAL [ CONT [HOOK [INDEX #ind,
 						  XARG #xarg],
 					    MSG #ms],
@@ -373,7 +373,7 @@ head-adjunct-rule-type := adjacent_head_check &
 							LAST #3 ],
 				      CAT [VAL #val]],
 			      MODIFIED.PERIPH bool]],
-  NON-HEAD-DTR j-sign & [ J-NEEDS-AFFIX -,
+  NON-HEAD-DTR sign & [ J-NEEDS-AFFIX -,
 			  SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
 							     LAST #2 ]],
 				   NON-LOCAL [REL #rel],
@@ -397,14 +397,14 @@ head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check &
 				   NON-LOCAL [REL #rel],
 				   LEX -,
                                    MODIFIED hasmod & [PERIPH #periph]],
-                           HEAD-DTR j-sign & [J-NEEDS-AFFIX -,
+                           HEAD-DTR sign & [J-NEEDS-AFFIX -,
                                             SYNSEM [ LOCAL [ CONT [HOOK.INDEX #ind,
 								  MSG #ms],
                                                              CTXT.BACKGROUND [ LIST #1,
                                                                                LAST #3 ],
 							     CAT [VAL #val]],
 						     MODIFIED.PERIPH bool]],
-                           NON-HEAD-DTR j-sign & [ J-NEEDS-AFFIX -,
+                           NON-HEAD-DTR sign & [ J-NEEDS-AFFIX -,
                                                 SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
                                                                                    LAST #2 ]],
 							 NON-LOCAL [REL #rel],
@@ -438,7 +438,7 @@ rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
 							 INDEX #eventindex],
 					      BAR +,
 					      NUCL not_fin_conj]]],
-                              [SYNSEM j-synsem & 
+                              [SYNSEM synsem & 
 				      [LOCAL [CAT.HEAD noun_head,
 					      BAR +,
 					      CONT [HOOK [INDEX #ind,
@@ -605,12 +605,12 @@ conj-rule-type :=  binary-type-conj &
   J-NEEDS-AFFIX -,
   C-CONT [RELS <! !>,
 	  HCONS <! !>],
-  ARGS <  j-sign & 
+  ARGS <  sign & 
 	  [SYNSEM.LOCAL [CTXT.BACKGROUND [list #ctxt1,last #ctxt3],
 			 CONT.HOOK [ INDEX #index,
 				     LTOP #handle],
 			 CAT [VAL saturated,
-			      HEAD.C-MOD < j-synsem & [LOCAL [CAT #1, 
+			      HEAD.C-MOD < synsem & [LOCAL [CAT #1, 
 							      CONT #3,
 							      BAR #5, 
 							      NUCL #6],
@@ -618,7 +618,7 @@ conj-rule-type :=  binary-type-conj &
 						       NON-LOCAL #4] >],
 			 NUCL not_fin_conj ],
 	   J-NEEDS-AFFIX -],
-	  j-sign & 
+	  sign & 
 	  [SYNSEM [LOCAL [CTXT.BACKGROUND [list #ctxt3,last #ctxt2],
 			  CAT #1 & [VAL saturated & #val],
 			  CONT #3, 
@@ -665,7 +665,7 @@ head-marker-rule := binary &
 								LTOP #top],
 							  CTXT.BACKGROUND [LIST #3,LAST #2]],
 						   MODIFIED.PERIPH #per]],
-                     NON-HEAD-DTR #nh-dtr & [SYNSEM.LOCAL [CAT [HEAD.MARK < j-synsem & 
+                     NON-HEAD-DTR #nh-dtr & [SYNSEM.LOCAL [CAT [HEAD.MARK < synsem & 
                                                                           [LOCAL.CAT.HEAD #5,
 									   MODIFIED.PERIPH #per] >,
                                                                VAL #val],
@@ -680,7 +680,7 @@ head-marker-rule := binary &
 ; (ERB 2001-11-26) It should also get the LTOP from the HEAD-DTR's LTOP,
 ; not its KEY.LBL.
 
-empty-head-type :=  headed-phrase & j-sign &
+empty-head-type :=  headed-phrase & 
                    [SYNSEM [LOCAL [CTXT #1,
                                    CAT.HEAD #head & [EMPTY +],
                                    CONT [HOOK.LTOP #hand,
@@ -788,7 +788,7 @@ empty-head-type :=  headed-phrase & j-sign &
 
 
 utterance-type := unary-type  &  
-[SYNSEM j-synsem & [LOCAL [CAT [HEAD utterance_head & [SMOD marked,
+[SYNSEM synsem & [LOCAL [CAT [HEAD utterance_head & [SMOD marked,
 						       EMPTY #empty],
 				VAL  saturated],
 			   CTXT [BACKGROUND diff-list &
@@ -911,7 +911,7 @@ word-rule := word-rule-basic & constant-lex-rule &
               ARGS  <[SYNSEM.LOCAL.CAT.HEAD [VN #vn,
                                              MODUS #mood]]>].
 
-category-change-rels-irule := constant-lex-rule & j-sign.
+category-change-rels-irule := constant-lex-rule.
 ;;;
 ;;; Rules to allow classifiers to float
 ;;;
@@ -928,7 +928,7 @@ floated-obj-num-cl-lex &
 ;;;
 ;;; V-V rules
 ;;;
-category-change-preds-irule := j-sign &
+category-change-preds-irule := sign &
  [SYNSEM.LKEYS.KEYREL.PRED #pred,
   ARGS.FIRST.SYNSEM.LKEYS.KEYREL.PRED #pred].
 
@@ -1435,7 +1435,7 @@ adjpolite-rule := i-adj-stem-lex &
 
 ;;; lexical rules 
 
-word2word-rule := j-sign & phrase-or-lexrule &
+word2word-rule := phrase-or-lexrule &
             [SYNSEM [LOCAL [CAT [HEAD #head],
                             BAR #bar,
                             CONT [HOOK #hook,
@@ -1503,10 +1503,10 @@ prefix-rule :=  head-final-type-mod &
 		 C-CONT [RELS <! !>,
 			 HCONS <! !>],
                  J-NEEDS-AFFIX -,
-                 NON-HEAD-DTR j-sign & 
+                 NON-HEAD-DTR sign & 
 			[SYNSEM [LOCAL.CTXT.BACKGROUND [list #3,last #2]],
 			 J-NEEDS-AFFIX -],
-		 HEAD-DTR j-sign & 
+		 HEAD-DTR sign & 
 			[SYNSEM [LOCAL [CTXT.BACKGROUND [list #1,last #3],
 					CONT [HOOK #hook],
 					CAT.VAL #val]],
@@ -1521,10 +1521,10 @@ suffix-rule :=  head-first-type-mod &  head-adjunct-p &
   C-CONT [RELS <! !>,
 	  HCONS <! !>],
   J-NEEDS-AFFIX -,
-  NON-HEAD-DTR j-sign & 
+  NON-HEAD-DTR sign & 
 	 [SYNSEM [LOCAL.CTXT.BACKGROUND [list #3,last #2]],
 	  J-NEEDS-AFFIX -],
-  HEAD-DTR j-sign & 
+  HEAD-DTR sign & 
 	 [SYNSEM [LOCAL [CTXT.BACKGROUND [list #1,last #3],
 			 CONT [HOOK #hook],
 			 CAT.VAL #val]],
@@ -2044,7 +2044,7 @@ embedded-question-rule-type := headed-phrase &
                                     LAST #last ]]],
  C-CONT [RELS <! !>,
          HCONS <! !>],
- HEAD-DTR j-sign & #head-dtr & 
+ HEAD-DTR sign & #head-dtr & 
              [ J-NEEDS-AFFIX -,
                SYNSEM [ LOCAL [ CONT [ HOOK [LTOP #h,
 					     INDEX #i]],
@@ -2056,7 +2056,7 @@ embedded-question-rule-type := headed-phrase &
                                 CTXT.BACKGROUND [ LIST #middle,
                                                   LAST #last ],
                                 NUCL #nucl]]],
-	       NON-HEAD-DTR j-sign & #nh-dtr & 
+	       NON-HEAD-DTR sign & #nh-dtr & 
              [ J-NEEDS-AFFIX -,
                SYNSEM #objval &
                            [ LOCAL [ CAT [ VAL optional-or-saturated],
@@ -2083,10 +2083,10 @@ stem-end-rule-type := head-specifier-rule-type &
                   J-NEEDS-AFFIX #aff,
                   LMORPH-BIND-TYPE nomorphbind,
 		  RMORPH-BIND-TYPE #rm,
-                  ARGS < [SYNSEM j-synsem & [LOCAL [CAT [VAL [UNSAT #unsat]]]],
+                  ARGS < [SYNSEM synsem & [LOCAL [CAT [VAL [UNSAT #unsat]]]],
 			  RMORPH-BIND-TYPE  #mt,	
 			  INFLECTED +],
-			  [SYNSEM j-synsem & [LOCAL [CONT [HOOK #hook]],
+			  [SYNSEM synsem & [LOCAL [CONT [HOOK #hook]],
 					    MODIFIED.PERIPH -],
 			   LMORPH-BIND-TYPE #mt,
 			   RMORPH-BIND-TYPE #rm,
@@ -2349,7 +2349,7 @@ C-CONT.RELS.LIST.REST.FIRST.ARG #ind ].
 
 frag-vmod-rule := unary-frag-rule &
  [  ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < synsem &
-					     [ LOCAL j-local ] >,
+					     [ LOCAL local ] >,
 				  VAL saturated],
 			    CONT.HOOK [ LTOP #klbl,
 					INDEX #arg ] ] ] >,
@@ -2449,7 +2449,7 @@ frag-vmod-something-rule := binary-frag-rule &
 				   ARG0 #ind,
 				   ARG  #arg ]]].
 
-;;; (FCB 2006-02-01) Changing intersective_mod to j-local allows scopal adverbs but gets the semantics wrong 
+;;; (FCB 2006-02-01) Changing intersective_mod to local allows scopal adverbs but gets the semantics wrong 
 ;;; i.e. it won't scope.
 
 frag-pp-np-rule := frag-vmod-something-rule &

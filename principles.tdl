@@ -219,11 +219,11 @@ liszt-princ := phrasal_sign &
                                         LAST #lastliszt],
                    HCONS diff-list & [LIST #scmiddle2,
                                          LAST #sclast]],
-           ARGS < j-sign & [SYNSEM [LOCAL [CONT [RELS [LIST #firstliszt,
+           ARGS < sign & [SYNSEM [LOCAL [CONT [RELS [LIST #firstliszt,
                                                            LAST #middle1liszt],
                                                     HCONS [LIST #scfirst ,
                                                             LAST #scmiddle1]]]]],
-		  j-sign & [SYNSEM [LOCAL [CONT [RELS [LIST  #middle1liszt,
+		  sign & [SYNSEM [LOCAL [CONT [RELS [LIST  #middle1liszt,
                                                         LAST  #middle2liszt],
                                                  HCONS [LIST #scmiddle1,
                                                          LAST #scmiddle2]]]]] > ].

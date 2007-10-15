@@ -501,7 +501,7 @@ hf-adj-i-rule := hadj-final-i &
                                                        MAIN-PRD -],
                                                  VAL saturated],
                                             BAR +]],
-                             [SYNSEM j-synsem & [LOCAL [BAR +]]]>].
+                             [SYNSEM synsem & [LOCAL [BAR +]]]>].
 
 ; (ERB 2001-11-07) I think this is part of analysis of low attachment
 ; of adverbs wrt ba/tara/etc.
@@ -529,7 +529,7 @@ hf-adj-i-rule := hadj-final-i &
 
 hi-adj-i-rule := hadj-first-i & 
                       [SYNSEM.LOCAL.BAR +,
-                        ARGS <[SYNSEM j-synsem], 
+                        ARGS <[SYNSEM synsem], 
                               [SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD right, 
 							MAIN-PRD -],
 						  VAL saturated],
@@ -549,7 +549,7 @@ hf-adj-s-rule := hadj-final-s &
 				   MAIN-PRD -],
 			     VAL saturated ],
 		       BAR +]],
-	[SYNSEM j-synsem &
+	[SYNSEM synsem &
 		[LOCAL.BAR +]]>].
 
 ; (MS 2003-06-11) Rule for scopal modifiers - head first
@@ -560,7 +560,7 @@ hi-adj-s-rule := hadj-first-s &
                       [SYNSEM.LOCAL [BAR #bar],
                        C-CONT [ RELS <! !>,
                                 HCONS <! !> ],
-                       ARGS <[SYNSEM j-synsem &
+                       ARGS <[SYNSEM synsem &
 				     [LOCAL.BAR #bar]],
 			     [SYNSEM.LOCAL [CAT [ HEAD [J-POSTHEAD right,
 							MAIN-PRD -],
@@ -579,10 +579,10 @@ prefix-rule := hadj-final-i &
                                                        MAIN-PRD -],
                                                  VAL saturated],
                                             BAR -]],
-                             [SYNSEM j-synsem & [LOCAL [BAR +]]]>].
+                             [SYNSEM synsem & [LOCAL [BAR +]]]>].
 
 suffix-rule := hadj-first-i & 
-                      [ARGS <[SYNSEM j-synsem], 
+                      [ARGS <[SYNSEM synsem], 
                              [SYNSEM.LOCAL [CAT [HEAD noun_mod_head &
 						      [J-POSTHEAD right, 
 						       MAIN-PRD -],
@@ -643,7 +643,7 @@ relative-clause-rule := hadj-final-for-rel-cl-topic &
 						      LTOP #adjhand],
                                             BAR +,
                                             NUCL not_fin_conj]]],
-                              [SYNSEM j-synsem & [LOCAL [CAT.HEAD noun_head,
+                              [SYNSEM synsem & [LOCAL [CAT.HEAD noun_head,
 							 BAR +,
 							 CONT.HOOK [INDEX #ind,
 								    LTOP #top]]]]>].
@@ -672,7 +672,7 @@ sentence-te-coordination-rule := sentence-coord-type &
 		CONT.HOOK.XARG #xarg]],
  C-CONT.RELS.LIST.FIRST.PRED 'coord,
  ARGS <[SYNSEM.LOCAL [CAT [HEAD verb_head-super & [J-POSTHEAD coord,
-						   C-MOD < j-synsem & [LOCAL [CAT #1, 
+						   C-MOD < synsem & [LOCAL [CAT #1, 
 									      CONT #3,
 									      BAR #5, 
 									      NUCL #6],
@@ -682,7 +682,7 @@ sentence-te-coordination-rule := sentence-coord-type &
 		      CONT.HOOK.XARG #xarg,
 		      BAR +],
         J-NEEDS-AFFIX -],
-       [SYNSEM j-synsem & [LOCAL [BAR +,
+       [SYNSEM synsem & [LOCAL [BAR +,
 				  CAT #1 & [VAL saturated, HEAD.EMPTY -],
 				  CONT #3,
 				  BAR #5, 
@@ -707,7 +707,7 @@ conj-rule := conj-rule-type &
 				  C-MOD < [MODIFIED.PERIPH #periph] > ],
 			    VAL saturated],
 		       BAR +]],
-	[SYNSEM j-synsem & [LOCAL [BAR +,
+	[SYNSEM synsem & [LOCAL [BAR +,
 				   CONT.HOOK.XARG #xarg],
 			    MODIFIED.PERIPH #periph]]>].
 
@@ -732,10 +732,10 @@ vn-light-rule := head-marker-rule &
 			  LEX +],
                   J-NEEDS-AFFIX -,
                   RMORPH-BIND-TYPE #morphbind,
-                 ARGS <[SYNSEM j-synsem & [LOCAL [CAT.HEAD vn_head & [KEYS #keys],
+                 ARGS <[SYNSEM synsem & [LOCAL [CAT.HEAD vn_head & [KEYS #keys],
 						  CONT.HOOK #hook,
 						   BAR -]]],
-                       [SYNSEM j-synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX aux_minus, LIGHT +]]],
+                       [SYNSEM synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX aux_minus, LIGHT +]]],
                         INFLECTED +,
                         J-NEEDS-AFFIX -,
                         RMORPH-BIND-TYPE #morphbind]>].
@@ -826,14 +826,14 @@ vend-vend-rule  := head-marker-rule &
                   J-NEEDS-AFFIX #aff,
                   LMORPH-BIND-TYPE #lmorph,
                   RMORPH-BIND-TYPE #rmorph,
-                  ARGS <[SYNSEM j-synsem & [LOCAL [CAT [HEAD verbend_head & [MODUS #mod],
+                  ARGS <[SYNSEM synsem & [LOCAL [CAT [HEAD verbend_head & [MODUS #mod],
 							VAL.SPR 1-list],
 						   BAR #bar]],
                          J-NEEDS-AFFIX +,
                          RMORPH-BIND-TYPE #mt,
                          LMORPH-BIND-TYPE #lmorph,
                          INFLECTED +],
-                       [SYNSEM j-synsem & [LOCAL [CAT.HEAD verbend_head & [MODUS #mod],
+                       [SYNSEM synsem & [LOCAL [CAT.HEAD verbend_head & [MODUS #mod],
 						  CONT.HOOK #hook],
 					 MODIFIED.PERIPH #per],
                         J-NEEDS-AFFIX #aff,
@@ -860,9 +860,9 @@ head-specifier-rule := head-specifier-rule-type &
 						  LTOP #mhand]],
 				LEX -,
 				MODIFIED.PERIPH #per],
-			ARGS <[SYNSEM j-synsem & [MODIFIED.PERIPH #per],
+			ARGS <[SYNSEM synsem & [MODIFIED.PERIPH #per],
                               J-NEEDS-AFFIX -],
-                             [SYNSEM j-synsem & [LOCAL [BAR #bar,
+                             [SYNSEM synsem & [LOCAL [BAR #bar,
                                                       CONT.HOOK [XARG #xarg,
 								 INDEX #mind,
 								 LTOP #mhand]]]]>].

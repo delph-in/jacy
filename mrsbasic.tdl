@@ -11,25 +11,6 @@ nothing :< individual.
 ; into a KEYS feature like in the LinGO grammar.
 
 
-; (ERB 2001-08-07) Experimenting with moving constraints from 
-; wg-handel-lex-mrs here.
-
-; (ERB 2001-09-13) Need a general constraint saying that LTOP =
-; KEY.LBL.  There are some exceptions to this in English to do
-; with the auxiliaries, but I doubt there are in Japanese.
-
-; (ERB 2001-09-24) I found an exception in Japanese, in the number
-; names.  The top handle needs to come from the plus_rel if there is one,
-; otherwise from the times_rel if there is one, otherwise from the const_rel.
-; So, I'm moving that constraint back to wg-handel-mrs.
-;
-; (MS 2003-07-09) Changed that due to the matrix definitions.
-
-j-mrs := mrs.
-; j-mrs := mrs &
-;   [MOD-IND individual,
-;    MOD-HAND handle].
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;  CONT values (MRS semantics)
@@ -51,7 +32,7 @@ j-mrs := mrs.
 
 full := event-or-ref-index.
 full-or-zpro-ref-ind := full & index.
-full_ref-ind := full-or-zpro-ref-ind & ref-ind & [PNG j-png].
+full_ref-ind := full-or-zpro-ref-ind & ref-ind & [PNG png].
 zpro_ref-ind := full-or-zpro-ref-ind.
 
 ; (MS 2004-12-13) The conj-ref-ind should be under full_ref-ind
@@ -60,7 +41,9 @@ zpro_ref-ind := full-or-zpro-ref-ind.
 
 conj-ref-ind := conj-index & full_ref-ind.
 
-j-png := png & [PN pn, GEN gender].
+;;; Japanese values for PNG
+
+png :+ [PN pn, GEN gender].
 
 ; The basic semantic structure, a CONT, is just something with a handle.
 ; Conts are further classified into mrss (i.e., things with liszts) and

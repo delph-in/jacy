@@ -141,13 +141,13 @@ na-adj-sem-type := na-adj-sem-type-basic &
 ; (ERB 2004-1-16) See notes at card-lex: exposing the ARG1 as the XARG.
 ; (FCB 2006-06-20) no MOD-IND/MOD-HAND
 ; FIXME check the semantics
-card-sem-type := j-mrs &
+card-sem-type := mrs &
 		 [HOOK [INDEX #ind,
 		       XARG #xarg],
                  HCONS <! !>,
                  RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind,
 								ARG1 #xarg]]].
-; card-sem-type := j-mrs &
+; card-sem-type := mrs &
 ;                 [MOD-IND #ind,
 ; 		 MOD-HAND #hand,
 ; 		 HOOK [INDEX #ind,

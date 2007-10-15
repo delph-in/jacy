@@ -13,11 +13,11 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-j-valence := valence &
-	[UNSAT bool,
-	 SUBJ 0-1-list,
-         COMPS list,
-         SPR 0-1-list].
+;;; specify this a bit further
+valence :+ 
+ [UNSAT bool,
+  SUBJ 0-1-list,
+  SPR 0-1-list].
 
 
 formal := avm & 
@@ -26,27 +26,27 @@ formal := avm &
 
 ;(MS 2003-07-08) replaced MOD mod_synsem with MOD 0-1-list, in order to adapt to Matrix standards.
 
-j-head :=    head & 
-         [POS category,
-          MARK 0-1-list,
-          MOD 0-1-list,
-          C-MOD 0-1-list,
-          J-SPEC 0-1-list,
-          FORMAL formal,
-          J-POSTHEAD posthead,
-          SMOD smod,
-          QUANTIFIABLE bool,
-          H-TENSE tense,
-          FIN bool,
-          AUX aux,
-          COP bool,
-          VN bool,
-          ADJ bool,
-          LIGHT bool,
-	  EMPTY bool,
-          MAIN-PRD bool,
-          COP-ARG bool,
-          MODUS mood].
+head :+ 
+ [POS category,
+  MARK 0-1-list,
+  MOD 0-1-list,
+  C-MOD 0-1-list,
+  J-SPEC 0-1-list,
+  FORMAL formal,
+  J-POSTHEAD posthead,
+  SMOD smod,
+  QUANTIFIABLE bool,
+  H-TENSE tense,
+  FIN bool,
+  AUX aux,
+  COP bool,
+  VN bool,
+  ADJ bool,
+  LIGHT bool,
+  EMPTY bool,
+  MAIN-PRD bool,
+  COP-ARG bool,
+  MODUS mood].
 
 c-indices := avm & 
              [SPEAKER index,
@@ -64,26 +64,30 @@ obj-honor_rel :< honor_rel.
 
 addr-honor_rel :< honor_rel.
 
-
-j-ctxt := ctxt &
-        [C-INDICES c-indices & [SPEAKER #sp],
-         BACKGROUND diff-list & [LIST list],
-         EMPATHY empathy_rel & [EMPER #sp]].
+;;; More details for context
+; indices, background and empathy
+ctxt :+ 
+ [C-INDICES c-indices & [SPEAKER #sp],
+  BACKGROUND diff-list & [LIST list],
+  EMPATHY empathy_rel & [EMPER #sp]].
 
 
 empathy_rel := avm &
                [EMPER index,
                 EMPEE index].
 
-j-cat := cat & [HEAD j-head, VAL j-valence].
+cat :+ [HEAD head, VAL valence].
 
 ; (ERB 2002-01-24) Change value of NUCL from bool to nucl in order
 ; to be able to keep phrases built by conj-rule from being modified.
+; FCB 
 
-j-local := local & [CAT j-cat,
-		    CTXT j-ctxt,
-		    NUCL nucl,
-		    BAR bool].
+local :+ [CAT cat,
+	  CTXT ctxt,
+	  NUCL nucl,
+	  BAR bool].
+
+
 
 ; (ERB 2001-11-28) Types to distinguish between intersective
 ; and scopal modifiers (will be used in their MOD values). 
@@ -91,21 +95,26 @@ j-local := local & [CAT j-cat,
 
 ; (MS 2003-07-10) I cannot use the definitions in matrix.tdl, because they are subtypes of local and I need them to be subtypes of j-local.
 
-scopal_mod := j-local.
-intersective_mod := j-local.
+scopal_mod := local.
+intersective_mod := local.
 
-j-nonlocal := non-local & 
-	      [ROBUST bool,
-	       UNDERSPEC_ARG bool,
-	       SLASH 0-dlist,
-	       AFFIX diff-list].
+;;; Do we use these additions?
+ non-local :+ 
+  [ROBUST bool,
+   UNDERSPEC_ARG bool,
+   SLASH 0-dlist,
+   AFFIX diff-list].
 
+;;; Redefine these (unused in JACY as we have no slash)
+extracted-adj-phrase := basic-extracted-adj-phrase.
+basic-head-filler-phrase := binary-phrase & phrasal.
+gap := expressed-non-canonical.
 
 ;;;;;;;;;(MS 2002-11-12) Matrix approach to subcategorization;;;;;;;;;;;;;;
 
 
 2-comps-list := 1-plus-list &
-		< j-synsem, j-synsem >.
+		< synsem, synsem >.
 
 saturated := optional-or-saturated & [SUBJ null,
 			COMPS null,
@@ -126,49 +135,47 @@ obl-2-args := obl-arg & 2-comps-list & [FIRST.OPT - ,
 					REST.FIRST.OPT - ].
 
 
-optional-or-saturated := j-valence.
+optional-or-saturated := valence.
 
 only-optional-arguments := optional-or-saturated & [SUBJ olist,
 						    COMPS olist,
 						    SPR olist].
 
 
-j-synsem :=  canonical-synsem & 
-          [LOCAL j-local,
-           NON-LOCAL j-nonlocal,
-           MODIFIED.PERIPH bool].
+canonical-synsem :+ 
+ [ MODIFIED.PERIPH bool].
 
-j-lex-synsem := j-synsem & lex-synsem.
-j-phr-synsem := j-synsem & phr-synsem.
 
-opt_synsem := j-synsem & [OPT + ].
-obl_synsem := j-synsem & [OPT - ].
+opt_synsem := canonical-synsem & [OPT + ].
+obl_synsem := canonical-synsem & [OPT - ].
 
 ; (MS 2003-07-09) changed due to the sign definition in matrix.tdl
-; BUT I added ORTH diff-list 
+; Idiom Implementation (CH 060804)
 
-j-sign := sign &
-	[SYNSEM j-synsem,	
-	 LMORPH-BIND-TYPE morphbind,
-	 RMORPH-BIND-TYPE morphbind,
-	 J-NEEDS-AFFIX bool].
+sign :+
+  [ IDIOM bool,
+    LMORPH-BIND-TYPE morphbind,
+    RMORPH-BIND-TYPE morphbind,
+    J-NEEDS-AFFIX bool].
    	
 
 ; So, I'm going to take the constraint off of lexical_sign, make
 ; three subtypes of lexical_sign (lexical_sign-word, lexical_sign-affix,
 ; and lexical_sign-rule) and make the constraint live on the first 
 ; of these.
+lexical_sign := word & 
+               [SYNSEM lex-synsem & [LOCAL [CAT.VAL.UNSAT +],
+				       LEX +],
+                STEMTYPE stemtype].
 
-;;; Most words should share pass up their lable
+;;; Most words should share their lable
 lexical_sign-word := lexical_sign &
  [ SYNSEM [LOCAL.CONT.HOOK.LTOP #label,
 	   LKEYS.KEYREL [ LBL #label]]].
 
 ;;; abnormal  words don't
-lexical_sign-aword := lexical_sign.lexical_sign := word & j-sign &
-               [SYNSEM j-lex-synsem & [LOCAL [CAT.VAL.UNSAT +],
-				       LEX +],
-                STEMTYPE stemtype].
+lexical_sign-aword := lexical_sign.
+
 
 lexical_sign-affix := lexical_sign.
 
@@ -183,7 +190,7 @@ lexical_sign-rule := lexical_sign & phrase-or-lexrule &
 
 
 
-wg-handel-lex-mrs-basic :< j-mrs.
+wg-handel-lex-mrs-basic :< mrs.
 
 ; (ERB 2001-11-26) Not all lexical sem types inherit the constraints
 ; that MOD-IND = INDEX and MOD-HAND = LTOP.  I'm going to move these
@@ -194,7 +201,7 @@ wg-handel-lex-mrs-basic :< j-mrs.
 wg-handel-lex-mrs := wg-handel-lex-mrs-basic.
 
 
-mod-id-mrs := j-mrs.
+mod-id-mrs := mrs.
 
 mod-id-wg-handel-mrs := mod-id-mrs & wg-handel-lex-mrs.
 

@@ -30,20 +30,12 @@ sign-min := avm &
 basic-sign := sign-min &
   [ KEY-ARG bool ].
 
-;;;
-;;; Idiom Implementation (CH 060804)
-;;;
+
 sign := basic-sign &
   [ SYNSEM synsem,
     ARGS list,
     INFLECTED bool,
-    ROOT bool,
-    IDIOM bool].
-; sign := basic-sign &
-;   [ SYNSEM synsem,
-;     ARGS list,
-;     INFLECTED bool,
-;     ROOT bool ].
+    ROOT bool ].
 
 
 ; C-CONT encodes the semantic contribution of the rule (phrasal
