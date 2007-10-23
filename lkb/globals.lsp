@@ -7,13 +7,7 @@
 ;;; parameters only - grammar specific functions 
 ;;; should go in user-fns.lsp
 
-;#+:allegro
-;(setf excl:*locale* (excl:find-locale "ja_JP.UTF-8"))
-
-(when (lkb-version-after-p "2005/10/28 00:00:00")
-  (grammar-encoding 'utf-8)) 
-
-(defparameter *active-parsing-p* t)
+(grammar-encoding 'utf-8)
 
 ;;; Types
 
@@ -63,10 +57,6 @@
 
 (defparameter *irregular-forms-only-p* t)
 
-;;;
-;;; input characters to be ignored (i.e. suppressed) in tokenization
-;;; moved to user-fns.lsp
-
 (defparameter *display-type-hierarchy-on-load* nil)
 
 ;;; Parsing
@@ -77,6 +67,8 @@
 
 (defparameter *mother-feature* NIL
    "The feature giving the mother in a grammar rule")
+
+(defparameter *active-parsing-p* t)
 
 ;for spoken and email language:
 
@@ -133,19 +125,9 @@
 (defparameter *discriminant-path* '(SYNSEM LKEYS KEYREL PRED))
 
 ;;;
-;;; enable (mostly) YY-specific recording of surface position in MRS relations
-;;;
-;;;(defparameter *relation-label-path* '(SYNSEM LOCAL CONT KEY WLINK))
-;;;(defparameter *relation-label-path* nil)
-
-;;;
-;;; put CDB into multi-byte mode
+;;; put lexicon CDB into multi-byte mode
 ;;;
 (defparameter cdb::*cdb-ascii-p* nil)
-
-;;;;;; for the compare function 
-;;;
-;;;(defparameter *discriminant-path* '(synsem local keys key pred))
 
 (setf *semantics-index-path* '(synsem local cont hook index))
 
@@ -165,18 +147,6 @@
 ;;;
 (setf *gen-packing-p* nil)
 (setf *gen-equate-qeqs-p* t)
-
-;;; connection parameters for lexical database, an association list with fields
-;;; `:host', `:db', `:table', and `:user' (optional) 
-;;; was for me (MS):   '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t) (:user "siegel"))
-;;; if unset we fall back to .tdl lexicon files
-
-;(defparameter *lexdb-params* 
-;bmw!!!
-					;  #+:psql
-;  '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t))
-;  #-:psql
-;  nil)
 
 ;;;
 ;;; make generation faster
@@ -232,6 +202,18 @@
 (setf *translate-grid* '(:ja . (:ja)))
 
 (setf *gen-ignore-rules* '(head-complement2-rule))
+
+;;; connection parameters for lexical database, an association list with fields
+;;; `:host', `:db', `:table', and `:user' (optional) 
+;;; was for me (MS):   '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t) (:user "siegel"))
+;;; if unset we fall back to .tdl lexicon files
+
+;(defparameter *lexdb-params* 
+;bmw!!!
+					;  #+:psql
+;  '((:db "jacy") (:host "localhost") (:table "jacy") (:semi t))
+;  #-:psql
+;  nil)
 
 
 ;;;
