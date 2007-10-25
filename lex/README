@@ -3,11 +3,14 @@ The definitions for the lexical database are in:
 
 lexdb.fld	The fields
 lexdb.dfn	The links to the grammar
+Jacy.rev	The contents
+generics.tdl	Generic entries (not stored in the database)
 
 See <http://wiki.delph-in.net/moin/LkbLexDb> for deeper explanation.
 
 The database is called "jacy" and is encoded in UNICODE.
 
-
+Currently (2007-10-25) all the *.tdl files apart from the generics.tdl
+are not being used, and are bundled in for historical interest only.
 
 

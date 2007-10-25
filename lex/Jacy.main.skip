@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: euc-jp  -*-
+;;; -*- Mode: TDL; Coding: utf-8  -*-
 ;;;
 ;;; Skip file for things that can't go in the lexdb
 ;;;  - ideally this should be empty
