@@ -526,7 +526,8 @@ want2-relation := arg12-relation & [PRED "want2_rel"].
 ; (MS 2003-07-11) For the Japanese analysis, it also needs an ARG2
 ; (MS 2004-02-20) and also an ARG3, in the case of passive?
 
-neg-relation := adv-relation & arg1-relation.
+neg-relation := adv-relation & arg1-relation
+		[ARG0 individual].
 
 ;cant_help_rel :< j-neg_rel.
 

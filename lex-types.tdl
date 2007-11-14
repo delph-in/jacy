@@ -3118,22 +3118,25 @@ s-conj-lex-desusapsc := s-conj-lex &
 ; (FCB 2005-06-27) Added ARG0 to message
 
 s-end-lex := sap-lex &
-              [SYNSEM [LKEYS.KEYREL #key & [MARG #soahandle,
-					    ARG0 #ind,
-					    LBL #top],
-		       LOCAL [CAT [HEAD s-end_head-avm & [COP-ARG -],
-				   VAL.COMPS.FIRST.LOCAL 
-					[ CAT.HEAD.EMPTY -,
-					  CONT.HOOK [LTOP #v-handle,	
-						     INDEX #ind]]],
-			      CONT [HOOK [LTOP #top,
-					  INDEX #ind],
-				    RELS <! #key !>,
-				    HCONS <! qeq & [LARG #v-handle,
-						   HARG #soahandle] !>]]]].
+ [SYNSEM [LKEYS.KEYREL #key & message & 
+		       [MARG #soahandle,
+			ARG0 #ind,
+			LBL #top],
+	  LOCAL [CAT [HEAD s-end_head-avm & [COP-ARG -],
+		      VAL.COMPS.FIRST.LOCAL 
+			   [ CAT.HEAD.EMPTY -,
+			     CONT.HOOK [LTOP #v-handle,	
+					INDEX #ind]]],
+		 CONT [HOOK [LTOP #top,
+			     INDEX #ind],
+		       RELS <! #key !>,
+		       HCONS <! qeq & [LARG #v-handle,
+				       HARG #soahandle] !>]]]].
 
-s-end1-lex := s-end-lex & [SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON #1,
-                                             VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
+;;; Pass up the AHON value (vs s-end2-lex which sets it to AHON +)
+s-end1-lex := s-end-lex & 
+ [SYNSEM.LOCAL.CAT [HEAD.FORMAL.AHON #1,
+		    VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORMAL.AHON #1]].
 
 
 ; <type val="s-end1-decl-lex">
@@ -3191,9 +3194,9 @@ s-end1-decl-full-lex := s-end1-decl-lex.
 ; <todo>
 ; </type>
 s-end1-quest-lex := s-end1-lex &
-		    [SYNSEM [LOCAL [CAT.HEAD.SMOD quest,
-                      CONT.RELS <! message & [ PRED question_m_rel ] !>],
-			     NON-LOCAL.QUE 0-dlist]].
+ [SYNSEM [LOCAL [CAT.HEAD.SMOD quest,
+		 CONT.RELS <! message & [ PRED question_m_rel ] !>],
+	  NON-LOCAL.QUE 0-dlist]].
 
 ; <type val="s-end1-quest-minusahon-lex">
 ; <name-ja>終助詞疑問非丁寧
@@ -3228,6 +3231,51 @@ s-end1-quest-minusahon-copcomp-lex := s-end1-quest-minusahon-lex &
 				      [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [NON-LOCAL.QUE 1-dlist,
 									LOCAL.CAT.HEAD.COP +]].
 
+
+; <type val="s-end1-neg-imp-lex">
+; <name-ja>終助詞命令
+; <description>文末にあって、文に否定の命令の意を加える。用言の終止形のみにつく。
+; <ex>行く な
+; <nex>行け な
+; <todo>
+; </type>
+;; FCB can't inherent easily from s-end-lex as it has two propositions
+;; not worth factoring out as it will change again in the MSG-free version
+;; FIXME - need to restrict to 終止形 
+s-end1-neg-imp-lex := sap-lex &
+ [SYNSEM [LKEYS.KEYREL #key & message &
+		       [ PRED command_m_rel,
+			 MARG #soahandle,
+			 ARG0 #ind,
+			 LBL #top],
+	  LOCAL [CAT [HEAD s-end_head-avm & 
+			   [COP-ARG -,
+			    SMOD imp],
+		      VAL.COMPS.FIRST.LOCAL 
+			   [ CAT.HEAD.EMPTY -,
+			     CONT.HOOK [LTOP #v-handle,	
+					INDEX #ind]]],
+		 CONT [HOOK [LTOP #top,
+			     INDEX #ind],
+		       RELS <! #key, 
+			     neg-relation & 
+			     [PRED 'neg_rel,
+			      ARG0 individual,
+			      LBL #neg-hand,
+			      ARG1 #neg1 ]!>,
+		       HCONS <! qeq & [HARG #soahandle,
+				       LARG #neg-hand ],
+			      qeq & [HARG #neg1,
+				     LARG #v-handle] !>]],
+	  NON-LOCAL.QUE 0-dlist]].
+
+;s-end1-lex &
+;		    [SYNSEM [LOCAL [CAT.HEAD.SMOD imp,
+;                      CONT.RELS <! message & [ PRED command_m_rel ] !>],
+;			     NON-LOCAL.QUE 0-dlist]].
+
+
+;;; Set the AHON value to + (vs s-end1-lex which passes it up)
 s-end2-lex := s-end-lex & [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 ; (MS 2005-11-09) To get rid of skip files.

@@ -1,3 +1,7 @@
+2007-11-14  Francis Bond  <bond@ronf>
+
+	* added s-end1-neg-imp-lex for 吠える　な "don't bark"
+
 2007-09-05  Francis Bond  <bond@nooka>
 
 	* used :+ to redefine TAM and Messages

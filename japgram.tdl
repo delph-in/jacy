@@ -66,15 +66,17 @@ utterance_rule-sep-quest := utt-message-sap-type &
                             HCONS <! !>],
                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
 
-; (ERB 2001-10-31) Moving contrast between imp_rel and polite-imp_rel
-; to REL feature for k2y purposes (and because we can't see why there
-; need to be special types).
-; (MS 2003-12-17) Adapting to Matrix 0.6
-
 utterance_rule-sep-imp := utt-message-sap-type &
                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & imp],
-                    C-CONT [RELS <! message & [PRED command_m_rel] !>],
+                    C-CONT [RELS <! !>,
+                            HCONS <! !>],
                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
+
+
+; utterance_rule-sep-imp := utt-message-sap-type &
+;                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & imp],
+;                     C-CONT [RELS <! message & [PRED command_m_rel] !>],
+;                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
 
 ; (MS 2003-12-17) Adapting to Matrix 0.6, but added cond_m_rel.
 
