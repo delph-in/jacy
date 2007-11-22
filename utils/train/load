@@ -1,0 +1,66 @@
+#!/bin/bash
+
+#FOREST=${LOGONROOT}/lingo/redwoods;
+#SCRIPT=${FOREST}/erg/lkb/script
+FOREST="/home/bond/hinoki/tanaka/070518"
+SCRIPT=${FOREST}/jacy/lkb/script
+
+if [ ! -f ${LOGONROOT}/etc/library.bash ]; then
+  echo "logon: unable to determine \$LOGONROOT source directory; exit";
+  exit 1;
+fi
+
+. ${LOGONROOT}/etc/library.bash;
+
+while [ $# -gt 0 -a "${1#-}" != "$1" ]; do
+  case ${1} in
+    --32)
+      LOGONOS=${LOGONOS%%.??}.32;
+      shift 1;
+    ;;
+    --source)
+      source="--source";
+      shift 1;
+    ;;
+    --cat)
+      cat="--cat";
+      shift 1;
+    ;;
+    --increment)
+      increment=${2};
+      shift 2;
+    ;;
+  esac
+done
+
+if [ -z "${1}" ]; then 
+  echo "usage: load <load file>.";
+  exit 1;
+fi
+
+
+load=$1;
+
+log=${load%%.lisp}.${HOSTNAME}.$(date "+%Y-%m-%d-%H:%M:%S");
+
+unset DISPLAY;
+
+{
+  if [ -n "${source}" ]; then
+    echo "(pushnew :lkb *features*)";
+    echo "(pushnew :bdb *features*)";
+    echo "(pushnew :logon *features*)";
+    echo "(load \"${LOGONROOT}/lingo/lkb/src/general/loadup.lisp\")";
+    echo "(compile-system \"tsdb\" :force t)";
+  fi
+
+  echo "(tsdb::initialize-tsdb nil :rc \"${FOREST}/dot.tsdbrc\")";
+  echo "(lkb:read-script-file-aux \"${SCRIPT}\")";
+  if [ -n "${increment}" ]; then
+    echo "(setf tsdb::%redwoods-items-increment% ${increment})";
+  fi  
+  echo "(load \"${load}\")"; \
+  echo "(excl:exit 0 :no-unwind t)";
+
+} | $LOGONROOT/bin/logon ${source} ${cat} \
+    -I base -locale en_US.UTF-8 -qq 1>&1 | tee ${log}

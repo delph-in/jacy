@@ -1,0 +1,10 @@
+Example files for training a stochastic model
+
+Adapted from the redwoods scripts.
+
+./load train.lisp
+
+should work if you have the treebanks and skeletons in the right
+places.  It first caches the values and then trains the models.
+You must have tadm to do the actual training.
+
