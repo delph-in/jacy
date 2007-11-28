@@ -213,24 +213,27 @@ nonmodable-relation := locable-relation.
 ; ERB (2001-10-03) Working numbered-np_rel into the new
 ; hierarchy below locable_rel.
 
-numbered-np-relation := nonmodable-relation & niarg-relation &
-                [ NUMBER handle,
-                  ARG0 full].
+numbered-np-relation := nonmodable-relation & niarg-relation & noun-arg1-relation &
+                [ ARG0 full,
+		  ARG1 handle].
 
 ; (MS 2004-12-02) For generation, these need PRED values.
 
-dofm-relation := numbered-np-relation & [PRED 'dofm].
-mofy-relation := numbered-np-relation & [PRED 'mofy].
-yofc-relation := numbered-np-relation & [PRED 'yofc].
-numbered-hour-relation := numbered-np-relation & [PRED 'hour].
-numbered-minute-relation := numbered-np-relation & [PRED 'minute].
+dofm-relation := numbered-np-relation & [PRED "dofm_rel"].
+mofy-relation := numbered-np-relation & [PRED "mofy_rel"].
+yofc-relation := numbered-np-relation & [PRED "yofc_rel"].
+numbered-hour-relation := numbered-np-relation & [PRED "numbered_hour_rel"].
+numbered-minute-relation := numbered-np-relation & [PRED "numbered_minute_rel"].
 
 ; ERB (2001-10-03) For days of the week, which are like
 ; the numbered-np_rels, but have a name instead of a number.
 ; (MS 2005-11-30) I want the others to have distinguished relations as well,
 ; which is used to disambiguate the ni particle attached to them.
 
-dofw-relation := named-relation & nonmodable-relation & niarg-relation.
+dofw-relation := const-value-relation & nonmodable-relation & niarg-relation
+  [ PRED "dofw_rel",
+    CARG *top* ].
+
 loc-relation := named-relation.
 inst-relation := named-relation.
 personname-relation := named-relation.

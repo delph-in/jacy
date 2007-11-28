@@ -97,12 +97,11 @@
 ;;; when loaded into an environment including [incr tsdb()] and the Redwoods
 ;;; tools, also load a Maximum Entropy parse selection model
 ;;;
-;#+:tsdb
-;(tsdb::read-model (lkb-pathname (parent-directory) "lxddef6s1.mem"))
-;;(tsdb::read-model (lkb-pathname (parent-directory) "train-df6s1-syn1.mem"))
-;#+:tsdb
+#+:logon
+(tsdb::read-model (lkb-pathname (parent-directory) "tanaka-006-015.mem"))
+#+:tsdb :logon
 ;(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
-;#+:tsdb
+;#+(and :tsdb :logon)
 ;(set (intern "*CHART-PACKING-P*" :lkb) t)
 
 ;;;

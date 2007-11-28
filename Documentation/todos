@@ -1,9 +1,10 @@
 ;;; -*-  Coding: euc-jp -*-
 
+
 FCB 2006-06-06
 
 Change compounds-rule from NP-NP to N-N.
-
+The valency should not be saturated.
 
 FCB 2006-05-31
 

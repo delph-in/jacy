@@ -6750,7 +6750,7 @@ date-with-int-lex := date-lex &
 				     LOCAL [ CAT [ HEAD int_head,
 						   VAL saturated ],
 					     CONT.HOOK.LTOP #h]] >],
-	    LKEYS.KEYREL.NUMBER #h ]].
+	    LKEYS.KEYREL.ARG1 #h ]].
 
 ; ERB (2001-08-28) To accomodate Chasen's parsing of 八月 etc as one word
 
@@ -6759,7 +6759,7 @@ date-no-int-lex := date-lex &
  [ SYNSEM [ LOCAL.CAT.VAL [COMPS 0-1-list ],
 	    LKEYS [ ALTKEYREL const-relation &
 			      [ LBL #hand ],
-		    KEYREL.NUMBER #hand ]]].
+		    KEYREL.ARG1 #hand ]]].
 
 ; (MS 2004-12-02) For generation, these need PRED values for the prep-mod-relation.
 

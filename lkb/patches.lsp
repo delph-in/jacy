@@ -435,199 +435,199 @@
 ;;;
 ;;; parse selection with a model
 ;;;
-(in-package :lkb)
-#+:tsdb
-(defun tsdb::parse-item (string
-                  &key id exhaustive nanalyses trace
-                       edges derivations semantix-hook trees-hook
-                       filter burst (nresults 0))
- (declare (ignore id derivations filter))
+;; (in-package :lkb)
+;; #+:tsdb
+;; (defun tsdb::parse-item (string
+;;                   &key id exhaustive nanalyses trace
+;;                        edges derivations semantix-hook trees-hook
+;;                        filter burst (nresults 0))
+;;  (declare (ignore id derivations filter))
 
- (let* ((*package* *lkb-package*)
-        (*chasen-debug-p* nil)
-        (*maximum-number-of-edges* (if (or (null edges) (zerop edges))
-                                     *maximum-number-of-edges*
-                                     edges))
-        (*first-only-p* (if (or exhaustive *chart-packing-p*)
-                          nil
-                          (if (integerp nanalyses)
-                            (or (zerop nanalyses) nanalyses)
-                            (if (integerp *first-only-p*) *first-only-p* 1))))
-        (*do-something-with-parse* nil))
-   (declare (special *chasen-debug-p*))
-   (multiple-value-bind (return condition)
-     (#-:debug ignore-errors #+:debug progn
-      (let* ((sent
-              (split-into-words (preprocess-sentence-string string)))
-             (str (make-string-output-stream)) ; capture any warning messages
-             (*standard-output*
-              (if trace
-                (make-broadcast-stream *standard-output* str)
-                str))
-             tgc tcpu treal conses symbols others)
-        ;;
-        ;; this really ought to be done in the parser ...  (30-aug-99  -  oe)
-        ;;
-        (setf *sentence* string)
-        (reset-statistics)
-        (multiple-value-bind (e-tasks s-tasks c-tasks f-tasks m-tasks)
-            (tsdb::time-a-funcall
-             #'(lambda () (parse-tsdb-sentence sent trace))
-             #'(lambda (tgcu tgcs tu ts tr scons ssym sother &rest ignore)
-                (declare (ignore ignore))
-                (setq tgc (+ tgcu tgcs) tcpu (+ tu ts) treal tr
-                      conses (* scons 8) symbols (* ssym 24) others sother)))
-         (declare (ignore m-tasks))
-         (let* ((*print-pretty* nil) (*print-level* nil) (*print-length* nil)
-                (packingp *chart-packing-p*)
-                (output (get-output-stream-string str))
-                (unifications (statistics-unifications *statistics*))
-                (copies (statistics-copies *statistics*))
-                utcpu
-                utgc
-                uspace
-                (readings (if packingp
-                            (tsdb::time-a-funcall
-                             #'(lambda ()
-                                 ;;
-                                 ;; _fix_me_
-                                 ;; this should really go into the parser, but
-                                 ;; just now patch things up for francis, so
-                                 ;; he can submit something to TMI.
-                                 ;;                            (11-may-07; oe)
-                                 (setf *parse-record*
-                                   (selectively-unpack-edges
-                                    *parse-record* nanalyses))
-                                 (length *parse-record*))
-                             #'(lambda (tgcu tgcs tu ts tr scons ssym sother
-                                        &rest ignore)
-                                 (declare (ignore tr ignore))
-                                 (setf utcpu (- (+ tu ts) (+ tgcu tgcs)))
-                                 (setf utgc (+ tgcu tgcs))
-                                 (setf uspace
-                                   (+ (* scons 8) (* ssym 24) sother))))
-                            (length *parse-record*)))
-                (readings (if (or (equal output "") (> readings 0))
-                             readings
-                            -1))
-                (best-first-p (> (length *parse-times*) 2))
-                (end (pop *parse-times*))
-                (times (nreverse *parse-times*))
-                (start (pop times))
-                (total (round (* (- end start) 1000)
-                              internal-time-units-per-second))
-                (first (if best-first-p
-                         (round (* (- (first times) start) 1000)
-                                internal-time-units-per-second)
-                         (if (> readings 0) total -1)))
-                #+:pooling
-                (pool (and (find-symbol "*DAG-POOL*")
-                           (boundp (find-symbol "*DAG-POOL*"))
-                           (symbol-value (find-symbol "*DAG-POOL*"))))
-                #+:pooling
-                (position (when pool
-                           (funcall
-                            (symbol-function (find-symbol "POOL-POSITION"))
-                            pool)))
-                #+:pooling
-                (garbage (when pool
-                           (funcall
-                            (symbol-function (find-symbol "POOL-GARBAGE"))
-                            pool)))
-                (comment
-                 #+:pooling
-                 (format nil "(:pool . ~d) (:garbage . ~d)" position garbage)
-                 #-:pooling
-                 "")
-                (comment
-                 (if packingp
-                   (format
-                    nil
-                    "(:utcpu . ~d) (:utgc . ~d) (:uspace . ~d)
-                     (:subsumptions . ~d) (:equivalence . ~d) ~
-                     (:proactive . ~d) (:retroactive . ~d)  ~
-                     (:trees . ~d) (:frozen . ~d) (:failures . ~d) ~a"
-                    utcpu utgc uspace
-                    (statistics-subsumptions *statistics*)
-                    (statistics-equivalent *statistics*)
-                    (statistics-proactive *statistics*)
-                    (statistics-retroactive *statistics*)
-                    (length *parse-record*)
-                    (statistics-frozen *statistics*)
-                    (statistics-failures *statistics*)
-                    comment)
-                   comment))
-                (summary (summarize-chart :derivationp (< nresults 0))))
-           (multiple-value-bind (l-s-tasks redges words)
-               (parse-tsdb-count-lrules-edges-morphs)
-             (declare (ignore l-s-tasks words))
-             `((:others . ,others) (:symbols . ,symbols)
-               (:conses . ,conses)
-               (:treal . ,treal) (:tcpu . ,tcpu)
-               (:tgc . ,tgc)
-               (:rpedges . ,redges)
-               (:pedges . ,(rest (assoc :pedges summary)))
-               (:aedges . ,(rest (assoc :aedges summary)))
-               (:p-stasks . ,s-tasks) (:p-etasks . ,e-tasks)
-               (:p-ftasks . ,f-tasks) (:p-ctasks . ,c-tasks)
-               (:l-stasks . ,(rest (assoc :l-stasks summary)))
-               (:words . ,(rest (assoc :words summary)))
-               (:total . ,total) (:first . ,first)
-               (:unifications . ,unifications) (:copies . ,copies)
-               (:readings . ,readings)
-               (:error . ,(pprint-error output))
-               (:comment . ,comment)
-               (:results .
-                ,(append
-                  (unless (and packingp nil)
-                    (loop
-                        with *package* = *lkb-package*
-                        with nresults = (if (<= nresults 0)
-                                          (length *parse-record*)
-                                          nresults)
-                        for i from 0
-                        for parse in (reverse *parse-record*)
-                        for time = (if (integerp (first times))
-                                     (round (* (- (pop times) start) 1000)
-                                            internal-time-units-per-second )
-                                     total)
-                        for derivation = (with-standard-io-syntax
-                                           (let ((*package* *lkb-package*))
-                                             (write-to-string
-                                              (compute-derivation-tree parse)
-                                              :case :downcase)))
-                        for r-redges = (length
-                                        (parse-tsdb-distinct-edges parse nil))
-                        for size = (parse-tsdb-count-nodes parse)
-                        for tree = (tsdb::call-hook trees-hook parse)
-                        for mrs = (tsdb::call-hook semantix-hook parse)
-                        while (>= (decf nresults) 0) collect
-                          (pairlis '(:result-id :mrs :tree
-                                     :derivation :r-redges :size
-                                     :r-stasks :r-etasks
-                                     :r-ftasks :r-ctasks
-                                     :time)
-                                   (list i mrs tree
-                                         derivation r-redges size
-                                         -1 -1
-                                         -1 -1
-                                         time))))
-                  (when (< nresults 0)
-                    (loop
-                        for i from (- (length *parse-record*) 1)
-                        for derivation in (rest (assoc :derivations summary))
-                        for string = (with-standard-io-syntax
-                                       (let ((*package* *lkb-package*))
-                                         (write-to-string
-                                          derivation :case :downcase)))
-                        collect (pairlis '(:result-id :derivation)
-                                         (list i string))))))))))))
-   (unless trace (release-temporary-storage))
-   (append
-    (when condition
-        (let* ((error (tsdb::normalize-string
-                       (format nil "~a" condition)))
-               (error (pprint-error error)))
-          (pairlis '(:readings :condition :error)
-                   (list -1 (unless burst condition) error))))
-    return))))
+;;  (let* ((*package* *lkb-package*)
+;;         (*chasen-debug-p* nil)
+;;         (*maximum-number-of-edges* (if (or (null edges) (zerop edges))
+;;                                      *maximum-number-of-edges*
+;;                                      edges))
+;;         (*first-only-p* (if (or exhaustive *chart-packing-p*)
+;;                           nil
+;;                           (if (integerp nanalyses)
+;;                             (or (zerop nanalyses) nanalyses)
+;;                             (if (integerp *first-only-p*) *first-only-p* 1))))
+;;         (*do-something-with-parse* nil))
+;;    (declare (special *chasen-debug-p*))
+;;    (multiple-value-bind (return condition)
+;;      (#-:debug ignore-errors #+:debug progn
+;;       (let* ((sent
+;;               (split-into-words (preprocess-sentence-string string)))
+;;              (str (make-string-output-stream)) ; capture any warning messages
+;;              (*standard-output*
+;;               (if trace
+;;                 (make-broadcast-stream *standard-output* str)
+;;                 str))
+;;              tgc tcpu treal conses symbols others)
+;;         ;;
+;;         ;; this really ought to be done in the parser ...  (30-aug-99  -  oe)
+;;         ;;
+;;         (setf *sentence* string)
+;;         (reset-statistics)
+;;         (multiple-value-bind (e-tasks s-tasks c-tasks f-tasks m-tasks)
+;;             (tsdb::time-a-funcall
+;;              #'(lambda () (parse-tsdb-sentence sent trace))
+;;              #'(lambda (tgcu tgcs tu ts tr scons ssym sother &rest ignore)
+;;                 (declare (ignore ignore))
+;;                 (setq tgc (+ tgcu tgcs) tcpu (+ tu ts) treal tr
+;;                       conses (* scons 8) symbols (* ssym 24) others sother)))
+;;          (declare (ignore m-tasks))
+;;          (let* ((*print-pretty* nil) (*print-level* nil) (*print-length* nil)
+;;                 (packingp *chart-packing-p*)
+;;                 (output (get-output-stream-string str))
+;;                 (unifications (statistics-unifications *statistics*))
+;;                 (copies (statistics-copies *statistics*))
+;;                 utcpu
+;;                 utgc
+;;                 uspace
+;;                 (readings (if packingp
+;;                             (tsdb::time-a-funcall
+;;                              #'(lambda ()
+;;                                  ;;
+;;                                  ;; _fix_me_
+;;                                  ;; this should really go into the parser, but
+;;                                  ;; just now patch things up for francis, so
+;;                                  ;; he can submit something to TMI.
+;;                                  ;;                            (11-may-07; oe)
+;;                                  (setf *parse-record*
+;;                                    (selectively-unpack-edges
+;;                                     *parse-record* nanalyses))
+;;                                  (length *parse-record*))
+;;                              #'(lambda (tgcu tgcs tu ts tr scons ssym sother
+;;                                         &rest ignore)
+;;                                  (declare (ignore tr ignore))
+;;                                  (setf utcpu (- (+ tu ts) (+ tgcu tgcs)))
+;;                                  (setf utgc (+ tgcu tgcs))
+;;                                  (setf uspace
+;;                                    (+ (* scons 8) (* ssym 24) sother))))
+;;                             (length *parse-record*)))
+;;                 (readings (if (or (equal output "") (> readings 0))
+;;                              readings
+;;                             -1))
+;;                 (best-first-p (> (length *parse-times*) 2))
+;;                 (end (pop *parse-times*))
+;;                 (times (nreverse *parse-times*))
+;;                 (start (pop times))
+;;                 (total (round (* (- end start) 1000)
+;;                               internal-time-units-per-second))
+;;                 (first (if best-first-p
+;;                          (round (* (- (first times) start) 1000)
+;;                                 internal-time-units-per-second)
+;;                          (if (> readings 0) total -1)))
+;;                 #+:pooling
+;;                 (pool (and (find-symbol "*DAG-POOL*")
+;;                            (boundp (find-symbol "*DAG-POOL*"))
+;;                            (symbol-value (find-symbol "*DAG-POOL*"))))
+;;                 #+:pooling
+;;                 (position (when pool
+;;                            (funcall
+;;                             (symbol-function (find-symbol "POOL-POSITION"))
+;;                             pool)))
+;;                 #+:pooling
+;;                 (garbage (when pool
+;;                            (funcall
+;;                             (symbol-function (find-symbol "POOL-GARBAGE"))
+;;                             pool)))
+;;                 (comment
+;;                  #+:pooling
+;;                  (format nil "(:pool . ~d) (:garbage . ~d)" position garbage)
+;;                  #-:pooling
+;;                  "")
+;;                 (comment
+;;                  (if packingp
+;;                    (format
+;;                     nil
+;;                     "(:utcpu . ~d) (:utgc . ~d) (:uspace . ~d)
+;;                      (:subsumptions . ~d) (:equivalence . ~d) ~
+;;                      (:proactive . ~d) (:retroactive . ~d)  ~
+;;                      (:trees . ~d) (:frozen . ~d) (:failures . ~d) ~a"
+;;                     utcpu utgc uspace
+;;                     (statistics-subsumptions *statistics*)
+;;                     (statistics-equivalent *statistics*)
+;;                     (statistics-proactive *statistics*)
+;;                     (statistics-retroactive *statistics*)
+;;                     (length *parse-record*)
+;;                     (statistics-frozen *statistics*)
+;;                     (statistics-failures *statistics*)
+;;                     comment)
+;;                    comment))
+;;                 (summary (summarize-chart :derivationp (< nresults 0))))
+;;            (multiple-value-bind (l-s-tasks redges words)
+;;                (parse-tsdb-count-lrules-edges-morphs)
+;;              (declare (ignore l-s-tasks words))
+;;              `((:others . ,others) (:symbols . ,symbols)
+;;                (:conses . ,conses)
+;;                (:treal . ,treal) (:tcpu . ,tcpu)
+;;                (:tgc . ,tgc)
+;;                (:rpedges . ,redges)
+;;                (:pedges . ,(rest (assoc :pedges summary)))
+;;                (:aedges . ,(rest (assoc :aedges summary)))
+;;                (:p-stasks . ,s-tasks) (:p-etasks . ,e-tasks)
+;;                (:p-ftasks . ,f-tasks) (:p-ctasks . ,c-tasks)
+;;                (:l-stasks . ,(rest (assoc :l-stasks summary)))
+;;                (:words . ,(rest (assoc :words summary)))
+;;                (:total . ,total) (:first . ,first)
+;;                (:unifications . ,unifications) (:copies . ,copies)
+;;                (:readings . ,readings)
+;;                (:error . ,(pprint-error output))
+;;                (:comment . ,comment)
+;;                (:results .
+;;                 ,(append
+;;                   (unless (and packingp nil)
+;;                     (loop
+;;                         with *package* = *lkb-package*
+;;                         with nresults = (if (<= nresults 0)
+;;                                           (length *parse-record*)
+;;                                           nresults)
+;;                         for i from 0
+;;                         for parse in (reverse *parse-record*)
+;;                         for time = (if (integerp (first times))
+;;                                      (round (* (- (pop times) start) 1000)
+;;                                             internal-time-units-per-second )
+;;                                      total)
+;;                         for derivation = (with-standard-io-syntax
+;;                                            (let ((*package* *lkb-package*))
+;;                                              (write-to-string
+;;                                               (compute-derivation-tree parse)
+;;                                               :case :downcase)))
+;;                         for r-redges = (length
+;;                                         (parse-tsdb-distinct-edges parse nil))
+;;                         for size = (parse-tsdb-count-nodes parse)
+;;                         for tree = (tsdb::call-hook trees-hook parse)
+;;                         for mrs = (tsdb::call-hook semantix-hook parse)
+;;                         while (>= (decf nresults) 0) collect
+;;                           (pairlis '(:result-id :mrs :tree
+;;                                      :derivation :r-redges :size
+;;                                      :r-stasks :r-etasks
+;;                                      :r-ftasks :r-ctasks
+;;                                      :time)
+;;                                    (list i mrs tree
+;;                                          derivation r-redges size
+;;                                          -1 -1
+;;                                          -1 -1
+;;                                          time))))
+;;                   (when (< nresults 0)
+;;                     (loop
+;;                         for i from (- (length *parse-record*) 1)
+;;                         for derivation in (rest (assoc :derivations summary))
+;;                         for string = (with-standard-io-syntax
+;;                                        (let ((*package* *lkb-package*))
+;;                                          (write-to-string
+;;                                           derivation :case :downcase)))
+;;                         collect (pairlis '(:result-id :derivation)
+;;                                          (list i string))))))))))))
+;;    (unless trace (release-temporary-storage))
+;;    (append
+;;     (when condition
+;;         (let* ((error (tsdb::normalize-string
+;;                        (format nil "~a" condition)))
+;;                (error (pprint-error error)))
+;;           (pairlis '(:readings :condition :error)
+;;                    (list -1 (unless burst condition) error))))
+;;     return))))
