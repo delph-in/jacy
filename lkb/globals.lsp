@@ -165,6 +165,10 @@
     yo-2 yo-3 keredo-send exclamation-mark ze zo zo-2 
     ;; s-end1-decl-minusahon-lex - emphatic sentence enders
     i-emp
+    ;;; question endings
+    no-send kai-sap na-ne kai-chasen-sap nokai-sap
+    ;;; variants of why
+    naze-kanji-adv nande-adv nande-kanji-multi-adv nande-multi-adv doushite-adv
     ;; subjunctive ends (should do with mood)
     darou-v-cop-lex deshou-v-cop-lex
     ;; various copulars
