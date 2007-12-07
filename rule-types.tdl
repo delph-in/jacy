@@ -2165,32 +2165,47 @@ adj-nominal-suffix-type := head-final-type &
 
 ;;;
 ;;; New N-N compound rule, which now scopes. (FCB 2006-06-06)
-;;; this is actually NP-NP, which seems a little strange.  
-;;; e.g. we don't get (lkb::do-parse-tty "ある 翻訳 システム が 寝る")
+;;; The Ns must be unsaturated, so we add the quantifier to the non-head daughter.
+;;; (lkb::do-parse-tty "ある 翻訳 システム が 寝る")
+;;; why can't I make this BAR -?
 
 ;compound-rule := hadj-final-i &
 compound-rule := head-final-type-mod & head-adjunct-rule-type &
- [SYNSEM.MODIFIED.PERIPH +,
+ [SYNSEM [ LOCAL.BAR bool,
+	   MODIFIED.PERIPH +],
+  NON-HEAD-DTR
+	 [SYNSEM.LOCAL [CAT [HEAD head & [J-POSTHEAD compound, 
+						MAIN-PRD -,
+						MOD < [MODIFIED.PERIPH #periph] > ],
+			     VAL [UNSAT +,
+				  SPR opt-1-arg,
+				  SUBJ olist,
+				  COMPS olist]],
+			BAR -,
+			CONT.HOOK [INDEX #nhinst,
+				   LTOP #nhhand]]],
+  HEAD-DTR
+	 [SYNSEM [LOCAL [CAT [HEAD final_head,
+			      VAL [UNSAT +,
+				   SPR opt-1-arg,
+				   SUBJ olist,
+				   COMPS olist]],
+			 BAR -,
+			 CONT.HOOK [INDEX #hinst,
+				    LTOP #hhand]],
+		  MODIFIED.PERIPH #periph]],
   C-CONT [RELS <! unspec-compound-relation &
 		[LBL #hhand,
 		 PRED compound_rel,
 		 ARG0.E.TENSE no_tense,
 		 ARG1 #hinst,
-		 ARG2 #nhinst ] !>,
-	  HCONS <! !>],
-  ARGS <[SYNSEM.LOCAL [CAT [HEAD final_head & [J-POSTHEAD compound, 
-					       MAIN-PRD -,
-					       MOD < [MODIFIED.PERIPH #periph] > ],
-			    VAL saturated],
-		       BAR -,
-		       CONT.HOOK.INDEX #nhinst]],
-	[SYNSEM [LOCAL [CAT [HEAD final_head,
-			     VAL saturated],
-			BAR -,
-			CONT.HOOK [INDEX #hinst,
-				   LTOP #hhand]],
-		 MODIFIED.PERIPH #periph]]>].
-
+		 ARG2 #nhinst],
+		[PRED udef_rel,
+		 ARG0 #nhinst,
+		 RSTR #restr] !>,
+	  HCONS <! qeq &
+		 [HARG #restr,
+                  LARG #nhhand] !>]].
 
 ;;;
 ;;; New approach to V-V compound rules
