@@ -2171,7 +2171,8 @@ adj-nominal-suffix-type := head-final-type &
 
 ;compound-rule := hadj-final-i &
 compound-rule := head-final-type-mod & head-adjunct-rule-type &
- [SYNSEM [ LOCAL.BAR bool,
+ [SYNSEM [ LOCAL [BAR bool,
+		  CONT.HOOK.LTOP #hhand ],
 	   MODIFIED.PERIPH +],
   NON-HEAD-DTR
 	 [SYNSEM.LOCAL [CAT [HEAD head & [J-POSTHEAD compound, 
