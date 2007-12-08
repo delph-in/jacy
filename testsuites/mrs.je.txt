@@ -1,0 +1,400 @@
+雨 が 降っ た ．
+It rained.
+
+太郎 が 吠え た ．
+Abrams barked.
+
+窓 が 開い た ．
+The window opened.
+
+太郎 が 次郎 を 追っ た ．
+Abrams chased Browne.
+
+次郎 を 太郎 が 追っ た ．
+Abrams chased Browne.
+
+太郎 が 次郎 に タバコ を 手渡し た ．
+Abrams handed Browne the cigarette.
+
+太郎 が タバコ を 次郎 に 手渡し た ．
+Abrams handed the cigarette to Browne.
+
+太郎 が タバコ を 次郎 に 雨 が 降る と 賭け た ．
+Abrams bet Browne a cigarette that it rained.
+
+太郎 が 雨 が 降っ た こと を 知っ て い た ．
+Abrams knew that it rained.
+
+太郎 が 吠える つもり だっ た ．
+Abrams intended to bark.
+
+太郎 が 次郎 に 吠え させる つもり だっ た ．
+Abrams intended Browne to bark.
+
+各 猫 が 吠え た ．
+Every cat barked.
+
+各 猫 が ある 犬 を 追っ た ．
+Every cat chased some dog.
+
+私 の 猫 が 吠え た ．
+My cat barked.
+
+あれ が 吠え た ．
+It barked.
+
+吠え た ．
+It barked.
+
+猫 が 追っ た ．
+The cat chased it.
+
+猫 が あれ を 追っ た ．
+The cat chased it.
+
+猫 が 自分 を 追っ た ．
+The cat chased itself.
+
+猫 が 一 匹 を 追っ た ．
+The cat chased one.
+
+私 の が 吠え た ．
+Mine barked.
+
+それ が 開い た
+That opened.
+
+猫 は 吠える ．
+Cats bark.
+
+猫 が 吠える ．
+Cats bark.
+
+猫 と は 吠える ．
+Cats bark.
+
+タバコ が 着い た ．
+Tobacco arrived.
+The cigarettes arrived.
+
+何 匹 か が 吠える ．
+Some bark.
+
+幾つか が 吠える ．
+Some bark.
+
+吠える もの も いる ．
+No cat barked.
+
+猫 の 何 匹 か が 吠える ．
+Some of the cats bark.
+
+猫 が 一 匹 も 吠え なかっ た ．
+No cat barked.
+
+吠える 猫 が 一 匹 も い なかっ た ．
+No cat barked.
+
+犬 が 吠え た か ．
+Did the dog bark?
+
+犬 が 吠え た か ？
+Did the dog bark?
+
+どの 犬 が 吠え た か ．
+Which dog barked?
+
+誰 の 犬 が 吠え た か ．
+Whose dog barked?
+
+次郎 を 追え ．
+Chase Browne!
+
+次郎 を 追え ！
+Chase Browne!
+
+次郎 を 追え なさい ．
+Chase Browne!
+
+太郎 が どの 犬 が 吠え た か と 考え た ．
+Abrams wondered which dog barked.
+
+太郎 が 次郎 が 吠え た か どう か 考え た ．
+Abrams wondered whether Browne barked.
+
+次郎 が 追っ た 犬 が 吠え た ．
+The dog that Browne chased barked.
+
+追う べき 犬 が 吠え て いる ．
+The dog to chase is barking.
+
+犬 が 次郎 に 追わ れ た ．
+The dog was chased by Browne.
+
+次郎 に 追わ れ た 犬 が 吠え た ．
+The dog chased by Browne barked.
+
+犬 が 吠え て いる ．
+The dog is barking.
+
+犬 が 吠え た こと が ある ．
+The dog has barked.
+
+犬 が 吠え て い た ．
+The dog has been barking.
+
+犬 が 吠え て い た ．
+The dog had been barking.
+
+犬 が 吠える だろ う ．
+The dog will bark.
+
+犬 が 吠える ところ だ ．
+The dog is about to bark. The dog is going to bark.
+
+犬 が 吠え られる ．
+The dog could bark.
+
+犬 が 吠え られ ない ．
+The dog couldn't bark.
+
+年寄り の 犬 が 吠え た ．
+The old dog barked.
+
+古い 犬 が 吠え た ．
+The old dog barked.
+
+犬 が 静か に 吠え た ．
+The dog barked softly.
+
+犬 が 優しく 吠え た ．
+The dog barked softly.
+
+犬 が たぶん 吠え た ．
+The dog probably barked.
+
+犬 が たぶん 吠え た ．
+The dog probably barked.
+
+犬 が たぶん 吠え た だろ う ．
+The dog probably barked.
+
+犬 が 庭 で 吠え た ．
+The dog barked in the garden.
+
+犬 が いま 吠える ．
+The dog barks now.
+
+庭 犬 が 吠え た ．
+The garden dog barked.
+
+タバコ 庭 犬 が 吠え た ．
+The tobacco garden dog barked.
+
+猫 が 年寄り だ ．
+The cat is old.
+
+猫 が 古い ．
+The cat is old.
+
+猫 が 庭 に いる ．
+The cat is in the garden.
+
+吠え て いる 犬 が 次郎 を 追っ た ．
+The barking dog chased Browne.
+
+追わ れ て いる 犬 が 吠える ．
+Chased dogs bark.
+
+猫 を 追う の が 古い ．
+Chasing the cat is old.
+
+猫 が 次郎 を 追う こと が 古い ．
+That the cat chases Browne is old.
+
+犬 は 吠える もの を 何でも 追う ．
+Dogs chase whatever barks.
+
+犬 が 毎日 吠え た ．
+The dog barked every day.
+
+犬 が 何時 吠え た か ．
+When did the dog bark?
+
+犬 の ３ 匹 が 吠える ．
+Three of the dogs bark.
+
+３ 匹 が 吠える ．
+Three bark.
+
+次郎 の 犬 が 吠える ．
+Browne's dog barks.
+
+次郎 の が 吠える ．
+Browne's barks.
+
+二 十 三 匹 の 犬 が 吠える ．
+Twenty three dogs bark.
+
+犬 が 二 十 三 匹 吠える ．
+Twenty three dogs bark.
+
+犬 二 十 三 匹 が 吠える ．
+Twenty three dogs bark.
+
+２３ 匹 の 犬 が 吠える ．
+Twenty three dogs bark.
+
+犬 が ２３ 匹 吠える ．
+Twenty three dogs bark.
+
+犬 ２３ 匹 が 吠える ．
+Twenty three dogs bark.
+
+二 百 二 十 匹 の 犬 が 吠える ．
+Two hundred twenty dogs bark.
+
+太郎 が 車 で 到着 し た ．
+Abrams arrived by car.
+
+太郎 が 吠え 続い た ．
+Abrams kept barking.
+
+次郎 が 猫 を 何とか し た ．
+Browne squeezed the cat in.
+
+次郎 が 猫 を 何とか し た ．
+Browne squeezed in the cat.
+
+太郎 の 絵 が 届い た ．
+The picture of Abrams arrived.
+
+太郎 が テーブル を 綺麗 に 拭い た ．
+Abrams wiped the table clean.
+
+太郎 が 次郎 を 庭 に 入れ た ．
+Abrams put Browne in the garden.
+
+次郎 が 着け ば 犬 が 吠える ．
+The dog will bark if Browne arrives.
+
+次郎 が 着く なら 犬 が 吠える ．
+The dog will bark if Browne arrives.
+
+太郎 と 次郎 が 着い た ．
+Abrams and Browne arrived.
+
+太郎 と 次郎 と が 着い た ．
+Abrams and Browne arrived.
+
+太郎 と 次郎 と 犬 が 着い た ．
+Abrams, Browne and the dog arrived.
+
+犬 が 着い て ， 吠え た ．
+The dog arrived and barked.
+
+犬 が 着い て 、 次郎 が 吠え た ．
+The dog arrived and Browne barked.
+
+犬 が 吠え た ね ．
+The dog barked, didn't it?
+
+犬 が 吠え た こと が 明らか だ ．
+It is obvious that the dog barked.
+
+太郎 が 次郎 に 吠える と 約束 し た ．
+Abrams promised Browne to bark.
+
+太郎 が 次郎 に 吠える こと を 約束 し た ．
+Abrams promised Browne to bark.
+
+太郎 が 吠える よう だ ．
+Abrams seems to bark.
+
+太郎 が 吠える らしい ．
+Abrams seems to bark.
+
+太郎 は 次郎 が 吠え て いる と 信じ て いる ．
+Abrams believes Browne to be barking.
+
+太郎 は 次郎 が 吠え た こと が 気 に なっ た ．
+It bothered Abrams that Browne barked.
+
+太郎 が 着く の が 十 分 かかっ た ．
+It took Abrams ten minutes to arrive.
+
+太郎 が 次郎 に 吠える こと を 任せ た ．
+Abrams left it to Browne to bark.
+
+太郎 が 次郎 に 年寄り に 見える ．
+Abrams strikes Browne as old.
+
+次郎 は 太郎 が 年寄り だ と 思う ．
+Browne considers Abrams old.
+
+太郎 が 次郎 が 吠える 考え を 好ん だ ．
+Abrams liked the idea that Browne could bark.
+
+太郎 が 十 時 から 三 時 まで 吠え た ．
+Abrams barked from ten to three.
+
+太郎 が とても 年寄り だっ た ．
+Abrams was very old.
+
+タバコ が とても 古かっ た ．
+The cigarette was very old.
+
+ほとんど 全て の 犬 が 吠え た ．
+Nearly every dog barked.
+
+太郎 が とても 静か に 吠え た ．
+Abrams barked very softly.
+
+太郎 は 次郎 が 猫 の 追う こと が 気 に なっ た ．
+Browne's chasing of cats bothered Abrams.
+
+次郎 は 太郎 は が 猫 を 追う こと が 気 に なっ た ．
+It bothered Browne that Abrams chased cats.
+
+６月 ３ 日 が 来 た ．
+June third arrived.
+
+太郎 が ３ 時 ２０ 分 に 着い た ．
+Abrams arrived at three twenty.
+
+次郎 が 火曜日 の 朝 に 着い た ．
+Browne arrived on Tuesday morning.
+
+猫 が 吠え 方 が 見付かっ た ．
+The cats found a way to bark.
+
+より 幸せ な 犬 が 次郎 を 追っ た ．
+The happier dog chased Browne.
+
+庭 に は 猫 が 居 た ．
+There were cats in the garden.
+
+あの 犬 が 次郎 を 追っ た ．
+That dog chased Browne.
+
+誰 か が 太郎 を 追っ た 。
+Somebody chased Abrams.
+
+太郎 が どの ぐらい 幸せ だっ た か ．
+How happy was Abrams?
+
+次郎 が 第 五 番 を 気 に なる ．
+The number five bothers Browne.
+
+太郎 が できる ．
+Abrams could.
+
+次郎 が やっ て み た ．
+Browne tried to.
+
+吠える な ．
+Don't bark!
+
+犬 が 吠え ながら 着い た ．
+The dog arrived barking.
+
