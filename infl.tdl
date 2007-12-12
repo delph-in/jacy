@@ -675,10 +675,24 @@ adj2v-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;V->VN;;;;;;;;;;;;;;;;;;;;
 
-v2vn-infl-rule :=
-%suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち)
+v2vn-v-infl-rule :=
+%suffix (!vる !v) 
 v2vn-rule &
-[ARGS.FIRST [STEMTYPE regular-stem,
+[ARGS.FIRST [STEMTYPE v-stem,
+             RMORPH-BIND-TYPE morphbindtype,
+             INFLECTED -]].
+
+v2vn-c-infl-rule :=
+%suffix (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち)
+v2vn-rule &
+[ARGS.FIRST [STEMTYPE c-stem,
+             RMORPH-BIND-TYPE morphbindtype,
+             INFLECTED -]].
+
+v2vn-c2-stem-infl-rule := 
+%suffix (く き) (る い) (う い)
+v2vn-rule &
+[ARGS.FIRST [STEMTYPE c2-stem,
              RMORPH-BIND-TYPE morphbindtype,
              INFLECTED -]].
 
