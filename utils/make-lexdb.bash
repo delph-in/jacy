@@ -62,11 +62,16 @@ LISP
 } | $lisp -I $image -qq 1>&1
 #} | cat 
 
+env SP_BCTF="utf-8" nsgmls -s  $outdir/types.xml 
+
 ### dump the description
 
 echo "Dumping lex-type descriptions"
 
 ./make-description.perl $ltypes > $outdir/linguistics.xml
+
+### validate
+env SP_BCTF="utf-8"  nsgmls  -s $outdir/linguistics.xml
 
 ### make the database
 

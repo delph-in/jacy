@@ -41,6 +41,7 @@ while (<TDL>) {
 	    $oldstate = "out";
 	}elsif((($state ne $oldstate) && ($oldstate ne "type"))
 	       || $state eq "ex"|| $state eq "nex") {
+	    $oldstate =~ s/name-.*/name/; ## make the language explicit
 	    print "</$oldstate>\n";
 	} else {
 	    print "\n";
@@ -48,6 +49,8 @@ while (<TDL>) {
 	my $description = $_;
 	$description =~ s/^;\s*//; ## clean the front
 	$description =~ s/\s+$//;  ## clean the end
+	$description =~ s/^<name-(.*?)>/<name lang="$1">/; ## make the language explicit
+
 	print $description;
 	#if($state ne $oldstate && $state !~ /type/
 	#    || $state eq "ex") {
