@@ -489,7 +489,7 @@ vn-trans1-hhon-shon-lex := vn-trans1-hhon-lex & [SYNSEM.LOCAL [CAT [HEAD.FORMAL.
 ; しかし今のところ全く機能していない。このtypeが単独でtransitiveのvn-lexと同じ働きをしてしまっている。
 ; <ex>書類 を 電子 化 する
 ; <nex>回路 が 小型 化 する
-; <todo>(TK 07-03-20)descriptionを参照。また、<nex>に挙げた例文を解析するために、vn-intrans-lex化させる
+; <todo>(TK 07-03-20)descriptionを参照。また、nexに挙げた例文を解析するために、vn-intrans-lex化させる
 ; typeも必要。
 ; </type>
 vn-trans1-minusbar-lex := vn-trans1-lex &

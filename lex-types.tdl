@@ -1752,8 +1752,8 @@ case-p-lex-np-to := case-p-lex-np &
 ; <ex>子供 が 親 から たしなめ られる
 ; <nex>友人 から 自転車 を 買う
 ; <todo>(07-03-30)間接受身でも使えるようにすべき。(lkb::do-parse-tty "親戚 から 怒ら れる")
-; <todo>(07-03-30)「〜」はこのtypeでよいのか？（格として取ることがないため）
-; <todo>(07-03-30)postp-lexの後につくtypeも必要。(lkb::do-parse-tty "子供 が 親 とか から たしなめ られる")
+; (07-03-30)「〜」はこのtypeでよいのか？（格として取ることがないため）
+; (07-03-30)postp-lexの後につくtypeも必要。(lkb::do-parse-tty "子供 が 親 とか から たしなめ られる")
 ; </type>
 case-p-lex-np-kara := case-p-lex-np &
 			[SYNSEM.LOCAL.CAT.HEAD.CASE kara-case].
@@ -7762,6 +7762,7 @@ v-past-tense-end-minusahon-lex := v-past-tense-end-lex &
 ; <ex>病気 だっ た 人
 ; <nex>
 ; <todo>
+; </type>
 v-past-tense-end-minusahon-tmorph-lex := v-past-tense-end-minusahon-lex &
 					 [LMORPH-BIND-TYPE t-morph].
 
@@ -7773,6 +7774,7 @@ v-past-tense-end-minusahon-tmorph-lex := v-past-tense-end-minusahon-lex &
 ; <ex>泳い だ 人
 ; <nex>犬 だ
 ; <todo>
+; </type>
 v-past-tense-end-minusahon-ndmorph-lex := v-past-tense-end-minusahon-lex &
 					 [LMORPH-BIND-TYPE nd-morph].
 
@@ -12488,7 +12490,7 @@ i-adj-hon-stem-lex := i-adj-stem-lex &
 ; 他の活用形でも解析できるようになっている（ex.「頭 が いかっ た」）。
 ; <ex>夕食 は さんま が いい
 ; <nex>御社 の 商品 は 質 が いい
-; <todo>FIXME: is this really shon -? <TK: 2007-03-14>
+; <todo>FIXME: is this really shon -? (TK: 2007-03-14)
 ; </type>
 i-adj-minusshon-stem-lex := i-adj-stem-lex &
 		      [SYNSEM.LOCAL.CAT.HEAD.FORMAL.SHON -].
