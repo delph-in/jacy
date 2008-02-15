@@ -141,10 +141,19 @@
 					  &key (verbose *chasen-debug-p*) posp)
   
   (let* ((string (string-trim '(#\space #\tab) string))
+         #+:logon
+         (logon (system:getenv "LOGONROOT"))
+         ;;
+         ;; in the self-contained LOGON philosophy, we assume people want to
+         ;; use the ChaSen installation included in the tree (using UTF-8).
          (command (format 
                    nil 
-                   "~a -i e -F  '(\"%m\" \"%M\" \"%P-+%Tn-%Fn\" \"%y\")\\n'" 
-                   *chasen-application*)))
+                   "~a~@[ -r '~a'~] -i ~a -F ~
+                    '(\"%m\" \"%M\" \"%P-+%Tn-%Fn\" \"%y\")\\n'" 
+                   *chasen-application*
+                   #+:logon (and logon (format nil "~a/.chasenrc" logon))
+                   #-:logon nil
+                   #+:logon "w" #-:logon "e")))
     (setf *chasen-readings* nil)
     (multiple-value-bind (stream foo pid)
         (run-process
@@ -154,10 +163,13 @@
       (declare (ignore foo #-:allegro pid))
       ;;
       ;; while we assert ChaSen to operate in EUC-JP mode, enforce the encoding
-      ;; on the stream talking to the sub-process.
+      ;; on the stream talking to the sub-process.  in the LOGON universe, on
+      ;; the other hand, we control which dictionaries are in use, so there we
+      ;; opt for modern UTF-8.
       ;;
       #+(and :allegro-version>= (version>= 6 0))
-      (setf (stream-external-format stream) (excl:find-external-format :euc))
+      (setf (stream-external-format stream)
+        (excl:find-external-format #+:logon :utf-8 #-:logon :euc))
     
       (format stream "~a~%" string)
       (let* ((analyses (loop
