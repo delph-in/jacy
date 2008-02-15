@@ -22,6 +22,8 @@
 (
  ((:path . "vanilla") 
   (:content . "Basic Japanese Constructions"))
+ ((:path . "haikingu") 
+  (:content . "Hiking Corpus from Logon (tur/hike)"))
  ((:path . "mrs")
   (:content . "MRS test suite"))
  ((:path . "kinou1")
