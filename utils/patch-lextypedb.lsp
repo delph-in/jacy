@@ -164,14 +164,11 @@
       (lex-summary  (collect-psort-ids *lexicon*) ostream))))
 
 ;;; how do I define TAB in format?
-;;; how do I make this more lispy
 (defun lex-summary (lex-entries stream)
   (loop for word-entry in lex-entries
-      do
-	;; get the lex-entry
-	(setf lex-entry (get-lex-entry-from-id word-entry))
-	;; get the tdfs
-	(setf lex-tdfs (tdfs-indef (psort-full-fs lex-entry)))
+	for lex-entry =  (get-lex-entry-from-id word-entry)
+	for lex-tdfs = (tdfs-indef (psort-full-fs lex-entry))
+	do
 	(format stream "~A	~A	~{~A~^ ~}	~A	~A~%"
 		;; lex-id
 		(string-downcase word-entry)
