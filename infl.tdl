@@ -106,9 +106,9 @@ t-lexeme-c-stem-infl-rule :=
 %suffix (く い) (る っ) (う っ) (す し) (つ っ)
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
- SYNSEM.LOCAL.CAT.HEAD ordinary-verb-stem_head,
+ SYNSEM.LOCAL.CAT.HEAD #1,
  ARGS.FIRST [STEMTYPE c-stem,
-	     SYNSEM.LOCAL.CAT.HEAD ordinary-verb-stem_head]].
+	     SYNSEM.LOCAL.CAT.HEAD #1]].
 
 ;; (FCB 2003-08-07) added u-type (tou and kou - past tense is o-u-ta not o-t-ta)
 ; (MS 2005-09-22) it is better to list all c2-stem ending in う, otherwise we
