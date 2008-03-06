@@ -47,8 +47,9 @@
  (list
   (lkb-pathname (parent-directory) "irregs.tab")))
 
-(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
+(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
+
 
 ;;; Load the lexicon
 (if  (and (find :psql *features*) *lexdb-params*)
@@ -97,12 +98,12 @@
 ;;; tools, also load a Maximum Entropy parse selection model and enable its
 ;;; use (currently limited to batch parsing with [incr tsdb()], though).
 ;;;
-#+:logon
-(tsdb::read-model (lkb-pathname (parent-directory) "tanaka-006-015.mem"))
-#+(and :tsdb :logon)
-(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
-#+(and :tsdb :logon)
-(setf *chart-packing-p* t)
+;#+:logon
+;(tsdb::read-model (lkb-pathname (parent-directory) "tanaka-006-015.mem"))
+;#+(and :tsdb :logon)
+;(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
+;#+(and :tsdb :logon)
+;(setf *chart-packing-p* t)
 
 ;;;
 ;;; convert to a semi
