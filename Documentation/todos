@@ -1,23 +1,40 @@
-;;; -*-  Coding: euc-jp -*-
+;;; -*-  Coding: utf-8 -*-
+
+ * 2007-10-10 split lexicon into n,v,a,r,s,x,... propername ?
+
+ * fix numbers bug
+ * add ï¼‘ã¤ etc
+ * lose messages
+ * fix ORTH/STEM and generation/MWE?
+
+
+FCB 2006-11-21
+
+We don't get the right parses for 
+
+"çŠ¬ ãŒ çŒ« ãŒ è¡Œãã€€ã¨ã€€æ€ã†"
+"çŒ« ãŒ è¡Œãã€€ã¨ã€€çŠ¬ ãŒ æ€ã†"
+
+These should be roughly the same.
 
 
 FCB 2006-06-06
 
 Change compounds-rule from NP-NP to N-N.
-The valency should not be saturated.
+
 
 FCB 2006-05-31
 
 Use irregulars.tab
 
-;;; ¸ŞÃÊ¡¦¥ï¹Ô¥¦²»ÊØ
-;;  c2stem past form (regular would be ¸ğ¤¤)
-;¸ğ¤¦ t-lexeme-c-stem-infl-rule ¸ğ¤¦
-;¤³¤¦ t-lexeme-c-stem-infl-rule ¤³¤¦
-;Ìä¤¦ t-lexeme-c-stem-infl-rule Ìä¤¦
-;¤È¤¦ t-lexeme-c-stem-infl-rule ¤È¤¦
-;¸ŞÃÊ¡¦¥«¹ÔÂ¥²»ÊØ --- ¹Ô¤¯
-;¹Ô¤Ã t-lexeme-c-stem-infl-rule ¹Ô¤¯ 
+;;; äº”æ®µãƒ»ãƒ¯è¡Œã‚¦éŸ³ä¾¿
+;;  c2stem past form (regular would be ä¹ã„)
+;ä¹ã† t-lexeme-c-stem-infl-rule ä¹ã†
+;ã“ã† t-lexeme-c-stem-infl-rule ã“ã†
+;å•ã† t-lexeme-c-stem-infl-rule å•ã†
+;ã¨ã† t-lexeme-c-stem-infl-rule ã¨ã†
+;äº”æ®µãƒ»ã‚«è¡Œä¿ƒéŸ³ä¾¿ --- è¡Œã
+;è¡Œã£ t-lexeme-c-stem-infl-rule è¡Œã 
 
 
 
@@ -27,14 +44,14 @@ Update script.chasen
 FCB 2005-05-25
 ------------------------------------------------------------------------
 
-(do-parse-tty "¤¹¤ë ÌÚ")
+(do-parse-tty "ã™ã‚‹ æœ¨")
 
 spurious ambiguity with suru-soc
 
 ------------------------------------------------------------------------
 FCB 2005-04-25
 ------------------------------------------------------------------------
-[116156] `¤­¤ç¤í¤­¤ç¤í ¡£' (2)
+[116156] `ãã‚‡ã‚ãã‚‡ã‚ ã€‚' (2)
 
   result # 1:
     scoping: `in 5 qeq NIL, NIL is not a label'.
@@ -42,14 +59,14 @@ FCB 2005-04-25
 ------------------------------------------------------------------------
 FCB 2005-04-25
 ------------------------------------------------------------------------
-(do-parse-tty "åºÎï ¤½¤¦ ¤À")
+(do-parse-tty "ç¶ºéº— ãã† ã ")
 
 Spurious ambiguity -- unifies with na-end-rule and head-specifier
 
 ------------------------------------------------------------------------
 FCB 2005-04-25
 ------------------------------------------------------------------------
-(do-parse-tty "¡Ö ¸¡»¡´± ¡×")
+(do-parse-tty "ã€Œ æ¤œå¯Ÿå®˜ ã€")
 
 scope problems with defintion quotation
 
@@ -64,7 +81,7 @@ LKB seems to parse fine!
 ------------------------------------------------------------------------
 FRANCIS
 ------------------------------------------------------------------------
-ERROR with parse of "Åìµş ¤Ø ¤Î Æ»"
+ERROR with parse of "æ±äº¬ ã¸ ã® é“"
 (and in general all such postposition -no sentences) 
 
 
@@ -73,7 +90,7 @@ FRANCIS
 ------------------------------------------------------------------------
 Lexical types fail to unify
 Spurious Ambiguity
- (do-parse-tty "¿´ ¤¬ Ëş¤¿¤µ ¤ì ¤Ê¤¤")
+ (do-parse-tty "å¿ƒ ãŒ æº€ãŸã• ã‚Œ ãªã„")
 TAI-OBJ-CHANGE-RULE
 
 SF fixed by adding KEY - 
@@ -85,19 +102,19 @@ FRANCIS
 ------------------------------------------------------------------------
 some miscellaneous words
  
-      3 error: no lexicon entries for "¤É¤¦¤·".
-      2 error: no lexicon entries for "¤Ë¤¢¤¿¤ë".
-      1 error: no lexicon entries for "Ï©".
-      1 error: no lexicon entries for "Ê¬¤Î".
-      1 error: no lexicon entries for "ÃÄ".
-      1 error: no lexicon entries for "Áê".
-      1 error: no lexicon entries for "À½", "À½".
-      1 error: no lexicon entries for "¤É¤ª¤ê".
-      1 error: no lexicon entries for "¤¸¤å¤¦".
-      1 error: no lexicon entries for "¤¶¤ì".
-      1 error: no lexicon entries for "¤²".
-      1 error: no lexicon entries for "¤¬¤Ş".
-      1 error: no lexicon entries for "¤«¤®¤ê".
+      3 error: no lexicon entries for "ã©ã†ã—".
+      2 error: no lexicon entries for "ã«ã‚ãŸã‚‹".
+      1 error: no lexicon entries for "è·¯".
+      1 error: no lexicon entries for "åˆ†ã®".
+      1 error: no lexicon entries for "å›£".
+      1 error: no lexicon entries for "ç›¸".
+      1 error: no lexicon entries for "è£½", "è£½".
+      1 error: no lexicon entries for "ã©ãŠã‚Š".
+      1 error: no lexicon entries for "ã˜ã‚…ã†".
+      1 error: no lexicon entries for "ã–ã‚Œ".
+      1 error: no lexicon entries for "ã’".
+      1 error: no lexicon entries for "ãŒã¾".
+      1 error: no lexicon entries for "ã‹ãã‚Š".
 
 ------------------------------------------------------------------------
 FRANCIS
@@ -107,7 +124,7 @@ FRANCIS
 * "tari" (as in "V tari V tari suru") can modify a non-suru verb
 I think this could be restricted more.
 
-e.g.  (do-parse-tty "¼¸¤Ã ¤¿¤ê Ãí°Õ ¤· ¤¿¤ê ¤¹¤ë »ş ¤Ë È¯¤¹¤ë ¸ì")
+e.g.  (do-parse-tty "å±ã£ ãŸã‚Š æ³¨æ„ ã— ãŸã‚Š ã™ã‚‹ æ™‚ ã« ç™ºã™ã‚‹ èª")
 
 
 
@@ -116,17 +133,17 @@ FRANCIS
 ------------------------------------------------------------------------
 And more of a wishlist/ do we really need to do this kind of thing -
 
-* Among the verbs I added were slightly archaic verbs like ¡ÖÀ¸¤º¤ë¡×
+* Among the verbs I added were slightly archaic verbs like ã€Œç”Ÿãšã‚‹ã€
 "shou-zuru".  At the moment, we can't inflect these.  It would be
 trivial to as (ze ji) etc to infl.tdl, but all these verbs also have a
-more modern counterpart e.g. ¡ÖÀ¸¤¸¤ë¡× "shou-jiru" which gives the
+more modern counterpart e.g. ã€Œç”Ÿã˜ã‚‹ã€ "shou-jiru" which gives the
 same inflectional forms and has the same meaning.  It would be nifty
 to have them as a special class in some way.  But i would need to
 discuss them more with a knowledgable Japanese linguist before doing
 anything.  I will ask Akira Ohtanai next tim we have some time.
 
-* Also added were verbs like ¡Ö´Ø¤¹¤ë¡×"kansuru" which pretty much
-  only turn up as pseudo postpositions ¡Ö¤Ë´Ø¤¹¤ë¡×"nikansuru".
+* Also added were verbs like ã€Œé–¢ã™ã‚‹ã€"kansuru" which pretty much
+  only turn up as pseudo postpositions ã€Œã«é–¢ã™ã‚‹ã€"nikansuru".
   Matsumoto Yo has a nice paper about these somewhere (I read it in
   a bookshop and don't actully own a copy or remember the title).
 
@@ -143,8 +160,8 @@ them we can now parse, but the semantics (and possibly syntax) is
 definitely not so correct.
 
 E.G. 
-ÃÄ "dan" which doesn't have the group meaning
-¤² "ge" as in sumu-ge (coldish) which doesn't get the POS conversion
+å›£ "dan" which doesn't have the group meaning
+ã’ "ge" as in sumu-ge (coldish) which doesn't get the POS conversion
 etc.
 ------------------------------------------------------------------------
 FRANCIS
@@ -172,186 +189,186 @@ official grammar, but list them here in case anyone is interested
 
 
 
-;<IJ> ; ÀÚ¤ì¤ë 
-;<IJ> ; JACY ÀÚ¤ì¤ë: kireru-stem (intrans-v-stem-lex)
+;<IJ> ; åˆ‡ã‚Œã‚‹ 
+;<IJ> ; JACY åˆ‡ã‚Œã‚‹: kireru-stem (intrans-v-stem-lex)
 ;<IJ> ; Used 1 times
 
 ;<IJ> kireru_2 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'kireru_2,
-;<IJ>  ORTH <! "ÀÚ¤ì¤ë" !> ].
+;<IJ>  ORTH <! "åˆ‡ã‚Œã‚‹" !> ].
 
-; ¤¯¤¿¤Ó¤ì¤ë 
+; ããŸã³ã‚Œã‚‹ 
 ; Used 1 times
 ; (TT 2003-08-07)
-; FIXJACY: Ê£¹çÆ°»ì¤òÀ¸À®¤¹¤ë(lexical type¤¬É¬Í×)
-; e.g. ¡ÖÂÔ¤Á¤¯¤¿¤Ó¤ì¤ë¡×
+; FIXJACY: è¤‡åˆå‹•è©ã‚’ç”Ÿæˆã™ã‚‹(lexical typeãŒå¿…è¦)
+; e.g. ã€Œå¾…ã¡ããŸã³ã‚Œã‚‹ã€
 
 ; kutabireru_2 := ordinary-suffix-n-lex &
 ; [SYNSEM.LOCAL.KEYS.KEY.PRED 'kutabireru_2,
-;  ORTH <! "¤¯¤¿¤Ó¤ì¤ë" !> ].
+;  ORTH <! "ããŸã³ã‚Œã‚‹" !> ].
 
-;<LF> ; ²Ì¤Æ¤ë 
+;<LF> ; æœã¦ã‚‹ 
 
 ;<LF> hateru_2 := ordinary-suffix-n-lex &
 ;<LF> [SYNSEM.LOCAL.KEYS.KEY.PRED 'hateru_2,
-;<LF>  ORTH <! "²Ì¤Æ¤ë" !> ].
+;<LF>  ORTH <! "æœã¦ã‚‹" !> ].
 
-;<LF> ; ¹û¤ì¤ë 
+;<LF> ; æƒšã‚Œã‚‹ 
 
 ;<LF> horeru_2 := ordinary-suffix-n-lex &
 ;<LF> [SYNSEM.LOCAL.KEYS.KEY.PRED 'horeru_2,
-;<LF>  ORTH <! "¹û¤ì¤ë" !> ].
+;<LF>  ORTH <! "æƒšã‚Œã‚‹" !> ].
 
-;<IJ> ; µÍ¤á¤ë 
-;<IJ> ; JACY µÍ¤á¤ë: tsumeru-stem (v1-v-stem-lex)
+;<IJ> ; è©°ã‚ã‚‹ 
+;<IJ> ; JACY è©°ã‚ã‚‹: tsumeru-stem (v1-v-stem-lex)
 ;<IJ> ; Used 3 times
 
 ;<IJ> tsumeru_3 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tsumeru_3,
-;<IJ>  ORTH <! "µÍ¤á¤ë" !> ].
+;<IJ>  ORTH <! "è©°ã‚ã‚‹" !> ].
 
 
-;<IJ> ; ÄÌ¤¹ 
-;<IJ> ; JACY ÄÌ¤¹: toosu-stem (v1-c-stem-lex) tousu-stem (v1-c-stem-lex)
+;<IJ> ; é€šã™ 
+;<IJ> ; JACY é€šã™: toosu-stem (v1-c-stem-lex) tousu-stem (v1-c-stem-lex)
 ;<IJ> ; Used 5 times
 
 ;<IJ> toosu_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'toosu_1,
-;<IJ>  ORTH <! "ÄÌ¤¹" !> ].
+;<IJ>  ORTH <! "é€šã™" !> ].
 
-;<IJ> ; Èô¤Ğ¤¹ 
-;<IJ> ; JACY Èô¤Ğ¤¹: tobasu-stem (v1-c-stem-lex)
+;<IJ> ; é£›ã°ã™ 
+;<IJ> ; JACY é£›ã°ã™: tobasu-stem (v1-c-stem-lex)
 ;<IJ> ; Used 2 times
 
 ;<IJ> tobasu_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tobasu_1,
-;<IJ>  ORTH <! "Èô¤Ğ¤¹" !> ].
+;<IJ>  ORTH <! "é£›ã°ã™" !> ].
 
-;<IJ> ; Ä¾¤¹ 
-;<IJ> ; JACY Ä¾¤¹: naosu-stem (v1-c-stem-lex)
+;<IJ> ; ç›´ã™ 
+;<IJ> ; JACY ç›´ã™: naosu-stem (v1-c-stem-lex)
 ;<IJ> ; Used 4 times
 
 ;<IJ> naosu_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'naosu_1,
-;<IJ>  ORTH <! "Ä¾¤¹" !> ].
+;<IJ>  ORTH <! "ç›´ã™" !> ].
 
-; À®¤¹ 
+; æˆã™ 
 ; Used 5 times
 ; (TT 2003-08-07)
-; FIXJACY: Ê£¹çÆ°»ì¤òÀ¸À®¤¹¤ë(lexical type¤¬É¬Í×)
-; e.g. ¡Ö¤Ä¤¯¤êÀ®¤¹¡×
+; FIXJACY: è¤‡åˆå‹•è©ã‚’ç”Ÿæˆã™ã‚‹(lexical typeãŒå¿…è¦)
+; e.g. ã€Œã¤ãã‚Šæˆã™ã€
 
 ; nasu_1_2 := ordinary-suffix-n-lex &
 ; [SYNSEM.LOCAL.KEYS.KEY.PRED 'nasu_1_2,
-;  ORTH <! "À®¤¹" !> ].
+;  ORTH <! "æˆã™" !> ].
 
-;<LF> ; ½¬¤ï¤¹ 
+;<LF> ; ç¿’ã‚ã™ 
 
 ;<LF> narawasu_1 := ordinary-suffix-n-lex &
 ;<LF> [SYNSEM.LOCAL.KEYS.KEY.PRED 'narawasu_1,
-;<LF>  ORTH <! "½¬¤ï¤¹" !> ].
+;<LF>  ORTH <! "ç¿’ã‚ã™" !> ].
 
-;<IJ> ; È´¤¯ 
-;<IJ> ; JACY È´¤¯: nuku-stem (v1-c-stem-lex)
+;<IJ> ; æŠœã 
+;<IJ> ; JACY æŠœã: nuku-stem (v1-c-stem-lex)
 ;<IJ> ; Used 3 times
 
 ;<IJ> nuku_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'nuku_1,
-;<IJ>  ORTH <! "È´¤¯" !> ].
+;<IJ>  ORTH <! "æŠœã" !> ].
 
-;<IJ> ; ²Ì¤¿¤¹ 
-;<IJ> ; JACY ²Ì¤¿¤¹: hatasu-stem (v1-c-stem-lex)
+;<IJ> ; æœãŸã™ 
+;<IJ> ; JACY æœãŸã™: hatasu-stem (v1-c-stem-lex)
 ;<IJ> ; Used 2 times
 
 ;<IJ> hatasu_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'hatasu_1,
-;<IJ>  ORTH <! "²Ì¤¿¤¹" !> ].
+;<IJ>  ORTH <! "æœãŸã™" !> ].
 
-;<IJ> ; ²ó¤¹ 
-;<IJ> ; JACY ²ó¤¹: mawasu-stem (v4-c-stem-lex)
+;<IJ> ; å›ã™ 
+;<IJ> ; JACY å›ã™: mawasu-stem (v4-c-stem-lex)
 ;<IJ> ; Used 2 times
 
 ;<IJ> mawasu_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'mawasu_1,
-;<IJ>  ORTH <! "²ó¤¹" !> ].
+;<IJ>  ORTH <! "å›ã™" !> ].
 
-;<IJ> ; ÅÏ¤¹ 
-;<IJ> ; JACY ÅÏ¤¹: watasu-stem (v1-c-stem-lex)
+;<IJ> ; æ¸¡ã™ 
+;<IJ> ; JACY æ¸¡ã™: watasu-stem (v1-c-stem-lex)
 ;<IJ> ; Used 9 times
 
 ;<IJ> watasu_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'watasu_1,
-;<IJ>  ORTH <! "ÅÏ¤¹" !> ].
+;<IJ>  ORTH <! "æ¸¡ã™" !> ].
 
 
-;<IJ> ; ÆÀ¤ë 
-;<IJ> ; JACY ÆÀ¤ë: eru-stem (v1-v-stem-lex)
+;<IJ> ; å¾—ã‚‹ 
+;<IJ> ; JACY å¾—ã‚‹: eru-stem (v1-v-stem-lex)
 ;<IJ> ; Used 25 times
 
 ;<IJ> eru_2_1 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'eru_2_1,
-;<IJ>  ORTH <! "ÆÀ¤ë" !> ].
+;<IJ>  ORTH <! "å¾—ã‚‹" !> ].
 
-;<IJ> ; ³İ¤±¤ë 
-;<IJ> ; JACY ³İ¤±¤ë: kakeru-kanji_telephone-stem (v1-v-stem-lex)
+;<IJ> ; æ›ã‘ã‚‹ 
+;<IJ> ; JACY æ›ã‘ã‚‹: kakeru-kanji_telephone-stem (v1-v-stem-lex)
 ;<IJ> ; Used 18 times
 
 ;<IJ> kakeru_2 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'kakeru_2,
-;<IJ>  ORTH <! "³İ¤±¤ë" !> ].
+;<IJ>  ORTH <! "æ›ã‘ã‚‹" !> ].
 
-; ·ó¤Í¤ë 
+; å…¼ã­ã‚‹ 
 ; Used 1 times
 ; (TT 2003-08-07)
-; FIXJACY: Ê£¹çÆ°»ì¤òÀ¸À®¤¹¤ë(lexical type¤¬É¬Í×)
-; e.g. ¡Ö¸«·ó¤Í¤ë¡×
+; FIXJACY: è¤‡åˆå‹•è©ã‚’ç”Ÿæˆã™ã‚‹(lexical typeãŒå¿…è¦)
+; e.g. ã€Œè¦‹å…¼ã­ã‚‹ã€
 
 ; kaneru_2 := ordinary-suffix-n-lex &
 ; [SYNSEM.LOCAL.KEYS.KEY.PRED 'kaneru_2,
-;  ORTH <! "·ó¤Í¤ë" !> ].
+;  ORTH <! "å…¼ã­ã‚‹" !> ].
 
-; ·ú¤Æ¤ë 
+; å»ºã¦ã‚‹ 
 ; Used 9 times
 ; (TT 2003-08-07)
-; ORTH ¡Ö·ú¤Æ¤ë¡×->¡ÖÎ©¤Æ¤ë¡×
-; FIXJACY: Ê£¹çÆ°»ì¤òÀ¸À®¤¹¤ë(lexical type¤¬É¬Í×)
-; e.g. ¡ÖÊÂ¤ÙÎ©¤Æ¤ë¡×¡Ö½Ò¤ÙÎ©¤Æ¤ë¡×
+; ORTH ã€Œå»ºã¦ã‚‹ã€->ã€Œç«‹ã¦ã‚‹ã€
+; FIXJACY: è¤‡åˆå‹•è©ã‚’ç”Ÿæˆã™ã‚‹(lexical typeãŒå¿…è¦)
+; e.g. ã€Œä¸¦ã¹ç«‹ã¦ã‚‹ã€ã€Œè¿°ã¹ç«‹ã¦ã‚‹ã€
 
 ; tateru_2 := ordinary-suffix-n-lex &
 ; [SYNSEM.LOCAL.KEYS.KEY.PRED 'tateru_2,
-;  ORTH <! "Î©¤Æ¤ë" !> ].
+;  ORTH <! "ç«‹ã¦ã‚‹" !> ].
 
-;<IJ> ; ÉÕ¤±¤ë 
-;<IJ> ; JACY ÉÕ¤±¤ë: tsukeru_attach-stem (v1-v-stem-lex)
+;<IJ> ; ä»˜ã‘ã‚‹ 
+;<IJ> ; JACY ä»˜ã‘ã‚‹: tsukeru_attach-stem (v1-v-stem-lex)
 ;<IJ> ; Used 82 times
 
 ;<IJ> tsukeru_2 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tsukeru_2,
-;<IJ>  ORTH <! "ÉÕ¤±¤ë" !> ].
+;<IJ>  ORTH <! "ä»˜ã‘ã‚‹" !> ].
 
-;<IJ> ; Â³¤±¤ë 
-;<IJ> ; JACY Â³¤±¤ë: tsuzukeru-stem (v1-v-stem-lex) tsudukeru-stem (v1-v-stem-lex)
+;<IJ> ; ç¶šã‘ã‚‹ 
+;<IJ> ; JACY ç¶šã‘ã‚‹: tsuzukeru-stem (v1-v-stem-lex) tsudukeru-stem (v1-v-stem-lex)
 ;<IJ> ; Used 12 times
 
 ;<IJ> tsudukeru_2 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'tsudukeru_2,
-;<IJ>  ORTH <! "Â³¤±¤ë" !> ].
+;<IJ>  ORTH <! "ç¶šã‘ã‚‹" !> ].
 
-;<IJ> ; »Ï¤á¤ë 
-;<IJ> ; JACY »Ï¤á¤ë: hajimeru-stem (v1-v-stem-lex)
+;<IJ> ; å§‹ã‚ã‚‹ 
+;<IJ> ; JACY å§‹ã‚ã‚‹: hajimeru-stem (v1-v-stem-lex)
 ;<IJ> ; Used 14 times
 
 ;<IJ> hajimeru_2 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'hajimeru_2,
-;<IJ>  ORTH <! "»Ï¤á¤ë" !> ].
+;<IJ>  ORTH <! "å§‹ã‚ã‚‹" !> ].
 
-;<IJ> ; ¾å¤²¤ë 
-;<IJ> ; JACY ¾å¤²¤ë: ageru-stem (v1-v-stem-lex)
+;<IJ> ; ä¸Šã’ã‚‹ 
+;<IJ> ; JACY ä¸Šã’ã‚‹: ageru-stem (v1-v-stem-lex)
 ;<IJ> ; Used 11 times
 
 ;<IJ> ageru_2 := ordinary-suffix-n-lex &
 ;<IJ> [SYNSEM.LOCAL.KEYS.KEY.PRED 'ageru_2,
-;<IJ>  ORTH <! "¾å¤²¤ë" !> ].
+;<IJ>  ORTH <! "ä¸Šã’ã‚‹" !> ].
 
 
 ------------------------------------------------------------------
@@ -399,126 +416,126 @@ Specific things people are working on/looking at that I know about
 Kuribayashi
 ----------------------------------------------------------------------
 
-¡Ö¥Î¡¼¥â¥¢¡×¡Ê³Ø¸¦¼­½ñ¤Ç¤Ï´¶Æ°»ì¡Ë
+ã€Œãƒãƒ¼ãƒ¢ã‚¢ã€ï¼ˆå­¦ç ”è¾æ›¸ã§ã¯æ„Ÿå‹•è©ï¼‰
 
-	²¾¤Ëordinary-prefix¤ÇÅĞÏ¿¤·¤Æ¤¤¤ë¤¬¡¢¸¡Æ¤¤ÎÉ¬Í×¤¢¤ê¡£
+	ä»®ã«ordinary-prefixã§ç™»éŒ²ã—ã¦ã„ã‚‹ãŒã€æ¤œè¨ã®å¿…è¦ã‚ã‚Šã€‚
 
-	ex.¡Ö¥Î¡¼¥â¥¢ ¹­Åç¡×
-	   ¡Ö¥Î¡¼¥â¥¢ ÀïÁè¡×
-	   ¡Ö¥Î¡¼¥â¥¢ »ºÇÑ¡×
+	ex.ã€Œãƒãƒ¼ãƒ¢ã‚¢ åºƒå³¶ã€
+	   ã€Œãƒãƒ¼ãƒ¢ã‚¢ æˆ¦äº‰ã€
+	   ã€Œãƒãƒ¼ãƒ¢ã‚¢ ç”£å»ƒã€
 
-	¡Ö¥Î¡¼¥â¥¢¡×¤ò°ì¸ì¤Î¤ß¤Ç»È¤¨¤ë¤«¤É¤¦¤«¤â¸¡Æ¤¤ÎÉ¬Í×¤¢¤ê¡£
+	ã€Œãƒãƒ¼ãƒ¢ã‚¢ã€ã‚’ä¸€èªã®ã¿ã§ä½¿ãˆã‚‹ã‹ã©ã†ã‹ã‚‚æ¤œè¨ã®å¿…è¦ã‚ã‚Šã€‚
 
 
 ---------------------------------------------------------------------------
 Kuribayashi
 ---------------------------------------------------------------------------
 
-¸å¤Ë¡Ö¤Î¡×¤ò¤È¤Ã¤ÆÌ¾»ì¤ò½¤¾ş¤¹¤ëna-adj,adv
+å¾Œã«ã€Œã®ã€ã‚’ã¨ã£ã¦åè©ã‚’ä¿®é£¾ã™ã‚‹na-adj,adv
 
 <na-adj>
 
-  ex.¡Ö¤Ş¤¢¤Ş¤¢¤Î½ĞÍè¡×¡Ê¡á¡Ö¤Ş¤¢¤Ş¤¢¤Ê½ĞÍè¡×¡Ë
-     ¡Ö¼«Á³¤ÎÀ®¤ê¹Ô¤­¡×¡Ê¡á¡Ö¼«Á³¤ÊÀ®¤ê¹Ô¤­¡×¡Ë
-     ¡ÖµÕ¤Î¸«Êı¡×¡Ê¡á¡Ö¸«Êı¤¬µÕ¤Ç¤¢¤ë¡×¡Ë
+  ex.ã€Œã¾ã‚ã¾ã‚ã®å‡ºæ¥ã€ï¼ˆï¼ã€Œã¾ã‚ã¾ã‚ãªå‡ºæ¥ã€ï¼‰
+     ã€Œè‡ªç„¶ã®æˆã‚Šè¡Œãã€ï¼ˆï¼ã€Œè‡ªç„¶ãªæˆã‚Šè¡Œãã€ï¼‰
+     ã€Œé€†ã®è¦‹æ–¹ã€ï¼ˆï¼ã€Œè¦‹æ–¹ãŒé€†ã§ã‚ã‚‹ã€ï¼‰
 
 <adv>
 
-  ex.¡Ö¤Ş¤µ¤«¤Î»öÂÖ¡×
-     ¡Ö¤µ¤·¤¢¤¿¤Ã¤Æ¤ÎÍ½Äê¡×
-     ¡ÖÎã¤¨¤Ğ¤ÎÏÃ¡×
+  ex.ã€Œã¾ã•ã‹ã®äº‹æ…‹ã€
+     ã€Œã•ã—ã‚ãŸã£ã¦ã®äºˆå®šã€
+     ã€Œä¾‹ãˆã°ã®è©±ã€
 
-<na-adj¤Èadv¤Î¶èÊÌ¤¬¤è¤¯¤ï¤«¤é¤Ê¤¤¤â¤Î>
+<na-adjã¨advã®åŒºåˆ¥ãŒã‚ˆãã‚ã‹ã‚‰ãªã„ã‚‚ã®>
 
-  ex.¡ÖÅöÁ³¤ÎÊó¤¤¡×
-     ¡Ö¤«¤Ê¤ê¤Î»ş´Ö¡×
+  ex.ã€Œå½“ç„¶ã®å ±ã„ã€
+     ã€Œã‹ãªã‚Šã®æ™‚é–“ã€
 
-<na-adj¤ÈÉáÄÌÌ¾»ì¤Î¶èÊÌ¤Ï¤è¤¯¤ï¤«¤é¤Ê¤¤¤¬¡¢na-adj¤Î°ÕÌ£¤ò»Ä¤·¤¿¤¤¤â¤Î>
+<na-adjã¨æ™®é€šåè©ã®åŒºåˆ¥ã¯ã‚ˆãã‚ã‹ã‚‰ãªã„ãŒã€na-adjã®æ„å‘³ã‚’æ®‹ã—ãŸã„ã‚‚ã®>
 
-  ex.¡ÖÉáÄÌ¤Î¿Í¡×¡Ê¡á¡ÖÉáÄÌ¤Ê¿Í¡×¡Ë
-     ¡ÖÀµÈ¿ÂĞ¤ÎÎ©¾ì¡×¡Ê¡á¡ÖÀµÈ¿ÂĞ¤ÊÎ©¾ì¡×¡Ë
-     ¡Ö¤®¤ê¤®¤ê¤Î¸ò¾Ä¡×¡Ê¡á¡Ö¤®¤ê¤®¤ê¤Ê¸ò¾Ä¡×¡Ë
+  ex.ã€Œæ™®é€šã®äººã€ï¼ˆï¼ã€Œæ™®é€šãªäººã€ï¼‰
+     ã€Œæ­£åå¯¾ã®ç«‹å ´ã€ï¼ˆï¼ã€Œæ­£åå¯¾ãªç«‹å ´ã€ï¼‰
+     ã€Œãã‚Šãã‚Šã®äº¤æ¸‰ã€ï¼ˆï¼ã€Œãã‚Šãã‚Šãªäº¤æ¸‰ã€ï¼‰
 
-<¸å¤Ë¡Ö¤Î¡×¤ò¤È¤ì¤Ê¤¤na-adj>
+<å¾Œã«ã€Œã®ã€ã‚’ã¨ã‚Œãªã„na-adj>
 
-  ex.¡ÖµŞ¤ÎÅ¾¶Ğ¡×
-     ¡ÖÍ­Ì¾¤Î¾®Àâ¡×
-     ¡Ö¥ª¡¼¥×¥ó¤Î¥¹¥Ú¡¼¥¹¡×
+  ex.ã€Œæ€¥ã®è»¢å‹¤ã€
+     ã€Œæœ‰åã®å°èª¬ã€
+     ã€Œã‚ªãƒ¼ãƒ—ãƒ³ã®ã‚¹ãƒšãƒ¼ã‚¹ã€
 
 
 -------------------------------------------------------------------------------
 Kuribayashi
 -------------------------------------------------------------------------------
 
-<¥È¥¿¥ë·¿³èÍÑ¤Î·ÁÍÆÆ°»ì>
+<ãƒˆã‚¿ãƒ«å‹æ´»ç”¨ã®å½¢å®¹å‹•è©>
 
-  ex.¡ÖÆ²¡¹¡×¡Ö¤¢Á³¡×
+  ex.ã€Œå ‚ã€…ã€ã€Œã‚ç„¶ã€
 
-¤³¤Î¤è¤¦¤Ê¥È¥¿¥ë·¿¤Î³èÍÑ¤ò¤¹¤ë·ÁÍÆÆ°»ì¤â¡¢na-adj¤ÇÅĞÏ¿¤µ¤ì¤Æ¤·¤Ş¤Ã¤Æ¤¤¤ë¡£
-¤½¤Î¤¿¤á¡¢
+ã“ã®ã‚ˆã†ãªãƒˆã‚¿ãƒ«å‹ã®æ´»ç”¨ã‚’ã™ã‚‹å½¢å®¹å‹•è©ã‚‚ã€na-adjã§ç™»éŒ²ã•ã‚Œã¦ã—ã¾ã£ã¦ã„ã‚‹ã€‚
+ãã®ãŸã‚ã€
 
-  ex.¡ÖÆ²¡¹¤ÈÆş¾ì¤¹¤ë¡×
+  ex.ã€Œå ‚ã€…ã¨å…¥å ´ã™ã‚‹ã€
 
-¤Î¤è¤¦¤ÊÊ¸¤Ï²òÀÏ¤Ç¤­¤Ê¤¯¤Ê¤Ã¤Æ¤¤¤ë¡£
+ã®ã‚ˆã†ãªæ–‡ã¯è§£æã§ããªããªã£ã¦ã„ã‚‹ã€‚
 
-
-
---------------------------------------------------------------------------------
-Kuribayashi
---------------------------------------------------------------------------------
-
-<Ì¾»ì¡Ü¤È¡Üna-adj><Ì¾»ì¡Ü¤È¡Üna-adj¡Ü¤Î¡ÜÌ¾»ì>
-
-  ex.¡ÖÆ±°ì¡×¡ÖÈ¿ÂĞ¡×¡ÖµÕ¡×¡Ö°ì½ï¡×¤Ê¤É
-
-  ex.¡ÖÀµ¤·¤¤¸ş¤­¤È¡Êor¤È¤Ï¡ËµÕ¤À¡×
-     ¡ÖÈà¤ÈÆ±°ì¤Î°Õ¸«¡×
-     ¡ÖÈà¤È¡Êor¤È¤Ï¡ËÈ¿ÂĞ¤Î°Õ¸«¡×
-
-¤³¤ì¤é¤Ï¸½ºßÀµ¤·¤¯²òÀÏ¤Ç¤­¤Æ¤¤¤Ê¤¤¡£
 
 
 --------------------------------------------------------------------------------
 Kuribayashi
 --------------------------------------------------------------------------------
 
-ex.¡Ö°ÜÆ°¡×
+<åè©ï¼‹ã¨ï¼‹na-adj><åè©ï¼‹ã¨ï¼‹na-adjï¼‹ã®ï¼‹åè©>
 
-  ¤³¤Î¾ì¹ç¡¢
-     ex.¡Ö¼Ö¤Ç»ÔÆâ¤ò°ÜÆ°¤¹¤ë¡×
-	¡ÖÈ¢¤ò±¦¤Ë°ÜÆ°¤¹¤ë¡×
-  ¤È¤¤¤¦£²¤Ä¤ÎÊ¸¤Ë¤ª¤¤¤Æ¡¢¡Ö°ÜÆ°¡×¤Ïvn-trans1¤ÇÁªÂò¤¹¤ë¤³¤È¤Ë¤Ê¤ë¤¬¡¢
-  ¤³¤Î£²¤Ä¤ÎÎã¤òÆ±°ì»ë¤·¤Æ¤·¤Ş¤Ã¤Æ¤è¤¤¤«¡£
+  ex.ã€ŒåŒä¸€ã€ã€Œåå¯¾ã€ã€Œé€†ã€ã€Œä¸€ç·’ã€ãªã©
+
+  ex.ã€Œæ­£ã—ã„å‘ãã¨ï¼ˆorã¨ã¯ï¼‰é€†ã ã€
+     ã€Œå½¼ã¨åŒä¸€ã®æ„è¦‹ã€
+     ã€Œå½¼ã¨ï¼ˆorã¨ã¯ï¼‰åå¯¾ã®æ„è¦‹ã€
+
+ã“ã‚Œã‚‰ã¯ç¾åœ¨æ­£ã—ãè§£æã§ãã¦ã„ãªã„ã€‚
+
+
+--------------------------------------------------------------------------------
+Kuribayashi
+--------------------------------------------------------------------------------
+
+ex.ã€Œç§»å‹•ã€
+
+  ã“ã®å ´åˆã€
+     ex.ã€Œè»Šã§å¸‚å†…ã‚’ç§»å‹•ã™ã‚‹ã€
+	ã€Œç®±ã‚’å³ã«ç§»å‹•ã™ã‚‹ã€
+  ã¨ã„ã†ï¼’ã¤ã®æ–‡ã«ãŠã„ã¦ã€ã€Œç§»å‹•ã€ã¯vn-trans1ã§é¸æŠã™ã‚‹ã“ã¨ã«ãªã‚‹ãŒã€
+  ã“ã®ï¼’ã¤ã®ä¾‹ã‚’åŒä¸€è¦–ã—ã¦ã—ã¾ã£ã¦ã‚ˆã„ã‹ã€‚
 
 
 ----------------------------------------------------------------------------------
 Kuribayashi
 ---------------------------------------------------------------------------------
 
-¡Ö¤»¤Ã¤«¤¯¡×¡ÖÀŞ³Ñ¡×¡ÊÉáÄÌÌ¾»ì¡¦Éû»ì¡Ë
+ã€Œã›ã£ã‹ãã€ã€ŒæŠ˜è§’ã€ï¼ˆæ™®é€šåè©ãƒ»å‰¯è©ï¼‰
 
-³Ø¸¦¼­½ñ¤ä¹­¼­±ñ¤Ç¤ÏÉáÄÌÌ¾»ì¤È¤·¤Æ°Ê²¼¤Î£²¤Ä¤ÎÍÑË¡¤ò¤¢¤²¤Æ¤¤¤ë¡£
+å­¦ç ”è¾æ›¸ã‚„åºƒè¾è‹‘ã§ã¯æ™®é€šåè©ã¨ã—ã¦ä»¥ä¸‹ã®ï¼’ã¤ã®ç”¨æ³•ã‚’ã‚ã’ã¦ã„ã‚‹ã€‚
 
-  ex.¡Ö¤»¤Ã¤«¤¯¡ÊÀŞ³Ñ¡Ë¤ÎµÙÆü¤Ê¤Î¤ËÉ÷¼Ù¤ò¤Ò¤¤¤Æ¤·¤Ş¤Ã¤¿¡×
-     ¡Ö¤»¤Ã¤«¤¯¡ÊÀŞ³Ñ¡Ë¤Ç¤¹¤¬¡¢¤ªÃÇ¤ê¤µ¤»¤Æ¤¤¤¿¤À¤­¤Ş¤¹¡×
+  ex.ã€Œã›ã£ã‹ãï¼ˆæŠ˜è§’ï¼‰ã®ä¼‘æ—¥ãªã®ã«é¢¨é‚ªã‚’ã²ã„ã¦ã—ã¾ã£ãŸã€
+     ã€Œã›ã£ã‹ãï¼ˆæŠ˜è§’ï¼‰ã§ã™ãŒã€ãŠæ–­ã‚Šã•ã›ã¦ã„ãŸã ãã¾ã™ã€
 
-¤¿¤À¤·¡¢Ì¾»ìÅªÍÑË¡¤Ï¤³¤Î£²¤Ä¤Î¥Ñ¥¿¡¼¥ó¤Ë¸Â¤é¤ì¤ë¤³¤È¡¢Ê£¹çÌ¾»ì¤ò
-ºî¤é¤Ê¤¤¤³¤È¤Ê¤É¡¢ÉáÄÌÌ¾»ì¡Êordinary-nohon-n-lex¡Ë¤Ç¤ÎÅĞÏ¿
-¤Ëµ¿Ìä¤¬¤¢¤ë¡£
+ãŸã ã—ã€åè©çš„ç”¨æ³•ã¯ã“ã®ï¼’ã¤ã®ãƒ‘ã‚¿ãƒ¼ãƒ³ã«é™ã‚‰ã‚Œã‚‹ã“ã¨ã€è¤‡åˆåè©ã‚’
+ä½œã‚‰ãªã„ã“ã¨ãªã©ã€æ™®é€šåè©ï¼ˆordinary-nohon-n-lexï¼‰ã§ã®ç™»éŒ²
+ã«ç–‘å•ãŒã‚ã‚‹ã€‚
 
 
 ---------------------------------------------------------------------------------
 Kuribayashi
 ---------------------------------------------------------------------------------
 
-v1-kurusuru-stem¡Ê¡ÖÈ¯¤¹¤ë¡×¤Ê¤É¡Ë
+v1-kurusuru-stemï¼ˆã€Œç™ºã™ã‚‹ã€ãªã©ï¼‰
 
-     lexicaltype¤¬v1-kurusuru-stem¤Î¤â¤Î¤òÁªÂò¤¹¤ë¤È¡¢¤½¤ÎÊ¸¾Ï¤¬µ¿ÌäÊ¸
-     ¤Ê¤Î¤«Ê¹¤¤¤Æ¤¯¤ë¡Ê=UTTERANCE_RULE-DECL-FINITE¤«UTTERANCE_RULE-
-     WH-WITHOUT-KA¤«¤ÎÁªÂò¤¬½Ğ¤ë¡Ë¡£
-     ¤Ş¤¿¡¢¡Ö¤É¤¦ ¤¹¤ë¡×¤Çv1-kurusuru-stem¤òÁª¤Ö¤È¡¢¶¯À©Åª¤Ëµ¿ÌäÊ¸¤Ë¤Ê¤ë¡£
+     lexicaltypeãŒv1-kurusuru-stemã®ã‚‚ã®ã‚’é¸æŠã™ã‚‹ã¨ã€ãã®æ–‡ç« ãŒç–‘å•æ–‡
+     ãªã®ã‹èã„ã¦ãã‚‹ï¼ˆ=UTTERANCE_RULE-DECL-FINITEã‹UTTERANCE_RULE-
+     WH-WITHOUT-KAã‹ã®é¸æŠãŒå‡ºã‚‹ï¼‰ã€‚
+     ã¾ãŸã€ã€Œã©ã† ã™ã‚‹ã€ã§v1-kurusuru-stemã‚’é¸ã¶ã¨ã€å¼·åˆ¶çš„ã«ç–‘å•æ–‡ã«ãªã‚‹ã€‚
 
-     ¤¿¤À¤·¡¢¡Ö¤¹¤ë¡×¡ÖÍ×¤¹¤ë¡×¡Ö°¦¤¹¤ë¡×¡ÖÃ£¤¹¤ë¡×¡Ö¶ş¤¹¤ë¡×¤ÏÎã³°¡£
+     ãŸã ã—ã€ã€Œã™ã‚‹ã€ã€Œè¦ã™ã‚‹ã€ã€Œæ„›ã™ã‚‹ã€ã€Œé”ã™ã‚‹ã€ã€Œå±ˆã™ã‚‹ã€ã¯ä¾‹å¤–ã€‚
 
 
 
@@ -527,11 +544,14 @@ v1-kurusuru-stem¡Ê¡ÖÈ¯¤¹¤ë¡×¤Ê¤É¡Ë
 ========================================================================
 Fixed
 
+ * converted to utf-8
+ * fixed preposition order
+
 
 ------------------------------------------------------------------------
 FRANCIS
 ------------------------------------------------------------------------
-(do-parse-tty "Æü¾ï ¤Î ¹Ô¤¤ ¤¬ ³Î¤« ¤Ç ¤¢¤ë ¡£")
+(do-parse-tty "æ—¥å¸¸ ã® è¡Œã„ ãŒ ç¢ºã‹ ã§ ã‚ã‚‹ ã€‚")
 There is a difference in the parse output between pet and the lkb
 Only pet gives - utterance_rule-wh-without-ka !
 
@@ -540,3 +560,4 @@ when updateing or annotating.
 
 lkb/pet did different things if a rule inhereited from two supertypes
 directly. We no longer do so!
+
