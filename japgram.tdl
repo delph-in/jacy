@@ -747,25 +747,31 @@ vn-light-rule := head-marker-rule &
 ; supertype vstem-vend-rule-type.
 ; (MS 2005-11-14) MAIN-PRD should come from the stem, otherwise we get 
 ; spurious ambiguity with the ga-no-conversion rule.
-                
+;;; CH+FCB+TK added LEX +             
+;;(lkb::do-parse-tty "投げ た")
 vstem-vend-rule := stem-end-rule-type &
  [ SYNSEM [LOCAL.CAT.VAL.SPR null,
 	   MODIFIED.PERIPH #per],
    ARGS < [ SYNSEM [LOCAL.CAT.HEAD ordinary-verb-stem_head & 
 				   [LIGHT #light,
 				    MAIN-PRD #main],
-		    MODIFIED.PERIPH #per],
+		    MODIFIED.PERIPH #per,
+		    LEX +],
 	    J-NEEDS-AFFIX + ],
 	  [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light,
 						 MAIN-PRD #main]] >].
 
 
+;;(lkb::do-parse-tty "投げ そこなっ た")
+;;; CH+FCB+TK added LEX +
+;;;「た」が「投げ そこなっ」と「そこなっ」のどちらに結び付くかの曖昧性をなくすため
 aux-vend-rule := stem-end-rule-type &
 [ SYNSEM [LOCAL.CAT.VAL.SPR #spr,
 	  MODIFIED.PERIPH #per],
   J-NEEDS-AFFIX #aff,
   ARGS < [ SYNSEM [LOCAL.CAT [HEAD other-verb-stem_head & [COP -],
-			      VAL.SPR #spr]],
+			      VAL.SPR #spr],
+		   LEX +],
 	   J-NEEDS-AFFIX + ],
 	 [J-NEEDS-AFFIX #aff,
 	  SYNSEM [LOCAL.CAT.HEAD verb_head,
