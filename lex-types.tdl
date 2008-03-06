@@ -1357,10 +1357,13 @@ ga-ga_transitive := sbj-obj-arg &
 
 ; (SF 2003)
 ; (MS 2003-12-23) This seems not to be used.
-;ni-ga_transitive := sbj-obj-arg &
-;                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >,
-;                           COMPS opt-1-arg &
-;			   < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
+; (FCB 2007-12-19) < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
+;                -> < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
+; 必要,欲しい
+ni-ga_transitive := sbj-obj-arg &
+                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >,
+                           COMPS opt-1-arg &
+			   < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
 
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
 
@@ -6161,6 +6164,29 @@ na-adj-gg-lex := na-adj-stem-lex &
 		 [ARG1 #sbjind,
 		  ARG2 #objind]]].
 
+; (TK 07-12-19)
+; <type val="na-adj-ng-lex">
+; <name-ja>ニ主格ガ目的格形容動詞
+; <description>格は主格（「に」格）目的格（「が」格）が取れる。主格
+; （「に」格）の現れない文では出現しない。通常は後ろにcopulaを伴う。
+; <ex>私 に 車 が 必要 だ
+; <ex>車 が 私 に 必要 だ
+; <nex>車 が 必要 だ
+; <todo>(lkb::do-parse-tty "車 が 私 に 必要 だ")の場合、「が」を格として取れない。
+; また、「に」格がobligatoryになっていない（主格をobligatoryにできない）
+; </type>
+na-adj-ng-lex := na-adj-stem-lex & 
+  [SYNSEM [LOCAL [CAT [HEAD.MODUS indicative,
+ 		      VAL ni-ga_transitive &
+ 			   [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
+ 			    COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind]],
+		 CONT [HOOK.XARG #sbjind,
+		      RELS <! #key !> ]],
+	   NON-LOCAL.QUE <! !>,
+	   LKEYS.KEYREL #key & arg12-relation & 
+		 [ARG1 #sbjind,
+		  ARG2 #objind]]].
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXIKAL TYPES -- adverbs;;;;;;;;;;;;;;;;;;
 
@@ -8206,10 +8232,11 @@ rareru-end-lex :=  v-noncaus-op-end-lex &
 
 ; られる
 ; <type val="rareru-end-imorph-lex">
-; <name-ja>承一段動詞可能接尾一段
-; <description>一段活用の動詞の語幹について、その行為が可能である意を添える接尾辞。
+; <name-ja>承一段動詞可能接尾
+; <description>一段活用の動詞の語幹の直後について、その行為が可能である意を添える接尾辞。
 ; このtype自身も一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
-; <ex>悪天候 が 考え られる
+; <ex>フォーク が 投げ られる
+; <ex>フォーク を 投げ られる
 ; <nex>弟子 が 師匠 に 投げ られる
 ; <todo>(TK 07-04-09)可能表現の「に」格が主格、「が」格が目的格となる構文ができない
 ; (lkb::do-parse-tty "私 に 荷物 が 届け られる か")。
@@ -8224,10 +8251,11 @@ rareru-end-condmorph-lex := rareru-end-lex &
  [LMORPH-BIND-TYPE cond-morph].
 ; れる
 ; <type val="rareru-end-condexcmorph-lex">
-; <name-ja>承語段動詞可能接尾一段
+; <name-ja>承語段動詞可能接尾
 ; <description>五段活用の動詞未然形について、その行為が可能である意を添える接尾辞。
 ; このtype自身も一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 ; （可能表現としては「行ける」のように「語幹+e+る」のほうがより多く使われる）
+; また現状ではrareru-end-imorph-lexと同じように一段活用動詞の語幹の直後につくことも可能になっている。
 ; <ex>会議 に 行か れ ない
 ; <nex>皿 が 人 に 洗わ れる
 ; <todo>(TK 07-04-09)rareru-end-imorph-lexを参照。(lkb::do-parse-tty "子供 に 犬 が 飼わ れる か")
@@ -8605,14 +8633,12 @@ pass-end-lex :=  v-op-end-lex &
 
 ; <type val="simple-pass-end-lex">
 ; <name-ja>承ヲ他動詞直接受身
-; <description>v1-stem-lexの未然形の直後について、直接受身の意味を表す。現状では「れる」「られる」は
-; 五段活用・一段活用・変格活用のいずれにもつくことができてしまう。
-; <ex>打た れる
-; <ex>食べ られる
-; <nex>打た られる
-; <nex>食べ れる
-; <todo>(TK 07-03-15)「れる」は五段活用と変格活用のみに、「られる」は一段活用のみにつくことができるように
-; typeを変更すべき。
+; <description>v1-stem-lexの未然形の直後について、直接受身の意味を表す。
+; <ex>
+; <ex>
+; <nex>
+; <nex>
+; <todo>
 ; </type>
 simple-pass-end-lex :=   pass-end-lex &
  [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
@@ -8641,6 +8667,30 @@ simple-pass-end-lex :=   pass-end-lex &
   LMORPH-BIND-TYPE pass-morph,
   INFLECTED -,
   STEMTYPE v-stem].
+
+
+;;; られる
+; <type val="simple-pass-v-morph-end-lex">
+; <name-ja>承一段ヲ他動詞直接受身
+; <description>v1-v-stem-lexの未然形の直後について、直接受身の意味を表す。このtype自身も一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
+; <ex>ボール が 投げ られる
+; <nex>ボール を 投げ られる
+; <todo>(TK 08-03-06)v1-kurusuru-stem-lexの未然形「せ（ぜ）」にもつくべき。(lkb::do-parse-tty "言葉 が 発せ られる")
+; </type>
+simple-pass-v-morph-end-lex := simple-pass-end-lex &
+ [LMORPH-BIND-TYPE pass-v-stem-morph].
+
+;; れる
+; <type val="simple-pass-c-morph-end-lex">
+; <name-ja>承五段ヲ他動詞直接受身
+; <description>v1-c-stem-lexの未然形の直後について、直接受身の意味を表す。このtype自身も一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
+; <ex>フォーク が 打た れる
+; <nex>フォーク を 打た れる
+; <todo>
+; </type>
+simple-pass-c-morph-end-lex := simple-pass-end-lex &
+ [LMORPH-BIND-TYPE pass-c-stem-morph].
+
 
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
@@ -8916,15 +8966,15 @@ lightverb-pass-end-lex :=   pass-end-lex &
 
 ; <type val="v-honorific-end-lex">
 ; <name-ja>承和語動詞接尾辞尊敬
-; <description>verbの未然形の直後について、主語に対する尊敬の意を表す。現状では通常はv-stem-lex、
-; GA-NO-CONVERSION-RULEを選択した場合にはc-stem-lexとv-stem-lexとkurusuru-stem-lexの直後にしかつかない。
-; このtypeが必要とされることは稀である。
+; <description>和語動詞の未然形の直後について、主語に対する尊敬の意を表す。現状では通常はv-stem-lex、
+; GA-NO-CONVERSION-RULEを選択した場合にはc-stem-lexとv-stem-lexとkurusuru-stem-lexの直後につく。
+; このtypeが必要とされることは実際のコーパス上では少ない。
 ; <ex>先生 が 戸 を 開け られる
-; <ex>首相 が 書か れる
+; <ex>国王 の 書か れ た 親書
 ; <nex>球 が 投げ られる
-; <todo>(TK 07-03-26)simple-pass-end-lexを参照。
-; (TK 07-03-26)また、c-stem-lexやkurusuru-stem-lexの後にもつくことができるようにすべき。(lkb::do-parse-tty "首相 が 書か れる")
-; また、lightverbの後につくtypeも作るべき。(lkb::do-parse-tty "国王 が 観戦 さ れる")
+; <todo>(TK 07-03-26)v-stem-lexとkurusuru-stem-lexの後につく「られる」とc-stem-lexの後につく「れる」でtypeを分けるべき。
+;(TK 07-03-26)通常時でもc-stem-lexやkurusuru-stem-lexの後にもつくことができるようにすべき。(lkb::do-parse-tty "国王 が 書か れる")
+; また、lightverbやauxの後につくtypeも作るべき。(lkb::do-parse-tty "国王 が 観戦 さ れる")(lkb::do-parse-tty "先生 が 戸 を 開け て いか れる")
 ; ただし、このtypeを選択すべき場合は稀なので、実際に直してしまうと曖昧性だけが増える結果になるかもしれない。
 ; </type>
 v-honorific-end-lex := v-simple-end-lex &
@@ -10428,7 +10478,26 @@ v3-c-stem-lex := v3-nohon-stem-lex & [STEMTYPE c-stem].
 v3-c2-stem-lex := v3-nohon-stem-lex & [STEMTYPE c2-stem].
 v3-v-stem-lex := v3-nohon-stem-lex & [STEMTYPE v-stem].
 
+; (TK 08-01-23)
+; <type val="v3-kurusuru-stem-lex">
+; <name-ja>ト必須他動詞変格
+; <description>v3-c-stem-lexを参照。このtypeはサ行変格活用をし、終止形が「する」「ずる」であるもの
+; (http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
+; <ex>違反 で は ない と 解する
+; <nex>
+; <todo>
+; </type>
+v3-kurusuru-stem-lex := v3-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+
 v3-c-shon-stem-lex := v3-shon-stem-lex & [STEMTYPE c-stem].
+; <type val="v3-c2-shon-stem-lex">
+; <name-ja>ト必須他動詞五段変則主格尊敬
+; <description>v3-c-stem-lexを参照。このtypeは主格に対する尊敬を表す場合に使い、
+; 五段変則活用をする(http://wiki.delph-in.net/moin/JacyMorphology)。
+; <ex>犬 だ と おっしゃる
+; <nex>冗談 を おっしゃる
+; <todo>
+; </type>
 v3-c2-shon-stem-lex := v3-shon-stem-lex & [STEMTYPE c2-stem].
 v3-v-shon-stem-lex := v3-shon-stem-lex & [STEMTYPE v-stem].
 
@@ -12591,6 +12660,24 @@ i-adj-gg-stem-lex := adj-stem-lex &
  			ARG2 #objind],
  	  LOCAL [CAT [HEAD.MODUS indicative,
  		      VAL ga-ga_transitive &
+ 			   [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
+ 			    COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind]],
+ 		 CONT [HOOK.XARG #sbjind]]]].
+
+; <type val="i-adj-ng-stem-lex">
+; <name-ja>ニ主格ガ目的格形容詞
+; <description>格は主格（「に」格）目的格（「が」格）が取れる。活用あり。
+; 主格（「に」格）の現れない文では出現しない。
+; <ex>私 に 勇気 が 欲しい
+; <ex>勇気 が 私 に 欲しい
+; <nex>勇気 が 欲しい
+; <todo>「に」格がobligatoryになっていない（主格をobligatoryにできない）
+; </type>
+i-adj-ng-stem-lex := adj-stem-lex &
+  [SYNSEM [LKEYS.KEYREL arg12-relation & [ARG1 #sbjind,
+ 			ARG2 #objind],
+ 	  LOCAL [CAT [HEAD.MODUS indicative,
+ 		      VAL ni-ga_transitive &
  			   [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
  			    COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind]],
  		 CONT [HOOK.XARG #sbjind]]]].
