@@ -106,7 +106,7 @@ reload generation rules
   (mt:initialize-transfer) 
   (mt:read-transfer-rules 
    (list
-    "~/delphin/grammars/japanese/generation.mtr")
+    "~/svn/jacy/trigger.mtr")
    "Generator Triggger Rules"
    :filter nil :task :trigger :recurse nil :subsume nil))
 

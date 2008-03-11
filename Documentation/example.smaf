@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF8'?>
+<smaf><lattice init='v0' final='v3'>
+    <edge type='token' id='t1' cfrom='0' cto='3' source='v0' target='v1'>Ben</edge>
+    <edge type='pos' id='p1' deps='t1' source='v0' target='v1' ><slot name='tag'>名詞-固有名詞-一般+n-n</slot></edge>
+    <edge type='token' id='t2' cfrom='3' cto='4' source='v1' target='v2'>が</edge>
+    <edge type='pos' id='p2' deps='t3' source='v2' target='v3'><slot name='tag'>動詞-自立+カ変・クル-基本形</slot></edge>
+    <edge type='token' id='t3' cfrom='4' cto='7' source='v2' target='v3'>AAA吠える</edge>
+</lattice></smaf>

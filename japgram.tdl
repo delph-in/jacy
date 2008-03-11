@@ -21,144 +21,36 @@
 
 ;declarative sentence, finite verb
 
-utterance_rule-decl-finite := utterance-plusmessage-type &
-                   [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD decl]],
-                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
-                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
-                                                    [MODUS uttmodus, 
-                                                     FIN +,
-                                                     MAIN-PRD +],
-                                               VAL saturated],
-                                          CONT.RELS diff-list ],
-                                   NON-LOCAL.QUE <! !>]]>].
+; <ex>(do-parse-tty "食べる")</ex>
+utterance_rule-decl-finite := utterance-sf-type &
+ [SYNSEM.LOCAL [CAT.HEAD.SMOD decl], 
+  C-CONT.HOOK.INDEX.SF prop,
+  ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus, 
+				     FIN +],
+		     NON-LOCAL.QUE <! !>]]. 
 
 ;wh-question without ka
-;
-; (FCB 2004-01-10)
-; temporarily comment out delete due to problems with pet/lkb inconsistency 
+; <ex>(do-parse-tty "何 を 食べる")</ex>
+utterance_rule-wh-without-ka := utterance-sf-type &
+ [SYNSEM.LOCAL.CAT.HEAD.SMOD quest,
+  C-CONT.HOOK.INDEX.SF ques,
+  ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus, 
+				     FIN +],
+		     NON-LOCAL.QUE <! [] !>]]. 
 
- utterance_rule-wh-without-ka := utterance-plusmessage-type &
-                    [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD quest]],
-                     C-CONT.RELS <! message & [ PRED question_m_rel ]!>,
-                     ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
-                                                     [MODUS uttmodus, 
-                                                      FIN +,
-                                                      MAIN-PRD +],
-                                                VAL saturated],
-                                           CONT.RELS diff-list ],
-                                    NON-LOCAL.QUE <! [] !> ]]>].
+; <ex>(do-parse-tty "食べ て")</ex>
 
-
-
-;sentence with sentence end particle, finite verb
-; (ERB 2001-09-26) Changing type from utt-type to utt-message-sap-type.
-
-utterance_rule-sep-decl := utt-message-sap-type &
-                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & decl],
-                    C-CONT [RELS <! !>,
-                            HCONS <! !>],
-                    ARGS < [SYNSEM.LOCAL.CAT.HEAD s-end_head & [SMOD #1]]>].
+utterance_rule-imp  := utterance-sf-type &
+[SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
+ C-CONT.HOOK.INDEX.SF comm,
+ ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus,
+				   H-TENSE te,
+				   VN -,
+				   COP -,
+				   J-SPEC 1-list],
+		    NON-LOCAL.QUE <! !>]].
 
 
-utterance_rule-sep-quest := utt-message-sap-type &
-                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & quest],
-                    C-CONT [RELS <! !>,
-                            HCONS <! !>],
-                    ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
-
-utterance_rule-sep-imp := utt-message-sap-type &
-                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & imp],
-                    C-CONT [RELS <! !>,
-                            HCONS <! !>],
-                    ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
-
-
-; utterance_rule-sep-imp := utt-message-sap-type &
-;                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & imp],
-;                     C-CONT [RELS <! message & [PRED command_m_rel] !>],
-;                     ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
-
-; (MS 2003-12-17) Adapting to Matrix 0.6, but added cond_m_rel.
-
-utterance_rule-sep-cond := utt-message-sap-type &
-                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD #1 & cond],
-                    C-CONT.RELS <! message & [PRED conditional_m_rel] !>,
-                    ARGS < [SYNSEM.LOCAL [CAT.HEAD s-end_head & [SMOD #1]]]>].
-
-; (MS 2002-01-16) simple-imperative vs. polite-imperative divides utterance_rule2e and utterance_rule10. 
-; The subcat should be saturated.
-
-utterance_rule-polite-imp := utt-message-sap-type &
-                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
-                    C-CONT [RELS <! !>,
-                            HCONS <! !>],
-                    ARGS < [SYNSEM.LOCAL.CAT [HEAD verb_head & [MODUS polite-imperative,
-                                                                SMOD decl],
-					      VAL saturated]]>].
-
-; V-te
-
-;utterance_rule3  := utterance-plusmessage-type &
-;                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
-;                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
-;                    ARGS <[SYNSEM [LOCAL.CAT [HEAD verb_head & 
-;                                                   [H-TENSE te,
-;                                                    VN -,
-;                                                    MAIN-PRD +],
-;                                              VAL saturated],
-;                                  NON-LOCAL.QUE <! !>]]>].
-
-; (ERB 2001-11-14) All of the sudden, this isn't working, and
-; the problem seems to be the constraint [ MODUS imperative ]
-; on the daughter.  Try taking it off.
-
-;(MS 2001-11-19) Taking the MODUS imperative restriction on the argument out.
-; (MS 2001-1-7) Instead inserting uttmodus, in order to keep the infinitive verb form out.
-
-; (ERB 2002-01-02) We don't want the pre-masu H-TENSE te forms to
-; be possible daughters here.  HACK: They differ from true te forms
-; in the J-SPEC value (don't know why), so I'll leverage that here.
-; (MS 2003-12-17) Adapting to Matrix 0.6
-
-utterance_rule-imp  := utterance-plusmessage-type &
-                   [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
-                    C-CONT.RELS <! message & [PRED command_m_rel] !>,
-                    ARGS <[SYNSEM [LOCAL.CAT [HEAD verb_head & 
-                                                   [H-TENSE te,
-                                                    VN -,
-                                                    COP -,
-                                                    J-SPEC 1-list,
-						    MODUS uttmodus,
-                                                    MAIN-PRD +],
-                                              VAL saturated],
-                                  NON-LOCAL.QUE <! !>]]>].
-
-; (ERB 2001-11-05) These idioms probably shouldn't get the prpstn_rel.
-; Also, this was turing up with unbound HCONS lists.
-
-;utterance_rule6  := turn-type &
-;                    [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
-;                    C-CONT.RELS <! prpstn_rel !>,
-;                    ARGS <[SYNSEM.LOCAL.CAT.HEAD idiom_head]>].
-
-utterance_rule-idiom  := turn-type &
-                    [SYNSEM [LOCAL [ CAT.HEAD utterance_head & [SMOD decl],
-                                    CONT [ HOOK.LTOP #top ]]],
-                     C-CONT [ RELS <! !>,
-                              HCONS <! !> ],
-                    ARGS <[SYNSEM [LOCAL [ CAT.HEAD idiom_head,
-					   CONT.HOOK.LTOP #top]]]>].
-
-
-;utterance_rule-empty-frag-p := utterance-plusmessage-type &
-;                  [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD decl],
-;                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
-;                    ARGS <[SYNSEM.LOCAL [CAT.HEAD empty-frag-p_head,
-;                                        BAR +]]>].
-
-; (ERB 2001-10-31) Moving contrast between imp_rel and polite-imp_rel
-; to REL feature for k2y purposes (and because we can't see why there
-; need to be special types).
 
 ; (ERB 2002-01-14) Don't want VN+kudasai to use this one anymore,
 ; so adding SMOD imp.
@@ -166,46 +58,53 @@ utterance_rule-idiom  := turn-type &
 ; (MS 2002-01-16) introduces simple-imperative vs. polite-imperative to divide utterance_rule10 and utterance_rule2e.
 ; (MS 2003-12-17) Adapting to Matrix 0.6
 ; (MS 2005-12-08) We don't want the NONLOCAL.QUE <! !> condition on the argument, as embedded sentences; could have some QUE left in their storage: "誰が行くか教えて下さい。"
+; EX: (do-parse-tty "食べ て 下さい")
+; EX: (do-parse-tty "食べ て なさい") FIXME (one bad parse)
 
-utterance_rule-command := utterance-plusmessage-type &
-                  [SYNSEM.LOCAL.CAT.HEAD utterance_head & [SMOD imp],
-                   C-CONT.RELS <! message & [PRED command_m_rel] !>,
-                   ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
-                                                   [MODUS simple-imperative,
-						    H-TENSE present,
-                                                    FIN +,
-                                                    MAIN-PRD +],
-                                              VAL saturated],
-                                         CONT.HOOK.INDEX.E.MOOD imperative]],
-			  RMORPH-BIND-TYPE imp-morph]>].
-
+utterance_rule-command  := utterance-sf-type &
+[SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
+ C-CONT.HOOK.INDEX.SF comm,
+ ARGS.FIRST [SYNSEM [LOCAL.CAT.HEAD [MODUS simple-imperative,
+				     H-TENSE present,
+				     FIN +],
+		     NON-LOCAL.QUE <! !>],
+	     RMORPH-BIND-TYPE imp-morph]].
 
 
 ; (MS 2004-12-14) an utterance rule for sentences with an infinite ending, like "偽りなく",
 ; at the moment restricted to adjectives.
-
-utterance_rule-decl-infinite := utterance-plusmessage-type &
-                   [SYNSEM [LOCAL.CAT.HEAD utterance_head & [SMOD decl]],
-                    C-CONT.RELS <! message & [PRED proposition_m_rel] !>,
-                    ARGS <[SYNSEM [LOCAL [CAT [HEAD verb_head & 
-                                                    [MODUS uttmodus, 
-                                                     FIN -,
-						     H-TENSE te,
-						     ADJ +,
-                                                     MAIN-PRD +],
-                                               VAL saturated],
-                                          CONT.RELS diff-list ],
-                                   NON-LOCAL [QUE <! !>,
-					      ROBUST +]]]>].
-
-;time in VM
-; (FCB&MS  2005-07-04)  We aren't using these now
-;pp_np_rule-time := empty-preposition-type &
-;              [SYNSEM.LOCAL.CAT [HEAD empty-case-p_head & [CASE temp-no]],
-;	       ARGS <[SYNSEM.LOCAL.CAT.HEAD temporal-noun_head]> ].
+;;; FIXME --- move to Fragments
+utterance_rule-decl-infinite := utterance-sf-type &
+[SYNSEM.LOCAL.CAT.HEAD.SMOD decl,
+ C-CONT.HOOK.INDEX.SF prop,
+ ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus,
+				   H-TENSE te,
+				   FIN -,
+				   ADJ +,
+				   VN -,
+				   COP -],
+		    NON-LOCAL [QUE <! !>,
+			       ROBUST +]]].
 
 
+;sentence with sentence end particle, finite verb
+; (FCB 2006-05-09) Pass up SMOD, assume particle sets the mood
+; this allows many rules to be collapsed
+ 
+utterance_rule-sep := utt-sep-type &
+ [SYNSEM.LOCAL.CAT.HEAD.SMOD #1,
+  ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.SMOD #1].
 
+; (ERB 2001-11-05) These idioms probably shouldn't get the prpstn_rel.
+; Also, this was turing up with unbound HCONS lists.
+;;; FIXME: doesn't scope, harmonize with ERG (FCB 2006-05-08)
+;;;  (do-parse-tty "お早う")
+
+utterance_rule-idiom  := utt-idiom-type &
+ [SYNSEM.LOCAL.CAT.HEAD.SMOD decl].
+
+
+;; end of utterances
 
 ; (ERB 2001-10-03) Rule that adds unspec-loc-rel to temporal
 ; nouns, and makes them modifiers.
@@ -624,34 +523,25 @@ suffix-rule := hadj-first-i &
 ; (FCB 2005-06-15) Added ARG0 to messages
 
 relative-clause-rule := hadj-final-for-rel-cl-topic &
-                      [SYNSEM.LOCAL [BAR +,
-                                     NUCL nucl_minus],
-                        C-CONT [RELS <!  message & [PRED proposition_m_rel,
-						    LBL #top,
-						    ARG0 #adjevent,
-						    MARG #soa],
-                                          prep-mod-relation & [PRED 'topic_p_rel,
-                                                       ARG0.E.TENSE no_tense,
-                                                       LBL #adjhand,
-                                                       ARG1 #adjevent,
-                                                       ARG2 #ind] !>,
-                                HCONS <! qeq & [HARG #soa,
-                                                 LARG #adjhand] !>],
-                       ARGS <[SYNSEM [LOCAL [CAT [HEAD [ADJ bool,
-							J-POSTHEAD rels,
-						       MAIN-PRD bool],
-						 VAL saturated],
-					    CONT.HOOK[INDEX #adjevent,
-						      LTOP #adjhand],
-                                            BAR +,
-                                            NUCL not_fin_conj]]],
-                              [SYNSEM synsem & [LOCAL [CAT.HEAD noun_head,
-							 BAR +,
-							 CONT.HOOK [INDEX #ind,
-								    LTOP #top]]]]>].
-
-
-
+ [SYNSEM.LOCAL [BAR +,
+		NUCL nucl_minus],
+  C-CONT [RELS <! prep-mod-relation & [PRED 'topic_p_rel,
+				       ARG0.E.TENSE no_tense,
+				       LBL #adjhand,
+				       ARG1 #adjevent,
+				       ARG2 #ind] !>,
+	  HCONS <!  !>],
+  ARGS <[SYNSEM [LOCAL [CAT [HEAD [ADJ bool,
+				   J-POSTHEAD rels,
+				   MAIN-PRD bool],
+			     VAL saturated],
+			CONT.HOOK [ INDEX #adjevent,
+				    LTOP #adjhand],
+			BAR +,
+			NUCL not_fin_conj]]],
+	[SYNSEM synsem & [LOCAL [CAT.HEAD noun_head,
+				 BAR +,
+				 CONT.HOOK.INDEX #ind]]]>].
 
 
 ; (ERB 2002-01-02) [NUCL +] on head daughter seems overly 
@@ -944,7 +834,7 @@ rareru-obj-change-rule :=  obj-casechange-rule &
 garu-sbj-change-rule := subj-casechange-rule &
  [SYNSEM.LOCAL.CAT.VAL [SUBJ.FIRST [LOCAL.CAT.HEAD overt-case-p_head &
 						   [CASE wo]]],
-  ARGS < [SYNSEM [LOCAL.CAT [HEAD [KEYS.KEY seem_v_rel,
+  ARGS < [SYNSEM [LOCAL.CAT [HEAD [KEYS.KEY garu_v_seem_rel,
 				   COP -],
 			     VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE ga]]] >].
 
@@ -1075,11 +965,26 @@ adj-nominal-suffix-rule := adj-nominal-suffix-type.
 
 ;;; Fragment rules
 ;;; unary rules
+;<ex>犬
 frg-np := frag-np-rule.
+
+;<ex>東京 へ
 frg-pp := frag-pp-rule.
+
+;<ex>たぶん
 frg-s-adv := frag-s-adv-rule.
+
+;<ex>少し
+;<ex>とて
 frg-i-adv := frag-i-adv-rule.
+
 ;;; binary fragment rules
+
+;<ex>東京 へ 彼
 frg-pp-np := frag-pp-np-rule.
+
+;<ex>少し 彼
 frg-i-adv-np := frag-i-adv-np-rule.
+
+;<ex>そこ へ ２
 frg-pp-int := frag-pp-int-rule.

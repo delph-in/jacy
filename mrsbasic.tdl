@@ -81,44 +81,6 @@ png :+ [PN pn, GEN gender].
 ; after Monday"; in the first, Tuesday must have an ARG0 index, while in the
 ; second, it must have a REF-IND index.
 
-; ERB (24-10-96) Here is the series of relations that will be used for
-; questions, etc.  Cf. Gizburg & Sag.
-; ERB (12-05-96) Moved the ne-rel here.
-
-
-
-; (ERB 2001-10-31) Need a common supertype for these two.
-; (ERB 2001-10-31) On second thought, handel this with REL.
-; (MS 2003-12-17) Adapting to Matrix 0.6
-;imp_rel := message.
-
-;cond_rel := message &
-;[ PRED "cond" ].
-
-; (MS 2003-12-17) The Matrix contains no message type for conditional
-;  sentences.
-
-conditional_m_rel := message_m_rel.
-
-; (MS 2003-12-17) Adapting to Matrix 0.6
-
-;propositional_rel := message &
-;[ PRED "prpstn_rel"].
-
-
-;prpstn_or_like_rel :< message.
-
-; (ERB 2001-11-01) Using REL to distinguish between closely
-; related message types.
-
-;prpstn_rel := propositional_rel & prpstn_or_like_rel. 
-
-
-;int_rel := message.
-
-
-;whq-relation :< quant-relation.
-
 ; (MS 2003-12-03) no-relation seems to be useful again, as Emily wants to 
 ; use it in nominal-numcl-rule-nomod.
 
@@ -541,7 +503,7 @@ tai-relation := objchange-relation & [PRED tai_v_want_rel].
 
 ; (MS 2001-11-22) RARERU needs an ARG1, if it shall be able to combine with TAI.
 
-rareru-relation := arg12-relation & [PRED rareru_v_can_rel].
+rareru-relation := arg12-ev-relation & [PRED rareru_v_can_rel].
 
 pass-relation := arg12-relation & [PRED 'passive].
 
@@ -621,7 +583,7 @@ noun_rel := predsort.
 no_rel := predsort.
 tai_v_want_rel  := predsort.
 rareru_v_can_rel := predsort.
-seem_v_rel := predsort.
+garu_v_seem_rel := predsort.
 pass_v_rel := predsort.
 
 

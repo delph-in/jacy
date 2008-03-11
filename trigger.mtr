@@ -16,8 +16,15 @@ da-end_gr := arg0e_gr &
 ; (MS 2005-11-29) imperative
 
 nasai-end_gr :=  arg0e_gr &
-[ CONTEXT [ RELS <! [ ARG0.E.MOOD imperative ] !> ],
+[ CONTEXT [ RELS <!  [ ARG0.SF comm ] !> ],
   FLAGS.TRIGGER "nasai-end" ].
+
+; Questions
+
+ka_gr := generator_rule & 
+[ CONTEXT.RELS <!  [ ARG0.SF ques ] !>,
+  FLAGS.TRIGGER "ka" ].
+
 
 ;;; Terminative
  shimau-aux-stem_gr := arg0e_gr &
@@ -126,6 +133,11 @@ rareru-simple-pass-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0.E.PASS + ] !> ],
   FLAGS.TRIGGER "rareru-simple-pass-end" ].
 
+reru-simple-pass-end_gr := arg0e_gr &
+[ CONTEXT [ RELS <! [ ARG0.E.PASS + ] !> ],
+  FLAGS.TRIGGER "reru-simple-pass-end" ].
+
+
 ;;;
 ;;; Case postposition rules 
 ;;;
@@ -133,6 +145,12 @@ rareru-simple-pass-end_gr := arg0e_gr &
 ;;; ARG1 is ga
 ga_gr_1 := arg0e_gr &
 [ CONTEXT [ RELS <!  [ ARG0.E.PASS -, ARG1 individual & #i ] !> ],
+  FLAGS [SUBSUME < #i >,
+	 TRIGGER "ga" ]].
+
+;;; ARG1 is ga (passive)
+ga_gr_2 := arg0e_gr &
+[ CONTEXT [ RELS <!  [ ARG0.E.PASS +, ARG2 individual & #i ] !> ],
   FLAGS [SUBSUME < #i >,
 	 TRIGGER "ga" ]].
 
@@ -146,6 +164,8 @@ wo_gr_3 := arg0e_gr &
 [ CONTEXT.RELS.LIST.FIRST.ARG3 individual & #i,
   FLAGS [SUBSUME < #i >,
 	 TRIGGER "o" ]].
+
+
 
 ;;; FIXME what about Passive ARG1 is wo
 
@@ -3208,3 +3228,125 @@ o-hon-npref_gr := generator_rule &
 rareru-ditrans-pass-ganini-end_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "rareru-ditrans-pass-ganini-end" ].
+
+
+;------------------------------------------------------------------------
+
+kai-sap_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kai-sap" ].
+i-sap_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "i-sap" ].
+o-4_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "o-4" ].
+keredo-send_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "keredo-send" ].
+kamo-naarg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kamo-naarg" ].
+kke_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kke" ].
+kedo-send_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kedo-send" ].
+kanaa_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kanaa" ].
+kanaa-chasen_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kanaa-chasen" ].
+nokawo-comp-varg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "nokawo-comp-varg" ].
+no-send_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "no-send" ].
+zo-2_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "zo-2" ].
+yo-2_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "yo-2" ].
+kamo-case_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kamo-case" ].
+zo_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "zo" ].
+ze_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "ze" ].
+to-comp-saparg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "to-comp-saparg" ].
+
+nokai-sap_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "nokai-sap" ].
+na-ne_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "na-ne" ].
+to-comp-quotarg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "to-comp-quotarg" ].
+yo-3_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "yo-3" ].
+i-emp_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "i-emp" ].
+noka-comp-varg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "noka-comp-varg" ].
+kashira_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kashira" ].
+ka-comp-varg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "ka-comp-varg" ].
+kana_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kana" ].
+ga-sap_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "ga-sap" ].
+kedomo-send_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kedomo-send" ].
+kudasai-vn-end-1_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kudasai-vn-end-1" ].
+shi-send_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "shi-send" ].
+kai-chasen-sap_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kai-chasen-sap" ].
+kamo-chasen-case_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kamo-chasen-case" ].
+kadoukaga-comp-varg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kadoukaga-comp-varg" ].
+kadouka-comp-varg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kadouka-comp-varg" ].
+kadouka-comp-naarg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kadouka-comp-naarg" ].
+exclamation-mark_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "exclamation-mark" ].
+to-comp-varg_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "to-comp-varg" ].
+keredomo-send_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "keredomo-send" ].
+kudasai-vn-end-2_gr := generator_rule & 
+[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+  FLAGS.TRIGGER "kudasai-vn-end-2" ].

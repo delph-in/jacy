@@ -194,7 +194,7 @@ eru-lexeme-infl-rule :=
 %suffix (く ける) (る れる) (う える) (す せる) (む める) (ぐ げる) (ぶ べる) (!v !vられる)  (つ てる) (ぬ ねる)
 potential-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE u-morph,
- SYNSEM.LOCAL.CAT.HEAD [H-TENSE present,
+ SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
                          MODUS potential,
                          MOD < [LOCAL [CAT.HEAD noun_head,
                                      BAR +],
@@ -204,6 +204,7 @@ potential-lexeme-to-word-rule &
                          FIN +,
                         J-POSTHEAD rels,
                          FORMAL.AHON -],
+	       BAR -],
  ARGS.FIRST.STEMTYPE regular-stem].
 
 ; (ERB 2001-09-06) Adding COP-ARG - to block 言いです.
@@ -355,7 +356,7 @@ ra-lexeme-infl-rule :=
 %suffix (な なら) (なが ながら)
 conditional-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE u-morph,
- SYNSEM.LOCAL.CAT [HEAD [H-TENSE present,
+ SYNSEM.LOCAL [CAT [HEAD [H-TENSE present,
 			 MODUS conditional,
 			 MOD null,
 			 VN -,
@@ -363,6 +364,7 @@ conditional-lexeme-to-word-rule &
 			 J-SPEC.FIRST [LOCAL [CAT.HEAD verb_head & [AUX aux_plus]],
 				     LEX +],
 			 FIN -]],
+	       BAR -],
  ARGS.FIRST.STEMTYPE da-stem].
 
 

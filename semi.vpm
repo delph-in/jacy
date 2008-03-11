@@ -26,7 +26,6 @@ PNG.PN : PERS NUM
 ;; two-or-three := person.
 
 
-
 PNG.GEN : GEND 
   masc <> m 
   fem  <> f 
@@ -73,6 +72,17 @@ E.ASPECT : PROG PERF
   perfective          << * +
   *                   >> - -
 
+E.PASS : PASS
+ + <> +
+ - <> -
+ * >> - 
+ - << *
+
+E.ASPECT : ASPECT
+ terminative <> terminative
+ * >> !
+ ! << * 
+
 ; terminative :< aspect.
 ; prospective :< aspect.
 ; perfective :< aspect.
@@ -82,5 +92,12 @@ E.ASPECT : PROG PERF
 ; modal :< aspect.
 ; ;;; the value for sentences with no special marking
 ; default_aspect :< aspect.  
+
+SF : SF
+comm   <> comm
+ques   <> ques
+prop   <> prop
+iforce >> prop     
+prop   <<  iforce
 
 ;;; make a semi (mt::construct-semi)

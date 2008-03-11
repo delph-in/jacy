@@ -357,18 +357,16 @@ head-adjunct-rule-type := adjacent_head_check &
 			  speaker-addr-principle &
                           affix-list &
  [J-NEEDS-AFFIX -,
-  SYNSEM [LOCAL [ CONT [HOOK [INDEX #ind,
+  SYNSEM [LOCAL [ CONT.HOOK [INDEX #ind,
 			      XARG #xarg],
-			MSG #ms],
 		  CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
 		  CAT [VAL #val]],
 	  NON-LOCAL [REL #rel],
 	  LEX -,
 	  MODIFIED hasmod & [PERIPH #periph]],
   HEAD-DTR sign & [J-NEEDS-AFFIX -,
-		     SYNSEM [ LOCAL [ CONT [HOOK [INDEX #ind,
-						  XARG #xarg],
-					    MSG #ms],
+		     SYNSEM [ LOCAL [ CONT.HOOK [INDEX #ind,
+						 XARG #xarg],
 				      CTXT.BACKGROUND [ LIST #1,
 							LAST #3 ],
 				      CAT [VAL #val]],
@@ -389,26 +387,24 @@ head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check &
 					 head-adjunct-p &
 					 speaker-addr-principle &
 					 affix-list &
-                          [J-NEEDS-AFFIX -,
-                           SYNSEM [LOCAL [ CONT [HOOK.INDEX #ind,
-                                                MSG #ms],
-                                           CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
-					   CAT [VAL #val]],
-				   NON-LOCAL [REL #rel],
-				   LEX -,
-                                   MODIFIED hasmod & [PERIPH #periph]],
-                           HEAD-DTR sign & [J-NEEDS-AFFIX -,
-                                            SYNSEM [ LOCAL [ CONT [HOOK.INDEX #ind,
-								  MSG #ms],
-                                                             CTXT.BACKGROUND [ LIST #1,
-                                                                               LAST #3 ],
-							     CAT [VAL #val]],
-						     MODIFIED.PERIPH bool]],
-                           NON-HEAD-DTR sign & [ J-NEEDS-AFFIX -,
-                                                SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
-                                                                                   LAST #2 ]],
-							 NON-LOCAL [REL #rel],
-                                                         MODIFIED.PERIPH #periph]]].
+ [J-NEEDS-AFFIX -,
+  SYNSEM [LOCAL [ CONT.HOOK.INDEX #ind,
+		  CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
+		  CAT [VAL #val]],
+	  NON-LOCAL [REL #rel],
+	  LEX -,
+	  MODIFIED hasmod & [PERIPH #periph]],
+  HEAD-DTR sign & [J-NEEDS-AFFIX -,
+		   SYNSEM [ LOCAL [ CONT.HOOK.INDEX #ind,
+				    CTXT.BACKGROUND [ LIST #1,
+						      LAST #3 ],
+				    CAT [VAL #val]],
+			    MODIFIED.PERIPH bool]],
+  NON-HEAD-DTR sign & [ J-NEEDS-AFFIX -,
+			SYNSEM [ LOCAL [ CTXT.BACKGROUND [ LIST #3,
+							   LAST #2 ]],
+				 NON-LOCAL [REL #rel],
+				 MODIFIED.PERIPH #periph]]].
 
 ; (FCB 2004-02-03) redid to factor out shared parts (actual rules in relative-clauses.tdl)
 ; NOTE without the rel-cl-obj2-gap-rule, this rule can be just rel-cl-gap-rule := hadj-final-i  & ...
@@ -416,33 +412,26 @@ head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check &
 
 ; (MS 2004-04-01) We decided to give the gap rules a UNDERSPEC_ARG - feature,
 ;  such that this can be selected by the root node type.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-; (FCB 2005-06-15) Added ARG0 to the message of the relative clause
+
 
 rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
-		       [SYNSEM [LOCAL [BAR +,
-				      NUCL nucl_minus,
-				      CONT.HOOK [INDEX #ind,
-						 LTOP #top]]],
-			C-CONT [RELS <!   message  & 
- 				       [PRED proposition_m_rel,
-					LBL #top,
-					ARG0 #eventindex,
-					MARG #soa ] !>, 
-				HCONS <! qeq & [HARG #soa,
-						LARG #adjhand] !>],
-			ARGS <[SYNSEM [LOCAL [CAT [HEAD [J-POSTHEAD rels,
-							 MAIN-PRD bool],
-						   VAL.SPR olist],
-					      CONT.HOOK [LTOP #adjhand,
-							 INDEX #eventindex],
-					      BAR +,
-					      NUCL not_fin_conj]]],
-                              [SYNSEM synsem & 
-				      [LOCAL [CAT.HEAD noun_head,
-					      BAR +,
-					      CONT [HOOK [INDEX #ind,
-							  LTOP #top]]]]]>].
+ [SYNSEM [LOCAL [BAR +,
+		 NUCL nucl_minus,
+		 CONT.HOOK [INDEX #ind,
+			    LTOP #top]]],
+  C-CONT [RELS <! !>, 
+	  HCONS <! !>],
+  ARGS <[SYNSEM [LOCAL [CAT [HEAD [J-POSTHEAD rels,
+				   MAIN-PRD bool],
+			     VAL.SPR olist],
+			CONT.HOOK.LTOP #top ,
+			BAR +,
+			NUCL not_fin_conj]]],
+	[SYNSEM synsem & 
+		[LOCAL [CAT.HEAD noun_head,
+			BAR +,
+			CONT [HOOK [INDEX #ind,
+				    LTOP #top]]]]]>].
 
 
 
@@ -537,35 +526,22 @@ hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-fina
 
 ; (ERB 2002-01-29) That constraint is too strong for runon_s rule,
 ; so move to head-adjunct-rule-coord-type.
-
-; (FCB 2005-06-15) Added ARG0 to messages
+; (FCB 2008-02-08) made this fully coordination, not subordination.
 
 sentence-coord-type :=  binary-type-conj & 
- [SYNSEM [LOCAL [CONT [HOOK [INDEX #rindex,
+ [SYNSEM [LOCAL [CONT [HOOK [INDEX #event,
 			     LTOP #hand]],
 		 CAT.VAL #val,
 		 NUCL te_conj],   
 	  LEX -],
   C-CONT [RELS <! subord-or-conj-relation &
 		[LBL #hand,
-		 L-HNDL #prpstnh2,
-		 R-HNDL #prpstnh1],
-		message & 
-	       [PRED proposition_m_rel,
-		LBL #prpstnh1,
-		ARG0 #rindex,
-		MARG #prpstnh1soa],
-		message & 
-		[PRED proposition_m_rel,
-		 LBL #prpstnh2,
-		 ARG0 #lindex,
-		 MARG #prpstnh2soa] !>,
-	  HCONS <! qeq &
-		 [HARG #prpstnh1soa,
-                  LARG #rhand],
-		 qeq &
-		 [HARG #prpstnh2soa,
-		  LARG #lhand]!>],
+		 ARG0 #event,
+		 L-HNDL #lhand,
+		 L-INDEX #lindex,
+		 R-HNDL #rhand,
+		 R-INDEX #rindex  ] !>,
+	  HCONS <! !>],
   ARGS < [SYNSEM.LOCAL [CONT.HOOK [LTOP #lhand,
 				   INDEX #lindex]]],
 	 [SYNSEM.LOCAL [CONT.HOOK [LTOP #rhand,
@@ -788,20 +764,23 @@ empty-head-type :=  headed-phrase &
 
 
 utterance-type := unary-type  &  
-[SYNSEM synsem & [LOCAL [CAT [HEAD utterance_head & [SMOD marked,
-						       EMPTY #empty],
-				VAL  saturated],
-			   CTXT [BACKGROUND diff-list &
-					    [LIST [FIRST addr-honor_rel &
-                                                       [POLARITY #3,
-							HONORER #sp,
-							HONORED #1],
-						   REST #2],
-					     LAST #4],
-				 C-INDICES [SPEAKER #sp,ADDRESSEE #1]],
-			   NUCL nucl_minus],
-		    LEX -,
-		    NON-LOCAL.AFFIX <! !>],
+[SYNSEM synsem & 
+	[LOCAL [CAT [HEAD utterance_head & [SMOD marked,
+					    EMPTY #empty],
+		     VAL  saturated],
+		CTXT [BACKGROUND diff-list &
+				 [LIST [FIRST addr-honor_rel &
+					      [POLARITY #3,
+					       HONORER #sp,
+					       HONORED #1],
+					REST #2],
+				  LAST #4],
+		      C-INDICES [SPEAKER #sp,ADDRESSEE #1]],
+		NUCL nucl_minus],
+	 LEX -,
+	 NON-LOCAL.AFFIX <! !>],
+ C-CONT [RELS <! !>,
+	 HCONS <! !>],
  ARGS.FIRST [SYNSEM [LOCAL  [CAT [HEAD [FORMAL.AHON #3,
 					EMPTY #empty],
 				  VAL optional-or-saturated],
@@ -811,33 +790,29 @@ utterance-type := unary-type  &
 		     NON-LOCAL.AFFIX <! !>],
 	     J-NEEDS-AFFIX -]].
 
+
 utt-type := utterance-type &
-            [SYNSEM.LOCAL [CONT [HOOK.INDEX #i]],
-	     ARGS < [SYNSEM.LOCAL.CONT [HOOK.INDEX #i]] >].
+ [SYNSEM.LOCAL.CONT.HOOK [INDEX #i,
+			  LTOP #top],
+  ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [INDEX #i,
+				     LTOP #top]].
 
-; (MS 2003-10-09) Problems with Matrix 0.5 MSG type
-; (FCB 2005-06-15) Added ARG0 to messages
+;;; FIXME unify with utt-type etc. (2006-05-05 no-MSG)
+utterance-sf-type := utt-type &
+ [ C-CONT.HOOK #hook,
+   ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD verb_head & 
+				      [MAIN-PRD +],
+				 VAL saturated],
+			    CONT [HOOK #hook,
+				  RELS diff-list]]].
 
-utterance-plusmessage-type := utt-type &
-                              [C-CONT [HOOK [LTOP #mhand,
-					     INDEX #ind],
-				       RELS <! [MARG #soahand,
-						ARG0 #ind,
-						LBL #mhand ] !>,
-                                       HCONS <! qeq & [HARG #soahand, LARG #hdhand] !>],
-                               ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [LTOP #hdhand,
-								  INDEX #ind]].
+; type for sentence ending particles
+utt-sep-type := utt-type &
+ [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD s-end_head].
 
-
-; (ERB 2001-09-26) The utterance rules for sentences with message-bearing
-; saps were not getting the handle of the message hooked up to LTOP.  This
-; type adds a constraint that fixes that.
-; (MS 2003-10-09) Problem with Matrix 0.5?
-
-
-utt-message-sap-type := utt-type &
-                        [ SYNSEM.LOCAL [CONT.HOOK.LTOP #top],
-                          ARGS < [SYNSEM.LOCAL [CONT.HOOK.LTOP #top]] > ].
+; type for idioms
+utt-idiom-type := utterance-type &
+ [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD idiom_head].
 
 
 turn-type :< utterance-type.
@@ -968,30 +943,28 @@ potential-rule := lex-rule & lexeme &
  [SYNSEM [LOCAL [CAT [HEAD #head & [MODUS potential],
 		      VAL #sc],
 		 CONT [HOOK [LTOP #hand,
-			     INDEX #ind]],
+			     INDEX #topind]],
 		 CTXT #ctxt],
-			   LKEYS.KEYREL #key,
+	  LKEYS.KEYREL #key,
 	  NON-LOCAL [QUE #que,
-				   REL #ref,
+		     REL #ref,
 		     AFFIX #aff],
 	  MODIFIED.PERIPH #per],
   J-NEEDS-AFFIX +,
   NEEDS-AFFIX +,
-  C-CONT [RELS <! message & 
-		[PRED proposition_m_rel, 
-		 LBL #chand, 
-		 ARG0 #ind,
-		 MARG #soa],
-		rareru-relation & #key &[LBL #hand,ARG0 #ind, ARG2 #chand] !>,
-	  HCONS <! qeq & [LARG #verb-hd,
-			  HARG #soa] !>],
+  C-CONT [RELS <! rareru-relation & #key &
+		[LBL #hand,
+		 ARG0 #topind,
+		 ARG1 #subj,
+		 ARG2 #rhand] !>,
+	  HCONS <! qeq & [HARG #rhand, LARG #verb-hd ] !>],
   ARGS < verb-stem-lex-super & 
 	 [SYNSEM [LOCAL [CAT [HEAD #head,
 			      VAL #sc],
 			 CTXT #ctxt,
 			 CONT verb-sem-type &
-			     [HOOK [INDEX #ind,
-				    LTOP #verb-hd]]],
+			     [HOOK [LTOP #verb-hd,
+				    XARG #subj]]],
 		  NON-LOCAL [QUE #que,
 			     REL #ref,
 			     AFFIX #aff],
@@ -1009,6 +982,7 @@ potential-rule := lex-rule & lexeme &
 ; (MS 2004-11-09) The INDEX should come from the argument: 食べて行ける
 
 ; (FCB 2005-06-15) Added ARG0 to messages
+; CHECKME should we link the ARG1 to the verb's ARG1?
 potential-lexeme-to-word-rule  := lex-rule & v-lex &
  [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
 			   [AUX #aux,
@@ -1022,21 +996,18 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
 			    COP-ARG bool],
 		      VAL #sc],
 		 CONT [HOOK [LTOP #tophand,
-			     INDEX #ind]]],
+			     INDEX #topind]]],
 	  LKEYS [KEYREL #key,
 		 ALTKEYREL #altkey],
 	  NON-LOCAL #nonloc],
-  C-CONT [RELS <! #key & rareru-relation & [ARG2 #chand,
-					    ARG0 #ind,
-					    LBL #tophand],
-		message & 
-		[PRED proposition_m_rel,
-		 LBL #chand,
-		 ARG0 #ind,
-		 MARG #soa] !>,
-	  HCONS <! qeq & [LARG #ohand,
-			  HARG #soa] !>],
-  ARGS < verb-stem-lex & [SYNSEM [LOCAL [CONT verb-sem-type & [HOOK.INDEX #ind],
+  C-CONT [RELS <! #key & rareru-relation & [LBL #tophand,
+					    ARG0 #topind,
+					    ARG1 #subj,
+					    ARG2 #chand] !>,
+	  HCONS <! qeq & [HARG #chand, LARG #vind ] !>],
+  ARGS < verb-stem-lex & [SYNSEM [LOCAL [CONT verb-sem-type & 
+					      [HOOK [LTOP #vind,
+						     XARG #subj]],
 					 CAT [HEAD [AUX #aux,
 						    COP #cop,
 						    VN #vn,
@@ -1046,7 +1017,7 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
 						    SMOD #smod,
 						    FORMAL #formal],
 					      VAL #sc]],
-				  LKEYS [KEYREL.LBL #ohand,
+				  LKEYS [KEYREL.LBL #vind,
 					 ALTKEYREL #altkey],
 				  NON-LOCAL #nonloc],
 			  INFLECTED -]>,
@@ -1083,20 +1054,10 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
   C-CONT [RELS <! #key & subord-relation &
 		[PRED "if_then_rel",
 		 LBL #tophand,					
-		 R-HNDL #main-prpstn,
-		 L-HNDL #subord-prpstn],
-		message & 
-		[PRED proposition_m_rel,
-		 LBL #main-prpstn,
-		 MARG #prpstnsoa1],
-		message & 
-		[PRED proposition_m_rel,
-		 LBL #subord-prpstn,
-		 MARG #prpstnsoa2]  !>,
-	  HCONS <! qeq & [LARG #main,
-			  HARG #prpstnsoa1],
-		 qeq & [LARG #subord,
-			HARG #prpstnsoa2] !>],
+		 R-HNDL #main-hndl,
+		 L-HNDL #subord-hndl]  !>,
+	  HCONS <! qeq & [HARG #main-hndl, LARG #main],
+		 qeq & [HARG #subord-hndl, LARG #subord] !>],
   ARGS < verb-stem-lex & [SYNSEM [LOCAL [CONT verb-sem-type,
 					 CAT [HEAD [AUX #aux,
 						    COP #cop,
@@ -1257,24 +1218,20 @@ vn2n-rule-super :=  n-lex-super & constant-lex-rule &
 	  LKEYS.KEYREL #key],
   INFLECTED +,
   C-CONT [RELS <! #key & reg-nom-arg1-relation &
-		[PRED 'noun-relation,
+		[PRED "nominalization_rel",
 		 LBL  #nom-hand,
 		 ARG0 #argN,
-		 ARG1 #prpstn-hand],
-		message & 
-		[PRED proposition_m_rel, 
-		 LBL #prpstn-hand,
-		 ARG0 #argV,
-		 MARG #soa] !>,
-	  HCONS  <! qeq &
-		  [HARG #soa, LARG #vn-hand] !>],
+		 ARG1 #vn-hand] !>,
+	  HCONS  <! !>],
   ARGS < [SYNSEM [LOCAL [ CAT  [HEAD vn_head-avm,
 				VAL [UNSAT +,
 				     SUBJ.FIRST.OPT +,
 				     COMPS olist]],
 			  CONT [ HOOK.INDEX #argV]],
 		  LKEYS.KEYREL  [LBL #vn-hand,
-				 ARG0 event & #argV],
+				 ARG0 event & #argV & 
+				     [SF prop,
+				      E.TENSE no_tense ]],
 		  LEX + ]]>].
 
 vn2n-rule-detarg :=  vn2n-rule-super &
@@ -1328,20 +1285,13 @@ v2n-kata-rule :=   n-lex-super & lex-rule &
 		[PRED "kata_n_rel",
 		 LBL #nom-hand,
 		 ARG0 #nom-ind,
-		 ARG1 #prpstn-hand],
-		message & 
-		[PRED proposition_m_rel, 
-		 LBL #prpstn-hand,
-		 ARG0 #arg0,
-		 MARG #soa] !>,
-	  HCONS  <! qeq &
-		  [HARG #soa, LARG #vn-hand] !>],
+		 ARG1 #vn-hand] !>,
+	  HCONS  <! !>],
   ARGS < [SYNSEM [LOCAL [CAT  [HEAD verb-stem_head,
 			       VAL [UNSAT +,
 				    SUBJ.FIRST.OPT +,
 				    COMPS olist]],
-			 CONT [ HOOK [INDEX #arg0,
-				      LTOP #vn-hand ],
+			 CONT [ HOOK.LTOP #vn-hand,
 				RELS <! [ARG2 #arg2] !> ]],
 		  LEX + ]]>].
 
@@ -1658,16 +1608,15 @@ subj-casechange-rule := casechange-rule & lex-rule &
 ; compound noun constructions.
 
 nominal-numcl-rule-type := unary-type &
-[ SYNSEM [ LOCAL [ CAT [ HEAD ordinary_noun_head-avm & [QUANTIFIABLE -, 
-							VN -,
-							KEYS.KEY #key],
-                         VAL noun_sc ],
-                    CONT [ HCONS <! !>,
-			   MSG no-msg],
-		   BAR +]],
-  ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head & [EMPTY +, KEYS.KEY #key],
-				  VAL saturated ],
-			    BAR +]].
+ [ SYNSEM [ LOCAL [ CAT [ HEAD ordinary_noun_head-avm & [QUANTIFIABLE -, 
+							 VN -,
+							 KEYS.KEY #key],
+			  VAL noun_sc ],
+		   CONT.HCONS <! !>,
+		    BAR +]],
+   ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head & [EMPTY +, KEYS.KEY #key],
+				   VAL saturated ],
+			     BAR +]].
 
 ; For numbers used as numeral classifiers used as nouns
 
@@ -2218,7 +2167,6 @@ lexical-compound-rule-type :=  affix-list & que-princ &
 		CTXT.BACKGROUND diff-list & [LIST #1, LAST #2],
 		CONT [HOOK [LTOP #top,
 			    XARG #xarg],
-		      MSG #ms,
 		      RELS [LIST #firstliszt,
 			    LAST #lastliszt],
 		      HCONS [LIST #scfirst,
@@ -2240,7 +2188,6 @@ lexical-compound-rule-type :=  affix-list & que-princ &
 		       CTXT.BACKGROUND [LIST #1, LAST #3],
 		       CONT [HOOK [LTOP #top,
 				   XARG #xarg],
-			     MSG #ms,
 			     RELS [LIST  #firstliszt,
 				   LAST  #middle1liszt],
 			     HCONS [LIST #scfirst,
@@ -2319,18 +2266,11 @@ ga-wo_transitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
 super-frag-rule := phrasal_sign  & 
   [ INFLECTED +,
     SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
-                           VAL saturated ],
-                     CONT.MSG #msg & [ MARG #marg,
-				       ARG0 #ind] ],
+                           VAL saturated ] ],
 	     NON-LOCAL [QUE <! !>,
 		     AFFIX  <! !>]],
-    C-CONT [ HOOK [LTOP #lbl,
-		   INDEX #ind],
-	     RELS.LIST < #msg &
-			 [ LBL #lbl,
-			   PRED proposition_m_rel ], 
-			  ... >,
-	     HCONS.LIST < qeq & [ HARG #marg ], ... > ], 
+    C-CONT [ RELS  <! relation !>,
+	     HCONS <!  !> ], 
     ARGS.FIRST [INFLECTED +,
 		SYNSEM [NON-LOCAL [QUE <! !>,
 			   AFFIX  <! !>]]]].
@@ -2338,18 +2278,16 @@ super-frag-rule := phrasal_sign  &
 
 ;;; The basic type creates a proposition with an unknown_relation 
 
-basic-frag-rule := super-frag-rule &
- [ C-CONT [ HOOK.INDEX #ind ,
-	    RELS.LIST < relation, 
-			unknown_relation & 
-			[ ARG0 #ind ],  ... > ]].
+basic-frag-rule := super-frag-rule  &
+[ C-CONT [   HOOK [ LTOP #lbl,
+		    INDEX #ind],
+	     RELS  <! unknown_relation &
+			  [ LBL #lbl,
+			    ARG0 #ind ] !>,
+	     HCONS <! !> ]].
 
 
-unary-frag-rule := basic-frag-rule & unary-type &
- [ C-CONT [ RELS  <! relation, 
-		   relation & 
-		   [LBL #ulbl ] !> ,
-	    HCONS <! [ LARG #ulbl ] !> ]].
+unary-frag-rule := basic-frag-rule & unary-type.
 
 frag-np-rule := unary-frag-rule &
  [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD  noun_head & 
@@ -2361,7 +2299,7 @@ frag-np-rule := unary-frag-rule &
 					SMOD unmarked],
 				 VAL saturated],
 			   CONT.HOOK.INDEX #ind]] >,
-C-CONT.RELS.LIST.REST.FIRST.ARG #ind ].
+C-CONT.RELS.LIST.FIRST.ARG #ind ].
 
 frag-vmod-rule := unary-frag-rule &
  [  ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < synsem &
@@ -2369,16 +2307,17 @@ frag-vmod-rule := unary-frag-rule &
 				  VAL saturated],
 			    CONT.HOOK [ LTOP #klbl,
 					INDEX #arg ] ] ] >,
-    C-CONT [ RELS.LIST.REST.FIRST [ LBL #klbl,
-				    ARG0 #arg ]]].
+    C-CONT [ RELS.LIST.FIRST [ LBL #klbl,
+			       ARG0 #arg ]]].
 
 frag-pp-rule := frag-vmod-rule &
  [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head &
 				   [MOD < synsem &
-					 [ LOCAL intersective_mod ]>]].
+					  [ LOCAL intersective_mod ]>]].
 
+;;; CHECK should it be adv_head-avm?
 frag-i-adv-rule := frag-vmod-rule &
- [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head-avm &
+ [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head &
 				   [MOD < synsem &
 					 [ LOCAL intersective_mod ]>]].
 ; frag-s-adv-rule := frag-vmod-rule &
@@ -2392,10 +2331,8 @@ frag-s-adv-rule := basic-frag-rule & unary-type &
 				      [ MOD < synsem &
 					      [ LOCAL scopal_mod &
 						      [ CONT.HOOK.LTOP #klbl]] >]]]]>,
-   C-CONT [ RELS  <! relation, 
-		   relation & 
-		   [LBL #klbl ] !> ,
-	    HCONS <! [ LARG #klbl ] !> ]].
+   C-CONT [ RELS  <! relation & 
+		   [LBL #klbl ] !>]].
 
 
 
@@ -2416,11 +2353,7 @@ frag-s-adv-rule := basic-frag-rule & unary-type &
 ; Fragments with two parts
 ;
 
-binary-frag-rule := basic-frag-rule & binary &
- [ C-CONT [ RELS  <! relation, 
-		   relation & 
-		   [LBL #ulbl ] !> ,
-	    HCONS <! [ LARG #ulbl ] !> ]].
+binary-frag-rule := basic-frag-rule & binary.
 
 
 ;;; fragments headed by na-adjective can add their own relation?
@@ -2461,9 +2394,9 @@ frag-vmod-something-rule := binary-frag-rule &
 					SMOD unmarked],
 				 VAL saturated],
 			   CONT.HOOK.INDEX #arg]] >,
-   C-CONT [ RELS.LIST.REST.FIRST [ LBL #klbl,
-				   ARG0 #ind,
-				   ARG  #arg ]]].
+   C-CONT [ RELS.LIST.FIRST [ LBL #klbl,
+			      ARG0 #ind,
+			      ARG  #arg ]]].
 
 ;;; (FCB 2006-02-01) Changing intersective_mod to local allows scopal adverbs but gets the semantics wrong 
 ;;; i.e. it won't scope.
@@ -2473,7 +2406,7 @@ frag-pp-np-rule := frag-vmod-something-rule &
    ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  noun_head].
 
 frag-i-adv-np-rule := frag-vmod-something-rule &
- [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head-avm,
+ [ ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head,
    ARGS.REST.FIRST.SYNSEM.LOCAL.CAT.HEAD  noun_head].
 
 frag-pp-int-rule := frag-vmod-something-rule  &

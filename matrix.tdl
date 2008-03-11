@@ -1,11 +1,15 @@
 ;;; -*- Mode: TDL; Package: LKB -*-
 ;;;
-;;;  HPSG Grammar Matrix Version 0.6
+;;;  HPSG Grammar Matrix Version 0.9 (sort of)
 ;;;
-;;;  Copyright Emily M. Bender 2002
-;;;  All Rights Reserved.
-;;;  No use or redistribution without permission.
-;;;  
+;;;  Copyright (c) 2002-2005
+;;;    Emily M. Bender, Dan Flickinger, Stephan Oepen
+;;;    see licence.txt for conditions
+;;;
+;;;  Projects using the Grammar Matrix should reference
+;;;  http://www.delph-in.net/matrix, the version used
+;;;  and Bender, Flickiner, & Oepen 2002.
+;;;
 ;;;  Based on:
 ;;;
 ;;;  LinGO Grammar: fundamentals.tdl 
@@ -29,7 +33,6 @@ sign-min := avm &
 
 basic-sign := sign-min &
   [ KEY-ARG bool ].
-
 
 sign := basic-sign &
   [ SYNSEM synsem,
@@ -111,16 +114,21 @@ tree-node-label := *top* &
 label := sign &
   [ LABEL-NAME string ].
 
-;; see lkbpatches
+; For complex node labels, like S/NP
 meta := sign &
   [ META-PREFIX string,
     META-SUFFIX string ]. 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; SYNSEM values
+; ERB 2007-02-05 Moving to an analysis of discourse status/cognitive
+; status of referents following Borthen & Haugereid 2005.  Replacing
+; DEF and DEF-OPT with COG-ST and OPT-CS.
+
 
 synsem-min := avm &
   [ OPT bool,
+    OPT-CS cog-st,
     LOCAL mod-local,
     NON-LOCAL non-local-min ].
 
@@ -139,9 +147,14 @@ lex-synsem := canonical-synsem & lex-or-phrase-synsem &
     LEX +,
     LKEYS lexkeys ].
 
-phr-synsem := canonical-synsem & lex-or-phrase-synsem &
-  [ LOCAL local-min,
-    LEX - ].
+; ERB (2005-08-10) We want to make sure that head-comp phrases
+; don't have the feature LKEYS, even if they are LIGHT +.
+
+phr-synsem-min := canonical-synsem & lex-or-phrase-synsem &
+  [ LOCAL local-min ].
+
+phr-synsem := phr-synsem-min &
+  [ LEX - ].
 
 non-canonical := synsem &
   [ LOCAL.CONT.HOOK.INDEX event-or-ref-index ].
@@ -162,7 +175,10 @@ unexpressed := synsem-min &
 
 unexpressed-reg := unexpressed & non-canonical.
 
-anti-synsem := unexpressed.
+anti-synsem := unexpressed &
+"A contrasting type to ordinary synsems (expressed
+and unexpressed) which is sometimes useful.  No longer
+explicitly used in the Matrix.".
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; LOCAL & NON-LOCAL values
@@ -185,7 +201,7 @@ local := local-min &
 
 ; Types for distinguishing scopal v. intersective modifiers.
 ; (These types are used in the MOD value of modifiers, and 
-; references by the scopal/intersective head-adjunct rules.)
+; referenced by the scopal/intersective head-adjunct rules.)
 
 scopal-mod := local.
 intersective-mod := local.
@@ -207,10 +223,22 @@ non-local-none := non-local &
 
 cat-min := avm.
 
+; ERB 2004-05-05 Following ERG, add a feature HC-LIGHT which indicates
+; whether a head-comp phrase projected from a head is treated as light
+; or heavy.  That is, whether or not a phrase consisting of heads and
+; complements is light or heavy is taken to be a lexical property of
+; the head.
+
+; MC stands for 'Main clause', and is used to distinguish phenomena
+; which can only occur in main (+) or subordinate clauses (-).  The
+; value of MC is luk, allowing for a third possibility of na, for
+; not applicable.
+
 cat := cat-min &
   [ HEAD head-min,
     VAL valence-min,
     MC luk,
+    HC-LIGHT luk,
     POSTHEAD bool ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -262,11 +290,13 @@ semsort :< sort.
 
 mrs-min := avm.
 
+; ERB 2007-01-21 Removing feature MSG here (moving it to a feature--SF---
+; of events).
+
 mrs := mrs-min &
   [ HOOK hook,
     RELS diff-list,
-    HCONS diff-list,
-    MSG basic_message ].
+    HCONS diff-list ].
 
 ; HOOK values include
 ;    LTOP                  ; Local top handle
@@ -274,7 +304,8 @@ mrs := mrs-min &
 ;    XARG                  ; The external (controlled) argument of a phrase
 
 hook := avm &
-  [ LTOP handle,
+  [ GTOP handle,
+    LTOP handle,
     INDEX individual,
     XARG individual ].
 
@@ -328,27 +359,27 @@ ctxt := ctxt-min &
 ; allowing scope ambiguity between quanitifers and messages, as it is
 ; not clear what that would mean.
 
-basic_message := relation.
-message := basic_message &
-  [ PRED message_m_rel,
-    MARG handle ].
+; basic_message := relation.
+; message := basic_message &
+;   [ PRED message_m_rel,
+;     MARG handle ].
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Message preds
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ; Message preds
 
-message_m_rel := predsort.
-command_m_rel := message_m_rel.
-prop-or-ques_m_rel := message_m_rel.          ;for COMPS of e.g. 'know'
-proposition_m_rel := prop-or-ques_m_rel.
-abstr-ques_m_rel := prop-or-ques_m_rel.       
-question_m_rel := abstr-ques_m_rel.
+; message_m_rel := predsort.
+; command_m_rel := message_m_rel.
+; prop-or-ques_m_rel := message_m_rel.          ;for COMPS of e.g. 'know'
+; proposition_m_rel := prop-or-ques_m_rel.
+; abstr-ques_m_rel := prop-or-ques_m_rel.       
+; question_m_rel := abstr-ques_m_rel.
 
 
-no-msg := basic_message.
+; no-msg := basic_message.
 
-; Subtype of int_rel for tag questions and structures in other languages
-; with equivalent pragmatics.
-ne_m_rel := abstr-ques_m_rel.                 
+; ; Subtype of int_rel for tag questions and structures in other languages
+; ; with equivalent pragmatics.
+; ne_m_rel := abstr-ques_m_rel.                 
 
 ; Constrains handle of scopable argument HARG relative to one 
 ; outscoped LARG handle (the "H" is mnemonic for either "higher" or
@@ -356,14 +387,14 @@ ne_m_rel := abstr-ques_m_rel.
 ; "label" argument.
 
 qeq := avm &
-  [ HARG handle & [ INSTLOC #instloc ],
-    LARG handle & [ INSTLOC #instloc ] ].        
+  [ HARG handle,
+    LARG handle ].        
 
-
-; (MS 2004-12-01) INSTLOC is needed for generation. This requires it to be string.
 semarg := avm &
-  [ INSTLOC string].
-
+"INSTLOC is used by generator to index input.  Changed from
+value instloc to value string in July 2004.  The grammar
+should never need to make reference to it beyond this."
+  [ INSTLOC string ].
 
 handle := semarg.
 individual := semarg &
@@ -371,8 +402,45 @@ individual := semarg &
 
 ; The INDEX value of a nom-obj is an index (expletive or
 ; referential).
+; ERB 2004-05-10 Add a feature DEF which encodes definiteness
+; for (in)definite null instantiation, and possibly other uses.
+; The null instantiation use might get superceded by a Sem-I based
+; solution.
 
-index := individual.
+; ERB 2007-02-05 Moving to an analysis of discourse status/cognitive
+; status of referents following Borthen & Haugereid 2005.  Replacing
+; DEF and DEF-OPT with COG-ST and OPT-CS.
+
+; ERB 2007-05-16 Can't put SPECI inside COG-ST, or the generator won't
+; pay attention to the value of COG-ST.  So, making it parallel.
+
+index := individual &
+	 [ COG-ST cog-st,
+	   SPECI bool ].
+
+; ERB 2007-02-05 Hierarchy from Borthen and Haugereid of possible
+; COG-ST values.  Departing from B&H analysis by putting SPECI on
+; this type (as well as by making COG-ST a feature of indicies rather
+; than parallel to the indices in the next level up).
+
+cog-st := avm.
+
+activ-or-less := cog-st.
+uniq-or-more := cog-st.
+uniq+fam+act := activ-or-less & uniq-or-more.
+fam-or-less := activ-or-less.
+fam-or-more := uniq-or-more.
+activ+fam := uniq+fam+act & fam-or-more.
+uniq+fam := uniq+fam+act & fam-or-less.
+uniq-or-less := fam-or-less.
+activ-or-more := fam-or-more.
+type-id := uniq-or-less.
+uniq-id := uniq-or-less & uniq+fam.
+familiar := uniq+fam & activ+fam.
+activated := activ+fam & activ-or-more.
+in-foc := activ-or-more.
+
+
 
 ; This is the type of the index of the phrase modified by predicative
 ; PPs, which can either modify a ref-ind nominal or an event VP.
@@ -411,12 +479,26 @@ tam := avm &
     ASPECT aspect,
     MOOD mood ]. 
 
-event := event-or-ref-index &
-  [ E tam ].
+; Sentence force: SF, this replaces MSG.
 
-; Coordinated phrases have conjoined indices as their INDEX
+iforce := avm.
+prop-or-ques := iforce.
+prop := prop-or-ques.
+ques := prop-or-ques.
+comm := iforce.
+
+; for 'ne' questions
+ne-sf := ques.
+
+event := event-or-ref-index &
+  [ E tam,
+    SF iforce ].
+
+; Coordinated phrases have coordinated indices as their INDEX
 ; values.  These are meant to be interpreted as pointers to 
-; the set of indices the conjunction conjoins.
+; the set of coordinated indices.
+
+; Name changed in Matrix 9.0
 
 conj-index := event-or-ref-index.
 conj-event := conj-index & event.
@@ -444,7 +526,7 @@ conj-ref-ind := conj-index & ref-ind.
 ;     CFROM *top*,
 ;     CTO *top*  ].
 
-; changed WLINK to LNK to humour oe
+; changed WLINK to LNK to humour oe ? now change it back ? Can we lose CFROM/CTO ???
 
 relation := avm &
   [ LBL handle,
@@ -486,8 +568,6 @@ arg1-ev-relation := arg1-relation & event-relation.
 arg12-ev-relation := arg1-ev-relation & arg12-relation.
 arg123-ev-relation := arg12-ev-relation & arg123-relation.
 arg1234-ev-relation := arg123-ev-relation & arg1234-relation.
-
-verb-ellipsis-relation := arg1-relation.
 
 ; Noun relations
 
@@ -615,6 +695,7 @@ rmod := hasmod & notmod-or-rmod.
 sort := *top*.
 predsort := sort.
 atom := predsort.
+no-pred := predsort.
 avm := *top*.
 list := avm.
 
@@ -692,9 +773,16 @@ onull := olist & null.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Lexical rules
 
-
-;;; Added Idiom (CH 060804)
-
+; Grammars should be monotonic in their construction of semantic
+; representations.  That is, as the tree is built, no relations should
+; ever be thrown away.  This has implications for the way lexical rules
+; are written.  If two forms are related to each other, and one has
+; more semantic relations than the other, it has to be the output. 
+; We are interested in cases where this constraint is or appears to
+; be problematic.
+; 
+; added IDIOM (CH)
+;
 lex-rule := phrase-or-lexrule & word-or-lexrule &
   [ IDIOM #idiom,
     NEEDS-AFFIX bool,
@@ -847,24 +935,7 @@ basic-unary-phrase := phrase &
 						  LAST #scmiddle ] ] ],
                     ROOT -,
 		    IDIOM #idiom] > ].
-; basic-unary-phrase := phrase &
-;   [ STEM #stem,
-;     SYNSEM.LOCAL.CONT [ RELS [ LIST #first,
-;         		       LAST #last ],
-; 			HCONS [ LIST #scfirst,
-; 				LAST #sclast ] ],
-;     C-CONT [ RELS [ LIST #middle,
-; 		    LAST #last ],
-; 	     HCONS [ LIST #scmiddle,
-; 		     LAST #sclast ] ],
-;     ARGS < sign & [ STEM #stem,
-;                     SYNSEM.LOCAL local &
-; 				 [ CONT [ RELS [ LIST #first,
-; 						 LAST #middle ],
-; 					  HCONS [ LIST #scfirst,
-; 						  LAST #scmiddle ] ] ],
-;                     ROOT - ] > ].
-
+ 
 unary-phrase := basic-unary-phrase &
   [ INFLECTED +,
     ARGS < [ INFLECTED + ] > ].
@@ -969,15 +1040,14 @@ head-compositional := headed-phrase &
 ; Clauses have message types as values, non-clauses have the value no-msg.
 ; Constrain the HEAD value of clause to verb or whatever type is
 ; appropriate.  Clauses have empty QUE values.
-; Later versions of the matrix might have clause v. non-clause as
+; Later versions of the Matrix might have clause v. non-clause as
 ; an independent dimension from headed v. non-headed phrase, as in
 ; Ginzburg & Sag 2000.  The phrase types are meant to cross-classify
 ; with the clause types to give e.g., decl-head-subj from decl-clause
 ; and head-subj-phrase.  
 
 non-clause := head-nexus-phrase &
-  [ SYNSEM.LOCAL [ CAT.MC na,
-                   CONT.MSG no-msg ] ].
+  [ SYNSEM.LOCAL.CAT.MC na ].
 
 clause := phrasal &
   [ SYNSEM [ LOCAL.CAT.VAL.COMPS olist,
@@ -989,33 +1059,18 @@ clause := phrasal &
 ; Relative clauses are propositions, but depending on the analysis
 ; of the construction, the message may actually come from the daughter.
 
-relative-clause := clause.
-  
-non-rel-clause := headed-phrase & clause &
-  [ SYNSEM [ LOCAL.CONT.MSG #msg &
-                            [ LBL #mhand,
-                              MARG #marghand ],
-             NON-LOCAL.REL 0-dlist ],
-    HEAD-DTR.SYNSEM [ LOCAL.CONT.HOOK [ LTOP #hdhand,
-				        INDEX #ind ],
-		      NON-LOCAL [ QUE 0-dlist,
-				  REL 0-dlist ] ],
-    C-CONT [ HOOK [ LTOP #mhand,
-                    INDEX #ind ],
-	     RELS.LIST < #msg, ... >,
-	     HCONS.LIST < qeq &
-                          [ HARG #marghand,
-                            LARG #hdhand ], ... > ] ].
+; ERB 2007-01-21 Adding constraint that should specialize prop-or-ques
+; to prop as value of SF.  (See notes at interrogative-clause.)
 
 
 interrogative-clause := clause &
-  [ SYNSEM.LOCAL.CONT.MSG.PRED question_m_rel ].
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques ].
 
 declarative-clause := clause &
-  [ SYNSEM.LOCAL.CONT.MSG.PRED proposition_m_rel ].
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SF prop-or-ques ].
 
 imperative-clause := clause &
-  [ SYNSEM.LOCAL.CONT.MSG.PRED command_m_rel ].
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.SF comm ].
 
 basic-head-filler-phrase := binary-phrase & phrasal &
   [ SYNSEM [ LOCAL [ CAT [ VAL [ COMPS < >,
@@ -1072,13 +1127,11 @@ basic-head-spec-phrase := head-valence-phrase & non-clause & phrasal &
                                             SPR < #synsem & 
                                                   canonical-synsem . #spr >,
                                             SPEC #spec ],
-                                      POSTHEAD #ph,
-                                      MC na ],
+                                      POSTHEAD #ph ],
                                 CONT.HOOK #hdhook ],
                         MODIFIED #hmodif ] ],
     NON-HEAD-DTR.SYNSEM #synsem &
-	 [ LOCAL [ CAT [ MC na,
-                         VAL [ SPEC < [ LOCAL [ CAT [ HEAD #head,
+	 [ LOCAL [ CAT [ VAL [ SPEC < [ LOCAL [ CAT [ HEAD #head,
                                                       VAL.COMPS #comps ],
                                                 CONT.HOOK #hdhook ],
                                         MODIFIED #hmodif ] >,
@@ -1088,6 +1141,14 @@ basic-head-spec-phrase := head-valence-phrase & non-clause & phrasal &
     C-CONT [ HOOK #hook,
              RELS <! !>,
 	     HCONS <! !> ] ].
+
+; Value of LIGHT comes from head-daughter's specification in HC-LIGHT.
+
+; ERB (2005-08-10) Change value of SYNSEM from canonical-synsem to
+; phr-synsem-min, so that LKEYS is not an appropriate feature.
+
+; ERB (2005-08-12) We need to copy of HC-LIGHT as well, for cases
+; where there are multiple complements.
 
 basic-head-comp-phrase := head-valence-phrase & head-compositional &
 			  binary-headed-phrase &
@@ -1175,11 +1236,13 @@ basic-extracted-comp-phrase := basic-extracted-arg-phrase &
     C-CONT [ RELS <! !>,
 	     HCONS <! !> ] ].
 
+; ERB 2004-08-26 Remove [MC -] on mother; probably specific
+; to analysis of subject extraction for English.
+
 basic-extracted-subj-phrase := basic-extracted-arg-phrase &
-  [ SYNSEM.LOCAL.CAT [ VAL [ SUBJ < >,
-                             SPR < >,
-			     COMPS < > ],
-		       MC - ],
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ < >,
+			   SPR < >,
+			   COMPS < > ],
     HEAD-DTR.SYNSEM [ LOCAL.CAT [ VAL [ SUBJ < gap &
 					       [ LOCAL #local & local &
 						       [ CONT.HOOK.INDEX 
@@ -1298,8 +1361,7 @@ scopal-mod-phrase := head-mod-phrase-simple &
              HCONS <! !> ] ].
 
 isect-mod-phrase := head-mod-phrase-simple & head-compositional &
-  [ HEAD-DTR.SYNSEM.LOCAL.CONT [ HOOK.LTOP #hand,
-                                 MSG no-msg ],
+  [ HEAD-DTR.SYNSEM.LOCAL.CONT.HOOK.LTOP #hand,
     NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [ LOCAL intersective-mod ] >,
 				CONT.HOOK.LTOP #hand ],
     C-CONT.HCONS <! !> ].

@@ -35,12 +35,12 @@ rel-cl-sbj-gap-rule := rel-cl-gap-rule  &
 
 
 rel-cl-obj1-gap-rule := rel-cl-gap-rule & 
-			[SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
-			 ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
-							 COMPS opt-1-arg &
-							      [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
-							       REST onull]]]]]],
-			       [SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind ]>].
+ [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+  ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
+				  COMPS opt-1-arg &
+				       [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
+					REST onull]]]]]],
+	[SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind ]>].
 
 
 

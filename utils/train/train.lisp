@@ -20,7 +20,7 @@
 (setf *feature-ngram-tag* :type)
 
 (setf *feature-ngram-back-off-p* t)
-
+;;; increase this to make a smaller model
 (setf *feature-frequency-threshold* (make-counts :relevant 1))
 
 (setf *feature-random-sample-size* nil)
