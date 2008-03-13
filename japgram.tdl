@@ -64,9 +64,10 @@ utterance_rule-imp  := utterance-sf-type &
 utterance_rule-command  := utterance-sf-type &
 [SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
  C-CONT.HOOK.INDEX.SF comm,
- ARGS.FIRST [SYNSEM [LOCAL.CAT.HEAD [MODUS simple-imperative,
+ ARGS.FIRST [SYNSEM [LOCAL [CAT.HEAD [MODUS simple-imperative,
 				     H-TENSE present,
 				     FIN +],
+			    CONT.HOOK.INDEX.E.MOOD imperative],
 		     NON-LOCAL.QUE <! !>],
 	     RMORPH-BIND-TYPE imp-morph]].
 
