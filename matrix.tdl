@@ -175,10 +175,11 @@ unexpressed := synsem-min &
 
 unexpressed-reg := unexpressed & non-canonical.
 
-anti-synsem := unexpressed &
-"A contrasting type to ordinary synsems (expressed
-and unexpressed) which is sometimes useful.  No longer
-explicitly used in the Matrix.".
+anti-synsem := unexpressed.
+; &
+;"A contrasting type to ordinary synsems (expressed
+;and unexpressed) which is sometimes useful.  No longer
+;explicitly used in the Matrix.".
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; LOCAL & NON-LOCAL values
@@ -391,10 +392,11 @@ qeq := avm &
     LARG handle ].        
 
 semarg := avm &
-"INSTLOC is used by generator to index input.  Changed from
-value instloc to value string in July 2004.  The grammar
-should never need to make reference to it beyond this."
   [ INSTLOC string ].
+;"INSTLOC is used by generator to index input.  Changed from
+;value instloc to value string in July 2004.  The grammar
+;should never need to make reference to it beyond this."
+
 
 handle := semarg.
 individual := semarg &
