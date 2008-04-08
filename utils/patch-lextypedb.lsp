@@ -166,7 +166,7 @@
 ;;; how do I define TAB in format?
 (defun lex-summary (lex-entries stream)
   (loop for word-entry in lex-entries
-	for lex-entry =  (get-lex-entry-from-id word-entry)
+	for lex-entry =  (get-lex-entry-from-id word-entry :cache nil)
 	for lex-tdfs = (tdfs-indef (psort-full-fs lex-entry))
 	do
 	(format stream "~A	~A	~{~A~^ ~}	~A	~A~%"
