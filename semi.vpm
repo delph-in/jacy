@@ -64,13 +64,18 @@ E.MOOD : MOOD
 ;;;
 
 
-E.ASPECT : PROG PERF
-  perfect_progressive <> + +
-  progressive         >> + !
-  progressive         << + *
-  perfective          >> ! +
-  perfective          << * +
-  *                   >> - -
+E.ASPECT : PROG PERF ASPECT 
+  perfect_progressive <> + + default_aspect
+  progressive         >> + - default_aspect
+  progressive         << + * default_aspect
+  perfective          >> - + default_aspect
+  perfective          << * + default_aspect
+  terminative         <> - - terminative
+  prospective         <> - - prospective
+  modal               <> - - modal
+  inceptive           <> - - inceptive
+  *                   >> - - default_aspect
+  default_aspect      << * * *
 
 E.PASS : PASS
  + <> +
@@ -78,10 +83,10 @@ E.PASS : PASS
  * >> - 
  - << *
 
-E.ASPECT : ASPECT
- terminative <> terminative
- * >> !
- ! << * 
+; E.ASPECT : ASPECT
+;  terminative <> terminative
+;  * >> !
+;  ! << * 
 
 ; terminative :< aspect.
 ; prospective :< aspect.

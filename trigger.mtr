@@ -27,9 +27,14 @@ ka_gr := generator_rule &
 
 
 ;;; Terminative
- shimau-aux-stem_gr := arg0e_gr &
+shimau-aux-stem_gr := arg0e_gr &
  [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT terminative ] ] !> ],
    FLAGS.TRIGGER "shimau-aux-stem" ].
+
+shimau-te_gr := arg0e_gr &
+ [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT terminative ] ] !> ],
+   FLAGS.TRIGGER "te-end" ].
+
 
 jau-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
@@ -39,15 +44,15 @@ chau-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "chau-end" ].
 
-; (MS 2005-11-29) this is TENSE te, and not ASPECT progressive
-te-end_gr := arg0e_gr &
-[ CONTEXT [ RELS <! [ ARG0 event & [ E.TENSE te ] ] !> ],
-  FLAGS.TRIGGER "te-end" ].
+; ; (MS 2005-11-29) this is TENSE te, and not ASPECT progressive
+; te-end_gr := arg0e_gr &
+; [ CONTEXT [ RELS <! [ ARG0 event & [ E.TENSE te ] ] !> ],
+;   FLAGS.TRIGGER "te-end" ].
 
 
-de-end_gr := arg0e_gr &
-[ CONTEXT [ RELS <! [ ARG0 event & [ E.TENSE te ] ] !> ],
-  FLAGS.TRIGGER "de-end" ].
+; de-end_gr := arg0e_gr &
+; [ CONTEXT [ RELS <! [ ARG0 event & [ E.TENSE te ] ] !> ],
+;   FLAGS.TRIGGER "de-end" ].
 
 ; (MS 2005-11-29) this is for sentence coordination using V-te
 te-coord-end_gr := generator_rule &
@@ -57,6 +62,11 @@ te-coord-end_gr := generator_rule &
 iru-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
   FLAGS.TRIGGER "iru-aux-stem" ].
+
+progressive-te_gr := arg0e_gr &
+ [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
+   FLAGS.TRIGGER "te-end" ].
+
 
 teru-end_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
