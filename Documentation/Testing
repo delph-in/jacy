@@ -7,3 +7,16 @@ e.g., :chasen 10000 edges
 Then compare it with the current gold to see that all is well, update
 from gold, treebank it and compress it [file | compress] into 
 $TSDBHOME/gold/jacy.
+
+========================================================================
+
+Before a release
+ - copy lexicon from sql (rev, tdl)
+ -- batch check lexicon
+
+- update quick check files
+
+ - flop
+ - compare pet and lkb with same settings
+ 
+ - rebuild scoring models
