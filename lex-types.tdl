@@ -2480,13 +2480,14 @@ postp-lex-robust := postp-lex &
 ; leads to MRSs that don't scope when wa marks NPs.  So, going back to
 ; having ARG = event of MOD and ARG2 = index of OBJ.  Undoing constraints
 ; associated with having ARG = index of OBJ.
+; Now ARG1 = index of OBJ (because we swapped ARG1 and 2: FCB)
 
 ; (MS 2005-05-11) In cleaning up particles, renaming topic-vmod-p-lex.
 ; (MS 2005-05-13) Topic particles should set speaker empathy.
 
 topic-p-lex := vmod-p-lex-super &
                     [SYNSEM [LKEYS.KEYREL prep-mod-relation &
-					[ ARG2 #ind,
+					[ ARG1 #ind,
 					  ARG0.E.TENSE no_tense ],
 			     LOCAL [ CAT [ HEAD topic-vmod-p_head ],
 				     CONT topic-sem-type  &
