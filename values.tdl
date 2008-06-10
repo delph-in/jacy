@@ -298,8 +298,10 @@ a-morph :< a-or-aa-morph.
 aa-morph :< a-or-aa-morph.
 
 nd-morph :< cstem-morph.
-mai-morph :< cstem-morph.
-beki-morph :< cstem-morph.
+
+mai-beki-morph  := morphbindtype.
+mai-morph := mai-beki-morph.
+beki-morph := mai-beki-morph.
 imp-morph :< cstem-morph.
 cond-morph :< cstem-morph.
 

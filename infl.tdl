@@ -495,11 +495,21 @@ lexeme-rule &
 [RMORPH-BIND-TYPE mai-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
+mai-lexeme-c-infl-rule := 
+lexeme-rule &
+[RMORPH-BIND-TYPE mai-beki-morph,
+ARGS.FIRST.STEMTYPE c-stem].
+
+mai-lexeme-v-infl-rule := 
+lexeme-rule &
+[RMORPH-BIND-TYPE mai-beki-morph,
+ARGS.FIRST.STEMTYPE v-stem].
+
 
 ; (MS 2004-12-17) beki takes す in the case of する+べき: すべき
 
 beki-lexeme-infl-rule := 
-%suffix (する す)
+%suffix (する す) (来る 来る) (くる くる)
 lexeme-rule &
 [RMORPH-BIND-TYPE beki-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
