@@ -9161,6 +9161,8 @@ mai-end-lex := v-noncaus-op-end-lex &
   J-NEEDS-AFFIX -,
   LMORPH-BIND-TYPE mai-morph].
 
+;;; maybe I should make the specifier no_tense?
+
 beki-end-lex:= v-noncaus-op-end-lex &
  [SYNSEM [LOCAL [CAT [HEAD v-op-end_head &
 			   [MODUS indicative,
@@ -9170,7 +9172,7 @@ beki-end-lex:= v-noncaus-op-end-lex &
 			    MARK null,
 			    J-SPEC null,
 			    FIN +],
-		      VAL.SPR.FIRST.LOCAL.CONT.HOOK.LTOP #h1],
+		      VAL.SPR.FIRST.LOCAL.CONT.HOOK.LTOP #h1]],
 		 CONT [HOOK [INDEX #ind],
 		       RELS <! #key & scopal-adv-relation &
 			     [PRED '_beki_a_rel,

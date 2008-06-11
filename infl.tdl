@@ -489,21 +489,21 @@ j-lexeme-to-word-rule &
 ; (TK 07-05-24)kurusuru-stem以外のverbに対応するものも必要。
 ; また、同じkurusuru-stemでも、「論ずる」など語尾が「ずる」のものに対応できていない。
 
-mai-lexeme-infl-rule := 
+mai-lexeme-ks-infl-rule := 
 %suffix (来る 来) (する す) (くる こ)
 lexeme-rule &
 [RMORPH-BIND-TYPE mai-morph,
-ARGS.FIRST.STEMTYPE kurusuru-stem].
+ARGS.FIRST v-lex & [STEMTYPE kurusuru-stem]].
 
 mai-lexeme-c-infl-rule := 
 lexeme-rule &
 [RMORPH-BIND-TYPE mai-beki-morph,
-ARGS.FIRST.STEMTYPE c-stem].
+ARGS.FIRST v-lex & [STEMTYPE c-stem]].
 
 mai-lexeme-v-infl-rule := 
 lexeme-rule &
 [RMORPH-BIND-TYPE mai-beki-morph,
-ARGS.FIRST.STEMTYPE v-stem].
+ARGS.FIRST v-lex & [STEMTYPE v-stem]].
 
 
 ; (MS 2004-12-17) beki takes す in the case of する+べき: すべき
