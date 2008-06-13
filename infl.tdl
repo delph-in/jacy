@@ -669,11 +669,11 @@ j-lexeme-to-word-rule &
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ->V;;;;;;;;;;;;;;;;;;;;
 
-
-adj2v-infl-rule :=
-%suffix (い 過ぎる)
-adj2v-rule &
-[RMORPH-BIND-TYPE u-morph].
+;;; FCB 2008-06-13: I expect this to be segmented off
+;adj2v-infl-rule :=
+;%suffix (い 過ぎる)
+;adj2v-rule &
+;[RMORPH-BIND-TYPE u-morph].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJ->N;;;;;;;;;;;;;;;;;;;;
 
