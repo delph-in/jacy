@@ -1,5 +1,6 @@
 ;;; -*-  Coding: utf-8 -*-
 
+ (lkb::do-parse-tty "犬 が 暑　そう　だ")
  * 2007-10-10 split lexicon into n,v,a,r,s,x,... propername ?
 
  * fix numbers bug
