@@ -1,4 +1,4 @@
-Here is a tentative new chasen to POS mapping for unknown words.
+#Here is a tentative new chasen to POS mapping for unknown words.
 
 # IPA-POS	generic-lex	lex-type	rpos
 その他-間投+n	generic_interj-lex	interj-lex	x
