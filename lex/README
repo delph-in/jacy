@@ -12,5 +12,27 @@ The database is called "jacy" and is encoded in UNICODE.
 
 Currently (2007-10-25) all the *.tdl files apart from the generics.tdl
 are not being used, and are bundled in for historical interest only.
+Their format is quite different from the current lexicon.
 
+Note: the lexdb.fld file only lists the optional fields.  The full set
+(used in the table lex and dumped into Jacy.rev) is:
 
+name  
+userid 
+modstamp
+type 
+orthography 
+keyrel
+keytag 
+altkey 
+alt2key 
+altkeytag 
+compkey 
+idiom 
+pronunciation 
+comments 
+lang 
+country 
+dialect 
+confidence 
+source 
