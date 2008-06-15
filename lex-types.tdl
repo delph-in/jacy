@@ -9172,14 +9172,13 @@ beki-end-lex:= v-noncaus-op-end-lex &
 			    MARK null,
 			    J-SPEC null,
 			    FIN +],
-		      VAL.SPR.FIRST.LOCAL.CONT.HOOK.LTOP #h1]],
+		      VAL.SPR.FIRST.LOCAL.CONT.HOOK.LTOP #h1],
 		 CONT [HOOK [INDEX #ind],
 		       RELS <! #key & scopal-adv-relation &
 			     [PRED '_beki_a_rel,
 			      ARG0 #ind,
 			      ARG1 #h3] !>,
-		       HCONS <! qeq & [HARG #h3,
-				       LARG #h1] !>]],
+		       HCONS <! qeq & [HARG #h3, LARG #h1] !>]],
 	  LKEYS.KEYREL #key ],
   J-NEEDS-AFFIX -,
   LMORPH-BIND-TYPE beki-morph].
