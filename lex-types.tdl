@@ -5998,12 +5998,16 @@ adj-lex := lexical_sign-word &
                            BAR +],
                     NON-LOCAL.AFFIX <! !>]].
 
-
+;;; FCB linked LBL to TOP (also done in na-adj-sem-type-basic)
 
 na-adj-stem-lex  := adj-lex & 
  [SYNSEM.LOCAL [CAT.HEAD na-adj-basic_head & 
 			 [MAIN-PRD -,
 			  MOD null],
+		CONT [ HOOK [INDEX #event,
+			     LTOP #handle],
+		       RELS <! [ARG0 #event,
+				LBL #handle] !>],
 		BAR +],
   J-NEEDS-AFFIX -,
   INFLECTED +].
@@ -6066,14 +6070,15 @@ na-adj-wh-lex := na-adj-basic-lex &
 ; REL-CL-SBJ-GAP-RULEしか出ない点は、RELATIVE-CLAUSE-RULEも出せるようにした方が良いかもしれない（「継続が
 ; 時間的だ」という解析に疑問があるため）。
 ; </type>
-na-adj-suffix-lex := adj-lex & [SYNSEM [LOCAL [CAT [HEAD na-adj_head & [MAIN-PRD -],
-						    VAL sbj-narg_transitive & [COMPS.FIRST [OPT -]]],
-					       CONT na-adj-sem-type & [RELS <! #key !>,
-								       HOOK.XARG #arg]],
-					LKEYS.KEYREL #key & [ARG1 #arg],
-					NON-LOCAL [QUE <! !>]],
-                               J-NEEDS-AFFIX -,
-                               INFLECTED +].
+na-adj-suffix-lex := adj-lex & 
+ [SYNSEM [LOCAL [CAT [HEAD na-adj_head & [MAIN-PRD -],
+		      VAL sbj-narg_transitive & [COMPS.FIRST [OPT -]]],
+		 CONT na-adj-sem-type & [RELS <! #key !>,
+					 HOOK.XARG #arg]],
+	  LKEYS.KEYREL #key & [ARG1 #arg],
+	  NON-LOCAL [QUE <! !>]],
+  J-NEEDS-AFFIX -,
+  INFLECTED +].
 
 ; <type val="na-adj-go-lex">
 ; <name-ja>ヲ目的格形容動詞
@@ -6108,8 +6113,8 @@ na-adj-gg-lex := na-adj-stem-lex &
  		      VAL ga-ga_transitive &
  			   [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
  			    COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #objind]],
-		 CONT [HOOK.XARG #sbjind,
-		      RELS <! #key !> ]],
+		  CONT [HOOK.XARG #sbjind,
+			RELS <! #key !> ]],
 	   NON-LOCAL.QUE <! !>,
 	   LKEYS.KEYREL #key & arg12-relation & 
 		 [ARG1 #sbjind,
