@@ -76,6 +76,10 @@
     (read-cached-sublex-if-available 
      "generics" (list (lkb-pathname 
 		       (parent-directory) "lex/generics.tdl"))) 
+   ;;; tc unknown words 
+    (read-cached-sublex-if-available 
+     "tc" (list (lkb-pathname 
+		       (parent-directory) "lex/tc.tdl"))) 
     ;;; read the dumped lexicon
     (read-cached-sublex-if-available 
      "lexicon" (list (lkb-pathname 
@@ -98,10 +102,10 @@
 ;;; tools, also load a Maximum Entropy parse selection model and enable its
 ;;; use (currently limited to batch parsing with [incr tsdb()], though).
 ;;;
-;;;#+(and :tsdb :logon)
-;;;(tsdb::read-model (lkb-pathname (parent-directory) "tanaka-006-015.mem"))
-;;;#+(and :tsdb :logon)
-;;;(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
+#+(and :tsdb :logon)
+(tsdb::read-model (lkb-pathname (parent-directory) "tanaka-006-015.mem"))
+#+(and :tsdb :logon)
+(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
 ;;;#+(and :tsdb :logon)
 ;;;(setf *chart-packing-p* t)
 
