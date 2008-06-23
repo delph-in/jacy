@@ -1804,11 +1804,14 @@ case-p-lex-np-topic := case-p-lex-np &
 		       [SYNSEM [NON-LOCAL.UNDERSPEC_ARG -]].
 
 ; (MS 2005-05-13) It sets empathy to the entity it attaches to.
+; (FCB 2008-06-23) taking of the empathy as it blocks:  
+; (lkb::do-parse-tty "猿 は 私 の 犬 を 食べる")
+; FIXME:  I should debug this more fully.
 
 case-p-lex-np-topic-ga := case-p-lex-np-topic &
-		       [SYNSEM.LOCAL [CAT.HEAD.CASE ga,
-				      CONT.HOOK.XARG #emp,
-				      CTXT.EMPATHY.EMPEE #emp]].
+		       [SYNSEM.LOCAL [CAT.HEAD.CASE ga]].
+;				      CONT.HOOK.XARG #emp,
+;				      CTXT.EMPATHY.EMPEE #emp]].
 
 ; (MS 2005-09-22) It sets empathy to the entity it attaches to, only
 ; when it is case ga! If it is a case of object topicalization, the 
@@ -9169,26 +9172,26 @@ mai-end-lex := v-noncaus-op-end-lex &
 ;;; maybe I should make the specifier no_tense?
 
 beki-end-lex:= v-noncaus-op-end-lex &
- [SYNSEM [LOCAL [CAT [HEAD v-op-end_head &
-			   [MODUS indicative,
-			    MOD null,
-			    C-MOD null,
-			    H-TENSE present,
-			    MARK null,
-			    J-SPEC null,
-			    FIN +],
-		      VAL.SPR.FIRST.LOCAL.CONT.HOOK.LTOP #h1],
-		 CONT [HOOK [INDEX #ind],
-		       RELS <! #key & scopal-adv-relation &
-			     [PRED '_beki_a_rel,
-			      ARG0 #ind,
-			      ARG1 #h3] !>,
-		       HCONS <! qeq & [HARG #h3, LARG #h1] !>]],
-	  LKEYS.KEYREL #key ],
-  J-NEEDS-AFFIX -,
-  LMORPH-BIND-TYPE beki-morph].
+               [SYNSEM [LKEYS.KEYREL #key & scopal-adv-relation & [PRED "_beki_v_modal_rel",
+								   ARG0 #ind,
+								   ARG1 #h3],
+			LOCAL [CAT [HEAD v-op-end_head &
+					 [MODUS indicative,
+                                          MOD null,
+                                          C-MOD null,
+                                          H-TENSE present,
+                                          MARK null,
+                                          J-SPEC null,
+                                          FIN +],
+                                   VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
+								    INDEX #ind]]]],
+                              CONT [HOOK [INDEX #ind],
+                                    RELS <! #key !>,
+                                    HCONS <! qeq & [HARG #h3,
+                                                     LARG #h1] !>]]],
+		J-NEEDS-AFFIX -,
+		LMORPH-BIND-TYPE beki-morph].
 
- 
 
 
 ; (ERB 2002-01-07) Need to add SMOD value to keep this from being
@@ -12216,7 +12219,7 @@ base-i-adj-neg-stem-lex := base-adj-stem-lex &
 		      RELS <! neg-relation & #key &
 			    [ARG1 #arghd, 
 			     LBL #top],
-			    [PRED 'exist,
+			    [PRED "exist_v_rel",
 			     LBL #aru_hd,
 			     ARG0 #event,
 			     ARG1 #inst]!>,
@@ -12995,5 +12998,4 @@ syn-vv-ditrans-vbar-v-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE
 syn-vv-ditrans-vbar-c-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE c-stem].
 ;syn-vv-ditrans-vbar-c2-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE c2-stem].
 ;syn-vv-ditrans-vbar-kurusuru-stem-lex := syntactic-vv-ditrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
-
 
