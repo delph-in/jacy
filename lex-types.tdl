@@ -3124,7 +3124,7 @@ s-end1-lex := s-end-lex &
 
 ; <type val="s-end1-decl-lex">
 ; <name-ja>終助詞平叙
-; <description>文の末尾にあって、種々の意味を付加するもの。このtypeは平叙文（物事をありのままに述べる文）に用いる。
+; <description>文の末尾にあって、種々の意味を付加するもの。このtypeは平叙文に用いる。
 ; 用言・助動詞の終止形・否定形・過去形やna-adj-lexや「連用形+て」などの直後につく。
 ; <ex>行く よ
 ; <nex>
@@ -3138,8 +3138,7 @@ s-end1-decl-lex := s-end1-lex &
 
 ; <type val="s-end1-declint-lex">
 ; <name-ja>終助詞平叙疑問
-; <description>s-end1-decl-lexを参照。ただしこのtypeは疑問文にも使う。しかし、Dependenciesには疑問の意味は出て
-; いないように見える。
+; <description>文の末尾にあって、平叙疑問文を作る。
 ; <ex>犬 だ ね
 ; <nex>ね 、 山田 くん
 ; <todo>
@@ -6351,6 +6350,7 @@ scopal-adv-right2left-lex := scopal-adv-lex &
 
 
 ; (MS 2005-11-09) To get rid of skip files.
+; (TK 08-06-18) commented out  (->beki-end-lex) 
 ; <type val="scopal-adv-right2left-presentmod-lex">
 ; <name-ja>
 ; <description>scopal-adv-right2left-lexを参照。ただしこのtypeは現在時制で使える語にしかかかれない。
@@ -6360,9 +6360,9 @@ scopal-adv-right2left-lex := scopal-adv-lex &
 ; <todo>(TK 07-04-27)「動詞+補助動詞+べき+copula」の形が解析できない。(lkb::do-parse-tty "やっ て おく べき だ")
 ; (TK 07-04-27)過去時制の語にもかかるべき場合がある。(lkb::do-parse-tty "行く べき だっ た")
 ; </type>
-scopal-adv-right2left-presentmod-lex := scopal-adv-right2left-lex &
-					[SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD [H-TENSE present,
-											  FORMAL.AHON -]].
+;scopal-adv-right2left-presentmod-lex := scopal-adv-right2left-lex &
+;					[SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD [H-TENSE present,
+;											  FORMAL.AHON -]].
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- numbers;;;;;;;;;;;;;;;;;;
@@ -7172,8 +7172,8 @@ naadj2adv-end-lex := lexical_sign-word &
 ; <ex>娘 が 犬 を 欲し がる
 ; <ex>残念 がる
 ; <nex>痒い がる
-; <todo>(TK 07-03-26)一段動詞の後につくべきではない。(lkb::do-parse-tty "言え がる")
-; (TK 07-03-26)また、v1-stemのような働きをする場合がある。(lkb::do-parse-tty "娘 が 犬 を 欲し がる")
+; <todo>(TK 07-03-26)一段動詞の後につくべきではない。(lkb::do-parse-tty "食べ がる")
+; (TK 07-03-26)また、v1-stemのような働きを持たせる場合にも対応すべき。(lkb::do-parse-tty "娘 が 犬 を 欲し がる")
 ; </type>
 naadj2v-end-lex := lexical_sign-word &
  [SYNSEM synsem &
@@ -7267,7 +7267,7 @@ v-neg-polite-present-end-imorph-lex := v-neg-polite-present-simple-end-lex &
 ; <description>動詞未然形の直後につく助動詞（複合語？）。現在時制に使い、聞き手（読み手）への敬意
 ; を表す場合に使う。
 ; ただ、現状では英語でいう"can't help"や"must"、"should"に当たるものがこのtypeで登録されているが、
-; このtypeにそのような意味が含まれているかは不明。
+; 正しいかどうかは不明。
 ; <ex>言わ ざる を 得 ませ ん
 ; <nex>ざる を 得 ませ ん
 ; <todo>(TK 07-05-08)「ざる を 得 ない」「ざる を え ない」もこのtypeで登録されているが、これらは
@@ -7419,6 +7419,16 @@ v-neg-te-plain-amorph-end-lex := v-neg-te-plain-end-lex &
 
 
 
+; <type val="v-naide-end-lex">
+; <name-ja>
+; <description>動詞の未然形に後接して否定の意味を与え、
+; 1.前後の節を等位接続する。
+; 2.動詞とperspectiveを繋ぐ。
+; 3.文末にあって否定と同時に禁止の意味(negative command)の意味を与える。
+; <ex>
+; <nex>
+; <todo>
+; </type>
 v-naide-end-lex := v-neg-end-lex &
 		   [J-NEEDS-AFFIX -,
 		    SYNSEM [LOCAL [CAT [HEAD [FIN -,
@@ -7558,11 +7568,11 @@ te-adjunct-lex := v-tense-end-lex &
 ; <name-ja>テ接続助詞従属
 ; <description>従属節の末尾につく助詞の「て」。動詞の連用形の直後につくが、音便を持つ語の場合は音便の直後につく。
 ; ガ行五段活用の動詞や音便が「ん」の場合はその後につくことはできない。活用はしない。
-; <ex>帰っ て 食べる
+; <ex>ハサミ を 使っ て 切る
 ; <ex>太郎 が ボール を 続け て 打つ
 ; <nex>行っ て 帰る
 ; <nex>行っ て くる
-; <todo>(TK 07-03-26)i-adj-lexにつくことができない。(lkb::do-parse-tty "景色 が 良く て ここ に 来る")
+; <todo>
 ; </type>
 te-adjunct-lex-t := te-adjunct-lex &
 		     [LMORPH-BIND-TYPE t-morph].
@@ -7576,7 +7586,7 @@ te-adjunct-lex-t := te-adjunct-lex &
 ; <ex>太郎 が ボール を 進ん で 打つ
 ; <nex>泳い で 走る
 ; <nex>結ん で 開く
-; <todo>(TK 07-03-26)te-adjunct-lex-tを参照。
+; <todo>
 ; </type>
 te-adjunct-lex-d := te-adjunct-lex &
 		     [LMORPH-BIND-TYPE nd-morph].
@@ -9135,12 +9145,27 @@ v2n-end-lex :=  nom-lex &
 
 ; <type val="mai-end-lex">
 ; <name-ja>否定推量助動詞マイ
-; <description>動詞・助動詞の後ろについて、否定推量など種々の意味を付与する助動詞。
+; <description>verb・copula・v-end-lexの後ろについて、否定推量など種々の意味を付与する助動詞の「まい」。
+; c-stem-lexやkurusuru-stem-lexのカ変活用の場合は終止形、v-stem-lexの場合は終止形と活用形（未然形？連用形？）、
+; kurusuru-stem-lexのサ変活用の場合は終止形「する」「す」の直後につく。
+; copulaの直後につく場合は「ではあるまい」の形のみ。
 ; 現状ではkurusuru-stem「来（こ）」「す」の直後にしか付くことができない。
+; 活用はしない。ほとんどの場合は「まい」で文が終止するが、名詞が後続する場合もある。しかし一般的な用法と言えるかは不明。
 ; <ex>彼 が 失敗 を す まい
 ; <nex>
-; <todo>(TK 07-05-24)verbの直後につけるためにinflection-ruleの拡大が必要、
-; また、助動詞の直後につけられるようにすべき。(lkb::do-parse-tty "失敗 は し ます まい")
+; <todo>(TK 08-06-19)助動詞の直後につけられるようにすべき。(lkb::do-parse-tty "失敗 は し ます まい")
+; また、v-stem-lexの活用形、kurusuru-stem-終止形「する」につく場合は必ず文中に主語or目的語が必要。
+; 以下、個人的メモとしてinflection(morph)-typeやvalencd-typeによる分類を載せる。
+;「投げる」 v1-v-stem-lex終止形「が」TAI-OBJ-CHANGEの曖昧性が出る 「を」問題なし
+;「栄える」 intrans-v-stem-lex 問題なし
+;「投げ」 v-stem-lex活用形 「が」TAI-OBJ-CHANGEが出て× 「を」parsing自体×
+;「栄え」 intrans-v-stem-lex活用形 parsing自体×
+;「応じる」 v2-v-stem-lex 「が」TAI-OBJ-CHANGEの曖昧性が出る 「に」「に」自体がcaseかvmodかの曖昧性がでる（問題なし）
+;「応じ」 v2-v-stem-lex活用形 「が」TAI-OBJ-CHANGEが出て× 「に」parsing自体×
+;「呼ぶ」 v1-c-stem-lex 「が」TAI-OBJ-CHANGEの曖昧性が出る 「を」問題なし
+;「降る」 intrans-c-stem-lex 問題なし
+;「する」「来る」 kurusuru-stem-lex 「が」「を」parsing自体×
+;「す」　　kurusuru-stem-lex短縮 「が」TAI-OBJ-CHANGEの曖昧性が出る 「を」問題なし
 ; </type>
 mai-end-lex := v-noncaus-op-end-lex &
  [SYNSEM [LKEYS.KEYREL #key & neg-relation & 
@@ -9171,26 +9196,41 @@ mai-end-lex := v-noncaus-op-end-lex &
 
 ;;; maybe I should make the specifier no_tense?
 
+; <type val="beki-end-lex">
+; <name-ja>
+; <description>verbの終止形（「する」で終止するものは「す」形でも可）の直後につく「べき」。このtypeは活用しない。
+; また、このtypeの語で文が終止する場合と、copulaあるいは名詞が後続する場合がある。
+; <ex>彼 が 行く べき
+; <ex>彼 が 行く べき だ
+; <ex>行く べき 人
+; <ex>宿題 を す べき
+; <nex>
+; <todo>(TK 08-06-18)現状ではこのtypeに名詞が後続できない。上記の<ex>の第三番目を参照。
+; (TK 08-06-18)また、「verb+べき」にかかる主語or目的語がないと解析できない。(lkb::do-parse-tty "行く べき")
+; (TK 08-06-18)「verb+aux_verb+べき」の場合は曖昧性が出る。
+; (TK 08-06-18)便宜上「べし」もこのtypeに登録されているが、実際は振る舞いが違う。少なくともcopulaは後続しない。
+; (TK 08-06-18)v1-stem-lex,v4-stem-lexの直後につき、「が」格が「verb+べき」にかかる場合、TAI-OBJ-CHANGE-RULE
+; のつくtreeを排除できない。(lkb::do-parse-tty "彼 が 呼ぶ べき")
+; </type>
 beki-end-lex:= v-noncaus-op-end-lex &
-               [SYNSEM [LKEYS.KEYREL #key & scopal-adv-relation & [PRED "_beki_v_modal_rel",
-								   ARG0 #ind,
-								   ARG1 #h3],
-			LOCAL [CAT [HEAD v-op-end_head &
-					 [MODUS indicative,
-                                          MOD null,
-                                          C-MOD null,
-                                          H-TENSE present,
-                                          MARK null,
-                                          J-SPEC null,
-                                          FIN +],
-                                   VAL.SPR.FIRST [LOCAL.CONT [HOOK [LTOP #h1,
-								    INDEX #ind]]]],
-                              CONT [HOOK [INDEX #ind],
-                                    RELS <! #key !>,
-                                    HCONS <! qeq & [HARG #h3,
-                                                     LARG #h1] !>]]],
-		J-NEEDS-AFFIX -,
-		LMORPH-BIND-TYPE beki-morph].
+ [SYNSEM [LOCAL [CAT [HEAD v-op-end_head &
+			   [MODUS indicative,
+			    MOD null,
+			    C-MOD null,
+			    H-TENSE present,
+			    MARK null,
+			    J-SPEC null,
+			    FIN +],
+		      VAL.SPR.FIRST.LOCAL.CONT.HOOK.LTOP #h1],
+		 CONT [HOOK [INDEX #ind],
+		       RELS <! #key & scopal-adv-relation &
+			     [
+			      ARG0 #ind,
+			      ARG1 #h3] !>,
+		       HCONS <! qeq & [HARG #h3, LARG #h1] !>]],
+	  LKEYS.KEYREL #key ],
+  J-NEEDS-AFFIX -,
+  LMORPH-BIND-TYPE beki-morph].
 
 
 
@@ -11175,8 +11215,7 @@ cop-light-lex := nonaux-lex &
 ; <ex>行く の だ
 ; <ex>良い の だ
 ; <nex>先生 の だ
-; <todo>(TK 07-05-08)「の です」など"AHON +"のものや「ん だろ う」など推測を表すものは
-; 別typeのほうが良いが、適当と思われるtypeがない。
+; <todo>(TK 07-05-08)「ん だろ う」など推測を表すものもこのtypeで良いかどうか。
 ; </type>
 n-cop-lex := cop-light-lex &
 [SYNSEM.LOCAL.CAT [HEAD [H-TENSE #tense,
@@ -11185,6 +11224,26 @@ n-cop-lex := cop-light-lex &
                          C-MOD null],
                    VAL.COMPS.FIRST.LOCAL.CAT.HEAD [H-TENSE #tense,
                                                   MODUS #mood]]].
+
+
+
+;の です 
+;の で す
+;ん です
+;; (TK 08-04-09)
+; <type val="n-cop-ahon-lex">
+; <name-ja>承用言助動詞連語尊敬
+; <description>n-cop-lexを参照。このtypeは聞き手（読み手）への敬意を表す場合に使う。
+; <ex>行く の です
+; <ex>良い の です
+; <nex>先生 の です
+; <todo>
+; </type>
+n-cop-ahon-lex := n-cop-lex &
+	       	  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+
+
+
 
 
 reg-cop-lex := cop-light-lex.
