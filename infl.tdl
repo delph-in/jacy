@@ -486,6 +486,12 @@ j-lexeme-to-word-rule &
                                         FIN -]],
  ARGS.FIRST.STEMTYPE kurusuru-stem].
 
+mai-beki-lexeme-regular-infl-rule := 
+lexeme-rule &
+[RMORPH-BIND-TYPE mai-beki-morph,
+ARGS.FIRST v-lex & [STEMTYPE regular-stem]].
+
+
 ; (TK 07-05-24)kurusuru-stem以外のverbに対応するものも必要。
 ; また、同じkurusuru-stemでも、「論ずる」など語尾が「ずる」のものに対応できていない。
 
@@ -495,24 +501,15 @@ lexeme-rule &
 [RMORPH-BIND-TYPE mai-morph,
 ARGS.FIRST v-lex & [STEMTYPE kurusuru-stem]].
 
-mai-lexeme-c-infl-rule := 
-lexeme-rule &
-[RMORPH-BIND-TYPE mai-beki-morph,
-ARGS.FIRST v-lex & [STEMTYPE c-stem]].
-
-mai-lexeme-v-infl-rule := 
-lexeme-rule &
-[RMORPH-BIND-TYPE mai-beki-morph,
-ARGS.FIRST v-lex & [STEMTYPE v-stem]].
-
-
 ; (MS 2004-12-17) beki takes す in the case of する+べき: すべき
 
-beki-lexeme-infl-rule := 
+beki-lexeme-ks-infl-rule := 
 %suffix (する す) (来る 来る) (くる くる)
 lexeme-rule &
 [RMORPH-BIND-TYPE beki-morph,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;ADJECTIVES;;;;;;;;;;;;;;;;;;;;
