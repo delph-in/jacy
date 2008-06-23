@@ -64,8 +64,8 @@
       (read-cached-sublex-if-available 
        "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))
       ;;; fake unknown word processing -- eric 2007/06/13
-      (read-cached-sublex-if-available 
-       "tanaka-unknowns" (list (lkb-pathname (parent-directory) "lex/tanaka-unknowns.tdl")))
+;      (read-cached-sublex-if-available 
+;       "tanaka-unknowns" (list (lkb-pathname (parent-directory) "lex/tanaka-unknowns.tdl")))
       ;;; its so fast now, we can afford to do it every time
       (index-for-generator)
       )
