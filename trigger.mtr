@@ -3417,3 +3417,11 @@ karane_gr := generator_rule &
 rareru-simple-pass-end-vmorph_gr := generator_rule &
 [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
   FLAGS.TRIGGER "rareru-simple-pass-end-vmorph" ].
+
+nee-sep_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "nee-sep" ].
+
+katamari_2_gr := generator_rule &
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+  FLAGS.TRIGGER "katamari_2" ].
