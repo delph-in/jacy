@@ -2260,12 +2260,12 @@ nounmod-p-intcomp-lex := nounmod-p-lex &
 ; <todo>
 ; </type>
 nounmod-p-pcomp-lex := nounmod-p-lex &
-		       [SYNSEM [LOCAL [CAT [HEAD.PTYPE nattr,
-					    VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD vmod-p_head  & [PTYPE nontop],
-									     CONT.HOOK.XARG #1,
-									     BAR +]]],
-				       CONT.RELS <! prep-mod-relation & [PRED '_no_p_rel] !>],
-				LKEYS.KEYREL.ARG1 #1]].
+ [SYNSEM [LOCAL [CAT [HEAD.PTYPE nattr,
+		      VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD vmod-p_head  & [PTYPE nontop],
+						       CONT.HOOK.XARG #1,
+						       BAR +]]],
+		 CONT.RELS <! prep-mod-relation & [PRED "_no_p_rel"] !>],
+	  LKEYS.KEYREL.ARG1 #1]].
 
 
 
@@ -2508,7 +2508,7 @@ topic-vhead-connect-p-lex := topic-p-lex &
 						      FORMAL.AHON -,
 						      MAIN-PRD -],
 					    CONT.HOOK.INDEX #objind]],
-		CONT [RELS <! [PRED '_toshite_p_rel,
+		CONT [RELS <! [PRED "_toshite_p_rel",
 			       ARG2 #objind] !>]]].
 
 ; (ERB 2002-01-10) Experimenting with treating particle uses of など
@@ -2827,7 +2827,7 @@ n_conj-p-lex := conj-lex &
 ; </type>
 hyphen-conj-p-lex := n_conj-p-lex &
             [SYNSEM [LOCAL.CAT.HEAD.PTYPE to,
-		     LKEYS.KEYREL.PRED 'to_and]].
+		     LKEYS.KEYREL.PRED "to_c_and"]].
 
 
 ; (MS 2005-05-17) I am not sure that we need this. The only instance is "か", as in "東京からか". 
@@ -3238,7 +3238,7 @@ s-end1-neg-imp-lex := sap-lex &
 		 CONT [HOOK [LTOP #neg-hand,
 			     INDEX #ind],
 		       RELS <! #key & neg-relation & 
-			     [PRED 'neg_rel,
+			     [PRED "neg_rel",
 			      LBL #neg-hand,
 			      ARG0 individual,
 			      ARG1 #neg1 ]!>,
@@ -3349,7 +3349,7 @@ discourse-lex := lexical_sign &
 		 CONT [HOOK.LTOP #top,
 		       RELS <! subord-or-conj-relation &
 			     [ LBL #top,
-			       PRED 'discourse_rel,
+			       PRED "discourse_x_rel",
 			       L-HNDL #hand ],
 			     #key & 
 			     [ LBL #hand, 
@@ -5366,11 +5366,11 @@ quotation-definition-end-lex :=  lexical_sign &
 			     INDEX #index],
 		       RELS <! #key  & noun-arg1-relation &
 			     [LBL #ltop,
-			      PRED 'nom_rel,
+			      PRED "nom_rel",
 			      ARG0 #index,
 			      ARG1 #arg1],
 			     quant-relation & 
-			     [PRED 'udef_rel,
+			     [PRED "udef_rel",
 			      ARG0 #index,
 			      RSTR #rstr]  !>,
 		       HCONS <! qeq & [HARG #rstr, LARG #ltop],
@@ -5461,7 +5461,8 @@ ordinary-nohon-threepl-n-lex := ordinary-nohon-n-lex & [SYNSEM.LKEYS.KEYREL.ARG0
 ; <todo>(TK 07-05-08)副詞的な働きもできるようにすべき(lkb::do-parse-tty "理由 が 何 か ある")。
 ; (TK 07-05-08)なぜ「何 か」がこのtypeで、「何か」がordinary-nohon-indef-n-lexなのか不明。
 ; </type>
-ordinary-nohon-plusbar-indefspec-n-lex := ordinary-nohon-plusbar-n-lex & [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED '_indef_n_rel].
+ordinary-nohon-plusbar-indefspec-n-lex := ordinary-nohon-plusbar-n-lex & 
+[SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LKEYS.KEYREL.PRED "_indef_n_rel"].
 
 
 ; (MS 2004-12-24) Changed the name from ordinary-nohon-minusbar-right-n-lex.
@@ -5759,7 +5760,7 @@ indef-word-place-lex := indef-word-temp-or-place-lex &
 ; <todo>
 ; </type>
 indef-word-person-lex := indef-word-temp-or-place-lex &
-[ SYNSEM.LKEYS.KEYREL reg-nom-relation & [ PRED 'person ]].
+[ SYNSEM.LKEYS.KEYREL reg-nom-relation & [ PRED "person" ]].
 
 ; (ERB 2001-10-04) My new adv_np_rule, meant for date expressions,
 ; is applying to いくら because the type of its key isn't sufficiently
@@ -5780,7 +5781,7 @@ wh-word-quantity-lex  := n-lex &
                                          VAL noun_sc & [SPR #spr & [FIRST.LOCAL.CAT.HEAD.KEYS.KEY whq_rel]]],
 				    ARG-S #spr,
                                     CONT [RELS <! #key,
-                                                   [PRED 'part-of_rel,
+                                                   [PRED "part-of_rel",
                                                     LBL #h1,
                                                     ARG0 #x1],
 						quant-relation & 
@@ -6755,7 +6756,7 @@ date-with-object2-lex := date-lex &
 				     LOCAL [ CAT.VAL saturated,
 					     CONT.HOOK.INDEX #objind ]] >],
 		  CONT [ RELS.LIST.REST.FIRST prep-mod-relation &
-					      [ PRED 'prep,
+					      [ PRED "prep",
 						ARG1 #selfind,
 						ARG2 #objind,
 						LBL #h2 ],
@@ -6801,8 +6802,8 @@ toshi-lex := date-lex &
 ; <todo>
 ; </type>
 date-ersatz-lex := date-no-object2-no-int-lex &
- [ SYNSEM.LKEYS [KEYREL.PRED 'dateersatz,
-		 ALTKEYREL.CARG 'ersatz ]].
+ [ SYNSEM.LKEYS [KEYREL.PRED "dateersatz",
+		 ALTKEYREL.CARG "ersatz" ]].
 
 nichi-no-object2-lex := nichi-lex & date-no-object2-with-int-lex.
 gatsu-no-object2-lex := gatsu-lex & date-no-object2-with-int-lex.
@@ -7684,7 +7685,8 @@ v-coord-end-ndmorph-lex := v-coord-end-lex &
 
 comma-coord-end-lex := v-coord-end-lex &
 		       [SYNSEM [LOCAL.CAT.HEAD.J-SPEC null,
-				LKEYS.KEYREL adj-relation & [PRED 'comma]],
+				LKEYS.KEYREL adj-relation & 
+						      [PRED "comma_c_rel"]],
 			LMORPH-BIND-TYPE i-or-t-morph].
 		
 
@@ -9170,7 +9172,7 @@ v2n-end-lex :=  nom-lex &
 mai-end-lex := v-noncaus-op-end-lex &
  [SYNSEM [LKEYS.KEYREL #key & neg-relation & 
 		       [LBL #top, 
-			PRED 'neg_rel,
+			PRED "neg_rel",
 			ARG1 #h3],
 	  LOCAL [CAT [HEAD v-op-end_head &
 			   [MODUS indicative,
@@ -9757,7 +9759,7 @@ v-sc-n-stem-lex := v-sc-stem-lex &
 			  [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
 			   COMPS.FIRST.LOCAL.CONT.HOOK.INDEX #compind]],
 		 CONT [RELS <! relation, 
-			     [PRED 'cop_id_rel,
+			     [PRED "cop_id_rel",
 			      ARG0 event,
 			      ARG1 #sbjind,
 			      ARG2 #compind,
@@ -9903,7 +9905,7 @@ v-soc-noun-stem-lex := v-soc-stem-lex &
 			[COMPS < [LOCAL.CONT.HOOK.INDEX #objind],
 				 [LOCAL.CONT.HOOK.INDEX #compind] >],
 		CONT [RELS <! relation,
-			    [PRED 'cop_id_rel,
+			    [PRED "cop_id_rel",
 			     ARG0 event,
 			     ARG1 #objind,
 			     ARG2 #compind,
@@ -10815,7 +10817,7 @@ cop-id-stem-lex := v-sbj-comps-stem-lex &
                     RELS.LIST.FIRST [LBL  #hand]],
 		CTXT.BACKGROUND <! !>],
 	 LKEYS.KEYREL equal-relation &
-		    [PRED 'cop_id_rel,
+		    [PRED "cop_id_rel",
                             LBL #hand,
                             ARG1 #sbjind,
                             ARG2 #objind,
@@ -10944,17 +10946,20 @@ cop-id-neg-stem-lex := verb-stem-lex &
 					     SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]]],
 		CONT [HOOK [LTOP #neg-hand,
 			   XARG #sbjind],
-                     RELS <! neg-relation & #key & [LBL #neg-hand,ARG1 #arg, PRED 'neg_rel],
-                              equal-relation & 
-                                         [PRED 'cop_id_rel,
-                                          LBL #cop-hand,
-                                          ARG1 #sbjind,
-                                          ARG2 #objind]!>,
-                    HCONS <! qeq & [HARG #arg, LARG #cop-hand] !>],
-               CTXT.BACKGROUND <! !>,
+                     RELS <! neg-relation & #key & 
+			   [LBL #neg-hand, 
+			    PRED "neg_rel",
+			    ARG1 #arg],
+			   equal-relation & 
+			   [PRED "cop_id_rel",
+			    LBL #cop-hand,
+			    ARG1 #sbjind,
+			    ARG2 #objind]!>,
+		      HCONS <! qeq & [HARG #arg, LARG #cop-hand] !>],
+		CTXT.BACKGROUND <! !>,
 		ARG-S < #sbj . #comps >],
 	 LKEYS.KEYREL #key,
-         NON-LOCAL.QUE <! !>],
+	 NON-LOCAL.QUE <! !>],
  STEMTYPE adj-stem].
 
 
@@ -11114,9 +11119,12 @@ cop-neg-stem-lex := verb-stem-lex &
 							 CAT.HEAD.H-TENSE #tense]]]]],
 		CONT [HOOK [LTOP #hand,
 			    INDEX #ind],
-                     RELS <! #key & neg-relation & [LBL #hand,ARG1 #arg, PRED 'neg_rel] !>,
-                    HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
-               CTXT.BACKGROUND <! !>,
+		      RELS <! #key & neg-relation & 
+			    [LBL #hand, 
+			     PRED "neg_rel", 
+			     ARG1 #arg ] !>,
+		      HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
+		CTXT.BACKGROUND <! !>,
 		ARG-S #comps],
 	 LKEYS.KEYREL #key,
          NON-LOCAL.QUE <! !>],
@@ -11147,7 +11155,9 @@ cop-neg-lex := nonaux-lex &
 	       
 	       CONT [HOOK #hook & [LTOP #hand,
 				   INDEX #ind],
-		     RELS <! #key & neg-relation & [ARG1 #arg, PRED 'neg_rel]  !>,
+		     RELS <! #key & neg-relation & 
+			   [PRED "neg_rel",
+			    ARG1 #arg ]  !>,
 		     HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
 	       CTXT.BACKGROUND <! !>,
 	       ARG-S #comps,
@@ -11725,7 +11735,7 @@ pure-aspect-stem-lex := verb-stem-lex &
 			     LTOP #ohand],
                        HCONS <! !> ],
 		 ARG-S < #sbj >],
-	  LKEYS.KEYREL [PRED 'aspect,
+	  LKEYS.KEYREL [PRED "aspect",
 			ARG0 #event],
 	  MODIFIED.PERIPH +,
 	  NON-LOCAL.QUE <! !>]].

@@ -1685,7 +1685,7 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 [ C-CONT common-noun-sem-type &
          [ HOOK [LTOP #hand,
 		 INDEX #arg],
-	   RELS <! [ PRED 'noun_relation,
+	   RELS <! [ PRED "noun_relation",
 		     ARG0 #arg,
 		     LBL #hand ] !> ],
   ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ XARG #arg,
@@ -1748,10 +1748,10 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 ; nouns to start with, so we don't need this.
 
 numcl2noun-rule-type :=  ordinary-nohon-n-lex &
-                         [SYNSEM.LKEYS.KEYREL.PRED 'numcl,
-                          INFLECTED +,
-                          STEM #stem,
-                          ARGS < spr-only-num-cl-lex & [STEM #stem]>].   
+ [SYNSEM.LKEYS.KEYREL.PRED "numcl",
+  INFLECTED +,
+  STEM #stem,
+  ARGS < spr-only-num-cl-lex & [STEM #stem]>].   
 
 ; (ERB 2001-10-03) I need this to be a syntax rule so that
 ; the quantify n rule can feed it, as well as the head-specifier
