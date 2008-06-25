@@ -10788,7 +10788,7 @@ to_intrans-c-stem-lex := to_intrans-stem-lex & [STEMTYPE c-stem].
 to_intrans-c2-stem-lex := to_intrans-stem-lex & [STEMTYPE c2-stem].
 to_intrans-v-stem-lex := to_intrans-stem-lex & [STEMTYPE v-stem].
 
-; <type val="to_intrans-c-stem-lex">
+; <type val="to_intrans-c-stem-nomorp-lex">
 ; <name-ja>非動作性イウ
 ; <description>to_intrans-c-stem-lexを参照。
 ; <ex>たこ焼き と いえ ば 大阪 だ
@@ -11057,10 +11057,13 @@ reg-cop-stem-indicative-dastem-nomod-lex := reg-cop-stem-indicative-dastem-lex &
 ; <nex>綺麗 だ な
 ; <todo>
 ; </type>
+; (FCB 2008-06-25) made FIN - so that it doesn't head sentences
 reg-cop-stem-indicative-dastem-nmod-lex := reg-cop-stem-indicative-dastem-lex & 
-					   [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL [CAT.HEAD noun_head,
-										CONT.HOOK.INDEX #ind]] >,
-						    LKEYS.KEYREL.ARG1 #ind]].
+ [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL [CAT.HEAD noun_head & [FIN -],
+				       CONT.HOOK.INDEX #ind]] >,
+	  LKEYS.KEYREL.ARG1 #ind]].
+
+
 reg-cop-stem-fem-lex := reg-cop-stem-lex &
 			[SYNSEM.LOCAL.CTXT.C-INDICES.SPEAKER.PNG.GEN fem,
 			 STEMTYPE desu-stem].
@@ -12278,7 +12281,7 @@ base-i-adj-neg-stem-lex := base-adj-stem-lex &
 		      RELS <! neg-relation & #key &
 			    [ARG1 #arghd, 
 			     LBL #top],
-			    [PRED "exist_v_rel",
+			    [PRED "_exist_v_rel",
 			     LBL #aru_hd,
 			     ARG0 #event,
 			     ARG1 #inst]!>,
