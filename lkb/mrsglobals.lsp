@@ -44,8 +44,8 @@
     (vsym "CFROM")
   "cfrom feature for recording character positions on relations")
 
-(defparameter *psoa-top-h-path* 
-  `(,(vsym "HOOK") ,(vsym "GTOP"))
+(defparameter *psoa-top-h-path* nil
+;  `(,(vsym "HOOK") ,(vsym "GTOP"))
   "path to get the hook's ltop from an mrs fs (psoa - parameterised state of affairs -
    old terminology)")
 

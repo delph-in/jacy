@@ -560,7 +560,7 @@ posmapping :=
 ;;; as of august 2003, PET includes ECL and the generic (R)MRS code; hence, we
 ;;; need to include the MRS settings from the grammar.
 ;;;
-postload-lisp-files := "lkb/mrsglobals.lisp".
+postload-lisp-files := "lkb/mrsglobals.lsp".
 
 
 ;;; load the vpm file
