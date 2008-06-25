@@ -10,6 +10,8 @@ lex-entries-can-fail.
 ;;; until we can fix that in the English grammar, duplicate some parameters
 ;;; here.                                                  (14-sep-01; oe)
 ;;;
+include "mrs".
+
 
 ;; command line settings
 verbose := 10.
@@ -42,7 +44,7 @@ trivial-tokenizer.
 ;; being used meaningfully.
 
 
-punctuation-characters := "\"!&'()*+,-−./;<=>?@[\]^_`{|}~。？…．　○●◎＊☆★◇◆".
+punctuation-characters := "!\"!&'()*+,-−./;<=>?@[\]^_`{|}~。！？…．　○●◎＊☆★◇◆".
 ;"
 
 ;; name of type to get info about grammar into (if at all)
@@ -119,9 +121,6 @@ mrs-path := "SYNSEM.LOCAL.CONT".
 mrs-cfrom-path := "SYNSEM.LOCAL.CONT.RELS.LIST.CFROM".
 mrs-cto-path   := "SYNSEM.LOCAL.CONT.RELS.LIST.CTO".
 mrs-carg-path  := "SYNSEM.LKEYS.KEYREL.CARG".
-
-
-
 
 ;; path to LABEL for RA mapping
 label-path := "SYNSEM.LOCAL.KEYS.KEY.LBL".

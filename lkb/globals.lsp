@@ -183,6 +183,46 @@
     five_card six_card seven_card eight_card nine_card 
     ;;; indefinite pronouns FIXME - improve semantics
     donna douiu dono-det
+    ;; variants of me
+    atakushi atashi boku boku-kanji boku_3 onore_1_2 ore ore-firstsg_katakana 
+    ore-kanji oresama-firstsg oresama-firstsg_chasen sei_10 shousei temae_2_1 
+    uchi-kanji-pron uchi-pron ware_1_3 ware_6 washi-firstsg watakushi watashi yasei_1_3 
+    ;; variants of you
+    anata-kanji anta-pron kimi-pron kimi-pron-hiragana omae_1_hiragana omae_1_kanji 
+    onmi_1 onoono_1_1 onore_2 otaku_3 socchi sochira_2 temee_1_2 ware_2_1 ware_5 
+    ;; variants of youse
+    anatatachi-b anatatachi-c kimitachi kimitachi-b kimitachi-c 
+    ;; variants of wa: wa-narg
+    tte-narg nanowa 
+    colon-advp colon-advp-2 comma-advp
+    ;; →
+    arrow-postp
+    ;;  第  FIXME - improve semantics
+    dai-card2ord
+    ;; who
+    dochirasama-multi dare-hiragana donata_1
+    ;; aru/iru
+    aru-kanji-stem aru-kanji-stem-2 iru_be-2-stem
+    ;; aru/iru aux
+    iru-aux-kanji-stem aru-kanji-aux-stem
+    ;; nai/nu
+    nai-no-case-adj-kanji nu-end
+    ;; da/dearu/desu: da-v-cop-id-stem 
+    desu-v-cop-id-stem dearu-v-cop-id-stem 
+    ;; koto
+    koto-pred-kanji
+    ;;; Lexical things here!
+    kirei_1_2 kirei_1_3 ;  綺麗　奇麗　
+    iya-katakana-gg-adj iya-kanji-gg-adj ;  嫌 いや
+    dekiru_2				; dekiru
+    furu_1-hiragana			; furu
+    tabako_1_1 tabako_1_2		; tabako
+    furui_2_2				; furui
+    akiraka_hiragana			; akiraka
+    mieru-hiragana-stem			; mieru
+    shizuka_1-hiragana			; shizuka
+    ;;; week days
+    ka_dofw kayou			; kayou / kayoubi 
     ))
 
 ;;;
