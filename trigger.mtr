@@ -27,13 +27,19 @@ ka_gr := generator_rule &
 
 
 ;;; Terminative
+; shimau-aux-stem_gr := arg0e_gr &
+;  [ CONTEXT [ RELS <! [ ARG0 #e & [ E.ASPECT  terminative ] ] !> ],
+;    FLAGS [TRIGGER "shimau-aux-stem" ],
+;          [EQUAL < #e > ]].
+
 shimau-aux-stem_gr := arg0e_gr &
- [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT terminative ] ] !> ],
+ [ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+;[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT  terminative ] ] !> ],
    FLAGS.TRIGGER "shimau-aux-stem" ].
 
-shimau-te_gr := arg0e_gr &
- [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT terminative ] ] !> ],
-   FLAGS.TRIGGER "te-end" ].
+; shimau-te_gr := arg0e_gr &
+;  [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT terminative ] ] !> ],
+;    FLAGS.TRIGGER "te-end" ].
 
 
 jau-end_gr := arg0e_gr &
@@ -94,7 +100,8 @@ oku-aux-kanji-stem_gr := arg0e_gr &
 
 ;;; inceptive
 iku-aux-hiragana-stem_gr := arg0e_gr &
- [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT inceptive ] ] !> ],
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+; [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT inceptive ] ] !> ],
    FLAGS.TRIGGER "iku-aux-hiragana-stem" ].
 
 iku-aux-stem_gr := arg0e_gr &
@@ -111,7 +118,8 @@ mairu-aux-hiragana-stem_gr := arg0e_gr &
 
 ;;; perfect_progressive
 kuru-hiragana-aux-stem_gr := arg0e_gr &
-[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT perfect_progressive ] ] !> ],
+[ CONTEXT [ RELS <! [ PRED "non_existing_rel" ] !> ],
+;[ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT perfect_progressive ] ] !> ],
   FLAGS.TRIGGER "kuru-hiragana-aux-stem" ].
 
 kuru-aux-stem_gr := arg0e_gr &
@@ -222,7 +230,7 @@ nin_numcl_gr := generator_rule &
 
 ;;; should look for vn lexical type?
 suru-light-stem_gr := arg0e_gr &
-[ CONTEXT [ RELS <! [ PRED "~_vn_" ] !> ],
+[ CONTEXT [ RELS <! [ PRED "~_s_" ] !> ],
   FLAGS.TRIGGER "suru-light-stem" ].
 
 ;;; possibly add different politenesses
