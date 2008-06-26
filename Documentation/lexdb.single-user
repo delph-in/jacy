@@ -81,3 +81,18 @@ Description:
  - you are free to define 'lex' as a view (eg. you could store a large number of lexicon entries in another table 'all_entries', create a table 'active'to specify which entry 'name's you want in view, then define 'lex' as:
 
   CREATE VIEW lex AS active JOIN all_entries USING name;
+
+
+
+========================================================================
+
+If Kuribayashi-san and I both try to play with the lexicon, mayhen
+ensues.
+
+To redo the semi (very sub-optimal):
+
+sudo su postgres
+postgres$ psql --command "DROP TABLE semi_extra, semi_frame, semi_mod, semi_pred, semi_var CASCADE;" jacy
+
+start jacy, when it complains that semi_pred doesn't exist, then 
+(new-semi *lexicon*).
