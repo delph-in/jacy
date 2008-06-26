@@ -7594,26 +7594,26 @@ te-adjunct-lex-d := te-adjunct-lex &
 
 
 te-end-lex-basic := v-tense-end-lex &
-	      [J-NEEDS-AFFIX -,
-            SYNSEM.LOCAL [CAT [HEAD [FIN -,
-                                     MARK null,
-                                     COP-ARG -,
-                                     C-MOD < [LOCAL [CAT [HEAD sentence-valid & [FORMAL.AHON #ahon]],
-						     BAR +]] >,
-                                     MOD null,
-                                     J-POSTHEAD coord,
-				     FORMAL.AHON #ahon]],
-                          CONT.HOOK.INDEX.E.MOOD indicative]].
+ [J-NEEDS-AFFIX -,
+  SYNSEM.LOCAL [CAT [HEAD [FIN -,
+			   MARK null,
+			   COP-ARG -,
+			   C-MOD < [LOCAL [CAT [HEAD sentence-valid & [FORMAL.AHON #ahon]],
+					   BAR +]] >,
+			   MOD null,
+			   J-POSTHEAD coord,
+			   FORMAL.AHON #ahon]],
+		CONT.HOOK.INDEX.E.MOOD indicative]].
 
 
 v-te-end-lex := te-end-lex-basic &
-	      [SYNSEM.LOCAL.CAT [HEAD [J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX aux_plus],
-						      BAR +],
-					       LEX +,
-					       MODIFIED.PERIPH -] >,
-				       MODUS #modus,
-				       H-TENSE tensed],
-				 VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #modus]].
+ [SYNSEM.LOCAL.CAT [HEAD [J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX aux_plus],
+					   BAR +],
+				    LEX +,
+				    MODIFIED.PERIPH -] >,
+			  MODUS #modus,
+			  H-TENSE tensed],
+		    VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #modus]].
 
 ; <type val="v-te-end-tmorph-lex">
 ; <name-ja>テ接続助詞並列
@@ -7625,7 +7625,7 @@ v-te-end-lex := te-end-lex-basic &
 ; <todo>
 ; </type>
 v-te-end-tmorph-lex := v-te-end-lex &
-		       [LMORPH-BIND-TYPE t-morph].
+ [LMORPH-BIND-TYPE t-morph].
 
 ; <type val="v-te-end-ndmorph-lex">
 ; <name-ja>デ接続助詞並列
@@ -7635,7 +7635,7 @@ v-te-end-tmorph-lex := v-te-end-lex &
 ; <todo>
 ; </type>
 v-te-end-ndmorph-lex := v-te-end-lex &
-		       [LMORPH-BIND-TYPE nd-morph].
+ [LMORPH-BIND-TYPE nd-morph].
 
 ; <type val="v-te-end-ahon-lex">
 ; <name-ja>テ接続助詞並列尊敬
@@ -8858,11 +8858,10 @@ v-honorific-end-lex := v-simple-end-lex &
 ; now that I've changed shimau.  (Should bring teru in line with teiru, too!)
 
 
-; (MS & FCB 2003-10-29) STEMTYPE otherstem included, but stops it working FIXME!!!
-
-
 v-contracted-aux-end-lex := v-op-end-lex &
-[SYNSEM [LOCAL [CAT [HEAD contracted-aux_head & [MODUS #modus],
+[SYNSEM [LOCAL [CAT [HEAD contracted-aux_head & 
+			  [AUX aux_minus,
+			   MODUS #modus],
 		     VAL [SUBJ  #subjval,
                           COMPS #compsval,
 			  SPR obl-1-arg &
@@ -8875,8 +8874,8 @@ v-contracted-aux-end-lex := v-op-end-lex &
 		      HOOK #hook,
 		      HCONS <!  !>]],
 	 MODIFIED.PERIPH +],
- INFLECTED bool,
- STEMTYPE otherstem].
+ INFLECTED bool].
+
 
 ; <type val="v-contracted-aux-progressive-end-lex">
 ; <name-ja>補助動詞進行縮約
@@ -8888,21 +8887,45 @@ v-contracted-aux-end-lex := v-op-end-lex &
 ; (TK 07-04-03)撥音便「ん」やガ行五段連用形イ音便の直後につく「でる」も必要。
 ; (lkb::do-parse-tty "読ん でる")
 ; </type>
-v-contracted-aux-progressive-end-lex := v-contracted-aux-end-lex &
-					[J-NEEDS-AFFIX +,
-					 LMORPH-BIND-TYPE t-morph,
-					 SYNSEM.LOCAL [CONT.HOOK.INDEX.E [ ASPECT progressive,
-									   MOOD #modus],
-						       CAT.HEAD.MODUS #modus]].
+v-contracted-aux-prog-end-lex := v-contracted-aux-end-lex &
+ [J-NEEDS-AFFIX +,
+  SYNSEM.LOCAL [CONT.HOOK.INDEX.E [ ASPECT progressive,
+				    MOOD #modus],
+		CAT.HEAD.MODUS #modus],
+  STEMTYPE v-stem].
 
+
+; <type val="v-contracted-aux-prog-end-teru-lex">
+; <name-ja>補助動詞進行縮約
+; <description>動詞の連用形の直後につく「て+いる(aspect)」の縮約形。動詞の連用形の直後につくが、音便を
+; 持つ語の場合は音便の直後につく。ガ行五段活用の動詞や音便が「ん」の場合はその後につくことはできない。
+; <ex>書い てる
+; <nex>
+; <todo>
+; </type>
+v-contracted-aux-prog-end-teru-lex := v-contracted-aux-prog-end-lex &
+[ LMORPH-BIND-TYPE t-morph].
+
+; <type val="v-contracted-aux-prog-end-deru-lex">
+; <name-ja>補助動詞進行縮約
+; <description>動詞の連用形の直後につく「て+いる(aspect)」の縮約形。動詞の連用形の直後につくが、音便を
+; 持つ語の場合は音便の直後につく。ガ行五段活用の動詞や音便が「ん」の場合はその後につくことはできない。
+; 撥音便「ん」やガ行五段連用形イ音便の直後につく「でる」
+; <ex>読ん でる
+; <nex>
+; <todo>
+; </type>
+v-contracted-aux-prog-end-deru-lex := v-contracted-aux-prog-end-lex &
+ [LMORPH-BIND-TYPE nd-morph].
 
 
 v-contracted-aux-terminative-end-lex := v-contracted-aux-end-lex &
-					[J-NEEDS-AFFIX -,
-					 INFLECTED -,
-					 SYNSEM.LOCAL [CAT.HEAD.COP-ARG -,
-						       CONT [HOOK.INDEX.E [MOOD indicative,
-									   ASPECT terminative]]]].
+ [J-NEEDS-AFFIX -,
+  INFLECTED -,
+  SYNSEM.LOCAL [CAT.HEAD.COP-ARG -,
+		CONT [HOOK.INDEX.E [MOOD indicative,
+				    ASPECT terminative]]],
+  STEMTYPE c-stem].
 
 ; <type val="v-contracted-aux-terminative-tmorph-end-lex">
 ; <name-ja>補助動詞終止縮約チャウ
@@ -8914,7 +8937,7 @@ v-contracted-aux-terminative-end-lex := v-contracted-aux-end-lex &
 ; v-contracted-aux-progressive-end-lexも参照。
 ; </type>
 v-contracted-aux-terminative-tmorph-end-lex := v-contracted-aux-terminative-end-lex &
-					       [LMORPH-BIND-TYPE t-morph].
+ [LMORPH-BIND-TYPE t-morph].
 
 ; <type val="v-contracted-aux-terminative-ndmorph-end-lex">
 ; <name-ja>補助動詞終止縮約ジャウ
@@ -8926,7 +8949,25 @@ v-contracted-aux-terminative-tmorph-end-lex := v-contracted-aux-terminative-end-
 ; v-contracted-aux-progressive-end-lex、v-contracted-aux-terminative-tmorph-end-lexも参照。
 ; </type>
 v-contracted-aux-terminative-ndmorph-end-lex := v-contracted-aux-terminative-end-lex &
-					       [LMORPH-BIND-TYPE nd-morph].
+ [LMORPH-BIND-TYPE nd-morph].
+
+
+v-contracted-aux-prospective-end-lex := v-contracted-aux-end-lex &
+ [J-NEEDS-AFFIX -,
+  INFLECTED -,
+  SYNSEM.LOCAL [CAT.HEAD.COP-ARG -,
+		CONT [HOOK.INDEX.E [MOOD indicative,
+				    ASPECT prospective]]],
+  STEMTYPE c-stem].
+;<ex>書い とく
+v-contracted-aux-prospective-tmorph-end-lex := v-contracted-aux-prospective-end-lex &
+ [LMORPH-BIND-TYPE t-morph].
+
+; <ex>読ん どく
+v-contracted-aux-prospective-ndmorph-end-lex := v-contracted-aux-prospective-end-lex &
+ [LMORPH-BIND-TYPE nd-morph].
+
+
 
 
 ;(MS 01-09-19) If the top-handle should be the handle of the subord_rel, we have problems with the restriction that LTOP = KEY.LBL.
