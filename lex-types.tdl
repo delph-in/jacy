@@ -8877,47 +8877,110 @@ v-contracted-aux-end-lex := v-op-end-lex &
  INFLECTED bool].
 
 
-; <type val="v-contracted-aux-progressive-end-lex">
-; <name-ja>補助動詞進行縮約
-; <description>動詞の連用形の直後につく「て+いる(aspect)」の縮約形。動詞の連用形の直後につくが、音便を
-; 持つ語の場合は音便の直後につく。ガ行五段活用の動詞や音便が「ん」の場合はその後につくことはできない。
-; <ex>書い てる
+; <type val="v-contracted-aux-prog-end-super-lex">
+; <name-ja>補助動詞縮約
+; <description>動詞の連用形の直後につく「て（で）+aspect」の縮約形。
+; <ex>
 ; <nex>
-; <todo>(TK 07-04-03)FIXME:現状では動詞の連用形の直後につくことができない。
-; (TK 07-04-03)撥音便「ん」やガ行五段連用形イ音便の直後につく「でる」も必要。
-; (lkb::do-parse-tty "読ん でる")
+; <todo>
 ; </type>
-v-contracted-aux-prog-end-lex := v-contracted-aux-end-lex &
+v-contracted-aux-prog-end-super-lex := v-contracted-aux-end-lex &
  [J-NEEDS-AFFIX +,
   SYNSEM.LOCAL [CONT.HOOK.INDEX.E [ ASPECT progressive,
 				    MOOD #modus],
-		CAT.HEAD.MODUS #modus],
-  STEMTYPE v-stem].
+		CAT.HEAD.MODUS #modus]].
+
+
+v-contracted-aux-prog-end-lex := v-contracted-aux-prog-end-super-lex &
+  [STEMTYPE v-stem].
+
+;;; FIXME VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+;;; why does this block zeros (lkb::do-parse-tty "書い とる")
+v-contracted-aux-prog-xshon-end-lex := v-contracted-aux-prog-end-super-lex &
+[SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -,
+		    VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #2],
+	       CONT.HOOK.INDEX #3,
+	       CTXT  subj-honor-ctxt & 
+		   [BACKGROUND <! subj-honor_rel &
+				[HONORED #2,
+                                     BEARER #3,
+                                     POLARITY -]!>]],
+ STEMTYPE c-stem].
+
+; [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON -],
+; ;                     VAL.SUBJ.FIRST.LOCAL [CAT.HEAD.FORMAL.SHON -,
+; ;                                            CONT.HOOK.INDEX #2]],
+; ;                CONT.HOOK.INDEX #3,
+;  CTXT  subj-honor-ctxt & 
+; 	      [BACKGROUND <! subj-honor_rel !>],
+; ;                                  [HONORED #2,
+; ;                                     BEARER #3,
+; ;                                     POLARITY -] !>]],
+; ; 
+
+v-contracted-aux-prog-xshon-end-toru-lex := v-contracted-aux-prog-xshon-end-lex &
+[ LMORPH-BIND-TYPE t-morph].
+
+v-contracted-aux-prog-xshon-end-doru-lex := v-contracted-aux-prog-xshon-end-lex &
+[ LMORPH-BIND-TYPE nd-morph].
+
 
 
 ; <type val="v-contracted-aux-prog-end-teru-lex">
-; <name-ja>補助動詞進行縮約
-; <description>動詞の連用形の直後につく「て+いる(aspect)」の縮約形。動詞の連用形の直後につくが、音便を
-; 持つ語の場合は音便の直後につく。ガ行五段活用の動詞や音便が「ん」の場合はその後につくことはできない。
+; <name-ja>補助動詞進行縮約テル
+; <description>動詞の連用形の直後につく「て+いる(aspect)」の縮約形「てる」。動詞の連用形の直後につくが、音便を
+; 持つ語の場合は音便の直後につく。音便が「ん」ガ行五段連用形の「い」の場合はその後につくことはできない。
 ; <ex>書い てる
-; <nex>
+; <nex>読ん てる
 ; <todo>
 ; </type>
 v-contracted-aux-prog-end-teru-lex := v-contracted-aux-prog-end-lex &
 [ LMORPH-BIND-TYPE t-morph].
 
 ; <type val="v-contracted-aux-prog-end-deru-lex">
-; <name-ja>補助動詞進行縮約
-; <description>動詞の連用形の直後につく「て+いる(aspect)」の縮約形。動詞の連用形の直後につくが、音便を
-; 持つ語の場合は音便の直後につく。ガ行五段活用の動詞や音便が「ん」の場合はその後につくことはできない。
-; 撥音便「ん」やガ行五段連用形イ音便の直後につく「でる」
+; <name-ja>補助動詞進行縮約デル
+; <description>動詞の連用形の直後につく「で+いる(aspect)」の縮約形「でる」。
+; 撥音便「ん」やガ行五段連用形イ音便の直後につく。
 ; <ex>読ん でる
-; <nex>
+; <ex>嗅い でる
+; <nex>書い でる
 ; <todo>
 ; </type>
 v-contracted-aux-prog-end-deru-lex := v-contracted-aux-prog-end-lex &
  [LMORPH-BIND-TYPE nd-morph].
 
+
+v-contracted-aux-inceptive-end-super-lex := v-contracted-aux-end-lex &
+ [J-NEEDS-AFFIX +,
+  SYNSEM.LOCAL [CONT.HOOK.INDEX.E [ ASPECT inceptive,
+				    MOOD #modus],
+		CAT.HEAD.MODUS #modus]].
+
+v-contracted-aux-inceptive-end-lex := v-contracted-aux-inceptive-end-super-lex &
+  [STEMTYPE c2-stem].
+
+; <type val="v-contracted-aux-inceptive-end-teku-lex">
+; <name-ja>補助動詞起動??縮約テル
+; <description>動詞の連用形の直後につく「て+いく(aspect)」の縮約形「てく」。動詞の連用形の直後につくが、音便を
+; 持つ語の場合は音便の直後につく。音便が「ん」ガ行五段連用形の「い」の場合はその後につくことはできない。
+; <ex>書い てく
+; <nex>読ん てく
+; <todo>
+; </type>
+v-contracted-aux-inceptive-end-teku-lex := v-contracted-aux-inceptive-end-lex &
+[ LMORPH-BIND-TYPE t-morph].
+
+; <type val="v-contracted-aux-inceptive-end-deku-lex">
+; <name-ja>補助動詞進行縮約デル
+; <description>動詞の連用形の直後につく「で+いく(aspect)」の縮約形「でく」。
+; 撥音便「ん」やガ行五段連用形イ音便の直後につく。
+; <ex>読ん でく
+; <ex>嗅い でく
+; <nex>書い でく
+; <todo>
+; </type>
+v-contracted-aux-inceptive-end-deku-lex := v-contracted-aux-inceptive-end-lex &
+[LMORPH-BIND-TYPE nd-morph].
 
 v-contracted-aux-terminative-end-lex := v-contracted-aux-end-lex &
  [J-NEEDS-AFFIX -,
@@ -8930,11 +8993,10 @@ v-contracted-aux-terminative-end-lex := v-contracted-aux-end-lex &
 ; <type val="v-contracted-aux-terminative-tmorph-end-lex">
 ; <name-ja>補助動詞終止縮約チャウ
 ; <description>動詞の連用形の直後につく「て+しまう(aspect)」の縮約形。動詞の連用形の直後につくが、音便を
-; 持つ語の場合は音便の直後につく。ガ行五段活用の動詞や音便が「ん」の場合はその後につくことはできない。
+; 持つ語の場合は音便の直後につく。音便が「ん」やガ行五段活用の「い」の場合はその後につくことはできない。
 ; <ex>書い ちゃう
-; <nex>
-; <todo>(TK 07-04-03)FIXME:現状では動詞の連用形の直後につくことができない。
-; v-contracted-aux-progressive-end-lexも参照。
+; <nex>読ん ちゃう
+; <todo>
 ; </type>
 v-contracted-aux-terminative-tmorph-end-lex := v-contracted-aux-terminative-end-lex &
  [LMORPH-BIND-TYPE t-morph].
@@ -8944,9 +9006,8 @@ v-contracted-aux-terminative-tmorph-end-lex := v-contracted-aux-terminative-end-
 ; <description>v-contracted-aux-terminative-tmorph-end-lexを参照。このtypeは撥音便「ん」や
 ; ガ行五段連用形イ音便の直後につく
 ; <ex>読ん じゃう
-; <nex>
-; <todo>(TK 07-04-03)FIXME:現状では動詞の連用形の直後につくことができない。
-; v-contracted-aux-progressive-end-lex、v-contracted-aux-terminative-tmorph-end-lexも参照。
+; <nex>書い じゃう
+; <todo>
 ; </type>
 v-contracted-aux-terminative-ndmorph-end-lex := v-contracted-aux-terminative-end-lex &
  [LMORPH-BIND-TYPE nd-morph].
@@ -8959,11 +9020,27 @@ v-contracted-aux-prospective-end-lex := v-contracted-aux-end-lex &
 		CONT [HOOK.INDEX.E [MOOD indicative,
 				    ASPECT prospective]]],
   STEMTYPE c-stem].
-;<ex>書い とく
+
+; <type val="v-contracted-aux-prospective-tmorph-end-lex">
+; <name-ja>補助動詞前望?縮約トク
+; <description>動詞の連用形の直後につく「て+おく(aspect)」の縮約形「とく」。動詞の連用形の直後につくが、音便を
+; 持つ語の場合は音便の直後につく。音便が「ん」やガ行五段連用形の「い」の場合はその後につくことはできない。
+; <ex>書い とく
+; <nex>読ん とく
+; <todo>
+; </type>
 v-contracted-aux-prospective-tmorph-end-lex := v-contracted-aux-prospective-end-lex &
  [LMORPH-BIND-TYPE t-morph].
 
+; <type val="v-contracted-aux-prospective-ndmorph-end-lex">
+; <name-ja>補助動詞前望?縮約ドク
+; <description>動詞の連用形の直後につく「で+おく(aspect)」の縮約形「どく」。
+; 撥音便「ん」やガ行五段連用形イ音便の直後につく。
 ; <ex>読ん どく
+; <ex>嗅い どく
+; <nex>書い どく
+; <todo>
+; </type>
 v-contracted-aux-prospective-ndmorph-end-lex := v-contracted-aux-prospective-end-lex &
  [LMORPH-BIND-TYPE nd-morph].
 
