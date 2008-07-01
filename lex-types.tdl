@@ -6073,12 +6073,22 @@ na-adj-wh-lex := na-adj-basic-lex &
 ; REL-CL-SBJ-GAP-RULEしか出ない点は、RELATIVE-CLAUSE-RULEも出せるようにした方が良いかもしれない（「継続が
 ; 時間的だ」という解析に疑問があるため）。
 ; </type>
-na-adj-suffix-lex := adj-lex & 
- [SYNSEM [LOCAL [CAT [HEAD na-adj_head & [MAIN-PRD -],
-		      VAL sbj-narg_transitive & [COMPS.FIRST [OPT -]]],
-		 CONT na-adj-sem-type & [RELS <! #key !>,
-					 HOOK.XARG #arg]],
-	  LKEYS.KEYREL #key & [ARG1 #arg],
+na-adj-suffix-lex := na-adj-stem-lex & 
+ [SYNSEM [LOCAL [CAT [HEAD [MODUS indicative,
+			    MAIN-PRD -],
+		      VAL sbj-narg_transitive & 
+			   [SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX #sbjind,
+			    COMPS.FIRST [OPT -,
+					 LOCAL.CONT.HOOK.INDEX #objind]]],
+		 CONT [ HOOK [ LTOP #ltop,
+			       INDEX #index,
+			       XARG #sbjind],
+			RELS <! #key !>]],
+	  LKEYS.KEYREL #key & arg12-relation &
+		[LBL #ltop,
+		 ARG0 #index,
+		 ARG1 #sbjind,
+		 ARG2 #objind],
 	  NON-LOCAL [QUE <! !>]],
   J-NEEDS-AFFIX -,
   INFLECTED +].
