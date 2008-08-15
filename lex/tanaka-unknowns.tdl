@@ -20234,13 +20234,13 @@
 [ STEM < "馬身" >,
   SYNSEM.LKEYS.KEYREL.PRED "_馬身_n_g_rel" ].
 
-〇-tc := card-no-object-no-specifier &
-[ STEM < "〇" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_〇_n_g_rel" ].
+; 〇-tc := card-no-object-no-specifier &
+; [ STEM < "〇" >,
+;   SYNSEM.LKEYS.KEYREL.PRED "_〇_n_g_rel" ].
 
-．-tc := card-no-object-no-specifier &
-[ STEM < "．" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_．_n_g_rel" ].
+; ．-tc := card-no-object-no-specifier &
+; [ STEM < "．" >,
+;   SYNSEM.LKEYS.KEYREL.PRED "_．_n_g_rel" ].
 
 あしい-tc := i-adj-stem-lex &
 [ STEM < "あしい" >,
@@ -20498,3 +20498,6 @@
 [ STEM < "鬱陶しい" >,
   SYNSEM.LKEYS.KEYREL.PRED "_鬱陶しい_a_g_rel" ].
 
+deru_from-hiragana-stem-new :=  v1-v-stem-lex &
+ [ STEM < "でる" >,
+   SYNSEM.LKEYS.KEYREL.PRED "_deru_v_from_rel" ].
