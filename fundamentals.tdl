@@ -227,5 +227,7 @@ unknown_relation := arg0-relation &
     ARG semarg ].
 
 unknown_rel := predsort.
+unknown_cop_rel := predsort.
 
-
+unknown_cop_relation := arg12-ev-relation &
+  [ PRED unknown_cop_rel ].

@@ -2269,7 +2269,11 @@ super-frag-rule := phrasal_sign  &
                            VAL saturated ] ],
 	     NON-LOCAL [QUE <! !>,
 		     AFFIX  <! !>]],
-    C-CONT [ RELS  <! relation !>,
+    C-CONT [ HOOK [ LTOP #lbl,
+		    INDEX #ind],
+	     RELS  <! relation &
+		    [ LBL #lbl,
+		      ARG0 #ind ] !>,
 	     HCONS <!  !> ], 
     ARGS.FIRST [INFLECTED +,
 		SYNSEM [NON-LOCAL [QUE <! !>,
@@ -2279,12 +2283,7 @@ super-frag-rule := phrasal_sign  &
 ;;; The basic type creates a proposition with an unknown_relation 
 
 basic-frag-rule := super-frag-rule  &
-[ C-CONT [   HOOK [ LTOP #lbl,
-		    INDEX #ind],
-	     RELS  <! unknown_relation &
-			  [ LBL #lbl,
-			    ARG0 #ind ] !>,
-	     HCONS <! !> ]].
+ [ C-CONT [ RELS  <! unknown_relation !>]].
 
 
 unary-frag-rule := basic-frag-rule & unary-type.
@@ -2375,6 +2374,26 @@ binary-frag-rule := basic-frag-rule & binary.
 ; 				 VAL saturated],
 ; 			   CONT.HOOK.INDEX #arg]] >
 
+
+
+frag-cop-rule := super-frag-rule & binary & 
+ [ ARGS <  [ SYNSEM.LOCAL [ BAR +,
+			    CAT [HEAD overt-case-p_head &
+				      [ CASE ga-or-coparg],
+				 VAL saturated],
+			    CONT.HOOK.INDEX #arg1 ]],
+	   [SYNSEM.LOCAL [ CAT [ HEAD  noun_head & 
+				       [EMPTY -,
+					AUX aux_minus,
+					ADJ -,
+					COP -,
+					C-MOD null,
+					SMOD unmarked],
+				 VAL saturated],
+			   CONT.HOOK.INDEX #arg2]] >,
+   C-CONT [ RELS.LIST.FIRST unknown_cop_relation &
+			    [ ARG1 #arg1, 
+			      ARG2 #arg2 ]]].
 
 
 ;;; FIXME - share code with PP/NP frag rules

@@ -990,3 +990,6 @@ frg-i-adv-np := frag-i-adv-np-rule.
 
 ;<ex>そこ へ ２
 frg-pp-int := frag-pp-int-rule.
+
+;<ex>犬 が 動物
+frg-cop := frag-cop-rule.
