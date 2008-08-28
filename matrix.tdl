@@ -332,11 +332,21 @@ nom-obj := mrs &
 ;  --COMPKEY predsort      ; Pointer to the first complement's KEY predsort
 ;  --OCOMPKEY predsort     ; Pointer to the oblique complement's KEY predsort
 
+; lexkeys := avm &
+;   [ KEYREL relation,
+;     ALTKEYREL relation,
+;     --COMPKEY predsort,
+;     --OCOMPKEY predsort ].
+;;
+;;; Moving to this may save some space (DPF and FCB 2008-08-05)
+;;;
 lexkeys := avm &
-  [ KEYREL relation,
-    ALTKEYREL relation,
-    --COMPKEY predsort,
-    --OCOMPKEY predsort ].
+ [ KEYREL relation ].
+
+lexkeys_full := lexkeys &
+ [ ALTKEYREL relation,
+   --COMPKEY predsort,
+   --OCOMPKEY predsort ].
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;  CTXT values 
