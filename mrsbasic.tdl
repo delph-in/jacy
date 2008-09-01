@@ -3,7 +3,7 @@
 ; CONT type
 
 
-nothing :< individual.
+nothing := individual.
 
 
 ; (ERB 2001-08-06) Added ALTKEY for number names.  I suspect it will be useful
@@ -140,7 +140,7 @@ contentful-nom-relation := noun-relation & [ARG0 full_ref-ind].
 
 ;nominalise-vn_rel := contentful-nom_rel & arg-nominalise_rel.
 
-reg-nom-relation :< contentful-nom-relation.
+reg-nom-relation := contentful-nom-relation.
 
 ; (ERB 2001-10-03) None of the subtypes of temp_rel are being used,
 ; so I'm going to comment them out for now, and redo as necessary.
@@ -290,12 +290,12 @@ named-card-relation := card-relation & contentful-nom-relation & [PRED 'named_ca
 
 ; Pronouns
 
-pron-relation :< reg-nom-relation. 
+pron-relation := reg-nom-relation. 
 
 
 ;zero-pron-relation :< pron-relation.
 
-real-pron-relation :< pron-relation.
+real-pron-relation := pron-relation.
 
 generic-nom-relation := pron-relation &
                    [PRED generic-nom_rel].
@@ -624,3 +624,28 @@ vv-relation := arg12-ev-relation &
 vv-prefix-v1_rel := predsort.
 vv-prefix-v1-relation := arg1-ev-relation &
  [PRED vv-prefix-v1_rel].
+
+;;;
+;;; (FCB & DPF 2008-08-06) New types for topic/focus markers
+;;;
+
+focus_d_rel := predsort.
+_wa_d_rel := focus_d_rel.
+_mo_d_rel := focus_d_rel.
+;;; (TK 08-08-28) Added following
+_dake_d_rel := focus_d_rel.
+_shika_d_rel := focus_d_rel.
+_bakari_d_rel := focus_d_rel.
+_nado_d_rel := focus_d_rel.
+_made_d_rel := focus_d_rel.
+_koso_d_rel := focus_d_rel.
+_sura_d_rel := focus_d_rel.
+_demo_d_rel := focus_d_rel.
+_nomi_d_rel := focus_d_rel.
+_sae_d_rel := focus_d_rel.
+_datte_d_rel := focus_d_rel.
+_ga_d_rel := focus_d_rel.
+_colon_d_rel := _wa_d_rel.
+_comma_d_rel := _wa_d_rel.
+_equal_d_rel := _wa_d_rel.
+

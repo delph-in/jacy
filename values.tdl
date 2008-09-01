@@ -21,43 +21,43 @@
 
 
 
-category :< sort.
-p :< category.
-n :< category.
-adj :< category.
-v :< category.
-adv :< category.
-card :< category.
-interj :< category.
-det :< category.
-temp_mod :< category.
-noun_mod :< category.
-pp_mod :< category.
-idiom :< category.
-utt :< category.
-turn :< category.
-sap  :< category.
-comp :< category.
-prep :< category.
+category := sort.
+p := category.
+n := category.
+adj := category.
+v := category.
+adv := category.
+card := category.
+interj := category.
+det := category.
+temp_mod := category.
+noun_mod := category.
+pp_mod := category.
+idiom := category.
+utt := category.
+turn := category.
+sap  := category.
+comp := category.
+prep := category.
 ;card_mod :< category.
-hes :< category.
-punct :< category.
-prefix :< category.
-numcl :< category.
+hes := category.
+punct := category.
+prefix := category.
+numcl := category.
 
 ;aspect :< sort.
-terminative :< aspect.
-prospective :< aspect.
-perfective :< aspect.
-progressive :< aspect.
-inceptive :< aspect.
-perfect_progressive :< aspect.
-modal :< aspect.
+terminative := aspect.
+prospective := aspect.
+perfective := aspect.
+progressive := aspect.
+inceptive := aspect.
+perfect_progressive := aspect.
+modal := aspect.
 ;;; the value for sentences with no special marking
-default_aspect :< aspect.  
+default_aspect := aspect.  
 
 ;tense :< sort.
-tensed :< tense.
+tensed := tense.
 
 
 ; (ERB 2001-12-13) For runon_s rule.
@@ -65,33 +65,33 @@ tensed :< tense.
 present-past-or-future := tensed.
 
 present-or-past := present-past-or-future.
-present :< present-or-past.
-past :< present-or-past.
+present := present-or-past.
+past := present-or-past.
 
 fut := present-past-or-future.
-te :< tensed.
-no_tense :< tense.
+te := tensed.
+no_tense := tense.
 
 
 ; (MS 2003-09-10) already contained in matrix.tdl
 ;mood :< sort.
 
-uttmodus :< mood.
+uttmodus := mood.
 
-nonuttmodus :< mood.
+nonuttmodus := mood.
 
-passive :< mood.
+passive := mood.
 
-nonpassive :< mood.
+nonpassive := mood.
 
-operative :< mood.
+operative := mood.
 
-nonoperative :< mood.
+nonoperative := mood.
 
 imperative := nonuttmodus & nonpassive & nonoperative.
 
-simple-imperative :< imperative.
-polite-imperative :< imperative.
+simple-imperative := imperative.
+polite-imperative := imperative.
 
 infinitive := nonuttmodus & nonpassive & nonoperative.
 
@@ -153,34 +153,34 @@ vol-neg-cond := neg-vol & neg-cond.
 pass-caus := passive-basic & causative.
 
 
-smod  :< sort.
+smod  := sort.
 
-unmarked :< smod.
-marked :< smod.
+unmarked := smod.
+marked := smod.
 
-decl :< marked.
-quest :< marked.
-cond :< marked.
-imp :< marked.
+decl := marked.
+quest := marked.
+cond := marked.
+imp := marked.
 
 
 ;Particles
 
-ptype :< sort.
+ptype := sort.
 
-overt :< ptype.
-empty :< ptype.
-sentence-particle :< ptype.
+overt := ptype.
+empty := ptype.
+sentence-particle := ptype.
 
-topic :< overt.
-nontop :< overt.
+topic := overt.
+nontop := overt.
 
-case :< nontop.
-mod :< case.
-temp-no :< case.
-no-case :< case.
-con :< case.
-kara-case :< ni-or-kara.
+case := nontop.
+mod := case.
+temp-no := case.
+no-case := case.
+con := case.
+kara-case := ni-or-kara.
 
 ; (ERB 2002-02-14) Complementizer to and postposition to should
 ; be distinguished.  For now, give complementizer to its own case
@@ -192,66 +192,75 @@ kara-case :< ni-or-kara.
 
 to-comp := case.
 
-ni-or-to :< case.
-ni-or-kara :< case.
-ga-or-wo :< case.
-ni-or-ga :< case.
-ga-or-coparg :< case.
-wo-or-ni :< case.
+ni-or-to := case.
+ni-or-kara := case.
+ga-or-wo := case.
+ni-or-ga := case.
+ga-or-coparg := case.
+wo-or-ni := case.
 
 ga := ga-or-wo & ni-or-ga & ga-or-coparg.
 wo := ga-or-wo & wo-or-ni.
 ni := ni-or-ga & ni-or-to & ni-or-kara & wo-or-ni.
-to :< ni-or-to.
-coparg :< ga-or-coparg.
+to := ni-or-to.
+coparg := ga-or-coparg.
 
 
-postp-case :< nontop.
-mo :< topic.
-koso :< topic.
-comma :< topic.
+postp-case := nontop.
+mo := topic.
+koso := topic.
+comma := topic.
 
-nattr  :< nontop.
-parmod :< nontop.
-de :< nontop.
-wa  :< topic.
-shika  :< topic.
-dake :< topic.
-nanka  :< postp-case.
-he  :< postp-case.
-sonota  :< postp-case.
-tomo  :< postp-case.
-nado  :< nontop.
+nattr  := nontop.
+parmod := nontop.
+de := nontop.
+
+wa  := topic.
+shika  := topic.
+dake := topic.
+
+demo := topic.
+datte := topic.
+
+nanka  := postp-case.
+he  := postp-case.
+sonota  := postp-case.
+tomo  := postp-case.
+;nado  :< nontop.
+nado  := topic.
 made  :=  postp-case.
-kara  :< postp-case.
-bakari  :< postp-case.
-kurai  :< postp-case.
-igai  :< postp-case.
-toshite  :< postp-case.
-yori  :< postp-case.
-nitsuite :< postp-case.
-nikaNshite :< postp-case.
-nikakete :< postp-case.
-niyotte :< postp-case.
-nisotte :< postp-case.
-sae :< postp-case.
-tou :< postp-case.
-zutsu :< postp-case.
-toka :< postp-case.
-kamo :< postp-case.
-toiu :< nontop.
-niokeru :< nontop.
-notame :< topic.
+made_d  :=  topic.
+kara  := postp-case.
+bakari := postp-case.
+bakari_d := topic.
+kurai  := postp-case.
+igai  := postp-case.
+toshite  := postp-case.
+yori  := postp-case.
+nitsuite := postp-case.
+nikaNshite := postp-case.
+nikakete := postp-case.
+niyotte := postp-case.
+nisotte := postp-case.
+;sae :< postp-case.
+sae := topic.
+tou := postp-case.
+zutsu := postp-case.
+toka := postp-case.
+kamo := postp-case.
+toiu := nontop.
+niokeru := nontop.
+notame := topic.
 
 ; (TT 2003-09-04) for ijou, igai
-ijou :< postp-case.
-ika :< postp-case.
+ijou := postp-case.
+ika := postp-case.
 
 
-modify :< sort.
-n-modified :< modify.
-not-modified :<  modify.
-modified :<  modify.
+modify := sort.
+n-modified := modify.
+not-modified :=  modify.
+modified :=  modify.
 
 ; (MS 2003-07-09) Not used any more?
 
@@ -270,98 +279,98 @@ modified :<  modify.
 ;thirdpl :< third.
 ;firstpl :< sp.
 
-vtype :< sort.
-std-or-demon :< vtype.
-std :< std-or-demon.
-zero :< vtype.
-demon :< std-or-demon.
+vtype := sort.
+std-or-demon := vtype.
+std := std-or-demon.
+zero := vtype.
+demon := std-or-demon.
 
-morphbind :< sort.
+morphbind := sort.
 
-morphbindtype :< morphbind.
-nomorphbind :< morphbind.
+morphbindtype := morphbind.
+nomorphbind := morphbind.
 
-vstem-morph :< morphbindtype.
-cstem-morph :< morphbindtype.
+vstem-morph := morphbindtype.
+cstem-morph := morphbindtype.
 
 
 v-or-c-stem-morph := vstem-morph & cstem-morph.
 
-o-morph :< v-or-c-stem-morph.
-u-morph :< v-or-c-stem-morph.
-inf-morph :< v-or-c-stem-morph.
+o-morph := v-or-c-stem-morph.
+u-morph := v-or-c-stem-morph.
+inf-morph := v-or-c-stem-morph.
 ;cond-morph :< v-or-c-stem-morph.
-i-or-t-or-a-morph :< v-or-c-stem-morph.
-a-or-aa-morph :< i-or-t-or-a-morph.
-a-morph :< a-or-aa-morph.
+i-or-t-or-a-morph := v-or-c-stem-morph.
+a-or-aa-morph := i-or-t-or-a-morph.
+a-morph := a-or-aa-morph.
 
 ;;; (FCB 2003-08-12) type for "se zu" very irregular suru ending before zu
-aa-morph :< a-or-aa-morph.
+aa-morph := a-or-aa-morph.
 
-nd-morph :< cstem-morph.
+nd-morph := cstem-morph.
 
 mai-beki-morph  := morphbindtype.
 mai-morph := mai-beki-morph.
 beki-morph := mai-beki-morph.
-imp-morph :< cstem-morph.
-cond-morph :< cstem-morph.
+imp-morph := cstem-morph.
+cond-morph := cstem-morph.
 
 ; (MS 2004-12-21) Maybe we don't need this one any more?
 ;e-morph :< vstem-morph.
 
-pass-morph :< morphbind.
+pass-morph := morphbind.
 pass-c-stem-morph := pass-morph & cstem-morph.
 pass-v-stem-morph := pass-morph & vstem-morph.
 
 
-ere-morph :< cond-morph.
-cond-exceptional-morph :< cond-morph.
+ere-morph := cond-morph.
+cond-exceptional-morph := cond-morph.
 
 ;(MS & FCB 2003-10-29) fixed the definition.
 
-i-or-t-morph :< i-or-t-or-a-morph.
+i-or-t-morph := i-or-t-or-a-morph.
 i-morph := i-or-t-morph & i-or-shortadj-morph.
-t-morph :< i-or-t-morph.
+t-morph := i-or-t-morph.
 
-i-or-shortadj-morph :< v-or-c-stem-morph.
-shortadj-morph :< i-or-shortadj-morph.
+i-or-shortadj-morph := v-or-c-stem-morph.
+shortadj-morph := i-or-shortadj-morph.
 
 
-stemtype :< sort.
-regular-stem :< stemtype.
-cons-stem :< regular-stem.
-c-stem :< cons-stem. 
-c2-stem :< cons-stem. 
-v-stem :< regular-stem.
+stemtype := sort.
+regular-stem := stemtype.
+cons-stem := regular-stem.
+c-stem := cons-stem. 
+c2-stem := cons-stem. 
+v-stem := regular-stem.
 
 ; (ERB 2002-01-22) To keep te (and possibly other tense
 ; endings) out of the i-adj-inflectional rule.
 
 otherstem := stemtype.
 
-irregular-stem  :< stemtype.
+irregular-stem  := stemtype.
 
-cop-stem :< irregular-stem.
-da-stem :< cop-stem.
-desu-stem  :< cop-stem.
+cop-stem := irregular-stem.
+da-stem := cop-stem.
+desu-stem  := cop-stem.
 
-adj-stem  :< irregular-stem.
-
-
-kurusuru-stem  :< irregular-stem.
+adj-stem  := irregular-stem.
 
 
-infinitive-stem :< stemtype.
-
-nominal-stem  :< stemtype.
-noun-stem :< nominal-stem.
-poss-adv-stem :< nominal-stem.
+kurusuru-stem  := irregular-stem.
 
 
-pn :< sort.
+infinitive-stem := stemtype.
 
-person :< pn.
-number :< pn.
+nominal-stem  := stemtype.
+noun-stem := nominal-stem.
+poss-adv-stem := nominal-stem.
+
+
+pn := sort.
+
+person := pn.
+number := pn.
 
 ; (ERB 2001-11-12) For the experiment I'm doing with -tai,
 ; I need a type one-or-two.
@@ -373,8 +382,8 @@ one := one-or-two.
 two := two-or-three & one-or-two.
 three := two-or-three.
 
-sg :< number.
-pl :< number.
+sg := number.
+pl := number.
 
 onesg := one & sg.
 twosg := two & sg. 
@@ -385,11 +394,11 @@ threepl := three & pl.
 
 
 ; (MS 2005-03-01) andro should be fem or masc, but not neut (彼ら)
-gender :< sort.
-andro :< gender.
-fem :< andro.
-masc :< andro.
-neut :< gender.
+gender := sort.
+andro := gender.
+fem := andro.
+masc := andro.
+neut := gender.
 
 
 ; (MS 2004-11-30) I want to distinguish between relatives and others,
@@ -397,14 +406,14 @@ neut :< gender.
 ; (MS 2005-03-29) intersective is not used any more.
 ; (MS 2005-07-04) we need something for compounds
 
-posthead :< sort.
-nonrels  :< posthead.
-left :< nonrels.
-right :< nonrels.
+posthead := sort.
+nonrels  := posthead.
+left := nonrels.
+right := nonrels.
 ;;intersective :< nonrels.
-rels :< posthead.
-coord :< nonrels.
-compound :< nonrels.
+rels := posthead.
+coord := nonrels.
+compound := nonrels.
 
 ; (ERB 2002-01-24) To keep phrases produced by the conj-rule
 ; from being modified.  The multiple layers here allow for
@@ -412,7 +421,7 @@ compound :< nonrels.
 ; while still forcing one order of combination within a kind
 ; of conjunction.
 
-nucl :< sort.
+nucl := sort.
 fin_conj := nucl.
 not_fin_conj := nucl.
 te_conj := not_fin_conj.
@@ -423,7 +432,7 @@ nucl_minus := nucl_bool.
 ; (MS 2004-11-09) We need to divide auxiliaries into aspectual and others to
 ; be able to state where zpros can be inserted.
 
-aux :< sort.
+aux := sort.
 aux_plus := aux.
 aux_minus_or_complex := aux.
 aux_minus := aux_minus_or_complex.
