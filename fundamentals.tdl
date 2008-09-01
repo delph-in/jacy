@@ -58,11 +58,11 @@ honor_rel := avm &
               POLARITY bool,
               BEARER individual].
 
-subj-honor_rel :< honor_rel.
+subj-honor_rel := honor_rel.
 
-obj-honor_rel :< honor_rel.
+obj-honor_rel := honor_rel.
 
-addr-honor_rel :< honor_rel.
+addr-honor_rel := honor_rel.
 
 ;;; More details for context
 ; indices, background and empathy
@@ -190,7 +190,7 @@ lexical_sign-rule := lexical_sign & phrase-or-lexrule &
 
 
 
-wg-handel-lex-mrs-basic :< mrs.
+wg-handel-lex-mrs-basic := mrs.
 
 ; (ERB 2001-11-26) Not all lexical sem types inherit the constraints
 ; that MOD-IND = INDEX and MOD-HAND = LTOP.  I'm going to move these

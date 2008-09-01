@@ -268,10 +268,10 @@ hes-sem-type :=  mod-id-wg-handel-mrs &
 
 
 
-pred-sem-type :< wg-handel-lex-mrs-basic.
+pred-sem-type := wg-handel-lex-mrs-basic.
 
 
-verb-sem-type :< pred-sem-type.
+verb-sem-type := pred-sem-type.
 
 ;(FCB 2005-04-09) no one seems to be using this
 ; aux-sem-type := pred-sem-type &

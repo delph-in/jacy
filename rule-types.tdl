@@ -815,7 +815,7 @@ utt-idiom-type := utterance-type &
  [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD idiom_head].
 
 
-turn-type :< utterance-type.
+turn-type := utterance-type.
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

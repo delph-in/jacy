@@ -52,7 +52,7 @@ utterance-super :=  utt-valid &
 utterance_head := utterance-super.
 fragment_head := utterance-super.
 
-temp_mod_head :< final_head.
+temp_mod_head := final_head.
 
 temp_mod_head-avm := temp_mod_head &
                      [POS temp_mod,
@@ -79,7 +79,7 @@ temp_nmod_head := temp_mod_head-avm &
 ;                                            BAR +]] >,
 ;		       COP-ARG -].
 
-noun_mod_head :< final_head.
+noun_mod_head := final_head.
 
 ; (ERB 2002-01-10) Developing an analysis of など as a posthead
 ; noun-mod-lex.  So, this shouldn't be J-POSTHEAD left.
@@ -96,7 +96,7 @@ noun_mod_head-avm :=  noun_mod_head &
                        J-SPEC null,
                        COP-ARG -].
 
-pp_mod_head :< final_head.
+pp_mod_head := final_head.
 
 
 
@@ -267,9 +267,9 @@ quotation-definition-end_head := brackets-or-quotations-end_head & nom_head-avm 
 ; get disjunctive modification possiblities for numeral classifiers w/o
 ; adding extra lexical entries.
 
-noun-or-case-p_head :< final_head.
+noun-or-case-p_head := final_head.
 
-noun_head :< noun-or-case-p_head.
+noun_head := noun-or-case-p_head.
 
 ; (MS 2005-07-04) I want to get rid of the compound-noun-rule, such that I give a value to MOD here.
 
@@ -318,7 +318,7 @@ date_noun_head-avm := date_noun_head & [J-SPEC null,
 							   VAL saturated]],
 					       MODIFIED.PERIPH -] >].
 
-pron_head :< noun_head-avm.
+pron_head := noun_head-avm.
 
 pron_head-avm := pron_head & [MOD null, 
 	                      KEYS.KEY pron_rel,
@@ -341,8 +341,8 @@ exceptional_noun_head := nom_head-avm & [MOD null,
 relational_noun_head := ordinary_noun_head & [MOD null,J-SPEC null, VN -].
                                                    
 
-dofw_noun_head  :< temporal-noun_head.
-dofm_noun_head  :< temporal-noun_head.
+dofw_noun_head  := temporal-noun_head.
+dofm_noun_head  := temporal-noun_head.
 
 
 
@@ -354,13 +354,13 @@ dofm_noun_head-avm := dofm_noun_head &
 
 
 
-nom_head  :< noun_head-avm.
+nom_head  := noun_head-avm.
 
 
 nom_head-avm  := nom_head & [J-SPEC null, ADJ -].
 
 
-title_head  :< noun_head-avm.
+title_head  := noun_head-avm.
 
 
 
@@ -371,7 +371,7 @@ title_head-avm := title_head &
                    QUANTIFIABLE -].
 
 
-name_head :< noun_head-avm.
+name_head := noun_head-avm.
 
 
 name_head-avm := name_head & 
@@ -381,33 +381,33 @@ name_head-avm := name_head &
 
 ; (MS 2005-03-15) For documentation purposes, changed pn_head to surname_head
 
-surname_head :< name_head-avm.
+surname_head := name_head-avm.
 
 
 surname_head-avm := surname_head & 
                [MOD < [LOCAL [CAT.HEAD name_head]] >,
 		J-POSTHEAD compound].
 
-ippan_head :< name_head-avm.
+ippan_head := name_head-avm.
 
 ippan_head-avm := ippan_head &
                   [MOD < [LOCAL [CAT.HEAD ordinary_noun_head]] >,
                    J-POSTHEAD left].
 
-first_name_head :< name_head-avm.
+first_name_head := name_head-avm.
 
 
 first_name_head-avm := first_name_head & 
                        [MOD < [LOCAL [CAT.HEAD name_head]] >,
 			J-POSTHEAD compound].
 
-other_name_head :< name_head-avm.
+other_name_head := name_head-avm.
 
 other_name_head-avm := other_name_head & 
                        [MOD < [LOCAL [CAT.HEAD name_head]] >,
 			J-POSTHEAD compound].
 
-inst_name_head :< name_head-avm.
+inst_name_head := name_head-avm.
 
 ;(MS 2005-11-15) Found examples of compounds with inst-names,
 ; such as "小田急片瀬江ノ島駅前". Changing MOD null to noun_head.
@@ -419,19 +419,19 @@ inst_name_head-avm := inst_name_head &
 ; (MS-2005-09-30) Shouldn't the relation between a location name and an institution be a compound?
 ; Maybe it should just be a noun: "アメリカ経済"
 
-loc_name_head :< name_head-avm.
+loc_name_head := name_head-avm.
 
 loc_name_head-avm := loc_name_head & 
                      [MOD < [LOCAL.CAT.HEAD noun_head] >,
                       J-POSTHEAD compound].
 
 
-product_name_head :< name_head-avm.
+product_name_head := name_head-avm.
 
 product_name_head-avm := product_name_head &
                         [MOD null].
 
-temp_numeral_head :< temporal-noun_head.
+temp_numeral_head := temporal-noun_head.
 
 
 ; (MS 2005-11-04) Found examples for compounds of temp_numerals and noun (vn): "深夜営業"
@@ -595,7 +595,7 @@ verbend_head-unmarked := verbend_head &
 
 v-op-end_head := verbend_head-unmarked & [VN -].
 
-v-cond-end_head :< v-op-end_head.
+v-cond-end_head := v-op-end_head.
 
 v-pass-caus-end_head := verbend_head-unmarked.
 
@@ -616,7 +616,7 @@ caus-end_head  := v-pass-caus-end_head & [MODUS causative,
 
 contracted-aux_head := verbend_head-unmarked.
 
-verb-noninfl_head :< verb_head-avm.
+verb-noninfl_head := verb_head-avm.
 
 verb-noninfl_head-avm := verb-noninfl_head & [AUX aux_minus].
 
@@ -629,7 +629,7 @@ light-verb_head := other-verb-stem_head &
                  ADJ -,
                  LIGHT +].
 
-p_head :< final_head.
+p_head := final_head.
 
 p_head-avm := p_head &
           [POS p,
@@ -637,7 +637,7 @@ p_head-avm := p_head &
            MARK null,
            CASE case].
 
-mod-p_head :< p_head-avm.
+mod-p_head := p_head-avm.
 
 ; (ERB 2002-01-22) Adverbs and such can modify things that are NUCL nucl_bool,
 ; but crucially not things that are NUCL conj.  This forces low adverb
@@ -650,7 +650,7 @@ mod-p_head-avm := mod-p_head &
                C-MOD null,
                MOD 1-list].
 
-vmod-p_head :< mod-p_head-avm.
+vmod-p_head := mod-p_head-avm.
 
 ; (ERB 2001-09-13) Getting rid of J-POSTHEAD value intersective, in system
 ; with only two HMRs.  See notes in japgram.tdl and rule-types.tdl.
@@ -691,7 +691,7 @@ topic-vmod-p_head := vmod-p_head-avm & [PTYPE topic,
 
 
 
-nmod-p_head :< mod-p_head-avm.
+nmod-p_head := mod-p_head-avm.
 
 ;"dekitara issho ni hanoofaa no kaNkou  shimaseN ka."
 ;"asa no juuji ni rufutohaNza no nanahyaku yoNjuuichi biN ga dete imasu keredomo."
@@ -871,7 +871,7 @@ s-end_head-avm := s-end_head &
                C-MOD null,
                J-POSTHEAD left].
 
-interj_head :< final_head.
+interj_head := final_head.
 
 ; (ERB 2001-12-10) These aren't doing anything semantically, so
 ; make them use the intersective head adj rule.
@@ -902,7 +902,7 @@ excl_head := idiom_head &
               MARK null].
 
 
-det_head :< final_head.
+det_head := final_head.
 
 det_head-avm := det_head &
             [POS det,
@@ -932,7 +932,7 @@ card2ord_head-avm := det_head &
 		      COP-ARG -].
 
 
-vn_head :< verb-noninfl_head-avm.
+vn_head := verb-noninfl_head-avm.
 
 ; (ERB 2001-09-03) If I want the vn-light verb combination to be done via the
 ; head-spr rule, I need VNs to have a compatible J-SPEC value.
@@ -1066,7 +1066,7 @@ adv_deg_num_head-avm := adv_head &
 case-adv_head := adv_head &
             [MOD < >].
 
-hes_head :< final_head.
+hes_head := final_head.
 
 hes_head-avm := hes_head &
             [POS hes,
@@ -1118,40 +1118,40 @@ int_head-avm := int_head &
 ; (ERB 2004-1-18) Need a special type for 何 in num cl phrases,
 ; so that it's an integer but can't be selected by anything else.
 
-nan_int :< int_head-avm.
+nan_int := int_head-avm.
 
-int21 :< int_head-avm.
-int17- :< int_head-avm.
-int17 :< int17-.
-int13- :< int17-.
+int21 := int_head-avm.
+int17- := int_head-avm.
+int17 := int17-.
+int13- := int17-.
 ; (ERB 2001-08-21) For ThirteenPlusDigitErsatz
-int13x :< int13-.
-int13 :< int13-.
-int9- :< int13-.
+int13x := int13-.
+int13 := int13-.
+int9- := int13-.
 ; (ERB 2001-08-21) For Nine-TwelveDigitErsatz
-int9x :< int9-.
-int9  :< int9-.
-int5- :< int9-.
+int9x := int9-.
+int9  := int9-.
+int5- := int9-.
 ; (ERB 2001-08-06) For Six-EightDigitErsatz
-int5x :< int5-.
-int5  :< int5-.
-int4x :< int5-.
-int4z :< int4x.
-int4- :< int4x.
-int4  :< int4-.
-int3- :< int4-.
-int3  :< int3-.
-int2- :< int3-.
-int2  :< int2-.
+int5x := int5-.
+int5  := int5-.
+int4x := int5-.
+int4z := int4x.
+int4- := int4x.
+int4  := int4-.
+int3- := int4-.
+int3  := int3-.
+int2- := int3-.
+int2  := int2-.
 
 ; (ERB 2001-08-06)Need a type "1 or fewer digits" because ichi is special: It
 ; behaves like the other one digit numbers when it's a complement, but
 ; differently in specifier position (juu and hyaku won't take it as a
 ; specifier).
 
-int1- :< int2-.
-int1  :< int1-.
-int_ichi :< int1-.
+int1- := int2-.
+int1  := int1-.
+int_ichi := int1-.
 
 ; (ERB 2001-12-05) Need a special head type for 半 because it has a very
 ; restricted distribution.  (Chasen calls it a 名詞-接尾-一般+n-n.  Although
@@ -1688,14 +1688,17 @@ case-p-lex := p-lex-norm &
 						      LTOP #hand]]]] >],
 		 CONT [HOOK [INDEX #arg, 
 			     LTOP #hand],
-		       RELS <! !>,
+;		       RELS <! !>,
 		       HCONS <! !>]]]].
 
 
 ; (MS 2005-05-06) renamed ga-wo-ni-p-lex (cleaning up particles).
 
 case-p-lex-np := case-p-lex & 
- [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head].
+[SYNSEM [NON-LOCAL.UNDERSPEC_ARG -,
+	  LOCAL [CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD noun_head,
+		 CONT.RELS <!  !>]]].
+
 
 ; (MS 2005-11-10) getting rid of skip files.
 
@@ -1800,8 +1803,16 @@ case-p-lex-np-no := case-p-lex-np &
 ; (MS 2005-05-11) This is the topic marker that replaces case particles,
 ; such that we have massive ambiguity whenever case particles occur. 
 
-case-p-lex-np-topic := case-p-lex-np &
-		       [SYNSEM [NON-LOCAL.UNDERSPEC_ARG -]].
+case-p-lex-np-topic := case-p-lex & 
+ [SYNSEM [LOCAL [CAT.VAL.COMPS.FIRST.LOCAL [CAT.HEAD noun_head],
+		CONT [HOOK [INDEX #arg, 
+			    LTOP #hand],
+		      RELS <! #key & prep-mod-relation & [PRED focus_d_rel,
+						   LBL #hand, 
+						   ARG1 event,
+						   ARG2 #arg,
+						   ARG0.E.TENSE no_tense] !>]],
+	  LKEYS.KEYREL #key]].
 
 ; (MS 2005-05-13) It sets empathy to the entity it attaches to.
 ; (FCB 2008-06-23) taking of the empathy as it blocks:  
@@ -6460,8 +6471,8 @@ nan-card-lex := card-lex-super &
 ; (ERB 2001-08-06) Subtypes of card-lex are cross-classified on
 ; two dimensions: their value and their valence.
 
-card-value :< card-lex.
-card-valence :< card-lex.
+card-value := card-lex.
+card-valence := card-lex.
 
 ; (ERB 2001-08-06) Subtypes of card-valence are cross-classified
 ; on two dimensions:  Whether or not there's a SPR and whether or
@@ -6469,8 +6480,8 @@ card-valence :< card-lex.
 ; there is a semantic difference between hyaku with a complement
 ; and hyaku without a complement.
 
-card-specification :< card-valence.
-card-complementation :< card-valence.
+card-specification := card-valence.
+card-complementation := card-valence.
 
 card-no-object := card-complementation &
 		  [ SYNSEM.LOCAL.CAT.VAL [ COMPS null]].
@@ -6973,9 +6984,9 @@ temporal-noun_head := noun_head-avm &
 ;;;</TT>
 
 
-adj-or-adv_head :< final_head.
+adj-or-adv_head := final_head.
 
-numbers_head :< final_head.
+numbers_head := final_head.
 
 
 ;;;;;;;;;;;;;;LEXICAL PRINCIPLES;;;;;;;;;;;;;;;
@@ -12945,7 +12956,7 @@ quasi-light-nohon-v-stem-rareru-lex := quasi-light-nohon-v-stem-lex &
 ; (MS 2003-12-17) We cannot safely switch to the Matrix 0.6 definition of lexeme. 
 ; This needs some fundamental adaptations of the word and lexeme concepts.
 
-lexeme :< lexical_sign.
+lexeme := lexical_sign.
 
 
 
