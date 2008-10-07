@@ -141,7 +141,7 @@ cond-lexeme-infl-rule :=
 %suffix (く け) (る れ) (う え) (す せ) (む め) (ぐ げ) (ぶ べ) (つ て) (ぬ ね) (れる れ) (せる せ)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-morph,
-ARGS.FIRST.STEMTYPE regular-stem].
+ARGS.FIRST.STEMTYPE cons-stem].
 
 ;(MS 2002-12-02) In spoken language, one can find 食べれば
 ; (MS 2004-11-24) Extended these to all v-stem verbs
