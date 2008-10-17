@@ -1410,9 +1410,9 @@
 [ STEM < "いきる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_いきる_v_g_rel" ].
 
-いただける-tc := v1-v-stem-lex &
-[ STEM < "いただける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_いただける_v_g_rel" ].
+;; いただける-tc := v1-v-stem-lex &
+;; [ STEM < "いただける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_いただける_v_g_rel" ].
 
 いだける-tc := v1-v-stem-lex &
 [ STEM < "いだける" >,
@@ -1582,9 +1582,9 @@
 [ STEM < "おぼえる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_おぼえる_v_g_rel" ].
 
-おもえる-tc := v1-v-stem-lex &
-[ STEM < "おもえる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_おもえる_v_g_rel" ].
+;; おもえる-tc := v1-v-stem-lex &
+;; [ STEM < "おもえる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_おもえる_v_g_rel" ].
 
 おれる-tc := v1-v-stem-lex &
 [ STEM < "おれる" >,
@@ -2174,9 +2174,9 @@
 [ STEM < "たでる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_たでる_v_g_rel" ].
 
-たどり着ける-tc := v1-v-stem-lex &
-[ STEM < "たどり着ける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_たどり着ける_v_g_rel" ].
+;; たどり着ける-tc := v1-v-stem-lex &
+;; [ STEM < "たどり着ける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_たどり着ける_v_g_rel" ].
 
 たりる-tc := v1-v-stem-lex &
 [ STEM < "たりる" >,
@@ -2186,9 +2186,9 @@
 [ STEM < "たれこめる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_たれこめる_v_g_rel" ].
 
-だせる-tc := v1-v-stem-lex &
-[ STEM < "だせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_だせる_v_g_rel" ].
+;; だせる-tc := v1-v-stem-lex &
+;; [ STEM < "だせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_だせる_v_g_rel" ].
 
 ついえる-tc := v1-v-stem-lex &
 [ STEM < "ついえる" >,
@@ -2438,9 +2438,9 @@
 [ STEM < "ねらわれる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_ねらわれる_v_g_rel" ].
 
-ねる-tc := v1-v-stem-lex &
-[ STEM < "ねる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_ねる_v_g_rel" ].
+;; ねる-tc := v1-v-stem-lex &
+;; [ STEM < "ねる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_ねる_v_g_rel" ].
 
 ねれる-tc := v1-v-stem-lex &
 [ STEM < "ねれる" >,
@@ -2630,9 +2630,9 @@
 [ STEM < "ぶっつづける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_ぶっつづける_v_g_rel" ].
 
-へる-tc := v1-v-stem-lex &
-[ STEM < "へる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_へる_v_g_rel" ].
+;; へる-tc := v1-v-stem-lex &
+;; [ STEM < "へる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_へる_v_g_rel" ].
 
 ほえる-tc := v1-v-stem-lex &
 [ STEM < "ほえる" >,
@@ -2686,9 +2686,9 @@
 [ STEM < "まぜる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_まぜる_v_g_rel" ].
 
-またせる-tc := v1-v-stem-lex &
-[ STEM < "またせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_またせる_v_g_rel" ].
+;; またせる-tc := v1-v-stem-lex &
+;; [ STEM < "またせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_またせる_v_g_rel" ].
 
 まちかねる-tc := v1-v-stem-lex &
 [ STEM < "まちかねる" >,
@@ -2802,9 +2802,9 @@
 [ STEM < "もちいる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_もちいる_v_g_rel" ].
 
-もらえる-tc := v1-v-stem-lex &
-[ STEM < "もらえる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_もらえる_v_g_rel" ].
+;; もらえる-tc := v1-v-stem-lex &
+;; [ STEM < "もらえる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_もらえる_v_g_rel" ].
 
 もれる-tc := v1-v-stem-lex &
 [ STEM < "もれる" >,
@@ -2838,17 +2838,17 @@
 [ STEM < "やりとげる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_やりとげる_v_g_rel" ].
 
-やり直せる-tc := v1-v-stem-lex &
-[ STEM < "やり直せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_やり直せる_v_g_rel" ].
+;; やり直せる-tc := v1-v-stem-lex &
+;; [ STEM < "やり直せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_やり直せる_v_g_rel" ].
 
 やり込める-tc := v1-v-stem-lex &
 [ STEM < "やり込める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_やり込める_v_g_rel" ].
 
-やれる-tc := v1-v-stem-lex &
-[ STEM < "やれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_やれる_v_g_rel" ].
+;; やれる-tc := v1-v-stem-lex &
+;; [ STEM < "やれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_やれる_v_g_rel" ].
 
 やわらげる-tc := v1-v-stem-lex &
 [ STEM < "やわらげる" >,
@@ -2902,9 +2902,9 @@
 [ STEM < "わすれる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_わすれる_v_g_rel" ].
 
-わたせる-tc := v1-v-stem-lex &
-[ STEM < "わたせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_わたせる_v_g_rel" ].
+;; わたせる-tc := v1-v-stem-lex &
+;; [ STEM < "わたせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_わたせる_v_g_rel" ].
 
 わたれる-tc := v1-v-stem-lex &
 [ STEM < "わたれる" >,
@@ -2922,13 +2922,13 @@
 [ STEM < "バレる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_バレる_v_g_rel" ].
 
-上がれる-tc := v1-v-stem-lex &
-[ STEM < "上がれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_上がれる_v_g_rel" ].
+;; 上がれる-tc := v1-v-stem-lex &
+;; [ STEM < "上がれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_上がれる_v_g_rel" ].
 
-上れる-tc := v1-v-stem-lex &
-[ STEM < "上れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_上れる_v_g_rel" ].
+;; 上れる-tc := v1-v-stem-lex &
+;; [ STEM < "上れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_上れる_v_g_rel" ].
 
 下せる-tc := v1-v-stem-lex &
 [ STEM < "下せる" >,
@@ -2946,13 +2946,13 @@
 [ STEM < "乗りかえる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_乗りかえる_v_g_rel" ].
 
-乗り切れる-tc := v1-v-stem-lex &
-[ STEM < "乗り切れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_乗り切れる_v_g_rel" ].
+;; 乗り切れる-tc := v1-v-stem-lex &
+;; [ STEM < "乗り切れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_乗り切れる_v_g_rel" ].
 
-乗れる-tc := v1-v-stem-lex &
-[ STEM < "乗れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_乗れる_v_g_rel" ].
+;; 乗れる-tc := v1-v-stem-lex &
+;; [ STEM < "乗れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_乗れる_v_g_rel" ].
 
 争える-tc := v1-v-stem-lex &
 [ STEM < "争える" >,
@@ -2966,37 +2966,37 @@
 [ STEM < "仕込める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_仕込める_v_g_rel" ].
 
-会える-tc := v1-v-stem-lex &
-[ STEM < "会える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_会える_v_g_rel" ].
+;; 会える-tc := v1-v-stem-lex &
+;; [ STEM < "会える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_会える_v_g_rel" ].
 
-伸ばせる-tc := v1-v-stem-lex &
-[ STEM < "伸ばせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_伸ばせる_v_g_rel" ].
+;; 伸ばせる-tc := v1-v-stem-lex &
+;; [ STEM < "伸ばせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_伸ばせる_v_g_rel" ].
 
-伺える-tc := v1-v-stem-lex &
-[ STEM < "伺える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_伺える_v_g_rel" ].
+;; 伺える-tc := v1-v-stem-lex &
+;; [ STEM < "伺える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_伺える_v_g_rel" ].
 
-住める-tc := v1-v-stem-lex &
-[ STEM < "住める" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_住める_v_g_rel" ].
+;; 住める-tc := v1-v-stem-lex &
+;; [ STEM < "住める" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_住める_v_g_rel" ].
 
 作りかえる-tc := v1-v-stem-lex &
 [ STEM < "作りかえる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_作りかえる_v_g_rel" ].
 
-作り出せる-tc := v1-v-stem-lex &
-[ STEM < "作り出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_作り出せる_v_g_rel" ].
+;; 作り出せる-tc := v1-v-stem-lex &
+;; [ STEM < "作り出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_作り出せる_v_g_rel" ].
 
-作れる-tc := v1-v-stem-lex &
-[ STEM < "作れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_作れる_v_g_rel" ].
+;; 作れる-tc := v1-v-stem-lex &
+;; [ STEM < "作れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_作れる_v_g_rel" ].
 
-使いこなせる-tc := v1-v-stem-lex &
-[ STEM < "使いこなせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_使いこなせる_v_g_rel" ].
+;; 使いこなせる-tc := v1-v-stem-lex &
+;; [ STEM < "使いこなせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_使いこなせる_v_g_rel" ].
 
 侮れる-tc := v1-v-stem-lex &
 [ STEM < "侮れる" >,
@@ -3006,13 +3006,13 @@
 [ STEM < "保てる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_保てる_v_g_rel" ].
 
-倒せる-tc := v1-v-stem-lex &
-[ STEM < "倒せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_倒せる_v_g_rel" ].
+;; 倒せる-tc := v1-v-stem-lex &
+;; [ STEM < "倒せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_倒せる_v_g_rel" ].
 
-働ける-tc := v1-v-stem-lex &
-[ STEM < "働ける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_働ける_v_g_rel" ].
+;; 働ける-tc := v1-v-stem-lex &
+;; [ STEM < "働ける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_働ける_v_g_rel" ].
 
 償える-tc := v1-v-stem-lex &
 [ STEM < "償える" >,
@@ -3026,17 +3026,17 @@
 [ STEM < "入れかえる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_入れかえる_v_g_rel" ].
 
-冷やせる-tc := v1-v-stem-lex &
-[ STEM < "冷やせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_冷やせる_v_g_rel" ].
+;; 冷やせる-tc := v1-v-stem-lex &
+;; [ STEM < "冷やせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_冷やせる_v_g_rel" ].
 
-出せる-tc := v1-v-stem-lex &
-[ STEM < "出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_出せる_v_g_rel" ].
+;; 出せる-tc := v1-v-stem-lex &
+;; [ STEM < "出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_出せる_v_g_rel" ].
 
-出会える-tc := v1-v-stem-lex &
-[ STEM < "出会える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_出会える_v_g_rel" ].
+;; 出会える-tc := v1-v-stem-lex &
+;; [ STEM < "出会える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_出会える_v_g_rel" ].
 
 分け与える-tc := v1-v-stem-lex &
 [ STEM < "分け与える" >,
@@ -3054,9 +3054,9 @@
 [ STEM < "切り分ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_切り分ける_v_g_rel" ].
 
-切り離せる-tc := v1-v-stem-lex &
-[ STEM < "切り離せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_切り離せる_v_g_rel" ].
+;; 切り離せる-tc := v1-v-stem-lex &
+;; [ STEM < "切り離せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_切り離せる_v_g_rel" ].
 
 切上げる-tc := v1-v-stem-lex &
 [ STEM < "切上げる" >,
@@ -3078,17 +3078,17 @@
 [ STEM < "加われる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_加われる_v_g_rel" ].
 
-動ける-tc := v1-v-stem-lex &
-[ STEM < "動ける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_動ける_v_g_rel" ].
+;; 動ける-tc := v1-v-stem-lex &
+;; [ STEM < "動ける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_動ける_v_g_rel" ].
 
 勝ち得る-tc := v1-v-stem-lex &
 [ STEM < "勝ち得る" >,
   SYNSEM.LKEYS.KEYREL.PRED "_勝ち得る_v_g_rel" ].
 
-勝てる-tc := v1-v-stem-lex &
-[ STEM < "勝てる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_勝てる_v_g_rel" ].
+;; 勝てる-tc := v1-v-stem-lex &
+;; [ STEM < "勝てる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_勝てる_v_g_rel" ].
 
 参じる-tc := v1-v-stem-lex &
 [ STEM < "参じる" >,
@@ -3102,21 +3102,21 @@
 [ STEM < "取りつかれる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_取りつかれる_v_g_rel" ].
 
-取り出せる-tc := v1-v-stem-lex &
-[ STEM < "取り出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_取り出せる_v_g_rel" ].
+;; 取り出せる-tc := v1-v-stem-lex &
+;; [ STEM < "取り出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_取り出せる_v_g_rel" ].
 
-取り合える-tc := v1-v-stem-lex &
-[ STEM < "取り合える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_取り合える_v_g_rel" ].
+;; 取り合える-tc := v1-v-stem-lex &
+;; [ STEM < "取り合える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_取り合える_v_g_rel" ].
 
-取り戻せる-tc := v1-v-stem-lex &
-[ STEM < "取り戻せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_取り戻せる_v_g_rel" ].
+;; 取り戻せる-tc := v1-v-stem-lex &
+;; [ STEM < "取り戻せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_取り戻せる_v_g_rel" ].
 
-取り消せる-tc := v1-v-stem-lex &
-[ STEM < "取り消せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_取り消せる_v_g_rel" ].
+;; 取り消せる-tc := v1-v-stem-lex &
+;; [ STEM < "取り消せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_取り消せる_v_g_rel" ].
 
 取り留める-tc := v1-v-stem-lex &
 [ STEM < "取り留める" >,
@@ -3134,9 +3134,9 @@
 [ STEM < "取上げる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_取上げる_v_g_rel" ].
 
-受け取れる-tc := v1-v-stem-lex &
-[ STEM < "受け取れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_受け取れる_v_g_rel" ].
+;; 受け取れる-tc := v1-v-stem-lex &
+;; [ STEM < "受け取れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_受け取れる_v_g_rel" ].
 
 受入れる-tc := v1-v-stem-lex &
 [ STEM < "受入れる" >,
@@ -3158,13 +3158,13 @@
 [ STEM < "叱り付ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_叱り付ける_v_g_rel" ].
 
-合える-tc := v1-v-stem-lex &
-[ STEM < "合える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_合える_v_g_rel" ].
+;; 合える-tc := v1-v-stem-lex &
+;; [ STEM < "合える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_合える_v_g_rel" ].
 
-同じる-tc := v1-v-stem-lex &
-[ STEM < "同じる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_同じる_v_g_rel" ].
+;; 同じる-tc := v1-v-stem-lex &
+;; [ STEM < "同じる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_同じる_v_g_rel" ].
 
 否める-tc := v1-v-stem-lex &
 [ STEM < "否める" >,
@@ -3174,37 +3174,37 @@
 [ STEM < "吸い付ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_吸い付ける_v_g_rel" ].
 
-吸える-tc := v1-v-stem-lex &
-[ STEM < "吸える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_吸える_v_g_rel" ].
+;; 吸える-tc := v1-v-stem-lex &
+;; [ STEM < "吸える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_吸える_v_g_rel" ].
 
-味わえる-tc := v1-v-stem-lex &
-[ STEM < "味わえる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_味わえる_v_g_rel" ].
+;; 味わえる-tc := v1-v-stem-lex &
+;; [ STEM < "味わえる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_味わえる_v_g_rel" ].
 
 呼び入れる-tc := v1-v-stem-lex &
 [ STEM < "呼び入れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_呼び入れる_v_g_rel" ].
 
-呼び出せる-tc := v1-v-stem-lex &
-[ STEM < "呼び出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_呼び出せる_v_g_rel" ].
+;; 呼び出せる-tc := v1-v-stem-lex &
+;; [ STEM < "呼び出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_呼び出せる_v_g_rel" ].
 
-呼び戻せる-tc := v1-v-stem-lex &
-[ STEM < "呼び戻せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_呼び戻せる_v_g_rel" ].
+;; 呼び戻せる-tc := v1-v-stem-lex &
+;; [ STEM < "呼び戻せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_呼び戻せる_v_g_rel" ].
 
-呼べる-tc := v1-v-stem-lex &
-[ STEM < "呼べる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_呼べる_v_g_rel" ].
+;; 呼べる-tc := v1-v-stem-lex &
+;; [ STEM < "呼べる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_呼べる_v_g_rel" ].
 
-咲かせる-tc := v1-v-stem-lex &
-[ STEM < "咲かせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_咲かせる_v_g_rel" ].
+;; 咲かせる-tc := v1-v-stem-lex &
+;; [ STEM < "咲かせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_咲かせる_v_g_rel" ].
 
-喋れる-tc := v1-v-stem-lex &
-[ STEM < "喋れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_喋れる_v_g_rel" ].
+;; 喋れる-tc := v1-v-stem-lex &
+;; [ STEM < "喋れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_喋れる_v_g_rel" ].
 
 喩える-tc := v1-v-stem-lex &
 [ STEM < "喩える" >,
@@ -3218,13 +3218,13 @@
 [ STEM < "嗅ぎ付ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_嗅ぎ付ける_v_g_rel" ].
 
-回せる-tc := v1-v-stem-lex &
-[ STEM < "回せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_回せる_v_g_rel" ].
+;; 回せる-tc := v1-v-stem-lex &
+;; [ STEM < "回せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_回せる_v_g_rel" ].
 
-回れる-tc := v1-v-stem-lex &
-[ STEM < "回れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_回れる_v_g_rel" ].
+;; 回れる-tc := v1-v-stem-lex &
+;; [ STEM < "回れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_回れる_v_g_rel" ].
 
 囲える-tc := v1-v-stem-lex &
 [ STEM < "囲える" >,
@@ -3250,29 +3250,29 @@
 [ STEM < "売りつける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_売りつける_v_g_rel" ].
 
-奪える-tc := v1-v-stem-lex &
-[ STEM < "奪える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_奪える_v_g_rel" ].
+;; 奪える-tc := v1-v-stem-lex &
+;; [ STEM < "奪える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_奪える_v_g_rel" ].
 
 委せる-tc := v1-v-stem-lex &
 [ STEM < "委せる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_委せる_v_g_rel" ].
 
-嫌われる-tc := v1-v-stem-lex &
-[ STEM < "嫌われる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_嫌われる_v_g_rel" ].
+;; 嫌われる-tc := v1-v-stem-lex &
+;; [ STEM < "嫌われる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_嫌われる_v_g_rel" ].
 
-学びとれる-tc := v1-v-stem-lex &
-[ STEM < "学びとれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_学びとれる_v_g_rel" ].
+;; 学びとれる-tc := v1-v-stem-lex &
+;; [ STEM < "学びとれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_学びとれる_v_g_rel" ].
 
-学べる-tc := v1-v-stem-lex &
-[ STEM < "学べる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_学べる_v_g_rel" ].
+;; 学べる-tc := v1-v-stem-lex &
+;; [ STEM < "学べる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_学べる_v_g_rel" ].
 
-守れる-tc := v1-v-stem-lex &
-[ STEM < "守れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_守れる_v_g_rel" ].
+;; 守れる-tc := v1-v-stem-lex &
+;; [ STEM < "守れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_守れる_v_g_rel" ].
 
 宛てる-tc := v1-v-stem-lex &
 [ STEM < "宛てる" >,
@@ -3302,21 +3302,21 @@
 [ STEM < "寝付ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_寝付ける_v_g_rel" ].
 
-就ける-tc := v1-v-stem-lex &
-[ STEM < "就ける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_就ける_v_g_rel" ].
+;; 就ける-tc := v1-v-stem-lex &
+;; [ STEM < "就ける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_就ける_v_g_rel" ].
 
-尽くせる-tc := v1-v-stem-lex &
-[ STEM < "尽くせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_尽くせる_v_g_rel" ].
+;; 尽くせる-tc := v1-v-stem-lex &
+;; [ STEM < "尽くせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_尽くせる_v_g_rel" ].
 
 屈める-tc := v1-v-stem-lex &
 [ STEM < "屈める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_屈める_v_g_rel" ].
 
-崩せる-tc := v1-v-stem-lex &
-[ STEM < "崩せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_崩せる_v_g_rel" ].
+;; 崩せる-tc := v1-v-stem-lex &
+;; [ STEM < "崩せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_崩せる_v_g_rel" ].
 
 崩れ落ちる-tc := v1-v-stem-lex &
 [ STEM < "崩れ落ちる" >,
@@ -3326,9 +3326,9 @@
 [ STEM < "巡らせる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_巡らせる_v_g_rel" ].
 
-巡り会える-tc := v1-v-stem-lex &
-[ STEM < "巡り会える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_巡り会える_v_g_rel" ].
+;; 巡り会える-tc := v1-v-stem-lex &
+;; [ STEM < "巡り会える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_巡り会える_v_g_rel" ].
 
 差しのべる-tc := v1-v-stem-lex &
 [ STEM < "差しのべる" >,
@@ -3342,25 +3342,25 @@
 [ STEM < "巻き付ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_巻き付ける_v_g_rel" ].
 
-帰せる-tc := v1-v-stem-lex &
-[ STEM < "帰せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_帰せる_v_g_rel" ].
+;; 帰せる-tc := v1-v-stem-lex &
+;; [ STEM < "帰せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_帰せる_v_g_rel" ].
 
-帰れる-tc := v1-v-stem-lex &
-[ STEM < "帰れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_帰れる_v_g_rel" ].
+;; 帰れる-tc := v1-v-stem-lex &
+;; [ STEM < "帰れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_帰れる_v_g_rel" ].
 
 干る-tc := v1-v-stem-lex &
 [ STEM < "干る" >,
   SYNSEM.LKEYS.KEYREL.PRED "_干る_v_g_rel" ].
 
-座れる-tc := v1-v-stem-lex &
-[ STEM < "座れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_座れる_v_g_rel" ].
+;; 座れる-tc := v1-v-stem-lex &
+;; [ STEM < "座れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_座れる_v_g_rel" ].
 
-延ばせる-tc := v1-v-stem-lex &
-[ STEM < "延ばせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_延ばせる_v_g_rel" ].
+;; 延ばせる-tc := v1-v-stem-lex &
+;; [ STEM < "延ばせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_延ばせる_v_g_rel" ].
 
 引き裂ける-tc := v1-v-stem-lex &
 [ STEM < "引き裂ける" >,
@@ -3370,13 +3370,13 @@
 [ STEM < "引っかける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_引っかける_v_g_rel" ].
 
-引っ越せる-tc := v1-v-stem-lex &
-[ STEM < "引っ越せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_引っ越せる_v_g_rel" ].
+;; 引っ越せる-tc := v1-v-stem-lex &
+;; [ STEM < "引っ越せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_引っ越せる_v_g_rel" ].
 
-張り合える-tc := v1-v-stem-lex &
-[ STEM < "張り合える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_張り合える_v_g_rel" ].
+;; 張り合える-tc := v1-v-stem-lex &
+;; [ STEM < "張り合える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_張り合える_v_g_rel" ].
 
 待ちかまえる-tc := v1-v-stem-lex &
 [ STEM < "待ちかまえる" >,
@@ -3386,9 +3386,9 @@
 [ STEM < "待ちこがれる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_待ちこがれる_v_g_rel" ].
 
-待てる-tc := v1-v-stem-lex &
-[ STEM < "待てる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_待てる_v_g_rel" ].
+;; 待てる-tc := v1-v-stem-lex &
+;; [ STEM < "待てる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_待てる_v_g_rel" ].
 
 心がける-tc := v1-v-stem-lex &
 [ STEM < "心がける" >,
@@ -3410,17 +3410,17 @@
 [ STEM < "思いがける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_思いがける_v_g_rel" ].
 
-思い出せる-tc := v1-v-stem-lex &
-[ STEM < "思い出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_思い出せる_v_g_rel" ].
+;; 思い出せる-tc := v1-v-stem-lex &
+;; [ STEM < "思い出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_思い出せる_v_g_rel" ].
 
-思い切れる-tc := v1-v-stem-lex &
-[ STEM < "思い切れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_思い切れる_v_g_rel" ].
+;; 思い切れる-tc := v1-v-stem-lex &
+;; [ STEM < "思い切れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_思い切れる_v_g_rel" ].
 
-思い起こせる-tc := v1-v-stem-lex &
-[ STEM < "思い起こせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_思い起こせる_v_g_rel" ].
+;; 思い起こせる-tc := v1-v-stem-lex &
+;; [ STEM < "思い起こせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_思い起こせる_v_g_rel" ].
 
 憎める-tc := v1-v-stem-lex &
 [ STEM < "憎める" >,
@@ -3430,25 +3430,25 @@
 [ STEM < "懸ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_懸ける_v_g_rel" ].
 
-戦える-tc := v1-v-stem-lex &
-[ STEM < "戦える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_戦える_v_g_rel" ].
+;; 戦える-tc := v1-v-stem-lex &
+;; [ STEM < "戦える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_戦える_v_g_rel" ].
 
 戴ける-tc := v1-v-stem-lex &
 [ STEM < "戴ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_戴ける_v_g_rel" ].
 
-戻せる-tc := v1-v-stem-lex &
-[ STEM < "戻せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_戻せる_v_g_rel" ].
+;; 戻せる-tc := v1-v-stem-lex &
+;; [ STEM < "戻せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_戻せる_v_g_rel" ].
 
-戻れる-tc := v1-v-stem-lex &
-[ STEM < "戻れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_戻れる_v_g_rel" ].
+;; 戻れる-tc := v1-v-stem-lex &
+;; [ STEM < "戻れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_戻れる_v_g_rel" ].
 
-手伝える-tc := v1-v-stem-lex &
-[ STEM < "手伝える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_手伝える_v_g_rel" ].
+;; 手伝える-tc := v1-v-stem-lex &
+;; [ STEM < "手伝える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_手伝える_v_g_rel" ].
 
 打ちつける-tc := v1-v-stem-lex &
 [ STEM < "打ちつける" >,
@@ -3458,25 +3458,25 @@
 [ STEM < "打ちとける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_打ちとける_v_g_rel" ].
 
-打ち勝てる-tc := v1-v-stem-lex &
-[ STEM < "打ち勝てる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_打ち勝てる_v_g_rel" ].
+;; 打ち勝てる-tc := v1-v-stem-lex &
+;; [ STEM < "打ち勝てる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_打ち勝てる_v_g_rel" ].
 
-打てる-tc := v1-v-stem-lex &
-[ STEM < "打てる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_打てる_v_g_rel" ].
+;; 打てる-tc := v1-v-stem-lex &
+;; [ STEM < "打てる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_打てる_v_g_rel" ].
 
 払いのける-tc := v1-v-stem-lex &
 [ STEM < "払いのける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_払いのける_v_g_rel" ].
 
-払える-tc := v1-v-stem-lex &
-[ STEM < "払える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_払える_v_g_rel" ].
+;; 払える-tc := v1-v-stem-lex &
+;; [ STEM < "払える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_払える_v_g_rel" ].
 
-扱える-tc := v1-v-stem-lex &
-[ STEM < "扱える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_扱える_v_g_rel" ].
+;; 扱える-tc := v1-v-stem-lex &
+;; [ STEM < "扱える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_扱える_v_g_rel" ].
 
 投げかける-tc := v1-v-stem-lex &
 [ STEM < "投げかける" >,
@@ -3486,9 +3486,9 @@
 [ STEM < "抜けでる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_抜けでる_v_g_rel" ].
 
-抜け出せる-tc := v1-v-stem-lex &
-[ STEM < "抜け出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_抜け出せる_v_g_rel" ].
+;; 抜け出せる-tc := v1-v-stem-lex &
+;; [ STEM < "抜け出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_抜け出せる_v_g_rel" ].
 
 抱きしめる-tc := v1-v-stem-lex &
 [ STEM < "抱きしめる" >,
@@ -3510,9 +3510,9 @@
 [ STEM < "押し進める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_押し進める_v_g_rel" ].
 
-押せる-tc := v1-v-stem-lex &
-[ STEM < "押せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_押せる_v_g_rel" ].
+;; 押せる-tc := v1-v-stem-lex &
+;; [ STEM < "押せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_押せる_v_g_rel" ].
 
 拉げる-tc := v1-v-stem-lex &
 [ STEM < "拉げる" >,
@@ -3522,17 +3522,17 @@
 [ STEM < "招き入れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_招き入れる_v_g_rel" ].
 
-拾える-tc := v1-v-stem-lex &
-[ STEM < "拾える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_拾える_v_g_rel" ].
+;; 拾える-tc := v1-v-stem-lex &
+;; [ STEM < "拾える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_拾える_v_g_rel" ].
 
 持ちこたえる-tc := v1-v-stem-lex &
 [ STEM < "持ちこたえる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_持ちこたえる_v_g_rel" ].
 
-持ち帰れる-tc := v1-v-stem-lex &
-[ STEM < "持ち帰れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_持ち帰れる_v_g_rel" ].
+;; 持ち帰れる-tc := v1-v-stem-lex &
+;; [ STEM < "持ち帰れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_持ち帰れる_v_g_rel" ].
 
 持ち込める-tc := v1-v-stem-lex &
 [ STEM < "持ち込める" >,
@@ -3566,17 +3566,17 @@
 [ STEM < "探しあてる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_探しあてる_v_g_rel" ].
 
-探し出せる-tc := v1-v-stem-lex &
-[ STEM < "探し出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_探し出せる_v_g_rel" ].
+;; 探し出せる-tc := v1-v-stem-lex &
+;; [ STEM < "探し出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_探し出せる_v_g_rel" ].
 
 探し求める-tc := v1-v-stem-lex &
 [ STEM < "探し求める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_探し求める_v_g_rel" ].
 
-探せる-tc := v1-v-stem-lex &
-[ STEM < "探せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_探せる_v_g_rel" ].
+;; 探せる-tc := v1-v-stem-lex &
+;; [ STEM < "探せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_探せる_v_g_rel" ].
 
 掴まえる-tc := v1-v-stem-lex &
 [ STEM < "掴まえる" >,
@@ -3594,9 +3594,9 @@
 [ STEM < "掻き立てる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_掻き立てる_v_g_rel" ].
 
-描ける-tc := v1-v-stem-lex &
-[ STEM < "描ける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_描ける_v_g_rel" ].
+;; 描ける-tc := v1-v-stem-lex &
+;; [ STEM < "描ける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_描ける_v_g_rel" ].
 
 握り締める-tc := v1-v-stem-lex &
 [ STEM < "握り締める" >,
@@ -3610,53 +3610,53 @@
 [ STEM < "摘める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_摘める_v_g_rel" ].
 
-撮れる-tc := v1-v-stem-lex &
-[ STEM < "撮れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_撮れる_v_g_rel" ].
+;; 撮れる-tc := v1-v-stem-lex &
+;; [ STEM < "撮れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_撮れる_v_g_rel" ].
 
-支払える-tc := v1-v-stem-lex &
-[ STEM < "支払える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_支払える_v_g_rel" ].
+;; 支払える-tc := v1-v-stem-lex &
+;; [ STEM < "支払える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_支払える_v_g_rel" ].
 
 攻め寄せる-tc := v1-v-stem-lex &
 [ STEM < "攻め寄せる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_攻め寄せる_v_g_rel" ].
 
-放せる-tc := v1-v-stem-lex &
-[ STEM < "放せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_放せる_v_g_rel" ].
+;; 放せる-tc := v1-v-stem-lex &
+;; [ STEM < "放せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_放せる_v_g_rel" ].
 
-救い出せる-tc := v1-v-stem-lex &
-[ STEM < "救い出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_救い出せる_v_g_rel" ].
+;; 救い出せる-tc := v1-v-stem-lex &
+;; [ STEM < "救い出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_救い出せる_v_g_rel" ].
 
-救える-tc := v1-v-stem-lex &
-[ STEM < "救える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_救える_v_g_rel" ].
+;; 救える-tc := v1-v-stem-lex &
+;; [ STEM < "救える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_救える_v_g_rel" ].
 
-数え切れる-tc := v1-v-stem-lex &
-[ STEM < "数え切れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_数え切れる_v_g_rel" ].
+;; 数え切れる-tc := v1-v-stem-lex &
+;; [ STEM < "数え切れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_数え切れる_v_g_rel" ].
 
-敷き詰める-tc := v1-v-stem-lex &
-[ STEM < "敷き詰める" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_敷き詰める_v_g_rel" ].
+;; 敷き詰める-tc := v1-v-stem-lex &
+;; [ STEM < "敷き詰める" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_敷き詰める_v_g_rel" ].
 
 敷ける-tc := v1-v-stem-lex &
 [ STEM < "敷ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_敷ける_v_g_rel" ].
 
-断れる-tc := v1-v-stem-lex &
-[ STEM < "断れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_断れる_v_g_rel" ].
+;; 断れる-tc := v1-v-stem-lex &
+;; [ STEM < "断れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_断れる_v_g_rel" ].
 
 昇れる-tc := v1-v-stem-lex &
 [ STEM < "昇れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_昇れる_v_g_rel" ].
 
-暮らせる-tc := v1-v-stem-lex &
-[ STEM < "暮らせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_暮らせる_v_g_rel" ].
+;; 暮らせる-tc := v1-v-stem-lex &
+;; [ STEM < "暮らせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_暮らせる_v_g_rel" ].
 
 書きつける-tc := v1-v-stem-lex &
 [ STEM < "書きつける" >,
@@ -3670,13 +3670,13 @@
 [ STEM < "書き入れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_書き入れる_v_g_rel" ].
 
-書き表せる-tc := v1-v-stem-lex &
-[ STEM < "書き表せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_書き表せる_v_g_rel" ].
+;; 書き表せる-tc := v1-v-stem-lex &
+;; [ STEM < "書き表せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_書き表せる_v_g_rel" ].
 
-書ける-tc := v1-v-stem-lex &
-[ STEM < "書ける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_書ける_v_g_rel" ].
+;; 書ける-tc := v1-v-stem-lex &
+;; [ STEM < "書ける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_書ける_v_g_rel" ].
 
 望める-tc := v1-v-stem-lex &
 [ STEM < "望める" >,
@@ -3694,33 +3694,33 @@
 [ STEM < "来はじめる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_来はじめる_v_g_rel" ].
 
-来れる-tc := v1-v-stem-lex &
-[ STEM < "来れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_来れる_v_g_rel" ].
+;; 来れる-tc := v1-v-stem-lex &
+;; [ STEM < "来れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_来れる_v_g_rel" ].
 
-果たせる-tc := v1-v-stem-lex &
-[ STEM < "果たせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_果たせる_v_g_rel" ].
+;; 果たせる-tc := v1-v-stem-lex &
+;; [ STEM < "果たせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_果たせる_v_g_rel" ].
 
 架ける-tc := v1-v-stem-lex &
 [ STEM < "架ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_架ける_v_g_rel" ].
 
-歌える-tc := v1-v-stem-lex &
-[ STEM < "歌える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_歌える_v_g_rel" ].
+;; 歌える-tc := v1-v-stem-lex &
+;; [ STEM < "歌える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_歌える_v_g_rel" ].
 
-止まれる-tc := v1-v-stem-lex &
-[ STEM < "止まれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_止まれる_v_g_rel" ].
+;; 止まれる-tc := v1-v-stem-lex &
+;; [ STEM < "止まれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_止まれる_v_g_rel" ].
 
 歩き疲れる-tc := v1-v-stem-lex &
 [ STEM < "歩き疲れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_歩き疲れる_v_g_rel" ].
 
-歩ける-tc := v1-v-stem-lex &
-[ STEM < "歩ける" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_歩ける_v_g_rel" ].
+;; 歩ける-tc := v1-v-stem-lex &
+;; [ STEM < "歩ける" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_歩ける_v_g_rel" ].
 
 死にかける-tc := v1-v-stem-lex &
 [ STEM < "死にかける" >,
@@ -3734,33 +3734,33 @@
 [ STEM < "殺げる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_殺げる_v_g_rel" ].
 
-殺せる-tc := v1-v-stem-lex &
-[ STEM < "殺せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_殺せる_v_g_rel" ].
+;; 殺せる-tc := v1-v-stem-lex &
+;; [ STEM < "殺せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_殺せる_v_g_rel" ].
 
 永らえる-tc := v1-v-stem-lex &
 [ STEM < "永らえる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_永らえる_v_g_rel" ].
 
-治せる-tc := v1-v-stem-lex &
-[ STEM < "治せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_治せる_v_g_rel" ].
+;; 治せる-tc := v1-v-stem-lex &
+;; [ STEM < "治せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_治せる_v_g_rel" ].
 
-泊まれる-tc := v1-v-stem-lex &
-[ STEM < "泊まれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_泊まれる_v_g_rel" ].
+;; 泊まれる-tc := v1-v-stem-lex &
+;; [ STEM < "泊まれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_泊まれる_v_g_rel" ].
 
-泳げる-tc := v1-v-stem-lex &
-[ STEM < "泳げる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_泳げる_v_g_rel" ].
+;; 泳げる-tc := v1-v-stem-lex &
+;; [ STEM < "泳げる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_泳げる_v_g_rel" ].
 
 洒落る-tc := v1-v-stem-lex &
 [ STEM < "洒落る" >,
   SYNSEM.LKEYS.KEYREL.PRED "_洒落る_v_g_rel" ].
 
-洗える-tc := v1-v-stem-lex &
-[ STEM < "洗える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_洗える_v_g_rel" ].
+;; 洗える-tc := v1-v-stem-lex &
+;; [ STEM < "洗える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_洗える_v_g_rel" ].
 
 洩れる-tc := v1-v-stem-lex &
 [ STEM < "洩れる" >,
@@ -3778,13 +3778,13 @@
 [ STEM < "浮かされる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_浮かされる_v_g_rel" ].
 
-浮かび上がれる-tc := v1-v-stem-lex &
-[ STEM < "浮かび上がれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_浮かび上がれる_v_g_rel" ].
+;; 浮かび上がれる-tc := v1-v-stem-lex &
+;; [ STEM < "浮かび上がれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_浮かび上がれる_v_g_rel" ].
 
-消せる-tc := v1-v-stem-lex &
-[ STEM < "消せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_消せる_v_g_rel" ].
+;; 消せる-tc := v1-v-stem-lex &
+;; [ STEM < "消せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_消せる_v_g_rel" ].
 
 添い遂げる-tc := v1-v-stem-lex &
 [ STEM < "添い遂げる" >,
@@ -3794,21 +3794,21 @@
 [ STEM < "減じる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_減じる_v_g_rel" ].
 
-渡り合える-tc := v1-v-stem-lex &
-[ STEM < "渡り合える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_渡り合える_v_g_rel" ].
+;; 渡り合える-tc := v1-v-stem-lex &
+;; [ STEM < "渡り合える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_渡り合える_v_g_rel" ].
 
 渡れる-tc := v1-v-stem-lex &
 [ STEM < "渡れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_渡れる_v_g_rel" ].
 
-測れる-tc := v1-v-stem-lex &
-[ STEM < "測れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_測れる_v_g_rel" ].
+;; 測れる-tc := v1-v-stem-lex &
+;; [ STEM < "測れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_測れる_v_g_rel" ].
 
-満たせる-tc := v1-v-stem-lex &
-[ STEM < "満たせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_満たせる_v_g_rel" ].
+;; 満たせる-tc := v1-v-stem-lex &
+;; [ STEM < "満たせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_満たせる_v_g_rel" ].
 
 溜める-tc := v1-v-stem-lex &
 [ STEM < "溜める" >,
@@ -3842,37 +3842,37 @@
 [ STEM < "燃え尽きる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_燃え尽きる_v_g_rel" ].
 
-燃やせる-tc := v1-v-stem-lex &
-[ STEM < "燃やせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_燃やせる_v_g_rel" ].
+;; 燃やせる-tc := v1-v-stem-lex &
+;; [ STEM < "燃やせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_燃やせる_v_g_rel" ].
 
 獲る-tc := v1-v-stem-lex &
 [ STEM < "獲る" >,
   SYNSEM.LKEYS.KEYREL.PRED "_獲る_v_g_rel" ].
 
-現せる-tc := v1-v-stem-lex &
-[ STEM < "現せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_現せる_v_g_rel" ].
+;; 現せる-tc := v1-v-stem-lex &
+;; [ STEM < "現せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_現せる_v_g_rel" ].
 
-理解し合える-tc := v1-v-stem-lex &
-[ STEM < "理解し合える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_理解し合える_v_g_rel" ].
+;; 理解し合える-tc := v1-v-stem-lex &
+;; [ STEM < "理解し合える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_理解し合える_v_g_rel" ].
 
-生かせる-tc := v1-v-stem-lex &
-[ STEM < "生かせる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_生かせる_v_g_rel" ].
+;; 生かせる-tc := v1-v-stem-lex &
+;; [ STEM < "生かせる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_生かせる_v_g_rel" ].
 
 生きながらえる-tc := v1-v-stem-lex &
 [ STEM < "生きながらえる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_生きながらえる_v_g_rel" ].
 
-生き残れる-tc := v1-v-stem-lex &
-[ STEM < "生き残れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_生き残れる_v_g_rel" ].
+;; 生き残れる-tc := v1-v-stem-lex &
+;; [ STEM < "生き残れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_生き残れる_v_g_rel" ].
 
-生まれ変われる-tc := v1-v-stem-lex &
-[ STEM < "生まれ変われる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_生まれ変われる_v_g_rel" ].
+;; 生まれ変われる-tc := v1-v-stem-lex &
+;; [ STEM < "生まれ変われる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_生まれ変われる_v_g_rel" ].
 
 用立てる-tc := v1-v-stem-lex &
 [ STEM < "用立てる" >,
@@ -3902,9 +3902,9 @@
 [ STEM < "登りつめる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_登りつめる_v_g_rel" ].
 
-登れる-tc := v1-v-stem-lex &
-[ STEM < "登れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_登れる_v_g_rel" ].
+;; 登れる-tc := v1-v-stem-lex &
+;; [ STEM < "登れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_登れる_v_g_rel" ].
 
 盗み見る-tc := v1-v-stem-lex &
 [ STEM < "盗み見る" >,
@@ -3922,9 +3922,9 @@
 [ STEM < "目ざめる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_目ざめる_v_g_rel" ].
 
-直せる-tc := v1-v-stem-lex &
-[ STEM < "直せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_直せる_v_g_rel" ].
+;; 直せる-tc := v1-v-stem-lex &
+;; [ STEM < "直せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_直せる_v_g_rel" ].
 
 相いれる-tc := v1-v-stem-lex &
 [ STEM < "相いれる" >,
@@ -3938,21 +3938,21 @@
 [ STEM < "省ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_省ける_v_g_rel" ].
 
-眠れる-tc := v1-v-stem-lex &
-[ STEM < "眠れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_眠れる_v_g_rel" ].
+;; 眠れる-tc := v1-v-stem-lex &
+;; [ STEM < "眠れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_眠れる_v_g_rel" ].
 
 秀でる-tc := v1-v-stem-lex &
 [ STEM < "秀でる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_秀でる_v_g_rel" ].
 
-移せる-tc := v1-v-stem-lex &
-[ STEM < "移せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_移せる_v_g_rel" ].
+;; 移せる-tc := v1-v-stem-lex &
+;; [ STEM < "移せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_移せる_v_g_rel" ].
 
-移れる-tc := v1-v-stem-lex &
-[ STEM < "移れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_移れる_v_g_rel" ].
+;; 移れる-tc := v1-v-stem-lex &
+;; [ STEM < "移れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_移れる_v_g_rel" ].
 
 稼げる-tc := v1-v-stem-lex &
 [ STEM < "稼げる" >,
@@ -3970,13 +3970,13 @@
 [ STEM < "突きぬける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_突きぬける_v_g_rel" ].
 
-立ち上がれる-tc := v1-v-stem-lex &
-[ STEM < "立ち上がれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_立ち上がれる_v_g_rel" ].
+;; 立ち上がれる-tc := v1-v-stem-lex &
+;; [ STEM < "立ち上がれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_立ち上がれる_v_g_rel" ].
 
-立ち直れる-tc := v1-v-stem-lex &
-[ STEM < "立ち直れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_立ち直れる_v_g_rel" ].
+;; 立ち直れる-tc := v1-v-stem-lex &
+;; [ STEM < "立ち直れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_立ち直れる_v_g_rel" ].
 
 立てかける-tc := v1-v-stem-lex &
 [ STEM < "立てかける" >,
@@ -4058,9 +4058,9 @@
 [ STEM < "聞きほれる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_聞きほれる_v_g_rel" ].
 
-聞き出せる-tc := v1-v-stem-lex &
-[ STEM < "聞き出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_聞き出せる_v_g_rel" ].
+;; 聞き出せる-tc := v1-v-stem-lex &
+;; [ STEM < "聞き出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_聞き出せる_v_g_rel" ].
 
 聴こえる-tc := v1-v-stem-lex &
 [ STEM < "聴こえる" >,
@@ -4098,9 +4098,9 @@
 [ STEM < "虐げる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_虐げる_v_g_rel" ].
 
-表せる-tc := v1-v-stem-lex &
-[ STEM < "表せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_表せる_v_g_rel" ].
+;; 表せる-tc := v1-v-stem-lex &
+;; [ STEM < "表せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_表せる_v_g_rel" ].
 
 補える-tc := v1-v-stem-lex &
 [ STEM < "補える" >,
@@ -4114,33 +4114,33 @@
 [ STEM < "見せかける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_見せかける_v_g_rel" ].
 
-見つけ出せる-tc := v1-v-stem-lex &
-[ STEM < "見つけ出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_見つけ出せる_v_g_rel" ].
+;; 見つけ出せる-tc := v1-v-stem-lex &
+;; [ STEM < "見つけ出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_見つけ出せる_v_g_rel" ].
 
 見とれる-tc := v1-v-stem-lex &
 [ STEM < "見とれる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_見とれる_v_g_rel" ].
 
-見れる-tc := v1-v-stem-lex &
-[ STEM < "見れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_見れる_v_g_rel" ].
+;; 見れる-tc := v1-v-stem-lex &
+;; [ STEM < "見れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_見れる_v_g_rel" ].
 
-見出せる-tc := v1-v-stem-lex &
-[ STEM < "見出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_見出せる_v_g_rel" ].
+;; 見出せる-tc := v1-v-stem-lex &
+;; [ STEM < "見出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_見出せる_v_g_rel" ].
 
-見張れる-tc := v1-v-stem-lex &
-[ STEM < "見張れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_見張れる_v_g_rel" ].
+;; 見張れる-tc := v1-v-stem-lex &
+;; [ STEM < "見張れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_見張れる_v_g_rel" ].
 
 見抜ける-tc := v1-v-stem-lex &
 [ STEM < "見抜ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_見抜ける_v_g_rel" ].
 
-見渡せる-tc := v1-v-stem-lex &
-[ STEM < "見渡せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_見渡せる_v_g_rel" ].
+;; 見渡せる-tc := v1-v-stem-lex &
+;; [ STEM < "見渡せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_見渡せる_v_g_rel" ].
 
 見破れる-tc := v1-v-stem-lex &
 [ STEM < "見破れる" >,
@@ -4150,9 +4150,9 @@
 [ STEM < "見込める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_見込める_v_g_rel" ].
 
-見逃せる-tc := v1-v-stem-lex &
-[ STEM < "見逃せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_見逃せる_v_g_rel" ].
+;; 見逃せる-tc := v1-v-stem-lex &
+;; [ STEM < "見逃せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_見逃せる_v_g_rel" ].
 
 覚ませる-tc := v1-v-stem-lex &
 [ STEM < "覚ませる" >,
@@ -4166,49 +4166,49 @@
 [ STEM < "言いつける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_言いつける_v_g_rel" ].
 
-言い表せる-tc := v1-v-stem-lex &
-[ STEM < "言い表せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_言い表せる_v_g_rel" ].
+;; 言い表せる-tc := v1-v-stem-lex &
+;; [ STEM < "言い表せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_言い表せる_v_g_rel" ].
 
-計れる-tc := v1-v-stem-lex &
-[ STEM < "計れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_計れる_v_g_rel" ].
+;; 計れる-tc := v1-v-stem-lex &
+;; [ STEM < "計れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_計れる_v_g_rel" ].
 
-許せる-tc := v1-v-stem-lex &
-[ STEM < "許せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_許せる_v_g_rel" ].
+;; 許せる-tc := v1-v-stem-lex &
+;; [ STEM < "許せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_許せる_v_g_rel" ].
 
 証拠立てる-tc := v1-v-stem-lex &
 [ STEM < "証拠立てる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_証拠立てる_v_g_rel" ].
 
-試せる-tc := v1-v-stem-lex &
-[ STEM < "試せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_試せる_v_g_rel" ].
+;; 試せる-tc := v1-v-stem-lex &
+;; [ STEM < "試せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_試せる_v_g_rel" ].
 
 誘き寄せる-tc := v1-v-stem-lex &
 [ STEM < "誘き寄せる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_誘き寄せる_v_g_rel" ].
 
-語れる-tc := v1-v-stem-lex &
-[ STEM < "語れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_語れる_v_g_rel" ].
+;; 語れる-tc := v1-v-stem-lex &
+;; [ STEM < "語れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_語れる_v_g_rel" ].
 
 読みかける-tc := v1-v-stem-lex &
 [ STEM < "読みかける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_読みかける_v_g_rel" ].
 
-読み切れる-tc := v1-v-stem-lex &
-[ STEM < "読み切れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_読み切れる_v_g_rel" ].
+;; 読み切れる-tc := v1-v-stem-lex &
+;; [ STEM < "読み切れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_読み切れる_v_g_rel" ].
 
 調える-tc := v1-v-stem-lex &
 [ STEM < "調える" >,
   SYNSEM.LKEYS.KEYREL.PRED "_調える_v_g_rel" ].
 
-請け合える-tc := v1-v-stem-lex &
-[ STEM < "請け合える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_請け合える_v_g_rel" ].
+;; 請け合える-tc := v1-v-stem-lex &
+;; [ STEM < "請け合える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_請け合える_v_g_rel" ].
 
 譲れる-tc := v1-v-stem-lex &
 [ STEM < "譲れる" >,
@@ -4218,29 +4218,29 @@
 [ STEM < "讃える" >,
   SYNSEM.LKEYS.KEYREL.PRED "_讃える_v_g_rel" ].
 
-負える-tc := v1-v-stem-lex &
-[ STEM < "負える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_負える_v_g_rel" ].
+;; 負える-tc := v1-v-stem-lex &
+;; [ STEM < "負える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_負える_v_g_rel" ].
 
 負かせる-tc := v1-v-stem-lex &
 [ STEM < "負かせる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_負かせる_v_g_rel" ].
 
-貰える-tc := v1-v-stem-lex &
-[ STEM < "貰える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_貰える_v_g_rel" ].
+;; 貰える-tc := v1-v-stem-lex &
+;; [ STEM < "貰える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_貰える_v_g_rel" ].
 
 買い与える-tc := v1-v-stem-lex &
 [ STEM < "買い与える" >,
   SYNSEM.LKEYS.KEYREL.PRED "_買い与える_v_g_rel" ].
 
-買える-tc := v1-v-stem-lex &
-[ STEM < "買える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_買える_v_g_rel" ].
+;; 買える-tc := v1-v-stem-lex &
+;; [ STEM < "買える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_買える_v_g_rel" ].
 
-貸せる-tc := v1-v-stem-lex &
-[ STEM < "貸せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_貸せる_v_g_rel" ].
+;; 貸せる-tc := v1-v-stem-lex &
+;; [ STEM < "貸せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_貸せる_v_g_rel" ].
 
 賄える-tc := v1-v-stem-lex &
 [ STEM < "賄える" >,
@@ -4254,9 +4254,9 @@
 [ STEM < "走り出る" >,
   SYNSEM.LKEYS.KEYREL.PRED "_走り出る_v_g_rel" ].
 
-走れる-tc := v1-v-stem-lex &
-[ STEM < "走れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_走れる_v_g_rel" ].
+;; 走れる-tc := v1-v-stem-lex &
+;; [ STEM < "走れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_走れる_v_g_rel" ].
 
 起こせる-tc := v1-v-stem-lex &
 [ STEM < "起こせる" >,
@@ -4266,13 +4266,13 @@
 [ STEM < "越せる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_越せる_v_g_rel" ].
 
-足せる-tc := v1-v-stem-lex &
-[ STEM < "足せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_足せる_v_g_rel" ].
+;; 足せる-tc := v1-v-stem-lex &
+;; [ STEM < "足せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_足せる_v_g_rel" ].
 
-踊れる-tc := v1-v-stem-lex &
-[ STEM < "踊れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_踊れる_v_g_rel" ].
+;; 踊れる-tc := v1-v-stem-lex &
+;; [ STEM < "踊れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_踊れる_v_g_rel" ].
 
 踏みつける-tc := v1-v-stem-lex &
 [ STEM < "踏みつける" >,
@@ -4286,9 +4286,9 @@
 [ STEM < "転げ落ちる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_転げ落ちる_v_g_rel" ].
 
-返せる-tc := v1-v-stem-lex &
-[ STEM < "返せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_返せる_v_g_rel" ].
+;; 返せる-tc := v1-v-stem-lex &
+;; [ STEM < "返せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_返せる_v_g_rel" ].
 
 追いつける-tc := v1-v-stem-lex &
 [ STEM < "追いつける" >,
@@ -4302,25 +4302,25 @@
 [ STEM < "追っかける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_追っかける_v_g_rel" ].
 
-送れる-tc := v1-v-stem-lex &
-[ STEM < "送れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_送れる_v_g_rel" ].
+;; 送れる-tc := v1-v-stem-lex &
+;; [ STEM < "送れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_送れる_v_g_rel" ].
 
-逆らえる-tc := v1-v-stem-lex &
-[ STEM < "逆らえる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_逆らえる_v_g_rel" ].
+;; 逆らえる-tc := v1-v-stem-lex &
+;; [ STEM < "逆らえる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_逆らえる_v_g_rel" ].
 
-通える-tc := v1-v-stem-lex &
-[ STEM < "通える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_通える_v_g_rel" ].
+;; 通える-tc := v1-v-stem-lex &
+;; [ STEM < "通える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_通える_v_g_rel" ].
 
-通せる-tc := v1-v-stem-lex &
-[ STEM < "通せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_通せる_v_g_rel" ].
+;; 通せる-tc := v1-v-stem-lex &
+;; [ STEM < "通せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_通せる_v_g_rel" ].
 
-通れる-tc := v1-v-stem-lex &
-[ STEM < "通れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_通れる_v_g_rel" ].
+;; 通れる-tc := v1-v-stem-lex &
+;; [ STEM < "通れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_通れる_v_g_rel" ].
 
 速める-tc := v1-v-stem-lex &
 [ STEM < "速める" >,
@@ -4330,41 +4330,41 @@
 [ STEM < "造りあげる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_造りあげる_v_g_rel" ].
 
-逢える-tc := v1-v-stem-lex &
-[ STEM < "逢える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_逢える_v_g_rel" ].
+;; 逢える-tc := v1-v-stem-lex &
+;; [ STEM < "逢える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_逢える_v_g_rel" ].
 
-遊べる-tc := v1-v-stem-lex &
-[ STEM < "遊べる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_遊べる_v_g_rel" ].
+;; 遊べる-tc := v1-v-stem-lex &
+;; [ STEM < "遊べる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_遊べる_v_g_rel" ].
 
-運べる-tc := v1-v-stem-lex &
-[ STEM < "運べる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_運べる_v_g_rel" ].
+;; 運べる-tc := v1-v-stem-lex &
+;; [ STEM < "運べる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_運べる_v_g_rel" ].
 
 過ごせる-tc := v1-v-stem-lex &
 [ STEM < "過ごせる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_過ごせる_v_g_rel" ].
 
-選び出せる-tc := v1-v-stem-lex &
-[ STEM < "選び出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_選び出せる_v_g_rel" ].
+;; 選び出せる-tc := v1-v-stem-lex &
+;; [ STEM < "選び出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_選び出せる_v_g_rel" ].
 
-選べる-tc := v1-v-stem-lex &
-[ STEM < "選べる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_選べる_v_g_rel" ].
+;; 選べる-tc := v1-v-stem-lex &
+;; [ STEM < "選べる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_選べる_v_g_rel" ].
 
 酔いつぶれる-tc := v1-v-stem-lex &
 [ STEM < "酔いつぶれる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_酔いつぶれる_v_g_rel" ].
 
-量れる-tc := v1-v-stem-lex &
-[ STEM < "量れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_量れる_v_g_rel" ].
+;; 量れる-tc := v1-v-stem-lex &
+;; [ STEM < "量れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_量れる_v_g_rel" ].
 
-釣れる-tc := v1-v-stem-lex &
-[ STEM < "釣れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_釣れる_v_g_rel" ].
+;; 釣れる-tc := v1-v-stem-lex &
+;; [ STEM < "釣れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_釣れる_v_g_rel" ].
 
 閉じこめる-tc := v1-v-stem-lex &
 [ STEM < "閉じこめる" >,
@@ -4378,33 +4378,33 @@
 [ STEM < "除ける" >,
   SYNSEM.LKEYS.KEYREL.PRED "_除ける_v_g_rel" ].
 
-隠せる-tc := v1-v-stem-lex &
-[ STEM < "隠せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_隠せる_v_g_rel" ].
+;; 隠せる-tc := v1-v-stem-lex &
+;; [ STEM < "隠せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_隠せる_v_g_rel" ].
 
 隣り合わせる-tc := v1-v-stem-lex &
 [ STEM < "隣り合わせる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_隣り合わせる_v_g_rel" ].
 
-集まれる-tc := v1-v-stem-lex &
-[ STEM < "集まれる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_集まれる_v_g_rel" ].
+;; 集まれる-tc := v1-v-stem-lex &
+;; [ STEM < "集まれる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_集まれる_v_g_rel" ].
 
-雇える-tc := v1-v-stem-lex &
-[ STEM < "雇える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_雇える_v_g_rel" ].
+;; 雇える-tc := v1-v-stem-lex &
+;; [ STEM < "雇える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_雇える_v_g_rel" ].
 
-離せる-tc := v1-v-stem-lex &
-[ STEM < "離せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_離せる_v_g_rel" ].
+;; 離せる-tc := v1-v-stem-lex &
+;; [ STEM < "離せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_離せる_v_g_rel" ].
 
 零れる-tc := v1-v-stem-lex &
 [ STEM < "零れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_零れる_v_g_rel" ].
 
-頑張れる-tc := v1-v-stem-lex &
-[ STEM < "頑張れる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_頑張れる_v_g_rel" ].
+;; 頑張れる-tc := v1-v-stem-lex &
+;; [ STEM < "頑張れる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_頑張れる_v_g_rel" ].
 
 頼める-tc := v1-v-stem-lex &
 [ STEM < "頼める" >,
@@ -4414,21 +4414,21 @@
 [ STEM < "頼れる" >,
   SYNSEM.LKEYS.KEYREL.PRED "_頼れる_v_g_rel" ].
 
-願える-tc := v1-v-stem-lex &
-[ STEM < "願える" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_願える_v_g_rel" ].
+;; 願える-tc := v1-v-stem-lex &
+;; [ STEM < "願える" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_願える_v_g_rel" ].
 
 顰める-tc := v1-v-stem-lex &
 [ STEM < "顰める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_顰める_v_g_rel" ].
 
-飛び出せる-tc := v1-v-stem-lex &
-[ STEM < "飛び出せる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_飛び出せる_v_g_rel" ].
+;; 飛び出せる-tc := v1-v-stem-lex &
+;; [ STEM < "飛び出せる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_飛び出せる_v_g_rel" ].
 
-飛べる-tc := v1-v-stem-lex &
-[ STEM < "飛べる" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_飛べる_v_g_rel" ].
+;; 飛べる-tc := v1-v-stem-lex &
+;; [ STEM < "飛べる" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_飛べる_v_g_rel" ].
 
 食らわせる-tc := v1-v-stem-lex &
 [ STEM < "食らわせる" >,
@@ -4438,9 +4438,9 @@
 [ STEM < "飲み込める" >,
   SYNSEM.LKEYS.KEYREL.PRED "_飲み込める_v_g_rel" ].
 
-飲める-tc := v1-v-stem-lex &
-[ STEM < "飲める" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_飲める_v_g_rel" ].
+;; 飲める-tc := v1-v-stem-lex &
+;; [ STEM < "飲める" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_飲める_v_g_rel" ].
 
 飾りたてる-tc := v1-v-stem-lex &
 [ STEM < "飾りたてる" >,
@@ -7342,9 +7342,9 @@
 [ STEM < "てん" >,
   SYNSEM.LKEYS.KEYREL.PRED "_てん_n_g_rel" ].
 
-でき-tc := ordinary-nohon-n-lex &
-[ STEM < "でき" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_でき_n_g_rel" ].
+;; でき-tc := ordinary-nohon-n-lex &
+;; [ STEM < "でき" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_でき_n_g_rel" ].
 
 でっち上げ-tc := ordinary-nohon-n-lex &
 [ STEM < "でっち上げ" >,
@@ -8034,9 +8034,9 @@
 [ STEM < "ろくでなし" >,
   SYNSEM.LKEYS.KEYREL.PRED "_ろくでなし_n_g_rel" ].
 
-わ-tc := ordinary-nohon-n-lex &
-[ STEM < "わ" >,
-  SYNSEM.LKEYS.KEYREL.PRED "_わ_n_g_rel" ].
+;; わ-tc := ordinary-nohon-n-lex &
+;; [ STEM < "わ" >,
+;;   SYNSEM.LKEYS.KEYREL.PRED "_わ_n_g_rel" ].
 
 わが校-tc := ordinary-nohon-n-lex &
 [ STEM < "わが校" >,
@@ -20498,6 +20498,6 @@
 [ STEM < "鬱陶しい" >,
   SYNSEM.LKEYS.KEYREL.PRED "_鬱陶しい_a_g_rel" ].
 
-deru_from-hiragana-stem-new :=  v1-v-stem-lex &
- [ STEM < "でる" >,
-   SYNSEM.LKEYS.KEYREL.PRED "_deru_v_from_rel" ].
+;; deru_from-hiragana-stem-new :=  v1-v-stem-lex &
+;;  [ STEM < "でる" >,
+;;    SYNSEM.LKEYS.KEYREL.PRED "_deru_v_from_rel" ].
