@@ -6,6 +6,8 @@ unset LUI;
 lkbdir=${LOGONROOT}/lingo/lkb;
 grammardir=${LOGONROOT}/dfki/jacy;
 
+### make input file
+cut -d@ -f7 $grammardir/tsdb/skeletons/mrs/item |tail -50 > $grammardir/utils/mrs.50.txt
 
 #
 # CHEAP
@@ -19,7 +21,7 @@ cd $grammardir
 flop japanese 
 
 # calculate the quickcheck file
-cut -d@ -f7 $grammardir/tsdb/skeletons/kinou1/item | \
+cat $grammardir/utils/mrs.txt | \
 cheap -limit=50000 -packing -compute-qc=pet/qc.tdl $grammardir/japanese
 
 # flop the grammar again
@@ -46,8 +48,8 @@ mv $grammardir/lkb/checkpaths.lsp $grammardir/lkb/checkpaths.lsp.old
   (lkb::with-check-path-list-collection  
    "$grammardir/lkb/checkpaths.lsp" 
     (lkb::parse-sentences 
-    "$grammardir/utils/kinou1.chasen"
-    "/tmp/kinou1.chasen.out"))
+    "$grammardir/utils/mrs.txt"
+    "/tmp/mrs.txt.out"))
   (format t "~%All Done!~%")
   #+allegro        (excl:exit)
   #+sbcl           (sb-ext:quit)
