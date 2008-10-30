@@ -3,12 +3,16 @@
 # ToDo: parametrize special values (HEAD VALENCE CONTENT)
 #
 
+unset DISPLAY;
+unset LUI;
+
+
 #lkbdir=/home/bond/delphin/lkb
 lkbdir=/home/bond/logon/lingo/lkb
 
 grammardir=/home/bond/svn/jacy; 
-ltypes=("$grammardir/lex-types.tdl $grammardir/v-lex-types.tdl")
-treebanks=`ls -d /home/bond/svn/jacy/gold/tc*`
+ltypes=("${grammardir}/lex-types.tdl $grammardir/v-lex-types.tdl")
+treebanks=`ls -d ${grammardir}/gold/*`
 
 #grammardir=/home/bond/logon/lingo/erg;
 #ltypes="$grammardir/letypes.tdl"
@@ -58,11 +62,7 @@ mkdir -p $outdir
 ### dump  the lex-types
 echo "Dumping lex-type definitions and lexicon" 
 
-#lisp="/home/bond/logon/franz/linux.x86.64/alisp -I bclim.dxl"
-lisp="/home/bond/logon/franz/linux.x86.32/alisp -I base.dxl"
-#lisp="/usr/bin/sbcl --dynamic-space-size 4000"  ## and change exit to quit
 
-unset DISPLAY
 
 { 
  cat 2>&1 <<- LISP
@@ -76,7 +76,7 @@ unset DISPLAY
   #+allegro        (excl:exit)
   #+sbcl           (sb-ext:quit)
 LISP
-} | $lisp -I $image -qq 1>&1
+} | ${LOGONROOT}/bin/logon --source -I base -locale ja_JP.UTF-8
 #} | cat 
 
 ###
