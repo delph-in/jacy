@@ -1,16 +1,60 @@
 #!/bin/bash
 # from the main grammar directory
+unset DISPLAY;
+unset LUI;
+
+lkbdir=${LOGONROOT}/lingo/lkb;
+grammardir=${LOGONROOT}/dfki/jacy;
+
+
+#
+# CHEAP
+#
 
 # back up quick check file
-mv pet/qc.tdl pet/qc.tdl.old
+mv $grammardir/pet/qc.tdl $grammardir/pet/qc.tdl.old
 
-# flop the grammar once
+#flop the grammar once
+cd $grammardir
 flop japanese 
 
 # calculate the quickcheck file
-cut -d@ -f7 tsdb/skeletons/kinou1/item | \
-iconv -f utf-8 -t euc-jp  | chasen -F "%M "| iconv -f euc-jp -t utf-8 | \
-cheap -limit=50000 -packing -compute-qc=pet/qc.tdl japanese
+cut -d@ -f7 $grammardir/tsdb/skeletons/kinou1/item | \
+cheap -limit=50000 -packing -compute-qc=pet/qc.tdl $grammardir/japanese
 
 # flop the grammar again
+cd $grammardir
 flop japanese
+
+echo "PET done"
+###
+### LKB
+###
+# back up 
+mv $grammardir/lkb/checkpaths.lsp $grammardir/lkb/checkpaths.lsp.old
+
+### FIXME should redo the input file at somestage
+
+{ 
+ cat 2>&1 <<- LISP
+  (load "$lkbdir/src/general/loadup")
+  (compile-system "lkb" :force t)
+  (lkb::read-script-file-aux  "$grammardir/lkb/script")
+  ;;; set an edge limit
+  (setf  lkb::*maximum-number-of-edges* '5000) 
+  ;; make the checkpaths
+  (lkb::with-check-path-list-collection  
+   "$grammardir/lkb/checkpaths.lsp" 
+    (lkb::parse-sentences 
+    "$grammardir/utils/kinou1.chasen"
+    "/tmp/kinou1.chasen.out"))
+  (format t "~%All Done!~%")
+  #+allegro        (excl:exit)
+  #+sbcl           (sb-ext:quit)
+LISP
+} | ${LOGONROOT}/bin/logon --source -I base -locale ja_JP.UTF-8
+
+echo "LKB done"
+
+echo "please commit the new files"
+echo "svn commit -m 'new quick check paths' pet/qc.tdl lkb/checkpaths.lsp"
