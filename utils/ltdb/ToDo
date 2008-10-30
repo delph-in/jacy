@@ -1,0 +1,15 @@
+
+ * make an index file
+
+ * add in some html for the trees
+
+ * release to the waiting world
+
+
+ * share paramaters with www
+   echo "(setf tsdb::*www-introduction* \"jacy\")";
+     '((:parse \"http://www.delph-in.net/jacy\")	
+
+ * add daughter look-up
+
+ 

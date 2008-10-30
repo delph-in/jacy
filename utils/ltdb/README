@@ -1,0 +1,41 @@
+Requirements
+
+  * Perl
+   * DBD::SQLite
+   * XML::DOM
+  * SQLite3
+  * Apache
+  * Lisp		for db dump
+  * nsgmls		for validation  
+
+Installation
+
+  1. Put lextypedb.css in a directory accessible from the Web.
+     ex) mv lextypedb.css /home/bond/public_html 
+
+  2. Put lextypedb in your CGI directory.
+     ex) mv lextypedb /home/bond/public_html/cgi-bin
+
+  3. Configure /cgi-bin/lextypedb/params appropriately.
+     ex)  dbroot=/home/bond/public_html/cgi-bin/lextypedb
+          cssdir=http://localhost/~bond/
+          cgidir=http://localhost/~bond/cgi-bin/lextypedb
+          charset=utf-8
+
+  4. Configure lextypedb_utils/make-lextypedb.bash appropriately.
+     ex)  lisp="/home/bond/delphin/franz/linux.x86.32/alisp -I bclim.dxl"
+          lkbdir="/home/bond/delphin/lkb"
+          grammardir="/home/bond/delphin/jacy"
+          ltypes=($grammardir/lex-types.tdl $grammardir/v-lex-types.tdl)
+          treebanks=(~/public_html/tc-070707/tanaka_ja_6.t/ ~/public_html/tc-070707/tanaka_ja_6.n/ ~/public_html/tc-070707/tanaka_ja_7.t/)
+
+
+Usage
+
+  1. Run lextypedb_utils/make-lextypedb.bash
+
+  2. Copy lt.db that is generated in lextypedb_utils/(Grammar-Version) to the CGI directory.
+     ex) cp lextypedb_utils/(Grammar-Version)/lt.db /home/bond/public_html/cgi-bin/lextypedb
+
+  3. Access list.cgi in the CGI directory.
+     ex) http://localhost/~bond/cgi-bin/lextypedb/list.cgi

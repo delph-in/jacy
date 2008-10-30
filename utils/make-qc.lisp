@@ -7,7 +7,7 @@
 ;;; use more memory
 ;(setf (sb-ext:BYTES-CONSED-BETWEEN-GCS) 200000000)
 
-(load "/home/bond/delphin/lkb/src/general/loadup")
+(load "/home/bond/logon/lingo/lkb/src/general/loadup")
 ;(load "/home/bond/delphin/lkb.cvs.good/src/general/loadup")
 ;(compile-system "lkb" :force t)
 (compile-system "lkb")
@@ -25,7 +25,7 @@
 (lkb::with-check-path-list-collection 
  "/tmp/checkpaths" 
  (lkb::parse-sentences 
-  (format  nil "~a/testsuites/kinou1.chasen.500" grm-dir)
+  (format  nil "~a/utils/kinou1.chasen.100" grm-dir)
   (format  nil "/tmp/kinou1.chasen.out" grm-dir)))
 
 (format t "~%All Done!~%")
