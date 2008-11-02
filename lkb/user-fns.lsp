@@ -73,7 +73,7 @@
 ;;; (ERB 2001-12-20) Colons are meaningful and we
 ;;; want to keep them!
 
-(defparameter *punctuation-characters*
+(setf *punctuation-characters*
   '(#\space #\! #\" #\& #\' #\(
     #\) #\* #\+ #\, #\- #\. #\/ #\;
     #\< #\= #\> #\? #\@ #\[ #\\ #\] #\^
@@ -85,17 +85,6 @@
     #\white_circle #\black_circle
     #\white_star #\black_star
     #\white_diamond #\black_diamond))
-;    #\katakana_middle_dot 
-
-
-(defun punctuationp (thing)
-  (let ((string (string thing)))
-    (loop
-        for c across string
-        always (member c *punctuation-characters*))))
-  
-(defun alphanumeric-or-extended-p (c)
-  (and (graphic-char-p c) (not (member c *punctuation-characters*))))
 
 ;;;
 ;;; to generate `punctuation-characters' value for `japanese.set'
@@ -103,165 +92,15 @@
 #+:null
 (loop for c in *punctuation-characters* do (format t "~a" c))
 
-(defun normalize-sentence-string (string)
-  (loop
-      with padding = 128
-      with length = (+ (length string) padding)
-      with result = (make-array length
-                                :element-type 'character
-                                :adjustable nil :fill-pointer 0)
-      with space = t
-      for c across string
-      when (or (member c '(#\Space #\Newline #\Tab))
-               (not (alphanumeric-or-extended-p c))) do
-        (when space (incf padding))
-        (unless space
-          (vector-push #\Space result)
-          (setf space :space))
-      else do
-        (vector-push c result)
-        (setf space nil)
-      finally
-        (when (and (eq space :space) (not (zerop (fill-pointer result))))
-          (decf (fill-pointer result)))
-        (return result)))
-
 ;;;
-;;; Call chasen and format the input appropriately
+;;; as of june 2008, the ChaSen wrapper code is now part of [incr tsdb()], so
+;;; that it can be used in conjunction with PET even without JaCY itself.  the
+;;; downside, however, is that ChaSen support is only available in conjunction
+;;; with [incr tsdb()] then.                                   (17-jun-08; oe)
 ;;;
-(setf *preprocessor* nil)
-
-(defparameter *chasen-application* "chasen")
-
-(defparameter *chasen-debug-p* t)
-
-(defparameter *chasen-readings* nil)
-
-(defun chasen-preprocess-sentence-string (string
-					  &key (verbose *chasen-debug-p*) posp)
-  
-  (let* ((string (string-trim '(#\space #\tab) string))
-         #+:logon
-         (logon (system:getenv "LOGONROOT"))
-         ;;
-         ;; in the self-contained LOGON philosophy, we assume people want to
-         ;; use the ChaSen installation included in the tree (using UTF-8).
-         (command (format 
-                   nil 
-                   "~a~@[ -r '~a'~] -i ~a -F ~
-                    '(\"%m\" \"%M\" \"%P-+%Tn-%Fn\" \"%y\")\\n'" 
-                   *chasen-application*
-                   #+:logon (and logon (format nil "~a/.chasenrc" logon))
-                   #-:logon nil
-                   #+:logon "w" #-:logon "e")))
-    (setf *chasen-readings* nil)
-    (multiple-value-bind (stream foo pid)
-        (run-process
-         command :wait nil
-         :output :stream :if-output-exists :append 
-         :input :stream :error-output nil)
-      (declare (ignore foo #-:allegro pid))
-      ;;
-      ;; while we assert ChaSen to operate in EUC-JP mode, enforce the encoding
-      ;; on the stream talking to the sub-process.  in the LOGON universe, on
-      ;; the other hand, we control which dictionaries are in use, so there we
-      ;; opt for modern UTF-8.
-      ;;
-      #+(and :allegro-version>= (version>= 6 0))
-      (setf (stream-external-format stream)
-        (excl:find-external-format #+:logon :utf-8 #-:logon :euc))
-    
-      (format stream "~a~%" string)
-      (let* ((analyses (loop
-                           for form = (read stream nil :eof)
-                           until (or (eq form :eof) 
-                                     (and (symbolp form)
-                                          (eq (intern form :keyword) :eos)))
-                           collect form))
-	     (length 0)
-             full)
-        (close stream)
-        #+:allegro 
-        (loop for i from 0 while (< i 500) until (sys:os-wait nil pid))
-        (loop
-            initially (when verbose (format t "~&~%ChaSen output:~%~%"))
-            with i = 0
-            with id = 0
-            for analysis in analyses
-            for form = (first analysis)
-	    for yy = (when *preprocessor*
-		       (lkb::preprocess
-			form :globalp nil :format :list :verbose nil))
-	    ;; FCB change with preprocessor ---  (lkb::preprocess form))
-            for pos = (third analysis)
-            when verbose do
-              (format 
-               t 
-               "  form: `~a'; stem: `~a'; analysis: `~a' ; reading : `~a'~%"
-               form (second analysis) pos (fourth analysis))
-            unless (punctuationp form) do
-	      (incf length)
-	      (if yy
-		(loop
-		    with start = i with end = (incf i)
-		    initially (setf (first analysis) (fourth (first yy)))
-		    for foo in yy
-		    do
-		      (push 
-		       (format 
-			nil 
-			"(~d, ~d, ~d, 1, \"~a\" \"~a\", ~
-                         0, \"null\", \"~a\" 1.0)" 
-			(incf id) start end
-			(fourth foo) (fifth foo) pos)
-		       full))
-		(push
-		 (format 
-		  nil 
-		  "(~d, ~d, ~d, 1, \"~a\" \"~a\", 0, \"null\", \"~a\" 1.0)" 
-		  (incf id)
-		  i (incf i) form (second analysis) pos)
-		 full))
-	    ;; collects readings
-	    unless (punctuationp form) do
-	      (push (fourth analysis) *chasen-readings*)
-            finally
-	      (setf *chasen-readings* (reverse *chasen-readings*))
-	      (when verbose (format t "~%")))
-        (values
-         (if posp
-           (format nil "~{~a~^ ~}" (reverse full))
-           (normalize-sentence-string
-            (format 
-             nil 
-             "~{~a~^ ~}" 
-             (loop for analysis in analyses collect (first analysis)))))
-         length)))))
-
-;;;
-;;; Possibly use chasen to process the string
-;;;
-
-(defun preprocess-sentence-string (string &key (verbose *chasen-debug-p*) posp)
-  (if (find :chasen *features*)
-    (chasen-preprocess-sentence-string string :verbose verbose :posp posp)
-    (if *preprocessor*
-      (preprocess string :format :lkb :verbose nil)
-      ;; FCB change with new preprocessor (preprocess string)
-      (normalize-sentence-string (string-trim '(#\space #\tab) string)))))
-
-
-;;;
-;;; hook for [incr tsdb()] to call when preprocessing input (going to the PET
-;;; parser or when counting `words' while importing test items from a file).
-;;;
-(defun chasen-preprocess-for-pet (input &optional tagger)
-  (declare (ignore tagger))
-  (chasen-preprocess-sentence-string input :verbose nil :posp t))
-
-#+:null
-(setf tsdb::*tsdb-preprocessing-hook* "lkb::preprocess-sentence-string")
-
+#+:(and :chasen :tsdb)
+(defun preprocess-sentence-string (string)
+  (tsdb::chasen-preprocess string))
 
 ;;;
 ;;; used in lexicon compilation for systems like PET and CHiC: when we compile
