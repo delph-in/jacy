@@ -2775,11 +2775,37 @@ adv-p-lex-postp-main-exh := adv-p-lex-postp-main & adv-p-lex-p-exh.
 ; solution...
 ; (MS 2002-05-28) VN - to prevent ambiguity.
 
+; <type val="adv-p-lex-vp">
+; <name-ja>
+; <description>verbの終止形につく「に」。
+; <ex>捨てる に は 惜しい
+; <nex>
+; <todo>
+; </type>
 adv-p-lex-vp := adv-p-lex & 
 [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & 
                                                 [FORMAL.AHON -,
+						 H-TENSE present,
                                                  VN -,
                                                  COP -]].
+
+; <type val="adv-p-lex-vp-inf">
+; <name-ja>
+; <description>verbの活用形の語幹につく「に」。
+; <ex>遊び に 行く
+; <nex>
+; <todo>
+; </type>
+adv-p-lex-vp-inf := adv-p-lex & 
+[SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & 
+                                                [FORMAL.AHON -,
+						 H-TENSE no_tense,
+                                                 VN -,
+                                                 COP -]].
+
+
+
+
 
 adv-p-lex-naadj := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
