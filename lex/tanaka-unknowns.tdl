@@ -1,4 +1,4 @@
-;;; Automatically generated entries for tc, created by eric on Tue Oct 21 21:12:38 JST 2008.
+;;; Automatically generated entries for tc, created by eric on Fri Oct 24 22:04:00 JST 2008.
 
 あのー_x_1-tc := interj-lex &
 [ STEM <"あのー">,
@@ -2497,10 +2497,6 @@
 [ STEM <"にせる">,
   SYNSEM.LKEYS.KEYREL.PRED "_にせる_v_1_g_rel" ].
 
-にる_v_1-tc := v1-v-stem-lex &
-[ STEM <"にる">,
-  SYNSEM.LKEYS.KEYREL.PRED "_にる_v_1_g_rel" ].
-
 ぬける_v_1-tc := v1-v-stem-lex &
 [ STEM <"ぬける">,
   SYNSEM.LKEYS.KEYREL.PRED "_ぬける_v_1_g_rel" ].
@@ -3564,10 +3560,6 @@
 置きかえる_v_1-tc := v1-v-stem-lex &
 [ STEM <"置きかえる">,
   SYNSEM.LKEYS.KEYREL.PRED "_置きかえる_v_1_g_rel" ].
-
-置ける_v_1-tc := v1-v-stem-lex &
-[ STEM <"置ける">,
-  SYNSEM.LKEYS.KEYREL.PRED "_置ける_v_1_g_rel" ].
 
 聞える_v_1-tc := v1-v-stem-lex &
 [ STEM <"聞える">,
@@ -5424,10 +5416,6 @@
 どもる_v_1-tc := v1-c-stem-lex &
 [ STEM <"どもる">,
   SYNSEM.LKEYS.KEYREL.PRED "_どもる_v_1_g_rel" ].
-
-なう_v_1-tc := v1-c-stem-lex &
-[ STEM <"なう">,
-  SYNSEM.LKEYS.KEYREL.PRED "_なう_v_1_g_rel" ].
 
 なおす_v_1-tc := v1-c-stem-lex &
 [ STEM <"なおす">,
@@ -11820,10 +11808,6 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 れん_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"れん">,
   SYNSEM.LKEYS.KEYREL.PRED "_れん_n_1_g_rel" ].
-
-ろ_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"ろ">,
-  SYNSEM.LKEYS.KEYREL.PRED "_ろ_n_1_g_rel" ].
 
 ろう_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"ろう">,
