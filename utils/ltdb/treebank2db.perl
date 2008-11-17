@@ -24,6 +24,8 @@ while(my @row = $sth->fetchrow_array){
 my @all_tb_data;
 foreach my $tbresult (@tbresults){
     open TB, $tbresult or die "Can't open $tbresult: $!";
+    $tbresult =~ m|/([^/]+)/result|;
+    my $profile = $1;
     my $sid = 'undefined';
     my %processedSentences;
     while(<TB>){
@@ -31,13 +33,14 @@ foreach my $tbresult (@tbresults){
 	# Extracting a parse result
 	/^(.*)?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@(.+)\@.*?\@.*?\@.*?\@$/;
 	next if defined $processedSentences{$1};
-	my $sid = $tbresult.'-'.$1; ### assume it is unique
+	my $sid = "$profile/$1"; ### assume it is unique
 	$processedSentences{$1} = 1;
 	my @tmp = $2 =~ /(\([^\(]+?\([^\(]+?\)\))/g;
 	
 	# Extracting pairs of a word-id and an orthography
 	foreach (@tmp){
 	    my $tbline;
+	    #$tbline->{profile} = $profile;
 	    $tbline->{sid} = $sid;
 	    /\"(.+?)\"/;#"
 	    $tbline->{orth} = $1;

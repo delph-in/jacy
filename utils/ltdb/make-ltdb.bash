@@ -52,6 +52,21 @@ outdir=$PWD/$version
 HTML_DIR=$HOME/public_html/ltdb/$version
 CGI_DIR=$HOME/public_html/cgi-bin/$version
 
+echo
+echo "It will be installed into:"
+echo "   $HTML_DIR"
+echo "   $CGI_DIR"
+echo 
+echo "Would you like to continue (y/n)?"
+read
+case $REPLY in
+   no|n) exit 0;;
+    *) echo "Keeping on" ;;
+esac
+
+
+
+
 ### make the output directory
 echo "Writing output to $outdir"
 mkdir -p $outdir
@@ -170,12 +185,17 @@ sed -i "1,1 s|#!/usr/local/bin/perl|#!$MYPERL|"  $CGI_DIR/*.cgi
 
 cp $outdir/$LTDB_FILE $CGI_DIR/.
 cp html/lextypedb.css $HTML_DIR/.
+dbhost=`hostname -f`
 echo "charset=utf-8" > $CGI_DIR/params
 echo "dbroot=$CGI_DIR" >> $CGI_DIR/params
-echo "cssdir=http://localhost/~$USERNAME/ltdb/$version" >> $CGI_DIR/params
-echo "cgidir=http://localhost/~$USERNAME/cgi-bin/$version" >> $CGI_DIR/params
+echo "cssdir=http://$dbhost/~$USERNAME/ltdb/$version" >> $CGI_DIR/params
+echo "cgidir=http://$dbhost/~$USERNAME/cgi-bin/$version" >> $CGI_DIR/params
 echo "version=$version" >> $CGI_DIR/params
+### trees
+mkdir -p $HTML_DIR/trees
 
+cp $lkbdir/src/tsdb/css/*.css  $HTML_DIR/.
+cp $lkbdir/src/tsdb/js/*.js  $HTML_DIR/.
 
 
 ### All done

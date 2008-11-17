@@ -75,7 +75,7 @@ my $out = "<table>";
  $out .= "<tr><th>Sentences</th><th>ex</th></tr>";
  foreach my $sid (keys %all_sentences){
      $out .= "<tr><td>$all_sentences{$sid}</td>";
-     $out .= "<td><a href = '$cssdir/db/trees/$sid.html'>$sid</a></td></tr>";
+     $out .= "<td><a href = '$cssdir/trees/$sid.html'>$sid</a></td></tr>";
  }
 $out .= "</table>";
 
@@ -95,8 +95,8 @@ print <<"HTML_VIEW";
 </div> <!-- end of menu -->
 </div> <!-- end of header -->
 <div id="confusing">
-<form name="frm1" action="$cgidir/confusingTypes.cgi" method="POST">
-Confusing Types:&nbsp;<input type="text" name="confusing">
+<form name="frm1" action="$cgidir/searchWord.cgi" method="POST">
+Word Search:&nbsp;<input type="text" name="confusing">
 <input type="submit" value="Submit" name="submitbtn">
 <input type="reset" value="Reset" />
 </form>
