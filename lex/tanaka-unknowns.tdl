@@ -1,4 +1,4 @@
-;;; Automatically generated entries for tc, created by eric on Fri Oct 24 22:04:00 JST 2008.
+;;; Automatically generated entries for tc, created by eric-n on Tue Nov 18 11:26:49 JST 2008.
 
 あのー_x_1-tc := interj-lex &
 [ STEM <"あのー">,
@@ -24811,1295 +24811,1295 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 
 1905_n_1-tc := card-no-object-no-specifier &
 [ STEM <"1905">,
-  SYNSEM.LKEYS.KEYREL.PRED "_1905_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "1905" ].
 
 1986_n_1-tc := card-no-object-no-specifier &
 [ STEM <"1986">,
-  SYNSEM.LKEYS.KEYREL.PRED "_1986_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "1986" ].
 
 ○○_n_1-tc := card-no-object-no-specifier &
 [ STEM <"○○">,
-  SYNSEM.LKEYS.KEYREL.PRED "_○○_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "○○" ].
 
 ・・・_n_1-tc := card-no-object-no-specifier &
 [ STEM <"・・・">,
-  SYNSEM.LKEYS.KEYREL.PRED "_・・・_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "・・・" ].
 
 一万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"一万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_一万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "一万" ].
 
 一九二〇_n_1-tc := card-no-object-no-specifier &
 [ STEM <"一九二〇">,
-  SYNSEM.LKEYS.KEYREL.PRED "_一九二〇_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "一九二〇" ].
 
 一兆_n_1-tc := card-no-object-no-specifier &
 [ STEM <"一兆">,
-  SYNSEM.LKEYS.KEYREL.PRED "_一兆_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "一兆" ].
 
 一千万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"一千万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_一千万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "一千万" ].
 
 七十_n_1-tc := card-no-object-no-specifier &
 [ STEM <"七十">,
-  SYNSEM.LKEYS.KEYREL.PRED "_七十_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "七十" ].
 
 七十五_n_1-tc := card-no-object-no-specifier &
 [ STEM <"七十五">,
-  SYNSEM.LKEYS.KEYREL.PRED "_七十五_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "七十五" ].
 
 三〇_n_1-tc := card-no-object-no-specifier &
 [ STEM <"三〇">,
-  SYNSEM.LKEYS.KEYREL.PRED "_三〇_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "三〇" ].
 
 三万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"三万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_三万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "三万" ].
 
 三十五_n_1-tc := card-no-object-no-specifier &
 [ STEM <"三十五">,
-  SYNSEM.LKEYS.KEYREL.PRED "_三十五_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "三十五" ].
 
 三千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"三千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_三千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "三千" ].
 
 三百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"三百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_三百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "三百" ].
 
 九〇_n_1-tc := card-no-object-no-specifier &
 [ STEM <"九〇">,
-  SYNSEM.LKEYS.KEYREL.PRED "_九〇_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "九〇" ].
 
 二〇_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二〇">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二〇_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二〇" ].
 
 二万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二万" ].
 
 二三_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二三">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二三_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二三" ].
 
 二三十_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二三十">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二三十_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二三十" ].
 
 二十_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二十">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二十_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二十" ].
 
 二十五_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二十五">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二十五_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二十五" ].
 
 二十億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二十億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二十億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二十億" ].
 
 二十四_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二十四">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二十四_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二十四" ].
 
 二千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二千" ].
 
 二百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"二百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_二百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "二百" ].
 
 五万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"五万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_五万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "五万" ].
 
 五千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"五千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_五千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "五千" ].
 
 五百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"五百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_五百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "五百" ].
 
 五百万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"五百万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_五百万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "五百万" ].
 
 何万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何万" ].
 
 何億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何億" ].
 
 何十_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何十">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何十_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何十" ].
 
 何十万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何十万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何十万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何十万" ].
 
 何十億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何十億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何十億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何十億" ].
 
 何千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何千" ].
 
 何百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何百" ].
 
 何百万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"何百万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_何百万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "何百万" ].
 
 八万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"八万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_八万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "八万" ].
 
 八十二_n_1-tc := card-no-object-no-specifier &
 [ STEM <"八十二">,
-  SYNSEM.LKEYS.KEYREL.PRED "_八十二_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "八十二" ].
 
 八百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"八百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_八百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "八百" ].
 
 六万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"六万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_六万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "六万" ].
 
 六千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"六千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_六千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "六千" ].
 
 十一_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十一">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十一_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十一" ].
 
 十七_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十七">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十七_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十七" ].
 
 十万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十万" ].
 
 十三_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十三">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十三_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十三" ].
 
 十二_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十二">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十二_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十二" ].
 
 十五_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十五">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十五_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十五" ].
 
 十八_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十八">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十八_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十八" ].
 
 十四_n_1-tc := card-no-object-no-specifier &
 [ STEM <"十四">,
-  SYNSEM.LKEYS.KEYREL.PRED "_十四_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "十四" ].
 
 千百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"千百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_千百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "千百" ].
 
 四千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"四千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_四千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "四千" ].
 
 四百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"四百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_四百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "四百" ].
 
 四百万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"四百万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_四百万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "四百万" ].
 
 幾千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"幾千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_幾千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "幾千" ].
 
 数万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"数万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_数万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "数万" ].
 
 数十_n_1-tc := card-no-object-no-specifier &
 [ STEM <"数十">,
-  SYNSEM.LKEYS.KEYREL.PRED "_数十_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "数十" ].
 
 数千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"数千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_数千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "数千" ].
 
 数百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"数百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_数百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "数百" ].
 
 数百万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"数百万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_数百万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "数百万" ].
 
 百八_n_1-tc := card-no-object-no-specifier &
 [ STEM <"百八">,
-  SYNSEM.LKEYS.KEYREL.PRED "_百八_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "百八" ].
 
 ．_n_1-tc := card-no-object-no-specifier &
 [ STEM <"．">,
-  SYNSEM.LKEYS.KEYREL.PRED "_．_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "．" ].
 
 ０．５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"０．５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_０．５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "０．５" ].
 
 ０．７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"０．７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_０．７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "０．７" ].
 
 ００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "００" ].
 
 ０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "０００" ].
 
 ００００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"００００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_００００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "００００" ].
 
 ００１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"００１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_００１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "００１" ].
 
 ００２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"００２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_００２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "００２" ].
 
 ０１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"０１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_０１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "０１" ].
 
 ０１２０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"０１２０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_０１２０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "０１２０" ].
 
 ０２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"０２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_０２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "０２" ].
 
 １3_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１3">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１3_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１3" ].
 
 １万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１万" ].
 
 １万４千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１万４千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１万４千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１万４千" ].
 
 １万５千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１万５千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１万５千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１万５千" ].
 
 １億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１億" ].
 
 １億２千万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１億２千万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１億２千万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１億２千万" ].
 
 １千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１千" ].
 
 １千万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１千万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１千万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１千万" ].
 
 １．_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１．">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１．_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１．" ].
 
 １．２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１．２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１．２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１．２" ].
 
 １．３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１．３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１．３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１．３" ].
 
 １．５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１．５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１．５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１．５" ].
 
 １０万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１０万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１０万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１０万" ].
 
 １０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１０億" ].
 
 １００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１００万" ].
 
 １００億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１００億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１００億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１００億" ].
 
 １０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１０００" ].
 
 １０００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１０００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１０００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１０００万" ].
 
 １００００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１００００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１００００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１００００" ].
 
 １０００００００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１０００００００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１０００００００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１０００００００" ].
 
 １００３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１００３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１００３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１００３" ].
 
 １０２５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１０２５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１０２５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１０２５" ].
 
 １０６６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１０６６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１０６６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１０６６" ].
 
 １１１１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１１１１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１１１１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１１１１" ].
 
 １１７３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１１７３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１１７３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１１７３" ].
 
 １２．５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１２．５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１２．５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１２．５" ].
 
 １２０．５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１２０．５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１２０．５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１２０．５" ].
 
 １２００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１２００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１２００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１２００" ].
 
 １２０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１２０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１２０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１２０００" ].
 
 １２２８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１２２８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１２２８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１２２８" ].
 
 １３．１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１３．１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１３．１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１３．１" ].
 
 １３０万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１３０万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１３０万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１３０万" ].
 
 １３１４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１３１４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１３１４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１３１４" ].
 
 １３７４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１３７４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１３７４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１３７４" ].
 
 １４７３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１４７３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１４７３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１４７３" ].
 
 １４８５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１４８５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１４８５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１４８５" ].
 
 １４９２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１４９２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１４９２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１４９２" ].
 
 １５万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１５万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１５万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１５万" ].
 
 １５億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１５億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１５億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１５億" ].
 
 １５００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１５００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１５００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１５００" ].
 
 １５００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１５００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１５００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１５００万" ].
 
 １５６４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１５６４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１５６４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１５６４" ].
 
 １６００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６００" ].
 
 １６０３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６０３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６０３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６０３" ].
 
 １６０９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６０９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６０９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６０９" ].
 
 １６１０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６１０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６１０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６１０" ].
 
 １６３６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６３６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６３６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６３６" ].
 
 １６３９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６３９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６３９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６３９" ].
 
 １６５０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６５０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６５０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６５０" ].
 
 １６６４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１６６４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１６６４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１６６４" ].
 
 １７００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１７００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１７００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１７００" ].
 
 １７０６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１７０６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１７０６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１７０６" ].
 
 １７２５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１７２５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１７２５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１７２５" ].
 
 １７３２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１７３２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１７３２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１７３２" ].
 
 １７４５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１７４５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１７４５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１７４５" ].
 
 １７７６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１７７６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１７７６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１７７６" ].
 
 １７８９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１７８９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１７８９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１７８９" ].
 
 １８万６千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８万６千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８万６千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８万６千" ].
 
 １８０６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８０６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８０６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８０６" ].
 
 １８１４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８１４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８１４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８１４" ].
 
 １８１５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８１５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８１５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８１５" ].
 
 １８２０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８２０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８２０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８２０" ].
 
 １８３０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８３０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８３０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８３０" ].
 
 １８３９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８３９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８３９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８３９" ].
 
 １８４５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８４５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８４５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８４５" ].
 
 １８４６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８４６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８４６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８４６" ].
 
 １８５３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８５３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８５３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８５３" ].
 
 １８６０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８６０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８６０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８６０" ].
 
 １８６１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８６１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８６１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８６１" ].
 
 １８６３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８６３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８６３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８６３" ].
 
 １８６５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８６５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８６５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８６５" ].
 
 １８６８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８６８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８６８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８６８" ].
 
 １８６９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８６９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８６９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８６９" ].
 
 １８７３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８７３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８７３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８７３" ].
 
 １８７６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８７６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８７６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８７６" ].
 
 １８８０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１８８０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１８８０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１８８０" ].
 
 １９００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９００" ].
 
 １９０６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９０６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９０６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９０６" ].
 
 １９１０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９１０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９１０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９１０" ].
 
 １９１２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９１２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９１２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９１２" ].
 
 １９１４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９１４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９１４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９１４" ].
 
 １９２０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９２０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９２０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９２０" ].
 
 １９２１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９２１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９２１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９２１" ].
 
 １９２７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９２７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９２７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９２７" ].
 
 １９２８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９２８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９２８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９２８" ].
 
 １９３０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９３０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９３０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９３０" ].
 
 １９３２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９３２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９３２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９３２" ].
 
 １９３３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９３３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９３３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９３３" ].
 
 １９３９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９３９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９３９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９３９" ].
 
 １９４０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４０" ].
 
 １９４１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４１" ].
 
 １９４２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４２" ].
 
 １９４３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４３" ].
 
 １９４５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４５" ].
 
 １９４６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４６" ].
 
 １９４７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４７" ].
 
 １９４８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９４８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９４８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９４８" ].
 
 １９５０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５０" ].
 
 １９５１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５１" ].
 
 １９５２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５２" ].
 
 １９５４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５４" ].
 
 １９５５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５５" ].
 
 １９５６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５６" ].
 
 １９５７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５７" ].
 
 １９５８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９５８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９５８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９５８" ].
 
 １９６０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９６０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９６０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９６０" ].
 
 １９６２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９６２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９６２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９６２" ].
 
 １９６３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９６３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９６３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９６３" ].
 
 １９６４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９６４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９６４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９６４" ].
 
 １９６５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９６５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９６５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９６５" ].
 
 １９６８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９６８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９６８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９６８" ].
 
 １９６９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９６９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９６９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９６９" ].
 
 １９７０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７０" ].
 
 １９７１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７１" ].
 
 １９７２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７２" ].
 
 １９７３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７３" ].
 
 １９７４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７４" ].
 
 １９７５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７５" ].
 
 １９７６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７６" ].
 
 １９７７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７７" ].
 
 １９７８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７８" ].
 
 １９７９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９７９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９７９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９７９" ].
 
 １９８０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８０" ].
 
 １９８１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８１" ].
 
 １９８２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８２" ].
 
 １９８３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８３" ].
 
 １９８４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８４" ].
 
 １９８５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８５" ].
 
 １９８７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８７" ].
 
 １９８８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８８" ].
 
 １９８９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９８９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９８９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９８９" ].
 
 １９９０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９０" ].
 
 １９９１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９１" ].
 
 １９９２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９２" ].
 
 １９９３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９３" ].
 
 １９９４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９４" ].
 
 １９９５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９５" ].
 
 １９９６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９６" ].
 
 １９９７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９７" ].
 
 １９９８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９８" ].
 
 １９９９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"１９９９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_１９９９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "１９９９" ].
 
 ２・３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２・３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２・３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２・３" ].
 
 ２万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２万" ].
 
 ２万７千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２万７千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２万７千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２万７千" ].
 
 ２億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２億" ].
 
 ２億１６００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２億１６００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２億１６００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２億１６００万" ].
 
 ２億５０００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２億５０００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２億５０００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２億５０００万" ].
 
 ２千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２千" ].
 
 ２百_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２百">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２百_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２百" ].
 
 ２百万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２百万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２百万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２百万" ].
 
 ２，３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２，３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２，３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２，３" ].
 
 ２．_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２．">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２．_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２．" ].
 
 ２．３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２．３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２．３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２．３" ].
 
 ２０万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０万" ].
 
 ２０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０億" ].
 
 ２０数_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０数">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０数_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０数" ].
 
 ２００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２００万" ].
 
 ２０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０００" ].
 
 ２０００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０００万" ].
 
 ２００１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２００１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２００１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２００１" ].
 
 ２００２_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２００２">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２００２_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２００２" ].
 
 ２００６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２００６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２００６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２００６" ].
 
 ２０１０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０１０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０１０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０１０" ].
 
 ２０２０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０２０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０２０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０２０" ].
 
 ２０３０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０３０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０３０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０３０" ].
 
 ２０６１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２０６１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２０６１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２０６１" ].
 
 ２２億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２２億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２２億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２２億" ].
 
 ２２．６８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２２．６８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２２．６８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２２．６８" ].
 
 ２３０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２３０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２３０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２３０億" ].
 
 ２３４５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２３４５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２３４５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２３４５" ].
 
 ２３５７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２３５７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２３５７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２３５７" ].
 
 ２４３５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２４３５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２４３５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２４３５" ].
 
 ２５万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２５万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２５万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２５万" ].
 
 ２５００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２５００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２５００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２５００" ].
 
 ２５０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２５０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２５０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２５０００" ].
 
 ２５８１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２５８１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２５８１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２５８１" ].
 
 ２６００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２６００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２６００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２６００万" ].
 
 ２７００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２７００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２７００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２７００" ].
 
 ２７００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２７００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２７００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２７００万" ].
 
 ２７３０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"２７３０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_２７３０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "２７３０" ].
 
 ３万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３万" ].
 
 ３万５千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３万５千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３万５千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３万５千" ].
 
 ３億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３億" ].
 
 ３千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３千" ].
 
 ３．_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３．">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３．_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３．" ].
 
 ３．０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３．０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３．０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３．０" ].
 
 ３０万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３０万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３０万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３０万" ].
 
 ３０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３０億" ].
 
 ３００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３００万" ].
 
 ３００億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３００億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３００億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３００億" ].
 
 ３０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３０００" ].
 
 ３０００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３０００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３０００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３０００万" ].
 
 ３００００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３００００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３００００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３００００" ].
 
 ３１００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３１００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３１００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３１００万" ].
 
 ３１４０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３１４０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３１４０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３１４０億" ].
 
 ３３万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３３万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３３万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３３万" ].
 
 ３４１万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３４１万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３４１万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３４１万" ].
 
 ３４５６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３４５６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３４５６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３４５６" ].
 
 ３４５６１０_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３４５６１０">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３４５６１０_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３４５６１０" ].
 
 ３５００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３５００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３５００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３５００" ].
 
 ３７７６_n_1-tc := card-no-object-no-specifier &
 [ STEM <"３７７６">,
-  SYNSEM.LKEYS.KEYREL.PRED "_３７７６_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "３７７６" ].
 
 ４万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４万" ].
 
 ４億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４億" ].
 
 ４．_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４．">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４．_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４．" ].
 
 ４．５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４．５">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４．５_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４．５" ].
 
 ４．８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４．８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４．８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４．８" ].
 
 ４０万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４０万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４０万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４０万" ].
 
 ４０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４０億" ].
 
 ４００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４００万" ].
 
 ４０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４０００" ].
 
 ４５万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４５万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４５万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４５万" ].
 
 ４５００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４５００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４５００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４５００" ].
 
 ４５６７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４５６７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４５６７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４５６７" ].
 
 ４６００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"４６００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_４６００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "４６００万" ].
 
 ５万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５万" ].
 
 ５億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５億" ].
 
 ５千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５千" ].
 
 ５千万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５千万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５千万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５千万" ].
 
 ５．_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５．">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５．_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５．" ].
 
 ５０万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５０万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５０万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５０万" ].
 
 ５００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５００万" ].
 
 ５０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５０００" ].
 
 ５０００億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５０００億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５０００億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５０００億" ].
 
 ５００００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５００００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５００００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５００００" ].
 
 ５４０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５４０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５４０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５４０億" ].
 
 ５５１１_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５５１１">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５５１１_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５５１１" ].
 
 ５６７８９_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５６７８９">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５６７８９_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５６７８９" ].
 
 ５８１４_n_1-tc := card-no-object-no-specifier &
 [ STEM <"５８１４">,
-  SYNSEM.LKEYS.KEYREL.PRED "_５８１４_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "５８１４" ].
 
 ６億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"６億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_６億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "６億" ].
 
 ６０万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"６０万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_６０万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "６０万" ].
 
 ６０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"６０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_６０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "６０億" ].
 
 ６０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"６０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_６０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "６０００" ].
 
 ６００００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"６００００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_６００００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "６００００" ].
 
 ６８６８_n_1-tc := card-no-object-no-specifier &
 [ STEM <"６８６８">,
-  SYNSEM.LKEYS.KEYREL.PRED "_６８６８_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "６８６８" ].
 
 ６８９億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"６８９億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_６８９億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "６８９億" ].
 
 ７万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"７万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_７万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "７万" ].
 
 ７万６０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"７万６０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_７万６０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "７万６０００" ].
 
 ７千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"７千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_７千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "７千" ].
 
 ７６０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"７６０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_７６０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "７６０億" ].
 
 ７６５万９０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"７６５万９０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_７６５万９０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "７６５万９０００" ].
 
 ７７０億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"７７０億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_７７０億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "７７０億" ].
 
 ７７８億_n_1-tc := card-no-object-no-specifier &
 [ STEM <"７７８億">,
-  SYNSEM.LKEYS.KEYREL.PRED "_７７８億_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "７７８億" ].
 
 ８万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"８万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_８万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "８万" ].
 
 ８千_n_1-tc := card-no-object-no-specifier &
 [ STEM <"８千">,
-  SYNSEM.LKEYS.KEYREL.PRED "_８千_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "８千" ].
 
 ８０００_n_1-tc := card-no-object-no-specifier &
 [ STEM <"８０００">,
-  SYNSEM.LKEYS.KEYREL.PRED "_８０００_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "８０００" ].
 
 ８６４７_n_1-tc := card-no-object-no-specifier &
 [ STEM <"８６４７">,
-  SYNSEM.LKEYS.KEYREL.PRED "_８６４７_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "８６４７" ].
 
 ８８７３_n_1-tc := card-no-object-no-specifier &
 [ STEM <"８８７３">,
-  SYNSEM.LKEYS.KEYREL.PRED "_８８７３_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "８８７３" ].
 
 ９千万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"９千万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_９千万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "９千万" ].
 
 ９千３百万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"９千３百万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_９千３百万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "９千３百万" ].
 
 ９００万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"９００万">,
-  SYNSEM.LKEYS.KEYREL.PRED "_９００万_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.CARG "９００万" ].
 
 あえない_a_1-tc := i-adj-stem-lex &
 [ STEM <"あえない">,
