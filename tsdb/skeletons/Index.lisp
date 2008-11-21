@@ -19,7 +19,8 @@
 ;;; the list lexicographically before output.
 ;;;
 
-(
+(((:path . "tanaka") 
+  (:content . "Japanese Tanaka Corpus"))
  ((:path . "vanilla") 
   (:content . "Basic Japanese Constructions"))
  ((:path . "haikingu") 
