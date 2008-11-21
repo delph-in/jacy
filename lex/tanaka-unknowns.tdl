@@ -24817,14 +24817,6 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"1986">,
   SYNSEM.LKEYS.KEYREL.CARG "1986" ].
 
-○○_n_1-tc := card-no-object-no-specifier &
-[ STEM <"○○">,
-  SYNSEM.LKEYS.KEYREL.CARG "○○" ].
-
-・・・_n_1-tc := card-no-object-no-specifier &
-[ STEM <"・・・">,
-  SYNSEM.LKEYS.KEYREL.CARG "・・・" ].
-
 一万_n_1-tc := card-no-object-no-specifier &
 [ STEM <"一万">,
   SYNSEM.LKEYS.KEYREL.CARG "一万" ].
@@ -25056,10 +25048,6 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 百八_n_1-tc := card-no-object-no-specifier &
 [ STEM <"百八">,
   SYNSEM.LKEYS.KEYREL.CARG "百八" ].
-
-．_n_1-tc := card-no-object-no-specifier &
-[ STEM <"．">,
-  SYNSEM.LKEYS.KEYREL.CARG "．" ].
 
 ０．５_n_1-tc := card-no-object-no-specifier &
 [ STEM <"０．５">,
@@ -27201,9 +27189,9 @@ to_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"to">,
   SYNSEM.LKEYS.KEYREL.PRED "_to_n_1_g_rel" ].
 
-v_n_1-tc := ordinary-nohon-n-lex &
+v_n_2-tc := ordinary-nohon-n-lex &
 [ STEM <"v">,
-  SYNSEM.LKEYS.KEYREL.PRED "_v_n_1_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.PRED "_v_n_2_g_rel" ].
 
 when_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"when">,
@@ -27257,59 +27245,4 @@ which_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"ｙ">,
   SYNSEM.LKEYS.KEYREL.PRED "_ｙ_n_1_g_rel" ].
 
-*_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"*">,
-  SYNSEM.LKEYS.KEYREL.PRED "_*_n_1_g_rel" ].
-
-+_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"+">,
-  SYNSEM.LKEYS.KEYREL.PRED "_+_n_1_g_rel" ].
-
--_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"-">,
-  SYNSEM.LKEYS.KEYREL.PRED "_-_n_1_g_rel" ].
-
-?_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"?">,
-  SYNSEM.LKEYS.KEYREL.PRED "_?_n_1_g_rel" ].
-
-…_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"…">,
-  SYNSEM.LKEYS.KEYREL.PRED "_…_n_1_g_rel" ].
-
-※_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"※">,
-  SYNSEM.LKEYS.KEYREL.PRED "_※_n_1_g_rel" ].
-
-−−_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"−−">,
-  SYNSEM.LKEYS.KEYREL.PRED "_−−_n_1_g_rel" ].
-
-々_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"々">,
-  SYNSEM.LKEYS.KEYREL.PRED "_々_n_1_g_rel" ].
-
-゜_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"゜">,
-  SYNSEM.LKEYS.KEYREL.PRED "_゜_n_1_g_rel" ].
-
-ノ_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"ノ">,
-  SYNSEM.LKEYS.KEYREL.PRED "_ノ_n_1_g_rel" ].
-
-＋_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"＋">,
-  SYNSEM.LKEYS.KEYREL.PRED "_＋_n_1_g_rel" ].
-
-；_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"；">,
-  SYNSEM.LKEYS.KEYREL.PRED "_；_n_1_g_rel" ].
-
-？_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"？">,
-  SYNSEM.LKEYS.KEYREL.PRED "_？_n_1_g_rel" ].
-
-＠_n_1-tc := ordinary-nohon-n-lex &
-[ STEM <"＠">,
-  SYNSEM.LKEYS.KEYREL.PRED "_＠_n_1_g_rel" ].
 
