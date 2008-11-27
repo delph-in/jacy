@@ -218,7 +218,7 @@ non-future-date-relation := not-niarg-relation & modable-relation.
 ; (ERB 2004-1-16) Another update to integer-relation and its subtypes
 ; to synch up with the ERG.
 
-;integer-relation :< relation.
+;integer-relation := relation.
 
 integer-relation := arg1-ev-relation &
  [ ARG1 individual ].
@@ -261,7 +261,8 @@ card-relation := quantity-relation.
 ;
 ; 口座番号は12345です
 
-named-card-relation := card-relation & contentful-nom-relation & [PRED 'named_card].
+named-card-relation := card-relation & contentful-nom-relation & 
+ [PRED "named_card"].
 
 ; (ERB 2001-10-29) I need a value for REL for integers that get
 ; promoted to NumClPs by the empty-cardinal-rule.  I want it to
@@ -293,7 +294,7 @@ named-card-relation := card-relation & contentful-nom-relation & [PRED 'named_ca
 pron-relation := reg-nom-relation. 
 
 
-;zero-pron-relation :< pron-relation.
+;zero-pron-relation := pron-relation.
 
 real-pron-relation := pron-relation.
 
@@ -305,7 +306,7 @@ place-relation := pron-relation &
 
 
 
-;ad_rel :< relation.
+;ad_rel := relation.
 
 
 
@@ -330,7 +331,7 @@ na-adj-relation := arg1-ev-relation.
 ;scoped_rel  := relation &
 ;	[ SCOPE handle ].
 
-;scope_rel :< scoped_rel.
+;scope_rel := scoped_rel.
 
 ;mood_rel := scope_rel.
 
@@ -424,7 +425,7 @@ want2-relation := arg12-relation & [PRED "want2_rel"].
 
 ; (MS 2003-07-09) This is different to the matrix definition. We have to see, whether it is necessary to keep it.
 
-;j-prep-mod_rel :< arg12-relation.
+;j-prep-mod_rel := arg12-relation.
 
 ; (ERB 2001-11-26) We want a special type for no-nmod and 
 ; compounds that the downstream machinery can recognize.
@@ -494,26 +495,30 @@ want2-relation := arg12-relation & [PRED "want2_rel"].
 neg-relation := adv-relation & arg1-relation &
 		[ARG0 individual].
 
-;cant_help_rel :< j-neg_rel.
+;cant_help_rel := j-neg_rel.
 
 
 objchange-relation := arg12-relation.
 
-tai-relation := objchange-relation & [PRED tai_v_want_rel].
+tai-relation := objchange-relation & 
+		[PRED tai_v_want_rel].
 
 ; (MS 2001-11-22) RARERU needs an ARG1, if it shall be able to combine with TAI.
 
-rareru-relation := arg12-ev-relation & [PRED rareru_v_can_rel].
+rareru-relation := arg12-ev-relation & 
+		   [PRED rareru_v_can_rel].
 
-pass-relation := arg12-relation & [PRED 'passive].
+pass-relation := arg12-relation & 
+		 [PRED "passive"].
 
-adversative-relation := arg12-relation & [PRED 'adversative].
+adversative-relation := arg12-relation & 
+			[PRED "adversative"].
 
 
 
 ; Degree relations
 
-;degree_rel :< relation.
+;degree_rel := relation.
 
 
 ; (ERB 2001-08-02) Changed type of C-ARG to conj_non_expl-ind to

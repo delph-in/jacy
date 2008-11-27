@@ -1,5 +1,10 @@
 ;;; -*-  Coding: utf-8 -*-
 
+;;; 2008-09-28
+
+FIXME: should the 吠える in 吠え たい be no_tense, like in English?
+
+
  (lkb::do-parse-tty "犬 が 暑　そう　だ")
  * 2007-10-10 split lexicon into n,v,a,r,s,x,... propername ?
 

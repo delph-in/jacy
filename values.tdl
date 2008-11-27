@@ -39,13 +39,13 @@ turn := category.
 sap  := category.
 comp := category.
 prep := category.
-;card_mod :< category.
+;card_mod := category.
 hes := category.
 punct := category.
 prefix := category.
 numcl := category.
 
-;aspect :< sort.
+;aspect := sort.
 terminative := aspect.
 prospective := aspect.
 perfective := aspect.
@@ -56,7 +56,7 @@ modal := aspect.
 ;;; the value for sentences with no special marking
 default_aspect := aspect.  
 
-;tense :< sort.
+;tense := sort.
 tensed := tense.
 
 
@@ -74,7 +74,7 @@ no_tense := tense.
 
 
 ; (MS 2003-09-10) already contained in matrix.tdl
-;mood :< sort.
+;mood := sort.
 
 uttmodus := mood.
 
@@ -226,7 +226,7 @@ nanka  := postp-case.
 he  := postp-case.
 sonota  := postp-case.
 tomo  := postp-case.
-;nado  :< nontop.
+;nado  := nontop.
 nado  := topic.
 made  :=  postp-case.
 made_d  :=  topic.
@@ -242,7 +242,7 @@ nikaNshite := postp-case.
 nikakete := postp-case.
 niyotte := postp-case.
 nisotte := postp-case.
-;sae :< postp-case.
+;sae := postp-case.
 sae := topic.
 tou := postp-case.
 zutsu := postp-case.
@@ -264,20 +264,20 @@ modified :=  modify.
 
 ; (MS 2003-07-09) Not used any more?
 
-;word-status :< sort.
-;word :< word-status.
-;stem :< word-status.
+;word-status := sort.
+;word := word-status.
+;stem := word-status.
 
 ; (FCB 2005-05-05) Not used any more?
 
-;vref :< sort.
-;he :< vref.
-;sp :< vref.
-;sp_he :< vref.
-;top :< vref.
-;third :< vref.
-;thirdpl :< third.
-;firstpl :< sp.
+;vref := sort.
+;he := vref.
+;sp := vref.
+;sp_he := vref.
+;top := vref.
+;third := vref.
+;thirdpl := third.
+;firstpl := sp.
 
 vtype := sort.
 std-or-demon := vtype.
@@ -299,7 +299,7 @@ v-or-c-stem-morph := vstem-morph & cstem-morph.
 o-morph := v-or-c-stem-morph.
 u-morph := v-or-c-stem-morph.
 inf-morph := v-or-c-stem-morph.
-;cond-morph :< v-or-c-stem-morph.
+;cond-morph := v-or-c-stem-morph.
 i-or-t-or-a-morph := v-or-c-stem-morph.
 a-or-aa-morph := i-or-t-or-a-morph.
 a-morph := a-or-aa-morph.
@@ -316,7 +316,7 @@ imp-morph := cstem-morph.
 cond-morph := cstem-morph.
 
 ; (MS 2004-12-21) Maybe we don't need this one any more?
-;e-morph :< vstem-morph.
+;e-morph := vstem-morph.
 
 pass-morph := morphbind.
 pass-c-stem-morph := pass-morph & cstem-morph.
@@ -375,7 +375,7 @@ number := pn.
 ; (ERB 2001-11-12) For the experiment I'm doing with -tai,
 ; I need a type one-or-two.
 
-;one :< person.
+;one := person.
 one-or-two := person.
 two-or-three := person.
 one := one-or-two.
@@ -410,7 +410,7 @@ posthead := sort.
 nonrels  := posthead.
 left := nonrels.
 right := nonrels.
-;;intersective :< nonrels.
+;;intersective := nonrels.
 rels := posthead.
 coord := nonrels.
 compound := nonrels.

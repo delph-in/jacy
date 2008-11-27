@@ -706,7 +706,7 @@ empty-head-type :=  headed-phrase &
 ;[HEAD-DTR.SYNSEM [LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [CONT [HOOK.INDEX #arg]],
 ;		  LKEYS.KEYREL [ARG2 #arg]]].
 ; (FCB 2005-07-04) Not used now
-;empty-conjunction-type :< empty-preposition-type.
+;empty-conjunction-type := empty-preposition-type.
 
 ; (ERB 2001-09-12) For bare number names used as ordinals.
 ; (ERB 2001-09-19) This is vastly overgenerating because it can modify

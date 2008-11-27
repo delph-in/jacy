@@ -1914,7 +1914,7 @@ case-p-lex-postp-ni := case-p-lex-postp &
 ;                  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
 ; (MS 2005-05-06) renamed particles (case-p-lex-np and case-p-lex-vmodp).
-;to-case-lex :< case-p-lex.
+;to-case-lex := case-p-lex.
 
 ; (ERB 2002-02-14) This should take the LTOP of its OBJ for the LARG
 ; handle, not KEY.LBL.  (Problem was embedded conjoined sentences where

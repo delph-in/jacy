@@ -29,7 +29,8 @@
   (format  nil "/tmp/kinou1.chasen.out" grm-dir)))
 
 (format t "~%All Done!~%")
-(quit)
+(exit)
+;;; quit for sbcl
 
 ;; sbcl 500 sentences
 ;; real    22m39.282s
