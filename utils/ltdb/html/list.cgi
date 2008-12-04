@@ -54,7 +54,7 @@ while(my @row = $sth->fetchrow_array){
     my $examples = join(",&nbsp;&nbsp;", @examples_a);
 
     $out .= "<tr>";
-    $out .= "<td><a href=\"$cgidir/description.cgi?lextype=$row[0]\">".$row[0]."</a></td>";
+    $out .= "<td><a href=\"$cgidir/description.cgi?type=$row[0]\">".$row[0]."</a></td>";
     $out .= "<td>".$row[1]."</td>";
     $out .= "<td>".$examples."&nbsp;&nbsp;(".$row[3].",&nbsp;".$row[4].")"."</td>";
     $out .= "</tr>";

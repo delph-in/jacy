@@ -17,7 +17,7 @@ $dbh->do(qq{
     CREATE TABLE $tablename (
 			     type primary key,
 			     name,
-			     definition,
+			     description,
 			     criteria,
 			     reference,
 			     todo
@@ -37,7 +37,7 @@ for(my $i=0; $i<$n; $i++){
     my $type = $typenode->getAttribute("val");
     my @children = $typenode->getChildNodes;
     my $name = "";
-    my $definition ="";
+    my $description ="";
     my $criteria ="";
     my $exe ="";
     my $reference="";
@@ -46,9 +46,9 @@ for(my $i=0; $i<$n; $i++){
 	if($children[$j]->getNodeName eq "name"){
 	    $name = $children[$j]->getFirstChild->getData if $children[$j]->getFirstChild;
 	    $name =~ s/^[\s\n]*(.+)[\s\n]*$/$1/m;
-	}elsif($children[$j]->getNodeName eq "definition"){
-	    $definition = $children[$j]->getFirstChild->getData if $children[$j]->getFirstChild;
-	    $definition =~ s/^[\s\n]*(.+)[\s\n]*$/$1/m;
+	}elsif($children[$j]->getNodeName eq "description"){
+	    $description = $children[$j]->getFirstChild->getData if $children[$j]->getFirstChild;
+	    $description =~ s/^[\s\n]*(.+)[\s\n]*$/$1/m;
 	}elsif($children[$j]->getNodeName eq "reference"){
 	    $reference = $children[$j]->getFirstChild->getData if $children[$j]->getFirstChild;
 	    $reference = &bib2html($reference);
@@ -68,7 +68,7 @@ for(my $i=0; $i<$n; $i++){
     if ($criteria) {
 	$criteria = &format_criteria($criteria);
     }
-    $insert->execute($type, $name, $definition, $criteria, $reference, $todo);
+    $insert->execute($type, $name, $description, $criteria, $reference, $todo);
 }
 
 sub bib2html{

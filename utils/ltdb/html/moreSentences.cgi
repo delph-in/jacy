@@ -40,9 +40,9 @@ my $dbname = $dbroot."/"."lt.db";
 my $dbh = DBI->connect("dbi:SQLite:dbname=$dbname", "", "", {AutoCommit => 0});
 #First, retrieve all the sentence ids.
 my $sth = $dbh->prepare(
-			"select sid from $treebank_table where lextype=\'$lextype\' and wordid=\'$wid\' limit $limit"
+			"select sid from $treebank_table where lextype=? and wordid=? limit $limit"
 			);
-$sth->execute;
+$sth->execute($lextype,$wid);
 my @sid_a;
 while(my @row = $sth->fetchrow_array){
     push(@sid_a, $row[0]);

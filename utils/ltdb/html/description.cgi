@@ -5,7 +5,7 @@ use CGI;
 use DBI;
 
 my $query = new CGI;
-my $dbroot = "/var/www/html/lextypedb/db";
+my $dbroot = "Jacy_2008-11-05";
 my $cssdir = "/lextypedb";
 my $cgidir = "/cgi-bin/lextypedb_tools";
 my $charset = "utf-8";
@@ -31,37 +31,35 @@ if(-e "params"){
 }
 
 #Receive the lextype param.
-my $lextype = $query->param("lextype");
+my $type = $query->param("type");
 
 my $dbname = $dbroot."/"."lt.db";
 my $dbh = DBI->connect("dbi:SQLite:dbname=$dbname", "", "", {AutoCommit => 0});
 
-#Retrieve the linguistic discussion
+#
+# Retrieve the linguistic discussion
+#
+# Format and store in the string $linguisitcs
+#
+
 my $linguistics_table = "linguistics_tbl";
 my $sth = $dbh->prepare(
-    "select name,definition,criteria,reference,todo from $linguistics_table where type=\'$lextype\'"
+    "select name,description,criteria,reference,todo from $linguistics_table where type=? limit 1"
 );
-$sth->execute;
-my $linguisitcs;
+$sth->execute($type);
+my $linguistics ="";
 my $name;
 my $todo;
-while(my @row = $sth->fetchrow_array){
-    $name = $row[0];
-    my $definition = $row[1];
-    #my $criteria = &format_criteria($row[2]);
-    my $criteria = $row[2];
-    #my $reference = "<xmp>".$row[3]."</xmp>";
-    my $reference = $row[3];
-    $todo = $row[4];
-    $linguisitcs = $definition."<p />".$criteria."<p />".$reference;
+if (my ($name, $description, $criteria, $reference, $todo) = $sth->fetchrow_array) {
+$linguistics = "<p>$description\n<p>$criteria\n<p>$reference\n";
 }
 
 #Retrieve example words, the number of types, and the number of tokens.
 my $list_table = "list_tbl";
 $sth = $dbh->prepare(
-    "select words,typefreq,tokenfreq from $list_table where lextype=\'$lextype\'"
+    "select words,typefreq,tokenfreq from $list_table where lextype=?"
 );
-$sth->execute;
+$sth->execute($type);
 my @words;
 my @word_ids;
 my $typefreq;
@@ -88,7 +86,7 @@ my $words_and_ids_s = join(",&nbsp;&nbsp;", @words_and_ids);
 my $sentences;
 my $treebank_table = "treebank_tbl";
 $sth = $dbh->prepare(
-    "select sid from $treebank_table where lextype=\'$lextype\' and wordid=? limit 3"
+    "select sid from $treebank_table where lextype=? and wordid=? limit 3"
 );
 my $sth2 = $dbh->prepare(
     "select wordid,orth from $treebank_table where sid=?"
@@ -96,7 +94,7 @@ my $sth2 = $dbh->prepare(
 for(my $i=0; $i<scalar(@word_ids); $i++){
     $sentences .= "<h4>Examples for ".$words[$i]." (".$word_ids[$i].")</h4>";
     my @sids;
-    $sth->execute($word_ids[$i]);
+    $sth->execute($type,$word_ids[$i]);
     while(my @row = $sth->fetchrow_array){
 	push(@sids, $row[0]);
     }
@@ -112,41 +110,45 @@ for(my $i=0; $i<scalar(@word_ids); $i++){
 	    }
 	    $sentence .= " ";
 	}
-	$sentences .= "<li>".$sentence;
+	$sentences .= "<li>$sentence  (<a href = '$cssdir/trees/$sid.html'>parse</a>)\n";
     }
-    $sentences .= "</ul>";
+    $sentences .= "</ul>\n";
 }
 
-#Retrieve the TDL definition for the lextype.
+#Retrieve the TDL definition for the type.
 my $tdl_definition;
 my $types_table = "types_tbl";
 $sth = $dbh->prepare(
-    "select parents,cat,val,cont,definition from $types_table where type=\'$lextype\'"
+    "select parents,children,cat,val,cont,definition from $types_table where type=? limit 1"
 );
-$sth->execute;
-while(my @row = $sth->fetchrow_array){
-    my @supertype_a = split / /, $row[0];
+$sth->execute($type);
+my ($parents, $children, $cat, $val, $cont, $definition) = $sth->fetchrow_array;
+my @supertype_a = split / /, $parents;
+my @subtype_a = split / /, $children;
+$definition =~ s/<br \/>/\n/g;
+$definition =~ s/^/<xmp>/;
+$definition =~ s/$/<\/xmp>/;
+$tdl_definition .= $definition;
 
-    my $definition = $row[4];
-    $definition =~ s/<br \/>/\n/g;
-    $definition =~ s/^/<xmp>/;
-    $definition =~ s/$/<\/xmp>/;
-    $tdl_definition .= $definition;
-
-    $tdl_definition .= "<table>";
-    $tdl_definition .= "<tr><th>Supertypes</th><th>Head Category</th><th>Valence</th><th>Content</th></tr>";
-    $tdl_definition .= "<tr>";
-    $tdl_definition .= "<td>";
-    for(my $i=0; $i<scalar(@supertype_a); $i++){
-	$tdl_definition .= "<a href=\'$cgidir/moreSupertypes.cgi?supertype=$supertype_a[$i]\'>$supertype_a[$i]</a>&nbsp;&nbsp;";
-    }
-    $tdl_definition .= "</td>";
-    $tdl_definition .= "<td>$row[1]</td>";
-    $tdl_definition .= "<td>$row[2]</td>";
-    $tdl_definition .= "<td>$row[3]</td>";
-    $tdl_definition .= "</tr>";
-    $tdl_definition .= "</table>";
+$tdl_definition .= "<table>";
+$tdl_definition .= "<tr><th>Supertypes</th><th>Head Category</th><th>Valence</th><th>Content</th><th>Subtypes</th></tr>\n";
+$tdl_definition .= "<tr>";
+$tdl_definition .= "<td>";
+for my $type (@supertype_a){
+    $tdl_definition .= "<a href=\'$cgidir/description.cgi?type=$type\'>$type</a>&nbsp;&nbsp;";
 }
+$tdl_definition .= "</td>";
+$tdl_definition .= "<td>$cat</td>";
+$tdl_definition .= "<td>$val</td>";
+$tdl_definition .= "<td>$cont</td>";
+$tdl_definition .= "<td>";
+for my $type (@subtype_a) {
+    $tdl_definition .= "<a href=\'$cgidir/description.cgi?type=$type\'>$type</a>&nbsp;&nbsp;";
+}
+$tdl_definition .= "</td>";
+$tdl_definition .= "</tr>\n";
+
+$tdl_definition .= "</table>\n";
 
 # # Retrieve the Other Lexicon Mapping information for the lextype.
 # my $otherlex_table = "otherlex_tbl";
@@ -179,9 +181,9 @@ while(my @row = $sth->fetchrow_array){
 
 # Message -------------------------------------
 print $query->header(-type  =>  'text/html;charset='.$charset),
-    $query->start_html(-title=>$lextype.' (description)',
+    $query->start_html(-title=>$type.' (description)',
 		       -style=>{'src' => $cssdir.'/lextypedb.css'});
-print <<"HTML_VIEW";
+print <<"HEADER";
 <div id="outline">
 <div id="header">
 <div id="menu">
@@ -200,17 +202,30 @@ Word Search:&nbsp;<input type="text" name="confusing">
 </form>
 </div> <!-- end of confusing -->
 <div id="contents">
-<h1>$name&nbsp;&nbsp;$lextype&nbsp;&nbsp;($words_s)</h1>
-<h2>Linguistic Discussion</h2>
-$linguisitcs
-<h2>Examples</h2>
-<h3>Example Words&nbsp;&nbsp;($typefreq)</h3>
-$words_and_ids_s
-<h3>Example Sentences&nbsp;&nbsp;($tokenfreq)</h3>
-$sentences
-<div align=right>
-<a href="$cgidir/moreExamples.cgi?lextype=$lextype">More Examples</a>
-</div>
+<h1>$name&nbsp;&nbsp;$type&nbsp;&nbsp;($words_s)</h1>
+HEADER
+
+
+    if ($linguistics) {
+	print "<h2>Linguistic Discussion</h2>\n$linguistics\n";
+}
+
+if ($typefreq > 0 || $tokenfreq > 0) {
+    print "<h2>Examples</h2>";
+    if ($typefreq > 0) {
+	print "<h3>Example Words&nbsp;&nbsp;($typefreq)</h3>\n";
+	print $words_and_ids_s;
+    }
+    if  ($tokenfreq > 0) {
+	print "<h3>Example Sentences&nbsp;&nbsp;($tokenfreq)</h3>";
+	print $sentences;
+	print "<div align=right>\n";
+	print "<a href=\"$cgidir/moreExamples.cgi?lextype=$type\">More Examples</a>\n";
+	print "</div>\n";
+    }
+}
+
+print <<"HTML_VIEW";
 <h2>TDL Summary</h2>
 <h3>TDL Definition</h3>
 $tdl_definition
@@ -222,6 +237,8 @@ $todo
 </div> <!-- end of outline -->
 HTML_VIEW
 print $query->end_html;
+$sth->finish;
+$dbh->disconnect;
 exit;
 
 # Error report -----------------------------------

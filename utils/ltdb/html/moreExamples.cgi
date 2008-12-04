@@ -35,9 +35,9 @@ my $dbname = $dbroot."/"."lt.db";
 my $dbh = DBI->connect("dbi:SQLite:dbname=$dbname", "", "", {AutoCommit => 0});
 ### sort in descending frequency 
 my $sth = $dbh->prepare(
-    "select wordid,orth,freq from $lexicon_table where lextype=\'$lextype\' order by freq + 0 desc"
+    "select wordid,orth,freq from $lexicon_table where lextype=? order by freq + 0 desc"
 );
-$sth->execute;
+$sth->execute($lextype);
 my $total = 0;
 my $out = "<table>";
 $out .= "<tr><th>Orthography</th><th>ID</th><th>Freq.</th><th></th></tr>";

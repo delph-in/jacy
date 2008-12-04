@@ -24,6 +24,9 @@ for (my $i = 0; $i < $n; $i++){
     my $parents = $type->getAttributeNode ("parents");
     $typeinfo->{parents} = defined $parents ? $parents->getValue : '';
 
+    my $children = $type->getAttributeNode ("children");
+    $typeinfo->{children} = defined $children ? $children->getValue : '';
+
     my $cat = $type->getAttributeNode ("cat");
     $typeinfo->{cat} = defined $cat ? $cat->getValue : '';
 
@@ -52,6 +55,7 @@ $dbh->do(qq{
     CREATE TABLE $tablename (
 			     type,
 			     parents,
+                             children, 
 			     cat,
 			     val,
 			     cont,
@@ -60,13 +64,14 @@ $dbh->do(qq{
 }) || die $dbh->errstr;
 
 my $insert = $dbh->prepare(
-			   "INSERT INTO $tablename VALUES (?,?,?,?,?,?)"
+			   "INSERT INTO $tablename VALUES (?,?,?,?,?,?,?)"
 			   );
 
 foreach my $typeinfo (@typeinfo_a){
     $insert->execute(
 		     $typeinfo->{type},
 		     $typeinfo->{parents},
+		     $typeinfo->{children},
 		     $typeinfo->{cat},
 		     $typeinfo->{val},
 		     $typeinfo->{cont},

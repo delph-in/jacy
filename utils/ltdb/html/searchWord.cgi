@@ -37,9 +37,9 @@ my $lexicon_table = "lex_and_freq_tbl";
 my $dbname = $dbroot."/"."lt.db";
 my $dbh = DBI->connect("dbi:SQLite:dbname=$dbname", "", "", {AutoCommit => 0});
 my $sth = $dbh->prepare(
-    "select lextype from $lexicon_table where orth=\'$confusing\'"
+    "select lextype from $lexicon_table where orth=?"
 );
-$sth->execute;
+$sth->execute($confusing);
 while(my @row = $sth->fetchrow_array){
     push(@lextypes, $row[0]);
 }
@@ -63,7 +63,7 @@ foreach my $lt (@lextypes){
 	my $examples = join(",&nbsp;&nbsp;", @examples_a);
 	
 	$out .= "<tr>";
-	$out .= "<td><a href=\"$cgidir/description.cgi?lextype=$row[0]\">".$row[0]."</a></td>";
+	$out .= "<td><a href=\"$cgidir/description.cgi?type=$row[0]\">".$row[0]."</a></td>";
 	$out .= "<td>".$row[1]."</td>";
 	$out .= "<td>".$examples."&nbsp;&nbsp;(".$row[3].",&nbsp;".$row[4].")"."</td>";
 	$out .= "</tr>";
