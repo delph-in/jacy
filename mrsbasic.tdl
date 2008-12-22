@@ -633,24 +633,28 @@ vv-prefix-v1-relation := arg1-ev-relation &
 ;;;
 ;;; (FCB & DPF 2008-08-06) New types for topic/focus markers
 ;;;
-
 focus_d_rel := predsort.
-_wa_d_rel := focus_d_rel.
-_mo_d_rel := focus_d_rel.
-;;; (TK 08-08-28) Added following
-_dake_d_rel := focus_d_rel.
-_shika_d_rel := focus_d_rel.
-_bakari_d_rel := focus_d_rel.
-_nado_d_rel := focus_d_rel.
-_made_d_rel := focus_d_rel.
-_koso_d_rel := focus_d_rel.
-_sura_d_rel := focus_d_rel.
-_demo_d_rel := focus_d_rel.
-_nomi_d_rel := focus_d_rel.
-_sae_d_rel := focus_d_rel.
-_datte_d_rel := focus_d_rel.
-_ga_d_rel := focus_d_rel.
-_colon_d_rel := _wa_d_rel.
-_comma_d_rel := _wa_d_rel.
-_equal_d_rel := _wa_d_rel.
 
+;;; (MWG 08-10-30) Added wa_d_super and other_focus_d_rel, and revamped
+;;; the hierarchy (so things like _equal_d_rel are not subtypes of _wa_d_rel)
+wa_d_super := focus_d_rel.
+other_focus_d_rel := focus_d_rel.
+
+_wa_d_rel := wa_d_super.
+_mo_d_rel := wa_d_super.
+_colon_d_rel := wa_d_super.
+_comma_d_rel := wa_d_super.
+_equal_d_rel := wa_d_super.
+;;; (TK 08-08-28) Added following
+_dake_d_rel := other_focus_d_rel.
+_shika_d_rel := other_focus_d_rel.
+_bakari_d_rel := other_focus_d_rel.
+_nado_d_rel := other_focus_d_rel.
+_made_d_rel := other_focus_d_rel.
+_koso_d_rel := other_focus_d_rel.
+_sura_d_rel := other_focus_d_rel.
+_demo_d_rel := other_focus_d_rel.
+_nomi_d_rel := other_focus_d_rel.
+_sae_d_rel := other_focus_d_rel.
+_datte_d_rel := other_focus_d_rel.
+_ga_d_rel := other_focus_d_rel.
