@@ -12,7 +12,8 @@
 ;;; ------------------|-------------|------------------------------------------
 ;;;Melanie Siegel (MS)|             | Emily Bender (ERB), Francis Bond (FCB), 
 ;;;                   |             | Chikara Hashimoto (CH),  
-;;;                   |             | Takaaki Tanaka (TT), Akira Ohtani (AO)
+;;;                   |             | Takaaki Tanaka (TT), Akira Ohtani (AO),
+;;;                   |             | Michael Goodman(MWG)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -270,6 +271,65 @@ adv_np_rule := adv_np_rule-type.
 
 compounds-rule := compound-rule.
 
+;;;;;;;;;;;;;;;;;;;;;;;;N-> QUANTIFIED N;;;;;;;;;;;;;;;;;;;;
+
+; (ERB 2001-08-16) Changed the following:
+;
+; ARGS.FIRST.SYNSEM.LOCAL.CONT.KEY.LBL #h 
+;
+; to
+;
+; ARGS.FIRST.SYNSEM.LOCAL.CONT.LBL #h 
+;
+; So that it works properly with NumCl phrases.
+
+; (ERB 2001-09-19) Somewhat surprisingly, this isn't restricted
+; to things that are LEX +.  For the moment, I'll just have it
+; copy up the LEX value.  Perhaps it should be restricted to
+; LEX + daughters.
+
+; (ERB 2001-09-20) Of course it can't be restricted to things
+; that are LEX +, because it has to apply to NumCl phrases that
+; are built up of an integer and a NumCl.  But copying up the
+; LEX value is still a good idea.
+
+; (ERB 2001-09-24) Experimenting with forcing this to apply
+; after all other valence requirements are satisfied.  (I'm
+; getting spurious ambiguity in the date expressions otherwise.)
+
+; (MS 2002-09-05) Inserted UNSAT + on the daughter to prevent the rule to be cyclic (actually a hint from Dan F.)
+;;; FCB this shouldn't be a lexical-rule (it applies after syntactic rules)
+
+; (MWG 2008-11-27) Moved to japgram.tdl from lrules.tdl because compounds could
+; not be quantified in generation. Compare:
+; 死星が帝国の武器である parses, does not generate
+; この死星が帝国の武器である parses and generates due to the explicit quantifier
+
+quantify-n-rule := unary-type-super &
+[SYNSEM [LOCAL [CAT [ HEAD #head,
+		      VAL saturated & [UNSAT -]],
+		BAR +],
+	 LEX #lex],
+ C-CONT [HOOK #hook,
+	 RELS <! [PRED #rel & udef_rel,
+		  ARG0 #i,
+		  RSTR #restr] !>,
+         HCONS <! qeq &
+                 [HARG #restr,
+                  LARG #h] !>],
+ ARGS.FIRST.SYNSEM [LOCAL [CAT [HEAD #head & noun_head,
+			       VAL [UNSAT bool,
+				    SPR opt-1-arg & [FIRST [OPT + ,
+							    LOCAL.CAT.HEAD.KEYS.KEY #rel]],
+				    SUBJ olist,
+				    COMPS olist]],
+			   CONT.HOOK #hook & [LTOP #h,
+					      INDEX #i],
+			   BAR -],
+		    LEX #lex]].
+
+
+
 ; (TT 2003-08-29) experimental rules for dealing with prefix and suffix correctly
 ; compounds-rule-nn := hadj-final-i & 
 ; 			[C-CONT [RELS <! !>,
@@ -395,7 +455,7 @@ head-complement2-rule := head-complement2-type & [SYNSEM.LOCAL.BAR +].
 ; head-adjunct-rule-type.
 
 hf-adj-i-rule := hadj-final-i & 
-                      [SYNSEM.LOCAL [BAR +],
+                      [SYNSEM.LOCAL.BAR +,
                        C-CONT [RELS <! !>,
                                HCONS <! !>],
                        ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
@@ -403,7 +463,7 @@ hf-adj-i-rule := hadj-final-i &
                                                        MAIN-PRD -],
                                                  VAL saturated],
                                             BAR +]],
-                             [SYNSEM synsem & [LOCAL [BAR +]]]>].
+                             [SYNSEM synsem & [LOCAL.BAR +]]>].
 
 ; (ERB 2001-11-07) I think this is part of analysis of low attachment
 ; of adverbs wrt ba/tara/etc.
@@ -524,7 +584,7 @@ suffix-rule := hadj-first-i &
 ; (FCB 2005-06-15) Added ARG0 to messages
 
 relative-clause-rule := hadj-final-for-rel-cl-topic &
- [SYNSEM.LOCAL [BAR +,
+ [SYNSEM.LOCAL [BAR #bar,
 		NUCL nucl_minus],
   C-CONT [RELS <! prep-mod-relation & [PRED "topic_p_rel",
 				       ARG0.E.TENSE no_tense,
@@ -541,7 +601,7 @@ relative-clause-rule := hadj-final-for-rel-cl-topic &
 			BAR +,
 			NUCL not_fin_conj]]],
 	[SYNSEM synsem & [LOCAL [CAT.HEAD noun_head,
-				 BAR +,
+				 BAR #bar,
 				 CONT.HOOK.INDEX #ind]]]>].
 
 

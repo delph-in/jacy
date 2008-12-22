@@ -12,7 +12,7 @@
 ;;; ------------------|-------------|------------------------------------------
 ;;;Melanie Siegel(MS) |             | Emily Bender (ERB), Francis Bond (FCB),
 ;;;                   |             | Chikara Hashimoto (CH), 
-;;;                   |             | Akira Ohtani (AO)
+;;;                   |             | Akira Ohtani (AO), Michael Goodman (MWG)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -413,9 +413,10 @@ head-adjunct-rule-type-for-rel-cl-gap := adjacent_head_check &
 ; (MS 2004-04-01) We decided to give the gap rules a UNDERSPEC_ARG - feature,
 ;  such that this can be selected by the root node type.
 
+; (MWG 2008-12-04) Carry up BAR value instead of constraining to BAR +
 
 rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
- [SYNSEM [LOCAL [BAR +,
+ [SYNSEM [LOCAL [BAR #bar,
 		 NUCL nucl_minus,
 		 CONT.HOOK [INDEX #ind,
 			    LTOP #top]]],
@@ -429,7 +430,7 @@ rel-cl-gap-rule := hadj-final-i-for-rel-cl-gap  &
 			NUCL not_fin_conj]]],
 	[SYNSEM synsem & 
 		[LOCAL [CAT.HEAD noun_head,
-			BAR +,
+			BAR #bar,
 			CONT [HOOK [INDEX #ind,
 				    LTOP #top]]]]]>].
 
@@ -1606,17 +1607,23 @@ subj-casechange-rule := casechange-rule & lex-rule &
 ; (MS 2005-01-07) Using EMPTY to prevent floated quantifiers to go into this rule.
 ; (MS 2005-01-10) Using BAR + to prevent the pumped-to-noun numcl's to be in
 ; compound noun constructions.
+; (MWG 2008-12-02) Carried up EMPTY to block compounds (eg. 3匹猫)
+;                  This was so I could make the BAR unspecified (thus allowing it
+;                  to be used in the quantify-n-rule)
+; (MWG 2008-12-08) No longer advance the EMPTY constraint because it looks
+;                  like numcls can compound (六本ブーケ or 三人兄弟)
 
 nominal-numcl-rule-type := unary-type &
  [ SYNSEM [ LOCAL [ CAT [ HEAD ordinary_noun_head-avm & [QUANTIFIABLE -, 
 							 VN -,
 							 KEYS.KEY #key],
 			  VAL noun_sc ],
-		   CONT.HCONS <! !>,
-		    BAR +]],
-   ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head & [EMPTY +, KEYS.KEY #key],
+		    CONT.HCONS <! !>,
+		    BAR bool ]],
+   ARGS.FIRST.SYNSEM.LOCAL [ CAT [ HEAD num-cl_head & [EMPTY +,
+						       KEYS.KEY #key],
 				   VAL saturated ],
-			     BAR +]].
+			     BAR + ]].
 
 ; For numbers used as numeral classifiers used as nouns
 
@@ -2118,8 +2125,10 @@ adj-nominal-suffix-type := head-final-type &
 ;;; (lkb::do-parse-tty "ある 翻訳 システム が 寝る")
 ;;; why can't I make this BAR -?
 
-;compound-rule := hadj-final-i &
-compound-rule := head-final-type-mod & head-adjunct-rule-type &
+;;; (MWG 2008-12-04) Changed type from hadj-final-i to get away from
+;;;  requiring the nonhead's mod from being intersective-mod 
+
+compound-rule := head-adjunct-rule-final &
  [SYNSEM [ LOCAL [BAR bool,
 		  CONT.HOOK.LTOP #hhand ],
 	   MODIFIED.PERIPH +],
@@ -2155,7 +2164,7 @@ compound-rule := head-final-type-mod & head-adjunct-rule-type &
 		 RSTR #restr] !>,
 	  HCONS <! qeq &
 		 [HARG #restr,
-                  LARG #nhhand] !>]].
+		  LARG #nhhand] !>]].
 
 ;;;
 ;;; New approach to V-V compound rules

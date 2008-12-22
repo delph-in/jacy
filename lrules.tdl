@@ -11,59 +11,6 @@
 
 ; %suffix should not appear in this file (see irules.tdl).
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;N-> QUANTIFIED N;;;;;;;;;;;;;;;;;;;;
-
-; (ERB 2001-08-16) Changed the following:
-;
-; ARGS.FIRST.SYNSEM.LOCAL.CONT.KEY.LBL #h 
-;
-; to
-;
-; ARGS.FIRST.SYNSEM.LOCAL.CONT.LBL #h 
-;
-; So that it works properly with NumCl phrases.
-
-; (ERB 2001-09-19) Somewhat surprisingly, this isn't restricted
-; to things that are LEX +.  For the moment, I'll just have it
-; copy up the LEX value.  Perhaps it should be restricted to
-; LEX + daughters.
-
-; (ERB 2001-09-20) Of course it can't be restricted to things
-; that are LEX +, because it has to apply to NumCl phrases that
-; are built up of an integer and a NumCl.  But copying up the
-; LEX value is still a good idea.
-
-; (ERB 2001-09-24) Experimenting with forcing this to apply
-; after all other valence requirements are satisfied.  (I'm
-; getting spurious ambiguity in the date expressions otherwise.)
-
-; (MS 2002-09-05) Inserted UNSAT + on the daughter to prevent the rule to be cyclic (actually a hint from Dan F.)
-;;; FCB this shouldn't be a lexical-rule (it applies after syntactic rules)
-
-quantify-n-lrule := word2word-rule &
-[SYNSEM [LOCAL [CAT [VAL saturated & [UNSAT -]]],
-	 LEX #lex],
- C-CONT [RELS <! [PRED #rel & udef_rel,
-		  ARG0 #i,
-		  RSTR #restr] !>,
-         HCONS <! qeq &
-                 [HARG #restr,
-                  LARG #h] !>],
- ARGS.FIRST.SYNSEM [LOCAL [CAT [HEAD noun_head,
-			       VAL [UNSAT +,
-				    SPR opt-1-arg & [FIRST [OPT + ,
-							    LOCAL.CAT.HEAD.KEYS.KEY #rel]],
-				    SUBJ olist,
-				    COMPS olist]],
-                          CONT.HOOK [LTOP #h,
-				     INDEX #i],
-                          NUCL nucl_plus],
-		    LEX #lex]].
-
-
-
-
 ; (MS 2005-01-06) Floated numeral classifiers, counting subjects.
 ; (MS 2005-01-10) These should copy the RELS from their ARGS, because
 ; measuring classifiers might have quite complicated ARGS: りんごを四キロ買った
