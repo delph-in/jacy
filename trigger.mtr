@@ -19,6 +19,16 @@ nasai-end_gr :=  arg0e_gr &
 [ CONTEXT [ RELS <!  [ ARG0.SF comm ] !> ],
   FLAGS.TRIGGER "nasai-end" ].
 
+imp-te-end_gr :=  arg0e_gr &
+[ CONTEXT [ RELS <!  [ ARG0.SF comm ] !> ],
+  FLAGS.TRIGGER "te-end" ].
+
+imp-de-end_gr :=  arg0e_gr &
+[ CONTEXT [ RELS <!  [ ARG0.SF comm ] !> ],
+  FLAGS.TRIGGER "de-end" ].
+
+
+
 ; Questions
 
 ka_gr := generator_rule & 
@@ -61,9 +71,15 @@ chau-end_gr := arg0e_gr &
 ;   FLAGS.TRIGGER "de-end" ].
 
 ; (MS 2005-11-29) this is for sentence coordination using V-te
-te-coord-end_gr := generator_rule &
+coord-te-end_gr := generator_rule &
 [ CONTEXT [ RELS <! [PRED "coord"] !> ],
   FLAGS.TRIGGER "te-end" ].
+
+coord-de-end_gr := generator_rule &
+[ CONTEXT [ RELS <! [PRED "coord"] !> ],
+  FLAGS.TRIGGER "de-end" ].
+
+
 
 iru-aux-stem_gr := arg0e_gr &
 [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
@@ -72,6 +88,10 @@ iru-aux-stem_gr := arg0e_gr &
 progressive-te_gr := arg0e_gr &
  [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
    FLAGS.TRIGGER "te-end" ].
+
+progressive-de_gr := arg0e_gr &
+ [ CONTEXT [ RELS <! [ ARG0 event & [ E.ASPECT progressive ] ] !> ],
+   FLAGS.TRIGGER "de-end" ].
 
 
 teru-end_gr := arg0e_gr &
@@ -211,12 +231,15 @@ ni_gr_3 := arg0e_gr &
 ;;; case-markers that follow postpositions
 
 ;;; ARG2 is to
-to_gr_ARG2 := arg0e_gr &
+to_varg_ARG2 := arg0e_gr &
 [ CONTEXT.RELS.LIST.FIRST.ARG2 handle & #h,
   FLAGS [SUBSUME < #h >,
 	 TRIGGER "to-comp-varg" ]].
 
-
+to_quotarg_ARG2r := arg0e_gr &
+[ CONTEXT.RELS.LIST.FIRST.ARG2 handle & #h,
+  FLAGS [SUBSUME < #h >,
+	 TRIGGER "to-comp-quotarg" ]].
 
 ;;;
 ;;; Classifier rules
@@ -2638,14 +2661,6 @@ soroi_2_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "soroi_2" ].
 
-de-end_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "de-end" ].
-
-te-end_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "te-end" ].
-
 ku_2_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "ku_2" ].
@@ -3102,10 +3117,6 @@ to-second-conj_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "to-second-conj" ].
 
-nasai-chasen-end_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "nasai-chasen-end" ].
-
 rinku_3_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "rinku_3" ].
@@ -3230,9 +3241,6 @@ quotation-noun-init2_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "quotation-noun-init2" ].
 
-nasai-end_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "nasai-end" ].
 
 wa_4_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,

@@ -24,7 +24,7 @@
 
 ; <ex>(do-parse-tty "食べる")</ex>
 utterance_rule-decl-finite := utterance-sf-type &
- [SYNSEM.LOCAL [CAT.HEAD.SMOD decl], 
+ [SYNSEM.LOCAL.CAT.HEAD.SMOD decl, 
   C-CONT.HOOK.INDEX.SF prop,
   ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus, 
 				     FIN +],
@@ -39,17 +39,26 @@ utterance_rule-wh-without-ka := utterance-sf-type &
 				     FIN +],
 		     NON-LOCAL.QUE <! [] !>]]. 
 
+; Imperative (request)   て
+; set SF to comm[and]
+; quite informal/conversational => ROBUST +
 ; <ex>(do-parse-tty "食べ て")</ex>
+; added  J-POSTHEAD coord to block te-adjunct
+; FIXME, I would prefer the tense to be present, not te 
+; C-CONT.HOOK.INDEX.E.TENSE present,
 
 utterance_rule-imp  := utterance-sf-type &
 [SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
  C-CONT.HOOK.INDEX.SF comm,
- ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus,
-				   H-TENSE te,
-				   VN -,
-				   COP -,
-				   J-SPEC 1-list],
-		    NON-LOCAL.QUE <! !>]].
+ ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus, 
+				    FIN -,
+				    H-TENSE te,
+				    VN -,
+				    COP -,
+				    J-SPEC 1-list,
+				    J-POSTHEAD coord],
+		    NON-LOCAL [QUE <! !>,
+			       ROBUST +]]].
 
 
 
@@ -61,14 +70,15 @@ utterance_rule-imp  := utterance-sf-type &
 ; (MS 2005-12-08) We don't want the NONLOCAL.QUE <! !> condition on the argument, as embedded sentences; could have some QUE left in their storage: "誰が行くか教えて下さい。"
 ; EX: (do-parse-tty "食べ て 下さい")
 ; EX: (do-parse-tty "食べ て なさい") FIXME (one bad parse)
+; (FCB 2009-01-05) Taking out the MOOD, as we don't need it and it stops generation.
+
 
 utterance_rule-command  := utterance-sf-type &
 [SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
  C-CONT.HOOK.INDEX.SF comm,
- ARGS.FIRST [SYNSEM [LOCAL [CAT.HEAD [MODUS simple-imperative,
+ ARGS.FIRST [SYNSEM [LOCAL.CAT.HEAD [MODUS simple-imperative,
 				     H-TENSE present,
 				     FIN +],
-			    CONT.HOOK.INDEX.E.MOOD imperative],
 		     NON-LOCAL.QUE <! !>],
 	     RMORPH-BIND-TYPE imp-morph]].
 
@@ -653,12 +663,13 @@ sentence-te-coordination-rule := sentence-coord-type &
 ; (MS 2004-06-25) We need something for the XARG. Try the XARG of the second conjunct.
 ; (FCB 2006-03-12) FIXME: I am pretty sure it shouldn't be that, but I don't know what it should be. 
 
+
 conj-rule := conj-rule-type &
  [SYNSEM [LOCAL [BAR +,
 		 CONT.HOOK.XARG #xarg],
 	  MODIFIED.PERIPH +],
   ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
-				  C-MOD < [MODIFIED.PERIPH #periph] > ],
+				  C-MOD < [MODIFIED.PERIPH #periph] >],
 			    VAL saturated],
 		       BAR +]],
 	[SYNSEM synsem & [LOCAL [BAR +,

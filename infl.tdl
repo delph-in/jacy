@@ -221,8 +221,8 @@ potential-lexeme-to-word-rule &
 ;(CH 2005-04-09)
 ; removed [J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,] to use this for 
 ; syntactic V-Vs, too.  Tried making it no_tense.
-infinitive-lexeme-1-infl-rule :=
-%suffix (!vる !v) (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に) (見る 見)
+infinitive-lexeme-v-infl-rule :=
+%suffix (!vる !v) (ケる ケ) (レる レ) (以る 以) (惟る 惟) (易る 易) (違る 違) (越る 越) (厭る 厭) (下る 下) (化る 化) (架る 架) (獲る 獲) (掛る 掛) (干る 干) (換る 換) (看る 看) (観る 観) (気る 気) (戯る 戯) (詰る 詰) (居る 居) (駈る 駈) (経る 経) (迎る 迎) (兼る 兼) (懸る 懸) (見る 見) (枯る 枯) (顧る 顧) (控る 控) (構る 構) (絞る 絞) (似る 似) (射る 射) (捨る 捨) (煮る 煮) (受る 受) (集る 集) (出る 出) (潤る 潤) (初る 初) (消る 消) (焦る 焦) (省る 省) (上る 上) (寝る 寝) (診る 診) (整る 整) (生る 生) (染る 染) (相る 相) (替る 替) (着る 着) (鋳る 鋳) (著る 著) (伝る 伝) (投る 投) (当る 当) (得る 得) (入る 入) (抜る 抜) (卑る 卑) (簸る 簸) (付る 付) (分る 分) (閉る 閉) (変る 変) (暮る 暮) (崩る 崩) (忘る 忘) (揚る 揚) (溶る 溶) (来る 来) (落る 落) (覧る 覧) (立る 立) (留る 留) (變る 變) (熾る 熾) (睨る 睨) (缺る 缺) (虧る 虧) (覽る 覽) (觀る 觀) (躾る 躾) (酖る 酖) (鑄る 鑄) (驅る 驅) (寝る 寝) (寢る 寢)
 j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE inf-morph,
  SYNSEM.LOCAL [CAT.HEAD #head &
@@ -236,10 +236,52 @@ j-lexeme-to-word-rule &
                         COP-ARG -,
                         FIN -],
 	BAR -],
- ARGS.FIRST [STEMTYPE regular-stem,
+ ARGS.FIRST [STEMTYPE v-stem,
              SYNSEM.LOCAL.CAT.HEAD #head & verb-stem_head,
 	     RMORPH-BIND-TYPE morphbindtype]].
 
+;(CH 2005-04-09)
+; removed [J-SPEC.FIRST.LOCAL.CAT.HEAD nom_head,] to use this for 
+; syntactic V-Vs, too.  Tried making it no_tense.
+infinitive-lexeme-c-infl-rule :=
+%suffix  (く き) (る り) (う い) (す し) (む み) (ぐ ぎ) (ぶ び)  (つ ち) (ぬ に) (見る 見)
+j-lexeme-to-word-rule &
+[RMORPH-BIND-TYPE inf-morph,
+ SYNSEM.LOCAL [CAT.HEAD #head &
+			[H-TENSE no_tense,
+                        MODUS infinitive,
+                        MOD null,
+                        VN -,
+                        C-MOD null,
+                        MARK null,
+                        J-POSTHEAD coord,
+                        COP-ARG -,
+                        FIN -],
+	BAR -],
+ ARGS.FIRST [STEMTYPE c-stem,
+             SYNSEM.LOCAL.CAT.HEAD #head & verb-stem_head,
+	     RMORPH-BIND-TYPE morphbindtype]].
+
+
+
+infinitive-lexeme-c2-stem-infl-rule := 
+%suffix (く き) (る い) (う い)
+j-lexeme-to-word-rule &
+[RMORPH-BIND-TYPE inf-morph,
+ SYNSEM.LOCAL [CAT.HEAD #head &
+			[H-TENSE no_tense,
+                        MODUS infinitive,
+                        MOD null,
+                        VN -,
+                        C-MOD null,
+                        MARK null,
+                        J-POSTHEAD coord,
+                        COP-ARG -,
+                        FIN -],
+	BAR -],
+ ARGS.FIRST [STEMTYPE c2-stem,
+             SYNSEM.LOCAL.CAT.HEAD #head & verb-stem_head,
+	     RMORPH-BIND-TYPE morphbindtype]].
 
 ; (MS 2003-07-11) We have to find another solution for that.
  
@@ -288,6 +330,33 @@ j-lexeme-to-word-rule &
                          J-SPEC null,
                          FIN +]],
  ARGS.FIRST.STEMTYPE c-stem].
+
+
+imp-yo-v-stem-infl-rule :=
+%suffix (る よ)
+j-lexeme-to-word-rule &
+[RMORPH-BIND-TYPE imp-morph,
+ SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
+                         MODUS simple-imperative,
+                         VN -,
+                         MOD null,
+                         MARK null,
+                         J-SPEC null,
+                         FIN +]],
+ ARGS.FIRST.STEMTYPE v-stem].
+
+imp-ro-v-stem-infl-rule :=
+%suffix (る ろ)
+j-lexeme-to-word-rule &
+[RMORPH-BIND-TYPE imp-morph,
+ SYNSEM.LOCAL [CAT.HEAD [H-TENSE present,
+                         MODUS simple-imperative,
+                         VN -,
+                         MOD null,
+                         MARK null,
+                         J-SPEC null,
+                         FIN +]],
+ ARGS.FIRST.STEMTYPE v-stem].
 
 
 ;;;;;;;;;;;;;;;;;;;COPULA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -489,6 +558,7 @@ j-lexeme-to-word-rule &
 mai-beki-lexeme-regular-infl-rule := 
 lexeme-rule &
 [RMORPH-BIND-TYPE mai-beki-morph,
+SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
 ARGS.FIRST v-lex & [STEMTYPE regular-stem]].
 
 
@@ -499,6 +569,7 @@ mai-lexeme-ks-infl-rule :=
 %suffix (来る 来) (する す) (くる こ)
 lexeme-rule &
 [RMORPH-BIND-TYPE mai-morph,
+ SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
 ARGS.FIRST v-lex & [STEMTYPE kurusuru-stem]].
 
 ; (MS 2004-12-17) beki takes す in the case of する+べき: すべき
@@ -507,6 +578,7 @@ beki-lexeme-ks-infl-rule :=
 %suffix (する す) (来る 来る) (くる くる)
 lexeme-rule &
 [RMORPH-BIND-TYPE beki-morph,
+ SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
 ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 
@@ -630,14 +702,14 @@ adj2adv-rule &
 
 adj-short-infl-rule :=
 %suffix (しい し) (さい さ) (たい た) (まい ま) (ずい ず) (ない な) (どい ど) (とい と) (こい こ) (ちい ち) (らい ら) (よい よ) (ゆい ゆ) (つい つ)(ごい ご) (ろい ろ) (すい す) (そい そ) (かい か) (わい わ) (少い 少さ) (ぱい ぱ) (ぽい ぽ) (わい わ) (じい じ) (きい き) (げい げ) (愛い 愛) (悪い 悪) (渥い 渥) (安い 安) (暗い 暗) (偉い 偉) (易い 易) (映い 映) (永い 永) (鋭い 鋭) (円い 円) (煙い 煙) (遠い 遠) (汚い 汚) (温い 温) (佳い 佳) (快い 快) (恢い 恢) (晦い 晦) (角い 角) (赫い 赫) (寒い 寒) (緩い 緩) (丸い 丸) (危い 危さ) (貴い 貴) (旧い 旧) (喬い 喬) (強い 強) (恐い 恐) (狭い 狭) (近い 近) (苦い 苦) (屑い 屑) (軽い 軽) (潔い 潔) (堅い 堅) (賢い 賢) (古い 古) (固い 固) (厚い 厚) (好い 好) (宏い 宏) (巧い 巧) (広い 広) (弘い 弘) (硬い 硬) (紅い 紅) (荒い 荒) (高い 高) (豪い 豪) (酷い 酷) (黒い 黒) (細い 細) (惨い 惨) (酸い 酸) (旨い 旨) (疾い 疾) (若い 若) (弱い 弱) (手い 手) (臭い 臭) (臭い 臭)  (醜い 醜) (渋い 渋) (重い 重) (暑い 暑) (少い 少) (少い 少さ) (浄い 浄) (色い 色) (深い 深) (深い 深)  (辛い 辛) (凄い 凄) (星い 星) (清い 清) (青い 青) (脆い 脆) (赤い 赤) (拙い 拙) (浅い 浅) (善い 善) (疎い 疎) (粗い 粗) (早い 早) (聡い 聡) (草い 草) (蒼い 蒼) (憎い 憎) (速い 速) (尊い 尊) (多い 多) (太い 太) (堆い 堆) (怠い 怠) (淡い 淡) (短い 短) (暖い 暖) (稚い 稚) (遅い 遅) (長い 長) (痛い 痛) (度い 度) (篤い 篤) (鈍い 鈍) (難い 難) (濃い 濃) (蝿い 蝿) (博い 博) (白い 白) (薄い 薄) (繁い 繁) (煩い 煩) (煩い 煩)  (晩い 晩) (敏い 敏) (怖い 怖) (殆い 殆) (味い 味) (眠い 眠) (無い 無) (憂い 憂) (幼い 幼) (良い 良) (良し 良) (廉い 廉) (俐い 俐) (儚い 儚) (圓い 圓) (夛い 夛) (梦い 梦) (嫖い 嫖) (嬾い 嬾) (孅い 孅) (尠い 尠) (孱い 孱) (岌い 岌) (嶷い 嶷) (廣い 廣) (惡い 惡) (慝い 慝) (慵い 慵) (懶い 懶) (擽い 擽) (敞い 敞) (暄い 暄) (暝い 暝) (曚い 曚) (毋い 毋) (泓い 泓) (洌い 洌) (淨い 淨) (淺い 淺) (溽い 溽) (澁い 澁) (澀い 澀) (熈い 熈) (狡い 狡) (狹い 狹) (痒い 痒) (癢い 癢) (皎い 皎) (眩い 眩) (矗い 矗) (穉い 穉) (穢い 穢) (糲い 糲) (纎い 纎) (譱い 譱) (聰い 聰) (腆い 腆) (腥い 腥) (臧い 臧) (舊い 舊) (褊い 褊) (輕い 輕) (邇い 邇) (逖い 逖) (遐い 遐) (遲い 遲) (陜い 陜) (駛い 駛) (鹹い 鹹) (黔い 黔) (黠い 黠) (危うい 危う) (殆うい 殆う)  (にくい にく)(ぬくい ぬく)(あつい あつ)(かつい かつ) (めつい めつ)  (きつい きつ) (ぎつい ぎつ)(たるい たる)  (だるい だる) (ぬるい ぬる) (かるい かる)  (ずるい ずる) (ぬるい ぬる)  (まるい まる)  (わるい わる) (やうい やう)
-lexeme-rule &
+j-lexeme-to-word-rule &
 [RMORPH-BIND-TYPE shortadj-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
  SYNSEM.LOCAL.CAT.HEAD i-adj-stem_head &
 		  [MOD null,
 		   MARK null,
 		   FIN -]].
-
+;lexeme-rule &
 
 
 adj-ku-lexeme-infl-rule := 
