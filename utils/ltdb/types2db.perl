@@ -3,6 +3,7 @@ use warnings;
 use DBI;
 use XML::DOM;
 
+
 my $types_file = $ARGV[0];
 my $dbname = $ARGV[1];
 

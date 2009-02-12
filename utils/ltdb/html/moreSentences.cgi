@@ -90,8 +90,6 @@ print <<"HTML_VIEW";
 <a href=$cssdir/index.html>Home</a>
 &nbsp;&nbsp;
 <a href="$cgidir/list.cgi">List</a>
-&nbsp;&nbsp;
-<a href=$cssdir/admin.html>Admin</a>
 </div> <!-- end of menu -->
 </div> <!-- end of header -->
 <div id="confusing">
@@ -127,8 +125,6 @@ sub error {
   <a href=$cssdir/index.html>Home</a>
   &nbsp;&nbsp;
   <a href="$cgidir/list.cgi">List</a>
-  &nbsp;&nbsp;
-  <a href=$cssdir/admin.html>Admin</a>
   </div> <!-- end of menu -->
   </div> <!-- end of header -->
   <div id="contents">

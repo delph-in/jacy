@@ -23,7 +23,13 @@ while(my @row = $sth->fetchrow_array){
 # Reading treebank result files.
 my @all_tb_data;
 foreach my $tbresult (@tbresults){
-    open TB, $tbresult or die "Can't open $tbresult: $!";
+    if ($tbresult =~ /\.gz$/) {
+	open(TB, "gzip -dc  $tbresult |") 
+	    or die "Can't open $tbresult: $!";
+    } else {
+	open(TB, $tbresult) 
+	    or die "Can't open $tbresult: $!";
+    }
     $tbresult =~ m|/([^/]+)/result|;
     my $profile = $1;
     my $sid = 'undefined';
@@ -31,11 +37,13 @@ foreach my $tbresult (@tbresults){
     while(<TB>){
 	chomp;
 	# Extracting a parse result
-	/^(.*)?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@.*?\@(.+)\@.*?\@.*?\@.*?\@$/;
-	next if defined $processedSentences{$1};
-	my $sid = "$profile/$1"; ### assume it is unique
-	$processedSentences{$1} = 1;
-	my @tmp = $2 =~ /(\([^\(]+?\([^\(]+?\)\))/g;
+	my @fields = split /@/;
+	next if defined $processedSentences{$fields[0]};
+
+	my $sid = "$profile/$fields[0]"; ### assume it is unique
+
+	$processedSentences{$fields[0]} = 1;
+	my @tmp = $fields[10] =~ /(\([^\(]+?\([^\(]+?\)\))/g;
 	
 	# Extracting pairs of a word-id and an orthography
 	foreach (@tmp){
@@ -51,6 +59,22 @@ foreach my $tbresult (@tbresults){
 
 	    push @all_tb_data, $tbline;
 	}
+        ## non-lexical types (i.e. rules)
+	## FIXME do this properly (e.g. remember parents)
+
+	## get rid of the lexical types
+#	$fields[10] =~ s/(\([^\(]+?\([^\(]+?\)\))//g;
+# 	@tmp = $fields[10] =~ /\(\d+\s+(\S+)\s/g;
+# 	foreach my $rule (@tmp){
+# 	    print "RULE\t$rule\n";
+# 	    my $tbline;
+# 	    #$tbline->{profile} = $profile;
+# 	    $tbline->{sid} = $sid;
+# 	    $tbline->{orth} = "";
+# 	    $tbline->{wordid} = "";
+# 	    $tbline->{lextype} = $rule;
+# 	    push @all_tb_data, $tbline;
+# 	}
     }
     close TB;
 }

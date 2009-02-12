@@ -10,6 +10,12 @@
    echo "(setf tsdb::*www-introduction* \"jacy\")";
      '((:parse \"http://www.delph-in.net/jacy\")	
 
- * add daughter look-up
+ * get the patches in the mainstream, ...
 
- 
+
+DONE:
+-----
+  * add daughter look-up
+
+ * handle gzipped profiles
+

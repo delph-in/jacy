@@ -214,12 +214,16 @@
 	;; Tree
 	(format stream "<tr>~%")
 	(format stream "<td class=resultsTree >~%")
-	(lkb::html-tree edge :stream stream :indentation 4)
+	(if edge
+  	  (lkb::html-tree edge :stream stream :indentation 4)
+          (format stream "no tree reconstructed"))
 	(format stream "~%")
 	(format stream "</td>~%")
 	;; MRS
 	(format stream "<td class=resultsMrs>~%")
-	(mrs::output-mrs1 mrs 'mrs::html  stream)
+	(if mrs
+	 (mrs::output-mrs1 mrs 'mrs::html  stream)
+          (format stream "no mrs available"))
 	(format stream "~%")
 	(format stream "</td>~%")
 	(format stream "</tr></table>~%")

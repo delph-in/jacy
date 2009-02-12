@@ -6,21 +6,13 @@
 unset DISPLAY;
 unset LUI;
 
-lkbdir=/home/bond/logon/lingo/lkb
+source ltdb-conf.bash
 
-grammardir=/home/bond/svn/jacy; 
-treebanks=`ls -d ${grammardir}/gold/*`
-grammardir=/home/bond/svn/jp080901/jacy; 
-
-outdir=/home/bond/svn/jacy/utils/ltdb/Jacy_2008-11-05
 mkdir $outdir/trees
 
 
 for tb in ${treebanks[@]} ; do
-    if [ ! -e $tb/$TB_FILE ]; then
- 	echo "Couldn't find  treebank at $tb"
- 	exit
-    fi
+    if [  -e $tb/$TB_FILE ] || [ -e $tb/${TB_FILE}.gz ]; then
     tsdbhome=`dirname $tb`
     profile=`basename $tb`
     echo "Export trees from  $profile in $tsdbhome"
@@ -38,9 +30,10 @@ for tb in ${treebanks[@]} ; do
   #+sbcl           (sb-ext:quit)
 LISP
     } | ${LOGONROOT}/bin/logon --binary -I base -locale ja_JP.UTF-8
+    else
+ 	echo "Couldn't find  treebank at $tb"
+    fi
 done
-
-HTML_DIR=/home/bond/public_html/ltdb/Jacy_2008-11-05/
 
 cp -rp $outdir/trees $HTML_DIR/.
 

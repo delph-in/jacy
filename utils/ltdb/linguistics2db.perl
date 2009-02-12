@@ -68,6 +68,13 @@ for(my $i=0; $i<$n; $i++){
     if ($criteria) {
 	$criteria = &format_criteria($criteria);
     }
+    if ($description) {
+	$description = &link($description);
+    }
+    if ($todo) {
+	$todo =  &link($todo);
+    }
+
     $insert->execute($type, $name, $description, $criteria, $reference, $todo);
 }
 
@@ -115,6 +122,21 @@ sub format_criteria{
     $c_out .= "</table>";
     $c_out;
 }
+
+sub link {
+    my ($text) = @_;
+    my @tmp = $text =~ /([-_+a-zA-Z0-9]+(-lex|_le))/g;
+    for my $tmp (@tmp) {
+	if ($tmp ne "-lex" && $tmp ne "_le") {
+	    ## FIXME test against list of types
+	    ##print STDERR "'$tmp'\n";
+	    $text =~ s/\Q$tmp\E/<a href='description.cgi?type=$tmp'>$tmp<\/a>/g;
+	}
+    }
+    return $text;
+}
+  
+
 
 $dbh->commit;
 

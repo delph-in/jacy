@@ -6,51 +6,12 @@
 unset DISPLAY;
 unset LUI;
 
-
-#lkbdir=/home/bond/delphin/lkb
-lkbdir=/home/bond/logon/lingo/lkb
-
-grammardir=/home/bond/svn/jacy; 
-ltypes=("${grammardir}/lex-types.tdl $grammardir/v-lex-types.tdl")
-treebanks=`ls -d ${grammardir}/gold/*`
-
-#grammardir=/home/bond/logon/lingo/erg;
-#ltypes="$grammardir/letypes.tdl"
-#grammardir=/home/bond/logon.old/ntnu.old/norsource; 
-#ltypes="$grammardir/norsk.tdl"
-#grammardir=/home/bond/logon/dfki/gg
-#ltypes="$grammardir/le-types.tdl"
-#grammardir=/home/bond/grammars/matrix
-#ltypes="$grammardir/pseudo_japanese.tdl"
+source ltdb-conf.bash
 
 echo 
 echo "Creating a lextypedb for the grammar stored at: $grammardir"
 echo
 
-### Constants
-LTDB_FILE="lt.db"
-LINGUISTICS_FILE="linguistics.xml"
-TYPES_FILE="types.xml"
-LEXICON_FILE="lex.tab"
-TB_FILE="result"
-
-
-### I really don't want to do this!
-if [ -f  $grammardir/Version.lsp ]; then
-    versionfile=$grammardir/Version.lsp
-else
-    versionfile=$grammardir/Version.lisp
-fi
-
-version=`perl -ne 'if (/^\(defparameter\s+\*grammar-version\*\s+\"(.*)\s+\((.*)\)\"/) {print "$1_$2"}' $versionfile`
-if [ -z "$version" ]; then
-    echo "Don't know the version, will use 'something'"
-    version=something
-fi
-outdir=$PWD/$version
-
-HTML_DIR=$HOME/public_html/ltdb/$version
-CGI_DIR=$HOME/public_html/cgi-bin/$version
 
 echo
 echo "It will be installed into:"
@@ -81,8 +42,8 @@ echo "Dumping lex-type definitions and lexicon"
 
 { 
  cat 2>&1 <<- LISP
-  (load "$lkbdir/src/general/loadup")
-  (compile-system "lkb" :force t)
+  ;(load "$lkbdir/src/general/loadup")
+  ;(compile-system "lkb" :force t)
   (lkb::read-script-file-aux  "$grammardir/lkb/script")
   (lkb::lkb-load-lisp "." "patch-lextypedb.lsp")
   (lkb::output-types :xml "$outdir/$TYPES_FILE")
@@ -91,7 +52,7 @@ echo "Dumping lex-type definitions and lexicon"
   #+allegro        (excl:exit)
   #+sbcl           (sb-ext:quit)
 LISP
-} | ${LOGONROOT}/bin/logon --source -I base -locale ja_JP.UTF-8
+} | ${LOGONROOT}/bin/logon --binary -I base -locale ja_JP.UTF-8
 #} | cat 
 
 ###
@@ -159,11 +120,13 @@ echo Create the treebank DB
 # Reading in treebank files.
 tbargs=''
 for tb in ${treebanks[@]} ; do
-    if [ ! -e $tb/$TB_FILE ]; then
+    if [ -e $tb/$TB_FILE ]; then
+	tbargs=$tbargs' '$tb/$TB_FILE
+    elif  [ -e $tb/${TB_FILE}.gz ]; then
+	tbargs=$tbargs' '$tb/${TB_FILE}.gz
+    else
  	echo "Couldn't find a treebank at $tb"
- 	exit
     fi
-    tbargs=$tbargs' '$tb/$TB_FILE
 done
 perl treebank2db.perl $outdir/$LTDB_FILE $tbargs 
 
@@ -197,6 +160,20 @@ mkdir -p $HTML_DIR/trees
 cp $lkbdir/src/tsdb/css/*.css  $HTML_DIR/.
 cp $lkbdir/src/tsdb/js/*.js  $HTML_DIR/.
 
+#
+# Make the IndexPage
+#
+
+echo "<html><body><h1>Welcome to $version</h1>" > $HTML_DIR/index.html
+echo "<ul>  <li>  <a href='../../cgi-bin/$version/list.cgi'>Lexical Type Database for $version</a>"  >> $HTML_DIR/index.html
+if [ -n "$grammarurl" ]; then
+echo "  <li>  <a href='$grammarurl'>Grammar Home Page</a>"  >> $HTML_DIR/index.html
+fi
+echo "  <li>  <a href='http://www.delph-in.net/'>DELPH-IN Network</a>"  >> $HTML_DIR/index.html
+echo "  <li>  <a href='http://wiki.delph-in.net/moin/FrontPage'>DELPH-IN Wiki</a>"  >> $HTML_DIR/index.html
+echo "  <li>  <a href='http://wiki.delph-in.net/moin/LkbLtdb'>Lexical Type Database Wiki</a></ul>"   >> $HTML_DIR/index.html
+echo "<p>Created on $now</p>"  >> $HTML_DIR/index.html
+echo "</html></body>" >> $HTML_DIR/index.html
 
 ### All done
 echo

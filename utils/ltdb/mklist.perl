@@ -73,6 +73,7 @@ foreach my $lt (@lextypes){
     push(@list_table_a, [($lt, $linguistic_name, $mostFrequentWords_s, $numOfTypes, $numOfTokens)]);
 }
 
+
 # Create the Lextype List Table.
 my $list_table = 'list_tbl';
 
