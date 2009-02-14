@@ -916,13 +916,13 @@ tsuuwa_3_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "tsuuwa_3" ].
 
-de-adjunct_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "de-adjunct" ].
+;de-adjunct_gr := generator_rule &
+;[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+;  FLAGS.TRIGGER "de-adjunct" ].
 
-te-adjunct_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "te-adjunct" ].
+;te-adjunct_gr := generator_rule &
+;[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+;  FLAGS.TRIGGER "te-adjunct" ].
 
 ori_2_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
@@ -2445,13 +2445,13 @@ irassharu-aux-stem_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "irassharu-aux-stem" ].
 
-de-adjunct_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "de-adjunct" ].
+;de-adjunct_gr := generator_rule &
+;[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+;  FLAGS.TRIGGER "de-adjunct" ].
 
-te-adjunct_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "te-adjunct" ].
+;te-adjunct_gr := generator_rule &
+;[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+;  FLAGS.TRIGGER "te-adjunct" ].
 
 comma1-infvmod_gr := generator_rule &
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,

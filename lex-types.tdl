@@ -7050,7 +7050,7 @@ subj-honor-ctxt := ctxt &
 ; (MS 2005-06-24) We need unificable SHON information between v-end and v-stem.
 
 
-v-end-lex := lexical_sign-affix &
+basic-v-end-lex := lexical_sign-affix &
              [SYNSEM synsem &
                      [LOCAL [CAT [HEAD v-end_head &
                                        [H-TENSE #tense,
@@ -7065,18 +7065,22 @@ v-end-lex := lexical_sign-affix &
 							       VAL [SUBJ #sbj,
 								    COMPS #comps]],
 							  ARG-S #arg-s,
-							   CONT [HOOK #hook],
 							  BAR -]]],
 				       SUBJ #sbj,
 				       COMPS #comps]],
 			     ARG-S #arg-s,
 			     CONT verb-sem-type &
-				 [HOOK #hook & [INDEX  event & 
-						      [E [TENSE #tense]]]],
+				 [HOOK [INDEX  event & 
+					       [E [TENSE #tense]]]],
                              BAR -,
                              NUCL nucl_plus],
                       NON-LOCAL [QUE <! !>,
                               AFFIX <! !>]]].
+
+v-end-lex := basic-v-end-lex &
+ [ SYNSEM.LOCAL [ CAT.VAL.SPR < [ LOCAL.CONT.HOOK #hook ] >,
+		  CONT.HOOK #hook ]].
+
 
 ; (MS 2002-1-9) This needs a subject: 雨が降りそうだ
 ; (MS 2003-10-08) Problems with Matrix 0.5?
@@ -7593,24 +7597,31 @@ v-tense-end-lex := v-tense-end-lex-super &
 ; (MS 2005-05-24) This adds massive ambiguity in all cases where there is a
 ; verb in te form (such as: 食べてもいい). 
 ; (FCB 2006-06-20)
-; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD sentence-valid] prevents this from modifying utterances.
+; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD sentence-valid] prevents this from modifying utterances.'
 
-te-adjunct-lex := v-tense-end-lex &
+te-adjunct-lex := basic-v-end-lex &
  [J-NEEDS-AFFIX -,
-  SYNSEM [LOCAL [CAT [HEAD [FIN -,
+  SYNSEM [LOCAL [CAT [ VAL.SPR < [ LOCAL.CONT.HOOK.LTOP #subord,
+				   LEX + ] >,
+		       HEAD [FIN -,
 			    MARK null,
 			    COP-ARG -,
 			    C-MOD null,
-			    MOD <[LOCAL intersective_mod &
+			    MOD <[LOCAL scopal_mod &
 					[CAT.HEAD sentence-valid & [COP -],
-					 CONT.HOOK [LTOP #handel,
-						    INDEX #ind]]]>,
+					 CONT.HOOK [ LTOP #main ]]]>,
 			    J-POSTHEAD left]],
-		 CONT [HOOK [INDEX #ind & [E.MOOD indicative]]]],
-	  LKEYS.KEYREL [ARG0 #ind,
-			LBL #handel],
+		 CONT [HOOK [INDEX [E.MOOD indicative],
+			     LTOP #hand ],
+		       RELS <! subord-relation &
+			    [ PRED #pred,
+			      LBL #hand,
+			      L-HNDL #subord-hand,
+			      R-HNDL #main-hand ] !>,
+		       HCONS.LIST.FIRST qeq & [ HARG #subord-hand, LARG #subord ],
+		       HCONS.LIST.REST.FIRST qeq & [ HARG #main-hand, LARG #main ] ]],
+	  LKEYS.KEYREL [PRED #pred],
 	  NON-LOCAL.QUE <! !>]].
-
 
 ; <type val="te-adjunct-lex-t">
 ; <name-ja>テ接続助詞従属
