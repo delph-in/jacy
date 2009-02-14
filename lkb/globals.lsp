@@ -194,7 +194,8 @@
     anatatachi-b anatatachi-c kimitachi kimitachi-b kimitachi-c 
     ;; variants of wa: wa-narg
     tte-narg nanowa 
-    colon-advp colon-advp-2 comma-advp
+    ; the following are now separate from wa_d_rel, so can be included
+    ;colon-advp colon-advp-2 comma-advp
     ;; →
     arrow-postp
     ;;  第  FIXME - improve semantics
