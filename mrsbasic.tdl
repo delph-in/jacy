@@ -658,3 +658,14 @@ _nomi_d_rel := other_focus_d_rel.
 _sae_d_rel := other_focus_d_rel.
 _datte_d_rel := other_focus_d_rel.
 _ga_d_rel := other_focus_d_rel.
+
+
+
+;;;  try to say more about pronouns
+ref-ind :+ 
+ [ PRONTYPE prontype ].
+
+prontype := predsort.
+refl := prontype.
+std_pron := prontype.
+zero_pron := prontype.

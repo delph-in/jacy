@@ -105,4 +105,12 @@ prop   <> prop
 iforce >> prop     
 prop   <<  iforce
 
+PRONTYPE : PRONTYPE
+  std_pron  <> std_pron
+  zero_pron <> zero_pron
+  refl      <> refl
+  *         >> !
+  !         << *
+
+
 ;;; make a semi (mt::construct-semi)

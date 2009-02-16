@@ -1922,9 +1922,11 @@ case-p-lex-postp-ni := case-p-lex-postp &
 
 
 comp-lex-basic := p-lex-c &
- [SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK.LTOP #vhand,
+ [SYNSEM.LOCAL [CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK [LTOP #vhand,
+						     INDEX #ind],
 		CONT [RELS  <!  !>,
-		      HOOK.LTOP #top,
+		      HOOK [LTOP #top,
+			    INDEX #ind],
 		      HCONS <! qeq & [HARG #top, LARG #vhand ] !>]]].
 
 comp-lex := comp-lex-basic &
@@ -3588,14 +3590,14 @@ ordinary-n-lex := ordinary-or-wh-n-lex &
 ; するtypeも必要。
 ; </type>
 adj2n-suffix-lex := n-lex &
-		      [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head-avm &  [J-POSTHEAD right],
-					   VAL noun_sc & [SPR.FIRST #spr]],
-				      BAR -,
-				      ARG-S < #spr >,
-				      CONT common-noun-sem-type & [HOOK.INDEX #ind & [PNG.PN three],
-								   RELS <! #key !> ]],
-			       LKEYS.KEYREL #key & [ARG0 #ind],
-			       NON-LOCAL.AFFIX <! !>]].	   
+ [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head-avm &  [J-POSTHEAD right],
+		      VAL noun_sc & [SPR.FIRST #spr]],
+		 BAR -,
+		 ARG-S < #spr >,
+		 CONT common-noun-sem-type & [HOOK.INDEX #ind & [PNG.PN three],
+					      RELS <! #key !> ]],
+	  LKEYS.KEYREL #key & [ARG0 #ind],
+	  NON-LOCAL.AFFIX <! !>]].	   
 
 
 ; (ERB 2001-10-23) 自分 unbound RELS values because it was a direct subtype
@@ -3615,7 +3617,12 @@ pron-lex := n-lex &
 pers-pron-lex := pron-lex &
                  [ SYNSEM [LKEYS.KEYREL real-pron-relation & #key & [PRED pron_rel],
 			   LOCAL.CONT personal-pronoun-sem-type &
+
 					  [RELS.LIST.FIRST #key]]].
+
+std-pron-lex := pers-pron-lex &
+ [ SYNSEM.LKEYS.KEYREL pron-relation &
+		       [ARG0.PRONTYPE std_pron]].
 
 ; (MS 2005-02-28) Renamed the pers-pron-selfemp-lex.
 ; This is actually only the reflexive 自分
@@ -3631,7 +3638,8 @@ pers-pron-lex := pron-lex &
 reflexive-pronoun-lex := pers-pron-lex &
 			 [ SYNSEM [LOCAL [CONT [HOOK.INDEX #ind],
 					  CTXT.EMPATHY.EMPEE #ind],
-				   LKEYS.KEYREL pron-relation,
+				   LKEYS.KEYREL pron-relation &
+					 [ARG0.PRONTYPE refl],
 				   NON-LOCAL [QUE <! !>,
 					      REL <! #ind !>]]].
 
@@ -3659,7 +3667,7 @@ reflexive-pronoun-honsbj-lex := reflexive-pronoun-lex &
 			   
 ; (MS 2005-02-28) renamed pron-sp-ref-lex. No example.
 
-pron-firstperson-ref-lex := pers-pron-lex &
+pron-firstperson-ref-lex := std-pron-lex &
 		   [SYNSEM [LKEYS.KEYREL [ARG0 [PNG.PN one]],
 			    LOCAL [CAT.HEAD.FORMAL.SHON -,
 				   CONT [HOOK.INDEX #1],
@@ -3681,7 +3689,7 @@ pron-firstperson-ref-lex := pers-pron-lex &
 ; <nex>そっち 悪い
 ; <todo>
 ; </type>
-pron-secondperson-ref-lex := pers-pron-lex &
+pron-secondperson-ref-lex := std-pron-lex &
                     [SYNSEM [LKEYS.KEYREL [ARG0 [PNG.PN two]],
 			     LOCAL [CAT.HEAD.FORMAL.SHON +,
                                    CONT [HOOK.INDEX #1],
@@ -3806,7 +3814,7 @@ pron-firstsgminusahon-ref-lex := pron-firstsg-ref-lex &
 
 ; (MS 2005-02-28) renamed pron-ent-ref-lex.
 
-pron-thirdperson-ref-lex :=  pers-pron-lex &
+pron-thirdperson-ref-lex :=  std-pron-lex &
                   [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN three]]].
 
 
@@ -9105,7 +9113,7 @@ v-contracted-aux-prospective-ndmorph-end-lex := v-contracted-aux-prospective-end
 
 
 
-;(MS 01-09-19) If the top-handle should be the handle of the subord_rel, we have problems with the restriction that LTOP = KEY.LBL.
+;(MS 01-09-19) If the top-handle should be the handle of the subord_relg, we have problems with the restriction that LTOP = KEY.LBL.
 ; (MS 02-11-19) Shift the restriction on the subject to the semantics.
 ; (MS 2004-11-08) AUX aux_minus on the SPR seems to be too strict: 帰って来やすい
 
