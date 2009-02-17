@@ -156,6 +156,14 @@
 (setf *packing-restrictor*  '(RELS HCONS STEM RULE-NAME))
 
 ;;;
+;;; for use in LOGON, set post-generation semantic equivalence check to filter
+;;; mode, i.e. prefer results that satisfy the test when available, but output
+;;; all complete generator results, in case none pass the equivalence test.
+;;;
+#+:logon
+(setf *bypass-equality-check* :filter)
+
+;;;
 ;;; list of things not to generate even though they maybe contentful
 ;;;
 
@@ -186,12 +194,27 @@
     ;; variants of me
     atakushi atashi boku boku-kanji boku_3 onore_1_2 ore ore-firstsg_katakana 
     ore-kanji oresama-firstsg oresama-firstsg_chasen sei_10 shousei temae_2_1 
-    uchi-kanji-pron uchi-pron ware_1_3 ware_6 washi-firstsg watakushi watashi yasei_1_3 
+    uchi-kanji-pron uchi-pron ware_1_3 ware_6 washi-firstsg watashi yasei_1_3 
     ;; variants of you
-    anata-kanji anta-pron kimi-pron kimi-pron-hiragana omae_1_hiragana omae_1_kanji 
-    onmi_1 onoono_1_1 onore_2 otaku_3 socchi sochira_2 temee_1_2 ware_2_1 ware_5 
+    anata-kanji anta-pron kimi-pron kimi-pron-hiragana 
+    omae_1_hiragana omae_1_kanji 
+    onmi_1 onoono_1_1 onore_2 otaku_3 socchi sochira_2 
+    temee_1_2 ware_2_1 ware_5 
     ;; variants of youse
     anatatachi-b anatatachi-c kimitachi kimitachi-b kimitachi-c 
+    ;; variants of: kare
+    soitsu_1 kare-hiragana daresore_kanji 
+    aitsu_pron darekare_hiragana daredare darekare_kanji daresore_hiragana
+    yatsu_pron yatsu_pron-hiragana daresore_kanji_chasen
+    ;; variants of karera
+    karera-kanji
+    ;; variants of arera
+    arekore_1_2 sorera
+    ;; variants of: watashitachi-firstpl
+    warera_4_1 kochira wareware-kanji-firstpl_2 kocchi warera_3_1
+    wagahai-firstpl_2 wagahai-firstpl_1 warera_5_1 wareware-firstpl
+    oira-firstpl wareware-firstpl_2 wareware-firstpl_2_chasen 
+    watakushidomo-firstpl wareware-kanji-firstpl
     ;; variants of wa: wa-narg
     tte-narg nanowa 
     ; the following are now separate from wa_d_rel, so can be included
@@ -224,6 +247,8 @@
     shizuka_1-hiragana			; shizuka
     ;;; week days
     ka_dofw kayou			; kayou / kayoubi 
+    ;; variants to deal with chasen
+    
     ))
 
 ;;;
