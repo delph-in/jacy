@@ -312,7 +312,8 @@ j-lexeme-to-word-rule &
                          MOD null,
                          MARK null,
                          J-SPEC null,
-                         FIN +]],
+			 FIN +],
+	       BAR -],
  ARGS.FIRST.STEMTYPE c2-stem].
 
 
@@ -328,7 +329,8 @@ j-lexeme-to-word-rule &
                          MOD null,
                          MARK null,
                          J-SPEC null,
-                         FIN +]],
+                         FIN +],
+	       BAR -],
  ARGS.FIRST.STEMTYPE c-stem].
 
 
@@ -342,7 +344,8 @@ j-lexeme-to-word-rule &
                          MOD null,
                          MARK null,
                          J-SPEC null,
-                         FIN +]],
+                         FIN +],
+	       BAR -],
  ARGS.FIRST.STEMTYPE v-stem].
 
 imp-ro-v-stem-infl-rule :=
@@ -355,7 +358,8 @@ j-lexeme-to-word-rule &
                          MOD null,
                          MARK null,
                          J-SPEC null,
-                         FIN +]],
+                         FIN +],
+	       BAR -],
  ARGS.FIRST.STEMTYPE v-stem].
 
 

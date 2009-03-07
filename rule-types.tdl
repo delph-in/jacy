@@ -130,7 +130,7 @@ unary-type-super :=   phrasal_sign &
 					      NON-LOCAL #nonloc]] >].
 
 unary-type := unary-type-super &
-[ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL optional-or-saturated,
+[ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL saturated,
  SYNSEM.LEX - ].
 
 head-final-type := binary-headed-phrase & speaker-addr-principle &	
@@ -684,7 +684,7 @@ empty-head-type :=  headed-phrase &
 								      LAST #middle1liszt],
 								HCONS [LIST #scfirst ,
 								       LAST #scmiddle1]],
-                                                          CAT.VAL optional-or-saturated],
+                                                          CAT.VAL saturated],
                                                    NON-LOCAL #nloc],
                                            J-NEEDS-AFFIX -],
 		    STEM #stem,
@@ -768,7 +768,7 @@ utterance-type := unary-type  &
 [SYNSEM synsem & 
 	[LOCAL [CAT [HEAD utterance_head & [SMOD marked,
 					    EMPTY #empty],
-		     VAL  saturated],
+		     VAL super-saturated],
 		CTXT [BACKGROUND diff-list &
 				 [LIST [FIRST addr-honor_rel &
 					      [POLARITY #3,
@@ -784,7 +784,7 @@ utterance-type := unary-type  &
 	 HCONS <! !>],
  ARGS.FIRST [SYNSEM [LOCAL  [CAT [HEAD [FORMAL.AHON #3,
 					EMPTY #empty],
-				  VAL optional-or-saturated],
+				  VAL saturated],
 			     CTXT.BACKGROUND [LIST #2,
                                             LAST #4],
 			     BAR +],
@@ -925,7 +925,7 @@ syn-vv-ditrans-vbar-c-stem-lex &
 [ ARGS.FIRST syn-vv-intrans-vbar-c-stem-lex].
 
 
-
+;;; FIXME: try this as BAR - ? FCB 2009-03-07
 j-lexeme-to-word-rule := word-rule-basic & v-lex &
                        [ARGS < verb-stem-lex-base>].
 
@@ -1423,28 +1423,35 @@ word2word-rule := phrase-or-lexrule &
                     RMORPH-BIND-TYPE #rmorph]>].
 
 
-;these are lexical rule types for zero pronoun insertion
+; these are lexical rule types for zero pronoun insertion
+; FCB (2009-02-18) refactoring, inspired by ERB
+
+zpro-rule  := word2word-rule & 
+	[SYNSEM [LOCAL.CAT.VAL.UNSAT -,
+		 LEX +],
+	 C-CONT [RELS <!  !>,
+		 HCONS <!  !>],
+	 ARGS.FIRST.SYNSEM.LEX +].
+
+
+zpro-subj-rule := zpro-rule &
+ [SYNSEM.LOCAL [CAT.VAL [SUBJ null,
+			 COMPS #comps,
+			 SPR #spr],
+		CONT.HOOK.XARG zpro_ref-ind],
+  ARGS.FIRST.SYNSEM.LOCAL.CAT.VAL [SUBJ opt-1-arg,
+				   COMPS #comps,
+				   SPR #spr]].
+
+
 
 zpro-insertion-rule := word2word-rule & 
-	[SYNSEM [LOCAL [CAT.VAL.UNSAT -,
-			BAR -],
-		 LEX +],
-	 C-CONT [RELS <!  !>,
-		 HCONS <!  !>],
-	 ARGS.FIRST.SYNSEM.LEX +].
+	[SYNSEM.LOCAL.BAR -].
 
 
-naadj-zpro-insertion-rule := word2word-rule & 
-	[SYNSEM [LOCAL [CAT.VAL.UNSAT -,
-		       BAR +],
-		 LEX +],
-	 C-CONT [RELS <!  !>,
-		 HCONS <!  !>],
-	 ARGS.FIRST.SYNSEM.LEX +].
 
 
-; (ERB 2002-01-14) MOD-IND and MOD-HAND from head-daughter.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 
 prefix-rule :=  head-final-type-mod &
                 head-adjunct-p &
@@ -1809,7 +1816,7 @@ numcl2noun-rule-type :=  ordinary-nohon-n-lex &
 ; added restriction on MOD.LOCAL.HEAD - only modify main verbs
 ; added EMPTY + to the HEAD
 adv_np_rule-type := unary-type &
-[ SYNSEM [LOCAL [ CAT [ VAL saturated,
+[ SYNSEM [LOCAL [ CAT [ VAL super-saturated,
 			HEAD adv_head &
 			    [ MOD < [LOCAL intersective_mod & 
 					   [ CAT.HEAD verb_head &
@@ -1842,7 +1849,7 @@ number-frag-rule-type := unary-type &
                             [ MOD null,
                               QUANTIFIABLE -,
                               SMOD marked ],
-                       VAL saturated ],
+                       VAL super-saturated ],
                  CONT [ RELS #liszt,
                         HCONS #h-cons,
                         HOOK.INDEX #index ],
@@ -1864,7 +1871,7 @@ pp-frag-rule-type := unary-type &
                             [ MOD null,
 			      EMPTY +,
                               SMOD marked ],
-                       VAL saturated ],
+                       VAL super-saturated ],
                  CONT [ RELS #liszt,
                         HCONS #h-cons,
                         HOOK.INDEX #index ],
@@ -1944,7 +1951,7 @@ pp-frag-rule-type := unary-type &
 na2adv-rule :=  lexical_sign-word & lex-rule &
             [SYNSEM [LOCAL [CAT  [HEAD adv_head & [COP-ARG -,
 	                                           MOD < [LOCAL scopal_mod] > ], 
-                                  VAL saturated],
+                                  VAL super-saturated],
                             CONT [RELS <!#key !>,
                                   HCONS <! !>],
                             CTXT.BACKGROUND <! !>,
@@ -2015,7 +2022,7 @@ embedded-question-rule-type := headed-phrase &
 	       NON-HEAD-DTR sign & #nh-dtr & 
              [ J-NEEDS-AFFIX -,
                SYNSEM #objval &
-                           [ LOCAL [ CAT [ VAL optional-or-saturated],
+                           [ LOCAL [ CAT [ VAL saturated],
                                      CTXT.BACKGROUND [ LIST #list,
                                                        LAST #middle ]]]],
  ARGS < #nh-dtr, #head-dtr >].
@@ -2275,7 +2282,7 @@ ga-wo_transitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
 super-frag-rule := phrasal_sign  & 
   [ INFLECTED +,
     SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
-                           VAL saturated ] ],
+                           VAL super-saturated ] ],
 	     NON-LOCAL [QUE <! !>,
 		     AFFIX  <! !>]],
     C-CONT [ HOOK [ LTOP #lbl,

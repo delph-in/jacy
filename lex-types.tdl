@@ -1198,8 +1198,14 @@ obj-obj2-arg := valence &
                [SPR null,
                 SUBJ null,
 		COMPS 2-comps-list].
+;;; FCB refactor
+; sc-sbj-arg-lex := word-or-lexrule &
+;  [SYNSEM.LOCAL.CAT.VAL [SPR null,
+; 			SUBJ opt-1-arg,
+; 			COMPS null]].
 
-sbj-arg := valence &
+
+sbj-arg :=  valence & 
                [SPR null,
 		SUBJ opt-1-arg,
 		COMPS null].
@@ -1314,14 +1320,14 @@ eval-adj_sc := obj-arg &
 ; 子供は学生と大人が先生だ。
 ; (MS 2005-05-17) Trying to put sentence particles into the type hierarchy of particles.
 
-sap_sc := p_sat &
-                [COMPS obl-1-arg &
-		       < [LOCAL [CAT [HEAD sentence-valid & 
-					   [MODUS uttmodus,
-					    MAIN-PRD +],
-				      VAL saturated],
-				 BAR +],
-			  MODIFIED hasmod] > ].
+sap_sc := p_sat & 
+ [COMPS obl-1-arg &
+	< [LOCAL [CAT [HEAD sentence-valid & 
+			    [MODUS uttmodus,
+			     MAIN-PRD +],
+		       VAL saturated],
+		  BAR +],
+	   MODIFIED hasmod] > ].
 
 ; (ERB 2001-12-28) For kudasai on VNs.
 
@@ -1343,7 +1349,7 @@ desu-sap_sc := sap_sc &
 
 
 
-ga-wo_transitive := sbj-obj-arg &
+ga-wo_transitive := sbj-obj-arg  & 
                      [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
                            COMPS opt-1-arg &
 			   < [LOCAL.CAT.HEAD case-p_head & [CASE wo]] >].
@@ -1360,9 +1366,9 @@ ga-ga_transitive := sbj-obj-arg &
 ; (FCB 2007-12-19) < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >].
 ;                -> < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
 ; 必要,欲しい
-ni-ga_transitive := sbj-obj-arg &
+ni-ga_transitive := sbj-obj-arg  & 
                      [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] >,
-                           COMPS opt-1-arg &
+                           COMPS opt-1-arg & 
 			   < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
 
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
@@ -1405,46 +1411,58 @@ suru_adv_ditransitive :=  sbj-obj-obj2-arg &
 			     LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]], 
 			    [OPT -,
 			     LOCAL.CAT.HEAD adv_head] >].
+;;
+;; ERB&FCB restrict the complement's index to be an event (2009-02-18)
+;; so that it won't become a dropped argument
 
 
-ga-to_transitive1 := sbj-obj-arg &
+ga-to_transitive1 := sbj-obj-arg  & 
  [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
-  COMPS  obl-1-arg &
-       < [LOCAL.CAT.HEAD case-p_head & [CASE to]] > ].
+  COMPS  opt-1-arg &
+       < [LOCAL [CAT.HEAD case-p_head & [CASE to],
+		 CONT.HOOK.INDEX event ]] > ].
 
-ga-to_transitive2 := sbj-obj-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
-                          COMPS opt-1-arg & 
-			  < [LOCAL.CAT.HEAD  case-p_head & [CASE to]] >].
+ga-to_transitive2 := sbj-obj-arg  & 
+ [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
+  COMPS opt-1-arg & 
+       < [LOCAL [CAT.HEAD  case-p_head & [CASE to],
+		 CONT.HOOK.INDEX event ]] >].
 
 
-ga-to-ni_transitive1 := sbj-obj-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
-		     COMPS opt-1-arg & 
-			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
+ga-to-ni_transitive1 := sbj-obj-arg  & 
+ [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+  COMPS opt-1-arg & 
+       < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
 
 ga-to-ni_transitive2 := sbj-obj-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
-		     COMPS obl-1-arg & 
-			  < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
+ [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
+  COMPS obl-1-arg & 
+       < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-to]] >].
 
 
 
-intransitive := sbj-arg &
+; sc-intr-lex := sc-sbj-arg-lex & 
+;  [SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
+
+
+intransitive := sbj-arg & 
                 [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
 
 
-to_intransitive-opt := obj-arg &
+
+to_intransitive-opt := obj-arg  & 
                 [COMPS opt-1-arg & 
-			  < [LOCAL.CAT.HEAD case-p_head & [CASE to]] >].
+			  < [LOCAL [CAT.HEAD case-p_head & [CASE to],
+				    CONT.HOOK.INDEX event ]] >].
 
 
 to_intransitive-obl := obj-arg &
                 [COMPS obl-1-arg &
-		       < [LOCAL.CAT.HEAD case-p_head & [CASE to]] >].
+		       < [LOCAL [CAT.HEAD case-p_head & [CASE to],
+				 CONT.HOOK.INDEX event ]] >].
 
 
-ditransitive :=  sbj-obj-obj2-arg &
+ditransitive :=  sbj-obj-obj2-arg  & 
                  [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
 		  COMPS opt-2-args &
 		       < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
@@ -1459,7 +1477,7 @@ ditransitive :=  sbj-obj-obj2-arg &
 ;			  [OPT - ,
 ;			   LOCAL.CAT.HEAD case-p_head & [CASE to]] >].
 
-ga-wo-toni-ditransitive := sbj-obj-obj2-arg  &
+ga-wo-toni-ditransitive := sbj-obj-obj2-arg   & 
                  [SUBJ < [LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE ga]] >,
 		  COMPS < [OPT + ,
 			   LOCAL.CAT.HEAD ga-or-wo-case-p_head & [CASE wo]],
@@ -1469,12 +1487,12 @@ ga-wo-toni-ditransitive := sbj-obj-obj2-arg  &
 
 ; (MS 2003-12-23) Added CASE ni-or-ga for, e.g., ni - ga wakaru.
 
-mental_state_transitive :=  sbj-obj-arg &
+mental_state_transitive :=  sbj-obj-arg  & 
                     [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ni-or-ga]] >,
 		     COMPS opt-1-arg &
 			  < [LOCAL.CAT.HEAD case-p_head & [CASE ga-or-wo]] >].
 
-aru_transitive :=  sbj-arg &
+aru_transitive :=  sbj-arg & 
            [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >].
 
 cop_transitive := obj-arg &
@@ -1488,7 +1506,7 @@ cop_transitive := obj-arg &
 ; the relative-clause-gap-rules cannot be applied. Rather, the cop-stem should 
 ; take the subject of the na-adj.
 
-cop-stem_transitive := sbj-obj-arg &
+cop-stem_transitive := sbj-obj-arg & 
                        [SUBJ #sbjval,
 			COMPS obl-1-arg &
 			      < [LOCAL [BAR +,
@@ -1750,7 +1768,7 @@ case-p-lex-np-wo := case-p-lex-np &
 ; <todo>
 ; </type>
 case-p-lex-np-to := case-p-lex-np &
-			[SYNSEM.LOCAL.CAT.HEAD.CASE to].
+ [SYNSEM.LOCAL.CAT.HEAD.CASE to].
 
 ; <type val="case-p-lex-np-kara">
 ; <name-ja>承名詞受身主格助詞
@@ -2074,20 +2092,20 @@ comp-int-lex-unmarked := comp-int-lex &
 ; (MS 2005-11-09) These all have PTYPE nattr.
 
 nspec-p-lex  :=  p-lex-c & 
-                 [SYNSEM [LKEYS.KEYREL #key,
-			  LOCAL [CAT [HEAD nspec-p_head & [J-SPEC.FIRST [LOCAL.CONT.HOOK [INDEX #i,
-											  LTOP #h]],
-							   PTYPE nattr],
-				      VAL.COMPS.FIRST.LOCAL [CONT [HOOK.INDEX #arg],
-							     CAT.VAL saturated]],
-				
-				     CONT [HOOK.INDEX #arg,
-					   RELS <! #key & quant-relation & [PRED udef_rel,
-                                                                   ARG0 #i,
-                                                                   RSTR #restr]!>,
-					   HCONS <! qeq &
-						  [HARG #restr,
-						   LARG #h] !>]]]].
+ [SYNSEM [LKEYS.KEYREL #key,
+	  LOCAL [CAT [HEAD nspec-p_head & [J-SPEC.FIRST [LOCAL.CONT.HOOK [INDEX #i,
+									  LTOP #h]],
+					   PTYPE nattr],
+		      VAL.COMPS.FIRST.LOCAL [CONT [HOOK.INDEX #arg],
+					     CAT.VAL saturated]],
+		 
+		     CONT [HOOK.INDEX #arg,
+			   RELS <! #key & quant-relation & [PRED udef_rel,
+							    ARG0 #i,
+							    RSTR #restr]!>,
+			   HCONS <! qeq &
+				  [HARG #restr,
+				   LARG #h] !>]]]].
 
 ; (MS 2005-11-09) Getting rid of skip files.
 
@@ -2977,7 +2995,7 @@ card2ord-lex := lexical_sign-word &
 									       CONT.HOOK [INDEX #ind,
 	       									 LTOP #spechand]],
 	                                                   KEYS.KEY def_rel], 
-                                 VAL saturated],
+                                 VAL super-saturated],
                             CTXT.BACKGROUND <! !>,
                             CONT lex-det-sem-type & [HOOK [INDEX #ind,
 							   XARG #ind],
@@ -3006,7 +3024,7 @@ card2ord-lex := lexical_sign-word &
 ; <todo>(TK 07-03-23)これも解析できるようにすべき(lkb::do-parse-tty "余裕 は ううん 無い")。
 ; </type>
 hes-lex   := lexical_sign-word &
-            [SYNSEM [LOCAL [CAT  [HEAD hes_head-avm, VAL saturated],
+            [SYNSEM [LOCAL [CAT  [HEAD hes_head-avm, VAL super-saturated],
                             CONT hes-sem-type,
                             CTXT.BACKGROUND <! !>,
 			    ARG-S <>],
@@ -3384,7 +3402,7 @@ s-ell-end-lex := sap-lex &
 ; (FCB 2006-06-20) reifying the similarities for idiom-lex and interj-lex
 discourse-lex := lexical_sign & 
  [SYNSEM [LOCAL [CAT [HEAD final_head,
-		      VAL saturated],
+		      VAL super-saturated],
 		 CONT [HOOK.LTOP #top,
 		       RELS <! subord-or-conj-relation &
 			     [ LBL #top,
@@ -3608,7 +3626,7 @@ adj2n-suffix-lex := n-lex &
 
 pron-lex := n-lex & 
            [SYNSEM [LOCAL [CAT [HEAD pron_head-avm,
-                               VAL saturated],
+                               VAL super-saturated],
                            BAR +,
 			   ARG-S <>],
                     NON-LOCAL [QUE <! !>,
@@ -4579,7 +4597,7 @@ event-num-cl-lex := adv-num-cl-lex &
 
 ; (ERB 2004-1-18) These ones are differentiated from the 
 ; individuating ones by their semantic contribution (and
-; reumably eventually by their lack of fussiness in what
+; presumably eventually by their lack of fussiness in what
 ; ontological types they'll modify), but they can serve as
 ; modifiers in the same way.  [We may want to separate out
 ; the syntactic details of the MOD possibilities from this
@@ -4713,7 +4731,7 @@ num-cl-spr-only-ind-lex := spr-only-num-cl-lex & anymod-ind-num-cl-lex &
 ; (FCB 2007-07-03) FIXME: these should also float
 
 n_num+cl-spr-only-ind-lex := numeral-classifier &
- [ SYNSEM [LOCAL [ CAT [ VAL saturated,
+ [ SYNSEM [LOCAL [ CAT [ VAL super-saturated,
 			 HEAD num-cl-nmod_head & 
 			     [ MOD < [ LOCAL intersective_mod &
 					     [ CONT.HOOK [ LTOP #ltop,
@@ -4887,7 +4905,7 @@ subcategorizing-poss-n-lex := subcategorizing-n-lex &
 
 temp_mod-lex := lexical_sign-word & 
             [SYNSEM [LOCAL [CAT [HEAD temp_mod_head,
-                                 VAL saturated],
+                                 VAL super-saturated],
 			    ARG-S < >,
                             CTXT.BACKGROUND <! !>],
                      NON-LOCAL [QUE <! !>,
@@ -4941,7 +4959,7 @@ noun_mod-lex := lexical_sign-word &
 				      [MOD < [LOCAL intersective_mod &
 						    [ CONT.HOOK [INDEX #inst,
 								 LTOP #handle]]] > ], 
-				 VAL saturated],
+				 VAL super-saturated],
 			    ARG-S < >,
 			    CONT simple-verb-sem-type &
 				[RELS <! #key !>,
@@ -5010,7 +5028,7 @@ pp_mod-lex := lexical_sign-word &
 				      [MOD < [LOCAL intersective_mod &
 						    [ CONT [HOOK [XARG #inst,
 								  LTOP #handle]]]] > ], 
-				 VAL saturated],
+				 VAL super-saturated],
 			    ARG-S < >,
 			    CONT simple-adj-sem-type &
 				[RELS <! #key !>,
@@ -5080,7 +5098,7 @@ pred-adj-lex := lexical_sign-word &
 
 hon-prefix-lex := lexical_sign-affix &
                   [SYNSEM [LOCAL [CAT [HEAD hon-prefix_head,
-                                       VAL saturated],
+                                       VAL super-saturated],
 				  ARG-S < >,
                                   CONT [RELS <! !>,
                                         HCONS <! !>],
@@ -5134,7 +5152,7 @@ hon-prefix2na-lex := hon-prefix-lex &
 ; (FCB 2005-04-12) To get the MRS to scope link LTOP.
 
 comma-lex := lexical_sign &
-             [SYNSEM [LOCAL [CAT [VAL saturated,
+             [SYNSEM [LOCAL [CAT [VAL super-saturated,
 				  HEAD.MOD < [LOCAL scopal_mod &
 						    [CONT.HOOK.LTOP #ltop]] >],
 			     ARG-S < >,
@@ -5260,7 +5278,7 @@ parenthesis-end-lex := lexical_sign &
 ; </type>
 parenthesis-init-lex := lexical_sign &
                         [SYNSEM [LOCAL [CAT [HEAD parent-init_head,
-                                             VAL saturated],
+                                             VAL super-saturated],
 					ARG-S < >,
                                         CONT[ RELS <! !>,
                                               HCONS <! !> ],
@@ -5273,7 +5291,7 @@ parenthesis-init-lex := lexical_sign &
 
 
 quotation-name-init-lex := lexical_sign &
-                      [SYNSEM [LOCAL [CAT [VAL saturated,
+                      [SYNSEM [LOCAL [CAT [VAL super-saturated,
                                            HEAD quotation-name-init_head],
 				      ARG-S < >,
                                       CONT [ RELS <! !>,
@@ -5302,7 +5320,7 @@ quotation-name-end-lex := lexical_sign &
 
 
 quotation-noun-init-lex := lexical_sign &
-                      [SYNSEM [LOCAL [CAT [VAL saturated,
+                      [SYNSEM [LOCAL [CAT [VAL super-saturated,
                                            HEAD quotation-noun-init_head],
 				      ARG-S < >,
                                       CONT  [ RELS <! !>,
@@ -5332,7 +5350,7 @@ quotation-noun-end-lex := lexical_sign &
 
 
 quotation-sentence-init-lex := lexical_sign &
-                      [SYNSEM [LOCAL [CAT [VAL saturated,
+                      [SYNSEM [LOCAL [CAT [VAL super-saturated,
                                            HEAD quotation-sentence-init_head],
 				      ARG-S < >,
                                       CONT [ RELS <! !>,
@@ -5365,7 +5383,7 @@ quotation-sentence-end-lex := lexical_sign &
 
 
 quotation-sap-init-lex := lexical_sign &
-                      [SYNSEM [LOCAL [CAT [VAL saturated,
+                      [SYNSEM [LOCAL [CAT [VAL super-saturated,
                                            HEAD quotation-sap-init_head],
 				      ARG-S < >,
                                       CONT [ RELS <! !>,
@@ -5575,7 +5593,7 @@ title-lex := lexical_sign &
 			    MOD < [LOCAL intersective_mod &
 					 [ CONT.HOOK [INDEX #nameind,
 						      LTOP #handle]]] > ], 
-		      VAL saturated],
+		      VAL super-saturated],
 		 ARG-S < >,
 		 CONT nominal-sign-sem-type &
 		     [HOOK [INDEX #titleind],
@@ -5688,7 +5706,7 @@ wh-word-lex  := n-lex &
 
 quant-word-temp-or-place-lex := n-lex &
                     [SYNSEM [LOCAL [CAT [ HEAD temporal-noun_head & [MOD null],
-                                          VAL saturated ],
+                                          VAL super-saturated ],
 				    ARG-S < >,
                                     CONT [RELS <! #key & noun-relation &
                                                     [ LBL #h,
@@ -6206,7 +6224,7 @@ na-adj-ng-lex := na-adj-stem-lex &
 
 
 adv-super-lex := lexical_sign-word & 
- [SYNSEM [LOCAL [CAT.VAL saturated,
+ [SYNSEM [LOCAL [CAT.VAL super-saturated,
 		 ARG-S < >,
 		 CTXT.BACKGROUND <! !>,
 		 BAR +],
@@ -6480,7 +6498,7 @@ card-lex := card-lex-super &
 ; <todo>(TK 07-03-22)wh-word-thing-lexを参照。(lkb::do-parse-tty "何 回 でも クリック する")
 ; </type>
 nan-card-lex := card-lex-super &
- [ SYNSEM.LOCAL [ CAT [ VAL saturated,
+ [ SYNSEM.LOCAL [ CAT [ VAL super-saturated,
 			HEAD nan_int ],
 		  CONT [ RELS <! quant-relation &
 			         [ PRED whq_rel,
@@ -6745,7 +6763,7 @@ card_21_spr_object := card21 & card-with-object-with-specifier4 &
 ; </type>
 han-lex := lexical_sign-word &
 [ SYNSEM [ LOCAL [ CAT [ HEAD han_head,
-                         VAL saturated ],
+                         VAL super-saturated ],
 		   ARG-S < >,
                    CONT card-sem-type &
                        [ HOOK.LTOP #top,
@@ -9504,12 +9522,13 @@ v-sbj-comps-stem-lex := v-nonop-stem-lex &
 
 
 intrans-stem-lex := v-nonop-stem-lex &
-                    [SYNSEM [LKEYS.KEYREL [ARG1 #sbjind],
-			     LOCAL [CAT [HEAD [COP -],
-                                        VAL intransitive &
-                                             [SUBJ #sbj & [FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]]],
-				    CONT  [HOOK.XARG #sbjind],
-				    ARG-S #sbj ]]].
+ [SYNSEM [LKEYS.KEYREL [ARG1 #sbjind],
+	  LOCAL [CAT [HEAD [COP -],
+		      VAL intransitive &
+			   [SUBJ #sbj & 
+				 [FIRST.LOCAL.CONT [HOOK.INDEX #sbjind]]]],
+		 CONT  [HOOK.XARG #sbjind],
+		 ARG-S #sbj ]]].
 
 intrans-nohon-stem-lex := intrans-stem-lex & 
                      [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
@@ -11248,8 +11267,9 @@ reg-cop-stem-indicative-dastem-nomod-lex := reg-cop-stem-indicative-dastem-lex &
 ; </type>
 ; (FCB 2008-06-25) made FIN - so that it doesn't head sentences
 reg-cop-stem-indicative-dastem-nmod-lex := reg-cop-stem-indicative-dastem-lex & 
- [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL [CAT.HEAD noun_head & [FIN -],
-				       CONT.HOOK.INDEX #ind]] >,
+ [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL [CAT [HEAD noun_head & [FIN -]],
+				       CONT.HOOK.INDEX #ind,
+				       BAR + ]] >,
 	  LKEYS.KEYREL.ARG1 #ind]].
 
 

@@ -6,6 +6,18 @@
 ;;;  using logon/lingo/erg/erg.smi as inspiration for the target mappings
 ;;;  order most specific mappings first
 
+;;; variable type correspondences 
+
+;   event          <> e
+;   ref-ind        <> x
+;   individual     <> i
+;   handle         <> h
+;   non_event      <> p
+;   *              >> u
+;   semarg         << u
+
+
+
 PNG.PN : PERS NUM
   onesg    <> 1 sg 
   onepl    <> 1 pl

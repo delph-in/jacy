@@ -94,7 +94,7 @@ local :+ [CAT cat,
 ; (Borrowed from LinGO grammar.)
 
 ; (MS 2003-07-10) I cannot use the definitions in matrix.tdl, because they are subtypes of local and I need them to be subtypes of j-local.
-
+; FIXME FCB we can do this now!
 scopal_mod := local.
 intersective_mod := local.
 
@@ -116,9 +116,27 @@ gap := expressed-non-canonical.
 2-comps-list := 1-plus-list &
 		< synsem, synsem >.
 
-saturated := optional-or-saturated & [SUBJ null,
-			COMPS null,
-			SPR null].
+
+;;; (DPF and FCB 2009-02) Allow saturated valences to include zero pronouns
+saturated := valence & 
+	     [SUBJ zlist,
+	      COMPS zlist,
+	      SPR null].
+super-saturated := saturated & 
+	     [SUBJ null,
+	      COMPS null,
+	      SPR null].
+;;; ensure that we can unify even with lex thingies 
+sat-sbj-arg := sbj-arg &  saturated.
+sat-ga-wo_transitive := ga-wo_transitive & ga-wo_transitive & saturated.
+sat-ni-ga_transitive := ni-ga_transitive &  saturated.
+sat-ga-to-ni_transitive1 := ga-to-ni_transitive1 &  saturated.
+sat-intransitive :=intransitive  &  saturated.
+sat-ditransitive := ditransitive &  saturated.
+sat-ga-wo-toni-ditransitive := ga-wo-toni-ditransitive &  saturated.
+sat-mental_state_transitive := mental_state_transitive &  saturated.
+sat-adj_sc := adj_sc &  saturated.
+
 
 ;sat-or-opt-arg := olist.
 
@@ -135,12 +153,18 @@ obl-2-args := obl-arg & 2-comps-list & [FIRST.OPT - ,
 					REST.FIRST.OPT - ].
 
 
-optional-or-saturated := valence.
+; A list of zero pronouns
 
-only-optional-arguments := optional-or-saturated & [SUBJ olist,
-						    COMPS olist,
-						    SPR olist].
+zlist := olist.
 
+zcons := zlist & cons &
+  [ FIRST.LOCAL.CONT.HOOK.INDEX  zpro_ref-ind,
+    REST  zlist ].
+
+zopt-1-arg := zcons & opt-1-arg.
+zopt-2-args := zcons & opt-2-args.
+
+znull := zlist & null.
 
 canonical-synsem :+ 
  [ MODIFIED.PERIPH bool].
