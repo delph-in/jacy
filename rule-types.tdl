@@ -926,8 +926,9 @@ syn-vv-ditrans-vbar-c-stem-lex &
 
 
 ;;; FIXME: try this as BAR - ? FCB 2009-03-07
+;;; breaks  (lkb::do-parse-tty "ご 招待 を お 受け でき ない")
 j-lexeme-to-word-rule := word-rule-basic & v-lex &
-                       [ARGS < verb-stem-lex-base>].
+ [ARGS < verb-stem-lex-base>].
 
 ; (MS 2003-07-11) We have to find another solution for that.
 
