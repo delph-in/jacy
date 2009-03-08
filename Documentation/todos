@@ -1,5 +1,17 @@
 ;;; -*-  Coding: utf-8 -*-
 
+
+2009-03-07
+Fix transitive causitive VN
+(lkb::do-parse-tty "勉強 さ れ た")
+Note: intransitivie works fine
+(lkb::do-parse-tty "死亡 さ　せ た")
+
+MS:
+ * check out the saseru scope entries.
+
+
+
 ;;; 2008-09-28
 
 FIXME: should the 吠える in 吠え たい be no_tense, like in English?

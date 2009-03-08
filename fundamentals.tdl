@@ -128,7 +128,7 @@ super-saturated := saturated &
 	      SPR null].
 ;;; ensure that we can unify even with lex thingies 
 sat-sbj-arg := sbj-arg &  saturated.
-sat-ga-wo_transitive := ga-wo_transitive & ga-wo_transitive & saturated.
+sat-ga-wo_transitive := ga-wo_transitive & saturated.
 sat-ni-ga_transitive := ni-ga_transitive &  saturated.
 sat-ga-to-ni_transitive1 := ga-to-ni_transitive1 &  saturated.
 sat-intransitive :=intransitive  &  saturated.
