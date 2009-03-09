@@ -230,11 +230,12 @@ ni_gr_3 := arg0e_gr &
 ;;; FIXME to, kara, no, wa, ?dake 
 ;;; case-markers that follow postpositions
 
+;(TK 09-03-09 commentout :"to-comp-varg"を使わなくなったため)
 ;;; ARG2 is to
-to_varg_ARG2 := arg0e_gr &
-[ CONTEXT.RELS.LIST.FIRST.ARG2 handle & #h,
-  FLAGS [SUBSUME < #h >,
-	 TRIGGER "to-comp-varg" ]].
+;to_varg_ARG2 := arg0e_gr &
+;[ CONTEXT.RELS.LIST.FIRST.ARG2 handle & #h,
+;  FLAGS [SUBSUME < #h >,
+;	 TRIGGER "to-comp-varg" ]].
 
 to_quotarg_ARG2r := arg0e_gr &
 [ CONTEXT.RELS.LIST.FIRST.ARG2 handle & #h,
@@ -3370,9 +3371,10 @@ kadouka-comp-naarg_gr := generator_rule &
 exclamation-mark_gr := generator_rule & 
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "exclamation-mark" ].
-to-comp-varg_gr := generator_rule & 
-[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
-  FLAGS.TRIGGER "to-comp-varg" ].
+;(TK 09-03-09 commentout :"to-comp-varg"を使わなくなったため)
+;to-comp-varg_gr := generator_rule & 
+;[ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
+;  FLAGS.TRIGGER "to-comp-varg" ].
 keredomo-send_gr := generator_rule & 
 [ CONTEXT.RELS <! [ PRED "non_existing_rel" ] !>,
   FLAGS.TRIGGER "keredomo-send" ].

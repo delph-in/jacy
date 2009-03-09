@@ -2009,6 +2009,7 @@ comp-prpstn-lex-questarg-to := comp-prpstn-lex-questarg &
 comp-prpstn-lex-quotarg := comp-prpstn-lex &
  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD quotation-sentence-end_head].
 
+;(TK 09-03-09 commentout)
 ; <type val="comp-prpstn-lex-varg">
 ; <name-ja>承動詞陳述ト目的格助詞
 ; <description>propositionをもつ語（文）の直後につく助詞。このtypeによってpropositionをもつ語（文）は
@@ -2019,10 +2020,10 @@ comp-prpstn-lex-quotarg := comp-prpstn-lex &
 ; <todo>(TK 07-04-06)comp-prpstn-lex-vargを選んでもcomp-prpstn-lex-quotを選んでもMRSに差が出ない。
 ; この２つを一緒にするか、もっと区別をはっきりさせるべき。
 ; </type>
-comp-prpstn-lex-varg := comp-prpstn-lex &
- [SYNSEM.LOCAL.CAT [HEAD.CASE to,
-		    VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [VN -, 
-								MAIN-PRD -]]].
+;comp-prpstn-lex-varg := comp-prpstn-lex &
+; [SYNSEM.LOCAL.CAT [HEAD.CASE to,
+;		    VAL.COMPS.FIRST.LOCAL.CAT.HEAD verb_head & [VN -, 
+;								MAIN-PRD -]]].
 
 ; <type val="comp-prpstn-lex-quot">
 ; <name-ja>承引用陳述ト目的格助詞
