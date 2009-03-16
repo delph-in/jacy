@@ -455,7 +455,7 @@ head-adjunct-rule-first := head-first-type-mod & head-adjunct-rule-type &
 head-adjunct-rule-intersective := head-adjunct-rule-type &
 [ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
 			    INDEX #ind]],
-  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
+  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL intersective-mod ] >,
 			      CONT.HOOK.LTOP #top],
   HEAD-DTR.SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
 				     INDEX #ind] ]].
@@ -465,7 +465,7 @@ head-adjunct-rule-intersective := head-adjunct-rule-type &
 
 head-adjunct-rule-scopal := head-adjunct-rule-type &
 [ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top] ],
-  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL scopal_mod] >,
+  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL scopal-mod] >,
                              CONT [ HOOK.LTOP #top ]]].
                                  
 ; (ERB 2002-01-02) [NUCL -] on mother --- see notes at 
@@ -480,7 +480,7 @@ hadj-first-i := head-adjunct-rule-first & head-adjunct-rule-intersective.
 hadj-final-for-rel-cl-topic :=  head-adjunct-rule-type & head-final-type-mod &
 [ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
 			    INDEX #ind]],
-  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL intersective_mod ] > ],
+  NON-HEAD-DTR.SYNSEM.LOCAL [ CAT.HEAD.MOD < [LOCAL intersective-mod ] > ],
   HEAD-DTR.SYNSEM.LOCAL [CONT [ HOOK [LTOP #top,
 				      INDEX #ind]],
 			 CAT.HEAD noun_head ]].
@@ -492,7 +492,7 @@ hadj-final-for-rel-cl-topic :=  head-adjunct-rule-type & head-final-type-mod &
 hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-final-type-mod &
 [ SYNSEM.LOCAL.CONT [ HOOK [LTOP #top,
 			    INDEX #ind]],
-  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective_mod ] >,
+  NON-HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL intersective-mod ] >,
   HEAD-DTR.SYNSEM.LOCAL [ CONT [ HOOK [LTOP #top,
 				       INDEX #ind]],
 			  CAT.HEAD noun_head ]].
@@ -1819,7 +1819,7 @@ numcl2noun-rule-type :=  ordinary-nohon-n-lex &
 adv_np_rule-type := unary-type &
 [ SYNSEM [LOCAL [ CAT [ VAL super-saturated,
 			HEAD adv_head &
-			    [ MOD < [LOCAL intersective_mod & 
+			    [ MOD < [LOCAL intersective-mod & 
 					   [ CAT.HEAD verb_head &
 						      [MAIN-PRD +],
 					     CONT [ HOOK [INDEX #arg,
@@ -1945,13 +1945,13 @@ pp-frag-rule-type := unary-type &
 ; (ERB 2001-10-29) Added type to KEY in output of this rule,
 ; mostly for k2y purposes, but also because I believe it should
 ; be able to have type and not have to get it from inference.
-; (MS 2001-11-29) Added the scopal_mod restriction and the key into the liszt.
+; (MS 2001-11-29) Added the scopal-mod restriction and the key into the liszt.
 
 ; (MS 2003-12-17) Changing the semantics of adverbs (Matrix)
                        
 na2adv-rule :=  lexical_sign-word & lex-rule &
             [SYNSEM [LOCAL [CAT  [HEAD adv_head & [COP-ARG -,
-	                                           MOD < [LOCAL scopal_mod] > ], 
+	                                           MOD < [LOCAL scopal-mod] > ], 
                                   VAL super-saturated],
                             CONT [RELS <!#key !>,
                                   HCONS <! !>],
@@ -2329,23 +2329,23 @@ frag-vmod-rule := unary-frag-rule &
 frag-pp-rule := frag-vmod-rule &
  [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD vmod-p_head &
 				   [MOD < synsem &
-					  [ LOCAL intersective_mod ]>]].
+					  [ LOCAL intersective-mod ]>]].
 
 ;;; CHECK should it be adv_head-avm?
 frag-i-adv-rule := frag-vmod-rule &
  [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head &
 				   [MOD < synsem &
-					 [ LOCAL intersective_mod ]>]].
+					 [ LOCAL intersective-mod ]>]].
 ; frag-s-adv-rule := frag-vmod-rule &
 ;  [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD adv_head-avm &
 ; 				   [MOD < synsem &
-; 					 [ LOCAL scopal_mod ]>]].
+; 					 [ LOCAL scopal-mod ]>]].
 
 ; FIXME (FCB not finished yet)
 frag-s-adv-rule := basic-frag-rule & unary-type &
  [ ARGS < [ SYNSEM.LOCAL [ CAT [ HEAD adv_head-avm &
 				      [ MOD < synsem &
-					      [ LOCAL scopal_mod &
+					      [ LOCAL scopal-mod &
 						      [ CONT.HOOK.LTOP #klbl]] >]]]]>,
    C-CONT [ RELS  <! relation & 
 		   [LBL #klbl ] !>]].
@@ -2418,7 +2418,7 @@ frag-cop-rule := super-frag-rule & binary &
 
 frag-vmod-something-rule := binary-frag-rule &
  [ ARGS <  [ SYNSEM.LOCAL [ CAT [ HEAD [ MOD < synsem &
-					       [ LOCAL intersective_mod ] >],
+					       [ LOCAL intersective-mod ] >],
 				  VAL saturated],
 			    CONT.HOOK [ LTOP #klbl,
 					INDEX #ind ]]],
@@ -2434,7 +2434,7 @@ frag-vmod-something-rule := binary-frag-rule &
 			      ARG0 #ind,
 			      ARG  #arg ]]].
 
-;;; (FCB 2006-02-01) Changing intersective_mod to local allows scopal adverbs but gets the semantics wrong 
+;;; (FCB 2006-02-01) Changing intersective-mod to local allows scopal adverbs but gets the semantics wrong 
 ;;; i.e. it won't scope.
 
 frag-pp-np-rule := frag-vmod-something-rule &

@@ -88,16 +88,6 @@ local :+ [CAT cat,
 	  BAR bool].
 
 
-
-; (ERB 2001-11-28) Types to distinguish between intersective
-; and scopal modifiers (will be used in their MOD values). 
-; (Borrowed from LinGO grammar.)
-
-; (MS 2003-07-10) I cannot use the definitions in matrix.tdl, because they are subtypes of local and I need them to be subtypes of j-local.
-; FIXME FCB we can do this now!
-scopal_mod := local.
-intersective_mod := local.
-
 ;;; Do we use these additions?
  non-local :+ 
   [ROBUST bool,

@@ -67,7 +67,7 @@ temp_mod_head-avm := temp_mod_head &
 ; (MS 2005-12-07) but this doesn't work, as nouns do modify!
 
 temp_nmod_head := temp_mod_head-avm &
-                     [ MOD < [LOCAL scopal_mod & [CAT.HEAD noun_head,
+                     [ MOD < [LOCAL scopal-mod & [CAT.HEAD noun_head,
 						  BAR +]] > ].
 
 
@@ -313,7 +313,7 @@ date_noun_head := temporal-noun_head & ordinary-or-date-noun_head.
 date_noun_head-avm := date_noun_head & [J-SPEC null, 
 					J-POSTHEAD compound,
 					VN -,
-					MOD < [LOCAL intersective_mod & 
+					MOD < [LOCAL intersective-mod & 
 						     [CAT [HEAD noun_head-avm,
 							   VAL saturated]],
 					       MODIFIED.PERIPH -] >].
@@ -481,7 +481,7 @@ num-cl-n-or-p-mod_head := num-cl-mod_head &
 ; (FCB 2007-07-03) FIXME: make this intersective
 
 num-cl-adv_head := num-cl-mod_head &
-                   [ MOD < [LOCAL scopal_mod & [CAT [ HEAD verb_head]]] >,
+                   [ MOD < [LOCAL scopal-mod & [CAT [ HEAD verb_head]]] >,
 		     EMPTY -].
 
 num-cl-float_head := num-cl-adv_head.
@@ -654,11 +654,11 @@ vmod-p_head := mod-p_head-avm.
 
 ; (ERB 2001-09-13) Getting rid of J-POSTHEAD value intersective, in system
 ; with only two HMRs.  See notes in japgram.tdl and rule-types.tdl.
-; (MS 2001-11-29) Making all these intersective_mod for the differentiation in the head-adjunct rules.
+; (MS 2001-11-29) Making all these intersective-mod for the differentiation in the head-adjunct rules.
 
 vmod-p_head-avm := vmod-p_head &
                    [J-SPEC null,
-                    MOD < [LOCAL intersective_mod &
+                    MOD < [LOCAL intersective-mod &
 					[CAT.HEAD verb_head,
                                          BAR +]] >,
                     J-POSTHEAD left].
@@ -890,7 +890,7 @@ interj_head-avm := interj_head &
                    [POS interj,
                     J-SPEC null,
                     MARK null,
-                    MOD < [LOCAL scopal_mod &
+                    MOD < [LOCAL scopal-mod &
                                         [CAT.HEAD utterance-super]] >,
                     C-MOD null,
                     J-POSTHEAD left,
@@ -1004,7 +1004,7 @@ na-adj-basic_head := na-adj_head &
  [ADJ +,
   POS adj].
 
-;na-adj-suffix_head := na-adj-basic_head & [MOD < [LOCAL intersective_mod & 
+;na-adj-suffix_head := na-adj-basic_head & [MOD < [LOCAL intersective-mod & 
 ;							[CAT [HEAD ordinary_noun_head,
 ;							      VAL saturated]]] >,
 ;					   J-POSTHEAD left].
@@ -2147,7 +2147,7 @@ nspec-p-vcomp-lex := nspec-p-lex &
 
 mod-p-lex :=  p-lex-c & 
             [SYNSEM.LOCAL.CAT.HEAD mod-p_head-avm &
-				   [ MOD < [LOCAL intersective_mod] > ]].
+				   [ MOD < [LOCAL intersective-mod] > ]].
 
 
 nmod-p-lex :=  mod-p-lex & 
@@ -2340,7 +2340,7 @@ nmod-numcl-p-lex := p-lex &
 					       CONT.HOOK #hook],
 			HEAD overt-nmod-p_head &
 					       [PTYPE overt,
-						MOD < [LOCAL intersective_mod &
+						MOD < [LOCAL intersective-mod &
 							     [CONT.HOOK.INDEX #NOUN]] >,
 						J-SPEC null ]],
 		   CONT [ HOOK #hook & [XARG #NOUN] ,
@@ -4506,7 +4506,7 @@ spr-obj-num-cl-lex := numeral-classifier &
 
 individuating-num-cl-lex := numeral-classifier &
   [ SYNSEM.LOCAL [ CAT.HEAD num-cl-mod_head & 
-			    [ MOD < [ LOCAL intersective_mod &
+			    [ MOD < [ LOCAL intersective-mod &
 					    [ CONT.HOOK #hook ]]>],
 		   CONT [ RELS <! !>,
 			  HCONS <! !>,
@@ -4625,7 +4625,7 @@ event-num-cl-lex := adv-num-cl-lex &
 measure-num-cl-lex := numeral-classifier &
 [ SYNSEM [ LKEYS.KEYREL #key,
 	   LOCAL [ CAT [HEAD num-cl-nmod_head & 
-			    [ MOD < [ LOCAL intersective_mod &
+			    [ MOD < [ LOCAL intersective-mod &
 					    [ CONT.HOOK.INDEX #ind ]] >]],
 		   CONT [ HOOK [ LTOP #lattr,
 				 INDEX #darg,
@@ -4734,7 +4734,7 @@ num-cl-spr-only-ind-lex := spr-only-num-cl-lex & anymod-ind-num-cl-lex &
 n_num+cl-spr-only-ind-lex := numeral-classifier &
  [ SYNSEM [LOCAL [ CAT [ VAL super-saturated,
 			 HEAD num-cl-nmod_head & 
-			     [ MOD < [ LOCAL intersective_mod &
+			     [ MOD < [ LOCAL intersective-mod &
 					     [ CONT.HOOK [ LTOP #ltop,
 							   INDEX #ind ],
 					       NUCL nucl_plus ] ] > ]],
@@ -4957,7 +4957,7 @@ noun_mod-lex := lexical_sign-word &
             [SYNSEM [LKEYS.KEYREL #key & [ARG1 #inst, 
 					  LBL #handle],
 		     LOCAL [CAT [HEAD noun_mod_head-avm &
-				      [MOD < [LOCAL intersective_mod &
+				      [MOD < [LOCAL intersective-mod &
 						    [ CONT.HOOK [INDEX #inst,
 								 LTOP #handle]]] > ], 
 				 VAL super-saturated],
@@ -5026,7 +5026,7 @@ pp_mod-lex := lexical_sign-word &
             [SYNSEM [LKEYS.KEYREL #key & [ARG1 #inst, 
 					  LBL #handle],
 		     LOCAL [CAT [HEAD pp_mod_head-avm &
-				      [MOD < [LOCAL intersective_mod &
+				      [MOD < [LOCAL intersective-mod &
 						    [ CONT [HOOK [XARG #inst,
 								  LTOP #handle]]]] > ], 
 				 VAL super-saturated],
@@ -5062,7 +5062,7 @@ pp_mod-lex-r := pp_mod-lex &
 ; </type>
 pred-adj-lex := lexical_sign-word &
  [SYNSEM [LOCAL [CAT [HEAD i-adj-stem_head &
-			   [MOD < [LOCAL intersective_mod & 
+			   [MOD < [LOCAL intersective-mod & 
 					 [CAT [HEAD ordinary_noun_head,
 					       VAL saturated]]] >,
 			    MARK null,
@@ -5149,12 +5149,12 @@ hon-prefix2na-lex := hon-prefix-lex &
 ; (ERB 2001-09-06) Sentences with commas in them have broken HCONS values.  So 
 ; I'm adding HCONS <! !> to see if that helps.                   
 
-; (MS 2003-08-22) Added scopal_mod information just to avoid spurious ambiguity.
+; (MS 2003-08-22) Added scopal-mod information just to avoid spurious ambiguity.
 ; (FCB 2005-04-12) To get the MRS to scope link LTOP.
 
 comma-lex := lexical_sign &
              [SYNSEM [LOCAL [CAT [VAL super-saturated,
-				  HEAD.MOD < [LOCAL scopal_mod &
+				  HEAD.MOD < [LOCAL scopal-mod &
 						    [CONT.HOOK.LTOP #ltop]] >],
 			     ARG-S < >,
                              CONT[ HOOK.LTOP #ltop,
@@ -5591,7 +5591,7 @@ title-lex := lexical_sign &
 [SYNSEM [LKEYS.KEYREL #key,
 	  LOCAL [CAT [HEAD noun_mod_head-avm &  
 			   [J-POSTHEAD right,
-			    MOD < [LOCAL intersective_mod &
+			    MOD < [LOCAL intersective-mod &
 					 [ CONT.HOOK [INDEX #nameind,
 						      LTOP #handle]]] > ], 
 		      VAL super-saturated],
@@ -6283,7 +6283,7 @@ adv-wh-lex := adv-lex &
 		      LKEYS [KEYREL #key & [ARG1 #ind,
 					    LBL #head-hd],
 			     ALTKEYREL #altkey],
-		      LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod &
+		      LOCAL [CAT.HEAD [MOD < [LOCAL intersective-mod &
 						    [ CONT.HOOK [ LTOP #head-hd,
 							     INDEX #ind]]] >,
 				       COP-ARG +,
@@ -6314,7 +6314,7 @@ lex-mod-adv-wh-lex := adv-wh-lex &
 ;;; FCB led gently by the hand by DPF (2006-05-01)
 
 isect-mod-lex := lexical_sign-word &
- [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective_mod & 
+ [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective-mod & 
 					[CONT.HOOK [LTOP #handel,
 						    INDEX #modified]]] >,
 			   COP-ARG +,
@@ -6379,7 +6379,7 @@ deg-adv-num-lex := isect-mod-lex & adv-deg-num-lex.
 
 
 scopal-adv-lex := adv-lex &
- [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL scopal_mod & 
+ [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL scopal-mod & 
 					[ CONT.HOOK.LTOP #h2,
 					  NUCL nucl_plus]] > ],
 		 CONT scopal-adv-sem-type &
@@ -7634,7 +7634,7 @@ te-adjunct-lex := basic-v-end-lex &
 			    MARK null,
 			    COP-ARG -,
 			    C-MOD null,
-			    MOD <[LOCAL scopal_mod &
+			    MOD <[LOCAL scopal-mod &
 					[CAT.HEAD sentence-valid & [COP -],
 					 CONT.HOOK [ LTOP #main ]]]>,
 			    J-POSTHEAD left]],
@@ -9282,7 +9282,7 @@ v2na-end-lex := v-op-end-lex &
 
                                                  
 v2adv-end-lex := lexical_sign-word &
- [SYNSEM  synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal_mod & 
+ [SYNSEM  synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal-mod & 
 								  [CONT.HOOK [LTOP #handel,
 									      INDEX #ind],
 								   CAT.HEAD.MODUS voluntative]] >,
