@@ -8,13 +8,13 @@
 
 ;;; variable type correspondences 
 
-;   event          <> e
-;   ref-ind        <> x
-;   individual     <> i
-;   handle         <> h
-;   non_event      <> p
-;   *              >> u
-;   semarg         << u
+   event          <> e
+   ref-ind        <> x
+   individual     <> i
+   handle         <> h
+   non_event      <> p
+   *              >> u
+   semarg         << u
 
 
 

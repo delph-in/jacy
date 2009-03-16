@@ -341,3 +341,5 @@ set in the code")
    - specified by the grammar")
 
 (defparameter *mrs-rule-condition-path* (list (vsym "CONDITION")))
+
+(setf *variable-type-mapping* :semi)
