@@ -2167,7 +2167,7 @@ compound-rule := head-adjunct-rule-final &
 		 ARG0.E.TENSE no_tense,
 		 ARG1 #hinst,
 		 ARG2 #nhinst],
-		[PRED udef_rel,
+		[PRED udef_q_rel,
 		 ARG0 #nhinst,
 		 RSTR #restr] !>,
 	  HCONS <! qeq &

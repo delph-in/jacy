@@ -907,7 +907,7 @@ det_head := final_head.
 det_head-avm := det_head &
             [POS det,
              MARK null,
-	     KEYS.KEY def_rel,
+	     KEYS.KEY def_q_rel,
              J-SPEC < [LOCAL [CAT.HEAD noun_head,
                                     BAR +],
                             MODIFIED.PERIPH bool] >,
@@ -2101,7 +2101,7 @@ nspec-p-lex  :=  p-lex-c &
 					     CAT.VAL saturated]],
 		 
 		     CONT [HOOK.INDEX #arg,
-			   RELS <! #key & quant-relation & [PRED udef_rel,
+			   RELS <! #key & quant-relation & [PRED udef_q_rel,
 							    ARG0 #i,
 							    RSTR #restr]!>,
 			   HCONS <! qeq &
@@ -2868,7 +2868,7 @@ n_conj-p-lex := conj-lex &
 						       BAR +]],
 			    CONT n-conj-sem-type &
                                [HOOK [INDEX conj-ref-ind & #index],
-				RELS <! #key , quant-relation & [PRED udef_rel,
+				RELS <! #key , quant-relation & [PRED udef_q_rel,
 								 ARG0 #index,
 								 RSTR #rest] !>,
 				HCONS <! qeq & [HARG #rest, LARG #hndl] !>]]]].
@@ -2974,7 +2974,7 @@ det-wh-lex := dt-lex &
              [SYNSEM [NON-LOCAL.QUE <! #top !>,
                       LOCAL [CONT.HOOK.LTOP #top,
 			     CAT.HEAD.KEYS.KEY #pred],
-		      LKEYS.KEYREL.PRED #pred & whq_rel]].
+		      LKEYS.KEYREL.PRED #pred & which_q_rel]].
 
 ; (MS 2002-04-17) DAI behaves like a definite determiner on counted nouns: 一本 - one book, 第一本 - the first book. 
 ; I've thus made it a determiner that specifies counted nouns. 
@@ -2995,7 +2995,7 @@ card2ord-lex := lexical_sign-word &
             [SYNSEM [LOCAL [CAT [HEAD card2ord_head-avm & [J-SPEC.FIRST.LOCAL [CAT.HEAD.KEYS.KEY quantity_rel,
 									       CONT.HOOK [INDEX #ind,
 	       									 LTOP #spechand]],
-	                                                   KEYS.KEY def_rel], 
+	                                                   KEYS.KEY def_q_rel], 
                                  VAL super-saturated],
                             CTXT.BACKGROUND <! !>,
                             CONT lex-det-sem-type & [HOOK [INDEX #ind,
@@ -3007,7 +3007,7 @@ card2ord-lex := lexical_sign-word &
                             BAR +,
 			    ARG-S <>],
 		     LKEYS.KEYREL #key &
-			   [PRED def_rel,
+			   [PRED def_q_rel,
 			    ARG0 #ind,
 			    RSTR #hand],
                      NON-LOCAL [AFFIX <! !>,
@@ -4009,7 +4009,7 @@ day-lex := n-lex &
 			   [FIN -],
 		      VAL noun_sc & 
 			   [SPR.FIRST #spr & 
-				      [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
+				      [LOCAL.CAT.HEAD.KEYS.KEY def_q_rel]]],
 		 CONT [HOOK [LTOP #hand],
 		       RELS <! #key !>,
 		       HCONS <! !>],
@@ -4055,7 +4055,7 @@ relational-n-lex := n-lex &
  [SYNSEM [LOCAL [CAT [HEAD relational_noun_head,
 		      VAL noun_sc & 
 			   [SPR.FIRST #spr & 
-				      [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
+				      [LOCAL.CAT.HEAD.KEYS.KEY def_q_rel]]],
 		 CONT [HOOK [LTOP #hand],
 		       RELS <! #key !>,
 		       HCONS <! !>],
@@ -4072,7 +4072,7 @@ relational-n-lex := n-lex &
 name-lex  := n-lex & 
                   [SYNSEM [LOCAL [CAT [HEAD name_head-avm & [KEYS.KEY #pred],
                                        VAL noun_sc &
-                                          [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_rel]]],
+                                          [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_q_rel]]],
                                   CONT mod-id-nominal-sign-sem-type &
                                       [RELS <! #key !>,
 				       HOOK.INDEX #ind,
@@ -4631,7 +4631,7 @@ measure-num-cl-lex := numeral-classifier &
 				 INDEX #darg,
 				 XARG #ind ],
 			  RELS.LIST < quant-relation &
-				      [ PRED udef_rel,
+				      [ PRED udef_q_rel,
 					ARG0 #unit-ind,
 					RSTR #harg ],
 				      #key & noun-relation &
@@ -5434,7 +5434,7 @@ quotation-definition-end-lex :=  lexical_sign &
 			      ARG0 #index,
 			      ARG1 #arg1],
 			     quant-relation & 
-			     [PRED "udef_rel",
+			     [PRED udef_q_rel,
 			      ARG0 #index,
 			      RSTR #rstr]  !>,
 		       HCONS <! qeq & [HARG #rstr, LARG #ltop],
@@ -5481,7 +5481,7 @@ idiom-A-noun-lex := ordinary-nohon-n-lex.
 ; (TK 07-05-08)副詞的な働きもできるようにすべき(lkb::do-parse-tty "時計 が いくつか ある")。
 ; (TK 07-05-08)なぜ「何か」がこのtypeで、「何 か」がordinary-nohon-plusbar-indefspec-n-lexなのか不明。
 ; </type>
-ordinary-nohon-indef-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY indef_rel].
+ordinary-nohon-indef-n-lex := ordinary-nohon-n-lex & [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.KEYS.KEY indef_q_rel].
 
 ; <type val="ordinary-nohon-minusbar-n-lex">
 ; <name-ja>普通名詞要複合
@@ -5601,7 +5601,7 @@ title-lex := lexical_sign &
 		      RELS <! #key &
 			    [LBL #titlehand,
 			     ARG0 #titleind],
-			    [PRED udef_rel,
+			    [PRED udef_q_rel,
 			     ARG0 #titleind,
 			     RSTR #restr],
 			    title-id-relation &
@@ -5680,7 +5680,7 @@ title-pers-minus-honsubj-lex := title-pers-lex  &
 ; (MS 2003-12-19) Matrix 0.6
 
 wh-word-lex  := n-lex &  
-                     [SYNSEM [LOCAL [CAT [VAL noun_sc & [SPR #spr & [FIRST.LOCAL.CAT.HEAD.KEYS.KEY whq_rel]],
+                     [SYNSEM [LOCAL [CAT [VAL noun_sc & [SPR #spr & [FIRST.LOCAL.CAT.HEAD.KEYS.KEY which_q_rel]],
                                           HEAD temporal-noun_head & [MOD null]],
 				     ARG-S #spr,
                                      CONT [HOOK.LTOP #top,
@@ -5722,12 +5722,12 @@ quant-word-temp-or-place-lex := n-lex &
                              NON-LOCAL [AFFIX <! !>]]].
 
 wh-word-temp-or-place-lex := quant-word-temp-or-place-lex &
-[ SYNSEM [ LOCAL.CONT [ RELS.LIST.REST.FIRST.PRED whq_rel,
+[ SYNSEM [ LOCAL.CONT [ RELS.LIST.REST.FIRST.PRED which_q_rel,
                         HOOK.LTOP #top ],
            NON-LOCAL.QUE <! #top !> ]].
 
 indef-word-temp-or-place-lex := quant-word-temp-or-place-lex &
-[ SYNSEM [ LOCAL.CONT.RELS.LIST.REST.FIRST.PRED indef_rel,
+[ SYNSEM [ LOCAL.CONT.RELS.LIST.REST.FIRST.PRED indef_q_rel,
            NON-LOCAL.QUE <! !> ]].
 
 ; (ERB 2001-10-03) Chaning the hierarchy for temporal relations.
@@ -5842,14 +5842,14 @@ indef-word-person-lex := indef-word-temp-or-place-lex &
 ; </type>
 wh-word-quantity-lex  := n-lex &
                     [SYNSEM [LOCAL [CAT [HEAD temporal-noun_head & [MOD null],
-                                         VAL noun_sc & [SPR #spr & [FIRST.LOCAL.CAT.HEAD.KEYS.KEY whq_rel]]],
+                                         VAL noun_sc & [SPR #spr & [FIRST.LOCAL.CAT.HEAD.KEYS.KEY which_q_rel]]],
 				    ARG-S #spr,
                                     CONT [RELS <! #key,
                                                    [PRED "part-of_rel",
                                                     LBL #h1,
                                                     ARG0 #x1],
 						quant-relation & 
-						[PRED udef_rel,
+						[PRED udef_q_rel,
 						 ARG0 #x1,
 						 RSTR #h2]!>,
                                           HCONS <! qeq & [HARG #h2,
@@ -5910,7 +5910,7 @@ nom-pred-lex-basic := nom-lex &
 				      ARG0 #i,
 				      ARG1 #nom-arg],
 				  quant-relation & 
-				  [ PRED udef_rel,
+				  [ PRED udef_q_rel,
 				    ARG0 #i, 
 				    RSTR #restr] !>,
 			    HOOK [LTOP #nom-hand,
@@ -6502,7 +6502,7 @@ nan-card-lex := card-lex-super &
  [ SYNSEM.LOCAL [ CAT [ VAL super-saturated,
 			HEAD nan_int ],
 		  CONT [ RELS <! quant-relation &
-			         [ PRED whq_rel,
+			         [ PRED which_q_rel,
 				   ARG0 #ind,
 				   RSTR #harg ],
 			         noun-relation &
@@ -9336,7 +9336,7 @@ v2n-end-lex :=  nom-lex &
 				  ARG0 #kata-index,
 				  ARG1 #v-hd],
 				quant-relation & 
-				[PRED def_rel,
+				[PRED def_q_rel,
 				 ARG0 #kata-index,
 				 RSTR #def-restr] !>,
 			  HOOK.INDEX #i,

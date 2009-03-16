@@ -74,7 +74,7 @@ lpron-sem-type := mod-id-nominal-sign-sem-type &
                    RELS  <! arg0-relation   & [LBL #hand,
                                        ARG0 #ind],
                           quant-relation & 
-			  [PRED def_rel,
+			  [PRED def_q_rel,
 			   ARG0 #ind,
 			   RSTR #restr],
                           place-relation &
@@ -86,7 +86,7 @@ lpron-sem-type := mod-id-nominal-sign-sem-type &
 
 
 personal-pronoun-sem-type := ppron-sem-type &
-                                  [RELS.LIST.REST.FIRST.PRED def_rel].
+                                  [RELS.LIST.REST.FIRST.PRED def_q_rel].
 
 
 
@@ -351,7 +351,7 @@ wh-adv-sem-type := mod-id-wg-handel-mrs &
                             quant-relation &
                             [ARG0 #var,
                              RSTR #rest,
-                             PRED whq_rel] !>,
+                             PRED which_q_rel] !>,
                      HCONS <! qeq & [LARG #lr, HARG #rest] !>].
 
 ;(MS 2003-07-09) This seems not to be used.

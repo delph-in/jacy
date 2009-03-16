@@ -87,10 +87,6 @@ png :+ [PN pn, GEN gender].
 no-relation := relation.
 
 
-;def_rel := quant-relation & [PRED "def"].
-
-;udef_rel := quant-relation & [PRED "udef"].
-
 ; Nominal relations
 
 ; (ERB 2001-11-05) For k2y purposes, making a supertype that
@@ -567,10 +563,10 @@ interj-relation := arg0-relation.
 ; predsorts
 
 quant_rel := predsort.
-udef_rel := quant_rel.
-def_rel := udef_rel.
-indef_rel := udef_rel.
-whq_rel := def_rel.
+udef_q_rel := quant_rel.
+def_q_rel := udef_q_rel.
+indef_q_rel := udef_q_rel.
+which_q_rel := def_q_rel.
 
 hes_rel := predsort.
 pron_rel := predsort.

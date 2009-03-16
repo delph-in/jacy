@@ -321,7 +321,7 @@ quantify-n-rule := unary-type-super &
 		BAR +],
 	 LEX #lex],
  C-CONT [HOOK #hook,
-	 RELS <! [PRED #rel & udef_rel,
+	 RELS <! [PRED #rel & udef_q_rel,
 		  ARG0 #i,
 		  RSTR #restr] !>,
          HCONS <! qeq &
