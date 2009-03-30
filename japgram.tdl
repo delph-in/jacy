@@ -731,12 +731,14 @@ aux-vend-rule := stem-end-rule-type &
 [ SYNSEM [LOCAL.CAT.VAL.SPR #spr,
 	  MODIFIED.PERIPH #per],
   J-NEEDS-AFFIX #aff,
-  ARGS < [ SYNSEM [LOCAL.CAT [HEAD other-verb-stem_head & [COP -],
+  ARGS < [ SYNSEM [LOCAL.CAT [HEAD other-verb-stem_head &
+				   [COP -,
+				    H-TENSE #tense],
 			      VAL.SPR #spr],
 		   LEX +],
 	   J-NEEDS-AFFIX + ],
 	 [J-NEEDS-AFFIX #aff,
-	  SYNSEM [LOCAL.CAT.HEAD verb_head,
+	  SYNSEM [LOCAL.CAT.HEAD verb_head & [H-TENSE #tense],
 		  MODIFIED.PERIPH #per]] >].
 
 na-vend-rule := stem-end-rule-type &

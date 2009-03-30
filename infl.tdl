@@ -603,7 +603,8 @@ adj-te-t-lexeme-c-stem-infl-rule :=
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
- SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.H-TENSE te] >].
+ SYNSEM.LOCAL.CAT.HEAD.H-TENSE te].
+; SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.H-TENSE te] >].
 
 
 adj-past-t-lexeme-c-stem-infl-rule := 
@@ -611,7 +612,8 @@ adj-past-t-lexeme-c-stem-infl-rule :=
 lexeme-rule &
 [RMORPH-BIND-TYPE t-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
- SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.H-TENSE past] >].
+ SYNSEM.LOCAL.CAT.HEAD.H-TENSE past].
+; SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.H-TENSE past] >].
 
 
 
@@ -664,8 +666,9 @@ adj-kere-lexeme-infl-rule :=
 %suffix (い けれ) (ない ね)
 lexeme-rule &
 [RMORPH-BIND-TYPE cond-morph,
- ARGS.FIRST.STEMTYPE adj-stem,
- SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.MODUS conditional] >].
+ ARGS.FIRST.STEMTYPE adj-stem].
+; SYNSEM.LOCAL.CAT.HEAD.MODUS conditional].
+; SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.MODUS conditional] >].
 
 
 a-lexeme-adj-stem-infl-rule := 
