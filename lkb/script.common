@@ -99,14 +99,13 @@
 ;; (FCB 2007-07-13) this turns on characterization, but breaks profiling
 ;(x-read-preprocessor (lkb-pathname (parent-directory) "preprocessor.fsr"))
 
-;;; tools, also load a Maximum Entropy parse selection model
-;;; tools, also load a Maximum Entropy parse selection model and enable its
-;;; use (currently limited to batch parsing with [incr tsdb()], though).
-;;;
-#+(and :tsdb :logon)
-(tsdb::read-model (lkb-pathname (parent-directory) "tanaka-006-015.mem"))
-#+(and :tsdb :logon)
-(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
+;;; Don't load a Maximum Entropy parse selection model and enable its
+;;; use as it is only used in batch parsing
+;;; instead add it in the batch script and lobby for its use in the lkb
+;#+(and :tsdb :logon)
+;(tsdb::read-model (lkb-pathname (parent-directory) "tanaka-006-015.mem"))
+;#+(and :tsdb :logon)
+;(setf *unpacking-scoring-hook* #'tsdb::mem-score-configuration)
 ;;;#+(and :tsdb :logon)
 ;;;(setf *chart-packing-p* t)
 
