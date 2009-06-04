@@ -6,7 +6,7 @@
 ;;;     version: %I%
 ;;;  written by: Melanie Siegel
 ;;; last update: 
-;;;  updated by: Melanie Siegel/Emily Bender
+;;;  updated by: Melanie Siegel/Emily Bender/Francis Bond
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; author            | date        | modification
 ;;; -----------------|--------- ---|------------------------------------------
@@ -710,7 +710,7 @@ overt-nmod-p_head := nmod-p_head-avm &
                       J-SPEC null,
                       MOD < [LOCAL [ CAT [HEAD noun_head,
                                         VAL saturated]],
-                           MODIFIED.PERIPH +] > ].
+                           MODIFIED.PERIPH bool] > ].
 
 
 
@@ -1691,10 +1691,6 @@ p-lex-c := p-lex-norm & lexical_sign-word.
 
 ; (ERB 2001-11-26) Identification of CONT.KEY.HANDEl and LTOP is
 ; redundant, since both LTOP and KEY are coming from the complement.
-; Also, adding MOD-IND and MOD-HAND to info that gets raised.
-
-; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 ; (MS 2005-06-20) FORMAL should come from the complement.
 
@@ -2171,16 +2167,13 @@ nmod-p-lex-pconj := nmod-p-lex &
 ;parmod-p-lex :=  mod-p-lex & 
 ;            [SYNSEM [LOCAL.CAT.HEAD nmod-p_head-avm & [MOD < [LOCAL.CAT [HEAD brackets-or-quotations-end_head,
 ;									 VAL saturated]] > ],
-;                     MODIFIED.PERIPH +]].
+;                     MODIFIED.PERIPH bool]].
 
 
 
 conj-lex := p-lex-c &
               [SYNSEM [LOCAL [CAT.HEAD n_conj_head],
-		       MODIFIED.PERIPH +]].
-
-; (ERB 2001-11-26) Changing modifiers to grab MOD-IND & MOD-HAND.
-; (MS 2004-12-15) Changing that back!
+		       MODIFIED.PERIPH bool]].
 
 nounmod-p-lex := nmod-p-lex &
                  [SYNSEM [LKEYS.KEYREL #key & prep-mod-relation &
@@ -2319,10 +2312,8 @@ nounmod-p-pcomp-lex := nounmod-p-lex &
 
 ; (ERB 2001-08-09) Type for the "no" that connects NumClP to nouns
 ;  e.g.: X CL の NOUN
-; (ERB 2001-11-28) Replace INDEX and LTOP with MOD-IND and MOD-HAND.
 ; (MS 2002-09-10) This should also hold for "〜".
 ; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (MS 2004-12-27) Work on floated numeral classifiers
 ; (MS 2005-01-07) Using EMPTY to prevent floated quantifiers to go into the nominal-numcl-rule.
 ; <type val="nmod-numcl-p-lex">
@@ -2381,13 +2372,11 @@ nmod-numcl-p-lex := p-lex &
 ; (ERB 2001-10-03) It's not true of wa that OBJ.INDEX = ARG2.  Moving
 ; that to vmod-p-lex.
 
-; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND, not INDEX & LTOP.
 
 ; (ERB 2002-01-10) Experimenting with treating particle uses of
 ; など as topic markers with some extra content.  For this purpose,
 ; I need to allow for RELSs of more than one relation on vmod-p-lex-super.
 
-; (MS 2004-06-26) Go back to grab INDEX and LTOP.
 
 vmod-p-lex-super := mod-p-lex & 
             [SYNSEM [LKEYS.KEYREL #key,
@@ -2555,7 +2544,6 @@ topic-vhead-connect-p-lex := topic-p-lex &
 ; That arises because the P object of wa identifies its ARG with its 
 ; MOD.IND with its own INDEX and wa takes the INDEX of its OBJ as ARG2
 ; and the INDEX of it's MOD (same thing) as ARG...  So grab the KEY.ARG0 instead.
-; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND instead of INDEX and LTOP.
 
 ; (ERB 2002-01-10) Some Ps select for MAIN-PRD + or -.  We 
 ; presumably want this selection to persist for P+wa.  (Immediate 
@@ -2566,7 +2554,6 @@ topic-vhead-connect-p-lex := topic-p-lex &
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2005-05-11) Linking XARG of the complement to ARG1, instead of INDEX.
-; (FCB 2006-06-20) no MOD-IND/MOD-HAND
 ; (FCB 2007-04-20) Linking XARG of the complement to ARG2
 
 topic-pobj-lex := topic-p-lex & 
@@ -2840,7 +2827,6 @@ adv-p-lex-parent := adv-p-lex &
 ; Don't know if some other subtype did need the constraint.
 ; (MS 2002-1-7) The L-HAND and R-HAND are not bound. 
 ;(MS 2004-06-24) As the n-conjunction gets an index, it should be quantified
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (MS 2005-06-01) I try to unify the coordinated heads. It has to be shown if this
 ; is adequate (counterexamples?)
 ; (FCB 2005-06-26) Unifying heads stops things like: 商売 や 映画
@@ -3421,7 +3407,7 @@ discourse-lex := lexical_sign &
 	  LKEYS.KEYREL #key,
 	  NON-LOCAL [QUE <! !>,
 		     AFFIX <! !>],
-	  MODIFIED.PERIPH +],
+	  MODIFIED.PERIPH bool],
   INFLECTED +].
 
 ;;; (FCB 2006-06-20) interjections modify the main relation as a scopal modifier
@@ -4380,7 +4366,8 @@ numeral-classifier := lexical_sign &
            NON-LOCAL [QUE <! !> ,
                    AFFIX <! !>]],
   J-NEEDS-AFFIX -,
-  INFLECTED +].
+  INFLECTED +,
+  STEMTYPE noun-stem].
 
 ; (ERB 2004-1-16) New semantic analysis has num-cls introducing more
 ; relations, with the total number depending on the semantic type.
@@ -4491,8 +4478,6 @@ spr-obj-num-cl-lex := numeral-classifier &
 ; expect to see some more types in here as we extend the analysis
 ; to other NumCl types.
 
-; (ERB 2001-11-28) Grab MOD-IND and MOD-HAND instead of INDEX
-; and LTOP.  Also, these are intersective modifiers.
 
 ; (ERB 2004-1-18) Put constaints on semantics etc for individuating
 ; numeral classifiers here.
@@ -4504,16 +4489,30 @@ spr-obj-num-cl-lex := numeral-classifier &
 ; (ERB 2004-1-18) Constraints on the SPR don't belong here,
 ; as a few oddballs actually take a COMPS instead.  
 
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-
 
 individuating-num-cl-lex := numeral-classifier &
-  [ SYNSEM.LOCAL [ CAT.HEAD num-cl-mod_head & 
-			    [ MOD < [ LOCAL intersective-mod &
-					    [ CONT.HOOK #hook ]]>],
-		   CONT [ RELS <! !>,
-			  HCONS <! !>,
-			  HOOK #hook ]]].
+ [ SYNSEM.LOCAL [ CAT.HEAD num-cl-mod_head & 
+			   [ MOD < [ LOCAL intersective-mod &
+					   [ CONT.HOOK #hook ]]>],
+		  CONT [ RELS <! !>,
+			 HCONS <! !>,
+			 HOOK #hook ]]].
+
+; FIXME: FCB this stops things from floating
+;
+; individuating-num-cl-lex := numeral-classifier &
+;  [ SYNSEM [ LOCAL [ CAT.HEAD num-cl-mod_head & 
+; 			     [ MOD < [ LOCAL intersective-mod &
+; 					     [ CONT.HOOK #hook ]]>],
+; 		    CONT [ RELS <! [ LBL #lbl,
+; 				     PRED "numcl_x_rel",
+; 				     ARG0 event,
+; 				     ARG1 #x ] !>,
+; 			   HCONS <! !>,
+; 			   HOOK #hook &
+; 				[LTOP #lbl,
+; 				 INDEX #x ]]]]].
+
 
 
 ; (ERB 2002-01-22) We don't want an attachment ambiguity between
@@ -4622,7 +4621,6 @@ event-num-cl-lex := adv-num-cl-lex &
 ; the paper (Bender & Siegel 2004, IJCNLP-04) I'm going to 
 ; write as if there were another role (EARG, for Extent ARG)
 ; in the degree-rel to tie things together.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (FCB 2005-08-07) fixed 'unspec_adj_rel, specified ARG0 to event
 ; make the whole thing look like a modifier from outside
 measure-num-cl-lex := numeral-classifier &
@@ -4690,26 +4688,9 @@ measure-num-cl-lex := numeral-classifier &
 ; implicit.  Presumably an inference engine could get it from 
 ; the card-rel. No need for that extra quant-rel either.
 
-;num-cl-mod-lex := num-cl-lex & anymod-ind-num-cl-lex &
-;  [ SYNSEM.LOCAL [ CAT [ HEAD.MOD.FIRST.LOCAL.CONT [ MOD-IND #ind,
-;						     HOOK [ LTOP #ltop ] ],
-;			 VAL.SPR.FIRST.LOCAL.CONT.HOOK [ XARG #ind,
-;							 LTOP #ltop ] ],
-;		   CONT [ RELS <! !>,
-;			  MOD-IND #ind,
-;			  MOD-HAND #ltop,
-;			  HOOK [ INDEX #ind,
-;				 LTOP #ltop ] ]]].
-
-
-; (ERB 2004-1-16) Per Francis, the individuate-rel can be left
-; implicit.  Presumably an inference engine could get it from 
-; the card-rel. No need for that extra quant-rel either.
-
 ; (ERB 2004-1-18) Moved constraints on the semantics of these
 ; guys up to individuating-num-cl-lex.  Still need to hook up
 ; XARG and LTOP of SPR to appropriate things.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 ; <type val="num-cl-spr-only-ind-lex">
 ; <name-ja>助数詞可算
@@ -4762,7 +4743,6 @@ n_num+cl-spr-only-ind-lex := numeral-classifier &
 ; (ERB 2004-1-18) Hook up XARG and LTOP of SPR with appropriate
 ; things.  This looks mighty similar to the above.  Consider just
 ; having this type further constrain the MOD value?
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 ; <type val="num-cl-spr-only-ind-nmod-lex">
 ; <name-ja>助数詞序数詞化
@@ -4951,10 +4931,9 @@ temp_nmod-nonempty-lex := temp_nmod-lex &
 
 
 
-; (ERB 2001-11-28) Constrain these to head-adj-1 and use
-; MOD-IND/MOD-HAND.
+; (ERB 2001-11-28) Constrain these to head-adj-1
+
 ; (MS 2003-10-29) There was a mistake on the RELS that prevented the RELS to pass up.
-; (MS 2004-12-22) use HOOK instead of MOD-IND/MOD-HAND
 
 noun_mod-lex := lexical_sign-word &
             [SYNSEM [LKEYS.KEYREL #key & [ARG1 #inst, 
@@ -5215,11 +5194,10 @@ comma-interjmod-lex := comma-lex &
 
 ; (ERB 2002-01-14) Special comma entry that picks up infinitival
 ; verbs and gives them a CMOD value.  To get semantics right,
-; copy up LTOP, INDEX, MOD-IND and MOD-HAND from the OBJ.
+; copy up LTOP, INDEX, from the OBJ.
 
 ; (ERB 2002-01-15) Restrict this to OBJs that are C-MOD null to
 ; keep real TE forms out.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 comma-lex-2 := lexical_sign &
 [SYNSEM [LOCAL [CAT [ VAL obj-arg & [ UNSAT +,
@@ -6268,8 +6246,7 @@ adv-deg-num-lex := adv-super-lex &
 
 
 ; (ERB 2001-11-28) Constrain these to intersective head-adj rules.
-; Changing ref to KEY.LBL and KEY.ARG0 to MOD-HAND and MOD-IND.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 
 ; <type val="adv-wh-lex">
 ; <name-ja>副詞疑問
@@ -6312,7 +6289,6 @@ lex-mod-adv-wh-lex := adv-wh-lex &
 
 ; (MS 2003-12-17) Changing the semantics of adverbs (Matrix)
 
-; (MS 2004-11-26) Changing MOD-HAND and MOD-IND in MOD to LTOP and INDEX.
 
 ;;; FCB led gently by the hand by DPF (2006-05-01)
 
@@ -7078,6 +7054,8 @@ subj-honor-ctxt := ctxt &
 
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2005-06-24) We need unificable SHON information between v-end and v-stem.
+; DPF spurring on FCB 2009-03-19
+; Make the SPR of the SPR empty  to avoid spurious ambiguity with light verbs,
 
 
 basic-v-end-lex := lexical_sign-affix &
@@ -7092,7 +7070,8 @@ basic-v-end-lex := lexical_sign-affix &
 										  ADJ #adj,
 										  H-TENSE #tense,
 										  FORMAL.SHON #shon],
-							       VAL [SUBJ #sbj,
+							       VAL [SPR <>,
+								    SUBJ #sbj,
 								    COMPS #comps]],
 							  ARG-S #arg-s,
 							  BAR -]]],
@@ -7116,7 +7095,6 @@ v-end-lex := basic-v-end-lex &
 ; (MS 2003-10-08) Problems with Matrix 0.5?
 ; (MS 2003-12-19) Matrix 0.6
 ; (MS 2004-12-03) The PRED value should be copied into the relation for indexing.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 ; (FCB 2005-04-09) in order to allow a handle as ARG1
 ; change na-adj-sem-type-basic to pred-sem-type, relation type to arg1-relation
@@ -7237,7 +7215,6 @@ naadj2adv-end-lex := lexical_sign-word &
 
 
 ; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (FCB 2005-06-27) Added ARG0 to message 
 ; FIXME should be able to combine with v-op-end-lex in some way
 ; がる : (do-parse-tty "犬 が 欲し がる")
@@ -7282,7 +7259,7 @@ naadj2v-end-lex := lexical_sign-word &
 			       ARG2 #harg],
 	  NON-LOCAL [QUE <! !>,
 		     AFFIX <! !>],
-	  MODIFIED.PERIPH +],
+	  MODIFIED.PERIPH bool],
   INFLECTED -,
   J-NEEDS-AFFIX +,
   LMORPH-BIND-TYPE shortadj-morph,
@@ -7295,7 +7272,7 @@ naadj2v-end-lex := lexical_sign-word &
 ; (ERB 2001-11-28) Replace KEY.LBL with LTOP.
 
 ; (MS 2004-07-09) neg-relation should use ARG1 instead of ARG3.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
+
 
 
 v-neg-end-lex := v-noncaus-op-end-lex &
@@ -7556,8 +7533,6 @@ v-naide-end-lex := v-neg-end-lex &
 ; IND.  (immediate motivation is "VN+negai+masu" where "negai" is
 ; doing something special with MOD-IND and MOD-HAND.
 
-; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 v-simple-end-lex := v-end-lex &
 [ SYNSEM [LOCAL [CAT [HEAD [SMOD smod,
@@ -7693,12 +7668,12 @@ te-end-lex-basic := v-tense-end-lex &
 			   FORMAL.AHON #ahon]],
 		CONT.HOOK.INDEX.E.MOOD indicative]].
 
-
+;;; change modified peripheral
 v-te-end-lex := te-end-lex-basic &
  [SYNSEM.LOCAL.CAT [HEAD [J-SPEC < [LOCAL [CAT.HEAD verb_head & [AUX aux_plus],
 					   BAR +],
 				    LEX +,
-				    MODIFIED.PERIPH -] >,
+				    MODIFIED.PERIPH bool] >,
 			  MODUS #modus,
 			  H-TENSE tensed],
 		    VAL.SPR.FIRST.LOCAL.CAT.HEAD.MODUS #modus]].
@@ -7966,7 +7941,6 @@ v-imperative-tense-end-lex := v-tense-end-lex-super &
 ; be looking at LTOP and INDEX and not KEY. 
 
 ; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 ; (FCB 2005-06-27) Added ARG0 to message 
 
 tai-end-lex-basic := v-noncaus-op-end-lex &
@@ -8064,7 +8038,7 @@ tai-notyetend-lex :=  tai-end-lex-basic &
 		       INFLECTED -,
 		       SYNSEM [LOCAL.CAT.HEAD [MOD null,
 					       C-MOD null],
-			       MODIFIED.PERIPH +]].
+			       MODIFIED.PERIPH bool]].
 
 ; <type val="tai-notyetend-adjstem-lex">
 ; <name-ja>終助詞願望
@@ -8257,7 +8231,7 @@ rareru-end-lex :=  v-noncaus-op-end-lex &
 		       HOOK [ LTOP #top,
 			      INDEX #event ],
 		       HCONS <! qeq & [HARG #rhand, LARG #ohand] !>]],
-			MODIFIED.PERIPH +],
+			MODIFIED.PERIPH bool],
   INFLECTED -]. 
 
 ; られる
@@ -8327,8 +8301,7 @@ v-noncaus-op-end-lex := v-op-end-lex &
 					  ARG-S #args]],
 		CONT.HOOK.XARG #xarg,
 		ARG-S #args]].
-; (FCB 2006-06-20) no MOD-IND/MOD-HAND
-; FIXME check the semantics
+
 naru-noncaus-end-lex := v-noncaus-op-end-lex &
  [INFLECTED -,
   LMORPH-BIND-TYPE a-morph,
@@ -8344,9 +8317,8 @@ naru-noncaus-end-lex := v-noncaus-op-end-lex &
 		[LBL #hd,
 		 ARG1 #arg-h,
 		 ARG0 #event],
-	  MODIFIED.PERIPH +]].
+	  MODIFIED.PERIPH bool]].
 
-; (MS 2005-11-29) There were still MOD-IND and MOD-HAND.
 
 ; <type val="nai-noncaus-end-lex">
 ; <name-ja>否定助動詞非終止
@@ -8362,26 +8334,28 @@ naru-noncaus-end-lex := v-noncaus-op-end-lex &
 ; （TK 07-05-07)(lkb::do-parse-tty "食べ なく なる")のような場合、「『食べる』の名詞化+i-adj-noncause-neg-
 ; stem-lex+なる」となってしまう。
 ; </type>
+; vn-play MODIFIED.PERIPH -
+; FIXME reify with nai-end
 nai-noncaus-end-lex := v-noncaus-op-end-lex &
-           [J-NEEDS-AFFIX +,
-	    INFLECTED -,
-	    LMORPH-BIND-TYPE a-morph,
-	    STEMTYPE adj-stem,
-	    SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK.FIRST [MODIFIED.PERIPH -,
-							    LOCAL.CAT.HEAD verbend_head],
-						      J-SPEC null,
-						      COP-ARG -],
-			       VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd,
-								INDEX #event]]]],
-			  CONT [RELS <! #key & [ARG0 #event,
-						ARG1 #neg-arg,
-						 LBL #top] !>,
-				HOOK [LTOP #top,
-				      INDEX #event & [E.MOOD indicative]],
-				HCONS <! qeq & [LARG #v-hd,
-						 HARG #neg-arg] !>]],
-		    LKEYS.KEYREL #key & neg-relation,
-		    MODIFIED.PERIPH +]].
+ [J-NEEDS-AFFIX +,
+  INFLECTED -,
+  LMORPH-BIND-TYPE a-morph,
+  STEMTYPE adj-stem,
+  SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MARK.FIRST [MODIFIED.PERIPH bool,
+							LOCAL.CAT.HEAD verbend_head],
+					    J-SPEC null,
+					    COP-ARG -],
+		      VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd,
+						       INDEX #event]]]],
+		 CONT [RELS <! #key & [ARG0 #event,
+				       ARG1 #neg-arg,
+				       LBL #top] !>,
+		       HOOK [LTOP #top,
+			     INDEX #event & [E.MOOD indicative]],
+		       HCONS <! qeq & [LARG #v-hd,
+				       HARG #neg-arg] !>]],
+	  LKEYS.KEYREL #key & neg-relation,
+	  MODIFIED.PERIPH bool]].
 
 
 
@@ -8399,7 +8373,7 @@ nai-noncaus-end-lex := v-noncaus-op-end-lex &
 ; and the subject of the specifier as the person made to do something 
 ; - this has to be available for passivization
 ; FIXME - can reify more from the intransitives
-
+; vn-play
 v-cause-op-end-lex := v-op-end-lex &
  [SYNSEM [LOCAL [CAT [HEAD caus-end_head & 
 			   [MOD < [LOCAL [CAT.HEAD noun_head,
@@ -8427,7 +8401,7 @@ v-cause-op-end-lex := v-op-end-lex &
 		 ARG1 #causer,
 		 ARG2 #causee,
 		 ARG3 #caused-hd ],
-	  MODIFIED.PERIPH +],
+	  MODIFIED.PERIPH bool],
   STEMTYPE v-stem,
   INFLECTED -].
 
@@ -8454,7 +8428,7 @@ caus-trans-obj-passvmorph-end-lex := caus-trans-obj-end-lex &
 ; such that this can be accessed by adverbs (to account for ambiguity in expressions like "花子が紀子に学校で走らせた")
 
 caus-trans-obj-scope-end-lex := v-cause-op-end-lex &
- [SYNSEM [MODIFIED.PERIPH +,
+ [SYNSEM [MODIFIED.PERIPH bool,
 	  LOCAL [CAT [VAL [SPR obl-1-arg &
 			       [FIRST [LOCAL [CONT [HOOK [INDEX #v-event,
 							  XARG #causee]],
@@ -8531,14 +8505,14 @@ caus-intrans-scope-passcmorph-end-lex := caus-intrans-scope-end-lex &
 
 
 
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
+;; vn-play
 pass-end-lex :=  v-op-end-lex &
                  [SYNSEM [LOCAL [CAT [HEAD pass-end_head,
                                      VAL.SPR obl-1-arg],
                                 CONT [HOOK [LTOP #top]]],
 			  LKEYS.KEYREL.LBL #top,
-			  MODIFIED.PERIPH +]].
+			  MODIFIED.PERIPH bool]].
 
 
 ; (MS 2003-12-19) Matrix 0.6, but is it right to grab RELS.LIST.FIRST?
@@ -8576,7 +8550,8 @@ simple-pass-end-lex :=   pass-end-lex &
 							     < [LOCAL [CAT.HEAD case-p_head & 
 										[CASE wo]]] > 
 							     ],
-						  HEAD.LIGHT -]]]],
+;;; FCB try this
+						  HEAD.LIGHT bool]]]],
 		      HEAD.KEYS.KEY pass_v_rel],
 		 CONT [RELS <! !>,
 		       HOOK.INDEX #event & [E.PASS +],
@@ -8912,7 +8887,7 @@ v-honorific-end-lex := v-simple-end-lex &
                                                    [HONORED #2,
                                                     BEARER #3,
                                                     POLARITY +] !>]],
-	 MODIFIED.PERIPH +],
+	 MODIFIED.PERIPH bool],
  INFLECTED -,
  LMORPH-BIND-TYPE pass-v-stem-morph,
  STEMTYPE v-stem].
@@ -8961,7 +8936,7 @@ v-contracted-aux-end-lex := v-op-end-lex &
 		CONT [RELS <! !>,
 		      HOOK #hook,
 		      HCONS <!  !>]],
-	 MODIFIED.PERIPH +],
+	 MODIFIED.PERIPH bool],
  INFLECTED bool].
 
 
@@ -9140,8 +9115,7 @@ v-contracted-aux-prospective-ndmorph-end-lex := v-contracted-aux-prospective-end
 ; (MS 2004-11-08) AUX aux_minus on the SPR seems to be too strict: 帰って来やすい
 
 ; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-; CHECKME
+
 
 v2adj-end-lex := v-op-end-lex &
 [SYNSEM [LKEYS.KEYREL #key,
@@ -9194,7 +9168,7 @@ v2adj-nmod-maybeend-lex := v2adj-end-lex &
 						  J-SPEC < [LOCAL.CAT.HEAD noun_head] >,
 						  FIN +,
 						  FORMAL.AHON -],
-			       MODIFIED.PERIPH +],
+			       MODIFIED.PERIPH bool],
 			  J-NEEDS-AFFIX bool,
 			  INFLECTED bool,
 			  LMORPH-BIND-TYPE i-morph].
@@ -9225,7 +9199,7 @@ v2adj-notyetend-lex-v1 := v2adj-end-lex-v1 &
 v2adj-notyetend-lex-v2 := v2adj-end-lex-v2 &
 			  [J-NEEDS-AFFIX +,
 			   LMORPH-BIND-TYPE i-morph,
-			   SYNSEM.MODIFIED.PERIPH +].
+			   SYNSEM.MODIFIED.PERIPH bool].
 
 
 
@@ -9248,7 +9222,6 @@ v2adj-end-v2-nmod-lex := v2adj-nmod-end-lex &
 							     CAT.VAL.COMPS null]]],
 				  LKEYS.KEYREL.ARG1 #verbobj]].
 
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 ; <type val="v2na-end-lex">
 ; <name-ja>承動詞連用形接尾辞形容動詞化
@@ -9281,7 +9254,6 @@ v2na-end-lex := v-op-end-lex &
 ;"出来るだけ", "食べられるだけ"
 
 ; (MS 2003-12-17) Changing the semantics of adverbs (Matrix)
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
                                                  
 v2adv-end-lex := lexical_sign-word &
@@ -9457,7 +9429,6 @@ beki-end-lex:= v-noncaus-op-end-lex &
 
 ; (MS 2002-01-16) Added restrictions on subcategorization. 
 ; (MS 2003-12-17) Adapting to Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 ;;; FIXME: when is this used?
 kudasai-vn-end := v-end-lex &
@@ -11376,9 +11347,6 @@ cop-neg-lex := nonaux-lex &
  STEMTYPE adj-stem].
 
 
-; (ERB 2001-12-20) This wasn't saying enough about it's MOD-IND
-; and MOD-HAND.
-
 ; (ERB 2002-01-14) SMOD unmarked to constrain nonprop GA.
 
 ; (ERB 2002-01-28) To reduce ambiguity, disallow conjoined Ss as
@@ -11389,8 +11357,7 @@ cop-neg-lex := nonaux-lex &
 ; (MS 2003-12-19) Matrix 0.6
 
 ; (MS 2004-08-25) I now call them cop-light-lex.
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
-
+;
 ; (MS 2005-06-20) These should take their FORMAL information from their complements: yoroshii deshou.
 ; (MS 2005-12-22) No, this is not right for AHON: 食べるでしょう
 
@@ -11579,7 +11546,7 @@ aux-top-stem-lex := verb-stem-lex & lexical_sign-word &
                                         [H-TENSE #tense]],
                               CONT [HOOK.INDEX [E [TENSE #tense]]]],
                        NON-LOCAL.QUE <! !>,
-		       MODIFIED.PERIPH +]].
+		       MODIFIED.PERIPH bool]].
 
 aux-arg123-stem-lex := aux-top-stem-lex &
  [SYNSEM [LOCAL [CAT.VAL [SPR.FIRST.LOCAL.CONT.HOOK.LTOP #ohand,
@@ -11945,7 +11912,7 @@ pure-aspect-stem-lex := verb-stem-lex &
 		 ARG-S < #sbj >],
 	  LKEYS.KEYREL [PRED "aspect",
 			ARG0 #event],
-	  MODIFIED.PERIPH +,
+	  MODIFIED.PERIPH bool,
 	  NON-LOCAL.QUE <! !>]].
 
 pure-aspect-perfprog-stem-lex := pure-aspect-stem-lex &
@@ -12201,9 +12168,11 @@ pure-aspect-prospective-minus_shon-v-stem-lex := pure-aspect-prospective-minus_s
 ; <nex>皿 を おく
 ; <todo>
 ; </type>
-pure-aspect-prospective-minus_shon-c-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE c-stem].
-pure-aspect-prospective-minus_shon-c2-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE c2-stem].
-pure-aspect-prospective-minus_shon-kurusuru-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
+pure-aspect-prospective-minus_shon-c-stem-lex := pure-aspect-prospective-minus_shon-stem-lex &
+ [STEMTYPE c-stem].
+
+; pure-aspect-prospective-minus_shon-c2-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE c2-stem].
+; pure-aspect-prospective-minus_shon-kurusuru-stem-lex := pure-aspect-prospective-minus_shon-stem-lex & [STEMTYPE kurusuru-stem].
 
 pure-aspect-prospective-shon-stem-lex := pure-aspect-prospective-stem-lex &
 			     [SYNSEM.LOCAL [CAT [HEAD.FORMAL.SHON +,
@@ -12840,7 +12809,7 @@ light-stem-base-lex := verb-stem-lex-super &
                 CONT pred-sem-type & [HOOK.INDEX [E.TENSE #tense]],
 		ARG-S #arg-s],
          NON-LOCAL.QUE <! !>,
-	 MODIFIED.PERIPH +]].
+	 MODIFIED.PERIPH bool]].
 
 ; (ERB 2001-12-28) The passive suffix looks in the KEY to get the
 ; right value for the new SUBJ.  This means that unless light verbs share
@@ -12848,8 +12817,6 @@ light-stem-base-lex := verb-stem-lex-super &
 ; linked to any role of the verb.  Also, grab LTOP, not KEY.LBL.
 ; (Remember: Content raising words should have empty WLINKs.)
 
-; (MS 2003-12-19) Matrix 0.6
-; (MS 2004-12-22) no MOD-IND/MOD-HAND
 
 
 light-stem-lex := light-stem-base-lex &
@@ -13081,7 +13048,7 @@ syn-vv-vp-stem_head := syntactic-vv-stem_head &
 ; 	  LKEYS.KEYREL #key & 
 ; 		[ARG0 #event],
 ; 	  NON-LOCAL.QUE <! !>,
-; 	  MODIFIED.PERIPH +]].
+; 	  MODIFIED.PERIPH bool]].
 
 ;(CH 2005-04-09) [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD.FIN -]
 ;(CH 2005-04-09) [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.BAR +]
@@ -13103,7 +13070,7 @@ syntactic-vv-vp-stem-lex := verb-stem-lex & lexical_sign-word &
 	  LKEYS.KEYREL #key & 
 		[ARG0 #event],
 	  NON-LOCAL.QUE <! !>,
-	  MODIFIED.PERIPH +]].
+	  MODIFIED.PERIPH bool]].
 
 ;(CH 2005-04-09)
 ; Raising 版の統語的複合
@@ -13216,7 +13183,7 @@ syntactic-vv-vbar-stem-lex := verb-stem-lex & lexical_sign-word &
 		[ARG1 #sbjind,
 		 ARG0 #event],
 	  NON-LOCAL.QUE <! !>,
-	  MODIFIED.PERIPH +]].
+	  MODIFIED.PERIPH bool]].
 
 ;(CH 2005-04-09)
 ; for an intransitive V1

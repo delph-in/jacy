@@ -33,6 +33,8 @@
   (:content . "Ikehara Kinou Shikenbun Ch 06-10 (v2)"))
  ((:path . "kinou3")
   (:content . "Ikehara Kinou Shikenbun Ch 11-14 (v2)"))
+  ((:path . "numcl")
+  (:content . "Numeral Classifiers"))
 )
 
 

@@ -1,11 +1,22 @@
 ;;; -*-  Coding: utf-8 -*-
 
+2009-06-03
+fix spurious ga-no conversion.
+
 
 2009-03-07
 Fix transitive causitive VN
 (lkb::do-parse-tty "勉強 さ れ た")
 Note: intransitivie works fine
 (lkb::do-parse-tty "死亡 さ　せ た")
+
+Can we bind these lower:
+(死亡 さ)　(せ た)
+not (死亡 (さ せ た))
+Complete rethink of light verbs
+ - try to make VN+verb like a heavy verb.
+ - maybe won't need LIGHT at all, just select for VN?
+Try this :-).
 
 MS:
  * check out the saseru scope entries.

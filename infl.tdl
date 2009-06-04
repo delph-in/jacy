@@ -559,11 +559,19 @@ j-lexeme-to-word-rule &
                                         FIN -]],
  ARGS.FIRST.STEMTYPE kurusuru-stem].
 
+;;; FIXME should this be untensed?
 mai-beki-lexeme-regular-infl-rule := 
 lexeme-rule &
-[RMORPH-BIND-TYPE mai-beki-morph,
-SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
-ARGS.FIRST v-lex & [STEMTYPE regular-stem]].
+ [RMORPH-BIND-TYPE mai-beki-morph,
+  SYNSEM.LOCAL.CAT.HEAD [MOD < [LOCAL [CAT.HEAD noun_head,
+ 				       BAR +]] >,
+			 MARK null,
+			 MODUS indicative,
+			 FIN -,
+			 SMOD unmarked,
+			 J-POSTHEAD rels,
+			 FORMAL.AHON -],
+  ARGS.FIRST v-lex & [STEMTYPE regular-stem]].
 
 
 ; (TK 07-05-24)kurusuru-stem以外のverbに対応するものも必要。
@@ -583,7 +591,7 @@ beki-lexeme-ks-infl-rule :=
 lexeme-rule &
 [RMORPH-BIND-TYPE beki-morph,
  SYNSEM.LOCAL.CAT.HEAD.MODUS indicative,
-ARGS.FIRST.STEMTYPE kurusuru-stem].
+ ARGS.FIRST.STEMTYPE kurusuru-stem].
 
 
 

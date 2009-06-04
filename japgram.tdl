@@ -1,4 +1,4 @@
-;;; -*- Mode: TDL; Coding: utf-8 -*-
+;; -*- Mode: TDL; Coding: utf-8 -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;        file: japgram
@@ -688,21 +688,27 @@ conj-rule := conj-rule-type &
 ; (MS 2003-12-19) Matrix 0.6
 
 ; (MS 2004-01-09) grab the KEYS from the VN.
+;;; FCB made J-NEEDS-AFFIX BOOl to annoy Melanie 2009-03-13
+;;; also allows : (lkb::do-parse-tty "勉強　さ　せ　た")
+; try making the infl rule pass up LIGHT (to block head-specifier)
+; try making the output of this LIGHT - (didn't work)
 
 vn-light-rule := head-marker-rule & 
-                 [SYNSEM [LOCAL [BAR bool,
-				 CAT.HEAD.KEYS #keys,
-				 CONT.HOOK #hook],
-			  LEX +],
-                  J-NEEDS-AFFIX -,
-                  RMORPH-BIND-TYPE #morphbind,
-                 ARGS <[SYNSEM synsem & [LOCAL [CAT.HEAD vn_head & [KEYS #keys],
-						  CONT.HOOK #hook,
-						   BAR -]]],
-                       [SYNSEM synsem & [LOCAL [CAT.HEAD light-verb_head & [AUX aux_minus, LIGHT +]]],
-                        INFLECTED +,
-                        J-NEEDS-AFFIX -,
-                        RMORPH-BIND-TYPE #morphbind]>].
+ [SYNSEM [LOCAL [BAR bool,
+		 CAT.HEAD [KEYS #keys,
+			   LIGHT bool],
+		 CONT.HOOK #hook],
+	  LEX +],
+  J-NEEDS-AFFIX #affix,
+  RMORPH-BIND-TYPE #morphbind,
+  ARGS <[SYNSEM synsem & [LOCAL [CAT.HEAD vn_head & [KEYS #keys],
+				 CONT.HOOK #hook,
+				 BAR -]]],
+	[SYNSEM synsem & [LOCAL [CAT.HEAD light-verb_head & 
+					  [AUX aux_minus, LIGHT +]]],
+	 INFLECTED +,
+	 J-NEEDS-AFFIX #affix,
+	 RMORPH-BIND-TYPE #morphbind]>].
 
 ; (ERB 2002-01-02) Adding a rule for VN+vends (esp. VN + kudasai).
 ; Pulled out similarities between new rule and vstem-vend-rule to
@@ -711,35 +717,42 @@ vn-light-rule := head-marker-rule &
 ; spurious ambiguity with the ga-no-conversion rule.
 ;;; CH+FCB+TK added LEX +             
 ;;(lkb::do-parse-tty "投げ た")
+;;; VN-play
+;;;
+;;; try just using vstem-vend --- link specifiers, HEAD verb-stem_head
+;;; don't pass up MODIFIED.PERIPH
 vstem-vend-rule := stem-end-rule-type &
- [ SYNSEM [LOCAL.CAT.VAL.SPR null,
-	   MODIFIED.PERIPH #per],
-   ARGS < [ SYNSEM [LOCAL.CAT.HEAD ordinary-verb-stem_head & 
+ [ SYNSEM [LOCAL.CAT [ HEAD verb_head, 
+		       VAL.SPR #spr]],
+   ARGS < [ SYNSEM [LOCAL.CAT [HEAD verb-stem_head & 
 				   [LIGHT #light,
 				    MAIN-PRD #main],
-		    MODIFIED.PERIPH #per,
-		    LEX +],
+			       VAL.SPR #spr ],
+		    LEX bool],
 	    J-NEEDS-AFFIX + ],
-	  [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light,
+	  [SYNSEM.LOCAL.CAT.HEAD verb_head & [LIGHT #light,
 						 MAIN-PRD #main]] >].
+;;; FCB   changed verbend_head to verb_head
+;	  [SYNSEM.LOCAL.CAT.HEAD verbend_head & [LIGHT #light,
+;						 MAIN-PRD #main]] >].
 
 
 ;;(lkb::do-parse-tty "投げ そこなっ た")
 ;;; CH+FCB+TK added LEX +
 ;;;「た」が「投げ そこなっ」と「そこなっ」のどちらに結び付くかの曖昧性をなくすため
-aux-vend-rule := stem-end-rule-type &
-[ SYNSEM [LOCAL.CAT.VAL.SPR #spr,
-	  MODIFIED.PERIPH #per],
-  J-NEEDS-AFFIX #aff,
-  ARGS < [ SYNSEM [LOCAL.CAT [HEAD other-verb-stem_head &
-				   [COP -,
-				    H-TENSE #tense],
-			      VAL.SPR #spr],
-		   LEX +],
-	   J-NEEDS-AFFIX + ],
-	 [J-NEEDS-AFFIX #aff,
-	  SYNSEM [LOCAL.CAT.HEAD verb_head & [H-TENSE #tense],
-		  MODIFIED.PERIPH #per]] >].
+; aux-vend-rule := stem-end-rule-type &
+; [ SYNSEM [LOCAL.CAT.VAL.SPR #spr,
+; 	  MODIFIED.PERIPH #per],
+;   J-NEEDS-AFFIX #aff,
+;   ARGS < [ SYNSEM [LOCAL.CAT [HEAD other-verb-stem_head &
+; 				   [COP -,
+; 				    H-TENSE #tense],
+; 			      VAL.SPR #spr],
+; 		   LEX +],
+; 	   J-NEEDS-AFFIX + ],
+; 	 [J-NEEDS-AFFIX #aff,
+; 	  SYNSEM [LOCAL.CAT.HEAD verb_head & [H-TENSE #tense],
+; 		  MODIFIED.PERIPH #per]] >].
 
 na-vend-rule := stem-end-rule-type &
 [ SYNSEM.LOCAL.CAT.VAL.SPR null,
@@ -788,6 +801,7 @@ unary-vstem-vend-rule := unary-type-super &
 ;         [SYNSEM.LOCAL.CAT.HEAD.AUX -] >].
 
 ; (MS 2003-12-19) Matrix 0.6
+; FCB & DPF make the specifier empty
 
 vend-vend-rule  := head-marker-rule & 
                  [SYNSEM [LOCAL [NUCL nucl_plus,
@@ -799,7 +813,7 @@ vend-vend-rule  := head-marker-rule &
                   LMORPH-BIND-TYPE #lmorph,
                   RMORPH-BIND-TYPE #rmorph,
                   ARGS <[SYNSEM synsem & [LOCAL [CAT [HEAD verbend_head & [MODUS #mod],
-							VAL.SPR 1-list],
+							VAL.SPR <>],
 						   BAR #bar]],
                          J-NEEDS-AFFIX +,
                          RMORPH-BIND-TYPE #mt,
@@ -821,23 +835,26 @@ vend-vend-rule  := head-marker-rule &
 ; MOD-IND and MOD-HAND in this rule. It might be a more general
 ; problem, but fixing it here for now.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
-
+; FCB removing the modified peripheral link
+; 
 head-specifier-rule := head-specifier-rule-type &
                         adjacent-spr-check &
-                       [SYNSEM [LOCAL [BAR #bar,
-				       CAT.VAL [UNSAT -,
-						SPR null],
-				       CONT.HOOK [XARG #xarg,
-						  INDEX #mind,
-						  LTOP #mhand]],
-				LEX -,
-				MODIFIED.PERIPH #per],
-			ARGS <[SYNSEM synsem & [MODIFIED.PERIPH #per],
-                              J-NEEDS-AFFIX -],
-                             [SYNSEM synsem & [LOCAL [BAR #bar,
-                                                      CONT.HOOK [XARG #xarg,
-								 INDEX #mind,
-								 LTOP #mhand]]]]>].
+ [SYNSEM [LOCAL [BAR #bar,
+		 CAT [VAL [UNSAT -,
+			  SPR null],
+		      HEAD.FIN #bool],
+		 CONT.HOOK [XARG #xarg,
+			    INDEX #mind,
+			    LTOP #mhand]],
+	  LEX -,
+	  MODIFIED.PERIPH bool],
+  ARGS <[SYNSEM synsem & [MODIFIED.PERIPH bool],
+	 J-NEEDS-AFFIX -],
+	[SYNSEM synsem & [LOCAL [ CAT.HEAD.FIN #bool,
+					       BAR #bar,
+				  CONT.HOOK [XARG #xarg,
+					     INDEX #mind,
+					     LTOP #mhand]]]]>].
 
 
 
@@ -865,24 +882,26 @@ tai-obj-change-rule :=  obj-casechange-rule &
 
 
 ;; 機関の変更したい
+;
+; I would prefer to delete these
+;
+; vn-light-obj-change-rule-case-p  :=  obj-casechange-rule &
+;  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+; 				    LOCAL.CAT.HEAD overt-case-p_head &
+; 					[CASE no-case]],
+;   RMORPH-BIND-TYPE #rmorph,
+;   ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
+; 			    VAL.SPR null],
+; 	  RMORPH-BIND-TYPE #rmorph] >].
 
-vn-light-obj-change-rule-case-p  :=  obj-casechange-rule &
- [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
-				    LOCAL.CAT.HEAD overt-case-p_head &
-					[CASE no-case]],
-  RMORPH-BIND-TYPE #rmorph,
-  ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
-			    VAL.SPR null],
-	  RMORPH-BIND-TYPE #rmorph] >].
-
-vn-light-obj-change-rule-noun  :=  obj-casechange-rule &
- [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
-				    LOCAL.CAT [HEAD noun_head,
-					       VAL saturated]],
-  RMORPH-BIND-TYPE #rmorph,
-  ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
-			    VAL.SPR null],
-	  RMORPH-BIND-TYPE #rmorph] >].
+; vn-light-obj-change-rule-noun  :=  obj-casechange-rule &
+;  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [OPT - ,
+; 				    LOCAL.CAT [HEAD noun_head,
+; 					       VAL saturated]],
+;   RMORPH-BIND-TYPE #rmorph,
+;   ARGS < [SYNSEM.LOCAL.CAT [HEAD light-verb_head,
+; 			    VAL.SPR null],
+; 	  RMORPH-BIND-TYPE #rmorph] >].
 
 
 ; (ERB 2001-09-26) Constraining head-dtr to be [HEAD verb_head-avm]
