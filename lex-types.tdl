@@ -2931,25 +2931,28 @@ compl-conj-p-lex := conj-lex &
 
 ;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- others;;;;;;;;;;;
 
-; (MS 2003-12-19) Matrix 0.6
+;;;
+;;; Determiners (kono/sono/ano/dono)
+;;;
 
 dt-lex := lexical_sign-word & 
-	  [SYNSEM [LOCAL [CAT [HEAD det_head-avm & [J-SPEC.FIRST.LOCAL.CONT.HOOK [INDEX #ind,
-										  LTOP #spechand]], 
-			       VAL saturated],
-			  CTXT.BACKGROUND <! !>,
-			  CONT lex-det-sem-type & [HOOK [INDEX #ind,
-							 XARG #ind],
-						   RELS <! #key !>,
-						   HCONS <! qeq &
-							  [LARG #spechand,
-							   HARG #hand] !>],
-			  BAR +,
-			  ARG-S <>],
-		   LKEYS.KEYREL #key & [ARG0 #ind,
-					RSTR #hand],
-		   NON-LOCAL [AFFIX <! !>]],
-	   INFLECTED +].
+ [SYNSEM  [LOCAL [CAT [HEAD det_head-avm & 
+			    [J-SPEC.FIRST.LOCAL.CONT.HOOK [INDEX #ind,
+							   LTOP #spechand]], 
+		       VAL super-saturated],
+		  CTXT.BACKGROUND <! !>,
+		  CONT lex-det-sem-type & [HOOK [INDEX #ind,
+						 XARG #ind],
+					   RELS <! #key !>,
+					   HCONS <! qeq &
+						  [LARG #spechand,
+						   HARG #hand] !>],
+		  BAR +,
+		  ARG-S <>],
+	   LKEYS.KEYREL #key & [ARG0 #ind,
+				RSTR #hand],
+	   NON-LOCAL [AFFIX <! !>]],
+  INFLECTED +].
 
 ; <type val="det-lex">
 ; <name-ja>連体詞
