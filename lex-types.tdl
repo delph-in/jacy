@@ -8442,12 +8442,13 @@ caus-trans-obj-scope-end-lex := v-cause-op-end-lex &
 ;;;
 ;;; FCB don't use these currently (2009-06-04)
 ;;; we don't want the ambiguity yet
-
-caus-trans-obj-scope-passcmorph-end-lex := caus-trans-obj-scope-end-lex &
-				     [LMORPH-BIND-TYPE pass-c-stem-morph].
-
-caus-trans-obj-scope-passvmorph-end-lex := caus-trans-obj-scope-end-lex &
-				     [LMORPH-BIND-TYPE pass-v-stem-morph].
+;(TK 09-06-05 commented out)
+;
+;caus-trans-obj-scope-passcmorph-end-lex := caus-trans-obj-scope-end-lex &
+;				     [LMORPH-BIND-TYPE pass-c-stem-morph].
+;
+;caus-trans-obj-scope-passvmorph-end-lex := caus-trans-obj-scope-end-lex &
+;				     [LMORPH-BIND-TYPE pass-v-stem-morph].
 
 ; (MS 2005-09-21) linked the SPR-SUBJ to the complement.
 
@@ -8500,11 +8501,12 @@ caus-intrans-scope-end-lex := v-cause-op-end-lex &
 ;;;
 ;;; FCB don't use these currently (2009-06-04)
 ;;; we don't want the ambiguity yet
-caus-intrans-scope-passvmorph-end-lex := caus-intrans-scope-end-lex &
-					 [LMORPH-BIND-TYPE pass-v-stem-morph].
-
-caus-intrans-scope-passcmorph-end-lex := caus-intrans-scope-end-lex &
-					 [LMORPH-BIND-TYPE pass-c-stem-morph].
+;(TK 09-06-05 commented out)
+;caus-intrans-scope-passvmorph-end-lex := caus-intrans-scope-end-lex &
+;					 [LMORPH-BIND-TYPE pass-v-stem-morph].
+;
+;caus-intrans-scope-passcmorph-end-lex := caus-intrans-scope-end-lex &
+;					 [LMORPH-BIND-TYPE pass-c-stem-morph].
 
 
 
