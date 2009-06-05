@@ -166,48 +166,6 @@
          (eql fs-type '-))))
 
 
-;;;
-;;; Generate unknown words from the CARG
-;;;
-(defun instantiate-generic-lexical-entry (gle surface &optional (carg surface))
-  (let ((tdfs (copy-tdfs-elements
-               (lex-entry-full-fs (if (gle-p gle) (gle-le gle) gle)))))
-    (loop
-        with dag = (tdfs-indef tdfs)
-        for path in '((STEM FIRST) (SYNSEM LKEYS KEYREL CARG))
-        for foo = (existing-dag-at-end-of dag path)
-        do (setf (dag-type foo) *string-type*))
-    (let* ((surface(or
-                    #+:logon
-                    (case (gle-id gle)
-                      (guess_n_gle 
-                       (format nil "/~a/" surface))
-                      (decade_gle
-                       (format nil "~as" surface)))
-                    surface))
-           (unifications
-            (list 
-             (make-unification
-              :lhs (create-path-from-feature-list
-                    (append *orth-path* *list-head*))
-              :rhs (make-u-value :type surface))
-             (make-unification
-              :lhs (create-path-from-feature-list
-                    (append *orth-path* *list-tail*))
-              :rhs (make-u-value :type *empty-list-type*))
-             (make-unification
-              :lhs (create-path-from-feature-list '(SYNSEM LKEYS KEYREL CARG))
-              :rhs (make-u-value :type carg))))
-           (indef (process-unifications unifications))
-           (indef (and indef (create-wffs indef)))
-           (overlay (and indef (make-tdfs :indef indef))))
-      (values
-       (when overlay
-        (with-unification-context (ignore)
-          (let ((foo (yadu tdfs overlay)))
-            (when foo (copy-tdfs-elements foo)))))
-       surface))))
-
 
 ;;;
 ;;; Idiom Implementation (CH 060804)
