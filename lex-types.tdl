@@ -8439,7 +8439,9 @@ caus-trans-obj-scope-end-lex := v-cause-op-end-lex &
 				   [LOCAL [CAT.HEAD overt-case-p_head & [CASE ni],
 					   CONT.HOOK.INDEX #causee]] >]],
 		 CONT.HOOK.INDEX #v-event]]].
-
+;;;
+;;; FCB don't use these currently (2009-06-04)
+;;; we don't want the ambiguity yet
 
 caus-trans-obj-scope-passcmorph-end-lex := caus-trans-obj-scope-end-lex &
 				     [LMORPH-BIND-TYPE pass-c-stem-morph].
@@ -8495,7 +8497,9 @@ caus-intrans-scope-end-lex := v-cause-op-end-lex &
 			RELS <! [ARG2 #causee] !>,
 			HCONS <! qeq & [ LARG #hand] !> ]]]].
 
-
+;;;
+;;; FCB don't use these currently (2009-06-04)
+;;; we don't want the ambiguity yet
 caus-intrans-scope-passvmorph-end-lex := caus-intrans-scope-end-lex &
 					 [LMORPH-BIND-TYPE pass-v-stem-morph].
 
