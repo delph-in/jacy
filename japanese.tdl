@@ -16,7 +16,7 @@
 
 :begin :instance :status rule.
    :include "japgram.tdl".
-   :include "ambiguous-rules.tdl".
+;   :include "ambiguous-rules.tdl".
 :end :instance.
 
 :begin :instance :status lex-rule.

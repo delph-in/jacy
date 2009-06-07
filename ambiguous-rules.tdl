@@ -24,35 +24,6 @@
 ;					 CAT.VAL saturated]]].
 
 
-; (MS 2004-12-22) Why did we have two rules for adjectives and non-adjectives? I'll take that out.
-rel-cl-sbj-gap-rule := rel-cl-gap-rule  & 
- [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
-  ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ bool,
-			   VAL  [SUBJ opt-1-arg & 
-				      [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
-				     COMPS onull]]],
-	[SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
-
-
-rel-cl-obj1-gap-rule := rel-cl-gap-rule & 
- [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
-  ARGS <[SYNSEM [LOCAL [CAT [VAL [SUBJ onull,
-				  COMPS opt-1-arg &
-				       [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
-					REST onull]]]]]],
-	[SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind ]>].
-
-
-
-
-rel-cl-obj2-gap-rule := rel-cl-gap-rule &
- [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
-  ARGS <[SYNSEM.LOCAL.CAT.VAL [SUBJ onull,
-			       COMPS 1-plus-list &
-				    [REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind]]],
-	[SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind ]>].
-
-
 
 
 ; (ERB 2001-12-13) For cases where the splitter can't break apart

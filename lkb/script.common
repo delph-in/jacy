@@ -47,7 +47,7 @@
  (list
   (lkb-pathname (parent-directory) "irregs.tab")))
 
-(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
+;(read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "ambiguous-rules.tdl"))
 (read-tdl-grammar-file-aux  (lkb-pathname (parent-directory) "japgram.tdl"))
 
 

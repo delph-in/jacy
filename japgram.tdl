@@ -593,10 +593,10 @@ suffix-rule := hadj-first-i &
 ; reading for 目が美しい猫.
 ; (FCB 2005-06-15) Added ARG0 to messages
 
-relative-clause-rule := hadj-final-for-rel-cl-topic &
+rel-cl-rule := hadj-final-for-rel-cl-topic &
  [SYNSEM.LOCAL [BAR #bar,
 		NUCL nucl_minus],
-  C-CONT [RELS <! prep-mod-relation & [PRED "topic_p_rel",
+  C-CONT [RELS <! prep-mod-relation & [PRED "rel_p_rel",
 				       ARG0.E.TENSE no_tense,
 				       LBL #adjhand,
 				       ARG1 #adjevent,
@@ -613,6 +613,35 @@ relative-clause-rule := hadj-final-for-rel-cl-topic &
 	[SYNSEM synsem & [LOCAL [CAT.HEAD noun_head,
 				 BAR #bar,
 				 CONT.HOOK.INDEX #ind]]]>].
+
+
+rel-cl-sbj-gap-rule := rel-cl-gap-rule  & 
+ [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+  ARGS <[SYNSEM.LOCAL.CAT [HEAD.ADJ bool,
+			   VAL  [SUBJ opt-1-arg & 
+				      [FIRST.LOCAL.CONT.HOOK.INDEX #sbjind],
+				     COMPS zlist]]],
+	[SYNSEM.LOCAL.CONT.HOOK.INDEX #sbjind ]>].
+
+
+rel-cl-obj1-gap-rule := rel-cl-gap-rule & 
+ [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+  ARGS <[SYNSEM.LOCAL.CAT.VAL [SUBJ zlist,
+			       COMPS opt-1-arg &
+				    [FIRST.LOCAL.CONT.HOOK.INDEX #obj1ind,
+				     REST zlist]]],
+	[SYNSEM.LOCAL.CONT.HOOK.INDEX #obj1ind ]>].
+
+
+
+
+rel-cl-obj2-gap-rule := rel-cl-gap-rule &
+ [SYNSEM.NON-LOCAL.UNDERSPEC_ARG -,
+  ARGS <[SYNSEM.LOCAL.CAT.VAL [SUBJ zlist,
+			       COMPS 1-plus-list &
+				    [REST.FIRST.LOCAL.CONT.HOOK.INDEX #obj2ind]]],
+	[SYNSEM.LOCAL.CONT.HOOK.INDEX #obj2ind ]>].
+
 
 
 ; (ERB 2002-01-02) [NUCL +] on head daughter seems overly 
