@@ -2602,7 +2602,7 @@ I am able to obtain a registration form for free.
 [1278670] 彼 は その 町 に 住ん で いる 。;;TID=116647
 He lives in the town.
 
-[1278680] ãã³ã ã® 1 ï¼ ã§ã  ã bitext log output 2 output 2 ~ poi rev 2 skelbi . perl rev 2 skelbi . perl ~ skel skel . new skel . old tc - new . tgz tcid . new tcid . orig test . perl test . perl ~ tok ã® æ° ã¨ èª ã® ä¸­ ã® å­æ° ã¨ ã¯ é¢ä¿ ã ãã ã¾ã ã ã;;TID=161674
+[1278680] ヒント の ***** の 数 と 語 の 中 の 字数 と は 関係 が あり ませ ん 。;;TID=161674
 The number of *****s in the hint has no relation to the number of characters in the word.
 
 [1278690] 車 の 運転 を 覚える の に しばらく 時間 が かかり まし た 。;;TID=89866
@@ -3889,7 +3889,7 @@ There was a large audience at the piano recital last night.
 [1282960] 彼女 は 洗い物 の たび に 皿 を 割る 。;;TID=142078
 She breaks a dish every time she washes them.
 
-[1282970] ;;TID=161649
+[1282970] 回答 に は アンカー を 必ず つけ て 下さい 。 半角 で " >> " ＋ 数字 （ 例 : >> 1 ） です 。;;TID=161649
 Please ensure you always include a link-back in your replies. ">>" in plain ascii + number (e.g. >>1).
 
 [1282980] もし 試験 に 落ち て い た と し たら 、 彼 は どう し た の だろ う 。;;TID=44776
