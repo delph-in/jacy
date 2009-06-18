@@ -71,14 +71,15 @@ utterance_rule-imp  := utterance-sf-type &
 ; EX: (do-parse-tty "食べ て 下さい")
 ; EX: (do-parse-tty "食べ て なさい") FIXME (one bad parse)
 ; (FCB 2009-01-05) Taking out the MOOD, as we don't need it and it stops generation.
-
+; put it back in due to spurious ambiguity with  (do-parse-tty "食べ ます")
 
 utterance_rule-command  := utterance-sf-type &
 [SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
  C-CONT.HOOK.INDEX.SF comm,
- ARGS.FIRST [SYNSEM [LOCAL.CAT.HEAD [MODUS simple-imperative,
+ ARGS.FIRST [SYNSEM [LOCAL [CAT.HEAD [MODUS simple-imperative,
 				     H-TENSE present,
-				     FIN +],
+				      FIN +],
+			    CONT.HOOK.INDEX.E.MOOD imperative],
 		     NON-LOCAL.QUE <! !>],
 	     RMORPH-BIND-TYPE imp-morph]].
 
