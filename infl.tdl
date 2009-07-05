@@ -609,7 +609,7 @@ lexeme-rule &
 adj-te-t-lexeme-c-stem-infl-rule := 
 %suffix (い く)
 lexeme-rule &
-[RMORPH-BIND-TYPE t-morph,
+[RMORPH-BIND-TYPE te-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
  SYNSEM.LOCAL.CAT.HEAD.H-TENSE te].
 ; SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.H-TENSE te] >].
@@ -618,7 +618,7 @@ lexeme-rule &
 adj-past-t-lexeme-c-stem-infl-rule := 
 %suffix (い かっ)
 lexeme-rule &
-[RMORPH-BIND-TYPE t-morph,
+[RMORPH-BIND-TYPE ta-morph,
  ARGS.FIRST.STEMTYPE adj-stem,
  SYNSEM.LOCAL.CAT.HEAD.H-TENSE past].
 ; SYNSEM.LOCAL.CAT.HEAD.MARK < [LOCAL.CAT.HEAD.H-TENSE past] >].

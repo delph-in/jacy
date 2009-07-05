@@ -4,14 +4,10 @@
 
 :begin :type.
    :include "matrix.tdl".
-   :include "mrsbasic.tdl".
-   :include "newlexsem-types.tdl".
-   :include "values.tdl".
    :include "fundamentals.tdl".
    :include "rule-types.tdl".
    :include "principles.tdl".
    :include "lex-types.tdl".
-   :include "v-lex-types.tdl".
 :end :type.
 
 :begin :instance :status rule.

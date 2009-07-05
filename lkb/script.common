@@ -24,14 +24,10 @@
 (read-tdl-type-files-aux
  (list
   (lkb-pathname (parent-directory) "matrix.tdl")
-  (lkb-pathname (parent-directory) "mrsbasic.tdl")
-  (lkb-pathname (parent-directory) "newlexsem-types.tdl")
-  (lkb-pathname (parent-directory) "values.tdl")
   (lkb-pathname (parent-directory) "fundamentals.tdl")
   (lkb-pathname (parent-directory) "rule-types.tdl")
   (lkb-pathname (parent-directory) "principles.tdl")
   (lkb-pathname (parent-directory) "lex-types.tdl")
-  (lkb-pathname (parent-directory) "v-lex-types.tdl")
   (lkb-pathname (parent-directory) "mtr.tdl") 
 ))
 
@@ -87,7 +83,7 @@
 		       (parent-directory) "lexicon.tdl")))))
 
 (read-tdl-parse-node-file-aux 
-          (lkb-pathname (parent-directory) "parse-nodes.tdl"))
+          (lkb-pathname (parent-directory) "labels.tdl"))
 
 (read-tdl-start-file-aux 
           (lkb-pathname (parent-directory) "roots.tdl"))

@@ -245,3 +245,1522 @@ unknown_cop_rel := predsort.
 
 unknown_cop_relation := arg12-ev-relation &
   [ PRED unknown_cop_rel ].
+
+
+;;;
+;;; information from what was mrsbasic.tdl (merged 2009-07-05)
+;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; CONT type
+
+
+nothing := individual.
+
+
+; (ERB 2001-08-06) Added ALTKEY for number names.  I suspect it will be useful
+; elsewhere as well.  KEY, ALTKEY, and MESSAGE should probably be pulled out 
+; into a KEYS feature like in the LinGO grammar.
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  CONT values (MRS semantics)
+;;
+;; The basic semantic objects are all sub-types of thing.  Right now, the only
+;; type of thing that has an internal structure is index, but that will
+;; probably change.  For example, an event might have various times associated
+;; with them or a handle may include a list of "subhandles" which are in its
+;; scope.  Indices are classified in the familiar HPSG way.
+
+; (ERB 2001-08-02) Adding type conj_non_expl-ind to help MRS machinery
+; deal with coordinated NPs.  (MRS machinery doesn't require indices
+; of this type to be bound by a quantifier.)  Verbs are enforcing
+; "full"ness of the indices of their arguments, but this needs to
+; be compatible with being a conj_non_expl-ind, so we cross-classify.
+
+; (MS 2003-07-09) Adapted these to matrix.
+; (MS 2003-09-25) And again adapted to matrix ver.0.5
+
+full := event-or-ref-index.
+full-or-zpro-ref-ind := full & index.
+full_ref-ind := full-or-zpro-ref-ind & ref-ind & [PNG png].
+zpro_ref-ind := full-or-zpro-ref-ind.
+
+; (MS 2004-12-13) The conj-ref-ind should be under full_ref-ind
+; in order to match the type hierarchy including zero pronouns.
+; This overrides the Matrix type.
+
+conj-ref-ind := conj-index & full_ref-ind.
+
+;;; Japanese values for PNG
+
+png :+ [PN pn, GEN gender].
+
+; The basic semantic structure, a CONT, is just something with a handle.
+; Conts are further classified into mrss (i.e., things with liszts) and
+; relations (i.e., things that go on liszts).  Conts are divided into psoas
+; (with a distinguished event) and nom-objs (with a distinguished index).
+; We use a polymorphic attribute name INDEX for both of these, to simplify
+; manipulation of these objects; for example, modifying PPs assign as their
+; ARG's value the INDEX of the phrase they modify, whether it's an N-bar
+; (with a ref-ind value) or a VP (with an event value).  Similarly useful
+; for coordination.
+
+; ERB (03-10-96) Along with implementing embedded questions, I am 
+; removing the feature CL-MODE in favor of message (=another name
+; for psoa) for the same distinctions.  (Plus the use of [MOD none] 
+; to distinguish and exclude relatives from certain positions.)  
+; Ultimately, I hope to use the type message for this purpose, but
+; until certain changes are made to the internal structure of CONT
+; (notably, bundling everything else as opposed to the RELS), this
+; isn't possible because the hcomp-nc rule needs to copy this information
+; up from head-dtr to mother.  So, it will be a feature MESSAGE for now.
+; The intermediate types ques-prop-msg and prop-com-msg represent the
+; natural classes needed for selection by know, announce, care, check,
+; etc. and the analysis of THAT (see lextypes.tdl) and the 
+; forthcoming analysis of tags on imperatives, respectively.
+
+; Relations are classified according to the types of arguments they take.  All
+; relations have a handle.  In addition, quantifier relations have a bound
+; variable and a restriction, nominal relations have an instance, and event
+; relations have an event.  Furthermore, nominal relations and event relations
+; can have additional roles, depending on their meaning.
+
+; Since some temporal nouns can be either arguments or VP modifiers, their 
+; rel's ARG0 value (coindexed with INDEX of the containing MRS) must remain 
+; unspecified for type.  Consider "Kim arrived Tuesday" vs. "Tuesday comes
+; after Monday"; in the first, Tuesday must have an ARG0 index, while in the
+; second, it must have a REF-IND index.
+
+; (MS 2003-12-03) no-relation seems to be useful again, as Emily wants to 
+; use it in nominal-numcl-rule-nomod.
+
+no-relation := relation.
+
+
+; Nominal relations
+
+; (ERB 2001-11-05) For k2y purposes, making a supertype that
+; groups together excl_rel and greeting rel.
+
+; (ERB 2001-12-10) and interj_rel.
+
+abstr-excl_rel := relation.
+
+;excl_rel := abstr-excl_rel.
+
+; (ERB 2001-12-10) Let individual interjections provide
+; the REL.
+
+;interj_rel := abstr-excl_rel.
+
+;hes_rel := relation.
+
+;greeting_rel := abstr-excl_rel.
+
+
+; (ERB 2001-10-31) Trying to keep nmod-p の from modifying
+; nominalizations, so I need a top level distinction between 
+; contentful and other nom_rels that will allow me to say 
+; that の only modifies things whose KEY is contentful-nom_rel.
+; (Can't use reg-nom_rel for this, because の can modify things
+; that are locable_rel, and I can't make locable_rel a subtype of
+; reg-nom_rel; see below.)
+
+; (ERB 2001-10-31) This almost works, but I need a way to distinguish
+; between の nominalizations and vns used as ns.  For now, I'm
+; going to try making a separate type for the vn nominalizations.
+
+contentful-nom-relation := noun-relation & [ARG0 full_ref-ind].
+
+; (ERB 2001-11-05) For k2y purposes, I need all of the nominalise
+; relations to have a common supertype.
+
+;basic-nominalise_rel := noun-relation.
+
+;nominalise-relation := noun-relation.
+
+
+;arg-nominalise_rel := basic-nominalise_rel & arg1-relation.
+
+;nominalise-pred_rel := arg-nominalise_rel.
+
+;nominalise-vn_rel := contentful-nom_rel & arg-nominalise_rel.
+
+reg-nom-relation := contentful-nom-relation.
+
+; (ERB 2001-10-03) None of the subtypes of temp_rel are being used,
+; so I'm going to comment them out for now, and redo as necessary.
+; Likewise for most subtypes of name_rel.
+
+; (ERB 2001-10-03) Reorganizing the type hierarchy for times to
+; create types that the PP -> NP rule and に can select for.
+
+; (ERB 2001-10-03) locable_rel is the requirement of the rule 
+; that makes expressions like 来月 and 2001年 into COP-ARG +
+; elements, with an added unspec_loc_rel.
+; modable is the requirement of the further rule that
+; gives these guys a MOD value, so they can modify without に.
+
+; (ERB 2001-10-03) Experimenting with making locable_rel a subtype
+; of reg-nom_rel because dofw will also inherit from name_rel.
+
+; (ERB 2001-10-04) That doesn't work because then any reg-nom_rel
+; can be compatible with locable_rel.  So, I need to introduce
+; the feature NAMED outside of reg-nom_rel.
+
+locable-relation := contentful-nom-relation.
+
+niarg-relation := locable-relation.
+not-niarg-relation := locable-relation.
+modable-relation := locable-relation.
+nonmodable-relation := locable-relation.
+
+
+
+; ERB (2001-08-28) For compositional analysis of dates
+; ERB (2001-10-03) Working numbered-np_rel into the new
+; hierarchy below locable_rel.
+
+numbered-np-relation := nonmodable-relation & niarg-relation & noun-arg1-relation &
+                [ ARG0 full,
+		  ARG1 handle].
+
+; (MS 2004-12-02) For generation, these need PRED values.
+
+dofm-relation := numbered-np-relation & [PRED "dofm_rel"].
+mofy-relation := numbered-np-relation & [PRED "mofy_rel"].
+yofc-relation := numbered-np-relation & [PRED "yofc_rel"].
+numbered-hour-relation := numbered-np-relation & [PRED "numbered_hour_rel"].
+numbered-minute-relation := numbered-np-relation & [PRED "numbered_minute_rel"].
+
+; ERB (2001-10-03) For days of the week, which are like
+; the numbered-np_rels, but have a name instead of a number.
+; (MS 2005-11-30) I want the others to have distinguished relations as well,
+; which is used to disambiguate the ni particle attached to them.
+
+dofw-relation := const-value-relation & nonmodable-relation &  niarg-relation &
+  [ PRED "dofw_rel",
+    CARG *top* ].
+
+loc-relation := named-relation.
+inst-relation := named-relation.
+personname-relation := named-relation.
+productname-relation := named-relation.
+
+; ERB (2001-10-03) Types for other kinds of date expressions.
+
+future-date-relation := niarg-relation & modable-relation.
+non-future-date-relation := not-niarg-relation & modable-relation.
+
+
+; (ERB 2001-08-06) Changing card_rel to look more like the LinGO
+; grammar.  Decided to call it integer_rel instead, since it's
+; not clear to me that we want to use different numbers for cardinals
+; and ordinals. ... but then it doesn't make sense to have
+; times_rel and plus_rel as subtypes of integer_rel.  So 
+; there will be integer_rel, const_rel, times_rel and plus_rel.
+; Just like the LinGO grammar!
+
+; (ERB 2004-1-16) Another update to integer-relation and its subtypes
+; to synch up with the ERG.
+
+;integer-relation := relation.
+
+integer-relation := arg1-ev-relation &
+ [ ARG1 individual ].
+
+; (ERB 2002-02-14) For current version of k2y code, need const_rel
+; to have an event variable.
+
+; (MS 2003-12-10) This is now CARG (RMRS construction and matrix).
+; But what should we do about ARG0?
+
+;const_rel := integer_rel & event_rel &
+;             [ CONST_VALUE *top*,
+;	       PRED 'const,
+;               ARG0.E.TENSE no_tense ].
+
+;const-relation := named-relation.
+
+const-relation := integer-relation & const-value-relation &
+		  [ PRED "card_rel" ].
+
+;;; FCB 2006-08-18 harmonize with ERG
+times-relation := integer-relation & arg123-ev-relation &
+             [ PRED "times_rel" ].
+
+plus-relation := integer-relation & arg123-ev-relation &
+            [ PRED "plus_rel" ].
+
+; (ERB 2001-11-14) To keep the numbers-qua-numcls out of the
+; first two nominal numcl rules.
+
+quantity-relation := arg1-relation &
+                [ AMOUNT handle ].
+
+reg-quantity-relation := quantity-relation.
+
+card-relation := quantity-relation.
+
+; (ERB 2001-11-14) Type for the relation in numbers acting as
+; labels for things, as in:
+;
+; 口座番号は12345です
+
+named-card-relation := card-relation & contentful-nom-relation & 
+ [PRED "named_card"].
+
+; (ERB 2001-10-29) I need a value for REL for integers that get
+; promoted to NumClPs by the empty-cardinal-rule.  I want it to
+; be atomic, and to contrast with string.  So, here it is:
+
+; (ERB 2001-10-29) The REL names, written 'relation, are actually
+; treated as atoms, not strings, by cheap.  This means I need to
+; move this contrast one level up.
+
+; (ERB 2001-11-01) Switching to a different strategy:  Three separate
+; numcl2n rules.  I still need to distinguish between types of numeral
+; classifiers, but now I can do it based on the entire ALTKEY.  So,
+; I want no_rel to be a kind of mod_relation that contrasts with everything
+; else. 
+
+; (MS 2003-10-05) Not used any more.
+
+;quantifier_rel := reg-nom_rel & [QUANTITY *top*].
+
+
+; (ERB 2001-11-15) Special type for loc-names used to
+; leverage Chasen's recognition of place names in YY's
+; product. 
+
+;named-place_rel := named_rel.
+
+; Pronouns
+
+pron-relation := reg-nom-relation. 
+
+
+;zero-pron-relation := pron-relation.
+
+real-pron-relation := pron-relation.
+
+generic-nom-relation := pron-relation &
+                   [PRED generic-nom_rel].
+
+place-relation := pron-relation &
+                   [PRED place_rel].
+
+
+
+;ad_rel := relation.
+
+
+
+; (ERB 2001-10-18) I'm trying to get rid of argmod1_rel.
+; so adj_rel will now be a subtype of the new type adj_rel-general.
+
+; (ERB 2002-01-14) The k2y machinery still isn't recognizing
+; these.  Maybe add TENSE no_tense?  (Originally put this on
+; adj_rel-general, but that caused problems for na-adjectives
+; in prenominal position.  Need to think about whether we really
+; want to use a subtype of adj_rel-general for those guys, but
+; moving the constraint here for now.)
+
+; (MS 2003-09-26) Adapting to Matrix Ver.0.5: There is no ARG any more.
+
+adj-relation := arg12-ev-relation &
+           [ ARG0.E.TENSE no_tense ].
+
+na-adj-relation := arg1-ev-relation.
+
+
+;scoped_rel  := relation &
+;	[ SCOPE handle ].
+
+;scope_rel := scoped_rel.
+
+;mood_rel := scope_rel.
+
+;dim_rel := relation &
+;	[ DARG individual ].
+
+
+;ordinal_rel := ad_rel &
+;               [ ORD integer ].
+
+
+;arg_rel := relation &
+;           [ ARG mrs-thing ].
+
+; (ERB 2001-10-18) Getting rid of a GLB type.
+; (MS 2003-09-26) Adapting to Matrix Ver.0.5: There is no ARG any more.
+
+;arg-event_rel := arg_rel & event_rel.
+
+
+
+; (ERB 2001-09-03) I'm trying to get wa to take an event as its
+; ARG3, so I need a supertype that doesn't require non_expl-ind.
+; I think we might really need some reorganization of the upper
+; part of this hierarchy, so that events are non_expl-inds anyway,
+; but that wouldn't immediately solve this problem.
+
+; (ERB 2001-09-06) In an MRS meeting with Dan, we decided that
+; the topic_rel should be an arg_rel only.  That is, no ARG3.  The
+; value of ARG is either the ARG0 of a noun or the ARG0 of a PP.
+; Undoing this arg3_rel-super stuff and reverting to original
+; definition above.
+
+; (ERB 2001-10-01) It turns out that making topic_rel arg_rel only
+; leads to MRSs that don't scope when wa marks NPs.  So, going
+; back to making it an ordinary arg_rel, with the features ARG and
+; ARG3.  The value of ARG3 has to be possibly an event.  Reinstating
+; arg3_rel-super.
+
+; (ERB 2001-10-03) The wa that attaches to complementizer to needs to be 
+; able to take a handle, so I will loosen this up from [ ARG3 index ].
+
+; (ERB 2001-10-10) We need to distinguish the relations belonging to
+; prepositions, adverbs and na-adjectives from those belonging to
+; verbs and adjectives for the k2y translation.  In order to do this,
+; I'll need two subtypes of event_rel: v-event_rel and non-v-event_rel.
+; arg1, arg2 and arg4 will all be under v-event_rel, but arg and
+; arg3_rel-super will just be under v-event_rel.
+
+; (ERB 2001-10-11) For k2y conversion, we need a supertype that includes
+; all verbs and no prepositions/modifiers.  Since Ps have ARG3, this can't
+; in a subtype of v-event_rel.  The specialization to ARG3 full for
+; Ps will be on argmod3_rel.
+
+; (MS 2003-09-26) Adapting to Matrix Ver.0.5: There is no ARG any more.
+
+;argmod_rel := arg_rel & arg1-relation.
+
+; (ERB 2001-10-18) I can't think of a reason that any relation
+; should have both the features ARG and ARG1, so I am removing
+; this type.
+
+
+
+;modal_rel := arg12-relation &
+;             scope_rel.
+
+;(MS 2003-09-26) Switched to Matrix unspec_compound_rel
+
+;unspec_rel := arg12-relation & [PRED "unspec_rel"].
+
+; (ERB 2001-10-10) For time NPs used as adverbs.
+; (MS 2003-09-26) Switched to Matrix unspec_compound_rel
+
+;unspec-loc_rel := arg12-relation & [PRED "unspec-loc_rel"].
+
+
+;(MS 2001-10-23) if we're not including ZPRO's into the MRS, we should not say too much about the index of ARGs.
+
+equal-relation := arg12-ev-relation &
+              [ ARG1 full,
+                ARG2 event-or-ref-index,
+                LBL handle].
+
+
+;; used in mai
+want2-relation := arg12-relation & [PRED "want2_rel"].
+
+
+; Preposition relations
+
+; (MS 2003-07-09) This is different to the matrix definition. We have to see, whether it is necessary to keep it.
+
+;j-prep-mod_rel := arg12-relation.
+
+; (ERB 2001-11-26) We want a special type for no-nmod and 
+; compounds that the downstream machinery can recognize.
+; (MS 2003-09-26) Switched to Matrix prep-mod-relation.
+
+;no_nmod := prep-mod-relation & [PRED 'no].
+
+;kara_nmod := prep-mod-relation.
+
+;ni_nmod := prep-mod-relation.
+
+;tloc_rel := prep-mod-relation.
+
+
+; (ERB 2001-09-03) I want the ARG3 of the topic_rel to
+; be potentially an event, so I'm changing this type. (see
+; further notes above at arg2_rel-super.
+
+; (ERB 2001-09-06) In an MRS meeting with Dan, we decided that
+; the topic_rel should be an arg_rel only.  That is, no ARG3.  The
+; value of ARG is either the ARG0 of a noun or the ARG0 of a PP.
+; Can't constrain ARG to be an event then.
+
+; (ERB 2001-10-01) It turns out that making topic_rel arg_rel only
+; leads to MRSs that don't scope when wa marks NPs.  So, going
+; back to making it an ordinary arg_rel, with the features ARG and
+; ARG3.  The value of ARG is the event of the main verb.
+
+; (ERB 2001-10-31) It seems that the reason for keeping the topic_rel
+; separate from prep-mod_rel may have gone away, and it would be
+; useful for k2y purposes for topic_rel to be a prep-mod_rel.  So,
+; seeing if that works.  (If it does, it may be possible to simplify
+; some things in this part of the hierachy and in the relevant
+; lexsem types.)
+
+
+;topic_rel := prep-mod-relation &
+;             [ ARG2 semarg ].
+
+	
+; (ERB 2001-10-11) No one was using this type, and adverbs were getting
+; the type of their relations from type inference from the features.
+; It was a glb type, too.  I'm going to make adv-relation a subtype of
+; arg_rel & event_rel, and declare it on the adv-sem-type.
+		 
+
+; (ERB 2001-10-18) I added arg-event_rel which inherits from
+; arg_rel & event_rel and eliminates a glb type.
+
+
+;modadv-relation := adv-relation & arg1-relation.
+
+; (ERB 2001-10-22) Negation isn't working in k2ys, so I'm going
+; to try making it a subtype of adv-relation for the moment, just for fun.
+
+; (ERB 2001-10-24) It wasn't working because it wasn't using this
+; rel.  Instead, it was an arg_rel with REL 'neg_rel.  So, I'm going
+; to make nai actually use this rel.
+
+; (ERB 2001-10-25) Changing spelling of neg_rel to neg_rel to 
+; match the English grammar.
+
+; (MS 2002-12-03) neg_rel needs an arg1 that can be accessed, e.g. in tabenaide morau.
+; (MS 2003-07-11) For the Japanese analysis, it also needs an ARG2
+; (MS 2004-02-20) and also an ARG3, in the case of passive?
+
+neg-relation := adv-relation & arg1-relation &
+		[ARG0 individual].
+
+;cant_help_rel := j-neg_rel.
+
+
+objchange-relation := arg12-relation.
+
+tai-relation := objchange-relation & 
+		[PRED tai_v_want_rel].
+
+; (MS 2001-11-22) RARERU needs an ARG1, if it shall be able to combine with TAI.
+
+rareru-relation := arg12-ev-relation & 
+		   [PRED rareru_v_can_rel].
+
+pass-relation := arg12-relation & 
+		 [PRED "passive"].
+
+adversative-relation := arg12-relation & 
+			[PRED "adversative"].
+
+
+
+; Degree relations
+
+;degree_rel := relation.
+
+
+; (ERB 2001-08-02) Changed type of C-ARG to conj_non_expl-ind to
+; help MRS machinery scope sentences with coordinated NPs.  This
+; probably means that we'll need a different type of conjunction_rel
+; for S coordination.  (Or this constraint will need to be lowered.)
+
+; (ERB 2001-08-02) Added features L-LBL and R-LBL so that 
+; the quantifiers won't be allowed to scope independently.
+; (ERB 2001-09-12) Turns out those features were superfluous... the
+; grammar shouldn't be imposing those constraints.  It really belongs
+; in the scoping machinery.
+
+; (ERB 2002-02-14) In case this helps with k2ys.
+; (MS 2003-09-25) Adapted this to matrix ver.05
+
+;discourse-relation := subord-or-conj-relation & [PRED "if-then-rel"].
+
+;in-order-to_rel := subord-or-conj-relation & [PRED "in-order-to_rel"].
+
+
+
+
+; for k2ys it is helpful for the unspec rel for noun noun
+; compounds to not be a prep-mod-relation.   Giving it the same
+; features as the English grammar.
+; (MS 2003-09-25) there is a new definition in matrix version 0.5
+
+
+
+appos-id-relation := arg12-relation & [PRED "appos-id_rel"].
+
+title-id-relation := arg12-relation & [PRED "title-id_rel",
+                             ARG0.E.TENSE no_tense].
+
+
+
+
+scopal-adv-relation := arg1-ev-relation & [ARG1 handle].
+
+;;; FCB 2006-01-26 --- made into arg0-relation so that RMRSs can be built
+
+interj-relation := arg0-relation.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; predsorts
+
+quant_rel := predsort.
+udef_q_rel := quant_rel.
+def_q_rel := udef_q_rel.
+indef_q_rel := udef_q_rel.
+which_q_rel := def_q_rel.
+
+hes_rel := predsort.
+pron_rel := predsort.
+generic-nom_rel := predsort.
+place_rel := predsort.
+quantity_rel := predsort.
+date_rel := predsort.
+yofc_rel := date_rel.
+mofy_rel := date_rel.
+person_n_rel := predsort.
+
+adv_rel := predsort.
+noun_rel := predsort.
+
+no_rel := predsort.
+tai_v_want_rel  := predsort.
+rareru_v_can_rel := predsort.
+garu_v_seem_rel := predsort.
+pass_v_rel := predsort.
+
+
+; FCB relations for numbers 
+;card_rel :=  named_rel.
+;plus_rel := card_rel.
+;times_rel := card_rel.
+
+
+;(MS 2005-11-29) these were still not defined. 
+; Recognized when trying to generate.
+
+degree_rel := predsort.
+unspec_adj_rel := predsort.
+compound_rel := predsort.
+unspec_rel := predsort.
+number_rel := predsort.
+
+; (ERB 2004-1-18) Copied from ERG for measure NP numeral
+; classifier phrases.
+; (FCB 2005-08-09) changed DARG to ARG1 
+; (trying to reduce the types of arguments)
+; ARG1 is the attribute being measured
+; ARG2 is the unit of measure
+degree-relation := arg12-relation.
+
+
+; (CH 2004-09-09)
+; introduce vv-relation, which is the supertype of all relations holding between
+; V1 and V2 of lexical V-V compound.
+vv_rel := predsort.
+vv-manner_rel := vv_rel.
+vv-relation := arg12-ev-relation &
+ [PRED vv_rel].
+
+; (CH 2004-09-09)
+; introduce vv-prefix-v1-relation.
+vv-prefix-v1_rel := predsort.
+vv-prefix-v1-relation := arg1-ev-relation &
+ [PRED vv-prefix-v1_rel].
+
+;;;
+;;; (FCB & DPF 2008-08-06) New types for topic/focus markers
+;;;
+focus_d_rel := predsort.
+
+;;; (MWG 08-10-30) Added wa_d_super and other_focus_d_rel, and revamped
+;;; the hierarchy (so things like _equal_d_rel are not subtypes of _wa_d_rel)
+wa_d_super := focus_d_rel.
+other_focus_d_rel := focus_d_rel.
+
+_wa_d_rel := wa_d_super.
+_mo_d_rel := wa_d_super.
+_colon_d_rel := wa_d_super.
+_comma_d_rel := wa_d_super.
+_equal_d_rel := wa_d_super.
+;;; (TK 08-08-28) Added following
+_dake_d_rel := other_focus_d_rel.
+_shika_d_rel := other_focus_d_rel.
+_bakari_d_rel := other_focus_d_rel.
+_nado_d_rel := other_focus_d_rel.
+_made_d_rel := other_focus_d_rel.
+_koso_d_rel := other_focus_d_rel.
+_sura_d_rel := other_focus_d_rel.
+_demo_d_rel := other_focus_d_rel.
+_nomi_d_rel := other_focus_d_rel.
+_sae_d_rel := other_focus_d_rel.
+_datte_d_rel := other_focus_d_rel.
+_ga_d_rel := other_focus_d_rel.
+
+
+
+;;;  try to say more about pronouns
+ref-ind :+ 
+ [ PRONTYPE prontype ].
+
+prontype := predsort.
+refl := prontype.
+std_pron := prontype.
+zero_pron := prontype.
+
+;;;
+;;; Information from what was values.tdl (merged 2009-07-05)
+;;;
+
+
+
+; Values
+
+
+
+category := sort.
+p := category.
+n := category.
+adj := category.
+v := category.
+adv := category.
+card := category.
+interj := category.
+det := category.
+temp_mod := category.
+noun_mod := category.
+pp_mod := category.
+idiom := category.
+utt := category.
+turn := category.
+sap  := category.
+comp := category.
+prep := category.
+;card_mod := category.
+hes := category.
+punct := category.
+prefix := category.
+numcl := category.
+
+;aspect := sort.
+terminative := aspect.
+prospective := aspect.
+perfective := aspect.
+progressive := aspect.
+inceptive := aspect.
+perfect_progressive := aspect.
+modal := aspect.
+;;; the value for sentences with no special marking
+default_aspect := aspect.  
+
+;tense := sort.
+tensed := tense.
+
+
+; (ERB 2001-12-13) For runon_s rule.
+
+present-past-or-future := tensed.
+
+present-or-past := present-past-or-future.
+present := present-or-past.
+past := present-or-past.
+
+fut := present-past-or-future.
+te := tensed.
+no_tense := tense.
+
+
+; (MS 2003-09-10) already contained in matrix.tdl
+;mood := sort.
+
+uttmodus := mood.
+
+nonuttmodus := mood.
+
+passive := mood.
+
+nonpassive := mood.
+
+operative := mood.
+
+nonoperative := mood.
+
+imperative := nonuttmodus & nonpassive & nonoperative.
+
+simple-imperative := imperative.
+polite-imperative := imperative.
+
+infinitive := nonuttmodus & nonpassive & nonoperative.
+
+negative := operative & uttmodus.
+
+conditional := operative & uttmodus.
+
+voluntative := operative & uttmodus.
+
+
+indicative := nonoperative & uttmodus & nonpassive.
+subjunctive := indicative.
+
+consultative := nonoperative & uttmodus.
+
+;potential := uttmodus & nonpassive.
+potential := uttmodus & operative.
+
+causative := uttmodus & nonpassive & operative.
+
+pot-neg := negative & potential.
+pot-pass := potential & passive-basic.
+pot-caus := potential & causative.
+pot-cond := potential & conditional.
+pot-vol := potential & voluntative.
+;pot-ind := potential & indicative.
+
+neg-caus := negative & causative.
+neg-pass := negative & passive-basic.
+neg-vol := negative & voluntative.
+
+
+vol-pass := voluntative & passive-basic.
+vol-caus := voluntative & causative.
+
+
+conditional-basic := conditional & nonpassive.
+pass-cond := passive-basic & conditional.
+neg-cond := conditional & negative.
+caus-cond := causative & conditional.
+
+passive-basic := passive & operative & uttmodus.
+
+consult-caus := consultative & causative.
+
+;sase-rare-tai
+pot-caus-vol := pot-caus & vol-caus.
+
+;sase-rare-nai
+pot-neg-caus := pot-neg & pot-caus.
+
+;sase-rare-taku-nai
+caus-pot-vol-neg := pot-caus-vol & pot-neg-caus.
+
+;taku-nakere-ba
+vol-neg-cond := neg-vol & neg-cond.
+
+;(MS 2004-11-26) sase-rareru
+pass-caus := passive-basic & causative.
+
+
+smod  := sort.
+
+unmarked := smod.
+marked := smod.
+
+decl := marked.
+quest := marked.
+cond := marked.
+imp := marked.
+
+
+;Particles
+
+ptype := sort.
+
+overt := ptype.
+empty := ptype.
+sentence-particle := ptype.
+
+topic := overt.
+nontop := overt.
+
+case := nontop.
+mod := case.
+temp-no := case.
+no-case := case.
+con := case.
+kara-case := ni-or-kara.
+
+; (ERB 2002-02-14) Complementizer to and postposition to should
+; be distinguished.  For now, give complementizer to its own case
+; value.  (Probably need more fundamental change to analysis -- 
+; perhaps when we overhaul the clause analysis.)
+; (MS 2004-12-13) Why was made in topic? This lead to unwanted unifications!
+; took that out (犬などの動物 got a reading, where the nado got PTYPE made).
+
+
+to-comp := case.
+
+ni-or-to := case.
+ni-or-kara := case.
+ga-or-wo := case.
+ni-or-ga := case.
+ga-or-coparg := case.
+wo-or-ni := case.
+
+ga := ga-or-wo & ni-or-ga & ga-or-coparg.
+wo := ga-or-wo & wo-or-ni.
+ni := ni-or-ga & ni-or-to & ni-or-kara & wo-or-ni.
+to := ni-or-to.
+coparg := ga-or-coparg.
+
+
+postp-case := nontop.
+mo := topic.
+koso := topic.
+comma := topic.
+
+nattr  := nontop.
+parmod := nontop.
+de := nontop.
+
+wa  := topic.
+shika  := topic.
+dake := topic.
+
+demo := topic.
+datte := topic.
+
+nanka  := postp-case.
+he  := postp-case.
+sonota  := postp-case.
+tomo  := postp-case.
+;nado  := nontop.
+nado  := topic.
+made  :=  postp-case.
+made_d  :=  topic.
+kara  := postp-case.
+bakari := postp-case.
+bakari_d := topic.
+kurai  := postp-case.
+igai  := postp-case.
+toshite  := postp-case.
+yori  := postp-case.
+nitsuite := postp-case.
+nikaNshite := postp-case.
+nikakete := postp-case.
+niyotte := postp-case.
+nisotte := postp-case.
+;sae := postp-case.
+sae := topic.
+tou := postp-case.
+zutsu := postp-case.
+toka := postp-case.
+kamo := postp-case.
+toiu := nontop.
+niokeru := nontop.
+notame := topic.
+
+; (TT 2003-09-04) for ijou, igai
+ijou := postp-case.
+ika := postp-case.
+
+
+modify := sort.
+n-modified := modify.
+not-modified :=  modify.
+modified :=  modify.
+
+; (MS 2003-07-09) Not used any more?
+
+;word-status := sort.
+;word := word-status.
+;stem := word-status.
+
+; (FCB 2005-05-05) Not used any more?
+
+;vref := sort.
+;he := vref.
+;sp := vref.
+;sp_he := vref.
+;top := vref.
+;third := vref.
+;thirdpl := third.
+;firstpl := sp.
+
+vtype := sort.
+std-or-demon := vtype.
+std := std-or-demon.
+zero := vtype.
+demon := std-or-demon.
+
+morphbind := sort.
+
+morphbindtype := morphbind.
+nomorphbind := morphbind.
+
+vstem-morph := morphbindtype.
+cstem-morph := morphbindtype.
+
+
+v-or-c-stem-morph := vstem-morph & cstem-morph.
+
+o-morph := v-or-c-stem-morph.
+u-morph := v-or-c-stem-morph.
+inf-morph := v-or-c-stem-morph.
+;cond-morph := v-or-c-stem-morph.
+i-or-t-or-a-morph := v-or-c-stem-morph.
+a-or-aa-morph := i-or-t-or-a-morph.
+a-morph := a-or-aa-morph.
+
+;;; (FCB 2003-08-12) type for "se zu" very irregular suru ending before zu
+aa-morph := a-or-aa-morph.
+
+nd-morph := cstem-morph.
+
+mai-beki-morph  := morphbindtype.
+mai-morph := mai-beki-morph.
+beki-morph := mai-beki-morph.
+imp-morph := cstem-morph.
+cond-morph := cstem-morph.
+
+; (MS 2004-12-21) Maybe we don't need this one any more?
+;e-morph := vstem-morph.
+
+pass-morph := morphbind.
+pass-c-stem-morph := pass-morph & cstem-morph.
+pass-v-stem-morph := pass-morph & vstem-morph.
+
+
+ere-morph := cond-morph.
+cond-exceptional-morph := cond-morph.
+
+;(MS & FCB 2003-10-29) fixed the definition.
+
+i-or-t-morph := i-or-t-or-a-morph.
+i-morph := i-or-t-morph & i-or-shortadj-morph.
+t-morph := i-or-t-morph.
+;
+; FCB distinguish for adjective inflection
+; te-morph:   古かった
+; ta-morph:
+ta-morph := t-morph.
+te-morph := t-morph.
+
+i-or-shortadj-morph := v-or-c-stem-morph.
+shortadj-morph := i-or-shortadj-morph.
+
+
+stemtype := sort.
+regular-stem := stemtype.
+cons-stem := regular-stem.
+c-stem := cons-stem. 
+c2-stem := cons-stem. 
+v-stem := regular-stem.
+
+; (ERB 2002-01-22) To keep te (and possibly other tense
+; endings) out of the i-adj-inflectional rule.
+
+otherstem := stemtype.
+
+irregular-stem  := stemtype.
+
+cop-stem := irregular-stem.
+da-stem := cop-stem.
+desu-stem  := cop-stem.
+
+adj-stem  := irregular-stem.
+
+
+kurusuru-stem  := irregular-stem.
+
+
+infinitive-stem := stemtype.
+
+nominal-stem  := stemtype.
+noun-stem := nominal-stem.
+poss-adv-stem := nominal-stem.
+
+
+pn := sort.
+
+person := pn.
+number := pn.
+
+; (ERB 2001-11-12) For the experiment I'm doing with -tai,
+; I need a type one-or-two.
+
+;one := person.
+one-or-two := person.
+two-or-three := person.
+one := one-or-two.
+two := two-or-three & one-or-two.
+three := two-or-three.
+
+sg := number.
+pl := number.
+
+onesg := one & sg.
+twosg := two & sg. 
+threesg := three & sg.
+onepl := one & pl.
+twopl := two & pl.
+threepl := three & pl.
+
+
+; (MS 2005-03-01) andro should be fem or masc, but not neut (彼ら)
+gender := sort.
+andro := gender.
+fem := andro.
+masc := andro.
+neut := gender.
+
+
+; (MS 2004-11-30) I want to distinguish between relatives and others,
+; such that the others don't go into the relative clause rule.
+; (MS 2005-03-29) intersective is not used any more.
+; (MS 2005-07-04) we need something for compounds
+
+posthead := sort.
+nonrels  := posthead.
+left := nonrels.
+right := nonrels.
+;;intersective := nonrels.
+rels := posthead.
+coord := nonrels.
+compound := nonrels.
+
+; (ERB 2002-01-24) To keep phrases produced by the conj-rule
+; from being modified.  The multiple layers here allow for
+; te-conjunction to either side of other kinds of conjucntion,
+; while still forcing one order of combination within a kind
+; of conjunction.
+
+nucl := sort.
+fin_conj := nucl.
+not_fin_conj := nucl.
+te_conj := not_fin_conj.
+nucl_bool := not_fin_conj.
+nucl_plus := nucl_bool.
+nucl_minus := nucl_bool.
+
+; (MS 2004-11-09) We need to divide auxiliaries into aspectual and others to
+; be able to state where zpros can be inserted.
+
+aux := sort.
+aux_plus := aux.
+aux_minus_or_complex := aux.
+aux_minus := aux_minus_or_complex.
+aspect_aux := aux_plus.
+complex_aux := aux_plus & aux_minus_or_complex.
+
+;;;
+;;; Information from newlexsem-types.tdl (merged 2009-07-05)
+;;;
+
+; (ERB 2001-09-13) Moved LTOP = KEY.LBL constraint to MRS, so I'm taking it
+; out of all of these types.
+; (MS 2001-11-5) I'm afraid I have to undo this for the treatment of HAYAKU NEREBA YOI.
+
+; (ERB 2001-11-26) I don't want nominal-sign-sem-type to inherit
+; the constraints identifying its MOD-IND with its INDEX and its
+; MOD-HAND with its LTOP because this is incorrect for the subtype
+; nom-vn-sem-type.  Making a subtype of nominal-sign-sem-type which
+; does inherit all of these constraints.
+
+; (MS 2003-07-09) changed due to matrix
+
+nominal-sign-sem-type :=  wg-handel-lex-mrs.
+
+mod-id-nominal-sign-sem-type := nominal-sign-sem-type & mod-id-wg-handel-mrs.
+
+common-noun-sem-type := mod-id-nominal-sign-sem-type &
+                        [ RELS diff-list & [LIST.FIRST reg-nom-relation ]].
+
+;date-noun-sem-type := mod-id-nominal-sign-sem-type &
+;                      [ KEY #key & locable_rel,
+;                        RELS 1-dlist & [LIST.FIRST #key ],
+;                        HCONS <! !> ].
+
+
+date-noun-sem-type := mod-id-nominal-sign-sem-type &
+                      [ HCONS <! !>].
+
+; (TT 2003-08-14) temporarily added
+nadv-sem-type := mod-id-nominal-sign-sem-type &
+                      [ HCONS <! !> ].
+; </TT>
+
+pron-sem-type := mod-id-nominal-sign-sem-type &
+                             [HOOK [LTOP #handle,
+				    INDEX #i],
+                              RELS diff-list & 
+                               <! pron-relation, 
+                                  quant-relation &
+                                     [ARG0 #i,
+                                      RSTR #restr] !>,
+                              HCONS <! qeq &
+                                       [HARG #restr,
+                                        LARG #handle] !>].
+
+ppron-sem-type := pron-sem-type &
+                  [RELS <! relation , relation !>].
+
+; (ERB 2001-09-13) This type identifies LTOP with the LBL of
+; the arg_rel.  This has the happy consequence that the LBLS of
+; the arg_rel and the place_rel are the same.
+
+lpron-sem-type := mod-id-nominal-sign-sem-type &
+                  [HOOK [LTOP #hand,
+			 INDEX #ind],
+                   RELS  <! arg0-relation   & [LBL #hand,
+                                       ARG0 #ind],
+                          quant-relation & 
+			  [PRED def_q_rel,
+			   ARG0 #ind,
+			   RSTR #restr],
+                          place-relation &
+                            [LBL #hand,
+			     ARG0 #ind ]!>,
+                   HCONS <! qeq &
+                           [HARG #restr,
+                            LARG #hand] !> ].
+
+
+personal-pronoun-sem-type := ppron-sem-type &
+                                  [RELS.LIST.REST.FIRST.PRED def_q_rel].
+
+
+
+det-sem-type := mod-id-wg-handel-mrs.
+
+lex-det-sem-type := det-sem-type.
+
+
+nom-sem-type := mod-id-nominal-sign-sem-type &
+                [RELS diff-list & [LIST.FIRST noun-relation]].
+
+nom-pred-sem-type := mod-id-nominal-sign-sem-type &
+                [RELS diff-list & [LIST.FIRST noun-arg1-relation]].
+
+; (ERB 2001-10-31) I want to disallow NO from modifying NO
+; nominalizations while still allowing it to modify vns used as ns.
+; I'm doing this based on the KEY, so I've introduce a new kind
+; of nominalise_rel for this type.  (Replacing nominalise-pred_rel
+; with nominalise-vn_rel.)
+
+; (ERB 2001-11-26) We want to expose the event of the embedded
+; verb as a target for modification.  This means that the MOD-IND
+; and the INDEX shouldn't be identified for this type.  See notes
+; at the vn2n rule in rule-types.tdl.
+;
+
+
+nom-vn-sem-type := nominal-sign-sem-type.
+; (FCB 2005-06-30) Move this inside the lexical rule
+;              [SYNSEM.LKEYS.KEYREL noun-arg1-relation].
+
+
+adj-sem-type := mod-id-wg-handel-mrs &
+                [ HOOK.INDEX #inst,
+                  RELS diff-list & [LIST.FIRST adj-relation &
+					       [ ARG1 #inst]]].
+
+;(MS 2004-06-25) added the linking of LBL to LTOP.
+
+na-adj-sem-type-basic := mod-id-wg-handel-mrs &
+                [ HOOK [INDEX #event,
+			LTOP #handle],
+                  RELS <! na-adj-relation & [ARG0 #event,
+					     LBL #handle] !>].
+
+na-adj-sem-type := na-adj-sem-type-basic &
+                [ HCONS <! !>].
+
+; (ERB 2001-08-06) In Smith-style number names, the numbers sometimes
+; have to also provide the times_rel and the plus-relation.
+
+; (ERB 2004-1-16) See notes at card-lex: exposing the ARG1 as the XARG.
+; (FCB 2006-06-20) no MOD-IND/MOD-HAND
+; FIXME check the semantics
+card-sem-type := mrs &
+		 [HOOK [INDEX #ind,
+		       XARG #xarg],
+                 HCONS <! !>,
+                 RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind,
+								ARG1 #xarg]]].
+; card-sem-type := mrs &
+;                 [MOD-IND #ind,
+; 		 MOD-HAND #hand,
+; 		 HOOK [INDEX #ind,
+; 		       LTOP #hand,
+; 		       XARG #xarg],
+;                  HCONS <! !>,
+;                  RELS diff-list & [LIST.FIRST const-relation & [ARG0 #ind,
+; 								ARG1 #xarg]]].
+
+
+
+; (ERB 2001-08-28) Date expressions
+
+date-sem-type := mod-id-wg-handel-mrs &
+                [HCONS <! !>,
+                 HOOK.INDEX #ind,
+                 RELS diff-list & [LIST.FIRST numbered-np-relation &
+					      [ ARG0 #ind ]]].
+                 
+
+simple-adj-sem-type := adj-sem-type.
+
+dim-adj-sem-type := adj-sem-type &
+		[ RELS diff-list & [LIST.FIRST adj-relation],
+                         HCONS <! !> ].
+
+;(MS 2004-06-24) As the n-conjunction gets an index, it should be quantified and therefore 
+; needs something in its HCONS. Therefore I erased the [HCONS <! !>] condition.
+
+n-conj-sem-type :=  mod-id-wg-handel-mrs.
+
+; (ERB 2001-09-13) Nothing is identifying KEY.LBL and LTOP for
+; these guys.  This constraint might belong somewhere higher up.
+
+; (ERB 2001-10-10) In order for the k2y code to recognize PPs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+; (ERB 2001-11-26) This should inherit constraints identifying
+; MOD-IND/HAND with INDEX/LTOP. ???
+
+prep-sem-type := mod-id-wg-handel-mrs.
+
+; (ERB 2001-09-03) For wa, which isn't quite like the other Ps.
+; (ERB 2001-10-01) ... but not as different as I thought.  Adding
+; back constraint that ARG = INDEX.
+
+; (ERB 2001-10-10) In order for the k2y code to recognize PPs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+topic-sem-type := mod-id-wg-handel-mrs.
+
+; (MS 2003-07-09) This seems not to be used.
+
+;preposition-sem-type := prep-sem-type &
+;                        [ KEY #key,
+;			RELS diff-list & [LIST.FIRST #key]].
+
+; (ERB 2001-10-10) For constructing k2ys it's helpful to have
+; the unspecified relation between nouns in an nn compound not
+; be an instance of prep_mod_rel.
+
+; (ERB 2001-11-26) This should inherit constraints identifying
+; MOD-IND/HAND with INDEX/LTOP.
+
+; (ERB 2001-11-26) It also can't identify its KEY's LBL with
+; its LTOP, since KEY.LBL = MOD.MOD-HAND, and we don't want
+; LTOP and MOD.MOD-HAND identified.
+
+; (ERB 2001-11-26) Experimenting (as we so desire) with using
+; a prep-mod_rel again here to allow compounds with nominalizations
+; as the head.
+
+; (ERB 2001-11-26) It seems to work.  We'll use a special relation
+; type (same as for genitive modifiers) so that the downstream machinery
+; recognize this and posit a role.
+
+
+nncompound-sem-type := wg-handel-lex-mrs-basic.
+
+; (ERB 2001-11-08) On the other hand, for n+vn compounds (used
+; as vns) it's useful to have it be prep_mod_rel.
+
+; (MS 2003-07-09) This seems not to be used.
+
+;nvncompound-sem-type := mod-id-wg-handel-mrs &
+;                 [KEY #key & prep-mod_rel &
+;                      [ ARG0.E.TENSE no_tense ],
+;                  RELS diff-list & [ LIST.FIRST #key ]].
+
+appos-id-sem-type := mod-id-wg-handel-mrs &
+                 [RELS <! appos-id-relation !> ].
+
+
+greeting-sem-type := mod-id-wg-handel-mrs &
+               	[ HCONS <!  !>].
+
+excl-sem-type := mod-id-wg-handel-mrs &
+               	[ HCONS <!  !>].
+
+; (ERB 2001-12-10) Making these more like discourse adverbs like
+; "well" and "so" in the LinGO grammar.  (Existing analysis gives
+; them only a LBL and doesn't link that handle up to anything.
+; In a sufficiently long sentence, this leads to non-scoping MRSs.)
+
+; (ERB 2001-12-10) This can't be mod-id-wg-handel mrs or even
+; wg-handel-lex-mrs because its LTOP isn't its KEY.LBL.
+
+; (ERB 2002-02-14) Try making discourse_rel a real type, not just
+; REL name on subord_rel.
+; (FCB 2006-06-20) Removed MOD-HAND
+
+interj-sem-type := wg-handel-lex-mrs-basic &
+                   [ HCONS <!  !>].
+
+hes-sem-type :=  mod-id-wg-handel-mrs &
+                   [RELS <! !>,
+                    HCONS <! !>].
+
+
+
+pred-sem-type := wg-handel-lex-mrs-basic.
+
+
+verb-sem-type := pred-sem-type.
+
+;(FCB 2005-04-09) no one seems to be using this
+; aux-sem-type := pred-sem-type &
+; 		[MOD-IND #ind,
+; 		 MOD-HAND #hand,
+; 		 HOOK [INDEX #ind,
+; 		       LTOP #hand]].
+; (FCB 2006-06-20)  lose the MOD-IND/MOD-HAND; I think we are linking this up elsewhere.
+simple-verb-sem-type := verb-sem-type.
+;  &
+;                  [ HOOK [INDEX #ind,
+; 			 LTOP #top],
+; 		   MOD-IND #ind,
+; 		   MOD-HAND #top].
+
+
+
+
+; (ERB 2001-10-10) In order for the k2y code to recognize adverbs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+; (ERB 2001-10-11) No one was saying the type of the relation for adverbs,
+; it was being given as arg_rel & event_rel by inference from the features.
+; Fixing this by making it adv_rel.
+
+i-sect-adv-sem-type := mod-id-wg-handel-mrs &
+                   [ HCONS <! !>  ].
+
+
+; (ERB 2001-09-06) wh adverbs will have more than one element
+; on the liszt.  So scopal-adv-sem-type can't be RELS 1-dlist.
+; I have some more things to add to the sem type for wh adverbs,
+; so I'll just a supertype without that constraint...
+
+; (ERB 2001-10-10) In order for the k2y code to recognize adverbs as modifiers,
+; they need to be ARG0.E.TENSE no_tense.
+
+; (ERB 2001-10-11) No one was saying the type of the relation for adverbs,
+; it was being given as arg_rel & event_rel by inference from the features.
+; Fixing this by making it adv_rel.
+
+possibly-wh-scopal-adv-sem-type := mod-id-wg-handel-mrs.
+
+scopal-adv-sem-type := possibly-wh-scopal-adv-sem-type.
+
+; (ERB 2001-09-06) Here's my attempt at the sem type that gives
+; the decompositional semantics for wh adverbs.
+
+; (ERB 2001-09-06) Going on the assumption for now that these
+; things are actually intersective modifiers.
+
+; (ERB 2001-10-10) In order for the k2y code to recognize adverbs as modifiers
+; they need to be ARG0.E.TENSE no_tense.
+
+; (MS 2001-10-17) That leads to problems for e.g. dou suru. 
+; (MS 2001-10-18) I took the identification of INDEX.ARG0 and KEY.ARG0 out.
+
+
+; (ERB 2001-10-17) Like other modifiers, wh adverbs pass up the index
+; of the heads they modify.  This index should not infact be identified
+; with their own event.  
+
+; (ERB 2001-12-05) We're not finding dou in role tables, possibly
+; because the altkey has no label.  Try identifying WLINK of KEY & 
+; ALTKEY.
+
+; (MS 2004-12-02) For generation, these need PRED values on the prep-mod-relation.
+
+wh-adv-sem-type := mod-id-wg-handel-mrs &
+                   [ RELS <! prep-mod-relation &
+                            [PRED "unspec_p_manner_rel",
+                             ARG0 [ E.TENSE no_tense ],
+			     ARG2 #var],
+                            noun-relation &
+                            [LBL #lr,
+                             ARG0 #var],
+                            quant-relation &
+                            [ARG0 #var,
+                             RSTR #rest,
+                             PRED which_q_rel] !>,
+                     HCONS <! qeq & [LARG #lr, HARG #rest] !>].
+
+;(MS 2003-07-09) This seems not to be used.
+
+;i-adj-sem-type := pred-sem-type &
+;		[ KEY #key & adj-relation,
+;		  MOD-IND #ind,
+;		  MOD-HAND #hand,
+;		  HOOK [INDEX #ind,
+;			LTOP #hand],
+;		RELS [LIST.FIRST  #key]].
+
+;simple-i-adj-sem-type := i-adj-sem-type &
+;                 [ HOOK.INDEX #ind,
+;                   RELS  1-dlist & [LIST.FIRST.ARG0 #ind],
+;                   HCONS <! !>  ].
+
+
+
+;pci-adj-sem-type := pred-sem-type &
+;		[ KEY #key & scope-adj-relation & [SCOPE #sc],
+;		  MOD-IND #ind,
+;		  MOD-HAND #hand,
+;		  HOOK [INDEX #ind,
+;			LTOP #hand],
+;;		RELS diff-list & [LIST.FIRST #key],
+;;		HCONS.LIST <qeq & [LARG #sc], ...> ].
+
+
+;simple-pci-adj-sem-type := pci-adj-sem-type &
+;                           [HOOK.INDEX #ind,
+;;                            RELS 1-dlist & [LIST.FIRST.ARG0 #ind],
+;                            HCONS <! qeq !> ].
+
+;cond-pci-adj-sem-type := pci-adj-sem-type &
+;                 [ LBL #op-hand,
+;		   LTOP-H #scope,
+;                   KEY.LBL #hand,
+;                   RELS diff-list & [LIST [FIRST [ARG0.E.TENSE tense], 
+;                                                  REST [FIRST subord_rel & [R-HNDL #h2,
+;                                                                            L-HNDL #h1,
+;                                                                            LBL #hand]]]],
+;                   HCONS <! qeq,
+;                           qeq &
+;                           [ LARG #h2 ],
+;                           qeq &
+;                           [ HARG #op-hand,
+;                             LARG #scope ],
+;                           qeq &
+;                           [ HARG #hand,
+;                             LARG #h1 ] !> ] .
+
+
+; (ERB 2001-08-09)
+
+; (ERB 2001-12-05) Need to enrich this to deal with 半 where the numeral
+; classifier is going to add another plus-relation.
+
+; (ERB 2004-1-16) I'm going to be introducing some H-CONS constraints now, because
+; the numeral classifier is going to introduce the quantifier for the modified
+; noun. 
+
+;num-cl-sem-type-super := mod-id-wg-handel-mrs &
+;                         [ HCONS <! !>].
+                    
+num-cl-sem-type-super := mod-id-wg-handel-mrs.
+
+num-cl-sem-type := num-cl-sem-type-super.
+
+; (FCB 2005-10-02) added so that vn2n's can become adverbial PPs
+
+reg-nom-arg1-relation := reg-nom-relation & noun-arg1-relation.
