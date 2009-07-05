@@ -27,7 +27,7 @@
   (lkb-pathname (parent-directory) "fundamentals.tdl")
   (lkb-pathname (parent-directory) "rule-types.tdl")
   (lkb-pathname (parent-directory) "principles.tdl")
-  (lkb-pathname (parent-directory) "lex-types.tdl")
+  (lkb-pathname (parent-directory) "letypes.tdl")
   (lkb-pathname (parent-directory) "mtr.tdl") 
 ))
 

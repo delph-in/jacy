@@ -7,7 +7,7 @@
    :include "fundamentals.tdl".
    :include "rule-types.tdl".
    :include "principles.tdl".
-   :include "lex-types.tdl".
+   :include "letypes.tdl".
 :end :type.
 
 :begin :instance :status rule.
