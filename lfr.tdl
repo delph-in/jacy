@@ -1,0 +1,37 @@
+;;; -*- Mode: tdl; Coding: utf-8; indent-tabs-mode: nil; -*-
+
+;;;
+;;; upon completion of `lexical parsing' (i.e. application of lexical rules
+;;; until a fix-point is reached), we can now filter lexical entries.  there is
+;;; little point attempting to do that earlier (as PET used to in its original
+;;; `-default-les' mode, where generics were only activated where there seemed
+;;; to be `gaps' in the _initial_ lexical chart, i.e. after lexical lookup).
+;;;
+;;; the main problem in this approach is the interaction with orthographemics:
+;;; in the initial lexical chart, there will be an edge analysing |UPS| as the
+;;; plural or 3sg present tense form of the preposition |up|.  it is only once
+;;; lexical rules have been processed that we know such hypotheses have turned
+;;; out invalid.  thus, lexical filtering rules below operate on lexical edges,
+;;; lexical entries that have gone through any number of lexical rules, i.e.
+;;; everything that would ordinarily feed into syntactic rules.
+;;; 
+;;; initially, our strategy is conservative: whenever there is a native entry,
+;;; purge all generic entries in the same chart cell, unless there is a good
+;;; reason to keep some.  for now, only capitalization is considered a reason,
+;;; and even there (i.e. for generic names), certain types of native entries
+;;; will filter.
+;;;
+;;; both on tokens and signs, the `native' vs. `generic' distinction is made in
+;;; +TRAIT: `generic_trait' vs. `native_trait'.
+;;;
+
+;;
+;; throw out generic whenever a native entry is available
+;;
+#|
+generic_non_ne+native_lfr := lexical_filtering_rule &
+ [ +CONTEXT < [ TOKENS.+LIST.FIRST.+TRAIT native_le ] >,
+   +INPUT <   [ TOKENS.+LIST.FIRST.+TRAIT generic_le ] >,
+   +OUTPUT < >,
+   +POSITION "I1@C1" ].
+|#

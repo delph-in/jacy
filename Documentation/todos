@@ -1,5 +1,14 @@
 ;;; -*-  Coding: utf-8 -*-
 
+ * Mark all non generics as native
+
+ zuzou_n1 := ordinary-nohon-n-lex &
+  [ STEM < "図像" >,
+-   SYNSEM.LKEYS.KEYREL.PRED "_zuzou_n_1_rel" ].
++   SYNSEM.LKEYS.KEYREL.PRED "_zuzou_n_1_rel",
++   TOKENS.+LIST.FIRST.+TRAIT  native_le ].
+
+
 2009-06-03
 fix spurious ga-no conversion.
 

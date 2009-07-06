@@ -1,0 +1,202 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+
+;; maybe copy +PRED +CARG +CLASS
+;; should give more meaningful output TAGS
+;; it would be nice to get the verb base form from JUMAN
+;; and put that in directly, with the verb type and lexical rule...
+
+
+split_v-ta_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)(た|だ)$,
+	      +TNT.+TAGS < ^.*InfForm-(タ形|ダ列タ形|デス列タ形|デアル列タ形)$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "${I1:+FORM:2}", 
+	        +TNT [ +TAGS < "ta" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;; second form should be $2 i.e. (て|で)
+split_v-te_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)(て|で)$,
+	      +TNT.+TAGS < ^.*InfForm-タ系連用テ形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "${I1:+FORM:2}", 
+	        +TNT [ +TAGS < "te" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;; conditional
+split_v-ba_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)ば$,
+	      +TNT.+TAGS < ^.*InfForm-基本条件形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "ば", 
+	        +TNT [ +TAGS < "ba" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;;(TK) conll01 626 「作ろう」
+split_v-u_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)う$,
+	      +TNT.+TAGS < ^.*InfForm-意志形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "う", 
+	        +TNT [ +TAGS < "u" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;;(TK) conll01 290 「合ったり」
+split_v-tari_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)(たり|だり)$,
+	      +TNT.+TAGS < ^.*InfForm-タ系連用タリ形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "${I1:+FORM:2}", 
+	        +TNT [ +TAGS < "tari" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;;(TK) conll01 253 「みたら」
+split_v-tara_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)(たら|だら)$,
+	      +TNT.+TAGS < ^.*InfForm-タ系条件形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "${I1:+FORM:2}", 
+	        +TNT [ +TAGS < "tara" > ,
+	             +PRBS < "1" > ] ] > ].
+
+
+;;;
+;;; Split up  形容動詞 to match ChaSen
+;;;
+
+
+split_na-da  := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)だ$,
+	      +TNT.+TAGS < ^.*InfType-(ナ形容詞|ナ形容詞特殊)\+InfForm-基本形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "だ", 
+	        +TNT [ +TAGS < "na-da" > ,
+	             +PRBS < "1" > ] ] > ].
+
+split_na-de  := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)で$,
+	      +TNT.+TAGS < ^.*InfType-(ナ形容詞|ナ形容詞特殊)\+InfForm-ダ列タ系連用テ形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "で", 
+	        +TNT [ +TAGS < "na-de" > ,
+	             +PRBS < "1" > ] ] > ].
+
+split_na-na  := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)な$,
+	      +TNT.+TAGS < ^.*InfType-ナ形容詞\+InfForm-ダ列基本連体形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "な", 
+	        +TNT [ +TAGS < "na-na" > ,
+	             +PRBS < "1" > ] ] > ].
+
+split_na-no  := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)の$,
+	      +TNT.+TAGS < ^.*InfType-ナノ形容詞\+InfForm-ダ列基本連体形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "の", 
+	        +TNT [ +TAGS < "na-no" > ,
+	             +PRBS < "1" > ] ] > ].
+
+
+split_na-ni  := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)に$,
+	      +TNT.+TAGS < ^.*InfType-(ナ形容詞|ナ形容詞特殊)\+InfForm-ダ列基本連用形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "に", 
+	        +TNT [ +TAGS < "na-ni" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;;(TK) conll01 240 「感無量です」
+split_na-desu  := one_two_tmt &
+ [ +INPUT < [ +FORM ^(.*)です$,
+	      +TNT.+TAGS < ^.*InfType-(ナ形容詞|ナノ形容詞|ナ形容詞特殊)\+InfForm-デス列基本形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "だ", 
+	        +TNT [ +TAGS < "na-desu" > ,
+	             +PRBS < "1" > ] ] > ].
+
+
+;;;
+;;; Copula verbs
+;;;
+
+;;;
+;;; ちゃんと動くか自信がありません
+;;; not sure to work correctly
+;;;
+;;;(TK) conll01 218 「のである」
+split_no-dearu  := one_two_tmt &
+ [ +INPUT < [ +FORM ^のである$,
+	      +TNT.+TAGS < ^InfType-ナ形容詞\+InfForm-デアル列基本形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "である", 
+	        +TNT [ +TAGS < "dearu" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;;(TK) conll01 1003 「(こと|はず|つもり)だ」
+split_n-da_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^(こと|はず|つもり)だ$,
+	      +TNT.+TAGS < ^.*InfType-(無活用型|判定詞)\+InfForm-基本形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "だ", 
+	        +TNT [ +TAGS < "da" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;;(TK) conll01 74 「であって」
+split_cop-te_tmr := one_two_tmt &
+ [ +INPUT < [ +FORM ^であって$,
+	      +TNT.+TAGS < ^InfType-判定詞\+InfForm-デアル列タ系連用テ形$ > ] >,
+   +OUTPUT < [ +FORM "であっ", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "て", 
+	        +TNT [ +TAGS < "te" > ,
+	             +PRBS < "1" > ] ] > ].
+
+;;;(TK) conll01 ? 「自由であって」
+split_na-cop-te_tmr := one_three_tmt &
+ [ +INPUT < [ +FORM ^(.*)であって$,
+	      +TNT.+TAGS < ^.*InfType-(ナ形容詞|ナ形容詞特殊|ナノ形容詞)\+InfForm-デアル列タ系連用テ形$ > ] >,
+   +OUTPUT < [ +FORM "${I1:+FORM:1}", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ],
+	     [ +FORM "であっ", 
+               +TNT [+TAGS < "NONE" > ,
+	             +PRBS < "1" > ] ], 
+	     [ +FORM "て", 
+	        +TNT [ +TAGS < "te" > ,
+	             +PRBS < "1" > ] ] > ].
+
+
+
+;;;(TK) conll01 「(この|どの|その)ような」
+
+
