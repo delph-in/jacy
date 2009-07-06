@@ -4,21 +4,19 @@
 
 
 lkbdir=${LOGONROOT}/lingo/lkb
-#
-# JACY
-#
-grammardir=${LOGONROOT}/dfki/jacy; 
-grammarurl=http://wiki.delph-in.net/moin/JacyTop
-ltypes=("${grammardir}/lex-types.tdl $grammardir/v-lex-types.tdl")
-#
-# GG
-#
-#grammardir=${LOGONROOT}/dfki/gg; 
-#grammarurl=http://gg.opendfki.de/
-#ltypes=("${grammardir}/le-types.tdl")
-#
-# SRG
-#
+
+case ${grm} in
+    jacy)
+	grammardir=${LOGONROOT}/dfki/jacy; 
+	grammarurl=http://wiki.delph-in.net/moin/JacyTop
+	ltypes=("${grammardir}/lex-types.tdl $grammardir/v-lex-types.tdl")
+	;;
+    gg)
+	grammardir=${LOGONROOT}/dfki/gg; 
+	grammarurl=http://gg.opendfki.de/
+	ltypes=("${grammardir}/le-types.tdl")
+	;;
+    srg)
 #grammardir=${LOGONROOT}/upf/srg; 
 #ltypes=("${grammardir}/letypes.tdl")
 #

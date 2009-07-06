@@ -303,7 +303,6 @@ ordinary_noun_head-avm := ordinary_noun_head &
 
 adj2n-suffix_noun_head := ordinary-or-date-noun_head.
 
-adj2n-suffix_noun_head-avm := adj2n-suffix_noun_head  & [MOD null, VN -].
 
 ; (MS 2005-10-06) I use this for month names.
 ; (MS 2005-11-04) I date nouns to occur in compounds, such as "毎週土曜日"
@@ -1858,7 +1857,9 @@ case-p-lex-np-topic-wo := case-p-lex-np-topic &
 ; (MS 2005-05-06) renamed ga-wo-ni-p-lex-3 (cleaning up particles).
 
 case-p-lex-postp := case-p-lex & 
- [SYNSEM.LOCAL [CONT.HOOK.INDEX #ind,
+ [SYNSEM.LOCAL [CONT [HOOK.INDEX #ind,
+		      RELS <! !>,
+		      HCONS <! !>],
 		CAT.VAL.COMPS.FIRST.LOCAL [CONT.HOOK.XARG #ind,
 					   CAT.HEAD postp_head & [PTYPE nontop,
 								  CASE mod]]]].
@@ -1873,7 +1874,7 @@ case-p-lex-postp := case-p-lex &
 ; <todo>
 ; </type>
 case-p-lex-postp-ga := case-p-lex-postp &
-			[SYNSEM.LOCAL.CAT.HEAD.CASE ga].
+ [SYNSEM.LOCAL.CAT.HEAD.CASE ga].
 
 ; <type val="case-p-lex-postp-wo">
 ; <name-ja>承連用助詞目的格助詞
@@ -1883,7 +1884,7 @@ case-p-lex-postp-ga := case-p-lex-postp &
 ; <todo>case-p-lex-np-woを参照。
 ; </type>
 case-p-lex-postp-wo := case-p-lex-postp &
-			[SYNSEM.LOCAL.CAT.HEAD.CASE wo].
+ [SYNSEM.LOCAL.CAT.HEAD.CASE wo].
 
 ; <type val="case-p-lex-postp-ni">
 ; <name-ja>承連用助詞与格助詞
@@ -1894,7 +1895,7 @@ case-p-lex-postp-wo := case-p-lex-postp &
 ; <todo>
 ; </type>
 case-p-lex-postp-ni := case-p-lex-postp &
-			[SYNSEM.LOCAL.CAT.HEAD.CASE ni].
+ [SYNSEM.LOCAL.CAT.HEAD.CASE ni].
 
 
 ; (MS 2005-05-06) renamed to-case-lex (cleaning up particles).
@@ -2151,16 +2152,17 @@ nmod-p-lex :=  mod-p-lex &
                      MODIFIED.PERIPH -]].
 
 ; (MS 2005-11-09) Getting rid of skip files.
+;; FIXME doesn't scope (isn't used?)
 
 nmod-p-lex-pconj := nmod-p-lex &
-            [SYNSEM [LOCAL [CAT [HEAD [MOD < [LOCAL.CONT [HOOK.INDEX #mod]] >,
-				       J-POSTHEAD left],
-				 VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD p_head & [PTYPE nontop,
-										     CASE mod],
-								  CONT [HOOK.INDEX #arg]]]],
-                           CONT n-conj-sem-type],
-		     LKEYS [KEYREL [L-INDEX #arg,
-				    R-INDEX #mod]]]].
+ [SYNSEM [LOCAL [CAT [HEAD [MOD < [LOCAL.CONT [HOOK.INDEX #mod]] >,
+			    J-POSTHEAD left],
+		      VAL.COMPS.FIRST synsem & [LOCAL [CAT.HEAD p_head & [PTYPE nontop,
+									  CASE mod],
+						       CONT [HOOK.INDEX #arg]]]],
+		 CONT n-conj-sem-type],
+	  LKEYS [KEYREL [L-INDEX #arg,
+			 R-INDEX #mod]]]].
 
 
 ;(MS 2005-05-14) This is not used any more. The parentheses do not build the heads.
@@ -2447,7 +2449,8 @@ postp-lex-coord := mod-p-lex &
 						       CONT.HOOK.INDEX conj-ref-ind & #ind],
 				 HEAD postp_head & [MOD.FIRST.LOCAL.CONT.RELS <! !>]],
 			    CONT [HOOK.INDEX #ind,
-				  RELS <! !>]]].
+				  RELS <! !>,
+				  HCONS <! !>]]].
 
 postp-lex-ahon := postp-lex &
 		  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
@@ -3598,12 +3601,16 @@ ordinary-n-lex := ordinary-or-wh-n-lex &
 ; するtypeも必要。
 ; </type>
 adj2n-suffix-lex := n-lex &
- [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head-avm &  [J-POSTHEAD right],
+ [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head &  
+			   [J-POSTHEAD right,
+			    MOD null,
+			    VN -],
 		      VAL noun_sc & [SPR.FIRST #spr]],
 		 BAR -,
 		 ARG-S < #spr >,
 		 CONT common-noun-sem-type & [HOOK.INDEX #ind & [PNG.PN three],
-					      RELS <! #key !> ]],
+					      RELS <! #key !>,
+					      HCONS <! !> ]],
 	  LKEYS.KEYREL #key & [ARG0 #ind],
 	  NON-LOCAL.AFFIX <! !>]].	   
 
@@ -4288,7 +4295,8 @@ temp_numeral-nonwh-lex  := temp_numeral-lex &
 ; </type>
 temp_numeral-dur-lex := temp_numeral-basic-lex &
                          [SYNSEM [NON-LOCAL.QUE <! !>,
-				  LOCAL.CONT.RELS <! #key !>,
+				  LOCAL.CONT [RELS <! #key !>,
+					      HCONS  <! !>],
 				  LKEYS.KEYREL #key]].
 
 ;;; FCB 2003-08-14 食事 中 juu/chuu 
@@ -6055,7 +6063,8 @@ na-adj-stem-lex  := adj-lex &
 		CONT [ HOOK [INDEX #event,
 			     LTOP #handle],
 		       RELS <! [ARG0 #event,
-				LBL #handle] !>],
+				LBL #handle] !>,
+		       HCONS <! !>],
 		BAR +],
   J-NEEDS-AFFIX -,
   INFLECTED +].
@@ -7623,8 +7632,8 @@ te-adjunct-lex := basic-v-end-lex &
 			      LBL #hand,
 			      L-HNDL #subord-hand,
 			      R-HNDL #main-hand ] !>,
-		       HCONS.LIST.FIRST qeq & [ HARG #subord-hand, LARG #subord ],
-		       HCONS.LIST.REST.FIRST qeq & [ HARG #main-hand, LARG #main ] ]],
+		       HCONS <! qeq & [ HARG #subord-hand, LARG #subord ],
+			      qeq & [ HARG #main-hand, LARG #main ] !>]],
 	  LKEYS.KEYREL [PRED #pred],
 	  NON-LOCAL.QUE <! !>]].
 
@@ -9264,12 +9273,13 @@ v2na-end-lex := v-op-end-lex &
 
                                                  
 v2adv-end-lex := lexical_sign-word &
- [SYNSEM  synsem & [LOCAL [CAT [HEAD adv_head-avm & [MOD < [LOCAL scopal-mod & 
-								  [CONT.HOOK [LTOP #handel,
-									      INDEX #ind],
-								   CAT.HEAD.MODUS voluntative]] >,
-						     COP-ARG +,
-						     J-POSTHEAD left],
+ [SYNSEM  synsem & [LOCAL [CAT [HEAD adv_head-avm & 
+				     [MOD < [LOCAL scopal-mod & 
+						   [CONT.HOOK [LTOP #handel,
+							       INDEX #ind],
+						    CAT.HEAD.MODUS voluntative]] >,
+				      COP-ARG +,
+				      J-POSTHEAD left],
 				VAL obj-arg &
 				     [COMPS.FIRST [OPT - ,
 						   LOCAL [CAT [HEAD verb_head &
@@ -9281,7 +9291,8 @@ v2adv-end-lex := lexical_sign-word &
 							  NUCL nucl_plus]]]],
 			   CONT scopal-adv-sem-type &
 			       [HOOK.INDEX #ind, 
-				RELS <! #key !>]],
+				RELS <! #key !>,
+				HCONS <! !>]],
 		    LKEYS.KEYREL #key & adv-relation & [LBL #handel],
 		    NON-LOCAL [QUE <! !>,
 			       AFFIX <! !>]],
@@ -12750,9 +12761,10 @@ generic_adj_i_infl-lex  :=  v-lex & lexical_sign-word &
                     [HOOK [INDEX event & #ind &
                                  [E [TENSE #tense]],
                            LTOP #handle],
-                     HCONS <! !>],
+		          RELS  <! #key !>,
+			  HCONS <! !>],
                 BAR -],
-         LKEYS.KEYREL arg1-relation &
+         LKEYS.KEYREL #key & arg1-relation &
                [ARG0 #ind,
                 ARG1 #inst,
                 LBL #handle],

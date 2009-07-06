@@ -6,6 +6,15 @@
 unset DISPLAY;
 unset LUI;
 
+while [ $# -gt 0 -a "${1#-}" != "$1" ]; do
+  case ${1} in
+    --grm)
+      grm=${2};
+      shift 2;
+      ;;
+  esac
+done
+
 source ltdb-conf.bash
 
 echo 
@@ -72,7 +81,7 @@ fi
 echo
 echo "Dumping lex-type descriptions"
 echo
-./make-description.perl $ltypes > $outdir/$LINGUISTICS_FILE
+./description2xml.perl $ltypes > $outdir/$LINGUISTICS_FILE
 
 ###
 ### Validate the type desciptions 
