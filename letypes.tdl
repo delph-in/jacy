@@ -3288,7 +3288,7 @@ s-end1-neg-imp-lex := sap-lex &
 		 CONT [HOOK [LTOP #neg-hand,
 			     INDEX #ind],
 		       RELS <! #key & neg-relation & 
-			     [PRED "neg_rel",
+			     [PRED "neg_v_rel",
 			      LBL #neg-hand,
 			      ARG0 individual,
 			      ARG1 #neg1 ]!>,
@@ -9368,7 +9368,7 @@ v2n-end-lex :=  nom-lex &
 mai-end-lex := v-noncaus-op-end-lex &
  [SYNSEM [LKEYS.KEYREL #key & neg-relation & 
 		       [LBL #top, 
-			PRED "neg_rel",
+			PRED "neg_v_rel",
 			ARG1 #h3],
 	  LOCAL [CAT [HEAD v-op-end_head &
 			   [MODUS indicative,
@@ -11144,7 +11144,7 @@ cop-id-neg-stem-lex := verb-stem-lex &
 			   XARG #sbjind],
                      RELS <! neg-relation & #key & 
 			   [LBL #neg-hand, 
-			    PRED "neg_rel",
+			    PRED "neg_v_rel",
 			    ARG1 #arg],
 			   equal-relation & 
 			   [PRED "cop_id_rel",
@@ -11318,7 +11318,7 @@ cop-neg-stem-lex := verb-stem-lex &
 			    INDEX #ind],
 		      RELS <! #key & neg-relation & 
 			    [LBL #hand, 
-			     PRED "neg_rel", 
+			     PRED "neg_v_rel", 
 			     ARG1 #arg ] !>,
 		      HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
 		CTXT.BACKGROUND <! !>,
@@ -11353,7 +11353,7 @@ cop-neg-lex := nonaux-lex &
 	       CONT [HOOK #hook & [LTOP #hand,
 				   INDEX #ind],
 		     RELS <! #key & neg-relation & 
-			   [PRED "neg_rel",
+			   [PRED "neg_v_rel",
 			    ARG1 #arg ]  !>,
 		     HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
 	       CTXT.BACKGROUND <! !>,
