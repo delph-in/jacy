@@ -140,15 +140,10 @@ orthographemics-duplicate-filter:= false.
 
 
 ;;;
-;;; scoring mechanism (fairly embryonic, for now)
+;;; scoring model
 ;;;
 
-;; produced by Dan Def-05/fd-005 (without 116777)
-;sm := "f5-005.mem".
-;;; made on syrah with Taka 2005-11-14 from LXD-DEF-6.jp051120.
-;;sm := "hinoki.mem".
-;;; made on nooka 2007-07-07 Tanaka corpus 6-15
-sm := "tanaka-006-015.mem".
+sm := "tc.mem".
 
 ;;; Notes:
 ;;; 
