@@ -4,6 +4,7 @@
 ;;; in the tsdb(1) database root directory `*tsdb-home*').
 
 (
+  ((:path . "tc") (:content . "A Treebank (virtual: 06-15)"))
   ((:path . "tc-000") (:content . "Tanaka Corpus Ja Set 0 (dev)"))
   ((:path . "tc-001") (:content . "Tanaka Corpus Ja Set 1 (dev)"))
   ((:path . "tc-002") (:content . "Tanaka Corpus Ja Set 2 (dev)"))
