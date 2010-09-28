@@ -6,6 +6,9 @@ item:
   i-difficulty :integer
   i-category :string
   i-input :string
+  i-tokens :string
+  i-gloss :string
+  i-translation :string
   i-wf :integer
   i-length :integer
   i-comment :string
@@ -229,5 +232,9 @@ fold:
 score:
   parse-id :integer :key
   result-id :integer
+  score-start :integer
+  score-end :integer
+  score-id :integer
+  learner :string
   rank :integer
   score :string
