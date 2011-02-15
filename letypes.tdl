@@ -10688,6 +10688,18 @@ v6-c2-stem-lex := v6-nohon-stem-lex & [STEMTYPE c2-stem].
 ; </type>
 v6-v-stem-lex := v6-nohon-stem-lex & [STEMTYPE v-stem].
 
+; <type val="v6-kurusuru-stem-lex">
+; <name-ja>ニト他動詞変格
+; <description>v6-c-stem-lexを参照。このtypeは変格活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
+; <ex>実態 に 即する
+; <ex>実態 と 即する
+; <nex>
+; <todo>
+; </type>
+v6-kurusuru-stem-lex := v6-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+
+
+
 v6-c-shon-stem-lex := v6-shon-stem-lex & [STEMTYPE c-stem].
 v6-c2-shon-stem-lex := v6-shon-stem-lex & [STEMTYPE c2-stem].
 v6-v-shon-stem-lex := v6-shon-stem-lex & [STEMTYPE v-stem].
