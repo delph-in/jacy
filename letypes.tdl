@@ -10630,6 +10630,14 @@ v4-c-minusshon-stem-lex := v4-minusshon-stem-lex & [STEMTYPE c-stem].
 v4-c2-minusshon-stem-lex := v4-minusshon-stem-lex & [STEMTYPE c2-stem].
 v4-v-minusshon-stem-lex := v4-minusshon-stem-lex & [STEMTYPE v-stem].
 
+; <type val="v4-kurusuru-stem-lex">
+; <name-ja>二重目的他動詞変格
+; <description>v4-c-stem-lexを参照。このtypeは変格活用をする。
+; <ex>
+; <nex>
+; <todo>v4-c-stem-lexを参照。
+; </type>
+v4-kurusuru-stem-lex := v4-nohon-stem-lex & [STEMTYPE kurusuru-stem].
 
 
 v6-stem-lex := v-sbj-comps-stem-lex &
