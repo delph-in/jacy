@@ -89,6 +89,7 @@ parse:
   parse-id :integer :key                # unique parse identifier
   run-id :integer :key                  # test run for this parse
   i-id :integer :key                    # item parsed
+  p-input :string                       # actual (pre-processed) parser input
   readings :integer                     # number of readings obtained
   first :integer                        # time to find first reading (msec)
   total :integer                        # total time for parsing (msec)
