@@ -10283,6 +10283,8 @@ v5-v-minusshon-stem-lex := v5-minusshon-stem-lex & [STEMTYPE v-stem].
 ; see: "誰が行っているか教えて下さい。"
 
 
+v5-kurusuru-stem-lex := v5-nohon-stem-lex & [STEMTYPE kurusuru-stem].
+
 v5a-stem-lex := v-sbj-comps-stem-lex  &
                [SYNSEM [LOCAL [CAT [HEAD.COP -,
                                    VAL ga-to_transitive1 &
