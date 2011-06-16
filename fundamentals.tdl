@@ -550,7 +550,7 @@ generic-nom-relation := pron-relation &
                    [PRED generic-nom_rel].
 
 place-relation := pron-relation &
-                   [PRED place_rel].
+                   [PRED place_n_rel].
 
 
 
@@ -820,10 +820,16 @@ def_q_rel := udef_q_rel.
 indef_q_rel := udef_q_rel.
 which_q_rel := def_q_rel.
 
+kono_q_rel := quant_rel.
+sono_q_rel := quant_rel.
+ano_q_rel := quant_rel.
+
+
 hes_rel := predsort.
 pron_rel := predsort.
 generic-nom_rel := predsort.
-place_rel := predsort.
+place_n_rel := predsort.
+thing_n_rel := predsort.
 quantity_rel := predsort.
 date_rel := predsort.
 yofc_rel := date_rel.
@@ -1042,7 +1048,7 @@ caus-cond := causative & conditional.
 
 passive-basic := passive & operative & uttmodus.
 
-consult-caus := consultative & causative.
+;consult-caus := consultative & causative.
 
 ;sase-rare-tai
 pot-caus-vol := pot-caus & vol-caus.
