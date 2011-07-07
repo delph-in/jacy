@@ -7846,28 +7846,28 @@ v-past-tense-end-minusahon-ndmorph-lex := v-past-tense-end-minusahon-lex &
 
 
 v-consultative-tense-end-lex := v-tense-end-lex &
-				[J-NEEDS-AFFIX -,
-				 SYNSEM.LOCAL [CAT.HEAD [MOD null,
-							 C-MOD null,
-							 H-TENSE present,
-							 MARK null,
-							 COP-ARG -,
-							 J-SPEC null,
-							 FIN +,
-							 MODUS consultative]]].
+ [J-NEEDS-AFFIX -,
+  SYNSEM.LOCAL [CONT.HOOK.INDEX.E.MOOD consultative,
+		CAT.HEAD [MOD null,
+			  C-MOD null,
+			  H-TENSE present,
+			  MARK null,
+			  COP-ARG -,
+			  J-SPEC null,
+			  FIN +,
+			  MODUS consultative]]].
 
 v-consultative-tense-polite-end-lex := v-consultative-tense-end-lex &
-				       [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+ [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 v-consultative-tense-plain-end-lex := v-consultative-tense-end-lex &
-				       [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
-
+ [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON -].
 
 v-consultative-tense-imorph-end-lex := v-consultative-tense-end-lex &
-				       [LMORPH-BIND-TYPE i-morph].
+ [LMORPH-BIND-TYPE i-morph].
 
 v-consultative-tense-omorph-end-lex := v-consultative-tense-end-lex &
-				       [LMORPH-BIND-TYPE o-morph].
+ [LMORPH-BIND-TYPE o-morph].
 
 ; <type val="v-consultative-tense-polite-imorph-end-lex">
 ; <name-ja>承動詞未然助動詞相談丁寧
@@ -7900,6 +7900,7 @@ v-consultative-tense-plain-imorph-end-lex := v-consultative-tense-plain-end-lex 
 ; <ex>犬 だろ う
 ; <nex>う が 泳ぐ
 ; <todo>(TK 07-04-03)カ変活用動詞「来る」もこのtypeで解析できるようにしたほうが良いのかもしれない。(lkb::do-parse-tty "来よ う")
+; The meaning is different in copular and adjectives 
 ; (TK 07-04-03)i-adj-lexの未然形の直後にもつくようにすべき。(lkb::do-parse-tty "寒かろ う")
 ; </type>
 v-consultative-tense-plain-omorph-end-lex := v-consultative-tense-plain-end-lex & v-consultative-tense-omorph-end-lex.

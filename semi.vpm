@@ -68,6 +68,7 @@ E.TENSE : TENSE
 ;;;
 E.MOOD : MOOD
   indicative <> indicative
+  consultative <> consultative
   * >> indicative
   ! << *
 
