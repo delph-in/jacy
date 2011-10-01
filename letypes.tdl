@@ -11282,10 +11282,12 @@ reg-cop-stem-indicative-dastem-nomod-lex := reg-cop-stem-indicative-dastem-lex &
 ; <todo>
 ; </type>
 ; (FCB 2008-06-25) made FIN - so that it doesn't head sentences
+; (FCB 2011-10-01) made MAIN-PRD - so that it doesn't head sentences
 reg-cop-stem-indicative-dastem-nmod-lex := reg-cop-stem-indicative-dastem-lex & 
- [SYNSEM [LOCAL.CAT.HEAD.MOD < [LOCAL [CAT [HEAD noun_head & [FIN -]],
-				       CONT.HOOK.INDEX #ind,
-				       BAR + ]] >,
+ [SYNSEM [LOCAL.CAT.HEAD [MAIN-PRD -,
+			  MOD < [LOCAL [CAT [HEAD noun_head & [FIN -]],
+					CONT.HOOK.INDEX #ind,
+					BAR + ]] >],
 	  LKEYS.KEYREL.ARG1 #ind]].
 
 
@@ -11447,12 +11449,12 @@ cop-light-lex := nonaux-lex &
 ; <todo>(TK 07-05-08)「ん だろ う」など推測を表すものもこのtypeで良いかどうか。
 ; </type>
 n-cop-lex := cop-light-lex &
-[SYNSEM.LOCAL.CAT [HEAD [H-TENSE #tense,
-                         MODUS #mood,
-                         MOD null,
-                         C-MOD null],
-                   VAL.COMPS.FIRST.LOCAL.CAT.HEAD [H-TENSE #tense,
-                                                  MODUS #mood]]].
+ [SYNSEM.LOCAL.CAT [HEAD [H-TENSE #tense,
+			  MODUS #mood,
+			  MOD null,
+			  C-MOD null],
+		    VAL.COMPS.FIRST.LOCAL.CAT.HEAD [H-TENSE #tense,
+						    MODUS #mood]]].
 
 
 
@@ -11469,7 +11471,7 @@ n-cop-lex := cop-light-lex &
 ; <todo>
 ; </type>
 n-cop-ahon-lex := n-cop-lex &
-	       	  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
+ [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +].
 
 
 
