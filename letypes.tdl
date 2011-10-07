@@ -2031,11 +2031,10 @@ comp-prpstn-lex-quotarg := comp-prpstn-lex &
 ; <nex>
 ; <todo>(TK 07-04-06)comp-prpstn-lex-vargを参照。
 ; </type>
-;;; (PH and FCB  FIXME TEST
+; (PH and FCB  2011-10-06) FIXME TEST
 comp-prpstn-lex-quot := comp-prpstn-lex &
- [ SYNSEM.LOCAL.CAT.HEAD.CASE to].
-;# 
-; SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD utterance_head].
+ [ SYNSEM.LOCAL.CAT.HEAD.CASE to,
+   SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD utterance_head].
 
 ; (MS 2005-05-09) I don't see why we need this: a copula is inserted
 ; even with the comp-prpstn-lex.
@@ -11935,8 +11934,7 @@ aspect-shon-kurusuru-stem-lex := aspect-shon-stem-lex & [STEMTYPE kurusuru-stem]
 ; while the main verb doesn't (友達を三人待っています)
 ; (FCB 2005-05-06) added restriction: SPR.FIRST.LOCAL.CAT.HEAD v-end_head 
 ; to stop overgeneration (勉強 し いる)
-; (PH and FCB) do not take complements ourselves.
-; COMPS zlist
+; (PH and FCB 2011-10-06) do not take complements ourselves:  COMPS zlist
 
 
 pure-aspect-stem-lex := verb-stem-lex &
