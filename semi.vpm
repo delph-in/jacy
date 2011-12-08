@@ -42,8 +42,10 @@ PNG.GEN : GEND
   masc <> m 
   fem  <> f 
   neut <> n 
-  *    << ! 
-  !    >> * 
+  *    >> ! 
+  !    << * 
+;  *    << ! 
+;  !    >> * 
 
 ;;; Things not listed disappear
 ;DIV : DIV
