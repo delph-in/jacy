@@ -1999,11 +1999,16 @@ na2adv-rule :=  lexical_sign-word & lex-rule &
 ; The actual constraints that I believe to really be specific to this
 ; type are all on the instance in japgram.tdl.
 ; (MS 2004-12-22) no MOD-IND/MOD-HAND
+; (FCB 2011-10-01) linked mother's and daughter's CONT and HCONS
 
 embedded-question-rule-type := headed-phrase &
 [SYNSEM [ LEX -,
 	  LOCAL [ CONT [ HOOK [LTOP #h,
-			       INDEX #i]],
+			       INDEX #i],
+			 RELS [LIST #rlist,
+			       LAST #rlast],
+			 HCONS [LIST #hclist,
+				LAST #hclast]],
 		  NUCL #nucl,
                   CAT [ HEAD #head,
                         VAL [ UNSAT -,
@@ -2017,7 +2022,11 @@ embedded-question-rule-type := headed-phrase &
  HEAD-DTR sign & #head-dtr & 
              [ J-NEEDS-AFFIX -,
                SYNSEM [ LOCAL [ CONT [ HOOK [LTOP #h,
-					     INDEX #i]],
+					     INDEX #i],
+			 RELS [LIST #rlist,
+			       LAST #rmiddle],
+			 HCONS [LIST #hclist,
+				LAST #hcmiddle]],
                                 CAT [ HEAD #head,
                                       VAL [COMPS [FIRST #objval & [OPT bool],
 						  REST #obj2val],
@@ -2030,6 +2039,10 @@ embedded-question-rule-type := headed-phrase &
              [ J-NEEDS-AFFIX -,
                SYNSEM #objval &
                            [ LOCAL [ CAT [ VAL saturated],
+				     CONT [ RELS [LIST #rmiddle,
+						  LAST #rlast],
+					    HCONS [LIST #hcmiddle,
+						   LAST #hclast] ],
                                      CTXT.BACKGROUND [ LIST #list,
                                                        LAST #middle ]]]],
  ARGS < #nh-dtr, #head-dtr >].
