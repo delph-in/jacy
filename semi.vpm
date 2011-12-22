@@ -61,6 +61,7 @@ E.TENSE : TENSE
   no_tense  <> untensed
   tensed    <> tense
   te        >> tense	
+  tense     >> tense	
   *         <> *
 ; non-past
 ; not sure about te
