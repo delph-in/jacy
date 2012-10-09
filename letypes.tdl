@@ -2031,7 +2031,7 @@ comp-prpstn-lex-quotarg := comp-prpstn-lex &
 ; <nex>
 ; <todo>(TK 07-04-06)comp-prpstn-lex-vargを参照。
 ; </type>
-; (PH and FCB  2011-10-06) FIXME TEST
+; (PH and FCB  2011-10-06) add utterance_head constraint
 comp-prpstn-lex-quot := comp-prpstn-lex &
  [ SYNSEM.LOCAL.CAT.HEAD.CASE to,
    SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD utterance_head].
