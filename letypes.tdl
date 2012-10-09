@@ -804,6 +804,7 @@ sap_head := p_head-avm &
              MOD 0-1-list,
              SMOD marked,
              PTYPE sentence-particle,
+	     MAIN-PRD -,
              J-POSTHEAD left] .
 
 
@@ -3593,15 +3594,18 @@ ordinary-n-lex := ordinary-or-wh-n-lex &
 ; (MS 2005-03-15) This is not correct: It should take an adjective as argument!
 ; FIXME!
 
-; <type val="adj2n-suffix-lex">
+; <type val="adj2n-suffix-lex" >
 ; <name-ja>接尾辞形容詞名詞化
 ; <description>形容詞の後にあってそれを名詞化する。現状では形容詞の後につけられずに名詞の後につく形になって
 ; しまっている。また、形容動詞の名詞化もこのtypeによって行われるべきかもしれない。
 ; <ex>春 の 暖か さ
+; <ex>その 美し さ
 ; <nex>あの 車 さ に は かなわ ない
 ; <todo>(TK 07-03-23)名詞でなくi-adj-lexの後につけられるようにすべき。また、na-adj-lexを名詞化
 ; するtypeも必要。
 ; </type>
+;;; FIXME: I think we can do these with head-specifier, like with koto
+;;; no need for a special rule.
 adj2n-suffix-lex := n-lex &
  [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head &  
 			   [J-POSTHEAD right,
@@ -3610,9 +3614,9 @@ adj2n-suffix-lex := n-lex &
 		      VAL noun_sc & [SPR.FIRST #spr]],
 		 BAR -,
 		 ARG-S < #spr >,
-		 CONT common-noun-sem-type & [HOOK.INDEX #ind & [PNG.PN three],
-					      RELS <! #key !>,
-					      HCONS <! !> ]],
+		 CONT nom-pred-sem-type & [HOOK.INDEX #ind & [PNG.PN three],
+					   RELS <! #key !>,
+					   HCONS <! !> ]],
 	  LKEYS.KEYREL #key & [ARG0 #ind],
 	  NON-LOCAL.AFFIX <! !>]].	   
 
@@ -6048,6 +6052,8 @@ nom-exceptional-dummy-lex := nom-dummy-lex &
 ;		LKEYS.KEYREL #key & [ARG0 #i, ARG1 #spri]]].
 
 
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;LEXICAL TYPES -- adjectives;;;;;;;;;;;;;;;;;;
 
 
@@ -7614,7 +7620,7 @@ v-tense-end-lex := v-tense-end-lex-super &
 ; verb in te form (such as: 食べてもいい). 
 ; (FCB 2006-06-20)
 ; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD sentence-valid] prevents this from modifying utterances.'
-
+; MAIN-PRD - to stop "座っ て ね"
 te-adjunct-lex := basic-v-end-lex &
  [J-NEEDS-AFFIX -,
   SYNSEM [LOCAL [CAT [ VAL.SPR < [ LOCAL.CONT.HOOK.LTOP #subord,
@@ -7623,6 +7629,7 @@ te-adjunct-lex := basic-v-end-lex &
 			    MARK null,
 			    COP-ARG -,
 			    C-MOD null,
+			    MAIN-PRD -,
 			    MOD <[LOCAL scopal-mod &
 					[CAT.HEAD sentence-valid & [COP -],
 					 CONT.HOOK [ LTOP #main ]]]>,
@@ -7647,6 +7654,7 @@ te-adjunct-lex := basic-v-end-lex &
 ; <ex>太郎 が ボール を 続け て 打つ
 ; <nex>行っ て 帰る
 ; <nex>行っ て くる
+; <nex>座っ て ね
 ; <todo>
 ; </type>
 te-adjunct-lex-t := te-adjunct-lex &

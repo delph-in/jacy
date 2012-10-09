@@ -2133,21 +2133,24 @@ cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
 
 
 
-adj-nominal-suffix-type := head-final-type & 
+adj-nominal-suffix-type := head-final-type &
  [SYNSEM.LOCAL [CAT [HEAD noun_head &
-			  [SMOD unmarked],
-		     VAL spr-arg & [ UNSAT -]]
-		    ],
+                          [SMOD unmarked],
+                     VAL spr-arg & [ UNSAT -]],
+		CONT.HOOK #hook],
   NON-HEAD-DTR [SYNSEM [ LOCAL [CAT [HEAD i-adj-stem_head,
-				     VAL.UNSAT -],
-				BAR -],
-			 LEX +],
-		RMORPH-BIND-TYPE shortadj-morph],
+                                     VAL.UNSAT -],
+				CONT.HOOK.INDEX #index,
+                                BAR -],
+                         LEX +],
+                RMORPH-BIND-TYPE shortadj-morph],
   HEAD-DTR [SYNSEM [LOCAL [CAT [HEAD adj2n-suffix_noun_head &
-				     [J-POSTHEAD right,
-				      MOD null, VN -],
-				VAL.UNSAT +],
-			   BAR -]]]].
+                                     [J-POSTHEAD right,
+                                      MOD null, VN -],
+                                VAL.UNSAT +],
+			   CONT [HOOK #hook, 
+				 RELS <! [ARG1 #index] !>],
+                           BAR -]]]].
 
 ;;;
 ;;; New N-N compound rule, which now scopes. (FCB 2006-06-06)
