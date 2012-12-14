@@ -5819,7 +5819,7 @@ indef-word-place-lex := indef-word-temp-or-place-lex &
 ; <todo>
 ; </type>
 indef-word-person-lex := indef-word-temp-or-place-lex &
-[ SYNSEM.LKEYS.KEYREL reg-nom-relation & [ PRED "person" ]].
+[ SYNSEM.LKEYS.KEYREL reg-nom-relation & [ PRED person_n_rel ]].
 
 ; (ERB 2001-10-04) My new adv_np_rule, meant for date expressions,
 ; is applying to いくら because the type of its key isn't sufficiently
