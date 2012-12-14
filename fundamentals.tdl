@@ -835,6 +835,7 @@ date_rel := predsort.
 yofc_rel := date_rel.
 mofy_rel := date_rel.
 person_n_rel := predsort.
+time_n_rel  := predsort.
 
 adv_rel := predsort.
 noun_rel := predsort.
