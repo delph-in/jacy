@@ -143,7 +143,7 @@ semantics-path            := SYNSEM LOCAL CONT.
 
 ;;;|| lattice-mapping-position-path || path within a lattice mapping rule to the positional constraints ||
 
-invent-ltop: TRUE.
+;invent-ltop: TRUE.
 
 ;;;Miscellaneous Switches
 
