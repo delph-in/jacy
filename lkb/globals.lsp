@@ -163,93 +163,25 @@
 #+:logon
 (setf *bypass-equality-check* :filter)
 
-;;;
-;;; list of things not to generate even though they maybe contentful
-;;;
 
-(setf *duplicate-lex-ids* 
-  '(;; s-end1-decl-lex - emphatic sentence enders
-    ga-sap keredomo-send kedomo-send ga-sap kedo-send shi-send 
-    yo-2 yo-3 keredo-send exclamation-mark ze zo zo-2 
-    ;; s-end1-decl-minusahon-lex - emphatic sentence enders
-    i-emp
-    ;;; question endings
-    no-send kai-sap na-ne kai-chasen-sap nokai-sap
-    ;;; variants of why
-    naze-kanji-adv nande-adv nande-kanji-multi-adv nande-multi-adv doushite-adv
-    ;; subjunctive ends (should do with mood)
-    darou-v-cop-lex deshou-v-cop-lex
-    ;; various copulars
-    kanaa-cop-id-lex kai-cop-id-lex kashira-cop-id-lex degozaru-cop-id-multi
-    nano-cop-id-multi nan-cop-id-multi naNdesu-cop-multi
-    nandesu-cop-id-multi nanodesu-cop-id-multi nanodesu-cop-id-multi-2
-    ;; variant forms of numbers (hankaku)
-    zero_card_a one_card_a two_card_a three_card_a four_card_a 
-    five_card_a six_card_a seven_card_a eight_card_a nine_card_a 
-    ;; variant forms of numbers (zenkaku)
-    zero_card one_card two_card three_card four_card  
-    five_card six_card seven_card eight_card nine_card 
-    ;;; indefinite pronouns FIXME - improve semantics
-    donna douiu dono-det
-    ;; variants of me
-    atakushi atashi boku boku-kanji boku_3 onore_1_2 ore ore-firstsg_katakana 
-    ore-kanji oresama-firstsg oresama-firstsg_chasen sei_10 shousei temae_2_1 
-    uchi-kanji-pron uchi-pron ware_1_3 ware_6 washi-firstsg watashi yasei_1_3 
-    ;; variants of you
-    anata-kanji anta-pron kimi-pron kimi-pron-hiragana 
-    omae_1_hiragana omae_1_kanji 
-    onmi_1 onoono_1_1 onore_2 otaku_3 socchi sochira_2 
-    temee_1_2 ware_2_1 ware_5 
-    ;; variants of youse
-    anatatachi-b anatatachi-c kimitachi kimitachi-b kimitachi-c 
-    ;; variants of: kare
-    soitsu_1 kare-hiragana daresore_kanji 
-    aitsu_pron darekare_hiragana daredare darekare_kanji daresore_hiragana
-    yatsu_pron yatsu_pron-hiragana daresore_kanji_chasen
-    ;; variants of karera
-    karera-kanji
-    ;; variants of arera
-    arekore_1_2 sorera
-    ;; variants of: watashitachi-firstpl
-    warera_4_1 kochira wareware-kanji-firstpl_2 kocchi warera_3_1
-    wagahai-firstpl_2 wagahai-firstpl_1 warera_5_1 wareware-firstpl
-    oira-firstpl wareware-firstpl_2 wareware-firstpl_2_chasen 
-    watakushidomo-firstpl wareware-kanji-firstpl
-    ;; variants of wa: wa-narg
-    tte-narg nanowa 
-    ; the following are now separate from wa_d_rel, so can be included
-    ;colon-advp colon-advp-2 comma-advp
-    ;; →
-    arrow-postp
-    ;;  第  FIXME - improve semantics
-    dai-card2ord
-    ;; who
-    dochirasama-multi dare-hiragana donata_1
-    ;; aru/iru
-    aru-kanji-stem aru-kanji-stem-2 iru_be-2-stem
-    ;; aru/iru aux
-    iru-aux-kanji-stem aru-kanji-aux-stem
-    ;; nai/nu
-    nai-no-case-adj-kanji nu-end
-    ;; da/dearu/desu: da-v-cop-id-stem 
-    desu-v-cop-id-stem dearu-v-cop-id-stem 
-    ;; koto
-    koto-pred-kanji
-    ;;; Lexical things here!
-    kirei_1_2 kirei_1_3 ;  綺麗　奇麗　
-    iya-katakana-gg-adj iya-kanji-gg-adj ;  嫌 いや
-    dekiru_2				; dekiru
-    furu_1-hiragana			; furu
-    tabako_1_1 tabako_1_2		; tabako
-    furui_2_2				; furui
-    akiraka_hiragana			; akiraka
-    mieru-hiragana-stem			; mieru
-    shizuka_1-hiragana			; shizuka
-    ;;; week days
-    ka_dofw kayou			; kayou / kayoubi 
-    ;; variants to deal with chasen
-    
-    ))
+;;
+;; Read in settings for globals including *gen-ignore-rules* and the ever-young
+;; temporary expedient *duplicate-lex-ids*.
+;;
+(defun load-settings-file (file)
+  (with-open-file (stream file :direction :input)
+    (loop for item = (read-line stream nil nil)
+	while item
+	unless (or (zerop (length item)) (eq (elt item 0) #\;))
+	collect (read-from-string item))))
+
+(setf *duplicate-lex-ids*
+  (load-settings-file 
+    (merge-pathnames "lkb/nogen-lex.set" *grammar-directory*)))
+
+(setf *gen-ignore-rules* 
+  (load-settings-file 
+    (merge-pathnames "lkb/nogen-rules.set" *grammar-directory*)))
 
 ;;;
 ;;; with recent LKB versions (as of 23-jul-05), there is now better support for
@@ -271,7 +203,6 @@
 ;;;
 (setf *translate-grid* '(:ja . (:ja)))
 
-(setf *gen-ignore-rules* '(head-complement2-rule))
 
 ;;; connection parameters for lexical database, an association list with fields
 ;;; `:host', `:db', `:table', and `:user' (optional) 
