@@ -59,7 +59,7 @@
        "skips" (list (lkb-pathname (parent-directory) "lex/Jacy.main.skip")))
       ;;; load the generic lexical types
       (read-cached-sublex-if-available 
-       "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))
+       "generics" (list (lkb-pathname (parent-directory) "gle.tdl")))
       ;;; fake unknown word processing -- eric 2007/06/13
 ;      (read-cached-sublex-if-available 
 ;       "tanaka-unknowns" (list (lkb-pathname (parent-directory) "lex/tanaka-unknowns.tdl")))
@@ -74,7 +74,7 @@
 						 "lex/dummy.tdl"))) 
     ;;; keep generics separate 
     (read-cached-sublex-if-available 
-     "generics" (list (lkb-pathname (parent-directory) "lex/generics.tdl")))
+     "generics" (list (lkb-pathname (parent-directory) "gle.tdl")))
     ;;; fake unknown word processing -- eric 2007/06/13
     (read-cached-sublex-if-available 
      "tanaka-unknowns" (list (lkb-pathname (parent-directory) "lex/tanaka-unknowns.tdl")))
@@ -111,6 +111,10 @@
 ;;;
 #+:logon
 (mt:read-vpm (lkb-pathname (parent-directory) "semi.vpm") :semi)
+;;;
+;;; another variable property mapping, used only when constructing the SEM-I
+;;;
+(mt:read-vpm (lkb-pathname (parent-directory) "abstract.vpm") :abstract)
 
 
 ;;;
