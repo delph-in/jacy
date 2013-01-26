@@ -1,0 +1,109 @@
+;;;  -*- Mode: TDL; Coding: utf-8; -*- 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Matrix Semantic Interface (SEM-I)
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;
+;;; the `signature' section: all there is to know about hierarchical relations
+;;; holding among SEM-I entries.
+;;;
+
+signature:
+
+  ;;
+  ;; the hierarchy of variable types: these are (pretty) close to universal 
+  ;;
+  u := top.
+  i := u.
+  p := u.
+  h := p.
+  e := i.
+  x := i & p.
+
+  ;;
+  ;; the various sub-hierarchies for variable properties; some shared across
+  ;; sets of grammars, some language- or grammar-specific
+  ;;
+  bool := top.
+  + := bool.                 ; `plus' and `minus' in RMRS DTD
+  - := bool.
+
+  tense := top.
+  tensed := tense.           ; missing in RMRS DTD; `real_tense' ERG-internally
+  past := tensed.
+  non-past := tensed.
+  present := non-past.
+  future := non-past.
+  untensed := tense.         ; missing in DTD
+
+  mood := top.               ; entire sub-hierarchy missing in DTD
+  subjunctive := mood.
+  indicative := mood.
+
+  gender := top.
+  m-or-f := gender.          ; `animate' ERG-internally
+  m := m-or-f.
+  f := m-or-f.
+  n := gender.
+
+  num := top.
+  sg := num.
+  pl := num.
+
+  pers := top.
+  1 := pers.
+  2 := pers.
+  3 := pers.
+
+  prontype := top.           ; entire sub-hierarchy missing in DTD
+  refl := prontype.
+  std_pron := prontype.
+  zero_pron := prontype.
+
+  iforce := top.
+  prop-or-ques := iforce.
+  prop := prop-or-ques.
+  ques := prop-or-ques.
+  comm := iforce.
+  like-iforce := prop-or-ques.
+
+;;;
+;;; now for the range of valid variable properties, minimal variable type for
+;;; which a property is appropriate, and value constraint(s).
+;;;
+properties:
+
+  DIV [x] : bool             ; changed from DTD (was DIVISIBLE)
+  IND [x] : bool             ; missing in DTD (could eventually replace DIV)
+  PERF [e] : bool            ; missing in DTD
+  PROGR [e] : bool           ; missing in DTD
+  MOOD [e] :  mood           ; missing in DTD
+  TENSE [e] : tense
+  GEND [x] : gender          ; changed from DTD (was GENDER)
+  PERS [x] : pers
+  NUM [x] : num
+  PRONTYPE [x] : prontype    ; missing in DTD
+  SF [e] : iforce            ; missing in DTD
+
+;;;
+;;; a quick summary of the inventory of valid role names and value constraints,
+;;; if any (RSTR, for example, will always be handle-valued).
+;;;
+roles:
+
+  ARG0 : i
+  ARG1 : u
+  ARG2 : u
+  ARG3 : u
+  ARG4 : h
+  ARG : u
+  BODY : h
+  CARG : symbol string
+  L-HNDL : u
+  L-INDEX : i
+  R-HNDL : u
+  R-INDEX : i
+  RSTR : h
+

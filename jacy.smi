@@ -1,0 +1,27 @@
+;;; -*- Mode: TDL; Coding: utf-8; -*- 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Jacy Semantic Interface (SEM-I)
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+;;
+;; Jacy specific `predicates' section: for each valid semantic
+;; predicate, one or more entries detailing the range of admissible
+;; roles, constraints on role values (in terms of variable types),
+;; and additional variable property restrictions, if any.  This
+;; should only include entries not create by the automatic
+;; SEM-I creation in the LKB.  Primarily abstract relation types that
+;; we want to expose, even though there is no lexical entry or rule that has
+;; this exact predicate in its semantics.
+;;
+
+;; none so far
+;; predicates:
+
+
+include: matrix.smi
+include: core.smi
