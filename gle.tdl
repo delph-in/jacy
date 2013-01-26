@@ -1,0 +1,585 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+ 
+generic_vn-lex :=  vn-trans1-lex &
+ [SYNSEM.LKEYS.KEYREL.PRED #pred,
+  STEM < "_generic_vn_" >,
+  TOKENS.+LIST generic_token_list &
+			   < [+POS.+TAGS < "名詞-サ変接続:n-n" >,
+			      +PRED #pred ] > ].
+
+generic_noun-lex := ordinary-nohon-n-lex &
+ [ SYNSEM.LKEYS.KEYREL.PRED #pred,
+   STEM < "_generic_noun" >,
+   TOKENS.+LIST generic_token_list &
+			    < [+POS.+TAGS < "名詞-一般:n-n" >,
+			       +PRED #pred ] > ].
+
+generic_name-lex := ippan-name-lex &
+ [ SYNSEM.LKEYS.KEYREL.CARG #carg,
+   STEM < "_generic_name" >,
+   TOKENS.+LIST generic_token_list &
+	< [+POS.+TAGS < "名詞-固有名詞-一般:n-n" >,
+	   +CLASS proper_ne, +CARG #carg ] > ].
+
+; generic_noun-suffix-lex :=
+; ordinary-nohon-n-lex &
+; [SYNSEM [ LKEYS.KEYREL.PRED 'generic_noun,
+; 	  LOCAL.BAR - ],
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; ;;; Assume an unknown joshuushi is a measure noun (FCB 2004-02-11)
+; generic_num-cl-lex :=  num-cl-spr-only-meas-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_numcl,
+;  STEM < *top* >,
+;  TOKENS [+LIST.FIRST [ +TRAIT generic_le, 
+; 			 +POS.+TAGS < "SFQ+_" > ]]].
+
+
+; generic_name-lex := ippan-name-lex &
+;  [SYNSEM.LKEYS.KEYREL.CARG *top*,
+;   STEM < *top* >,
+;   TOKENS [+LIST.FIRST [ +TRAIT generic_le, 
+; 			+POS.+TAGS < "SFQ+_" > ]]].
+
+; generic_person_name-lex := person-name-lex &
+;  [SYNSEM.LKEYS.KEYREL.CARG *top*,
+;   STEM < *top* >,
+;   TOKENS [+LIST.FIRST [ +TRAIT generic_le, 
+; 			+POS.+TAGS < "NNP+_" > ]]].
+
+; generic_inst_name-lex := inst_name-lex &
+;  [SYNSEM.LKEYS.KEYREL.CARG *top*,
+;   STEM < *top* >,
+;   TOKENS [+LIST.FIRST [ +TRAIT generic_le, 
+; 			+POS.+TAGS < "NNO+_" > ]]].
+
+
+
+; generic_surname-lex := surname-lex &
+; [SYNSEM.LKEYS.KEYREL.CARG *top*,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_first_name-lex := first_name-lex &
+; [SYNSEM.LKEYS.KEYREL.CARG *top*,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_loc_name-lex := loc_name-lex &
+; [ SYNSEM.LKEYS.KEYREL.CARG *top*,
+;   STEM < *top* >,
+;   TOKENS [+LIST.FIRST [ +TRAIT generic_le, 
+; 			+POS.+TAGS < "NNL+_" > ]]].
+
+
+; generic_number-lex := card-no-object-no-specifier &
+;  [SYNSEM.LKEYS.KEYREL.CARG *top*,
+;   STEM < *top* >,
+;   TOKENS [+LIST.FIRST [ +TRAIT generic_le, 
+; 			+POS.+TAGS < "CD+_" > ]]].
+
+
+; generic_na-adj-lex :=
+; na-adj-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_na-adj,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adv-lex :=  isect-adv-lex &
+;  [STEM < *top* >,
+;   SYNSEM.LKEYS.KEYREL.PRED 'generic_adv,
+;   TOKENS [+LIST.FIRST [ +TRAIT generic_le, 
+; 			+POS.+TAGS < "RB+_" > ]]].
+
+
+
+; generic_scopal_adv-lex :=
+; scopal-adv-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_scopal_adv,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_dim_adv-lex :=
+; scopal-adv-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_dim_adv,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adj_te_infl := generic_adj_te_infl-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_adj,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adj_a_infl := generic_adj_a_infl-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_adj,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adj_past_infl := generic_adj_past_infl-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_adj,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adj_i_infl := generic_adj_i_infl-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_adj,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adj_kere_infl := generic_adj_kere_infl-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_adj,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adj_short_infl := generic_adj_short_infl-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_adj,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_adj2adv_infl := scopal-adv-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_adj2adv,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_excl-lex := excl-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'generic_excl,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le ].
+
+; generic_interj-lex := interj-lex &
+; [STEM < *top* >,
+;  SYNSEM.LKEYS.KEYREL.PRED 'int,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le ].
+
+; generic_hes-lex := hes-lex &
+;  [STEM < *top* >,
+;   TOKENS.+LIST.FIRST.+TRAIT generic_le ].
+
+; generic_verb_ru_infl :=
+; generic_verb_ru_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_verb_i_infl :=
+; generic_verb_i_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_verb_morphbind_infl :=
+; generic_verb_morphbind_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_verb_a_infl :=
+; generic_verb_a_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_verb_t_infl :=
+; generic_verb_t_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_verb_cond_infl :=
+; generic_verb_cond_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_verb_o_infl :=
+; generic_verb_o_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+; generic_verb_vstem_infl :=
+; generic_verb_vstem_infl-lex &
+; [SYNSEM.LKEYS.KEYREL.PRED 'generic_verb,
+;  STEM < *top* >,
+;  TOKENS.+LIST.FIRST.+TRAIT generic_le].
+
+
+
+
+
+; posmapping := 
+;   名詞-一般+n-n                                  $generic_noun-lex
+;   名詞-接尾-一般+n-n                             $generic_noun-suffix-lex
+;   名詞-固有名詞-一般+n-n                         $generic_name-lex
+;   名詞-固有名詞-人名-一般+n-n                    $generic_person_name-lex
+;   名詞-固有名詞-人名-姓+n-n                      $generic_surname-lex
+;   名詞-固有名詞-人名-名+n-n                      $generic_first_name-lex
+;   名詞-固有名詞-組織+n-n                         $generic_inst_name-lex
+;   名詞-固有名詞-地域-一般+n-n                    $generic_loc_name-lex
+;   名詞-固有名詞-地域-国+n-n                      $generic_loc_name-lex
+;   名詞-数+n-n					 $generic_number-lex
+;   名詞-接尾-助数詞+n-n                           $generic_num-cl-lex	
+;   名詞-形容動詞語幹+n-n                          $generic_na-adj-lex
+;   副詞-一般+n-n                                  $generic_scopal_adv-lex
+;   副詞-助詞類接続+n-n                            $generic_dim_adv-lex
+;   感動詞+n-n                                     $generic_excl-lex
+;   その他-間投+n-n                                $generic_interj-lex
+;   フィラー+n-n                                   $generic_hes-lex
+;   名詞-サ変接続+n-n                              $generic_vn-lex
+;   動詞-自立+カ変・クル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+カ変・クル-未然形		         $generic_verb_a_infl
+;   動詞-自立+カ変・クル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+カ変・クル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+カ変・クル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+カ変・来ル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+カ変・来ル-未然形		         $generic_verb_a_infl
+;   動詞-自立+カ変・来ル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+カ変・来ル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+カ変・来ル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+サ変・スル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+サ変・スル-未然形		         $generic_verb_a_infl
+;   動詞-自立+サ変・スル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+サ変・スル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+サ変・スル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+サ変・−スル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+サ変・−スル-未然形		         $generic_verb_a_infl
+;   動詞-自立+サ変・−スル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+サ変・−スル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+サ変・−スル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+サ変・−ズル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+サ変・−ズル-未然形		         $generic_verb_a_infl
+;   動詞-自立+サ変・−ズル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+サ変・−ズル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+サ変・−ズル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・病メル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・病メル-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・病メル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・病メル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・病メル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・カ行イ音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+一段・カ行イ音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+一段・カ行イ音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+一段・カ行イ音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+一段・カ行イ音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+一段・カ行促音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+一段・カ行促音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+一段・カ行促音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+一段・カ行促音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+一段・カ行促音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+一段・カ行促音便ユク-基本形	         $generic_verb_ru_infl
+;   動詞-自立+一段・カ行促音便ユク-未然形	         $generic_verb_a_infl
+;   動詞-自立+一段・カ行促音便ユク-連用タ接続	 $generic_verb_t_infl
+;   動詞-自立+一段・カ行促音便ユク-仮定形	         $generic_verb_cond_infl
+;   動詞-自立+一段・カ行促音便ユク-未然ウ接続	 $generic_verb_o_infl
+;   動詞-自立+一段・ガ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・ガ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・ガ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・ガ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・ガ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・サ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・サ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・サ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・サ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・サ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・タ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・タ行-未然形	        	 $generic_verb_a_infl
+;   動詞-自立+一段・タ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・タ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・タ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・ナ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・ナ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・ナ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・ナ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・ナ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・バ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・バ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・バ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・バ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・バ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・マ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・マ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・マ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・マ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・マ行-未然ウ接続	       	 $generic_verb_o_infl
+;   動詞-自立+一段・ラ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・ラ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・ラ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・ラ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・ラ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・ラ行アル-基本形		 $generic_verb_ru_infl
+;   動詞-自立+一段・ラ行アル-未然形		 $generic_verb_a_infl
+;   動詞-自立+一段・ラ行アル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・ラ行アル-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+一段・ラ行アル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・ラ行特殊-基本形		 $generic_verb_ru_infl
+;   動詞-自立+一段・ラ行特殊-未然形		 $generic_verb_a_infl
+;   動詞-自立+一段・ラ行特殊-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・ラ行特殊-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+一段・ラ行特殊-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・ワ行ウ音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+一段・ワ行ウ音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+一段・ワ行ウ音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+一段・ワ行ウ音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+一段・ワ行ウ音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+一段・ワ行促音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+一段・ワ行促音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+一段・ワ行促音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+一段・ワ行促音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+一段・ワ行促音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+五段・カ行イ音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+五段・カ行イ音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+五段・カ行イ音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+五段・カ行イ音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+五段・カ行イ音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+五段・カ行促音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+五段・カ行促音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+五段・カ行促音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+五段・カ行促音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+五段・カ行促音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+五段・カ行促音便ユク-基本形	         $generic_verb_ru_infl
+;   動詞-自立+五段・カ行促音便ユク-未然形	         $generic_verb_a_infl
+;   動詞-自立+五段・カ行促音便ユク-連用タ接続	 $generic_verb_t_infl
+;   動詞-自立+五段・カ行促音便ユク-仮定形	         $generic_verb_cond_infl
+;   動詞-自立+五段・カ行促音便ユク-未然ウ接続	 $generic_verb_o_infl
+;   動詞-自立+五段・ガ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+五段・ガ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+五段・ガ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・ガ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+五段・ガ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・サ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+五段・サ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+五段・サ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・サ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+五段・サ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・サ行-連用形                    $generic_verb_t_infl
+;   動詞-自立+五段・タ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+五段・タ行-未然形	        	 $generic_verb_a_infl
+;   動詞-自立+五段・タ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・タ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+五段・タ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・ナ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+五段・ナ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+五段・ナ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・ナ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+五段・ナ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・バ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+五段・バ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+五段・バ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・バ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+五段・バ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・マ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+五段・マ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+五段・マ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・マ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+五段・マ行-未然ウ接続	       	 $generic_verb_o_infl
+;   動詞-自立+五段・ラ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+五段・ラ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+五段・ラ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・ラ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+五段・ラ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・ラ行アル-基本形		 $generic_verb_ru_infl
+;   動詞-自立+五段・ラ行アル-未然形		 $generic_verb_a_infl
+;   動詞-自立+五段・ラ行アル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・ラ行アル-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+五段・ラ行アル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・ラ行特殊-基本形		 $generic_verb_ru_infl
+;   動詞-自立+五段・ラ行特殊-未然形		 $generic_verb_a_infl
+;   動詞-自立+五段・ラ行特殊-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+五段・ラ行特殊-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+五段・ラ行特殊-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+五段・ワ行ウ音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+五段・ワ行ウ音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+五段・ワ行ウ音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+五段・ワ行ウ音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+五段・ワ行ウ音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+五段・ワ行促音便-基本形		 $generic_verb_ru_infl
+;   動詞-自立+五段・ワ行促音便-未然形		 $generic_verb_a_infl
+;   動詞-自立+五段・ワ行促音便-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+五段・ワ行促音便-仮定形		 $generic_verb_cond_infl
+;   動詞-自立+五段・ワ行促音便-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+四段・カ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・カ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・カ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+四段・カ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・カ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+四段・ガ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・ガ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・ガ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+四段・ガ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・ガ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+四段・サ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・サ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・サ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+四段・サ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・サ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+四段・タ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・タ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・タ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+四段・タ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・タ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+四段・バ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・バ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・バ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+四段・バ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・バ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+四段・マ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・マ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・マ行-連用タ接続	         $generic_verb_t_infl
+;   動詞-自立+四段・マ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・マ行-未然ウ接続	         $generic_verb_o_infl
+;   動詞-自立+四段・ラ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・ラ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・ラ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+四段・ラ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・ラ行-未然ウ接続	       	 $generic_verb_o_infl
+;   動詞-自立+四段・ハ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+四段・ハ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+四段・ハ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+四段・ハ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+四段・ハ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+上二・ダ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+上二・ダ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+上二・ダ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+上二・ダ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+上二・ダ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+上二・ハ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+上二・ハ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+上二・ハ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+上二・ハ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+上二・ハ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ア行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ア行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ア行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・ア行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ア行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・カ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・カ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・カ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・カ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・カ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ガ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ガ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ガ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・ガ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ガ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・サ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・サ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・サ行-連用タ接続	       	 $generic_verb_t_infl
+;   動詞-自立+下二・サ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・サ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ザ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ザ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ザ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・ザ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ザ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・タ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・タ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・タ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・タ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・タ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ダ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ダ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ダ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・ダ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ダ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ナ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ナ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ナ行-連用タ接続	       	 $generic_verb_t_infl
+;   動詞-自立+下二・ナ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ナ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ハ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ハ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ハ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・ハ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ハ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・バ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・バ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・バ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・バ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・バ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・マ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・マ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・マ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・マ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・マ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ヤ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ヤ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ヤ行-連用タ接続	       	 $generic_verb_t_infl
+;   動詞-自立+下二・ヤ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ヤ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ラ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ラ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ラ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・ラ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ラ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・ワ行-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・ワ行-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・ワ行-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+下二・ワ行-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・ワ行-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+下二・得-基本形		         $generic_verb_ru_infl
+;   動詞-自立+下二・得-未然形		         $generic_verb_a_infl
+;   動詞-自立+下二・得-連用タ接続		         $generic_verb_t_infl
+;   動詞-自立+下二・得-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+下二・得-未然ウ接続		         $generic_verb_o_infl
+;   動詞-自立+一段・クレル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・クレル-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・クレル-連用タ接続		 $generic_verb_t_infl
+;   動詞-自立+一段・クレル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・クレル-未然ウ接続		 $generic_verb_o_infl
+;   動詞-自立+一段・ル-基本形		         $generic_verb_ru_infl
+;   動詞-自立+一段・ル-未然形		         $generic_verb_a_infl
+;   動詞-自立+一段・ル-連用タ接続		         $generic_verb_t_infl
+;   動詞-自立+一段・ル-仮定形		         $generic_verb_cond_infl
+;   動詞-自立+一段・ル-未然ウ接続		         $generic_verb_o_infl
+;   動詞-自立+一段・病メル-連用形		         $generic_verb_morphbind_infl
+;   動詞-自立+五段・カ行イ音便-連用形		 $generic_verb_i_infl
+;   動詞-自立+五段・カ行促音便-連用形		 $generic_verb_i_infl
+;   動詞-自立+五段・カ行促音便ユク-連用形	         $generic_verb_i_infl
+;   動詞-自立+五段・ガ行-連用形	        	 $generic_verb_i_infl
+;   動詞-自立+五段・サ行-連用形	        	 $generic_verb_i_infl
+;   動詞-自立+五段・タ行-連用形	        	 $generic_verb_i_infl
+;   動詞-自立+五段・ナ行-連用形	        	 $generic_verb_i_infl
+;   動詞-自立+五段・バ行-連用形	        	 $generic_verb_i_infl
+;   動詞-自立+五段・マ行-連用形	        	 $generic_verb_i_infl
+;   動詞-自立+五段・ラ行-連用形	        	 $generic_verb_i_infl
+;   動詞-自立+五段・ラ行アル-連用形		 $generic_verb_i_infl
+;   動詞-自立+五段・ラ行特殊-連用形		 $generic_verb_i_infl
+;   動詞-自立+五段・ワ行ウ音便-連用形		 $generic_verb_i_infl
+;   動詞-自立+五段・ワ行促音便-連用形		 $generic_verb_i_infl
+;   動詞-自立+一段・クレル-連用形		         $generic_verb_morphbind_infl
+;   動詞-自立+一段・ル-連用形		         $generic_verb_morphbind_infl
+;   動詞-自立+一段-連用形				 $generic_verb_vstem_infl
+;   形容詞-自立+形容詞・アウオ段-連用テ接続	 $generic_adj_te_infl 
+;   形容詞-自立+形容詞・アウオ段-連用テ接続        $generic_adj_a_infl 
+;   形容詞-自立+形容詞・アウオ段-連用テ接続        $generic_adj2adv_infl
+;   形容詞-自立+形容詞・アウオ段-連用タ接続	 $generic_adj_past_infl
+;   形容詞-自立+形容詞・アウオ段-基本形		 $generic_adj_i_infl
+;   形容詞-自立+形容詞・アウオ段-仮定形		 $generic_adj_kere_infl
+;   形容詞-自立+形容詞・アウオ段-文語基本形	 $generic_adj_short_infl
+;   形容詞-自立+形容詞・イ段-連用テ接続		 $generic_adj_te_infl 
+;   形容詞-自立+形容詞・イ段-連用テ接続            $generic_adj_a_infl
+;   形容詞-自立+形容詞・イ段-連用テ接続            $generic_adj2adv_infl
+;   形容詞-自立+形容詞・イ段-連用タ接続		 $generic_adj_past_infl
+;   形容詞-自立+形容詞・イ段-基本形		 $generic_adj_i_infl
+;   形容詞-自立+形容詞・イ段-仮定形		 $generic_adj_kere_infl
+;   形容詞-自立+形容詞・イ段-文語基本形		 $generic_adj_short_infl
+;   形容詞-自立+形容詞・アウオ段-連用テ接続	 $generic_adj_te_infl
+;   形容詞-自立+形容詞・アウオ段-連用テ接続        $generic_adj_a_infl
+;   形容詞-自立+形容詞・アウオ段-連用テ接続        $generic_adj2adv_infl
+;   形容詞-自立+形容詞・アウオ段-連用タ接続	 $generic_adj_past_infl
+;   形容詞-自立+形容詞・アウオ段-基本形		 $generic_adj_i_infl
+;   形容詞-自立+形容詞・アウオ段-仮定形		 $generic_adj_kere_infl
+;   形容詞-自立+形容詞・アウオ段-文語基本形	 $generic_adj_short_infl
+;   形容詞-自立+形容詞・イ段-連用テ接続		 $generic_adj_te_infl
+;   形容詞-自立+形容詞・イ段-連用テ接続		 $generic_adj_a_infl
+;   形容詞-自立+形容詞・イ段-連用テ接続		 $generic_adj2adv_infl
+;   形容詞-自立+形容詞・イ段-連用タ接続		 $generic_adj_past_infl
+;   形容詞-自立+形容詞・イ段-基本形		 $generic_adj_i_infl
+;   形容詞-自立+形容詞・イ段-仮定形		 $generic_adj_kere_infl
+;   形容詞-自立+形容詞・イ段-文語基本形		 $generic_adj_short_infl
+;   JapaneseNounCompound                           $generic_noun-lex
+;   未知語+n-n                                     $generic_noun-lex
+;;   記号-アルファベット+n-n                        $generic_noun-lex
+;;   記号-一般+n-n                                  $generic_noun-lex
+; .
