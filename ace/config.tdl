@@ -16,11 +16,12 @@ version                   := "../Version.lsp".
 
 grammar-top               := "../japanese.tdl".
 
-generation-fixup-rules    := "../gen-fixup.mtr".
+;;; experimental rules to negate sentences
+;generation-fixup-rules    := "../gen-fixup.mtr".
 
 ;;;|| preprocessor || path to a .rpp file defining the REPP ||
 
-preprocessor              := "../preprocessor.fsr".
+preprocessor              := "../rpp/tokenizer.rpp".
 
 ;;;|| preprocessor-modules || list of ''unquoted'' paths to REPP modules to enable ||
 

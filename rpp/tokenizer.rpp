@@ -1,0 +1,2 @@
+;;; Note both half and fullwidth space
+:[ 　\t]+
