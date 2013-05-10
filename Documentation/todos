@@ -1,5 +1,48 @@
 ;;; -*-  Coding: utf-8 -*-
 
+Do we really need embedded-question-rule-type?
+at least it gives spurious ambiguity here:
+[301] `太郎 が 次郎 が 吠え た か どう か 考え た ．'
+I see no difference in meaning (but don't understand the rule)
+
+check neg_rel here:
+[241] `猫 が 一 匹 も 吠え なかっ た ．'
+[421] `犬 が 吠える こと が でき ない ．'
+
+should there be a 'ni' that rasies na-adj to adverb and adds no semantics?
+the equivalent of 'く' or 'ly' in English?  
+Otherwise ARG1 of _a_ not linked, ...
+[441] `犬 が 静か に 吠え た ．'
+;;; adv-p-lex-naadj
+
+semantics not decomposed like English _now_
+[471] `犬 が いま 吠える ．'
+
+toshiyori should be 'no' adjective 
+[501] `猫 が 年寄り だ ．'
+
+spurious ambiguity with mai-beki-lexeme-regular-infl-rule
+[521] `吠え て いる 犬 が 次郎 を 追っ た ．'
+
+Not getting control quite right
+[791] `太郎 が 次郎 に 吠える と 約束 し た ．'
+[792] `太郎 が 次郎 に 吠える こと を 約束 し た ．'
+
+kata should not be kata_v
+[971] `猫 が 吠え 方 が 分かっ た ．'
+
+From MM:
+- "te_adjunct" when there is no proper R-HNDL
+
+- "au_v_emb_rel" 's ARG2, parses number 3 to 8:
+あい と まりこ は とても 仲 が 良く 、 どこ に でも いっしょ に 行く 。
+
+- "sugiru_v_rais_rel" 's ARG1, parse number 0:
+私 たち は １１ 時 すぎ まで 話し た 。
+
+
+
+------------------------------------------------------------------------
  * Mark all non generics as native
 
  zuzou_n1 := ordinary-nohon-n-lex &

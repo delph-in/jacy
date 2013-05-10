@@ -1053,7 +1053,7 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex &
 	  LKEYS [KEYREL #key,
 		 ALTKEYREL #altkey],
 	  NON-LOCAL #nonloc],
-  C-CONT [RELS <! #key & subord-relation &
+  C-CONT [RELS <! #key & subord-relation & 
 		[PRED "if_then_rel",
 		 LBL #tophand,					
 		 R-HNDL #main-hndl,
@@ -1706,7 +1706,7 @@ nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
 [ C-CONT common-noun-sem-type &
          [ HOOK [LTOP #hand,
 		 INDEX #arg],
-	   RELS <! [ PRED "noun_relation",
+	   RELS <! [ PRED generic_entity_rel,
 		     ARG0 #arg,
 		     LBL #hand ] !> ],
   ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ XARG #arg,

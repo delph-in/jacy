@@ -628,7 +628,7 @@ conjunction-relation := subord-or-conj-relation & arg0-relation &
 
 ; NB: "if_then_rel" is now a PRED value of subord-relation.
 ; currently it is sconjunction relation FCB
-subord-relation := subord-or-conj-relation.
+subord-relation := subord-or-conj-relation & event-relation.
 
 ; noun noun compounds
 

@@ -54,7 +54,7 @@
 :end :instance.
 
 :begin :instance :status generic-lex-entry.
-   :include "lex/generics.tdl".
+;   :include "lex/generics.tdl".
 :end :instance.
 
 :begin :instance.

@@ -828,6 +828,7 @@ ano_q_rel := quant_rel.
 hes_rel := predsort.
 pron_rel := predsort.
 generic-nom_rel := predsort.
+generic_entity_rel := predsort.
 place_n_rel := predsort.
 thing_n_rel := predsort.
 quantity_rel := predsort.
