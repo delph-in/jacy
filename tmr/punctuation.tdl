@@ -1,0 +1,146 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+
+;;;
+;;; Copyright (c) 2009 -- 2010 Stephan Oepen (oe@ifi.uio.no); 
+;;; see `LICENSE' for conditions.
+;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; re-combine punctuation marks with adjacent tokens, based on directionality
+;;; of punctuation marks, e.g. opening vs. closing quotes and brackets.  doing
+;;; one such re-combination at a time is sufficient, as each rewrite rule will
+;;; apply as many times as it possibly can, seeing its own output from earlier
+;;; applications.
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;
+;; but first, preserve the current (non-punctuated) form in +CARG, for later
+;; reference, e.g. in constructing +PRED values for generics.  NE rules have
+;; done this already, hence make sure to not overwrite existing +CARGSs.
+;;
+default_carg_tmr := one_one_tmt &
+[ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
+             +PRED #pred, +CARG anti_string, +TNT #tnt ] >,
+  +OUTPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
+              +PRED #pred, +CARG #form, +TNT #tnt ] > ].
+
+;;
+;; _fix_me_
+;; when re-attaching pre- or suffix punctuation to NEs, we should find a way of
+;; forcing the application of corresponding punctuation rules eventually.  as
+;; things are now, an NE with adjacent punctuation creates spurious ambiguity:
+;; |oe@yy.com.| is matched as an NE prior to re-attaching the period.  when the
+;; token with the trailing period is sent through the morphology, two analyses
+;; are created, one with, another without a `punct_period' expectation.  both
+;; succeed, as there is no testing against a lexical stem with the generic LE.
+;; for NEs, at least, i think one could work around this by adding properties 
+;; to each token, +PRFX and +SFFX, say, each a list of strings.  in the case of
+;; |oe@yy.com.|, the suffix punctuation rule would add to the +SFFX front, say:
+;; [ +SFFX < "." > ].  the corresponding orthographemic rules would then have
+;; to `pop' the list (to make things simpler, non-generic tokens could leave 
+;; +SFFX underspecified), and at some point (syntactic rules, for example), an
+;; empty +SFFX (and +PRFX ) would be the pre-requisite to any further rule
+;; applications.  --- discuss this with dan one day.            (8-feb-09; oe)
+;;
+
+;;
+;; both in prefix and suffix punctuation, we need to protect against `clusters'
+;; of punctuation marks, e.g. for |(“foo”)|.  if |“| were to attach to |foo|,
+;; followed by |(| attaching to |“|, then we are left with two partially over-
+;; lapping tokens, but there is no way of arriving at |(“foo| any longer.  the
+;; safe-guarding against this in the +INPUT seems a little baroque, but i fail
+;; to come up with an easier solution.
+;;
+;; straight quote are treated separately because they can attach both to the
+;; left and to the right; to prevent fragmented token lattices, this means we
+;; also need to preserve the original token to which a straight quote attaches
+;; in the chart.
+;;
+prefix_straight_quote_tmr := prefix_straight_quote_tmt &
+[ +CONTEXT < [ +FORM ^(["'])$ ],
+             [ +FORM ^(.*[^[({“"‘'].*)$ ] >,
+  +OUTPUT < [ +FORM "${C1:+FORM:1}${C2:+FORM:1}" ] > ].
+
+prefix_punctuation_tmr := prefix_punctuation_tmt &
+[ +CONTEXT < [ +FORM ^([[({“‘])$ ] >,
+  +INPUT < [ +FORM ^(.*[^[({“"‘'].*)$ ] >,
+  +OUTPUT < [ +FORM "${C1:+FORM:1}${I1:+FORM:1}" ] > ].
+
+;;
+;; _fix_me_
+;; there is a special case in suffix punctation: an apostrophe following a 
+;; token ending in |s| could be a possessive marker (which should remain a 
+;; token in its own right), or could be a closing single quote (which should
+;; be suffixed onto the preceding token).  in principle, the same is true for 
+;; double closing quotes (or double primes), but the `inches' measure unit, 
+;; maybe, will have been detected during NE recognition earlier.
+;;                                                              (20-mar-10; oe)
+;; _fix_me_
+;; one might wonder about cases like: [the] |factor(s)'s| [importance], but at
+;; least today i am not enough of a perfectionist for that.     (23-mar-10; oe)
+;;
+ambiguous_apostrophe_tmr := token_mapping_rule &
+[ +CONTEXT < [ +FORM ^(.*[sS])$,
+               +CLASS #class1, +TRAIT #trait1, +PRED #pred1, +CARG #carg1,
+               +ID [ LIST #front, LAST #middle ], +FROM #from1,
+               +TNT #tnt1 ] >,
+  +INPUT < [ +FORM #form2 & ^([’'])$,
+             +TRAIT #trait2, +PRED #pred2, +CARG #carg2,
+             +ID #id2 & [ LIST #middle, LAST #back ],
+             +FROM #from2, +TO #to2 ] >,
+  +OUTPUT < [ +FORM "${C1:+FORM:1}${I1:+FORM:1}",
+              +CLASS #class1, +TRAIT #trait1, +PRED #pred1, +CARG #carg1,
+              +ID [ LIST #front, LAST #back ], +FROM #from1, +TO #to2,
+              +TNT #tnt1  ],
+            [ +FORM #form2,
+              +CLASS apostrophe, +TRAIT #trait2, +PRED #pred2, +CARG #carg2,
+              +ID #id2 & [ LIST #middle, LAST #back ],
+              +FROM #from2, +TO #to2 ] >,
+  +POSITION "C1<I1, O1@C1, O1@I1, O2@I1" ].
+
+suffix_straight_quote_tmr := suffix_straight_quote_tmt &
+[ +CONTEXT < [ +FORM ^(.*[^sS])$ ],
+             [ +FORM ^(["'])$ ] >,
+  +OUTPUT < [ +FORM "${C1:+FORM:1}${C2:+FORM:1}" ] > ].
+
+suffix_apostrophe_tmr := suffix_punctuation_tmt &
+[ +INPUT < [ +FORM ^(.*[^sS])$ ] >,
+  +CONTEXT < [ +FORM "’" ] >,
+  +OUTPUT < [ +FORM "${I1:+FORM:1}’" ] > ].
+
+;;
+;; at this point, an apostrophe may have attached to a suffix punctuation mark
+;; (e.g. from |‘Abrams,’|), hence optionally allow it in the +CONTEXT coda.
+;;
+suffix_punctuation_tmr := suffix_punctuation_tmt &
+[ +INPUT < [ +FORM ^(.*[^])}”",;.!?].*)$ ] >,
+  +CONTEXT < [ +FORM ^([])}”,;.!?]’?)$ ] >,
+  +OUTPUT < [ +FORM "${I1:+FORM:1}${C1:+FORM:1}" ] > ].
+
+ditch_apostrophe_tmr := token_mapping_rule &
+[ +INPUT < [ +FORM ^[[({“"‘']*[’'][])}”",;.!?]*$, +CLASS anti_apostrophe ] >,
+  +OUTPUT < > ].
+
+ditch_punctuation_tmr := token_mapping_rule &
+[ +INPUT < [ +FORM ^[[({“‘"]|[])}”",;.!?]+’?$ ] >,
+  +OUTPUT < > ].
+
+;;
+;; two similar rules, converting (some) directional GML tokens into affixes
+;;
+prefix_markup_tmr := prefix_punctuation_tmt &
+[ +CONTEXT < [ +FORM ^([[({“‘"']*¦i)$ ] >,
+  +INPUT < [ +FORM ^(.+)$ ] >,
+  +OUTPUT < [ +FORM "${C1:+FORM:1}${I1:+FORM:1}" ] > ].
+
+suffix_markup_tmr := suffix_punctuation_tmt &
+[ +INPUT < [ +FORM ^(.+)$ ] >,
+  +CONTEXT < [ +FORM ^(i¦[])}”"’',;.!?]*)$ ] >,
+  +OUTPUT < [ +FORM "${I1:+FORM:1}${C1:+FORM:1}" ] > ].
+
+ditch_markup_tmr := token_mapping_rule &
+[ +INPUT < [ +FORM ^[[({“‘"']*(¦i|i¦)[])}”"’',;.!?]*$ ] >,
+  +OUTPUT < > ].

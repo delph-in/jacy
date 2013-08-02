@@ -1,0 +1,27 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+
+;;;
+;;; Copyright (c) 2012 Francis Bond (bond@ieee.org); 
+;;; see `LICENSE' for conditions.
+;;;
+
+;;; ditch POS which will never be generic
+
+ipa_ditch_particles_tmr := token_mapping_rule &
+[ +INPUT < [ +POS.+TAGS < ^助詞.*$ > ] >,
+  +OUTPUT < > ].
+
+;;; rewrite equivalent POS tags
+
+ipa_noun_equivalents_tmr := one_one_pos_tmt &
+[ +INPUT   < [ +POS.+TAGS < ^記号-アルファベット:n-n|記号-一般:n-n$ >, +POS.+PRBS #probs ] >,
+  +OUTPUT  < [ +POS.+TAGS < "名詞-一般:n-n" >, +POS.+PRBS #probs ] > ].
+
+;;; Mark proper nouns
+
+ipa_proper_class_tmr  := one_one_tmt &
+[ +INPUT   < [ +TRAIT #trait, +CLASS #class, 
+	       +POS #pos & [ +TAGS < "名詞-固有名詞-一般:n-n" > ],
+	       +PRED anti_string, +CARG #carg, +FORM #form ] >,
+  +OUTPUT  < [+TRAIT #trait, +CLASS #class & proper_ne, +POS #pos,
+	       +PRED "named_rel", +CARG #carg, +FORM #form ] > ].

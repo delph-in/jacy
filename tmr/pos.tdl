@@ -1,0 +1,68 @@
+;;; -*- Mode: tdl; Coding: utf-8; -*-
+
+;;;
+;;; Copyright (c) 2009 -- 2010 Stephan Oepen (oe@ifi.uio.no); 
+;;; see `LICENSE' for conditions.
+;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; at this point, we multiply out PoS values on all tokens, where for each
+;;; original token as many additional tokens are created (in the same chart
+;;; cell) as there are PoS readings.  at this point, we start distinguishing
+;;; between tokens that activate native lexical entries (LEs), vs. those that
+;;; activate generic LEs.  in the token universe, this distinction is made by
+;;; virtue of +TRAIT, with generic_trait targeting generic LEs.  the two sets
+;;; do not overlap, i.e. for a single original token with two PoS readings, we
+;;; end up with a total of three new tokens.  the pair of rules below resembles
+;;; a recursive function, terminating once the PoS list has been reduced to 
+;;; a singleton element.  form-based named entities identified earlier avoid
+;;; this kind of PoS multiplication because they have already emptied out their
+;;; PoS list.
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;
+;; even though we originally made sure all tokens had a fully specified +POS
+;; value, intervening rules could have `leaked' PoS information.  if so, once
+;; again, fully annul the +POS value.
+;;
+pos_default_tmr := one_one_tmt &
+[ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
+             +PRED #pred, +CARG #carg, 
+             +POS [ +TAGS < anti_string, ... > ] ] >,
+  +OUTPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
+              +PRED #pred, +CARG #carg, +POS null_pos ] > ].
+
+pos_recurse_tmr := token_mapping_rule &
+[ +INPUT < [ +FORM #form, +TRAIT anti_trait,
+             +CLASS #class, +PRED #pred, +CARG #carg,
+             +ID #id, +FROM #from, +TO #to,
+             +POS [ +TAGS < #tag . #tags & cons >,
+                    +PRBS < #prb . #prbs & cons > ] ] > ,
+  +OUTPUT < [ +FORM #form, +TRAIT generic_trait,
+              +CLASS #class, +PRED #pred, +CARG #carg,
+              +ID #id, +FROM #from, +TO #to,
+              +POS [ +TAGS < #tag >, +PRBS < #prb > ] ],
+            [ +FORM #form,
+              +CLASS #class, +PRED #pred, +CARG #carg,
+              +ID #id, +FROM #from, +TO #to,
+              +POS [ +TAGS #tags, +PRBS #prbs ] ] > ,
+  +POSITION "O1@I1, O2@I1" ].
+
+pos_terminate_tmr := token_mapping_rule &
+[ +INPUT < [ +FORM #form, +TRAIT anti_trait,
+             +CLASS #class, +PRED #pred, +CARG #carg,
+             +ID #id, +FROM #from, +TO #to,
+             +POS [  +TAGS < #tag >, +PRBS < #prb > ] ] > ,
+  +OUTPUT < [ +FORM #form, +TRAIT generic_trait,
+              +CLASS #class, +PRED anti_string, +CARG #carg,
+              +ID #id, +FROM #from, +TO #to,
+              +POS [+TAGS < #tag >, +PRBS < #prb > ] ],
+            [ +FORM #form, +TRAIT native_trait,
+              +CLASS #class, +PRED #pred, +CARG #carg,
+              +ID #id, +FROM #from, +TO #to,
+              +POS null_pos ] >,
+  +POSITION "O1@I1, O2@I1" ].
+
