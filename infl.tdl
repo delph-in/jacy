@@ -898,7 +898,7 @@ adjpolite-rule &
 ;[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
 ; fix me - this doesn't appear to work
 n2i-adj-lrule :=
- %suffix (* らしい)
+%suffix (* らしい)
  n2i-adj-rule &
  [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
 
