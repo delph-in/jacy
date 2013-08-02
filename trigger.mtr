@@ -252,7 +252,7 @@ ko_numcl_pieces_gr := generator_rule &
 
 ; (MS 2005-11-29): in the case of 学生の三人が来た, we have a noun_relation
 nin_numcl_gr := generator_rule &
-[ CONTEXT.RELS <! [ PRED "noun_relation" ] !>,
+[ CONTEXT.RELS <! [ PRED generic_entity_rel ] !>,
   FLAGS.TRIGGER "nin_numcl" ].
 
 ; (MWG 2008-12-03) allows 3匹の犬

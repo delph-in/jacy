@@ -28,10 +28,8 @@
 ;;
 ;; throw out generic whenever a native entry is available
 ;;
-#|
 generic_non_ne+native_lfr := lexical_filtering_rule &
- [ +CONTEXT < [ TOKENS.+LIST.FIRST.+TRAIT native_le ] >,
-   +INPUT <   [ TOKENS.+LIST.FIRST.+TRAIT generic_le ] >,
+ [ +CONTEXT < [ TRAITS native_token_list ] >,
+   +INPUT <   [ TRAITS generic_token_list ] >,
    +OUTPUT < >,
    +POSITION "I1@C1" ].
-|#

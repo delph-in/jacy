@@ -316,30 +316,7 @@ compounds-rule := compound-rule.
 ; 死星が帝国の武器である parses, does not generate
 ; この死星が帝国の武器である parses and generates due to the explicit quantifier
 
-quantify-n-rule := unary-type-super &
-[SYNSEM [LOCAL [CAT [ HEAD #head,
-		      VAL super-saturated & [UNSAT -]],
-		BAR +],
-	 LEX #lex],
- C-CONT [HOOK #hook,
-	 RELS <! [PRED #rel & udef_q_rel,
-		  ARG0 #i,
-		  RSTR #restr] !>,
-         HCONS <! qeq &
-                 [HARG #restr,
-                  LARG #h] !>],
- ARGS.FIRST.SYNSEM [LOCAL [CAT [HEAD #head & noun_head,
-			       VAL [UNSAT bool,
-				    SPR opt-1-arg & [FIRST [OPT + ,
-							    LOCAL.CAT.HEAD.KEYS.KEY #rel]],
-				    SUBJ olist,
-				    COMPS olist]],
-			   CONT.HOOK #hook & [LTOP #h,
-					      INDEX #i],
-			   BAR -],
-		    LEX #lex]].
-
-
+quantify-n-rule := quantify-n-rule-type.
 
 ; (TT 2003-08-29) experimental rules for dealing with prefix and suffix correctly
 ; compounds-rule-nn := hadj-final-i & 

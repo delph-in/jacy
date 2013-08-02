@@ -21,6 +21,21 @@
 
 rule-type := phrase-or-lexrule.
 
+;;; for rules with only one thing in their C-CONT, link FROM/TO to CFROM/CTO
+c-cont-1 := phrase-or-lexrule &
+ [ STEM [FROM #from,
+	 TO #to ],
+   C-CONT.RELS <! [ CFROM #from, 
+		    CTO #to ] !>].
+
+c-cont-2 := phrase-or-lexrule &
+ [ STEM [FROM #from,
+	 TO #to ],
+   C-CONT.RELS <! [ CFROM #from, 
+		    CTO #to ],
+		[ CFROM #from, 
+		  CTO #to ] !>].
+
 
 phrasal_sign := phrase-or-lexrule.
 
@@ -529,7 +544,7 @@ hadj-final-i-for-rel-cl-gap := head-adjunct-rule-type-for-rel-cl-gap & head-fina
 ; so move to head-adjunct-rule-coord-type.
 ; (FCB 2008-02-08) made this fully coordination, not subordination.
 
-sentence-coord-type :=  binary-type-conj & 
+sentence-coord-type :=  binary-type-conj & c-cont-1 &
  [SYNSEM [LOCAL [CONT [HOOK [INDEX #event,
 			     LTOP #hand]],
 		 CAT.VAL #val,
@@ -941,7 +956,7 @@ j-lexeme-to-word-rule := word-rule-basic & v-lex &
 ; to undergo this rule.
 
 ; (FCB 2005-06-15) Added ARG0 to messages
-potential-rule := lex-rule & lexeme &
+potential-rule := lex-rule & lexeme & c-cont-1 &
  [SYNSEM [LOCAL [CAT [HEAD #head & [MODUS potential],
 		      VAL #sc],
 		 CONT [HOOK [LTOP #hand,
@@ -985,7 +1000,7 @@ potential-rule := lex-rule & lexeme &
 
 ; (FCB 2005-06-15) Added ARG0 to messages
 ; CHECKME should we link the ARG1 to the verb's ARG1?
-potential-lexeme-to-word-rule  := lex-rule & v-lex &
+potential-lexeme-to-word-rule  := lex-rule & v-lex & c-cont-1 &
  [SYNSEM [LOCAL [CAT [HEAD verb_head-avm &
 			   [AUX #aux,
 			    COP #cop,
@@ -1032,7 +1047,7 @@ potential-lexeme-to-word-rule  := lex-rule & v-lex &
 ;
 
 
-conditional-lexeme-to-word-rule  := lex-rule & v-lex &
+conditional-lexeme-to-word-rule  := lex-rule & v-lex & c-cont-1 &
  [SYNSEM [LOCAL [CAT [HEAD cop-id-stem_head &
 			   [AUX #aux,
 			    COP #cop,
@@ -1203,7 +1218,7 @@ n2i-adj-rule := i-adj-stem-lex & inflecting-lex-rule &
 ; (MS 2005-07-01) Experimenting with making the result VN - . This is needed
 ; when coordinating vns and ns, as in: 商売 や 映画
 
-vn2n-rule-super :=  n-lex-super & constant-lex-rule &
+vn2n-rule-super :=  n-lex-super & constant-lex-rule & c-cont-1 &
  [SYNSEM [LOCAL [CAT [HEAD noun_head &
 			   [ MOD < [LOCAL [CAT [HEAD ordinary-or-date-noun_head]],
 				    MODIFIED.PERIPH -]>,
@@ -1268,7 +1283,7 @@ vn2n-rule-nspecarg2 :=  vn2n-rule-super &
 ; (do-parse-tty "食べ方") 
 ; FIXME only gets ARG2 as spec
 ; FIXME doesn't share with vn2n-rule-nspecarg2 or the v2n-end-lex
-v2n-kata-rule :=   n-lex-super & lex-rule &
+v2n-kata-rule :=   n-lex-super & lex-rule & c-cont-1 &
  [SYNSEM [LOCAL [CAT [HEAD nom_head &
 			   [ MOD < [LOCAL [CAT [HEAD ordinary_noun_head-avm]],
 				    MODIFIED.PERIPH -]>,
@@ -1702,7 +1717,7 @@ nominal-numcl-rule-card := nominal-numcl-rule-type &
 ; should this be  ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ INDEX #arg,
 ; or              ARGS.FIRST.SYNSEM.LOCAL.CONT.HOOK [ XARG  #arg,
 
-nominal-numcl-rule-type-noncard := nominal-numcl-rule-type &
+nominal-numcl-rule-type-noncard := nominal-numcl-rule-type & c-cont-1 &
 [ C-CONT common-noun-sem-type &
          [ HOOK [LTOP #hand,
 		 INDEX #arg],
@@ -1822,7 +1837,7 @@ numcl2noun-rule-type :=  ordinary-nohon-n-lex &
 ; (MS 2004-12-20) This shouldn't be unspec_compound_rel, but prep-mod-relation! 今日来る
 ; added restriction on MOD.LOCAL.HEAD - only modify main verbs
 ; added EMPTY + to the HEAD
-adv_np_rule-type := unary-type &
+adv_np_rule-type := unary-type & c-cont-1 &
 [ SYNSEM [LOCAL [ CAT [ VAL super-saturated,
 			HEAD adv_head &
 			    [ MOD < [LOCAL intersective-mod & 
@@ -2080,7 +2095,7 @@ stem-end-rule-type := head-specifier-rule-type &
                       LMORPH-BIND-TYPE nomorphbind]. 
 
 
-cards-times-rule := lexeme & inflecting-lex-rule & card-lex &
+cards-times-rule := lexeme & inflecting-lex-rule & card-lex & c-cont-2 &
  [SYNSEM.LOCAL [CAT.VAL.COMPS null,
 		CONT.HOOK.LTOP #top],
   C-CONT.RELS <! const-relation & [LBL #fac2],
@@ -2090,7 +2105,7 @@ cards-times-rule := lexeme & inflecting-lex-rule & card-lex &
   ARGS < card-lex & [SYNSEM.LKEYS.KEYREL.LBL #fac1] >,
   INFLECTED +].
 
-cards-plus-rule := lexeme & inflecting-lex-rule & card-lex &
+cards-plus-rule := lexeme & inflecting-lex-rule & card-lex & c-cont-2 &
  [SYNSEM.LOCAL [CAT.VAL.COMPS null,
 		CONT.HOOK.LTOP #top],
   C-CONT.RELS <! const-relation & [LBL #term2],
@@ -2161,7 +2176,7 @@ adj-nominal-suffix-type := head-final-type &
 ;;; (MWG 2008-12-04) Changed type from hadj-final-i to get away from
 ;;;  requiring the nonhead's mod from being intersective-mod 
 
-compound-rule := head-adjunct-rule-final &
+compound-rule := head-adjunct-rule-final & c-cont-2 &
  [SYNSEM [ LOCAL [BAR bool,
 		  CONT.HOOK.LTOP #hhand ],
 	   MODIFIED.PERIPH +],
@@ -2255,7 +2270,7 @@ lexical-vv-rule-type := lexical-compound-rule-type &
 ;; (CH 2004-09-09)
 ;; this is for introducing vv_rel to V-V's semantics.
 ;; identified the handles.
-lexical-vv-vv-rel-rule-type := lexical-vv-rule-type &
+lexical-vv-vv-rel-rule-type := lexical-vv-rule-type & c-cont-1 &
 			[SYNSEM.LOCAL.CONT.HOOK [INDEX #ind,
 						 LTOP #lbl],
 			 C-CONT [RELS <! vv-relation &
@@ -2305,7 +2320,7 @@ ga-wo_transitive-lex-vv-rule-type := lexical-vv-non-motion-rule-type &
 
 ;;; The super type creates a proposition with an non-specified relation
 
-super-frag-rule := phrasal_sign  & 
+super-frag-rule := phrasal_sign  & c-cont-1 &
   [ INFLECTED +,
     SYNSEM [ LOCAL [ CAT [ HEAD fragment_head,
                            VAL super-saturated ] ],
@@ -2477,3 +2492,26 @@ frag-pp-int-rule := frag-vmod-something-rule  &
 ;;;
 ;;; End of fragment rules
 ;;;
+
+quantify-n-rule-type := unary-type-super & c-cont-1 &
+[SYNSEM [LOCAL [CAT [ HEAD #head,
+		      VAL super-saturated & [UNSAT -]],
+		BAR +],
+	 LEX #lex],
+ C-CONT [HOOK #hook,
+	 RELS <! [PRED #rel & udef_q_rel,
+		  ARG0 #i,
+		  RSTR #restr] !>,
+         HCONS <! qeq &
+                 [HARG #restr,
+                  LARG #h] !>],
+ ARGS.FIRST.SYNSEM [LOCAL [CAT [HEAD #head & noun_head,
+			       VAL [UNSAT bool,
+				    SPR opt-1-arg & [FIRST [OPT + ,
+							    LOCAL.CAT.HEAD.KEYS.KEY #rel]],
+				    SUBJ olist,
+				    COMPS olist]],
+			   CONT.HOOK #hook & [LTOP #h,
+					      INDEX #i],
+			   BAR -],
+		    LEX #lex]].

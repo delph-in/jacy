@@ -1672,7 +1672,8 @@ p-lex := lexical_sign &
 		 ARG-S #comps],
 	  NON-LOCAL [QUE <! !>,
 		     AFFIX <! !>]],
-  INFLECTED +].
+  INFLECTED +,
+  TOKENS.+LIST.FIRST.+TRAIT native_trait].
 
 ; (FCB 2006-05-02) move this down to do the wierd numeral-clasifier の
 ; DPF maybe this linkage could be revised
@@ -4072,18 +4073,18 @@ relational-n-lex := n-lex &
 ; (MS 2005-11-09) These needed to link the KEYS.KEY, otherwise we parse (and generate) 第花子
 
 name-lex  := n-lex & 
-                  [SYNSEM [LOCAL [CAT [HEAD name_head-avm & [KEYS.KEY #pred],
-                                       VAL noun_sc &
-                                          [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_q_rel]]],
-                                  CONT mod-id-nominal-sign-sem-type &
-                                      [RELS <! #key !>,
-				       HOOK.INDEX #ind,
-                                       HCONS <! !>],
-				  CTXT.BACKGROUND <! !>,
-				  ARG-S < #spr >],
-			   LKEYS.KEYREL named-relation & #key & [ARG0 #ind, PRED #pred],
-                           NON-LOCAL [QUE 0-dlist,
-				      AFFIX <! !>]]].
+ [SYNSEM [LOCAL [CAT [HEAD name_head-avm & [KEYS.KEY #pred],
+		      VAL noun_sc &
+			   [SPR.FIRST #spr & [LOCAL.CAT.HEAD.KEYS.KEY def_q_rel]]],
+		 CONT mod-id-nominal-sign-sem-type &
+		     [RELS <! #key !>,
+		      HOOK.INDEX #ind,
+		      HCONS <! !>],
+		 CTXT.BACKGROUND <! !>,
+		 ARG-S < #spr >],
+	  LKEYS.KEYREL named-relation & #key & [ARG0 #ind, PRED #pred],
+	  NON-LOCAL [QUE 0-dlist,
+		     AFFIX <! !>]]].
 
 
 person-name-lex := name-lex.
@@ -5450,7 +5451,9 @@ quotation-definition-end-lex :=  lexical_sign &
 ; <nex>犬 する 
 ; <todo>
 ; </type>
-ordinary-nohon-n-lex := ordinary-n-lex & [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+ordinary-nohon-n-lex := ordinary-n-lex & 
+ [ SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
+;   TOKENS.+LIST.FIRST.+TRAIT native_trait ].
 
 ; Idiom Implementation (CH 060804)
 ; (CH 2006-08-04) Introduced idiom-A-noun-lex, which is an idiom that
@@ -9489,10 +9492,11 @@ kudasai-vn-end := v-end-lex &
 ; unary-vstem-vend-rule.
 
 verb-stem-lex-base  := v-lex & 
-              [SYNSEM [LOCAL [CAT.HEAD verb-stem_head,
-                              BAR bool]],
-               J-NEEDS-AFFIX +,
-               INFLECTED -].
+ [SYNSEM [LOCAL [CAT.HEAD verb-stem_head,
+		 BAR bool]],
+  J-NEEDS-AFFIX +,
+  INFLECTED -,
+  TOKENS.+LIST.FIRST.+TRAIT native_trait ].
 
 verb-stem-lex-super := verb-stem-lex-base.
 

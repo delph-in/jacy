@@ -546,8 +546,15 @@ pron-relation := reg-nom-relation.
 
 real-pron-relation := pron-relation.
 
+;;; used for relative clauses should be 'generic_nom_rel' to harmonize with the erg.
 generic-nom-relation := pron-relation &
                    [PRED generic-nom_rel].
+
+;;; used in numbers with no head '3-biki hoeta'
+
+generic-entity-relation := pron-relation &
+                   [PRED generic_entity_rel].
+
 
 place-relation := pron-relation &
                    [PRED place_n_rel].
@@ -827,7 +834,8 @@ ano_q_rel := quant_rel.
 
 hes_rel := predsort.
 pron_rel := predsort.
-generic-nom_rel := predsort.
+generic-nom_rel := pron_rel.
+generic_entity_rel := pron_rel.
 generic_entity_rel := predsort.
 place_n_rel := predsort.
 thing_n_rel := predsort.

@@ -184,6 +184,20 @@
     (merge-pathnames "lkb/nogen-rules.set" *grammar-directory*)))
 
 ;;;
+;;; as we move into the chart mapping universe, lexical entries behave similar
+;;; to rules: the list of input tokens that license a lexical entry are unified
+;;; into *lexicon-tokens-path* (when set).  furthermore, to give the grammarian
+;;; easier access to the token in the right periphery, the last element of the 
+;;; tokens list is made re-entrant with *lexicon-last-token-path*.
+;;;
+(setf *lexicon-tokens-path* '(TOKENS +LIST))
+(setf *lexicon-last-token-path* '(TOKENS +LAST))
+(setf *token-id-path* '(+ID))
+
+
+
+
+;;;
 ;;; with recent LKB versions (as of 23-jul-05), there is now better support for
 ;;; the (still primitive) `remote' generation mode: a `translation grid' can be
 ;;; configured from any number of LKB processes, each potentially prepared to

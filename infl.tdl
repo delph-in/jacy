@@ -898,9 +898,9 @@ adjpolite-rule &
 ;[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
 ; fix me - this doesn't appear to work
 n2i-adj-lrule :=
-%suffix (* らしい)
-n2i-adj-rule &
-[ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
+ %suffix (* らしい)
+ n2i-adj-rule &
+ [ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD ordinary_noun_head].
 
 ;(CH 2003-08-25)
 ;「動物的人間」など「的」が直接名詞にかかれるようにするために追加。
