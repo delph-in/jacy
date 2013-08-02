@@ -1,5 +1,11 @@
 ;;; -*- Mode: tdl; Coding: utf-8; -*-
 
+;;;
+;;; Copyright (c) 2009 -- 2012 Stephan Oepen (oe@ifi.uio.no); 
+;;; Copyright (c) 2009 -- 2011 Dan Flickinger (danf@stanford.edu);
+;;; Copyright (c) 2012 Francis Bond (bond@ieee.org);
+;;; see `LICENSE' for conditions.
+;;;
 
 ;;
 ;; redefine `stem-or-lex-sign' (from `synsem-types.tdl') to add informattion
@@ -7,7 +13,36 @@
 ;; of all lexical entries (the value of the `lexitem-inpitem-path' setting).
 ;;
 word :+  
-[ TOKENS tokens ].
+[ TRAITS #traits,
+  STEM [ FROM #from,
+	 TO #to],
+  SYNSEM.LKEYS.KEYREL [CFROM #from, 
+		       CTO #to	],
+  TOKENS tokens &
+	 [ +LIST #traits &
+		 [ FIRST.+FROM #from ], 
+	   +LAST.+TO #to]].
+
+word-or-lexrule :+  
+ [ TRAITS list ].
+
+lex-rule :+ 
+ [ TRAITS #traits,
+   STEM.TO #to,
+   DTR [TRAITS #traits,
+	STEM.TO #to ]].
+
+phrase-or-lexrule :+ 
+ [ STEM.FROM #from,
+   ARGS.FIRST.STEM.FROM #from ].
+
+unary-type-super :+
+ [ STEM.TO #to,
+   ARGS.FIRST.STEM.TO #to ].
+
+basic-binary-phrase :+
+ [ STEM.TO #to,
+   ARGS.REST.FIRST.STEM.TO #to ].
 
 tokens := *top* &
 [ +LIST list,
@@ -17,26 +52,126 @@ token_min := avm.
 
 token := token_min &
 [ +FORM  string,
-  +CLASS orthclass,
-  +TRAIT trait,
+  +CLASS token_class,
+  +TRAIT token_trait,
   +PRED  predsort,
   +CARG  string,
   +ID    diff-list,
   +FROM  string,
   +TO    string,
-  +TNT   tnt ].
+  +POS   pos ].
 
-trait := sort.
-native_le := trait.
-generic_le := trait.
+token_trait := sort.
+anti_trait := token_trait.
+native_trait := token_trait.
+generic_trait := token_trait.
 
-tnt := *top* &
+native_token_list := list.
+native_token_cons := native_token_list & cons &
+[ FIRST.+TRAIT native_trait, REST native_token_list ].
+native_token_null := native_token_list & null.
+
+generic_token_list := list.
+generic_token_cons := generic_token_list & cons &
+[ FIRST.+TRAIT generic_trait, REST generic_token_list ].
+generic_token_null := generic_token_list & null.
+
+
+pos := *top* &
 [ +TAGS list,
   +PRBS list  ].
 
-null_tnt := tnt &
+null_pos := pos &
 [ +TAGS < >,
   +PRBS < > ].
+
+;;
+;; in token mapping, it is useful to have available distinct `anti'-strings.
+;;
+anti_string := string.
+non_string := string.
+
+;;;
+;;; orthographic classes, used in token mapping and lexical filtering
+;;;
+token_class := sort.
+no_class := token_class.
+named_entity := token_class.
+proper_ne := named_entity.
+file_ne := proper_ne.
+url_ne := proper_ne.
+email_ne := proper_ne.
+phone_ne := proper_ne.
+card_or_year_ne := named_entity.
+card_or_dom_ne := named_entity.
+card_or_time_ne := named_entity.
+card_or_meas_ne := named_entity.
+card_ne := card_or_year_ne & card_or_dom_ne & card_or_time_ne & card_or_meas_ne.
+year_ne := card_or_year_ne.
+ord_or_dom_ne := named_entity.
+ord_ne  := ord_or_dom_ne.
+frct_ne := named_entity.
+plur_ne := named_entity.
+dom_card_ne := card_or_dom_ne.
+dom_ord_ne := ord_or_dom_ne.
+date_ne := named_entity.
+meas_or_time_ne := named_entity.
+time_ne := card_or_dom_ne & card_or_time_ne & meas_or_time_ne.
+meas_ne := meas_or_time_ne & card_or_meas_ne.
+meas_noun_ne := named_entity.
+
+;;
+;; the following are modeled after POSIX character classes; most have obvious 
+;; correspondences in terms of (more elaborate) UniCode character properties.
+;; essentially, we cross-classify along three dimensions: (a) the combination
+;; of characters used, (b) whether or not the first character is capitalized,
+;; and (c) whether or not a token appears utterance-initial.
+;;
+non_ne := token_class &
+[ +INITIAL luk ].
+non_alphanumeric := non_ne.
+apostrophe := non_alphanumeric.
+anti_apostrophe := non_alphanumeric.
+alphanumeric := non_ne &
+[ +CASE token_case ].
+alphabetic := alphanumeric.
+numeric := alphanumeric.
+
+;;
+;; in parsing partially bracketed inputs, we introduce special-purpose bracket
+;; tokens, e.g. |the ¦[0 parking lot 0]¦ attendant arrived.|  these are parsed
+;; in token mapping, using a custom +CLASS value.
+;;
+bracket := non_ne &
+[ +COUNT string ].
+left_bracket := bracket.
+right_bracket := bracket.
+
+;;
+;; at least the fourth time that i revise this hierarchy.  `capitalized' or not
+;; is a property of the first character (|1A| is not capitalized).  `mixed', on
+;; the other hand, is only applicable to tokens with at least two characters.
+;; both |aB| and |AbC| are mixed, but |A| or |a| are not.  finally, `lower' and
+;; `upper' reflect the full token string, i.e. |Dan| is neither, |1a| is lower,
+;; and |A| is upper.
+;;
+token_case := sort.
+capitalized := token_case.
+non_capitalized := token_case.
+mixed := token_case.
+non_mixed := token_case.
+capitalized+mixed := capitalized & mixed.
+capitalized+non_mixed := capitalized & non_mixed.
+capitalized+lower := capitalized+non_mixed.
+capitalized+upper := capitalized+non_mixed.
+non_capitalized+mixed := non_capitalized & mixed.
+;;
+;; we are making a simplifying assumption here, not distinguishing one-token
+;; non-capitalized (which could be called 'non_capitalized+non_mixed') from
+;; 'non_capitalized+lower'.  so far, we just never care about the distinction.
+;;
+non_capitalized+lower := non_capitalized & non_mixed.
+
 
 chart_mapping_rule := *top* &
 [ +CONTEXT list,
@@ -88,47 +223,53 @@ one_three_tmt := token_mapping_rule &
 
 one_one_form_tmt := one_one_tmt &
 [ +INPUT < [ +TRAIT #trait, +CLASS #class,
-             +PRED #pred, +CARG #carg, +TNT #tnt ] >,
+             +PRED #pred, +CARG #carg, +POS #pos ] >,
   +OUTPUT < [ +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #carg, +TNT #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #pos ] > ].
+
+one_one_pos_tmt := one_one_tmt &
+[ +INPUT < [ +TRAIT #trait, +CLASS #class,
+             +PRED #pred, +CARG #carg, +FORM #form ] >,
+  +OUTPUT < [ +TRAIT #trait, +CLASS #class,
+              +PRED #pred, +CARG #carg, +FORM #form ] > ].
 
 two_one_initial_form_tmt := two_one_tmt &
 [ +INPUT < [ +TRAIT #trait, +CLASS #class,
-             +PRED #pred, +CARG #carg, +TNT #tnt ],
+             +PRED #pred, +CARG #carg, +POS #pos ],
            [ ] >,
   +OUTPUT < [ +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #carg, +TNT #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #pos ] > ].
 
 two_one_final_form_tmt := two_one_tmt &
 [ +INPUT < [ ],
            [ +TRAIT #trait, +CLASS #class,
-             +PRED #pred, +CARG #carg, +TNT #tnt ] >,
+             +PRED #pred, +CARG #carg, +POS #pos ] >,
   +OUTPUT < [ +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #carg, +TNT #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #pos ] > ].
 
 three_one_center_form_tmt := three_one_tmt &
 [ +INPUT < [ ],
            [ +TRAIT #trait, +CLASS #class,
-             +PRED #pred, +CARG #carg, +TNT #tnt ],
+             +PRED #pred, +CARG #carg, +POS #pos ],
            [ ] >,
   +OUTPUT < [ +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #carg, +TNT #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #pos ] > ].
 
 three_one_final_form_tmt := three_one_tmt &
 [ +INPUT < [ ],
            [ ],
 	   [ +TRAIT #trait, +CLASS #class,
-             +PRED #pred, +CARG #carg, +TNT #tnt ] >,
+             +PRED #pred, +CARG #carg, +POS #pos ] >,
   +OUTPUT < [ +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #carg, +TNT #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #pos ] > ].
 
 one_two_all_form_tmt := one_two_tmt &
 [ +INPUT < [ +TRAIT #trait, +CLASS #class,
-             +PRED #pred, +CARG #carg, +TNT #tnt ] >,
+             +PRED #pred, +CARG #carg, +POS #pos ] >,
   +OUTPUT < [ +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #carg, +TNT #tnt ],
+              +PRED #pred, +CARG #carg, +POS #pos ],
             [ +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #carg, +TNT #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #pos ] > ].
 
 
 ;;;
@@ -137,38 +278,38 @@ one_two_all_form_tmt := one_two_tmt &
 ;;;
 
 token_class_tmt := one_one_tmt &
-[ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS noclass,
-             +PRED #pred, +CARG #carg, +TNT #tnt ] >,
+[ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS no_class,
+             +PRED #pred, +CARG #carg, +POS #pos ] >,
   +OUTPUT < [ +FORM #form, +TRAIT #trait, +CLASS non_ne,
-              +PRED #pred, +CARG #carg, +TNT #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #pos ] > ].
 
 token_case_tmt := token_mapping_rule &
 [ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
-             +PRED #pred, +TNT #tnt ] >,
+             +PRED #pred, +POS #pos ] >,
   +OUTPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +TNT #tnt ] > ].
+              +PRED #pred, +POS #pos ] > ].
 
 one_one_token_case_tmt := one_one_tmt & token_case_tmt.
 
 ;;
 ;; _fix_me_
-;; the NE rules force [ +TRAIT generic_le ], to prevent NE tokens activating a
+;; the NE rules force [ +TRAIT generic_trait ], to prevent NE tokens activating a
 ;; native entry.  there are some digits in the lexicon, hence `4 chairs' could
 ;; in principle get two analyses.  but i see no reason why we should want that?
 ;;                                                              (26-sep-08; oe)
 ne_tmt := one_one_tmt &
 [ +INPUT < [ +FORM #form, +CLASS non_ne,
              +PRED #pred, +CARG #carg ] >,
-  +OUTPUT < [ +FORM #form, +TRAIT generic_le, +CLASS namedentity,
-              +PRED #pred, +CARG #carg, +TNT null_tnt ] > ].
+  +OUTPUT < [ +FORM #form, +TRAIT generic_trait, +CLASS named_entity,
+              +PRED #pred, +CARG #carg, +POS null_pos ] > ].
 
 add_ne_tmt := token_mapping_rule &
 [ +CONTEXT < [ +FORM #form, +CLASS non_ne,
                +PRED #pred, +CARG #carg,
                +ID #id, +FROM #from, +TO #to ] >,
-  +OUTPUT < [ +FORM #form, +TRAIT generic_le, +CLASS namedentity,
+  +OUTPUT < [ +FORM #form, +TRAIT generic_trait, +CLASS named_entity,
               +PRED #pred, +CARG #carg,
-              +ID #id, +FROM #from, +TO #to, +TNT null_tnt ] >,
+              +ID #id, +FROM #from, +TO #to, +POS null_pos  ] >,
   +POSITION "O1@C1" ].
 
 ;;;
@@ -177,65 +318,3 @@ add_ne_tmt := token_mapping_rule &
 lexical_filtering_rule := chart_mapping_rule.
 
 
-;;;
-;;; Orthographic classes, used in token mapping and lexical filtering
-;;;
-
-orthclass := sort.
-noclass := orthclass.
-namedentity := orthclass.
-proper_ne := namedentity.
-file_ne := proper_ne.
-url_ne := proper_ne.
-email_ne := proper_ne.
-phone_ne := proper_ne.
-card_or_year_ne := namedentity.
-card_ne := card_or_year_ne.
-year_ne := card_or_year_ne.
-ord_or_dom_ne := namedentity.
-ord_ne  := ord_or_dom_ne.
-dom_ne  := ord_or_dom_ne.
-frct_ne := namedentity.
-date_ne := namedentity.
-meas_ne := namedentity.
-
-;;
-;; the following are modeled after POSIX character classes; most have obvious 
-;; correspondences in terms of (more elaborate) UniCode character properties.
-;; essentially, we cross-classify along three dimensions: (a) the combination
-;; of characters used, (b) whether or not the first character is capitalized,
-;; and (c) whether or not a token appears utterance-initial.
-;;
-non_ne := orthclass &
-[ +INITIAL luk ].
-non_alphanumeric := non_ne.
-alphanumeric := non_ne &
-[ +CASE token_case ].
-alphabetic := alphanumeric.
-numeric := alphanumeric.
-
-;;
-;; at least the fourth time that i revise this hierarchy.  `capitalized' or not
-;; is a property of the first character (|1A| is not capitalized).  `mixed', on
-;; the other hand, is only applicable to tokens with at least two characters.
-;; both |aB| and |AbC| are mixed, but |A| or |a| are not.  finally, `lower' and
-;; `upper' reflect the full token string, i.e. |Dan| is neither, |1a| is lower,
-;; and |A| is upper.
-;;
-token_case := sort.
-capitalized := token_case.
-non_capitalized := token_case.
-mixed := token_case.
-non_mixed := token_case.
-capitalized+mixed := capitalized & mixed.
-capitalized+non_mixed := capitalized & non_mixed.
-capitalized+lower := capitalized+non_mixed.
-capitalized+upper := capitalized+non_mixed.
-non_capitalized+mixed := non_capitalized & mixed.
-non_capitalized+lower := non_capitalized & non_mixed.
-
-;;
-;; in token mapping, it seems useful to have available distinct `anti'-strings.
-;;
-anti_string := string.
-non_string := string.
