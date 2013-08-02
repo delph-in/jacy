@@ -3,17 +3,10 @@
 ;;;
 
 
-
-
-;; token mapping: manipulate the token lattice prior to lexical look-up
-:begin :instance :status token-mapping-rule.
-;:include "tmr.tdl".
-:end :instance.
-
 ;; lexical filtering: reduce the chart after lexical instantiation and the
 ;; application of lexical rules, right before we turn loose syntactic rules.
 :begin :instance :status lexical-filtering-rule.
-;:include "lfr.tdl".
+:include "lfr.tdl".
 :end :instance.
 
 :begin :type.
@@ -24,6 +17,13 @@
    :include "letypes.tdl".
    :include "tmt.tdl".
 :end :type.
+:begin :instance :status token-mapping-rule.
+:include "tmr/prelude".
+:include "tmr/pos".
+:include "tmr/pos-ipa".
+:include "tmr/finis".
+:end :instance.
+
 
 :begin :instance :status rule.
    :include "japgram.tdl".
