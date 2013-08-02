@@ -14,7 +14,7 @@
 generic_name_tmr := token_mapping_rule &  
 [ +INPUT < [ +FORM #form,
              +TRAIT #trait & generic_trait, +CLASS #class & proper_ne, 
-             +PRED #pred & "named_rel", 
+             +PRED #pred & named_rel, 
              +CARG #carg, 
              +ID #id, +FROM #from, +TO #to,
              +POS #pos ] >,
@@ -30,6 +30,8 @@ generic_name_tmr := token_mapping_rule &
 ;; on all tokens that we expect to activate generic entries, make the +PRED
 ;; value reflect the orthography and PoS tag.
 ;;
+;; fix me: do per POS (_n_, _v_, _a_ at least)
+;;
 generic_pred_tmr := token_mapping_rule &  
 [ +INPUT < [ +FORM #form,
              +TRAIT #trait & generic_trait, +CLASS #class & non_ne, 
@@ -39,7 +41,7 @@ generic_pred_tmr := token_mapping_rule &
   +OUTPUT < [ +FORM #form,
               +TRAIT #trait, +CLASS #class,
               +PRED 
-              "_${lc(I1:+CARG:1)}/${I1:+POS.+TAGS.FIRST:1}_u_unknown_rel",
+              "_${lc(I1:+CARG:1)}_u_unknown:${I1:+POS.+TAGS.FIRST:1}_rel",
               +CARG #carg,
               +ID #id, +FROM #from, +TO #to,
               +POS #pos ] >,
