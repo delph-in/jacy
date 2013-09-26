@@ -25,6 +25,8 @@ preprocessor              := "../rpp/tokenizer.rpp".
 
 ;;;|| preprocessor-modules || list of ''unquoted'' paths to REPP modules to enable ||
 
+preprocessor-modules      := ../rpp/lkb.rpp.
+
 ;;;|| maxent-model || path to a .mem file for ranking ||
 
 maxent-model              := "../tc.mem".
