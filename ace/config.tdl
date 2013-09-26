@@ -35,6 +35,7 @@ variable-property-mapping := "../semi.vpm".
 
 ;;;|| parse-node-labels || path to a TDL file defining parse node labels (unused) ||
 
+parse-node-labels := "../labels.tdl".
 label-path := LABEL-NAME.
 
 ;;;|| generation-ignore-signs || path to a file listing rule and lexeme names to disable for generation ||
