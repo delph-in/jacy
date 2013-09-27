@@ -32,7 +32,7 @@ pos_default_tmr := one_one_tmt &
 [ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
              +PRED #pred, +CARG #carg, 
              +POS [ +TAGS < anti_string, ... > ] ] >,
-  +OUTPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
+  +OUTPUT < [ +FORM #form, +TRAIT #trait & native_trait, +CLASS #class,
               +PRED #pred, +CARG #carg, +POS null_pos ] > ].
 
 pos_recurse_tmr := token_mapping_rule &

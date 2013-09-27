@@ -122,32 +122,45 @@ semantics-path            := SYNSEM LOCAL CONT.
 ;;;Token Mapping
 
 ;;;|| token-mapping || enabled (normal) or disabled (legacy; not well supported) ||
-
 ;;;|| token-type || type of a token feature structure ||
-
 ;;;|| lexicon-tokens-path || path to the list of tokens that license a lexeme ||
-
 ;;;|| lexicon-tokens-last-path || path to the LAST pointer for the diff-list-like token list ||
-
 ;;;|| token-form-path || path within a token to the surface form string ||
-
 ;;;|| token-from-path || path within a token to the CFROM (character start position) field ||
-
 ;;;|| token-to-path   || path within a token to the CTO (character end position) field ||
-
 ;;;|| token-id-path   || path within a token to the ID ||
-
 ;;;|| token-postags-path   || path within a token to the POS tag list ||
-
 ;;;|| token-posprobs-path  || path within a token to the POS tag probability list ||
+;; token settings
+token-mapping := enabled.
+
+lexicon-tokens-path := TOKENS +LIST.
+lexicon-last-token-path := TOKENS +LAST.
+token-type			:= token.
+token-form-path     := +FORM.       ; [required] string for lexical lookup
+token-id-path       := +ID.         ; [optional] list of external ids
+token-from-path     := +FROM.       ; [optional] surface start position
+token-to-path       := +TO.         ; [optional] surface end position
+token-postags-path  := +POS +TAGS.  ; [optional] list of POS tags
+token-posprobs-path := +POS +PRBS.  ; [optional] list of POS probabilities
+
 
 ;;;|| lattice-mapping-input-path || path within a lattice mapping rule to the input list ||
-
 ;;;|| lattice-mapping-output-path || path within a lattice mapping rule to the output list ||
-
 ;;;|| lattice-mapping-context-path || path within a lattice mapping rule to the context list ||
-
 ;;;|| lattice-mapping-position-path || path within a lattice mapping rule to the positional constraints ||
+;; lattice mapping settings
+lattice-mapping-input-path := +INPUT.
+lattice-mapping-output-path := +OUTPUT.
+lattice-mapping-context-path := +CONTEXT.
+lattice-mapping-position-path := +POSITION.
+
+
+:begin :type.
+:include "../mtr".
+:end :type.
+
+
 
 ;invent-ltop: TRUE.
 
