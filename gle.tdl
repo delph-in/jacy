@@ -13,13 +13,12 @@ generic_noun-lex := ordinary-nohon-n-lex &
    TOKENS.+LIST generic_token_list &
 			    < [+POS.+TAGS < "名詞-一般:n-n" >,
 			       +PRED #pred ] > ].
+;;; should have generic_ne_lex_entry := generic_lex_entry & like the ERG
 
 generic_name-lex := ippan-name-lex &
  [ SYNSEM.LKEYS.KEYREL.CARG #carg,
    STEM < "_generic_name" >,
-   TOKENS.+LIST generic_token_list &
-	< [+POS.+TAGS < "名詞-固有名詞-一般:n-n" >,
-	   +CLASS proper_ne, +CARG #carg ] > ].
+   TOKENS.+LIST  < [ +CLASS proper_ne, +CARG #carg ] > ].
 
 ; generic_noun-suffix-lex :=
 ; ordinary-nohon-n-lex &

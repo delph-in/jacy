@@ -2,7 +2,7 @@
 
 ;;;
 ;;; Copyright (c) 2009 -- 2012 Stephan Oepen (oe@ifi.uio.no); 
-;;; Copyright (c) 2012 Francis Bond (bond@ieee.org); 
+;;; Copyright (c) 2012 -- 2013 Francis Bond (bond@ieee.org); 
 ;;; see `LICENSE' for conditions.
 ;;;
 
@@ -30,8 +30,23 @@ generic_name_tmr := token_mapping_rule &
 ;; on all tokens that we expect to activate generic entries, make the +PRED
 ;; value reflect the orthography and PoS tag.
 ;;
-;; fix me: do per POS (_n_, _v_, _a_ at least)
-;;
+;; fix me: only nouns so far
+;; 
+generic_noun_tmr := token_mapping_rule &  
+[ +INPUT < [ +FORM #form,
+             +TRAIT #trait & generic_trait, +CLASS #class & non_ne, 
+             +PRED anti_string, +CARG #carg & ^(.+)$,
+             +ID #id, +FROM #from, +TO #to,
+             +POS #pos & [ +TAGS < ^(名詞.*)$ > ] ] >,
+  +OUTPUT < [ +FORM #form,
+              +TRAIT #trait, +CLASS #class,
+              +PRED 
+              "_${lc(I1:+CARG:1)}_n_unknown:${I1:+POS.+TAGS.FIRST:1}_rel",
+              +CARG #carg,
+              +ID #id, +FROM #from, +TO #to,
+              +POS #pos ] >,
+  +POSITION "O1@I1" ].
+
 generic_pred_tmr := token_mapping_rule &  
 [ +INPUT < [ +FORM #form,
              +TRAIT #trait & generic_trait, +CLASS #class & non_ne, 

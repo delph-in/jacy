@@ -21,7 +21,7 @@ ipa_noun_equivalents_tmr := one_one_pos_tmt &
 
 ipa_proper_class_tmr  := one_one_tmt &
 [ +INPUT   < [ +TRAIT #trait, +CLASS #class, 
-	       +POS #pos & [ +TAGS < "名詞-固有名詞-一般:n-n" > ],
+	       +POS #pos & [ +TAGS < ^名詞-固有名詞.*$ > ],
 	       +PRED anti_string, +CARG #carg, +FORM #form ] >,
-  +OUTPUT  < [+TRAIT #trait, +CLASS #class & proper_ne, +POS #pos,
+  +OUTPUT  < [+TRAIT #trait, +CLASS #class & proper_ne, +POS  null_pos,
 	       +PRED "named_rel", +CARG #carg, +FORM #form ] > ].
