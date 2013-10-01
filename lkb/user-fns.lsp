@@ -194,3 +194,58 @@
 	   #-:ansi-eval-when (load eval)
   (setf *additional-root-condition* #'idiom-complete-p))
 
+;;;
+;;;  Output latex in emacs
+;;;  turn on with (setf *mrs-latex-output-p* t)
+
+(in-package :mrs)
+
+(defvar *mrs-latex-output-p* nil)
+
+(defun output-mrs-after-parse (&optional edges stream)
+  ;;; for ACL this is most likely to be useful in an emacs window
+  ;;; the need to use *lkb-background-stream* is because 
+  ;;; of the complexity with background streams in ACL
+  ;;; it's set in topmenu.lsp
+  (when (or *mrs-scoping-output-p*
+            *mrs-base-output-p*
+            *rmrs-xml-output-p*
+            *rmrs-compact-output-p*
+	    *mrs-discourse*
+	    *mrs-latex-output-p*)
+    (unless stream
+      (setf stream lkb::*lkb-background-stream*))
+    (unless edges (setf edges *parse-record*))
+    (let ((*print-circle* nil))
+      (loop for edge in edges 
+           do
+           (let ((mrs (extract-mrs edge)))
+             (format stream "~%Edge number ~A" 
+                     (lkb::edge-id edge))
+             (format stream "~%~A~%" 
+                     (lkb::parse-tree-structure edge))
+             (treat-mrs mrs t stream))))))
+
+
+(defun mrs::treat-mrs (mrs-struct simplep stream)
+  (format stream "~%~A " lkb::*sentence*)
+  (setf *mrs-debug* mrs-struct)
+  (when *mrs-base-output-p*
+    (output-mrs1 mrs-struct 'simple stream))
+  (when *mrs-scoping-output-p*
+    (process-mrs-struct mrs-struct nil 10 simplep stream))
+  (when *mrs-fol-output-p*
+    (output-fol-approximation mrs-struct stream))
+  (when *rmrs-xml-output-p*
+         (output-rmrs1 (mrs-to-rmrs mrs-struct) 'xml stream))
+  (when *mrs-latex-output-p*
+         (mrs::output-mrs1 mrs-struct 'mrs::latex stream))
+  (when *rmrs-compact-output-p*
+    (output-rmrs1 (mrs-to-rmrs mrs-struct) 'compact stream t))
+  (when *mrs-discourse*
+	 (output-mrs1 mrs-struct 'simple stream)
+	 (output-mrs1 mrs-struct 'prolog stream)
+	 (with-open-file (pro-out "~/tmp/prologformat"
+			  :direction :output :if-does-not-exist :create
+			  :if-exists :append)
+	   (output-mrs1 mrs-struct 'prolog pro-out))))
