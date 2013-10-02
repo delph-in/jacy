@@ -17,7 +17,7 @@ generic_name_tmr := token_mapping_rule &
              +PRED #pred & named_rel, 
              +CARG #carg, 
              +ID #id, +FROM #from, +TO #to,
-             +POS #pos ] >,
+             +POS #pos & [ +TAGS < string > ] ] >,
   +OUTPUT < [ +FORM #form,
               +TRAIT #trait, +CLASS #class,
               +PRED #pred,
@@ -32,6 +32,21 @@ generic_name_tmr := token_mapping_rule &
 ;;
 ;; fix me: only nouns so far
 ;; 
+generic_sahen_tmr := token_mapping_rule &  
+[ +INPUT < [ +FORM #form,
+             +TRAIT #trait & generic_trait, +CLASS #class & non_ne, 
+             +PRED anti_string, +CARG #carg & ^(.+)$,
+             +ID #id, +FROM #from, +TO #to,
+             +POS #pos & [ +TAGS < ^(名詞-サ変接続.*)$ > ] ] >,
+  +OUTPUT < [ +FORM #form,
+              +TRAIT #trait, +CLASS #class,
+              +PRED 
+              "_${lc(I1:+CARG:1)}_s_unknown_rel",
+              +CARG #carg,
+              +ID #id, +FROM #from, +TO #to,
+              +POS #pos ] >,
+  +POSITION "O1@I1" ].
+
 generic_noun_tmr := token_mapping_rule &  
 [ +INPUT < [ +FORM #form,
              +TRAIT #trait & generic_trait, +CLASS #class & non_ne, 
@@ -41,7 +56,7 @@ generic_noun_tmr := token_mapping_rule &
   +OUTPUT < [ +FORM #form,
               +TRAIT #trait, +CLASS #class,
               +PRED 
-              "_${lc(I1:+CARG:1)}_n_unknown:${I1:+POS.+TAGS.FIRST:1}_rel",
+              "_${lc(I1:+CARG:1)}_n_unknown_rel",
               +CARG #carg,
               +ID #id, +FROM #from, +TO #to,
               +POS #pos ] >,
