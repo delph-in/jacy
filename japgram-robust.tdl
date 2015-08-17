@@ -1,0 +1,11 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Robust Phrase Structure Rules for  
+;;; Full Forestbanking (FFTB)
+;;; 
+;;; created by Sanghoun Song (SSH, 2015-06-30) 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+xp-xp-bridge-c := bridge-binary-phrase.
+xp-bridge-c := bridge-unary-phrase.
+
+

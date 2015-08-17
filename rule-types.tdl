@@ -393,6 +393,7 @@ head-adjunct-rule-type := adjacent_head_check &
 				   MODIFIED.PERIPH #periph]]].
 
 
+
 ;(CH 2003-08-22) gap有り関係節のための規則
 ; without "adjacent_nonhead_check &"
 ;(MS 2003-12-17) Adapt that to Matrix 0.6
@@ -805,6 +806,9 @@ utterance-type := unary-type  &
 			     BAR +],
 		     NON-LOCAL.AFFIX <! !>],
 	     J-NEEDS-AFFIX -]].
+
+;;SSH 2015-06-30
+utterance-type :+ [ SYNSEM.LOCAL.CAT.HEAD.UTTERED + ].
 
 
 utt-type := utterance-type &
@@ -2515,3 +2519,60 @@ quantify-n-rule-type := unary-type-super & c-cont-1 &
 					      INDEX #i],
 			   BAR -],
 		    LEX #lex]].
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DPF 2014-08-01 - Added unary and binary bridging rules to accommodate robust
+;; full-forest treebanking.  The strategy is to pump each normal edge in the
+;; chart to a "bridge head" edge via the unary rule, and then combine two
+;; adjacent such bridge-head edges using the binary rule.  This strategy,
+;; proposed by Woodley Packard, results in a mere doubling of the number of
+;; edges in each cell of the chart, rather than the square of the number of
+;; normal edges that resulted from trying just a binary bridging rule that
+;; accepted either bridge or normal edges.
+;;
+;; SSH 2015-06-30 - Added for Jacy
+bridge_x_rel := predsort.
+
+head-min :+ [ UTTERED luk ].
+;;bridge-head := head &
+bridge-head := head-min &
+  [ BRIDGED luk ].
+
+;head :+ [ BRIDGED luk ].
+
+;; SSH 2015-06-30: [ ICONS <! !> ] is temporarily removed.
+bridge-binary-phrase := basic-binary-phrase &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head & [ BRIDGED + ],
+                           VAL [ SUBJ < >,
+                                 SPR < >,
+                                 COMPS < > ] ] ],
+             NON-LOCAL non-local-none ],
+    C-CONT [ HOOK [ LTOP #lbl, INDEX #arg0 ],
+	     RELS <! [ LBL #lbl,
+		       PRED bridge_x_rel,
+		       ARG0 #arg0,
+		       ARG1 #ind,
+		       ARG2 #rind ] !>,
+             HCONS <! !> ],
+    ARGS < [ SYNSEM.LOCAL [ CAT.HEAD bridge-head & [ BRIDGED - ],
+			    CONT.HOOK.INDEX #ind ] ],
+           [ SYNSEM.LOCAL [ CAT.HEAD bridge-head,
+			    CONT.HOOK.INDEX #rind ] ] > ].
+
+bridge-unary-phrase := basic-unary-phrase &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD bridge-head & [ BRIDGED - ],
+                           VAL [ SUBJ < >,
+                                 SPR < >,
+                                 COMPS < > ] ] ],
+             NON-LOCAL non-local-none ],
+    C-CONT [ HOOK #hook,
+	     RELS <! !>,
+             HCONS <! !> ],
+    ARGS < [ SYNSEM.LOCAL [ BAR +,
+			    CAT.HEAD head,
+			    CONT.HOOK #hook ] ] > ].
+
+hadj-final-i :+ [ SYNSEM.LOCAL.CAT.HEAD.UTTERED na ].
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

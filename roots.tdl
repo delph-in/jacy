@@ -69,3 +69,9 @@ number-frag-root := number-frag-rule-type.
 ; (for efficiency)
 root_non_idiom := sign &
   [ IDIOM - ].
+
+; SSH 2015-06-30 This root type should be used for only robust parsig. 
+; This cannot be used for generation.
+root-bridge := phrase &
+  [ SYNSEM.LOCAL.CAT.HEAD bridge-head & [ BRIDGED + ] ].
+

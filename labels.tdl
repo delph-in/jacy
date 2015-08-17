@@ -16,6 +16,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;; SSH 2015-06-30 for robust parsing 
+bridge-unary := label &
+  [ SYNSEM.LOCAL.CAT.HEAD bridge-head & [ BRIDGED - ],
+    LABEL-NAME "BX" ].
+
+bridge-binary := label &
+  [ SYNSEM.LOCAL.CAT.HEAD bridge-head & [ BRIDGED + ],
+    LABEL-NAME "BP" ].
+
+
+
 
 ;; labels
 ;; UTT, PP, NP, VP, ADV, ADJ, DET, TEMP_MOD, NOUN_MOD, N, V, VMOD-P, NMOD-P, NSPEC-P, CASE-P, IDIOM, SAP, INTERJ, HES, CARD, CARD_MOD, PUNCT
@@ -188,3 +199,4 @@ conj := label &
 prefix := label &
       [SYNSEM.LOCAL.CAT.HEAD hon-prefix_head,
        LABEL-NAME "PREFIX"].
+
