@@ -746,9 +746,12 @@ want2-relation := arg12-relation & [PRED "want2_rel"].
 ; (MS 2002-12-03) neg_rel needs an arg1 that can be accessed, e.g. in tabenaide morau.
 ; (MS 2003-07-11) For the Japanese analysis, it also needs an ARG2
 ; (MS 2004-02-20) and also an ARG3, in the case of passive?
+; (FCB 2014-01-27) The arg1 outscopes the handle of the verb. 
+;                  There is no arg2 or arg3.
+;                  Changed to event
 
-neg-relation := adv-relation & arg1-relation &
-		[ARG0 individual].
+neg-relation := scopal-adv-relation.
+
 
 ;cant_help_rel := j-neg_rel.
 
