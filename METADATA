@@ -36,7 +36,7 @@ SHORT_GRAMMAR_NAME="Jacy"
 WEBSITE="http://wiki.delph-in.net/moin/JacyTop"
 DEMO_WEBSITE="http://jacy.delph-in.net/"
 DOCUMENTATION_URL="http://wiki.delph-in.net/moin/JacyDoc"
-ISSUE_TRACKER="http://jacy.opendfki.de/"
+ISSUE_TRACKER="https://github.com/delph-in/jacy/issues"
 LICENSE="MIT"
 
 ## You may optionally specify a release date for the grammar. If unspecified,
@@ -48,14 +48,14 @@ LATEST_RELEASE=""
 ## If this is not provided, the text of citation.bib or canonical.bib
 ## will be used in the Grammar Catalogue
 BIB_URL="http://faculty.washington.edu/ebender/bibtex/SieBen02.bib.txt"
-PDF_URL="http://www.dfki.de/~siegel/Siegel-Bender.pdf"
+PDF_URL="http://www.aclweb.org/anthology/W/W02/W02-1210.pdf"
 CITE="Siegel and Bender 2002"
 
 ## Version Control
 ## If this is not provided, it is automatically extracted from the
 ## local version control info. You only need to modify this if the
 ## version control URL you use locally is not the one you want published
-VCS="svn co https://jacy.opendfki.de/repos/trunk jacy"
+VCS="git clone https://github.com/delph-in/jacy.git"
 
 ## Semi-colon separated list of required external resources 
 ## e.g.
@@ -98,3 +98,4 @@ ISO_CODE="jpn"
 
 LKB_SCRIPT_FILE="lkb/script"
 CHEAP_GRM_FILE_NAME="japanese.grm"
+
