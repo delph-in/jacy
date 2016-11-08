@@ -919,23 +919,26 @@ floated-obj-num-cl-lex &
 ;;;
 ;;; V-V rules
 ;;;
-category-change-preds-irule := sign &
- [SYNSEM.LKEYS.KEYREL.PRED #pred,
-  ARGS.FIRST.SYNSEM.LKEYS.KEYREL.PRED #pred].
+;;constant-lex-rule &
+category-change-preds-lrule := sign & 
+ [ STEM  #stem,
+   SYNSEM.LKEYS.KEYREL.PRED #pred,
+   ARGS <  [STEM #stem, 
+	    SYNSEM.LKEYS.KEYREL.PRED #pred] > ].
 
-vbar-monotransitivization-v-rule := category-change-preds-irule &
+vbar-monotransitivization-v-rule := category-change-preds-lrule &
 syn-vv-monotrans-vbar-v-stem-lex &
  [ ARGS.FIRST syn-vv-intrans-vbar-v-stem-lex ].
 
-vbar-ditransitivization-v-rule := category-change-preds-irule &
+vbar-ditransitivization-v-rule := category-change-preds-lrule  &
 syn-vv-ditrans-vbar-v-stem-lex &
 [ ARGS.FIRST syn-vv-intrans-vbar-v-stem-lex ].
 
-vbar-monotransitivization-c-rule := category-change-preds-irule &
+vbar-monotransitivization-c-rule := category-change-preds-lrule  &
 syn-vv-monotrans-vbar-c-stem-lex &
 [ ARGS.FIRST syn-vv-intrans-vbar-c-stem-lex].
 
-vbar-ditransitivization-c-rule := category-change-preds-irule &
+vbar-ditransitivization-c-rule := category-change-preds-lrule  &
 syn-vv-ditrans-vbar-c-stem-lex &
 [ ARGS.FIRST syn-vv-intrans-vbar-c-stem-lex].
 
