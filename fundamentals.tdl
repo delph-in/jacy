@@ -76,7 +76,7 @@ empathy_rel := avm &
                [EMPER index,
                 EMPEE index].
 
-cat :+ [HEAD head, VAL valence].
+cat :+ [HEAD head-min, VAL valence].
 
 ; (ERB 2002-01-24) Change value of NUCL from bool to nucl in order
 ; to be able to keep phrases built by conj-rule from being modified.
@@ -1783,3 +1783,4 @@ num-cl-sem-type := num-cl-sem-type-super.
 ; (FCB 2005-10-02) added so that vn2n's can become adverbial PPs
 
 reg-nom-arg1-relation := reg-nom-relation & noun-arg1-relation.
+
