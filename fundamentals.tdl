@@ -236,15 +236,15 @@ never_unify_rel := relation.
 
 ; For fragments (DPF FCB 2005-08-22) expect to appear in the Matrix any moment now
 unknown_relation := arg0-relation &
-  [ PRED unknown_rel,
+  [ PRED unknown_v_rel,
     ARG0 event,
     ARG semarg ].
 
-unknown_rel := predsort.
-unknown_cop_rel := predsort.
+unknown_v_rel := predsort.
+unknown_v_cop_rel := predsort.
 
 unknown_cop_relation := arg12-ev-relation &
-  [ PRED unknown_cop_rel ].
+  [ PRED unknown_v_cop_rel ].
 
 
 ;;;

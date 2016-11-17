@@ -2904,20 +2904,20 @@ hyphen-conj-p-lex := n_conj-p-lex &
 ; <todo>
 ; </type>
 compl-conj-p-lex := conj-lex & 
-            [SYNSEM [LKEYS.KEYREL #key & [ARG0 #index,
-					  L-HNDL #arg,
-					  R-HNDL #mod],
-		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD case-p_head & [CASE #case,
-									       PTYPE to],
-						       CONT [HOOK.LTOP #mod]]] >,
-				       J-POSTHEAD left],
-				 VAL.COMPS.FIRST.LOCAL [CAT.HEAD case-p_head & [CASE #case,
-										PTYPE to],
-							CONT [HOOK.LTOP #arg]]],
-			    CONT n-conj-sem-type &
-				[HCONS <! !>,
-				 HOOK.INDEX conj-ref-ind & #index,
-				 RELS <! #key !>]]]].
+ [SYNSEM [LKEYS.KEYREL #key & [ARG0 #index,
+			       L-HNDL #arg,
+			       R-HNDL #mod],
+	  LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD case-p_head & [CASE #case,
+								    PTYPE to],
+					    CONT [HOOK.LTOP #mod]]] >,
+			    J-POSTHEAD left],
+		      VAL.COMPS.FIRST.LOCAL [CAT.HEAD case-p_head & [CASE #case,
+								     PTYPE to],
+					     CONT [HOOK.LTOP #arg]]],
+		 CONT n-conj-sem-type &
+		     [HCONS <! !>,
+		      HOOK.INDEX conj-ref-ind & #index,
+		      RELS <! #key !>]]]].
 
 
 
@@ -3401,7 +3401,7 @@ discourse-lex := lexical_sign &
  [SYNSEM [LOCAL [CAT [HEAD final_head,
 		      VAL super-saturated],
 		 CONT [HOOK.LTOP #top,
-		       RELS <! subord-or-conj-relation &
+		       RELS <! subord-or-conj-relation & event-relation &
 			     [ LBL #top,
 			       PRED "discourse_x_rel",
 			       L-HNDL #hand ],
@@ -13239,11 +13239,11 @@ syntactic-vv-vbar-stem-lex := verb-stem-lex & lexical_sign-word &
 			     XARG #sbjind],
 		       RELS  <! #key !>,
 		       HCONS <! qeq & [ LARG #ohand ] !>],
-		 ARG-S < #sbj >],
-	  LKEYS.KEYREL #key & arg1-relation &
-		[ARG1 #sbjind,
-		 ARG0 #event],
-	  NON-LOCAL.QUE <! !>,
+		 ARG-S < #sbj >],  
+	  LKEYS.KEYREL #key & arg1-ev-relation &
+		[ARG0 #event,
+		 ARG1 #sbjind ],
+	  NON-LOCAL.QUE <! !>,	
 	  MODIFIED.PERIPH bool]].
 
 ;(CH 2005-04-09)
@@ -13251,7 +13251,7 @@ syntactic-vv-vbar-stem-lex := verb-stem-lex & lexical_sign-word &
 syntactic-vv-intrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
  [SYNSEM [LOCAL [CONT.HCONS <! [ HARG #chand] !>,
 		 CAT.VAL.SPR <[LOCAL.CAT.VAL [COMPS null]]>],
-	  LKEYS.KEYREL arg12-relation &
+	  LKEYS.KEYREL arg12-ev-relation &
 		[ARG2 #chand]]].
 
 ; <type val="syn-vv-intrans-vbar-v-stem-lex">
@@ -13290,6 +13290,7 @@ syn-vv-monotrans-vbar-c-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEM
 ;syn-vv-monotrans-vbar-c2-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE c2-stem].
 ;syn-vv-monotrans-vbar-kurusuru-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
 
+;<ex>電話 を 手渡し 直す
 ;(CH 2005-04-09)
 ; for a ditransitive V1
 syntactic-vv-ditrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
