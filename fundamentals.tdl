@@ -750,7 +750,10 @@ want2-relation := arg12-relation & [PRED "want2_rel"].
 ;                  There is no arg2 or arg3.
 ;                  Changed to event
 
-neg-relation := scopal-adv-relation.
+neg_x_rel := predsort.
+
+neg-relation := scopal-adv-relation &
+ [ PRED neg_x_rel ].
 
 
 ;cant_help_rel := j-neg_rel.

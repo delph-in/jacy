@@ -3292,10 +3292,9 @@ s-end1-neg-imp-lex := sap-lex &
 		 CONT [HOOK [LTOP #neg-hand,
 			     INDEX #ind],
 		       RELS <! #key & neg-relation & 
-			     [PRED "neg_v_rel",
-			      LBL #neg-hand,
-			      ARG0 individual,
-			      ARG1 #neg1 ]!>,
+			     [ LBL #neg-hand,
+			       ARG0 individual,
+			       ARG1 #neg1 ]!>,
 		       HCONS <! qeq & [HARG #neg1, LARG #v-handle] !>]],
 	  NON-LOCAL.QUE 0-dlist]].
 
@@ -6403,7 +6402,7 @@ scopal-adv-regular-lex := scopal-adv-lex &
 ; (MS 2005-11-09) To get rid of skip files.
 
 scopal-adv-regular-negmod-lex := scopal-adv-regular-lex &
- [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY "_neg_v_rel" ].
+ [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY neg_x_rel ].
 
 ; (MS 2004-12-15) This doesn't have to be COMPS null on the modifiee, otherwise we
 ; don't get relative-clause-obj-gap rules. But it should be COP-ARG -, such that
@@ -7300,7 +7299,7 @@ v-neg-end-lex := v-noncaus-op-end-lex &
 							    KEYS.KEY #negrel],
 				      VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd,
 								       INDEX #event]]]],
-				 CONT [RELS <! neg-relation &  #keyrel & [ARG1 #neg-arg,
+				 CONT [RELS <! scopal-adv-relation &  #keyrel & [ARG1 #neg-arg,
 									  PRED #negrel,
 									  LBL #top] !>,
 				       HOOK [LTOP #top,
@@ -9382,7 +9381,6 @@ v2n-end-lex :=  nom-lex &
 mai-end-lex := v-noncaus-op-end-lex &
  [SYNSEM [LKEYS.KEYREL #key & neg-relation & 
 		       [LBL #top, 
-			PRED "neg_v_rel",
 			ARG1 #h3],
 	  LOCAL [CAT [HEAD v-op-end_head &
 			   [MODUS indicative,
@@ -11172,26 +11170,29 @@ cop-id-quest-stem-fem-lex := cop-id-quest-stem-lex &
 ; <nex>
 ; <todo>
 ; </type>
-cop-id-neg-stem-lex := verb-stem-lex &
+; 			   KEYS.KEY #neg_x_rel ],
+cop-id-neg-stem-lex := verb-stem-lex-super &
 [SYNSEM [LOCAL [CAT [HEAD i-adj-stem_head &
 			  [MODUS negative],
-                    VAL cop-id_transitive & [COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #objind],
-					     SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]]],
+                    VAL cop-id_transitive &
+			  [COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #objind],
+			   SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]]],
 		CONT [HOOK [LTOP #neg-hand,
-			   XARG #sbjind],
-                     RELS <! neg-relation & #key & 
-			   [LBL #neg-hand, 
-			    PRED "neg_v_rel",
-			    ARG1 #arg],
-			   equal-relation & 
+			    INDEX  #copind,
+			    XARG #sbjind],
+                     RELS <! equal-relation & 
 			   [PRED "cop_id_rel",
 			    LBL #cop-hand,
+			    ARG0 #copind,
 			    ARG1 #sbjind,
-			    ARG2 #objind]!>,
+			    ARG2 #objind ],
+			   neg-relation & 
+			   [LBL #neg-hand,
+			    PRED #neg_x_rel,
+			    ARG1 #arg] !>,
 		      HCONS <! qeq & [HARG #arg, LARG #cop-hand] !>],
 		CTXT.BACKGROUND <! !>,
 		ARG-S < #sbj . #comps >],
-	 LKEYS.KEYREL #key,
 	 NON-LOCAL.QUE <! !>],
  STEMTYPE adj-stem].
 
@@ -11340,7 +11341,7 @@ reg-cop-stem-nomod-desustem-lex := reg-cop-stem-nomod-lex & reg-cop-stem-desuste
 ; <nex>犬 で は ない
 ; <todo>
 ; </type>
-cop-neg-stem-lex := verb-stem-lex &
+cop-neg-stem-lex := verb-stem-lex-super &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
                           COP +,
                           H-TENSE #tense,
@@ -11355,14 +11356,13 @@ cop-neg-stem-lex := verb-stem-lex &
 							 CAT.HEAD.H-TENSE #tense]]]]],
 		CONT [HOOK [LTOP #hand,
 			    INDEX #ind],
-		      RELS <! #key & neg-relation & 
+		      RELS <! neg-relation & 
 			    [LBL #hand, 
-			     PRED "neg_v_rel", 
 			     ARG1 #arg ] !>,
-		      HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
+		      HCONS <! qeq &
+			     [HARG #arg, LARG #objhd] !>],
 		CTXT.BACKGROUND <! !>,
 		ARG-S #comps],
-	 LKEYS.KEYREL #key,
          NON-LOCAL.QUE <! !>],
  STEMTYPE adj-stem].
 
@@ -11392,8 +11392,7 @@ cop-neg-lex := nonaux-lex &
 	       CONT [HOOK #hook & [LTOP #hand,
 				   INDEX #ind],
 		     RELS <! #key & neg-relation & 
-			   [PRED "neg_v_rel",
-			    ARG1 #arg ]  !>,
+			   [ ARG1 #arg ]  !>,
 		     HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
 	       CTXT.BACKGROUND <! !>,
 	       ARG-S #comps,
