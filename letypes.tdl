@@ -8324,23 +8324,6 @@ v-noncaus-op-end-lex := v-op-end-lex &
 		CONT.HOOK.XARG #xarg,
 		ARG-S #args]].
 
-naru-noncaus-end-lex := v-noncaus-op-end-lex &
- [INFLECTED -,
-  LMORPH-BIND-TYPE a-morph,
-  STEMTYPE c-stem,
-  SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
-		      VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
-						      INDEX #event-v]]],
-		 CONT [HOOK [INDEX #event,
-			     LTOP #hd],
-		       RELS <! #key & [ARG0 #event-v]!>,
-		       HCONS <! !>]],
-	  LKEYS.KEYREL #key & adv-relation &
-		[LBL #hd,
-		 ARG1 #arg-h,
-		 ARG0 #event],
-	  MODIFIED.PERIPH bool]].
-
 
 ; <type val="nai-noncaus-end-lex">
 ; <name-ja>否定助動詞非終止
