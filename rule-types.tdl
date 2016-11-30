@@ -1103,9 +1103,9 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex & c-cont-1 &
 ; (FCB 2005-09-22) Don't copy up hook as the modified verb's hook 
 ; should be the hook (from isect-adv-lex)
 
-adj2adv-rule  := isect-adv-lex & lex-rule &
+adj2adv-rule  := isect-mod-lex  & lex-rule & adv-super-lex &
  [SYNSEM [LKEYS.KEYREL [ PRED #rel ],
-	  LOCAL [CAT.HEAD adv_head,
+	  LOCAL [CAT.HEAD adv_adj_head-avm,
 		 CTXT #ctxt],
 	  NON-LOCAL #nonloc],
   J-NEEDS-AFFIX -,

@@ -1047,7 +1047,8 @@ adv_head := adj-or-adv_head &
 adv_head-avm := adv_head &
             [KEYS.KEY adv_rel,
 	     MOD < [LOCAL [CAT.HEAD sentence-valid]] >,
-	     H-TENSE present].
+	     H-TENSE present,
+	     ADJ -].
 
 ;;; making MOD.LOCAL.CAT.HEAD.ADJ + stops us from modifying adverbs
 ;;; FIXME: now we over generate by modifying past tense normal verbs
@@ -1063,8 +1064,12 @@ adv_deg_num_head-avm := adv_head &
 	     MOD < [LOCAL [CAT.HEAD num-cl_head]] >,
 	     H-TENSE present].
 
-case-adv_head := adv_head &
-            [MOD < >].
+adv_adj_head-avm := adv_head &
+"used for adverbs made from adjectives (na or i)"
+ [KEYS.KEY adv_rel,
+  MOD < [LOCAL [CAT.HEAD sentence-valid]] >,
+  H-TENSE present,
+  ADJ +].
 
 hes_head := final_head.
 
@@ -2268,8 +2273,8 @@ nounmod-p-ncomp-relmod-lex := nounmod-p-ncomp-lex &
 ; <todo>
 ; </type>
 nounmod-p-exc-ncomp-lex := nounmod-p-lex &
-		       [SYNSEM.LOCAL.CAT [HEAD.PTYPE nattr,
-					  VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD exceptional_noun_head]]].
+ [SYNSEM.LOCAL.CAT [HEAD.PTYPE nattr,
+    VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD exceptional_noun_head]]].
 
 
 nounmod-p-ncomp-plusbar-lex := nounmod-p-lex &
@@ -2821,9 +2826,6 @@ adv-p-lex-vp-inf := adv-p-lex &
 
 
 
-
-adv-p-lex-naadj := adv-p-lex & 
-            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
 
 adv-p-lex-parent := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD parent-end_head].
@@ -4237,7 +4239,7 @@ temp_numeral-basic-lex  := n-lex &
                                      [SPR.FIRST #spr,
 				      COMPS #comps & [FIRST.LOCAL [CONT.HOOK [LTOP #hand,
 									      XARG #i],
-								   CAT.HEAD.KEYS.KEY 'temp_loc]]]],
+								   CAT.HEAD.KEYS.KEY "temp_loc"]]]],
                            CONT common-noun-sem-type &
                                [HOOK [INDEX #i,
 				      LTOP #hand]],
@@ -7200,32 +7202,33 @@ na-naarg-end-lex :=  na-end-lex &
 ; (since 2005)v-soc-adv-stem-lexやv2a-c-stem-lexのように、adverbを格として取る動詞に対して使う。
 ; <ex>部屋 を きれい に する
 ; <ex>桜 が 有名 に なる
-; <nex>部屋 を きれい に 掃除 する
-; <nex>確か に 鐘 が なっ た
+; <ex>部屋 を きれい に 掃除 する
+; <ex>確か に 鐘 が なっ た
 ; <todo>(TK 07-04-11)「そうに+V」(lkb::do-parse-tty "寒 そう に 振る舞う")や「na-adj-lex+に+助詞」
 ; (lkb::do-parse-tty "簡単 に は 譲ら ない")の場合にもこのtypeを選ぶかどうかの選択肢が出てしまう。
 ; (TK 07-04-11)また、「na-adj-lex+に+助詞」の場合、このtypeを選ぶことは可能だが、格にはなれない
 ; (lkb::do-parse-tty "きれい に は し ない")。
 ; </type>
-naadj2adv-end-lex := lexical_sign-word &
+naadj2adv-end-lex := lexical_sign-aword &
  [J-NEEDS-AFFIX -,
   SYNSEM synsem &
-		[LOCAL [CAT [HEAD case-adv_head & [J-POSTHEAD left],
+		[LOCAL [CAT [HEAD adv_adj_head-avm &
+				  [J-POSTHEAD left,
+				   MOD < [LOCAL intersective-mod & 
+					      [CONT.HOOK [LTOP #h,
+							  INDEX #e ]]] > ],
 			     VAL obj-arg &
-				  [COMPS #comps & [FIRST [OPT - ,
-							  LOCAL [CAT [HEAD na-adj_head,
-								      VAL.UNSAT +],
-								 CONT [RELS <! #key & 
-									     [ARG1 #xarg] !>,
-								       HOOK [LTOP #tophand,
-									     INDEX #ind]]]]]]],
+				  [COMPS #comps
+					 & [FIRST [OPT - ,
+						   LOCAL [CAT [HEAD na-adj_head,
+							       VAL.UNSAT +],
+							  CONT.HOOK #hook ]]]]],
 			ARG-S #comps,
-			CONT [HOOK [LTOP #tophand,
-				    XARG #xarg,
-				    INDEX #ind],
+			CONT [HOOK #hook &
+				   [LTOP #h,
+				    XARG #e ],  
 			      RELS <! !>,
 			      HCONS <!  !>]],
-		 LKEYS.KEYREL #key & [ LBL #tophand],
 		 NON-LOCAL [QUE <! !>,
 			    AFFIX <! !>]],
   INFLECTED +].

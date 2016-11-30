@@ -441,13 +441,16 @@ head-complement2-rule := head-complement2-type & [SYNSEM.LOCAL.BAR +].
 
 ; (ERB 2002-01-02) [NUCL -] on mother - see notes at 
 ; head-adjunct-rule-type.
+; took out 
+; FCB 2017-11-29 changed ADJ to bool
+;;; to allow its use to distinguish adverbs dervied from adjectives
 
 hf-adj-i-rule := hadj-final-i & 
                       [SYNSEM.LOCAL.BAR +,
                        C-CONT [RELS <! !>,
                                HCONS <! !>],
                        ARGS <[SYNSEM.LOCAL [CAT [HEAD [J-POSTHEAD left,
-                                                       ADJ -,
+                                                       ADJ bool,
                                                        MAIN-PRD -],
                                                  VAL saturated],
                                             BAR +]],
