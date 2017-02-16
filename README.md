@@ -1,17 +1,20 @@
 # Jacy
 
-The Jacy Japanese Grammar ([Siegel & Bender, 2002][]) is a broad-coverage
-HPSG grammar of Japanese. In combination with a parser (such as the
-[LKB][], [ACE][], or [agree][]), it can analyze Japanese sentences,
-yielding derivation trees and [MRS][] semantic representations, and also
-generate sentences from semantic representations.
+The Jacy Japanese Grammar ([Siegel, Bender, & Bond, 20016][]; [Siegel
+& Bender, 2002][]) is a broad-coverage HPSG grammar of Japanese. In
+combination with a parser (such as the [LKB][], [ACE][], or
+[agree][]), it can analyze Japanese sentences, yielding derivation
+trees and [MRS][] semantic representations, and also generate
+sentences from semantic representations.
 
-Input sentences are tokenized using a morphological analyzer like [MeCab][].
+Input sentences are tokenized using a morphological analyzer like
+[MeCab][].
 
 ## Quick Start
 
-The [ACE][] parser/generator works on Linux and Mac machines. After installing
-ACE, the following commands will let you parse and generate with Jacy:
+The [ACE][] parser/generator works on Linux and Mac machines. After
+installing ACE, the following commands will let you parse and generate
+with Jacy:
 
 ```bash
 ~$ git clone https://github.com/delph-in/jacy.git
@@ -29,6 +32,7 @@ NOTE: parsed 1 / 1 sentences, avg 2837k, time 0.02782s
 NOTE: generated 1 / 9 sentences, avg 2653k, time 0.06851s
 ```
 
+[Siegel, Bender, & Bond, 2016]: https://web.stanford.edu/group/cslipublications/cslipublications/site/9781684000180.shtml
 [Siegel & Bender, 2002]: http://www.aclweb.org/anthology/W/W02/W02-1210.pdf
 [LKB]: http://moin.delph-in.net/LkbTop
 [ACE]: http://sweaglesw.org/linguistics/ace/
