@@ -1,9 +1,9 @@
 # Jacy
 
-The Jacy Japanese Grammar ([Siegel, Bender, & Bond, 2016][]; [Siegel
-& Bender, 2002][]) is a broad-coverage HPSG grammar of Japanese. In
-combination with a parser (such as the [LKB][], [ACE][], or
-[agree][]), it can analyze Japanese sentences, yielding derivation
+The [Jacy][] Japanese grammar ([Siegel, Bender, & Bond, 2016][];
+[Siegel & Bender, 2002][]) is a broad-coverage HPSG grammar of
+Japanese. In combination with a parser (such as the [LKB][], [ACE][],
+or [agree][]), it can analyze Japanese sentences, yielding derivation
 trees and [MRS][] semantic representations, and also generate
 sentences from semantic representations.
 
@@ -32,6 +32,7 @@ NOTE: parsed 1 / 1 sentences, avg 2837k, time 0.02782s
 NOTE: generated 1 / 9 sentences, avg 2653k, time 0.06851s
 ```
 
+[Jacy]: http://moin.delph-in.net/JacyTop
 [Siegel, Bender, & Bond, 2016]: https://web.stanford.edu/group/cslipublications/cslipublications/site/9781684000180.shtml
 [Siegel & Bender, 2002]: http://www.aclweb.org/anthology/W/W02/W02-1210.pdf
 [LKB]: http://moin.delph-in.net/LkbTop
