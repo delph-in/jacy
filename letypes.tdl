@@ -11174,7 +11174,7 @@ cop-id-neg-stem-lex := verb-stem-lex-super &
 			    ARG2 #objind ],
 			   neg-relation & 
 			   [LBL #neg-hand,
-			    PRED #neg_x_rel,
+			    PRED neg_x_rel,
 			    ARG1 #arg] !>,
 		      HCONS <! qeq & [HARG #arg, LARG #cop-hand] !>],
 		CTXT.BACKGROUND <! !>,
