@@ -2704,6 +2704,10 @@ topic-cardarg-lex := topic-p-lex &
 ;;;
 
 
+
+
+
+
 adv-p-lex := vmod-p-lex & 
              [SYNSEM.LOCAL.CAT.HEAD adv-p_head].
 
@@ -7676,6 +7680,66 @@ te-adjunct-lex-t := te-adjunct-lex &
 ; </type>
 te-adjunct-lex-d := te-adjunct-lex &
 		     [LMORPH-BIND-TYPE nd-morph].
+
+
+; <type val="ni-adjunct-lex">
+; <name-en>subordinate mi
+; <description>従属節の末尾につく助詞の「で」。te-adjunct-lex-tを参照。このtypeは撥音便「ん」やガ行五段連用形
+; イ音便の直後につく。
+; <ex> 中澤 が 映画 を 見 に 行く
+; <ex> 中澤 が 日本語 を 勉強 し に 行く
+; <nex> 中澤 が 日本語 の 勉強 し に 行く
+; <ex> 中澤 が 日本語 の 勉強 を し に 行く
+; <ex> 中澤 が 見 に 行く
+;; not sure if this is correct
+; <ex> 中澤 が 焼き鳥 を 見 に 食べる
+; <nex> 中澤 が 映画 に 行く
+; <todo>
+; coindex the subjects
+;
+; Also need:
+; N-ni V  block verbal noun
+; N-no/wo VN-ni
+; <ex> 中澤 が 日本語 を 勉強 に 行く
+; <ex> 中澤 が 日本語 の 勉強 に 行く
+; also get this
+; <ex> 中澤 が 日本語 の 勉強 を する
+;
+; similar things (possibly)
+; co-index te-adjunct (and lose one tree: VAL.SPR < [ LOCAL [ CAT.VAL.SUBJ < anti-synsem >)
+; がでら
+; ながら
+; のために
+; 
+; </type>
+ni-adjunct-lex :=   basic-v-end-lex &
+ [J-NEEDS-AFFIX -,
+  SYNSEM [LOCAL [CAT [ VAL.SPR < [ LOCAL [ CAT.VAL.SUBJ < anti-synsem >,
+					   CONT.HOOK [LTOP #subord ] ],
+				   LEX + ] >,
+		       HEAD [FIN -,
+			    MARK null,
+			    COP-ARG -,
+			    C-MOD null,
+			    MAIN-PRD -,
+			    MOD <[LOCAL scopal-mod &
+					[CAT.HEAD sentence-valid & [COP -],
+					 CONT.HOOK [ LTOP #main,
+						     XARG #xarg ]]]>,
+			    J-POSTHEAD left]],
+		 CONT [HOOK [INDEX [E.MOOD indicative],
+			     LTOP #hand ],
+		       RELS <! prep-mod-relation &
+			    [ PRED #pred,
+			      LBL #hand,
+			      ARG1 #main,
+			      ARG2 #subord-hand ] !>,
+		       HCONS <! qeq & [ HARG #subord-hand, LARG #subord ] !>]],
+	  LKEYS.KEYREL  [ PRED #pred],
+	  NON-LOCAL.QUE <! !>],
+  LMORPH-BIND-TYPE i-morph].
+
+
 
 
 te-end-lex-basic := v-tense-end-lex &
