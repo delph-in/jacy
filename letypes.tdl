@@ -1047,7 +1047,8 @@ adv_head := adj-or-adv_head &
 adv_head-avm := adv_head &
             [KEYS.KEY adv_rel,
 	     MOD < [LOCAL [CAT.HEAD sentence-valid]] >,
-	     H-TENSE present].
+	     H-TENSE present,
+	     ADJ -].
 
 ;;; making MOD.LOCAL.CAT.HEAD.ADJ + stops us from modifying adverbs
 ;;; FIXME: now we over generate by modifying past tense normal verbs
@@ -1063,8 +1064,12 @@ adv_deg_num_head-avm := adv_head &
 	     MOD < [LOCAL [CAT.HEAD num-cl_head]] >,
 	     H-TENSE present].
 
-case-adv_head := adv_head &
-            [MOD < >].
+adv_adj_head-avm := adv_head &
+"used for adverbs made from adjectives (na or i)"
+ [KEYS.KEY adv_rel,
+  MOD < [LOCAL [CAT.HEAD sentence-valid]] >,
+  H-TENSE present,
+  ADJ +].
 
 hes_head := final_head.
 
@@ -2268,8 +2273,8 @@ nounmod-p-ncomp-relmod-lex := nounmod-p-ncomp-lex &
 ; <todo>
 ; </type>
 nounmod-p-exc-ncomp-lex := nounmod-p-lex &
-		       [SYNSEM.LOCAL.CAT [HEAD.PTYPE nattr,
-					  VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD exceptional_noun_head]]].
+ [SYNSEM.LOCAL.CAT [HEAD.PTYPE nattr,
+    VAL.COMPS.FIRST synsem & [LOCAL.CAT.HEAD exceptional_noun_head]]].
 
 
 nounmod-p-ncomp-plusbar-lex := nounmod-p-lex &
@@ -2826,9 +2831,6 @@ adv-p-lex-vp-inf := adv-p-lex &
 
 
 
-adv-p-lex-naadj := adv-p-lex & 
-            [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
-
 adv-p-lex-parent := adv-p-lex & 
             [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD parent-end_head].
 
@@ -2908,20 +2910,20 @@ hyphen-conj-p-lex := n_conj-p-lex &
 ; <todo>
 ; </type>
 compl-conj-p-lex := conj-lex & 
-            [SYNSEM [LKEYS.KEYREL #key & [ARG0 #index,
-					  L-HNDL #arg,
-					  R-HNDL #mod],
-		     LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD case-p_head & [CASE #case,
-									       PTYPE to],
-						       CONT [HOOK.LTOP #mod]]] >,
-				       J-POSTHEAD left],
-				 VAL.COMPS.FIRST.LOCAL [CAT.HEAD case-p_head & [CASE #case,
-										PTYPE to],
-							CONT [HOOK.LTOP #arg]]],
-			    CONT n-conj-sem-type &
-				[HCONS <! !>,
-				 HOOK.INDEX conj-ref-ind & #index,
-				 RELS <! #key !>]]]].
+ [SYNSEM [LKEYS.KEYREL #key & [ARG0 #index,
+			       L-HNDL #arg,
+			       R-HNDL #mod],
+	  LOCAL [CAT [HEAD [C-MOD < [LOCAL [CAT.HEAD case-p_head & [CASE #case,
+								    PTYPE to],
+					    CONT [HOOK.LTOP #mod]]] >,
+			    J-POSTHEAD left],
+		      VAL.COMPS.FIRST.LOCAL [CAT.HEAD case-p_head & [CASE #case,
+								     PTYPE to],
+					     CONT [HOOK.LTOP #arg]]],
+		 CONT n-conj-sem-type &
+		     [HCONS <! !>,
+		      HOOK.INDEX conj-ref-ind & #index,
+		      RELS <! #key !>]]]].
 
 
 
@@ -3296,10 +3298,9 @@ s-end1-neg-imp-lex := sap-lex &
 		 CONT [HOOK [LTOP #neg-hand,
 			     INDEX #ind],
 		       RELS <! #key & neg-relation & 
-			     [PRED "neg_v_rel",
-			      LBL #neg-hand,
-			      ARG0 individual,
-			      ARG1 #neg1 ]!>,
+			     [ LBL #neg-hand,
+			       ARG0 individual,
+			       ARG1 #neg1 ]!>,
 		       HCONS <! qeq & [HARG #neg1, LARG #v-handle] !>]],
 	  NON-LOCAL.QUE 0-dlist]].
 
@@ -3405,7 +3406,7 @@ discourse-lex := lexical_sign &
  [SYNSEM [LOCAL [CAT [HEAD final_head,
 		      VAL super-saturated],
 		 CONT [HOOK.LTOP #top,
-		       RELS <! subord-or-conj-relation &
+		       RELS <! subord-or-conj-relation & event-relation &
 			     [ LBL #top,
 			       PRED "discourse_x_rel",
 			       L-HNDL #hand ],
@@ -4242,7 +4243,7 @@ temp_numeral-basic-lex  := n-lex &
                                      [SPR.FIRST #spr,
 				      COMPS #comps & [FIRST.LOCAL [CONT.HOOK [LTOP #hand,
 									      XARG #i],
-								   CAT.HEAD.KEYS.KEY 'temp_loc]]]],
+								   CAT.HEAD.KEYS.KEY "temp_loc"]]]],
                            CONT common-noun-sem-type &
                                [HOOK [INDEX #i,
 				      LTOP #hand]],
@@ -6407,7 +6408,7 @@ scopal-adv-regular-lex := scopal-adv-lex &
 ; (MS 2005-11-09) To get rid of skip files.
 
 scopal-adv-regular-negmod-lex := scopal-adv-regular-lex &
- [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY "_neg_v_rel" ].
+ [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD.KEYS.KEY neg_x_rel ].
 
 ; (MS 2004-12-15) This doesn't have to be COMPS null on the modifiee, otherwise we
 ; don't get relative-clause-obj-gap rules. But it should be COP-ARG -, such that
@@ -7205,32 +7206,33 @@ na-naarg-end-lex :=  na-end-lex &
 ; (since 2005)v-soc-adv-stem-lexやv2a-c-stem-lexのように、adverbを格として取る動詞に対して使う。
 ; <ex>部屋 を きれい に する
 ; <ex>桜 が 有名 に なる
-; <nex>部屋 を きれい に 掃除 する
-; <nex>確か に 鐘 が なっ た
+; <ex>部屋 を きれい に 掃除 する
+; <ex>確か に 鐘 が なっ た
 ; <todo>(TK 07-04-11)「そうに+V」(lkb::do-parse-tty "寒 そう に 振る舞う")や「na-adj-lex+に+助詞」
 ; (lkb::do-parse-tty "簡単 に は 譲ら ない")の場合にもこのtypeを選ぶかどうかの選択肢が出てしまう。
 ; (TK 07-04-11)また、「na-adj-lex+に+助詞」の場合、このtypeを選ぶことは可能だが、格にはなれない
 ; (lkb::do-parse-tty "きれい に は し ない")。
 ; </type>
-naadj2adv-end-lex := lexical_sign-word &
+naadj2adv-end-lex := lexical_sign-aword &
  [J-NEEDS-AFFIX -,
   SYNSEM synsem &
-		[LOCAL [CAT [HEAD case-adv_head & [J-POSTHEAD left],
+		[LOCAL [CAT [HEAD adv_adj_head-avm &
+				  [J-POSTHEAD left,
+				   MOD < [LOCAL intersective-mod & 
+					      [CONT.HOOK [LTOP #h,
+							  INDEX #e ]]] > ],
 			     VAL obj-arg &
-				  [COMPS #comps & [FIRST [OPT - ,
-							  LOCAL [CAT [HEAD na-adj_head,
-								      VAL.UNSAT +],
-								 CONT [RELS <! #key & 
-									     [ARG1 #xarg] !>,
-								       HOOK [LTOP #tophand,
-									     INDEX #ind]]]]]]],
+				  [COMPS #comps
+					 & [FIRST [OPT - ,
+						   LOCAL [CAT [HEAD na-adj_head,
+							       VAL.UNSAT +],
+							  CONT.HOOK #hook ]]]]],
 			ARG-S #comps,
-			CONT [HOOK [LTOP #tophand,
-				    XARG #xarg,
-				    INDEX #ind],
+			CONT [HOOK #hook &
+				   [LTOP #h,
+				    XARG #e ],  
 			      RELS <! !>,
 			      HCONS <!  !>]],
-		 LKEYS.KEYREL #key & [ LBL #tophand],
 		 NON-LOCAL [QUE <! !>,
 			    AFFIX <! !>]],
   INFLECTED +].
@@ -7304,7 +7306,7 @@ v-neg-end-lex := v-noncaus-op-end-lex &
 							    KEYS.KEY #negrel],
 				      VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd,
 								       INDEX #event]]]],
-				 CONT [RELS <! neg-relation &  #keyrel & [ARG1 #neg-arg,
+				 CONT [RELS <! scopal-adv-relation &  #keyrel & [ARG1 #neg-arg,
 									  PRED #negrel,
 									  LBL #top] !>,
 				       HOOK [LTOP #top,
@@ -8389,23 +8391,6 @@ v-noncaus-op-end-lex := v-op-end-lex &
 		CONT.HOOK.XARG #xarg,
 		ARG-S #args]].
 
-naru-noncaus-end-lex := v-noncaus-op-end-lex &
- [INFLECTED -,
-  LMORPH-BIND-TYPE a-morph,
-  STEMTYPE c-stem,
-  SYNSEM [LOCAL [CAT [HEAD v-op-end_head & [MODUS indicative],
-		      VAL.SPR.FIRST.LOCAL.CONT [HOOK [LTOP #arg-h,
-						      INDEX #event-v]]],
-		 CONT [HOOK [INDEX #event,
-			     LTOP #hd],
-		       RELS <! #key & [ARG0 #event-v]!>,
-		       HCONS <! !>]],
-	  LKEYS.KEYREL #key & adv-relation &
-		[LBL #hd,
-		 ARG1 #arg-h,
-		 ARG0 #event],
-	  MODIFIED.PERIPH bool]].
-
 
 ; <type val="nai-noncaus-end-lex">
 ; <name-ja>否定助動詞非終止
@@ -9446,7 +9431,6 @@ v2n-end-lex :=  nom-lex &
 mai-end-lex := v-noncaus-op-end-lex &
  [SYNSEM [LKEYS.KEYREL #key & neg-relation & 
 		       [LBL #top, 
-			PRED "neg_v_rel",
 			ARG1 #h3],
 	  LOCAL [CAT [HEAD v-op-end_head &
 			   [MODUS indicative,
@@ -11236,26 +11220,29 @@ cop-id-quest-stem-fem-lex := cop-id-quest-stem-lex &
 ; <nex>
 ; <todo>
 ; </type>
-cop-id-neg-stem-lex := verb-stem-lex &
+; 			   KEYS.KEY #neg_x_rel ],
+cop-id-neg-stem-lex := verb-stem-lex-super &
 [SYNSEM [LOCAL [CAT [HEAD i-adj-stem_head &
 			  [MODUS negative],
-                    VAL cop-id_transitive & [COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #objind],
-					     SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]]],
+                    VAL cop-id_transitive &
+			  [COMPS #comps & [FIRST.LOCAL.CONT.HOOK.INDEX #objind],
+			   SUBJ.FIRST #sbj & [LOCAL.CONT.HOOK.INDEX #sbjind]]],
 		CONT [HOOK [LTOP #neg-hand,
-			   XARG #sbjind],
-                     RELS <! neg-relation & #key & 
-			   [LBL #neg-hand, 
-			    PRED "neg_v_rel",
-			    ARG1 #arg],
-			   equal-relation & 
+			    INDEX  #copind,
+			    XARG #sbjind],
+                     RELS <! equal-relation & 
 			   [PRED "cop_id_rel",
 			    LBL #cop-hand,
+			    ARG0 #copind,
 			    ARG1 #sbjind,
-			    ARG2 #objind]!>,
+			    ARG2 #objind ],
+			   neg-relation & 
+			   [LBL #neg-hand,
+			    PRED neg_x_rel,
+			    ARG1 #arg] !>,
 		      HCONS <! qeq & [HARG #arg, LARG #cop-hand] !>],
 		CTXT.BACKGROUND <! !>,
 		ARG-S < #sbj . #comps >],
-	 LKEYS.KEYREL #key,
 	 NON-LOCAL.QUE <! !>],
  STEMTYPE adj-stem].
 
@@ -11404,7 +11391,7 @@ reg-cop-stem-nomod-desustem-lex := reg-cop-stem-nomod-lex & reg-cop-stem-desuste
 ; <nex>犬 で は ない
 ; <todo>
 ; </type>
-cop-neg-stem-lex := verb-stem-lex &
+cop-neg-stem-lex := verb-stem-lex-super &
 [SYNSEM [LOCAL [CAT [HEAD [COP-ARG -,
                           COP +,
                           H-TENSE #tense,
@@ -11419,14 +11406,13 @@ cop-neg-stem-lex := verb-stem-lex &
 							 CAT.HEAD.H-TENSE #tense]]]]],
 		CONT [HOOK [LTOP #hand,
 			    INDEX #ind],
-		      RELS <! #key & neg-relation & 
+		      RELS <! neg-relation & 
 			    [LBL #hand, 
-			     PRED "neg_v_rel", 
 			     ARG1 #arg ] !>,
-		      HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
+		      HCONS <! qeq &
+			     [HARG #arg, LARG #objhd] !>],
 		CTXT.BACKGROUND <! !>,
 		ARG-S #comps],
-	 LKEYS.KEYREL #key,
          NON-LOCAL.QUE <! !>],
  STEMTYPE adj-stem].
 
@@ -11456,8 +11442,7 @@ cop-neg-lex := nonaux-lex &
 	       CONT [HOOK #hook & [LTOP #hand,
 				   INDEX #ind],
 		     RELS <! #key & neg-relation & 
-			   [PRED "neg_v_rel",
-			    ARG1 #arg ]  !>,
+			   [ ARG1 #arg ]  !>,
 		     HCONS <! qeq & [HARG #arg, LARG #objhd] !>],
 	       CTXT.BACKGROUND <! !>,
 	       ARG-S #comps,
@@ -13303,11 +13288,11 @@ syntactic-vv-vbar-stem-lex := verb-stem-lex & lexical_sign-word &
 			     XARG #sbjind],
 		       RELS  <! #key !>,
 		       HCONS <! qeq & [ LARG #ohand ] !>],
-		 ARG-S < #sbj >],
-	  LKEYS.KEYREL #key & arg1-relation &
-		[ARG1 #sbjind,
-		 ARG0 #event],
-	  NON-LOCAL.QUE <! !>,
+		 ARG-S < #sbj >],  
+	  LKEYS.KEYREL #key & arg1-ev-relation &
+		[ARG0 #event,
+		 ARG1 #sbjind ],
+	  NON-LOCAL.QUE <! !>,	
 	  MODIFIED.PERIPH bool]].
 
 ;(CH 2005-04-09)
@@ -13315,7 +13300,7 @@ syntactic-vv-vbar-stem-lex := verb-stem-lex & lexical_sign-word &
 syntactic-vv-intrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
  [SYNSEM [LOCAL [CONT.HCONS <! [ HARG #chand] !>,
 		 CAT.VAL.SPR <[LOCAL.CAT.VAL [COMPS null]]>],
-	  LKEYS.KEYREL arg12-relation &
+	  LKEYS.KEYREL arg12-ev-relation &
 		[ARG2 #chand]]].
 
 ; <type val="syn-vv-intrans-vbar-v-stem-lex">
@@ -13354,6 +13339,7 @@ syn-vv-monotrans-vbar-c-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEM
 ;syn-vv-monotrans-vbar-c2-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE c2-stem].
 ;syn-vv-monotrans-vbar-kurusuru-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
 
+;<ex>電話 を 手渡し 直す
 ;(CH 2005-04-09)
 ; for a ditransitive V1
 syntactic-vv-ditrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &

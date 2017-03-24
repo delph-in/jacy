@@ -923,23 +923,26 @@ floated-obj-num-cl-lex &
 ;;;
 ;;; V-V rules
 ;;;
-category-change-preds-irule := sign &
- [SYNSEM.LKEYS.KEYREL.PRED #pred,
-  ARGS.FIRST.SYNSEM.LKEYS.KEYREL.PRED #pred].
+;;constant-lex-rule &
+category-change-preds-lrule := sign & 
+ [ STEM  #stem,
+   SYNSEM.LKEYS.KEYREL.PRED #pred,
+   ARGS <  [STEM #stem, 
+	    SYNSEM.LKEYS.KEYREL.PRED #pred] > ].
 
-vbar-monotransitivization-v-rule := category-change-preds-irule &
+vbar-monotransitivization-v-rule := category-change-preds-lrule &
 syn-vv-monotrans-vbar-v-stem-lex &
  [ ARGS.FIRST syn-vv-intrans-vbar-v-stem-lex ].
 
-vbar-ditransitivization-v-rule := category-change-preds-irule &
+vbar-ditransitivization-v-rule := category-change-preds-lrule  &
 syn-vv-ditrans-vbar-v-stem-lex &
 [ ARGS.FIRST syn-vv-intrans-vbar-v-stem-lex ].
 
-vbar-monotransitivization-c-rule := category-change-preds-irule &
+vbar-monotransitivization-c-rule := category-change-preds-lrule  &
 syn-vv-monotrans-vbar-c-stem-lex &
 [ ARGS.FIRST syn-vv-intrans-vbar-c-stem-lex].
 
-vbar-ditransitivization-c-rule := category-change-preds-irule &
+vbar-ditransitivization-c-rule := category-change-preds-lrule  &
 syn-vv-ditrans-vbar-c-stem-lex &
 [ ARGS.FIRST syn-vv-intrans-vbar-c-stem-lex].
 
@@ -1100,9 +1103,9 @@ conditional-lexeme-to-word-rule  := lex-rule & v-lex & c-cont-1 &
 ; (FCB 2005-09-22) Don't copy up hook as the modified verb's hook 
 ; should be the hook (from isect-adv-lex)
 
-adj2adv-rule  := isect-adv-lex & lex-rule &
+adj2adv-rule  := isect-mod-lex  & lex-rule & adv-super-lex &
  [SYNSEM [LKEYS.KEYREL [ PRED #rel ],
-	  LOCAL [CAT.HEAD adv_head,
+	  LOCAL [CAT.HEAD adv_adj_head-avm,
 		 CTXT #ctxt],
 	  NON-LOCAL #nonloc],
   J-NEEDS-AFFIX -,

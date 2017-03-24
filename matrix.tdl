@@ -616,19 +616,20 @@ prep-mod-relation := arg12-ev-relation.
 ; adverb relations
 ; NB: Negation is represented not as a subtype of adv-relation, but as an 
 ; adv-relation with the PRED value neg_rel.
-
-adv-relation := arg0-relation.
+;;; FCB fixed
+;adv-relation := arg0-relation.
+adv-relation := arg1-ev-relation.
 
 ; coordinating and subordinating conjunctions
 ; (MS 2004-06-24) changed the handle to semarg, otherwise it won't scope 
 ; in n compounds.
 
-subord-or-conj-relation := relation &
+subord-or-conj-relation := arg0-relation &
   [ L-HNDL semarg,
     R-HNDL semarg ].
 
 ;;; (FCB 2006-06-02) changed to allow for event conjunction
-conjunction-relation := subord-or-conj-relation & arg0-relation &
+conjunction-relation := subord-or-conj-relation &
   [ L-INDEX event-or-ref-index,
     R-INDEX event-or-ref-index ].
 
@@ -639,8 +640,7 @@ subord-relation := subord-or-conj-relation & event-relation.
 ; noun noun compounds
 
 unspec-compound-relation := arg12-relation &
-  [ ARG0 event,
-    ARG1 ref-ind,
+  [ ARG1 ref-ind,
     ARG2 ref-ind ].
 
 ; quantifier relation
