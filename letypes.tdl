@@ -7684,6 +7684,8 @@ te-adjunct-lex-d := te-adjunct-lex &
 		     [LMORPH-BIND-TYPE nd-morph].
 
 
+;; MWG 2017-04-22: removed [ XARG #xarg ] on the MOD list because it wasn't
+;;   coreferenced to anything, and prevented the LKB from loading the grammar.
 ; <type val="ni-adjunct-lex">
 ; <name-en>subordinate mi
 ; <description>従属節の末尾につく助詞の「で」。te-adjunct-lex-tを参照。このtypeは撥音便「ん」やガ行五段連用形
@@ -7726,8 +7728,7 @@ ni-adjunct-lex :=   basic-v-end-lex &
 			    MAIN-PRD -,
 			    MOD <[LOCAL scopal-mod &
 					[CAT.HEAD sentence-valid & [COP -],
-					 CONT.HOOK [ LTOP #main,
-						     XARG #xarg ]]]>,
+					 CONT.HOOK [ LTOP #main ]]]>,
 			    J-POSTHEAD left]],
 		 CONT [HOOK [INDEX [E.MOOD indicative],
 			     LTOP #hand ],
