@@ -182,7 +182,8 @@ lattice-mapping-position-path := +POSITION.
 
 ;;;|| spanning-only-rules || list of rules to only allow in the spanning chart cell ||
 
-spanning-only-rules := frg-np frg-pp frg-s-adv frg-i-adv frg-pp-np frg-i-adv-np frg-pp-int runon_s.
+;; MWG 2017-04-22: removed unused 'runon_s' from below to avoid compilation warning.
+spanning-only-rules := frg-np frg-pp frg-s-adv frg-i-adv frg-pp-np frg-i-adv-np frg-pp-int.
 
 ;;;|| fragment-only-rules || list of rules to only allow when fragment parsing is enabled ||
 
@@ -237,7 +238,3 @@ generation-roots          := utterance-root.
 :begin :instance.
 :include "../pet/qc".
 :end :instance.
-
-:begin :type.
-:include "../mtr".
-:end :type.
