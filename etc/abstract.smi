@@ -1,0 +1,108 @@
+predicates:
+
+  adversative : ARG0 e, ARG1 i, ARG2 h.
+  beshi_v_modal : ARG0 e, ARG1 h.
+  card : ARG0 e, ARG1 i.
+  compound : ARG0 i, ARG1 x, ARG2 x.
+  coord : ARG0 i, L-HNDL h, L-INDEX i, R-HNDL h, R-INDEX i.
+  cop_id : ARG0 e, ARG1 i, ARG2 i.
+  currencyersatzarp : ARG0 x.
+  currencyersatzats : ARG0 x.
+  currencyersatzaud : ARG0 x.
+  currencyersatzbef : ARG0 x.
+  currencyersatzbrl : ARG0 x.
+  currencyersatzchf : ARG0 x.
+  currencyersatzclp : ARG0 x.
+  currencyersatzcnd : ARG0 x.
+  currencyersatzcny : ARG0 x.
+  currencyersatzczk : ARG0 x.
+  currencyersatzdem : ARG0 x.
+  currencyersatzdollarsymb : ARG0 x.
+  currencyersatzegp : ARG0 x.
+  currencyersatzesp : ARG0 x.
+  currencyersatzeur : ARG0 x.
+  currencyersatzfim : ARG0 x.
+  currencyersatzfrf : ARG0 x.
+  currencyersatzgbp : ARG0 x.
+  currencyersatzgrd : ARG0 x.
+  currencyersatzhkd : ARG0 x.
+  currencyersatziep : ARG0 x.
+  currencyersatzils : ARG0 x.
+  currencyersatzinr : ARG0 x.
+  currencyersatzitl : ARG0 x.
+  currencyersatzjpy : ARG0 x.
+  currencyersatzkrw : ARG0 x.
+  currencyersatzmxp : ARG0 x.
+  currencyersatzmyr : ARG0 x.
+  currencyersatznlg : ARG0 x.
+  currencyersatznok : ARG0 x.
+  currencyersatznzd : ARG0 x.
+  currencyersatzpkr : ARG0 x.
+  currencyersatzpte : ARG0 x.
+  currencyersatzsek : ARG0 x.
+  currencyersatzsgd : ARG0 x.
+  currencyersatzsur : ARG0 x.
+  currencyersatzthb : ARG0 x.
+  currencyersatztwd : ARG0 x.
+  currencyersatzusd : ARG0 x.
+  currencyersatzyensymb : ARG0 x.
+  currencyersatzzar : ARG0 x.
+  dateersatz : ARG0 x, ARG1 h.
+  def_q : ARG0 x { NUM sg }, RSTR h, BODY h.
+  def_q : ARG0 x { GEND n, NUM sg }, RSTR h, BODY h.
+  def_q : ARG0 x, RSTR h, BODY h.
+  def_q : ARG0 x { GEND n, NUM pl }, RSTR h, BODY h.
+  def_q : ARG0 x { GEND m, NUM sg }, RSTR h, BODY h.
+  def_q : ARG0 x { NUM pl }, RSTR h, BODY h.
+  def_q : ARG0 x { GEND f, NUM sg }, RSTR h, BODY h.
+  degree : ARG0 e, ARG1 e, ARG2 x.
+  discourse_x : ARG0 e, L-HNDL h, R-HNDL h.
+  dofm : ARG0 x, ARG1 h.
+  dofw : ARG0 x.
+  ehkeywordersatz : ARG0 x.
+  ehsmersatz : ARG0 x.
+  ellipses : ARG0 e.
+  garu_v_seem : ARG0 e, ARG1 i, ARG2 h.
+  generic-nom : ARG0 x { GEND n }.
+  generic_entity : ARG0 x.
+  if_then : ARG0 e, L-HNDL h, R-HNDL h.
+  indef_q : ARG0 x, RSTR h, BODY h.
+  kata_n : ARG0 x, ARG1 h.
+  mofy : ARG0 x, ARG1 h.
+  named : ARG0 x.
+  neg_x : ARG0 e, ARG1 h.
+  nom : ARG0 x, ARG1 h.
+  nominalization : ARG0 x, ARG1 h.
+  number : ARG0 x.
+  part-of : ARG0 x.
+  person_n : ARG0 x.
+  place_n : ARG0 x.
+  plus : ARG0 e, ARG1 i, ARG2 h, ARG3 h.
+  prep : ARG0 e, ARG1 x, ARG2 i.
+  pron : ARG0 x { NUM sg }.
+  pron : ARG0 x { GEND n, NUM sg }.
+  pron : ARG0 x { GEND n, NUM pl }.
+  pron : ARG0 x { GEND m, NUM sg }.
+  pron : ARG0 x { NUM pl }.
+  pron : ARG0 x.
+  pron : ARG0 x { GEND f, NUM sg }.
+  rareru_v_can : ARG0 e, ARG1 u, ARG2 h.
+  rel_p : ARG0 e, ARG1 i, ARG2 i.
+  s-conj : ARG0 i, L-HNDL h, L-INDEX i, R-HNDL h, R-INDEX i.
+  tai_v_want : ARG0 e, ARG1 i, ARG2 h.
+  time_n : ARG0 x.
+  times : ARG0 e, ARG1 i, ARG2 h, ARG3 h.
+  title-id : ARG0 e, ARG1 x, ARG2 i.
+  to_c_and : ARG0 x, L-HNDL u, L-INDEX i, R-HNDL u, R-INDEX i.
+  udef_q : ARG0 x, RSTR h, BODY h.
+  unknown_v : ARG0 e, ARG u.
+  unknown_v_cop : ARG0 e, ARG1 i, ARG2 i.
+  unspec : ARG0 i, ARG1 i, ARG2 x.
+  unspec_adj : ARG0 e, ARG1 i.
+  unspec_p : ARG0 e, ARG1 i, ARG2 i.
+  unspec_p_manner : ARG0 e, ARG1 i, ARG2 x.
+  vv : ARG0 e, ARG1 i, ARG2 i.
+  vv-manner : ARG0 e, ARG1 i, ARG2 i.
+  want2 : ARG0 e, ARG1 i, ARG2 h.
+  which_q : ARG0 x, RSTR h, BODY h.
+  yofc : ARG0 x, ARG1 h.

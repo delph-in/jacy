@@ -1,0 +1,7 @@
+predicates:
+
+  def_q < udef_q.
+  generic-nom < pron.
+  indef_q < udef_q.
+  vv-manner < vv.
+  which_q < def_q & udef_q.
