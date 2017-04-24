@@ -16,4 +16,5 @@ default_carg_tmr := one_one_tmt &
 [ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
              +PRED #pred, +CARG anti_string, +POS #pos ] >,
   +OUTPUT < [ +FORM #form, +TRAIT #trait, +CLASS #class,
-              +PRED #pred, +CARG #form, +POS #pos ] > ].
+              +PRED #pred, +CARG #form, +POS #pos ] >,
+  +CONTEXT < > ].

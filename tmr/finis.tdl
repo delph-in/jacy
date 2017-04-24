@@ -24,7 +24,8 @@ generic_name_tmr := token_mapping_rule &
               +CARG #carg,
               +ID #id, +FROM #from, +TO #to,
               +POS #pos ] >,
-  +POSITION "O1@I1" ].
+  +POSITION "O1@I1",
+  +CONTEXT < > ].
 
 ;;
 ;; on all tokens that we expect to activate generic entries, make the +PRED
@@ -45,7 +46,8 @@ generic_sahen_tmr := token_mapping_rule &
               +CARG #carg,
               +ID #id, +FROM #from, +TO #to,
               +POS #pos ] >,
-  +POSITION "O1@I1" ].
+  +POSITION "O1@I1",
+  +CONTEXT < > ].
 
 generic_noun_tmr := token_mapping_rule &  
 [ +INPUT < [ +FORM #form,
@@ -60,7 +62,8 @@ generic_noun_tmr := token_mapping_rule &
               +CARG #carg,
               +ID #id, +FROM #from, +TO #to,
               +POS #pos ] >,
-  +POSITION "O1@I1" ].
+  +POSITION "O1@I1",
+  +CONTEXT < > ].
 
 generic_pred_tmr := token_mapping_rule &  
 [ +INPUT < [ +FORM #form,
@@ -75,7 +78,8 @@ generic_pred_tmr := token_mapping_rule &
               +CARG #carg,
               +ID #id, +FROM #from, +TO #to,
               +POS #pos ] >,
-  +POSITION "O1@I1" ].
+  +POSITION "O1@I1",
+  +CONTEXT < > ].
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -109,7 +113,8 @@ default_class_tmr := one_one_tmt &
 [ +INPUT < [ +FORM #form, +TRAIT #trait, +CLASS no_class,
              +PRED #pred, +CARG #carg, +POS #tnt ] >,
   +OUTPUT < [ +FORM #form, +TRAIT #trait, +CLASS non_ne,
-              +PRED #pred, +CARG #carg, +POS #tnt ] > ].
+              +PRED #pred, +CARG #carg, +POS #tnt ] >,
+  +CONTEXT < > ].
 
 
 ;;

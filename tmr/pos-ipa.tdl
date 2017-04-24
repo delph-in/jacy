@@ -9,13 +9,15 @@
 
 ipa_ditch_particles_tmr := token_mapping_rule &
 [ +INPUT < [ +POS.+TAGS < ^助詞.*$ > ] >,
-  +OUTPUT < > ].
+  +OUTPUT < >,
+  +CONTEXT < > ].
 
 ;;; rewrite equivalent POS tags
 
 ipa_noun_equivalents_tmr := one_one_pos_tmt &
 [ +INPUT   < [ +POS.+TAGS < ^記号-アルファベット:n-n|記号-一般:n-n$ >, +POS.+PRBS #probs ] >,
-  +OUTPUT  < [ +POS.+TAGS < "名詞-一般:n-n" >, +POS.+PRBS #probs ] > ].
+  +OUTPUT  < [ +POS.+TAGS < "名詞-一般:n-n" >, +POS.+PRBS #probs ] >,
+  +CONTEXT < > ].
 
 ;;; Mark proper nouns
 
@@ -24,4 +26,5 @@ ipa_proper_class_tmr  := one_one_tmt &
 	       +POS #pos & [ +TAGS < ^名詞-固有名詞.*$ > ],
 	       +PRED anti_string, +CARG #carg, +FORM #form ] >,
   +OUTPUT  < [+TRAIT #trait, +CLASS #class & proper_ne, +POS  null_pos,
-	       +PRED "named_rel", +CARG #carg, +FORM #form ] > ].
+	       +PRED "named_rel", +CARG #carg, +FORM #form ] >,
+  +CONTEXT < > ].
