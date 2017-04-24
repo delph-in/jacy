@@ -1328,11 +1328,11 @@ twopl := two & pl.
 threepl := three & pl.
 
 
-; (MS 2005-03-01) andro should be fem or masc, but not neut (彼ら)
+; (MS 2005-03-01) m-or-f is for fem or masc, but not neut (彼ら)
 gender := sort.
-andro := gender.
-fem := andro.
-masc := andro.
+m-or-f := gender.
+fem := m-or-f.
+masc := m-or-f.
 neut := gender.
 
 

@@ -41,7 +41,8 @@ PNG.PN : PERS NUM
 PNG.GEN : GEND 
   masc <> m 
   fem  <> f 
-  neut <> n 
+  neut <> n
+  m-or-f <> m-or-f
   *    >> ! 
   !    << * 
 ;  *    << ! 

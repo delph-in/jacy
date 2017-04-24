@@ -3900,7 +3900,7 @@ pron-thirdsgneutahon-ref-lex := pron-thirdsgneut-ref-lex &
 pron-thirdpl-ref-lex := pron-thirdperson-ref-lex  &
                   [SYNSEM.LKEYS [KEYREL [ARG0.PNG.PN threepl]]].
 
-; (MS 2005-03-01) third person plural can be andro (彼ら) or neutr (それら).
+; (MS 2005-03-01) third person plural can be m-or-f (彼ら) or neutr (それら).
 
 ; <type val="pron-thirdplandro-ref-lex">
 ; <name-ja>代名詞三人称複数男性
@@ -3910,7 +3910,7 @@ pron-thirdpl-ref-lex := pron-thirdperson-ref-lex  &
 ; <todo>(TK 07-04-11)このtypeの女性版も必要では？（例:「彼女ら」）
 ; </type>
 pron-thirdplandro-ref-lex := pron-thirdpl-ref-lex &
-			     [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN andro].
+			     [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN m-or-f].
 
 
 ; <type val="pron-thirdplneut-ref-lex">
