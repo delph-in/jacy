@@ -642,7 +642,7 @@ rel-cl-obj2-gap-rule := rel-cl-gap-rule &
 sentence-te-coordination-rule := sentence-coord-type &
 [SYNSEM [LOCAL [BAR +,
 		CONT.HOOK.XARG #xarg]],
- C-CONT.RELS.LIST.FIRST.PRED "coord",
+ C-CONT.RELS.LIST.FIRST.PRED "coord_c_rel",
  ARGS <[SYNSEM.LOCAL [CAT [HEAD verb_head-super & 
 				[J-POSTHEAD coord,
 				 C-MOD < synsem & [LOCAL [CAT #1, 
