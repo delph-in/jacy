@@ -3998,10 +3998,10 @@ pron-demon-a-lex := pron-lex &
 ; <todo>
 ; </type>
 pron-loc-ref-lex  := pron-lex &
-                  [SYNSEM [LKEYS.KEYREL #key & [ARG0 #i],
-				 LOCAL.CONT lpron-sem-type &
-					  [HOOK.INDEX #i,
-					   RELS.LIST.FIRST #key ]]].
+ [SYNSEM [LKEYS.KEYREL #key & [ARG0 #i],
+	  LOCAL.CONT lpron-sem-type &
+		       [HOOK.INDEX #i,
+			RELS.LIST.FIRST #key ]]].
 
 
 
@@ -8418,8 +8418,7 @@ nai-noncaus-end-lex := v-noncaus-op-end-lex &
 							LOCAL.CAT.HEAD verbend_head],
 					    J-SPEC null,
 					    COP-ARG -],
-		      VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd,
-						       INDEX #event]]]],
+		      VAL.SPR.FIRST.LOCAL [CONT [HOOK [LTOP #v-hd ]]]],
 		 CONT [RELS <! #key & [ARG0 #event,
 				       ARG1 #neg-arg,
 				       LBL #top] !>,
@@ -8532,16 +8531,14 @@ caus-intrans-end-lex := v-cause-op-end-lex &
 						    CONT.HOOK.INDEX #causee]] >,
 			   SPR obl-1-arg &
 				      [FIRST.LOCAL [CONT.HOOK [LTOP #hand,
-							       INDEX #caused,
 							       XARG #causee],
 						    CAT [HEAD verb-stem_head,
 							 VAL [UNSAT +,
 							      SUBJ.FIRST.LOCAL [CAT.HEAD overt-case-p_head & [CASE ga],
 										CONT.HOOK.INDEX #causee],
 							      COMPS null]]]]]],
-		 CONT [HOOK.INDEX  #caused,
-		       RELS <!  [ARG2 #causee] !>,
-		       HCONS <! qeq & [ LARG #hand] !> ]]]].
+		 CONT [ RELS <!  [ARG2 #causee] !>,
+		        HCONS <! qeq & [ LARG #hand] !> ]]]].
 
 caus-intrans-passcmorph-end-lex := caus-intrans-end-lex &
 				   [ LMORPH-BIND-TYPE pass-c-stem-morph ].
