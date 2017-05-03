@@ -4355,7 +4355,7 @@
 
 かする_v_2-tc := v1-c-stem-lex &
 [ STEM <"かする">,
-  SYNSEM.LKEYS.KEYREL.PRED "_かする_v_2_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.PRED "_かする_v_unk-2_rel" ].
 
 かせぐ_v_1-tc := v1-c-stem-lex &
 [ STEM <"かせぐ">,
@@ -5995,7 +5995,7 @@
 
 へる_v_2-tc := v1-c-stem-lex &
 [ STEM <"へる">,
-  SYNSEM.LKEYS.KEYREL.PRED "_へる_v_2_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.PRED "_へる_v_unk-2_rel" ].
 
 ほうりこむ_v_1-tc := v1-c-stem-lex &
 [ STEM <"ほうりこむ">,
@@ -24557,14 +24557,6 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"がい">,
   SYNSEM.LKEYS.KEYREL.PRED "_がい_n_unk_rel" ].
 
-がけ_n_2-tc := ordinary-nohon-n-lex &
-[ STEM <"がけ">,
-  SYNSEM.LKEYS.KEYREL.PRED "_がけ_n_2_g_rel" ].
-
-がら_n_2-tc := ordinary-nohon-n-lex &
-[ STEM <"がら">,
-  SYNSEM.LKEYS.KEYREL.PRED "_がら_n_2_g_rel" ].
-
 がらみ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"がらみ">,
   SYNSEM.LKEYS.KEYREL.PRED "_がらみ_n_unk_rel" ].
@@ -24572,10 +24564,6 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 がわり_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"がわり">,
   SYNSEM.LKEYS.KEYREL.PRED "_がわり_n_unk_rel" ].
-
-くず_n_2-tc := ordinary-nohon-n-lex &
-[ STEM <"くず">,
-  SYNSEM.LKEYS.KEYREL.PRED "_くず_n_2_g_rel" ].
 
 くみ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"くみ">,
@@ -24641,10 +24629,6 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"づくり">,
   SYNSEM.LKEYS.KEYREL.PRED "_づくり_n_unk_rel" ].
 
-とり_n_2-tc := ordinary-nohon-n-lex &
-[ STEM <"とり">,
-  SYNSEM.LKEYS.KEYREL.PRED "_とり_n_2_g_rel" ].
-
 なみ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"なみ">,
   SYNSEM.LKEYS.KEYREL.PRED "_なみ_n_unk_rel" ].
@@ -24656,10 +24640,6 @@ Tシャツ_n_1-tc := ordinary-nohon-n-lex &
 まみれ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"まみれ">,
   SYNSEM.LKEYS.KEYREL.PRED "_まみれ_n_unk_rel" ].
-
-みち_n_2-tc := ordinary-nohon-n-lex &
-[ STEM <"みち">,
-  SYNSEM.LKEYS.KEYREL.PRED "_みち_n_2_g_rel" ].
 
 ゆえ_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"ゆえ">,
@@ -27191,7 +27171,7 @@ to_n_1-tc := ordinary-nohon-n-lex &
 
 v_n_2-tc := ordinary-nohon-n-lex &
 [ STEM <"v">,
-  SYNSEM.LKEYS.KEYREL.PRED "_v_n_2_g_rel" ].
+  SYNSEM.LKEYS.KEYREL.PRED "_v_n_unk_rel" ].
 
 when_n_1-tc := ordinary-nohon-n-lex &
 [ STEM <"when">,
