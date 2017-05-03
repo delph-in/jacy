@@ -1799,7 +1799,23 @@ case-p-lex-np-kara := case-p-lex-np &
 ; <todo>
 ; </type>
 case-p-lex-np-ni := case-p-lex-np &
-			[SYNSEM.LOCAL.CAT.HEAD.CASE ni].
+ [SYNSEM.LOCAL.CAT.HEAD.CASE ni].
+
+; <type val="case-p-lex-np-niyotte">
+; <name-ja>承名詞与格助詞
+; <description>名詞の直後について、与格を表す助詞「に」。このtypeによって受動態では実際の行為の主体として動詞のARG1に入る。
+; <ex>バナナ が 猿 により 食べ られる
+; <ex>バナナ が 猿 によって 食べ られる
+; <ex>バナナ が 猿 に 食べ られる
+; <nex>犬 により 餌 を 与える
+; <nex>車 によりに 乗る
+; <nex>母 が 子供 により 宿題 を さ せる
+; <nex>犬 により 芸 が できる か
+; <nex>朝 に 餌 を 与える
+; <todo>
+; </type>
+case-p-lex-np-niyotte := case-p-lex-np &
+ [SYNSEM.LOCAL.CAT.HEAD.CASE niyotte-case].
 
 ; <type val="case-p-lex-np-no">
 ; <name-ja>承名詞ノ主格助詞
@@ -8614,7 +8630,7 @@ simple-pass-end-lex :=   pass-end-lex &
  [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
 		      VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 					      CONT.HOOK.INDEX #surfsbjind]],
-			   COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+			   COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-niyotte],
 						    CONT.HOOK.INDEX #surfobjind]] >,
 			   SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
 							 LTOP #hand,
@@ -8675,7 +8691,7 @@ ditrans-pass-end-ganini-lex :=   pass-end-lex &
 			   SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 					      CONT.HOOK.INDEX #surfsbjind]],
 			   COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
-				   [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+				   [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-niyotte],
 					   CONT.HOOK.INDEX #surfobj2ind]] >,
 			   SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
 							  XARG #surfobj2ind,
@@ -8730,7 +8746,7 @@ ditrans-pass-end-ganiwo-lex :=   pass-end-lex &
 			   SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 					      CONT.HOOK.INDEX #surfsbjind]],
 			   COMPS < #objval & [LOCAL.CONT.HOOK.INDEX #surfobjind],
-				   [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+				   [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-niyotte],
 					   CONT.HOOK.INDEX #surfobj2ind]] >,
 			   SPR.FIRST [ LOCAL [CONT [HOOK [INDEX #event,
 							  XARG #surfobj2ind,
@@ -8888,7 +8904,7 @@ adversative-trans-pass-passcmorph-end-lex := adversative-trans-pass-end-lex &
 lightverb-pass-end-lex :=   pass-end-lex &
  [SYNSEM [LOCAL [CAT [VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 					      CONT.HOOK.INDEX #surfsbjind]],
-			   COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-kara],
+			   COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-niyotte],
 						    CONT.HOOK.INDEX #surfobjind]] >,
 			   SPR.FIRST [LOCAL [CONT [HOOK [INDEX #event,
 							 LTOP #hand,

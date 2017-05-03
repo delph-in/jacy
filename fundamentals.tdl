@@ -1127,10 +1127,13 @@ ga-or-wo := case.
 ni-or-ga := case.
 ga-or-coparg := case.
 wo-or-ni := case.
+ni-or-niyotte := case.
 
 ga := ga-or-wo & ni-or-ga & ga-or-coparg.
 wo := ga-or-wo & wo-or-ni.
-ni := ni-or-ga & ni-or-to & ni-or-kara & wo-or-ni.
+ni := ni-or-ga & ni-or-to & ni-or-kara & wo-or-ni & ni-or-niyotte.
+;; used for passive
+niyotte-case := ni-or-niyotte. 
 to := ni-or-to.
 coparg := ga-or-coparg.
 
