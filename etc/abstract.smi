@@ -4,7 +4,7 @@ predicates:
   beshi_v_modal : ARG0 e, ARG1 h.
   card : ARG0 e, ARG1 i.
   compound : ARG0 i, ARG1 x, ARG2 x.
-  coord : ARG0 i, L-HNDL h, L-INDEX i, R-HNDL h, R-INDEX i.
+  coord_c : ARG0 i, L-HNDL h, L-INDEX i, R-HNDL h, R-INDEX i.
   cop_id : ARG0 e, ARG1 i, ARG2 i.
   currencyersatzarp : ARG0 x.
   currencyersatzats : ARG0 x.
@@ -54,6 +54,7 @@ predicates:
   def_q : ARG0 x { GEND n, NUM pl }, RSTR h, BODY h.
   def_q : ARG0 x { GEND m, NUM sg }, RSTR h, BODY h.
   def_q : ARG0 x { NUM pl }, RSTR h, BODY h.
+  def_q : ARG0 x { GEND m-or-f, NUM pl }, RSTR h, BODY h.
   def_q : ARG0 x { GEND f, NUM sg }, RSTR h, BODY h.
   degree : ARG0 e, ARG1 e, ARG2 x.
   discourse_x : ARG0 e, L-HNDL h, R-HNDL h.
@@ -85,6 +86,7 @@ predicates:
   pron : ARG0 x { GEND m, NUM sg }.
   pron : ARG0 x { NUM pl }.
   pron : ARG0 x.
+  pron : ARG0 x { GEND m-or-f, NUM pl }.
   pron : ARG0 x { GEND f, NUM sg }.
   rareru_v_can : ARG0 e, ARG1 u, ARG2 h.
   rel_p : ARG0 e, ARG1 i, ARG2 i.

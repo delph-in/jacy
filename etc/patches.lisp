@@ -44,6 +44,7 @@
 )
 
 #+:null
+;; MWG 2017-05-03: see etc/make-sem-i.bash
 ;; MWG 2017-04-22: changed absolute directories to relative, also
 ;;   matrix.smi corresponds to the ERG's erg.smi, so I load that
 ;;   for the initial construction instead of jacy.smi (because
