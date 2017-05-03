@@ -109,7 +109,7 @@
 ;;;
 ;;; convert to a semi
 ;;;
-#+:logon
+(mt:read-semi (lkb-pathname (parent-directory "etc") "jacy.smi"))
 (mt:read-vpm (lkb-pathname (parent-directory) "semi.vpm") :semi)
 ;;;
 ;;; another variable property mapping, used only when constructing the SEM-I

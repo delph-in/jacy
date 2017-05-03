@@ -3,89 +3,81 @@
 ;;;
 ;;; Matrix Semantic Interface (SEM-I)
 ;;;
+;;; Note: as of 2017-04-24, this is just local to Jacy, but the intention is
+;;;       that it will be pushed up to the matrix.
+;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;
-;;; the `signature' section: all there is to know about hierarchical relations
-;;; holding among SEM-I entries.
+;;; the hierarchy of variable types: these are (pretty) close to universal 
 ;;;
+variables:
 
-signature:
-
-  ;;
-  ;; the hierarchy of variable types: these are (pretty) close to universal 
-  ;;
-  u := top.
-  i := u.
-  p := u.
-  h := p.
-  e := i.
-  x := i & p.
-
-  ;;
-  ;; the various sub-hierarchies for variable properties; some shared across
-  ;; sets of grammars, some language- or grammar-specific
-  ;;
-  bool := top.
-  + := bool.                 ; `plus' and `minus' in RMRS DTD
-  - := bool.
-
-  tense := top.
-  tensed := tense.           ; missing in RMRS DTD; `real_tense' ERG-internally
-  past := tensed.
-  non-past := tensed.
-  present := non-past.
-  future := non-past.
-  untensed := tense.         ; missing in DTD
-
-  mood := top.               ; entire sub-hierarchy missing in DTD
-  subjunctive := mood.
-  indicative := mood.
-
-  gender := top.
-  m-or-f := gender.          ; `animate' ERG-internally
-  m := m-or-f.
-  f := m-or-f.
-  n := gender.
-
-  num := top.
-  sg := num.
-  pl := num.
-
-  pers := top.
-  1 := pers.
-  2 := pers.
-  3 := pers.
-
-  prontype := top.           ; entire sub-hierarchy missing in DTD
-  refl := prontype.
-  std_pron := prontype.
-  zero_pron := prontype.
-
-  iforce := top.
-  prop-or-ques := iforce.
-  prop := prop-or-ques.
-  ques := prop-or-ques.
-  comm := iforce.
-  like-iforce := prop-or-ques.
+  u.
+  i < u.
+  p < u.
+  h < p.
+  e < i : TENSE tense, MOOD mood, PROG bool, PERF bool, ASPECT aspect, PASS bool, SF iforce.
+  x < i & p : PERS person, NUM number, GEND gender, PRONTYPE prontype.
 
 ;;;
 ;;; now for the range of valid variable properties, minimal variable type for
 ;;; which a property is appropriate, and value constraint(s).
 ;;;
 properties:
+  ;;
+  ;; the various sub-hierarchies for variable properties; some shared across
+  ;; sets of grammars, some language- or grammar-specific
+  ;;
+  bool.
+  + < bool.                 ; `plus' and `minus' in RMRS DTD
+  - < bool.
 
-  DIV [x] : bool             ; changed from DTD (was DIVISIBLE)
-  IND [x] : bool             ; missing in DTD (could eventually replace DIV)
-  PERF [e] : bool            ; missing in DTD
-  PROGR [e] : bool           ; missing in DTD
-  MOOD [e] :  mood           ; missing in DTD
-  TENSE [e] : tense
-  GEND [x] : gender          ; changed from DTD (was GENDER)
-  PERS [x] : pers
-  NUM [x] : num
-  PRONTYPE [x] : prontype    ; missing in DTD
-  SF [e] : iforce            ; missing in DTD
+  tense.
+  tensed < tense.
+  past < tensed.
+  pres < tensed.
+  fut < tensed.
+  untensed < tense.
+  te < tensed.
+
+  aspect.
+  default_aspect < aspect.
+  terminative < aspect.
+  prospective < aspect.
+  modal < aspect.
+  inceptive < aspect.
+
+  mood.
+  indicative < mood.
+  consultative < mood.
+
+  gender.
+  m-or-f < gender.
+  m < m-or-f.
+  f < m-or-f.
+  n < gender.
+
+  number.
+  sg < number.
+  pl < number.
+
+  person.
+  1 < person.
+  2 < person.
+  3 < person.
+
+  prontype.
+  refl < prontype.
+  std_pron < prontype.
+  zero_pron < prontype.
+
+  iforce.
+  prop-or-ques < iforce.
+  prop < prop-or-ques.
+  ques < prop-or-ques.
+  comm < iforce.
+
 
 ;;;
 ;;; a quick summary of the inventory of valid role names and value constraints,
@@ -93,17 +85,17 @@ properties:
 ;;;
 roles:
 
-  ARG0 : i
-  ARG1 : u
-  ARG2 : u
-  ARG3 : u
-  ARG4 : h
-  ARG : u
-  BODY : h
-  CARG : symbol string
-  L-HNDL : u
-  L-INDEX : i
-  R-HNDL : u
-  R-INDEX : i
-  RSTR : h
+  ARG0 : i.
+  ARG1 : u.
+  ARG2 : u.
+  ARG3 : u.
+  ARG4 : h.
+  ARG : u.
+  BODY : h.
+  CARG : string.
+  L-HNDL : u.
+  L-INDEX : i.
+  R-HNDL : u.
+  R-INDEX : i.
+  RSTR : h.
 
