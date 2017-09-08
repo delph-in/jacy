@@ -163,6 +163,10 @@ which need not be scoped - pronouns etc.  Not used in current ERG")
   "a suffix string marking semantic relations - 
    used in the compact MRS representation")
 
+(defparameter *normalize-predicates-p* t
+  "normalize string and symbol predicates, and remove the _rel suffix.")
+
+
 ;;; for generation
 
 (defparameter *null-semantics-hack-p* nil

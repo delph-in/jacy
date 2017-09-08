@@ -35,6 +35,12 @@ maxent-model              := "../tc.mem".
 
 variable-property-mapping := "../semi.vpm".
 
+;;; new-style SEM-I
+
+;; enable when ACE allows unicode in the SEM-I files
+; semantic-interface-2016   := "../etc/jacy.smi".
+; semantic-interface-top-type := top.
+
 ;;;|| parse-node-labels || path to a TDL file defining parse node labels (unused) ||
 
 parse-node-labels := "../labels.tdl".

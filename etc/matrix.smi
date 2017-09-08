@@ -1,0 +1,101 @@
+;;;  -*- Mode: TDL; Coding: utf-8; -*- 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Matrix Semantic Interface (SEM-I)
+;;;
+;;; Note: as of 2017-04-24, this is just local to Jacy, but the intention is
+;;;       that it will be pushed up to the matrix.
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;
+;;; the hierarchy of variable types: these are (pretty) close to universal 
+;;;
+variables:
+
+  u.
+  i < u.
+  p < u.
+  h < p.
+  e < i : TENSE tense, MOOD mood, PROG bool, PERF bool, ASPECT aspect, PASS bool, SF iforce.
+  x < i & p : PERS person, NUM number, GEND gender, PRONTYPE prontype.
+
+;;;
+;;; now for the range of valid variable properties, minimal variable type for
+;;; which a property is appropriate, and value constraint(s).
+;;;
+properties:
+  ;;
+  ;; the various sub-hierarchies for variable properties; some shared across
+  ;; sets of grammars, some language- or grammar-specific
+  ;;
+  bool.
+  + < bool.                 ; `plus' and `minus' in RMRS DTD
+  - < bool.
+
+  tense.
+  tensed < tense.
+  past < tensed.
+  pres < tensed.
+  fut < tensed.
+  untensed < tense.
+  te < tensed.
+
+  aspect.
+  default_aspect < aspect.
+  terminative < aspect.
+  prospective < aspect.
+  modal < aspect.
+  inceptive < aspect.
+
+  mood.
+  indicative < mood.
+  consultative < mood.
+
+  gender.
+  m-or-f < gender.
+  m < m-or-f.
+  f < m-or-f.
+  n < gender.
+
+  number.
+  sg < number.
+  pl < number.
+
+  person.
+  1 < person.
+  2 < person.
+  3 < person.
+
+  prontype.
+  refl < prontype.
+  std_pron < prontype.
+  zero_pron < prontype.
+
+  iforce.
+  prop-or-ques < iforce.
+  prop < prop-or-ques.
+  ques < prop-or-ques.
+  comm < iforce.
+
+
+;;;
+;;; a quick summary of the inventory of valid role names and value constraints,
+;;; if any (RSTR, for example, will always be handle-valued).
+;;;
+roles:
+
+  ARG0 : i.
+  ARG1 : u.
+  ARG2 : u.
+  ARG3 : u.
+  ARG4 : h.
+  ARG : u.
+  BODY : h.
+  CARG : string.
+  L-HNDL : u.
+  L-INDEX : i.
+  R-HNDL : u.
+  R-INDEX : i.
+  RSTR : h.
+

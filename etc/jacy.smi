@@ -5,9 +5,6 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
-
 ;;
 ;; Jacy specific `predicates' section: for each valid semantic
 ;; predicate, one or more entries detailing the range of admissible
@@ -19,9 +16,10 @@
 ;; this exact predicate in its semantics.
 ;;
 
+; predicates:
 ;; none so far
-;; predicates:
-
 
 include: matrix.smi
-include: core.smi
+include: hierarchy.smi
+include: abstract.smi
+include: surface.smi
