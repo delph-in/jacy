@@ -1779,7 +1779,6 @@ predicates:
   _bettari_a_1 : ARG0 e, ARG1 i.
   _betto_n_1 : ARG0 x.
   _bettori_a_1 : ARG0 e, ARG1 i.
-  _bi-_n_2 : ARG0 x.
   _bi-ecchishi-_n_1 : ARG0 x.
   _bi-fukare-_n_1 : ARG0 x.
   _bi-goban_n_1 : ARG0 x.
@@ -2479,7 +2478,6 @@ predicates:
   _buteikku_n_1 : ARG0 x.
   _butou_n_1 : ARG0 x.
   _butou_s_1 : ARG0 i, ARG1 i.
-  _butsu_a_4 : ARG0 i, ARG1 i.
   _butsu_n_1 : ARG0 x.
   _butsubutsu_a_3 : ARG0 e, ARG1 i.
   _butsubutsu_n_2 : ARG0 x.
@@ -3145,6 +3143,7 @@ predicates:
   _choudume_n_1 : ARG0 x.
   _chouei_n_1 : ARG0 x.
   _choueki_n_1 : ARG0 x.
+  _chouen_n_1 : ARG0 x.
   _chouetsu_s_1 : ARG0 i, ARG1 i.
   _chougenjitsuteki_a_1 : ARG0 e, ARG1 i.
   _chougi_n_2 : ARG0 x.
@@ -3442,7 +3441,6 @@ predicates:
   _daburupanchi_n_1 : ARG0 x.
   _daburupuree_n_1 : ARG0 x.
   _daburusu_n_1 : ARG0 x.
-  _daburyu_n_2 : ARG0 x.
   _daburyu_n_shi : ARG0 x.
   _dabutsuki_n_1 : ARG0 x.
   _dabutsuku_v_1 : ARG0 e, ARG1 i.
@@ -4690,9 +4688,7 @@ predicates:
   _ebisu_n_1 : ARG0 x.
   _eboryu_n : ARG0 x.
   _eboshi_n_2 : ARG0 x.
-  _ecchi_a_3 : ARG0 e, ARG1 i.
-  _ecchi_n_2 : ARG0 x.
-  _ecchibi_n_1 : ARG0 x.
+  _ecchi_a_na : ARG0 e, ARG1 i.
   _ecchieruei_n_1 : ARG0 x.
   _ecchiraocchira_a_1 : ARG0 e, ARG1 i.
   _echiketto_n_1 : ARG0 x.
@@ -4715,7 +4711,6 @@ predicates:
   _eepurirufuuru_n : ARG0 x.
   _eesu_n_1 : ARG0 x.
   _eeto_x : ARG0 e.
-  _efu_n_2 : ARG0 x.
   _efubi-_n_1 : ARG0 x.
   _efuda_n_1 : ARG0 x.
   _efudaburyu-_n_1 : ARG0 x.
@@ -4896,7 +4891,6 @@ predicates:
   _emerarudoguriin_n : ARG0 x.
   _emi_n_1 : ARG0 x.
   _emono_n_1 : ARG0 x.
-  _emu_n_2 : ARG0 x.
   _emua-ruai_n_1 : ARG0 x.
   _emubuipi_n_1 : ARG0 x.
   _emuefu_n_1 : ARG0 x.
@@ -5085,7 +5079,6 @@ predicates:
   _ero_n_1 : ARG0 x.
   _erochikku_a_1 : ARG0 e, ARG1 i.
   _erosu_n_1 : ARG0 x.
-  _eru_n_2 : ARG0 x.
   _eru_v_1 : ARG0 e, ARG1 i, ARG2 i.
   _eru_v_rais : ARG0 e, ARG1 h.
   _erubi-_n_1 : ARG0 x.
@@ -5103,7 +5096,6 @@ predicates:
   _esseisuto_n_1 : ARG0 x.
   _essensu_n_1 : ARG0 x.
   _esu_n_1 : ARG0 x.
-  _esu_n_2 : ARG0 x.
   _esuefu_n_1 : ARG0 x.
   _esueichi_n_1 : ARG0 x.
   _esueru_n_1 : ARG0 x.
@@ -6125,9 +6117,9 @@ predicates:
   _futtobu_v_1 : ARG0 e, ARG1 i.
   _futtou_s_1 : ARG0 i, ARG1 i.
   _fuu_a_4 : ARG0 i, ARG1 i.
-  _fuu_n : ARG0 x.
   _fuu_n_1 : ARG0 x.
   _fuu_n_2 : ARG0 x.
+  _fuu_n_way : ARG0 x.
   _fuuatsu_n_1 : ARG0 x.
   _fuubi_s_1 : ARG0 i, ARG1 i, ARG2 i.
   _fuubutsu_n_1 : ARG0 x.
@@ -7132,6 +7124,7 @@ predicates:
   _gokai_s_1 : ARG0 i, ARG1 i, ARG2 i.
   _gokaku_a_2 : ARG0 e, ARG1 i.
   _gokaku_n_1 : ARG0 x.
+  _gokakukei_n_1 : ARG0 x.
   _gokan_n_1 : ARG0 x.
   _gokan_n_2 : ARG0 x.
   _gokan_n_4 : ARG0 x.
@@ -8223,8 +8216,7 @@ predicates:
   _hanashigai_n_2 : ARG0 x.
   _hanashigoe_n_1 : ARG0 x.
   _hanashihanbun_n_1 : ARG0 x.
-  _hanashijouzu_a_2 : ARG0 e, ARG1 i.
-  _hanashijouzu_n_1 : ARG0 x.
+  _hanashijouzu_a_1 : ARG0 e, ARG1 i.
   _hanashikakeru_v_1 : ARG0 e, ARG1 i.
   _hanashikata_n_1 : ARG0 x.
   _hanashikomu_v_1 : ARG0 e, ARG1 i.
@@ -8779,7 +8771,7 @@ predicates:
   _haya_n_3 : ARG0 x.
   _hayaashi_n_1 : ARG0 x.
   _hayaban_n_1 : ARG0 x.
-  _hayabaya_a_1 : ARG0 e, ARG1 i.
+  _hayabaya_n_1 : ARG0 x.
   _hayabusa_n_1 : ARG0 x.
   _hayade_s_2 : ARG0 i, ARG1 i.
   _hayagaten_s_1 : ARG0 i, ARG1 i, ARG2 e.
@@ -8845,6 +8837,7 @@ predicates:
   _hazushi_a_2 : ARG0 i, ARG1 i.
   _hazusu_v : ARG0 e, ARG1 i, ARG2 i.
   _hazusu_v_1 : ARG0 e, ARG1 i, ARG2 i.
+  _hb_n_1 : ARG0 x.
   _he_n_1 : ARG0 x.
   _he_n_2 : ARG0 x.
   _he_x_4 : ARG0 e.
@@ -9118,8 +9111,6 @@ predicates:
   _hesomagari_n_1 : ARG0 x.
   _hesonoo_n_1 : ARG0 x.
   _heta_a_2 : ARG0 e, ARG1 i.
-  _heta_n_1 : ARG0 x.
-  _heta_n_3 : ARG0 x.
   _hetabaru_v_1 : ARG0 e, ARG1 i.
   _hetakuso_a_2 : ARG0 e, ARG1 i.
   _hetakuso_n_1 : ARG0 x.
@@ -10941,7 +10932,6 @@ predicates:
   _iikaeru_v_2 : ARG0 e, ARG1 i, ARG2 h.
   _iikaesu_v_1 : ARG0 e, ARG1 i, ARG2 h.
   _iikaesu_v_2 : ARG0 e, ARG1 i, ARG2 i.
-  _iikaesu_v_3 : ARG0 e, ARG1 i, ARG2 h.
   _iikagen_a_2 : ARG0 e, ARG1 i.
   _iikagen_a_4 : ARG0 e, ARG1 i.
   _iikakeru_v_1 : ARG0 e, ARG1 i, ARG2 i.
@@ -12013,13 +12003,11 @@ predicates:
   _ji-kei_n_1 : ARG0 x.
   _ji-pi-_n_1 : ARG0 x.
   _ji_a_1 : ARG0 i, ARG1 i.
-  _ji_n_1 : ARG0 x.
   _ji_n_2 : ARG0 x.
   _ji_n_3 : ARG0 x.
   _ji_n_4 : ARG0 x.
   _ji_n_5 : ARG0 x.
   _ji_n_6 : ARG0 x.
-  _ji_n_7 : ARG0 x.
   _jiai_n_1 : ARG0 x.
   _jiamari_n_1 : ARG0 x.
   _jiba_n_1 : ARG0 x.
@@ -12169,7 +12157,6 @@ predicates:
   _jikangai_n_1 : ARG0 x.
   _jikangire_n_1 : ARG0 x.
   _jikanhyou_n_1 : ARG0 x.
-  _jikani_a_1 : ARG0 e, ARG1 i.
   _jikankoushi_n_1 : ARG0 x.
   _jikankyuu_n_1 : ARG0 x.
   _jikantai_n : ARG0 x.
@@ -12784,9 +12771,8 @@ predicates:
   _jouyousha_n_1 : ARG0 x.
   _jouzai_n_1 : ARG0 x.
   _jouzou_s_2 : ARG0 i, ARG1 i, ARG2 i.
-  _jouzu_a_2 : ARG0 e, ARG1 i.
+  _jouzu_a_1 : ARG0 e, ARG1 i.
   _jouzu_n_1 : ARG0 x.
-  _jouzu_n_3 : ARG0 x.
   _joya_n_1 : ARG0 x.
   _joyaku_n_1 : ARG0 x.
   _joyanokane_n_1 : ARG0 x.
@@ -12934,7 +12920,6 @@ predicates:
   _juubun_n_3 : ARG0 x.
   _juubun_n_4 : ARG0 x.
   _juubyou_n_1 : ARG0 x.
-  _juuchuuhakku_n_1 : ARG0 x.
   _juudai_a_1 : ARG0 e, ARG1 i.
   _juudai_n_1 : ARG0 x.
   _juudan_n_1 : ARG0 x.
@@ -13869,7 +13854,6 @@ predicates:
   _kakouboueki_n_1 : ARG0 x.
   _kaku_n_1 : ARG0 x.
   _kaku_n_2 : ARG0 x.
-  _kaku_n_5 : ARG0 x.
   _kaku_n_7 : ARG0 x.
   _kaku_n_9 : ARG0 x.
   _kaku_q_14 : ARG0 x, RSTR h, BODY h.
@@ -14574,7 +14558,6 @@ predicates:
   _kara_p : ARG0 e, ARG1 i, ARG2 i.
   _kara_p : ARG0 i, L-HNDL h, [ L-INDEX i ], R-HNDL h, [ R-INDEX i ].
   _kara_p_cardmod : ARG0 e, ARG1 i, ARG2 i.
-  _kara_p_prep : ARG0 e, ARG1 i, ARG2 i.
   _karaa_n_1 : ARG0 x.
   _karaafirumu_n_1 : ARG0 x.
   _karaage_n_2 : ARG0 x.
@@ -14852,7 +14835,6 @@ predicates:
   _kasutanetto_n_1 : ARG0 x.
   _kasutera_n_1 : ARG0 x.
   _kata_a_1 : ARG0 e, ARG1 i.
-  _kata_a_4 : ARG0 i, ARG1 i.
   _kata_a_5 : ARG0 i, ARG1 i.
   _kata_n : ARG0 x.
   _kata_n_1 : ARG0 x.
@@ -15921,7 +15903,6 @@ predicates:
   _kika_s_2 : ARG0 i, ARG1 i.
   _kikaeru_v_1 : ARG0 e, ARG1 i, ARG2 i.
   _kikagaku_n_1 : ARG0 x.
-  _kikai_a_1 : ARG0 e, ARG1 i.
   _kikai_n : ARG0 x.
   _kikai_n_1 : ARG0 x.
   _kikai_n_2 : ARG0 x.
@@ -22274,7 +22255,6 @@ predicates:
   _nanbaapureeto_n : ARG0 x.
   _nanbaawan_n : ARG0 x.
   _nanben_n_1 : ARG0 x.
-  _nanbito_n_1 : ARG0 x.
   _nanbo_a_1 : ARG0 e, ARG1 i.
   _nanboku_n_1 : ARG0 x.
   _nanbokumondai_n_1 : ARG0 x.
@@ -22299,6 +22279,7 @@ predicates:
   _nani_n_1 : ARG0 x.
   _nani_n_mo : ARG0 x.
   _nani_x_2 : ARG0 e.
+  _nanibito_n_1 : ARG0 x.
   _nanibun_a : ARG0 e, ARG1 i.
   _nanido_n_1 : ARG0 x.
   _nanigenai_a_1 : ARG0 e, ARG1 i.
@@ -23824,7 +23805,6 @@ predicates:
   _o-yamaneko_n_1 : ARG0 x.
   _o_n : ARG0 x.
   _o_n_1 : ARG0 x.
-  _o_n_2 : ARG0 x.
   _o_n_4 : ARG0 x.
   _o_n_ba : ARG0 x.
   _oabaakooto_n : ARG0 x.
@@ -26622,7 +26602,6 @@ predicates:
   _ryokuchi_n_1 : ARG0 x.
   _ryokufuu_n_1 : ARG0 x.
   _ryokuin_n_1 : ARG0 x.
-  _ryokuka_s_1 : ARG0 i, ARG1 i, ARG2 i.
   _ryokuoushoku_n_1 : ARG0 x.
   _ryokushoku_n_1 : ARG0 x.
   _ryou_a_7 : ARG0 i, ARG1 i.
@@ -28837,7 +28816,6 @@ predicates:
   _shazai_s_2 : ARG0 i, ARG1 i, ARG2 i.
   _shea_n_1 : ARG0 x.
   _shea_s_2 : ARG0 i, ARG1 i, ARG2 i.
-  _shi-_n_2 : ARG0 x.
   _shi-_n_3 : ARG0 x.
   _shi-dhi-_n_1 : ARG0 x.
   _shi-eieruesu_n_1 : ARG0 x.
@@ -31680,11 +31658,10 @@ predicates:
   _soushutsu_s_1 : ARG0 i, ARG1 i, ARG2 i.
   _soushuunyuu_n_1 : ARG0 x.
   _sousoku_n_1 : ARG0 x.
+  _sousou_a_1 : ARG0 e, ARG1 i.
   _sousou_a_2 : ARG0 e, ARG1 i.
-  _sousou_a_3 : ARG0 e, ARG1 i.
   _sousou_n_1 : ARG0 x.
   _sousou_n_5 : ARG0 x.
-  _sousou_x_4 : ARG0 e.
   _sousu_v_1 : ARG0 e, ARG1 i, ARG2 i.
   _sousu_v_2 : ARG0 e, ARG1 i, ARG2 h.
   _sousui_n_1 : ARG0 x.
@@ -35467,7 +35444,6 @@ predicates:
   _tsuneni_a_1 : ARG0 e, ARG1 i.
   _tsuneru_v_1 : ARG0 e, ARG1 i, ARG2 i.
   _tsunnomeru_v_1 : ARG0 e, ARG1 i.
-  _tsuno_n_1 : ARG0 x.
   _tsunokakushi_n_1 : ARG0 x.
   _tsunori_n_1 : ARG0 x.
   _tsunoru_v_1 : ARG0 e, ARG1 i, ARG2 i.
@@ -35641,7 +35617,6 @@ predicates:
   _tsuya_n_3 : ARG0 x.
   _tsuyakeshi_n_1 : ARG0 x.
   _tsuyatsuya_a_1 : ARG0 e, ARG1 i.
-  _tsuyatsuya_a_2 : ARG0 e, ARG1 i.
   _tsuyatsuya_s_1 : ARG0 i, ARG1 i.
   _tsuyobi_n_1 : ARG0 x.
   _tsuyogari_n_1 : ARG0 x.
@@ -35934,9 +35909,6 @@ predicates:
   _umagoyashi_n_1 : ARG0 x.
   _umai_a_1 : ARG0 e, ARG1 i.
   _umai_a_4 : ARG0 e, ARG1 i.
-  _umai_a_delicious : ARG0 e, ARG1 i.
-  _umai_a_well : ARG0 e, ARG1 i.
-  _umai_s_1 : ARG0 i, ARG1 i.
   _umami_n_1 : ARG0 x.
   _umani_n_1 : ARG0 x.
   _umanoashigata_n_1 : ARG0 x.
@@ -36349,7 +36321,6 @@ predicates:
   _uwasabanashi_n_1 : ARG0 x.
   _uwasuberi_a_1 : ARG0 e, ARG1 i.
   _uwasuberi_s_1 : ARG0 i, ARG1 i.
-  _uwate_a_2 : ARG0 e, ARG1 i.
   _uwate_n_1 : ARG0 x.
   _uwatenage_n_1 : ARG0 x.
   _uwattsura_n_1 : ARG0 x.
