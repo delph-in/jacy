@@ -2678,7 +2678,8 @@ topic-vobj-lex := topic-p-lex &
 						       [VN -,
 							COP -,
 							ADJ -,
-							H-TENSE te],
+							H-TENSE te,
+							MOD <  >],
 						  VAL saturated ],
 					   CONT.HOOK.INDEX #objind]],
 		CONT.RELS <! [ ARG2 #objind ] !>]]. 
@@ -7646,6 +7647,7 @@ v-tense-end-lex := v-tense-end-lex-super &
 ; (FCB 2006-06-20)
 ; [SYNSEM.LOCAL.CAT.HEAD.MOD.FIRST.LOCAL.CAT.HEAD sentence-valid] prevents this from modifying utterances.'
 ; MAIN-PRD - to stop "座っ て ね"
+; If we want to distinguish with v-te-end-lex, look for MOD < > vs < ... >
 te-adjunct-lex := basic-v-end-lex &
  [J-NEEDS-AFFIX -,
   SYNSEM [LOCAL [CAT [ VAL.SPR < [ LOCAL.CONT.HOOK.LTOP #subord,
