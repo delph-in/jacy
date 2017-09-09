@@ -1,7 +1,13 @@
 
 # Change Log
 
-## 2017-09-08
+## [Unreleased][unreleased]
+
+Recent changes not yet part of a release are listed here:
+
+* ...
+
+## [2017-09-08][]
 
 This release encapsulates many semantic fixes, updated metadata, and
 efforts to get Jacy working with both ACE and the LKB.
@@ -17,7 +23,7 @@ The changes can be summarized as follows:
 * update docs to include new canonical citation
 * add entities for ShapeWorld (see https://arxiv.org/pdf/1704.04517.pdf)
 
-## 2016-11-08
+## [2016-11-08][]
 
 This release corresponds roughly to the state of the grammar for the
 Jacy book. No change log was kept since 2007-11-28, but there were
@@ -92,3 +98,10 @@ The following is the original change log; it stopped in late 2007
 >   * changelog: pred-adj-lex, made a sub-class of adjectives, so that
 >     it can be modified by とても, made it BAR - to reduce ambiguity.
 > 
+
+
+[unreleased]: ../../tree/develop
+[2017-09-08]: ../../releases/tag/2017-09-08
+[2016-11-08]: ../../releases/tag/2016-11-08
+
+
