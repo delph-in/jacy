@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# If Version.lsp is not changed, prompt the user to use the current
+# date and time as the version.
+
+# if branch is not master, add it to the version string
+branch="-$( git rev-parse --abbrev-ref HEAD )"
+if "$branch" = "-master"; then
+	branch=''
+fi
+
+newver="Jacy$branch ($( date --utc --rfc-3339=seconds))"
+
+exitcode=0  # 0 is success; otherwise commit is cancelled
+
+if ! $( git diff --cached --name-only --diff-filter=AM | grep -q '^Version.lsp$' ); then
+
+	echo "Version.lsp is unchanged. Do you wish to update the version string"
+	echo "to \"$newver\" ?"
+	echo "  [y]es   : update and commit"
+	echo "  [n]o    : don't update, commit anyway"
+	echo "  [a]bort : don't commit"
+
+	exec < /dev/tty  # get keyboard input
+	while true; do
+		read -n 1 -p '(y|n|a) ' choice
+		echo ""
+		case "$choice" in
+			[yY])
+				sed -i "s/^(defparameter \*grammar-version\*.*/(defparameter *grammar-version* \"$newver\")/" Version.lsp
+				git add Version.lsp
+				break
+				;;
+			[nN])
+				break
+				;;
+			[aA])
+				echo "Aborting commit"
+				exitcode=1
+				break
+				;;
+			*)
+				echo "Invalid option"
+				;;
+		esac
+	done
+fi
+
+exit "$exitcode"

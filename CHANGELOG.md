@@ -5,7 +5,9 @@
 
 Recent changes not yet part of a release are listed here:
 
-* ...
+* Add `utils/git-hooks/pre-commit` for auto-updating Version.lsp; Note
+  that it still needs to be copied locally to `.git/hooks/pre-commit`
+  in order to work
 
 ## [2017-09-08][]
 
