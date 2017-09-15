@@ -8,6 +8,10 @@ Recent changes not yet part of a release are listed here:
 * Add `utils/git-hooks/pre-commit` for auto-updating Version.lsp; Note
   that it still needs to be copied locally to `.git/hooks/pre-commit`
   in order to work
+* Fixed a number of ill-formed predicates in lexicon.tdl
+* Add `utils/jpn2yy` shell script; this is slightly faster and has
+  fewer requirements than the `utils/jpn2yy.py` script, which can now
+  be considered deprecated
 
 ## [2017-09-08][]
 

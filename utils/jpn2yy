@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Read in Japanese sentences in UTF8, tokenize it with MeCab, and
+# format it in YY notation.
+#
+# Note that MeCab and a UTF8 dictionary (e.g. mecab-ipadic-utf8) must
+# be installed for this to work. Also, the default python3 should be
+# version 3.3 or greater.
+
+# YY node format:
+# (id, start, end, [link,] path+, form [surface], ipos, lrule+[, {pos p}+])
+
+# first check if MeCab is installed
+type -p mecab &>/dev/null || { 
+	echo "This program requires MeCab. Please install and try again." >&2
+	echo "  e.g., on Ubuntu: apt install mecab mecab-ipadic-utf8" >&2
+    exit 1
+}
+
+mecab --bos-format='BOS\t%S\n' \
+      --node-format='%m\t%F-[0,1,2,3]\t%f[4]\t%f[5]\n' "$@" | \
+python3 -c "
+import sys
+punct=u\"!\\\"!&'()*+,-−./;<=>?@[\]^_\`{|}~。！？…．　○●◎＊☆★◇◆\"
+yid = start = cfrom = cto = 0
+sent = ''
+yy = []
+for line in sys.stdin:
+  if line.startswith('BOS'):
+    sent = line.partition('\t')[2]
+  # emit current tokens at EOS and reset for next sentence
+  elif line.strip() == 'EOS':
+    print(''.join(yy))
+    yid = start = cfrom = cto = 0
+    yy = []
+  # otherwise add the current token
+  else:
+    form, pos, infl_type, infl_form = line.rstrip('\n').split('\t')
+    if form in punct:
+      continue
+    pos_info = '{}:{}-{}'.format(pos, infl_type or 'n', infl_form or 'n')
+    cfrom = sent.find(form, cto)
+    cto = -1 if cfrom == -1 else cfrom + len(form)
+    yy.append(
+      '({}, {}, {}, <{}:{}>, 1, \"{}\", {}, \"null\", \"{}\" 1.0)'.format(
+        yid, start, start + 1, cfrom, cto, form, 0, pos_info
+      )
+    )
+    yid += 1
+    start += 1
+"
