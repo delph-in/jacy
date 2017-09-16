@@ -12,6 +12,7 @@ Recent changes not yet part of a release are listed here:
 * Add `utils/jpn2yy` shell script; this is slightly faster and has
   fewer requirements than the `utils/jpn2yy.py` script, which can now
   be considered deprecated
+* Added `CONTRIBUTING.md`
 
 ## [2017-09-08][]
 
