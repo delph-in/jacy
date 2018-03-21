@@ -819,7 +819,8 @@ utt-type := utterance-type &
 
 ;;; FIXME unify with utt-type etc. (2006-05-05 no-MSG)
 utterance-sf-type := utt-type &
- [ C-CONT.HOOK #hook,
+" I am a comment"
+[ C-CONT.HOOK #hook,
    ARGS.FIRST.SYNSEM.LOCAL [CAT [HEAD verb_head & 
 				      [MAIN-PRD +],
 				 VAL saturated],

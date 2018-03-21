@@ -22,7 +22,6 @@
 
 ;declarative sentence, finite verb
 
-; <ex>(do-parse-tty "食べる")</ex>
 utterance_rule-decl-finite := utterance-sf-type &
  [SYNSEM.LOCAL.CAT.HEAD.SMOD decl, 
   C-CONT.HOOK.INDEX.SF prop,
@@ -31,7 +30,6 @@ utterance_rule-decl-finite := utterance-sf-type &
 		     NON-LOCAL.QUE <! !>]]. 
 
 ;wh-question without ka
-; <ex>(do-parse-tty "何 を 食べる")</ex>
 utterance_rule-wh-without-ka := utterance-sf-type &
  [SYNSEM.LOCAL.CAT.HEAD.SMOD quest,
   C-CONT.HOOK.INDEX.SF ques,
@@ -42,7 +40,6 @@ utterance_rule-wh-without-ka := utterance-sf-type &
 ; Imperative (request)   て
 ; set SF to comm[and]
 ; quite informal/conversational => ROBUST +
-; <ex>(do-parse-tty "食べ て")</ex>
 ; added  J-POSTHEAD coord to block te-adjunct
 ; FIXME, I would prefer the tense to be present, not te 
 ; C-CONT.HOOK.INDEX.E.TENSE present,
@@ -1068,29 +1065,24 @@ adj-nominal-suffix-rule := adj-nominal-suffix-type.
 
 ;;; Fragment rules
 ;;; unary rules
-;<ex>犬
-frg-np := frag-np-rule.
+frg-np := frag-np-rule. 
 
-;<ex>東京 へ
+
 frg-pp := frag-pp-rule.
 
-;<ex>たぶん
+
 frg-s-adv := frag-s-adv-rule.
 
-;<ex>少し
-;<ex>とて
 frg-i-adv := frag-i-adv-rule.
+
 
 ;;; binary fragment rules
 
-;<ex>東京 へ 彼
 frg-pp-np := frag-pp-np-rule.
 
-;<ex>少し 彼
+
 frg-i-adv-np := frag-i-adv-np-rule.
 
-;<ex>そこ へ ２
 frg-pp-int := frag-pp-int-rule.
 
-;<ex>犬 が 動物
 frg-cop := frag-cop-rule.

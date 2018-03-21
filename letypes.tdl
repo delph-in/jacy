@@ -7713,22 +7713,21 @@ te-adjunct-lex-d := te-adjunct-lex &
 ; <nex> 中澤 が 日本語 の 勉強 し に 行く
 ; <ex> 中澤 が 日本語 の 勉強 を し に 行く
 ; <ex> 中澤 が 見 に 行く
-;; not sure if this is correct
-; <ex> 中澤 が 焼き鳥 を 見 に 食べる
+; <ex> 中澤 が 焼き鳥 を 食べ に 行く
 ; <nex> 中澤 が 映画 に 行く
 ; <todo>
 ; coindex the subjects
+
+;; not sure if this is correct: 中澤 が 見 に 行く
 ;
 ; Also need:
 ; N-ni V  block verbal noun
 ; N-no/wo VN-ni
-; <ex> 中澤 が 日本語 を 勉強 に 行く
-; <ex> 中澤 が 日本語 の 勉強 に 行く
-; also get this
-; <ex> 中澤 が 日本語 の 勉強 を する
+;  中澤 が 日本語 を 勉強 に 行く
+;  中澤 が 日本語 の 勉強 に 行く
+;  中澤 が 日本語 の 勉強 を する
 ;
 ; similar things (possibly)
-; co-index te-adjunct (and lose one tree: VAL.SPR < [ LOCAL [ CAT.VAL.SUBJ < anti-synsem >)
 ; がでら
 ; ながら
 ; のために
@@ -13328,6 +13327,7 @@ syntactic-vv-intrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
 ; <todo>
 ; </type>
 syn-vv-intrans-vbar-v-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE v-stem].
+
 ; <type val="syn-vv-intrans-vbar-c-stem-lex">
 ; <name-ja>統語的複合動詞補語型五段
 ; <description>統語的複合動詞V1-V2のうち、V2に使われるもの。
@@ -13336,7 +13336,9 @@ syn-vv-intrans-vbar-v-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE
 ; <nex>電話 を 直す
 ; <todo>
 ; </type>
-syn-vv-intrans-vbar-c-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE c-stem].
+syn-vv-intrans-vbar-c-stem-lex := syntactic-vv-intrans-vbar-stem-lex &
+ [STEMTYPE c-stem].
+
 ;syn-vv-intrans-vbar-c2-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE c2-stem].
 ;syn-vv-intrans-vbar-kurusuru-stem-lex := syntactic-vv-intrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
 
@@ -13355,9 +13357,12 @@ syn-vv-monotrans-vbar-c-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEM
 ;syn-vv-monotrans-vbar-c2-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE c2-stem].
 ;syn-vv-monotrans-vbar-kurusuru-stem-lex := syntactic-vv-monotrans-vbar-stem-lex & [STEMTYPE kurusuru-stem].
 
-;<ex>電話 を 手渡し 直す
+;<type val='syntactic-vv-ditrans-vbar-stem-lex'>
+; <description>
 ;(CH 2005-04-09)
 ; for a ditransitive V1
+;<ex>電話 を 手渡し 直す
+; </type>
 syntactic-vv-ditrans-vbar-stem-lex := syntactic-vv-vbar-stem-lex &
  [SYNSEM [LOCAL [CAT [VAL [COMPS <[LOCAL.CONT.HOOK.INDEX #objind],
 				  [LOCAL.CONT.HOOK.INDEX #obj2ind]>,
