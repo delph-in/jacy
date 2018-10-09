@@ -1064,8 +1064,11 @@ adv_deg_num_head-avm := adv_head &
 	     MOD < [LOCAL [CAT.HEAD num-cl_head]] >,
 	     H-TENSE present].
 
+;;; MWG 2018-10-09: moved docstring to comment temporarily.
+;;;   When support for triple-quoted docstrings rolls out it can be restored.
+;;;
+;;;   """used for adverbs made from adjectives (na or i)"""
 adv_adj_head-avm := adv_head &
-"used for adverbs made from adjectives (na or i)"
  [KEYS.KEY adv_rel,
   MOD < [LOCAL [CAT.HEAD sentence-valid]] >,
   H-TENSE present,
