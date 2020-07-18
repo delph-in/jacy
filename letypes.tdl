@@ -6337,22 +6337,19 @@ lex-mod-adv-wh-lex := adv-wh-lex &
 
 ;;; FCB led gently by the hand by DPF (2006-05-01)
 
-isect-mod-lex := lexical_sign-word &
- [SYNSEM [LOCAL [CAT.HEAD [MOD < [LOCAL intersective-mod & 
-					[CONT.HOOK [LTOP #handel,
-						    INDEX #modified]]] >,
-			   COP-ARG +,
-			   J-POSTHEAD left],
-		 CONT i-sect-adv-sem-type &
-			  [HOOK [INDEX #ind,
-				 LTOP #handel],
-			   RELS <! #key !>]],
-	  LKEYS.KEYREL #key & adv-relation & 
-		[ARG0 #ind & event,
-		 ARG0.E.TENSE no_tense,
-		 ARG1 #modified,
-		 LBL #handel],
-	  NON-LOCAL.QUE <! !>]].
+isect-mod-lex := lexical_sign-word & norm-lex-item &
+ [ SYNSEM [ LOCAL [ CAT.HEAD [MOD < [LOCAL intersective-mod &
+					   [ CONT.HOOK [ LTOP #handel,
+							 INDEX #modified ] ] ] >,  
+   			   COP-ARG +,
+ 			   J-POSTHEAD left],
+		    CONT i-sect-adv-sem-type ],
+	    NON-LOCAL.QUE <! !>,
+	    LKEYS.KEYREL adv-relation &
+		  [ LBL #handel,
+		    ARG0.E.TENSE no_tense,
+		    ARG1 #modified ] ] ].	
+
 
 isect-adv-lex := isect-mod-lex & adv-lex.
 ;;; 美しい
@@ -8631,8 +8628,10 @@ pass-end-lex :=  v-op-end-lex &
 ; <nex>
 ; <todo>
 ; </type>
+; TDL FIXME
 simple-pass-end-lex :=   pass-end-lex &
- [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
+ [SYNSEM [LOCAL [CAT [ HEAD simple-pass-end_head &
+			    [KEYS.KEY pass_v_rel],
 		      VAL [SUBJ.FIRST [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 					      CONT.HOOK.INDEX #surfsbjind]],
 			   COMPS 1-list & < [LOCAL [CAT.HEAD case-p_head & [CASE ni-or-niyotte],
@@ -8646,11 +8645,10 @@ simple-pass-end-lex :=   pass-end-lex &
 						       SUBJ opt-1-arg,
 						       COMPS 1-list &
 							     < [LOCAL [CAT.HEAD case-p_head & 
-										[CASE wo]]] > 
-							     ],
+										[CASE wo]]] > ],
 ;;; FCB try this
-						  HEAD.LIGHT bool]]]],
-		      HEAD.KEYS.KEY pass_v_rel],
+						      HEAD.LIGHT bool]]]]],
+;		       HEAD.KEYS.KEY pass_v_rel],
 		 CONT [RELS <! !>,
 		       HOOK.INDEX #event & [E.PASS +],
 		       HCONS <! !>],
@@ -8801,17 +8799,18 @@ ditrans-pass-end-ganiwo-passvmorph-lex := ditrans-pass-end-ganiwo-lex &
 ;  (MS 2004-11-12) I had to bind the ARG2 of the adversative relation. It seems to me that the ARG2 should be the event, rather than
 ; the ARG1 of the verb. Then, we have only one adversative relation, with ARG1 (the surface subject) and ARG2 (the event).
 
+
 adversative-pass-end-lex := pass-end-lex &
- [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head,
+ [SYNSEM [LOCAL [CAT [HEAD simple-pass-end_head &
+			   [ KEYS.KEY pass_v_rel ],
 		      VAL [SUBJ 1-list & < [LOCAL [CAT.HEAD ga-or-wo-case-p_head & [CASE ga],
 						   CONT.HOOK.INDEX #surfsbjind]] >,
 			   SPR 1-list & <  [LOCAL [CAT.VAL.UNSAT +,
 						   CONT.HOOK.LTOP #sprhd]] >],
-		      HEAD.KEYS.KEY pass_v_rel],
-		 CONT [RELS <! #key !>,
-		       HOOK [XARG #surfsbjind,
-			     INDEX #event],
-		       HCONS <!  !>]],
+		      CONT [RELS <! #key !>,
+			    HOOK [XARG #surfsbjind,
+				  INDEX #event],
+			    HCONS <!  !>]]],
 	  LKEYS.KEYREL #key & adversative-relation & [ARG1 #surfsbjind,
 						      ARG2 #sprhd,
 						      ARG0 #event]],
