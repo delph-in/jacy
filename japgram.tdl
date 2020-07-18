@@ -20,34 +20,44 @@
 
 ;Rules for sentence chains or single sentences
 
-;declarative sentence, finite verb
 
-; <ex>(do-parse-tty "食べる")</ex>
+
+
 utterance_rule-decl-finite := utterance-sf-type &
+"""
+declarative sentence, finite verb
+<ex> 食べる
+"""
  [SYNSEM.LOCAL.CAT.HEAD.SMOD decl, 
   C-CONT.HOOK.INDEX.SF prop,
   ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus, 
 				     FIN +],
 		     NON-LOCAL.QUE <! !>]]. 
 
-;wh-question without ka
-; <ex>(do-parse-tty "何 を 食べる")</ex>
+
 utterance_rule-wh-without-ka := utterance-sf-type &
+"""
+wh-question without ka
+<ex> 何 を 食べる
+"""
  [SYNSEM.LOCAL.CAT.HEAD.SMOD quest,
   C-CONT.HOOK.INDEX.SF ques,
   ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus, 
 				     FIN +],
 		     NON-LOCAL.QUE <! [] !>]]. 
 
-; Imperative (request)   て
-; set SF to comm[and]
-; quite informal/conversational => ROBUST +
-; <ex>(do-parse-tty "食べ て")</ex>
 ; added  J-POSTHEAD coord to block te-adjunct
 ; FIXME, I would prefer the tense to be present, not te 
 ; C-CONT.HOOK.INDEX.E.TENSE present,
 
 utterance_rule-imp  := utterance-sf-type &
+"""
+Imperative (request)   て
+Informal (ROBUST +)
+
+<ex> 食べ て
+
+"""
 [SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
  C-CONT.HOOK.INDEX.SF comm,
  ARGS.FIRST.SYNSEM [LOCAL.CAT.HEAD [MODUS uttmodus, 
@@ -68,12 +78,15 @@ utterance_rule-imp  := utterance-sf-type &
 ; (MS 2002-01-16) introduces simple-imperative vs. polite-imperative to divide utterance_rule10 and utterance_rule2e.
 ; (MS 2003-12-17) Adapting to Matrix 0.6
 ; (MS 2005-12-08) We don't want the NONLOCAL.QUE <! !> condition on the argument, as embedded sentences; could have some QUE left in their storage: "誰が行くか教えて下さい。"
-; EX: (do-parse-tty "食べ て 下さい")
-; EX: (do-parse-tty "食べ て なさい") FIXME (one bad parse)
 ; (FCB 2009-01-05) Taking out the MOOD, as we don't need it and it stops generation.
 ; put it back in due to spurious ambiguity with  (do-parse-tty "食べ ます")
 
 utterance_rule-command  := utterance-sf-type &
+"""
+Polite imperative
+<ex> 食べ て 下さい
+<nex> 食べ て なさい
+"""
 [SYNSEM.LOCAL.CAT.HEAD.SMOD imp,
  C-CONT.HOOK.INDEX.SF comm,
  ARGS.FIRST [SYNSEM [LOCAL [CAT.HEAD [MODUS simple-imperative,
@@ -100,11 +113,14 @@ utterance_rule-decl-infinite := utterance-sf-type &
 			       ROBUST +]]].
 
 
-;sentence with sentence end particle, finite verb
+
 ; (FCB 2006-05-09) Pass up SMOD, assume particle sets the mood
 ; this allows many rules to be collapsed
  
 utterance_rule-sep := utt-sep-type &
+"""
+sentence with sentence end particle, finite verb
+"""
  [SYNSEM.LOCAL.CAT.HEAD.SMOD #1,
   ARGS.FIRST.SYNSEM.LOCAL.CAT.HEAD.SMOD #1].
 
@@ -113,7 +129,12 @@ utterance_rule-sep := utt-sep-type &
 ;;; FIXME: doesn't scope, harmonize with ERG (FCB 2006-05-08)
 ;;;  (do-parse-tty "お早う")
 
+
 utterance_rule-idiom  := utt-idiom-type &
+"""
+Idiomatic utterance
+<ex> お早う
+"""
  [SYNSEM.LOCAL.CAT.HEAD.SMOD decl].
 
 
@@ -1068,29 +1089,70 @@ adj-nominal-suffix-rule := adj-nominal-suffix-type.
 
 ;;; Fragment rules
 ;;; unary rules
-;<ex>犬
-frg-np := frag-np-rule.
 
-;<ex>東京 へ
-frg-pp := frag-pp-rule.
+frg-np := frag-np-rule
+"""
+Noun phrase fragment
+<ex>犬
+"""
+.
 
-;<ex>たぶん
-frg-s-adv := frag-s-adv-rule.
 
-;<ex>少し
-;<ex>とて
-frg-i-adv := frag-i-adv-rule.
+frg-pp := frag-pp-rule
+"""
+Prepostional phrase fragment
+<ex> 東京 へ
+"""
+.
+
+
+frg-s-adv := frag-s-adv-rule
+"""
+Scopal modifier fragment
+<ex> たぶん
+"""
+.
+
+
+
+frg-i-adv := frag-i-adv-rule
+"""
+Intersective modifier fragment 
+<ex> 少し
+<ex> とて
+"""
+.
 
 ;;; binary fragment rules
 
-;<ex>東京 へ 彼
-frg-pp-np := frag-pp-np-rule.
 
-;<ex>少し 彼
-frg-i-adv-np := frag-i-adv-np-rule.
+frg-pp-np := frag-pp-np-rule
+"""
+Prepositional and Noun phase fragment (both modifiyin the same event)
+<ex> 東京 へ 彼
+"""
+.
 
-;<ex>そこ へ ２
-frg-pp-int := frag-pp-int-rule.
 
-;<ex>犬 が 動物
-frg-cop := frag-cop-rule.
+frg-i-adv-np := frag-i-adv-np-rule
+"""
+Intersective Modifier and NP fragment
+<ex> 少し 彼
+"""
+.
+
+
+frg-pp-int := frag-pp-int-rule
+"""
+Intersective Modifier and Number
+<ex>そこ へ ２
+"""
+.
+
+
+frg-cop := frag-cop-rule
+"""
+Copular sentence missing the copula
+<ex> 犬 が 動物
+"""
+.
