@@ -1385,8 +1385,14 @@ ni-ga_transitive := sbj-obj-arg  &
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
 
 ga-ni_transitive := sbj-obj-arg &
-                    [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
-                          COMPS < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] > ].
+"""
+Verbs with a -ni marked optional complement.
+<ex> 当っ た
+<ex> 波 が 当っ た
+<ex> 波 が 岩 に 当っ た
+"""
+ [SUBJ < [LOCAL.CAT.HEAD case-p_head & [CASE ga]] >,
+  COMPS  opt-1-arg &  < [LOCAL.CAT.HEAD case-p_head & [CASE ni]] > ].
 
 ; (MS 2004-11-22) I don't think that we need sbj-obj2-arg.
 
