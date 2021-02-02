@@ -828,7 +828,15 @@ interj-relation := arg0-relation.
 ; predsorts
 
 quant_rel := predsort.
-udef_q_rel := quant_rel.
+udef_q_rel := quant_rel
+"""
+The default quantifier for nouns that have no explicit quantifier, 
+and are not known to be something special (like demnostratives, 
+pronouns or proper nouns).  
+
+It can be specialized to definite, indefinite or interrogative: 
+(def_q, indef_q, which_q). 
+""".
 def_q_rel := udef_q_rel.
 indef_q_rel := udef_q_rel.
 which_q_rel := def_q_rel.
