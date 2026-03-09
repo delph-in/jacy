@@ -1743,8 +1743,7 @@ case-p-lexの「が」と同じような役割をする記号。ただしこのt
 「写真 ： 馬 だ」のような文を解析するためのtypeだが、現実の文では「だ」などcopulaを伴わない場合がほとんど。
 <ex> 真 ： 馬
 
-ToDo
-----
+## ToDo
 (TK 07-04-04)実際には「写真 ： 馬」のように、copulaがない文でも解析できるようにすべき。
 (TK 07-04-04)また、リストのようなものだと「本田 ： 行く 、 川崎 ： 行か ない 、 鈴木 ： 不明」や、
 「メニュー ： 多い 、 値段 ： 安い 、 店員 ： 明るい」のような使い方もあり得るのではないか。
@@ -1774,8 +1773,7 @@ case-p-lex-np-wo := case-p-lex-np &
 (ARG2)となることができる。
 <ex> 子供 が 本 を 買う
 <nex> ボール が 落ち て き た ところ を キャッチ する
-ToDo
-----
+## ToDo
 (07-03-30)場所や状況を表す「を」も必要。(lkb::do-parse-tty "砂漠 を 行く 旅人")
 (lkb::do-parse-tty "ボール が 落ち て き た ところ を キャッチ する")
 """
@@ -1799,8 +1797,7 @@ case-p-lex-np-kara := case-p-lex-np &
 名詞の直後について、受身文の主格（実際にその行為を行うもの）を表す助詞「から」。
 <ex> 子供 が 親 から たしなめ られる
 <nex> 友人 から 自転車 を 買う
-ToDo
-----
+## ToDo
 (07-03-30)間接受身でも使えるようにすべき。(lkb::do-parse-tty "親戚 から 怒ら れる")
 (07-03-30)「〜」はこのtypeでよいのか？（格として取ることがないため）
 (07-03-30)postp-lexの後につくtypeも必要。(lkb::do-parse-tty "子供 が 親 とか から たしなめ られる")
@@ -1850,8 +1847,7 @@ case-p-lex-np-no := case-p-lex-np &
 relative clauseの場合にしか出ないという部分で違いがある。
 <ex> 車 の ある 家
 <nex> 大阪 の ある 地域
-ToDo
-----
+## ToDo
 (TK 07-03-29)受動態も作れるようにすべき(lkb::do-parse-tty "勢い の 失わ れ た チーム")
 (TK 07-03-29)「na-adj-lex+reg-cop-stem-lex」も解析できるようにすべき。
 (lkb::do-parse-tty "音 の 静か な 機械")
@@ -1935,8 +1931,7 @@ case-p-lex-postp-wo := case-p-lex-postp &
 「名詞or動詞+postp-lex」の形の直後について、目的格を表す助詞「を」。case-p-lex-np-woを参照。
 <ex> 子供 が 本 とか を 買う
 <nex> 川 とか 海 とか を 泳ぐ
-ToDo
-----
+## ToDo
 case-p-lex-np-woを参照。
 """
  [SYNSEM.LOCAL.CAT.HEAD.CASE wo].
@@ -2018,8 +2013,7 @@ propositionを持つ文を受ける助詞。このtypeによってその文は�
 <ex> 行く かも 分から ない
 <nex> 人間 かも 分から ない
 <nex> 大丈夫 かも 分から ない
-ToDo
-----
+## ToDo
 (TK 07-04-06)かかることのできる動詞を「知れる」「分かる」などに限定すべき。
 だが現状ではこのtypeは「知れる(v2-v-stem-lex)」にかかることができない。
 (TK 07-04-06)また、名詞を受けるtypeがない。(lkb::do-parse-tty "人間 かも 分から ない")
@@ -2036,8 +2030,7 @@ comp-prpstn-lex-sentargを参照。ただしこのtypeはna-adj-lexを受ける�
 <ex> 大丈夫 かも 分から ない
 <nex> 人間 かも 分から ない
 <nex> 行く かも 分から ない
-ToDo
-----
+## ToDo
 (TK 07-04-06)comp-prpstn-lex-sentargを参照。
 """
  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD na-adj_head].
@@ -2095,8 +2088,7 @@ comp-prpstn-lex-vargを参照。このtypeはpropositionをもつ語（文）に
 
 
 
-ToDo
-----
+## ToDo
 (TK 07-04-06)comp-prpstn-lex-vargを参照。
 """
  [ SYNSEM.LOCAL.CAT.HEAD.CASE to,
@@ -2197,8 +2189,7 @@ argumentが取れていないように見える。
 <ex> 弟 と の 喧嘩
 <nex> 会社 から の 帰宅
 <nex> チョップ から の キック
-ToDo
-----
+## ToDo
 (TK 07-03-28)一部のpostp-lex（「から」など）ではうまくargumentが取れない
 """
 			[SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD postp_head].
@@ -2720,8 +2711,7 @@ topic-vobj-lex := topic-p-lex &
 <name lang='ja'>後置詞？？？
 ２つの動詞を繋ぐ助詞。
 <ex> 泳い で も よい
-ToDo
-----
+## ToDo
 reject te-adjunct
 """
  [SYNSEM.LOCAL [CAT [VAL.COMPS.FIRST.LOCAL [CAT [ HEAD sentence-valid & 
@@ -3030,8 +3020,7 @@ det-lex := dt-lex &
 単独で名詞にのみかかる。現状ではdet-lexの直後にある名詞にしかかかれない。
 <ex> あの 犬 は 雌 だ
 <nex> あの の 犬 は 雌 だ
-ToDo
-----
+## ToDo
 Should also take wides scope over coordination: あの 犬 と 猫
 """
              [SYNSEM.NON-LOCAL.QUE <! !>].
@@ -3043,8 +3032,7 @@ det-wh-lex := dt-lex &
 det-lexを参照。ただしこちらはwh疑問文に使う。このtypeがある文は必ず疑問文になってしまう
 <ex> どんな 色 が 好き です か
 <nex> どんな 行動 する
-ToDo
-----
+## ToDo
 (TK 07-03-23)疑問文になってほしくない場合もある。間接疑問文？(lkb::do-parse-tty "どんな 場合 でも 行く")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "どこ に どの 色 を 塗る か")。
@@ -3068,8 +3056,7 @@ card2ord-lex := lexical_sign-word &
 という解析になっている（「第２/巻」でなく「第/２巻」という解析）。
 <ex> 第 ２ 巻 を 読む
 <nex> 第 ２ リットル
-ToDo
-----
+## ToDo
 (TK 07-04-10)このtypeが、現状のように「数詞+助数詞」の外側からかかっていくのが良いのか、それとも
 数詞に直接かかるべきなのかが分からない。
 """
@@ -3105,8 +3092,7 @@ hes-lex   := lexical_sign-word &
 感覚か。現状では文頭にしか使えないが、文中で使う場合も考えられる。
 <ex> ううん 余裕 は 無い
 
-ToDo
-----
+## ToDo
 (TK 07-03-23)これも解析できるようにすべき(lkb::do-parse-tty "余裕 は ううん 無い")。
 """
             [SYNSEM [LOCAL [CAT  [HEAD hes_head-avm, VAL super-saturated],
@@ -3306,8 +3292,7 @@ s-end1-decl-lexを参照。ただしこのtypeは聞き手や読み手に対す�
 また、助動詞「だ」の後にしかつかない。
 <ex> 犬 だ い
 <nex> 誰 だ い
-ToDo
-----
+## ToDo
 (TK 07-03-15)「だ い」で一語として扱うべき
 """
  [SYNSEM.LOCAL [CAT [HEAD.FORMAL.AHON -,
@@ -3364,8 +3349,7 @@ s-end1-quest-minusahon-copcomp-lex := s-end1-quest-minusahon-lex &
 s-end1-quest-minusahon-lexを参照。このtypeはwh-wordとcopulaのある文の末尾につく。
 <ex> 誰 だ い
 <nex> 本 だ い
-ToDo
-----
+## ToDo
 (TK 07-03-23)「だ い」を一語で扱っても良いのではないか。s-end1-decl-minusahon-lexも参照。
 """
  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST [NON-LOCAL.QUE 1-dlist,
@@ -3446,8 +3430,7 @@ s-end2-quest-lex := s-end2-lex &
 で使う場合は「か」(s-end1-quest-lex)と同じようなものなので、このtypeは必要かどうかよく分からない。
 <ex> 行く な
 <nex> 行け な
-ToDo
-----
+## ToDo
 (TK 07-03-15)禁止を意味するtypeが必要。(lkb::do-parse-tty "行く な")
 """
  [SYNSEM.LOCAL [CAT.HEAD.SMOD quest,
@@ -3471,8 +3454,7 @@ s-ell-end-lex := sap-lex &
 <ex> 勝っ た の は 打線 が 好調 だっ た から だ
 <ex> もう 野菜 を 買っ た のに
 <nex> 打線 が 好調 だっ た から 勝っ た
-ToDo
-----
+## ToDo
  
 """
  [SYNSEM [LOCAL [CAT [HEAD s-end_head-avm & [EMPTY -,
@@ -3719,8 +3701,7 @@ adj2n-suffix-lex := n-lex &
 <ex> 春 の 暖か さ
 <ex> その 美し さ
 <nex> あの 車 さ に は かなわ ない
-ToDo
-----
+## ToDo
 (TK 07-03-23)名詞でなくi-adj-lexの後につけられるようにすべき。また、na-adj-lexを名詞化
 するtypeも必要。
 """
@@ -3991,8 +3972,7 @@ pron-thirdsgmasc-ref-lex := pron-thirdsg-ref-lex &
 三人称の代名詞のうち、一人の男性を指すもの。複合名詞は作らない。
 <ex> 彼 が 行く
 
-ToDo
-----
+## ToDo
 (TK 07-04-11)男性を指すとは限らないものも登録されている（「誰々」「誰それ」など）。
 """
 			   [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN masc].
@@ -4004,8 +3984,7 @@ pron-thirdsgneut-ref-lex := pron-thirdsg-ref-lex &
 三人称の代名詞のうち、一つの中性のものを指すもの。複合名詞は作らない。
 <ex> それだけ が 在る
 <nex> それだけ 雨 が 降っ た
-ToDo
-----
+## ToDo
 (TK 07-04-11)「それ」はpron-demon-lexなのに何故「それだけ」がこのtypeなのか。
 """
 			   [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN neut].
@@ -4038,8 +4017,7 @@ pron-thirdplandro-ref-lex := pron-thirdpl-ref-lex &
 三人称の代名詞のうち、複数の男性を指すもの。複合名詞は作らない。
 <ex> 彼ら が 作る
 
-ToDo
-----
+## ToDo
 (TK 07-04-11)このtypeの女性版も必要では？（例:「彼女ら」）
 """
 			     [SYNSEM.LKEYS.KEYREL.ARG0.PNG.GEN m-or-f].
@@ -4197,8 +4175,7 @@ relational-n-lex := n-lex &
 <ex> 線 より 内側 に 入る
 <ex> 線 の 内側 に 入る
 
-ToDo
-----
+## ToDo
 (TK 07-03-23)「relational-n-lex+ordinary-nohon-n-lex」も解析できるようにすべき。
 (lkb::do-parse-tty "上級 クラス") (lkb::do-parse-tty "後方 支援")
 """
@@ -4321,8 +4298,7 @@ agent-name-lex := name-lex &
 
 <ex> 北朝鮮 が 参加 する
 
-ToDo
-----
+## ToDo
 (TK 07-04-04)このtypeが必要かどうかわからない
 """
                   [SYNSEM.LOCAL [CAT.HEAD surname_head-avm]].
@@ -4427,8 +4403,7 @@ temp_numeral-nonwh-lexを参照。ただしこのtypeは、当該の時間がい
 <ex> 来月 何日 に 行く か
 <nex> 何時 ３ 日 に 行く か
 <nex> 何日 来月 に 行く か
-ToDo
-----
+## ToDo
 (TK 07-04-18)日付表現がうまくできていない。temp_numeral-nonwh-lexを参照。
 (TK 07-04-18)また、(lkb::do-parse-tty "何時 ３ 日 に 行く か")は解析できないほうが良い。
 temp_numeral-nonwh-lexも参照。
@@ -4449,8 +4424,7 @@ date-noun-lexと同様。ただし、現状では日付表現がうまくでき�
 <ex> 今日 朝 に 着く
 <nex> ３ 時 朝 に 着く
 <nex> 朝 今日 に 着く
-ToDo
-----
+## ToDo
 (TK 07-04-18)日付表現がうまくできていないため、(lkb::do-parse-tty "３ 日 朝 に 着く")も
 (lkb::do-parse-tty "朝 ３ 時 に 着く")も解析できない。
 (TK 07-04-18)また、(lkb::do-parse-tty "朝 今日 に 着く")は解析できないほうが良いと思われる。
@@ -4465,8 +4439,7 @@ temp_numeral-dur-lex := temp_numeral-basic-lex &
 と同じような振舞いをする他、ADV_NP_RULEによって副詞化することができる。
 <ex> 短時間 煮る
 
-ToDo
-----
+## ToDo
 (TK 07-04-13)FIXME:「temp_numeral-dur-lex+vn-lex」の形のときに、何故かREL-CL-OBJ1-GAP-RULE
 とRELATIVE-CLAUSE-RULEが出て不要な曖昧性が増えてしまう（たとえvn-intrans-lexでも同様）。
 (lkb::do-parse-tty "短時間 労働")
@@ -4488,8 +4461,7 @@ vn-lexや名詞などの直後について、その状態や行為がその期�
 ただし、現状ではdate-noun-lexの直後にしかつかない状態と思われる。
 <ex> 今日 じゅう に 帰る
 <nex> 世界 じゅう の 飛行機
-ToDo
-----
+## ToDo
 (TK 07-04-13)FIXME:以下の文も解析できるようにすべき。
 (lkb::do-parse-tty "食事 中")(lkb::do-parse-tty "休暇 中 の 職員")
 """
@@ -4505,8 +4477,7 @@ temp_numeral-dur-lexを参照。このtypeはその期間がどのくらいで�
 また、このtypeのある文は全て疑問文になってしまう。
 <ex> 何日間 居 ます か
 
-ToDo
-----
+## ToDo
 (TK 07-04-13)疑問文になってほしくない場合もある。間接疑問文？(lkb::do-parse-tty "何時間 の 労働 でも 耐える")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "何月 に 何日間 働く か")。
@@ -4908,8 +4879,7 @@ n_num+cl-spr-only-ind-lex := numeral-classifier &
 茶筌は「一つ」〜「九つ」を一語にしますので特別なエントリーが必要だ。
 基本的に数字と助数詞を一緒にした物です。
 <ex> 一つ の 石 が 倒れ た
-ToDo
-----
+## ToDo
 Add "tsu" as a predicate in some way
 """
  [ SYNSEM [LOCAL [ CAT [ VAL super-saturated,
@@ -5120,8 +5090,7 @@ temp_nmod-nonempty-lex := temp_nmod-lex &
 <name lang='ja'>???
 ???
 <nex> 一つ の 物 が 倒れ た
-ToDo
-----
+## ToDo
 stop this modifying dummy nouns
 """
  [SYNSEM.LOCAL.CAT.HEAD.MOD < [LOCAL.CAT.HEAD noun_head-avm & [EMPTY +]] > ].
@@ -5201,8 +5170,7 @@ ordinary-nohon-n-lexのみの登録。
 <ex> 水道 の カルキ 臭 が 強い
 <nex> 水道 の カルキ の 臭 が 強い
 <nex> 水道 の 臭 は カルキ だ
-ToDo
-----
+## ToDo
 複数形を表す接尾辞を別のクラスにすべき（「方」「がた」「達」「たち」「等」「ら」「共」「ども」）。
 """
                   [ SYNSEM.LOCAL.CAT.HEAD.J-POSTHEAD right ].
@@ -5399,8 +5367,7 @@ comma-interjmod-lex := comma-lex &
 interj-lexの後につく読点「、」。
 <ex> エッ 、 僕 です
 <nex> 右 、 左 です
-ToDo
-----
+## ToDo
 (TK 07-04-09)excl-lexやgreeting-lexにつくtypeも必要ではないか。
 (lkb::do-parse-tty "どうも 、 夕刊 です")(lkb::do-parse-tty "さようなら 、 また 来る")
 """
@@ -5443,8 +5410,7 @@ parenthesis-init-lexを参照。このtypeは閉じる（横書きなら右側�
 <ex> 主人公 は ポチ （ 犬 ） です
 <nex> 主人公 は ポチ ） 犬 ） です
 <nex> 主人公 は ポチ 【 犬 ） です
-ToDo
-----
+## ToDo
 parenthesis-init-lexを参照。
 """
              [SYNSEM [LOCAL [CAT [VAL obj-obj2-arg & 
@@ -5475,8 +5441,7 @@ parenthesis-init-lex := lexical_sign &
 <ex> 主人公 は ポチ （ 犬 ） です
 <nex> 主人公 は ポチ （ 犬 】 です
 <nex> 主人公 は ポチ （ 犬 （ です
-ToDo
-----
+## ToDo
 (TK 07-03-23)やはり括弧開と括弧閉は１つ１つの対応関係にするべき。
 """
                         [SYNSEM [LOCAL [CAT [HEAD parent-init_head,
@@ -5687,8 +5652,7 @@ ordinary-nohon-indef-n-lex := ordinary-nohon-n-lex &
 でもない。
 <ex> いくつか の 時計
 <nex> いくつか は 知ら ない
-ToDo
-----
+## ToDo
 (TK 07-05-08)複合名詞を作れてしまうが、複合名詞で使うことはないので修正すべき。
 (TK 07-05-08)副詞的な働きもできるようにすべき(lkb::do-parse-tty "時計 が いくつか ある")。
 (TK 07-05-08)なぜ「何か」がこのtypeで、「何 か」がordinary-nohon-plusbar-indefspec-n-lexなのか不明。
@@ -5704,8 +5668,7 @@ ordinary-nohon-n-lexを参照。ただしこのtypeは必ず他の名詞（名�
 
 
 
-ToDo
-----
+## ToDo
 (TK 07-04-23)普通名詞でも使いそうなもやsuffixかprifixとしてしか使わないもの、またsuffixでもprifixでも
 使うが意味が異なるもの（「来」など）などの、このtypeでは適当でないものしか登録されていなかったので、
 全て他のtypeに移した。
@@ -5733,8 +5696,7 @@ ordinary-nohon-n-lexを参照。このtypeは三人称複数形を表す。日�
 扱われることが多い。
 <ex> 人々 が 笑う
 
-ToDo
-----
+## ToDo
 (TK 07-04-11)「人々」「子供 達」の登録しかないが、少なくともこれらは複合名詞を作らないのではないか。
 """
  [SYNSEM.LKEYS.KEYREL.ARG0.PNG.PN threepl].
@@ -5746,8 +5708,7 @@ ordinary-nohon-plusbar-indefspec-n-lex := ordinary-nohon-plusbar-n-lex &
 ordinary-nohon-indef-n-lexを参照。ただしこのtypeは、複合名詞を作らない。
 <ex> 何 か の はずみ
 <nex> 何 か は 知ら ない
-ToDo
-----
+## ToDo
 (TK 07-05-08)副詞的な働きもできるようにすべき(lkb::do-parse-tty "理由 が 何 か ある")。
 (TK 07-05-08)なぜ「何 か」がこのtypeで、「何か」がordinary-nohon-indef-n-lexなのか不明。
 """
@@ -5852,8 +5813,7 @@ title-inst-lex := title-lex &
 <ex> 田中 大学
 <ex> ボンド 研究室
 <nex> 移動 研究室
-ToDo
-----
+## ToDo
 (TK 07-04-25)ordinary-nohon-n-lexやvn-lexの後について組織名を作るtypeも必要。
 (lkb::do-parse-tty "考古学 研究室")(lkb::do-parse-tty "衆議院 予算 委員会")
 """
@@ -5976,8 +5936,7 @@ wh-word-temp-lex := wh-word-temp-or-place-lex &
 <ex> いつ 行く
 <ex> いつ の 話 だ
 
-ToDo
-----
+## ToDo
 (TK 07-03-22)wh-word-thing-lexを参照。(lkb::do-parse-tty "いつ だ か 知ら ない")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "いつ どこ に 行く")。
@@ -5991,8 +5950,7 @@ wh-word-place-lex := wh-word-temp-or-place-lex &
 当該の場所がどこであるかを尋ねるときに使う代名詞。このtypeがある文は必ず疑問文になる。
 <ex> どこ に 行く
 
-ToDo
-----
+## ToDo
 (TK 07-03-22)wh-word-thing-lexを参照。(lkb::do-parse-tty "どこ でも 良い")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "いつ どこ に 行く")。
@@ -6006,8 +5964,7 @@ wh-word-person-lex := wh-word-temp-or-place-lex &
 当該の人が誰であるかを尋ねるときに使う代名詞。このtypeがある文は必ず疑問文になる。
 <ex> 誰 が 行く
 <nex> 誰 か い ない か
-ToDo
-----
+## ToDo
 (TK 07-03-22)wh-word-thing-lexを参照。(lkb::do-parse-tty "誰 でも 良い")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "いつ 誰 と 行く")。
@@ -6022,8 +5979,7 @@ wh-word-thing-lex := wh-word-temp-or-place-lex &
 当該の物が何であるかを尋ねるときに使う代名詞。このtypeがある文は必ず疑問文になる。
 <ex> 何 を 読む
 <nex> 何 金 が 無い の か
-ToDo
-----
+## ToDo
 (TK 07-03-22)必ずしも疑問文で使われるとは限らない。間接疑問？
 (lkb::do-parse-tty "何 が あっ て も 行く")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
@@ -6085,8 +6041,7 @@ wh-word-quantity-lex  := n-lex &
 は必ず疑問文になる。
 <ex> パン は いくら です か
 <nex> いくら 君 でも 無理 だ
-ToDo
-----
+## ToDo
 (TK 07-03-22)wh-word-thing-lexを参照。(lkb::do-parse-tty "いくら でも 出す")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "誰 が いくら 出す か")。
@@ -6117,8 +6072,7 @@ wh-word-honsubj-lex := wh-word-person-lex &
 wh-word-person-lexを参照。このtypeは敬意を表される対象である人に使われる。
 <ex> どなた が 来る か
 
-ToDo
-----
+## ToDo
 (TK 07-03-22)wh-word-thing-lexを参照。(lkb::do-parse-tty "どなた でも 良い")
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "どなた が どこ に いらっしゃる か")。
@@ -6196,8 +6150,7 @@ nom-pred-vn-lex := nom-pred-lex &
 <ex> ドキュメント は 作成 済 です
 <ex> 使用 済 の オイル は 捨てる
 <nex> ドキュメント は 作り 済 です
-ToDo
-----
+## ToDo
 (TK 07-04-06)vn-intrans-lexにしかつくことができない点は修正すべき。
 """
 		   [SYNSEM.LOCAL.CAT.VAL.SPR.FIRST.LOCAL.CAT.HEAD vn_head].
@@ -6396,8 +6349,7 @@ na-adj-suffix-lex := na-adj-stem-lex &
 <ex> 平和 的 解決
 <ex> 平和 的 に 解決 する
 <nex> 平和 的 解決 する
-ToDo
-----
+## ToDo
 (TK 07-04-11)直後に「に」をつけて副詞的に働けるようにすべき(lkb::do-parse-tty "平和 的 に 解決 する")。
 (TK 07-04-11)adverbを格として取る動詞の場合にも解析できない(lkb::do-parse-tty "考え が 革新 的 に なる")。
 (TK 07-04-11)また、上記の例にある(lkb::do-parse-tty "時間 的 継続")のような場合、「時間 的 /継続」で
@@ -6475,8 +6427,7 @@ na-adj-ng-lex := na-adj-stem-lex &
 <ex> 私 に 車 が 必要 だ
 <ex> 車 が 私 に 必要 だ
 <nex> 車 が 必要 だ
-ToDo
-----
+## ToDo
 (lkb::do-parse-tty "車 が 私 に 必要 だ")の場合、「が」を格として取れない。
 また、「に」格がobligatoryになっていない（主格をobligatoryにできない）
 """
@@ -6546,8 +6497,7 @@ adv-wh-lex := adv-lex &
 「どのくらい」のように機能が一部wh-word-lexと重なるのではないか。
 <ex> なぜ 行く
 
-ToDo
-----
+## ToDo
 (TK 07-03-23)間接疑問文にも対応すべき(lkb::do-parse-tty "なぜ 行く か を 聞く")。wh-word-thing-lexも参照。
 (TK 07-04-18)wh疑問のtypeに共通だが、１つの文にwhを表す語が複数あると解析できなくなる
 (lkb::do-parse-tty "なぜ どこ に も 無い の か")。
@@ -6616,8 +6566,7 @@ i-adj-stem-lexやna-adj-lex、またadverbを修飾するための副詞。
 <ex> より きれい に する
 <ex> もう ちょっと 走る
 <nex> 少し 走る
-ToDo
-----
+## ToDo
 (TK 07-04-19)verbを修飾することができないので、「少し」などはこのtypeの他に
 isect-adv-lexの登録もある。そのため、上記の「少し 多い 砂糖」のようにi-adj-stem-lex
 の終止形・連体形の場合に「少し」で双方の選択肢が出てしまう。
@@ -6759,8 +6708,7 @@ nan-card-lex := card-lex-super &
 現状ではこのtypeを使っても数量を尋ねる疑問文になっていないようにDependenciesからは読み取れる。
 <ex> 何 回 クリック する か
 <nex> 何 を クリック する か
-ToDo
-----
+## ToDo
 (TK 07-03-22)wh-word-thing-lexを参照。(lkb::do-parse-tty "何 回 でも クリック する")
 """
  [ SYNSEM.LOCAL [ CAT [ VAL super-saturated,
@@ -7026,8 +6974,7 @@ han-lex := lexical_sign-word &
 想定されていないが、「余り」「強」「弱」「以上」「未満」などもこの仲間ではないか。
 <ex> 二 年 半
 <nex> 半 人前
-ToDo
-----
+## ToDo
 (TK 07-03-26)(lkb::do-parse-tty "二 年 未満")これもこのtypeで解析すべきでは？
 """
 [ SYNSEM [ LOCAL [ CAT [ HEAD han_head,
@@ -7219,8 +7166,7 @@ date-noun-lexを参照。連体修飾されなければこのtypeは出現しな
 <ex> 行く 間
 <ex> 授業 の 間
 <nex> 授業 間 寝る
-ToDo
-----
+## ToDo
 (TK 07-03-15)(lkb::do-parse-tty "間 の 本")これはこのtypeで解析されないほうがよい。
 """
  [SYNSEM.LOCAL.BAR +].
@@ -7430,8 +7376,7 @@ na-varg-end-lex := na-end-lex &
 <ex> 帰り そう だ
 <ex> 高 そう だ
 <nex> 高い そう だ
-ToDo
-----
+## ToDo
 (TK 07-05-07)このtypeの後に「に+なる」の形をつけると、その「なる」はintrans-c-stem-lexになってしまう
 (lkb::do-parse-tty "流れ そう に なる")
 """
@@ -7447,8 +7392,7 @@ na-varg-end-lexを参照。ただしこのtypeは、現状ではi-adj-neg-stem-l
 の後にのみつくことができる。
 <ex> 力 が な さ そう だ
 
-ToDo
-----
+## ToDo
 (TK 07-05-07)i-adj-neg-stem-lexの「ない」以外でも「良い（よい）」「無い（ない）」とつく語の
 語幹につくべき。(lkb::do-parse-tty "考え て い な さ そう だ")(lkb::do-parse-tty "人 が い な さ そう だ")
 (lkb::do-parse-tty "とめど な さ そう だ")(lkb::do-parse-tty "物足りな さ そう だ")
@@ -7468,8 +7412,7 @@ na-adj-lexの直後にあって、na-adj-lexと同じような働きをする複
 <ex> お 元気 そう だ
 <ex> 不安 そう に 眺める
 <nex> 佐藤 さん は お 元気 だ そう です
-ToDo
-----
+## ToDo
 (TK 07-05-07)このtypeの後に「に+なる」の形をつけると、その「なる」はintrans-c-stem-lexになってしまう
 (lkb::do-parse-tty "元気 そう に なる")。
 """
@@ -7489,8 +7432,7 @@ na-adj-lexの直後につく助詞の「に」。「na-adj-lex+に」の形で�
 <ex> 桜 が 有名 に なる
 <ex> 部屋 を きれい に 掃除 する
 <ex> 確か に 鐘 が なっ た
-ToDo
-----
+## ToDo
 (TK 07-04-11)「そうに+V」(lkb::do-parse-tty "寒 そう に 振る舞う")や「na-adj-lex+に+助詞」
 (lkb::do-parse-tty "簡単 に は 譲ら ない")の場合にもこのtypeを選ぶかどうかの選択肢が出てしまう。
 (TK 07-04-11)また、「na-adj-lex+に+助詞」の場合、このtypeを選ぶことは可能だが、格にはなれない
@@ -7541,8 +7483,7 @@ type名にnaadj~とつくが、実際にはna-adj-lexやi-adj-lexの語幹
 <ex> 娘 が 犬 を 欲し がる
 <ex> 残念 がる
 <nex> 痒い がる
-ToDo
-----
+## ToDo
 (TK 07-03-26)一段動詞の後につくべきではない。(lkb::do-parse-tty "食べ がる")
 (TK 07-03-26)また、v1-stemのような働きを持たせる場合にも対応すべき。(lkb::do-parse-tty "娘 が 犬 を 欲し がる")
 """
@@ -7643,8 +7584,7 @@ v-neg-polite-present-end-amorph-lex := v-neg-polite-present-simple-end-lex &
 正しいかどうかは不明。
 <ex> 言わ ざる を 得 ませ ん
 <nex> ざる を 得 ませ ん
-ToDo
-----
+## ToDo
 (TK 07-05-08)「ざる を 得 ない」「ざる を え ない」もこのtypeで登録されているが、これらは
 少なくとも"AHON +"ではなく、何か適当なtypeが必要。
 """
@@ -7707,8 +7647,7 @@ v-neg-plain-present-spr-end-lex := v-neg-plain-present-end-lex &
 <ex> 食べ ぬ
 <ex> 思わ ぬ 事態
 
-ToDo
-----
+## ToDo
 (TK 07-04-02)このtypeには必ずV-END-RU-INFLE-RULEを適用するかどうかの選択が出るが、
 Dependenciesの上では差がないように見える。
 (TK 07-04-02)また、現状ではサ行変格活用動詞の「し」「じ」の直後につくようになっているが、
@@ -7753,8 +7692,7 @@ nai-noncaus-end-lexとは相反するtype。現状では用言とこのtypeの�
 <ex> 打て ない 打者
 <nex> 打て なく て 負け た
 <nex> 打て なかっ た
-ToDo
-----
+## ToDo
 （TK 07-03-30)(lkb::do-parse-tty "痛く は ない")も正しく解析できるようにすべき。
 """
  [J-NEEDS-AFFIX -,
@@ -7791,8 +7729,7 @@ v-neg-te-plain-aamorph-end-lex := v-neg-te-plain-end-lex &
 
 <ex> 食べ ず
 
-ToDo
-----
+## ToDo
 (07-04-02)古風な表現の場合、(lkb::do-parse-tty "食べ ず")のようにこのtypeで終止することがあるが、
 その時にUTTERUNCE_RULE-DECL-INFINITEとUTTERUNCE_RULE-IMPの選択肢が出てしまうが、不要。
 """
@@ -8104,8 +8041,7 @@ v-te-end-tmorph-lexを参照。このtypeは聞き手（読み手）への敬意
 i-adj-lexの後にはつかない。
 <ex> 木 が あり まして 犬 が 居 ます
 <nex> 部屋 を 借り まして 住み ます
-ToDo
-----
+## ToDo
 (07-04-02)te-adjunct-lexに当たるtypeも必要(lkb::do-parse-tty "部屋 を 借り まして 住み ます")。
 """
  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.AHON +,
@@ -8129,8 +8065,7 @@ v-coord-end-tmorph-lex := v-coord-end-lex &
 <ex> 喋っ たり する と 喉 が 痛い
 <ex> 挨拶 し たり 片付け たり で 大変 だ
 <nex> 数 が たり ない
-ToDo
-----
+## ToDo
 (TK 07-04-03)このtypeの場合、「する」という動詞が後につく場合が多いが、現状では「〜たり//する」は
 SENTENCE-TE-COORDINATION-RULEで接続されてしまっている。
 """
@@ -8145,8 +8080,7 @@ v-coord-end-tmorph-lexを参照。このtypeはガ行五段連用形イ音便や
 <ex> 繋い だり 塞い だり する
 <ex> 本 を 読ん だり する
 
-ToDo
-----
+## ToDo
 v-coord-end-tmorph-lexを参照。
 """
  [LMORPH-BIND-TYPE nd-morph].
@@ -8182,8 +8116,7 @@ v-present-tense-end-lex :=  v-indicative-tense-end-lex &
 の敬意を表す。現在時制に使う。活用はしない。
 <ex> 食べ ます
 <nex> 食べ まし た
-ToDo
-----
+## ToDo
 (TK 07-05-07)「vn-ditrans-lex,vn-trans8-lex+lightverb」の第一目的格（「を」格にあたるもの）
 が現れている文章の後につくことができない
 (lkb::do-parse-tty "チェック よろしく お願い し ます")(lkb::do-parse-tty "家 を 売却 し ます")。
@@ -8207,8 +8140,7 @@ v-past-tense-end-minusahon-tmorph-lexやv-past-tense-end-minusahon-ndmorph-lex�
 動詞の連用形の直後にのみつく。
 <ex> 勝ち まし た
 
-ToDo
-----
+## ToDo
 (TK 07-05-08)「で ある」の連用形「で あり」の後にもつけられるようにすべき
 (lkb::do-parse-tty "無事 で あり まし た")。
 """
@@ -8311,8 +8243,7 @@ v-consultative-tense-plain-imorph-end-lexを参照。このtypeは、「一段�
 <ex> 買お う
 <ex> 犬 だろ う
 <nex> う が 泳ぐ
-ToDo
-----
+## ToDo
 (TK 07-04-03)カ変活用動詞「来る」もこのtypeで解析できるようにしたほうが良いのかもしれない。(lkb::do-parse-tty "来よ う")
 The meaning is different in copular and adjectives 
 (TK 07-04-03)i-adj-lexの未然形の直後にもつくようにすべき。(lkb::do-parse-tty "寒かろ う")
@@ -8327,8 +8258,7 @@ v-imperative-tense-end-lex := v-tense-end-lex-super &
 <ex> 行き なさい
 <ex> 観念 し なさい
 <nex> 勉強 を なさい
-ToDo
-----
+## ToDo
 (TK 07-04-02)補助動詞「なさる」は、現代語としては命令形でのみ使われるが、古風な文章では命令形以外
 でも使うことがある。(lkb::do-parse-tty "行き なさっ た")(lkb::do-parse-tty "食べ なされ ば 治る")
 """
@@ -8403,8 +8333,7 @@ tai-notyetend-adjstem-lexでカバーしている。
 <ex> 帰り たく ない
 <ex> ここ は 帰っ て いただき たく
 <nex> 帰り たい
-ToDo
-----
+## ToDo
 (TK 07-05-09)tai-notyetend-adjstem-lexを参照。現状では「○○たく」と「ない」が
 SENTENCE-TE-COORDINATION-RULEで接続されてしまう。
 """
@@ -8433,8 +8362,7 @@ tai-end-lex := tai-end-lex-basic &
 のものはtai-notyetend-cstem-lexがカバーしている。
 <ex> 行き たがる
 <nex> 行き たがら ない
-ToDo
-----
+## ToDo
 (TK 07-05-09)"AHON +"である必要があるか。
 """
 	       [SYNSEM.LOCAL [CAT.HEAD [MODUS voluntative,
@@ -8483,8 +8411,7 @@ i-adj-stem-lexと同じ活用をし、助動詞や助詞などに接続するが
 <ex> 帰り たかっ た
 <ex> 帰り たけれ ば 帰る
 <nex> 帰り たい
-ToDo
-----
+## ToDo
 (TK 07-05-09)連用形「たく」はtaku-end-lexではなくこのtypeで解析できるようにしたほう
 が良いのではないか(lkb::do-parse-tty "帰り たく ない")。
 """
@@ -8532,8 +8459,7 @@ v-cond-end-lex  :=  v-noncaus-op-end-lex &
 本来は撥音便「ん」やガ行五段連用形イ音便の直後につく。
 <ex> 泳い だら ば 寒かっ た
 <nex> 書い だら ば 寒かっ た
-ToDo
-----
+## ToDo
 (TK 07-04-20)"だら ば" should be nd-morph
 (TK 07-04-20)v-cond-end-pastspr-polite-tmorph-lex「たら ば」とはt-morphかnd-morphか以外に
 違いがないと思われるのに、type hierarchy上の位置が全く違っている。
@@ -8617,8 +8543,7 @@ v-cond-end-pastspr-polite-ind-imorph-lex :=  v-cond-end-pastspr-polite-imorph-le
 聞き手（読み手）への敬意を表す場合に使う。
 <ex> 走り まし たら 疲れ まし た
 
-ToDo
-----
+## ToDo
 (TK 07-04-20)過去を表すとは限らない(lkb::do-parse-tty "いらっしゃい まし たら ご 連絡 ください")。
 ただし「〜ましたら〜ください」がなぜかうまく解析できない。
 (TK 07-04-20)仮定法でも使うかもしれない(lkb::do-parse-tty "お 金 が あり まし たら 買う の です が")。
@@ -8642,8 +8567,7 @@ v-cond-end-pastspr-polite-tmorph-lex := v-cond-end-pastspr-polite-lex & v-cond-e
 「ん」の場合はその後につくことはできない。
 <ex> 先生 の お宅 に 寄っ たら ば ご 不在 でし た
 
-ToDo
-----
+## ToDo
 (TK 07-04-20)「たら ば」はAHON +とは限らない
 (lkb::do-parse-tty "先生 の お宅 に 寄っ たら ば ご 不在 だっ た")。
 (TK 07-04-20)また、上記の例のように「たら ば」は過去を表すとは限らない。
@@ -8695,8 +8619,7 @@ rareru-end-imorph-lex := rareru-end-lex &
 <ex> フォーク が 投げ られる
 <ex> フォーク を 投げ られる
 <nex> 弟子 が 師匠 に 投げ られる
-ToDo
-----
+## ToDo
 (TK 07-04-09)可能表現の「に」格が主格、「が」格が目的格となる構文ができない
 (lkb::do-parse-tty "私 に 荷物 が 届け られる か")。
 Dependenciesを見ると「rareru_v_can[ARG2 proposition]」となっていて、常にARG1の項がブランク
@@ -8719,8 +8642,7 @@ rareru-end-condexcmorph-lex := rareru-end-lex &
 また現状ではrareru-end-imorph-lexと同じように一段活用動詞の語幹の直後につくことも可能になっている。
 <ex> 会議 に 行か れ ない
 <nex> 皿 が 人 に 洗わ れる
-ToDo
-----
+## ToDo
 (TK 07-04-09)rareru-end-imorph-lexを参照。(lkb::do-parse-tty "子供 に 犬 が 飼わ れる か")
 """
  [LMORPH-BIND-TYPE cond-exceptional-morph].
@@ -8775,8 +8697,7 @@ nai-noncaus-end-lex := v-noncaus-op-end-lex &
 <ex> 打て なく て 負け た
 <nex> 騒が ない
 <nex> 打て ない 打者
-ToDo
-----
+## ToDo
 （TK 07-03-30)(lkb::do-parse-tty "痛く は なかっ た")も正しく解析できるようにすべき。
 （TK 07-05-07)(lkb::do-parse-tty "食べ なく なる")のような場合、「『食べる』の名詞化+i-adj-noncause-neg-
 stem-lex+なる」となってしまう。
@@ -9015,8 +8936,7 @@ simple-pass-v-morph-end-lex := simple-pass-end-lex &
 v1-v-stem-lexの未然形の直後について、直接受身の意味を表す。このtype自身も一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> ボール が 投げ られる
 <nex> ボール を 投げ られる
-ToDo
-----
+## ToDo
 (TK 08-03-06)v1-kurusuru-stem-lexの未然形「せ（ぜ）」にもつくべき。(lkb::do-parse-tty "言葉 が 発せ られる")
 """
  [LMORPH-BIND-TYPE pass-v-stem-morph].
@@ -9264,8 +9184,7 @@ lightverb-pass-end-lex :=   pass-end-lex &
 lightverbの直後にあって表現をつくる。現状ではvn-trans1-lexの直接受身しかカバーできていない。
 <ex> 家 が 売却 さ れる
 <nex> 財宝 が 奪わ れる
-ToDo
-----
+## ToDo
 (TK 07-04-04)全てのlightverbがverbstemがvn化したものの直後にもついてしまうため、
 (lkb::do-parse-tty "盗み さ れる")のようなおかしな文章も解析されてしまう。
 """
@@ -9325,8 +9244,7 @@ GA-NO-CONVERSION-RULEを選択した場合にはc-stem-lexとv-stem-lexとkurusu
 <ex> 先生 が 戸 を 開け られる
 <ex> 国王 の 書か れ た 親書
 <nex> 球 が 投げ られる
-ToDo
-----
+## ToDo
 (TK 07-03-26)v-stem-lexとkurusuru-stem-lexの後につく「られる」とc-stem-lexの後につく「れる」でtypeを分けるべき。
 (TK 07-03-26)通常時でもc-stem-lexやkurusuru-stem-lexの後にもつくことができるようにすべき。(lkb::do-parse-tty "国王 が 書か れる")
 また、lightverbやauxの後につくtypeも作るべき。(lkb::do-parse-tty "国王 が 観戦 さ れる")(lkb::do-parse-tty "先生 が 戸 を 開け て いか れる")
@@ -9703,8 +9621,7 @@ verbの連用形の後について、１つのna-adj-lexのような働きをす
 <ex> 疲れ 気味 だ
 <ex> 卑下 し 気味 だ
 <nex> 良い 気味 だ
-ToDo
-----
+## ToDo
 (TK 07-05-07)このtypeの語の後に「に+なる」をつけると、その「なる」はintrans-c-stem-lexになってしまい、
 「○○の状態に変化する」という意味にならない(lkb::do-parse-tty "疲れ 気味 に なる")。
 """
@@ -9770,8 +9687,7 @@ v2n-end-lex :=  nom-lex &
 <ex> 打ち方 が 悪い
 <ex> 食べ っぷり が 良い
 <nex> 男 っぷり が 良い
-ToDo
-----
+## ToDo
 (TK 07-03-20)lightverbの後にもつくことができるようになったほうが良いかもしれない。(lkb::do-parse-tty "進行 し 方")
 """
  [SYNSEM [ LOCAL [CAT.VAL nom_sc & 
@@ -9815,8 +9731,7 @@ copulaの直後につく場合は「ではあるまい」の形のみ。
 活用はしない。ほとんどの場合は「まい」で文が終止するが、名詞が後続する場合もある。しかし一般的な用法と言えるかは不明。
 <ex> 彼 が 失敗 を す まい
 
-ToDo
-----
+## ToDo
 (TK 08-06-19)助動詞の直後につけられるようにすべき。(lkb::do-parse-tty "失敗 は し ます まい")
 また、v-stem-lexの活用形、kurusuru-stem-終止形「する」につく場合は必ず文中に主語or目的語が必要。
 以下、個人的メモとしてinflection(morph)-typeやvalencd-typeによる分類を載せる。
@@ -9869,8 +9784,7 @@ verbの終止形（「する」で終止するものは「す」形でも可）�
 <ex> 行く べき 人
 <ex> 宿題 を す べき
 
-ToDo
-----
+## ToDo
 (TK 08-06-18)現状ではこのtypeに名詞が後続できない。「行く べき 人」を参照。
 (TK 08-06-18)また、「verb+べき」にかかる主語or目的語がないと解析できない。(lkb::do-parse-tty "行く べき")
 (TK 08-06-18)「verb+aux_verb+べき」の場合は曖昧性が出る。
@@ -10263,8 +10177,7 @@ v1-kurusuru-stem-lex := v1-nohon-stem-lex &
 またこのtypeは、単独で疑問文も作れる。
 <ex> 客 が キノコ を 食する
 
-ToDo
-----
+## ToDo
 (TK 07-03-20)v1-kurusuru-stem-lexとv1-kurusuru-nonquest-stem-lexはどちらか一方でよいのではないか。
 """
  [STEMTYPE kurusuru-stem].
@@ -10277,8 +10190,7 @@ v1-kurusuru-nonquest-stem-lex := v1-kurusuru-stem-lex &
 v1-kurusuru-stem-lexを参照。ただしこのtypeは、単独では疑問文を作れない。
 <ex> 金持ち が 権力 を 愛する
 
-ToDo
-----
+## ToDo
 (TK 07-03-20)v1-kurusuru-stem-lexを参照。
 """
  [SYNSEM.NON-LOCAL.QUE <! !>].
@@ -10293,8 +10205,7 @@ v1-kurusuru-stem-lexを参照。ただしこのtypeは、疑問文のみに用�
 サ行変格活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 代金 を どう する
 
-ToDo
-----
+## ToDo
 (TK 07-03-20)疑問文以外も作れるようにすべき。(lkb::do-parse-tty "どう する か 決める")
 """
  [ SYNSEM [NON-LOCAL.QUE <! #top !>,
@@ -10331,8 +10242,7 @@ v1-v-stem-lexを参照。このtypeは主語への尊敬を表す。現状では
 登録されているが、 本来「くれる」に尊敬の意味は特にないように思われる。
 <ex> 祖父 が おもちゃ を くれる
 
-ToDo
-----
+## ToDo
 (TK 07-03-20)「息子 が 花 を くれる」の場合、特に敬意などは関係がないと思われる。
 """
  [STEMTYPE v-stem].
@@ -10539,8 +10449,7 @@ MRSの上ではadjectiveのARG1に主格（「が」格）が入り、v2a-c-stem
 <ex> 食事 が 豪華 に なる
 <ex> 食事 が 豪華 と なる
 <nex> 静か に 鐘 が なる
-ToDo
-----
+## ToDo
 (TK 07-03-20)「どう なる」の場合以外、adverbを目的語にすべきでないと思われる。
 (TK 07-04-06)助詞の「と」がcomp-prpstn-lex-quotにしかならないのはそれで良いのか。
 (TK 07-04-16)副詞化したi-adj-stem-lexが目的語の場合、MRSの上でそのi-adj-stem-lexがargumentを取ることができず、
@@ -10595,8 +10504,7 @@ v2a-c-stem-lexを参照。このtypeの目的格は「名詞+に(case-p-lex-np-n
 <ex> 犬 が 猫 に なる
 <ex> 犬 が 猫 と なる
 <nex> 木 に 実 が なる
-ToDo
-----
+## ToDo
 (TK 07-05-24)主格が「の」であると解析できない(lkb::do-parse-tty "犬 の 猫 に なる 日")。
 v2a-c-stem-lexも同様。
 """
@@ -10704,8 +10612,7 @@ v-soc-adv-kurusuru-stem-lex := v-soc-adv-nohon-stem-lex &
 <ex> 学者 が 考え を 確か と する
 <ex> カルシウム が 骨 を 太く する
 <nex> 兄 が チェス を 良く する
-ToDo
-----
+## ToDo
 (TK 07-04-16)ルールなどによって副詞化されたものだけでなく、純粋なadverbまでargumentに取って
 しまうのは、正しくないと思われる。v2a-c-stem-lexも参照。
 (TK 07-04-16)「na-adj-lex+と」の形の「と」がcomp-prpstn-lex-quotにしかならないのはそれで良いのか。
@@ -10738,8 +10645,7 @@ v-soc-adv-kurusuru-stem-lexを参照。ただしこのtypeは主格への敬意�
 五段変則活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 先生 が 部屋 を きれい に なさる
 <nex> 先生 が チェス を 良く なさる
-ToDo
-----
+## ToDo
 (TK 07-04-16)v-soc-adv-kurusuru-stem-lexを参照。
 """
  [STEMTYPE c2-stem].            
@@ -10788,8 +10694,7 @@ v5-c-stem-lex := v5-nohon-stem-lex &
 と呼ばれている。五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 雨 が 降る と 見込ん で 傘 を 持つ
 
-ToDo
-----
+## ToDo
 (TK 07-04-05)同時に「を」格も取る場合を解析できるようにすべき。
 (lkb::do-parse-tty "彼 を 男 と 見込む")
 """
@@ -10802,8 +10707,7 @@ v5-v-stem-lex := v5-nohon-stem-lex &
 v5-c-stem-lexを参照。このtypeは一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 彼 は 余談 だ が と 付け加え た
 
-ToDo
-----
+## ToDo
 (TK 07-04-05)v5-c-stem-lexを参照。(lkb::do-parse-tty "「これ は ペン です 」 と 訳 を 付け加え た")
 """
  [STEMTYPE v-stem].
@@ -10816,8 +10720,7 @@ v5-c-stem-lexを参照。このtypeは主語への敬意を表す場合に使う
 (http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 先生 が 良い と おっしゃる
 
-ToDo
-----
+## ToDo
 (TK 07-04-05)v5-c-stem-lexを参照。(lkb::do-parse-tty "苗字 を 川崎 さん と おっしゃる 紳士")
 """
  [STEMTYPE c2-stem].
@@ -10835,8 +10738,7 @@ v5-c-minusshon-stem-lex := v5-minusshon-stem-lex &
 v5-c-stem-lexを参照。ただしこのtypeは主語への敬意を表す場合には使えない。
 <ex> 私 は 栗林 と 申し ます
 <nex> 王 が 大臣 に 不服 だ と 申す
-ToDo
-----
+## ToDo
 (TK 07-04-05)v5-c-stem-lexを参照。(lkb::do-parse-tty "名 を 寅次郎 と 申し ます")
 (TK 07-07-04)We don't have any entries now.
 """
@@ -10905,8 +10807,7 @@ v5a-c-stem-lex := v5a-nohon-stem-lex &
 五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 花子 が 良い と 聞く
 
-ToDo
-----
+## ToDo
 (TK 07-04-05)v3-stem-lexとv5a-stem-lexの違いがはっきりしていない。
 (TK 07-04-05)v5-c-stem-lexを参照。(lkb::do-parse-tty "ポスト の 色 を 赤 と 知る")
 """
@@ -10919,8 +10820,7 @@ v5a-v-stem-lex := v5a-nohon-stem-lex &
 v5a-c-stem-lexを参照。このtypeは一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> あれ が 犬 だ と 教える
 
-ToDo
-----
+## ToDo
 (TK 07-04-05)v5a-c-stem-lexを参照。
 (TK 07-04-05)v5-c-stem-lexを参照。(lkb::do-parse-tty "ポスト の 色 を 赤 と 教える")
 """
@@ -10933,8 +10833,7 @@ v5a-kurusuru-stem-lex := v5a-nohon-stem-lex &
 v5a-c-stem-lexを参照。このtypeはサ行変格活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 彼 が 犯人 だ と し て 捜査 する
 <nex> 彼 を 犯人 だ と し て 捜査 する
-ToDo
-----
+## ToDo
 (TK 07-04-05)v5a-c-stem-lexを参照。
 """
 			 [STEMTYPE kurusuru-stem,
@@ -11087,8 +10986,7 @@ v5a-c-stem-lexの(lkb::do-parse-tty "花子 が 良い と 思う")と同じMRS�
 五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 花子 が 良い と 言う
 
-ToDo
-----
+## ToDo
 (TK 07-04-05)v3-stem-lexとv5a-stem-lexの違いがはっきりしていない。
 (TK 07-04-05)v5-c-stem-lexを参照。(lkb::do-parse-tty "恐かっ た と 体験 を 語る")
 """
@@ -11133,8 +11031,7 @@ v3-v-minusshon-stem-lexを参照。
 五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 買っ て ください と 頼む
 
-ToDo
-----
+## ToDo
 (TK 07-07-03)v3-c-stem-lexを参照。
 (TK 07-07-04)v5-c-stem-lexを参照。(lkb::do-parse-tty "名 を 寅次郎 と 申し ます") 
 """
@@ -11158,8 +11055,7 @@ v3-c-stem-lexを参照。このtypeは、主語に対する尊敬を表す場合
 一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 犬 と 存じ ます
 
-ToDo
-----
+## ToDo
 (TK 07-04-05)v3-c-stem-lexを参照。
 (TK 07-04-05)v5-c-stem-lexを参照。(lkb::do-parse-tty "プラチナ を 高価 だ と 存じ ます")
 """
@@ -11207,8 +11103,7 @@ v-soc-noun-stem-lexも２つの目的格を取るが、このtypeは２つの目
 このtypeは五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 子供 が 本 を 机 に 置く
 
-ToDo
-----
+## ToDo
 (TK 07-03-22)「を」とこのtypeの間にある「に」が、必ずcaseになってしまうのは改善すべき
 (lkb::do-parse-tty "書類 を ３ 時 に 手渡す")。
 """
@@ -11224,8 +11119,7 @@ v4-c-stem-lexを参照。このtypeは五段変則活用をする
 <ex> 罪人 が 神 に 許し を 乞う た
 <ex> 罪人 が 神 に 許し を 乞い ます
 
-ToDo
-----
+## ToDo
 v4-c-stem-lexを参照。
 """
  [STEMTYPE c2-stem].
@@ -11238,8 +11132,7 @@ v4-c-stem-lexを参照。このtypeは一段活用をする
 (http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> ライオン が 子供 に ミルク を 与える
 
-ToDo
-----
+## ToDo
 v4-c-stem-lexを参照。
 """
  [STEMTYPE v-stem].
@@ -11255,8 +11148,7 @@ v4-c-minusshon-stem-lex := v4-minusshon-stem-lex &
 v4-c-stem-lexを参照。ただしこのtypeは主語への尊敬を表す場合には使えない。
 <ex> 母親 が 息子 に 買物 を 頼む
 <nex> 大臣 が 王 に 節約 を 頼む
-ToDo
-----
+## ToDo
 v4-c-stem-lexを参照。
 """
  [STEMTYPE c-stem].
@@ -11271,8 +11163,7 @@ v4-kurusuru-stem-lex := v4-nohon-stem-lex &
 v4-c-stem-lexを参照。このtypeは変格活用をする。
 
 
-ToDo
-----
+## ToDo
 v4-c-stem-lexを参照。
 """
  [STEMTYPE kurusuru-stem].
@@ -11321,8 +11212,7 @@ v6-c-stem-lex := v6-nohon-stem-lex &
 <ex> 兄 が 弟 に 会う
 <ex> 兄 が 弟 と 会う
 
-ToDo
-----
+## ToDo
 (TK 07-04-06)vn-lexにはv6-stem-lexにあたるtypeがない。(lkb::do-parse-tty "敵 に/と 遭遇 する")
 """
  [STEMTYPE c-stem].
@@ -11336,8 +11226,7 @@ v6-c-stem-lexを参照。このtypeは一段活用をする(http://wiki.delph-in
 <ex> 顔 が 父親 に 似る
 <ex> 顔 が 父親 と 似る
 
-ToDo
-----
+## ToDo
 (TK 07-04-06)v6-c-stem-lexを参照。(lkb::do-parse-tty "基準 に/と 適合 する")
 """
  [STEMTYPE v-stem].
@@ -11412,8 +11301,7 @@ speechや特殊な場合以外はあまり使われるべきでない。このty
 (http://wiki.delph-in.net/moin/JacyMorphology)。
 <ex> 首相 が 手紙 書き送る
 <nex> 首相 が 手紙 を 書き送る
-ToDo
-----
+## ToDo
 (TK 07-03-22)このtypeの直前にあるのがdate-nounなどであっても必ず補語として取られてしまう。
 (lkb::do-parse-tty "首相 が 今日 書き送る")
 """
@@ -11427,8 +11315,7 @@ v8-c2-stem-lex := v8-nohon-stem-lex &
 v8-c-stem-lexを参照。このtypeは五段変則活用をする(http://wiki.delph-in.net/moin/JacyMorphology)。
 <ex> 献金 ありがとう ござい ます
 <nex> 献金 を ありがとう ござい ます
-ToDo
-----
+## ToDo
 v8-c-stem-lexを参照。
 """
  [ STEMTYPE c2-stem,
@@ -11442,8 +11329,7 @@ v8-c-stem-lexを参照。このtypeは一段活用をする
 (http://wiki.delph-in.net/moin/JacyMorphology)。
 <ex> 生徒 が 宿題 忘れる
 <nex> 生徒 が 宿題 を 忘れる
-ToDo
-----
+## ToDo
 v8-c-stem-lexを参照。
 """
  [STEMTYPE v-stem,SYNSEM.NON-LOCAL.QUE <! !>].
@@ -11461,8 +11347,7 @@ v8-c-minusshon-stem-lex := v8-minusshon-stem-lex &
 v8-c-stem-lexを参照。このtypeは主語への敬意を表す場合には使えない。
 <ex> 王 が 幸福 願う
 <nex> 王 が 幸福 を 願う
-ToDo
-----
+## ToDo
 v8-c-stem-lexを参照。
 """
  [STEMTYPE c-stem,
@@ -11479,8 +11364,7 @@ v8-c-stem-wh-lex  := v8-nohon-stem-lex &
 v8-c-stem-lexを参照。v1-kurusuru-quest-stem-lexのように疑問文に用いる。
 <ex> 代金 どう なる
 
-ToDo
-----
+## ToDo
 v8-c-stem-lexを参照。
 (TK 07-05-07)このtypeはいつ使えばよいか（「を」格に当たるものを取り得るのか）。
 """
@@ -11539,8 +11423,7 @@ mental-stem-lexを参照。五段活用をする(http://wiki.delph-in.net/moin/J
 <ex> 私 に 地図 が 分かる
 <ex> 私 が 地図 を 分かる
 <nex> 私 に 地図 を 分かる
-ToDo
-----
+## ToDo
 (TK 07-03-15)「私 に 地図 を 分かる」が「私 が 地図 が 分かる」と同じ解析になってしまうのは良くない。
 """
  [STEMTYPE c-stem].
@@ -11556,8 +11439,7 @@ mental-stem-lexを参照。一段活用をする(http://wiki.delph-in.net/moin/J
 <ex> 私 に 卓球 が できる
 <ex> 私 が 卓球 を できる
 <nex> 私 に 卓球 を できる
-ToDo
-----
+## ToDo
 (TK 07-03-15)mental-c-stem-lexを参照。
 """
  [STEMTYPE v-stem].
@@ -11574,8 +11456,7 @@ mental-stem-lexを参照。主格に対する尊敬を表す場合に使う。
 <ex> 将軍 が 切腹 を 申し付ける
 <nex> 将軍 に 切腹 が 申し付ける
 <nex> 将軍 に 切腹 を 申し付ける
-ToDo
-----
+## ToDo
 (TK 07-03-15)mental-c-minusshon-stem-lexを参照。
 """
  [STEMTYPE v-stem].
@@ -11589,8 +11470,7 @@ mental-stem-lexを参照。主格に対する尊敬を表す場合には使え�
 <ex> 私 が 成功 を 願う
 <nex> 私 に 成功 が 願う
 <nex> 私 に 成功 を 願う
-ToDo
-----
+## ToDo
 (TK 07-03-15)「私 に 成功 が 願う」「私 に 成功 を 願う」は「私 が 成功 を 願う」と同じ解析になって
 いるが、解析できないほうがよい。
 """
@@ -11607,8 +11487,7 @@ mental-c-minusshon-stem-lexを参照。五段変則活用をする
 また、おそらく「が」格や「に」格が現れない形でしか使わない。
 <ex> 贈り物 を ありがとう ござい ます
 <nex> 私 が ありがとう ござる
-ToDo
-----
+## ToDo
 (TK 07-05-08)mental-c-minusshon-stem-lexを参照。
 (TK 07-05-08)「ありがとう ござる」がこのtypeである必要があるかどうか。
 """
@@ -11655,8 +11534,7 @@ to_intrans-c-stem-lexを参照。
 <ex> 秋田犬 と いう 犬
 <ex> 東京 や 大阪 と いっ た 都市
 <nex> 子供 が 眠い と いう
-ToDo
-----
+## ToDo
 (TK 07-03-30)nounmod-p-lexの「という」「といった」との使い分けは？
 """
  [RMORPH-BIND-TYPE nomorphbind].
@@ -11693,8 +11571,7 @@ cop-id-ordinary-dastem-lex「だ」の変形。名詞について断定などの
 五段変則活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> これ が ペン で ある
 <nex> 海 が 静か で ある
-ToDo
-----
+## ToDo
 (TK 07-05-09)「で ござる」もこのtypeで登録されているが、これは"AHON +"では？
 """
  [STEMTYPE c2-stem].
@@ -11758,8 +11635,7 @@ cop-id-quest-stem-lex := cop-id-stem-lex &
 名詞の後について、疑問の意を表す助動詞。活用はしない。
 <ex> あれ が ペン かい
 <nex> 大丈夫 かい
-ToDo
-----
+## ToDo
 (TK 07-05-07)UTTERANCE_RULE-DECL-FINITEとUTTERANCE_RULE-WH-WITHOUT-KAの選択肢が出るが、
 まず、必ず疑問文になるので前者は不要で、更にWH疑問文ではない（「誰かい」という表現はしない）
 ので後者も正しくない。
@@ -11784,8 +11660,7 @@ cop-id-quest-stem-lexを参照。ただしこのtypeは男性が使う言葉で�
 現状では「か なあ」しか登録されていないが、これは女性でも使う場合がある。
 <ex> あれ が ペン か なあ
 <nex> 大丈夫 か なあ
-ToDo
-----
+## ToDo
 (TK 07-05-07)cop-id-quest-stem-lexを参照。
 """
  [SYNSEM.LOCAL.CTXT.C-INDICES.SPEAKER.PNG.GEN masc].
@@ -11797,8 +11672,7 @@ cop-id-quest-stem-fem-lex := cop-id-quest-stem-lex &
 cop-id-quest-stem-lexを参照。ただしこのtypeは女性が使う言葉である。
 <ex> あれ が ペン かしら
 <nex> 大丈夫 かしら
-ToDo
-----
+## ToDo
 (TK 07-05-07)cop-id-quest-stem-lexを参照。
 """
  [SYNSEM.LOCAL.CTXT.C-INDICES.SPEAKER.PNG.GEN fem].
@@ -11879,8 +11753,7 @@ na-adj-lexを受ける助動詞。五段変則活用をする
 (http://wiki.delph-in.net/moin/JacyMorphologyのc2-stemを参照)。
 <ex> 綺麗 で ござる
 <nex> 犬 で ござる
-ToDo
-----
+## ToDo
 (TK 07-05-24)「で ござる」しか登録されていないが、これは"AHON +"と思われる。
 """
  [SYNSEM.LKEYS.KEYREL arg1-ev-relation].
@@ -11977,8 +11850,7 @@ reg-cop-stem-nomod-desustem-lexを参照。更に女性が使う言葉である�
 使うが、Dependenciesには疑問の意味は現れていないように見える。
 <ex> 大丈夫 かしら
 <nex> 犬 かしら
-ToDo
-----
+## ToDo
 (TK 07-05-07)「かしら」は疑問で、「かなあ」は疑問あるいは願望の意味で使われる。現状ではそのいずれの意味
 にもならない。
 """
@@ -12127,8 +11999,7 @@ n-cop-lex := cop-light-lex &
 <ex> 行く の だ
 <ex> 良い の だ
 <nex> 先生 の だ
-ToDo
-----
+## ToDo
 (TK 07-05-08)「ん だろ う」など推測を表すものもこのtypeで良いかどうか。
 """
  [SYNSEM.LOCAL.CAT [HEAD [H-TENSE #tense,
@@ -12171,8 +12042,7 @@ reg-cop-lex-indicative := reg-cop-lex &
 ただし実際には用言の直後につかずに「べき」や「ばかり」の後につくことが多いのではないか。
 <ex> 行く べき だっ た
 
-ToDo
-----
+## ToDo
 (TK 07-03-27)「な」がこのtypeで登録されているのは正しいかどうか。
 もし(lkb::do-parse-tty "見る な よ")という用法のためなら、この「な」は禁止の意味を持つ
 type（やはり終助詞か？）で登録されるべき。
@@ -12423,8 +12293,7 @@ light-nohon-kurusuru-stem-lexを参照。このtypeは「が」格と「を」�
 現状では「を」格を取るvn-lexでしか使えなくなっている。
 <ex> 皆様 に 商品 を ご 購入 いただく
 <nex> 抹茶 を いただく
-ToDo
-----
+## ToDo
 (TK 07-03-27)「を」格を取らないvn-lexでも解析できるようにすべき。
 (lkb::do-parse-tty "皆様 に ご 起立 いただく")
 (TK 07-03-27)また、(lkb::do-parse-tty "弟子 が 師匠 に 芸 を ご 実演 いただく")も念のためきちんと解析
@@ -12488,8 +12357,7 @@ argumentを取り、MRSに現れることができる。その際、ARG1に「�
 <ex> 私 が 内容 を 説明 し て みる
 <ex> 私 が 内容 を 説明 し て みせる
 <nex> 私 が 内容 を みる
-ToDo
-----
+## ToDo
 (TK 07-04-17)「みせる」「見せる」は、（それを目撃する対象である）「に」格も取るのではないか
 能動態(lkb::do-parse-tty "怪獣 が 人々 に ヒーロー を 倒し て みせる")
 間接受身(lkb::do-parse-tty "人々 が 怪獣 に ヒーロー を 倒し て みせ られる")
@@ -12559,8 +12427,7 @@ aspect-c-stem-lex := aspect-stem-lex &
 五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 本 が 買っ て ある
 <nex> 本 が ある
-ToDo
-----
+## ToDo
 (07-03-27)(lkb::do-parse-tty "本 を 買っ て ある")も解析できるようにすべき。
 """
 [STEMTYPE c-stem].
@@ -12575,8 +12442,7 @@ aspect-c2-stem-lex := aspect-stem-lex &
 また、本来「ござる」は尊敬語であり、現代語としては「ござい ます」の形で使う。
 <ex> 本 が 買っ て ござい ます
 <nex> ビール が ござい ます
-ToDo
-----
+## ToDo
 (07-03-27)aspect-c-stem-lexを参照。
 (07-03-27)「ござる」「御座る」はminus_shonのtypeにすべき。
 (07-03-27)「いる」の尊敬語としての「ござる」「御座る」のtypeも必要。
@@ -12706,8 +12572,7 @@ pure-aspect-perfprog-kurusuru-stem-lex := pure-aspect-perfprog-stem-lex &
 カ行変格活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> ７ 回 の 表 まで 投げ て 来 た
 <nex> ７ 回 の 表 まで 来 た
-ToDo
-----
+## ToDo
 (TK 07-04-16)「来る」「くる」には完了進行以外にも用法がある。(lkb::do-parse-tty "向かっ て くる 敵 を 蹴散らす")
 """
  [STEMTYPE kurusuru-stem].
@@ -12755,8 +12620,7 @@ pure-aspect-inceptive-c2-stem-lex := pure-aspect-inceptive-stem-lex &
 五段変則活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 消しゴム を 端 から 使っ て いく
 <nex> 消しゴム を 買い に いく
-ToDo
-----
+## ToDo
 (TK 07-04-16)「行く」「いく」には起動相以外にも意味がある。(lkb::do-parse-tty "家 から 出 て いく")
 「来る」なども起動相として使えるのではないか。「構想が固まりはじめる」→(lkb::do-parse-tty "構想 が 固まっ て くる")
 """
@@ -12784,8 +12648,7 @@ pure-aspect-inceptive-c2-stem-lexを参照。このtypeは主語（「が」格�
 (http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 太陽 が 上っ て 参り ます
 <nex> 太陽 が 参り ます
-ToDo
-----
+## ToDo
 (TK 07-04-16)pure-aspect-inceptive-c2-stem-lexを参照。(lkb::do-parse-tty "来年 まで 続け て 参り ます")
 (TK 07-04-16)また、「参る」は「行く」「いく」のminus_shon版であると同時に、「来る」「くる」の
 minus_shon版でもある。(lkb::do-parse-tty "敵 が 向かっ て 参り ます")
@@ -13153,8 +13016,7 @@ ARG2に、vn-lex（行われる行為）がARG3になる。一段活用をする
 (http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 担当 が 鈴木 様 に ご 回答 さしあげ ます
 <nex> 子犬 さしあげ ます
-ToDo
-----
+## ToDo
 (TK 07-04-04)全てのlightverbがverbstemがvn化したものの直後にもついてしまうので、このtypeにおいても
 (lkb::do-parse-tty "お 調べ さしあげる")が解析できてしまうが、日本語の表現として正しくないのではないか
 （「お 調べ 申し上げる」が正しいのではないか）。
@@ -13204,8 +13066,7 @@ light-nohon-kurusuru-stem-lexを参照。このtypeは主語（「が」格）�
 になる。五段変則活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> お客様 が 私 に 内容 を ご 質問 くださる
 <nex> 賞状 を くださる
-ToDo
-----
+## ToDo
 (TK 07-04-04)全てのlightverbがverbstemがvn化したものの直後にもついてしまうのは修正すべきだが、
 (lkb::do-parse-tty "先生 が 私 に お 答え くださる")という表現も使える。
 """
@@ -13350,8 +13211,7 @@ i-adj-minusshon-stem-lex := i-adj-stem-lex &
 他の活用形でも解析できるようになっている（ex.「頭 が いかっ た」）。
 <ex> 夕食 は さんま が いい
 <nex> 御社 の 商品 は 質 が いい
-ToDo
-----
+## ToDo
 FIXME: is this really shon -? (TK: 2007-03-14)
 """
  [SYNSEM.LOCAL.CAT.HEAD.FORMAL.SHON -].
@@ -13450,8 +13310,7 @@ i-adj-gg-stem-lex := adj-stem-lex &
 格は主格（「が」格）目的格（「を」格）が取れる。活用あり。
 <ex> 犬 が 餌 を 欲しい
 <nex> 犬 が 餌 に 欲しい
-ToDo
-----
+## ToDo
  LR for i-adj-gg-stem-lex subcat
 """
   [SYNSEM [LKEYS.KEYREL arg12-relation & [ARG1 #sbjind,
@@ -13471,8 +13330,7 @@ i-adj-ng-stem-lex := adj-stem-lex &
 <ex> 私 に 勇気 が 欲しい
 <ex> 勇気 が 私 に 欲しい
 <nex> 勇気 が 欲しい
-ToDo
-----
+## ToDo
 「に」格がobligatoryになっていない（主格をobligatoryにできない）
 """
   [SYNSEM [LKEYS.KEYREL arg12-relation & [ARG1 #sbjind,
@@ -13661,8 +13519,7 @@ light-nohon-kurusuru-stem-lex := light-nohon-stem-lex &
 <ex> 車 が 故障 する
 <ex> 父 が 友人 を 招待 する
 <nex> 掃除 を する
-ToDo
-----
+## ToDo
 (TK 07-04-04)現状では、全てのlightverbがverbstemがvn化したものの直後にもついてしまうが、vn化したverbstem
 の直後について良いのは「お 送り する」などの敬語？（丁寧？）表現の場合のみ。
 ただし、例外として「数値 を 打ち込み する」のような使い方ができるものもあるかもしれない。
@@ -13690,8 +13547,7 @@ light-shon-c2-stem-lexを参照。ただしこのtypeは五段活用をする
 (http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> ご 出発 に なる
 <nex> 犬 に なる
-ToDo
-----
+## ToDo
 (TK 07-05-08)「hon-prefix『ご（御）』+vn-lex+light-shon-c-stem-lex」の形でしか使わないのに、
 hon-prefixがつくと解析できなくなってしまう。
 (TK 07-05-08)全てのlightverbがverbstemがvn化したものの直後にもついてしまうのは修正すべきだが、
@@ -13709,8 +13565,7 @@ vn-lexやverb連用形の直後にあって１つの動詞のような働きを�
 主格（「が」格）への敬意を表す場合に使う。五段変則活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 出発 なさい ます か
 <nex> 何 に なさい ます か
-ToDo
-----
+## ToDo
 (TK 07-04-04)日本語として正しいかどうかの議論はあるが、(lkb::do-parse-tty "ご 出発 なさい ます か")のような
 使い方がされる場合もあるので、「hon-prefix+vn(or verb連用形)+light-shon-c2-stem-lex」も解析できるようにすべき
 かもしれない。
@@ -13741,8 +13596,7 @@ light-minus_shon-c-stem-lexを参照。ただしこちらは一段活用をす�
 (http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 私 が 報告 申し上げ ます
 <nex> 先方 の 役員 が 報告 申し上げ た
-ToDo
-----
+## ToDo
 (TK 07-03-28)light-minus_shon-c-stem-lexを参照。
 (TK 07-04-04)全てのlightverbがverbstemがvn化したものの直後にもついてしまうのは修正すべきだが、
 (lkb::do-parse-tty "お 答え 申し上げる")という表現は可能。
@@ -13758,8 +13612,7 @@ light-nohon-kurusuru-stem-lexを参照。ただしこちらは主語（「が」
 五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 弊社 が 参加 いたし ます
 <nex> 国王 が 来社 いたし ます
-ToDo
-----
+## ToDo
 (TK 07-03-28)「hon-prefix+vn-lex+light-minus_shon-c-stem-lex」の形でも解析できるようにすべき。
 (lkb::do-parse-tty "ご 案内 いたし ます")
 (TK 07-04-04)全てのlightverbがverbstemがvn化したものの直後にもついてしまうのは修正すべきだが、
@@ -13809,8 +13662,7 @@ vn-lexの直後について、vn-lexの行為にそれぞれ独自の意味を�
 五段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 退場 願う
 <nex> 成功 を 願う
-ToDo
-----
+## ToDo
 (TK 07-04-09)全てのlightverbがverbstemがvn化したものの直後にもついてしまうのは修正すべき
 だが、(lkb::do-parse-tty "お 引き取り ねがう")のような敬語表現は可能。
 """
@@ -13824,8 +13676,7 @@ quasi-light-nohon-c-stem-lexを参照。
 このtypeは一段活用をする(http://wiki.delph-in.net/moin/JacyMorphologyを参照)。
 <ex> 私 が 機械 を 操作 できる
 <nex> 私 に 操作 が できる
-ToDo
-----
+## ToDo
 (TK 07-04-09)全てのlightverbがverbstemがvn化したものの直後にもついてしまうのは修正すべき
 だが、(lkb::do-parse-tty "お 作り でき ます")のような敬語表現は可能。
 (TK 07-04-09)可能表現に必須の「に」格が主格で「が」格が目的格となる構文が解析できない。
@@ -14403,8 +14254,7 @@ vn-trans1-hhon-lex := vn-trans1-super-lex &
 vn-trans1-lexを参照。このtypeは聞き手（読み手）に対する敬意を表す場合に使う。
 <ex> 彼 が 理由 を 存知 する
 <nex> ご 存知 です か
-ToDo
-----
+## ToDo
 (TK 07-04-09)このtypeには「存知」のみが登録されているが、「存知」には本来honorification
 に関わる意味は含まれない。
 また、もし「ご存知」として使うのであれば、それは「存じる」の名詞化（vn化？）であり、「ご存じ」
@@ -14610,8 +14460,7 @@ vn-trans1-minusbar-lex := vn-trans1-lex &
 しかし今のところ全く機能していない。このtypeが単独でtransitiveのvn-lexと同じ働きをしてしまっている。
 <ex> 書類 を 電子 化 する
 <nex> 回路 が 小型 化 する
-ToDo
-----
+## ToDo
 (TK 07-03-20)descriptionを参照。また、nexに挙げた例文を解析するために、vn-intrans-lex化させる
 typeも必要。
 """
@@ -14632,8 +14481,7 @@ vn-trans1-lex := vn-trans1-super-lex &
 <ex> スパイ が 暗号 を 解読 する
 <ex> 解読 が 進む
 
-ToDo
-----
+## ToDo
 (TK 07-03-20)名詞単独でもそのまま目的格補語として取ってしまう。(lkb::do-parse-tty "犬 飼育 する")
 """
  [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
@@ -14648,8 +14496,7 @@ vn-trans2-lex := vn-trans2-super-lex &
 <ex> 社員 が サーバー に ログイン する
 <ex> ログイン が 出来 ない
 
-ToDo
-----
+## ToDo
 vn-trans1-lexを参照。
 """
  [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
@@ -14678,8 +14525,7 @@ vn-trans8-lex := vn-trans8-super-lex &
 (http://wiki.delph-in.net/moin/JacyValence)。
 <ex> チェック よろしく お願い し ます
 <nex> チェック を よろしく お願い し ます
-ToDo
-----
+## ToDo
 (TK 07-05-08)v-present-tense-end-lexを参照。
 """
  [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
@@ -14694,8 +14540,7 @@ vn-ditrans-lex := vn-ditrans-super-lex &
 <ex> 妻 が 探偵 に 調査 を 依頼 する
 <ex> 依頼 を 断る
 
-ToDo
-----
+## ToDo
 (TK 07-03-22)「を」とこのtypeの間にある「に」が、必ずcaseになってしまうのは改善すべき
 (lkb::do-parse-tty "調査 を ３ 時 に 依頼 する")。v4-c-stem-lexも参照。
 """
@@ -14712,8 +14557,7 @@ ga-wo-toni-ditransitiveを参照(http://wiki.delph-in.net/moin/JacyValence)。
 <ex> 日本国 の 略 は 日 だ
 <ex> 日本国 を １ 文字 に 略 する
 
-ToDo
-----
+## ToDo
 vn-trans1-lexを参照。
 """
  [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
@@ -14793,8 +14637,7 @@ Jacy Valenceのga-ni_transitiveを参照(http://wiki.delph-in.net/moin/JacyValen
 名詞として働くことができる他、後にlightverbを伴って動詞として働くことができる。
 <ex> 隕石 に 衝突 する
 <ex> 隕石 と 衝突 する
-ToDo
-----
+## ToDo
 vn-trans1-lexを参照。
 """
  [SYNSEM.LOCAL.CTXT.BACKGROUND <! !>].
