@@ -100,4 +100,9 @@ ISO_CODE="jpn"
 LKB_SCRIPT_FILE="lkb/script"
 CHEAP_GRM_FILE_NAME="japanese.grm"
 ACE_CONFIG_FILE="ace/config.tdl"
-
+EXAMPLES = [ "犬 は 猫 に 吠える",
+    "光 が 本 を 読ん だ",
+    "光 は 何 を 食べ た",
+    "猫 が 三 匹 いる",
+    "光 が 本 を 読ん で いる",
+    "光 が 玲 に 本 を 渡し た" ]  
